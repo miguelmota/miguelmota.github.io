@@ -1,12 +1,163 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-<title>{{ page.title }}</title>
+	<meta charset='utf-8' />
+<!--
+                                      ___      
+           __                        /\_ \     
+  ___ ___ /\_\     __   __  __     __\//\ \    
+/' __` __`\/\ \  /'_ `\/\ \/\ \  /'__`\\ \ \   
+/\ \/\ \/\ \ \ \/\ \L\ \ \ \_\ \/\  __/ \_\ \_ 
+\ \_\ \_\ \_\ \_\ \____ \ \____/\ \____\/\____\
+ \/_/\/_/\/_/\/_/\/___L\ \/___/  \/____/\/____/
+                   /\____/                     
+                   \_/__/                      
+                  __               
+                 /\ \__            
+  ___ ___     ___\ \ ,_\    __     
+/' __` __`\  / __`\ \ \/  /'__`\   
+/\ \/\ \/\ \/\ \L\ \ \ \_/\ \L\.\_ 
+\ \_\ \_\ \_\ \____/\ \__\ \__/.\_\
+ \/_/\/_/\/_/\/___/  \/__/\/__/\/_/
+                                   
+-->
+	<meta name='description' content='Creative freelance web developer from the always sunny Southern California.' />
+	<meta name='keywords' content='miguel mota,creative,freelance,web developer,web design,blog' />
+	<meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0;' />
+	<title>Blog &#8212; Miguel Mota</title>
+	<link rel='canonical' href='http://www.miguelmota.com/' />
+	<link rel='alternate' type='application/rss+xml' href='{RSS}'>
+	<link rel='shortcut icon' href='http://www.miguelmota.com/favicon.ico' />
+	<link rel='apple-touch-icon' href='http://www.miguelmota.com/static/images/apple-touch-icon.png' />
+	<link rel='stylesheet' href='http://www.miguelmota.com/static/styles/global.min.css' />
+	<!--[if lt IE 9]>
+		<script src='http://html5shiv.googlecode.com/svn/trunk/html5.js'></script>
+		<link href='http://www.miguelmota.com/static/styles/ie.css' rel='stylesheet' />
+	<![endif]-->
+	<style>
+	body {
+		display: block !important;
+		background-color: #222;
+	}
+	ul li {
+		list-style-type: none;
+	}
+	/* ADD THIS TO STATIC GLOBAL.CSS */
+	h1.title a {
+		color: #999 !important;
+	}
+	h1.title a:hover {
+		color: #007799 !important;
+	}
+	h3 a {
+		font-size: 26px;
+		font-family: Klavika-Light, Helvetica, Arial, sans-serif;
+	}
+	/* END */
+	header.main {
+		position: relative;
+		width: auto;
+		height: auto;
+	}
+	form.search_form {
+		position: absolute;
+		right: 0;
+		top: 0;
+		width: 150px;
+		height: auto;
+	}
+	form.search_form input.search {
+		width: 150px;
+		height: auto;
+		font-size: 10px;
+	}
+	form.search_form input.submit {
+		display: none;
+	}
+	div.search_results {
+		font-size: 10px;	
+		margin-bottom: 5px;
+	}
+	h3 {
+		margin-bottom: 5px;
+		border-bottom: 1px dotted #999;
+	}
+	div.post {
+		margin-bottom: 50px;
+	}
+	div.post_footer {
+		margin-top: 5px;
+		font-size: 10px;
+	}
+	div.post_footer p {
+		margin-bottom: 5px;
+	}
+	.p_comment_form input[type=text],
+	.p_comment_form textarea {
+		border: 1px solid #999;
+		background-color: #222;
+		color: #999;
+	}
+	.p_comment_form input[type=text]:focus,
+	.p_comment_form textarea:focus {
+		border: 1px solid #007799;
+	}
+	.p_no_responses {
+		display: none;
+	}
+	footer.main {
+		margin-left: 0 !important;
+	}
+	footer.main div.pagination {
+		margin-bottom: 25px;
+	}
+	footer.main a.top {
+		position: absolute;
+		right: 0;
+	}
+	</style>
 </head>
-
 <body>
-<h1>{{ page.title }}</h1>
-
-{{ content }}
+<div id='wrap'>
+	<nav class='main'>
+		<a id='logo' href='http://www.miguelmota.com'><img src='http://www.miguelmota.com/static/images/logo.png' /></a><span class='trade'>&#8482;</span>
+		<ul class='nav'>
+			<li><a id='home' href='http://www.miguelmota.com/stream'>stream</a></li>
+			<li><a id='about' href='http://www.miguelmota.com/about'>about</a></li>
+			<li><a id='portfolio' href='http://www.miguelmota.com/portfolio'>portfolio</a></li>
+			<li><a id='contact' href='http://www.miguelmota.com/contact'>contact</a></li>
+			<li><a id='blog' class='selected' href='http://blog.miguelmota.com'>blog</a></li>
+		</ul>
+	</nav>
+	<section class='content'>
+		<header class='main'>
+			<h1 class='title'><a href='http://blog.miguelmota.com'>Miguel<span class='mota'>Mota</span><span class='slash'>/</span><span class='sub'>Blog</span></a></h1>
+			<p class='description'>
+				<em>a blog on code, design and some other stuff. </em><a href='/rss'>subscribe</a> / <a href='http://twitter.com/miguel_mota'>follow me</a>
+			</p>
+			<form class='search_form' action='javascript:void(0);' method='get'>
+				<input type='hidden' name='sort' value='{SearchSort}' />  
+	   			<input type='text' class='search' name='q' value='[search]' onblur="if(this.value=='') this.value='[search]';"  onfocus="if(this.value=='[search]') this.value='';" />
+	    		<input type='submit' class='submit' value='Search' />
+			</form>
+		</header>
+			<div class='post'>
+				<h3><a href='{Permalink}'>{{ page.title }}</a></h3>
+				{{ content }}
+				<div class='post_footer'>
+					<p>posted <a href='{Permalink}'>{TimeAgo}</a> /
+	            		tags: {TagsAsClasses}</p>
+					{block:Responses/}
+	            </div>
+			</div>
+		{/block:Posts}
+		<footer class='main'>
+			<div class='pagination'>
+				{block:Pagination/}
+			</div>
+			<p>&#169; 2011 miguel mota <a href='#top' class='top'>&#8593;</a></p>
+		</footer>
+	</section>
+</div>
 </body>
 </html>
