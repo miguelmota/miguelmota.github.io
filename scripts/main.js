@@ -14,10 +14,10 @@ $(document).ready(function(){
 	});
 	textticker();
 	if(window.location.hash == '') {
-		//streamPage();
+		streamPage();
 	}
 	if(window.location.hash == '#!') {
-		//window.location = '/';
+		window.location = '/';
 	}
 	$('nav.main a#logo').live('click', function(){
 		$('nav.main a').removeClass('selected');
