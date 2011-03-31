@@ -140,11 +140,11 @@
 	<nav class='main'>
 		<a id='logo' href='http://www.miguelmota.com'><img src='http://www.miguelmota.com/static/images/logo.png' /></a><span class='trade'>&#8482;</span>
 		<ul class='nav'>
-			<li><a id='home' href='http://blog.miguelmota.com/stream.html'>stream</a></li>
-			<li><a id='about' href='http://blog.miguelmota.com/about.html'>about</a></li>
-			<li><a id='portfolio' href='http://blog.miguelmota.com/portfolio.html'>portfolio</a></li>
-			<li><a id='contact' href='http://blog.miguelmota.com/contact.html'>contact</a></li>
-			<li><a id='blog' class='selected' href='http://blog.miguelmota.com'>blog</a></li>
+			<li><a id='home' href='http://blog.miguelmota.com/stream'>stream</a></li>
+			<li><a id='about' href='http://blog.miguelmota.com/about'>about</a></li>
+			<li><a id='portfolio' href='http://blog.miguelmota.com/portfolio'>portfolio</a></li>
+			<li><a id='contact' href='http://blog.miguelmota.com/contact'>contact</a></li>
+			<li><a id='blog' href='http://blog.miguelmota.com'>blog</a></li>
 		</ul>
 	</nav>
 	<section class='content'>
@@ -179,6 +179,20 @@
 			<p>&#169; 2011 miguel mota / powered by <a href='http://jekyllrb.com'>jekyll</a> <a href='#top' class='top'>&#8593;</a></p>
 		</footer>
 	</section>
+	<script src='http://wwww.miguelmota.com/static/scripts/main.min.js'></script>
+	<script>
+		$('#<decorator:getProperty property="meta.page" />').addClass('selected');
+  		var _gaq = _gaq || [];
+  		_gaq.push(['_setAccount', 'UA-12642068-1']);
+  		_gaq.push(['_setDomainName', '.miguelmota.com']);
+ 		_gaq.push(['_trackPageview']);
+  		(function() {
+    		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  		})();
+	</script>
+	<noscript><div id='noscript'>please enable javascript</div></noscript>
 </div>
 </body>
 </html>
