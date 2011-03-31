@@ -105,6 +105,24 @@
 	.p_no_responses {
 		display: none;
 	}
+	div#dsq-global-toolbar {
+		margin-bottom: -25px !important;
+	}
+	div#dsq-content h3 {
+		display: none !important;
+	}
+	div#dsq-account-dropdown {
+		display: none !important;
+	}
+	div#dsq-subscribe {
+		display: none !important;
+	}
+	select#dsq-sort-select {
+		display: none !important;
+	}
+	div.dsq-item-trackback {
+		display: none !important;
+		}
 	footer.main {
 		margin-left: 0 !important;
 	}
@@ -142,40 +160,26 @@
 	    		<input type='submit' class='submit' value='Search' />
 			</form>
 		</header>
-			<div class='post'>
-				{% for post in site.posts limit:5 %}
-	<h3><a href='{{ post.url }}'>{{ post.title }}</a></h3>
-	{{ post.content }}
-	<div class='post_footer'>
-		<p>posted <a href='{{ post.url }}'>{{ post.date | date_to_string }}</a></p>
-    </div>
-	
-	<a href="{{ post.url }}#disqus_thread">comments</a>
-				
-
-	
-{% endfor %}
-<div id="disqus_thread"></div>
-<script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-    var disqus_shortname = 'miguelmota'; // required: replace example with your forum shortname
-
-    // The following are highly recommended additional parameters. Remove the slashes in front to use.
-    // var disqus_identifier = 'unique_dynamic_id_1234';
-    // var disqus_url = 'http://example.com/permalink-to-page.html';
-
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-				
-
-				
-			</div>
+		<div class='post'>
+			{% for post in site.posts limit:5 %}
+				<h3><a href='{{ post.url }}'>{{ post.title }}</a></h3>
+				{{ post.content }}
+				<div class='post_footer'>
+					<p>posted <a href='{{ post.url }}'>{{ post.date | date_to_string }}</a></p>
+	   			</div>
+				<br /><a href="{{ post.url }}#disqus_thread">comments</a>
+			{% endfor %}
+			<div id="disqus_thread"></div>
+			<script type="text/javascript">
+			    var disqus_shortname = 'miguelmota';
+			    (function() {
+			        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+			        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+			        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+			    })();
+			</script>
+			<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+		</div>
 		<footer class='main'>
 			<div class='pagination'>
 				{{ paginator.previous_page }} {{ paginator.next_page }} {{ paginator.total_pages }}
