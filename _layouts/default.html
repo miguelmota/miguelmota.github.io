@@ -138,7 +138,7 @@
 <body>
 <div id='wrap'>
 	<nav class='main'>
-		<a id='logo' href='http://www.miguelmota.com'><img src='/static/images/logo.png' /></a><span class='trade'>&#8482;</span>
+		<a id='logo' href='http://www.miguelmota.com'><img src='/images/logo.png' /></a><span class='trade'>&#8482;</span>
 		<ul class='nav'>
 			<li><a id='home' href='http://blog.miguelmota.com/stream'>stream</a></li>
 			<li><a id='about' href='http://blog.miguelmota.com/about'>about</a></li>
@@ -147,7 +147,7 @@
 			<li><a id='blog' href='http://blog.miguelmota.com'>blog</a></li>
 		</ul>
 	</nav>
-	<section class='content'>
+	<!-- <section class='content'>
 		<header class='main'>
 			<h1 class='title'><a href='http://blog.miguelmota.com'>Miguel<span class='mota'>Mota</span><span class='slash'>/</span><span class='sub'>Blog</span></a></h1>
 			<p class='description'>
@@ -178,7 +178,8 @@
 			</div>
 			<p>&#169; 2011 miguel mota / powered by <a href='http://jekyllrb.com'>jekyll</a> <a href='#top' class='top'>&#8593;</a></p>
 		</footer>
-	</section>
+	</section>-->
+	{{ content }}
 	<script src='/scripts/main.min.js'></script>
 	<script>
 		$('#<decorator:getProperty property="meta.page" />').addClass('selected');
