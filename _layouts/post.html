@@ -1,13 +1,10 @@
 ---
 layout: default
-title: Miguel Mota
 ---
-{% for post in site.posts limit:1 %}
 	<h3><a href='{{ post.url }}'>{{ post.title }}</a></h3>
-	{{ post.content }}
+	{{ content }}
 	<div class='post_footer'>
 		<p>posted <a href='{{ post.url }}'>{{ post.date | date_to_string }}</a></p>
- 			</div>
+ 	</div>
 	<br /><a href="{{ post.url }}#disqus_thread">comments</a>
 	<div id="disqus_thread"></div>
-{% endfor %}
