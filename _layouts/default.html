@@ -145,18 +145,17 @@
 			<div class='post'>
 				{% for post in site.posts limit:5 %}
 	<h3><a href='{{ post.url }}'>{{ post.title }}</a></h3>
-	{{ content }}
+	{{ post.content }}
 	<div class='post_footer'>
 		<p>posted <a href='{{ post.url }}'>{{ post.date | date_to_string }}</a></p>
     </div>
-	{{ post.content }}
 	
-					<a href="{{ post.url }}#disqus_thread">comments</a>
+	<a href="{{ post.url }}#disqus_thread">comments</a>
 				
 
 	
 {% endfor %}
-
+<div id="disqus_thread"></div>
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
     var disqus_shortname = 'miguelmota'; // required: replace example with your forum shortname
