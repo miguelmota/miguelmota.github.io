@@ -14,10 +14,10 @@ $(document).ready(function(){
 	});
 	textticker();
 	if(window.location.hash == '') {
-		streamPage();
+		//streamPage();
 	}
 	if(window.location.hash == '#!') {
-		window.location = '/';
+		//window.location = '/';
 	}
 	$('nav.main a#logo').live('click', function(){
 		$('nav.main a').removeClass('selected');
@@ -32,7 +32,7 @@ $(document).ready(function(){
 		redirectPath();
 	}
 	function loadPage(){
-		var toLoad = window.location.hash.substr(27)+' section.content';
+		var toLoad = window.location.hash.substr(2)+' section.content';
 		window.location.hash = window.location.hash.substr(1);
 		$('section.content').fadeOut('fast',loadContent);
 		$('div.loader').fadeIn('normal');
@@ -63,10 +63,10 @@ $(document).ajaxComplete(function(){
 		break;
 }
 });
-$("nav.main").live('click', function(){
+$("nav.main a:not('a#blog')").live('click', function(){
 	c = 0;
 	var toLoad = $(this).attr('href')+' section.content';
-	window.location.hash = '!'+$(this).attr('href').substr(27,$(this).attr('href').length);
+	window.location.hash = '!'+$(this).attr('href').substr(1,$(this).attr('href').length);
 	$('section.content').fadeOut('fast',loadContent);
 	$('div.loader').fadeIn('normal');
 	function loadContent(){
