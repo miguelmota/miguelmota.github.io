@@ -63,7 +63,7 @@ $(document).ajaxComplete(function(){
 		break;
 }
 });
-$("nav.main a:not('a#blog')").live('click', function(){
+$("nav.main a')").live('click', function(){
 	c = 0;
 	var toLoad = $(this).attr('href')+' section.content';
 	window.location.hash = '!'+$(this).attr('href').substr(27,$(this).attr('href').length);
