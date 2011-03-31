@@ -44,6 +44,25 @@ $(document).ready(function(){
 	function redirectPath(){
 		window.location = './#!'+path;
 	}
+	$(window).scroll(function () { 
+		var scrollTop = $(document).scrollTop();
+		scrollTop = parseInt(scrollTop);
+		var offset = topYloc+scrollTop+'px';  
+		$('a.top').animate({top:offset},{duration:500,queue:false});
+	});
+	$('a[href*=#]').click(function() {
+		if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
+		&& location.hostname == this.hostname) {
+            var $target = $(this.hash);
+            $target = $target.length && $target || $('[name=' + this.hash.slice(1) +']');
+            if ($target.length) {
+            	var targetOffset = $target.offset().top;
+            	$('html,body').animate({scrollTop: targetOffset}, 1000);
+                return false;
+            }
+        }
+    });
+	topYloc = parseInt($('a.top').css('top').substring(0,$('a.top').css('top').indexOf('px')));
 });
 var c = 0;
 $(document).ajaxComplete(function(){
