@@ -14,10 +14,10 @@ $(document).ready(function(){
 	});
 	textticker();
 	if(window.location.hash == '') {
-		//streamPage();
+		streamPage();
 	}
 	if(window.location.hash == '#!') {
-		//window.location = '/';
+		window.location = '/';
 	}
 	$('nav.main a#logo').live('click', function(){
 		$('nav.main a').removeClass('selected');
@@ -344,7 +344,7 @@ function streamPage(){
 }
 function refreshStream(){
 	setTimeout(function(){
-		if(window.location.hash.substr(2) == 'stream' || window.location.hash.substr(2) == 'index' || window.location.hash.substr(1) == '!'){
+		if(window.location.hash.substr(2) == 'stream' || window.location.hash.substr(2) == 'index' || window.location.hash.substr(1) == ''){
 			$('a#stream').trigger('click');
 		}
 	},30000);
