@@ -69,6 +69,7 @@ $(document).ajaxComplete(function(){
 	var hash = window.location.hash.substr(2);
 	switch(hash){
 	case '':
+	case 'index':
 	case 'stream':
 		streamPage();
 		break;
@@ -343,7 +344,7 @@ function streamPage(){
 }
 function refreshStream(){
 	setTimeout(function(){
-		if(window.location.hash.substr(2) == 'stream' || window.location.hash.substr(1) == ''){
+		if(window.location.hash.substr(2) == 'stream' || window.location.hash.substr(2) == 'index' || window.location.hash.substr(1) == ''){
 			$('a#stream').trigger('click');
 		}
 	},30000);
