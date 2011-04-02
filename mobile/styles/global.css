@@ -1,0 +1,49 @@
+@charset 'utf-8';
+body, div.content {
+	background-color: #434349;
+}
+img {
+	width: 100%;
+	height: auto;	
+}
+p {
+	margin-bottom: 10px;
+	color: #999;
+}
+img.loader {
+	display: none;
+	width: 16px;
+	height: 16px;	
+	clear: both;
+}
+div.content li.arrow {
+	font-size: 12px;
+}
+div.content span.sub {
+	color: #555;
+}
+div.content li.arrow p {
+	font-size: 12px;
+}
+div#about li.arrow a[href^='mailto'] {
+	display: inline;
+}
+div#portfolio div.content li.arrow,
+div#about div.content li.arrow {
+	background-image: none;
+}
+div#contact div.content li.arrow {
+	background-image: url('../themes/jqt/img/chevron.png');
+}
+div#contact div.content li.arrow a {
+	font-size: 18px;
+}
+div.content li.arrow span.date {
+	font-size: 10px;
+}
+li.view a {
+	font-size: 10px;
+}
+h1.title {
+	display: none;
+}

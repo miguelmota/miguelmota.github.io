@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	if(window.innerWidth <= 640){
-		$('div#wrap').prepend("<a id='mobile_bar' href='/iphone/'>view mobile site</a><a id='mobile_close' href='javascript:void(0);'>x</a>");
+		$('div#wrap').prepend("<a id='mobile_bar' href='/mobile'>view mobile site</a><a id='mobile_close' href='javascript:void(0);'>x</a>");
 		$('a#mobile_close').live('click', function(){
 			$(this).hide();
 			$('a#mobile_bar').slideUp('normal');
