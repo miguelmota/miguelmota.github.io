@@ -94,7 +94,7 @@ $(document).ajaxComplete(function(){
 $("nav.main a").live('click', function(){
 	c = 0;
 	var toLoad = $(this).attr('href')+' section.content';
-	window.location.hash = '!'+$(this).attr('href').substr(27,$(this).attr('href').length);
+	window.location.hash = '!'+$(this).attr('href').substr(1,$(this).attr('href').length);
 	$('section.content').fadeOut('fast',loadContent);
 	$('div.loader').fadeIn('normal');
 	function loadContent(){
