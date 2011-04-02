@@ -64,6 +64,14 @@ $(document).ready(function(){
     });
 	topYloc = parseInt($('a.top').css('top').substring(0,$('a.top').css('top').indexOf('px')));
 });
+$(window).scroll(function(){
+	if(window.pageYOffset >= 200){
+		$('a.top').fadeIn(600);
+	}
+	if(window.pageYOffset < 200){
+		$('a.top').fadeOut(185);
+	}
+});
 var c = 0;
 $(document).ajaxComplete(function(){
 	var hash = window.location.hash.substr(2);
