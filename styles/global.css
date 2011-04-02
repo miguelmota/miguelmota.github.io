@@ -591,6 +591,7 @@ div.dsq-item-trackback {
 		margin-bottom: 25px;
 	}
 	footer.main a.top {
+		display: none;
 		position: absolute;
 		right: 0;
 	}
