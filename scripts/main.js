@@ -29,7 +29,7 @@ $(document).ready(function(){
 		loadPage();
 	}
 	else {
-		redirectPath();
+		//redirectPath();
 	}
 	function loadPage(){
 		var toLoad = window.location.hash.substr(2)+' section.content';
