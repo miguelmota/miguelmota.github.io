@@ -1,3 +1,3 @@
 RewriteEngine On
-RewriteCond %{HTTP_HOST} ^m\.miguelmota\.com
+RewriteCond %{HTTP_HOST} ^abc\.miguelmota\.com
 RewriteRule ^(.*)$ /mobile/$1 [L]
