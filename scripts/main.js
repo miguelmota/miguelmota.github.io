@@ -102,6 +102,7 @@ $('nav.main a').live('click', function(){
 	}
 	return false;
 });
+/*
 $('div.posti h3 a').live('click', function(){
 	//c = 0;
 	var toLoad2 = $(this).attr('href')+' div.posti';
@@ -122,7 +123,7 @@ $('div.posti h3 a').live('click', function(){
 		}
 	}
 	return false;
-});
+});*/
 var position = 0;
 var length = 'portfolio'.length;
 function textticker(){
