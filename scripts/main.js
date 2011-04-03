@@ -104,7 +104,7 @@ $('nav.main a').live('click', function(){
 });
 $('div.posti h3 a').live('click', function(){
 	//c = 0;
-	var toLoad2 = '/post div.posti';
+	var toLoad2 = '/post.html div.posti';
 	window.location.hash = '!'+$(this).attr('href').substr(1,$(this).attr('href').length);
 	$('div.posti').fadeOut('fast',loadContent2);
 	$('div.loader').fadeIn('normal');
