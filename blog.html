@@ -15,7 +15,7 @@ layout: default
 		</form>
 	</header>
 	<div class='posti'>
-{% for page in paginator.posts %}
+{% for post in site.posts %}
   {% include post.html %}
 {% endfor %}
 		<br />
