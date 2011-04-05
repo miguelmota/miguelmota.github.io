@@ -15,9 +15,14 @@ layout: default
 		</form>
 	</header>
 	<div class='posti'>
-{% for post in site.posts %}
-  {% include post.html %}
-{% endfor %}
+		{% for post in site.posts %}
+			<h3><a href='{{ post.url }}'>{{ post.title }}</a></h3>
+			{{ post.content }}
+			<div class='post_footer'>
+				<p>posted <a href='{{ post.url }}'>{{ post.date | date_to_string }}</a></p>
+		 			</div>
+			<br /><a href="{{ post.url }}#disqus_thread">comments</a>
+		{% endfor %}
 		<br />
 		<a href='/page{{ paginator.previous_page }}'>previous</a> | <a href='/page{{ paginator.next_page }}'>next</a>
 	</div>
