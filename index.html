@@ -1,29 +1,47 @@
 ---
 layout: default
 ---
-<section class='content blog'>
-	<header class='main'>
-		<h1 class='title'><a href='/blog'>Miguel<span class='mota'>Mota</span><span class='slash'>/</span><span class='sub'>Blog</span></a></h1>
-		<p class='description'>
-			<em>a blog on code, design and some other stuff. </em><a href='/rss'>subscribe</a> / <a href='http://twitter.com/miguel_mota'>follow me</a>
-			<p><strong>note:</strong> I'm currently playing around with github and jekyll.. so things might look a little weird around here. ^_^</p>
-		</p>
-		<form class='search_form' action='javascript:void(0);' method='get'>
-			<input type='hidden' name='sort' value='{SearchSort}' />  
-   			<input type='text' class='search' name='q' value='[search]' onblur="if(this.value=='') this.value='[search]';"  onfocus="if(this.value=='[search]') this.value='';" />
-    		<input type='submit' class='submit' value='Search' />
-		</form>
-	</header>
-	<div class='posti'>
-		{% for post in site.posts %}
-			<h3><a href='{{ post.url }}'>{{ post.title }}</a></h3>
-			{{ post.content }}
-			<div class='post_footer'>
-				<p>posted <a href='{{ post.url }}'>{{ post.date | date_to_string }}</a></p>
-		 			</div>
-			<br /><a href="{{ post.url }}#disqus_thread">comments</a>
-		{% endfor %}
-		<br />
-		<a href='/page{{ paginator.previous_page }}'>previous</a> | <a href='/page{{ paginator.next_page }}'>next</a>
+<section class='content stream'>
+	<h1 class='title'><a href='/stream'>Miguel<span class='mota'>Mota</span><span class='slash'>/</span><span class='sub'>Stream</span></a></h1>
+	<div class='stream latitude'>
+		<a class='social latitude' href='http://www.google.com/latitude/apps/badge/api?user=7812482200199007583&amp;type=iframe&amp;maptype=roadmap'>latitude</a><span class='mtip' title='current location'>(?)</span>
+		<ul class='latitude'>
+			<li><iframe class='latitude' src='http://www.ffirl.com/miguelmota/location.php'></iframe></li>
+		</ul>
+	</div>
+	<div class='stream facebook'>
+		<a class='social facebook' href='http://www.facebook.com/miguel.mota2'></a><span class='mtip' title='recent statuses'>(?)</span>
+		<ul class='facebook_status'>
+		</ul>
+		<img class='loader' src='/images/ajax_loader.gif' />
+	</div>
+	<div class='stream twitter'>
+		<a class='social twitter' href='http://twitter.com/miguel_mota'></a><span class='mtip' title='@miguel_mota recent tweets'>(?)</span>
+		<ul class='twitter_status'>
+		</ul>
+		<img class='loader' src='/images/ajax_loader.gif' />
+	</div>
+	<div class='stream tumblr'>
+		<a class='social tumblr' href='http://miguelmota.tumblr.com'></a><span class='mtip' title='recent posts'>(?)</span>
+		<ul class='tumblr_posts'>
+		</ul>
+		<img class='loader' src='/images/ajax_loader.gif' />
+	</div>
+	<div class='stream delicious'>
+		<a class='social delicious' href='http://www.delicious.com/miguelmota'></a><span class='mtip' title='recently saved bookmarks'>(?)</span>
+		<ul class='delicious_bookmarks'>
+		</ul>
+		<img class='loader' src='/images/ajax_loader.gif' />
+	</div>
+	<div class='stream lastfm'>
+		<a class='social lastfm' href='http://www.last.fm/user/miguel_mota'></a><span class='mtip' title='recently listened tracks'>(?)</span>
+		<ul class='lastfm_tracks'>
+		</ul>
+		<img class='loader' src='/images/ajax_loader.gif' />
+	</div>
+	<div class='stream wakoopa'>
+		<a class='social wakoopa' href='http://social.wakoopa.com/miguelmota'></a><span class='mtip' title='recently used software'>(?)</span>
+		<div id='wakoopa_software'></div>
+		<img class='loader' src='/images/ajax_loader.gif' />
 	</div>
 </section>
