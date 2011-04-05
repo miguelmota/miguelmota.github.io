@@ -15,7 +15,7 @@ layout: default
 		</form>
 	</header>
 	<div class='posti'>
-		{% for post in site.posts limit:1 %}
+		{% for post in site.posts limit:5 %}
 			<h3><a href='{{ post.url }}'>{{ post.title }}</a></h3>
 			{{ post.content }}
 			<div class='post_footer'>
