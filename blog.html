@@ -6,7 +6,7 @@ layout: default
 		<h1 class='title'><a href='/blog'>Miguel<span class='mota'>Mota</span><span class='slash'>/</span><span class='sub'>Blog</span></a></h1>
 		<p class='description'>
 			<em>a blog on code, design and some other stuff. </em><a href='/rss'>subscribe</a> / <a href='http://twitter.com/miguel_mota'>follow me</a>
-			<p><strong>note:</strong> I'm currently playing around with github and jekyll.. so things might look a little weird around here. </p>
+			<p><strong>note:</strong> I'm currently playing around with github and jekyll.. so things might look a little weird around here. ^_^</p>
 		</p>
 		<form class='search_form' action='javascript:void(0);' method='get'>
 			<input type='hidden' name='sort' value='{SearchSort}' />  
@@ -23,6 +23,7 @@ layout: default
 		 			</div>
 			<br /><a href="{{ post.url }}#disqus_thread">comments</a>
 		{% endfor %}
-		<a href='#'>previous</a> | <a href='#'>next</a>
+		<br />
+		<a href='/page{{ paginator.previous_page }}'>previous</a> | <a href='/page{{ paginator.next_page }}'>next</a>
 	</div>
 </section>
