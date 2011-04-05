@@ -1,0 +1,13 @@
+---
+layout: default
+---
+	<div class='posti'>
+		<h3><a href='{{ post.url }}'>{{ page.title }}</a></h3>
+		{{ content }}
+		<div class='post_footer'>
+			<p>posted <a href='{{ post.url }}'>{{ page.date | date_to_string }}</a></p>
+	 	</div>
+		<br /><a href="{{ post.url }}#disqus_thread">comments</a>
+		<div id="disqus_thread"></div>
+	</div>
+</section>
