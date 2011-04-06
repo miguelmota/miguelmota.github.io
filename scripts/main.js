@@ -42,19 +42,20 @@ $(document).ready(function(){
 		return false;
 	}
 	function redirectPath(){
-		var location = window.location;
-		alert(location);
+		var domain = document.domain;
 		var pathname = window.location.pathname.substr(1);
-		switch(pathname){
-		case '':
-		case 'index':
-		case 'stream':
-		case 'portfolio':
-		case 'contact':
-		case 'blog':
-			window.location = './#!'+path;
-		default:
-			break;
+		if(domain == 'www.miguelmota.com') {
+			switch(pathname){
+			case '':
+			case 'index':
+			case 'stream':
+			case 'portfolio':
+			case 'contact':
+			case 'blog':
+				window.location = './#!'+path;
+			default:
+				break;
+			}
 		}
 	}
 	$(window).scroll(function () { 
