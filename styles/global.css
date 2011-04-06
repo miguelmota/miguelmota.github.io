@@ -512,9 +512,24 @@ div#search {
 	top: 0;
 }
 div#search input[type=submit].gsc-search-button,
-div#search .gsc-branding-text,
-div#search .gsc-branding-img  {
+div#search td.gsc-branding-text,
+div#search td.gsc-branding-img  {
 	display: none;
+}
+div#search input[type=text].gsc-input {
+	border: 1px solid #555;
+}
+div#search input[type=text].gsc-input:focus {
+	border-color: #007799;
+}
+div#search div.gsc-results  {
+	background-color: #222;
+}
+div#search a.gs-title  {
+	color: #007799;
+}
+div#search div.visibleUrl  {
+	color: #007799;
 }
 form.search_form {
 	display: none;
