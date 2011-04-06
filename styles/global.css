@@ -209,6 +209,7 @@ nav.main a#logo img:hover {
 	opacity: .8;
 }
 nav.main a {
+	display: block;
 	color: #999;
 	padding: 2px;
 	-webkit-transition: background-color linear .2s, color linear .3s;
