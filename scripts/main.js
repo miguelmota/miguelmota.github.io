@@ -42,8 +42,8 @@ $(document).ready(function(){
 		return false;
 	}
 	function redirectPath(){
-		var pathname = window.location.pathname;
-		alert(pathname);
+		var pathname = window.location.pathname.substr(1);
+		//alert(pathname);
 		switch(pathname){
 		case '':
 		case 'index':
