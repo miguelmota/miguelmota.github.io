@@ -75,7 +75,6 @@ a {
 	-moz-transition: color linear .2s;
 	-o-transition: color linear .2s;
 	transition: color linear .2s;
-	padding: 5px;
 }
 a:hover {
 	color: #0099aa;
@@ -212,7 +211,7 @@ nav.main a#logo img:hover {
 nav.main a {
 	display: block;
 	color: #999;
-	padding: 2px;
+	padding: 5px;
 	-webkit-transition: background-color linear .2s, color linear .3s;
 	-moz-transition: background-color linear .2s, color linear .3s;
 	-o-transition: background-color linear .2s, color linear .3s;
