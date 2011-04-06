@@ -24,6 +24,9 @@ layout: default
 			<br /><a href="{{ post.url }}#disqus_thread">comments</a>
 		{% endfor %}
 		<br />
+					<div class='pagination'>
+				{{ paginator.previous_page }} {{ paginator.next_page }} {{ paginator.total_pages }}
+			</div>
 		<a href='/page{{ paginator.previous_page }}'>previous</a> | <a href='/page{{ paginator.next_page }}'>next</a>
 	</div>
 </section>
