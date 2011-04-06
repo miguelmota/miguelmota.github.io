@@ -211,7 +211,7 @@ nav.main a#logo img:hover {
 	opacity: .8;
 }
 nav.main a {
-	float: left;
+	font-family: Helvetica;
 	display: block;
 	color: #999;
 	padding: 2px;
