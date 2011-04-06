@@ -75,7 +75,7 @@ a {
 	-moz-transition: color linear .2s;
 	-o-transition: color linear .2s;
 	transition: color linear .2s;
-	z-index: 5000;
+	padding: 5px;
 }
 a:hover {
 	color: #0099aa;
