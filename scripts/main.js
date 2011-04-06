@@ -42,7 +42,18 @@ $(document).ready(function(){
 		return false;
 	}
 	function redirectPath(){
-		window.location = './#!'+path;
+		var hash = window.location.hash.substr(2);
+		switch(hash){
+		case '':
+		case 'index':
+		case 'stream':
+		case 'portfolio':
+		case 'contact':
+		case 'blog':
+			window.location = './#!'+path;
+		default:
+			break;
+		}
 	}
 	$(window).scroll(function () { 
 		var scrollTop = $(document).scrollTop();
