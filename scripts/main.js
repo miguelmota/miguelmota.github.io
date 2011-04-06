@@ -12,7 +12,7 @@ $(document).ready(function(){
 	$('body').fadeIn(650, function(){
 		$('div#ie').slideDown('slow');
 	});
-	//textticker();
+	textticker();
 	if(window.location.hash == '') {
 		streamPage();
 	}
@@ -127,11 +127,11 @@ $('div.posti h3 a').live('click', function(){
 var position = 0;
 var length = 'portfolio'.length;
 function textticker(){
-	$('a#stream').html('stream'.substring(0,position));
-	$('a#about').html('about'.substring(0,position));
-	$('a#portfolio').html('portfolio'.substring(0,position));
-	$('a#contact').html('contact'.substring(0,position));
-	$('a#blog').html('blog'.substring(0,position));
+	$('a#stream').text('stream'.substring(0,position));
+	$('a#about').text('about'.substring(0,position));
+	$('a#portfolio').text('portfolio'.substring(0,position));
+	$('a#contact').text('contact'.substring(0,position));
+	$('a#blog').text('blog'.substring(0,position));
 	if(position++ == length){
 		setTimeout('textticker()',1000);
 	} else
