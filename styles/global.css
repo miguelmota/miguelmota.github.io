@@ -525,7 +525,12 @@ div#search input[type=text].gsc-input:focus {
 div#search div.gsc-results  {
 	padding: 2px;
 	background-color: #222;
-	border-left: 1px solid #999;
+	border-left: 1px solid #555;
+	border-bottom: 1px solid #555;
+	-webkit-box-shadow: 2px 2px 5px #111;
+	-moz-box-shadow: 2px 2px 5px #111;
+	-o-box-shadow: 2px 2px 5px #111;
+	box-shadow: 2px 2px 5px #111;
 }
 div#search a.gs-title  {
 	color: #007799;
@@ -536,10 +541,10 @@ div#search a.gs-title b {
 div#search div.gs-visibleUrl  {
 	color: #555;
 }
-div#search div.gsc-curosor-page  {
+div#search div.gsc-cursor-page  {
 	color: #007799;
 }
-div#search div.gsc-curosor-current-page  {
+div#search div.gsc-cursor-current-page  {
 	color: #005577;
 }
 form.search_form {
