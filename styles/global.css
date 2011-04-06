@@ -525,6 +525,7 @@ div#search input[type=text].gsc-input:focus {
 div#search div.gsc-results  {
 	padding: 2px;
 	background-color: #222;
+	border-left: 1px solid #999;
 }
 div#search a.gs-title  {
 	color: #007799;
@@ -534,6 +535,12 @@ div#search a.gs-title b {
 }
 div#search div.gs-visibleUrl  {
 	color: #555;
+}
+div#search div.gsc-curosor-page  {
+	color: #007799;
+}
+div#search div.gsc-curosor-current-page  {
+	color: #005577;
 }
 form.search_form {
 	display: none;
