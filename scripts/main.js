@@ -42,8 +42,9 @@ $(document).ready(function(){
 		return false;
 	}
 	function redirectPath(){
-		var hash = window.location.hash.substr(2);
-		switch(hash){
+		var pathname = window.location.pathname;
+		alert(pathname);
+		switch(pathname){
 		case '':
 		case 'index':
 		case 'stream':
