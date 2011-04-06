@@ -523,10 +523,17 @@ div#search input[type=text].gsc-input:focus {
 	border-color: #007799;
 }
 div#search div.gsc-results  {
-	background-color: #202020;
+	padding: 2px;
+	background-color: #222;
 }
-div#search div.gsc-results a  {
+div#search a.gs-title  {
 	color: #007799;
+}
+div#search a.gs-title b {
+	color: #007799;
+}
+div#search div.gs-visibleUrl  {
+	color: #555;
 }
 form.search_form {
 	display: none;
