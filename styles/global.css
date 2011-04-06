@@ -181,8 +181,10 @@ div#noscript {
 /* /GENERAL ========================================================== */
 /* NAVIGATION ======================================================== */
 nav.main {
+	float: left;
+	/*
 	position: absolute;
-	top: 70px;
+	top: 70px; */
 }
 nav.main a#logo img {
 	display: block;
