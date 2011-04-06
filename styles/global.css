@@ -506,7 +506,13 @@ header.main {
 p.description {
 	font-size: 10px;
 }
+div#search {
+	position: absolute;
+	right: 0;
+	top: 0;
+}
 form.search_form {
+	display: none;
 	position: absolute;
 	right: 0;
 	top: 0;

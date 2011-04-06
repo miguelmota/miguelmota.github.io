@@ -8,12 +8,12 @@ layout: default
 			<em>a blog on code, design and some other stuff. </em><a href='/rss'>subscribe</a> / <a href='http://twitter.com/miguel_mota'>follow me</a>
 			<p><strong>note:</strong> I'm currently playing around with github and jekyll.. so things might look a little weird around here. ^_^</p>
 		</p>
-		<div id='search'></div>
 		<form class='search_form' action='javascript:void(0);' method='get'>
 			<input type='hidden' name='sort' value='{SearchSort}' />  
    			<input type='text' class='search' name='q' value='[search]' onblur="if(this.value=='') this.value='[search]';"  onfocus="if(this.value=='[search]') this.value='';" />
     		<input type='submit' class='submit' value='Search' />
 		</form>
+		<div id='search'></div>
 	</header>
 	<div class='posti'>
 		{% for post in site.posts %}
