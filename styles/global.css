@@ -511,6 +511,11 @@ div#search {
 	right: 0;
 	top: 0;
 }
+div#search input[type=submit].gsc-search-button,
+div#search .gsc-branding-text,
+div#search .gsc-branding-img  {
+	display: none;
+}
 form.search_form {
 	display: none;
 	position: absolute;
