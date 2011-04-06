@@ -525,8 +525,6 @@ div#search input[type=text].gsc-input:focus {
 div#search div.gsc-results  {
 	padding: 2px;
 	background-color: #222;
-	border-left: 1px solid #555;
-	border-bottom: 1px solid #555;
 	-webkit-box-shadow: 2px 2px 5px #111;
 	-moz-box-shadow: 2px 2px 5px #111;
 	-o-box-shadow: 2px 2px 5px #111;
