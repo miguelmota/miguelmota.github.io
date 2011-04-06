@@ -104,6 +104,9 @@ $(document).ajaxComplete(function(){
 	case 'contact':
 		contactPage();
 		break;
+	case 'blog':
+		blogPage();
+		break;
 	default:
 		break;
 }
@@ -485,4 +488,15 @@ function contactPage(){
 				$('form.contact_form').html('<p>Thank you.<br />Your message has been successfully sent!<br />I will get in touch with you soon.</p>').fadeIn(1200);	
 			}, 300);
 		}
+}
+function blogPage(){
+	google.load('search', '1');
+	function OnLoad() {
+		var searchControl = new google.search.SearchControl();
+		var webSearch = new google.search.WebSearch();
+		webSearch.setSiteRestriction('http://www.miguelmota.com');
+		searchControl.addSearcher(webSearch);
+		searchControl.draw(document.getElementById('search'));
+	}
+	google.setOnLoadCallback(OnLoad);
 }
