@@ -26,7 +26,10 @@ $(document).ready(function(){
 	$('body').append("<div class='theTitle' style='display: none;'> &#8212; Miguel Mota | Freelance Web Developer</div>");
 	var path = window.location.pathname.substring(1);
 	if(window.location.hash){
-		loadPage();
+		var domain = document.domain;
+		if(domain == 'www.miguelmota.com') {
+			loadPage();
+		}
 	}
 	else {
 		redirectPath();
