@@ -12,7 +12,7 @@ $(document).ready(function(){
 	$('body').fadeIn(650, function(){
 		$('div#ie').slideDown('slow');
 	});
-	textticker();
+	//textticker();
 	if(window.location.hash == '') {
 		streamPage();
 	}
