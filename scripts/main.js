@@ -42,6 +42,8 @@ $(document).ready(function(){
 		return false;
 	}
 	function redirectPath(){
+		var location = window.location;
+		alert(location);
 		var pathname = window.location.pathname.substr(1);
 		switch(pathname){
 		case '':
