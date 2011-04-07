@@ -524,6 +524,7 @@ div#cse input[type=text].gsc-input:focus {
 }
 div#cse div.gsc-control-cse  {
 	display: block;
+	position: static;
 }
 div#cse div.sce-results  {
 	padding: 2px;
