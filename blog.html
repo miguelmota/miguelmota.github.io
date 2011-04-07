@@ -26,7 +26,7 @@ layout: default
   <p>Use the back and forward buttons in your browser to navigate the history.</p>
   <ul id="examples">
     <li><a href="/about">first</a></li>
-    <li><a href="/history/second">second</a></li>
+    <li><a href="/contact">second</a></li>
     <li><a href="/history/third">third</a></li>
     <li><a href="/history/fourth">fourth</a></li>
   </ul>
@@ -101,7 +101,7 @@ addEvent(examples, 'click', function (event) {
     history.pushState(data[title], title, event.target.href);
     reportData(data[title]);
   }
-  $('#output').load('/about section.content');
+  $('#output').load($(this).href()+' section.content');
 });
 
 addEvent(window, 'popstate', function (event) {
