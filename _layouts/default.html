@@ -49,6 +49,15 @@
 		</ul>
 	</nav>
 	{{ content }}
+	<script src="//www.google.com/jsapi" type="text/javascript"></script>
+<script type="text/javascript"> 
+  google.load('search', '1', {language : 'en'});
+  google.setOnLoadCallback(function() {
+    var customSearchControl = new google.search.CustomSearchControl('013110027163283765539:a-en5rcxdcu');
+    customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+    customSearchControl.draw('cse');
+  }, true);
+</script>
 	<footer class='main'>
 		<p>&#169; <script>var date = new Date();var thisYear = date.getFullYear(); document.write(thisYear);</script>  miguel mota / powered by <a href='http://jekyllrb.com'>jekyll</a> <a href='#top' class='top'>&#8593;</a></p>
 	</footer>
