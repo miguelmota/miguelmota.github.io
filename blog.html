@@ -46,37 +46,11 @@ var $ = function (s) { return document.getElementById(s); },
     examples = $('examples'),
     output = $('output'),
  
-    template = '<p>URL: <strong>{url}</strong>, name: <strong>{name}</strong>, location: <strong>{location}</strong></p>',
-    data = { // imagine these are ajax requests :)
-      first : {
-        name: "Remy",
-        location: "Brighton, UK"
-      },
-      second: {
-        name: "John",
-        location: "San Francisco, USA"
-      },
-      third: {
-        name: "Jeff",
-        location: "Vancover, Canada"
-      },
-      fourth: {
-        name: "Simon",
-        location: "London, UK"
-      }
-    }
-    
-    ;
+    template = $('#output').load({url}+' section.content');
 
 function reportEvent(event) {
   lastevent.innerHTML = event.type;
 }
-/*
-function reportData(data) {
-  output.innerHTML = template.replace(/(:?\{(.*?)\})/g, function (a,b,c) {
-    return data[c];
-  });
-}*/
 
 function reportData(data) {
   output.innerHTML = template.replace(/(:?\{(.*?)\})/g, function (a,b,c) {
@@ -101,7 +75,7 @@ addEvent(examples, 'click', function (event) {
     history.pushState(data[title], title, event.target.href);
     reportData(data[title]);
   }
-  $('#output').load(event.target.getAttribute('href')+' section.content');
+
 });
 
 addEvent(window, 'popstate', function (event) {
@@ -112,15 +86,6 @@ addEvent(window, 'popstate', function (event) {
 
 addEvent(window, 'hashchange', function (event) {
   reportEvent(event);
-
-  // we won't do this for now - let's stay focused on states
-  /*
-  if (event.newURL) {
-    urlhistory.innerHTML = event.oldURL;
-  } else {
-    urlhistory.innerHTML = "no support for <code>event.newURL/oldURL</code>";
-  }
-  */
 });
 
 addEvent(window, 'pageshow', function (event) {
