@@ -26,7 +26,7 @@ layout: default
   <p>Use the back and forward buttons in your browser to navigate the history.</p>
   <ul id="examples">
     <li><a href="/about">first</a></li>
-    <li><a href="/contact">second</a></li>
+    <li><a href="/history/second">second</a></li>
     <li><a href="/history/third">third</a></li>
     <li><a href="/history/fourth">fourth</a></li>
   </ul>
@@ -78,8 +78,10 @@ function reportData(data) {
   });
 }*/
 
-function reportData() {
-	$('#output').load('/contact section.content');
+function reportData(data) {
+  $('#output').load('/about section.content'), function (a,b,c) {
+    return data[c];
+  });
 }
 
 if (typeof history.pushState === 'undefined') {
