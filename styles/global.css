@@ -556,26 +556,6 @@ div#cse div.gsc-cursor-current-page  {
 	color: #005577;
 }
 /* /GOOGLE SEARCH --------------------------------------------------- */
-form.search_form {
-	display: none;
-	position: absolute;
-	right: 0;
-	top: 0;
-	width: 150px;
-	height: auto;
-}
-form.search_form input.search {
-	width: 150px;
-	height: auto;
-	font-size: 10px;
-}
-form.search_form input.submit {
-	display: none;
-}
-div.search_results {
-	font-size: 10px;	
-	margin-bottom: 5px;
-}
 h3 {
 	margin-bottom: 5px;
 	border-bottom: 1px dotted #999;
@@ -589,9 +569,6 @@ div.post_footer {
 }
 div.post_footer p {
 	margin-bottom: 5px;
-}
-footer.main div.pagination {
-	margin-bottom: 25px;
 }
 /* /BLOG ============================================================== */
 /* FOOTER ============================================================= */
@@ -646,6 +623,24 @@ div.dsq-item-trackback {
 }
 /* /DISQUS ============================================================ */
 /* TUMBLR ============================================================= */
+section.tumblr form.search_form {
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 150px;
+	height: auto;
+}
+section.tumblr form.search_form input.search {
+	width: 150px;
+	height: auto;
+	font-size: 10px;
+}
+section.tumblr form.search_form input.submit {
+	display: none;
+}
+footer.main div.pagination {
+	margin-bottom: 25px;
+}
 section.tumblr ul li {
 	list-style-type: none;
 }
