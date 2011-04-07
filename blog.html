@@ -13,9 +13,9 @@ layout: default
    			<input type='text' class='search' name='q' value='[search]' onblur="if(this.value=='') this.value='[search]';"  onfocus="if(this.value=='[search]') this.value='';" />
     		<input type='submit' class='submit' value='Search' />
 		</form>
-		<div id="cse-search-form"></div> 
+		<div id='cse-search-form'></div> 
 	</header>
-	<div id="cse" style="width:100%;"></div> 
+	<div id='cse'></div> 
 	<div class='posti'>
 		{% for post in site.posts %}
 			<h3><a href='{{ post.url }}'>{{ post.title }}</a></h3>
