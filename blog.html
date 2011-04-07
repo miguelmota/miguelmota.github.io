@@ -44,8 +44,8 @@ var $ = function (s) { return document.getElementById(s); },
     lastevent = $('lastevent'),
     urlhistory = $('urlhistory'),
     examples = $('examples'),
-    output = $('output')/*
-    
+    output = $('output'),
+ 
     template = '<p>URL: <strong>{url}</strong>, name: <strong>{name}</strong>, location: <strong>{location}</strong></p>',
     data = { // imagine these are ajax requests :)
       first : {
@@ -65,7 +65,7 @@ var $ = function (s) { return document.getElementById(s); },
         location: "London, UK"
       }
     }
-    */
+    
     ;
 
 function reportEvent(event) {
@@ -79,7 +79,7 @@ function reportData(data) {
 }*/
 
 function reportData(data) {
-  output.innerHTML = 'blah', function (a,b,c) {
+  output.innerHTML = template.replace(/(:?\{(.*?)\})/g, function (a,b,c) {
     return data[c];
   });
 }
