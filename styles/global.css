@@ -507,7 +507,6 @@ p.description {
 	font-size: 10px;
 }
 form.gsc-search-box {
-	width: 300px;
 	position: absolute;
 	right: 0;
 	top: 0;
@@ -518,6 +517,7 @@ div#cse td.gsc-branding-img  {
 	display: none;
 }
 div#cse input[type=text].gsc-input {
+	float: right;
 	width: 300px;
 	border: 1px solid #555;
 	background-image: none !mportant;
