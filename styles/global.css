@@ -506,7 +506,7 @@ header.main {
 p.description {
 	font-size: 10px;
 }
-div#cse {
+div#cse-search-form {
 	position: absolute;
 	right: 0;
 	top: 0;
