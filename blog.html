@@ -25,7 +25,7 @@ layout: default
   <p>To test the History API, click through the urls below. Note that none of these urls point to <em>real</em> pages. JavaScript will intercept these clicks, load data and the browser address bar will <em>appear</em> to change - but this is the History API in action!</p>
   <p>Use the back and forward buttons in your browser to navigate the history.</p>
   <ul id="examples">
-    <li><a href="/history/first">first</a></li>
+    <li><a href="/about">first</a></li>
     <li><a href="/history/second">second</a></li>
     <li><a href="/history/third">third</a></li>
     <li><a href="/history/fourth">fourth</a></li>
@@ -44,7 +44,8 @@ var $ = function (s) { return document.getElementById(s); },
     lastevent = $('lastevent'),
     urlhistory = $('urlhistory'),
     examples = $('examples'),
-    output = $('output'),
+    output = $('output')/*
+    
     template = '<p>URL: <strong>{url}</strong>, name: <strong>{name}</strong>, location: <strong>{location}</strong></p>',
     data = { // imagine these are ajax requests :)
       first : {
@@ -63,16 +64,22 @@ var $ = function (s) { return document.getElementById(s); },
         name: "Simon",
         location: "London, UK"
       }
-    };
+    }
+    */
+    ;
 
 function reportEvent(event) {
   lastevent.innerHTML = event.type;
 }
-
+/*
 function reportData(data) {
   output.innerHTML = template.replace(/(:?\{(.*?)\})/g, function (a,b,c) {
     return data[c];
   });
+}*/
+
+function reportData(data) {
+	$('#output').load('/about section.content');
 }
 
 if (typeof history.pushState === 'undefined') {
