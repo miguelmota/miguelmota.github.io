@@ -47,7 +47,7 @@ var $ = function (s) { return document.getElementById(s); },
     output = $('output'),
  
    template = '<p>URL: <strong>{url}</strong>, name: <strong>{name}</strong>, location: <strong>{location}</strong></p>';
-
+  data =  $('#output').load(event.target.getAttribute('href')+' section.content');
 function reportEvent(event) {
   lastevent.innerHTML = event.type;
 }
@@ -75,7 +75,7 @@ addEvent(examples, 'click', function (event) {
     history.pushState(data[title], title, event.target.href);
     reportData(data[title]);
   }
-  $('#output').load(event.target.getAttribute('href')+' section.content');
+
 });
 
 addEvent(window, 'popstate', function (event) {
