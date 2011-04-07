@@ -149,6 +149,7 @@ $('div.posti h3 a').live('click', function(){
 });
 function loadDisqus(){
     var disqus_shortname = 'miguelmota';
+    var disqus_url = 'http://wwww.miguelmota.com/{{ page.url }}';
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
         dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
