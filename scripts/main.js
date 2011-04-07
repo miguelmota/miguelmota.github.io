@@ -115,6 +115,7 @@ $('nav.main a').live('click', function(){
 	var domain = document.domain;
 	if(domain == 'www.miguelmota.com') {
 		c = 0;
+		bc = 0;
 		var toLoad = $(this).attr('href')+' section.content';
 		window.location.hash = '!'+$(this).attr('href').substr(1,$(this).attr('href').length);
 		$('section.content').fadeOut('fast',loadContent);
@@ -489,14 +490,18 @@ function contactPage(){
 			}, 300);
 		}
 }
+var bc = 0;
 function blogPage(){
-	google.load('search', '1');
-	function OnLoad() {
-		var searchControl = new google.search.SearchControl();
-		var webSearch = new google.search.WebSearch();
-		webSearch.setSiteRestriction('http://www.miguelmota.com');
-		searchControl.addSearcher(webSearch);
-		searchControl.draw(document.getElementById('search'));
+	while(bc == 0){
+		google.load('search', '1');
+		function OnLoad() {
+			var searchControl = new google.search.SearchControl();
+			var webSearch = new google.search.WebSearch();
+			webSearch.setSiteRestriction('http://www.miguelmota.com');
+			searchControl.addSearcher(webSearch);
+			searchControl.draw(document.getElementById('search'));
+		}
+		google.setOnLoadCallback(OnLoad);
+		bc++;
 	}
-	google.setOnLoadCallback(OnLoad);
 }
