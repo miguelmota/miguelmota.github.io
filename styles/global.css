@@ -522,6 +522,9 @@ div#cse input[type=text].gsc-input {
 div#cse input[type=text].gsc-input:focus {
 	border-color: #007799;
 }
+div#cse div.gsc-control-cse  {
+	display: block;
+}
 div#cse div.sce-results  {
 	padding: 2px;
 	background-color: #222;
