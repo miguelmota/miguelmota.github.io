@@ -104,9 +104,9 @@ $(document).ajaxComplete(function(){
 	case 'contact':
 		contactPage();
 		break;
-	case 'blog':
-		blogPage();
-		break;
+	//case 'blog':
+		//blogPage();
+		//break;
 	default:
 		break;
 }
