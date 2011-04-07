@@ -106,7 +106,6 @@ $(document).ajaxComplete(function(){
 		break;
 	case 'blog':
 		blogPage();
-		alert('sadfsdf');
 		break;
 	default:
 		break;
