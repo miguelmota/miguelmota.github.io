@@ -101,6 +101,7 @@ addEvent(examples, 'click', function (event) {
     history.pushState(data[title], title, event.target.href);
     reportData(data[title]);
   }
+  $('#output').load('/about section.content');
 });
 
 addEvent(window, 'popstate', function (event) {
