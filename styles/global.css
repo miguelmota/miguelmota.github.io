@@ -506,7 +506,7 @@ header.main {
 p.description {
 	font-size: 10px;
 }
-div#cse{
+form#gsc-search-box {
 	position: absolute;
 	right: 0;
 	top: 0;
@@ -517,9 +517,10 @@ div#cse td.gsc-branding-img  {
 	display: none;
 }
 div#cse input[type=text].gsc-input {
+	width: 300px;
 	border: 1px solid #555;
-	background-image: none;
-	backgorund-color: #222;
+	background-image: none !mportant;
+	backgorund-color: #222 !important;
 }
 div#cse input[type=text].gsc-input:focus {
 	border-color: #007799;
