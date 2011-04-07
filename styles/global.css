@@ -506,23 +506,23 @@ header.main {
 p.description {
 	font-size: 10px;
 }
-div#search {
+div#cse {
 	position: absolute;
 	right: 0;
 	top: 0;
 }
-div#search input[type=submit].gsc-search-button,
-div#search td.gsc-branding-text,
-div#search td.gsc-branding-img  {
+div#cse input[type=submit].gsc-search-button,
+div#cse td.gsc-branding-text,
+div#cse td.gsc-branding-img  {
 	display: none;
 }
-div#search input[type=text].gsc-input {
+div#cse input[type=text].gsc-input {
 	border: 1px solid #555;
 }
-div#search input[type=text].gsc-input:focus {
+div#cse input[type=text].gsc-input:focus {
 	border-color: #007799;
 }
-div#search div.gsc-results  {
+div#cse div.sce-results  {
 	padding: 2px;
 	background-color: #222;
 	-webkit-box-shadow: 0 0 5px #111;
@@ -530,19 +530,19 @@ div#search div.gsc-results  {
 	-o-box-shadow: 0 0 5px #111;
 	box-shadow: 0 0 5px #111;
 }
-div#search a.gs-title  {
+div#cse a.gs-title  {
 	color: #007799;
 }
-div#search a.gs-title b {
+div#cse a.gs-title b {
 	color: #007799;
 }
-div#search div.gs-visibleUrl  {
+div#cse div.gs-visibleUrl  {
 	color: #555;
 }
-div#search div.gsc-cursor-page  {
+div#cse div.gsc-cursor-page  {
 	color: #007799;
 }
-div#search div.gsc-cursor-current-page  {
+div#cse div.gsc-cursor-current-page  {
 	color: #005577;
 }
 form.search_form {

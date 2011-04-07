@@ -160,14 +160,6 @@ function textticker(){
 	} else
 		setTimeout('textticker()',60);
 }
-google.load('search', '1');
-function OnLoad() {
-	var searchControl = new google.search.SearchControl();
-	var webSearch = new google.search.WebSearch();
-	webSearch.setSiteRestriction('http://www.miguelmota.com');
-	searchControl.addSearcher(webSearch);
-	searchControl.draw(document.getElementById('search'));
-}
 function showNewContent(){
 	$('nav.main a').removeClass('selected');
 	$('#'+window.location.hash.substr(2)).addClass('selected');
@@ -498,5 +490,4 @@ function contactPage(){
 		}
 }
 function blogPage(){
-		OnLoad();
 }

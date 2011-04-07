@@ -15,6 +15,19 @@ layout: default
 		</form>
 		<div id="cse" style="width:100%;"></div> 
 	</header>
+	
+
+<script src="//www.google.com/jsapi" type="text/javascript"></script>
+<script type="text/javascript"> 
+  google.load('search', '1', {language : 'en'});
+  google.setOnLoadCallback(function() {
+    var customSearchControl = new google.search.CustomSearchControl('013110027163283765539:a-en5rcxdcu');
+    customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+    customSearchControl.draw('cse');
+  }, true);
+</script>
+
+
 	<div class='posti'>
 		{% for post in site.posts %}
 			<h3><a href='{{ post.url }}'>{{ post.title }}</a></h3>
