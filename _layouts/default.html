@@ -40,7 +40,15 @@
 	<script src="http://www.google.com/jsapi?key=ABQIAAAAaPkBW3vge4odDUBtbC4e-xRutoCKHFl1g3ES_cmPf4BxqcVG3BR7pbnwzjWgqiKDxSEqSvzSUG2pww" type="text/javascript"></script>
 <script language="Javascript" type="text/javascript">
   
-
+google.load('search', '1');
+function OnLoad() {
+	var searchControl = new google.search.SearchControl();
+	var webSearch = new google.search.WebSearch();
+	webSearch.setSiteRestriction('http://www.miguelmota.com');
+	searchControl.addSearcher(webSearch);
+	searchControl.draw(document.getElementById('search'));
+}
+google.setOnLoadCallback(OnLoad);
   
 </script>
 

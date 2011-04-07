@@ -490,13 +490,5 @@ function contactPage(){
 		}
 }
 function blogPage(){
-	google.load('search', '1');
-	function OnLoad() {
-		var searchControl = new google.search.SearchControl();
-		var webSearch = new google.search.WebSearch();
-		webSearch.setSiteRestriction('http://www.miguelmota.com');
-		searchControl.addSearcher(webSearch);
-		searchControl.draw(document.getElementById('search'));
-	}
 	google.setOnLoadCallback(OnLoad);
 }
