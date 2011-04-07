@@ -613,6 +613,9 @@ div#dsq-content h3 {
 div#dsq-account-dropdown {
 	display: none !important;
 }
+div.dsq-comment-body {
+	margin-top: 25px !important;
+}
 div#dsq-subscribe {
 	display: none !important;
 }
