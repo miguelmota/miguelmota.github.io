@@ -506,7 +506,7 @@ header.main {
 p.description {
 	font-size: 10px;
 }
-form#gsc-search-box {
+form.gsc-search-box {
 	position: absolute;
 	right: 0;
 	top: 0;
