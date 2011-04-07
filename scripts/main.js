@@ -489,5 +489,12 @@ function contactPage(){
 			}, 300);
 		}
 }
+google.load('search', '1', {language : 'en'});
+function loadSearch() {
+  var customSearchControl = new google.search.CustomSearchControl('013110027163283765539:a-en5rcxdcu');
+  customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+  customSearchControl.draw('cse');
+}
 function blogPage(){
+	loadSearch();
 }
