@@ -500,9 +500,5 @@ function OnLoad() {
 }
 var bc = 0;
 function blogPage(){
-	while(bc == 0){
-
 		OnLoad();
-		bc++;
-	}
 }
