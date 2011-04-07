@@ -507,6 +507,7 @@ p.description {
 	font-size: 10px;
 }
 form.gsc-search-box {
+	width: 300px;
 	position: absolute;
 	right: 0;
 	top: 0;
