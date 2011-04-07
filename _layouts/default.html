@@ -38,22 +38,20 @@
 	
 	
 	
-<script language="Javascript" type="text/javascript">
-  /*
-google.load('search', '1');
-function OnLoad() {
-	var searchControl = new google.search.SearchControl();
-	var webSearch = new google.search.WebSearch();
-	webSearch.setSiteRestriction('http://www.miguelmota.com');
-	searchControl.addSearcher(webSearch);
-	searchControl.draw(document.getElementById('search'));
-}
-google.setOnLoadCallback(OnLoad);
-  */
+	<script src="//www.google.com/jsapi" type="text/javascript"></script>
+<script type="text/javascript"> 
+  google.load('search', '1', {language : 'en'});
+  google.setOnLoadCallback(function() {
+    var customSearchControl = new google.search.CustomSearchControl('013110027163283765539:a-en5rcxdcu');
+    customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+    customSearchControl.draw('cse');
+  }, true);
 </script>
 
-
-
+<link rel="stylesheet" href="//www.google.com/cse/style/look/default.css" type="text/css" />
+	
+	
+	
 </head>
 <body>
 <div id='top'></div>
@@ -69,22 +67,23 @@ google.setOnLoadCallback(OnLoad);
 		</ul>
 	</nav>
 	{{ content }}
-		<div class='loader'></div>
-		<footer class='main'>
-			<p>&#169; <script>var date = new Date();var thisYear = date.getFullYear(); document.write(thisYear);</script>  miguel mota / powered by <a href='http://jekyllrb.com'>jekyll</a> <a href='#top' class='top'>&#8593;</a></p>
-		</footer>
-		<script type="text/javascript">
-		    var disqus_shortname = 'miguelmota';
-		    (function() {
-		        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-		        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-		        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-		    })();
-		</script>
-		<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-		<script src="http://www.google.com/jsapi?key=ABQIAAAAaPkBW3vge4odDUBtbC4e-xRutoCKHFl1g3ES_cmPf4BxqcVG3BR7pbnwzjWgqiKDxSEqSvzSUG2pww" type="text/javascript"></script>
-	<script src='/scripts/main.min.js'></script>
 	
+	<div id="cse" style="width: 100%;">Loading</div>
+
+	<footer class='main'>
+		<p>&#169; <script>var date = new Date();var thisYear = date.getFullYear(); document.write(thisYear);</script>  miguel mota / powered by <a href='http://jekyllrb.com'>jekyll</a> <a href='#top' class='top'>&#8593;</a></p>
+	</footer>
+	<script type="text/javascript">
+	    var disqus_shortname = 'miguelmota';
+	    (function() {
+	        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+	        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	    })();
+	</script>
+	<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	<script src="http://www.google.com/jsapi?key=ABQIAAAAaPkBW3vge4odDUBtbC4e-xRutoCKHFl1g3ES_cmPf4BxqcVG3BR7pbnwzjWgqiKDxSEqSvzSUG2pww" type="text/javascript"></script>
+	<script src='/scripts/main.min.js'></script>
 	<script>
 		$('#<decorator:getProperty property="meta.page" />').addClass('selected');
   		var _gaq = _gaq || [];
