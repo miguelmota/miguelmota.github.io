@@ -506,6 +506,10 @@ header.main {
 p.description {
 	font-size: 10px;
 }
+element.style {
+	background-image: none !mportant;
+	backgorund-color: #222 !important;
+}
 form.gsc-search-box {
 	position: absolute;
 	right: 0;
