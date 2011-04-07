@@ -125,7 +125,6 @@ $('nav.main a').live('click', function(){
 		return false;
 	}
 });
-/*
 $('div.posti h3 a').live('click', function(){
 	//c = 0;
 	var toLoad2 = $(this).attr('href')+' div.posti';
@@ -143,10 +142,19 @@ $('div.posti h3 a').live('click', function(){
 			if(window.location.hash == '#!'){
 				//document.title = theTitle;
 			}
+			loadDisqus();
 		}
 	}
 	return false;
-});*/
+});
+function loadDisqus(){
+    var disqus_shortname = 'miguelmota';
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+}
 var position = 0;
 var length = 'portfolio'.length;
 function textticker(){
