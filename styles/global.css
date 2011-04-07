@@ -605,7 +605,6 @@ footer.main a.top {
 	display: none;
 }
 div#dsq-global-toolbar {
-	margin-bottom: -25px !important;
 }
 div#dsq-content h3 {
 	display: none !important;
@@ -614,10 +613,8 @@ div#dsq-account-dropdown {
 	display: none !important;
 }
 div.dsq-comment-body {
-	margin-top: 25px !important;
 }
 img.dsq-deferred-avatar {
-	margin-top: 25px !important;
 }
 div#dsq-subscribe {
 	display: none !important;
