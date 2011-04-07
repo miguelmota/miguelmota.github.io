@@ -13,7 +13,7 @@ layout: default
    			<input type='text' class='search' name='q' value='[search]' onblur="if(this.value=='') this.value='[search]';"  onfocus="if(this.value=='[search]') this.value='';" />
     		<input type='submit' class='submit' value='Search' />
 		</form>
-		<div id='search'></div>
+		<div id="cse" style="width:100%;"></div> 
 	</header>
 	<div class='posti'>
 		{% for post in site.posts %}
