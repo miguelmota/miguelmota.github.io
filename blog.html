@@ -19,30 +19,24 @@ layout: default
 		
 		
 		
-<article>
-  <p id="status">HTML5 History API not supported</p>
+
   <ul id="examples">
     <li><a href="/about">first</a></li>
     <li><a href="/contact">second</a></li>
-    <li><a href="/history/third">third</a></li>
-    <li><a href="/history/fourth">fourth</a></li>
+    <li><a href="/portfolio">third</a></li>
+    <li><a href="/stream">fourth</a></li>
   </ul>
-  <p><small>Note: since these urls aren't real, refreshing the page will land on an invalid url.</small></p>
   <div id="output"></div>
-</article>
-		
+
+	
 		
 	</div>
 	
 <script src='http://html5demos.com/js/h5utils.js'></script>
 	<script>
 var $ = function (s) { return document.getElementById(s); },
-    state = $('status'),
-    lastevent = $('lastevent'),
-    urlhistory = $('urlhistory'),
     examples = $('examples'),
     output = $('output'),
-
     template = '<p>URL: <strong>{url}</strong>, name: <strong>{name}</strong>, location: <strong>{location}</strong></p>',
     data = { // imagine these are ajax requests :)
       first : {
@@ -62,24 +56,15 @@ var $ = function (s) { return document.getElementById(s); },
         location: "London, UK"
       }
     }
-    
-    ;
+ ;
 function reportData(data) {
   output.innerHTML = template.replace(/(:?\{(.*?)\})/g, function (a,b,c) {
     return data[c];
   });
 }
 
-if (typeof history.pushState === 'undefined') {
-  state.className = 'fail';
-} else {
-  state.className = 'success';
-  state.innerHTML = 'HTML5 History API available';
-}
-
 addEvent(examples, 'click', function (event) {
   var title;
-  
   event.preventDefault();
   if (event.target.nodeName == 'A') {
     title = event.target.innerHTML;
