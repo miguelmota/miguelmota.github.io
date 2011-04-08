@@ -37,10 +37,27 @@ layout: default
 var $ = function (s) { return document.getElementById(s); },
     examples = $('examples'),
     output = $('output'),
-    template = '',
-    data = {
+    template = '<p>URL: <strong>{url}</strong>, name: <strong>{name}</strong>, location: <strong>{location}</strong></p>',
+    data = { // imagine these are ajax requests :)
+      first : {
+        name: "Remy",
+        location: "Brighton, UK"
+      },
+      second: {
+        name: "John",
+        location: "San Francisco, USA"
+      },
+      third: {
+        name: "Jeff",
+        location: "Vancover, Canada"
+      },
+      fourth: {
+        name: "Simon",
+        location: "London, UK"
+      }
     }
- ;
+    
+    ;
 function reportData(data) {
   output.innerHTML = template.replace(/(:?\{(.*?)\})/g, function (a,b,c) {
     return data[c];
@@ -49,6 +66,7 @@ function reportData(data) {
 
 addEvent(examples, 'click', function (event) {
   var title;
+  
   event.preventDefault();
   if (event.target.nodeName == 'A') {
     title = event.target.innerHTML;
