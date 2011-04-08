@@ -36,7 +36,11 @@ layout: default
 var $ = function (s) { return document.getElementById(s); },
     data;
  ;
-
+function reportData(data) {
+  output.innerHTML = template.replace(/(:?\{(.*?)\})/g, function (a,b,c) {
+    return data[c];
+  });
+}
 
 addEvent(examples, 'click', function (event) {
   var title;
