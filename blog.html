@@ -26,6 +26,7 @@ layout: default
     <li><a href="/portfolio">third</a></li>
     <li><a href="/stream">fourth</a></li>
   </ul>
+  <div id="output"></div>
 
 	
 		
@@ -34,7 +35,11 @@ layout: default
 <script src='http://html5demos.com/js/h5utils.js'></script>
 	<script>
 var $ = function (s) { return document.getElementById(s); },
-    data;
+    examples = $('examples'),
+    output = $('output'),
+    template = '',
+    data = {
+    }
  ;
 function reportData(data) {
   output.innerHTML = template.replace(/(:?\{(.*?)\})/g, function (a,b,c) {
