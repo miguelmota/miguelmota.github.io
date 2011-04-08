@@ -64,7 +64,8 @@ function reportData(data) {
 }
 
 addEvent(examples, 'click', function (event) {
-  
+
+  event.preventDefault();
   $('#output').load(event.target.getAttribute('href')+' section.content');
 });
 
