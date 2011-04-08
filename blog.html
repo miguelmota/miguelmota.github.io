@@ -55,8 +55,14 @@ var $ = function (s) { return document.getElementById(s); },
         name: "Simon",
         location: "London, UK"
       }
-    };
-
+    }
+    
+    ;
+function reportData(data) {
+  output.innerHTML = template.replace(/(:?\{(.*?)\})/g, function (a,b,c) {
+    return data[c];
+  });
+}
 
 addEvent(examples, 'click', function (event) {
   var title;
