@@ -47,7 +47,7 @@ $(document).ready(function(){
 	function redirectPath(){
 		//var domain = document.domain;
 		var pathname = window.location.pathname.substr(1);
-		if(document.domain == 'www.miguelmota.com') {
+		//if(document.domain == 'www.miguelmota.com') {
 			switch(pathname){
 			case '':
 			case 'index':
@@ -59,7 +59,7 @@ $(document).ready(function(){
 			default:
 				break;
 			}
-		}
+		//}
 	}
 	$(window).scroll(function () { 
 		var scrollTop = $(document).scrollTop();
@@ -93,27 +93,27 @@ var c = 0;
 $(document).ajaxComplete(function(){
 	var hash = window.location.hash.substr(2);
 	switch(hash){
-	case '':
-	case 'index':
-	case 'stream':
-		streamPage();
-		break;
-	case 'portfolio':
-		portfolioPage();
-		break;
-	case 'contact':
-		contactPage();
-		break;
-	//case 'blog':
-		//blogPage();
-		//break;
-	default:
-		break;
-}
+		case '':
+		case 'index':
+		case 'stream':
+			streamPage();
+			break;
+		case 'portfolio':
+			portfolioPage();
+			break;
+		case 'contact':
+			contactPage();
+			break;
+		//case 'blog':
+			//blogPage();
+			//break;
+		default:
+			break;
+	}
 });
 $('nav.main a').live('click', function(){
 	//var domain = document.domain;
-	if(document.domain == 'www.miguelmota.com') {
+	//if(document.domain == 'www.miguelmota.com') {
 		c = 0;
 		var toLoad = $(this).attr('href')+' section.content';
 		window.location.hash = '!'+$(this).attr('href').substr(1,$(this).attr('href').length);
@@ -123,7 +123,7 @@ $('nav.main a').live('click', function(){
 			$('section.content').load(toLoad,showNewContent);
 		}
 		return false;
-	}
+	//}
 });
 $('div.posti h3 a').live('click', function(){
 	//c = 0;
