@@ -24,7 +24,7 @@ $(document).ready(function(){
 		$('#'+path).addClass('selected');
 	}
 	if(window.location.pathname.substring(1,5) == 'post') {
-		$('#stream').addClass('selected');
+		$('#stream').removeClass('selected');
 		$('#blog').addClass('selected');
 	}
 	else {
