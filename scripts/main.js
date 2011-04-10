@@ -111,11 +111,7 @@ $(document).ajaxComplete(function(){
 			break;
 	}
 });
-<<<<<<< HEAD
 $('nav.main a').live('click', function(){
-=======
-$('nav.main a.blahblahblahblah').live('click', function(){
->>>>>>> parent of bd2da9f... ...
 	//var domain = document.domain;
 	//if(document.domain == 'www.miguelmota.com') {
 		c = 0;
@@ -517,46 +513,3 @@ function blogPage(){
 
 
 
-
-var $ = function (s) { return document.getElementById(s); },
-examples = $('nav'),
-output = $('article'),
-template = '',
-data = { // imagine these are ajax requests :)
-  first : {
-    name: "Remy",
-    location: "Brighton, UK"
-  },
-  second: {
-    name: "John",
-    location: "San Francisco, USA"
-  },
-  third: {
-    name: "Jeff",
-    location: "Vancover, Canada"
-  },
-  fourth: {
-    name: "Simon",
-    location: "London, UK"
-  }
-}
-
-;
-function reportData(data) {
-output.innerHTML = template.replace(/(:?\{(.*?)\})/g, function (a,b,c) {
-return data[c];
-});
-}
-
-addEvent(examples, 'click', function (event) {
-var title;
-
-event.preventDefault();
-if (event.target.nodeName == 'A') {
-title = event.target.innerHTML;
-data[title].url = event.target.getAttribute('href'); // slightly hacky (the setting), using getAttribute to keep it short
-history.pushState(data[title], title, event.target.href);
-reportData(data[title]);
-}
-$('#article').load(event.target.getAttribute('href')+' section.content');
-});
