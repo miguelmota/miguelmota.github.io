@@ -20,14 +20,17 @@ $(document).ready(function(){
 		//window.location = '/';
 	//}
 	var path = window.location.pathname.substring(1);
-	if(path)
+	if(path){
 		$('#'+path).addClass('selected');
-	else if(window.location.pathname.substring(1,5) == 'post')
-		$('#blog').addClass('selected');
-	else
+	}
+	if(window.location.pathname.substring(1,5) == 'post') {
 		$('#stream').addClass('selected');
+		$('#blog').addClass('selected');
+	}
+	else {
+		$('#stream').addClass('selected');
+	}
 	streamPage();
-	alert(window.location.pathname.substring(1,5));
 	$('nav.main a#logo').live('click', function(){
 		$('nav.main a').removeClass('selected');
 		$('nav.main a#stream').addClass('selected');
