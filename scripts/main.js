@@ -20,9 +20,11 @@ $(document).ready(function(){
 		//window.location = '/';
 	//}
 	var path = window.location.pathname.substring(1);
-	if(path){
+	if(path)
 		$('#'+path).addClass('selected');
-	}
+	else
+		$('#stream').addClass('selected');
+	
 	$('nav.main a#logo').live('click', function(){
 		$('nav.main a').removeClass('selected');
 		$('nav.main a#stream').addClass('selected');
