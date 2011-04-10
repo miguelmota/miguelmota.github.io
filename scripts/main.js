@@ -27,7 +27,7 @@ $(document).ready(function(){
 	else
 		$('#stream').addClass('selected');
 	streamPage();
-	
+	alert(window.location.pathname.substring(1,5));
 	$('nav.main a#logo').live('click', function(){
 		$('nav.main a').removeClass('selected');
 		$('nav.main a#stream').addClass('selected');
