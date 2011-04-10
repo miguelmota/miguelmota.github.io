@@ -143,7 +143,7 @@ $('div.posti h3 a').live('click', function(){
 	$('div.loader').fadeIn('normal');
 	var stateObj2 = { foo2:  $(this).attr('href') };
 	history.pushState(stateObj2, "Title2", $(this).attr('href'));
-	var title2 = $('div.posti h3 a').text()+$('div.theTitle').text();
+	var title2 = $(this).text()+$('div.theTitle').text();
 	document.title = title2;
 	function loadContent2(){
 		$('div.posti').load(toLoad2,showNewContent2);
