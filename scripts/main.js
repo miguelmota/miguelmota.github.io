@@ -415,12 +415,12 @@ function streamPage(){
 			}
 		);
 		c++
-		//refreshStream();
+		refreshStream();
 	}
 }
 function refreshStream(){
 	setTimeout(function(){
-		if(window.location.hash.substr(2) == 'stream' || window.location.hash.substr(2) == 'index' || window.location.hash.substr(1) == ''){
+		if(window.location.pathname.substr(1) == 'stream' || window.location.pathname.substr(1) == 'index' || window.location.pathname == ''){
 			$('a#stream').trigger('click');
 		}
 	},30000);
