@@ -27,6 +27,9 @@ $(document).ready(function(){
 		$('#stream').removeClass('selected');
 		$('#blog').addClass('selected');
 	}
+	if(window.location.pathname.substring(1) != 'stream') {
+		$('#stream').removeClass('selected');
+	}
 	else {
 		$('#stream').addClass('selected');
 	}
