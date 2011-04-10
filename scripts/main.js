@@ -28,11 +28,11 @@ $(document).ready(function(){
 	if(window.location.hash){
 		var domain = document.domain;
 		if(domain == 'www.miguelmota.com') {
-			loadPage();
+			//loadPage();
 		}
 	}
 	else {
-		redirectPath();
+		//redirectPath();
 	}
 	function loadPage(){
 		var toLoad = window.location.hash.substr(2)+' section.content';
