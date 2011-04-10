@@ -111,7 +111,11 @@ $(document).ajaxComplete(function(){
 			break;
 	}
 });
+<<<<<<< HEAD
 $('nav.main a').live('click', function(){
+=======
+$('nav.main a.blahblahblahblah').live('click', function(){
+>>>>>>> parent of bd2da9f... ...
 	//var domain = document.domain;
 	//if(document.domain == 'www.miguelmota.com') {
 		c = 0;
