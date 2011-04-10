@@ -142,6 +142,8 @@ $('div.posti h3 a').live('click', function(){
 	$('div.posti').fadeOut('fast',loadContent2);
 	$('div.loader').fadeIn('normal');
 	function loadContent2(){
+		var stateObj2 = { foo2:  $(this).attr('href') };
+		history.pushState(stateObj2, "Title", $(this).attr('href'));
 		$('div.posti').load(toLoad2,showNewContent2);
 		function showNewContent2(){
 			//$('nav.main a').removeClass('selected'); //commented because of testing
@@ -153,8 +155,6 @@ $('div.posti h3 a').live('click', function(){
 				//document.title = theTitle; //commented because testing
 			//}
 			loadDisqus();
-			var stateObj = { foo:  $(this).attr('href') };
-			history.pushState(stateObj, "Title", $(this).attr('href'));
 		}
 	}
 	return false;
