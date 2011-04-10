@@ -111,7 +111,7 @@ $(document).ajaxComplete(function(){
 			break;
 	}
 });
-$('nav.main a').live('click', function(){
+$('nav.main a.blah').live('click', function(){
 	//var domain = document.domain;
 	//if(document.domain == 'www.miguelmota.com') {
 		c = 0;
