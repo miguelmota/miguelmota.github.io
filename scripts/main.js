@@ -19,6 +19,7 @@ $(document).ready(function(){
 	//if(window.location.hash == '#!') { //commented because pushstate, no longer necessary
 		//window.location = '/';
 	//}
+	$('#'+window.location.pathname.substr(1)).addClass('selected');
 	$('nav.main a#logo').live('click', function(){
 		$('nav.main a').removeClass('selected');
 		$('nav.main a#stream').addClass('selected');
