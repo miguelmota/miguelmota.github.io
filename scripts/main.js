@@ -141,9 +141,9 @@ $('div.posti h3 a').live('click', function(){
 	//window.location.hash = '!'+$(this).attr('href').substr(1,$(this).attr('href').length); //using pushstate, no longer neccessary
 	$('div.posti').fadeOut('fast',loadContent2);
 	$('div.loader').fadeIn('normal');
+	var stateObj2 = { foo2:  $(this).attr('href') };
+	history.pushState(stateObj2, "Title2", $(this).attr('href'));
 	function loadContent2(){
-		var stateObj2 = { foo2:  $(this).attr('href') };
-		history.pushState(stateObj2, "Title", $(this).attr('href'));
 		$('div.posti').load(toLoad2,showNewContent2);
 		function showNewContent2(){
 			//$('nav.main a').removeClass('selected'); //commented because of testing
