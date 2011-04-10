@@ -45,6 +45,7 @@ $(document).ready(function(){
 		}
 		return false;
 	}
+	streamPage();
 	/*//commented because pushstate, no longer necessary
 	function redirectPath(){
 		//var domain = document.domain; //commented because of firefox bug
