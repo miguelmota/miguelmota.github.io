@@ -24,6 +24,7 @@ $(document).ready(function(){
 		$('#'+path).addClass('selected');
 	else
 		$('#stream').addClass('selected');
+	streamPage();
 	
 	$('nav.main a#logo').live('click', function(){
 		$('nav.main a').removeClass('selected');
@@ -49,7 +50,6 @@ $(document).ready(function(){
 		}
 		return false;
 	}
-	streamPage();
 	/*//commented because pushstate, no longer necessary
 	function redirectPath(){
 		//var domain = document.domain; //commented because of firefox bug
@@ -153,6 +153,8 @@ $('div.posti h3 a').live('click', function(){
 				//document.title = theTitle; //commented because testing
 			//}
 			loadDisqus();
+			var stateObj = { foo:  $(this).attr('href') };
+			history.pushState(stateObj, "Title", $(this).attr('href'));
 		}
 	}
 	return false;
@@ -518,9 +520,3 @@ function loadSearch() {
 function blogPage(){
 	loadSearch();
 }
-
-
-
-
-
-
