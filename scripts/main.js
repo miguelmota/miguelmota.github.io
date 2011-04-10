@@ -176,6 +176,7 @@ function textticker(){
 function showNewContent(){
 	$('nav.main a').removeClass('selected');
 	//$('#'+window.location.hash.substr(2)).addClass('selected'); //using pushstate, no longer neccessary
+	$('#'+window.location.pathname).addClass('selected');
 	$('section.content, footer.main').fadeIn('normal',hideLoader);
 	var title = $('span.sub').text()+$('div.theTitle').text();
 	document.title = title;
