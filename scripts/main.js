@@ -127,8 +127,8 @@ $('nav.main a').live('click', function(){
 		}
 		return false;
 	//} //commented because of firefox bug
-		var stateObj = { foo:  $(this).attr('href') };
-		history.pushState(stateObj, "Title",  $(this).attr('href'));
+		var stateObj = { foo:	$(this).attr('href').substr(1) };
+		history.pushState(stateObj, "Title", $(this).attr('href').substr(1));
 });
 $('div.posti h3 a').live('click', function(){
 	var toLoad2 = $(this).attr('href')+' div.posti';
