@@ -40,7 +40,7 @@
 <div id='wrap'>
 	<nav class='main'>
 		<a id='logo' href='/stream'><img src='/images/logo.png' /></a><span class='trade'>&#8482;</span>
-		<ul class='nav'>
+		<ul id='nav' class='nav'>
 			<li><a id='stream' class='selected' href='/stream'>stream</a></li>
 			<li><a id='about' href='/about'>about</a></li>
 			<li><a id='portfolio' href='/portfolio'>portfolio</a></li>
@@ -48,7 +48,9 @@
 			<li><a id='blog' href='/blog'>blog</a></li>
 		</ul>
 	</nav>
-	{{ content }}
+	<div id='article'>
+		{{ content }}
+	</div>
 	<footer class='main'>
 		<p>&#169; <script>var date = new Date();var thisYear = date.getFullYear(); document.write(thisYear);</script>  miguel mota / powered by <a href='http://jekyllrb.com'>jekyll</a> <a href='#top' class='top'>&#8593;</a></p>
 	</footer>

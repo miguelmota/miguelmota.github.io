@@ -515,8 +515,8 @@ function blogPage(){
 
 
 var $ = function (s) { return document.getElementById(s); },
-examples = $('examples'),
-output = $('output'),
+examples = $('nav'),
+output = $('article'),
 template = '',
 data = { // imagine these are ajax requests :)
   first : {
@@ -554,5 +554,5 @@ data[title].url = event.target.getAttribute('href'); // slightly hacky (the sett
 history.pushState(data[title], title, event.target.href);
 reportData(data[title]);
 }
-$('#output').load(event.target.getAttribute('href')+' section.content');
+$('#article').load(event.target.getAttribute('href')+' section.content');
 });
