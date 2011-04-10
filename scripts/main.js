@@ -28,11 +28,11 @@ $(document).ready(function(){
 	if(window.location.hash){
 		var domain = document.domain;
 		if(domain == 'www.miguelmota.com') {
-			//loadPage();
+			loadPage();
 		}
 	}
 	else {
-		//redirectPath();
+		redirectPath();
 	}
 	function loadPage(){
 		var toLoad = window.location.hash.substr(2)+' section.content';
@@ -111,7 +111,7 @@ $(document).ajaxComplete(function(){
 			break;
 	}
 });
-$('nav.main a.blah').live('click', function(){
+$('nav.main a').live('click', function(){
 	//var domain = document.domain;
 	//if(document.domain == 'www.miguelmota.com') {
 		c = 0;
@@ -178,6 +178,12 @@ function showNewContent(){
 	if(window.location.hash == '#!'){
 		document.title = theTitle;
 	}
+	
+	
+	
+	var stateObj = { foo: window.location.hash.substr(2) };
+	history.pushState(stateObj, "Title", window.location.hash.substr(2));
+	
 }
 function hideLoader(){
 	$('div.loader').hide();
@@ -507,3 +513,9 @@ function loadSearch() {
 function blogPage(){
 	loadSearch();
 }
+
+
+
+
+
+
