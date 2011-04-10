@@ -622,7 +622,7 @@ div#dsq-subscribe {
 select#dsq-sort-select {
 	display: none !important;
 }
-div.dsq-item-trackback {
+div.dsq-trackback-url {
 	display: none !important;
 }
 /* /DISQUS ============================================================ */
