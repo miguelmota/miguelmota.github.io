@@ -19,13 +19,13 @@ $(document).ready(function(){
 	//if(window.location.hash == '#!') { //commented because pushstate, no longer necessary
 		//window.location = '/';
 	//}
-	$('#'+window.location.pathname.substr(1)).addClass('selected');
+	var path = window.location.pathname.substring(1);
+	//$('#'+path).addClass('selected');
 	$('nav.main a#logo').live('click', function(){
 		$('nav.main a').removeClass('selected');
 		$('nav.main a#stream').addClass('selected');
 	});
 	$('body').append("<div class='theTitle' style='display: none;'> &#8212; Miguel Mota | Freelance Web Developer</div>");
-	var path = window.location.pathname.substring(1);
 	//if(window.location.hash){ //commented because pushstate, no longer necessary
 		//var domain = document.domain;
 		//if(domain == 'www.miguelmota.com') {
