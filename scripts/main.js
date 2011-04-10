@@ -22,7 +22,7 @@ $(document).ready(function(){
 	var path = window.location.pathname.substring(1);
 	if(path)
 		$('#'+path).addClass('selected');
-	if(window.location.pathname.substring(1,5) == 'post')
+	else if(window.location.pathname.substring(1,5) == 'post')
 		$('#blog').addClass('selected');
 	else
 		$('#stream').addClass('selected');
