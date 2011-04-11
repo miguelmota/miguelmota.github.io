@@ -1,7 +1,30 @@
 @CHARSET "UTF-8";
 
 body {
-	font-size: 12px;
+	font-size: 18px;
 	font-family: Helvetica;
 	color: #aaa;
+}
+div#wrap {
+	margin: 0 auto;
+	height: 100%;
+	width: 760px;
+	border: 1px solid #aaa;
+}
+a {
+	color: #555;
+	padding: 10px;
+	width: 100px;
+	float: left;
+	border: 1px solid #aaa;
+}
+ul {
+	width: 100%;
+	border: 1px solid #aaa;
+}
+ul li {
+	display: inline;
+}
+nav.main {
+	margin: 0 auto;
 }
