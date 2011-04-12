@@ -1,30 +1,35 @@
 @CHARSET "UTF-8";
 
 body {
-	font-size: 18px;
 	font-family: Helvetica;
+	font-size: 18px;
+	background: #c3c8cb;
 	color: #aaa;
 }
 div#wrap {
 	margin: 0 auto;
-	height: 100%;
 	width: 760px;
+	height: 100%;
 	border: 1px solid #aaa;
-}
-a {
-	color: #555;
-	padding: 10px;
-	width: 100px;
-	float: left;
-	border: 1px solid #aaa;
-}
-ul {
-	width: 100%;
-	border: 1px solid #aaa;
-}
-ul li {
-	display: inline;
 }
 nav.main {
 	margin: 0 auto;
+}
+ul.nav ul {
+	width: 100%;
+	border: 1px solid #aaa;
+}
+ul.nav ul li {
+	display: inline;
+}
+ul.nav a {
+	float: left;
+	width: 100px;
+	padding: 10px;
+	color: #555;
+	border: 1px solid #aaa;
+}
+img.logo {
+	width: 248px;
+	height: auto;
 }
