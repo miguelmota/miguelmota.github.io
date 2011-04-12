@@ -13,19 +13,19 @@ div#wrap {
 	border: 1px solid #aaa;
 }
 nav.main {
-	margin: 0 auto;
+
 }
 ul.nav ul {
-	width: 100%;
-	border: 1px solid #aaa;
+
 }
 ul.nav ul li {
 	display: inline;
 }
 ul.nav a {
 	float: left;
-	width: 100px;
+	width: 130px;
 	padding: 10px;
+	text-align: center;
 	color: #555;
 	border: 1px solid #aaa;
 }
