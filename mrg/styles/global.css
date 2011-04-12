@@ -1,13 +1,23 @@
 @charset 'utf-8';
 
+@font-face {
+	font-family: Aller;
+	src: url('../fonts/aller-webfont/aller_bd-webfont.eot');
+	src: local('☺'),
+	url('../fonts/aller-webfont/aller_bd-webfont.woff') format('woff'),
+	url('../fonts/aller-webfont/aller_bd-webfont.ttf') format('truetype'),
+	url('../fonts/aller-webfont/aller_bd-webfont.svg') format('svg');
+}
+
 html, body {
 	height: 100%;
 }
 body {
+	text-shadow: 0 1px 0 #fff;
 	font-family: Helvetica;
 	font-size: 18px;
 	background-color: #ddd;
-	color: #000;
+	color: #444751;
 }
 div#wrap {
 	margin: 0 auto;
@@ -15,9 +25,7 @@ div#wrap {
 	min-height: 100%;
 }
 /* GENERAL ===================================================================== */
-p {
-	margin-bottom: 15px;
-}
+
 /* GENERAL ===================================================================== */
 
 /* HEADER ====================================================================== */
@@ -60,7 +68,6 @@ ul.nav li a {
 	padding: 0 20px;
 	line-height: 40px;
 	text-decoration: none;
-	text-shadow: 0 1px 0 #fff;
 	color: #666;
 	-webkit-transition: background-color linear .2s, color linear .3s;
 	-moz-transition: background-color linear .2s, color linear .3s;
@@ -101,14 +108,31 @@ ul.nav li a#blog:hover {
 section.content {
 	min-height: 300px;
 	padding: 10px;
-	background-color: #fff;
 	-webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
 	-o-border-radius: 10px;
 	border-radius: 10px;
 	behavior: url('plugins/PIE/PIE.htc');
 }
-
+h1,h4 {
+	font-family: Aller, Helvetica, Aria, sans-serif;
+	font-size: 36px;
+	margin-bottom: 5px;
+}
+p {
+	margin-bottom: 15px;
+	line-height: 120%;
+	font-size: 18px;
+}
+p.first {
+	font-size: 22px;
+}
+p.second {
+	font-size: 20px;
+}
+p.third {
+	font-size: 18px;
+}
 /* NIVO SLIDER ------------------------------------------------------------------*/
 div#slider {
     position: relative;
@@ -135,8 +159,9 @@ footer.main {
 	width: 900px;
 	height: 15px;
 	margin: -55px auto 0 auto;
+}
+footer.main p {
 	font-size: 12px;
-	text-shadow: 0 1px 0 #fff;
 	color: #999;
 }
 /* /FOOTER ===================================================================== */
