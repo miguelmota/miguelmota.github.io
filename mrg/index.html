@@ -2,14 +2,20 @@
 <html lang='en'>
 <meta charse='utf-8' >
 <head>
-<title>Welcome - MRG Properties Inc.</title>
-<link rel='stylesheet' href='styles/reset.css' />
-<link rel='stylesheet' href='styles/global.css' />
+	<title>Welcome - MRG Properties Inc.</title>
+	<link href='styles/reset.css' rel='stylesheet' />
+	<link href='styles/global.css' rel='stylesheet' />
+	<link href='plugins/nivo-slider/nivo-slider.css' rel='stylesheet' />
+	<script src='scripts/jquery.min.js'></script>
+	<script src='plugins/nivo-slider/jquery.nivo.slider.js'></script>
+	<script src='scripts/main.js'></script>
 </head>
 <body>
 <div id='wrap'>
-	<a href='./index.html'><img class='logo' src='images/mrg_logo.png' /></a>
-   <nav class='main'>
+	<header class='main'>
+		<a href='./index.html'><img class='logo' src='images/mrg_logo.png' alt='' /></a>
+	</header>
+	<nav class='main'>
 		<ul class='nav'>
 			<li><a id='home' href='./index.html'>Home</a></li>
 			<li><a id='about' href='./about.html'>About</a></li>
@@ -18,8 +24,19 @@
 			<li><a id='blog' href='./blog.html'>Blog</a></li>
 		</ul>
 	</nav>
-	<section class='content''>
+	<section class='content'>
+		<p>Thank you for visiting Melendez Realty Group website - a real estate and financial team who is dedicated to its people.  
+		The goal of this website is to help bring you one click closer to your home or assist you in selling your house, while providing tax guidance and benefits of owning real estate.</p>
+		<p>We can help you buy HUD owned properties that are currently for sale.  Or if you need to sell your house for less than what is owed, we can help you with a short sale and help you to avoid foreclosure.</p>
+		<p>We provide full support for all your real estate needs.  Call us for an evaluation of your home, for help finding the property of your dreams or advice on investing in real estate.</p>
+		<!-- <div id='slider'>
+		<img src='images/nemo.jpg' alt='' />
+		<img src='images/toystory.jpg' alt='' />
+	</div>-->
 	</section>
 </div>
+<footer class='main'>
+	<p>&#169; 2009 - <script>var date = new Date(); var thisYear = date.getFullYear(); document.write(thisYear);</script> MRGP Inc. All rights reserved.</p>
+</footer>
 </body>
 </html>
