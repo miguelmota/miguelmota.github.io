@@ -95,7 +95,7 @@ ul.nav li a#blog:hover {
 
 /* CONTENT ====================================================================== */
 section.content {
-	min-height: 500px;
+	min-height: 300px;
 	padding: 10px;
 	background-color: #fff;
 	-webkit-border-radius: 10px;
