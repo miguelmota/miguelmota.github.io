@@ -27,12 +27,12 @@ $(document).ready(function(){
 		if($(this).attr('href') == pathname){
 			$(this).addClass('selected');
 		}
+		else {
+			$('nav.main a#stream').addClass('selected');
+		}
 	});	
 	
 	streamPage();
-	if(window.location.pathname == null) {
-		$('nav.main a#stream').addClass('selected');
-	}
 	
 	$('nav.main a#logo').live('click', function(){
 		$('nav.main a').removeClass('selected');
