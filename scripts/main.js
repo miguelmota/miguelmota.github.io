@@ -19,20 +19,17 @@ $(document).ready(function(){
 	//if(window.location.hash == '#!') { //commented because pushstate, no longer necessary
 		//window.location = '/';
 	//}
-	var path = window.location.pathname.substring(1);
-	if(path){
-		$('#'+path).addClass('selected');
-	}
-	if(window.location.pathname.substring(1,5) == 'post') {
-		$('#stream').removeClass('selected');
-		$('#blog').addClass('selected');
-	}
-	if(window.location.pathname.substring(1) != 'stream') {
-		$('#stream').removeClass('selected');
-	}
-	else {
-		$('#stream').addClass('selected');
-	}
+
+	
+	// check pathname and add selected class to nav link
+	var pathname = window.location.pathname;
+	$('ul.nav li a').each(function(){
+		if($(this).attr('href') == pathname){
+			$(this).addClass('selected');
+		}
+	});	
+	
+	
 	streamPage();
 	$('nav.main a#logo').live('click', function(){
 		$('nav.main a').removeClass('selected');
