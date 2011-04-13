@@ -20,6 +20,9 @@ $(document).ready(function(){
 		//window.location = '/';
 	//}
 
+	streamPage();
+	$('nav.main a#stream').addClass('selected');
+	
 	
 	// check pathname and add selected class to nav link
 	var pathname = window.location.pathname;
@@ -28,13 +31,8 @@ $(document).ready(function(){
 			$('nav.main a#stream').removeClass('selected');
 			$(this).addClass('selected');
 		}
-		else {
-			$('nav.main a#stream').addClass('selected');
-		}
-	});	
-	
-	streamPage();
-	
+	});
+
 	$('nav.main a#logo').live('click', function(){
 		$('nav.main a').removeClass('selected');
 		$('nav.main a#stream').addClass('selected');
