@@ -30,7 +30,9 @@ $(document).ready(function(){
 	});	
 	
 	streamPage();
-	$('nav.main a#stream').addClass('selected');
+	if(pathname == null) {
+		$('nav.main a#stream').addClass('selected');
+	}
 	
 	$('nav.main a#logo').live('click', function(){
 		$('nav.main a').removeClass('selected');
