@@ -30,7 +30,7 @@ $(document).ready(function(){
 	});	
 	
 	streamPage();
-	if(pathname == null) {
+	if(window.location.pathname == null) {
 		$('nav.main a#stream').addClass('selected');
 	}
 	
