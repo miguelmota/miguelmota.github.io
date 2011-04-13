@@ -25,6 +25,7 @@ $(document).ready(function(){
 	var pathname = window.location.pathname;
 	$('ul.nav li a').each(function(){
 		if($(this).attr('href') == pathname){
+			$('nav.main a#stream').removeClass('selected');
 			$(this).addClass('selected');
 		}
 		else {
