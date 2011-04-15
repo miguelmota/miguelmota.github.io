@@ -452,9 +452,6 @@ section.portfolio p.description span.date {
 section.portfolio p.description a.link {
 	font-size: 10px;
 }
-section.portfolio img {
-	display: none;
-}
 section.portfolio img.miggs {
 	position: absolute;
 	top: -100px;
