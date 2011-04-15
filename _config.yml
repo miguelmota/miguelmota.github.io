@@ -1,2 +1,3 @@
 paginate: 1
+paginate_file: blog.html
 permalink: /post/:year/:month/:day/:title
