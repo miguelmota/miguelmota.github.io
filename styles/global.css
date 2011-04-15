@@ -576,6 +576,9 @@ div.post_footer {
 div.post_footer p {
 	margin-bottom: 5px;
 }
+div.info p {
+	font-size: 9px;
+}
 /* /BLOG ============================================================== */
 /* FOOTER ============================================================= */
 footer.main {

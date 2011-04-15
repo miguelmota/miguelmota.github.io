@@ -1,12 +1,12 @@
 ---
-layout: putsomerandomstringhere
+layout: default1
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0">
 	<channel>
-		<title>put your blog's title here</title>
-		<description>put your blog's description here</description>
-		<link>http://yoururl.com</link>
+		<title>Miguel Mota</title>
+		<description>Freelance Web Developer</description>
+		<link>http://www.miguelmota.com</link>
 		{% for post in site.posts %}
 			<item>
 				<title>{{ post.title }}</title>

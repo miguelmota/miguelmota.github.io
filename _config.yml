@@ -1,3 +1,2 @@
-paginate: 1
-paginate_file: blog.html
+paginate: 10
 permalink: /post/:year/:month/:day/:title
