@@ -431,6 +431,9 @@ section.portfolio div.container {
 	-o-transition: box-shadow linear .3s;
 	transition: box-shadow linear .3s;
 }
+section.portfolio a.fancybox {
+	width: 500px;
+}
 section.portfolio div.container div.overlay {
 	position: absolute;
 	bottom: 0;
