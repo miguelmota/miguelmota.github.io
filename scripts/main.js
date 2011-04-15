@@ -105,6 +105,7 @@ $(window).scroll(function(){
 	}
 });
 var c = 0;
+var bc = 0;
 $(document).ajaxComplete(function(){
 	//var hash = window.location.hash.substr(2); //using pushstate, no longer neccessary
 	var path = window.location.pathname.substring(1);
@@ -127,15 +128,19 @@ $(document).ajaxComplete(function(){
 			break;
 	}
 	if(window.location.pathname.substr(1,4) == 'post'){
-		blogPage();
-		$('nav.main a#stream').removeClass('selected');
-		$('nav.main a#blog').addClass('selected');
+		while(bc == 0) {
+			blogPage();
+			$('nav.main a#stream').removeClass('selected');
+			$('nav.main a#blog').addClass('selected');
+			bc++;
+		}
 	}
 });
 $('nav.main a').live('click', function(){
 	//var domain = document.domain; //commented because of firefox bug
 	//if(document.domain == 'www.miguelmota.com') { //commented because of firefox bug
 		c = 0;
+		bc = 0;
 		var toLoad = $(this).attr('href')+' section.content';
 		//window.location.hash = '!'+$(this).attr('href').substr(1,$(this).attr('href').length); //using pushstate, no longer neccessary
 		$('section.content').fadeOut('fast',loadContent);
