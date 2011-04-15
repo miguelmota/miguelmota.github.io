@@ -435,6 +435,7 @@ function refreshStream(){
 	},30000);
 }
 function portfolioPage(){
+	/*//disabled temp. for testing b'c nav moves left
 	$('section.portfolio div.container').hover(function(){
 				jQuery('div.overlay', this).fadeOut(300);
 				$(this).css({
@@ -451,6 +452,7 @@ function portfolioPage(){
 					});
 		  }
 	);
+	*/
 	$('a.fancybox').fancybox({
 			'padding': 0,
 			'transitionIn': 'fade',
