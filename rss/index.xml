@@ -13,7 +13,7 @@ layout: default1
 				<description>{{ post.content | xml_escape }}</description>
 				<link>http://www.miguelmota.com{{ post.url }}</link>
 				<pubDate>{{ post.date }}</pubDate>
-			</item>si
+			</item>
 		{% endfor %}
 	</channel>
 </rss>
