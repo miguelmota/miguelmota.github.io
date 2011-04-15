@@ -415,17 +415,17 @@ section.stream ul.lastfm_tracks li span.date {
 /* /STREAM ============================================================ */
 /* CONTACT ============================================================ */
 section.about img {
-	width: 99%;
+	width: 95%;
 	height: auto;
 }
 /* /CONTACT =========================================================== */
 /* PORTFOLIO ========================================================== */
 section.portfolio div {
-	width: 99%;
+	width: 95%;
 }
 section.portfolio div.container {
 	position: relative;
-	width: 99%;
+	width: 95%;
 	height: 200px;
 	overflow: hidden;
 	-webkit-transition: -webkit-box-shadow linear .3s;
