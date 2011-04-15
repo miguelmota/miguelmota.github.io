@@ -68,7 +68,6 @@ div#wrap {
 	height: auto;
 	margin: 70px auto 0 auto;
 	word-wrap: break-word;
-	border: 1px solid #333;
 }
 a {
 	color: #007799;
@@ -195,7 +194,6 @@ nav.main {
 	position: fixed;
 	top: 70px;
 	z-index: 1000;
-	border: 1px solid #555;
 }
 nav.main a#logo img {
 	display: block;
@@ -239,11 +237,9 @@ nav.main a.selected {
 /* /NAVIGATION ======================================================= */
 /* CONTENT =========================================================== */
 section.content {
-	position: relative;
 	width: 650px;
 	min-height: 500px;
 	float: right;
-	border: 1px solid #444;
 }
 h1.title {
 	margin-bottom: 5px;
@@ -586,7 +582,6 @@ footer.main {
 	margin-left: 110px;
 	padding: 25px 0 15px 0;
 	clear: both;
-	border: 1px solid #666;
 }
 footer.main p {
 	font-size: 9px;
