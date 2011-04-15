@@ -120,9 +120,9 @@ $(document).ajaxComplete(function(){
 		case 'contact':
 			contactPage();
 			break;
-		//case 'blog': //commented because of testing
-			//blogPage();
-			//break;
+		case 'blog': 
+			blogPage();
+			break;
 		default:
 			break;
 	}
@@ -536,4 +536,5 @@ function loadSearch() {
 }
 function blogPage(){
 	loadSearch();
+	loadDisqus();
 }
