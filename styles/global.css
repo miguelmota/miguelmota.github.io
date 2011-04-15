@@ -579,7 +579,6 @@ div.post_footer p {
 /* /BLOG ============================================================== */
 /* FOOTER ============================================================= */
 footer.main {
-	display: none;
 	position: relative;
 	margin-left: 110px;
 	padding: 25px 0 15px 0;
