@@ -444,6 +444,10 @@ section.portfolio p.description {
 	position: relative;
 	margin: 0 0 25px 5px;
 }
+section.portfolio p.description span.date {
+	float: right;
+	color: #555;
+}
 section.portfolio p.description a.link {
 	font-size: 10px;
 }
