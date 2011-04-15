@@ -239,7 +239,6 @@ nav.main a.selected {
 section.content {
 	position: relative;
 	width: 650px;
-	min-height: 500px;
 	float: right;
 }
 h1.title {
