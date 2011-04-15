@@ -423,7 +423,7 @@ section.about img {
 /* PORTFOLIO ========================================================== */
 section.portfolio div.container {
 	position: relative;
-	width: 100%;
+	width: 70%;
 	height: 200px;
 	overflow: hidden;
 	-webkit-transition: -webkit-box-shadow linear .3s;
