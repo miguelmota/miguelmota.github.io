@@ -507,6 +507,7 @@ header.main {
 	position: relative;
 	width: auto;
 	height: auto;
+	margin-bottom: 5px;
 }
 p.description {
 	font-size: 10px;
