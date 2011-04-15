@@ -128,8 +128,9 @@ $(document).ajaxComplete(function(){
 	}
 	if(window.location.pathname.substr(1,4) == 'post'){
 		blogPage();
+		$('nav.main a#stream').removeClass('selected');
+		$('nav.main a#blog').addClass('selected');
 	}
-	alert(window.location.pathname.substr(1,4));
 });
 $('nav.main a').live('click', function(){
 	//var domain = document.domain; //commented because of firefox bug
