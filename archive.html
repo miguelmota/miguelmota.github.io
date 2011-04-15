@@ -3,21 +3,19 @@ layout: default
 title: Archive
 ---
 <section class='content archive'>
-	<h1 class='title'><a href='/about'>Miguel<span class='mota'>Mota</span><span class='slash'>/</span><span class='sub'>Archive</span></a></h1>
-<ul>
-  {% for post in site.posts %}
-
-    {% unless post.next %}
-      <h3>{{ post.date | date: '%Y' }}</h3>
-    {% else %}
-      {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
-      {% capture nyear %}{{ post.next.date | date: '%Y' }}{% endcapture %}
-      {% if year != nyear %}
-        <h3>{{ post.date | date: '%Y' }}</h3>
-      {% endif %}
-    {% endunless %}
-
-    <li>{{ post.date | date:"%b" }} <a href="{{ post.url }}">{{ post.title }}</a></li>
-  {% endfor %}
-</ul>
+	<h1 class='title'><a href='/archive'>Miguel<span class='mota'>Mota</span><span class='slash'>/</span><span class='sub'>Archive</span></a></h1>
+	<ul>
+		{% for post in site.posts %}
+	    	{% unless post.next %}
+	    		<strong>{{ post.date | date: '%Y' }}</strong>
+	    	{% else %}
+	      		{% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
+	     		{% capture nyear %}{{ post.next.date | date: '%Y' }}{% endcapture %}
+	      		{% if year != nyear %}
+	       			<strong>{{ post.date | date: '%Y' }}</strong>
+	      		{% endif %}
+	    	{% endunless %}
+	    	<li>{{ post.date | date:"%b" }} <a href='{{ post.url }}'>{{ post.title }}</a></li>
+		{% endfor %}
+	</ul>
 </section>
