@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: default1
 ---
 <?xml version='1.0' encoding='UTF-8'?>
 <rss version='2.0'>
@@ -12,7 +12,7 @@ layout: default
 				<title>{{ post.title }}</title>
 				<description>{{ post.content | xml_escape }}</description>
 				<link>http://www.miguelmota.com{{ post.url }}</link>
-			</item>
+			</item>si
 		{% endfor %}
 	</channel>
 </rss>
