@@ -423,7 +423,7 @@ section.about img {
 /* PORTFOLIO ========================================================== */
 section.portfolio div.container {
 	position: relative;
-	width: 70%;
+	width: 100%;
 	height: 200px;
 	overflow: hidden;
 	-webkit-transition: -webkit-box-shadow linear .3s;
@@ -451,6 +451,9 @@ section.portfolio p.description span.date {
 }
 section.portfolio p.description a.link {
 	font-size: 10px;
+}
+section.portfolio img {
+	display: none;
 }
 section.portfolio img.miggs {
 	position: absolute;
