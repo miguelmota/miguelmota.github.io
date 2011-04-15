@@ -126,6 +126,10 @@ $(document).ajaxComplete(function(){
 		default:
 			break;
 	}
+	if(window.location.pathname.substr(1,4) == 'post'){
+		blogPage();
+	}
+	alert(window.location.pathname.substr(1,4));
 });
 $('nav.main a').live('click', function(){
 	//var domain = document.domain; //commented because of firefox bug
