@@ -5,14 +5,16 @@ title: Blog
 <section class='content blog'>
 	{% include header.html %}
 	<div class='posti'>
-		{% for post in site.posts %}
-			<h3><a href='{{ post.url }}'>{{ post.title }}</a></h3>
-			{{ post.content }}
-			<div class='post_footer'>
-				<p>posted <a href='{{ post.url }}'>{{ post.date | date_to_string }}</a></p>
-		 			</div>
-			<br /><a class='dsq-comment-count' href="{{ post.url }}#disqus_thread">comments</a>
-		{% endfor %}
+		<div class='post'>
+			{% for post in site.posts %}
+				<h3><a href='{{ post.url }}'>{{ post.title }}</a></h3>
+				{{ post.content }}
+				<div class='post_footer'>
+					<p>posted <a href='{{ post.url }}'>{{ post.date | date_to_string }}</a></p>
+			 			</div>
+				<br /><a class='dsq-comment-count' href="{{ post.url }}#disqus_thread">comments</a>
+			{% endfor %}
+		</div>
 		<div class='view_archive'>
 			<a href='/archive'>view archive &#187;</a>
 		</div>
