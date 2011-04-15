@@ -135,6 +135,10 @@ $(document).ajaxComplete(function(){
 			bc++;
 		}
 	}
+	if(window.location.pathname.substr(1) == 'archive'){
+		$('nav.main a#stream').removeClass('selected');
+		$('nav.main a#blog').addClass('selected');
+	}
 });
 $('nav.main a').live('click', function(){
 	//var domain = document.domain; //commented because of firefox bug
