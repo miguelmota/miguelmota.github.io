@@ -12,7 +12,7 @@ layout: default1
 				<title>{{ post.title }}</title>
 				<description>{{ post.content | xml_escape }}</description>
 				<link>http://www.miguelmota.com{{ post.url }}</link>
-				<pubDate>{{ post.date }}</pubDate>
+				<pubDate>{{ post.date | date_to_string }}</pubDate>
 			</item>
 		{% endfor %}
 	</channel>
