@@ -237,6 +237,7 @@ nav.main a.selected {
 /* /NAVIGATION ======================================================= */
 /* CONTENT =========================================================== */
 section.content {
+	position: relative;
 	width: 650px;
 	min-height: 500px;
 	float: right;
@@ -415,17 +416,14 @@ section.stream ul.lastfm_tracks li span.date {
 /* /STREAM ============================================================ */
 /* CONTACT ============================================================ */
 section.about img {
-	width: 95%;
+	width: 100%;
 	height: auto;
 }
 /* /CONTACT =========================================================== */
 /* PORTFOLIO ========================================================== */
-section.portfolio div {
-	width: 95%;
-}
 section.portfolio div.container {
 	position: relative;
-	width: 95%;
+	width: 100%;
 	height: 200px;
 	overflow: hidden;
 	-webkit-transition: -webkit-box-shadow linear .3s;
@@ -437,7 +435,7 @@ section.portfolio div.container div.overlay {
 	position: absolute;
 	bottom: 0;
 	left: 0;
-	width: 95%;
+	width: 100%;
 	height: 100%;
 	background-color: #000;
 	opacity: .5;
@@ -458,27 +456,27 @@ section.portfolio img.miggs {
 	position: absolute;
 	top: -100px;
 	left: -300px;
-	width: 95%;
+	width: 250%;
 	height: auto;
 }
 section.portfolio img.ffirl {
 	position: absolute;
 	left: -300px;
-	width: 95%;
+	width: 300%;
 	height: auto;
 }
 section.portfolio img.dunstar_logo {
 	position: absolute;
 	top: -250px;
 	right: -375px;
-	width: 95%;
+	width: auto;
 	height: auto;
 }
 section.portfolio img.miguelmota_logo {
 	position: absolute;
 	top: -320px;
 	right: -160px;
-	width: 95%;
+	width: 116%;
 	height: auto;
 }
 /* /PORTFOLIO ========================================================= */
