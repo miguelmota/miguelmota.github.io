@@ -34,14 +34,6 @@
 		<script src='http://html5shiv.googlecode.com/svn/trunk/html5.js'></script>
 		<link href='/static/styles/ie.css' rel='stylesheet' />
 	<![endif]-->
-		<script src="http://www.google.com/jsapi?key=ABQIAAAAaPkBW3vge4odDUBtbC4e-xRutoCKHFl1g3ES_cmPf4BxqcVG3BR7pbnwzjWgqiKDxSEqSvzSUG2pww" type="text/javascript"></script>
-	<script src='//www.google.com/jsapi'></script>
-	<script src='scripts/main.min.js'></script>
-	  <script type="text/javascript">
-    $(function(){
-    	 $('a.js-pjax').pjax('#main');
-    });
-  </script>
 </head>
 <body>
 <div id='top'></div>
@@ -72,6 +64,9 @@
 	    })();
 	</script>
 	<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	<script src="http://www.google.com/jsapi?key=ABQIAAAAaPkBW3vge4odDUBtbC4e-xRutoCKHFl1g3ES_cmPf4BxqcVG3BR7pbnwzjWgqiKDxSEqSvzSUG2pww" type="text/javascript"></script>
+	<script src='//www.google.com/jsapi'></script>
+	<script src='scripts/main.min.js'></script>
 	<script>
 		$('#<decorator:getProperty property="meta.page" />').addClass('selected');
   		var _gaq = _gaq || [];
@@ -86,13 +81,5 @@
 	</script>
 	<noscript><div id='noscript'>please enable javascript</div></noscript>
 </div>
-	      <div class='tabs'>
-       <a href='/blog' class='js-pjax'>...</a>
-       <a href='/contact' class='js-pjax'>___</a>
-     </div>
-	  <div id='main'>
-	  
-     <div class='loader' style='display:none'><img src='/images/ajax_loader.gif'></div>
-   </div>
 </body>
 </html>
