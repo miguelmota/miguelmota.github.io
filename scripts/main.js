@@ -16,9 +16,11 @@ $(document).ready(function(){
 	//if(window.location.pathname == '') {
 		//streamPage();
 	//}
-	//if(window.location.hash == '#!') { //commented because pushstate, no longer necessary
-		//window.location = '/';
-	//}
+	if(typeof(window.history.pushState) != 'function'){
+		if(window.location.hash == '#!') {
+			window.location = '/';
+		}
+	}
 
 	streamPage();
 	$('nav.main a#stream').addClass('selected');
@@ -38,15 +40,17 @@ $(document).ready(function(){
 		$('nav.main a#stream').addClass('selected');
 	});
 	$('body').append("<div class='theTitle' style='display: none;'> &#8212; Miguel Mota | Freelance Web Developer</div>");
-	//if(window.location.hash){ //commented because pushstate, no longer necessary
-		//var domain = document.domain;
-		//if(domain == 'www.miguelmota.com') {
-			//loadPage();
-		//}
-	//}
-	//else {
-		//redirectPath();
-	//}
+	if(typeof(window.history.pushState) != 'function'){
+		if(window.location.hash){
+			//var domain = document.domain;  //commented because of firefox bug
+			//if(domain == 'www.miguelmota.com') {  //commented because of firefox bug
+				loadPage();
+			//}  //commented because of firefox bug
+		}
+		else {
+			redirectPath();
+		}
+	}
 	function loadPage(){
 		var toLoad = window.location.hash.substr(2)+' section.content';
 		window.location.hash = window.location.hash.substr(1);
@@ -57,25 +61,19 @@ $(document).ready(function(){
 		}
 		return false;
 	}
-	/*//commented because pushstate, no longer necessary
-	function redirectPath(){
-		//var domain = document.domain; //commented because of firefox bug
-		var pathname = window.location.pathname.substr(1);
-		//if(document.domain == 'www.miguelmota.com') { //commented because of firefox bug
-			switch(pathname){
-			case '':
-			case 'index':
-			case 'stream':
-			case 'portfolio':
-			case 'contact':
-			//case 'blog': //commented because of testing
-				window.location = './#!'+path;
-			default:
-				break;
-			}
-		//} //commented because of firefox bug
+	if(typeof(window.history.pushState) != 'function'){
+		function redirectPath(){
+			//var domain = document.domain; //commented because of firefox bug
+			var pathname = window.location.pathname.substr(1);
+			//if(document.domain == 'www.miguelmota.com') { //commented because of firefox bug
+			$('ul.nav li a').each(function(){
+				if($(this).attr('href') == pathname){
+					window.location = './#!'+path;
+				}
+			});
+			//} //commented because of firefox bug
+		}
 	}
-	*/
 	$(window).scroll(function () { 
 		var scrollTop = $(document).scrollTop();
 		scrollTop = parseInt(scrollTop);
@@ -109,8 +107,12 @@ $(window).scroll(function(){
 var c = 0;
 var bc = 0;
 $(document).ajaxComplete(function(){
-	//var hash = window.location.hash.substr(2); //using pushstate, no longer neccessary
-	var path = window.location.pathname.substring(1);
+	if(typeof(window.history.pushState) != 'function'){
+		var path = window.location.hash.substr(2);
+	}
+	else {
+		var path = window.location.pathname.substring(1);
+	}
 	switch(path){
 		case '':
 		case 'index':
@@ -148,7 +150,6 @@ $('nav.main a').live('click', function(){
 		c = 0;
 		bc = 0;
 		var toLoad = $(this).attr('href')+' section.content';
-		//window.location.hash = '!'+$(this).attr('href').substr(1,$(this).attr('href').length); //using pushstate, no longer neccessary
 		$('section.content').fadeOut('fast',loadContent);
 		$('div.loader').fadeIn('normal');
 		function loadContent(){
@@ -159,18 +160,23 @@ $('nav.main a').live('click', function(){
 			history.pushState(stateObj, "Title", $(this).attr('href'));
 		}
 		else{
-			alert('update your browser!!');
+			window.location.hash = '!'+$(this).attr('href').substr(1,$(this).attr('href').length);
 		}
 		return false;
 	//} //commented because of firefox bug
 });
 $('div.posti h3 a').live('click', function(){
 	var toLoad2 = $(this).attr('href')+' div.posti';
-	//window.location.hash = '!'+$(this).attr('href').substr(1,$(this).attr('href').length); //using pushstate, no longer neccessary
+
 	$('div.posti').fadeOut('fast',loadContent2);
 	$('div.loader').fadeIn('normal');
-	var stateObj2 = { foo2:  $(this).attr('href') };
-	history.pushState(stateObj2, "Title2", $(this).attr('href'));
+	if(typeof(window.history.pushState) == 'function'){
+		var stateObj2 = { foo2:  $(this).attr('href') };
+		history.pushState(stateObj2, "Title2", $(this).attr('href'));
+	}
+	else{
+		window.location.hash = '!'+$(this).attr('href').substr(1,$(this).attr('href').length);
+	}
 	var title2 = $(this).text()+$('div.theTitle').text();
 	document.title = title2;
 	function loadContent2(){
@@ -221,14 +227,19 @@ function textticker(){
 }
 function showNewContent(){
 	$('nav.main a').removeClass('selected');
-	//$('#'+window.location.hash.substr(2)).addClass('selected'); //using pushstate, no longer neccessary
+	if(typeof(window.history.pushState) != 'function'){
+		$('#'+window.location.hash.substr(2)).addClass('selected');
+	}
 	$('#'+window.location.pathname.substr(1)).addClass('selected');
 	$('section.content, footer.main').fadeIn('normal',hideLoader);
 	var title = $('span.sub').text()+$('div.theTitle').text();
 	document.title = title;
-	//if(window.location.hash == '#!'){ $('#'+window.location.hash.substr(2)).a
-		//document.title = theTitle;
-	//}
+	if(typeof(window.history.pushState) != 'function'){
+		if(window.location.hash == '#!'){
+			$('#'+window.location.hash.substr(2));
+			document.title = theTitle;
+		}
+	}
 }
 function hideLoader(){
 	$('div.loader').hide();
