@@ -103,6 +103,11 @@ $(window).scroll(function(){
 	if(window.pageYOffset < 200){
 		$('a.top').fadeOut(185);
 	}
+	
+	
+	
+	$('a[data-pjax]').pjax()
+	
 });
 var c = 0;
 var bc = 0;
