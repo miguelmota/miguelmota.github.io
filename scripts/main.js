@@ -106,7 +106,7 @@ $(window).scroll(function(){
 	
 	
 	
-	$('div#main a').pjax('#main').live('click', function(){
+	$('a').pjax('#main').live('click', function(){
 	     $(this).showLoader()
 	   });
 	
