@@ -37,12 +37,9 @@
 		<script src="http://www.google.com/jsapi?key=ABQIAAAAaPkBW3vge4odDUBtbC4e-xRutoCKHFl1g3ES_cmPf4BxqcVG3BR7pbnwzjWgqiKDxSEqSvzSUG2pww" type="text/javascript"></script>
 	<script src='//www.google.com/jsapi'></script>
 	<script src='scripts/main.min.js'></script>
-	 <script src="http://pjax.heroku.com/jquery.cookie.js"></script> 
-  <script src="http://pjax.heroku.com/pages.js"></script> 
 	  <script type="text/javascript">
     $(function(){
-      // pjax
-      $('a').pjax('#main');
+      $('div.tabs a').pjax('#main');
     });
   </script>
 </head>
