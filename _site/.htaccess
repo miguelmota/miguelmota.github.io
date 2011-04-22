@@ -1,0 +1,6 @@
+RewriteEngine On
+Options +FollowSymlinks
+rewritecond %{http_host} ^miguelmota.com [nc]
+rewriterule ^(.*)$ http://www.miguelmota.com/$1 [r=301,nc]
+RewriteCond %{HTTP_HOST} ^m\.miguelmota\.com
+RewriteRule ^(.*)$ /mobile/$1 [L]

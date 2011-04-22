@@ -1,0 +1,46 @@
+@charset 'utf-8';
+/*
+/---------------------------/
+//@Author: Miguel Mota
+//@website: www.miguelmota.com
+//@email: hello@miguelmota.com
+//@license: Feel free to use it, but keep these credits please!					
+/---------------------------/
+*/
+div.tooltip_container {
+	position: relative;
+	float: left;
+	width: 200px;
+	height: auto;
+}
+div.tooltip  {
+	visibility: hidden;
+	position: absolute;
+	top: -20px;
+	margin-left: -10px;
+	padding: 5px;
+	z-index: 10;
+	text-align: center;
+	font-size: 12px;
+	-moz-box-shadow: 1px 1px 3px #000;
+	-webkit-box-shadow: 1px 1px 3px #000;
+	box-shadow: 1px 1px 3px #000;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	background-color: #000;
+	color: #fff;
+	opacity: .8;
+}
+div.tooltip:after {
+	content: "";
+	display: block;
+	position: absolute;
+	bottom: -5px; /* value = - border-top-width - border-bottom-width */
+	left: 10px; /* controls horizontal position */
+	width: 0;
+	height: 0;
+	border-width: 5px 5px 0; /* vary these values to change the angle of the vertex */
+	border-style: solid;
+	border-color: #000 transparent;
+}

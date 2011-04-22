@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<rss version='2.0'>
+	<channel>
+		<title>Miguel Mota</title>
+		<description>Freelance Web Developer</description>
+		<link>http://www.miguelmota.com</link>
+		
+			<item>
+				<title>Hello World!</title>
+				<description>&lt;p&gt;This will be the best blog ever!&lt;/p&gt;</description>
+				<link>http://www.miguelmota.com/post/2011/03/30/hello-world</link>
+				<pubDate>30 Mar 2011</pubDate>
+			</item>
+		
+	</channel>
+</rss>
