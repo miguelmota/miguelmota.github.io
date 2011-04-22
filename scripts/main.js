@@ -104,12 +104,6 @@ $(window).scroll(function(){
 		$('a.top').fadeOut(185);
 	}
 	
-	
-	
-	$('a').pjax('#main').live('click', function(){
-	     $(this).showLoader()
-	   });
-	
 });
 var c = 0;
 var bc = 0;
