@@ -59,6 +59,7 @@ $(document).ready(function(){
 		function loadContent(){
 			$('section.content').load(toLoad,showNewContent);
 		}
+		alert(toLoad);
 		return false;
 	}
 	if(typeof(window.history.pushState) != 'function'){
