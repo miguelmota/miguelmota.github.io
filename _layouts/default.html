@@ -39,7 +39,9 @@
 	<script src='scripts/main.min.js'></script>
 	  <script type="text/javascript">
     $(function(){
-      $('div.tabs a').pjax('#main');
+    	 $('a.js-pjax').pjax('div#main', { timeout: null, error: function(xhr, err){
+    	     $('div#main').text('Something went wrong: ' + err)
+    	   })
     });
   </script>
 </head>
