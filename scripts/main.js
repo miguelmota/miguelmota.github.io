@@ -154,8 +154,13 @@ $('nav.main a').live('click', function(){
 		function loadContent(){
 			$('section.content').load(toLoad,showNewContent);
 		}
-		var stateObj = { foo:  $(this).attr('href') };
-		history.pushState(stateObj, "Title", $(this).attr('href'));
+		if(typeof(window.history.pushState) == 'function'){
+			var stateObj = { foo:  $(this).attr('href') };
+			history.pushState(stateObj, "Title", $(this).attr('href'));
+		}
+		else{
+			alert('update your browser!!');
+		}
 		return false;
 	//} //commented because of firefox bug
 });
