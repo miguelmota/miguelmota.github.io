@@ -106,7 +106,9 @@ $(window).scroll(function(){
 	
 	
 	
-	$('a[data-pjax]').pjax()
+	$('div#main a').pjax('#main').live('click', function(){
+	     $(this).showLoader()
+	   });
 	
 });
 var c = 0;
