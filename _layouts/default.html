@@ -40,7 +40,6 @@
 	  <script type="text/javascript">
     $(function(){
     	 $('a.js-pjax').pjax('div#main');
-    	   $('div#main').text('asdfsadf');
     });
   </script>
 </head>
@@ -87,5 +86,13 @@
 	</script>
 	<noscript><div id='noscript'>please enable javascript</div></noscript>
 </div>
+	      <div class='tabs'>
+       <a href='/blog' class='js-pjax'>...</a>
+       <a href='/contact' class='js-pjax'>___</a>
+     </div>
+	  <div id='main'>
+	  
+     <div class='loader' style='display:none'><img src='/images/ajax_loader.gif'></div>
+   </div>
 </body>
 </html>
