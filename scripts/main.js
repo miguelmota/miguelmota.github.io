@@ -104,10 +104,6 @@ $(window).scroll(function(){
 		$('a.top').fadeOut(185);
 	}
 	
-	 $('a.js-pjax').pjax('div#main', { timeout: null, error: function(xhr, err){
-	     $('div#main').text('Something went wrong: ' + err)
-	   })
-	   $('div#main').text('asdfsadf');
 	
 });
 var c = 0;
