@@ -44,7 +44,7 @@
 				<file name="plugins/validate/jquery.validate.min.js" />
 				<file name="plugins/shadowbox/shadowbox.js" />
 				<file name="plugins/fancybox/jquery.fancybox-1.3.2.pack.js" />
-				<file name="/plugins/pjax/jquery.pjax.js" />
+				<file name="plugins/pjax/jquery.pjax.js" />
 				<file name="scripts/main.js" />
 			</sources>
 		</jscomp>    
