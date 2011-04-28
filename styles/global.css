@@ -431,6 +431,10 @@ section.portfolio div.sort {
 section.portfolio div.sort a {
 	color: #005577;
 }
+section.portfolio div.sort a:hover,
+section.portfolio div.sort a:hover {
+	color: #007799;
+}
 section.portfolio div.sort a.selected {
 	color: #007799;
 }
