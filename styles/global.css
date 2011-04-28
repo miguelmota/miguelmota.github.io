@@ -420,6 +420,9 @@ section.about img {
 }
 /* /CONTACT =========================================================== */
 /* PORTFOLIO ========================================================== */
+section.portfolio h1.title {
+	display: inline;
+}
 section.portfolio div.container {
 	position: relative;
 	width: 100%;
