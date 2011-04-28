@@ -487,16 +487,16 @@ function refreshStream(){
 function portfolioPage(){
 	
 	$('section.portfolio a#all').live('click', function(){
-		$('section.portfolio div.identity, section.portfolio div.web').show();
+		$('section.portfolio div.identity, section.portfolio div.web').slideUp('fast');
 	});
 	
 	$('section.portfolio a#web').live('click', function(){
-		$('section.portfolio div.web').show();
+		$('section.portfolio div.web').slideUp('fast');
 		$('section.portfolio div.identity').slideUp('fast');
 	});
 	
 	$('section.portfolio a#identity').live('click', function(){
-		$('section.portfolio div.identity').show();
+		$('section.portfolio div.identity').slideUp('fast');
 		$('section.portfolio div.web').slideUp('fast');
 	});
 	
