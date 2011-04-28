@@ -489,6 +489,7 @@ function portfolioPage(){
 	$('section.portfolio a#all').live('click', function(){
 		$('section.portfolio div.identity, section.portfolio div.web').slideDown('fast');
 	});
+
 	
 	$('section.portfolio a#web').live('click', function(){
 		$('section.portfolio div.identity').slideUp('fast');
