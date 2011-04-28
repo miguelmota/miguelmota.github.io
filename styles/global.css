@@ -423,6 +423,11 @@ section.about img {
 section.portfolio h1.title {
 	display: inline;
 }
+section.portfolio div.sort {
+	float: right;
+	clear: right;
+	margin-top: 7px;
+}
 section.portfolio div.sort a.selected {
 	color: #005577;
 }
