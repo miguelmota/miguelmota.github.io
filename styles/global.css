@@ -426,7 +426,8 @@ section.portfolio h1.title {
 section.portfolio div.sort {
 	float: right;
 	clear: right;
-	margin-top: 7px;
+	margin-top: 10px;
+	font-size: 9px;
 }
 section.portfolio div.sort a {
 	color: #005577;
