@@ -423,6 +423,9 @@ section.about img {
 section.portfolio h1.title {
 	display: inline;
 }
+section.portfolio div.sort a.selected {
+	color: #005577;
+}
 section.portfolio div.container {
 	position: relative;
 	width: 100%;
