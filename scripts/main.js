@@ -297,11 +297,11 @@ function streamPage(){
 				    	    $('ul.facebook_status').append("<li class='status'>&#187; <span class='post'>"+post+"</span> <span class='date'><a href='http://www.facebook.com/miguel.mota2/posts/"+post_id+"'>"+niceTime(date)+"</a></span></li>");
 				    	    break;
 			    	  	case 'link':
-			    	  		if(post == ''){
-			    	  			$('ul.facebook_status').append("<li class='status'>&#187; Link: <a href='"+link+"'>"+name+"</a></span> <span class='date'><a href='http://www.facebook.com/miguel.mota2/posts/"+post_id+"'>"+niceTime(date)+"</a></span></li>");
+			    	  		if(post){
+					    	    $('ul.facebook_status').append("<li class='status'>&#187; Link: <span class='post'>"+post+" <a href='"+link+"'>"+name+"</a></span> <span class='date'><a href='http://www.facebook.com/miguel.mota2/posts/"+post_id+"'>"+niceTime(date)+"</a></span></li>");
 			    	  		}
 			    	  		else {
-					    	    $('ul.facebook_status').append("<li class='status'>&#187; Link: <span class='post'>"+post+" <a href='"+link+"'>"+name+"</a></span> <span class='date'><a href='http://www.facebook.com/miguel.mota2/posts/"+post_id+"'>"+niceTime(date)+"</a></span></li>");
+			    	  			$('ul.facebook_status').append("<li class='status'>&#187; Link: <a href='"+link+"'>"+name+"</a></span> <span class='date'><a href='http://www.facebook.com/miguel.mota2/posts/"+post_id+"'>"+niceTime(date)+"</a></span></li>");
 			    	  		}
 				    	    break;
 			    	  	case 'video':
@@ -485,6 +485,21 @@ function refreshStream(){
 	},30000);
 }
 function portfolioPage(){
+	
+	$('section.portfolio a#all').live('click', function(){
+		$('section.portfolio div.identity, section.portfolio div.web').show();
+	});
+	
+	$('section.portfolio a#web').live('click', function(){
+		$('section.portfolio div.web').show();
+		$('section.portfolio div.identity').slideUp('fast');
+	});
+	
+	$('section.portfolio a#identity').live('click', function(){
+		$('section.portfolio div.identity').show();
+		$('section.portfolio div.web').slideUp('fast');
+	});
+	
 	$('section.portfolio div.container').hover(function(){
 				jQuery('div.overlay', this).fadeOut(300);
 				$(this).css({

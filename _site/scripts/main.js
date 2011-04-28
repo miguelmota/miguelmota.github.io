@@ -485,6 +485,21 @@ function refreshStream(){
 	},30000);
 }
 function portfolioPage(){
+	
+	$('section.portfolio a#all').live('click', function(){
+		$('section.portfolio div.identity, section.portfolio div.web').show();
+	});
+	
+	$('section.portfolio a#web').live('click', function(){
+		$('section.portfolio div.web').show();
+		$('section.portfolio div.identity').slideUp('fast');
+	});
+	
+	$('section.portfolio a#identity').live('click', function(){
+		$('section.portfolio div.identity').show();
+		$('section.portfolio div.web').slideUp('fast');
+	});
+	
 	$('section.portfolio div.container').hover(function(){
 				jQuery('div.overlay', this).fadeOut(300);
 				$(this).css({
