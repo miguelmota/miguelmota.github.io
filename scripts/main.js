@@ -32,6 +32,25 @@ $(document).ready(function(){
 		if($(this).attr('href') == pathname){
 			$('nav.main a#stream').removeClass('selected');
 			$(this).addClass('selected');
+			
+			switch(pathname){
+			case '':
+			case 'index':
+			case 'stream':
+				streamPage();
+				break;
+			case 'portfolio':
+				portfolioPage();
+				break;
+			case 'contact':
+				contactPage();
+				break;
+			case 'blog': 
+				blogPage();
+				break;
+			default:
+				break;
+		}
 		}
 	});
 
