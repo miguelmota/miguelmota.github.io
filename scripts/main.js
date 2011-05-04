@@ -32,7 +32,6 @@ $(document).ready(function(){
 		if($(this).attr('href') == pathname){
 			$('nav.main a#stream').removeClass('selected');
 			$(this).addClass('selected');
-			alert(pathname.substr(1));
 			switch(pathname.substr(1)){
 			case '':
 			case 'index':
@@ -189,7 +188,8 @@ $('nav.main a').live('click', function(){
 			history.pushState(stateObj, "Title", $(this).attr('href'));
 		}
 		else{
-			window.location.hash = '!'+$(this).attr('href').substr(1,$(this).attr('href').length);
+			//window.location.hash = '!'+$(this).attr('href').substr(1,$(this).attr('href').length); //won't load for some reason
+			window.location = $(this).attr('href');
 		}
 		return false;
 	//} //commented because of firefox bug
