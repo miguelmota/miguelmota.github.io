@@ -182,7 +182,7 @@ var bc = 0;
 
 function loadPage(){
 	
-	var toLoad = '/'+window.location.hash.substr(2)+' section.content';
+	var toLoad = '/'+window.location.hash.substr(1)+' section.content';
 	//window.location.hash = window.location.hash.substr(1);
 	$('section.content').fadeOut('fast',loadContent);
 	$('div.loader').fadeIn('normal');
