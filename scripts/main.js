@@ -32,8 +32,8 @@ $(document).ready(function(){
 		if($(this).attr('href') == pathname){
 			$('nav.main a#stream').removeClass('selected');
 			$(this).addClass('selected');
-			
-			switch(pathname){
+			alert(pathname.substr(1));
+			switch(pathname.substr(1)){
 			case '':
 			case 'index':
 			case 'stream':
