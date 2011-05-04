@@ -64,29 +64,33 @@ $(document).ready(function(){
 		}
 	});
 	
-	//
+	//append title
 	$('body').append("<div class='theTitle' style='display: none;'> &#8212; Miguel Mota | Freelance Web Developer</div>");
+	
+	//load content if pushSate not supported
 	if(typeof(window.history.pushState) != 'function'){
 		if(window.location.hash){
-			//var domain = document.domain;  //commented because of firefox bug
-			//if(domain == 'www.miguelmota.com') {  //commented because of firefox bug
 				loadPage();
-			//}  //commented because of firefox bug
 		}
 		else {
 			redirectPath();
 		}
 	}
+	
 	function loadPage(){
+		
 		var toLoad = '/'+window.location.hash.substr(2)+' section.content';
 		window.location.hash = window.location.hash.substr(1);
 		$('section.content').fadeOut('fast',loadContent);
 		$('div.loader').fadeIn('normal');
+		alert(toLoad);
 		function loadContent(){
 			$('section.content').load(toLoad,showNewContent);
 		}
 		return false;
 	}
+	
+	
 	if(typeof(window.history.pushState) != 'function'){
 		function redirectPath(){
 			//var domain = document.domain; //commented because of firefox bug
@@ -110,12 +114,8 @@ $(document).ready(function(){
 			//} //commented because of firefox bug
 		}
 	}
-	$(window).scroll(function () { 
-		var scrollTop = $(document).scrollTop();
-		scrollTop = parseInt(scrollTop);
-		var offset = topYloc+scrollTop+'px';  
-		$('a.top').animate({top:offset},{duration:500,queue:false});
-	});
+	
+	//back to top smooth scroll effect
 	$('a[href*=#]').click(function() {
 		if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
 		&& location.hostname == this.hostname) {
@@ -128,9 +128,19 @@ $(document).ready(function(){
             }
         }
     });
+	$(window).scroll(function () { 
+		var scrollTop = $(document).scrollTop();
+		scrollTop = parseInt(scrollTop);
+		var offset = topYloc+scrollTop+'px';  
+		$('a.top').animate({top:offset},{duration:500,queue:false});
+	});
 	topYloc = parseInt($('a.top').css('top').substring(0,$('a.top').css('top').indexOf('px')));
+	
 });
+
 $(window).scroll(function(){
+	
+	//toggle back to top link on scroll
 	if(window.pageYOffset >= 200){
 		$('a.top').fadeIn(600);
 	}
@@ -138,8 +148,8 @@ $(window).scroll(function(){
 		$('a.top').fadeOut(185);
 	}
 	
-	
 });
+
 $(document).ajaxComplete(function(){
 	if(typeof(window.history.pushState) != 'function'){
 		var path2 = window.location.hash.substr(2);
