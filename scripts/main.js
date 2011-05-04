@@ -27,7 +27,7 @@ $(document).ready(function(){
 	}
 	
 	//initialize text ticker
-	textticker();
+	//textticker();
 	
 	//initialize stream
 	streamPage();
@@ -244,13 +244,15 @@ $('div.posti h3 a').live('click', function(){
 	return false;
 });
 
+var position = 0;
+var length = 'portfolio'.length;
 function textticker(){
 	
-	$('a#stream').text('stream'.substring(0,0));
-	$('a#about').text('about'.substring(0,0));
-	$('a#portfolio').text('portfolio'.substring(0,0));
-	$('a#contact').text('contact'.substring(0,0));
-	$('a#blog').text('blog'.substring(0,0));
+	$('a#stream').text('stream'.substring(0,position));
+	$('a#about').text('about'.substring(0,position));
+	$('a#portfolio').text('portfolio'.substring(0,position));
+	$('a#contact').text('contact'.substring(0,position));
+	$('a#blog').text('blog'.substring(0,position));
 	
 	if(position++ == 8){
 		setTimeout('textticker()',1000);
