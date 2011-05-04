@@ -1,4 +1,6 @@
 $(document).ready(function(){
+	
+	//display mobile link if window is 640px or less
 	if(window.innerWidth <= 640){
 		$('div#wrap').prepend("<a id='mobile_bar' href='/mobile'>view mobile site</a><a id='mobile_close' href='javascript:void(0);'>x</a>");
 		$('a#mobile_close').live('click', function(){
@@ -6,50 +8,61 @@ $(document).ready(function(){
 			$('a#mobile_bar').slideUp('normal');
 		});
 	}
-	$('div#ie a#close').click(function(){
-		$('div#ie').slideUp('normal');
-	});
+	
+	//display ie message
 	$('body').fadeIn(650, function(){
 		$('div#ie').slideDown('slow');
 	});
+	
+	//close ie message
+	$('div#ie a#close').click(function(){
+		$('div#ie').slideUp('normal');
+	});
+
 	//textticker(); //commented because of firefix bug
 	//if(window.location.pathname == '') {
 		//streamPage();
 	//}
+	
+	//redirect to homepage if window location alone is #!
 	if(typeof(window.history.pushState) != 'function'){
 		if(window.location.hash == '#!') {
 			window.location = '/';
 		}
 	}
-
+	
+	//initialize stream
 	streamPage();
 	$('nav.main a#stream').addClass('selected');
 	
 	
-	// check pathname and add selected class to nav link
+	//check pathname and add selected class to nav link
 	var pathname = window.location.pathname;
 	$('ul.nav li a').each(function(){
 		if($(this).attr('href') == pathname){
 			$('nav.main a#stream').removeClass('selected');
 			$(this).addClass('selected');
-			switch(pathname.substr(1)){
-			case '':
-			case 'index':
-			case 'stream':
-				streamPage();
-				break;
-			case 'portfolio':
-				portfolioPage();
-				break;
-			case 'contact':
-				contactPage();
-				break;
-			case 'blog': 
-				blogPage();
-				break;
-			default:
-				break;
-		}
+			
+			//run appropriate function
+			switch($(this).attr('href').substr(1)){
+				case '':
+				case 'index':
+				case 'stream':
+					streamPage();
+					break;
+				case 'portfolio':
+					portfolioPage();
+					break;
+				case 'contact':
+					contactPage();
+					break;
+				case 'blog': 
+					blogPage();
+					break;
+				default:
+					break;
+			}
+			
 		}
 	});
 
@@ -132,31 +145,6 @@ $(window).scroll(function(){
 	
 	
 });
-var c = 0;
-var bc = 0;
-var niceTime = (function(){
-	    var ints = {
-	        second: 1,
-	        minute: 60,
-	        hour: 3600,
-	        day: 86400,
-	        week: 604800,
-	        month: 2592000,
-	        year: 31536000
-	    };
-	    return function(time){
-	        time = +new Date(time);
-	        var gap = ((+new Date()) - time) / 1000,
-	            amount, measure;
-	        for (var i in ints){
-	            if (gap > ints[i]){ measure = i; }
-	        }
-	        amount = gap / ints[measure];
-	        amount = gap > ints.day ? (Math.round(amount)) : Math.round(amount);
-	        amount += ' ' + measure + (amount > 1 ? 's' : '') + ' ago';			    	  	 
-	        return amount;
-	    };
-	})();
 $(document).ajaxComplete(function(){
 	if(typeof(window.history.pushState) != 'function'){
 		var path2 = window.location.hash.substr(2);
@@ -195,6 +183,36 @@ $(document).ajaxComplete(function(){
 		$('nav.main a#blog').addClass('selected');
 	}
 });
+
+
+var c = 0;
+var bc = 0;
+
+//convert UTC time to niceTime, ie. 2 hours ago
+var niceTime = (function(){
+	    var ints = {
+	        second: 1,
+	        minute: 60,
+	        hour: 3600,
+	        day: 86400,
+	        week: 604800,
+	        month: 2592000,
+	        year: 31536000
+	    };
+	    return function(time){
+	        time = +new Date(time);
+	        var gap = ((+new Date()) - time) / 1000,
+	            amount, measure;
+	        for (var i in ints){
+	            if (gap > ints[i]){ measure = i; }
+	        }
+	        amount = gap / ints[measure];
+	        amount = gap > ints.day ? (Math.round(amount)) : Math.round(amount);
+	        amount += ' ' + measure + (amount > 1 ? 's' : '') + ' ago';			    	  	 
+	        return amount;
+	    };
+	})();
+
 $('nav.main a').live('click', function(){
 	//var domain = document.domain; //commented because of firefox bug
 	//if(document.domain == 'www.miguelmota.com') { //commented because of firefox bug
@@ -217,6 +235,7 @@ $('nav.main a').live('click', function(){
 		return false;
 	//} //commented because of firefox bug
 });
+
 $('div.posti h3 a').live('click', function(){
 	var toLoad2 = $(this).attr('href')+' div.posti';
 
@@ -293,12 +312,19 @@ function showNewContent(){
 		}
 	}
 }
+
 function hideLoader(){
 	$('div.loader').hide();
 }
+
 function streamPage(){
+	
+	//initialize mtip
 	$('.mtip').mtip();
+	
 	while(c == 0){
+		
+		//Facebook stream
 		$('div.facebook img.loader').css('display','block');
 		$.getJSON('https://graph.facebook.com/miguel.mota2/feed?limit=3&callback=?', 
 				function(json){
@@ -333,6 +359,8 @@ function streamPage(){
 					$('div.facebook img.loader').css('display','none');
 				}
 		);
+		
+		//Twitter stream
 		$('div.twitter img.loader').css('display','block');
 		$.getJSON('http://twitter.com/status/user_timeline/miguel_mota.json?&count=5&callback=?', 
 				function(data){
@@ -348,6 +376,8 @@ function streamPage(){
 					$('div.twitter img.loader').css('display','none');
 				}
 		);
+		
+		//Tumblr stream
 		$('div.tumblr img.loader').css('display','block');
 		$.getJSON('http://miguelmota.tumblr.com/api/read/json?num=3&callback=?', 
 				function(data){
@@ -361,6 +391,8 @@ function streamPage(){
 					  $('div.tumblr img.loader').css('display','none');
 				  }
 		);
+		
+		//Delicious stream
 		$('div.delicious img.loader').css('display','block');
 		$.getJSON('http://feeds.delicious.com/v2/json/miguelmota/?count=3&callback=?', 
 				function(data){
@@ -373,6 +405,8 @@ function streamPage(){
 					$('div.delicious img.loader').css('display','none');
 			}
 		);
+		
+		//Last.fm stream
 		$('div.lastfm img.loader').css('display','block');
 		$.getJSON('http://ws.audioscrobbler.com/2.0/?method=user.getRecentTracks&user=miguel_mota&api_key=b25b959554ed76058ac220b7b2e0a026&format=json&limit=5&callback=?', 
 				function(data){       
@@ -386,6 +420,8 @@ function streamPage(){
 					$('div.lastfm img.loader').css('display','none');
 				}
 		);
+		
+		//Wakoopa stream
 		$('div.wakoopa img.loader').css('display','block');
 		$.getJSON('http://api.wakoopa.com/miguelmota/recently_used.json?limit=3&callback=?', 
 			function wakoopaApi(data){
@@ -403,23 +439,29 @@ function streamPage(){
 		c++
 		refreshStream();
 	}
+	
+	//refresh stream page every 30 seconds
+	function refreshStream(){
+		setTimeout(function(){
+			if(window.location.pathname.substr(1) == 'stream' || window.location.pathname.substr(1) == 'index' || window.location.pathname == ''){
+				$('a#stream').trigger('click');
+			}
+		},30000);
+	}
+	
 }
-function refreshStream(){
-	setTimeout(function(){
-		if(window.location.pathname.substr(1) == 'stream' || window.location.pathname.substr(1) == 'index' || window.location.pathname == ''){
-			$('a#stream').trigger('click');
-		}
-	},30000);
-}
+
+
 function portfolioPage(){
 	
+	//show all work with effect
 	$('section.portfolio div.sort a#all').live('click', function(){
 		$('section.portfolio div.sort a').removeClass('selected');
 		$(this).addClass('selected');
 		$('section.portfolio div.identity, section.portfolio div.web').slideDown('fast');
 	});
 
-	
+	//show web work with effect 
 	$('section.portfolio div.sort a#web').live('click', function(){
 		$('section.portfolio div.sort a').removeClass('selected');
 		$(this).addClass('selected');
@@ -427,6 +469,7 @@ function portfolioPage(){
 		$('section.portfolio div.web').slideDown('fast');
 	});
 	
+	//show identity work with effect
 	$('section.portfolio div.sort a#identity').live('click', function(){
 		$('section.portfolio div.sort a').removeClass('selected');
 		$(this).addClass('selected');
@@ -434,6 +477,7 @@ function portfolioPage(){
 		$('section.portfolio div.identity').slideDown('fast');
 	});
 	
+	//hover glow effect
 	$('section.portfolio div.container').hover(function(){
 				jQuery('div.overlay', this).fadeOut(300);
 				$(this).css({
@@ -450,6 +494,8 @@ function portfolioPage(){
 					});
 		  }
 	);
+	
+	//initialize fancybox
 	$('a.fancybox').fancybox({
 			'padding': 0,
 			'transitionIn': 'fade',
@@ -458,74 +504,93 @@ function portfolioPage(){
 			'speedOut': 200, 
 			'overlayColor': '#000'
 	});
+	
 }
+
 function contactPage(){
+	
+	//create method to validate name
 	$('form.contact_form a.submit').live('click', function(){
 		$.validator.addMethod('namecheck', function(value, element){
 			return this.optional(element) || /^[a-zA-Z]+?\s?[a-zA-Z]+?\s?[a-zA-Z]+$/.test(value);
-		});
-		$('form.contact_form').validate({
-			rules: {
-				name: {
-					namecheck: true,
-					required: true
-				},
-				email: {
-					required: true,
-					email: true
-				},
-					message: {
-					required: true,
-					minlength: 10
-				}
+	});
+		
+	//validate contact form
+	$('form.contact_form').validate({
+		rules: {
+			name: {
+				namecheck: true,
+				required: true
 			},
-			messages: {
-				name: {
-					namecheck: 'invalid',
-					required: 'required'
-				},
-				email: {
-					required: 'required',
-					email: 'invalid'
-				},
-				message: 'required',
-				minlength: 'required'
-				},
-			onkeyup: true,
-			debug: true
+			email: {
+				required: true,
+				email: true
+			},
+				message: {
+				required: true,
+				minlength: 10
+			}
+		},
+		messages: {
+			name: {
+				namecheck: 'invalid',
+				required: 'required'
+			},
+			email: {
+				required: 'required',
+				email: 'invalid'
+			},
+			message: 'required',
+			minlength: 'required'
+			},
+		onkeyup: true,
+		debug: true
+	});
+	
+	//if validates to true, then submit it
+	if ($('form.contact_form').valid() == true){						  
+		var str = $('form.contact_form').serialize();
+		$.ajax({
+			type: 'post',
+			url: 'http://miguelmota.webuda.com/contact/mailer.php',
+			data: str,
+			success: function(){
+				success();
+			},
+			error: function(){
+				success();
+			}
 		});
-		if ($('form.contact_form').valid() == true){						  
-			var str = $('form.contact_form').serialize();
-			$.ajax({
-				type: 'post',
-				url: 'http://miguelmota.webuda.com/contact/mailer.php',
-				data: str,
-				success: function(){
-					success();
-				},
-				error: function(){
-					success();
-				}
-			});
-			return false;
-		}
-		else
-			return false;
-		});
-		function success(){
-			$('form.contact_form').slideUp(300);
-			setTimeout(function(){
-				$('form.contact_form').html('<p>Thank you.<br />Your message has been successfully sent!<br />I will get in touch with you soon.</p>').fadeIn(1200);	
-			}, 300);
-		}
+		return false;
+	}
+	else
+		return false;
+	});
+	
+	//hide contact form and display thank you message
+	function success(){
+		$('form.contact_form').slideUp(300);
+		setTimeout(function(){
+			$('form.contact_form').html('<p>Thank you.<br />Your message has been successfully sent!<br />I will get in touch with you soon.</p>').fadeIn(1200);	
+		}, 300);
+	}
+	
 }
-google.load('search', '1', {language : 'en'});
-function loadSearch() {
-  var customSearchControl = new google.search.CustomSearchControl('013110027163283765539:a-en5rcxdcu');
-  customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
-  customSearchControl.draw('cse');
-}
+
 function blogPage(){
+	
+	//initialize Google Search
 	loadSearch();
+	
+	//initialize Disqus
 	loadDisqus();
+	
+}
+
+//load Google Search function
+google.load('search', '1', {language : 'en'});
+function loadSearch(){
+	var customSearchControl = new google.search.CustomSearchControl('013110027163283765539:a-en5rcxdcu');
+	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	customSearchControl.draw('cse');
 }
