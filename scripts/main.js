@@ -246,11 +246,11 @@ $('div.posti h3 a').live('click', function(){
 
 function textticker(){
 	
-	$('a#stream').text('stream'.substr(0));
-	$('a#about').text('about'.substr(0));
-	$('a#portfolio').text('portfolio'.substr(0));
-	$('a#contact').text('contact'.substr(0));
-	$('a#blog').text('blog'.substr(0));
+	$('a#stream').text('stream'.substring(0,0));
+	$('a#about').text('about'.substring(0,0));
+	$('a#portfolio').text('portfolio'.substring(0,0));
+	$('a#contact').text('contact'.substring(0,0));
+	$('a#blog').text('blog'.substring(0,0));
 	
 	if(position++ == 8){
 		setTimeout('textticker()',1000);
