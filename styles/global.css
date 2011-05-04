@@ -261,11 +261,15 @@ h1.title span.sub {
 	margin-left: -2px;
 	font-family: klavika-Light, Helvetica, Arial, sans-serif;	
 }
-div.loader {
+div.loading {
 	display: none;
 	position: absolute;
 	top: 25%;
 	left: 40%;
+	width: 46px;
+	height: 35px;
+}
+div.loader {
 	width: 16px;
 	height: 16px;
 	background: url('../images/ajax_loader.gif') no-repeat 0 0;

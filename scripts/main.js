@@ -110,7 +110,7 @@ $(document).ajaxComplete(function(){
 	if(typeof(window.history.pushState) != 'function'){
 		var path2 = window.location.hash.substr(2);
 	}
-	else {
+	else{
 		var path2 = window.location.pathname.substring(1);
 	}
 	switch(path2){
@@ -157,7 +157,7 @@ function loadPage(){
 	var toLoad = '/'+window.location.hash.substr(12)+' section.content';
 	//window.location.hash = window.location.hash.substr(1);
 	$('section.content').fadeOut('fast',loadContent);
-	$('div.loader').fadeIn('normal');
+	$('div.loading').fadeIn('normal');
 	function loadContent(){
 		$('section.content').load(toLoad, showNewContent);
 	}
@@ -191,13 +191,11 @@ var niceTime = (function(){
 	})();
 
 $("nav.main a:not('#logo')").live('click', function(){
-	//var domain = document.domain; //commented because of firefox bug
-	//if(document.domain == 'www.miguelmota.com') { //commented because of firefox bug
 		c = 0;
 		bc = 0;
 		var toLoad = $(this).attr('href')+' section.content';
 		$('section.content').fadeOut('fast',loadContent);
-		$('div.loader').fadeIn('normal');
+		$('div.loading').fadeIn('normal');
 		function loadContent(){
 			$('section.content').load(toLoad,showNewContent);
 		}
@@ -210,14 +208,13 @@ $("nav.main a:not('#logo')").live('click', function(){
 			window.location = $(this).attr('href');
 		}
 		return false;
-	//} //commented because of firefox bug
 });
 
 $('div.posti h3 a').live('click', function(){
 	var toLoad2 = $(this).attr('href')+' div.posti';
 
 	$('div.posti').fadeOut('fast',loadContent2);
-	$('div.loader').fadeIn('normal');
+	$('div.loading').fadeIn('normal');
 	if(typeof(window.history.pushState) == 'function'){
 		var stateObj2 = { foo2:  $(this).attr('href') };
 		history.pushState(stateObj2, "Title2", $(this).attr('href'));
@@ -257,7 +254,7 @@ function textticker(){
 	if(position++ == 8){
 		setTimeout('textticker()',1000);
 	} 
-	else {
+	else{
 		setTimeout('textticker()',60);
 	}
 	
@@ -270,7 +267,7 @@ function showNewContent(){
 	}
 	$('#'+window.location.pathname.substr(1)).addClass('selected');
 	$('section.content, footer.main').fadeIn('normal',hideLoader);
-	var title = $('span.sub').text()+$('div.theTitle').text();
+	var title = $('h1.title span.sub').text()+$('div.theTitle').text();
 	document.title = title;
 	if(typeof(window.history.pushState) != 'function'){
 		if(window.location.hash == '#!'){
@@ -281,7 +278,7 @@ function showNewContent(){
 }
 
 function hideLoader(){
-	$('div.loader').hide();
+	$('div.loading').hide();
 }
 
 function streamPage(){
@@ -312,7 +309,7 @@ function streamPage(){
 			    	  		if(post){
 					    	    $('ul.facebook_status').append("<li class='status'>&#187; Link: <span class='post'>"+post+" <a href='"+link+"'>"+name+"</a></span> <span class='date'><a href='http://www.facebook.com/miguel.mota2/posts/"+post_id+"'>"+niceTime(date)+"</a></span></li>");
 			    	  		}
-			    	  		else {
+			    	  		else{
 			    	  			$('ul.facebook_status').append("<li class='status'>&#187; Link: <a href='"+link+"'>"+name+"</a></span> <span class='date'><a href='http://www.facebook.com/miguel.mota2/posts/"+post_id+"'>"+niceTime(date)+"</a></span></li>");
 			    	  		}
 				    	    break;
