@@ -2,12 +2,12 @@
 * {
 	opacity: none;	
 }
-section#portfolio div.container div.overlay {
+section.portfolio div.container div.overlay {
 	display: none !important;
 }
-section#portfolio div.container {
+section.portfolio div.container {
 	border: 1px solid #999;
 }
-section#portfolio div.container:hover {
+section.portfolio div.container:hover {
 	border-color: #007799;
 }
