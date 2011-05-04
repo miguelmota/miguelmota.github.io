@@ -245,36 +245,27 @@ $('div.posti h3 a').live('click', function(){
 	}
 	return false;
 });
-function loadDisqus(){
-    var disqus_shortname = 'miguelmota';
-    var disqus_url = 'http://wwww.miguelmota.com/{{ page.url }}';
-    //comment box
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-    //comment count
-    (function () {
-        var s = document.createElement('script'); s.async = true;
-        s.type = 'text/javascript';
-        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
-        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('body')[0]).appendChild(s);
-    }());
-}
-var position = 0;
-var length = 'portfolio'.length;
+
 function textticker(){
+	
+	var position = 0;
+	var length = 'portfolio'.length;
+	
 	$('a#stream').text('stream'.substring(0,position));
 	$('a#about').text('about'.substring(0,position));
 	$('a#portfolio').text('portfolio'.substring(0,position));
 	$('a#contact').text('contact'.substring(0,position));
 	$('a#blog').text('blog'.substring(0,position));
+	
 	if(position++ == length){
 		setTimeout('textticker()',1000);
-	} else
+	} 
+	else {
 		setTimeout('textticker()',60);
+	}
+	
 }
+
 function showNewContent(){
 	$('nav.main a').removeClass('selected');
 	if(typeof(window.history.pushState) != 'function'){
@@ -566,6 +557,27 @@ function blogPage(){
 	
 }
 
+function loadDisqus(){
+	
+    var disqus_shortname = 'miguelmota';
+    var disqus_url = 'http://wwww.miguelmota.com/{{ page.url }}';
+    
+    //comment box
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    
+    //comment count
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('body')[0]).appendChild(s);
+    }());
+}
+
 //load Google Search function
 google.load('search', '1', {language : 'en'});
 function loadSearch(){
@@ -573,3 +585,4 @@ function loadSearch(){
 	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
 	customSearchControl.draw('cse');
 }
+
