@@ -266,8 +266,6 @@ div.loading {
 	position: absolute;
 	top: 25%;
 	left: 40%;
-	width: 46px;
-	height: 35px;
 }
 div.loader {
 	width: 16px;
