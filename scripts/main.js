@@ -134,6 +134,29 @@ $(window).scroll(function(){
 });
 var c = 0;
 var bc = 0;
+var niceTime = (function(){
+	    var ints = {
+	        second: 1,
+	        minute: 60,
+	        hour: 3600,
+	        day: 86400,
+	        week: 604800,
+	        month: 2592000,
+	        year: 31536000
+	    };
+	    return function(time){
+	        time = +new Date(time);
+	        var gap = ((+new Date()) - time) / 1000,
+	            amount, measure;
+	        for (var i in ints){
+	            if (gap > ints[i]){ measure = i; }
+	        }
+	        amount = gap / ints[measure];
+	        amount = gap > ints.day ? (Math.round(amount)) : Math.round(amount);
+	        amount += ' ' + measure + (amount > 1 ? 's' : '') + ' ago';			    	  	 
+	        return amount;
+	    };
+	})();
 $(document).ajaxComplete(function(){
 	if(typeof(window.history.pushState) != 'function'){
 		var path2 = window.location.hash.substr(2);
@@ -287,30 +310,7 @@ function streamPage(){
 						var name = fb.name;
 						var caption = fb.caption;
 						var description = fb.description;
-			    	  	var date = new Date(fb.created_time).toUTCString();
-			    	  	var niceTime = (function(){
-			    	  	    var ints = {
-			    	  	        second: 1,
-			    	  	        minute: 60,
-			    	  	        hour: 3600,
-			    	  	        day: 86400,
-			    	  	        week: 604800,
-			    	  	        month: 2592000,
-			    	  	        year: 31536000
-			    	  	    };
-			    	  	    return function(time){
-			    	  	        time = +new Date(time);
-			    	  	        var gap = ((+new Date()) - time) / 1000,
-			    	  	            amount, measure;
-			    	  	        for (var i in ints){
-			    	  	            if (gap > ints[i]){ measure = i; }
-			    	  	        }
-			    	  	        amount = gap / ints[measure];
-			    	  	        amount = gap > ints.day ? (Math.round(amount)) : Math.round(amount);
-			    	  	        amount += ' ' + measure + (amount > 1 ? 's' : '') + ' ago';			    	  	 
-			    	  	        return amount;
-			    	  	    };
-			    	  	})();
+			    	  	var date = new Date(fb.created_time).toUTCString();		   
 			    	  	switch(type){
 			    	  	case 'status':
 				    	    $('ul.facebook_status').append("<li class='status'>&#187; <span class='post'>"+post+"</span> <span class='date'><a href='http://www.facebook.com/miguel.mota2/posts/"+post_id+"'>"+niceTime(date)+"</a></span></li>");
@@ -340,29 +340,6 @@ function streamPage(){
 						var post = status.text;
 						var id = status.id_str;
 			    	  	var date = new Date(status.created_at).toUTCString();
-			    	  	var niceTime = (function(){
-			    	  	    var ints = {
-			    	  	        second: 1,
-			    	  	        minute: 60,
-			    	  	        hour: 3600,
-			    	  	        day: 86400,
-			    	  	        week: 604800,
-			    	  	        month: 2592000,
-			    	  	        year: 31536000
-			    	  	    };
-			    	  	    return function(time){
-			    	  	        time = +new Date(time);
-			    	  	        var gap = ((+new Date()) - time) / 1000,
-			    	  	            amount, measure;
-			    	  	        for (var i in ints){
-			    	  	            if (gap > ints[i]){ measure = i; }
-			    	  	        }
-			    	  	        amount = gap / ints[measure];
-			    	  	        amount = gap > ints.day ? (Math.round(amount)) : Math.round(amount);
-			    	  	        amount += ' ' + measure + (amount > 1 ? 's' : '') + ' ago';			    	  	 
-			    	  	        return amount;
-			    	  	    };
-			    	  	})();
 				        var newText = '<span>'+post.split(' ').join('</span> <span>')+'</span>';
 			    	  	$('ul.twitter_status').append("<li id='"+id+"' class='status'>&#187; <span class='post'>"+newText+"</span> <span class='date'><a href='http://twitter.com/miguel_mota/status/"+id+"'>"+niceTime(date)+"</a></span></li>");
 			    	    $("li.status[id='"+id+"'] span").find(":contains('http')").wrapInner("<a href='"+$("li.status[id='"+id+"'] span").find(":contains('http')").text()+"'> </a>");
@@ -379,30 +356,7 @@ function streamPage(){
 				    	  	var url = this.url;
 				    	  	var caption = this['photo-caption'];
 				    	  	var slug = this.slug.replace(/-/g,' ');
-				    	  	var niceTime = (function(){
-				    	  	    var ints = {
-				    	  	        second: 1,
-				    	  	        minute: 60,
-				    	  	        hour: 3600,
-				    	  	        day: 86400,
-				    	  	        week: 604800,
-				    	  	        month: 2592000,
-				    	  	        year: 31536000
-				    	  	    };
-				    	  	    return function(time){
-				    	  	        time = +new Date(time);
-				    	  	        var gap = ((+new Date()) - time) / 1000,
-				    	  	            amount, measure;
-				    	  	        for (var i in ints){
-				    	  	            if (gap > ints[i]){ measure = i; }
-				    	  	        }
-				    	  	        amount = gap / ints[measure];
-				    	  	        amount = gap > ints.day ? (Math.round(amount)) : Math.round(amount);
-				    	  	        amount += ' ' + measure + (amount > 1 ? 's' : '') + ' ago';			    	  	 
-				    	  	        return amount;
-				    	  	    };
-				    	  	})();
-				        $('ul.tumblr_posts').append("<li>&#187; <a href='"+url+"'>"+slug.substring(0,1).toUpperCase()+slug.substr(1,200)+"</a> <span class='date'>"+niceTime(date)+"</span></li>");
+				    	  	$('ul.tumblr_posts').append("<li>&#187; <a href='"+url+"'>"+slug.substring(0,1).toUpperCase()+slug.substr(1,200)+"</a> <span class='date'>"+niceTime(date)+"</span></li>");
 				      }); 
 					  $('div.tumblr img.loader').css('display','none');
 				  }
@@ -414,29 +368,6 @@ function streamPage(){
 						var title = item.d;
 						var url = item.u;
 			    	  	var date = new Date(item.dt).toUTCString();
-			    	  	var niceTime = (function(){
-			    	  	    var ints = {
-			    	  	        second: 1,
-			    	  	        minute: 60,
-			    	  	        hour: 3600,
-			    	  	        day: 86400,
-			    	  	        week: 604800,
-			    	  	        month: 2592000,
-			    	  	        year: 31536000
-			    	  	    };
-			    	  	    return function(time){
-			    	  	        time = +new Date(time);
-			    	  	        var gap = ((+new Date()) - time) / 1000,
-			    	  	            amount, measure;
-			    	  	        for (var i in ints){
-			    	  	            if (gap > ints[i]){ measure = i; }
-			    	  	        }
-			    	  	        amount = gap / ints[measure];
-			    	  	        amount = gap > ints.day ? (Math.round(amount)) : Math.round(amount);
-			    	  	        amount += ' ' + measure + (amount > 1 ? 's' : '') + ' ago';			    	  	 
-			    	  	        return amount;
-			    	  	    };
-			    	  	})();
 						$('ul.delicious_bookmarks').append("<li>&#187; <a href='"+url+"'>"+title+"</a> <span class='date'>"+niceTime(date)+"</span></li>");
 					});
 					$('div.delicious img.loader').css('display','none');
@@ -460,32 +391,9 @@ function streamPage(){
 			function wakoopaApi(data){
 				var html = ["<ul class='wakoopa_software'>"];
 				for(var i = 0; i < data.length; i++){
-				var entry = data[i].software;
-				var date = new Date(entry.last_active_at).toUTCString();
-	    	  	var niceTime = (function(){
-	    	  	    var ints = {
-	    	  	        second: 1,
-	    	  	        minute: 60,
-	    	  	        hour: 3600,
-	    	  	        day: 86400,
-	    	  	        week: 604800,
-	    	  	        month: 2592000,
-	    	  	        year: 31536000
-	    	  	    };
-	    	  	    return function(time){
-	    	  	        time = +new Date(time);
-	    	  	        var gap = ((+new Date()) - time) / 1000,
-	    	  	            amount, measure;
-	    	  	        for (var i in ints){
-	    	  	            if (gap > ints[i]){ measure = i; }
-	    	  	        }
-	    	  	        amount = gap / ints[measure];
-	    	  	        amount = gap > ints.day ? (Math.round(amount)) : Math.round(amount);
-	    	  	        amount += ' ' + measure + (amount > 1 ? 's' : '') + ' ago';			    	  	 
-	    	  	        return amount;
-	    	  	    };
-	    	  	})();
-				html.push("<li><a class='link' href='", entry.complete_url, "'>", entry.name, "</a> <span class='date'>"+niceTime(date)+"</span>", "</li>");
+					var entry = data[i].software;
+					var date = new Date(entry.last_active_at).toUTCString();
+					html.push("<li><a class='link' href='", entry.complete_url, "'>", entry.name, "</a> <span class='date'>"+niceTime(date)+"</span>", "</li>");
 				}
 				html.push("</ul>");
 				document.getElementById('wakoopa_software').innerHTML = html.join("");
