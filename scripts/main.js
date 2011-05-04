@@ -244,10 +244,9 @@ $('div.posti h3 a').live('click', function(){
 	return false;
 });
 
+var position = 0;
+var length = 'portfolio'.length;
 function textticker(){
-	
-	var position = 0;
-	var length = 'portfolio'.length;
 	
 	$('a#stream').text('stream'.substring(0,position));
 	$('a#about').text('about'.substring(0,position));
