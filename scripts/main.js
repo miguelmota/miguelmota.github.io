@@ -77,19 +77,6 @@ $(document).ready(function(){
 		}
 	}
 	
-	function loadPage(){
-		
-		var toLoad = '/'+window.location.hash.substr(2)+' section.content';
-		window.location.hash = window.location.hash.substr(1);
-		$('section.content').fadeOut('fast',loadContent);
-		$('div.loader').fadeIn('normal');
-		alert(toLoad);
-		function loadContent(){
-			$('section.content').load(toLoad,showNewContent);
-		}
-		return false;
-	}
-	
 	
 	if(typeof(window.history.pushState) != 'function'){
 		function redirectPath(){
@@ -192,6 +179,18 @@ $(document).ajaxComplete(function(){
 
 var c = 0;
 var bc = 0;
+
+function loadPage(){
+	
+	var toLoad = '/'+window.location.hash.substr(2)+' section.content';
+	//window.location.hash = window.location.hash.substr(1);
+	$('section.content').fadeOut('fast',loadContent);
+	$('div.loader').fadeIn('normal');
+	function loadContent(){
+		$('section.content').load(toLoad,showNewContent);
+	}
+	return false;
+}
 
 //convert UTC time to niceTime, ie. 2 hours ago
 var niceTime = (function(){
