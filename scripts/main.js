@@ -37,7 +37,6 @@ $(document).ready(function(){
 	
 	
 	//check pathname and add selected class to nav link
-	var pathname = window.location.pathname;
 	$('ul.nav li a').each(function(){
 		if($(this).attr('href') == pathname){
 			$('nav.main a#stream').removeClass('selected');
@@ -67,38 +66,10 @@ $(document).ready(function(){
 	//append title
 	$('body').append("<div class='theTitle' style='display: none;'> &#8212; Miguel Mota | Freelance Web Developer</div>");
 	
-	//load content if pushSate not supported
+	//redirect to poper page if pushSate not supported
 	if(typeof(window.history.pushState) != 'function'){
 		if(window.location.hash){
-				loadPage();
-		}
-		else {
-			redirectPath();
-		}
-	}
-	
-	
-	if(typeof(window.history.pushState) != 'function'){
-		function redirectPath(){
-			//var domain = document.domain; //commented because of firefox bug
-			var pathname = window.location.pathname.substr(1);
-			//if(document.domain == 'www.miguelmota.com') { //commented because of firefox bug
-			switch(pathname){
-				case '':
-				case 'index':
-				case 'stream':
-					break;
-				case 'portfolio':
-					break;
-				case 'contact':
-					break;
-				case 'blog': 
-					break;
-					window.location = './#!'+path;
-				default:
-					break;
-			}
-			//} //commented because of firefox bug
+			window.location = '/'+window.location.hash.substr(2);
 		}
 	}
 	
@@ -176,21 +147,25 @@ $(document).ajaxComplete(function(){
 	}
 });
 
-
+//global variables
 var c = 0;
 var bc = 0;
+var pathname = window.location.pathname;
 
+/*
+//can't get it to work
 function loadPage(){
 	
-	var toLoad = '/'+window.location.hash.substr(1)+' section.content';
+	var toLoad = '/'+window.location.hash.substr(12)+' section.content';
 	//window.location.hash = window.location.hash.substr(1);
 	$('section.content').fadeOut('fast',loadContent);
 	$('div.loader').fadeIn('normal');
 	function loadContent(){
-		$('section.content').load(toLoad);
+		$('section.content').load(toLoad, showNewContent);
 	}
-
+	return false;
 }
+*/
 
 //convert UTC time to niceTime, ie. 2 hours ago
 var niceTime = (function(){
