@@ -18,11 +18,6 @@ $(document).ready(function(){
 	$('div#ie a#close').click(function(){
 		$('div#ie').slideUp('normal');
 	});
-
-	//textticker(); //commented because of firefix bug
-	//if(window.location.pathname == '') {
-		//streamPage();
-	//}
 	
 	//redirect to homepage if window location alone is #!
 	if(typeof(window.history.pushState) != 'function'){
@@ -30,6 +25,9 @@ $(document).ready(function(){
 			window.location = '/';
 		}
 	}
+	
+	//initialize text ticker
+	textticker();
 	
 	//initialize stream
 	streamPage();
