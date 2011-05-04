@@ -187,9 +187,9 @@ function loadPage(){
 	$('section.content').fadeOut('fast',loadContent);
 	$('div.loader').fadeIn('normal');
 	function loadContent(){
-		$('section.content').load(toLoad,showNewContent);
+		$('section.content').load(toLoad);
 	}
-	return false;
+
 }
 
 //convert UTC time to niceTime, ie. 2 hours ago
