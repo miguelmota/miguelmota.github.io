@@ -44,9 +44,7 @@ $(document).ready(function(){
 			$(this).addClass('selected');
 			
 			//run appropriate function
-			switch($(this).attr('href').substr(1)){
-				case '':
-				case 'index':
+			switch($(this).attr('id')){
 				case 'stream':
 					streamPage();
 					break;
@@ -65,11 +63,8 @@ $(document).ready(function(){
 			
 		}
 	});
-
-	$('nav.main a#logo').live('click', function(){
-		$('nav.main a').removeClass('selected');
-		$('nav.main a#stream').addClass('selected');
-	});
+	
+	//
 	$('body').append("<div class='theTitle' style='display: none;'> &#8212; Miguel Mota | Freelance Web Developer</div>");
 	if(typeof(window.history.pushState) != 'function'){
 		if(window.location.hash){
@@ -213,7 +208,7 @@ var niceTime = (function(){
 	    };
 	})();
 
-$('nav.main a').live('click', function(){
+$("nav.main a:not('#logo')").live('click', function(){
 	//var domain = document.domain; //commented because of firefox bug
 	//if(document.domain == 'www.miguelmota.com') { //commented because of firefox bug
 		c = 0;
