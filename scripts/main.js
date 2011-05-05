@@ -27,12 +27,10 @@ $(document).ready(function(){
 	}
 	
 	//initialize text ticker
-	//textticker();
+	//textticker(); //disabled, firefox bug
 	
 	//initialize stream
 	streamPage();
-	$('nav.main a#stream').addClass('selected');
-	
 	
 	//check pathname and add selected class to nav link
 	$('ul.nav li a').each(function(){
@@ -113,6 +111,10 @@ $(document).ajaxComplete(function(){
 	else{
 		var path2 = window.location.pathname.substring(1);
 	}
+	var title = $('h1.title span.sub').text()+$('div.theTitle').text();
+	document.title = title;
+	$('nav.main a').removeClass('selected');
+	$('nav.main a'+path2).addClass('selected');
 	switch(path2){
 		case '':
 		case 'index':
@@ -261,24 +263,18 @@ function textticker(){
 }
 
 function showNewContent(){
-	$('nav.main a').removeClass('selected');
+	
 	if(typeof(window.history.pushState) != 'function'){
 		$('#'+window.location.hash.substr(2)).addClass('selected');
 	}
-	$('#'+window.location.pathname.substr(1)).addClass('selected');
 	$('section.content, footer.main').fadeIn('normal',hideLoader);
-	var title = $('h1.title span.sub').text()+$('div.theTitle').text();
-	document.title = title;
-	if(typeof(window.history.pushState) != 'function'){
-		if(window.location.hash == '#!'){
-			$('#'+window.location.hash.substr(2));
-			document.title = theTitle;
-		}
-	}
+	
 }
 
 function hideLoader(){
+	
 	$('div.loading').hide();
+	
 }
 
 function streamPage(){
