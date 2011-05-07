@@ -741,7 +741,8 @@ section.tumblr ol.notes li.note .answer_content {
     font-weight: normal;
 }
 section.tumblr ol.notes li.note blockquote {
-	margin: 5 0px 0 5px;
+	margin: 5 0px 0 35px;
+	border-left: 1px solid #999;
 }
 section.tumblr footer.main {
 	margin-left: 0 !important;
