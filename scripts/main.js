@@ -115,8 +115,7 @@ $(document).ajaxComplete(function(){
 	}
 	var title = $('h1.title span.sub').text()+$('div.theTitle').text();
 	document.title = title;
-	$('nav.main a').removeClass('selected');
-	$('nav.main a#'+path2).addClass('selected');
+	$('a#'+$('span.sub').text()).addClass('selected');
 	switch(path2){
 		case '':
 		case 'index':
