@@ -260,6 +260,7 @@ h1.title span.slash {
 	position: relative;
 	top: -2px;
 	font-family: klavika-Light, Helvetica, Arial, sans-serif;	
+	font-weight: normal;
 }
 h1.title span.sub {
 	margin-left: -2px;
