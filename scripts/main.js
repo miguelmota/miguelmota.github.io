@@ -57,6 +57,7 @@ $(document).ready(function(){
 		else{
 			//initialize stream
 			streamPage();
+			document.title = 'Miguel Mota | Freelance Web Developer';
 		}
 	});
 	$('a#'+$('span.sub').text()).addClass('selected');
@@ -121,6 +122,7 @@ $(document).ajaxComplete(function(){
 	}
 	else{
 		$('nav.main a#stream').addClass('selected');
+		document.title = 'Miguel Mota | Freelance Web Developer';
 	}
 	switch(path2){
 		case '':
