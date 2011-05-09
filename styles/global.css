@@ -265,6 +265,7 @@ h1.title span.slash {
 h1.title span.sub {
 	margin-left: -2px;
 	font-family: klavika-Light, Helvetica, Arial, sans-serif;	
+	font-weight: normal;
 }
 div.loading {
 	display: none;
