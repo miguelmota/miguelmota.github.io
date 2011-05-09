@@ -58,6 +58,7 @@ $(document).ready(function(){
 			//initialize stream
 			streamPage();
 			$('nav.main a#stream').addClass('selected');
+			alert('asdf');		
 		}
 	});
 	
