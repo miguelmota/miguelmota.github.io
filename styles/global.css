@@ -481,6 +481,12 @@ section.portfolio img.miggs {
 	width: 250%;
 	height: auto;
 }
+section.portfolio img.mrg {
+	position: absolute;
+	left: -300px;
+	width: 300%;
+	height: auto;
+}
 section.portfolio img.foodfail {
 	position: absolute;
 	left: -300px;
