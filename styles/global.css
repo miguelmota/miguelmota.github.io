@@ -34,20 +34,22 @@
 	url('../fonts/klavika-webfont/klavika-regular-webfont.svg') format('svg');
 }
 @font-face {
-	font-family: Klavika-Bold;
+	font-family: Klavika;
 	src: url('../fonts/klavika-webfont/klavika-bold-webfont.eot');
 	src: local('☺'),
 	url('../fonts/klavika-webfont/klavika-bold-webfont.woff') format('woff'),
 	url('../fonts/klavika-webfont/klavika-bold-webfont.ttf') format('truetype'),
 	url('../fonts/klavika-webfont/klavika-bold-webfont.svg') format('svg');
+	font-weight: bold;
 }
 @font-face {
-	font-family: Klavika-Italic;
+	font-family: Klavika;
 	src: url('../fonts/klavika-webfont/klavika-italic-webfont..eot');
 	src: local('☺'),
 	url('../fonts/klavika-webfont/klavika-italic-webfont..woff') format('woff'),
 	url('../fonts/klavika-webfont/klavika-italic-webfont..ttf') format('truetype'),
 	url('../fonts/klavika-webfont/klavika-italic-webfont..svg') format('svg');
+	font-style: italic;
 }
 @font-face {
 	font-family: Klavika-Light;
@@ -248,10 +250,10 @@ h1.title {
 	text-shadow: 0 -1px 0 #000;
 	text-transform: uppercase;
 	font-size: 32px;
-	font-family: Klavika-Bold, Helvetica, Arial, sans-serif;
+	font-weight: bold;
 }
 h1.title span.mota {
-	font-family: klavika, Helvetica, Arial, sans-serif;
+	font-weight: normal;
 }
 h1.title span.slash {
 	position: relative;
@@ -484,8 +486,8 @@ section.portfolio img.miggs {
 }
 section.portfolio img.mrg {
 	position: absolute;
-	left: -500px;
-	top: -150px;
+	left: -400px;
+	top: -25px;
 	width: 300%;
 	height: auto;
 }
