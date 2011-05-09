@@ -174,7 +174,7 @@ div#ie a#close {
 	top: 10px;
 	right: 10px;
 }
-section.about img,
+section.about img.about,
 section.portfolio div.container {
 	-webkit-box-shadow: 2px 2px 5px #111;
 	-moz-box-shadow: 2px 2px 5px #111;
