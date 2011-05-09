@@ -32,8 +32,8 @@ $(document).ready(function(){
 	//check pathname and add selected class to nav link
 	$('ul.nav li a').each(function(){
 		if($(this).attr('href') == pathname){
-			$('nav.main a#stream').removeClass('selected');
-			$(this).addClass('selected');
+			//$('nav.main a#stream').removeClass('selected');
+			//$(this).addClass('selected');
 			
 			//run appropriate function
 			switch($(this).attr('id')){
@@ -59,6 +59,7 @@ $(document).ready(function(){
 			streamPage();
 		}
 	});
+	$('a#'+$('span.sub').text()).addClass('selected');
 	
 	//append title
 	$('body').append("<div class='theTitle' style='display: none;'> &#8212; Miguel Mota | Freelance Web Developer</div>");
