@@ -276,10 +276,6 @@ div.loader {
 	margin-right: 5px;
 	background: url('../images/ajax_loader.gif') no-repeat 0 0;
 }
-img.loader {
-	width: 16px;
-	height: 16px;
-}
 /* /CONTENT ========================================================== */
 /* STREAM ============================================================ */
 section.stream div.stream {
@@ -288,6 +284,8 @@ section.stream div.stream {
 section.stream div.stream img.loader {
 	display: block;
 	clear: both;
+	width: 16px;
+	height: 16px;
 }
 section.stream span.mtip {
 	padding: 3px;
@@ -420,7 +418,7 @@ section.stream ul.lastfm_tracks li span.date {
 }
 /* /STREAM ============================================================ */
 /* CONTACT ============================================================ */
-section.about img {
+section.about img.about {
 	width: 100%;
 	height: auto;
 }
