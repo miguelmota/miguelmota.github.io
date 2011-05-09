@@ -31,6 +31,7 @@ $(document).ready(function(){
 	
 	//initialize stream
 	streamPage();
+	$('nav.main a#stream').addClass('selected');
 	
 	//check pathname and add selected class to nav link
 	$('ul.nav li a').each(function(){
