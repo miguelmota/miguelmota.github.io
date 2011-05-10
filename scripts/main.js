@@ -121,7 +121,7 @@ $(document).ajaxComplete(function(){
 		$('nav.main a#'+path2).addClass('selected');
 	}
 	else{
-		$('nav.main a#stream').addClass('selected');
+		$('nav.main a#'+pathname.substr(1)).addClass('selected');
 		document.title = 'Miguel Mota | Freelance Web Developer';
 	}
 	switch(path2){
