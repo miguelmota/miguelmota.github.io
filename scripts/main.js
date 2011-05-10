@@ -117,8 +117,8 @@ $(document).ajaxComplete(function(){
 	var title = $('h1.title span.sub').text()+$('div.theTitle').text();
 	document.title = title;
 	$('nav.main a').removeClass('selected');
-	if(path2.substr(3) != ''){
-		$('nav.main a#'+path2).addClass('selected');
+	if(path2.substr(4) != ''){
+		$('nav.main a#stream').addClass('selected');
 	}
 	else{
 		$('nav.main a#'+pathname.substr(1)).addClass('selected');
