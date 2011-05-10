@@ -109,7 +109,12 @@ $(window).scroll(function(){
 
 $(document).ajaxComplete(function(){
 	if(typeof(window.history.pushState) != 'function'){
-		var path2 = window.location.hash.substr(2);
+		if(hash){
+			var path2 = window.location.hash.substr(2);
+		}
+		else{
+			var path2 = window.location.pathname.substr(1);
+		}
 	}
 	else{
 		var path2 = window.location.pathname.substr(1);
