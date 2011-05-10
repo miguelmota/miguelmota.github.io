@@ -215,8 +215,7 @@ $("nav.main a:not('#logo')").live('click', function(){
 			history.pushState(stateObj, "Title", $(this).attr('href'));
 		}
 		else{
-			//window.location.hash = '!'+$(this).attr('href').substr(1,$(this).attr('href').length); //won't load for some reason
-			//window.location = $(this).attr('href');
+			window.location.hash = '!'+$(this).attr('href').substr(1,$(this).attr('href').length);
 		}
 		return false;
 });
