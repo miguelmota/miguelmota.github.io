@@ -112,13 +112,13 @@ $(document).ajaxComplete(function(){
 		var path2 = window.location.hash.substr(2);
 	}
 	else{
-		var path2 = window.location.pathname;
+		var path2 = window.location.pathname.substr(1);
 	}
 	var title = $('h1.title span.sub').text()+$('div.theTitle').text();
 	document.title = title;
 	$('nav.main a').removeClass('selected');
-	if(path2.substr(4) != ''){
-		$('nav.main a#'+path2.substr(1)).addClass('selected');
+	if(path2 != ''){
+		$('nav.main a#'+path2).addClass('selected');
 	}
 	else{
 		$('nav.main a#stream').addClass('selected');
