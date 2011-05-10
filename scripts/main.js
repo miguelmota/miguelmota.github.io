@@ -112,7 +112,7 @@ $(document).ajaxComplete(function(){
 		var path2 = window.location.hash.substr(2);
 	}
 	else{
-		var path2 = window.location.pathname.substring(1);
+		var path2 = window.location.pathname;
 	}
 	var title = $('h1.title span.sub').text()+$('div.theTitle').text();
 	document.title = title;
