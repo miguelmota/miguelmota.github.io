@@ -118,10 +118,10 @@ $(document).ajaxComplete(function(){
 	document.title = title;
 	$('nav.main a').removeClass('selected');
 	if(path2.substr(4) != ''){
-		$('nav.main a#stream').addClass('selected');
+		$('nav.main a#'+path2.substr(1)).addClass('selected');
 	}
 	else{
-		$('nav.main a#'+pathname.substr(1)).addClass('selected');
+		$('nav.main a#stream').addClass('selected');
 		document.title = 'Miguel Mota | Freelance Web Developer';
 	}
 	switch(path2){
