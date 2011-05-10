@@ -274,7 +274,7 @@ function textticker(){
 function showNewContent(){
 	
 	if(typeof(window.history.pushState) != 'function'){
-		$('#'+window.location.hash.substr(2)).addClass('selected');
+		//$('#'+window.location.hash.substr(2)).addClass('selected');
 	}
 	$('section.content, footer.main').fadeIn('normal',hideLoader);
 	
