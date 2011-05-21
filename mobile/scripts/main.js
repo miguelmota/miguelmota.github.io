@@ -5,6 +5,8 @@ $(document).ready(function(){
 		$('#portfolio div.content ul li.arrow').load('/portfolio section.content');
 		$('#blog div.content ul li.arrow').load('/blog section.content');
 		
+		//initialize Disqus
+		loadDisqus();
 		
 		$('#blog div.content h3 a').live('click', function(){
 			$('#blog div.content ul li.arrow').load($(this).attr('href')+' section.content');
@@ -15,6 +17,7 @@ $(document).ready(function(){
 	
 	streamPage();
 });
+
 var jQt = $.jQTouch({
 	icon: '/images/apple-touch-icon.png',
 	addGlossToIcon: false,
@@ -22,6 +25,34 @@ var jQt = $.jQTouch({
 	startupScreen: '/images/startup.png',
 	preloadImages: []
 });
+
+
+function loadDisqus(){
+	
+    var disqus_shortname = 'miguelmota';
+    var disqus_url = 'http://wwww.miguelmota.com/{{ page.url }}';
+    
+    //comment box
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    
+    //comment count
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('body')[0]).appendChild(s);
+    }());
+}
+
+
+
+
+
+
 function streamPage(){
 	$('div.facebook img.loader').css('display','block');
 	$.getJSON('https://graph.facebook.com/miguel.mota2/feed?limit=3&callback=?', 
