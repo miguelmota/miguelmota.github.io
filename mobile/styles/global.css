@@ -64,6 +64,7 @@ div#portfolio div.sort {
 div#portfolio div.container {
 	position: relative;
 	height: 300px;
+	margin-bottom: 25px;
 	overflow: hidden;
 }
 div#portfolio div.container img {
@@ -72,6 +73,7 @@ div#portfolio div.container img {
 }
 div#portfolio p.description {
 	position: relative;
+	margin-top: 10px;
 }
 div#portfolio span.date {
 	float: right;
