@@ -31,9 +31,7 @@ div#contact div.content li.arrow a {
 div.content li.arrow span.date {
 	font-size: 10px;
 }
-li.view a {
-	font-size: 10px;
-}
+
 */
 img {
 	width: 100%;
@@ -54,6 +52,9 @@ div#portfolio li.arrow a,
 div#blog li.arrow a {
 	display: inline;
 	font-size: 12px;
+}
+li.view a {
+	font-size: 10px;
 }
 /* PORTFOLIO_PAGE ============================================================ */
 div#portfolio div.sort {
