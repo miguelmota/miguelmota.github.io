@@ -53,6 +53,11 @@ div.content span.sub {
 p {
 	margin-bottom: 10px;
 }
-div#about li.arrow a {
+div.page li.arrow a {
 	display: inline;
 }
+/* PORTFOLIO_PAGE ============================================================ */
+div#portfolio div.sort {
+	display: none;
+}
+/* /PORTFOLIO_PAGE =========================================================== */
