@@ -73,7 +73,7 @@ div#portfolio div.container img {
 }
 div#portfolio p.description {
 	position: relative;
-	margin-top: 10px;
+	margin-bottom: 35px;
 }
 div#portfolio span.date {
 	float: right;
