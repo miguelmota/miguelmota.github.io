@@ -4,6 +4,12 @@ $(document).ready(function(){
 		$('#about div.content ul li.arrow').load('/about section.content');
 		$('#portfolio div.content ul li.arrow').load('/portfolio section.content');
 		$('#blog div.content ul li.arrow').load('/blog section.content');
+		
+		
+		$('#blog div.content h3 a').live('click', function(){
+			$('#blog div.content ul li.arrow').load($(this).attr('href')+' section.content');
+		});
+
 
 	
 	streamPage();
