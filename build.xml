@@ -63,7 +63,7 @@
 	    <concat destfile="${mobile.dir}/styles/global.con.css" force="no">
 	    	<fileset dir="${mobile.dir}/jqtouch" includes="jqtouch.css" />
 		    <fileset dir="${mobile.dir}/themes/artspot" includes="theme.css" />
-	    	<!-- <fileset dir="${mobile.dir}/styles" includes="global.css" /> -->
+	    	<fileset dir="${mobile.dir}/styles" includes="global.css" />
 	    </concat>
 	    <yuicompressor warn="false" charset="UTF-8" fromdir="${mobile.dir}/styles" todir="${mobile.dir}/styles" csssuffix=".min.css">
 	    	<include name="global.con.css" />
