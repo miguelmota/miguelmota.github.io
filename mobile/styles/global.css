@@ -18,10 +18,6 @@ div.content li.arrow {
 	font-size: 12px;
 }
 
-div.content li.arrow p {
-	font-size: 12px;
-}
-
 div#portfolio div.content li.arrow,
 div#about div.content li.arrow {
 	background-image: none;
@@ -50,8 +46,9 @@ h1.title {
 div.content span.sub {
 	color: #555;
 }
-p {
+div.content p {
 	margin-bottom: 10px;
+	font-size: 12px;
 }
 div#about li.arrow a,
 div#portfolio li.arrow a {
