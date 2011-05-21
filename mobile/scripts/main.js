@@ -2,7 +2,7 @@ $(document).ready(function(){
 	//$("a:not('a[href^='#']')").attr('target','_blank');
 	
 	$('ul.nav li a').live('click', function(){
-		$($(this).attr('href').substr(1)+' div.content ul li.arrow').load($(this).attr('href').substr(1)+' section.content');
+		$($(this).attr('href').substr(1)+' div.content ul li.arrow').load('/'+$(this).attr('href').substr(1)+' section.content');
 	});
 	
 	streamPage();
