@@ -50,7 +50,8 @@ div.content p {
 	font-size: 12px;
 }
 div#about li.arrow a,
-div#portfolio li.arrow a {
+div#portfolio li.arrow a,
+div#blog li.arrow a {
 	display: inline;
 	font-size: 12px;
 }
