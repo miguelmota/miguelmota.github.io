@@ -62,11 +62,18 @@ div#portfolio div.sort {
 }
 div#portfolio div.container {
 	position: relative;
-	height: 150px;
+	height: 300px;
 	overflow: hidden;
 }
 div#portfolio div.container img {
 	position: absolute;
-	left: 100px;
+	top: -100px;
+}
+div#portfolio p.description {
+	position: relative;
+}
+div#portfolio span.date {
+	float: right;
+	color: #aaa;
 }
 /* /PORTFOLIO_PAGE =========================================================== */
