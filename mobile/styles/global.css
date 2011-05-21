@@ -21,9 +21,7 @@ div.content li.arrow {
 div.content li.arrow p {
 	font-size: 12px;
 }
-div#about li.arrow a[href^='mailto'] {
-	display: inline;
-}
+
 div#portfolio div.content li.arrow,
 div#about div.content li.arrow {
 	background-image: none;
@@ -54,4 +52,7 @@ div.content span.sub {
 }
 p {
 	margin-bottom: 10px;
+}
+div#about li.arrow a[href^='#'] {
+	display: inline;
 }
