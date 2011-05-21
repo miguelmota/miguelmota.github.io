@@ -63,12 +63,11 @@ div#portfolio div.sort {
 }
 div#portfolio div.container {
 	position: relative;
-	height: 300px;
+	height: 100px;
 	overflow: hidden;
 }
 div#portfolio div.container img {
 	position: absolute;
-	top: -15%;
 }
 div#portfolio p.description {
 	position: relative;
