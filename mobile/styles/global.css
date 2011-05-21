@@ -53,6 +53,6 @@ div.content span.sub {
 p {
 	margin-bottom: 10px;
 }
-div#about li.arrow a[href^='#'] {
+div#about li.arrow a[href*=#] {
 	display: inline;
 }
