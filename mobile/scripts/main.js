@@ -7,7 +7,8 @@ $(document).ready(function(){
 		
 		
 		$('#blog div.content h3 a').live('click', function(){
-			$('#blog div.content ul li.arrow').load($(this).attr('href')+' section.content');
+			alert('adsjf');
+			//$('#blog div.content ul li.arrow').load($(this).attr('href')+' section.content');
 		});
 
 
