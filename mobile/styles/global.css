@@ -60,4 +60,13 @@ div.content li.arrow a {
 div#portfolio div.sort {
 	display: none;
 }
+div#portfolio div.container {
+	position: relative;
+	height: 150px;
+	overflow: hidden;
+}
+div#portfolio div.container img {
+	position: absolute;
+	left: 100px;
+}
 /* /PORTFOLIO_PAGE =========================================================== */
