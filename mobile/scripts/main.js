@@ -5,10 +5,11 @@ $(document).ready(function(){
 		$('#portfolio div.content ul li.arrow').load('/portfolio section.content');
 		$('#blog div.content ul li.arrow').load('/blog section.content');
 		
-		//initialize Disqus
-		loadDisqus();
-		
+
 		$('#blog div.content h3 a').live('click', function(){
+			//initialize Disqus
+			loadDisqus();
+			
 			$('#blog div.content ul li.arrow').load($(this).attr('href')+' section.content');
 			return false;
 		});
