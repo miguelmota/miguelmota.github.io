@@ -4,10 +4,10 @@ $(document).ready(function(){
 	streamPage();
 });
 var jQt = $.jQTouch({
-	icon: '/static/images/apple-touch-icon.png',
+	icon: '/images/apple-touch-icon.png',
 	addGlossToIcon: false,
 	statusBar: 'black',
-	startupScreen: '/static/images/startup.png',
+	startupScreen: '/images/startup.png',
 	preloadImages: []
 });
 function streamPage(){

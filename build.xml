@@ -4,9 +4,9 @@
 		Miguel Mota | Freelance Web Developer
 	</description>
 	<property name="static.dir" value="" />
-	<property name="mobile.dir" value="iphone" />
+	<property name="mobile.dir" value="mobile" />
 	<property name="lib.dir" value="lib" />
-	<target name="build" depends="compile"></target>
+	<target name="build" depends="compile-mobile"></target>
 	<target name="compile">
 		<property 
 		    name="yui-compressor.jar" 
@@ -60,25 +60,25 @@
 		<taskdef name="yuicompressor" classname="net.noha.tools.ant.yuicompressor.tasks.YuiCompressorTask">
 			<classpath refid="task.classpath" />
 		</taskdef>
-	    <concat destfile="${mobile.dir}styles/global.con.css" force="no">
+	    <concat destfile="${mobile.dir}/styles/global.con.css" force="no">
 	    	<fileset dir="${mobile.dir}/jqtouch" includes="jqtouch.css" />
-		    <fileset dir="${mobile.dir}/themes/jqt" includes="theme.css" />
-	    	<fileset dir="${mobile.dir}styles" includes="global.css" />
+		    <fileset dir="${mobile.dir}/themes/artspot" includes="theme.css" />
+	    	<!-- <fileset dir="${mobile.dir}/styles" includes="global.css" /> -->
 	    </concat>
-	    <yuicompressor warn="false" charset="UTF-8" fromdir="${mobile.dir}styles" todir="${mobile.dir}styles" csssuffix=".min.css">
+	    <yuicompressor warn="false" charset="UTF-8" fromdir="${mobile.dir}/styles" todir="${mobile.dir}/styles" csssuffix=".min.css">
 	    	<include name="global.con.css" />
 	    </yuicompressor>
-		<move file="${mobile.dir}styles/global.con.min.css" tofile="${mobile.dir}styles/global.min.css"/>
-		<delete file="${mobile.dir}styles/global.con.css" />
+		<move file="${mobile.dir}/styles/global.con.min.css" tofile="${mobile.dir}/styles/global.min.css"/>
+		<delete file="${mobile.dir}/styles/global.con.css" />
 
 		<taskdef name="jscomp" classname="com.google.javascript.jscomp.ant.CompileTask"
 	    	classpath="${lib.dir}/compiler.jar" />
 		<jscomp compilationLevel="whitespace" warning="verbose" 
-	    	debug="false" output="${mobile.dir}scripts/main.min.js">
+	    	debug="false" output="${mobile.dir}/scripts/main.min.js">
 			<sources dir="${mobile.dir}">
 				<file name="/jqtouch/jquery.js" />
 				<file name="/jqtouch/jqtouch.js" />
-				<file name="scripts/main.js" />
+				<file name="/scripts/main.js" />
 			</sources>
 		</jscomp>
 	</target>

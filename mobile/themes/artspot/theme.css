@@ -1,24 +1,33 @@
-body {
-    background: #000;
-    color: #ddd;
+/** CHANGE COLORS HERE **/
+
+body, .toolbar, #jqt ul, #jqt ul.individual li,#jqt ul li a.active,#jqt .info,#jqt #plastic,#tabbar, .s-scrollpane {
+    background-color: #007799; /* main background color */
+}
+#jqt h1, #jqt h2, #jqt ul li a,#jqt .whiteButton, #jqt .button.active, #jqt .cancel.active, #jqt .add.active, #jqt .back.active,#jqt ul li small,#tabbar .badge,#jqt .info,#jqt .info a  {
+    color: #999; /* main text color */
+}
+
+/** END **/
+
+body, .toolbar, #jqt ul, #jqt ul.individual li, #jqt ul li a.active,#tabbar,.s-scrollwrapper {
+    background-image: url(img/bg_noise.png);
 }
 #jqt > * {
-    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#333), to(#5e5e65));
+    background: rgba(255,255,255,0.9);
 }
-#jqt h1, #jqt h2 {
+#jqt h1, #jqt h2, #jqt ul li a {
     font: bold 18px "Helvetica Neue", Helvetica;
-    text-shadow: rgba(255,255,255,.2) 0 1px 1px;
-    color: #000;
+    text-shadow: white 0 1px 0;
     margin: 10px 20px 5px;
 }
 /* @group Toolbar */
 #jqt .toolbar {
     -webkit-box-sizing: border-box;
-    border-bottom: 1px solid #000;
+/*     border-bottom: 1px solid rgba(0,0,0,0.5); */
     padding: 10px;
     height: 45px;
-    background: url(img/toolbar.png) #000000 repeat-x;
     position: relative;
+    -webkit-box-shadow: inset 0 -2px 2px rgba(0,0,0,0.2);
 }
 #jqt .black-translucent .toolbar {
     margin-top: 20px;
@@ -34,7 +43,7 @@ body {
     font-size: 20px;
     width: 150px;
     font-weight: bold;
-    text-shadow: rgba(0,0,0,1) 0 -1px 1px;
+    text-shadow: rgba(0,0,0,0.5) 0 1px 1px;
     text-align: center;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -50,24 +59,26 @@ body {
     top: 8px;
     right: 10px;
     margin: 0;
-    border-width: 0 5px;
-    padding: 0 3px;
+    padding: 0 8px;
     width: auto;
     height: 30px;
     line-height: 30px;
     font-family: inherit;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: bold;
     color: #fff;
-    text-shadow: rgba(0, 0, 0, 0.5) 0px -1px 0;
+    text-shadow: rgba(0, 0, 0, 0.5) 0px 1px 0;
     text-overflow: ellipsis;
     text-decoration: none;
     white-space: nowrap;
     background: none;
-    -webkit-border-image: url(img/button.png) 0 5 0 5;
+    text-transform: uppercase;
+    background: rgba(0,0,0,0.4);
+    border-radius: 8px;
 }
-#jqt .button.active, #jqt .cancel.active, #jqt .add.active {
-    -webkit-border-image: url(img/button_clicked.png) 0 5 0 5;
+#jqt .button.active, #jqt .cancel.active, #jqt .add.active, #jqt .back.active {
+    background: rgba(255,255,255,0.9);
+    text-shadow: none;
 }
 #jqt .blueButton {
     -webkit-border-image: url(img/blueButton.png) 0 5 0 5;
@@ -76,13 +87,11 @@ body {
 #jqt .back {
     left: 6px;
     right: auto;
-    padding: 0;
-    max-width: 55px;
-    border-width: 0 8px 0 14px;
-    -webkit-border-image: url(img/back_button.png) 0 8 0 14;
-}
-#jqt .back.active {
-    -webkit-border-image: url(img/back_button_clicked.png) 0 8 0 14;
+    max-width: 41px;
+    padding-left: 11px;
+    border-width: 0 0 0 9px;
+    border-radius: 0 8px 8px 0;
+    -webkit-mask-image: url(img/mask_button_back.svg);
 }
 #jqt .leftButton, #jqt .cancel {
     left: 6px;
@@ -93,40 +102,53 @@ body {
     line-height: 24px;
     font-weight: bold;
 }
-#jqt .whiteButton,
-#jqt .grayButton, #jqt .redButton, #jqt .blueButton, #jqt .greenButton {
-    border-width: 0 12px;
-    color: #000000;
+#jqt .whiteButton,#jqt .grayButton, #jqt .redButton, #jqt .blueButton, #jqt .greenButton {
     display: block;
-    font-size: 20px;
-    font-weight: bold;
     padding: 10px;
     text-align: center;
+    font-size: 20px;
+    font-weight: bold;
     text-decoration: inherit;
-    text-shadow: rgba(255, 255, 255, 0.7) 0 1px 0;
+    border-radius: 10px;
+    border: 1px solid rgba(0,0,0,0.2);
+    text-shadow: 0 2px 0 rgba(0,0,0,0.2);
 }
 
 #jqt .whiteButton.active, #jqt .grayButton.active, #jqt .redButton.active, #jqt .blueButton.active, #jqt .greenButton.active,
 #jqt .whiteButton:active, #jqt .grayButton:active, #jqt .redButton:active, #jqt .blueButton:active, #jqt .greenButton:active {
-    -webkit-border-image: url(img/activeButton.png) 0 12 0 12;
-    color: #000000 !important;
+  
 }
 #jqt .whiteButton {
-    -webkit-border-image: url(img/whiteButton.png) 0 12 0 12;
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#eee));
+    text-shadow: rgba(255, 255, 255, 0.7) 0 1px 0;
+}
+#jqt .whiteButton.active {
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#eee), to(#fff));
+    text-shadow: rgba(255, 255, 255, 0.7) 0 1px 0;
 }
 #jqt .grayButton {
-    -webkit-border-image: url(img/grayButton.png) 0 12 0 12;
-    color: #FFFFFF;
+    color: white;
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#aaa), to(#888));
 }
-
+#jqt .grayButton.active {
+    color: white;
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#888), to(#aaa));
+}
 #jqt .redButton {
-    -webkit-border-image: url(img/redButton.png) 0 12 0 12;
+    color: white;
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ee0000), to(#cc0000));
 }
-
+#jqt .redButton.active {
+    color: white;
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#cc0000), to(#ee0000));
+}
 #jqt .greenButton {
-    -webkit-border-image: url(img/greenButton.png) 0 12 0 12;
+    color: white;
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(green), to(darkgreen));
 }
-
+#jqt .greenButton.active {
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(darkgreen), to(green));
+}
 
 /* @end */
 /* @group Lists */
@@ -135,7 +157,6 @@ body {
 }
 #jqt ul {
     color: #aaa;
-    border: 1px solid #333333;
     font: bold 18px "Helvetica Neue", Helvetica;
     padding: 0;
     margin: 15px 10px 17px 10px;
@@ -143,6 +164,10 @@ body {
 #jqt ul.rounded {
     -webkit-border-radius: 8px;
     -webkit-box-shadow: rgba(0,0,0,.3) 1px 1px 3px;
+}
+#jqt ul.rounded li a, #jqt ul.individual li a {
+  color: white;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.5);
 }
 #jqt ul.rounded li:first-child, #jqt ul.rounded li:first-child a {
     border-top: 0;
@@ -154,17 +179,22 @@ body {
     -webkit-border-bottom-right-radius: 8px;
 }
 #jqt ul li {
-    color: #666;
-    border-top: 1px solid #333;
-    border-bottom: #555858;
+    color: white;
     list-style-type: none;
     padding: 10px 10px 10px 10px;
-    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#4c4d4e), to(#404142));
     overflow: hidden;
+    border-top: 1px solid rgba(255,255,255,0.8);
+}
+#jqt ul li:first-child, #jqt ul.individual li {
+  border: none;
+}
+#jqt ul.rounded li a.active {
+    background-color: rgba(0,0,0,0.2);
+    color: #fff;
+    background-image: none;
 }
 #jqt ul li.arrow {
-    background-color: #4c4d4e !important;
-    background-image: url(img/chevron.png), -webkit-gradient(linear, 0% 0%, 0% 100%, from(#4c4d4e), to(#404142));
+    background-image: url(img/chevron.svg);
     background-position: right center !important;
     background-repeat: no-repeat !important;
 }
@@ -174,13 +204,12 @@ body {
 }
 
 #jqt ul li.forward {
-    background-image: url(img/chevron_circle.png), -webkit-gradient(linear, 0% 0%, 0% 100%, from(#4c4d4e), to(#404142));
+    background-image: url(img/chevron_circle.svg);
     background-position: right center;
     background-repeat: no-repeat;
 }
 /* universal links on list */
 #jqt ul li a, #jqt li.img a + a {
-    color: #fff;
     text-decoration: none;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -188,19 +217,16 @@ body {
     display: block;
     padding: 12px 10px 12px 10px;
     margin: -10px;
-    text-shadow: rgba(0,0,0,.2) 0 1px 1px;
-}
-#jqt ul li a.active, #jqt ul li a.button {
-    background-color: #53b401;
-    color: #fff;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 #jqt ul li a.active.loading {
     background-image: url(img/loading.gif);
     background-position: 95% center;
     background-repeat: no-repeat;
 }
+/*
 #jqt ul li.arrow a.active {
-    background-image: url(img/chevron.png);
+    background-image: url(img/chevron.svg);
     background-position: right center;
     background-repeat: no-repeat;
 }
@@ -209,6 +235,7 @@ body {
     background-position: right center;
     background-repeat: no-repeat;
 }
+*/
 #jqt ul li.img a + a {
     margin: -10px 10px -20px -5px;
     font-size: 17px;
@@ -276,7 +303,7 @@ body {
 #jqt ul li input[type="url"],
 #jqt ul li textarea,
 #jqt ul li select {
-    color: #777;
+    color: white;
     background: transparent url('data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==');
     border: 0;
     font: normal 17px "Helvetica Neue", Helvetica;
@@ -286,6 +313,9 @@ body {
     width: 100%;
     -webkit-appearance: textarea;
 }
+#jqt ul li input::-webkit-input-placeholder, #jqt ul li textarea::-webkit-input-placeholder {
+    color: rgba(255,255,255,0.4);
+}
 #jqt ul li textarea {
     height: 120px;
     padding: 0;
@@ -293,7 +323,7 @@ body {
 }
 #jqt ul li select {
     text-indent: 0px;
-    background: transparent url(img/chevron.png) no-repeat right center;
+    background: transparent url(img/chevron.svg) no-repeat right center;
     -webkit-appearance: textfield;
     margin-left: -6px;
     width: 104%;
@@ -307,16 +337,12 @@ body {
     font: 17px "Helvetica Neue", Helvetica;
     display: block;
     width: 246px;
-    color: #777;
+    color: white;
     margin: -12px 0 0 17px;
-}
-#jqt.android ul li input[type="checkbox"]:after, #jqt.android ul li input[type="radio"]:after {
-    margin: 3px 0 0 24px;
 }
 /* @end */
 /* @group Mini Label */
 #jqt ul li small {
-    color: #64c114;
     font: 17px "Helvetica Neue", Helvetica;
     text-align: right;
     text-overflow: ellipsis;
@@ -334,14 +360,13 @@ body {
     font-size: 17px;
     line-height: 13px;
     font-weight: bold;
-    background: rgba(0,0,0,.15);
+    background: rgba(0,0,0,.2);
     color: #fff;
     -webkit-border-radius: 11px;
     padding: 4px 10px 5px 10px;
     display: block;
     width: auto;
-    margin-top: -22px;
-    -webkit-box-shadow: rgba(255,255,255,.1) 0 1px 0;
+    margin-top: -24px;
 }
 #jqt ul li.arrow small.counter {
     margin-right: 15px;
@@ -357,8 +382,6 @@ body {
     -webkit-box-shadow: none;
 }
 #jqt ul.individual li {
-    background: #4c4d4e;
-    border: 1px solid #333;
     font-size: 14px;
     text-align: center;
     -webkit-border-radius: 8px;
@@ -368,7 +391,7 @@ body {
     display: block;
     padding: 11px 10px 14px 10px;
     -webkit-box-shadow: rgba(0,0,0,.2) 1px 1px 3px;
-    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#4c4d4e), to(#404142));
+    margin-bottom: 10px;
 }
 #jqt ul.individual li + li {
     float: right;
@@ -391,34 +414,36 @@ body {
     float: right;
 }
 #jqt .toggle input[type="checkbox"]:checked {
-    background-position: 0 0;
+    left: 0px;
 }
 #jqt .toggle input[type="checkbox"] {
     -webkit-appearance: textarea;
     -webkit-border-radius: 5px;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
-    -webkit-transition: background-position .15s;
+    -webkit-transition: left .15s;
     background-color: transparent;
-    background: #fff url(img/on_off.png) -55px 0 no-repeat;
+    background: #fff url(img/on_off.png) 0 0 no-repeat;
     border: 0;
     height: 27px;
+    left: -55px;
     margin: 0;
     overflow: hidden;
     position: absolute;
-    width: 94px;
+    top: 0;
+    width: 149px;
 }
 /* @end */
 /* @group Info */
 #jqt .info {
-    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ccc), to(#aaa), color-stop(.6,#CCCCCC));
     font-size: 12px;
     line-height: 16px;
     text-align: center;
-    text-shadow: rgba(255,255,255,.8) 0 1px 0;
-    color: #444;
+    text-shadow: rgba(255,255,255,0.5) 0 1px 0;
     padding: 15px;
-    border-top: 1px solid rgba(255,255,255,.2);
     font-weight: bold;
+    -webkit-box-shadow: inset 0 -5px 5px rgba(0,0,0,0.3);
+    border-top: 1px solid rgba(0,0,0,0.5);
+    background-image: -webkit-gradient(linear, left top, left bottom,from(rgba(255,255,255,0.8)))
 }
 /* @end */
 /* @group Edge to edge */
@@ -428,27 +453,27 @@ body {
     padding: 0;
 }
 #jqt ul.edgetoedge li {
-    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#1e1f21), to(#272729));
-    border-bottom: 2px solid #000;
-    border-top: 1px solid #4a4b4d;
+    background: rgba(255,255,255,0.9);
     font-size: 20px;
-    margin-bottom: -1px;
+}
+#jqt ul.edgetoedge li a.active {
+  color: white;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.3);
+  -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.3);
 }
 #jqt ul.edgetoedge li.arrow {
     background-color: #404142 !important;
-    background-image: url(img/chevron.png), -webkit-gradient(linear, 0% 0%, 0% 100%, from(#1e1f21), to(#272729));
+    background-image: url(img/chevron.svg);
     background-position: right center;
     background-repeat: no-repeat;
 }
 #jqt ul.edgetoedge li.sep {
-    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(0,0,0,0)), to(rgba(0,0,0,.5)));
-    border-bottom: 1px solid #111113;
-    border-top: 1px solid #666;
-    color: #3e9ac3;
+    background: rgba(255,255,255,0.25);
+    color: #fff;
     font-size: 16px;
-    margin: 1px 0 0 0;
     padding: 2px 10px;
-    text-shadow: #000 0 1px 0;
+    text-shadow: 0 1px 1px rgba(0,0,0,0.5);
+    border: none;
 }
 #jqt ul.edgetoedge li em {
     font-weight: normal;
@@ -456,26 +481,27 @@ body {
 }
 /* @end */
 /* @group Plastic */
-#jqt #plastic {
-    background: #17181a;
-}
+
 #jqt ul.plastic {
-    background: #17181a;
-    color: #aaa;
+    color: rgba(0,0,0,0.3);
     font: bold 18px "Helvetica Neue", Helvetica;
     margin: 0;
     padding: 0;
     border-width: 0 0 1px 0;
+    background: rgba(255,255,255,0.7);
 }
 #jqt ul.plastic li {
-    border-width: 1px 0;
-    border-style: solid;
-    border-top-color: #222;
-    border-bottom-color: #000;
-    color: #666;
+    color: rgba(0,0,0,0.6);
     list-style-type: none;
     overflow: hidden;
     padding: 10px 10px 10px 10px;
+    margin: 0;
+    border: none;
+    border-bottom: 1px solid rgba(0,0,0,0.1)
+}
+#jqt ul.plastic li a {
+  text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(255,255,255,0)), to(rgba(255,255,255,0.5)));
 }
 #jqt ul.plastic li a.active.loading {
     background-image: url(img/loading.gif);
@@ -489,28 +515,19 @@ body {
     line-height: 24px;
     text-transform: uppercase;
 }
-#jqt ul.plastic li:nth-child(odd) {
-    background-color: #1c1c1f;
-}
 #jqt ul.plastic li.arrow {
-    background-image: url(img/chevron.png);
-    background-position: right center;
-    background-repeat: no-repeat;
-}
-#jqt ul.plastic li.arrow a.active {
-    background-image: url(img/chevron.png);
+    background-image: url(img/chevron_dark.svg);
     background-position: right center;
     background-repeat: no-repeat;
 }
 #jqt ul.plastic li.forward {
-    background-image: url(img/chevron_circle.png);
+    background-image: url(img/chevron_circle.svg);
     background-position: right center;
     background-repeat: no-repeat;
 }
-#jqt ul.plastic li.forward a.active {
-    background-image: url(img/chevron_circle.png);
-    background-position: right center;
-    background-repeat: no-repeat;
+#jqt ul.plastic li a.active {
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(255,255,255,0)), to(rgba(255,255,255,0.5)));
+    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.5);
 }
 /* @group Metal */
 #jqt ul.metal {
@@ -519,19 +536,19 @@ body {
     border-right: 0;
     border-top: 0;
     margin: 0;
+    background: white;
 }
 #jqt ul.metal li {
     background-image: none;
-    border-top: 1px solid #fff;
-    border-bottom: 1px solid #666;
     font-size: 26px;
-    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(238,238,238,1)), to(rgba(156,158,160,1)));
+    padding: 0;
 }
 #jqt ul.metal li a {
+    padding: 13px;
     line-height: 26px;
     margin: 0;
-    text-shadow: #fff 0 1px 0;
-    padding: 13px 0;
+    text-shadow: rgba(255,255,255,0.7) 0 1px 0;
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(238,238,238,1)), to(rgba(200,200,200,1)));
 }
 #jqt ul.metal li a em {
     display: block;
@@ -542,7 +559,8 @@ body {
     line-height: 14px;
 }
 #jqt ul.metal li a.active {
-    color: rgb(0,0,0);
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(200,200,200,1)), to(rgba(238,238,238,1)));
+    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.5)
 }
 #jqt ul.metal li small {
     float: right;
@@ -551,10 +569,10 @@ body {
     font-weight: bold;
 }
 #jqt ul.metal li.arrow {
-    background-image: url(img/chevron.png);
+    background-image: url(img/chevron.svg);
     background-position: right center;
     background-repeat: no-repeat;
-    background-image: url(img/chevron.png), -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(238,238,238,1)), to(rgba(156,158,160,1)));
+    background-image: url(img/chevron.svg), -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(238,238,238,1)), to(rgba(156,158,160,1)));
     background-repeat: no-repeat;
     background-position: right center;
 }
