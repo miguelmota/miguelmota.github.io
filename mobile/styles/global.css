@@ -35,7 +35,9 @@ li.view a {
 	font-size: 10px;
 }
 */
-
+strong {
+	font-weight: bold;
+}
 img {
 	width: 100%;
 	height: auto;	
