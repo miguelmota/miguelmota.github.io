@@ -53,7 +53,7 @@ div#blog li.arrow a {
 	display: inline;
 	font-size: 12px;
 }
-li.view a {
+li.view {
 	font-size: 10px;
 }
 /* PORTFOLIO_PAGE ============================================================ */
