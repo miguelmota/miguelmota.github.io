@@ -54,7 +54,8 @@ div#blog li.arrow a {
 	font-size: 12px;
 }
 a#standard_view {
-	font-size: 10px;
+	font-size: 12px;
+	float: right;
 }
 /* PORTFOLIO_PAGE ============================================================ */
 div#portfolio div.sort {
