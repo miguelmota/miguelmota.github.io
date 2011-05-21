@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	//$("a:not('a[href^='#']')").attr('target','_blank');
 	
-	$('ul.nav li a').live('click', function(){
+	$("ul.nav li a:not('.contact')").live('click', function(){
 		$($(this).attr('href')+' div.content ul li.arrow').load('/'+$(this).attr('href').substr(1)+' section.content');
 	});
 	
