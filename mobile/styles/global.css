@@ -50,12 +50,10 @@ div.content p {
 	margin-bottom: 10px;
 	font-size: 12px;
 }
-div.content p a {
-	font-size: 12px;
-}
 div#about li.arrow a,
 div#portfolio li.arrow a {
 	display: inline;
+	font-size: 12px;
 }
 /* PORTFOLIO_PAGE ============================================================ */
 div#portfolio div.sort {
