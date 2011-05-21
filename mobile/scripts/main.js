@@ -1,9 +1,9 @@
 $(document).ready(function(){
 	//$("a:not('a[href^='#']')").attr('target','_blank');
-	
-	$("ul.nav li a:not('.contact, .stream')").live('click', function(){
-		$($(this).attr('href')+' div.content ul li.arrow').load('/'+$(this).attr('href').substr(1)+' section.content');
-	});
+
+		$('#about div.content ul li.arrow').load('/about section.content');
+		$('#portfolio div.content ul li.arrow').load('/portfolio section.content');
+
 	
 	streamPage();
 });
