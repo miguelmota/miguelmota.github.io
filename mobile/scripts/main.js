@@ -1,5 +1,10 @@
 $(document).ready(function(){
-	$("a:not('a[href^='#']')").attr('target','_blank');
+	//$("a:not('a[href^='#']')").attr('target','_blank');
+	
+	$('ul.nav li a').click(function(){
+		$($(this).href().substr(1)+' div.content ul li.arrow').load($(this).href().substr(1)+' section.content');
+	});
+	
 	$('div#about div.content ul li.arrow').load('/about section.content');
 	streamPage();
 });

@@ -23,7 +23,12 @@
 -->
 	<title>Miguel Mota</title>
 	<link rel='shortcut icon' href='/favicon.ico' />
-	<link rel='stylesheet' href='styles/global.min.css' />
+   	<link href="jqtouch/jqtouch.css" rel='stylesheet' />
+    <link href="themes/artspot/theme.css" rel='stylesheet' />
+   	<link href="styles/global.css" rel='stylesheet' />
+	<script src="jqtouch/jquery.js"></script>
+	<script src="jqtouch/jqtouch.js"></script>
+	<script src="scripts/main.js"></script>
 
 </head>
 <body>
@@ -31,12 +36,12 @@
 		<div class='toolbar'>
 			<h1>Miguel Mota</h1>
 		</div>
-		<ul class='plastic'>
+		<ul class='plastic nav'>
 			<li class='arrow'><a class='stream' href='#stream'>Stream</a></li>
 			<li class='arrow'><a href='#about'>About</a></li>
 			<li class='arrow'><a href='#portfolio'>Portfolio</a></li>
 			<li class='arrow'><a href='#contact'>Contact</a></li>
-			<li class='arrow'><a href='http://blog.miguelmota.com'>Blog</a></li>
+			<li class='arrow'><a href='#blog'>Blog</a></li>
 			<li class='arrow view'><a href='http://www.miguelmota.com'>Standard view</a></li>
 		</ul>
 	</div>
@@ -132,7 +137,15 @@
 			</ul>
 		</div>
 	</div>
-	<script src='scripts/main.min.js'></script>
+	<div id='blog'>
+		<div class='toolbar'>
+			<h1>Blog</h1>
+			<a class="back" href="#home">Home</a> 
+		</div>
+		<div class='content'><ul class='plastic'><li class='arrow'></li></ul></div>
+	</div>
+	
+	
 	<script>
   		var _gaq = _gaq || [];
   		_gaq.push(['_setAccount', 'UA-12642068-1']);

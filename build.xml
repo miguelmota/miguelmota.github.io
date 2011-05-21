@@ -46,6 +46,8 @@
 			</sources>
 		</jscomp>    
 	</target>
+	
+
 	<target name="compile-mobile">
 		<property 
 		    name="yui-compressor.jar" 
@@ -82,4 +84,5 @@
 			</sources>
 		</jscomp>
 	</target>
+	
 </project>
