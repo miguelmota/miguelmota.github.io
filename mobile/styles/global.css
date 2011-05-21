@@ -7,10 +7,7 @@ img {
 	width: 100%;
 	height: auto;	
 }
-p {
-	margin-bottom: 10px;
-	color: #999;
-}
+
 img.loader {
 	display: none;
 	width: 16px;
@@ -20,9 +17,7 @@ img.loader {
 div.content li.arrow {
 	font-size: 12px;
 }
-div.content span.sub {
-	color: #555;
-}
+
 div.content li.arrow p {
 	font-size: 12px;
 }
@@ -46,6 +41,17 @@ li.view a {
 	font-size: 10px;
 }
 */
+
+img {
+	width: 100%;
+	height: auto;	
+}
 h1.title {
 	display: none;
+}
+div.content span.sub {
+	color: #555;
+}
+p {
+	margin-bottom: 10px;
 }
