@@ -77,7 +77,7 @@ var niceTime = (function(){
 	})();
 
 
-
+/*
 
 
 function streamPage(){
@@ -206,7 +206,7 @@ function streamPage(){
 	
 }
 
-
+*/
 
 
 /*
