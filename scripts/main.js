@@ -286,11 +286,14 @@ function hideLoader(){
 }
 
 function streamPage(){
-
+	
 	//initialize mtip
 	$('.mtip').mtip();
 	
 	while(c == 0){
+		
+		//hide social link text
+		$('div.stream a.social').text('');
 		
 		//Facebook stream
 		$('div.facebook img.loader').css('display','block');

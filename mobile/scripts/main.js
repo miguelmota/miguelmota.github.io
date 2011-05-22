@@ -7,7 +7,8 @@ $(document).ready(function(){
 	$('#blog div.content ul li.arrow').load('/blog section.content');
 
 
-
+	//streamPage();
+	
 	$('#blog div.content h3 a').live('click', function(){
 		//initialize Disqus
 		loadDisqus();
