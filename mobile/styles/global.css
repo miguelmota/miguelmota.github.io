@@ -66,6 +66,7 @@ div#stream a.facebook {
 	background-position: 0 0;
 	background-image: url('../../images/facebook_sprite.png');
 	width: 73px;
+	border: 1px solid black;
 }
 div#stream a.facebook:hover,
 div#stream a.facebook:active {
