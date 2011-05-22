@@ -95,7 +95,8 @@ div#portfolio div.sort {
 }
 div#portfolio div.work {
 	margin-bottom: 45px;
-	border-bottom: 1px solid #ddd;
+	padding-top: 5px;
+	border-top: 1px solid #ddd;
 }
 div#portfolio div.container {
 	position: relative;
