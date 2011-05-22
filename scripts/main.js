@@ -6,7 +6,7 @@ $(document).ready(function(){
 		$('a#mobile_bar').hide();
 		setTimeout(function(){
 			$('a#mobile_bar').slideDown('slow');
-		}, 3000);
+		}, 2500);
 		$('a#mobile_close').live('click', function(){
 			$(this).hide();
 			$('a#mobile_bar').slideUp('normal');
