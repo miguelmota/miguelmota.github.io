@@ -9,6 +9,7 @@ $(document).ready(function(){
 
 	//streamPage();
 	function showTitle(){
+		alert('asdfjasdf');
 		$('div.facebook').append('<p>jaksdf</p>');
 	}
 
