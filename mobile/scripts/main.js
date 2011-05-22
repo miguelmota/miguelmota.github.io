@@ -6,7 +6,9 @@ $(document).ready(function(){
 	$('#portfolio div.content ul li.arrow').load('/portfolio section.content');
 	$('#blog div.content ul li.arrow').load('/blog section.content');
 
+
 			streamPage();
+			$('ul.facebook_status').html("<a class='social facebook' href='http://www.facebook.com/miguel.mota2'>Facebook</a>");
 
 	$('#blog div.content h3 a').live('click', function(){
 		//initialize Disqus
@@ -81,7 +83,6 @@ var niceTime = (function(){
 function streamPage(){
 	
 		//Facebook stream
-		$('ul.facebook_status').prepend("<a class='social facebook' href='http://www.facebook.com/miguel.mota2'>Facebook</a>");
 		$('div.facebook img.loader').css('display','block');
 		$.getJSON('https://graph.facebook.com/miguel.mota2/feed?limit=3&callback=?', 
 				function(json){
