@@ -7,18 +7,23 @@ $(document).ready(function(){
 	//$('#blog div.content ul li.arrow').load('/blog section.content');
 	$('ul.nav li a').live('click', function(){
 		$($(this).attr('href')+' div.content ul li.arrow').load('/'+$(this).attr('href').substr(1)+' section.content');
+		switch($(this).attr('href').substr(1)){
+		case: 'stream';
+			streamPage();
+			break;
+		default:
+			break;
+		}
 	});
 	$('#blog div.content h3 a').live('click', function(){
 		//initialize Disqus
-		//loadDisqus();
+		loadDisqus();
 		
-		//$('#blog div.content ul li.arrow').load($(this).attr('href')+' section.content');
-	//	return false;
+		$('#blog div.content ul li.arrow').load($(this).attr('href')+' section.content');
+		return false;
 	});
 
 
-	
-	//streamPage();
 });
 
 var jQt = $.jQTouch({
@@ -77,7 +82,7 @@ var niceTime = (function(){
 	})();
 
 
-/*
+
 
 
 function streamPage(){
@@ -206,7 +211,7 @@ function streamPage(){
 	
 }
 
-*/
+
 
 
 /*
