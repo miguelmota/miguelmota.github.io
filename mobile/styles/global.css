@@ -55,8 +55,9 @@ a#standard_view {
 	color: #999;
 }
 /* STREAM_PAGE ============================================================ */
-div#stream a.social {
-	
+div#stream a.facebook {
+	display: block;
+	border: 1px solid black;
 }
 span.mtip {
 	display: none;
