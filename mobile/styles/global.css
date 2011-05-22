@@ -55,12 +55,12 @@ a#standard_view {
 	color: #999;
 }
 /* STREAM_PAGE ============================================================ */
-section.stream a.facebook {
+div#stream a.facebook {
 	background: url('/images/facebook_sprite.png');
 	width: 73px;
 }
-section.stream a.facebook:hover,
-section.stream a.facebook:active {
+div#stream a.facebook:hover,
+div#stream a.facebook:active {
 	background-position: 0 16px;
 }
 span.mtip {
