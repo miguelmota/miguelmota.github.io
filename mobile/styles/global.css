@@ -39,6 +39,7 @@ div.content p {
 	margin-bottom: 10px;
 	font-size: 12px;
 }
+div#stream li.arrow a,
 div#about li.arrow a,
 div#portfolio li.arrow a,
 div#blog li.arrow a {
@@ -67,7 +68,7 @@ div#stream ul {
     color: #999;
     font: bold 18px "Helvetica Neue", Helvetica;
     padding: 0;
-    margin: 0;
+    margin: 20px 0;
 }
 
 div#stream ul li {
@@ -77,6 +78,14 @@ div#stream ul li {
     overflow: hidden;
     border-top: none;
     background-color: #fff;
+}
+
+div#stream ul li span.date {
+	float: right;
+}
+
+div#stream div.latitude {
+	display: none;	
 }
 /* /STREAM_PAGE ============================================================ */
 /* PORTFOLIO_PAGE ============================================================ */
