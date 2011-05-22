@@ -1,5 +1,8 @@
 $(document).ready(function(){
 	$("a:not('a[href^='#']')").attr('target','_blank');
+	$('div.content ul li.arrow a').live('click', function(){
+		return true;
+	});
 
 	$('#stream div.content ul li.arrow').load('/stream section.content');
 	$('#about div.content ul li.arrow').load('/about section.content');
