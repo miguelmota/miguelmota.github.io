@@ -1,13 +1,16 @@
 $(document).ready(function(){
 	$("a:not('a[href^='#']')").attr('target','_blank');
 
-	$('#stream div.content ul li.arrow').load('/stream section.content');
+	$('#stream div.content ul li.arrow').load('/stream section.content', showTitle);
 	$('#about div.content ul li.arrow').load('/about section.content');
 	$('#portfolio div.content ul li.arrow').load('/portfolio section.content');
 	$('#blog div.content ul li.arrow').load('/blog section.content');
 
 
 	//streamPage();
+	function showTitle(){
+		$('ul.facebook_status').before('<p>jaksdf</p>');
+	}
 
 	$('#blog div.content h3 a').live('click', function(){
 		//initialize Disqus
