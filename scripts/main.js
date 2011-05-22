@@ -293,7 +293,7 @@ function streamPage(){
 	while(c == 0){
 		
 		//hide text
-		$('a.social').text('');
+		$('div.stream a.social').text('');
 		
 		//Facebook stream
 		$('div.facebook img.loader').css('display','block');
