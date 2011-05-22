@@ -93,9 +93,14 @@ div#stream div.latitude {
 div#portfolio div.sort {
 	display: none;
 }
+div#portfolio div.work {
+	margin-bottom: 45px;
+	border-bottom: 1px solid #999;
+}
 div#portfolio div.container {
 	position: relative;
 	height: 100px;
+	margin-bottom: 10px 
 	overflow: hidden;
 }
 div#portfolio div.container img {
@@ -103,7 +108,6 @@ div#portfolio div.container img {
 }
 div#portfolio p.description {
 	position: relative;
-	margin: 10px 0 45px 0;
 }
 div#portfolio span.date {
 	float: right;
