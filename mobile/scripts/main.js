@@ -7,13 +7,13 @@ $(document).ready(function(){
 	//$('#blog div.content ul li.arrow').load('/blog section.content');
 	$('ul.nav').live('click', function(){
 		$($(this).attr('href')+' div.content ul li.arrow').load('/'+$(this).attr('href').substr(1)+'section.content');
-	}
+	});
 	$('#blog div.content h3 a').live('click', function(){
 		//initialize Disqus
-		loadDisqus();
+		//loadDisqus();
 		
 		//$('#blog div.content ul li.arrow').load($(this).attr('href')+' section.content');
-		return false;
+	//	return false;
 	});
 
 
