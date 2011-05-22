@@ -100,7 +100,7 @@ div#portfolio div.work {
 div#portfolio div.container {
 	position: relative;
 	height: 100px;
-	margin-bottom: 10px 
+	margin-bottom: 10px;
 	overflow: hidden;
 }
 div#portfolio div.container img {
