@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	//$("a:not('a[href^='#']')").attr('target','_blank');
 
-	$('#stream div.content').load('/about section.content');
+	$('#stream div.content').load('/ section.content');
 	$('#about div.content ul li.arrow').load('/about section.content');
 	$('#portfolio div.content ul li.arrow').load('/portfolio section.content');
 	$('#blog div.content ul li.arrow').load('/blog section.content');
