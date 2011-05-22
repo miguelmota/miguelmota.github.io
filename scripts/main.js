@@ -2,8 +2,8 @@ $(document).ready(function(){
 	
 	//display mobile link if window is 640px or less
 	if(window.innerWidth <= 640){
+		$('div#wrap').prepend("<a id='mobile_bar' href='/mobile'>view mobile site</a><a id='mobile_close' href='javascript:void(0);'>x</a>").hide();
 		setTimeout(function(){
-			$('div#wrap').prepend("<a id='mobile_bar' href='/mobile'>view mobile site</a><a id='mobile_close' href='javascript:void(0);'>x</a>");
 			$('a#mobile_bar').slideDown('slow');
 		}, 3000);
 		$('a#mobile_close').live('click', function(){
