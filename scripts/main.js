@@ -292,6 +292,9 @@ function streamPage(){
 	
 	while(c == 0){
 		
+		//hide text
+		$('a.social').text('');
+		
 		//Facebook stream
 		$('div.facebook img.loader').css('display','block');
 		$.getJSON('https://graph.facebook.com/miguel.mota2/feed?limit=3&callback=?', 
