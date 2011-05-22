@@ -57,10 +57,9 @@ a#standard_view {
 /* STREAM_PAGE ============================================================ */
 div#stream a.social {
 	display: block;
-	width: auto;
 	height: 16px;
 	margin-bottom: 5px;
-	float: left;
+	background: none;
 	background-repeat: no-repeat;
 	background-position: 0 0;
 }
