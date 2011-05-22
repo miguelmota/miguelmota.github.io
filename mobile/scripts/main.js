@@ -1,9 +1,9 @@
 $(document).ready(function(){
-	$("a:not('a[href^='#']')").attr('target','_blank');
 	
 	
 	$('div.content ul li.arrow a').live('click', function(){
 		$(this).attr('rel', 'external');
+		$(this).attr('target','_blank');
 		return true;
 	});
 	
