@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	
 	
-	$('div.content ul li.arrow a').live('click', function(){
+	$('div.content ul li.arrow a, a#standard_view').live('click', function(){
 		$(this).attr('rel', 'external');
 		$(this).attr('target','_blank');
 		return true;
