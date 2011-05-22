@@ -1,17 +1,12 @@
 $(document).ready(function(){
 	$("a:not('a[href^='#']')").attr('target','_blank');
 
-	$('#stream div.content ul li.arrow').load('/stream section.content', showTitle);
+	//$('#stream div.content ul li.arrow').load('/stream section.content');
 	$('#about div.content ul li.arrow').load('/about section.content');
 	$('#portfolio div.content ul li.arrow').load('/portfolio section.content');
 	$('#blog div.content ul li.arrow').load('/blog section.content');
 
 
-	//streamPage();
-	function showTitle(){
-		alert('asdfjasdf');
-		$('div.facebook').append('<p>jaksdf</p>');
-	}
 
 	$('#blog div.content h3 a').live('click', function(){
 		//initialize Disqus
