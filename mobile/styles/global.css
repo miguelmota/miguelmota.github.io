@@ -55,6 +55,15 @@ a#standard_view {
 	color: #999;
 }
 /* STREAM_PAGE ============================================================ */
+div#stream a.social {
+	display: block;
+	width: auto;
+	height: 16px;
+	margin-bottom: 5px;
+	float: left;
+	background-repeat: no-repeat;
+	background-position: 0 0;
+}
 div#stream a.facebook {
 	background: url('/images/facebook_sprite.png');
 	width: 73px;
