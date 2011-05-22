@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	//$("a:not('a[href^='#']')").attr('target','_blank');
 
-	$('#stream div.content').load('/ section.content');
+	$('#stream div.content ul li.arrow').load('/stream section.content');
 	$('#about div.content ul li.arrow').load('/about section.content');
 	$('#portfolio div.content ul li.arrow').load('/portfolio section.content');
 	$('#blog div.content ul li.arrow').load('/blog section.content');
@@ -17,7 +17,7 @@ $(document).ready(function(){
 
 
 	
-	streamPage();
+	//streamPage();
 });
 
 var jQt = $.jQTouch({
