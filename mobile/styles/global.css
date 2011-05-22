@@ -44,6 +44,7 @@ div#about li.arrow a,
 div#portfolio li.arrow a,
 div#blog li.arrow a {
 	display: inline;
+	word-wrap: break-word;
 	text-decoration: underline;
 	font-size: 12px;
 }
@@ -107,7 +108,8 @@ div#portfolio div.work:last-child {
 }
 div#portfolio div.container {
 	position: relative;
-	height: 100px;
+	height: 120px;
+	width: 100%;
 	margin-bottom: 10px;
 	overflow: hidden;
 }
