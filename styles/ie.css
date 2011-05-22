@@ -2,6 +2,9 @@
 * {
 	opacity: none;	
 }
+section.stream div#stream div.latitude {
+	display: none !important;	
+}
 section.portfolio div.container div.overlay {
 	display: none !important;
 }
