@@ -1,20 +1,14 @@
 $(document).ready(function(){
 	//$("a:not('a[href^='#']')").attr('target','_blank');
 
-	//$('#stream div.content ul li.arrow').load('/stream section.content');
-	//$('#about div.content ul li.arrow').load('/about section.content');
-	//$('#portfolio div.content ul li.arrow').load('/portfolio section.content');
-	//$('#blog div.content ul li.arrow').load('/blog section.content');
-	$('ul.nav li a').live('click', function(){
-		$($(this).attr('href')+' div.content .arrow').load('/'+$(this).attr('href').substr(1)+' section.content');
-		switch($(this).attr('href').substr(1)){
-		case 'stream':
+	$('#stream div.content').load('/stream section.content');
+	$('#about div.content ul li.arrow').load('/about section.content');
+	$('#portfolio div.content ul li.arrow').load('/portfolio section.content');
+	$('#blog div.content ul li.arrow').load('/blog section.content');
+
+
 			streamPage();
-			break;
-		default:
-			break;
-		}
-	});
+
 	$('#blog div.content h3 a').live('click', function(){
 		//initialize Disqus
 		loadDisqus();
