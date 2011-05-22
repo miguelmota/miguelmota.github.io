@@ -59,12 +59,12 @@ div#stream a.social {
 	display: block;
 	height: 16px;
 	margin-bottom: 5px;
-	background: none;
+	background-image: none;
 	background-repeat: no-repeat;
 	background-position: 0 0;
 }
 div#stream a.facebook {
-	background: url('/images/facebook_sprite.png');
+	background-image: url('../../images/facebook_sprite.png');
 	width: 73px;
 }
 div#stream a.facebook:hover,
