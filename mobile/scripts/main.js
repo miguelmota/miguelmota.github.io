@@ -80,7 +80,7 @@ var niceTime = (function(){
 
 function streamPage(){
 		
-		$('a.facebook').after('<a href=''>Facebook</a>');
+		$('a.facebook').after("<a href='#'>Facebook</a>");
 	
 		//Facebook stream
 		$('div.facebook img.loader').css('display','block');
