@@ -117,6 +117,7 @@ function streamPage(){
 			    	  	default:
 			    	  		break;
 			    	  	}
+			    	    $('ul.facebook_status').prepend("<li class='status'>Facebook</li>");
 					});
 					$('div.facebook img.loader').css('display','none');
 				}
