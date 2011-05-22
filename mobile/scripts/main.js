@@ -79,10 +79,9 @@ var niceTime = (function(){
 
 
 function streamPage(){
-		
-		$('a.facebook').after("<a style='float:left;display:block;' href='#'>Facebook</a>");
 	
 		//Facebook stream
+		$('ul.facebook_status').before("<a class='social facebook' href='http://www.facebook.com/miguel.mota2'>Facebook</a>");
 		$('div.facebook img.loader').css('display','block');
 		$.getJSON('https://graph.facebook.com/miguel.mota2/feed?limit=3&callback=?', 
 				function(json){
