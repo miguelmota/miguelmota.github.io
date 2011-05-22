@@ -99,6 +99,9 @@ div#portfolio div.work {
 	padding-top: 5px;
 	border-top: 1px solid #ddd;
 }
+div#portfolio div.work:last-child {
+	margin-bottom: 0;
+}
 div#portfolio div.container {
 	position: relative;
 	height: 100px;
