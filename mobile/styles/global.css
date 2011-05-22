@@ -65,7 +65,8 @@ div#stream a.facebook {
 	margin-bottom: 5px;
 	background-repeat: no-repeat;
 	background-position: 0 0;
-	background-image: url('/images/facebook_sprite.png');
+	background: url('/images/facebook_sprite.png');
+	background-color: #fff;
 	width: 73px;
 	border: 1px solid black;
 }
