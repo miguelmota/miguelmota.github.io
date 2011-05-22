@@ -7,7 +7,7 @@ $(document).ready(function(){
 	$('#blog div.content ul li.arrow').load('/blog section.content');
 
 
-	streamPage();
+	//streamPage();
 
 	$('#blog div.content h3 a').live('click', function(){
 		//initialize Disqus
@@ -148,7 +148,6 @@ function streamPage(){
 				    	  	var url = this.url;
 				    	  	var caption = this['photo-caption'];
 				    	  	var slug = this.slug.replace(/-/g,' ');
-				    	    $('ul.tumblr_posts').prepend("<li>Facebook</li>");
 				    	  	$('ul.tumblr_posts').append("<li>&#187; <a href='"+url+"'>"+slug.substring(0,1).toUpperCase()+slug.substr(1,200)+"</a> <span class='date'>"+niceTime(date)+"</span></li>");
 				      }); 
 					  $('div.tumblr img.loader').css('display','none');
