@@ -9,7 +9,7 @@ $(document).ready(function(){
 
 	//streamPage();
 	function showTitle(){
-		$('ul.facebook_status').before('<p>jaksdf</p>');
+		$('div.facebook').append('<p>jaksdf</p>');
 	}
 
 	$('#blog div.content h3 a').live('click', function(){
