@@ -5,7 +5,7 @@ $(document).ready(function(){
 	//$('#about div.content ul li.arrow').load('/about section.content');
 	//$('#portfolio div.content ul li.arrow').load('/portfolio section.content');
 	//$('#blog div.content ul li.arrow').load('/blog section.content');
-	$('ul.nav').live('click', function(){
+	$('ul.nav li a').live('click', function(){
 		$($(this).attr('href')+' div.content ul li.arrow').load('/'+$(this).attr('href').substr(1)+'section.content');
 	});
 	$('#blog div.content h3 a').live('click', function(){
