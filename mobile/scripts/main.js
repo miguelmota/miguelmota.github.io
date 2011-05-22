@@ -117,7 +117,6 @@ function streamPage(){
 			    	  	default:
 			    	  		break;
 			    	  	}
-			    	    $('ul.facebook_status').prepend("<li class='status'>Facebook</li>");
 					});
 					$('div.facebook img.loader').css('display','none');
 				}
@@ -149,6 +148,7 @@ function streamPage(){
 				    	  	var url = this.url;
 				    	  	var caption = this['photo-caption'];
 				    	  	var slug = this.slug.replace(/-/g,' ');
+				    	    $('ul.tumblr_posts').prepend("<li>Facebook</li>");
 				    	  	$('ul.tumblr_posts').append("<li>&#187; <a href='"+url+"'>"+slug.substring(0,1).toUpperCase()+slug.substr(1,200)+"</a> <span class='date'>"+niceTime(date)+"</span></li>");
 				      }); 
 					  $('div.tumblr img.loader').css('display','none');
