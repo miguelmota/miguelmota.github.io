@@ -76,11 +76,11 @@ var niceTime = (function(){
 	})();
 
 
-
+var c = 0;
 
 
 function streamPage(){
-	
+
 	//initialize mtip
 	$('.mtip').mtip();
 	
