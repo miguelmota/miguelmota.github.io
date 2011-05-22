@@ -6,7 +6,6 @@ $(document).ready(function(){
 	$('#portfolio div.content ul li.arrow').load('/portfolio section.content');
 	$('#blog div.content ul li.arrow').load('/blog section.content');
 
-$('a.facebook').text('facebook');
 			streamPage();
 
 	$('#blog div.content h3 a').live('click', function(){
@@ -81,7 +80,7 @@ var niceTime = (function(){
 
 function streamPage(){
 
-
+	$('a.facebook').html('facebook');
 		
 		//Facebook stream
 		$('div.facebook img.loader').css('display','block');
