@@ -1,6 +1,11 @@
 $(document).ready(function(){
 	$("a:not('a[href^='#']')").attr('target','_blank');
-	$('div.content ul li.arrow a').attr('rel', 'external');
+	
+	
+	$('div.content ul li.arrow a').live('click', function(){
+		$(this).attr('rel', 'external');
+	});
+	
 
 	$('#stream div.content ul li.arrow').load('/stream section.content');
 	$('#about div.content ul li.arrow').load('/about section.content');
