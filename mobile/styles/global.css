@@ -78,6 +78,7 @@ div#stream ul li {
     overflow: hidden;
     border-top: none;
     background-color: #fff;
+    font-size: 12px;
 }
 
 div#stream ul li span.date {
