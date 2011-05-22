@@ -8,7 +8,7 @@ $(document).ready(function(){
 	$('ul.nav li a').live('click', function(){
 		$($(this).attr('href')+' div.content ul li.arrow').load('/'+$(this).attr('href').substr(1)+' section.content');
 		switch($(this).attr('href').substr(1)){
-		case: 'stream';
+		case 'stream':
 			streamPage();
 			break;
 		default:
