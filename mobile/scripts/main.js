@@ -76,15 +76,12 @@ var niceTime = (function(){
 	})();
 
 
-var c = 0;
+
 
 
 function streamPage(){
 
-	//initialize mtip
-	$('.mtip').mtip();
-	
-	while(c == 0){
+
 		
 		//Facebook stream
 		$('div.facebook img.loader').css('display','block');
@@ -203,18 +200,8 @@ function streamPage(){
 				$('div.wakoopa img.loader').css('display','none');
 			}
 		);
-		c++
-		refreshStream();
-	}
+
 	
-	//refresh stream page every 30 seconds
-	function refreshStream(){
-		setTimeout(function(){
-			if(window.location.pathname.substr(1) == 'stream' || window.location.pathname.substr(1) == 'index' || window.location.pathname == ''){
-				$('a#stream').trigger('click');
-			}
-		},30000);
-	}
 	
 }
 
