@@ -6,7 +6,7 @@
 	<property name="static.dir" value="" />
 	<property name="mobile.dir" value="mobile" />
 	<property name="lib.dir" value="lib" />
-	<target name="build" depends="compile-mobile"></target>
+	<target name="build" depends="compile"></target>
 	<target name="compile">
 		<property 
 		    name="yui-compressor.jar" 
