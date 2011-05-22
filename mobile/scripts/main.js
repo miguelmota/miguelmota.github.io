@@ -4,6 +4,7 @@ $(document).ready(function(){
 	
 	$('div.content ul li.arrow a').live('click', function(){
 		$(this).attr('rel', 'external');
+		return true;
 	});
 	
 
