@@ -79,8 +79,6 @@ var niceTime = (function(){
 
 
 function streamPage(){
-
-	$('a.facebook').html('facebook');
 		
 		//Facebook stream
 		$('div.facebook img.loader').css('display','block');
