@@ -6,7 +6,7 @@ $(document).ready(function(){
 	//$('#portfolio div.content ul li.arrow').load('/portfolio section.content');
 	//$('#blog div.content ul li.arrow').load('/blog section.content');
 	$('ul.nav li a').live('click', function(){
-		$($(this).attr('href')+' div.content ul li.arrow').load('/'+$(this).attr('href').substr(1)+' section.content');
+		$($(this).attr('href')+' div.content .arrow').load('/'+$(this).attr('href').substr(1)+' section.content');
 		switch($(this).attr('href').substr(1)){
 		case 'stream':
 			streamPage();

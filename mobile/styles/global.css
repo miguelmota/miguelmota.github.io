@@ -3,17 +3,9 @@
 body, div.content {
 	background-color: #434349;
 }
-img {
-	width: 100%;
-	height: auto;	
-}
 
-img.loader {
-	display: none;
-	width: 16px;
-	height: 16px;	
-	clear: both;
-}
+
+
 div.content li.arrow {
 	font-size: 12px;
 }
@@ -60,6 +52,17 @@ a#standard_view {
 	font-size: 12px;
 	color: #999;
 }
+/* STREAM_PAGE ============================================================ */
+span.mtip {
+	display: none;
+}
+img.loader {
+	display: none;
+	width: 16px;
+	height: 16px;	
+	clear: both;
+}
+/* /STREAM_PAGE ============================================================ */
 /* PORTFOLIO_PAGE ============================================================ */
 div#portfolio div.sort {
 	display: none;
