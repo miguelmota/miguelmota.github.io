@@ -56,13 +56,14 @@ a#standard_view {
 }
 /* STREAM_PAGE ============================================================ */
 div#stream a.social {
+
+}
+div#stream a.facebook {
 	display: block;
 	height: 16px;
 	margin-bottom: 5px;
 	background-repeat: no-repeat;
 	background-position: 0 0;
-}
-div#stream a.facebook {
 	background-image: url('../../images/facebook_sprite.png');
 	width: 73px;
 }
