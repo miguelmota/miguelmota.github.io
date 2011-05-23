@@ -18,7 +18,8 @@ $(document).ready(function(){
 	streamPage();
 	
 	//initialize fancybox
-	$('a.fancybox').fancybox({
+	setTimeout(function(){
+		$('a.fancybox').fancybox({
 			'padding': 0,
 			'transitionIn': 'fade',
 			'transitionOut': 'fade',
@@ -26,6 +27,9 @@ $(document).ready(function(){
 			'speedOut': 200, 
 			'overlayColor': '#000'
 	});
+		
+	}, 3000);
+
 	
 	$('#blog div.content h3 a').live('click', function(){
 		//initialize Disqus
