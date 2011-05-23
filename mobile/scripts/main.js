@@ -24,8 +24,8 @@ $(document).ready(function(){
 		Shadowbox.init();
 	}, 5000);
 
-	$('a.fancybox').live('click', function(){
-		return false;
+	$('a.fancybox').live('click', function(event){
+		event.preventDefault();
 	});
 	
 	
