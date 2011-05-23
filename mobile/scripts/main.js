@@ -17,18 +17,8 @@ $(document).ready(function(){
 
 	streamPage();
 	
-	//initialize fancybox
-	setTimeout(function(){
-		$('a.fancybox').fancybox({
-			'padding': 0,
-			'transitionIn': 'fade',
-			'transitionOut': 'fade',
-			'speedIn': 600, 
-			'speedOut': 200, 
-			'overlayColor': '#000'
-	});
-		
-	}, 3000);
+	//initialize
+	 $('a.fancybox').touchGallery();
 
 	
 	$('#blog div.content h3 a').live('click', function(){
