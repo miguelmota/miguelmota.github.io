@@ -17,8 +17,11 @@ $(document).ready(function(){
 
 	streamPage();
 	
-	//initialize
-	 $('a.fancybox').touchGallery();
+	//initialize fancybox
+	setTimeout(function(){
+		$('a.fancybox').touchGallery();
+		
+	}, 5000);
 
 	
 	$('#blog div.content h3 a').live('click', function(){
