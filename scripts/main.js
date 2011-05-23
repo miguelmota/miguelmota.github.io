@@ -475,8 +475,7 @@ function portfolioPage(){
 		  }
 	);
 	
-	//initialize Fancybox (using shadowbox instead)
-	/*
+	//initialize fancybox
 	$('a.fancybox').fancybox({
 			'padding': 0,
 			'transitionIn': 'fade',
@@ -485,10 +484,6 @@ function portfolioPage(){
 			'speedOut': 200, 
 			'overlayColor': '#000'
 	});
-	*/
-	
-	//initialize Shadowbox
-	Shadowbox.init();
 	
 }
 

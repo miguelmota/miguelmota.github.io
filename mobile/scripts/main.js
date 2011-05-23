@@ -1,23 +1,36 @@
 $(document).ready(function(){
 	
-	/*
-	$('div.content ul li.arrow a, a#standard_view').live('click', function(){
-		$(this).attr('rel', 'external');
-		$(this).attr('rel', 'external');
-		$(this).attr('target','_blank');
-		return true;
-	});
-	*/
+
 
 	$('#stream div.content ul li.arrow').load('/stream section.content', function(){
-		streamPage();
+		streamPage();	
 	});
+			
 	$('#about div.content ul li.arrow').load('/about section.content');
 	$('#portfolio div.content ul li.arrow').load('/portfolio section.content', function(){
-		Shadowbox.init();
+		
 	});
 	$('#blog div.content ul li.arrow').load('/blog section.content');
 
+
+
+	
+	//initialize fancybox
+	$('a.fancybox').fancybox({
+		'padding': 0,
+		'transitionIn': 'fade',
+		'transitionOut': 'fade',
+		'speedIn': 600, 
+		'speedOut': 200, 
+		'overlayColor': '#000'
+	});
+	
+	
+	setTimeout(function(){
+		$("div.content ul li.arrow a:not('a.fancybox'), a#standard_view").attr('rel', 'external');
+	}, 5000);
+
+	
 	
 	$('#blog div.content h3 a').live('click', function(){
 		//initialize Disqus
