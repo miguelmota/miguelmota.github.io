@@ -19,14 +19,7 @@ $(document).ready(function(){
 	
 	//initialize fancybox
 	setTimeout(function(){
-		$('a.fancybox').attr('rel','external').fancybox({
-			'padding': 0,
-			'transitionIn': 'fade',
-			'transitionOut': 'fade',
-			'speedIn': 600, 
-			'speedOut': 200, 
-			'overlayColor': '#000'
-	});
+		$('a.fancybox').attr('rel','external').touchGallery();
 		
 	}, 5000);
 
