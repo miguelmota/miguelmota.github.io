@@ -24,6 +24,10 @@ $(document).ready(function(){
 		Shadowbox.init();
 	}, 5000);
 
+	$('a.fancybox').live('click', function(){
+		return false;
+	});
+	
 	
 	$('#blog div.content h3 a').live('click', function(){
 		//initialize Disqus
