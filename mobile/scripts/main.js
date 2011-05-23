@@ -1,12 +1,13 @@
 $(document).ready(function(){
 	
-	
+	/*
 	$('div.content ul li.arrow a, a#standard_view').live('click', function(){
+		$(this).attr('rel', 'external');
 		$(this).attr('rel', 'external');
 		$(this).attr('target','_blank');
 		return true;
 	});
-	
+	*/
 
 	$('#stream div.content ul li.arrow').load('/stream section.content');
 	$('#about div.content ul li.arrow').load('/about section.content');
