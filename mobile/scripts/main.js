@@ -16,12 +16,7 @@ $(document).ready(function(){
 
 
 	streamPage();
-	
-	//initialize fancybox
-	setTimeout(function(){
-		$('#migs').touchGallery();
-		
-	}, 5000);
+
 
 	
 	$('#blog div.content h3 a').live('click', function(){
