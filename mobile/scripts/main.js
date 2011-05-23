@@ -19,7 +19,7 @@ $(document).ready(function(){
 	
 	//initialize fancybox
 	setTimeout(function(){
-		$('a.fancybox').touchGallery();
+		$('#migs').touchGallery();
 		
 	}, 5000);
 
