@@ -801,7 +801,9 @@
             // Define public jQuery functions
             $.fn.isExternalLink = function() {
                 var $el = $(this);
-                return ($el.attr('target') == '_blank' || $el.attr('rel') == 'external' || $el.is('a[href^="http://maps.google.com"], a[href^="mailto:"], a[href^="tel:"], a[href^="javascript:"], a[href*="youtube.com/v"], a[href*="youtube.com/watch"]'));
+                return ($el.attr('target') == '_blank' || $el.attr('rel') == 'external' || $el.is('a[href^="http://maps.google.com"], a[href^="mailto:"], a[href^="tel:"], a[href^="javascript:"], a[href*="youtube.com/v"], a[href*="youtube.com/watch"]') 
+                		//NEW added this 05/23/11
+                		|| $el.attr('rel') == 'shadowbox[miggs]' ||);
             }
             $.fn.makeActive = function() {
                 return $(this).addClass('active');

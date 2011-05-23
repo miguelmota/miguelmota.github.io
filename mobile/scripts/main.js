@@ -23,10 +23,6 @@ $(document).ready(function(){
 		//$('a.fancybox').attr('rel','shadowbox external');
 		Shadowbox.init();
 	}, 5000);
-
-	$('a.fancybox').live('click', function(event){
-		event.preventDefault();
-	});
 	
 	
 	$('#blog div.content h3 a').live('click', function(){
