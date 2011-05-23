@@ -19,7 +19,7 @@ $(document).ready(function(){
 	
 	//initialize fancybox
 	setTimeout(function(){
-		$('div.content ul li.arrow a, a#standard_view').attr('rel', 'external');
+		//$('div.content ul li.arrow a, a#standard_view').attr('rel', 'external');
 		//$('a.fancybox').attr('rel','shadowbox external');
 		Shadowbox.init();
 	}, 5000);
