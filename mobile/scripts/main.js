@@ -19,7 +19,7 @@ $(document).ready(function(){
 	
 	//initialize fancybox
 	setTimeout(function(){
-		$('a.fancybox').fancybox({
+		$('a.fancybox').attr('rel','external').fancybox({
 			'padding': 0,
 			'transitionIn': 'fade',
 			'transitionOut': 'fade',
