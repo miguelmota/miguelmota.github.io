@@ -20,7 +20,8 @@ $(document).ready(function(){
 	//initialize fancybox
 	setTimeout(function(){
 		$('div.content ul li.arrow a, a#standard_view').attr('rel', 'external');
-		$('a.fancybox').attr('rel','external').fancybox();
+		$('a.fancybox').attr('rel','external');
+		$('div.container a').touchGallery();
 	}, 5000);
 
 	
