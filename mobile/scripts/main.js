@@ -9,21 +9,15 @@ $(document).ready(function(){
 	});
 	*/
 
-	$('#stream div.content ul li.arrow').load('/stream section.content');
+	$('#stream div.content ul li.arrow').load('/stream section.content', function(){
+		streamPage();
+	});
 	$('#about div.content ul li.arrow').load('/about section.content');
-	$('#portfolio div.content ul li.arrow').load('/portfolio section.content');
+	$('#portfolio div.content ul li.arrow').load('/portfolio section.content', function(){
+		Shadowbox.init();
+	});
 	$('#blog div.content ul li.arrow').load('/blog section.content');
 
-
-	streamPage();
-	
-	//initialize fancybox
-	setTimeout(function(){
-		//$('div.content ul li.arrow a, a#standard_view').attr('rel', 'external');
-		//$('a.fancybox').attr('rel','shadowbox external');
-		Shadowbox.init();
-	}, 5000);
-	
 	
 	$('#blog div.content h3 a').live('click', function(){
 		//initialize Disqus
