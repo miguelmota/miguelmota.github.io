@@ -73,7 +73,7 @@ a#standard_view {
 span.mtip {
 	display: none;
 }
-img.loader {
+div.content img.loader {
 	display: none;
 	width: 16px;
 	height: 16px;	
