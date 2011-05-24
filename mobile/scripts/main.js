@@ -8,22 +8,22 @@ $(document).ready(function(){
 			
 	$('#about div.content ul li.arrow').load('/about section.content');
 	$('#portfolio div.content ul li.arrow').load('/portfolio section.content', function(){
-		
+		//initialize fancybox
+		$('a.fancybox').fancybox({
+			'padding': 0,
+			'transitionIn': 'fade',
+			'transitionOut': 'fade',
+			'speedIn': 600, 
+			'speedOut': 200, 
+			'overlayColor': '#000'
+		});
 	});
 	$('#blog div.content ul li.arrow').load('/blog section.content');
 
 
 
 	
-	//initialize fancybox
-	$('a.fancybox').fancybox({
-		'padding': 0,
-		'transitionIn': 'fade',
-		'transitionOut': 'fade',
-		'speedIn': 600, 
-		'speedOut': 200, 
-		'overlayColor': '#000'
-	});
+
 	
 	
 	setTimeout(function(){
