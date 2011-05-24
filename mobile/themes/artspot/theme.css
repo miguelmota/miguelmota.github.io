@@ -1,7 +1,7 @@
 /** CHANGE COLORS HERE **/
 
 body, .toolbar, #jqt ul, #jqt ul.individual li,#jqt ul li a.active,#jqt .info,#jqt #plastic,#tabbar, .s-scrollpane {
-    background-color: #007799; /* main background color */
+    background-color: #000; /* main background color */
 }
 #jqt h1, #jqt h2, #jqt ul li a,#jqt .whiteButton, #jqt .button.active, #jqt .cancel.active, #jqt .add.active, #jqt .back.active,#jqt ul li small,#tabbar .badge,#jqt .info,#jqt .info a  {
     color: #999; /* main text color */
@@ -10,14 +10,15 @@ body, .toolbar, #jqt ul, #jqt ul.individual li,#jqt ul li a.active,#jqt .info,#j
 /** END **/
 
 body, .toolbar, #jqt ul, #jqt ul.individual li, #jqt ul li a.active,#tabbar,.s-scrollwrapper {
-    background-image: url(img/bg_noise.png);
+    background-image: url(img/bg_noise.png); 
 }
 #jqt > * {
-    background: rgba(255,255,255,0.9);
+    /*background: rgba(255,255,255,0.9);*/
+    background-color: #222;
 }
 #jqt h1, #jqt h2, #jqt ul li a {
     font: bold 18px "Helvetica Neue", Helvetica;
-    text-shadow: white 0 1px 0;
+    /* text-shadow: white 0 1px 0; */
     margin: 10px 20px 5px;
 }
 /* @group Toolbar */
@@ -194,9 +195,10 @@ body, .toolbar, #jqt ul, #jqt ul.individual li, #jqt ul li a.active,#tabbar,.s-s
     background-image: none;
 }
 #jqt ul li.arrow {
-    background-image: url(img/chevron.svg);
+    /*background-image: url(img/chevron.svg);
     background-position: right center !important;
-    background-repeat: no-repeat !important;
+    background-repeat: no-repeat !important;*/
+    background-color: #222;
 }
 
 #jqt ul li.arrow a {
@@ -459,7 +461,7 @@ body, .toolbar, #jqt ul, #jqt ul.individual li, #jqt ul li a.active,#tabbar,.s-s
 #jqt ul.edgetoedge li a.active {
   color: white;
   text-shadow: 0 1px 1px rgba(0,0,0,0.3);
-  -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.3);
+  webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.3);
 }
 #jqt ul.edgetoedge li.arrow {
     background-color: #404142 !important;
@@ -500,8 +502,9 @@ body, .toolbar, #jqt ul, #jqt ul.individual li, #jqt ul li a.active,#tabbar,.s-s
     border-bottom: 1px solid rgba(0,0,0,0.1)
 }
 #jqt ul.plastic li a {
-  text-shadow: 0 1px 0 rgba(255,255,255,0.5);
-    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(255,255,255,0)), to(rgba(255,255,255,0.5)));
+  	 /* text-shadow: 0 1px 0 rgba(255,255,255,0.5); */
+  	 text-shadow: 0 -1px 0 #000;
+    /* background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(255,255,255,0)), to(rgba(255,255,255,0.5))); */
 }
 #jqt ul.plastic li a.active.loading {
     background-image: url(img/loading.gif);
@@ -526,8 +529,8 @@ body, .toolbar, #jqt ul, #jqt ul.individual li, #jqt ul li a.active,#tabbar,.s-s
     background-repeat: no-repeat;
 }
 #jqt ul.plastic li a.active {
-    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(255,255,255,0)), to(rgba(255,255,255,0.5)));
-    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.5);
+    /* background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(255,255,255,0)), to(rgba(255,255,255,0.5)));
+    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.5); */
 }
 /* @group Metal */
 #jqt ul.metal {
