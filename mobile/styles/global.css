@@ -72,6 +72,9 @@ img.loader {
 	height: 16px;	
 	clear: both;
 }
+div#stream a.social {
+	font-size: 14px;
+}
 div#stream ul {
     color: #999;
     font: bold 18px "Helvetica Neue", Helvetica;
@@ -92,6 +95,7 @@ div#stream ul li {
 }
 div#stream ul li span.date {
 	float: right;
+	font-size: 10px;
 }
 
 div#stream div.latitude {
@@ -105,7 +109,7 @@ div#portfolio div.sort {
 div#portfolio div.work {
 	margin-bottom: 45px;
 	padding-top: 5px;
-	border-top: 1px solid #ddd;
+	border-top: 1px solid #000;
 }
 div#portfolio div.work:last-child {
 	margin-bottom: 0;
