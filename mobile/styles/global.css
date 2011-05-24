@@ -121,9 +121,10 @@ div#portfolio span.date {
 	color: #aaa;
 }
 /* /PORTFOLIO_PAGE =========================================================== */
-
+#fancybox-left, #fancybox-right {
+	display: block;
+}
 #fancybox-wrap {
-	padding: 0;
 }
 
 .fancybox-bg,
