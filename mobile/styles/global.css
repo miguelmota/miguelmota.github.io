@@ -73,7 +73,7 @@ img.loader {
 	clear: both;
 }
 div#stream a.social {
-	font-size: 14px;
+	font-size: 14px !important;
 }
 div#stream ul {
     color: #999;
@@ -95,7 +95,7 @@ div#stream ul li {
 }
 div#stream ul li span.date {
 	float: right;
-	font-size: 10px;
+	font-size: 10px !important;
 }
 
 div#stream div.latitude {

@@ -802,13 +802,15 @@
             $.fn.isExternalLink = function() {
                 var $el = $(this);
         		//NEW added rel=shadowbox 05/23/11
+                /*
                 return ($el.attr('target') == '_blank' || $el.attr('rel') == 'external' || $el.is('a[href^="http://maps.google.com"], a[href^="mailto:"], a[href^="tel:"], a[href^="javascript:"], a[href*="youtube.com/v"], a[href*="youtube.com/watch"]') 
                 		|| $el.attr('rel') == 'miggs'
                 		|| $el.attr('rel') == 'foodfail'
                 		|| $el.attr('rel') == 'mrgpropertiesinc'
                 		|| $el.attr('rel') == 'dunstar'
                 		|| $el.attr('rel') == 'miguelmota'
-                );
+                ); */
+                return ($el.attr('target') == '_blank' || $el.attr('rel') == 'external' || $el.is('a[href^="http://maps.google.com"], a[href^="mailto:"], a[href^="tel:"], a[href^="javascript:"], a[href*="youtube.com/v"], a[href*="youtube.com/watch"]'));
             }
             $.fn.makeActive = function() {
                 return $(this).addClass('active');
