@@ -128,8 +128,6 @@ div#portfolio span.date {
 }
 #fancybox-outer {
 	background: none !important;
-}
-#fancybox-content {
 	width: 200% !important;
 	height: 200% !important;
 }
