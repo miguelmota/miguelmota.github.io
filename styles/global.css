@@ -48,9 +48,9 @@
 	font-family: Klavika;
 	src: url('../fonts/klavika-webfont/klavika-italic-webfont..eot');
 	src: local('☺'),
-	url('../fonts/klavika-webfont/klavika-italic-webfont..woff') format('woff'),
-	url('../fonts/klavika-webfont/klavika-italic-webfont..ttf') format('truetype'),
-	url('../fonts/klavika-webfont/klavika-italic-webfont..svg') format('svg');
+	url('../fonts/klavika-webfont/klavika-italic-webfont.woff') format('woff'),
+	url('../fonts/klavika-webfont/klavika-italic-webfont.ttf') format('truetype'),
+	url('../fonts/klavika-webfont/klavika-italic-webfont.svg') format('svg');
 	font-style: italic;
 }
 @font-face {

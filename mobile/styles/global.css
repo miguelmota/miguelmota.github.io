@@ -29,7 +29,14 @@ div.content li.arrow span.date {
 }
 
 */
-img {
+img.logo {
+	height: 32px;
+	width: auto;
+    position: absolute;
+    left: 50%;
+    margin: -4px 0 0 -95px;
+}
+div.content img {
 	width: 100%;
 	height: auto;	
 }
