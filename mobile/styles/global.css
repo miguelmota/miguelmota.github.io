@@ -97,6 +97,9 @@ div#stream ul li span.date {
 	float: right;
 	font-size: 10px !important;
 }
+div#stream ul li span.date a {
+	font-size: 10px !important;
+}
 
 div#stream div.latitude {
 	display: none;	
@@ -129,7 +132,8 @@ div#portfolio p.description {
 }
 div#portfolio span.date {
 	float: right;
-	color: #aaa;
+	color: #555;
+	font-size: 10px !important;
 }
 /* /PORTFOLIO_PAGE =========================================================== */
 /*
