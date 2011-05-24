@@ -145,7 +145,8 @@ body, .toolbar, #jqt ul, #jqt ul.individual li, #jqt ul li a.active,#tabbar,.s-s
     border-radius: 8px;
 }
 #jqt .button.active, #jqt .cancel.active, #jqt .add.active, #jqt .back.active {
-    background: rgba(255,255,255,0.9);
+    /* background: rgba(255,255,255,0.9); */
+    background: #999;
     text-shadow: none;
 }
 #jqt .blueButton {
@@ -293,18 +294,21 @@ body, .toolbar, #jqt ul, #jqt ul.individual li, #jqt ul li a.active,#tabbar,.s-s
     background-position: 95% center;
     background-repeat: no-repeat;
 }
-/*
+
 #jqt ul li.arrow a.active {
+	/*
     background-image: url(img/chevron.svg);
     background-position: right center;
     background-repeat: no-repeat;
+    */
+    background-color: #999;
 }
 #jqt ul li.forward a.active {
     background-image: url(img/chevron_circle.png);
     background-position: right center;
     background-repeat: no-repeat;
 }
-*/
+
 #jqt ul li.img a + a {
     margin: -10px 10px -20px -5px;
     font-size: 17px;
