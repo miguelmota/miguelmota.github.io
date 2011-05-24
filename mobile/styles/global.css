@@ -128,12 +128,12 @@ div#portfolio span.date {
 }
 #fancybox-outer {
 	background: none !important;
-	width: 110% !important;
-	height: auto !important;
 }
 #fancybox-content {
 	border: 0 !important;
 	background: none !important;
+	width: 50% !important;
+	height: auto !important;
 }
 
 .fancybox-title-inside {
