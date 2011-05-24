@@ -110,18 +110,30 @@ body, .toolbar, #jqt ul, #jqt ul.individual li, #jqt ul li a.active,#tabbar,.s-s
     height: 40px;
     font-size: 20px;
     width: 150px;
-    font-family: "Klavika-Light";
-    font-weight: bold;
     text-shadow: rgba(0,0,0,0.5) 0 1px 1px;
     text-align: center;
     text-overflow: ellipsis;
     white-space: nowrap;
-    color: #fff;
+    color: #999;
+    letter-spacing: -2px;
 }
 #jqt.landscape .toolbar > h1 {
     margin-left: -125px;
     width: 250px;
 }
+
+
+
+h1 {
+	font-family: "Klavika", sans-serif !important;
+	text-transform: uppercase;
+}
+h1 span.mota {
+	font-weight: normal;
+}
+
+
+
 #jqt .button, #jqt .back, #jqt .cancel, #jqt .add {
     position: absolute;
     overflow: hidden;
