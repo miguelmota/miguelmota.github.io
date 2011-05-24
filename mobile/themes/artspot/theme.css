@@ -106,7 +106,7 @@ body, .toolbar, #jqt ul, #jqt ul.individual li, #jqt ul li a.active,#tabbar,.s-s
     left: 50%;
     top: 10px;
     line-height: 1em;
-    margin: 1px 0 0 -75px;
+    margin: 1px -32px 0 -75px;
     height: 40px;
     font-size: 20px;
     width: 150px;
