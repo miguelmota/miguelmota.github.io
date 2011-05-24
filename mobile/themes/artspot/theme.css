@@ -146,7 +146,7 @@ body, .toolbar, #jqt ul, #jqt ul.individual li, #jqt ul li a.active,#tabbar,.s-s
 }
 #jqt .button.active, #jqt .cancel.active, #jqt .add.active, #jqt .back.active {
     /* background: rgba(255,255,255,0.9); */
-    background: #999;
+    background: #222;
     text-shadow: none;
 }
 #jqt .blueButton {
@@ -301,7 +301,7 @@ body, .toolbar, #jqt ul, #jqt ul.individual li, #jqt ul li a.active,#tabbar,.s-s
     background-position: right center;
     background-repeat: no-repeat;
     */
-    background-color: #999;
+    background-color: #000;
 }
 #jqt ul li.forward a.active {
     background-image: url(img/chevron_circle.png);
