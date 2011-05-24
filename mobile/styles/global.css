@@ -134,9 +134,10 @@ div#portfolio span.date {
 	background: none !important;
 	width: 110% !important;
 	height: auto !important;
+}
 
 .fancybox-title-inside {
-	background: #none !important;
+	background: none !important;
 }
 
 .fancybox-bg,
