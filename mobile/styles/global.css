@@ -132,9 +132,8 @@ div#portfolio span.date {
 #fancybox-content {
 	border: 0 !important;
 	background: none !important;
-	width: 200% !important;
+	width: 110% !important;
 	height: auto !important;
-	overflow: visible !important;
 
 .fancybox-title-inside {
 	background: #none !important;
