@@ -115,7 +115,7 @@ body, .toolbar, #jqt ul, #jqt ul.individual li, #jqt ul li a.active,#tabbar,.s-s
     text-overflow: ellipsis;
     white-space: nowrap;
     color: #999;
-    letter-spacing: -2px;
+    letter-spacing: -1px;
 }
 #jqt.landscape .toolbar > h1 {
     margin-left: -125px;
