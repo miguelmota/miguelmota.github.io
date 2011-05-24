@@ -131,5 +131,12 @@ div#portfolio span.date {
 #fancybox-bg-sw,
 #fancybox-bg-w,
 #fancybox-bg-nw {
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	border: 0;
+	width: 0;
+	height: 0;
+	z-index: 1001;
 	background: none;
 }
