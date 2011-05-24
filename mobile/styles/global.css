@@ -45,7 +45,6 @@ div#about li.arrow a,
 div#portfolio li.arrow a,
 div#blog li.arrow a {
 	display: inline;
-	text-decoration: underline;
 	font-size: 12px;
 	color: #007799;
 }
@@ -53,7 +52,6 @@ a#standard_view {
 	display: block;
 	float: right;
 	padding: 5px 10px 5px 5px;
-	text-decoration: underline;
 	font-size: 12px;
 	color: #007799;
 }

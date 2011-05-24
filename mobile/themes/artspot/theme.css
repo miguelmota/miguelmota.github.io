@@ -14,7 +14,7 @@ body, .toolbar, #jqt ul, #jqt ul.individual li, #jqt ul li a.active,#tabbar,.s-s
 }
 #jqt > * {
     /*background: rgba(255,255,255,0.9);*/
-    background-color: #222;
+    background-color: #333;
 }
 #jqt h1, #jqt h2, #jqt ul li a {
     font: bold 18px "Helvetica Neue", Helvetica;
@@ -493,7 +493,8 @@ body, .toolbar, #jqt ul, #jqt ul.individual li, #jqt ul li a.active,#tabbar,.s-s
     background: rgba(255,255,255,0.7);
 }
 #jqt ul.plastic li {
-    color: rgba(0,0,0,0.6);
+    /* color: rgba(0,0,0,0.6); */
+    color: #999;
     list-style-type: none;
     overflow: hidden;
     padding: 10px 10px 10px 10px;
