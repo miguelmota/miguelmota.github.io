@@ -499,7 +499,8 @@ body, .toolbar, #jqt ul, #jqt ul.individual li, #jqt ul li a.active,#tabbar,.s-s
     padding: 10px 10px 10px 10px;
     margin: 0;
     border: none;
-    border-bottom: 1px solid rgba(0,0,0,0.1)
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    background-color: #222;
 }
 #jqt ul.plastic li a {
   	 /* text-shadow: 0 1px 0 rgba(255,255,255,0.5); */
