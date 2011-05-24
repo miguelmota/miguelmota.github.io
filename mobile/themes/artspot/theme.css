@@ -497,10 +497,11 @@ body, .toolbar, #jqt ul, #jqt ul.individual li, #jqt ul li a.active,#tabbar,.s-s
     color: #999;
     list-style-type: none;
     overflow: hidden;
-    padding: 10px 10px 10px 10px;
+    /*  padding: 10px 10px 10px 10px; */
+    padding: 5px 10px 5px 10px;
     margin: 0;
     border: none;
-    border-bottom: 1px solid rgba(0,0,0,0.1);
+    /* border-bottom: 1px solid rgba(0,0,0,0.1); */
     background-color: #222;
 }
 #jqt ul.plastic li a {

@@ -9,7 +9,7 @@ $(document).ready(function(){
 	$('#about div.content ul li.arrow').load('/about section.content');
 	$('#portfolio div.content ul li.arrow').load('/portfolio section.content', function(){
 		//initialize fancybox
-		$('a.fancybox').fancybox({
+		/*$('a.fancybox').fancybox({
 			'padding': 0,
 			'margin': 0,
 			'transitionIn': 'none',
@@ -18,7 +18,7 @@ $(document).ready(function(){
 			'speedOut': 0, 
 			'overlayColor': '#000',
 			'hideOnContentClick': true
-		});
+		});*/
 	});
 	$('#blog div.content ul li.arrow').load('/blog section.content');
 
