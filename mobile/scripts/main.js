@@ -11,11 +11,13 @@ $(document).ready(function(){
 		//initialize fancybox
 		$('a.fancybox').fancybox({
 			'padding': 0,
-			'transitionIn': 'fade',
-			'transitionOut': 'fade',
-			'speedIn': 600, 
-			'speedOut': 200, 
-			'overlayColor': '#000'
+			'margin': 0,
+			'transitionIn': 'none',
+			'transitionOut': 'none',
+			'speedIn': 0, 
+			'speedOut': 0, 
+			'overlayColor': '#000',
+			'hideOnContentClick': true
 		});
 	});
 	$('#blog div.content ul li.arrow').load('/blog section.content');
