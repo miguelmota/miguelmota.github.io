@@ -127,11 +127,18 @@ div#portfolio span.date {
 #fancybox-wrap {
 }
 #fancybox-outer {
-
+	background: none !important;
 }
 #fancybox-content {
-	width: 200%;
-	height: 200%;
+	width: 200% !important;
+	height: 200% !important;
+}
+#fancybox-content {
+	border: 0 !important;
+	background: none !important;
+}
+.fancybox-title-inside {
+	background: #none !important;
 }
 
 .fancybox-bg,
@@ -143,12 +150,12 @@ div#portfolio span.date {
 #fancybox-bg-sw,
 #fancybox-bg-w,
 #fancybox-bg-nw {
-	position: absolute;
-	padding: 0;
-	margin: 0;
-	border: 0;
-	width: 0;
-	height: 0;
-	z-index: 1001;
-	background: none;
+	position: absolute !important;
+	padding: 0 !important;
+	margin: 0 !important;
+	border: 0 !important;
+	width: 0 !important;
+	height: 0 !important;
+	z-index: 1001 !important;
+	background: none !important;
 }
