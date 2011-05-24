@@ -1,4 +1,6 @@
 @charset 'utf-8';
+
+/* FONT_FACE ========================================================= */
 @font-face {
 	font-family: NeoSans;
 	src: url('../fonts/neosans-webfont/neosans-webfont.eot');
@@ -59,6 +61,8 @@
 	url('../fonts/klavika-webfont/klavika-light-webfont.ttf') format('truetype'),
 	url('../fonts/klavika-webfont/klavika-light-webfont.svg') format('svg');
 }
+/* /FONT_FACE ======================================================== */
+
 /* GENERAL =========================================================== */
 body {
 	display: none;

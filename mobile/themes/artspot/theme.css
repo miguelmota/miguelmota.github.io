@@ -9,6 +9,73 @@ body, .toolbar, #jqt ul, #jqt ul.individual li,#jqt ul li a.active,#jqt .info,#j
 
 /** END **/
 
+
+
+
+/* FONT_FACE ========================================================= */
+@font-face {
+	font-family: NeoSans;
+	src: url('/fonts/neosans-webfont/neosans-webfont.eot');
+	src: local('☺'),
+	url('/fonts/neosans-webfont/neosans-webfont.woff') format('woff'),
+	url('/fonts/neosans-webfont/neosans-webfont.ttf') format('truetype'),
+	url('/fonts/neosans-webfont/neosans-webfont.svg') format('svg');
+}
+@font-face {
+	font-family: NeoSans;
+	src: url('/fonts/neosans-webfont/neosans-bold-webfont.eot');
+	src: local('☺'),
+	url('/fonts/neosans-webfont/neosans-bold-webfont.woff') format('woff'),
+	url('/fonts/neosans-webfont/neosans-bold-webfont.ttf') format('truetype'),
+	url('/fonts/neosans-webfont/neosans-bold-webfont.svg') format('svg');
+	font-weight: bold;
+}
+@font-face {
+	font-family: NeoSans;
+	src: url('/fonts/neosans-italic-webfont.eot');
+	src: local('☺'),
+	url('/fonts/neosans-webfont/neosans-italic-webfont.woff') format('woff'),
+	url('/fonts/neosans-webfont/neosans-italic-webfont.ttf') format('truetype'),
+	url('/fonts/neosans-webfont/neosans-italic-webfont.svg') format('svg');
+	font-style: italic;
+}
+@font-face {
+	font-family: Klavika;
+	src: url('/fonts/klavika-webfont/klavika-regular-webfont.eot');
+	src: local('☺'),
+	url('/fonts/klavika-webfont/klavika-regular-webfont.woff') format('woff'),
+	url('/fonts/klavika-webfont/klavika-regular-webfont.ttf') format('truetype'),
+	url('/fonts/klavika-webfont/klavika-regular-webfont.svg') format('svg');
+}
+@font-face {
+	font-family: Klavika;
+	src: url('/fonts/klavika-webfont/klavika-bold-webfont.eot');
+	src: local('☺'),
+	url('/fonts/klavika-webfont/klavika-bold-webfont.woff') format('woff'),
+	url('/fonts/klavika-webfont/klavika-bold-webfont.ttf') format('truetype'),
+	url('/fonts/klavika-webfont/klavika-bold-webfont.svg') format('svg');
+	font-weight: bold;
+}
+@font-face {
+	font-family: Klavika;
+	src: url('/fonts/klavika-webfont/klavika-italic-webfont..eot');
+	src: local('☺'),
+	url('/fonts/klavika-webfont/klavika-italic-webfont..woff') format('woff'),
+	url('/fonts/klavika-webfont/klavika-italic-webfont..ttf') format('truetype'),
+	url('/fonts/klavika-webfont/klavika-italic-webfont..svg') format('svg');
+	font-style: italic;
+}
+@font-face {
+	font-family: Klavika-Light;
+	src: url('/fonts/klavika-webfont/klavika-light-webfont.eot');
+	src: local('☺'),
+	url('/fonts/klavika-webfont/klavika-light-webfont.woff') format('woff'),
+	url('/fonts/klavika-webfont/klavika-light-webfont.ttf') format('truetype'),
+	url('/fonts/klavika-webfont/klavika-light-webfont.svg') format('svg');
+}
+/* /FONT_FACE ======================================================== */
+
+
 body, .toolbar, #jqt ul, #jqt ul.individual li, #jqt ul li a.active,#tabbar,.s-scrollwrapper {
     background-image: url(img/bg_noise.png); 
 }
@@ -17,7 +84,7 @@ body, .toolbar, #jqt ul, #jqt ul.individual li, #jqt ul li a.active,#tabbar,.s-s
     background-color: #333;
 }
 #jqt h1, #jqt h2, #jqt ul li a {
-    font: bold 18px "Helvetica Neue", Helvetica;
+    font: bold 18px "NeoSans", "Helvetica Neue", Helvetica;
     /* text-shadow: white 0 1px 0; */
     margin: 10px 20px 5px;
 }
@@ -158,7 +225,7 @@ body, .toolbar, #jqt ul, #jqt ul.individual li, #jqt ul li a.active,#tabbar,.s-s
 }
 #jqt ul {
     color: #aaa;
-    font: bold 18px "Helvetica Neue", Helvetica;
+    font: bold 18px "NeoSans", "Helvetica Neue", Helvetica;
     padding: 0;
     margin: 15px 10px 17px 10px;
 }
@@ -266,7 +333,7 @@ body, .toolbar, #jqt ul, #jqt ul.individual li, #jqt ul li a.active,#tabbar,.s-s
 }
 #jqt ul li a + a {
     color: #000;
-    font: 14px "Helvetica Neue", Helvetica;
+    font: 14px "NeoSans", "Helvetica Neue", Helvetica;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
@@ -276,7 +343,7 @@ body, .toolbar, #jqt ul, #jqt ul.individual li, #jqt ul li a.active,#tabbar,.s-s
 }
 #jqt ul li a + a + a, #jqt ul li.img a + a + a + a, #jqt ul li.img a + small + a + a + a {
     color: #666;
-    font: 13px "Helvetica Neue", Helvetica;
+    font: 13px "NeoSans", "Helvetica Neue", Helvetica;
     margin: 0;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -308,7 +375,7 @@ body, .toolbar, #jqt ul, #jqt ul.individual li, #jqt ul li a.active,#tabbar,.s-s
     color: white;
     background: transparent url('data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==');
     border: 0;
-    font: normal 17px "Helvetica Neue", Helvetica;
+    font: normal 17px "NeoSans", "Helvetica Neue", Helvetica;
     padding: 0;
     display: inline-block;
     margin-left: 0px;
@@ -336,7 +403,7 @@ body, .toolbar, #jqt ul, #jqt ul.individual li, #jqt ul li a.active,#tabbar,.s-s
 }
 #jqt ul li input[type="checkbox"]:after, #jqt ul li input[type="radio"]:after {
     content: attr(title);
-    font: 17px "Helvetica Neue", Helvetica;
+    font: 17px "NeoSans", "Helvetica Neue", Helvetica;
     display: block;
     width: 246px;
     color: white;
@@ -345,7 +412,7 @@ body, .toolbar, #jqt ul, #jqt ul.individual li, #jqt ul li a.active,#tabbar,.s-s
 /* @end */
 /* @group Mini Label */
 #jqt ul li small {
-    font: 17px "Helvetica Neue", Helvetica;
+    font: 17px "NeoSans", "Helvetica Neue", Helvetica;
     text-align: right;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -486,7 +553,7 @@ body, .toolbar, #jqt ul, #jqt ul.individual li, #jqt ul li a.active,#tabbar,.s-s
 
 #jqt ul.plastic {
     color: rgba(0,0,0,0.3);
-    font: bold 18px "Helvetica Neue", Helvetica;
+    font: bold 18px "NeoSans", "Helvetica Neue", Helvetica;
     margin: 0;
     padding: 0;
     border-width: 0 0 1px 0;
