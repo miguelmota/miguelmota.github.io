@@ -126,6 +126,11 @@ div#portfolio span.date {
 }
 #fancybox-wrap {
 }
+#fancybox-outer {
+	width: 200%;
+	height: 200%;
+	background: none;
+}
 
 .fancybox-bg,
 #fancybox-bg-n,
