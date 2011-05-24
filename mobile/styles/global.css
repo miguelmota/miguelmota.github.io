@@ -122,10 +122,14 @@ div#portfolio span.date {
 }
 /* /PORTFOLIO_PAGE =========================================================== */
 
-
-#fancybox-outer {
-	position: relative;
-	width: 100%;
-	height: 100%;
+.fancybox-bg,
+#fancybox-bg-n,
+#fancybox-bg-ne,
+#fancybox-bg-e,
+#fancybox-bg-se,
+#fancybox-bg-s,
+#fancybox-bg-sw,
+#fancybox-bg-w,
+#fancybox-bg-nw {
 	background: none;
 }
