@@ -134,7 +134,8 @@ div#portfolio span.date {
 	background: none !important;
 	width: 200% !important;
 	height: auto !important;
-}
+	overflow: visible !important;
+
 .fancybox-title-inside {
 	background: #none !important;
 }
