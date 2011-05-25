@@ -34,11 +34,12 @@ $(document).ready(function(){
 	//textticker(); //disabled, firefox bug
 	
 	//check pathname and add selected class to nav link
+	var pathname = window.location.pathname;
 	$('ul#nav li a').each(function(){
 		if($(this).attr('href') == pathname){
-			//$('nav.main a#stream').removeClass('selected');
-			//$(this).addClass('selected');
-			alert(pathname);
+			$('nav.main a#stream').removeClass('selected');
+			$(this).addClass('selected');
+			
 			//run appropriate function
 			switch($(this).attr('id')){
 				case 'stream':
