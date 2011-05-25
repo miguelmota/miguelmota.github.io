@@ -38,23 +38,27 @@ $(document).ready(function(){
 	switch(pathname.substr(1)){
 		case 'stream':
 			streamPage();
+			$('a#stream').addClass('selected');
 			break;
 		case 'portfolio':
 			portfolioPage();
+			$('a#portfolio').addClass('selected');
 			break;
 		case 'contact':
 			contactPage();
+			$('a#contact').addClass('selected');
 			break;
 		case 'blog': 
 			blogPage();
+			$('a#blog').addClass('selected');
 			break;
 		default:
 			break;
 	}
 	$('ul#nav li a').each(function(){
 		if($(this).attr('href') == pathname){
-			$('nav.main a#stream').removeClass('selected');
-			$(this).addClass('selected');
+			//$('nav.main a#stream').removeClass('selected');
+			//$(this).addClass('selected');
 			
 		}
 		else{
