@@ -294,11 +294,11 @@ function streamPage(){
 	//initialize mtip
 	$('.mtip').mtip();
 	
+	//hide social link text
+	$("div.stream a.social:not('.latitude')").text('');
+	
 	while(c == 0){
-		
-		//hide social link text
-		$("div.stream a.social:not('.latitude')").text('');
-		
+
 		//Facebook stream
 		$('div.facebook img.loader').css('display','block');
 		$.getJSON('https://graph.facebook.com/miguel.mota2/feed?limit=3&callback=?', 
