@@ -35,7 +35,7 @@ $(document).ready(function(){
 	
 	//check pathname and add selected class to nav link
 	$('ul#nav li a').each(function(){
-		if($(this).attr('href') == pathname.substr(1)){
+		if($(this).attr('href') == pathname){
 			//$('nav.main a#stream').removeClass('selected');
 			//$(this).addClass('selected');
 			alert(pathname);
@@ -139,11 +139,9 @@ $(document).ajaxComplete(function(){
 			break;
 		case 'contact':
 			contactPage();
-			alert('sdfsdf');
 			break;
 		case 'blog': 
 			blogPage();
-			alert('asdf');
 			break;
 		default:
 			break;
