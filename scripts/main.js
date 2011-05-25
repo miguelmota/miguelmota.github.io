@@ -33,6 +33,7 @@ $(document).ready(function(){
 	//initialize text ticker
 	//textticker(); //disabled, firefox bug
 	
+	var pathname = window.location.pathname;
 	alert(pathname);
 	
 	
