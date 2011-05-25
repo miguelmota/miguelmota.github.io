@@ -66,6 +66,13 @@ $(document).ready(function(){
 	default:
 		break;
 	}
+	switch(pathname.substr(1,7)){
+	case 'archive':
+		$('a#blog').addClass('selected');
+		break;
+	default:
+		break;
+	}
 	$('ul#nav li a').each(function(){
 		if($(this).attr('href') == pathname){
 			//$('nav.main a#stream').removeClass('selected');
