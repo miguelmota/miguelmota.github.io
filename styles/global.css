@@ -615,10 +615,10 @@ div.posti h1 a {
 	font-family: Klavika-Light, Helvetica, Arial, sans-serif;
 }
 div.post {
-	margin-bottom: 50px;
+	margin-bottom: 55px;
 }
 div.post_footer {
-	margin-top: 15px;
+	margin-top: 20px;
 	font-size: 10px;
 }
 div.view_archive {
@@ -647,6 +647,9 @@ footer.main a.top {
 }
 /* /FOOTER ============================================================ */
 /* DISQUS ============================================================= */
+#disqus_thread {
+	margin: 20px 0;
+}
 .p_comment_form input[type=text],
 .p_comment_form textarea {
 	border: 1px solid #999;
