@@ -34,29 +34,27 @@ $(document).ready(function(){
 	//textticker(); //disabled, firefox bug
 	
 	//check pathname and add selected class to nav link
-	var pathname = window.location.pathname;
+	//run appropriate function
+	switch(pathname.substr(1)){
+		case 'stream':
+			streamPage();
+			break;
+		case 'portfolio':
+			portfolioPage();
+			break;
+		case 'contact':
+			contactPage();
+			break;
+		case 'blog': 
+			blogPage();
+			break;
+		default:
+			break;
+	}
 	$('ul#nav li a').each(function(){
 		if($(this).attr('href') == pathname){
 			$('nav.main a#stream').removeClass('selected');
 			$(this).addClass('selected');
-			
-			//run appropriate function
-			switch($(this).attr('id')){
-				case 'stream':
-					streamPage();
-					break;
-				case 'portfolio':
-					portfolioPage();
-					break;
-				case 'contact':
-					contactPage();
-					break;
-				case 'blog': 
-					blogPage();
-					break;
-				default:
-					break;
-			}
 			
 		}
 		else{
