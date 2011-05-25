@@ -651,8 +651,7 @@ footer.main a.top {
 /* /FOOTER ============================================================ */
 /* DISQUS ============================================================= */
 .dsq-comment-count {
-	display: block;
-	margin-bottom: 5px;
+
 }
 .p_comment_form input[type=text],
 .p_comment_form textarea {
