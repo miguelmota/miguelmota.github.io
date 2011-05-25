@@ -33,13 +33,9 @@ $(document).ready(function(){
 	//initialize text ticker
 	//textticker(); //disabled, firefox bug
 	
-
-	alert(pathname);
-	
-	
 	//check pathname and add selected class to nav link
 	$('ul.nav li a').each(function(){
-		if($(this).attr('href') == pathname){
+		if($(this).attr('href') == pathname.substr(1)){
 			//$('nav.main a#stream').removeClass('selected');
 			//$(this).addClass('selected');
 			alert(pathname);
@@ -56,7 +52,6 @@ $(document).ready(function(){
 					break;
 				case 'blog': 
 					blogPage();
-					alert('asdf');
 					break;
 				default:
 					break;
