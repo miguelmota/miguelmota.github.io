@@ -51,12 +51,20 @@ $(document).ready(function(){
 			contactPage();
 			$('a#contact').addClass('selected');
 			break;
-		case 'blog': 
+		case 'blog':
 			blogPage();
 			$('a#blog').addClass('selected');
 			break;
 		default:
 			break;
+	}
+	switch(pathname.substr(1,4)){
+	case 'post':
+		blogPage();
+		$('a#blog').addClass('selected');
+		break;
+	default:
+		break;
 	}
 	$('ul#nav li a').each(function(){
 		if($(this).attr('href') == pathname){
