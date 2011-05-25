@@ -33,6 +33,9 @@ $(document).ready(function(){
 	//initialize text ticker
 	//textticker(); //disabled, firefox bug
 	
+	alert(pathname);
+	
+	
 	//check pathname and add selected class to nav link
 	$('ul.nav li a').each(function(){
 		if($(this).attr('href') == pathname){
