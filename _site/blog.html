@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang='en'>
 <head>
 	<meta charset='utf-8' />
 <!--
@@ -27,19 +27,20 @@
 	<title>Blog &#8212; Miguel Mota | Freelance Web Developer</title>
 	<link rel='canonical' href='http://www.miguelmota.com/' />
 	<link rel='alternate' type='application/rss+xml' href='http://feeds.feedburner.com/miguelmota' />
-	<link rel='shortcut icon' href='favicon.ico' />
-	<link rel='apple-touch-icon' href='images/apple-touch-icon.png' />
-	<link rel='stylesheet' href='styles/global.min.css' />
+	<link rel='shortcut icon' href='/favicon.ico' />
+	<link rel='apple-touch-icon-precomposed' href='/images/apple-touch-icon.png' />
+	<link rel='stylesheet' href='/styles/global.min.css' />
+	<link href='/styles/pygment_friendly.css' rel='stylesheet' />
 	<!--[if lt IE 9]>
 		<script src='http://html5shiv.googlecode.com/svn/trunk/html5.js'></script>
-		<link href='/static/styles/ie.css' rel='stylesheet' />
+		<link href='/styles/ie.css' rel='stylesheet' />
 	<![endif]-->
 </head>
 <body>
 <div id='top'></div>
 <div id='wrap'>
 	<nav class='main'>
-		<a id='logo' href='/stream'><img src='images/logo.png' /></a><span class='trade'>&#8482;</span>
+		<a id='logo' href='/'><img src='/images/logo.png' /></a><span class='trade'>&#8482;</span>
 		<ul id='nav' class='nav'>
 			<li><a id='stream' href='/stream'>stream</a></li>
 			<li><a id='about' href='/about'>about</a></li>
@@ -53,7 +54,7 @@
 	<header class='main'>
 	<h1 class='title'><a href='/blog'>Miguel<span class='mota'>Mota</span><span class='slash'>/</span><span class='sub'>Blog</span></a></h1>
 	<p class='description'>
-		<em>a blog on code, design and some other stuff. </em><a href='http://feeds.feedburner.com/miguelmota'>subscribe</a> / <a href='http://twitter.com/miguel_mota'>follow me</a>
+		<em>a blog on code, design and some other stuff. </em><a href='http://feeds.feedburner.com/miguelmota'>subscribe</a> / <a href='http://twitter.com/#!/miguel_mota'>follow me</a>
 	</p>
 	<div id='cse-search-form'></div> 
 </header>
@@ -61,8 +62,239 @@
 	<div class='posti'>
 		
 			<div class='post'>
-				<h3><a href='/post/2011/03/30/hello-world'>Hello World!</a></h3>
-				<p>This will be the best blog ever!</p>
+				<h1 class='post'><a href='/post/2011/05/24/jquery-tooltip-demo'>Jquery Tooltip Demo</a></h1>
+				<!doctype html>
+<html lang='en'>
+<head>
+	<meta charset='utf-8' />
+	<meta name='description' content='Creative freelance web developer from the always sunny Southern California.' />
+	<meta name='keywords' content='miguel mota,creative,freelance,web developer,web design,blog' />
+	<meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=1;' />
+	<title>jQuery tooltip demo</title>
+	<link href='http://www.miguelmota.com/' rel='canonical' />
+	<link href='/favicon.ico' rel='shortcut icon' />
+	<link href='/plugins/mtip/mtip.css' rel='stylesheet' />
+	<script src='/plugins/mtip/jquery.js'></script>
+	<script src='/plugins/mtip/mtip.js'></script>
+	<!--[if lt IE 9]>
+		<script src='http://html5shiv.googlecode.com/svn/trunk/html5.js'></script>
+		<link href='/styles/ie.css' rel='stylesheet' />
+	<![endif]-->
+	<script>
+		$(document).ready(function(){
+			$('.mtip').mtip();
+		});
+	</script>
+	<style>
+	#wrap {
+		width: 960px;
+		margin: 0 auto;
+	}
+	#demo {
+		padding: 100px;
+		font-family: Helvetica, Arial, sans-serif;
+		border: 1px solid #eee;
+	}
+	#demo a {
+		text-decoration: none;
+		color: #0080ff
+	}
+	</style>
+</head>
+<body>
+<div id='wrap'>
+	<h1><a href='/post/2011/05/24/jquery-tooltip-demo'>jQuery tooltip demo</a></h1>
+	<div id='demo'>
+		<a class='mtip' href='javascript:void(0);' title='hello, I am a tooltip!'>hover over me</a>
+	</div>
+	<a class='original_post' href='/post/2011/05/24/jquery-tooltip/'>view original post</a>
+</div>
+<script>
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-12642068-1']);
+	_gaq.push(['_setDomainName', '.miguelmota.com']);
+	_gaq.push(['_trackPageview']);
+	(function() {
+ 		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ 		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+ 		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+</script>
+</body>
+</html>
+
+				<div class='post_footer'>
+					<p>posted <a href='/post/2011/05/24/jquery-tooltip-demo'>24 May 2011</a></p>
+			 			</div>
+				<br /><a class='dsq-comment-count' href="/post/2011/05/24/jquery-tooltip-demo#disqus_thread">comments</a>
+			</div>
+		
+			<div class='post'>
+				<h1 class='post'><a href='/post/2011/05/24/jquery-tooltip'>Make an awesome tooltip with jQuery</a></h1>
+				<p>I will attempt to show you how to make a simple yet awesome tooltip using jQuery and CSS3.</p>
+<p><a href='/post/2011/05/24/jquery-tooltip-demo'>View the demo</a></p>
+<p>Ok so first let's set up the HTML:</p>
+
+<div class="highlight"><pre><span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&#39;mtip&#39;</span> <span class="na">href=</span><span class="s">&#39;http://wwww.miguelmota.com/&#39;</span> <span class="na">title=</span><span class="s">&#39;Hello, I am a tootip!&#39;</span><span class="nt">&gt;</span>hover over me<span class="nt">&lt;/a&gt;</span>
+</pre>
+</div>
+
+<p>All we did was make a link with the class of <code>mtip</code> (that's what I decided to call this mini plugin) and gave it a <code>title</code> attribute.</p>
+<p>Now let's move on to the fun stuff. We are going to make a self executing function so that the plugin won't collide with other libraries that use the <code>$</code> dollar sign:</p>
+
+<div class="highlight"><pre><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>
+
+<span class="p">})(</span><span class="nx">jQuery</span><span class="p">);</span>
+</pre>
+</div>
+
+<p>Inside this function we are going to add a new function property to the <code>jQuery.fn</code> object where the name of the property is the name of the plugin:</p>
+
+<div class="highlight"><pre><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>
+	<span class="nx">$</span><span class="p">.</span><span class="nx">fn</span><span class="p">.</span><span class="nx">mtip</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+		<span class="c1">//plugin code</span>
+	<span class="p">}</span>
+<span class="p">})(</span><span class="nx">jQuery</span><span class="p">);</span>
+</pre>
+</div>
+
+<p>Ok now we want to rename the <code>title</code> to something else, in this case I renamed it to <code>mtip</code>. How we are going to do this is by making a new attribute and copying the contents of the <code>title</code> 
+attribute and then removing the <code>title</code> attribute. So what's the point in doing this? if we don't, we will have our custom tooltip and the default tooltip pop up at the same time.. which will be a nuisance!</p>
+
+<div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;mtip&#39;</span><span class="p">,</span> <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">)).</span><span class="nx">removeAttr</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">);</span>
+</pre>
+</div>
+
+<p>So now let's assign the <code>mtip</code> attribute to a variable named <code>title</code>:</p>
+
+<div class="highlight"><pre><span class="kd">var</span> <span class="nx">title</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;mtip&#39;</span><span class="p">);</span>
+</pre>
+</div>
+
+<p>Next we want to wrap the link in a container:</p>
+
+<div class="highlight"><pre><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">wrap</span><span class="p">(</span><span class="s1">&#39;&lt;div class=&quot;tooltip_container&quot; /&gt;&#39;</span><span class="p">);</span>
+</pre>
+</div>
+
+<p>Let's create the functions for the hover method:</p>
+
+<div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">hover</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+		<span class="c1">//hover over do stuff</span>
+	<span class="p">},</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+		<span class="c1">//hover out do stuff</span>
+<span class="p">});</span>
+</pre>
+</div>
+
+<p>Inside the first hover function let's make a <code>div</code> and give a class of <code>tooltip</code>, then insert the content from <code>title</code> variable in to the <code>div</code> and hide it:</p>
+
+<div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">after</span><span class="p">(</span><span class="s2">&quot;&lt;div class=&#39;tooltip&#39;&gt;&lt;/div&gt;&quot;</span><span class="p">);</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;div.tooltip&#39;</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="nx">title</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>
+</pre>
+</div>
+
+<p>We're going to make the tooltip fade in going upwards when they hover over:</p>
+
+<div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;div.tooltip&#39;</span><span class="p">).</span><span class="nx">css</span><span class="p">({</span>
+	<span class="s1">&#39;visibility&#39;</span><span class="o">:</span> <span class="s1">&#39;visible&#39;</span>
+<span class="p">});</span>
+<span class="nx">jQuery</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">next</span><span class="p">(</span><span class="s1">&#39;div.tooltip&#39;</span><span class="p">).</span><span class="nx">stop</span><span class="p">(</span><span class="kc">true</span><span class="p">,</span> <span class="kc">true</span><span class="p">).</span><span class="nx">animate</span><span class="p">({</span><span class="nx">opacity</span><span class="o">:</span> <span class="s1">&#39;show&#39;</span><span class="p">,</span> <span class="nx">top</span><span class="o">:</span> <span class="s1">&#39;-30&#39;</span><span class="p">},</span> <span class="s1">&#39;slow&#39;</span><span class="p">);</span>
+</pre>
+</div>
+
+<p>Now make it fade out on hover out:</p>
+
+<div class="highlight"><pre><span class="nx">jQuery</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">next</span><span class="p">(</span><span class="s1">&#39;div.tooltip&#39;</span><span class="p">).</span><span class="nx">animate</span><span class="p">({</span><span class="nx">opacity</span><span class="o">:</span> <span class="s1">&#39;hide&#39;</span><span class="p">,</span> <span class="nx">top</span><span class="o">:</span> <span class="s1">&#39;-20&#39;</span><span class="p">},</span> <span class="s1">&#39;fast&#39;</span><span class="p">);</span>
+</pre>
+</div>
+
+<p>So the whole jQuery plugin code should look something like this:</p>
+
+<div class="highlight"><pre><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>
+	<span class="nx">$</span><span class="p">.</span><span class="nx">fn</span><span class="p">.</span><span class="nx">mtip</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
+		<span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;mtip&#39;</span><span class="p">,</span> <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">)).</span><span class="nx">removeAttr</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">);</span>
+		<span class="kd">var</span> <span class="nx">title</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;mtip&#39;</span><span class="p">);</span>
+		<span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">wrap</span><span class="p">(</span><span class="s1">&#39;&lt;div class=&quot;tooltip_container&quot; /&gt;&#39;</span><span class="p">);</span>
+		<span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">hover</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+					<span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">after</span><span class="p">(</span><span class="s2">&quot;&lt;div class=&#39;tooltip&#39;&gt;&lt;/div&gt;&quot;</span><span class="p">);</span>
+					<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;div.tooltip&#39;</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="nx">title</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>
+					<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;div.tooltip&#39;</span><span class="p">).</span><span class="nx">css</span><span class="p">({</span>
+						<span class="s1">&#39;visibility&#39;</span><span class="o">:</span> <span class="s1">&#39;visible&#39;</span>
+					<span class="p">});</span>
+					<span class="nx">jQuery</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">next</span><span class="p">(</span><span class="s1">&#39;div.tooltip&#39;</span><span class="p">).</span><span class="nx">stop</span><span class="p">(</span><span class="kc">true</span><span class="p">,</span> <span class="kc">true</span><span class="p">).</span><span class="nx">animate</span><span class="p">({</span><span class="nx">opacity</span><span class="o">:</span> <span class="s1">&#39;show&#39;</span><span class="p">,</span> <span class="nx">top</span><span class="o">:</span> <span class="s1">&#39;-30&#39;</span><span class="p">},</span> <span class="s1">&#39;slow&#39;</span><span class="p">);</span>
+			<span class="p">},</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+					<span class="nx">jQuery</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">next</span><span class="p">(</span><span class="s1">&#39;div.tooltip&#39;</span><span class="p">).</span><span class="nx">animate</span><span class="p">({</span><span class="nx">opacity</span><span class="o">:</span> <span class="s1">&#39;hide&#39;</span><span class="p">,</span> <span class="nx">top</span><span class="o">:</span> <span class="s1">&#39;-20&#39;</span><span class="p">},</span> <span class="s1">&#39;fast&#39;</span><span class="p">);</span>
+		<span class="p">});</span>
+	<span class="p">}</span>
+<span class="p">})(</span><span class="nx">jQuery</span><span class="p">);</span>
+</pre>
+</div>
+
+<p>It's time to style the tooltip:</p>
+
+<div class="highlight"><pre><span class="nt">div</span><span class="nc">.tooltip_container</span> <span class="p">{</span>
+	<span class="k">position</span><span class="o">:</span> <span class="k">relative</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">div</span><span class="nc">.tooltip</span>  <span class="p">{</span>
+	<span class="k">position</span><span class="o">:</span> <span class="k">absolute</span><span class="p">;</span>
+	<span class="k">top</span><span class="o">:</span> <span class="m">-20px</span><span class="p">;</span>
+	<span class="k">visibility</span><span class="o">:</span> <span class="k">hidden</span><span class="p">;</span>
+	<span class="k">padding</span><span class="o">:</span> <span class="m">5px</span><span class="p">;</span>
+	<span class="k">z-index</span><span class="o">:</span> <span class="m">1000</span><span class="p">;</span>
+	<span class="k">text-align</span><span class="o">:</span> <span class="k">center</span><span class="p">;</span>
+	<span class="k">font-family</span><span class="o">:</span> <span class="n">Aria</span><span class="o">,</span> <span class="k">sans-serif</span><span class="p">;</span>
+	<span class="k">font-size</span><span class="o">:</span> <span class="m">12px</span><span class="p">;</span>
+	<span class="o">-</span><span class="n">moz</span><span class="o">-</span><span class="n">box</span><span class="o">-</span><span class="n">shadow</span><span class="o">:</span> <span class="m">1px</span> <span class="m">1px</span> <span class="m">3px</span> <span class="m">#000</span><span class="p">;</span>
+	<span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">box</span><span class="o">-</span><span class="n">shadow</span><span class="o">:</span> <span class="m">1px</span> <span class="m">1px</span> <span class="m">3px</span> <span class="m">#000</span><span class="p">;</span>
+	<span class="n">box</span><span class="o">-</span><span class="n">shadow</span><span class="o">:</span> <span class="m">1px</span> <span class="m">1px</span> <span class="m">3px</span> <span class="m">#000</span><span class="p">;</span>
+	<span class="o">-</span><span class="n">moz</span><span class="o">-</span><span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">5px</span><span class="p">;</span>
+	<span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">5px</span><span class="p">;</span>
+	<span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">5px</span><span class="p">;</span>
+	<span class="k">background-color</span><span class="o">:</span> <span class="m">#000</span><span class="p">;</span>
+	<span class="k">color</span><span class="o">:</span> <span class="m">#fff</span><span class="p">;</span>
+	<span class="k">opacity</span><span class="o">:</span> <span class="o">.</span><span class="m">8</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* triangle on the bottom */</span>
+<span class="nt">div</span><span class="nc">.tooltip</span><span class="nd">:after</span> <span class="p">{</span>
+	<span class="k">content</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
+	<span class="k">display</span><span class="o">:</span> <span class="k">block</span><span class="p">;</span>
+	<span class="k">position</span><span class="o">:</span> <span class="k">absolute</span><span class="p">;</span>
+	<span class="k">bottom</span><span class="o">:</span> <span class="m">-5px</span><span class="p">;</span> <span class="c">/* value = - border-top-width - border-bottom-width */</span>
+	<span class="k">left</span><span class="o">:</span> <span class="m">10px</span><span class="p">;</span> <span class="c">/* controls horizontal position*/</span>
+	<span class="k">margin-left</span><span class="o">:</span> <span class="m">-5px</span><span class="p">;</span>
+	<span class="k">width</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+	<span class="k">height</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+	<span class="k">z-index</span><span class="o">:</span> <span class="m">1000</span><span class="p">;</span>
+	<span class="k">border-width</span><span class="o">:</span> <span class="m">5px</span> <span class="m">5px</span> <span class="m">0</span><span class="p">;</span> <span class="c">/* vary these values to change the angle of the vertex */</span>
+	<span class="k">border-style</span><span class="o">:</span> <span class="k">solid</span><span class="p">;</span>
+	<span class="k">border-color</span><span class="o">:</span> <span class="m">#000</span> <span class="k">transparent</span><span class="p">;</span>
+<span class="p">}</span>
+</pre>
+</div>
+
+<p>The CSS is self-explanatory so I won't go in much detail</p>
+<p>So the last step now is to initialize the our tooltip plugins:</p>
+
+<div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+	<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.mtip&#39;</span><span class="p">).</span><span class="nx">mtip</span><span class="p">();</span>
+<span class="p">});</span>
+</pre>
+</div>
+
+<p>That's it folks! You should now have a functioning mini tooltip plugin. If I made mistakes or if you would like to add, please comment! any feedback is greatly appreciated.</p>
+				<div class='post_footer'>
+					<p>posted <a href='/post/2011/05/24/jquery-tooltip'>24 May 2011</a></p>
+			 			</div>
+				<br /><a class='dsq-comment-count' href="/post/2011/05/24/jquery-tooltip#disqus_thread">comments</a>
+			</div>
+		
+			<div class='post'>
+				<h1 class='post'><a href='/post/2011/03/30/hello-world'>Hello World!</a></h1>
+				This will be the best blog ever!
 				<div class='post_footer'>
 					<p>posted <a href='/post/2011/03/30/hello-world'>30 Mar 2011</a></p>
 			 			</div>
@@ -74,7 +306,7 @@
 		</div>
 	</div>
 </section>
-		<div class='loader'></div>
+		<div class='loading'><div class='loader'></div>loading...</div>
 	</div>
 	<footer class='main'>
 		<p>&#169; <script>var date = new Date();var thisYear = date.getFullYear(); document.write(thisYear);</script>  miguel mota / powered by <a href='http://jekyllrb.com'>jekyll</a> <a href='#top' class='top'>&#8593;</a></p>
@@ -90,7 +322,7 @@
 	<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 	<script src="http://www.google.com/jsapi?key=ABQIAAAAaPkBW3vge4odDUBtbC4e-xRutoCKHFl1g3ES_cmPf4BxqcVG3BR7pbnwzjWgqiKDxSEqSvzSUG2pww" type="text/javascript"></script>
 	<script src='//www.google.com/jsapi'></script>
-	<script src='scripts/main.min.js'></script>
+	<script src='/scripts/main.min.js'></script>
 	<script>
 		$('#<decorator:getProperty property="meta.page" />').addClass('selected');
   		var _gaq = _gaq || [];

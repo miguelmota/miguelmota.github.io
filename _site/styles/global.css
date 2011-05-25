@@ -1,4 +1,6 @@
 @charset 'utf-8';
+
+/* FONT_FACE ========================================================= */
 @font-face {
 	font-family: NeoSans;
 	src: url('../fonts/neosans-webfont/neosans-webfont.eot');
@@ -8,20 +10,22 @@
 	url('../fonts/neosans-webfont/neosans-webfont.svg') format('svg');
 }
 @font-face {
-	font-family: NeoSans-Bold;
+	font-family: NeoSans;
 	src: url('../fonts/neosans-webfont/neosans-bold-webfont.eot');
 	src: local('☺'),
 	url('../fonts/neosans-webfont/neosans-bold-webfont.woff') format('woff'),
 	url('../fonts/neosans-webfont/neosans-bold-webfont.ttf') format('truetype'),
 	url('../fonts/neosans-webfont/neosans-bold-webfont.svg') format('svg');
+	font-weight: bold;
 }
 @font-face {
-	font-family: NeoSans-Italic;
+	font-family: NeoSans;
 	src: url('../fonts/neosans-italic-webfont.eot');
 	src: local('☺'),
 	url('../fonts/neosans-webfont/neosans-italic-webfont.woff') format('woff'),
 	url('../fonts/neosans-webfont/neosans-italic-webfont.ttf') format('truetype'),
 	url('../fonts/neosans-webfont/neosans-italic-webfont.svg') format('svg');
+	font-style: italic;
 }
 @font-face {
 	font-family: Klavika;
@@ -32,20 +36,22 @@
 	url('../fonts/klavika-webfont/klavika-regular-webfont.svg') format('svg');
 }
 @font-face {
-	font-family: Klavika-Bold;
+	font-family: Klavika;
 	src: url('../fonts/klavika-webfont/klavika-bold-webfont.eot');
 	src: local('☺'),
 	url('../fonts/klavika-webfont/klavika-bold-webfont.woff') format('woff'),
 	url('../fonts/klavika-webfont/klavika-bold-webfont.ttf') format('truetype'),
 	url('../fonts/klavika-webfont/klavika-bold-webfont.svg') format('svg');
+	font-weight: bold;
 }
 @font-face {
-	font-family: Klavika-Italic;
+	font-family: Klavika;
 	src: url('../fonts/klavika-webfont/klavika-italic-webfont..eot');
 	src: local('☺'),
-	url('../fonts/klavika-webfont/klavika-italic-webfont..woff') format('woff'),
-	url('../fonts/klavika-webfont/klavika-italic-webfont..ttf') format('truetype'),
-	url('../fonts/klavika-webfont/klavika-italic-webfont..svg') format('svg');
+	url('../fonts/klavika-webfont/klavika-italic-webfont.woff') format('woff'),
+	url('../fonts/klavika-webfont/klavika-italic-webfont.ttf') format('truetype'),
+	url('../fonts/klavika-webfont/klavika-italic-webfont.svg') format('svg');
+	font-style: italic;
 }
 @font-face {
 	font-family: Klavika-Light;
@@ -55,10 +61,12 @@
 	url('../fonts/klavika-webfont/klavika-light-webfont.ttf') format('truetype'),
 	url('../fonts/klavika-webfont/klavika-light-webfont.svg') format('svg');
 }
+/* /FONT_FACE ======================================================== */
+
 /* GENERAL =========================================================== */
 body {
 	display: none;
-	font-family: NeoSans, Helvetica, Arial, sans-serif;
+	font-family: NeoSans, Klavika-Light, Helvetica, Arial, sans-serif;
 	font-size: 12px;
 	background-color: #222;
 	color: #999;
@@ -85,10 +93,6 @@ h1.title a {
 h1.title a:hover {
 	color: #007799 !important;
 }
-h3 a {
-	font-size: 26px;
-	font-family: Klavika-Light, Helvetica, Arial, sans-serif;
-}
 ::selection {
 	background-color: #007799;
 }
@@ -96,11 +100,10 @@ h3 a {
 	background-color: #007799;
 }
 strong {
-	font-family: NeoSans-Bold, Helvetica, Arial, sans-serif;
+	font-weight: bold;
 }
 em {
 	display: inline;
-	font-family: NeoSans-Italic, Helvetica, Arial, sans-serif;
 }
 label {
 	margin-right: 5px;
@@ -174,7 +177,7 @@ div#ie a#close {
 	top: 10px;
 	right: 10px;
 }
-section.about img,
+section.about img.about,
 section.portfolio div.container {
 	-webkit-box-shadow: 2px 2px 5px #111;
 	-moz-box-shadow: 2px 2px 5px #111;
@@ -187,6 +190,10 @@ div#noscript {
 	width: 760px;
 	background-color: #a80f0f;
 	color: #fff;
+}
+div.highlight {
+	background-color: #202020;
+	padding: 5px;
 }
 /* /GENERAL ========================================================== */
 /* NAVIGATION ======================================================== */
@@ -246,33 +253,38 @@ h1.title {
 	letter-spacing: -2px;
 	text-shadow: 0 -1px 0 #000;
 	text-transform: uppercase;
+	font-family: Klavika, Helvetica, Arial, sans-serif;
 	font-size: 32px;
-	font-family: Klavika-Bold, Helvetica, Arial, sans-serif;
+	font-weight: bold;
 }
 h1.title span.mota {
-	font-family: klavika, Helvetica, Arial, sans-serif;
+	font-weight: normal;
 }
 h1.title span.slash {
 	position: relative;
 	top: -2px;
 	font-family: klavika-Light, Helvetica, Arial, sans-serif;	
+	font-weight: normal;
 }
 h1.title span.sub {
 	margin-left: -2px;
 	font-family: klavika-Light, Helvetica, Arial, sans-serif;	
+	font-weight: normal;
 }
-div.loader {
+div.loading {
 	display: none;
 	position: absolute;
 	top: 25%;
 	left: 40%;
-	width: 16px;
+	width: 75px;
 	height: 16px;
-	background: url('../images/ajax_loader.gif') no-repeat 0 0;
 }
-img.loader {
+div.loader {
+	float: left;
 	width: 16px;
 	height: 16px;
+	margin-right: 5px;
+	background: url('../images/ajax_loader.gif') no-repeat 0 0;
 }
 /* /CONTENT ========================================================== */
 /* STREAM ============================================================ */
@@ -282,6 +294,8 @@ section.stream div.stream {
 section.stream div.stream img.loader {
 	display: block;
 	clear: both;
+	width: 16px;
+	height: 16px;
 }
 section.stream span.mtip {
 	padding: 3px;
@@ -314,6 +328,7 @@ section.stream iframe.latitude {
 	width: 100%;
 	height: 14px;
 	margin-bottom: 5px;
+	border: none;
 }
 section.stream a.tumblr {
 	background: url('../images/tumblr_sprite.png');
@@ -414,13 +429,35 @@ section.stream ul.lastfm_tracks li span.date {
 }
 /* /STREAM ============================================================ */
 /* CONTACT ============================================================ */
-section.about img {
+section.about img.about {
 	width: 100%;
 	height: auto;
 }
 /* /CONTACT =========================================================== */
 /* PORTFOLIO ========================================================== */
-section.portfolio div.container {
+section.portfolio h1.title {
+	display: inline;
+}
+section.portfolio div.sort {
+	float: right;
+	clear: right;
+	margin-top: 10px;
+	font-size: 9px;
+}
+section.portfolio div.sort a {
+	color: #005577;
+}
+section.portfolio div.sort a:hover,
+section.portfolio div.sort a:hover {
+	color: #007799;
+}
+section.portfolio div.sort a.selected {
+	color: #007799;
+}
+section.portfolio div.work {
+	margin-bottom: 25px;
+}
+section.portfolio div.work div.container {
 	position: relative;
 	width: 100%;
 	height: 200px;
@@ -430,7 +467,7 @@ section.portfolio div.container {
 	-o-transition: box-shadow linear .3s;
 	transition: box-shadow linear .3s;
 }
-section.portfolio div.container div.overlay {
+section.portfolio div.work div.container div.overlay {
 	position: absolute;
 	bottom: 0;
 	left: 0;
@@ -439,16 +476,16 @@ section.portfolio div.container div.overlay {
 	background-color: #000;
 	opacity: .5;
 }
-section.portfolio p.description {
+section.portfolio div.work p.description {
 	position: relative;
-	margin: 0 0 25px 5px;
+	padding-left: 5px;
 }
-section.portfolio p.description span.date {
+section.portfolio div.work p.description span.date {
 	float: right;
 	font-size: 9px;
 	color: #333;
 }
-section.portfolio p.description a.link {
+section.portfolio div.work p.description a.link {
 	font-size: 10px;
 }
 section.portfolio img.miggs {
@@ -458,7 +495,14 @@ section.portfolio img.miggs {
 	width: 250%;
 	height: auto;
 }
-section.portfolio img.ffirl {
+section.portfolio img.mrg {
+	position: absolute;
+	left: -300px;
+	top: -25px;
+	width: 300%;
+	height: auto;
+}
+section.portfolio img.foodfail {
 	position: absolute;
 	left: -300px;
 	width: 300%;
@@ -562,9 +606,13 @@ div#cse div.gsc-cursor-current-page  {
 	color: #005577;
 }
 /* /GOOGLE SEARCH --------------------------------------------------- */
-h3 {
+div.posti h1 {
 	margin-bottom: 5px;
 	border-bottom: 1px dotted #999;
+}
+div.posti h1 a {
+	font-size: 26px;
+	font-family: Klavika-Light, Helvetica, Arial, sans-serif;
 }
 div.post {
 	margin-bottom: 50px;
@@ -695,8 +743,30 @@ section.tumblr ul.posts li.photo div.zoom {
 	opacity: .7;
 }
 section.tumblr ul.posts div.post_footer {
-	margin: 5px 0 50px 0;
+	margin: 5px 0 15px 0;
 	font-size: 10px;
+}
+section.tumblr ol.notes {
+	margin: 5px 0 50px 0;
+    padding: 0px;
+    font-size: 10px;
+}
+section.tumblr ol.notes li.note img.avatar {
+	width: 16px;
+    height: 16px;
+    margin-right: 5px;
+    vertical-align: -4px;
+}
+section.tumblr ol.notes li.note span.action {
+    font-weight: bold;
+}
+section.tumblr ol.notes li.note .answer_content {
+    font-weight: normal;
+}
+section.tumblr ol.notes li.note blockquote {
+	margin: 5px 0 5px 35px;
+	padding-left: 5px;
+	border-left: 1px solid #999;
 }
 section.tumblr footer.main {
 	margin-left: 0 !important;

@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang='en'>
 <head>
 	<meta charset='utf-8' />
 <!--
@@ -27,19 +27,20 @@
 	<title>Stream &#8212; Miguel Mota | Freelance Web Developer</title>
 	<link rel='canonical' href='http://www.miguelmota.com/' />
 	<link rel='alternate' type='application/rss+xml' href='http://feeds.feedburner.com/miguelmota' />
-	<link rel='shortcut icon' href='favicon.ico' />
-	<link rel='apple-touch-icon' href='images/apple-touch-icon.png' />
-	<link rel='stylesheet' href='styles/global.min.css' />
+	<link rel='shortcut icon' href='/favicon.ico' />
+	<link rel='apple-touch-icon-precomposed' href='/images/apple-touch-icon.png' />
+	<link rel='stylesheet' href='/styles/global.min.css' />
+	<link href='/styles/pygment_friendly.css' rel='stylesheet' />
 	<!--[if lt IE 9]>
 		<script src='http://html5shiv.googlecode.com/svn/trunk/html5.js'></script>
-		<link href='/static/styles/ie.css' rel='stylesheet' />
+		<link href='/styles/ie.css' rel='stylesheet' />
 	<![endif]-->
 </head>
 <body>
 <div id='top'></div>
 <div id='wrap'>
 	<nav class='main'>
-		<a id='logo' href='/stream'><img src='images/logo.png' /></a><span class='trade'>&#8482;</span>
+		<a id='logo' href='/'><img src='/images/logo.png' /></a><span class='trade'>&#8482;</span>
 		<ul id='nav' class='nav'>
 			<li><a id='stream' href='/stream'>stream</a></li>
 			<li><a id='about' href='/about'>about</a></li>
@@ -52,48 +53,48 @@
 		<section class='content stream'>
 	<h1 class='title'><a href='/stream'>Miguel<span class='mota'>Mota</span><span class='slash'>/</span><span class='sub'>Stream</span></a></h1>
 	<div class='stream latitude'>
-		<a class='social latitude' href='http://www.google.com/latitude/apps/badge/api?user=7812482200199007583&amp;type=iframe&amp;maptype=roadmap'>latitude</a><span class='mtip' title='current location'>(?)</span>
+		<a class='social latitude' href='http://www.google.com/latitude/apps/badge/api?user=7812482200199007583&amp;type=iframe&amp;maptype=roadmap' frameborder='0' scrolling='0'>latitude</a><span class='mtip' title='current location'>(?)</span>
 		<ul class='latitude'>
 			<li><iframe class='latitude' src='http://www.ffirl.com/miguelmota/location.php'></iframe></li>
 		</ul>
 	</div>
 	<div class='stream facebook'>
-		<a class='social facebook' href='http://www.facebook.com/miguel.mota2'></a><span class='mtip' title='recent statuses'>(?)</span>
+		<a class='social facebook' href='http://www.facebook.com/miguel.mota2'>Facebook</a><span class='mtip' title='recent statuses'>(?)</span>
 		<ul class='facebook_status'>
 		</ul>
 		<img class='loader' src='/images/ajax_loader.gif' />
 	</div>
 	<div class='stream twitter'>
-		<a class='social twitter' href='http://twitter.com/miguel_mota'></a><span class='mtip' title='@miguel_mota recent tweets'>(?)</span>
+		<a class='social twitter' href='http://twitter.com/#!/miguel_mota'>Twitter</a><span class='mtip' title='@miguel_mota recent tweets'>(?)</span>
 		<ul class='twitter_status'>
 		</ul>
 		<img class='loader' src='/images/ajax_loader.gif' />
 	</div>
 	<div class='stream tumblr'>
-		<a class='social tumblr' href='http://miguelmota.tumblr.com'></a><span class='mtip' title='recent posts'>(?)</span>
+		<a class='social tumblr' href='http://miguelmota.tumblr.com'>Tumblr</a><span class='mtip' title='recent posts'>(?)</span>
 		<ul class='tumblr_posts'>
 		</ul>
 		<img class='loader' src='/images/ajax_loader.gif' />
 	</div>
 	<div class='stream delicious'>
-		<a class='social delicious' href='http://www.delicious.com/miguelmota'></a><span class='mtip' title='recently saved bookmarks'>(?)</span>
+		<a class='social delicious' href='http://www.delicious.com/miguelmota'>Delicious</a><span class='mtip' title='recently saved bookmarks'>(?)</span>
 		<ul class='delicious_bookmarks'>
 		</ul>
 		<img class='loader' src='/images/ajax_loader.gif' />
 	</div>
 	<div class='stream lastfm'>
-		<a class='social lastfm' href='http://www.last.fm/user/miguel_mota'></a><span class='mtip' title='recently listened tracks'>(?)</span>
+		<a class='social lastfm' href='http://www.last.fm/user/miguel_mota'>Last.fm</a><span class='mtip' title='recently listened tracks'>(?)</span>
 		<ul class='lastfm_tracks'>
 		</ul>
 		<img class='loader' src='/images/ajax_loader.gif' />
 	</div>
 	<div class='stream wakoopa'>
-		<a class='social wakoopa' href='http://social.wakoopa.com/miguelmota'></a><span class='mtip' title='recently used software'>(?)</span>
+		<a class='social wakoopa' href='http://social.wakoopa.com/miguelmota'>Wakoopa</a><span class='mtip' title='recently used software'>(?)</span>
 		<div id='wakoopa_software'></div>
 		<img class='loader' src='/images/ajax_loader.gif' />
 	</div>
 </section>
-		<div class='loader'></div>
+		<div class='loading'><div class='loader'></div>loading...</div>
 	</div>
 	<footer class='main'>
 		<p>&#169; <script>var date = new Date();var thisYear = date.getFullYear(); document.write(thisYear);</script>  miguel mota / powered by <a href='http://jekyllrb.com'>jekyll</a> <a href='#top' class='top'>&#8593;</a></p>
@@ -109,7 +110,7 @@
 	<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 	<script src="http://www.google.com/jsapi?key=ABQIAAAAaPkBW3vge4odDUBtbC4e-xRutoCKHFl1g3ES_cmPf4BxqcVG3BR7pbnwzjWgqiKDxSEqSvzSUG2pww" type="text/javascript"></script>
 	<script src='//www.google.com/jsapi'></script>
-	<script src='scripts/main.min.js'></script>
+	<script src='/scripts/main.min.js'></script>
 	<script>
 		$('#<decorator:getProperty property="meta.page" />').addClass('selected');
   		var _gaq = _gaq || [];

@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang='en'>
 <head>
 	<meta charset='utf-8' />
 <!--
@@ -27,19 +27,20 @@
 	<title>Portfolio &#8212; Miguel Mota | Freelance Web Developer</title>
 	<link rel='canonical' href='http://www.miguelmota.com/' />
 	<link rel='alternate' type='application/rss+xml' href='http://feeds.feedburner.com/miguelmota' />
-	<link rel='shortcut icon' href='favicon.ico' />
-	<link rel='apple-touch-icon' href='images/apple-touch-icon.png' />
-	<link rel='stylesheet' href='styles/global.min.css' />
+	<link rel='shortcut icon' href='/favicon.ico' />
+	<link rel='apple-touch-icon-precomposed' href='/images/apple-touch-icon.png' />
+	<link rel='stylesheet' href='/styles/global.min.css' />
+	<link href='/styles/pygment_friendly.css' rel='stylesheet' />
 	<!--[if lt IE 9]>
 		<script src='http://html5shiv.googlecode.com/svn/trunk/html5.js'></script>
-		<link href='/static/styles/ie.css' rel='stylesheet' />
+		<link href='/styles/ie.css' rel='stylesheet' />
 	<![endif]-->
 </head>
 <body>
 <div id='top'></div>
 <div id='wrap'>
 	<nav class='main'>
-		<a id='logo' href='/stream'><img src='images/logo.png' /></a><span class='trade'>&#8482;</span>
+		<a id='logo' href='/'><img src='/images/logo.png' /></a><span class='trade'>&#8482;</span>
 		<ul id='nav' class='nav'>
 			<li><a id='stream' href='/stream'>stream</a></li>
 			<li><a id='about' href='/about'>about</a></li>
@@ -51,48 +52,61 @@
 	<div id='article'>
 		<section class='content portfolio'>
 	<h1 class='title'><a href='/portfolio'>Miguel<span class='mota'>Mota</span><span class='slash'>/</span><span class='sub'>Portfolio</span></a></h1>
-	<div><a id='all' href='javascript:void(0);'>all</a>|<a id='web' href='javascript:void(0);'>web</a>|<a id='identity' href='javascript:void(0);'>identity</a></div>
-	<div class='web'>
+	<div class='sort'><a id='all' class='selected' href='javascript:void(0);'>all</a> | <a id='web' href='javascript:void(0);'>web</a> | <a id='identity' href='javascript:void(0);'>identity</a></div>
+	<div class='work web'>
 		<div class='container'>
-			<a class='fancybox' href='images/work/miggs_shortener.png' rel='miggs'>
-				<img class='miggs' src='images/work/miggs_shortener.png' alt='' />
+			<a class='fancybox' href='/images/work/miggs_shortener.png' rel='miggs'>
+				<img class='miggs' src='/images/work/miggs_shortener.png' alt='' />
 				<div class='overlay'></div></a>
-			<a class='fancybox' href='images/work/miggs_shortened.png' rel='miggs'></a>
+			<a class='fancybox' href='/images/work/miggs_shortened.png' rel='miggs'></a>
 		</div>
-		<p class='description'>Complete front and back-end web development for <strong>mig.gs</strong>, <em>a basic url shortener</em>.<span class='date'>May 2011</span><br />
+		<p class='description'>[WORK IN PROGRESS] Complete front and back-end web development for <strong>mig.gs</strong>, <em>a basic url shortener</em>.<span class='date'>May 2011</span><br />
 		[<a class='link' href='http://mig.gs'>mig.gs</a>]</p>
 	</div>
-	<div class='web'>
+	<div class='work web'>
 		<div class='container'>
-			<a class='fancybox' href='images/work/ffirl_single.png' rel='ffirl'>
-				<img class='ffirl' src='images/work/ffirl_single.png' alt='' />
+			<a class='fancybox' href='/images/work/mrg_home.png' rel='mrgpropertiesinc'>
+				<img class='mrg' src='/images/work/mrg_home.png' alt='' />
 				<div class='overlay'></div></a>
-			<a class='fancybox' href='images/work/ffirl_footer.png' rel='ffirl'></a>
+			<a class='fancybox' href='/images/work/mrg_resources.png' rel='mrgpropertiesinc'></a>
+			<a class='fancybox' href='/images/work/mrg_calculator.png' rel='mrgpropertiesinc'></a>
 		</div>
-		<p class='description'>Complete front and back-end web development for <strong>Fast food in real life</strong>, <em>a fast food photo blog</em>.<span class='date'>January 2011</span><br />
-		[<a class='link' href='http://www.ffirl.com'>www.ffirl.com</a>]</p>
+		<p class='description'>Front end web design for <strong>MRG Properties Inc</strong>, <em>a real estate and financial team</em>.<span class='date'>March 2011</span><br />
+		[<a class='link' href='http://www.mrgpropertiesinc.com'>www.mrgpropertiesinc.com</a>]</p>
 	</div>
-	<div class='identity'>
+	<div class='work web'>
 		<div class='container'>
-			<a class='fancybox' href='images/work/dunstar_logo_dark.png' rel='dunstar'>
-				<img class='dunstar_logo' src='images/work/dunstar_logo_dark.png' alt='' />
+			<a class='fancybox' href='/images/work/foodfail_top.png' rel='foodfail'>
+				<img class='foodfail' src='/images/work/foodfail_top.png' alt='' />
 				<div class='overlay'></div></a>
-			<a class='fancybox' href='images/work/dunstar_logo_light.png' rel='dunstar'></a>
+			<a class='fancybox' href='/images/work/foodfail_bottom.png' rel='foodfail'></a>
+			<a class='fancybox' href='/images/work/foodfail_signup.png' rel='foodfail'></a>
+		</div>
+		<p class='description'>Complete front and back-end web development for <strong>Food FAIL</strong>, <em>a fast food photo blog</em>.<span class='date'>January 2011</span><br />
+		[<a class='link' href='http://www.foodfail.org'>www.foodfail.org</a>]</p>
+	</div>
+	<div class='work identity'>
+		<div class='container'>
+			<a class='fancybox' href='/images/work/dunstar_logo_dark.png' rel='dunstar'>
+				<img class='dunstar_logo' src='/images/work/dunstar_logo_dark.png' alt='' />
+				<div class='overlay'></div></a>
+			<a class='fancybox' href='/images/work/dunstar_logo_light.png' rel='dunstar'></a>
 		</div>
 		<p class='description'>Logo for <strong>Dunstar Media Corporation</strong>, <em>a small media publishing company</em>.<span class='date'>December 2010</span><br />
 		[<a class='link' href='http://www.dunstar.com'>www.dunstar.com</a>]</p>
 	</div>
-	<div class='identity'>
+	<div class='work identity'>
 		<div class='container'>
-			<a class='fancybox' href='images/work/miguelmota_logo.png' rel='miguelmota'>
-				<img class='miguelmota_logo' src='images/work/miguelmota_logo.png' alt='' />
+			<a class='fancybox' href='/images/work/miguelmota_logo.png' rel='miguelmota'>
+				<img class='miguelmota_logo' src='/images/work/miguelmota_logo.png' alt='' />
 				<div class='overlay'></div></a>
 		</div>
-		<p class='description'>Logo and front-end web development for my me, myself and I, <em>an awesome web developer</em>.<span class='date'>September 2010</span><br />
+		<a class='fancybox' href='/images/work/miguelmota_bc.jpg' rel='miguelmota'></a>
+		<p class='description'>My very own logo and site.<span class='date'>September 2010</span><br />
 		[<a class='link' href='http://www.miguelmota.com'>www.miguelmota.com</a>]</p>
 	</div>
 </section>
-		<div class='loader'></div>
+		<div class='loading'><div class='loader'></div>loading...</div>
 	</div>
 	<footer class='main'>
 		<p>&#169; <script>var date = new Date();var thisYear = date.getFullYear(); document.write(thisYear);</script>  miguel mota / powered by <a href='http://jekyllrb.com'>jekyll</a> <a href='#top' class='top'>&#8593;</a></p>
@@ -108,7 +122,7 @@
 	<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 	<script src="http://www.google.com/jsapi?key=ABQIAAAAaPkBW3vge4odDUBtbC4e-xRutoCKHFl1g3ES_cmPf4BxqcVG3BR7pbnwzjWgqiKDxSEqSvzSUG2pww" type="text/javascript"></script>
 	<script src='//www.google.com/jsapi'></script>
-	<script src='scripts/main.min.js'></script>
+	<script src='/scripts/main.min.js'></script>
 	<script>
 		$('#<decorator:getProperty property="meta.page" />').addClass('selected');
   		var _gaq = _gaq || [];

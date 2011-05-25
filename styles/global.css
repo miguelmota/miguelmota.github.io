@@ -93,10 +93,6 @@ h1.title a {
 h1.title a:hover {
 	color: #007799 !important;
 }
-h3 a {
-	font-size: 26px;
-	font-family: Klavika-Light, Helvetica, Arial, sans-serif;
-}
 ::selection {
 	background-color: #007799;
 }
@@ -194,6 +190,10 @@ div#noscript {
 	width: 760px;
 	background-color: #a80f0f;
 	color: #fff;
+}
+div.highlight {
+	background-color: #202020;
+	padding: 5px;
 }
 /* /GENERAL ========================================================== */
 /* NAVIGATION ======================================================== */
@@ -606,9 +606,13 @@ div#cse div.gsc-cursor-current-page  {
 	color: #005577;
 }
 /* /GOOGLE SEARCH --------------------------------------------------- */
-h3 {
+div.posti h1 {
 	margin-bottom: 5px;
 	border-bottom: 1px dotted #999;
+}
+div.posti h1 a {
+	font-size: 26px;
+	font-family: Klavika-Light, Helvetica, Arial, sans-serif;
 }
 div.post {
 	margin-bottom: 50px;

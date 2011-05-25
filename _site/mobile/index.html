@@ -23,100 +23,54 @@
 -->
 	<title>Miguel Mota</title>
 	<link rel='shortcut icon' href='/favicon.ico' />
-	<link rel='stylesheet' href='styles/global.min.css' />
+	<link href='/styles/reset.css' rel='stylesheet' />
+   	<link href="jqtouch/jqtouch.css" rel='stylesheet' />
+    <link href="themes/artspot/theme.css" rel='stylesheet' />
+    <link href='/plugins/fancybox/jquery.fancybox.css' rel='stylesheet' />
+    <link href='/plugins/shadowbox/shadowbox.css' rel='stylesheet' />
+   	<link href="styles/global.css" rel='stylesheet' />
+	<script src="jqtouch/jquery.js"></script>
+	<script src="jqtouch/jqtouch.js"></script>
+	<script src='/plugins/fancybox/jquery.fancybox-1.3.2.pack.js'></script>
+	<script src='/plugins/touch-gallery/jquery.touch-gallery-1.0.0.min.js'></script>
+	<script src='/plugins/shadowbox/shadowbox.js'></script>
+	<script src="scripts/main.js"></script>
+
 </head>
 <body>
 	<div id='home'>
 		<div class='toolbar'>
-			<h1>Miguel Mota</h1>
+			<img class='logo' src='../images/logo.png' /><h1>Miguel<span class='mota'>mota</span></h1>
 		</div>
-		<ul class='plastic'>
-			<li class='arrow'><a class='stream' href='#stream'>Stream</a></li>
+		<ul class='plastic nav'>
+			<li class='arrow'><a href='#stream'>Stream</a></li>
 			<li class='arrow'><a href='#about'>About</a></li>
-			<li class='arrow'><a href='#portfolio'>Portfolio</a> <small class="counter">4</small></li>
+			<li class='arrow'><a href='#portfolio'>Portfolio</a></li>
 			<li class='arrow'><a href='#contact'>Contact</a></li>
-			<li class='arrow'><a href='http://blog.miguelmota.com'>Blog</a></li>
-			<li class='arrow view'><a href='http://www.miguelmota.com'>Standard view</a></li>
+			<li class='arrow'><a href='#blog'>Blog</a></li>
 		</ul>
+		<a id='standard_view' href='http://www.miguelmota.com'>Standard view</a>
 	</div>
 	<div id='stream'>
 		<div class='toolbar'>
 			<h1>Stream</h1>
 			<a class="back" href="#home">Home</a> 
 		</div>
-		<div class='content'>
-			<div class='stream latitude'>
-				<ul class='latitude plastic'>
-					<li class='forward'><a href='http://www.google.com/latitude/apps/badge/api?user=7812482200199007583&amp;type=iframe&amp;maptype=roadmap'>Latitude</a></li>
-					<!--<li class='arrow'><iframe class='latitude' src='http://www.ffirl.com/miguelmota/location.php' scrolling='no'></iframe></li>-->
-				</ul>
-			</div>
-			<div class='stream facebook'>
-					<a class='social facebook' href='http://www.facebook.com/miguel.mota2'></a>
-					<ul class='facebook_status plastic'>
-						<li class='forward'><a href='http://www.facebook.com/miguel.mota2'>Facebook <span class='sub'>miguel.mota2</span></a></li>
-					</ul>
-					<img class='loader' src='../static/images/ajax_loader.gif' />
-			</div>
-			<div class='stream twitter'>
-					<a class='social twitter' href='http://twitter.com/miguel_mota'></a>
-					<ul class='twitter_status plastic'>
-						<li class='forward'><a href='http://mobile.twitter.com/miguel_mota'>Twitter <span class='sub'>@miguel_mota</span></a></li>
-					</ul>
-					<img class='loader' src='../static/images/ajax_loader.gif' />
-			</div>
-			<div class='stream tumblr'>
-					<a class='social tumblr' href='http://miguelmota.tumblr.com'></a>
-					<ul class='tumblr_posts plastic'>
-						<li class='forward'><a href='http://miguelmota.tumblr.com'>Tumblr <span class='sub'>miguelmota</span></a></li>
-					</ul>
-					<img class='loader' src='../static/images/ajax_loader.gif' />
-			</div>
-			<div class='stream delicious'>
-				<a class='social delicious' href='http://www.delicious.com/miguelmota'></a>
-				<ul class='delicious_bookmarks plastic'>
-					<li class='forward'><a href='http://www.delicious.com/miguelmota'>Delicious <span class='sub'>miguelmota</span></a></li>
-				</ul>
-				<img class='loader' src='../static/images/ajax_loader.gif' />
-			</div>
-			<div class='stream lastfm'>
-				<a class='social lastfm' href='http://www.last.fm/user/miguel_mota'></a>
-				<ul class='lastfm_tracks plastic'>
-					<li class='forward'><a href='http://www.last.fm/user/miguel_mota'>Last.fm <span class='sub'>miguel_mota</span></a></li>
-				</ul>
-				<img class='loader' src='../static/images/ajax_loader.gif' />
-			</div>
-			<div class='stream wakoopa'>
-				<a class='social wakoopa' href='http://social.wakoopa.com/miguelmota'></a>
-				<div id='wakoopa_software'></div>
-				<img class='loader' src='../static/images/ajax_loader.gif' />
-			</div>
-		</div>
+		<div class='content'><ul class='plastic'><li class='arrow'></li></ul></div>
 	</div>
 	<div id='about'>
 		<div class='toolbar'>
 			<h1>About</h1>
 			<a class="back" href="#home">Home</a> 
 		</div>
-		<div class='content'><ul class='plastic'><li class='arrow'>262626</li></ul></div>
+		<div class='content'><ul class='plastic'><li class='arrow'></li></ul></div>
 	</div>
 	<div id='portfolio'>
 		<div class='toolbar'>
 			<h1>Portfolio</h1>
 			<a class="back" href="#home">Home</a> 
 		</div>
-		<div class='content'>
-			<ul class='plastic'>
-				<li class='forward'><a href='http://mig.gs'>mig.gs URL shortener</a></li>
-				<li class='arrow'><p>Complete front and back-end web development for a basic URL shortener. [mig.gs]</p></li>
-				<li class='forward'><a href='http://www.ffirl.com'>Fast food in real life.</a></li>
-				<li class='arrow'><p>Complete front and back-end web development for a fast food photo blog. [www.ffirl.com]</p></li>
-				<li class='forward'><a href='http://www.dunstar.com'>Dunstar Media Corporation</a></li>
-				<li class='arrow'><p>Logo and front-end web development for a media publishing company. [www.dunstar.com]</p></li>
-				<li class='forward'><a href='http://www.miguelmota.com'>Miguel Mota (me)</a></li>
-				<li class='arrow'><p>Logo and front-end web development for my personal website. [www.miguelmota.com]</p></li>
-			</ul>
-		</div>
+		<div class='content'><ul class='plastic'><li class='arrow'></li></ul></div>
 	</div>
 	<div id='contact'>
 		<div class='toolbar'>
@@ -131,7 +85,15 @@
 			</ul>
 		</div>
 	</div>
-	<script src='scripts/main.min.js'></script>
+	<div class='page' id='blog'>
+		<div class='toolbar'>
+			<h1>Blog</h1>
+			<a class="back" href="#home">Home</a> 
+		</div>
+		<div class='content'><ul class='plastic'><li class='arrow'></li></ul></div>
+	</div>
+	
+	
 	<script>
   		var _gaq = _gaq || [];
   		_gaq.push(['_setAccount', 'UA-12642068-1']);

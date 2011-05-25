@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang='en'>
 <head>
 	<meta charset='utf-8' />
 <!--
@@ -27,19 +27,20 @@
 	<title>About &#8212; Miguel Mota | Freelance Web Developer</title>
 	<link rel='canonical' href='http://www.miguelmota.com/' />
 	<link rel='alternate' type='application/rss+xml' href='http://feeds.feedburner.com/miguelmota' />
-	<link rel='shortcut icon' href='favicon.ico' />
-	<link rel='apple-touch-icon' href='images/apple-touch-icon.png' />
-	<link rel='stylesheet' href='styles/global.min.css' />
+	<link rel='shortcut icon' href='/favicon.ico' />
+	<link rel='apple-touch-icon-precomposed' href='/images/apple-touch-icon.png' />
+	<link rel='stylesheet' href='/styles/global.min.css' />
+	<link href='/styles/pygment_friendly.css' rel='stylesheet' />
 	<!--[if lt IE 9]>
 		<script src='http://html5shiv.googlecode.com/svn/trunk/html5.js'></script>
-		<link href='/static/styles/ie.css' rel='stylesheet' />
+		<link href='/styles/ie.css' rel='stylesheet' />
 	<![endif]-->
 </head>
 <body>
 <div id='top'></div>
 <div id='wrap'>
 	<nav class='main'>
-		<a id='logo' href='/stream'><img src='images/logo.png' /></a><span class='trade'>&#8482;</span>
+		<a id='logo' href='/'><img src='/images/logo.png' /></a><span class='trade'>&#8482;</span>
 		<ul id='nav' class='nav'>
 			<li><a id='stream' href='/stream'>stream</a></li>
 			<li><a id='about' href='/about'>about</a></li>
@@ -50,16 +51,22 @@
 	</nav>
 	<div id='article'>
 		<section class='content about'>
+
 	<h1 class='title'><a href='/about'>Miguel<span class='mota'>Mota</span><span class='slash'>/</span><span class='sub'>About</span></a></h1>
-	<img src='images/miguel_mota.jpg' />
-	<p>I'm <strong>Miguel Mota</strong>, a <em>somewhat</em> creative 19 year old freelance web developer from the always sunny Southern California. 
+	
+	<img class='about' src='/images/miguel_mota.jpg' alt='Miguel Mota' />
+	
+	<p>I'm <strong>Miguel Mota</strong>, a super duper amazingly awesome cool (and awkward) 19 year old freelance web developer from the always sunny Southern California. 
 	I create simple, user-friendly and aesthetically pleasing websites in compliance with the latest web standards, specializing in XHTML/CSS, Javascript(jQuery) and PHP/SQL... 
 	in other words, I make stuff for the web.</p>
+	
 	<p>I am currently a college student with 1+ years of experience in web developing and would love to make this a full-time job someday.
-	If you need help with an existing site or would like to start from scratch then I <em>might</em> be what you are looking for. </p>
+	If you need help with an existing site or would like to start from scratch then I <em>might</em> be what you are looking for.</p>
+	
 	<p>For questions, comments or simply to talk, you can reach me at <a href='mailto:hello@miguelmota.com'>hello@miguelmota.com</a>. =]</p>
+	
 </section>
-		<div class='loader'></div>
+		<div class='loading'><div class='loader'></div>loading...</div>
 	</div>
 	<footer class='main'>
 		<p>&#169; <script>var date = new Date();var thisYear = date.getFullYear(); document.write(thisYear);</script>  miguel mota / powered by <a href='http://jekyllrb.com'>jekyll</a> <a href='#top' class='top'>&#8593;</a></p>
@@ -75,7 +82,7 @@
 	<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 	<script src="http://www.google.com/jsapi?key=ABQIAAAAaPkBW3vge4odDUBtbC4e-xRutoCKHFl1g3ES_cmPf4BxqcVG3BR7pbnwzjWgqiKDxSEqSvzSUG2pww" type="text/javascript"></script>
 	<script src='//www.google.com/jsapi'></script>
-	<script src='scripts/main.min.js'></script>
+	<script src='/scripts/main.min.js'></script>
 	<script>
 		$('#<decorator:getProperty property="meta.page" />').addClass('selected');
   		var _gaq = _gaq || [];

@@ -2,7 +2,7 @@
 layout: default
 ---
 	<div class='posti'>
-		<h3><a href='{{ post.url }}'>{{ page.title }}</a></h3>
+		<h1 class='post'><a href='{{ post.url }}'>{{ page.title }}</a></h1>
 		{{ content }}
 		<div class='post_footer'>
 			<p>posted <a href='{{ post.url }}'>{{ page.date | date_to_string }}</a></p>

@@ -4,7 +4,7 @@ layout: default
 <section class='content post'>
 	{% include header.html %}
 	<div class='posti'>
-		<h3><a href='{{ page.url }}'>{{ page.title }}</a></h3>
+		<h1><a href='{{ page.url }}'>{{ page.title }}</a></h1>
 		{{ content }}
 		<div class='post_footer'>
 			<p>posted <a href='{{ page.url }}'>{{ page.date | date_to_string }}</a></p>

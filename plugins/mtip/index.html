@@ -1,0 +1,24 @@
+<!doctype>
+<html>
+<head>
+	<title>mtip</title>
+	<script src='jquery.js'></script>
+	<script src='mtip.js'></script>
+	<link href='mtip.css' rel='stylesheet' />
+	<script>
+	$(document).ready(function(){
+		$('.mtip').mtip();
+	});
+	</script>
+	<style>
+		div#wrap {
+			margin: 100px;
+		}
+	</style>
+</head>
+<body>
+	<div id='wrap'>
+		<span class='mtip' title='hello, I am a tooltip!'>hover over me</span>
+	</div>
+</body>
+</html>
