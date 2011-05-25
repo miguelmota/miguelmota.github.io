@@ -40,6 +40,9 @@ $(document).ready(function(){
 			streamPage();
 			$('a#stream').addClass('selected');
 			break;
+		case 'about':
+			$('a#about').addClass('selected');
+			break;
 		case 'portfolio':
 			portfolioPage();
 			$('a#portfolio').addClass('selected');
