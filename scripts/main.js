@@ -38,7 +38,7 @@ $(document).ready(function(){
 		if($(this).attr('href') == pathname){
 			//$('nav.main a#stream').removeClass('selected');
 			//$(this).addClass('selected');
-			
+			alert(pathname);
 			//run appropriate function
 			switch($(this).attr('id')){
 				case 'stream':
