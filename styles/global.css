@@ -618,11 +618,8 @@ div.post {
 	margin-bottom: 50px;
 }
 div.post_footer {
-	margin-top: 5px;
+	margin-top: 15px;
 	font-size: 10px;
-}
-div.post_footer p {
-	margin-bottom: 5px;
 }
 div.view_archive {
 	margin-top: 25px;
@@ -650,9 +647,6 @@ footer.main a.top {
 }
 /* /FOOTER ============================================================ */
 /* DISQUS ============================================================= */
-.dsq-comment-count {
-
-}
 .p_comment_form input[type=text],
 .p_comment_form textarea {
 	border: 1px solid #999;
