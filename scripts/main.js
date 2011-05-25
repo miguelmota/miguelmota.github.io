@@ -52,6 +52,7 @@ $(document).ready(function(){
 					break;
 				case 'blog': 
 					blogPage();
+					alert('asdf');
 					break;
 				default:
 					break;
@@ -224,6 +225,9 @@ $("nav.main a:not('#logo')").live('click', function(){
 		return false;
 });
 
+
+/*
+ //not gonna use anymore
 $('div.posti h3 a').live('click', function(){
 	var toLoad2 = $(this).attr('href')+' div.posti';
 
@@ -254,6 +258,8 @@ $('div.posti h3 a').live('click', function(){
 	}
 	return false;
 });
+
+*/
 
 var position = 0;
 var length = 'portfolio'.length;
