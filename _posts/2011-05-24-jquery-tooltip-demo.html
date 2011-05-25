@@ -1,3 +1,7 @@
+---
+layout: blah
+title: jQuery tooltip demo
+---
 <!doctype html>
 <html lang='en'>
 <head>
@@ -5,7 +9,7 @@
 	<meta name='description' content='Creative freelance web developer from the always sunny Southern California.' />
 	<meta name='keywords' content='miguel mota,creative,freelance,web developer,web design,blog' />
 	<meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=1;' />
-	<title>jQuery tooltip demo</title>
+	<title>{{ page.title }}</title>
 	<link href='http://www.miguelmota.com/' rel='canonical' />
 	<link href='/favicon.ico' rel='shortcut icon' />
 	<link href='/plugins/mtip/mtip.css' rel='stylesheet' />
@@ -38,7 +42,7 @@
 </head>
 <body>
 <div id='wrap'>
-	<h1><a href='{{ page.url }}'>jQuery tooltip demo</a></h1>
+	<h1><a href='{{ page.url }}'>{{ page.title }}</a></h1>
 	<div id='demo'>
 		<a class='mtip' href='javascript:void(0);' title='hello, I am a tooltip!'>hover over me</a>
 	</div>
