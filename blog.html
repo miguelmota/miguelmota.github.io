@@ -5,7 +5,7 @@ title: Blog
 <section class='content blog'>
 	{% include header.html %}
 	<div class='posti'>
-		{% for jquery in site.categories %}
+		{% for post in site.posts %}
 			<div class='post'>
 				<h1 class='post'><a href='{{ post.url }}'>{{ post.title }}</a></h1>
 				{{ post.content }}
