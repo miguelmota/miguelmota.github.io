@@ -115,14 +115,14 @@ body, .toolbar, #jqt ul, #jqt ul.individual li, #jqt ul li a.active,#tabbar,.s-s
     text-align: center;
     text-overflow: ellipsis;
     white-space: nowrap;
-    color: #fff;
+    color: #999;
     letter-spacing: -1px;
 }
 #jqt .toolbar > h1 a {
     text-shadow: rgba(0,0,0,0.5) 0 1px 1px;
     text-overflow: ellipsis;
     white-space: nowrap;
-    color: #fff;
+    color: #999;
     letter-spacing: -1px;
 }
 #jqt.landscape .toolbar > h1 {
