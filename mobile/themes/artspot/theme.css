@@ -314,7 +314,7 @@ body, .toolbar, #jqt ul, #jqt ul.individual li, #jqt ul li a.active,#tabbar,.s-s
     background-position: right center;
     background-repeat: no-repeat;
     */
-    background-color: #000;
+    background: rgba(0,119,153,1.4);
 }
 #jqt ul li.forward a.active {
     background-image: url(img/chevron_circle.png);
