@@ -841,6 +841,12 @@ div#stream a.social {
 span.rsaquo {
 	float: right;
 }
+div#stream span.rsaquo {
+	font-size: 18px;
+}
+div#home span.rsaquo {
+	font-size: 22px;
+}
 div#stream a.social:active {
     background-color: #007799 !important;
     color: #999;
