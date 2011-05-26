@@ -847,7 +847,7 @@ span.rsaquo {
 div#stream a.social:active,
 div#stream a.social.active  {
     background-color: #007799 !important;
-    color: #999;
+    color: #fff;
 }
 div#stream ul {
     color: #999;
