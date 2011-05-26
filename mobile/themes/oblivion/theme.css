@@ -831,8 +831,12 @@ div#stream a.social {
 	font-size: 16px !important;
 	-webkit-border-radius: 10px !important;
 	background-color: #111 !important;
-	color: #fff;
+	color: #999;
 	margin-bottom: 10px !important;
+}
+div#stream a.social:active {
+    background-color: #007799 !important;
+    color: #999;
 }
 div#stream ul {
     color: #999;
@@ -849,9 +853,7 @@ div#stream ul li {
     background-color: #222;
     font-size: 12px !important;
 }
-div#stream ul li:active {
-    background-color: #007799 !important;
-}
+
 div#stream ul li a {
 	color: #007799 !important;
 	font-size: 12px !important;
