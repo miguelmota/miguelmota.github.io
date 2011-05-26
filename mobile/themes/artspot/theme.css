@@ -681,3 +681,11 @@ input[type='submit'] {
     font-weight: inherit;
     padding: 10px;
 }
+
+
+
+/*    custom            */
+p {
+	font-family: 'klavika-Light', Arial, sans-serif;
+	font-weight: normal;
+}
