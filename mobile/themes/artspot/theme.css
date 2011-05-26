@@ -689,3 +689,8 @@ p {
 	font-family: 'klavika-Light', Arial, sans-serif;
 	font-weight: normal;
 }
+p a {
+	font-family: 'klavika-Light', Arial, sans-serif;
+	font-weight: normal;
+	padding: 0;
+}
