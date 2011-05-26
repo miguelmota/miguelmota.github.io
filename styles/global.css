@@ -140,7 +140,8 @@ textarea:blur {
 	color: #555;
 }
 p {
-	padding: 5px 0;
+	padding: 10px 0;
+	line-height: 120%;
 }
 a#mobile_bar {
 	display: block;
@@ -192,8 +193,9 @@ div#noscript {
 	color: #fff;
 }
 div.highlight {
-	background-color: #202020;
+	margin: 10px 0;
 	padding: 5px;
+	background-color: #202020;
 }
 .highlight code {
 	word-wrap: break-word;
