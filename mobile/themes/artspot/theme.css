@@ -154,7 +154,7 @@ body, .toolbar, #jqt ul, #jqt ul.individual li, #jqt ul li a.active,#tabbar,.s-s
     white-space: nowrap;
     background: none;
     text-transform: uppercase;
-    background: rgba(0,119,153,1.4);
+    background: rgba(0,85,119,1.4);
     border-radius: 8px;
 }
 #jqt .button.active, #jqt .cancel.active, #jqt .add.active, #jqt .back.active {
