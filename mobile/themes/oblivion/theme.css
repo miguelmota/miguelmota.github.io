@@ -309,7 +309,9 @@ ul.nav {
     background-color: #222;
 	border-bottom: 0;
 }
-
+div#contact ul.contact {
+	background-color: #222 !important;
+}
 div#contact ul.contact li.arrow {
 	margin: 10px;
 	-webkit-border-radius: 10px;
@@ -318,6 +320,7 @@ div#contact ul.contact li.arrow {
 	border-radius: 10px;
     background-color: #222;
 	border-bottom: 0;
+	padding: 12px 22px 12px 10px;
 }
 
 #jqt ul li.arrow a {
