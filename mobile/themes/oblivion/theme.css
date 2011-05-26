@@ -826,13 +826,18 @@ div.content img.loader {
 	clear: both;
 }
 div#stream a.social {
+	padding: 10px !important;
 	font-size: 16px !important;
+	-webkit-border-radius: 10px !important;
+	background-color: #111 !important
+	color: #fff;
 }
 div#stream ul {
     color: #999;
     font: bold 18px "Helvetica Neue", Helvetica;
     padding: 0;
     margin: 0 0 30px 0;
+    background-color: #222 !important;
 }
 div#stream ul:last-child {
 	 margin-bottom: 10px;;
