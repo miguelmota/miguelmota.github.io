@@ -698,17 +698,14 @@ input[type='submit'] {
 /*    custom            */
 
 
-div.content ul.plastic {
-	padding-bottom: 15px;
-}
-
-
-
 
 
 p {
 	font-family: 'klavika-Light', Arial, sans-serif;
 	font-weight: normal;
+}
+div#about li.arrow img {
+	border: 1px solid #555;
 }
 div#stream li.arrow a,
 div#about li.arrow a,
