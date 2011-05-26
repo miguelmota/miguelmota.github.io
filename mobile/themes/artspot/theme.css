@@ -160,7 +160,7 @@ body, .toolbar, #jqt ul, #jqt ul.individual li, #jqt ul li a.active,#tabbar,.s-s
 }
 #jqt .button.active, #jqt .cancel.active, #jqt .add.active, #jqt .back.active {
     /* background: rgba(255,255,255,0.9); */
-    background: #222;
+    background: #007799;
     text-shadow: none;
 }
 #jqt .blueButton {
