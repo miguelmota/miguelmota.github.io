@@ -160,6 +160,7 @@ div.post h1 {
 }
 div.post h1 a {
 	font-size: 24px !important;
+	word-wrap: break-word;
 }
 /* BLOG_PAGE ================================================================= */
 /*
