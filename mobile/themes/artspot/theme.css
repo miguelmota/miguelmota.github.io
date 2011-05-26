@@ -95,7 +95,10 @@ body, .toolbar, #jqt ul, #jqt ul.individual li, #jqt ul li a.active,#tabbar,.s-s
     padding: 10px;
     height: 45px;
     position: relative;
-    -webkit-box-shadow: inset 0 -2px 2px rgba(0,0,0,0.2);
+    -webkit-box-shadow: inset 0 -2px 5px rgba(0,0,0,0.8);
+    -moz-box-shadow: inset 0 -2px 2px rgba(0,0,0,0.2);
+    -o-box-shadow: inset 0 -2px 2px rgba(0,0,0,0.2);
+     box-shadow: inset 0 -2px 2px rgba(0,0,0,0.2);
 }
 #jqt .black-translucent .toolbar {
     margin-top: 20px;
@@ -334,7 +337,7 @@ ul.nav {
     background-position: right center;
     background-repeat: no-repeat;
     */
-    background: rgba(0,119,153,1.4);
+    background: rgba(0,85,119,1.4);
     color: #fff;
 }
 #jqt ul li.forward a.active {
