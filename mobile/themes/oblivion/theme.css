@@ -849,8 +849,12 @@ div#stream ul li {
     background-color: #222;
     font-size: 12px !important;
 }
+div#stream ul li:active {
+    background-color: #007799 !important;
+}
 div#stream ul li a {
 	color: #007799 !important;
+	font-size: 12px !important;
 }
 div#stream ul li a:active {
 	background: none !important;
