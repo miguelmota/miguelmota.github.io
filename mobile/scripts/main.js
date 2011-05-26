@@ -24,7 +24,7 @@ $(document).ready(function(){
 		loadDisqus();
 	});
 
-	$('div.content').prepend("<div class='footer'>&#169; "+thisYear+" miguel mota</div>");
+	$('div.page').prepend("<div class='footer'>&#169; "+thisYear+" miguel mota</div>");
 
 
 	
