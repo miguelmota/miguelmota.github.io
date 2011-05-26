@@ -832,7 +832,7 @@ div#stream a.social {
 	-webkit-border-radius: 10px !important;
 	background-color: #111 !important;
 	color: #999;
-	margin-bottom: 10px !important;
+	margin-bottom: 5px !important;
 }
 div#stream a.social:active {
     background-color: #007799 !important;
@@ -847,7 +847,7 @@ div#stream ul {
 div#stream ul li {
     color: #999;
     list-style-type: none;
-    padding: 0 !important;
+    padding: 5px 0 !important;
     overflow: hidden;
     border-top: none;
     background-color: #222;
@@ -855,7 +855,7 @@ div#stream ul li {
 }
 
 div#stream ul li:nth-child(even) {
-	background-color: #333;
+	background-color: #202020;
 }
 
 div#stream ul li a {
