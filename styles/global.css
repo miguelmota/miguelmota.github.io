@@ -534,8 +534,8 @@ section.portfolio img.miguelmota_logo {
 /* CONTACT ============================================================ */
 section.contact img.qrcode {
 	float: right;
-	width: 64px;
-	height: 64px;
+	width: 88px;
+	height: 88px;
 }
 section.contact form.contact_form div.input {
 	margin-bottom: 10px;
