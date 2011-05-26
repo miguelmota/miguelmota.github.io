@@ -684,7 +684,28 @@ input[type='submit'] {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 /*    custom            */
+
+
+div.content {
+	padding-bottom: 15px;
+}
+
+
+
+
+
 p {
 	font-family: 'klavika-Light', Arial, sans-serif;
 	font-weight: normal;
@@ -700,6 +721,7 @@ div#blog li.arrow a {
 	font-weight: normal;
     padding: 12px 12px 12px 10px;
 }
+
 
 .highlight {
 	margin: 5px 0;
