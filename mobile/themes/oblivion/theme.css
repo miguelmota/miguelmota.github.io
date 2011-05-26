@@ -936,6 +936,10 @@ div#blog img {
 	font-size: 10px;
 	background-color: #111;
 }
+.highlight .p,
+.highlight .nx {
+	color: #999;
+}
 .highlight code {
 	word-wrap: break-word;
 }

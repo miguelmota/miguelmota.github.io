@@ -436,12 +436,12 @@ section.stream ul.lastfm_tracks li span.date {
 	border-left: 2px solid #222;
 }
 /* /STREAM ============================================================ */
-/* CONTACT ============================================================ */
+/* ABOUT ============================================================== */
 section.about img.about {
 	width: 100%;
 	height: auto;
 }
-/* /CONTACT =========================================================== */
+/* /ABOUT ============================================================= */
 /* PORTFOLIO ========================================================== */
 section.portfolio h1.title {
 	display: inline;
@@ -532,6 +532,9 @@ section.portfolio img.miguelmota_logo {
 }
 /* /PORTFOLIO ========================================================= */
 /* CONTACT ============================================================ */
+section.contact img.qrcode {
+	float: right;
+}
 section.contact form.contact_form div.input {
 	margin-bottom: 10px;
 }
