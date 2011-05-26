@@ -734,7 +734,9 @@ input[type='submit'] {
 
 
 
-
+code {
+	background-color: #111;
+}
 
 
 /*    custom            */
