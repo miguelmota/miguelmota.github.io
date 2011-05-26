@@ -56,14 +56,6 @@ div.content p {
 ul.nav li {
 	padding: 10px !important;
 }
-div#stream li.arrow a,
-div#about li.arrow a,
-div#portfolio li.arrow a,
-div#blog li.arrow a {
-	display: inline;
-	font-size: 12px;
-	color: #007799;
-}
 a#standard_view {
 	display: block;
 	float: right;
@@ -114,37 +106,7 @@ div#stream div.latitude {
 	display: none;	
 }
 /* /STREAM_PAGE ============================================================ */
-/* PORTFOLIO_PAGE ============================================================ */
-div#portfolio div.sort {
-	display: none;
-}
-div#portfolio div.work {
-	margin-bottom: 45px;
-	padding-top: 5px;
-	border-top: 1px solid #000;
-}
-div#portfolio div.work:last-child {
-	margin-bottom: 0;
-}
-div#portfolio div.container {
-	position: relative;
-	height: 120px;
-	width: 100%;
-	margin-bottom: 10px;
-	overflow: hidden;
-}
-div#portfolio div.container img {
-	position: absolute;
-}
-div#portfolio p.description {
-	position: relative;
-}
-div#portfolio span.date {
-	float: right;
-	color: #555;
-	font-size: 10px !important;
-}
-/* /PORTFOLIO_PAGE =========================================================== */
+
 
 
 /*
