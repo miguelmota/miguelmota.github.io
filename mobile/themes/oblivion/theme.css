@@ -321,10 +321,11 @@ div#contact ul.contact li.arrow {
     background-color: #222;
 	border-bottom: 0;
 	padding: 12px 22px 12px 10px;
+	padding: 10px !important;
 }
 
-div#contact ul.contact li.arrow span.sub:active {
-	color: #fff;
+div#contact ul.contact li.arrow span.sub {
+	display: none;
 }
 
 #jqt ul li.arrow a {
