@@ -747,6 +747,7 @@ code {
 div.footer {
 	position: absolute;
 	bottom: 0;
+	padding: 10px;
 	font-size: 10px;
 	color: #555;
 	clear: both;
