@@ -95,7 +95,7 @@ body, .toolbar, #jqt ul, #jqt ul.individual li, #jqt ul li a.active,#tabbar,.s-s
     padding: 10px;
     height: 45px;
     position: relative;
-    -webkit-box-shadow: inset 0 -2px 5px rgba(0,0,0,0.8);
+    -webkit-box-shadow: 0 5px .8 #000;
     -moz-box-shadow: inset 0 -2px 2px rgba(0,0,0,0.2);
     -o-box-shadow: inset 0 -2px 2px rgba(0,0,0,0.2);
      box-shadow: inset 0 -2px 2px rgba(0,0,0,0.2);
@@ -303,6 +303,7 @@ ul.nav {
 #jqt ul.nav li.arrow.active,
 #jqt ul.nav li.arrow:active {
     -webkit-box-shadow: 0;
+    -text-shadow: 0 -1px 0 #000;
 }
 
 #jqt ul li.arrow a {
