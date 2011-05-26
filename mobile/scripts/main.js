@@ -37,11 +37,11 @@ $(document).ready(function(){
 
 	
 	
-	$('#blog div.content h3 a').live('click', function(){
+	$('#blog div.content h1 a').live('click', function(){
 		//initialize Disqus
 		loadDisqus();
 		
-		$('#blog div.content ul li.arrow').load($(this).attr('href')+' section.content');
+		$('#blog div.content').load($(this).attr('href')+' section.content');
 		return false;
 	});
 
