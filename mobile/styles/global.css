@@ -29,6 +29,9 @@ div.content li.arrow span.date {
 }
 
 */
+.highlight {
+	font-size: 12px;
+}
 img.logo {
 	height: 32px;
 	width: auto;
