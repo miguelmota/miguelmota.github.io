@@ -310,6 +310,16 @@ ul.nav {
 	border-bottom: 0;
 }
 
+div#contact ul.contact li.arrow {
+	margin: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-o-border-radius: 10px;
+	border-radius: 10px;
+    background-color: #222;
+	border-bottom: 0;
+}
+
 #jqt ul li.arrow a {
     padding: 12px 22px 12px 10px;
 }
