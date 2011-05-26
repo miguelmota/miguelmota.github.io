@@ -20,7 +20,7 @@ $(document).ready(function(){
 			'hideOnContentClick': true
 		});*/
 	});
-	$('#blog div.content ul li.arrow').load('/blog section.content', function(){
+	$('#blog div.content').load('/blog section.content', function(){
 		loadDisqus();
 	});
 

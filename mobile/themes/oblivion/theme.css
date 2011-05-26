@@ -730,7 +730,10 @@ input[type='submit'] {
 
 
 
-
+div.content {
+	padding: 10px;
+	background-color: #333;
+}
 
 
 div.page {
