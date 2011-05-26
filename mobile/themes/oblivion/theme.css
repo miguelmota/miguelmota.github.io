@@ -809,7 +809,7 @@ ul.nav li {
 	padding: 10px !important;
 }
 a#standard_view {
-	display: block;
+	display: none;
 	float: right;
 	padding: 5px 10px 5px 5px;
 	font-size: 12px;
