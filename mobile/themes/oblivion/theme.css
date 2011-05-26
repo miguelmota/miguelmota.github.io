@@ -868,7 +868,7 @@ div#stream ul li:nth-child(even) {
 div#stream ul li a {
 	display: inline;
 	color: #007799 !important;
-	font-size: 12px !important;
+    font: 12px normal "NeoSans", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
 }
 div#stream ul li a:active {
 	background: none !important;
