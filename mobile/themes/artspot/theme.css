@@ -714,13 +714,13 @@ div#blog li.arrow a {
 /* BLOG_PAGE ================================================================= */
 div.post {
 	margin-bottom: 50px;
-	border-bottom: 1px dotted #999;
 }
 div.post h1 {
-	margin: 0
+	margin: 0 !important;
+	border-bottom: 1px dotted #999;
 }
 div.post h1 a {
-	font-size: 16px;
-	word-wrap: break-word;
+	font-size: 16px !important;
+	word-wrap: break-word !important;
 }
 /* BLOG_PAGE ================================================================= */
