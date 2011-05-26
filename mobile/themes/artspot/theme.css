@@ -281,11 +281,17 @@ body, .toolbar, #jqt ul, #jqt ul.individual li, #jqt ul li a.active,#tabbar,.s-s
     background-repeat: no-repeat !important;*/
     background-color: #222;
 }
-
+ul.nav {
+	background-color: #333;
+}
 #jqt ul.nav li.arrow {
-	margin: 10px 15px;
+	margin: 10px;
 	-webkit-border-radius: 10px;
     background-color: #222;
+    -webkit-box-shadow: 2px 2px 5px #111;
+	-moz-box-shadow: 2px 2px 5px #111;
+	-o-box-shadow: 2px 2px 5px #111;
+	box-shadow: 2px 2px 5px #111;
 }
 
 #jqt ul li.arrow a {
@@ -704,7 +710,14 @@ input[type='submit'] {
 
 /*    custom            */
 
-
+div.content img {
+	width: 100%;
+	height: auto;	
+	-webkit-box-shadow: 2px 2px 5px #111;
+	-moz-box-shadow: 2px 2px 5px #111;
+	-o-box-shadow: 2px 2px 5px #111;
+	box-shadow: 2px 2px 5px #111;
+}
 
 
 p {
