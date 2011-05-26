@@ -157,10 +157,10 @@ div#portfolio span.date {
 /* BLOG_PAGE ================================================================= */
 div.post h1 {
 	margin: 0 !important;
+	word-wrap: break-word;
 }
 div.post h1 a {
 	font-size: 24px !important;
-	word-wrap: break-word;
 }
 /* BLOG_PAGE ================================================================= */
 /*
