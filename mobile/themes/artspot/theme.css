@@ -729,10 +729,10 @@ div#portfolio div.container {
 	width: 100%;
 	margin-bottom: 10px;
 	overflow: hidden;
+	border: 1px solid #999;
 }
 div#portfolio div.container img {
 	position: absolute;
-	border: 1px solid #999;
 }
 div#portfolio p.description {
 	position: relative;
