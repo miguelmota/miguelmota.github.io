@@ -689,7 +689,13 @@ p {
 	font-family: 'klavika-Light', Arial, sans-serif;
 	font-weight: normal;
 }
-p a {
+div#stream li.arrow a,
+div#about li.arrow a,
+div#portfolio li.arrow a,
+div#blog li.arrow a {
+	display: inline;
+	font-size: 12px;
+	color: #007799;
 	font-family: 'klavika-Light', Arial, sans-serif;
 	font-weight: normal;
 	padding: 0;
