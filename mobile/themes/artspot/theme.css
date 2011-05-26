@@ -294,10 +294,6 @@ ul.nav {
 	-o-border-radius: 10px;
 	border-radius: 10px;
     background-color: #222;
-    -webkit-box-shadow: 0 1px 1px #222;
-	-moz-box-shadow: 0 1px 1px #222;
-	-o-box-shadow: 0 1px 1px #222;
-	box-shadow: 0 1px 1px #222;
 	border-bottom: 0;
 }
 
@@ -335,8 +331,6 @@ ul.nav {
     */
     background: rgba(0,85,119,1.4);
     color: #fff;
-    text-shadow: 0 -1px 0 #000;
-     -webkit-box-shadow: 0;
 }
 #jqt ul li.forward a.active {
     background-image: url(img/chevron_circle.png);
