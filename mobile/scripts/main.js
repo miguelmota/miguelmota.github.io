@@ -4,6 +4,7 @@ $(document).ready(function(){
 
 	$('#stream div.content').load('/stream section.content', function(){
 		streamPage();	
+		$('a.social').append("<span class='rsaquo'>&#8250;</span>");
 	});
 			
 	$('#about div.content').load('/about section.content');
@@ -35,6 +36,7 @@ $(document).ready(function(){
 		$("div#home div.toolbar a, div.content a:not('a.fancybox'), a#standard_view").attr('rel', 'external');
 	}, 5000);
 
+	
 	
 	
 	$('#blog div.content h1 a').live('click', function(){
