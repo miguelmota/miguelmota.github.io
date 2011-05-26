@@ -153,6 +153,13 @@ div#portfolio span.date {
 	font-size: 10px !important;
 }
 /* /PORTFOLIO_PAGE =========================================================== */
+
+/* BLOG_PAGE ================================================================= */
+div.content h1 {
+	font-size: 16px;
+	
+}
+/* BLOG_PAGE ================================================================= */
 /*
 #fancybox-left, #fancybox-right {
 	
