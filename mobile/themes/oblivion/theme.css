@@ -729,9 +729,7 @@ input[type='submit'] {
 
 
 
-div.post_footer,
-div.view_archive {
-	display: none;
+div.post_footer a.dsq-comment-count {
 }
 
 
