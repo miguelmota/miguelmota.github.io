@@ -2,12 +2,12 @@ $(document).ready(function(){
 	
 
 
-	$('#stream div.content ul li.arrow').load('/stream section.content', function(){
+	$('#stream div.content').load('/stream section.content', function(){
 		streamPage();	
 	});
 			
 	$('#about div.content').load('/about section.content');
-	$('#portfolio div.content ul li.arrow').load('/portfolio section.content', function(){
+	$('#portfolio div.content').load('/portfolio section.content', function(){
 		//initialize fancybox
 		/*$('a.fancybox').fancybox({
 			'padding': 0,

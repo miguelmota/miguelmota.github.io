@@ -727,7 +727,9 @@ input[type='submit'] {
 
 
 
-
+div.page {
+	padding-bottom: 15px;
+}
 
 
 div.content {
@@ -735,10 +737,13 @@ div.content {
 	background-color: #333;
 }
 
-
-div.page {
-	padding-bottom: 15px;
+div.content a {
+	color: #007799;
 }
+div.content a:hover {
+	color: #0099aa;
+}
+
 
 div.post_footer a.dsq-comment-count {
 }
