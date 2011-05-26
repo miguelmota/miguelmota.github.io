@@ -195,6 +195,9 @@ div.highlight {
 	background-color: #202020;
 	padding: 5px;
 }
+.highlight code {
+	word-wrap: break-word;
+}
 /* /GENERAL ========================================================== */
 /* NAVIGATION ======================================================== */
 nav.main {
