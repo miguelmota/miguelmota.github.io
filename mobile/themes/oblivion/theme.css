@@ -101,6 +101,7 @@ body, .toolbar, #jqt ul, #jqt ul.individual li, #jqt ul li a.active,#tabbar,.s-s
 #jqt .black-translucent .toolbar {
     margin-top: 20px;
 }
+#jqt .toolbar > h1,
 #jqt .toolbar > h1 a {
     position: absolute;
     overflow: hidden;
@@ -118,6 +119,7 @@ body, .toolbar, #jqt ul, #jqt ul.individual li, #jqt ul li a.active,#tabbar,.s-s
     color: #999;
     letter-spacing: -1px;
 }
+#jqt.landscape .toolbar > h1,
 #jqt.landscape .toolbar > h1 a {
     margin-left: -125px;
     width: 250px;
@@ -125,9 +127,13 @@ body, .toolbar, #jqt ul, #jqt ul.individual li, #jqt ul li a.active,#tabbar,.s-s
 
 
 
+#jqt .toolbar  h1,
 #jqt .toolbar  h1 a {
 	font-family: "Klavika", "Helvetica Neue", "Helvetica", Arial, sans-serif !important;
 	text-transform: uppercase;
+}
+#jqt .toolbar  h1 a:active {
+	color: #fff;
 }
 #jqt .toolbar  h1 a span.mota {
 	font-weight: normal;
@@ -159,7 +165,7 @@ body, .toolbar, #jqt ul, #jqt ul.individual li, #jqt ul li a.active,#tabbar,.s-s
     border-radius: 8px;
 }
 #jqt .button.active, #jqt .cancel.active, #jqt .add.active, #jqt .back.active {
-    background: rgba(0,119,153,.4);
+    background: rgba(0,119,153,.9);
     color: #fff;
     text-shadow: none;
 }
@@ -272,7 +278,7 @@ body, .toolbar, #jqt ul, #jqt ul.individual li, #jqt ul li a.active,#tabbar,.s-s
   border: none;
 }
 #jqt ul.nav li a.active {
-    background-color: rgba(0,0,0,0.2);
+    background-color: rgba(0,0,0,0.9);
     color: #fff;
     background-image: none;
 }
