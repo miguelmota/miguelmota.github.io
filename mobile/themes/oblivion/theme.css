@@ -77,7 +77,7 @@ body, .toolbar, #jqt ul, #jqt ul.individual li,#jqt ul li a.active,#jqt .info,#j
 
 
 body, .toolbar, #jqt ul, #jqt ul.individual li, #jqt ul li a.active,#tabbar,.s-scrollwrapper {
-    background-image: url(img/bg_noise.png); 
+    /* background-image: url(img/bg_noise.png); */
 }
 #jqt > * {
     background-color: #222;
