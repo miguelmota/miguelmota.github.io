@@ -158,8 +158,8 @@ body, .toolbar, #jqt ul, #jqt ul.individual li, #jqt ul li a.active,#tabbar,.s-s
     border-radius: 8px;
 }
 #jqt .button.active, #jqt .cancel.active, #jqt .add.active, #jqt .back.active {
-    /* background: rgba(255,255,255,0.9); */
-    background: #007799;
+    background: rgba(0,119,153,1.4);
+    color: #fff;
     text-shadow: none;
 }
 #jqt .blueButton {
