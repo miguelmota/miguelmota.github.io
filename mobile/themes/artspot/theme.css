@@ -273,10 +273,14 @@ body, .toolbar, #jqt ul, #jqt ul.individual li, #jqt ul li a.active,#tabbar,.s-s
 #jqt ul li:first-child, #jqt ul.individual li {
   border: none;
 }
-#jqt ul..nav.rounded li a.active {
+#jqt ul.nav li a.active {
     background-color: rgba(0,0,0,0.2);
     color: #fff;
     background-image: none;
+}
+#jqt ul.rounded li a.active {
+    background-color: none !important;
+    color: #fff !important;
 }
 #jqt ul li.arrow {
     /*background-image: url(img/chevron.svg);
