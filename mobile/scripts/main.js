@@ -6,7 +6,7 @@ $(document).ready(function(){
 		streamPage();	
 	});
 			
-	$('#about div.content ul li.arrow').load('/about section.content');
+	$('#about div.content').load('/about section.content');
 	$('#portfolio div.content ul li.arrow').load('/portfolio section.content', function(){
 		//initialize fancybox
 		/*$('a.fancybox').fancybox({
