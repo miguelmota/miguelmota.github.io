@@ -2,7 +2,7 @@ $(document).ready(function(){
 	
 	//display mobile link if window is 640px or less
 	if(window.innerWidth <= 640){
-		window.location = 'http://m.miguelmota.com';
+		window.location = 'http://www.miguelmota.com/mobile/';
 		/*
 		$('div#wrap').prepend("<a id='mobile_bar' href='/mobile'>view mobile site &#187;</a><a id='mobile_close' href='javascript:void(0);'>x</a>");
 		$('a#mobile_bar').hide();
