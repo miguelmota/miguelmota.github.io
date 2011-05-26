@@ -34,6 +34,9 @@ div.content li.arrow span.date {
 	font-size: 12px;
 	background-color: #111;
 }
+.highlight code {
+	word-wrap: break-word;
+}
 img.logo {
 	height: 32px;
 	width: auto;
