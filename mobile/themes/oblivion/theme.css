@@ -744,7 +744,10 @@ code {
 	background-color: #111;
 }
 
-
+div.footer {
+	font-size: 10px;
+	color: #555;
+}
 /*    custom            */
 
 div#blog p.description {
