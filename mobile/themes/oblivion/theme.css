@@ -729,6 +729,15 @@ input[type='submit'] {
 
 
 
+
+
+
+
+
+div.content ul.plastic li.arrow {
+	padding-bottom: 25px;
+}
+
 div.post_footer a.dsq-comment-count {
 }
 
