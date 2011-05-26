@@ -838,14 +838,13 @@ div#stream a.social {
 	color: #999;
 	margin-bottom: 5px !important;
 }
-div#stream a.social:active,
-div#stream a.social:hover {
+div#stream a.social:active {
     background-color: #007799 !important;
     color: #999;
 }
 div#stream ul {
     color: #999;
-    padding: 0 5px;
+    padding: 0;
     margin: 0 0 30px 0;
     background-color: #222 !important;
 }
