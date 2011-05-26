@@ -732,8 +732,13 @@ input[type='submit'] {
 div.post_footer a.dsq-comment-count {
 }
 
+div#cse {
+	display: none;
+}
 
-
+div.view_archive {
+	margin-bottom: 15px;	
+}
 
 code {
 	background-color: #111;

@@ -22,6 +22,7 @@ $(document).ready(function(){
 	});
 	$('#blog div.content ul li.arrow').load('/blog section.content', function(){
 		loadDisqus();
+		$('div.view_archive').after("<div class='footer'>&#169; "+thisYear+"</a>");
 	});
 
 
@@ -46,6 +47,10 @@ $(document).ready(function(){
 
 
 });
+
+var date = new Date();
+var thisYear = date.getFullYear();
+
 
 var jQt = $.jQTouch({
 	icon: '/images/apple-touch-icon.png',
