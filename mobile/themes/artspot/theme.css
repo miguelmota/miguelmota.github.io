@@ -718,12 +718,7 @@ div#portfolio div.sort {
 div#portfolio div.work {
 	margin-bottom: 45px;
 	padding: 5px;
-}
-div#portfolio div.work:nth-child(even) {
 	background-color: #111;
-}
-div#portfolio div.work:last-child {
-	margin-bottom: 0;
 }
 div#portfolio div.container {
 	position: relative;
