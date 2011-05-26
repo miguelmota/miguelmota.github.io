@@ -29,7 +29,7 @@ $(document).ready(function(){
 	
 	
 	setTimeout(function(){
-		$("div.content ul li.arrow a:not('a.fancybox'), a#standard_view").attr('rel', 'external');
+		$("div#home div.toolbar a, div.content ul li.arrow a:not('a.fancybox'), a#standard_view").attr('rel', 'external');
 	}, 5000);
 
 	
