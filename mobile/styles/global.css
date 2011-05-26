@@ -155,6 +155,9 @@ div#portfolio span.date {
 /* /PORTFOLIO_PAGE =========================================================== */
 
 /* BLOG_PAGE ================================================================= */
+div.post h1 {
+	padding: 0 !important;
+}
 div.post h1 a {
 	font-size: 24px !important;
 	
