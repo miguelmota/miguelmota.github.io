@@ -22,7 +22,7 @@ $(document).ready(function(){
 	});
 	$('#blog div.content ul li.arrow').load('/blog section.content', function(){
 		loadDisqus();
-		$('div.view_archive').after("<div class='footer'>&#169; "+thisYear+" miguel mota</a>");
+		$('div.view_archive').after("<div class='footer'>&#169; "+thisYear+" miguel mota</div>");
 	});
 
 
