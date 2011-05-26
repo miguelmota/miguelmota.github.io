@@ -838,6 +838,9 @@ div#stream a.social {
 	color: #999;
 	margin-bottom: 5px !important;
 }
+div#stream a.social span.rsaquo {
+	float: right;
+}
 div#stream a.social:active {
     background-color: #007799 !important;
     color: #999;
