@@ -30,7 +30,9 @@ div.content li.arrow span.date {
 
 */
 .highlight {
+	padding: 5px;
 	font-size: 12px;
+	background-color: #202020;
 }
 img.logo {
 	height: 32px;
