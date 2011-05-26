@@ -824,6 +824,10 @@ div.content img.loader {
 	width: 16px;
 	height: 16px;	
 	clear: both;
+	-webkit-box-shadow:0;
+	-moz-box-shadow: 0;
+	-o-box-shadow: 0;
+	box-shadow: 0;
 }
 div#stream a.social {
 	display: block !important;
@@ -834,7 +838,8 @@ div#stream a.social {
 	color: #999;
 	margin-bottom: 5px !important;
 }
-div#stream a.social:active {
+div#stream a.social:active,
+div#stream a.social:hover {
     background-color: #007799 !important;
     color: #999;
 }
@@ -855,10 +860,11 @@ div#stream ul li {
 }
 
 div#stream ul li:nth-child(even) {
-	background-color: #202020;
+	background-color: #111;
 }
 
 div#stream ul li a {
+	display: inline;
 	color: #007799 !important;
 	font-size: 12px !important;
 }
