@@ -720,6 +720,9 @@ div#portfolio div.work {
 	padding-top: 5px;
 	border-top: 1px solid #000;
 }
+div#portfolio div.work:nth-child(even) {
+	background-color: #111;
+}
 div#portfolio div.work:last-child {
 	margin-bottom: 0;
 }
