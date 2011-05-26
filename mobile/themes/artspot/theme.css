@@ -155,7 +155,7 @@ body, .toolbar, #jqt ul, #jqt ul.individual li, #jqt ul li a.active,#tabbar,.s-s
     background: none;
     text-transform: uppercase;
     /* background: rgba(0,0,0,0.4); */
-    background-color: #111;
+    background-color: #202020;
     border-radius: 8px;
 }
 #jqt .button.active, #jqt .cancel.active, #jqt .add.active, #jqt .back.active {
