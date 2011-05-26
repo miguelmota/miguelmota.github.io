@@ -1,33 +1,102 @@
 /** CHANGE COLORS HERE **/
 
 body, .toolbar, #jqt ul, #jqt ul.individual li,#jqt ul li a.active,#jqt .info,#jqt #plastic,#tabbar, .s-scrollpane {
-    background-color: #519d00; /* main background color */
+    background-color: #000; /* main background color */
 }
 #jqt h1, #jqt h2, #jqt ul li a,#jqt .whiteButton, #jqt .button.active, #jqt .cancel.active, #jqt .add.active, #jqt .back.active,#jqt ul li small,#tabbar .badge,#jqt .info,#jqt .info a  {
-    color: #2e6c00; /* main text color */
+    color: #999; /* main text color */
 }
 
 /** END **/
 
+
+
+
+/* FONT_FACE ========================================================= */
+@font-face {
+	font-family: NeoSans;
+	src: url('/fonts/neosans-webfont/neosans-webfont.eot');
+	src: local('☺'),
+	url('/fonts/neosans-webfont/neosans-webfont.woff') format('woff'),
+	url('/fonts/neosans-webfont/neosans-webfont.ttf') format('truetype'),
+	url('/fonts/neosans-webfont/neosans-webfont.svg') format('svg');
+}
+@font-face {
+	font-family: NeoSans;
+	src: url('/fonts/neosans-webfont/neosans-bold-webfont.eot');
+	src: local('☺'),
+	url('/fonts/neosans-webfont/neosans-bold-webfont.woff') format('woff'),
+	url('/fonts/neosans-webfont/neosans-bold-webfont.ttf') format('truetype'),
+	url('/fonts/neosans-webfont/neosans-bold-webfont.svg') format('svg');
+	font-weight: bold;
+}
+@font-face {
+	font-family: NeoSans;
+	src: url('/fonts/neosans-italic-webfont.eot');
+	src: local('☺'),
+	url('/fonts/neosans-webfont/neosans-italic-webfont.woff') format('woff'),
+	url('/fonts/neosans-webfont/neosans-italic-webfont.ttf') format('truetype'),
+	url('/fonts/neosans-webfont/neosans-italic-webfont.svg') format('svg');
+	font-style: italic;
+}
+@font-face {
+	font-family: Klavika;
+	src: url('/fonts/klavika-webfont/klavika-regular-webfont.eot');
+	src: local('☺'),
+	url('/fonts/klavika-webfont/klavika-regular-webfont.woff') format('woff'),
+	url('/fonts/klavika-webfont/klavika-regular-webfont.ttf') format('truetype'),
+	url('/fonts/klavika-webfont/klavika-regular-webfont.svg') format('svg');
+}
+@font-face {
+	font-family: Klavika;
+	src: url('/fonts/klavika-webfont/klavika-bold-webfont.eot');
+	src: local('☺'),
+	url('/fonts/klavika-webfont/klavika-bold-webfont.woff') format('woff'),
+	url('/fonts/klavika-webfont/klavika-bold-webfont.ttf') format('truetype'),
+	url('/fonts/klavika-webfont/klavika-bold-webfont.svg') format('svg');
+	font-weight: bold;
+}
+@font-face {
+	font-family: Klavika;
+	src: url('/fonts/klavika-webfont/klavika-italic-webfont..eot');
+	src: local('☺'),
+	url('/fonts/klavika-webfont/klavika-italic-webfont.woff') format('woff'),
+	url('/fonts/klavika-webfont/klavika-italic-webfont.ttf') format('truetype'),
+	url('/fonts/klavika-webfont/klavika-italic-webfont.svg') format('svg');
+	font-style: italic;
+}
+@font-face {
+	font-family: Klavika-Light;
+	src: url('/fonts/klavika-webfont/klavika-light-webfont.eot');
+	src: local('☺'),
+	url('/fonts/klavika-webfont/klavika-light-webfont.woff') format('woff'),
+	url('/fonts/klavika-webfont/klavika-light-webfont.ttf') format('truetype'),
+	url('/fonts/klavika-webfont/klavika-light-webfont.svg') format('svg');
+}
+/* /FONT_FACE ======================================================== */
+
+
 body, .toolbar, #jqt ul, #jqt ul.individual li, #jqt ul li a.active,#tabbar,.s-scrollwrapper {
-    background-image: url(img/bg_noise.png);
+    background-image: url(img/bg_noise.png); 
 }
 #jqt > * {
-    background: rgba(255,255,255,0.9);
+    background-color: #333;
 }
 #jqt h1, #jqt h2, #jqt ul li a {
-    font: bold 18px "Helvetica Neue", Helvetica;
-    text-shadow: white 0 1px 0;
+    font: bold 18px "NeoSans", "Helvetica Neue", "Helvetica", Arial, sans-serif;
+    /* text-shadow: white 0 1px 0; */
     margin: 10px 20px 5px;
 }
 /* @group Toolbar */
 #jqt .toolbar {
     -webkit-box-sizing: border-box;
-/*     border-bottom: 1px solid rgba(0,0,0,0.5); */
     padding: 10px;
     height: 45px;
     position: relative;
-    -webkit-box-shadow: inset 0 -2px 2px rgba(0,0,0,0.2);
+    -webkit-box-shadow: 0 5px .8 #000;
+    -moz-box-shadow: inset 0 -2px 2px rgba(0,0,0,0.2);
+    -o-box-shadow: inset 0 -2px 2px rgba(0,0,0,0.2);
+     box-shadow: inset 0 -2px 2px rgba(0,0,0,0.2);
 }
 #jqt .black-translucent .toolbar {
     margin-top: 20px;
@@ -42,17 +111,30 @@ body, .toolbar, #jqt ul, #jqt ul.individual li, #jqt ul li a.active,#tabbar,.s-s
     height: 40px;
     font-size: 20px;
     width: 150px;
-    font-weight: bold;
     text-shadow: rgba(0,0,0,0.5) 0 1px 1px;
     text-align: center;
     text-overflow: ellipsis;
     white-space: nowrap;
-    color: #fff;
+    color: #999;
+    letter-spacing: -1px;
 }
 #jqt.landscape .toolbar > h1 {
     margin-left: -125px;
     width: 250px;
 }
+
+
+
+#jqt .toolbar  h1 {
+	font-family: "Klavika", "Helvetica Neue", "Helvetica", Arial, sans-serif !important;
+	text-transform: uppercase;
+}
+#jqt .toolbar  h1 span.mota {
+	font-weight: normal;
+}
+
+
+
 #jqt .button, #jqt .back, #jqt .cancel, #jqt .add {
     position: absolute;
     overflow: hidden;
@@ -73,11 +155,12 @@ body, .toolbar, #jqt ul, #jqt ul.individual li, #jqt ul li a.active,#tabbar,.s-s
     white-space: nowrap;
     background: none;
     text-transform: uppercase;
-    background: rgba(0,0,0,0.4);
+    background: rgba(0,85,119,.4);
     border-radius: 8px;
 }
 #jqt .button.active, #jqt .cancel.active, #jqt .add.active, #jqt .back.active {
-    background: rgba(255,255,255,0.9);
+    background: rgba(0,119,153,.4);
+    color: #fff;
     text-shadow: none;
 }
 #jqt .blueButton {
@@ -110,8 +193,8 @@ body, .toolbar, #jqt ul, #jqt ul.individual li, #jqt ul li a.active,#tabbar,.s-s
     font-weight: bold;
     text-decoration: inherit;
     border-radius: 10px;
-    border: 1px solid rgba(0,0,0,0.2);
-    text-shadow: 0 2px 0 rgba(0,0,0,0.2);
+    border: 1px solid rgba(0,0,0,.2);
+    text-shadow: 0 2px 0 rgba(0,0,0,.2);
 }
 
 #jqt .whiteButton.active, #jqt .grayButton.active, #jqt .redButton.active, #jqt .blueButton.active, #jqt .greenButton.active,
@@ -157,7 +240,7 @@ body, .toolbar, #jqt ul, #jqt ul.individual li, #jqt ul li a.active,#tabbar,.s-s
 }
 #jqt ul {
     color: #aaa;
-    font: bold 18px "Helvetica Neue", Helvetica;
+    font: bold 18px "NeoSans", "Helvetica Neue", Helvetica;
     padding: 0;
     margin: 15px 10px 17px 10px;
 }
@@ -188,15 +271,32 @@ body, .toolbar, #jqt ul, #jqt ul.individual li, #jqt ul li a.active,#tabbar,.s-s
 #jqt ul li:first-child, #jqt ul.individual li {
   border: none;
 }
-#jqt ul.rounded li a.active {
+#jqt ul.nav li a.active {
     background-color: rgba(0,0,0,0.2);
     color: #fff;
     background-image: none;
 }
+#jqt ul.rounded li a.active {
+    background-color: none !important;
+    color: #fff !important;
+}
 #jqt ul li.arrow {
-    background-image: url(img/chevron.svg);
+    /*background-image: url(img/chevron.svg);
     background-position: right center !important;
-    background-repeat: no-repeat !important;
+    background-repeat: no-repeat !important;*/
+    background-color: #222;
+}
+ul.nav {
+	background-color: #333 !important;
+}
+#jqt ul.nav li.arrow {
+	margin: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-o-border-radius: 10px;
+	border-radius: 10px;
+    background-color: #222;
+	border-bottom: 0;
 }
 
 #jqt ul li.arrow a {
@@ -224,18 +324,22 @@ body, .toolbar, #jqt ul, #jqt ul.individual li, #jqt ul li a.active,#tabbar,.s-s
     background-position: 95% center;
     background-repeat: no-repeat;
 }
-/*
+
 #jqt ul li.arrow a.active {
+	/*
     background-image: url(img/chevron.svg);
     background-position: right center;
     background-repeat: no-repeat;
+    */
+    background: rgba(0,85,119,.4);
+    color: #fff;
 }
 #jqt ul li.forward a.active {
     background-image: url(img/chevron_circle.png);
     background-position: right center;
     background-repeat: no-repeat;
 }
-*/
+
 #jqt ul li.img a + a {
     margin: -10px 10px -20px -5px;
     font-size: 17px;
@@ -264,7 +368,7 @@ body, .toolbar, #jqt ul, #jqt ul.individual li, #jqt ul li a.active,#tabbar,.s-s
 }
 #jqt ul li a + a {
     color: #000;
-    font: 14px "Helvetica Neue", Helvetica;
+    font: 14px "NeoSans", "Helvetica Neue", Helvetica;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
@@ -274,7 +378,7 @@ body, .toolbar, #jqt ul, #jqt ul.individual li, #jqt ul li a.active,#tabbar,.s-s
 }
 #jqt ul li a + a + a, #jqt ul li.img a + a + a + a, #jqt ul li.img a + small + a + a + a {
     color: #666;
-    font: 13px "Helvetica Neue", Helvetica;
+    font: 13px "NeoSans", "Helvetica Neue", Helvetica;
     margin: 0;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -306,7 +410,7 @@ body, .toolbar, #jqt ul, #jqt ul.individual li, #jqt ul li a.active,#tabbar,.s-s
     color: white;
     background: transparent url('data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==');
     border: 0;
-    font: normal 17px "Helvetica Neue", Helvetica;
+    font: normal 17px "NeoSans", "Helvetica Neue", Helvetica;
     padding: 0;
     display: inline-block;
     margin-left: 0px;
@@ -334,7 +438,7 @@ body, .toolbar, #jqt ul, #jqt ul.individual li, #jqt ul li a.active,#tabbar,.s-s
 }
 #jqt ul li input[type="checkbox"]:after, #jqt ul li input[type="radio"]:after {
     content: attr(title);
-    font: 17px "Helvetica Neue", Helvetica;
+    font: 17px "NeoSans", "Helvetica Neue", Helvetica;
     display: block;
     width: 246px;
     color: white;
@@ -343,7 +447,7 @@ body, .toolbar, #jqt ul, #jqt ul.individual li, #jqt ul li a.active,#tabbar,.s-s
 /* @end */
 /* @group Mini Label */
 #jqt ul li small {
-    font: 17px "Helvetica Neue", Helvetica;
+    font: 17px "NeoSans", "Helvetica Neue", Helvetica;
     text-align: right;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -459,7 +563,7 @@ body, .toolbar, #jqt ul, #jqt ul.individual li, #jqt ul li a.active,#tabbar,.s-s
 #jqt ul.edgetoedge li a.active {
   color: white;
   text-shadow: 0 1px 1px rgba(0,0,0,0.3);
-  -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.3);
+  webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.3);
 }
 #jqt ul.edgetoedge li.arrow {
     background-color: #404142 !important;
@@ -484,24 +588,28 @@ body, .toolbar, #jqt ul, #jqt ul.individual li, #jqt ul li a.active,#tabbar,.s-s
 
 #jqt ul.plastic {
     color: rgba(0,0,0,0.3);
-    font: bold 18px "Helvetica Neue", Helvetica;
+    font: bold 18px "NeoSans", "Helvetica Neue", Helvetica;
     margin: 0;
     padding: 0;
     border-width: 0 0 1px 0;
     background: rgba(255,255,255,0.7);
 }
 #jqt ul.plastic li {
-    color: rgba(0,0,0,0.6);
+    /* color: rgba(0,0,0,0.6); */
+    color: #999;
     list-style-type: none;
     overflow: hidden;
-    padding: 10px 10px 10px 10px;
+    /*  padding: 10px 10px 10px 10px; */
+    padding: 5px 10px 5px 10px;
     margin: 0;
     border: none;
-    border-bottom: 1px solid rgba(0,0,0,0.1)
+    /* border-bottom: 1px solid rgba(0,0,0,0.1); */
+    border-bottom: 1px solid #000;
+    background-color: #222;
 }
 #jqt ul.plastic li a {
-  text-shadow: 0 1px 0 rgba(255,255,255,0.5);
-    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(255,255,255,0)), to(rgba(255,255,255,0.5)));
+  	 /* text-shadow: 0 1px 0 rgba(255,255,255,0.5); */
+    /* background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(255,255,255,0)), to(rgba(255,255,255,0.5))); */
 }
 #jqt ul.plastic li a.active.loading {
     background-image: url(img/loading.gif);
@@ -526,8 +634,8 @@ body, .toolbar, #jqt ul, #jqt ul.individual li, #jqt ul li a.active,#tabbar,.s-s
     background-repeat: no-repeat;
 }
 #jqt ul.plastic li a.active {
-    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(255,255,255,0)), to(rgba(255,255,255,0.5)));
-    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.5);
+    /* background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(255,255,255,0)), to(rgba(255,255,255,0.5)));
+    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.5); */
 }
 /* @group Metal */
 #jqt ul.metal {
@@ -590,3 +698,178 @@ input[type='submit'] {
     font-weight: inherit;
     padding: 10px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*    custom            */
+
+
+
+img.logo {
+	height: 32px;
+	width: auto;
+    position: absolute;
+    left: 50%;
+    margin: -4px 0 0 -95px;
+}
+
+h1.title {
+	display: none;
+}
+div.content span.sub {
+	color: #555;
+}
+div.content p {
+	padding: 5px 0;
+	line-height: 120%;
+	font-size: 12px;
+	color: #999;
+}
+ul.nav li {
+	padding: 10px !important;
+}
+a#standard_view {
+	display: block;
+	float: right;
+	padding: 5px 10px 5px 5px;
+	font-size: 12px;
+	color: #007799;
+}
+/* STREAM_PAGE ============================================================ */
+span.mtip {
+	display: none;
+}
+div.content img.loader {
+	display: none;
+	width: 16px;
+	height: 16px;	
+	clear: both;
+}
+div#stream a.social {
+	font-size: 14px !important;
+}
+div#stream ul {
+    color: #999;
+    font: bold 18px "Helvetica Neue", Helvetica;
+    padding: 0;
+    margin: 0 0 30px 0;
+}
+div#stream ul:last-child {
+	 margin-bottom: 10px;;
+}
+div#stream ul li {
+    color: #999;
+    list-style-type: none;
+    padding: 0;
+    overflow: hidden;
+    border-top: none;
+    background-color: #fff;
+    font-size: 12px;
+}
+div#stream ul li span.date {
+	float: right;
+	font-size: 10px !important;
+}
+div#stream ul li span.date a {
+	font-size: 10px !important;
+}
+
+div#stream div.latitude {
+	display: none;	
+}
+/* /STREAM_PAGE ============================================================ */
+
+div.content img {
+	width: 100%;
+	height: auto;	
+	-webkit-box-shadow: 2px 2px 5px #111;
+	-moz-box-shadow: 2px 2px 5px #111;
+	-o-box-shadow: 2px 2px 5px #111;
+	box-shadow: 2px 2px 5px #111;
+}
+
+
+p {
+	font-family: 'klavika-Light', "Helvetica Neue", "Helvetica", Arial, sans-serif;
+	font-weight: normal;
+}
+div#about li.arrow img {
+	border: 1px solid #555;
+}
+div#stream li.arrow a,
+div#about li.arrow a,
+div#portfolio li.arrow a,
+div#blog li.arrow a {
+	display: inline;
+	font-size: 12px;
+	color: #007799;
+	font-family: 'klavika-Light', "Helvetica Neue", "Helvetica", Arial, sans-serif;
+	font-weight: normal;
+    padding: 12px 12px 12px 10px;
+}
+
+
+.highlight {
+	margin: 5px 0;
+	padding: 5px;
+	font-size: 10px;
+	background-color: #111;
+}
+.highlight code {
+	word-wrap: break-word;
+}
+
+/* PORTFOLIO_PAGE ============================================================ */
+div#portfolio div.sort {
+	display: none;
+}
+div#portfolio div.work {
+	margin-bottom: 45px;
+	padding: 5px;
+	background-color: #111;
+}
+div#portfolio div.container {
+	position: relative;
+	height: 120px;
+	width: 100%;
+	margin-bottom: 10px;
+	overflow: hidden;
+	border: 1px solid #555;
+}
+div#portfolio div.container img {
+	position: absolute;
+}
+div#portfolio p.description {
+	position: relative;
+}
+div#portfolio span.date {
+	float: right;
+	color: #555;
+	font-size: 10px !important;
+}
+/* /PORTFOLIO_PAGE =========================================================== */
+
+/* BLOG_PAGE ================================================================= */
+div.post {
+	margin-bottom: 50px;
+}
+div.post h1 {
+	margin: 0 !important;
+	border-bottom: 1px dotted #999;
+}
+div.post h1 a {
+	font-size: 16px !important;
+	word-wrap: break-word !important;
+}
+/* BLOG_PAGE ================================================================= */
