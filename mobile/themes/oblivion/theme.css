@@ -745,7 +745,8 @@ div.content {
 div.content a {
 	color: #007799;
 }
-div.content a:active {
+div.content a:active,
+div.content a.active {
 	color: #0099aa;
 }
 
