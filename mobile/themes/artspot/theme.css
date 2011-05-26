@@ -302,7 +302,7 @@ ul.nav {
 }
 #jqt ul.nav li.arrow a.active,
 #jqt ul.nav li.arrow a:active {
-	text-shadow: 0 -1px 0 #000;
+	 text-shadow: 0 -1px 0 #000;
 
 }
 
@@ -616,7 +616,6 @@ ul.nav {
 }
 #jqt ul.plastic li a {
   	 /* text-shadow: 0 1px 0 rgba(255,255,255,0.5); */
-  	 text-shadow: 0 -1px 0 #000;
     /* background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(255,255,255,0)), to(rgba(255,255,255,0.5))); */
 }
 #jqt ul.plastic li a.active.loading {
