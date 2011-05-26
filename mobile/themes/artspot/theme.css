@@ -700,3 +700,27 @@ div#blog li.arrow a {
 	font-weight: normal;
     padding: 12px 12px 12px 10px;
 }
+
+.highlight {
+	margin: 5px 0;
+	padding: 5px;
+	font-size: 10px;
+	background-color: #111;
+}
+.highlight code {
+	word-wrap: break-word;
+}
+
+/* BLOG_PAGE ================================================================= */
+div.post {
+	margin-bottom: 50px;
+	border-bottom: 1px dotted #999;
+}
+div.post h1 {
+	margin: 0
+}
+div.post h1 a {
+	font-size: 16px;
+	word-wrap: break-word;
+}
+/* BLOG_PAGE ================================================================= */

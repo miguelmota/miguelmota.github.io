@@ -29,15 +29,7 @@ div.content li.arrow span.date {
 }
 
 */
-.highlight {
-	margin: 5px 0;
-	padding: 5px;
-	font-size: 12px;
-	background-color: #111;
-}
-.highlight code {
-	word-wrap: break-word;
-}
+
 img.logo {
 	height: 32px;
 	width: auto;
@@ -154,18 +146,7 @@ div#portfolio span.date {
 }
 /* /PORTFOLIO_PAGE =========================================================== */
 
-/* BLOG_PAGE ================================================================= */
-div.post {
-	margin-bottom: 50px;
-}
-div.post h1 {
-	margin: 0 !important;
-}
-div.post h1 a {
-	font-size: 16px !important;
-	word-wrap: break-word !important;
-}
-/* BLOG_PAGE ================================================================= */
+
 /*
 #fancybox-left, #fancybox-right {
 	
