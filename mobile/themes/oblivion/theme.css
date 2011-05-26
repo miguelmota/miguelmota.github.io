@@ -80,7 +80,7 @@ body, .toolbar, #jqt ul, #jqt ul.individual li, #jqt ul li a.active,#tabbar,.s-s
     background-image: url(img/bg_noise.png); 
 }
 #jqt > * {
-    background-color: #333;
+    background-color: #222;
 }
 #jqt h1, #jqt h2, #jqt ul li a {
     font: bold 18px "NeoSans", "Helvetica Neue", "Helvetica", Arial, sans-serif;
@@ -295,10 +295,10 @@ body, .toolbar, #jqt ul, #jqt ul.individual li, #jqt ul li a.active,#tabbar,.s-s
     /*background-image: url(img/chevron.svg);
     background-position: right center !important;
     background-repeat: no-repeat !important;*/
-    background-color: #222;
+    background-color: #111;
 }
 ul.nav {
-	background-color: #333 !important;
+	background-color: #222 !important;
 }
 #jqt ul.nav li.arrow {
 	margin: 10px;
@@ -306,11 +306,11 @@ ul.nav {
 	-moz-border-radius: 10px;
 	-o-border-radius: 10px;
 	border-radius: 10px;
-    background-color: #222;
+    background-color: #111;
 	border-bottom: 0;
 }
 div#contact ul.contact {
-	background-color: #333 !important;
+	background-color: #222 !important;
 }
 div#contact ul.contact li.arrow {
 	margin: 10px;
@@ -318,7 +318,7 @@ div#contact ul.contact li.arrow {
 	-moz-border-radius: 10px;
 	-o-border-radius: 10px;
 	border-radius: 10px;
-    background-color: #222;
+    background-color: #111;
 	border-bottom: 0;
 	padding: 12px 22px 12px 10px;
 	padding: 10px !important;
@@ -630,7 +630,7 @@ div#contact ul.contact li.arrow {
     border: none;
     /* border-bottom: 1px solid rgba(0,0,0,0.1); */
     border-bottom: 1px solid #000;
-    background-color: #222;
+    background-color: #111;
 }
 #jqt ul.plastic li a {
   	 /* text-shadow: 0 1px 0 rgba(255,255,255,0.5); */
@@ -734,7 +734,7 @@ div.page {
 
 div.content {
 	padding: 10px;
-	background-color: #333;
+	background-color: #222;
 }
 
 div.content a {
