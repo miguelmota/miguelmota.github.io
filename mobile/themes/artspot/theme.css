@@ -302,7 +302,7 @@ ul.nav {
 }
 #jqt ul.nav li.arrow,
 #jqt ul.nav li.arrow a {
-	 text-shadow: 0 -1px 0 red;
+	 text-shadow: 0 -1px 0 red !important;
 
 }
 
