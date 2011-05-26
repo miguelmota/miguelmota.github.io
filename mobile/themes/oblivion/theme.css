@@ -824,10 +824,10 @@ div.content img.loader {
 	width: 16px;
 	height: 16px;	
 	clear: both;
-	-webkit-box-shadow:0;
-	-moz-box-shadow: 0;
-	-o-box-shadow: 0;
-	box-shadow: 0;
+	-webkit-box-shadow: 0 !important;
+	-moz-box-shadow: 0 !important;;
+	-o-box-shadow: 0 !important;;
+	box-shadow: 0 !important;;
 }
 div#stream a.social {
 	display: block !important;
