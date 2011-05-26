@@ -296,6 +296,7 @@ body, .toolbar, #jqt ul, #jqt ul.individual li, #jqt ul li a.active,#tabbar,.s-s
 #jqt ul.rounded li a.active {
     background-color: none !important;
     color: #fff !important;
+    padding: 0 !important;
 }
 #jqt ul li.arrow {
     /*background-image: url(img/chevron.svg);
@@ -380,6 +381,7 @@ div#contact ul.contact li.arrow a {
     margin: -10px 10px -20px -5px;
     font-size: 17px;
     font-weight: bold;
+    padding: 0 !importantl
 }
 #jqt ul li.img a + a + a {
     font-size: 14px;
@@ -387,9 +389,11 @@ div#contact ul.contact li.arrow a {
     margin-left: -10px;
     margin-bottom: -10px;
     margin-top: 0;
+       padding: 0 !importantl
 }
 #jqt ul li.img a + small + a {
     margin-left: -5px;
+    padding: 0 !importantl
 }
 #jqt ul li.img a + small + a + a {
     margin-left: -10px;
@@ -401,6 +405,7 @@ div#contact ul.contact li.arrow a {
 #jqt ul li.img a + small + a + a + a {
     margin-left: 0px !important;
     margin-bottom: 0;
+    padding: 0 !importantl
 }
 #jqt ul li a + a {
     color: #000;
@@ -410,7 +415,7 @@ div#contact ul.contact li.arrow a {
     overflow: hidden;
     display: block;
     margin: 0;
-    padding: 0;
+    padding: 0 !important;
 }
 #jqt ul li a + a + a, #jqt ul li.img a + a + a + a, #jqt ul li.img a + small + a + a + a {
     color: #666;
@@ -420,7 +425,7 @@ div#contact ul.contact li.arrow a {
     white-space: nowrap;
     overflow: hidden;
     display: block;
-    padding: 0;
+    padding: 0 !important;
 }
 /*
 @end */
