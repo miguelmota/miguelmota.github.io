@@ -169,6 +169,7 @@ body, .toolbar, #jqt ul, #jqt ul.individual li, #jqt ul li a.active,#tabbar,.s-s
     text-transform: uppercase;
     background: rgba(0,85,119,.9);
     border-radius: 8px;
+    behavior: url('/plugins/pie/pie.htc');
 }
 #jqt .button.active, #jqt .cancel.active, #jqt .add.active, #jqt .back.active {
     background: rgba(0,119,153,.9);
@@ -187,6 +188,7 @@ body, .toolbar, #jqt ul, #jqt ul.individual li, #jqt ul li a.active,#tabbar,.s-s
     border-width: 0 0 0 9px;
     border-radius: 0 8px 8px 0;
     -webkit-mask-image: url(img/mask_button_back.svg);
+    behavior: url('/plugins/pie/pie.htc');
 }
 #jqt .leftButton, #jqt .cancel {
     left: 6px;
@@ -207,6 +209,7 @@ body, .toolbar, #jqt ul, #jqt ul.individual li, #jqt ul li a.active,#tabbar,.s-s
     border-radius: 10px;
     border: 1px solid rgba(0,0,0,.2);
     text-shadow: 0 2px 0 rgba(0,0,0,.2);
+    behavior: url('/plugins/pie/pie.htc');
 }
 
 #jqt .whiteButton.active, #jqt .grayButton.active, #jqt .redButton.active, #jqt .blueButton.active, #jqt .greenButton.active,
@@ -260,6 +263,7 @@ body, .toolbar, #jqt ul, #jqt ul.individual li, #jqt ul li a.active,#tabbar,.s-s
 #jqt ul.rounded {
     -webkit-border-radius: 8px;
     -webkit-box-shadow: rgba(0,0,0,.3) 1px 1px 3px;
+    behavior: url('/plugins/pie/pie.htc');
 }
 #jqt ul.rounded li a, #jqt ul.individual li a {
   color: white;
@@ -310,6 +314,7 @@ ul.nav {
 	border-radius: 10px;
     background-color: #111;
 	border-bottom: 0;
+	behavior: url('/plugins/pie/pie.htc');
 }
 div#contact ul.contact {
 	background-color: #222 !important;
@@ -324,6 +329,7 @@ div#contact ul.contact li.arrow {
 	border-bottom: 0;
 	padding: 12px 22px 12px 10px;
 	padding: 10px !important;
+	behavior: url('/plugins/pie/pie.htc');
 }
 div#contact ul.contact li.arrow a {
 	font-size: 16px !important;
@@ -501,6 +507,7 @@ div#contact ul.contact li.arrow a {
     display: block;
     width: auto;
     margin-top: -24px;
+    behavior: url('/plugins/pie/pie.htc');
 }
 #jqt ul li.arrow small.counter {
     margin-right: 15px;
@@ -526,6 +533,7 @@ div#contact ul.contact li.arrow a {
     padding: 11px 10px 14px 10px;
     -webkit-box-shadow: rgba(0,0,0,.2) 1px 1px 3px;
     margin-bottom: 10px;
+    behavior: url('/plugins/pie/pie.htc');
 }
 #jqt ul.individual li + li {
     float: right;
@@ -536,6 +544,7 @@ div#contact ul.contact li.arrow a {
     margin: -11px -10px -14px -10px;
     padding: 11px 10px 14px 10px;
     -webkit-border-radius: 8px;
+    behavior: url('/plugins/pie/pie.htc');
 }
 /* @end */
 /* @group Toggle */
@@ -565,6 +574,7 @@ div#contact ul.contact li.arrow a {
     position: absolute;
     top: 0;
     width: 149px;
+    behavior: url('/plugins/pie/pie.htc');
 }
 /* @end */
 /* @group Info */
@@ -727,6 +737,7 @@ input[type='submit'] {
     font-size: inherit;
     font-weight: inherit;
     padding: 10px;
+    behavior: url('/plugins/pie/pie.htc');
 }
 
 
@@ -841,6 +852,7 @@ div#stream a.social {
 	border-radius: 10px !important;
 	background-color: #111 !important;
 	color: #999;
+    behavior: url('/plugins/pie/pie.htc');
 }
 span.rsaquo {
 	float: right;
