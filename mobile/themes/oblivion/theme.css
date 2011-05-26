@@ -825,9 +825,7 @@ div.content img.loader {
 	width: 16px;
 	height: 16px;	
 	clear: both;
-	margin: 0 auto;
-	positon: relative;
-	top: -10px;
+	margin: -10px auto 0 auto;
 }
 div#stream a.social {
 	display: block !important;
