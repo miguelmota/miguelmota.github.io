@@ -282,6 +282,12 @@ body, .toolbar, #jqt ul, #jqt ul.individual li, #jqt ul li a.active,#tabbar,.s-s
     background-color: #222;
 }
 
+#jqt ul.nav li.arrow {
+	margin: 10px 15px;
+	-webkit-border-radius: 10px;
+    background-color: #222;
+}
+
 #jqt ul li.arrow a {
     padding: 12px 22px 12px 10px;
 }
