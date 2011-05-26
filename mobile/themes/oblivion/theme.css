@@ -768,7 +768,7 @@ code {
 div.footer {
 	position: absolute;
 	bottom: 0;
-	padding: 10px;
+	padding: 10px 0 10px 15px;
 	font-size: 10px;
 	color: #555;
 	clear: both;
@@ -852,6 +852,10 @@ div#stream ul li {
     border-top: none;
     background-color: #222;
     font-size: 12px !important;
+}
+
+div#stream ul li:nth-child(even) {
+	background-color: #333;
 }
 
 div#stream ul li a {
