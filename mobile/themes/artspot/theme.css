@@ -300,8 +300,8 @@ ul.nav {
 	box-shadow: 2px 2px 5px #111;
 	border-bottom: 0;
 }
-#jqt ul.nav li.arrow.active,
-#jqt ul.nav li.arrow:active {
+#jqt ul.nav li.arrow a.active,
+#jqt ul.nav li.arrow :active {
     -webkit-box-shadow: 0;
     text-shadow: 0 -1px 0 #000;
 }
