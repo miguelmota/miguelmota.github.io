@@ -118,6 +118,13 @@ body, .toolbar, #jqt ul, #jqt ul.individual li, #jqt ul li a.active,#tabbar,.s-s
     color: #999;
     letter-spacing: -1px;
 }
+#jqt .toolbar > h1 a {
+    text-shadow: rgba(0,0,0,0.5) 0 1px 1px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #999;
+    letter-spacing: -1px;
+}
 #jqt.landscape .toolbar > h1 {
     margin-left: -125px;
     width: 250px;
@@ -335,7 +342,7 @@ ul.nav {
     background-position: right center;
     background-repeat: no-repeat;
     */
-    background: rgba(0,85,119,.9);
+    background: rgba(0,119,153,.9);
     color: #fff;
 }
 #jqt ul li.forward a.active {
