@@ -765,6 +765,7 @@ div.content a:active,
 div.content a.active {
 	color: #0099aa;
 	background-color: #000;
+	border: 5px solid #000;
 }
 
 
