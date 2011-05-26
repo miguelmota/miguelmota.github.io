@@ -40,6 +40,10 @@ img.logo {
 div.content img {
 	width: 100%;
 	height: auto;	
+	-webkit-box-shadow: 2px 2px 5px #111;
+	-moz-box-shadow: 2px 2px 5px #111;
+	-o-box-shadow: 2px 2px 5px #111;
+	box-shadow: 2px 2px 5px #111;
 }
 h1.title {
 	display: none;
