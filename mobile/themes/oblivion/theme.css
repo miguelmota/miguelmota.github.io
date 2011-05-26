@@ -733,9 +733,8 @@ input[type='submit'] {
 
 
 
-
-div.content ul.plastic {
-	padding-bottom: 25px;
+div.page {
+	padding-bottom: 15px;
 }
 
 div.post_footer a.dsq-comment-count {
