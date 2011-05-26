@@ -101,8 +101,7 @@ body, .toolbar, #jqt ul, #jqt ul.individual li, #jqt ul li a.active,#tabbar,.s-s
 #jqt .black-translucent .toolbar {
     margin-top: 20px;
 }
-#jqt .toolbar > h1,
-#jqt .toolbar > h1 a {
+#jqt .toolbar > h1 {
     position: absolute;
     overflow: hidden;
     left: 50%;
@@ -119,8 +118,7 @@ body, .toolbar, #jqt ul, #jqt ul.individual li, #jqt ul li a.active,#tabbar,.s-s
     color: #999;
     letter-spacing: -1px;
 }
-#jqt.landscape .toolbar > h1,
-#jqt.landscape .toolbar > h1 a {
+#jqt.landscape .toolbar > h1 {
     margin-left: -125px;
     width: 250px;
 }
@@ -161,7 +159,7 @@ body, .toolbar, #jqt ul, #jqt ul.individual li, #jqt ul li a.active,#tabbar,.s-s
     white-space: nowrap;
     background: none;
     text-transform: uppercase;
-    background: rgba(0,85,119,.4);
+    background: rgba(0,85,119,.9);
     border-radius: 8px;
 }
 #jqt .button.active, #jqt .cancel.active, #jqt .add.active, #jqt .back.active {
@@ -337,7 +335,7 @@ ul.nav {
     background-position: right center;
     background-repeat: no-repeat;
     */
-    background: rgba(0,85,119,.4);
+    background: rgba(0,85,119,.9);
     color: #fff;
 }
 #jqt ul li.forward a.active {
