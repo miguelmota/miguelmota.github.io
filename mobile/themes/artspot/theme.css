@@ -273,7 +273,7 @@ body, .toolbar, #jqt ul, #jqt ul.individual li, #jqt ul li a.active,#tabbar,.s-s
 #jqt ul li:first-child, #jqt ul.individual li {
   border: none;
 }
-#jqt ul.rounded li a.active {
+#jqt ul..nav.rounded li a.active {
     background-color: rgba(0,0,0,0.2);
     color: #fff;
     background-image: none;
