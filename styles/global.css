@@ -192,6 +192,9 @@ div#noscript {
 	background-color: #a80f0f;
 	color: #fff;
 }
+code {
+	background-color: #202020;
+}
 div.highlight {
 	margin: 10px 0;
 	padding: 5px;
