@@ -729,7 +729,7 @@ input[type='submit'] {
 
 
 
-post.footer,
+div.post_footer,
 div.view_archive {
 	display: none;
 }
