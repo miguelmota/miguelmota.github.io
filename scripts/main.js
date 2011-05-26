@@ -2,7 +2,7 @@ $(document).ready(function(){
 	
 	//display mobile link if window is 640px or less
 	if(window.innerWidth <= 640){
-		window.location = 'http://www.miguelmota.com/mobile';
+		window.location = 'http://m.miguelmota.com';
 		/*
 		$('div#wrap').prepend("<a id='mobile_bar' href='/mobile'>view mobile site &#187;</a><a id='mobile_close' href='javascript:void(0);'>x</a>");
 		$('a#mobile_bar').hide();
@@ -120,6 +120,10 @@ $(document).ready(function(){
 		$('a.top').animate({top:offset},{duration:500,queue:false});
 	});
 	topYloc = parseInt($('a.top').css('top').substring(0,$('a.top').css('top').indexOf('px')));
+	
+	
+	//initialize mtip
+	$('.mtip').mtip();
 	
 });
 
@@ -319,9 +323,6 @@ function hideLoader(){
 }
 
 function streamPage(){
-	
-	//initialize mtip
-	$('.mtip').mtip();
 	
 	//hide social link text
 	$("div.stream a.social:not('.latitude')").text('');
