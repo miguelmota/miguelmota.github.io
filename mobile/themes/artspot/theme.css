@@ -717,7 +717,7 @@ div#portfolio div.sort {
 }
 div#portfolio div.work {
 	margin-bottom: 45px;
-	padding-top: 5px;
+	padding: 5px;
 	border-top: 1px solid #000;
 }
 div#portfolio div.work:nth-child(even) {
