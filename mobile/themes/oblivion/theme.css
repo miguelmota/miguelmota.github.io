@@ -825,10 +825,6 @@ div.content img.loader {
 	width: 16px;
 	height: 16px;	
 	clear: both;
-	-webkit-box-shadow: 0 !important;
-	-moz-box-shadow: 0 !important;;
-	-o-box-shadow: 0 !important;;
-	box-shadow: 0 !important;;
 }
 div#stream a.social {
 	display: block !important;
@@ -897,10 +893,6 @@ div#stream div.latitude {
 div.content img {
 	width: 100%;
 	height: auto;	
-	-webkit-box-shadow: 2px 2px 5px #111;
-	-moz-box-shadow: 2px 2px 5px #111;
-	-o-box-shadow: 2px 2px 5px #111;
-	box-shadow: 2px 2px 5px #111;
 }
 
 
@@ -908,21 +900,15 @@ p {
 	font-family: 'klavika-Light', "Helvetica Neue", "Helvetica", Arial, sans-serif;
 	font-weight: normal;
 }
-div#about li.arrow img {
-	border: 1px solid #555;
-}
-div#stream li.arrow a,
-div#about li.arrow a,
-div#portfolio li.arrow a,
-div#blog li.arrow a {
-	display: inline;
-	font-size: 12px;
-	color: #007799;
-	font-family: 'klavika-Light', "Helvetica Neue", "Helvetica", Arial, sans-serif;
-	font-weight: normal;
-    padding: 12px 12px 12px 10px;
-}
 
+div#about img,
+div#blog img {
+	border: 1px solid #555;
+	-webkit-box-shadow: 2px 2px 5px #111;
+	-moz-box-shadow: 2px 2px 5px #111;
+	-o-box-shadow: 2px 2px 5px #111;
+	box-shadow: 2px 2px 5px #111;
+}
 
 .highlight {
 	margin: 5px 0;
