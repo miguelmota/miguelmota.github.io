@@ -740,13 +740,16 @@ input[type='submit'] {
 /*    custom            */
 
 div#blog p.description {
-	background-color: #111;
+	background-color: #222;
 	padding: 5px;
-	margin-bottom: 5px;
+	margin-bottom: 15px;
 }
 
 div#blog p.description em {
 	display: block;
+}
+div#blog p.description a {
+	padding: 0;
 }
 
 img.logo {
