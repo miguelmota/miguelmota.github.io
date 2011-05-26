@@ -125,7 +125,7 @@ body, .toolbar, #jqt ul, #jqt ul.individual li, #jqt ul li a.active,#tabbar,.s-s
 
 
 #jqt .toolbar  h1 {
-	font-family: "Klavika", "Helvetica Neue", "Helvetica", Arial, sans-serif !important;
+	font-family: "Klavika", Arial, sans-serif !important;
 	text-transform: uppercase;
 }
 #jqt .toolbar  h1 span.mota {
