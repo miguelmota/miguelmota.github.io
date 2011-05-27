@@ -23,7 +23,7 @@ $(document).ready(function(){
 	});
 	$('#blog div.content').load('/blog section.content', function(){
 		loadDisqus();
-		$('#blog div.view_archive a').attr('href', '#archive');
+		$('#blog div.view_archive a').attr('href', '#archive').removeAttr('rel');
 		$('#archive div.content').load('/archive section.content');
 	});
 
