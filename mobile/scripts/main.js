@@ -50,7 +50,7 @@ $(document).ready(function(){
 		$('#article div.content').load($(this).attr('href')+' section.content');
 	
 		
-	}).removeAttr('rel');
+	})..attr('href', '#article').removeAttr('rel');
 
 
 });
