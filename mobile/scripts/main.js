@@ -33,7 +33,7 @@ $(document).ready(function(){
 			//initialize Disqus
 			loadDisqus();
 			
-			$('#article div.content').load('/link'+' section.content');
+			$('#article div.content').load('/'+link'+' section.content');
 		
 			
 		});
