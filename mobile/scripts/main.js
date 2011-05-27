@@ -23,6 +23,8 @@ $(document).ready(function(){
 	});
 	$('#blog div.content').load('/blog section.content', function(){
 		loadDisqus();
+		$('#blog div.view_archive a').attr('href', '#archive');
+		$('#archive div.content').load('/archive section.content');
 	});
 
 	$('div.page').prepend("<div class='footer'>&#169; "+thisYear+" miguel mota</div>");
