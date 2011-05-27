@@ -43,14 +43,14 @@ $(document).ready(function(){
 	
 	
 	
-	$('#blog h1 a').live('click', function(){
+	$('#blog h1 a').attr('href', '#article').removeAttr('rel').live('click', function(){
 		//initialize Disqus
 		loadDisqus();
 		
 		$('#article div.content').load($(this).attr('href')+' section.content');
 	
 		
-	}).attr('href', '#article').removeAttr('rel');
+	});
 
 
 });
