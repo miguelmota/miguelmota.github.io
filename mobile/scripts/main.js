@@ -30,10 +30,13 @@ $(document).ready(function(){
 		
 		var link = $('#blog h1 a').attr('href');
 		$('#blog h1 a').attr('href', '#article').removeAttr('rel').live('click', function(){
-			//initialize Disqus
-			loadDisqus();
 			
-			$('#article div.content').load('/post/2011/05/24/make-an-awesome-tooltip-with-jquery/ section.content');
+			
+			
+			$('#article div.content').load('/post/2011/05/24/make-an-awesome-tooltip-with-jquery/ section.content', function(){
+				//initialize Disqus
+				loadDisqus();
+			});
 		
 			
 		});
