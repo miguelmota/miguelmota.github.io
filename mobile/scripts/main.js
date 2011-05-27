@@ -33,7 +33,7 @@ $(document).ready(function(){
 			//initialize Disqus
 			loadDisqus();
 			
-			$('#article div.content').load('/'+link+' section.content');
+			$('#article div.content').load('/post/2011/05/24/make-an-awesome-tooltip-with-jquery/ section.content');
 		
 			
 		});
