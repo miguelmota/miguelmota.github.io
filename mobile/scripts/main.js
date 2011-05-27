@@ -28,12 +28,12 @@ $(document).ready(function(){
 		
 		
 		
-		
+		var link = $('#blog h1 a').attr('href');
 		$('#blog h1 a').attr('href', '#article').removeAttr('rel').live('click', function(){
 			//initialize Disqus
 			loadDisqus();
 			
-			$('#article div.content').load($(this).attr('href')+' section.content');
+			$('#article div.content').load('/link'+' section.content');
 		
 			
 		});
