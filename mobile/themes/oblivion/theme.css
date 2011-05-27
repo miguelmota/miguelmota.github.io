@@ -798,6 +798,9 @@ div#blog p.description {
 	padding: 5px;
 	margin-bottom: 15px;
 }
+div#article p.description {
+	display: none;
+}
 
 div#blog p.description em {
 	display: block;
