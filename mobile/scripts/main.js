@@ -25,6 +25,21 @@ $(document).ready(function(){
 	$('#blog div.content').load('/blog section.content', function(){
 		loadDisqus();
 		
+		
+		
+		
+		
+		$('#blog h1 a').attr('href', '#article').removeAttr('rel').live('click', function(){
+			//initialize Disqus
+			loadDisqus();
+			
+			$('#article div.content').load($(this).attr('href')+' section.content');
+		
+			
+		});
+		
+		
+		
 		$('#blog div.view_archive a').attr('href', '#archive').removeAttr('rel');
 		$('#archive div.content').load('/archive section.content');
 	});
@@ -42,15 +57,7 @@ $(document).ready(function(){
 
 	
 	
-	
-	$('#blog h1 a').attr('href', '#article').removeAttr('rel').live('click', function(){
-		//initialize Disqus
-		loadDisqus();
-		
-		$('#article div.content').load($(this).attr('href')+' section.content');
-	
-		
-	});
+
 
 
 });
