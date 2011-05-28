@@ -198,7 +198,7 @@ code {
 div.highlight {
 	margin: 10px 0;
 	padding: 5px;
-	word-wrap: break-word;
+	overflow: scroll;
 	background-color: #202020;
 }
 .highlight code {
