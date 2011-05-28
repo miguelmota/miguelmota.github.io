@@ -201,7 +201,7 @@ div.highlight {
 	background-color: #202020;
 }
 .highlight code,
-.highlight span, {
+.highlight span {
 	word-wrap: break-word;
 	
 }
