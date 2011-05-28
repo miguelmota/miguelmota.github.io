@@ -194,15 +194,16 @@ div#noscript {
 }
 code {
 	background-color: #202020;
-	overflow: scroll;
 }
 div.highlight {
 	margin: 10px 0;
 	padding: 5px;
 	background-color: #202020;
 }
-.highlight code {
+.highlight code,
+.highlight span, {
 	word-wrap: break-word;
+	
 }
 /* /GENERAL ========================================================== */
 /* NAVIGATION ======================================================== */
