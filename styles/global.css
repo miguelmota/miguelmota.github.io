@@ -200,9 +200,9 @@ div.highlight {
 	padding: 5px;
 	background-color: #202020;
 }
-.highlight code,
-.highlight span {
+.highlight code {
 	word-wrap: break-word;
+	overflow: scroll;
 	
 }
 /* /GENERAL ========================================================== */
