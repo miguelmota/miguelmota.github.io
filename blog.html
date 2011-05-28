@@ -11,7 +11,6 @@ title: Blog
 				{{ post.content }}
 				<div class='post_footer'>
 					<p><a class='dsq-comment-count' href="{{ post.url }}#disqus_thread">comments</a> / posted <a href='{{ post.url }}'>{{ post.date | date_to_string }}</a> / <a class='addthis_button' addthis:url='{{ post.url }}'>share this &#8250;</a></p>
-					<script src='http://s7.addthis.com/js/250/addthis_widget.js#username=miguelmota'></script>
 			 	</div>
 			</div>
 		{% endfor %}
