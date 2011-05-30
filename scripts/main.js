@@ -60,6 +60,9 @@ $(document).ready(function(){
 			$('a#blog').addClass('selected');
 			break;
 	}
+	
+	alert(pathname.substr(1));
+	
 	switch(pathname.substr(1,4)){
 	case 'post':
 		blogPage();
