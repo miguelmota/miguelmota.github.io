@@ -234,20 +234,26 @@ var niceTime = (function(){
 	})();
 
 $("nav.main a:not('#logo')").live('click', function(){
-		c = 0;
-		bc = 0;
-		var toLoad = $(this).attr('href')+' section.content';
-		$('section.content').fadeOut('fast',loadContent);
-		$('div.loading').fadeIn('normal');
-		function loadContent(){
-			$('section.content').load(toLoad,showNewContent);
-		}
 		if(typeof(window.history.pushState) == 'function'){
-			var stateObj = { foo:  $(this).attr('href') };
-			history.pushState(stateObj, "Title", $(this).attr('href'));
+			c = 0;
+			bc = 0;
+			var toLoad = $(this).attr('href')+' section.content';
+			$('section.content').fadeOut('fast',loadContent);
+			$('div.loading').fadeIn('normal');
+			function loadContent(){
+				$('section.content').load(toLoad,showNewContent);
+			}
+			if(typeof(window.history.pushState) == 'function'){
+				var stateObj = { foo:  $(this).attr('href') };
+				history.pushState(stateObj, "Title", $(this).attr('href'));
+			}
+			else{
+				window.location.hash = '!'+$(this).attr('href').substr(1,$(this).attr('href').length);
+			}
+			return false;
 		}
 		else{
-			window.location.hash = '!'+$(this).attr('href').substr(1,$(this).attr('href').length);
+			return true;
 		}
 });
 
