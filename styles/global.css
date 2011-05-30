@@ -531,6 +531,12 @@ section.portfolio img.miguelmota_logo {
 	width: 116%;
 	height: auto;
 }
+
+#tip7-title { text-align: left; }
+
+#tip7-title b { display: block; margin-right: 80px; }
+
+#tip7-title span { float: right; }
 /* /PORTFOLIO ========================================================= */
 /* CONTACT ============================================================ */
 section.contact img.qrcode {
