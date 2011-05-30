@@ -164,8 +164,8 @@
 }
 
 #fancybox-left-ico {
-	background-image: url('/plugins/fancybox/fancybox.png');
-	background-position: -40px -30px;
+	background-image: url('/plugins/fancybox/fancy_nav_right.png');
+	/* background-position: -40px -30px; */
 }
 
 #fancybox-right-ico {
