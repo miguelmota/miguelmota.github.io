@@ -533,11 +533,13 @@ section.portfolio img.miguelmota_logo {
 }
 
 #fancybox_title {
+	margin-bottom: -10px;
 	text-align: left;
-	background-color: #000;
+	background: rgba(0,0,0,.5);
 }
 #fancybox_title strong {
-	display: block; margin-right: 80px;
+	display: block;
+	margin-right: 80px;
 }
 #fancybox_title span {
 	float: right;
