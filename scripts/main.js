@@ -249,7 +249,6 @@ $("nav.main a:not('#logo')").live('click', function(){
 		else{
 			window.location.hash = '!'+$(this).attr('href').substr(1,$(this).attr('href').length);
 		}
-		return false;
 });
 
 
