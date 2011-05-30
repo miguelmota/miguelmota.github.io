@@ -55,10 +55,9 @@ $(document).ready(function(){
 			$('a#contact').addClass('selected');
 			break;
 		case 'blog':
+		default:
 			blogPage();
 			$('a#blog').addClass('selected');
-			break;
-		default:
 			break;
 	}
 	switch(pathname.substr(1,4)){
