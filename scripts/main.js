@@ -518,9 +518,8 @@ function portfolioPage(){
 			'titleFormat': formatTitle,
 			'padding': 0,
 			'transitionIn': 'fade',
-			'transitionOut': 'fade',
+			'transitionOut': 'none',
 			'speedIn': 150, 
-			'speedOut': 0, 
 			'overlayColor': '#000'
 	});
 	//custom fancybox title formatting
