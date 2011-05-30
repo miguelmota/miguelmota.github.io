@@ -140,12 +140,13 @@ $(window).scroll(function(){
 });
 
 $(document).ajaxComplete(function(){
-	//if(typeof(window.history.pushState) != 'function'){
-		var path2 = window.location.hash.substr(2);
-	//}
-	//else{
-		//var path2 = window.location.pathname.substr(1);
-	//}
+	if(typeof(window.history.pushState) != 'function'){
+		//var path2 = window.location.hash.substr(2);
+		var path2 = window.location.pathname.substr(1);
+	}
+	else{
+		var path2 = window.location.pathname.substr(1);
+	}
 	var title = $('h1.title span.sub').text()+$('div.theTitle').text();
 	document.title = title;
 	$('nav.main a').removeClass('selected');
