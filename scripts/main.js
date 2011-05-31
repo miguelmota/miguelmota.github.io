@@ -336,6 +336,9 @@ function streamPage(){
 	$('.mtip').mtip();
 	
 	while(c == 0){
+		
+		$('a.social.wakoopa').after("<span class='mtip' title='recently used software'>(?)8</span>");
+		
 
 		//Facebook stream
 		$('div.facebook img.loader').css('display','block');
