@@ -192,6 +192,8 @@ $(document).ajaxComplete(function(){
 //global variables
 var c = 0;
 var bc = 0;
+var ldc = 0;
+
 var pathname = window.location.pathname;
 
 /*
@@ -238,6 +240,7 @@ $("nav.main a:not('#logo')").live('click', function(){
 		if(typeof(window.history.pushState) == 'function'){
 			c = 0;
 			bc = 0;
+			ldc = 0;
 			var toLoad = $(this).attr('href')+' section.content';
 			$('section.content').fadeOut('fast',loadContent);
 			$('div.loading').fadeIn('normal');
@@ -599,11 +602,10 @@ function contactPage(){
 	
 }
 
-ldc = 0;
 function blogPage(){
 	
 	//initialize AddThis
-	$.getScript('http://s7.addthis.com/js/250/addthis_widget.js#username=miguelmota');
+	//$.getScript('http://s7.addthis.com/js/250/addthis_widget.js#username=miguelmota');
 	
 	//initialize Google Search
 	loadSearch();
