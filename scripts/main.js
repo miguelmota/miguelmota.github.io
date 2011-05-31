@@ -599,6 +599,7 @@ function contactPage(){
 	
 }
 
+ldc = 0;
 function blogPage(){
 	
 	//initialize AddThis
@@ -608,7 +609,10 @@ function blogPage(){
 	loadSearch();
 	
 	//initialize Disqus
-	loadDisqus();
+	while(ldc = 0){
+		loadDisqus();
+		ldc++;
+	}
 	
 }
 
