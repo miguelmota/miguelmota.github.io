@@ -342,8 +342,8 @@ function streamPage(){
 		$('a.social.facebook').after("<span class='mtip' title='recent statuses'>(?)</span>");
 		$('a.social.tumblr').after("<span class='mtip' title='recent posts'>(?)</span>");
 		$('a.social.delicious').after("<span class='mtip' title='recently saved bookmarks'>(?)</span>");
-		//$('a.social.lastfm').after("<span class='mtip' title='recently listened tracks'>(?)</span>");
-		$('a.social.wakoopa'.after("<span class='mtip' title='recently used software'>(?)</span>");
+		$('a.social.lastfm').after("<span class='mtip' title='recently listened tracks'>(?)</span>");
+		$('a.social.wakoopa').after("<span class='mtip' title='recently used software'>(?)</span>");
 		
 
 		//Facebook stream
