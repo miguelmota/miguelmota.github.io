@@ -7,7 +7,7 @@ layout: default
 		<div class='post_footer'>
 			<p>posted <a href='{{ post.url }}'>{{ page.date | date_to_string }}</a></p>
 	 	</div>
-		<br /><a href="{{ post.url }}#disqus_thread">comments</a>
-		<div id="disqus_thread"></div>
+		<br /><a class='dsq-comment-count' href="{{ post.url }}#disqus_thread">comments</a>
+		<div id='disqus_thread'></div>
 	</div>
 </section>

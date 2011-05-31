@@ -170,7 +170,7 @@ $(document).ajaxComplete(function(){
 			contactPage();
 			break;
 		case 'blog': 
-			//blogPage();
+			blogPage();
 			break;
 		default:
 			break;
