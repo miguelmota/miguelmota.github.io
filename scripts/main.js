@@ -337,7 +337,14 @@ function streamPage(){
 	
 	while(c == 0){
 		
-		$('a.social.wakoopa').after("<span class='mtip' title='recently used software'>(?)8</span>");
+		$('a.social').after("<span class='mtip'>(?)</span>");
+		$('a.social.latitude').attr('title','recent location');
+		$('a.social.twitter').attr('title','@miguel_mota recent tweets');
+		$('a.social.facebook').attr('title','recent statuses');
+		$('a.social.tumblr').attr('title','recent posts');
+		$('a.social.delicious').attr('title','recently saved bookmarks');
+		$('a.social.lastfm').attr('title','recently listened tracks');
+		$('a.social.wakoopa').attr('title','recently used software');
 		
 
 		//Facebook stream
