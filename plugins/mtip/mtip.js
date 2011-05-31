@@ -6,10 +6,10 @@
 /***************************/
 (function($) {
 	$.fn.mtip = function() {
-		$(this).attr('mtip', $(this).attr('title')).removeAttr('title');
-		var title = $(this).attr('mtip');
 		$(this).wrap('<div class="tooltip_container" />');
 		$(this).hover(function() {
+					$(this).attr('mtip', $(this).attr('title')).removeAttr('title');
+					var title = $(this).attr('mtip');
 					$(this).after("<div class='tooltip'></div>");
 					$('div.tooltip').text(title).hide();
 					$('div.tooltip').css({
