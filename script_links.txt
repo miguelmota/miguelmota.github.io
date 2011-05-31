@@ -6,6 +6,8 @@
 <script src='http://www.google.com/jsapi?key=ABQIAAAAaPkBW3vge4odDUBtbC4e-xRutoCKHFl1g3ES_cmPf4BxqcVG3BR7pbnwzjWgqiKDxSEqSvzSUG2pww'></script>
 <script src='/scripts/main.js'></script>
 
+<script src='http://s7.addthis.com/js/250/addthis_widget.js#username=miguelmota'></script>
+
 //compressed
 <script src='/scripts/main.min.js'></script>
 

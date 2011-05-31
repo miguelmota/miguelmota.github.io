@@ -607,6 +607,8 @@ function blogPage(){
 	//initialize Disqus
 	loadDisqus();
 	
+	$.getScript('http://s7.addthis.com/js/250/addthis_widget.js#username=miguelmota');
+	
 }
 
 function loadDisqus(){
