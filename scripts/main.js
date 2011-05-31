@@ -121,10 +121,6 @@ $(document).ready(function(){
 	});
 	topYloc = parseInt($('a.top').css('top').substring(0,$('a.top').css('top').indexOf('px')));
 	
-	
-	//initialize mtip
-	$('.mtip').mtip();
-	
 });
 
 $(window).scroll(function(){
@@ -335,6 +331,9 @@ function streamPage(){
 	
 	//hide social link text
 	$("div.stream a.social:not('.latitude')").text('');
+	
+	//initialize mtip
+	$('.mtip').mtip();
 	
 	while(c == 0){
 
