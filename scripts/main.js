@@ -559,7 +559,7 @@ function contactPage(){
 				required: true,
 				email: true
 			},
-				message: {
+			message: {
 				required: true,
 				minlength: 10
 			}
