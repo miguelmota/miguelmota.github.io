@@ -335,16 +335,16 @@ function streamPage(){
 	//initialize mtip
 	$('.mtip').mtip();
 	
+	//add question mark next to social logo
+	$('a.social.latitude').after("<span class='mtip' title='recent location'>(?)</span>");
+	$('a.social.twitter').after("<span class='mtip' title='@miguel_mota recent tweets'>(?)</span>");
+	$('a.social.facebook').after("<span class='mtip' title='recent statuses'>(?)</span>");
+	$('a.social.tumblr').after("<span class='mtip' title='recent posts'>(?)</span>");
+	$('a.social.delicious').after("<span class='mtip' title='recently saved bookmarks'>(?)</span>");
+	$('a.social.lastfm').after("<span class='mtip' title='recently listened tracks'>(?)</span>");
+	$('a.social.wakoopa').after("<span class='mtip' title='recently used software'>(?)</span>");
+	
 	while(c == 0){
-		
-		$('a.social.latitude').after("<span class='mtip' title='recent location'>(?)</span>");
-		$('a.social.twitter').after("<span class='mtip' title='@miguel_mota recent tweets'>(?)</span>");
-		$('a.social.facebook').after("<span class='mtip' title='recent statuses'>(?)</span>");
-		$('a.social.tumblr').after("<span class='mtip' title='recent posts'>(?)</span>");
-		$('a.social.delicious').after("<span class='mtip' title='recently saved bookmarks'>(?)</span>");
-		$('a.social.lastfm').after("<span class='mtip' title='recently listened tracks'>(?)</span>");
-		$('a.social.wakoopa').after("<span class='mtip' title='recently used software'>(?)</span>");
-		
 
 		//Facebook stream
 		$('div.facebook img.loader').css('display','block');
