@@ -867,6 +867,7 @@ span.rsaquo {
 }
 ul.nav li a {
 	float: left;
+	width: 99%;
 }
 div#stream a.social:active,
 div#stream a.social.active  {
