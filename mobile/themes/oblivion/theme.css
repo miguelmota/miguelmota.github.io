@@ -411,7 +411,7 @@ div#contact ul.contact li.arrow a {
     color: #000;
     font: 14px "NeoSans", "Helvetica Neue", Helvetica;
     text-overflow: ellipsis;
-
+    white-space: nowrap;
     overflow: hidden;
     display: block;
     margin: 0;
@@ -422,7 +422,7 @@ div#contact ul.contact li.arrow a {
     font: 13px "NeoSans", "Helvetica Neue", Helvetica;
     margin: 0;
     text-overflow: ellipsis;
-
+    white-space: nowrap;
     overflow: hidden;
     display: block;
     padding: 0 !important;
@@ -864,9 +864,10 @@ div#stream a.social {
 }
 span.rsaquo {
 	float: right;
+	border: 1px solid red;
 }
 ul.nav li a {
-
+	width: 97%;
 }
 div#stream a.social:active,
 div#stream a.social.active  {
