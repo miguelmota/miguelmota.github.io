@@ -864,7 +864,8 @@ div#stream a.social {
 }
 span.rsaquo {
 	float: right;
-	width: 16px;
+	
+	border: 1px solid red;
 }
 div#stream a.social:active,
 div#stream a.social.active  {
