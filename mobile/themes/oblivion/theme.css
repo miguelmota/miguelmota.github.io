@@ -747,7 +747,9 @@ input[type='submit'] {
 
 
 
-
+ul.nav li a {
+	display: inline;
+}
 div.page {
 	padding-bottom: 25px;
 }
@@ -863,7 +865,7 @@ div#stream a.social {
     behavior: url('/plugins/pie/PIE.htc');
 }
 span.rsaquo {
-	float: right !important;
+	float: right;
 	
 	border: 1px solid blue;
 }
