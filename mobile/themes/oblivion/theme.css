@@ -864,11 +864,10 @@ div#stream a.social {
 }
 span.rsaquo {
 	float: right;
-	border: 1px solid blue;
 }
-ul.nav li a {
+ul.nav li a,
+div.content ul.nav li a {
 	float: left;
-	border: 1px solid blue;
 }
 div#stream a.social:active,
 div#stream a.social.active  {
