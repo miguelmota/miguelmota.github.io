@@ -747,9 +747,7 @@ input[type='submit'] {
 
 
 
-ul.nav li a {
-	display: inline !important;
-}
+
 div.page {
 	padding-bottom: 25px;
 }
@@ -866,8 +864,10 @@ div#stream a.social {
 }
 span.rsaquo {
 	float: right;
-	
-	border: 1px solid green;
+	border: 1px solid blue;
+}
+ul.nav li a span {
+	display: inline !important;
 }
 div#stream a.social:active,
 div#stream a.social.active  {
