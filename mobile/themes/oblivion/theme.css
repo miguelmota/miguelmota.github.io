@@ -411,9 +411,9 @@ div#contact ul.contact li.arrow a {
     color: #000;
     font: 14px "NeoSans", "Helvetica Neue", Helvetica;
     text-overflow: ellipsis;
-    white-space: nowrap;
+
     overflow: hidden;
-    display: inline !important;
+    display: block;
     margin: 0;
     padding: 0 !important;
 }
@@ -422,9 +422,9 @@ div#contact ul.contact li.arrow a {
     font: 13px "NeoSans", "Helvetica Neue", Helvetica;
     margin: 0;
     text-overflow: ellipsis;
-    white-space: nowrap;
+
     overflow: hidden;
-    display: inline !important;
+    display: block;
     padding: 0 !important;
 }
 /*
