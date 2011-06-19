@@ -863,12 +863,10 @@ div#stream a.social {
     behavior: url('/plugins/pie/PIE.htc');
 }
 span.rsaquo {
-	float: right;
+	
 }
 ul.nav li a {
-	float: left;
-	width: 100%;
-	min-width: 100%;
+
 }
 div#stream a.social:active,
 div#stream a.social.active  {
