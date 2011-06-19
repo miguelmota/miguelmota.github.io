@@ -609,24 +609,18 @@ function contactPage(){
 }
 
 function blogPage(){
-	
-	setTimeout(function(){
-		
-		//initialize AddThis
-		$.getScript('http://s7.addthis.com/js/250/addthis_widget.js#username=miguelmota');
-		
-		//initialize Google Search
-		loadSearch();
-		
-		//initialize Disqus
-		while(ldc = 0){
-			loadDisqus();
-			ldc++;
-		}
-		
-	},3000);
-	
 
+	//initialize AddThis
+	//$.getScript('http://s7.addthis.com/js/250/addthis_widget.js#username=miguelmota');
+	
+	//initialize Google Search
+	loadSearch();
+	
+	//initialize Disqus
+	while(ldc = 0){
+		loadDisqus();
+		ldc++;
+	}
 	
 }
 
