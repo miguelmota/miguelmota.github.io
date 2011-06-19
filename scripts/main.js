@@ -610,8 +610,11 @@ function contactPage(){
 
 function blogPage(){
 
-	//initialize AddThis
-	//$.getScript('http://s7.addthis.com/js/250/addthis_widget.js#username=miguelmota');
+	setTimeout(function(){
+		//initialize AddThis
+		$.getScript('http://s7.addthis.com/js/250/addthis_widget.js#username=miguelmota');
+	},5000);
+
 	
 	//initialize Google Search
 	loadSearch();
