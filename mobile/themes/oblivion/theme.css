@@ -413,7 +413,7 @@ div#contact ul.contact li.arrow a {
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
-    display: block;
+    display: inline !important;
     margin: 0;
     padding: 0 !important;
 }
@@ -424,7 +424,7 @@ div#contact ul.contact li.arrow a {
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
-    display: block;
+    display: inline !important;
     padding: 0 !important;
 }
 /*
@@ -863,7 +863,7 @@ div#stream a.social {
     behavior: url('/plugins/pie/PIE.htc');
 }
 span.rsaquo {
-	
+	float: right;
 }
 ul.nav li a {
 
