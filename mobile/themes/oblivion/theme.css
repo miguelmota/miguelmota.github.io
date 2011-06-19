@@ -748,7 +748,7 @@ input[type='submit'] {
 
 
 ul.nav li a {
-	display: inline;
+	display: inline !important;
 }
 div.page {
 	padding-bottom: 25px;
@@ -867,7 +867,7 @@ div#stream a.social {
 span.rsaquo {
 	float: right;
 	
-	border: 1px solid blue;
+	border: 1px solid green;
 }
 div#stream a.social:active,
 div#stream a.social.active  {
