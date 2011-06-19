@@ -865,8 +865,7 @@ div#stream a.social {
 span.rsaquo {
 	float: right;
 }
-ul.nav li a,
-div.content ul.nav li a {
+ul.nav li a {
 	float: left;
 }
 div#stream a.social:active,
