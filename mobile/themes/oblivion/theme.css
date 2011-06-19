@@ -865,7 +865,8 @@ div#stream a.social {
 span.rsaquo {
 	float: right;
 }
-ul.nav li a {
+ul.nav li a,
+ul.contact li a {
 	float: left;
 	width: 98%;
 }
