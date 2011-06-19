@@ -863,9 +863,9 @@ div#stream a.social {
     behavior: url('/plugins/pie/PIE.htc');
 }
 span.rsaquo {
-	float: right;
+	float: right !important;
 	
-	border: 1px solid red;
+	border: 1px solid blue;
 }
 div#stream a.social:active,
 div#stream a.social.active  {
