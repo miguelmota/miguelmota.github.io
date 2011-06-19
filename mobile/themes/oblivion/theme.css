@@ -867,9 +867,8 @@ span.rsaquo {
 }
 ul.nav li a,
 ul.contact li a {
-	display: inline !important;
 	float: left;
-	width: 96%;
+	width: 98%;
 }
 div#stream a.social:active,
 div#stream a.social.active  {
