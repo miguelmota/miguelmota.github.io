@@ -141,7 +141,7 @@ $(document).ajaxComplete(function(){
 	else{
 		var path2 = window.location.pathname.substr(1);
 	}
-	var title = $('div.theTitle').text();
+	var title = $('h1.title span.sub').text()+$('div.theTitle').text();
 	document.title = title;
 	$('nav.main a').removeClass('selected');
 	if(path2 != ''){
