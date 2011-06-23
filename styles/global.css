@@ -64,6 +64,10 @@
 /* /FONT_FACE ======================================================== */
 
 /* GENERAL =========================================================== */
+html {
+	overflow: scroll;
+	overflow: -moz-scrollbars-vertical;
+}
 body {
 	display: none;
 	font-family: NeoSans, Klavika-Light, Helvetica, Arial, sans-serif;
