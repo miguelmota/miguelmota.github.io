@@ -83,10 +83,10 @@ div#wrap {
 }
 a {
 	color: #007799;
-	-webkit-transition: color linear .2s;
-	-moz-transition: color linear .2s;
-	-o-transition: color linear .2s;
-	transition: color linear .2s;
+	-webkit-transition: color linear .1s;
+	-moz-transition: color linear .1s;
+	-o-transition: color linear .1s;
+	transition: color linear .1s;
 }
 a:hover {
 	color: #0099aa;
