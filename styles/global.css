@@ -91,6 +91,11 @@ a {
 a:hover {
 	color: #0099aa;
 }
+h1.title {
+	position: relative;
+	width: 650px;
+	float: right;
+}
 h1.title a {
 	color: #999 !important;
 }
@@ -644,7 +649,7 @@ div#cse div.gsc-cursor-current-page  {
 }
 /* /GOOGLE SEARCH --------------------------------------------------- */
 div.posti h1 {
-	margin-bottom: 10px;
+	margin-bottom: 5px;
 	border-bottom: 1px dotted #999;
 }
 div.posti h1 a {
