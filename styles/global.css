@@ -513,8 +513,8 @@ section.portfolio img.mrg {
 }
 section.portfolio img.foodfail {
 	position: absolute;
-	left: -300px;
-	width: 300%;
+	left: -50px;
+	width: 100%;
 	height: auto;
 }
 section.portfolio img.dunstar_logo {
