@@ -318,7 +318,7 @@ function showNewContent(){
 	if(typeof(window.history.pushState) != 'function'){
 		//$('#'+window.location.hash.substr(2)).addClass('selected');
 	}
-	$('h1.title span.sub').fadeIn('normal');
+	$('h1.title span.sub').show();
 	$('section.content, footer.main').fadeIn('normal',hideLoader);
 	
 }
