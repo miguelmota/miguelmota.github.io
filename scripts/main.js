@@ -235,10 +235,13 @@ $("nav.main a:not('#logo')").live('click', function(){
 			c = 0;
 			bc = 0;
 			ldc = 0;
+			var loadSubTitle = $(this).attr('href')+' h1.title span.sub';
 			var toLoad = $(this).attr('href')+' section.content';
+			$('h1.title span.sub').fadeOut('fast');
 			$('section.content').fadeOut('fast',loadContent);
 			$('div.loading').fadeIn('normal');
 			function loadContent(){
+				$('h1.title span.sub').load(loadSubTitle);
 				$('section.content').load(toLoad,showNewContent);
 			}
 			if(typeof(window.history.pushState) == 'function'){
