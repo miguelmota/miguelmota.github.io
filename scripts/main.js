@@ -610,10 +610,8 @@ function contactPage(){
 
 function blogPage(){
 
-	setTimeout(function(){
-		//initialize AddThis
-		$.getScript('http://s7.addthis.com/js/250/addthis_widget.js#username=miguelmota');
-	},5000);
+	//initialize AddThis
+	$.getScript('http://s7.addthis.com/js/250/addthis_widget.js#username=miguelmota');
 
 	
 	//initialize Google Search
