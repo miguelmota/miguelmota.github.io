@@ -235,7 +235,7 @@ $("nav.main a:not('#logo')").live('click', function(){
 			c = 0;
 			bc = 0;
 			ldc = 0;
-			var loadSubTitle = $(this).attr('href')+' h1.title span.sub';
+			var loadSubTitle = $(this).attr('href')+' span.sub';
 			var toLoad = $(this).attr('href')+' section.content';
 			$('h1.title span.sub').fadeOut('fast');
 			$('section.content').fadeOut('fast',loadContent);
