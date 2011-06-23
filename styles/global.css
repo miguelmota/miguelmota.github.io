@@ -451,8 +451,8 @@ section.about img.about {
 /* /ABOUT ============================================================= */
 /* PORTFOLIO ========================================================== */
 section.portfolio h1.title {
+	float: left;
 	width: 400px;
-	border: 1px solid red;
 }
 section.portfolio div.sort {
 	float: right;
