@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	
-	$('ul.nav li a, ul.contact li a').append("<span class='rsaquo'>&#8250;</span>");
+	$('ul.nav li a, ul.contact li a').text().wrap("<span class='text' />").append("<span class='rsaquo'>&#8250;</span>");
 
 	$('#stream div.content').load('/stream section.content', function(){
 		streamPage();	

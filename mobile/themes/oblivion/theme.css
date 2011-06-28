@@ -862,6 +862,9 @@ div#stream a.social {
 	color: #999;
     behavior: url('/plugins/pie/PIE.htc');
 }
+span.text {
+	float: left;
+}
 span.rsaquo {
 	float: right;
 }
