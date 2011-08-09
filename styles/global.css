@@ -256,8 +256,9 @@ nav.main a#logo img:hover {
 }
 nav.main a {
 	display: block;
+	border-left: 4px solid #292929;
 	color: #999;
-	padding: 2px;
+	padding: 2px 2px 2px 4px;
 	-webkit-transition: background-color linear .2s, color linear .3s;
 	-moz-transition: background-color linear .2s, color linear .3s;
 	-o-transition: background-color linear .2s, color linear .3s;
@@ -266,6 +267,7 @@ nav.main a {
 nav.main a:hover,
 nav.main a:active {
 	background-color: #292929;
+	border-left: 4px solid #555;
 	color: #fff;
 }
 nav.main a.selected {
