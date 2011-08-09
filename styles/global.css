@@ -326,19 +326,18 @@ div.loading {
 	width: 75px;
 	height: 16px;
 }
-div.indicator_loader {
+div.loader {
 	float: left;
 	width: 16px;
 	height: 16px;
 	margin-right: 5px;
 	background: url('../images/ajax_loader.gif') no-repeat 0 0;
 }
-div.loader {
+div.page_loader {
 	float: left;
 	width: 128px;
 	height: 15px;
-	margin-right: 5px;
-	background: url('../images/ajax_loader.gif') no-repeat 0 0;
+	background: url('../images/ajax_loader_page.gif') no-repeat 0 0;
 }
 /* /CONTENT ========================================================== */
 /* STREAM ============================================================ */
