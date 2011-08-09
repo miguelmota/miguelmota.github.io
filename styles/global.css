@@ -674,7 +674,7 @@ div.contact-qrcode {
 	height: 88px;
 	position: absolute;
 	right: 0;
-	top: 20px;
+	top: -30px;
 	width: 88px;
 }
 form.contact-form {
@@ -691,7 +691,7 @@ textarea.contact-message {
 }
 a.contact-submit {
 	float: right;
-	font-size: 13px;
+	font-size: 14px;
 }
 input.error,
 textarea.error {
