@@ -112,7 +112,7 @@ h1.title a:hover {
 	color: #007799 !important;
 }
 ::selection {
-	background-color: #007299;
+	background-color: #2b9abf;
 	color: #fff;
 	text-shadow: 0 1px 0 rgba(0,0,0,.3);
 }
