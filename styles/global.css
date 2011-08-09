@@ -145,10 +145,10 @@ textarea {
 	border: 1px solid #555;
 	background-color: #252525;
 	color: #555;	
-	-webkit-transition: border-color .3s linear, color .3s linear;
-	-moz-transition: border-color .3s linear, color .3s linear;
-	-o-transition: border-color .3s linear, color .3s linear;
-	transition: border-color .3s linear, color .3s linear;
+	-webkit-transition: border-color .1s linear, color .1s linear;
+	-moz-transition: border-color .3s linear, color .1s linear;
+	-o-transition: border-color .3s linear, color .1s linear;
+	transition: border-color .3s linear, color .1s linear;
 }
 input[type=text]:focus,
 textarea:focus {
