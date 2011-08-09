@@ -297,6 +297,7 @@ section.content {
 }
 div#article {
 	clear: both;
+	position: relative;
 }
 h1.title {
 	margin-bottom: 10px;
@@ -323,6 +324,9 @@ h1.title span.sub {
 }
 div.loading {
 	display: none;
+	position: absolute;
+	top: 10%;
+	left: 10%;
 	width: 128px;
 	height: 15px;
 }
