@@ -270,6 +270,7 @@ nav.main a:active {
 }
 nav.main a.selected {
 	background-color: #292929;
+	border-left: 4px solid #999;
 	color: #fff;
 	font-weight: bold;
 }
