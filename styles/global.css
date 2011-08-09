@@ -350,6 +350,7 @@ section.stream span.mtip:hover {
 	cursor: default;
 }
 section.stream a.social {
+	border-left: none !important;
 	display: block;
 	width: auto;
 	height: 16px;
@@ -357,7 +358,7 @@ section.stream a.social {
 	float: left;
 	background-repeat: no-repeat;
 	background-position: 0 0;
-	padding: 0;
+	padding: 0 !important;
 }
 section.stream a.latitude {
 	font-size: 18px;
