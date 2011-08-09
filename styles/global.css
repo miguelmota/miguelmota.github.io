@@ -82,9 +82,10 @@ div#wrap {
 	word-wrap: break-word;
 }
 a {
+	background-color: #292929;
 	border-left: 3px solid #333;
 	color: #007299;
-	padding: 1px 3px 1p 6px;
+	padding: 1px 3px 1px 6px;
 	text-shadow: 0 1px 0 rgba(0,0,0,.5);
 	-webkit-transition: color linear .1s;
 	-moz-transition: color linear .1s;
@@ -92,7 +93,8 @@ a {
 	transition: color linear .1s;
 }
 a:hover {
- 	background-color: #222222;
+ 	background-color: #323232;
+ 	border-left: 3px solid #444;
 	color: #0083aa;
 	text-shadow: 0 1px 0 rgba(0,0,0,.9);
 }
