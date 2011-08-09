@@ -536,6 +536,18 @@ function portfolioPage(){
 		  }
 	);
 	
+	
+	
+	// Show zoom icon on hover
+	$('a.fancybox').hover(function(){
+			jQuery('span.zoom, this').css('display', 'block');
+	},function(){
+			jQuery('span.zoom', this).hide();
+		  }
+	);
+	
+	
+	
 	//initialize fancybox
 	$('a.fancybox').fancybox({
 			'showCloseButton': false,
