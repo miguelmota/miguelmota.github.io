@@ -267,11 +267,11 @@ nav.main a {
 nav.main a:hover,
 nav.main a:active {
 	background-color: #292929;
-	border-left: 4px solid #555;
+	border-left: 4px solid #444;
 	color: #fff;
 }
 nav.main a.selected {
-	background-color: #292929;
+	background-color: #353535;
 	border-left: 4px solid #999;
 	color: #fff;
 	font-weight: bold;
