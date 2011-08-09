@@ -610,13 +610,13 @@ section.contact form.contact_form a.submit {
 }
 input.error,
 textarea.error {
-	border-color: #8e2323;
-	color: #8e2323;
+	border-color: #870000;
+	color: #870000;
 }
 label.error {
 	margin-left: 5px;
 	background-color: inherit;
-	color: #8e2323;
+	color: #870000;
 }
 label[for='message'].error {
 	margin: 10px 0 0 0;
