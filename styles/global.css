@@ -585,7 +585,8 @@ section.portfolio img.miguelmota_logo {
 }
 /* /PORTFOLIO ========================================================= */
 /* CONTACT ============================================================ */
-section.contact img.qrcode {
+div.contact_qrcode {
+	background: url('/images/qrcode.png') no-repeat 0 0;
 	float: right;
 	margin-top: -28px;
 	padding-bottom: 10px;
