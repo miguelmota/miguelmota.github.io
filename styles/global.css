@@ -90,7 +90,11 @@ a {
 	transition: color linear .1s;
 }
 a:hover {
+	background-color: #222222;
 	color: #006b8e;
+}
+a:active {
+	text-shadow: 0 -1px 0 rgba(0,0,0,.5);
 }
 h1.title {
 	position: relative;
