@@ -142,10 +142,10 @@ textarea {
 	padding: 2px;
 	font-family: inherit;
 	font-size: 12px;
-	border: 1px solid #999;
-	border-left: 4px solid #999;
+	border: 1px solid #555;
+	border-left: 4px solid #555;
 	background-color: #252525;
-	color: #999;	
+	color: #555;	
 	-webkit-transition: border-color .1s linear, color .1s linear;
 	-moz-transition: border-color .3s linear, color .1s linear;
 	-o-transition: border-color .3s linear, color .1s linear;
@@ -160,10 +160,10 @@ textarea:focus {
 }
 input[type=text]:blur,
 textarea:blur {
-	border-color: #999;
-	border-left: 4px solid #999;
+	border-color: #555;
+	border-left: 4px solid #555;
 	background-color: inherit;
-	color: #999;
+	color: #555;
 }
 p {
 	padding: 4px 0;
@@ -611,6 +611,7 @@ section.contact form.contact_form a.submit {
 input.error,
 textarea.error {
 	border-color: #8e2323;
+	color: #8e2323;
 }
 label.error {
 	margin-left: 5px;
