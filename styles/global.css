@@ -137,6 +137,7 @@ textarea {
 }
 input[type=text],
 textarea {
+	border-left: 4px solid #555;
 	width: 225px;
 	height: 20px;
 	padding: 2px;
@@ -153,12 +154,20 @@ textarea {
 input[type=text]:focus,
 textarea:focus {
 	border-color: #007299;
+	border-left: 4px solid #007299;
+	background-color: #262626;
+	color: #999;
+}
+input[type=text]:hover,
+textarea:hover {
+	border-color: #323232;
 	background-color: #262626;
 	color: #999;
 }
 input[type=text]:blur,
 textarea:blur {
 	border-color: #555;
+	border-left: 4px solid #555;
 	background-color: inherit;
 	color: #555;
 }
