@@ -598,6 +598,10 @@ section.portfolio img.miguelmota_logo {
 #fancybox_title span {
 	float: right;
 }
+div.work-image {
+	width: 100%;
+	height: auto;
+}
 /* /PORTFOLIO ========================================================= */
 /* CONTACT ============================================================ */
 div.contact_qrcode {
