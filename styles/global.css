@@ -239,6 +239,8 @@ ul li {
 nav.main {
 	position: fixed;
 	top: 70px;
+	width: 150px;
+	border: 1px solid red;
 	z-index: 1000;
 }
 a.nav_logo {
