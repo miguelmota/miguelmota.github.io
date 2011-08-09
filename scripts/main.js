@@ -571,13 +571,13 @@ function portfolioPage(){
 function contactPage(){
 	
 	//create method to validate name
-	$('form.contact_form a.submit').live('click', function(){
+	$('a.contact-submit').live('click', function(){
 		$.validator.addMethod('namecheck', function(value, element){
 			return this.optional(element) || /^[a-zA-Z]+?\s?[a-zA-Z]+?\s?[a-zA-Z]+$/.test(value);
 	});
 		
 	//validate contact form
-	$('form.contact_form').validate({
+	$('form.contact-form').validate({
 		rules: {
 			name: {
 				namecheck: true,
@@ -609,7 +609,7 @@ function contactPage(){
 	});
 	
 	//if validates to true, then submit it
-	if ($('form.contact_form').valid() == true){						  
+	if ($('form.contact-form').valid() == true){						  
 		var str = $('form.contact_form').serialize();
 		$.ajax({
 			type: 'post',
@@ -630,9 +630,9 @@ function contactPage(){
 	
 	//hide contact form and display thank you message
 	function success(){
-		$('form.contact_form').slideUp(300);
+		$('form.contact-form').slideUp(300);
 		setTimeout(function(){
-			$('form.contact_form').html('<p>Thank you.<br />Your message has been successfully sent!<br />I will get in touch with you soon.</p>').fadeIn(1200);	
+			$('form.contact-form').html('<p>Thank you.<br />Your message has been successfully sent!<br />I will get in touch with you soon.</p>').fadeIn(1200);	
 		}, 300);
 	}
 	
