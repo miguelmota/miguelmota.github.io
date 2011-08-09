@@ -520,14 +520,14 @@ function portfolioPage(){
 	
 	//hover glow effect
 	$('div.container').hover(function(){
-				jQuery('div.overlay', this).fadeOut(300);
+				jQuery('div.overlay', this).fadeOut(200);
 				$(this).css({
 					'-webkit-box-shadow': '0 0 10px #fff',
 					'-moz-box-shadow': '0 0 10px #fff',
 					'box-shadow': '0 0 10px #fff'
 					});
 	},function(){
-				jQuery('div.overlay', this).hide().fadeIn(300);
+				jQuery('div.overlay', this).hide().fadeIn(200);
 				$(this).css({
 					'-webkit-box-shadow': '2px 2px 5px #111',
 					'-moz-box-shadow': '2px 2px 5px #111',
