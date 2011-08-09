@@ -515,7 +515,7 @@ function portfolioPage(){
 	});
 	
 	//hover glow effect
-	$('section.portfolio div.container').hover(function(){
+	$('div.container').hover(function(){
 				jQuery('div.overlay', this).fadeOut(300);
 				$(this).css({
 					'-webkit-box-shadow': '0 0 10px #fff',
