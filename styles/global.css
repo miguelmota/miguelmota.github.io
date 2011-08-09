@@ -72,8 +72,7 @@ body {
 	display: none;
 	font-family: NeoSans, Klavika-Light, Helvetica, Arial, sans-serif;
 	font-size: 12px;
-	background-color: #222;
-	background-color: rgba(34,34,34,.9);
+	background-color: #282828;
 	color: #999;
 }
 div#wrap {
