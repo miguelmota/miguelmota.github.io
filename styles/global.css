@@ -83,6 +83,7 @@ div#wrap {
 }
 a {
 	color: #007299;
+	text-shadow: 0 1px 0 rgba(0,0,0,.5);
 	-webkit-transition: color linear .1s;
 	-moz-transition: color linear .1s;
 	-o-transition: color linear .1s;
