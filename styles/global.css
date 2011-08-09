@@ -668,24 +668,22 @@ div.work-image img {
 /* ==============================================================================
 	CONTACT
 ================================================================================= */
-div.contact_qrcode {
+div.contact-qrcode {
 	background: url('/images/qrcode.png') no-repeat 0 0;
 	float: right;
-	margin-top: -28px;
-	padding-bottom: 10px;
-	width: 88px;
 	height: 88px;
+	width: 88px;
 }
-section.contact form.contact_form div.input {
+div.input {
 	margin-bottom: 10px;
 }
-section.contact form.contact_form textarea.message {
-	width: 640px;
+textarea.contact-message {
 	height: 275px;
-	max-width: 640px;
 	max-height: 275px;
+	max-width: 640px;
+	width: 640px;
 }
-section.contact form.contact_form a.submit {
+a.contact-submit {
 	float: right;
 }
 input.error,
@@ -694,13 +692,13 @@ textarea.error {
 	color: #870000;
 }
 label.error {
-	margin-left: 5px;
 	background-color: inherit;
 	color: #870000;
+	margin-left: 5px;
 }
 label[for='message'].error {
-	margin: 10px 0 0 0;
 	float: left;
+	margin: 10px 0 0 0;
 }
 /* ==============================================================================
 	END CONTACT
