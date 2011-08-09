@@ -82,14 +82,14 @@ div#wrap {
 	word-wrap: break-word;
 }
 a {
-	color: #0e759e;
+	color: #005885;
 	-webkit-transition: color linear .1s;
 	-moz-transition: color linear .1s;
 	-o-transition: color linear .1s;
 	transition: color linear .1s;
 }
 a:hover {
-	color: #0099aa;
+	color: #005885;
 }
 h1.title {
 	position: relative;
