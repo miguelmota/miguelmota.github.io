@@ -150,7 +150,7 @@ textarea:blur {
 }
 p {
 	padding: 5px 0;
-	line-height: 145%;
+	line-height: 120%;
 }
 a#mobile_bar {
 	display: block;
@@ -212,6 +212,9 @@ div.highlight {
 .highlight code {
 	word-wrap: break-word;
 	
+}
+ul li {
+	line-height: 120%;
 }
 /* /GENERAL ========================================================== */
 /* NAVIGATION ======================================================== */
