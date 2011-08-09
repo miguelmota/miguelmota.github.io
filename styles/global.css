@@ -239,7 +239,7 @@ ul li {
 nav.main {
 	position: fixed;
 	top: 70px;
-	width: 150px;
+	width: 100px;
 	border: 1px solid red;
 	z-index: 1000;
 }
