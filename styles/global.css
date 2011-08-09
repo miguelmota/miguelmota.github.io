@@ -244,8 +244,8 @@ a.nav_logo {
 	display: block;
 	width: 48px;
 	height: 50px;
+	margin: 0 auto;
 	padding: 0 0 10px 0 !important;
-	text-align: center;
 }
 a.nav_logo:hover {
 	background-color: #252525 !important;
