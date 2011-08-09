@@ -291,7 +291,6 @@ nav.main a.selected {
 /* CONTENT =========================================================== */
 section.content {
 	position: relative;
-	min-height: 500px;
 	width: 650px;
 	float: right;
 	text-shadow: 0 -1px 0 rgba(0,0,0,.5);
@@ -335,6 +334,7 @@ div.loader {
 	background: url('../images/ajax_loader.gif') no-repeat 0 0;
 }
 div.page_loader {
+	clear: both;
 	float: left;
 	width: 128px;
 	height: 15px;
