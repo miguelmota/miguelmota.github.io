@@ -163,8 +163,8 @@ textarea:blur {
 	color: #555;
 }
 p {
-	padding: 5px 0;
-	line-height: 120%;
+	padding: 4px 0;
+	line-height: 125%;
 }
 a#mobile_bar {
 	display: block;
@@ -228,7 +228,7 @@ div.highlight {
 	
 }
 ul li {
-	line-height: 120%;
+	line-height: 125%;
 }
 /* /GENERAL ========================================================== */
 /* NAVIGATION ======================================================== */
