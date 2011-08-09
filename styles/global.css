@@ -291,6 +291,7 @@ nav.main a.selected {
 /* CONTENT =========================================================== */
 section.content {
 	position: relative;
+	min-height: 500px;
 	width: 650px;
 	float: right;
 	text-shadow: 0 -1px 0 rgba(0,0,0,.5);
