@@ -151,6 +151,7 @@ div.image-container {
 	-o-box-shadow: 2px 2px 8px rgba(0,0,0,.7);
 	-webkit-box-shadow: 2px 2px 8px rgba(0,0,0,.7);
 	height: auto;
+	margin-bottom: 10px;
 	width: 650px;
 }
 div.image-container img {
