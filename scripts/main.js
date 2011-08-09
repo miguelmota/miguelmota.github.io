@@ -580,15 +580,15 @@ function contactPage(){
 		},
 		messages: {
 			name: {
-				namecheck: 'invalid',
-				required: 'required'
+				namecheck: '',
+				required: ''
 			},
 			email: {
-				required: 'required',
-				email: 'invalid'
+				required: '',
+				email: ''
 			},
-			message: 'required',
-			minlength: 'required'
+			message: '',
+			minlength: ''
 			},
 		onkeyup: true,
 		debug: true
