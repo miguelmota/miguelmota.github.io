@@ -84,7 +84,7 @@ div#wrap {
 a {
 	border-left: 3px solid #292929;
 	color: #007299;
-	padding: 1px 3px 1px 6px;
+	padding: 1px 3px 1px 4px;
 	text-shadow: 0 1px 0 rgba(0,0,0,.5);
 	-webkit-transition: color linear .1s;
 	-moz-transition: color linear .1s;
