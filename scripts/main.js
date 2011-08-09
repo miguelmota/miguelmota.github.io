@@ -67,6 +67,10 @@ $(document).ready(function(){
 			break;
 	}
 	
+	if(pathname.substr(1,11) == 'portfolio'){
+		portfolioPage();
+	}
+	
 	switch(pathname.substr(1,4)){
 	case 'post':
 		blogPage();
@@ -548,7 +552,7 @@ function portfolioPage(){
 	    return '<div id="fancybox_title"><span><a href="javascript:void(0);" onclick="$.fancybox.close();">close X</a></span>' + (title && title.length ? '<strong>' + title + '</strong>' : '' ) + 'Image ' + (currentIndex + 1) + ' of ' + currentArray.length + '</div>';
 	}
 	
-	alert('testing..');
+	alert('test');
 	
 }
 
