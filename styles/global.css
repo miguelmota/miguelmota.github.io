@@ -323,9 +323,6 @@ h1.title span.sub {
 }
 div.loading {
 	display: none;
-	position: absolute;
-	top: 15%;
-	left: 35%;
 	width: 128px;
 	height: 15px;
 }
