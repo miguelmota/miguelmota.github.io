@@ -92,7 +92,7 @@ a {
 	transition: color linear .1s;
 }
 a:hover {
- 	background-color: #292929;
+ 	background-color: #222;
  	border-left: 3px solid #323232;
 	color: #0083aa;
 	text-shadow: 0 1px 0 rgba(0,0,0,.9);
