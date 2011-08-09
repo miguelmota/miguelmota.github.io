@@ -538,16 +538,16 @@ section.portfolio div.work div.container div.overlay {
 	background-color: #000;
 	opacity: .5;
 }
-section.portfolio div.work p.description {
+p.work-description {
 	position: relative;
 	padding-left: 5px;
 }
-section.portfolio div.work p.description span.date {
+p.work-description  span.date {
 	float: right;
 	font-size: 9px;
 	color: #333;
 }
-section.portfolio div.work p.description a.link {
+p.work-description  a.link {
 	font-size: 10px;
 }
 section.portfolio img.miggs {
