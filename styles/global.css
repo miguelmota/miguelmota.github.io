@@ -145,7 +145,7 @@ textarea {
 	border: 1px solid #999;
 	border-left: 4px solid #999;
 	background-color: #252525;
-	color: #555;	
+	color: #999;	
 	-webkit-transition: border-color .1s linear, color .1s linear;
 	-moz-transition: border-color .3s linear, color .1s linear;
 	-o-transition: border-color .3s linear, color .1s linear;
