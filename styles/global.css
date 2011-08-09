@@ -295,6 +295,9 @@ section.content {
 	float: right;
 	text-shadow: 0 -1px 0 rgba(0,0,0,.5);
 }
+div#article {
+	clear: both;
+}
 h1.title {
 	margin-bottom: 10px;
 	letter-spacing: -2px;
