@@ -232,14 +232,11 @@ nav.main {
 }
 a.nav_logo {
 	background: url('/images/logo.png') no-repeat 0 0;
+	border: 0;
 	display: block;
 	width: 48px;
 	height: 50px;
-	margin-bottom: 10px;
-	-webkit-transition: opacity .3s linear;
-	-moz-transition: opacity .3s linear;
-	-o-transition: opacity .3s linear;
-	transition: opacity .3s linear;
+	padding: 0 0 10px 0;
 }
 nav.main span.trade {
 	position: absolute;
