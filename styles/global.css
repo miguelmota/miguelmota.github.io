@@ -203,9 +203,10 @@ div#ie a#close {
 }
 section.about img.about,
 section.portfolio div.container {
-	-webkit-box-shadow: 2px 2px 5px rgba(0,0,0,.8);
-	-moz-box-shadow: 2px 2px 5px rgba(0,0,0,.8);
-	box-shadow: 2px 2px 5px rgba(0,0,0,.8);
+	-webkit-box-shadow: 2px 2px 5px rgba(0,0,0,.7);
+	-moz-box-shadow: 2px 2px 5px rgba(0,0,0,.7);
+	-0-box-shadow: 2px 2px 5px rgba(0,0,0,.7);
+	box-shadow: 2px 2px 5px rgba(0,0,0,.7);
 }
 div#noscript {
 	position: absolute;
