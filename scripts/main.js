@@ -72,6 +72,8 @@ $(document).ready(function(){
 		portfolioPage();
 	}
 	
+	alert(pathname.substr(1,11));
+	
 	switch(pathname.substr(1,4)){
 	case 'post':
 		blogPage();
