@@ -323,11 +323,12 @@ h1.title span.sub {
 }
 div.loading {
 	display: none;
+	clear: both;
 	position: absolute;
 	top: 25%;
-	left: 40%;
-	width: 75px;
-	height: 16px;
+	left: 10%;
+	width: 128px;
+	height: 15px;
 }
 div.loader {
 	float: left;
