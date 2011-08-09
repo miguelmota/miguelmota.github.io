@@ -31,6 +31,14 @@ $(document).ready(function(){
 		}
 	}
 	
+	
+	// Open external links in new tab
+	$('a[href^=http]').live('click', function(){
+		window.open(this.href);
+		return false;
+	});
+	
+	
 	//initialize text ticker
 	//textticker(); //disabled, firefox bug
 	
