@@ -241,6 +241,14 @@ a.nav_logo {
 	-o-transition: opacity .3s linear;
 	transition: opacity .3s linear;
 }
+nav.main span.trade {
+	position: absolute;
+	top: 42px;
+	left: 40px;
+	font-family: sans-serif;
+	font-size: 10px;
+	color: #333;
+}
 nav.main a#logo:hover {
 	background-color: #222;
 }
@@ -255,12 +263,12 @@ nav.main a {
 }
 nav.main a:hover,
 nav.main a:active {
-	background-color: #323232;
+	background-color: #292929;
 	border-left: 4px solid #444;
 	color: #fff;
 }
 nav.main a.selected {
-	background-color: #292929;
+	background-color: #323232;
 	border-left: 4px solid #999;
 	color: #fff;
 	font-weight: bold;
