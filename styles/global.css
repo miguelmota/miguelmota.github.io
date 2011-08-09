@@ -608,6 +608,9 @@ section.contact form.contact_form textarea.message {
 section.contact form.contact_form a.submit {
 	float: right;
 }
+input.error {
+	background-color: red;
+}
 label.error {
 	margin-left: 5px;
 	background-color: inherit;
