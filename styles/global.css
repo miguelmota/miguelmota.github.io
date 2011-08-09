@@ -674,6 +674,9 @@ div.contact-qrcode {
 	height: 88px;
 	width: 88px;
 }
+form.contact-form {
+	float: left;
+}
 div.input {
 	margin-bottom: 10px;
 }
