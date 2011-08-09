@@ -1,6 +1,8 @@
 @charset 'utf-8';
 
-/* FONT_FACE ========================================================= */
+/* ==============================================================================
+	FONT IMPORTS
+================================================================================= */
 @font-face {
 	font-family: NeoSans;
 	src: url('../fonts/neosans-webfont/neosans-webfont.eot');
@@ -61,35 +63,35 @@
 	url('../fonts/klavika-webfont/klavika-light-webfont.ttf') format('truetype'),
 	url('../fonts/klavika-webfont/klavika-light-webfont.svg') format('svg');
 }
-/* /FONT_FACE ======================================================== */
+/* ==============================================================================
+	END FONT IMPORTS
+================================================================================= */
 
-/* GENERAL =========================================================== */
+
+
+/* ==============================================================================
+	GENERAL
+================================================================================= */
 html {
 	overflow-y: scroll;
 	overflow-y: -moz-scrollbars-vertical;
 }
 body {
+	background-color: #252525;
+	color: #999;
 	display: none;
 	font-family: NeoSans, Klavika-Light, Helvetica, Arial, sans-serif;
 	font-size: 12px;
-	background-color: #252525;
-	color: #999;
-}
-div#wrap {
-	width: 760px;
-	height: auto;
-	margin: 70px auto 0 auto;
-	word-wrap: break-word;
 }
 a {
 	border-left: 3px solid #292929;
 	color: #007299;
 	padding: 1px 3px 1px 3px;
 	text-shadow: 0 1px 0 rgba(0,0,0,.5);
-	-webkit-transition: color linear .1s;
+	transition: color linear .1s;
 	-moz-transition: color linear .1s;
 	-o-transition: color linear .1s;
-	transition: color linear .1s;
+	-webkit-transition: color linear .1s;
 }
 a:hover {
  	background-color: #222;
@@ -100,76 +102,7 @@ a:hover {
 a:active {
 	text-shadow: 0 -1px 0 rgba(0,0,0,.5);
 }
-h1.title {
-	position: relative;
-	width: 650px;
-	float: right;
-}
-h1.title a {
-	color: #999 !important;
-}
-h1.title a:hover {
-	color: #007799 !important;
-}
-::selection {
-	background-color: #000;
-	background-color: rgba(0,0,0,.8);
-	color: #fff;
-	text-shadow: 0 1px 0 rgba(0,0,0,.3);
-}
-::-moz-selection {
-	background-color: #007299;
-	color: #fff;
-	text-shadow: 0 1px 0 rgba(0,0,0,.3);
-}
-strong {
-	font-weight: bold;
-}
-em {
-	display: inline;
-}
-label {
-	margin-right: 5px;
-}
-textarea {
-	resize: none;
-	overflow: auto;
-}
-input[type=text],
-textarea {
-	width: 225px;
-	height: 20px;
-	padding: 2px;
-	font-family: inherit;
-	font-size: 12px;
-	border: 1px solid #555;
-	border-left: 4px solid #555;
-	background-color: #252525;
-	color: #555;	
-	-webkit-transition: border-color .1s linear, color .1s linear;
-	-moz-transition: border-color .3s linear, color .1s linear;
-	-o-transition: border-color .3s linear, color .1s linear;
-	transition: border-color .3s linear, color .1s linear;
-}
-input[type=text]:focus,
-textarea:focus {
-	border-color: #007299;
-	border-left: 4px solid #007299;
-	background-color: #262626;
-	color: #999;
-}
-input[type=text]:blur,
-textarea:blur {
-	border-color: #555;
-	border-left: 4px solid #555;
-	background-color: inherit;
-	color: #555;
-}
-p {
-	padding: 4px 0;
-	line-height: 125%;
-}
-a#mobile_bar {
+a.mobile-bar {
 	display: block;
 	position: relative;
 	top: -70px;
@@ -181,321 +114,419 @@ a#mobile_bar {
 	font-size: 16px;
 	background-color: #000;
 }
-a#mobile_close {
+a.mobile-bar-close {
 	float: right;
 	position: relative;
 	top: -90px;
 	left: -20px;
 }
-div#top {
-	position: absolute;
-	top: 0;
-}
-div#ie {
+div.ie-bar {
+	background-color: #202020;
 	display: none;
+	font-size: 9px;
+	padding: 2px;
 	position: relative;
 	width: 100%;
-	padding: 2px;
-	font-size: 9px;
-	background-color: #202020;
 }
-div#ie a#close {
+a.ie-bar-close {
 	position: absolute;
-	top: 10px;
 	right: 10px;
-}
-section.about img.about,
-section.portfolio div.container {
-	-webkit-box-shadow: 2px 2px 8px rgba(0,0,0,.7);
-	-moz-box-shadow: 2px 2px 8px rgba(0,0,0,.7);
-	-o-box-shadow: 2px 2px 8px rgba(0,0,0,.7);
-	box-shadow: 2px 2px 8px rgba(0,0,0,.7);
-}
-div#noscript {
-	position: absolute;
-	top: 0;
-	padding: 10px;
-	width: 760px;
-	background-color: #a80f0f;
-	color: #fff;
+	top: 10px;
 }
 code {
 	background-color: #202020;
 }
 div.highlight {
+	background-color: #202020;
 	margin: 10px 0;
 	padding: 5px;
-	background-color: #202020;
+
 }
-.highlight code {
+div.highlight code {
 	word-wrap: break-word;
-	
 }
-ul li {
-	line-height: 125%;
+div.image-container {
+	box-shadow: 2px 2px 8px rgba(0,0,0,.7);
+	-moz-box-shadow: 2px 2px 8px rgba(0,0,0,.7);
+	-o-box-shadow: 2px 2px 8px rgba(0,0,0,.7);
+	-webkit-box-shadow: 2px 2px 8px rgba(0,0,0,.7);
 }
-/* /GENERAL ========================================================== */
-/* NAVIGATION ======================================================== */
-nav.main {
-	position: fixed;
-	top: 70px;
-	width: 75px;
-	z-index: 1000;
+div.main-wrap {
+	height: auto;
+	margin: 70px auto 0 auto;
+	width: 760px;
+	word-wrap: break-word;
 }
-a.nav_logo {
-	background: url('/images/logo.png') no-repeat 0 0;
-	border-left: none !important;
-	display: block;
-	width: 48px;
-	height: 50px;
-	margin: 0 auto;
-	padding: 0 0 10px 0 !important;
-}
-a.nav_logo:hover {
-	background-color: #252525 !important;
-}
-nav.main span.trade {
+div.noscript {
+	background-color: #a80f0f;
+	color: #fff;
+	padding: 10px;
 	position: absolute;
-	top: 42px;
-	left: 40px;
-	font-family: sans-serif;
-	font-size: 10px;
-	color: #333;
+	top: 0;
+	width: 760px;
 }
-nav.main a#logo:hover {
-	background-color: #222;
+div#top {
+	position: absolute;
+	top: 0;
 }
-nav.main a#logo img:hover {
-	opacity: .8;
-}
-nav.main a {
-	display: block;
-	border-left: 4px solid #292929;
-	color: #999;
-	font-size: 13px;
-	padding: 2px 2px 2px 4px;
-}
-nav.main a:hover,
-nav.main a:active {
-	background-color: #292929;
-	border-left: 4px solid #444;
-	color: #fff;
-}
-nav.main a.selected {
-	background-color: #323232;
-	border-left: 4px solid #999;
-	color: #fff;
-	font-weight: bold;
-}
-/* /NAVIGATION ======================================================= */
-/* CONTENT =========================================================== */
-section.content {
-	position: relative;
-	width: 650px;
-	float: right;
-	text-shadow: 0 -1px 0 rgba(0,0,0,.5);
-}
-div#article {
-	clear: both;
-	position: relative;
+em {
+	display: inline;
 }
 h1.title {
-	margin-bottom: 10px;
-	letter-spacing: -2px;
-	text-shadow: 0 -1px 0 #000;
-	text-transform: uppercase;
+	float: right;
 	font-family: Klavika, Helvetica, Arial, sans-serif;
 	font-size: 32px;
 	font-weight: bold;
+	letter-spacing: -2px;
+	margin-bottom: 10px;
+	position: relative;
+	text-shadow: 0 -1px 0 #000;
+	text-transform: uppercase;
+	width: 650px;
 }
 h1.title span.mota {
 	font-weight: normal;
 }
 h1.title span.slash {
+	font-family: klavika-Light, Helvetica, Arial, sans-serif;	
+	font-weight: normal;
 	position: relative;
 	top: -2px;
-	font-family: klavika-Light, Helvetica, Arial, sans-serif;	
-	font-weight: normal;
 }
 h1.title span.sub {
-	margin-left: -2px;
 	font-family: klavika-Light, Helvetica, Arial, sans-serif;	
 	font-weight: normal;
+	margin-left: -2px;
 }
-div.loading {
-	display: none;
-	position: absolute;
-	top: 100px;
-	left: 120px;
-	width: 128px;
-	height: 15px;
+h1.title a {
+	color: #999 !important;
 }
-div.loader {
-	float: left;
-	width: 16px;
-	height: 16px;
+h1.title a:hover {
+	color: #007299 !important;
+}
+::selection {
+	background-color: #000;
+	background-color: rgba(0,0,0,.8);
+	color: #fff;
+	text-shadow: 0 1px 0 rgba(0,0,0,.3);
+}
+::-moz-selection {
+	background-color: #000;
+	background-color: rgba(0,0,0,.8);
+	color: #fff;
+	text-shadow: 0 1px 0 rgba(0,0,0,.3);
+}
+label {
 	margin-right: 5px;
-	background: url('../images/ajax_loader.gif') no-repeat 0 0;
 }
-div.page_loader {
-	clear: both;
-	float: left;
-	width: 128px;
-	height: 15px;
-	background: url('../images/ajax_loader_page.gif') no-repeat 0 0;
+p {
+	line-height: 125%;
+	padding: 4px 0;
 }
-/* /CONTENT ========================================================== */
-/* STREAM ============================================================ */
-section.stream div.stream {
-	margin-bottom: 10px;
+strong {
+	font-weight: bold;
 }
-section.stream div.stream img.loader {
-	display: block;
-	clear: both;
-	width: 16px;
-	height: 16px;
+input[type=text],
+textarea {		
+	background-color: #252525;
+	border: 1px solid #555;
+	border-left: 4px solid #555;
+	color: #555;
+	font-family: inherit;
+	font-size: 12px;
+	height: 20px;
+	width: 225px;
+	padding: 2px;
+	transition: border-color .3s linear, color .1s linear;
+	-moz-transition: border-color .3s linear, color .1s linear;
+	-o-transition: border-color .3s linear, color .1s linear;
+	-webkit-transition: border-color .1s linear, color .1s linear;
 }
-section.stream span.mtip {
-	padding: 3px;
-	float: left;
-	font-size: 6px;
-	color: #005577;
-}
-section.stream span.mtip:hover {
-	cursor: default;
-}
-section.stream a.social {
-	border-left: none !important;
-	display: block;
-	width: auto;
-	height: 16px;
-	margin-bottom: 5px;
-	float: left;
-	background-repeat: no-repeat;
-	background-position: 0 0;
-	padding: 0 !important;
-}
-section.stream a.latitude {
-	font-size: 18px;
+input[type=text]:focus,
+textarea:focus {
+	background-color: #262626;
+	border-color: #007299;
+	border-left: 4px solid #007299;
 	color: #999;
 }
-section.stream a.latitude:hover {
+input[type=text]:blur,
+textarea:blur {
+	background-color: inherit;
+	border-color: #555;
+	border-left: 4px solid #555;
+	color: #555;
+}
+textarea {
+	overflow: auto;
+	resize: none;
+}
+ul li {
+	line-height: 125%;
+}
+/* ==============================================================================
+	END GENERAL
+================================================================================= */
+
+
+
+/* ==============================================================================
+	MAIN NAVIGATION
+================================================================================= */
+ul.main-nav {
+	position: fixed;
+	top: 70px;
+	width: 75px;
+	z-index: 1000;
+}
+a.nav-logo {
+	background: url('/images/logo.png') no-repeat 0 0;
+	border-left: none !important;
+	display: block;
+	height: 50px;
+	margin: 0 auto;
+	padding: 0 0 10px 0 !important;
+	width: 48px;
+}
+a.nav-logo:hover {
+	background-color: #252525 !important;
+}
+ul.main-nav a {
+	border-left: 4px solid #292929;
+	color: #999;
+	display: block;
+	font-size: 13px;
+	padding: 2px 2px 2px 4px;
+}
+ul.main-nav a:hover,
+ul.main-nav a:active {
+	background-color: #292929;
+	border-left: 4px solid #444;
+	color: #fff;
+}
+ul.main-nav a.selected {
+	background-color: #323232;
+	border-left: 4px solid #999;
+	color: #fff;
+	font-weight: bold;
+}
+/* ==============================================================================
+	END MAIN NAVIGATION
+================================================================================= */
+
+
+
+/* ==============================================================================
+	CONTENT
+================================================================================= */
+section.content {
+	float: right;
+	position: relative;
+	text-shadow: 0 -1px 0 rgba(0,0,0,.5);
+	width: 650px;
+}
+div.main-content {
+	position: relative;
+}
+/* ==============================================================================
+	END CONTENT
+================================================================================= */
+
+
+
+/* ==============================================================================
+	LOADERS
+================================================================================= */
+div.loader {
+	background: url('/images/ajax_loader.gif') no-repeat 0 0;
+	float: left;
+	height: 16px;
+	margin-right: 5px;
+	width: 16px;
+}
+div.loader-container {
+	display: none;
+	height: 15px;
+	left: 120px;
+	position: absolute;
+	top: 100px;
+	width: 128px;
+}
+div.page-loader {
+	background: url('/images/ajax_loader_page.gif') no-repeat 0 0;
+	clear: both;
+	float: left;
+	height: 15px;
+	width: 128px;
+}
+img.loader {	
+	clear: both;
+	display: block;
+	height: 16px;
+	width: 16px;
+}
+/* ==============================================================================
+	END LOADERS
+================================================================================= */
+
+
+
+/* ==============================================================================
+	STREAM
+================================================================================= */
+div.stream {
+	margin-bottom: 10px;
+}
+span.mtip {
+	color: #005577;
+	float: left;
+	font-size: 6px;
+	padding: 3px;
+}
+span.mtip:hover {
+	cursor: default;
+}
+a.social {
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	border-left: none !important;
+	display: block;
+	float: left;
+	height: 16px;
+	margin-bottom: 5px;
+	padding: 0 !important;
+	width: auto;
+}
+a.latitude {
+	color: #999;
+	font-size: 18px;
+}
+a.latitude:hover {
 	color: #007799;
 }
-section.stream iframe.latitude {
-	float: left;
+iframe.latitude {
+	border: none;
 	clear: both;
-	width: 100%;
+	float: left;
 	height: 14px;
 	margin-bottom: 5px;
-	border: none;
+	width: 100%;
 }
-section.stream a.tumblr {
-	background: url('../images/tumblr_sprite.png');
+a.tumblr {
+	background: url('/images/tumblr_sprite.png');
 	width: 75px;
 }
-section.stream a.tumblr:hover,
-section.stream a.tumblr:active {
+a.tumblr:hover,
+a.tumblr:active {
 	background-position: 0 16px;
 }
-section.stream ul.tumblr_posts,
-section.stream ul.twitter_status,
-section.stream ul.facebook_status,
-section.stream ul.delicious_bookmarks {
-	display: block;
+ul.tumblr-posts,
+ul.twitter-status,
+ul.facebook-status,
+ul.delicious-bookmarks {
 	clear: both;
+	display: block;
 }
-section.stream span.date {
+span.stream-date {
 	font-size: 9px;
 }
-section.stream a.facebook {
-	background: url('../images/facebook_sprite.png');
+a.facebook {
+	background: url('/images/facebook_sprite.png');
 	width: 73px;
 }
-section.stream a.facebook:hover,
-section.stream a.facebook:active {
+a.facebook:hover,
+a.facebook:active {
 	background-position: 0 16px;
 }
-section.stream a.twitter {
-	background: url('../images/twitter_sprite.png');
+a.twitter {
+	background: url('/images/twitter_sprite.png');
 	width: 78px;
 }
-section.stream a.twitter:hover,
-section.stream a.twitter:active {
+a.twitter:hover,
+a.twitter:active {
 	background-position: 0 16px;
 }
-section.stream a.delicious {
-	background: url('../images/delicious_sprite.png');
-	width: 83px;
+a.delicious {
+	background: url('/images/delicious_sprite.png');
 	height: 15px;
+	width: 83px;
 }
-section.stream a.delicious:hover,
-section.stream a.delicious:active {
+a.delicious:hover,
+a.delicious:active {
 	background-position: 0 16px;
 }
-section.stream a.lastfm {
-	background: url('../images/lastfm_sprite.png');
+a.lastfm {
+	background: url('/images/lastfm_sprite.png');
 	width: 62px;
 }
-section.stream a.lastfm:hover,
-section.stream a.lastfm:active {
+a.lastfm:hover,
+a.lastfm:active {
 	background-position: 0 16px;
 }
-section.stream a.wakoopa {
-	background: url('../images/wakoopa_sprite.png');
+a.wakoopa {
+	background: url('/images/wakoopa_sprite.png');
 	width: 75px;
 	height: 18px;
 }
-section.stream a.wakoopa:hover,
-section.stream a.wakoopa:active {
+a.wakoopa:hover,
+a.wakoopa:active {
 	background-position: 0 18px;
 }
-section.stream ul.wakoopa_software {
+ul.wakoopa-software {
+	clear: both;
+	height: auto;
 	width: 200px;
-	height: auto;
-	clear: both;
 }
-section.stream ul.lastfm_tracks {
+ul.lastfm-tracks {
+	clear: both;
+	height: auto;
 	width: 300px;
-	height: auto;
-	clear: both;
 }
-section.stream ul.wakoopa_software li,
-section.stream ul.lastfm_tracks li {
-	padding: 2px;
-	margin: 2px;
+ul.wakoopa-software li,
+ul.lastfm-tracks li {
 	font-size: 10px;
+	margin: 2px;
+	padding: 2px;
 }
-section.stream ul.lastfm_tracks {
+ul.lastfm-tracks {
 	display: block;
 }
-section.stream ul.wakoopa_software li:nth-child(odd),
-section.stream ul.lastfm_tracks li:nth-child(odd) {
+ul.wakoopa-software li:nth-child(odd),
+ul.lastfm-tracks li:nth-child(odd) {
 	background-color: #202020;	
 }
-section.stream ul.wakoopa_software a.link,
-section.stream ul.lastfm_tracks li a.link  {
+ul.wakoopa-software a.link,
+ul.lastfm-tracks li a.link  {
 	color: #999;
 }
-section.stream ul.wakoopa_software a.link:hover,
-section.stream ul.lastfm_tracks li  a.link:hover  {
+ul.wakoopa-software a.link:hover,
+ul.lastfm-tracks li  a.link:hover  {
 	text-decoration: underline;
 }
-section.stream ul.wakoopa_software li span.date,
-section.stream ul.lastfm_tracks li span.date {
+ul.wakoopa-software li span.date,
+ul.lastfm-tracks li span.date {
+	border-left: 2px solid #222;
 	float: right;
 	padding: 2px;
-	border-left: 2px solid #222;
 }
-/* /STREAM ============================================================ */
-/* ABOUT ============================================================== */
-section.about img.about {
-	width: 100%;
-	height: auto;
-	margin-bottom: 10px;
-}
-/* /ABOUT ============================================================= */
-/* PORTFOLIO ========================================================== */
+/* ==============================================================================
+	END STREAM
+================================================================================= */
+
+
+
+/* ==============================================================================
+	ABOUT
+================================================================================= */
+
+/* ==============================================================================
+	END ABOUT
+================================================================================= */
+
+
+
+/* ==============================================================================
+	PORTFOLIO
+================================================================================= */
 section.portfolio h1.title {
 	float: left;
 	width: 400px;
@@ -621,8 +652,15 @@ div.work-image img {
 	width: 100%;
 	height: auto;
 }
-/* /PORTFOLIO ========================================================= */
-/* CONTACT ============================================================ */
+/* ==============================================================================
+	END PORTFOLIO
+================================================================================= */
+
+
+
+/* ==============================================================================
+	CONTACT
+================================================================================= */
 div.contact_qrcode {
 	background: url('/images/qrcode.png') no-repeat 0 0;
 	float: right;
@@ -657,8 +695,15 @@ label[for='message'].error {
 	margin: 10px 0 0 0;
 	float: left;
 }
-/* /CONTACT =========================================================== */
-/* BLOG =============================================================== */
+/* ==============================================================================
+	END CONTACT
+================================================================================= */
+
+
+
+/* ==============================================================================
+	BLOG
+================================================================================= */
 header.main {
 	position: relative;
 	width: auto;
@@ -739,8 +784,15 @@ div.view_archive {
 div.view_archive a {
 	font-size: 10px;
 }
-/* /BLOG ============================================================== */
-/* FOOTER ============================================================= */
+/* ==============================================================================
+	END BLOG
+================================================================================= */
+
+
+
+/* ==============================================================================
+	MAIN FOOTER
+================================================================================= */
 footer.main {
 	position: relative;
 	margin-left: 110px;
@@ -757,8 +809,15 @@ footer.main a.top {
 	position: absolute;
 	right: 0;
 }
-/* /FOOTER ============================================================ */
-/* DISQUS ============================================================= */
+/* ==============================================================================
+	END MAIN FOOTER
+================================================================================= */
+
+
+
+/* ==============================================================================
+	DISQUS
+================================================================================= */
 #disqus_thread {
 	margin: 20px 0;
 }
@@ -796,8 +855,15 @@ select#dsq-sort-select {
 div.dsq-trackback-url {
 	display: none !important;
 }
-/* /DISQUS ============================================================ */
-/* TUMBLR ============================================================= */
+/* ==============================================================================
+	END DISQUS
+================================================================================= */
+
+
+
+/* ==============================================================================
+	TUMBLR
+================================================================================= */
 section.tumblr form.search_form {
 	position: absolute;
 	right: 0;
@@ -886,4 +952,6 @@ section.tumblr footer.main {
 section.tumblr footer.main div.pagination {
 	margin-bottom: 25px;
 }
-/* /TUMBLR ============================================================ */
+/* ==============================================================================
+	END TUMBLR
+================================================================================= */

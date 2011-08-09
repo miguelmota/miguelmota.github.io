@@ -47,10 +47,10 @@
 </head>
 <body>
 <div id='top'></div>
-<div id='wrap'>
-	<nav class='main'>
-		<a class='nav_logo' href='/'></a>
-		<ul id='nav' class='nav'>
+<div class='main-wrap'>
+	<nav>
+		<a class='nav-logo' href='/'></a>
+		<ul class='main-nav'>
 			<li><a id='stream' href='/stream'>stream</a></li>
 			<li><a id='about' href='/about'>about</a></li>
 			<li><a id='portfolio' href='/portfolio'>portfolio</a></li>
@@ -58,9 +58,9 @@
 			<li><a id='blog' href='/blog'>blog</a></li>
 		</ul>
 	</nav>
-	<div id='article'>
+	<div class='main-content'>
 		{{ content }}
-		<div class='loading'><div class='page_loader'></div></div>
+		<div class='loader-container'><div class='page-loader'></div></div>
 	</div>
 	<footer class='main'>
 		<p>&#169; <script>var date = new Date();var thisYear = date.getFullYear(); document.write(thisYear);</script>  miguel mota / powered by <a href='http://jekyllrb.com'>jekyll</a> <a href='#top' class='top'>&#8593;</a></p>
@@ -86,7 +86,7 @@
     		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   		})();
 	</script>
-	<noscript><div id='noscript'>please enable javascript</div></noscript>
+	<noscript><div class='noscript'>please enable javascript</div></noscript>
 	<script src='http://s7.addthis.com/js/250/addthis_widget.js#username=miguelmota'></script>
 </div>
 </body>
