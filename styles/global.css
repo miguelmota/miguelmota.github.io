@@ -239,7 +239,7 @@ a.nav_logo {
 	padding: 0 0 10px 0 !important;
 }
 a.nav_logo:hover {
-	background-color: none !important;
+	background-color: #252525 !important;
 }
 nav.main span.trade {
 	position: absolute;
