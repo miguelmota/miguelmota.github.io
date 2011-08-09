@@ -326,10 +326,17 @@ div.loading {
 	width: 75px;
 	height: 16px;
 }
-div.loader {
+div.indicator_loader {
 	float: left;
 	width: 16px;
 	height: 16px;
+	margin-right: 5px;
+	background: url('../images/ajax_loader.gif') no-repeat 0 0;
+}
+div.loader {
+	float: left;
+	width: 128ppx;
+	height: 15px;
 	margin-right: 5px;
 	background: url('../images/ajax_loader.gif') no-repeat 0 0;
 }
