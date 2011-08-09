@@ -589,7 +589,7 @@ a.fancybox {
 }
 span.zoom-icon {
 	background-color: #000;
-	background-color: rgba(0,0,0,.5);
+	background-color: rgba(0,0,0,.2);
 	bottom: 10px;
 	color: #fff;
 	display: none;
