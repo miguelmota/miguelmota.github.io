@@ -249,7 +249,7 @@ nav.main span.trade {
 	color: #333;
 }
 nav.main a#logo:hover {
-	background-color: #222222;
+	background-color: #222;
 }
 nav.main a#logo img:hover {
 	opacity: .8;
@@ -259,14 +259,10 @@ nav.main a {
 	border-left: 4px solid #292929;
 	color: #999;
 	padding: 2px 2px 2px 4px;
-	-webkit-transition: background-color linear .2s, color linear .3s;
-	-moz-transition: background-color linear .2s, color linear .3s;
-	-o-transition: background-color linear .2s, color linear .3s;
-	transition: background-color linear .2s, color linear .3s;
 }
 nav.main a:hover,
 nav.main a:active {
-	background-color: #292929;
+	background-color: #323232;
 	border-left: 4px solid #444;
 	color: #fff;
 }
