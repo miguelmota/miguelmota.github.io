@@ -230,7 +230,8 @@ nav.main {
 	top: 70px;
 	z-index: 1000;
 }
-nav.main a#logo img {
+a.nav_logo {
+	background: url('/images/logo.png') no-repeat 0 0;
 	display: block;
 	width: 48px;
 	height: 50px;
@@ -239,14 +240,6 @@ nav.main a#logo img {
 	-moz-transition: opacity .3s linear;
 	-o-transition: opacity .3s linear;
 	transition: opacity .3s linear;
-}
-nav.main span.trade {
-	position: absolute;
-	top: 42px;
-	left: 40px;
-	font-family: sans-serif;
-	font-size: 10px;
-	color: #333;
 }
 nav.main a#logo:hover {
 	background-color: #222;
@@ -267,7 +260,7 @@ nav.main a:active {
 	color: #fff;
 }
 nav.main a.selected {
-	background-color: #353535;
+	background-color: #292929;
 	border-left: 4px solid #999;
 	color: #fff;
 	font-weight: bold;
