@@ -137,13 +137,13 @@ textarea {
 }
 input[type=text],
 textarea {
-	border-left: 4px solid #555;
 	width: 225px;
 	height: 20px;
 	padding: 2px;
 	font-family: inherit;
 	font-size: 12px;
 	border: 1px solid #555;
+	border-left: 4px solid #555;
 	background-color: #252525;
 	color: #555;	
 	-webkit-transition: border-color .1s linear, color .1s linear;
