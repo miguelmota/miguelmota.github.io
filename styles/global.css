@@ -158,12 +158,6 @@ textarea:focus {
 	background-color: #262626;
 	color: #999;
 }
-input[type=text]:hover,
-textarea:hover {
-	border-color: #323232;
-	background-color: #262626;
-	color: #999;
-}
 input[type=text]:blur,
 textarea:blur {
 	border-color: #555;
