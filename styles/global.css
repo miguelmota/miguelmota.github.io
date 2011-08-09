@@ -608,13 +608,14 @@ section.contact form.contact_form textarea.message {
 section.contact form.contact_form a.submit {
 	float: right;
 }
-input.error {
+input.error,
+textarea.error {
 	border-color: #8e2323;
 }
 label.error {
 	margin-left: 5px;
 	background-color: inherit;
-	color: #005577;
+	color: #8e2323;
 }
 label[for='message'].error {
 	margin: 10px 0 0 0;
