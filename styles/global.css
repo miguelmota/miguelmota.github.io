@@ -609,7 +609,7 @@ section.contact form.contact_form a.submit {
 	float: right;
 }
 input.error {
-	background-color: red;
+	border-color: #8e2323;
 }
 label.error {
 	margin-left: 5px;
