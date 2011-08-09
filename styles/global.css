@@ -142,10 +142,10 @@ textarea {
 	padding: 2px;
 	font-family: inherit;
 	font-size: 12px;
-	border: 1px solid #292929;
-	border-left: 4px solid #292929;
-	background-color: #252525;
-	color: #555;	
+	border: 1px solid #777;
+	border-left: 4px solid #777;
+	background-color: #777;
+	color: #777;	
 	-webkit-transition: border-color .1s linear, color .1s linear;
 	-moz-transition: border-color .3s linear, color .1s linear;
 	-o-transition: border-color .3s linear, color .1s linear;
