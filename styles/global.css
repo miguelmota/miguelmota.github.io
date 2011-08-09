@@ -599,6 +599,10 @@ section.portfolio img.miguelmota_logo {
 	float: right;
 }
 div.work-image {
+	width: 650px;
+	height: auto;
+}
+div.work-image img {
 	width: 100%;
 	height: auto;
 }
