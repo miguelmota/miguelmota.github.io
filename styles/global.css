@@ -583,7 +583,9 @@ section.portfolio img.miguelmota_logo {
 	width: 116%;
 	height: auto;
 }
-
+a.fancybox {
+	display: block;
+}
 #fancybox_title {
 	margin-bottom: -10px;
 	padding: 5px;
