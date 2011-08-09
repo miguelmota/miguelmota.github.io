@@ -335,7 +335,7 @@ div.indicator_loader {
 }
 div.loader {
 	float: left;
-	width: 128ppx;
+	width: 128px;
 	height: 15px;
 	margin-right: 5px;
 	background: url('../images/ajax_loader.gif') no-repeat 0 0;
