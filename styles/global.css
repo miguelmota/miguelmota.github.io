@@ -254,10 +254,14 @@ nav.main a {
 	transition: background-color linear .2s, color linear .3s;
 }
 nav.main a:hover,
-nav.main a:active,
+nav.main a:active {
+	background-color: #292929;
+	color: #fff;
+}
 nav.main a.selected {
 	background-color: #292929;
 	color: #fff;
+	font-weight: bold;
 }
 /* /NAVIGATION ======================================================= */
 /* CONTENT =========================================================== */
