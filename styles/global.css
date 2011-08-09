@@ -537,6 +537,7 @@ section.portfolio div.work div.container div.overlay {
 	height: 100%;
 	background-color: #000;
 	background-color: rbga(0,0,0,.2);
+	opacity: .2;
 }
 p.work-description {
 	position: relative;
