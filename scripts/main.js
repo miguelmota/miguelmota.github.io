@@ -52,7 +52,7 @@ $(document).ready(function(){
 		case 'about':
 			$('a#about').addClass('selected');
 			break;
-		case 'portfolio':
+		case 'portfolio/':
 			portfolioPage();
 			$('a#portfolio').addClass('selected');
 			break;
@@ -67,7 +67,8 @@ $(document).ready(function(){
 			break;
 	}
 	
-	if(pathname.substr(1,11) == 'portfolio'){
+	if(pathname.substr(1,11) == 'portfolio/'){
+		alert('asdfa');
 		portfolioPage();
 	}
 	
