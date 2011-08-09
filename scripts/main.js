@@ -548,6 +548,8 @@ function portfolioPage(){
 	    return '<div id="fancybox_title"><span><a href="javascript:void(0);" onclick="$.fancybox.close();">close X</a></span>' + (title && title.length ? '<strong>' + title + '</strong>' : '' ) + 'Image ' + (currentIndex + 1) + ' of ' + currentArray.length + '</div>';
 	}
 	
+	alert('testing..');
+	
 }
 
 function contactPage(){
