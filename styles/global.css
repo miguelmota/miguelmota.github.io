@@ -634,6 +634,7 @@ textarea.error {
 	color: #870000;
 }
 label.error {
+	display: none;
 	margin-left: 5px;
 	background-color: inherit;
 	color: #870000;
