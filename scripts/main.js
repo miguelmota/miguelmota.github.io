@@ -67,12 +67,9 @@ $(document).ready(function(){
 			break;
 	}
 	
-	if(pathname.substr(1,11) == 'portfolio/'){
-		alert('asdfa');
+	if(pathname.substr(1,10) == 'portfolio/'){
 		portfolioPage();
 	}
-	
-	alert(pathname.substr(1,11));
 	
 	switch(pathname.substr(1,4)){
 	case 'post':
