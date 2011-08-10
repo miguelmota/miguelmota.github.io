@@ -686,7 +686,8 @@ div#cse-search-form {
 form.gsc-search-box {
 
 }
-a.gs-title {
+div.gs-title a {
+	color: #007299;
 	font-size: 12px;
 }
 div.gs-snippet {
@@ -718,12 +719,6 @@ div#cse div.sce-results  {
 	-moz-box-shadow: 0 0 5px #111;
 	-o-box-shadow: 0 0 5px #111;
 	box-shadow: 0 0 5px #111;
-}
-div#cse a.gs-title  {
-	color: #007799;
-}
-div#cse a.gs-title b {
-	color: #007799;
 }
 div.gs-visibleUrl  {
 	color: #555;
