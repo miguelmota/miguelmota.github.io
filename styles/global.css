@@ -794,11 +794,9 @@ div.post_footer {
 	margin-top: 20px;
 	font-size: 10px;
 }
-div.view_archive {
-	margin-top: 25px;
-}
-div.view_archive a {
+a.archive-link {
 	font-size: 10px;
+	margin-top: 25px;
 }
 /* ==============================================================================
 	END BLOG
