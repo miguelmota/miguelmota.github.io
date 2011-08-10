@@ -9,11 +9,13 @@ $(document).ready(function(){
 			
 	$('#about div.content').load('/about section.content');
 	$('#portfolio div.content').load('/portfolio/miggs section.content', function(){
+		$('div.work-image:not(:first)', this).hide();
+		
 		$(this).append("<div class='foodfail' />");
 		
 		$('div.foodfail').load('/portfolio/foodfail section.content', function(){
 			
-			$('div.work div.work-image:not(:first)').hide();
+			$('div.foodfail div.work-image:not(:first)').hide();
 			
 		});
 		
