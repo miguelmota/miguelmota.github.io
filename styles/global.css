@@ -270,7 +270,7 @@ textarea {
 	resize: none;
 }
 div.ascii-art {
-	color: #fff;
+	color: #999;
 	font-family: monospace;
 	white-space: pre;
 }
