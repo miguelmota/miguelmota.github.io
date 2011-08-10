@@ -690,6 +690,7 @@ form.gsc-search-box {
 div#cse,
 div.gsc-control-cse {
 	background-color: #252525;
+	border: none;
 }
 div#cse a {
 	color: #007299 !important;
@@ -740,6 +741,7 @@ div#cse div.gsc-cursor-current-page  {
 	color: #005577;
 }
 div.gsc-result {
+	border: none !important;
 	border-bottom: 1px solid #292929 !important;
 }
 
