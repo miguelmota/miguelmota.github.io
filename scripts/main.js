@@ -209,7 +209,7 @@ function loadPage(){
 	var toLoad = '/'+window.location.hash.substr(12)+' section.content';
 	//window.location.hash = window.location.hash.substr(1);
 	$('section.content').fadeOut('fast',loadContent);
-	$('div.loading').fadeIn('normal');
+	$('div.loader-container').fadeIn('normal');
 	function loadContent(){
 		$('section.content').load(toLoad, showNewContent);
 	}
@@ -251,7 +251,7 @@ $("ul.main-nav a:not('#logo')").live('click', function(){
 			var toLoad = $(this).attr('href')+' section.content';
 			$('h1.title span.sub').fadeOut('fast');
 			$('section.content').fadeOut('fast',loadContent);
-			$('div.loading').fadeIn('normal');
+			$('div.loader-container').fadeIn('normal');
 			function loadContent(){
 				$('h1.title span.sub').load(loadSubTitle);
 				$('section.content').load(toLoad,showNewContent);
@@ -277,7 +277,7 @@ $('div.posti h3 a').live('click', function(){
 	var toLoad2 = $(this).attr('href')+' div.posti';
 
 	$('div.posti').fadeOut('fast',loadContent2);
-	$('div.loading').fadeIn('normal');
+	$('div.loader-container').fadeIn('normal');
 	if(typeof(window.history.pushState) == 'function'){
 		var stateObj2 = { foo2:  $(this).attr('href') };
 		history.pushState(stateObj2, "Title2", $(this).attr('href'));
@@ -337,7 +337,7 @@ function showNewContent(){
 
 function hideLoader(){
 	
-	$('div.loading').hide();
+	$('div.loader-container').hide();
 	
 }
 
