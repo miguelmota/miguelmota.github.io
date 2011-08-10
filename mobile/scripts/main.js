@@ -17,6 +17,8 @@ $(document).ready(function(){
 			
 			$('div.foodfail div.work-image:not(:first)').hide();
 			
+			$('p.work-description').appendTo('div.work');
+			
 		});
 		
 		
