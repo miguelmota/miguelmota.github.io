@@ -672,6 +672,7 @@ label[for='message'].error {
 ============================================================================== */
 div.search-container {
 	clear: both;
+	height: 30px;
 	padding-bottom: 10px;
 }
 p.blog-description {
@@ -681,8 +682,10 @@ p.blog-description {
 /* GOOGLE SEARCH ----------------------------------------------------- */
 
 div#cse-search-form {
-	width: 300px;
 	float: right;
+	position: relative;
+	top: -25px;
+	width: 300px;
 }
 form.gsc-search-box {
 
