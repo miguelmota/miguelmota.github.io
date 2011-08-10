@@ -690,9 +690,9 @@ form.gsc-search-box {
 div#cse {
 	background-color: #252525;
 }
-a.gs-title {
-	color: #007299;
-	font-size: 12px;
+div#cse a {
+	color: #007299 !important;
+	font-size: 12px !important;
 }
 div.gs-snippet {
 	font-size: 10px;
@@ -725,7 +725,7 @@ div#cse div.sce-results  {
 	box-shadow: 0 0 5px #111;
 }
 div.gs-visibleUrl  {
-	color: #555;
+	color: #555 !important;
 	font-size: 10px;
 }
 div#cse div.gsc-cursor-page  {
@@ -733,6 +733,9 @@ div#cse div.gsc-cursor-page  {
 }
 div#cse div.gsc-cursor-current-page  {
 	color: #005577;
+}
+div.gsc-result {
+	border-bottom: 1px solid #555 !important;
 }
 
 /* /GOOGLE SEARCH --------------------------------------------------- */
