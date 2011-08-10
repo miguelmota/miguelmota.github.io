@@ -4,7 +4,7 @@ layout: default
 <section class='content post'>
 	{% include header.html %}
 	<div class='posti'>
-		<h1><a href='{{ page.url }}'>{{ page.title }}</a></h1>
+		<h1 class='post-title'><a href='{{ page.url }}'>{{ page.title }}</a></h1>
 		{{ content }}
 		<div class='post-footer'>
 			<p><a class='dsq-comment-count' href='{{ page.url }}#disqus_thread'>comments</a> / posted <a href='{{ page.url }}'>{{ page.date | date_to_string }}</a> / <a class='addthis_button' addthis:url='{{ page.url }}'>share this &#8250;</a></p>

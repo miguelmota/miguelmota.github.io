@@ -775,13 +775,13 @@ div#cse div.gsc-cursor-current-page  {
 	color: #005577;
 }
 /* /GOOGLE SEARCH --------------------------------------------------- */
-div.posti h1 {
+h1.post-title {
 	margin-bottom: 5px;
-	border-bottom: 1px dotted #999;
 }
-div.posti h1 a {
-	font-size: 26px;
+h1.post-title a {
+	display: block;
 	font-family: Klavika-Light, Helvetica, Arial, sans-serif;
+	font-size: 26px;
 }
 div.post {
 	margin-bottom: 55px;
