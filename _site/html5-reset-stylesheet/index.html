@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang='en'>
+<head>
+	<meta charset='utf-8' />
+<!--
+                                      ___      
+           __                        /\_ \     
+  ___ ___ /\_\     __   __  __     __\//\ \    
+/' __` __`\/\ \  /'_ `\/\ \/\ \  /'__`\\ \ \   
+/\ \/\ \/\ \ \ \/\ \L\ \ \ \_\ \/\  __/ \_\ \_ 
+\ \_\ \_\ \_\ \_\ \____ \ \____/\ \____\/\____\
+ \/_/\/_/\/_/\/_/\/___L\ \/___/  \/____/\/____/
+                   /\____/                     
+                   \_/__/                      
+                  __               
+                 /\ \__            
+  ___ ___     ___\ \ ,_\    __     
+/' __` __`\  / __`\ \ \/  /'__`\   
+/\ \/\ \/\ \/\ \L\ \ \ \_/\ \L\.\_ 
+\ \_\ \_\ \_\ \____/\ \__\ \__/.\_\
+ \/_/\/_/\/_/\/___/  \/__/\/__/\/_/
+                                   
+-->
+	<meta name='description' content='Creative freelance web developer from the always sunny Southern California.' />
+	<meta name='keywords' content='miguel mota,creative,freelance,web developer,web design,blog' />
+	<meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=1;' />
+	<title>HTML5 Reset Stylesheet Miguel Mota | Freelance Web Developer</title>
+	<link rel='canonical' href='http://www.miguelmota.com/' />
+	<link rel='alternate' type='application/rss+xml' href='http://feeds.feedburner.com/miguelmota' />
+	<link rel='shortcut icon' href='/favicon.ico' />
+	<link rel='apple-touch-icon-precomposed' href='/images/apple-touch-icon.png' />
+	<link rel='stylesheet' href='/styles/reset.css' />
+	<link rel='stylesheet' href='/styles/pygment_friendly.css' />
+	<link rel='stylesheet' href='/plugins/mtip/mtip.css' />
+	<link rel='stylesheet' href='/plugins/fancybox/jquery.fancybox.css' />
+	<link rel='stylesheet' href='/styles/global.css' />
+	<script src='/scripts/jquery.min.js'></script>
+	<script src='/plugins/mtip/mtip.js'></script>
+	<script src='/plugins/validate/jquery.validate.min.js'></script>
+	<script src='/plugins/fancybox/jquery.fancybox-1.3.2.pack.js'></script>
+	<script src='http://www.google.com/jsapi?key=ABQIAAAAaPkBW3vge4odDUBtbC4e-xRutoCKHFl1g3ES_cmPf4BxqcVG3BR7pbnwzjWgqiKDxSEqSvzSUG2pww'></script>
+	<script src='/scripts/main.js'></script>
+	<!--[if lt IE 9]>
+		<script src='http://html5shiv.googlecode.com/svn/trunk/html5.js'></script>
+		<link href='/styles/ie.css' rel='stylesheet' />
+	<![endif]-->
+</head>
+<body>
+<div id='top'></div>
+<div class='main-wrap'>
+	<nav class='main-side-nav'>
+		<a class='nav-logo' href='/'></a>
+		<ul class='main-nav'>
+			<li><a id='stream' href='/stream'>stream</a></li>
+			<li><a id='about' href='/about'>about</a></li>
+			<li><a id='portfolio' href='/portfolio'>portfolio</a></li>
+			<li><a id='contact' href='/contact'>contact</a></li>
+			<li><a id='blog' href='/blog'>blog</a></li>
+		</ul>
+	</nav>
+	<div class='main-content'>
+		<section class='content post'>
+	<header class='blog-header'>
+	<p class='blog-description'><em>a blog on code, design and some other stuff. </em><a href='http://feeds.feedburner.com/miguelmota'>subscribe</a> / <a href='http://twitter.com/#!/miguel_mota'>follow me</a></p>
+	<div id='cse-search-form'></div> 
+</header>
+<div id='cse'></div>
+	<div class='posti'>
+		<h1 class='post-title'><a href='/html5-reset-stylesheet'>HTML5 Reset Stylesheet</a></h1>
+		<p>I couldn't find an HTML5 reset stylesheet that suited my needs so I decided to modify <a href='http://html5doctor.com/html-5-reset-stylesheet/'>HTML5 Doctors'</a> CSS reset a bit. This is what it looks like:</p>
+
+<div class="highlight"><pre><span class="nt">html</span><span class="o">,</span> <span class="nt">body</span><span class="o">,</span> <span class="nt">div</span><span class="o">,</span> <span class="nt">span</span><span class="o">,</span> <span class="nt">object</span><span class="o">,</span> <span class="nt">iframe</span><span class="o">,</span>
+<span class="nt">h1</span><span class="o">,</span> <span class="nt">h2</span><span class="o">,</span> <span class="nt">h3</span><span class="o">,</span> <span class="nt">h4</span><span class="o">,</span> <span class="nt">h5</span><span class="o">,</span> <span class="nt">h6</span><span class="o">,</span> <span class="nt">p</span><span class="o">,</span> <span class="nt">blockquote</span><span class="o">,</span> <span class="nt">pre</span><span class="o">,</span>
+<span class="nt">abbr</span><span class="o">,</span> <span class="nt">address</span><span class="o">,</span> <span class="nt">cite</span><span class="o">,</span> <span class="nt">code</span><span class="o">,</span>
+<span class="nt">del</span><span class="o">,</span> <span class="nt">dfn</span><span class="o">,</span> <span class="nt">em</span><span class="o">,</span> <span class="nt">img</span><span class="o">,</span> <span class="nt">ins</span><span class="o">,</span> <span class="nt">kbd</span><span class="o">,</span> <span class="nt">q</span><span class="o">,</span> <span class="nt">samp</span><span class="o">,</span>
+<span class="nt">small</span><span class="o">,</span> <span class="nt">strong</span><span class="o">,</span> <span class="nt">sub</span><span class="o">,</span> <span class="nt">sup</span><span class="o">,</span> <span class="nt">var</span><span class="o">,</span>
+<span class="nt">b</span><span class="o">,</span> <span class="nt">i</span><span class="o">,</span>
+<span class="nt">dl</span><span class="o">,</span> <span class="nt">dt</span><span class="o">,</span> <span class="nt">dd</span><span class="o">,</span> <span class="nt">ol</span><span class="o">,</span> <span class="nt">ul</span><span class="o">,</span> <span class="nt">li</span><span class="o">,</span>
+<span class="nt">fieldset</span><span class="o">,</span> <span class="nt">form</span><span class="o">,</span> <span class="nt">label</span><span class="o">,</span> <span class="nt">legend</span><span class="o">,</span>
+<span class="nt">table</span><span class="o">,</span> <span class="nt">caption</span><span class="o">,</span> <span class="nt">tbody</span><span class="o">,</span> <span class="nt">tfoot</span><span class="o">,</span> <span class="nt">thead</span><span class="o">,</span> <span class="nt">tr</span><span class="o">,</span> <span class="nt">th</span><span class="o">,</span> <span class="nt">td</span><span class="o">,</span>
+<span class="nt">article</span><span class="o">,</span> <span class="nt">aside</span><span class="o">,</span> <span class="nt">canvas</span><span class="o">,</span> <span class="nt">details</span><span class="o">,</span> <span class="nt">figcaption</span><span class="o">,</span> <span class="nt">figure</span><span class="o">,</span> 
+<span class="nt">footer</span><span class="o">,</span> <span class="nt">header</span><span class="o">,</span> <span class="nt">hgroup</span><span class="o">,</span> <span class="nt">menu</span><span class="o">,</span> <span class="nt">nav</span><span class="o">,</span> <span class="nt">section</span><span class="o">,</span> <span class="nt">summary</span><span class="o">,</span>
+<span class="nt">time</span><span class="o">,</span> <span class="nt">mark</span><span class="o">,</span> <span class="nt">audio</span><span class="o">,</span> <span class="nt">video</span> <span class="p">{</span>
+	<span class="k">background</span><span class="o">:</span> <span class="k">transparent</span><span class="p">;</span>
+	<span class="k">border</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+	<span class="k">font-size</span><span class="o">:</span> <span class="m">100</span><span class="o">%</span><span class="p">;</span>
+    <span class="k">margin</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="k">outline</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="k">padding</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="k">vertical-align</span><span class="o">:</span> <span class="k">baseline</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">body</span> <span class="p">{</span>
+	<span class="k">line-height</span><span class="o">:</span> <span class="m">1</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">article</span><span class="o">,</span> <span class="nt">aside</span><span class="o">,</span> <span class="nt">details</span><span class="o">,</span> <span class="nt">figcaption</span><span class="o">,</span> <span class="nt">figure</span><span class="o">,</span>
+<span class="nt">footer</span><span class="o">,</span> <span class="nt">header</span><span class="o">,</span> <span class="nt">hgroup</span><span class="o">,</span> <span class="nt">menu</span><span class="o">,</span> <span class="nt">nav</span><span class="o">,</span> <span class="nt">section</span> <span class="p">{</span> 
+    <span class="k">display</span><span class="o">:</span> <span class="k">block</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">ol</span><span class="o">,</span> <span class="nt">ul</span> <span class="p">{</span>
+	<span class="k">list-style</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">h1</span><span class="o">,</span> <span class="nt">h2</span><span class="o">,</span> <span class="nt">h3</span><span class="o">,</span> <span class="nt">h4</span><span class="o">,</span> <span class="nt">h5</span><span class="o">,</span> <span class="nt">h6</span> <span class="p">{</span>
+	<span class="k">font-size</span><span class="o">:</span> <span class="m">100</span><span class="o">%</span><span class="p">;</span>
+	<span class="k">font-weight</span><span class="o">:</span> <span class="k">normal</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">blockquote</span><span class="o">,</span> <span class="nt">q</span> <span class="p">{</span>
+	<span class="k">quotes</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">blockquote</span><span class="nd">:before</span><span class="o">,</span> <span class="nt">blockquote</span><span class="nd">:after</span><span class="o">,</span>
+<span class="nt">q</span><span class="nd">:before</span><span class="o">,</span> <span class="nt">q</span><span class="nd">:after</span> <span class="p">{</span>
+	<span class="k">content</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
+	<span class="k">content</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nd">:focus</span> <span class="p">{</span>
+	<span class="k">outline</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">a</span> <span class="p">{</span>
+	<span class="k">text-decoration</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">ins</span> <span class="p">{</span>
+    <span class="k">text-decoration</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">mark</span> <span class="p">{</span>
+    <span class="k">font-style</span><span class="o">:</span> <span class="k">italic</span><span class="p">;</span>
+    <span class="k">font-weight</span><span class="o">:</span> <span class="k">bold</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">del</span> <span class="p">{</span>
+	<span class="k">text-decoration</span><span class="o">:</span> <span class="k">line-through</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">abbr</span><span class="o">[</span><span class="nt">title</span><span class="o">],</span> <span class="nt">dfn</span><span class="o">[</span><span class="nt">title</span><span class="o">]</span> <span class="p">{</span>
+    <span class="k">border-bottom</span><span class="o">:</span> <span class="m">1px</span> <span class="k">dotted</span><span class="p">;</span>
+    <span class="k">cursor</span><span class="o">:</span> <span class="k">help</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">table</span> <span class="p">{</span>
+	<span class="k">border-collapse</span><span class="o">:</span> <span class="k">collapse</span><span class="p">;</span>
+	<span class="k">border-spacing</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">caption</span><span class="o">,</span> <span class="nt">th</span><span class="o">,</span> <span class="nt">td</span> <span class="p">{</span>
+	<span class="k">font-weight</span><span class="o">:</span> <span class="k">normal</span><span class="p">;</span>
+	<span class="k">text-align</span><span class="o">:</span> <span class="k">left</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">hr</span> <span class="p">{</span>
+	<span class="k">border</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>  
+	<span class="k">border-top</span><span class="o">:</span> <span class="m">1px</span> <span class="k">solid</span> <span class="m">#ccc</span><span class="p">;</span>
+    <span class="k">display</span><span class="o">:</span> <span class="k">block</span><span class="p">;</span>
+    <span class="k">height</span><span class="o">:</span> <span class="m">1px</span><span class="p">;</span>
+    <span class="k">margin</span><span class="o">:</span> <span class="m">1em</span> <span class="m">0</span><span class="p">;</span>
+    <span class="k">padding</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">input</span><span class="o">,</span> <span class="nt">select</span> <span class="p">{</span>
+    <span class="k">vertical-align</span><span class="o">:</span> <span class="k">middle</span><span class="p">;</span>
+<span class="p">}</span>
+</pre>
+</div>
+
+<p><a href='/styles/reset.css'>Download</a></p>
+
+<p>This stylesheet is released under the <a href='http://creativecommons.org/licenses/by/3.0/'>Creative Commons Attribution 3.0 License</a>, so feel free to use it!</p>
+		<div class='post-footer'>
+			<p><a class='dsq-comment-count' href='/html5-reset-stylesheet#disqus_thread'>comments</a> / posted <a href='/html5-reset-stylesheet'>09 Aug 2011</a> / <a class='addthis_button' addthis:url='/html5-reset-stylesheet'>share this &#8250;</a></p>
+	 	</div>
+		<div id='disqus_thread'></div>
+	</div>
+</section>
+		<div class='loader-container'><div class='page-loader'></div></div>
+	</div>
+	<footer class='main'>
+		<p>&#169; <script>displayYear();</script> <a href='https://profiles.google.com/miguelmota2' rel='author'>miguel mota</a> / powered by <a href='http://jekyllrb.com'>jekyll</a> <a href='#top' class='top'>&#8593;</a></p>
+	</footer>
+	<script type="text/javascript">
+	    var disqus_shortname = 'miguelmota';
+	    (function() {
+	        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+	        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	    })();
+	</script>
+	<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	<script>
+		$('#<decorator:getProperty property="meta.page" />').addClass('selected');
+  		var _gaq = _gaq || [];
+  		_gaq.push(['_setAccount', 'UA-12642068-1']);
+  		_gaq.push(['_setDomainName', '.miguelmota.com']);
+ 		_gaq.push(['_trackPageview']);
+  		(function() {
+    		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  		})();
+	</script>
+	<noscript><div class='noscript'>please enable javascript</div></noscript>
+	<script src='http://s7.addthis.com/js/250/addthis_widget.js#username=miguelmota'></script>
+</div>
+</body>
+</html>

@@ -96,7 +96,7 @@
 &lt;p&gt;&lt;a href='/styles/reset.css'&gt;Download&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;This stylesheet is released under the &lt;a href='http://creativecommons.org/licenses/by/3.0/'&gt;Creative Commons Attribution 3.0 License&lt;/a&gt;, so feel free to use it!&lt;/p&gt;</description>
-				<link>http://www.miguelmota.com/blog/html5-reset-stylesheet</link>
+				<link>http://www.miguelmota.com/html5-reset-stylesheet</link>
 				<pubDate>09 Aug 2011</pubDate>
 			</item>
 		
@@ -256,14 +256,14 @@ attribute and then removing the &lt;code&gt;title&lt;/code&gt; attribute. So wha
 &lt;/div&gt;
 
 &lt;p&gt;That's it folks! You should now have a functioning mini tooltip plugin. If I made mistakes or if you would like to add, please comment! any feedback is greatly appreciated.&lt;/p&gt;</description>
-				<link>http://www.miguelmota.com/blog/make-an-awesome-tooltip-with-jquery</link>
+				<link>http://www.miguelmota.com/make-an-awesome-tooltip-with-jquery</link>
 				<pubDate>24 May 2011</pubDate>
 			</item>
 		
 			<item>
 				<title>Hello World!</title>
 				<description>&lt;p&gt;This will be the best blog ever!&lt;/p&gt;</description>
-				<link>http://www.miguelmota.com/blog/hello-world</link>
+				<link>http://www.miguelmota.com/hello-world</link>
 				<pubDate>30 Mar 2011</pubDate>
 			</item>
 		

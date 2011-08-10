@@ -24,7 +24,7 @@
 	<meta name='description' content='Creative freelance web developer from the always sunny Southern California.' />
 	<meta name='keywords' content='miguel mota,creative,freelance,web developer,web design,blog' />
 	<meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=1;' />
-	<title>Blog &#8212; Miguel Mota | Freelance Web Developer</title>
+	<title>Make an awesome tooltip with jQuery Miguel Mota | Freelance Web Developer</title>
 	<link rel='canonical' href='http://www.miguelmota.com/' />
 	<link rel='alternate' type='application/rss+xml' href='http://feeds.feedburner.com/miguelmota' />
 	<link rel='shortcut icon' href='/favicon.ico' />
@@ -59,114 +59,15 @@
 		</ul>
 	</nav>
 	<div class='main-content'>
-		<h1 class='title'>Miguel<span class='mota'>Mota</span><span class='slash'>/</span><span class='sub'>Blog</span></h1>
-<section class='content blog'>
+		<section class='content post'>
 	<header class='blog-header'>
 	<p class='blog-description'><em>a blog on code, design and some other stuff. </em><a href='http://feeds.feedburner.com/miguelmota'>subscribe</a> / <a href='http://twitter.com/#!/miguel_mota'>follow me</a></p>
 	<div id='cse-search-form'></div> 
 </header>
 <div id='cse'></div>
 	<div class='posti'>
-		
-			<div class='post'>
-				<h1 class='post-title'><a href='/html5-reset-stylesheet'>HTML5 Reset Stylesheet</a></h1>
-				<p>I couldn't find an HTML5 reset stylesheet that suited my needs so I decided to modify <a href='http://html5doctor.com/html-5-reset-stylesheet/'>HTML5 Doctors'</a> CSS reset a bit. This is what it looks like:</p>
-
-<div class="highlight"><pre><span class="nt">html</span><span class="o">,</span> <span class="nt">body</span><span class="o">,</span> <span class="nt">div</span><span class="o">,</span> <span class="nt">span</span><span class="o">,</span> <span class="nt">object</span><span class="o">,</span> <span class="nt">iframe</span><span class="o">,</span>
-<span class="nt">h1</span><span class="o">,</span> <span class="nt">h2</span><span class="o">,</span> <span class="nt">h3</span><span class="o">,</span> <span class="nt">h4</span><span class="o">,</span> <span class="nt">h5</span><span class="o">,</span> <span class="nt">h6</span><span class="o">,</span> <span class="nt">p</span><span class="o">,</span> <span class="nt">blockquote</span><span class="o">,</span> <span class="nt">pre</span><span class="o">,</span>
-<span class="nt">abbr</span><span class="o">,</span> <span class="nt">address</span><span class="o">,</span> <span class="nt">cite</span><span class="o">,</span> <span class="nt">code</span><span class="o">,</span>
-<span class="nt">del</span><span class="o">,</span> <span class="nt">dfn</span><span class="o">,</span> <span class="nt">em</span><span class="o">,</span> <span class="nt">img</span><span class="o">,</span> <span class="nt">ins</span><span class="o">,</span> <span class="nt">kbd</span><span class="o">,</span> <span class="nt">q</span><span class="o">,</span> <span class="nt">samp</span><span class="o">,</span>
-<span class="nt">small</span><span class="o">,</span> <span class="nt">strong</span><span class="o">,</span> <span class="nt">sub</span><span class="o">,</span> <span class="nt">sup</span><span class="o">,</span> <span class="nt">var</span><span class="o">,</span>
-<span class="nt">b</span><span class="o">,</span> <span class="nt">i</span><span class="o">,</span>
-<span class="nt">dl</span><span class="o">,</span> <span class="nt">dt</span><span class="o">,</span> <span class="nt">dd</span><span class="o">,</span> <span class="nt">ol</span><span class="o">,</span> <span class="nt">ul</span><span class="o">,</span> <span class="nt">li</span><span class="o">,</span>
-<span class="nt">fieldset</span><span class="o">,</span> <span class="nt">form</span><span class="o">,</span> <span class="nt">label</span><span class="o">,</span> <span class="nt">legend</span><span class="o">,</span>
-<span class="nt">table</span><span class="o">,</span> <span class="nt">caption</span><span class="o">,</span> <span class="nt">tbody</span><span class="o">,</span> <span class="nt">tfoot</span><span class="o">,</span> <span class="nt">thead</span><span class="o">,</span> <span class="nt">tr</span><span class="o">,</span> <span class="nt">th</span><span class="o">,</span> <span class="nt">td</span><span class="o">,</span>
-<span class="nt">article</span><span class="o">,</span> <span class="nt">aside</span><span class="o">,</span> <span class="nt">canvas</span><span class="o">,</span> <span class="nt">details</span><span class="o">,</span> <span class="nt">figcaption</span><span class="o">,</span> <span class="nt">figure</span><span class="o">,</span> 
-<span class="nt">footer</span><span class="o">,</span> <span class="nt">header</span><span class="o">,</span> <span class="nt">hgroup</span><span class="o">,</span> <span class="nt">menu</span><span class="o">,</span> <span class="nt">nav</span><span class="o">,</span> <span class="nt">section</span><span class="o">,</span> <span class="nt">summary</span><span class="o">,</span>
-<span class="nt">time</span><span class="o">,</span> <span class="nt">mark</span><span class="o">,</span> <span class="nt">audio</span><span class="o">,</span> <span class="nt">video</span> <span class="p">{</span>
-	<span class="k">background</span><span class="o">:</span> <span class="k">transparent</span><span class="p">;</span>
-	<span class="k">border</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
-	<span class="k">font-size</span><span class="o">:</span> <span class="m">100</span><span class="o">%</span><span class="p">;</span>
-    <span class="k">margin</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
-    <span class="k">outline</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
-    <span class="k">padding</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
-    <span class="k">vertical-align</span><span class="o">:</span> <span class="k">baseline</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nt">body</span> <span class="p">{</span>
-	<span class="k">line-height</span><span class="o">:</span> <span class="m">1</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nt">article</span><span class="o">,</span> <span class="nt">aside</span><span class="o">,</span> <span class="nt">details</span><span class="o">,</span> <span class="nt">figcaption</span><span class="o">,</span> <span class="nt">figure</span><span class="o">,</span>
-<span class="nt">footer</span><span class="o">,</span> <span class="nt">header</span><span class="o">,</span> <span class="nt">hgroup</span><span class="o">,</span> <span class="nt">menu</span><span class="o">,</span> <span class="nt">nav</span><span class="o">,</span> <span class="nt">section</span> <span class="p">{</span> 
-    <span class="k">display</span><span class="o">:</span> <span class="k">block</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nt">ol</span><span class="o">,</span> <span class="nt">ul</span> <span class="p">{</span>
-	<span class="k">list-style</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nt">h1</span><span class="o">,</span> <span class="nt">h2</span><span class="o">,</span> <span class="nt">h3</span><span class="o">,</span> <span class="nt">h4</span><span class="o">,</span> <span class="nt">h5</span><span class="o">,</span> <span class="nt">h6</span> <span class="p">{</span>
-	<span class="k">font-size</span><span class="o">:</span> <span class="m">100</span><span class="o">%</span><span class="p">;</span>
-	<span class="k">font-weight</span><span class="o">:</span> <span class="k">normal</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nt">blockquote</span><span class="o">,</span> <span class="nt">q</span> <span class="p">{</span>
-	<span class="k">quotes</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nt">blockquote</span><span class="nd">:before</span><span class="o">,</span> <span class="nt">blockquote</span><span class="nd">:after</span><span class="o">,</span>
-<span class="nt">q</span><span class="nd">:before</span><span class="o">,</span> <span class="nt">q</span><span class="nd">:after</span> <span class="p">{</span>
-	<span class="k">content</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
-	<span class="k">content</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nd">:focus</span> <span class="p">{</span>
-	<span class="k">outline</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nt">a</span> <span class="p">{</span>
-	<span class="k">text-decoration</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nt">ins</span> <span class="p">{</span>
-    <span class="k">text-decoration</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nt">mark</span> <span class="p">{</span>
-    <span class="k">font-style</span><span class="o">:</span> <span class="k">italic</span><span class="p">;</span>
-    <span class="k">font-weight</span><span class="o">:</span> <span class="k">bold</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nt">del</span> <span class="p">{</span>
-	<span class="k">text-decoration</span><span class="o">:</span> <span class="k">line-through</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nt">abbr</span><span class="o">[</span><span class="nt">title</span><span class="o">],</span> <span class="nt">dfn</span><span class="o">[</span><span class="nt">title</span><span class="o">]</span> <span class="p">{</span>
-    <span class="k">border-bottom</span><span class="o">:</span> <span class="m">1px</span> <span class="k">dotted</span><span class="p">;</span>
-    <span class="k">cursor</span><span class="o">:</span> <span class="k">help</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nt">table</span> <span class="p">{</span>
-	<span class="k">border-collapse</span><span class="o">:</span> <span class="k">collapse</span><span class="p">;</span>
-	<span class="k">border-spacing</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nt">caption</span><span class="o">,</span> <span class="nt">th</span><span class="o">,</span> <span class="nt">td</span> <span class="p">{</span>
-	<span class="k">font-weight</span><span class="o">:</span> <span class="k">normal</span><span class="p">;</span>
-	<span class="k">text-align</span><span class="o">:</span> <span class="k">left</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nt">hr</span> <span class="p">{</span>
-	<span class="k">border</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>  
-	<span class="k">border-top</span><span class="o">:</span> <span class="m">1px</span> <span class="k">solid</span> <span class="m">#ccc</span><span class="p">;</span>
-    <span class="k">display</span><span class="o">:</span> <span class="k">block</span><span class="p">;</span>
-    <span class="k">height</span><span class="o">:</span> <span class="m">1px</span><span class="p">;</span>
-    <span class="k">margin</span><span class="o">:</span> <span class="m">1em</span> <span class="m">0</span><span class="p">;</span>
-    <span class="k">padding</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nt">input</span><span class="o">,</span> <span class="nt">select</span> <span class="p">{</span>
-    <span class="k">vertical-align</span><span class="o">:</span> <span class="k">middle</span><span class="p">;</span>
-<span class="p">}</span>
-</pre>
-</div>
-
-<p><a href='/styles/reset.css'>Download</a></p>
-
-<p>This stylesheet is released under the <a href='http://creativecommons.org/licenses/by/3.0/'>Creative Commons Attribution 3.0 License</a>, so feel free to use it!</p>
-				<div class='post-footer'>
-					<p><a class='dsq-comment-count' href="/html5-reset-stylesheet#disqus_thread">comments</a> / posted <a href='/html5-reset-stylesheet'>09 Aug 2011</a> / <a class='addthis_button' addthis:url='/html5-reset-stylesheet'>share this &#8250;</a></p>
-			 	</div>
-			</div>
-		
-			<div class='post'>
-				<h1 class='post-title'><a href='/make-an-awesome-tooltip-with-jquery'>Make an awesome tooltip with jQuery</a></h1>
-				<p>I will attempt to show you how to make a simple yet awesome tooltip using jQuery and CSS3.</p>
+		<h1 class='post-title'><a href='/make-an-awesome-tooltip-with-jquery'>Make an awesome tooltip with jQuery</a></h1>
+		<p>I will attempt to show you how to make a simple yet awesome tooltip using jQuery and CSS3.</p>
 <p><a href='http://www.miguelmota.com/plugins/mtip'>View the demo</a></p>
 <p>Ok so first let's set up the HTML:</p>
 
@@ -320,20 +221,10 @@ attribute and then removing the <code>title</code> attribute. So what's the poin
 </div>
 
 <p>That's it folks! You should now have a functioning mini tooltip plugin. If I made mistakes or if you would like to add, please comment! any feedback is greatly appreciated.</p>
-				<div class='post-footer'>
-					<p><a class='dsq-comment-count' href="/make-an-awesome-tooltip-with-jquery#disqus_thread">comments</a> / posted <a href='/make-an-awesome-tooltip-with-jquery'>24 May 2011</a> / <a class='addthis_button' addthis:url='/make-an-awesome-tooltip-with-jquery'>share this &#8250;</a></p>
-			 	</div>
-			</div>
-		
-			<div class='post'>
-				<h1 class='post-title'><a href='/hello-world'>Hello World!</a></h1>
-				<p>This will be the best blog ever!</p>
-				<div class='post-footer'>
-					<p><a class='dsq-comment-count' href="/hello-world#disqus_thread">comments</a> / posted <a href='/hello-world'>30 Mar 2011</a> / <a class='addthis_button' addthis:url='/hello-world'>share this &#8250;</a></p>
-			 	</div>
-			</div>
-		
-			<a class='archive-link' href='/archive'>view archive &#187;</a>
+		<div class='post-footer'>
+			<p><a class='dsq-comment-count' href='/make-an-awesome-tooltip-with-jquery#disqus_thread'>comments</a> / posted <a href='/make-an-awesome-tooltip-with-jquery'>24 May 2011</a> / <a class='addthis_button' addthis:url='/make-an-awesome-tooltip-with-jquery'>share this &#8250;</a></p>
+	 	</div>
+		<div id='disqus_thread'></div>
 	</div>
 </section>
 		<div class='loader-container'><div class='page-loader'></div></div>
