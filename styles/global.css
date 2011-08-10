@@ -670,6 +670,9 @@ label[for='message'].error {
 	BLOG
 ============================================================================== */
 header.blog-header {
+	position: relative;
+	width: auto;
+	height: auto;
 	margin-bottom: 5px;
 }
 p.blog-description {
@@ -689,7 +692,6 @@ div#cse td.gsc-branding-img  {
 }
 div#cse input[type=text].gsc-input {
 	width: 250px;
-	float: right;
 	border: 1px solid #555;
 }
 div#cse input[type=text].gsc-input:focus {
