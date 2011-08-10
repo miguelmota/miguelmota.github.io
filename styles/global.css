@@ -270,7 +270,7 @@ textarea {
 	resize: none;
 }
 pre {
-	color: #999;
+	color: #999 !important;
 }
 ul li {
 	line-height: 125%;
