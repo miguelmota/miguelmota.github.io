@@ -566,10 +566,8 @@ a.site-link {
 }
 img.miggs-thumb {
 	height: auto;
-	left: -300px;
 	position: absolute;
-	top: -100px;
-	width: 250%;
+	width: 130%;
 }
 img.foodfail-thumb {
 	height: auto;
