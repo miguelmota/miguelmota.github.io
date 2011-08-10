@@ -557,9 +557,9 @@ p.work-description {
 	position: relative;
 }
 span.work-date {
-	color: #555;
+	color: #777;
 	float: right;
-	font-size: 9px;
+	font-size: 10px;
 }
 a.site-link {
 	font-size: 10px;
