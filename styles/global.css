@@ -674,6 +674,7 @@ p.blog-description {
 	font-size: 10px;
 }
 /* GOOGLE SEARCH ----------------------------------------------------- */
+/*
 div#cse-search-form {
 	
 }
@@ -722,6 +723,7 @@ div#cse div.gsc-cursor-page  {
 div#cse div.gsc-cursor-current-page  {
 	color: #005577;
 }
+*/
 /* /GOOGLE SEARCH --------------------------------------------------- */
 h1.post-title {
 	border-bottom: 1px solid #777;
