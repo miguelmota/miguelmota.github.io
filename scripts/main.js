@@ -560,7 +560,7 @@ function portfolioPage(){
 			'transitionOut': 'none',
 			'speedIn': 150, 
 			'overlayColor': '#000',
-			'overlayOpacity': .9
+			'overlayOpacity': .8
 	});
 	//custom fancybox title formatting
 	function formatTitle(title, currentArray, currentIndex, currentOpts) {
