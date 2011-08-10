@@ -567,12 +567,12 @@ a.site-link {
 img.miggs-thumb {
 	height: auto;
 	position: absolute;
-	width: 50%;
+	width: 170% !important;
 }
 img.foodfail-thumb {
 	height: auto;
 	position: absolute;
-	width: 130%;
+	width: 130% !important;
 }
 a.fancybox {
 	display: block;
