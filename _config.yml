@@ -1,3 +1,3 @@
 paginate: 10
-permalink: /blog/:title
+permalink: /:title
 pygments: true

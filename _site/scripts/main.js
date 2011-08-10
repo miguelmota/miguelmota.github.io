@@ -685,3 +685,16 @@ function loadSearch(){
 	customSearchControl.draw('cse');
 }
 
+
+
+function displayYear(){
+	var date = new Date();
+	var thisYear = date.getFullYear();
+	
+	document.write(thisYear);
+}
+
+
+function displayURL(){
+	document.write(pathname);
+}
