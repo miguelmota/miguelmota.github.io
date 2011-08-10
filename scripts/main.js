@@ -351,7 +351,7 @@ function streamPage(){
 	
 	while(c == 0){
 
-		//add question mark next to social logo
+		// Add question mark next to social logo
 		$('a.social.latitude').after("<span class='mtip' title='recent location'>(?)</span>");
 		$('a.social.twitter').after("<span class='mtip' title='@miguel_mota recent tweets'>(?)</span>");
 		$('a.social.facebook').after("<span class='mtip' title='recent statuses'>(?)</span>");
