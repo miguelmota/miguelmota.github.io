@@ -673,7 +673,6 @@ label[for='message'].error {
 div.search-container {
 	clear: both;
 	height: 30px;
-	padding-bottom: 10px;
 }
 p.blog-description {
 	float: left;
@@ -684,7 +683,7 @@ p.blog-description {
 div#cse-search-form {
 	float: right;
 	position: relative;
-	top: -25px;
+	top: -60px;
 	width: 300px;
 }
 form.gsc-search-box {
