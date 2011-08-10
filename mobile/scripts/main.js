@@ -11,7 +11,7 @@ $(document).ready(function(){
 	$('#portfolio div.content').load('/portfolio/miggs section.content', function(){
 		$(this).append("<div class='foodfail' />");
 		
-		//$('#portfolio div.content').append($('div.foodfail').load('/portfolio/foodfail section.content'));
+		$('div.foodfail').load('/portfolio/foodfail section.content');
 		
 		
 		//initialize fancybox
