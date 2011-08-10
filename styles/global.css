@@ -741,6 +741,7 @@ div.gsc-cursor-box {
 }
 div.gsc-cursor-page  {
 	color: #007799 !important;
+	background-color: #252525 !important;
 }
 div.gsc-cursor-current-page  {
 	color: #007299 important;
