@@ -686,6 +686,12 @@ div#cse-search-form {
 form.gsc-search-box {
 
 }
+a.gs-title {
+	font-size: 12px;
+}
+div.gs-snippet {
+	font-size: 10px;
+}
 input[type=submit].gsc-search-button,
 td.gcsc-branding-text,
 td.gcsc-branding-img-noclear  {
@@ -719,8 +725,9 @@ div#cse a.gs-title  {
 div#cse a.gs-title b {
 	color: #007799;
 }
-div#cse div.gs-visibleUrl  {
+div.gs-visibleUrl  {
 	color: #555;
+	font-size: 10px;
 }
 div#cse div.gsc-cursor-page  {
 	color: #007799;
