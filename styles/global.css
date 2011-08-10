@@ -694,6 +694,10 @@ div#cse a {
 	color: #007299 !important;
 	font-size: 12px !important;
 }
+div#cse a b {
+	color: #007299 !important;
+	font-size: 12px !important;
+}
 div.gs-snippet {
 	font-size: 10px;
 }
@@ -735,7 +739,7 @@ div#cse div.gsc-cursor-current-page  {
 	color: #005577;
 }
 div.gsc-result {
-	border-bottom: 1px solid #555 !important;
+	border-bottom: 1px solid #292929 !important;
 }
 
 /* /GOOGLE SEARCH --------------------------------------------------- */
