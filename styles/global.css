@@ -269,8 +269,10 @@ textarea {
 	overflow: auto;
 	resize: none;
 }
-pre {
-	color: #999 !important;
+div.ascii-art {
+	color: #999;
+	font-family: monospace;
+	white-space: pre;
 }
 ul li {
 	line-height: 125%;
