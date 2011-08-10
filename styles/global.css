@@ -687,7 +687,8 @@ form.gsc-search-box {
 
 
 }
-div#cse {
+div#cse,
+div.gsc-control-cse {
 	background-color: #252525;
 }
 div#cse a {
