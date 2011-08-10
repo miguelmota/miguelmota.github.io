@@ -677,12 +677,12 @@ div.search-container {
 p.blog-description {
 	float: left;
 	font-size: 10px;
-	width: 325px;
-	border: 1px solid blue;c
 }
 /* GOOGLE SEARCH ----------------------------------------------------- */
 
 div#cse-search-form {
+	width: 250px;
+	border: 1px solid blue;
 	float: right;
 }
 form.gsc-search-box {
