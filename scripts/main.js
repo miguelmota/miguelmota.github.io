@@ -646,7 +646,7 @@ function blogPage(){
 
 	
 	//initialize Google Search
-	//loadSearch();
+	loadSearch();
 	
 	//initialize Disqus
 	while(ldc = 0){
@@ -678,11 +678,32 @@ function loadDisqus(){
 }
 
 //load Google Search function
-google.load('search', '1', {language : 'en'});
+google.load('search', '1', {language : 'en', style : google.loader.themes.MINIMALIST});
 function loadSearch(){
-	var customSearchControl = new google.search.CustomSearchControl('013110027163283765539:a-en5rcxdcu');
-	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
-	customSearchControl.draw('cse');
+	  google.load('search', '1', {language : 'en', style : google.loader.themes.MINIMALIST});
+	  var _gaq = _gaq || [];
+	  _gaq.push(["_setAccount", "UA-12642068-1"]);
+	  function _trackQuery(control, searcher, query) {
+	    var gaQueryParamName = "q";
+	    var loc = document.location;
+	    var url = [
+	      loc.pathname,
+	      loc.search,
+	      loc.search ? '&' : '?',
+	      gaQueryParamName == '' ? 'q' : encodeURIComponent(gaQueryParamName),
+	      '=',
+	      encodeURIComponent(query)
+	    ].join('');
+	    _gaq.push(["_trackPageview", url]);
+	  }
+	  google.setOnLoadCallback(function() {
+	    var customSearchControl = new google.search.CustomSearchControl('013110027163283765539:a-en5rcxdcu');
+	    customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	    customSearchControl.setSearchStartingCallback(null, _trackQuery);
+	    var options = new google.search.DrawOptions();
+	    options.setSearchFormRoot('cse-search-form');    
+	    customSearchControl.draw('cse', options);
+	  }, true);
 }
 
 
