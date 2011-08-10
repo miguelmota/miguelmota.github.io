@@ -11,7 +11,11 @@ $(document).ready(function(){
 	$('#portfolio div.content').load('/portfolio/miggs section.content', function(){
 		$(this).append("<div class='foodfail' />");
 		
-		$('div.foodfail').load('/portfolio/foodfail section.content');
+		$('div.foodfail').load('/portfolio/foodfail section.content', function(){
+			
+			$('div.work-image:not(:first)').hide();
+			
+		});
 		
 		
 		//initialize fancybox
