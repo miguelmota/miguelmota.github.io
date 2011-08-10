@@ -670,6 +670,9 @@ label[for='message'].error {
 /* ==============================================================================
 	BLOG
 ============================================================================== */
+div.search-container {
+	padding-bottom: 10px;
+}
 p.blog-description {
 	float: left;
 	font-size: 10px;
