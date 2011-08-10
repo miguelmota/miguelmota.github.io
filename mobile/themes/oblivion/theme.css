@@ -80,7 +80,7 @@ body, .toolbar, #jqt ul, #jqt ul.individual li, #jqt ul li a.active,#tabbar,.s-s
     /* background-image: url(img/bg_noise.png); */
 }
 #jqt > * {
-    background-color: #222;
+    background-color: #252525;
 }
 #jqt h1, #jqt h2, #jqt ul li a {
     font: bold 18px "NeoSans", "Helvetica Neue", "Helvetica", Arial, sans-serif;
@@ -258,7 +258,7 @@ body, .toolbar, #jqt ul, #jqt ul.individual li, #jqt ul li a.active,#tabbar,.s-s
     font: bold 18px "NeoSans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     padding: 0;
     margin: 15px 10px 17px 10px;
-    background-color: #222;
+    background-color: #252525;
 }
 #jqt ul.rounded {
     -webkit-border-radius: 8px;
@@ -305,7 +305,7 @@ body, .toolbar, #jqt ul, #jqt ul.individual li, #jqt ul li a.active,#tabbar,.s-s
     background-color: #111;
 }
 ul.nav {
-	background-color: #222 !important;
+	background-color: #252525 !important;
 }
 #jqt ul.nav li.arrow {
 	margin: 10px;
@@ -318,7 +318,7 @@ ul.nav {
 	behavior: url('/plugins/pie/PIE.htc');
 }
 div#contact ul.contact {
-	background-color: #222 !important;
+	background-color: #252525 !important;
 }
 div#contact ul.contact li.arrow {
 	margin: 10px;
@@ -755,7 +755,7 @@ div.page {
 
 div.content {
 	padding: 10px;
-	background-color: #222;
+	background-color: #252525;
 }
 
 div.content a {
@@ -881,7 +881,7 @@ div#stream ul {
     color: #999;
     padding: 0;
     margin: 5px 0 35px 0;
-    background-color: #222 !important;
+    background-color: #252525 !important;
 }
 div#stream ul li {
     color: #999;
@@ -889,7 +889,7 @@ div#stream ul li {
     padding: 5px !important;
     overflow: hidden;
     border-top: none;
-    background-color: #222;
+    background-color: #252525;
     font: 12px "NeoSans", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
 }
 
@@ -958,12 +958,12 @@ div#blog img {
 div#portfolio div.sort {
 	display: none;
 }
-div#portfolio div.work {
+div#portfolio div.project {
 	margin-bottom: 45px;
 	padding: 5px;
 	background-color: #111;
 }
-div#portfolio div.container {
+div#portfolio div.work-image {
 	position: relative;
 	height: 120px;
 	width: 100%;
@@ -971,13 +971,13 @@ div#portfolio div.container {
 	overflow: hidden;
 	border: 1px solid #555;
 }
-div#portfolio div.container img {
+div#portfolio div.work-image img {
 	position: absolute;
 }
-div#portfolio p.description {
+div#portfolio p.work-description {
 	position: relative;
 }
-div#portfolio span.date {
+div#portfolio span.work-date {
 	float: right;
 	color: #555;
 	font-size: 10px !important;

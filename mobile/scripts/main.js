@@ -8,7 +8,10 @@ $(document).ready(function(){
 	});
 			
 	$('#about div.content').load('/about section.content');
-	$('#portfolio div.content').load('/portfolio section.content', function(){
+	$('#portfolio div.content').load('/portfolio/miggs section.content', function(){
+		
+		
+		
 		//initialize fancybox
 		/*$('a.fancybox').fancybox({
 			'padding': 0,
