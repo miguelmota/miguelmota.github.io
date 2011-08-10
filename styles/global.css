@@ -543,25 +543,25 @@ div.project div.image-container {
 	height: 200px;
 }
 span.overlay {
-	display: block;
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
 	background-color: #000;
+	bottom: 0;
+	display: block;
+	height: 100%;
+	left: 0;
 	opacity: .2;
+	position: absolute;
+	width: 100%;
 }
 p.work-description {
-	position: relative;
 	padding-left: 5px;
+	position: relative;
 }
-p.work-description  span.date {
+span.work-date {
+	color: #555;
 	float: right;
 	font-size: 9px;
-	color: #333;
 }
-p.work-description  a.link {
+a.site-link {
 	font-size: 10px;
 }
 section.portfolio img.miggs {
