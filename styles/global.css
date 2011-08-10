@@ -282,6 +282,7 @@ ul li {
 	MAIN NAVIGATION
 ============================================================================== */
 nav.main-side-nav {
+	background-color: #252525;
 	position: fixed;
 	top: 70px;
 	width: 75px;
