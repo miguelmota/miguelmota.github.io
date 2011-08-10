@@ -269,6 +269,9 @@ textarea {
 	overflow: auto;
 	resize: none;
 }
+pre {
+	color: #999;
+}
 ul li {
 	line-height: 125%;
 }
