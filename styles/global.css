@@ -735,11 +735,14 @@ div.gs-visibleUrl  {
 	color: #555 !important;
 	font-size: 10px;
 }
+div.gsc-cursor-box {
+	border: none !important;
+}
 div.gsc-cursor-page  {
-	color: #007799;
+	color: #007799 !important;
 }
 div.gsc-cursor-current-page  {
-	color: #007299;
+	color: #007299 important;
 }
 div.gsc-result {
 	border: none !important;
