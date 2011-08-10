@@ -2,25 +2,26 @@ $(document).ready(function(){
 	
 	//display mobile link if window is 640px or less
 	if(window.innerWidth <= 640){
-		$('div#wrap').prepend("<a id='mobile_bar' href='/mobile'>view mobile site &#187;</a><a id='mobile_close' href='javascript:void(0);'>x</a>");
-		$('a#mobile_bar').hide();
+		window.location = 'http://www.miguelmota.com/mobile/';
+		$('div.main-wrap').prepend("<a class='mobile-bar' href='/mobile'>view mobile site &#187;</a><a class='mobile-bar-close' href='javascript:void(0);'>x</a>");
+		$('a.mobile-bar').hide();
 		setTimeout(function(){
-			$('a#mobile_bar').slideDown('slow');
+			$('a.mobile-bar').slideDown('slow');
 		}, 2500);
-		$('a#mobile_close').live('click', function(){
+		$('a.mobile-bar-close').live('click', function(){
 			$(this).hide();
-			$('a#mobile_bar').slideUp('normal');
+			$('a.mobile-bar').slideUp('normal');
 		});
 	}
 	
 	//display ie message
 	$('body').fadeIn(650, function(){
-		$('div#ie').slideDown('slow');
+		$('div.ie-bar').slideDown('slow');
 	});
 	
 	//close ie message
-	$('div#ie a#close').click(function(){
-		$('div#ie').slideUp('normal');
+	$('div.ie-bar a.ie-bar-close').click(function(){
+		$('div.ie-bar').slideUp('normal');
 	});
 	
 	//redirect to homepage if window location alone is #!
@@ -30,32 +31,65 @@ $(document).ready(function(){
 		}
 	}
 	
+	
+	// Open external links in new tab
+	$('a[href^=http]').live('click', function(){
+		window.open(this.href);
+		return false;
+	});
+	
+	
 	//initialize text ticker
 	//textticker(); //disabled, firefox bug
 	
 	//check pathname and add selected class to nav link
-	$('ul.nav li a').each(function(){
+	//run appropriate function
+	switch(pathname.substr(1)){
+		case 'stream':
+			streamPage();
+			$('a#stream').addClass('selected');
+			break;
+		case 'about':
+			$('a#about').addClass('selected');
+			break;
+		case 'portfolio/':
+			portfolioPage();
+			$('a#portfolio').addClass('selected');
+			break;
+		case 'contact':
+			contactPage();
+			$('a#contact').addClass('selected');
+			break;
+		case 'blog':
+		default:
+			blogPage();
+			$('a#blog').addClass('selected');
+			break;
+	}
+	
+	if(pathname.substr(1,10) == 'portfolio/'){
+		portfolioPage();
+	}
+	
+	switch(pathname.substr(1,4)){
+	case 'post':
+		blogPage();
+		$('a#blog').addClass('selected');
+		break;
+	default:
+		break;
+	}
+	switch(pathname.substr(1,7)){
+	case 'archive':
+		$('a#blog').addClass('selected');
+		break;
+	default:
+		break;
+	}
+	$('ul.main-nav li a').each(function(){
 		if($(this).attr('href') == pathname){
-			//$('nav.main a#stream').removeClass('selected');
+			//$('ul.main-nav a#stream').removeClass('selected');
 			//$(this).addClass('selected');
-			
-			//run appropriate function
-			switch($(this).attr('id')){
-				case 'stream':
-					streamPage();
-					break;
-				case 'portfolio':
-					portfolioPage();
-					break;
-				case 'contact':
-					contactPage();
-					break;
-				case 'blog': 
-					blogPage();
-					break;
-				default:
-					break;
-			}
 			
 		}
 		else{
@@ -113,19 +147,20 @@ $(window).scroll(function(){
 
 $(document).ajaxComplete(function(){
 	if(typeof(window.history.pushState) != 'function'){
-		var path2 = window.location.hash.substr(2);
+		//var path2 = window.location.hash.substr(2);
+		var path2 = window.location.pathname.substr(1);
 	}
 	else{
 		var path2 = window.location.pathname.substr(1);
 	}
-	var title = $('h1.title span.sub').text()+$('div.theTitle').text();
+	var title = $('h1.title span.sub:first').text()+$('div.theTitle').text();
 	document.title = title;
-	$('nav.main a').removeClass('selected');
+	$('ul.main-nav a').removeClass('selected');
 	if(path2 != ''){
-		$('nav.main a#'+path2).addClass('selected');
+		$('ul.main-nav a#'+path2).addClass('selected');
 	}
 	else{
-		$('nav.main a#stream').addClass('selected');
+		$('ul.main-nav a#stream').addClass('selected');
 		document.title = 'Miguel Mota | Freelance Web Developer';
 	}
 	switch(path2){
@@ -149,20 +184,22 @@ $(document).ajaxComplete(function(){
 	if(window.location.pathname.substr(1,4) == 'post'){
 		while(bc == 0) {
 			blogPage();
-			$('nav.main a#stream').removeClass('selected');
-			$('nav.main a#blog').addClass('selected');
+			$('ul.main-nav a#stream').removeClass('selected');
+			$('ul.main-nav a#blog').addClass('selected');
 			bc++;
 		}
 	}
 	if(window.location.pathname.substr(1) == 'archive'){
-		$('nav.main a#stream').removeClass('selected');
-		$('nav.main a#blog').addClass('selected');
+		$('ul.main-nav a#stream').removeClass('selected');
+		$('ul.main-nav a#blog').addClass('selected');
 	}
 });
 
 //global variables
 var c = 0;
 var bc = 0;
+var ldc = 0;
+
 var pathname = window.location.pathname;
 
 /*
@@ -205,25 +242,37 @@ var niceTime = (function(){
 	    };
 	})();
 
-$("nav.main a:not('#logo')").live('click', function(){
-		c = 0;
-		bc = 0;
-		var toLoad = $(this).attr('href')+' section.content';
-		$('section.content').fadeOut('fast',loadContent);
-		$('div.loading').fadeIn('normal');
-		function loadContent(){
-			$('section.content').load(toLoad,showNewContent);
-		}
+$("ul.main-nav a:not('#logo')").live('click', function(){
 		if(typeof(window.history.pushState) == 'function'){
-			var stateObj = { foo:  $(this).attr('href') };
-			history.pushState(stateObj, "Title", $(this).attr('href'));
+			c = 0;
+			bc = 0;
+			ldc = 0;
+			var loadSubTitle = $(this).attr('href')+' span.sub';
+			var toLoad = $(this).attr('href')+' section.content';
+			$('h1.title span.sub').fadeOut('fast');
+			$('section.content').fadeOut('fast',loadContent);
+			$('div.loading').fadeIn('normal');
+			function loadContent(){
+				$('h1.title span.sub').load(loadSubTitle);
+				$('section.content').load(toLoad,showNewContent);
+			}
+			if(typeof(window.history.pushState) == 'function'){
+				var stateObj = { foo:  $(this).attr('href') };
+				history.pushState(stateObj, "Title", $(this).attr('href'));
+			}
+			else{
+				window.location.hash = '!'+$(this).attr('href').substr(1,$(this).attr('href').length);
+			}
+			return false;
 		}
 		else{
-			window.location.hash = '!'+$(this).attr('href').substr(1,$(this).attr('href').length);
+			return true;
 		}
-		return false;
 });
 
+
+/*
+ //not gonna use anymore
 $('div.posti h3 a').live('click', function(){
 	var toLoad2 = $(this).attr('href')+' div.posti';
 
@@ -241,7 +290,7 @@ $('div.posti h3 a').live('click', function(){
 	function loadContent2(){
 		$('div.posti').load(toLoad2,showNewContent2);
 		function showNewContent2(){
-			//$('nav.main a').removeClass('selected'); //commented because of testing
+			//$('ul.main-nav a').removeClass('selected'); //commented because of testing
 			//$('#'+window.location.hash.substr(2)).addClass('selected'); //commented because of testing
 			$('div.posti').fadeIn('normal',hideLoader);
 			//var title = $('span.sub').text()+$('div.theTitle').text(); //commented because of testing
@@ -254,6 +303,8 @@ $('div.posti h3 a').live('click', function(){
 	}
 	return false;
 });
+
+*/
 
 var position = 0;
 var length = 'portfolio'.length;
@@ -279,6 +330,7 @@ function showNewContent(){
 	if(typeof(window.history.pushState) != 'function'){
 		//$('#'+window.location.hash.substr(2)).addClass('selected');
 	}
+	$('h1.title span.sub').show();
 	$('section.content, footer.main').fadeIn('normal',hideLoader);
 	
 }
@@ -291,56 +343,25 @@ function hideLoader(){
 
 function streamPage(){
 	
+	//hide social link text
+	$("div.stream a.social:not('.latitude')").text('');
+	
 	//initialize mtip
 	$('.mtip').mtip();
 	
 	while(c == 0){
+
+		//Add question mark next to social logo
+		$('a.social.latitude').after("<span class='mtip' title='recent location'>(?)</span>");
+		$('a.social.twitter').after("<span class='mtip' title='@miguel_mota recent tweets'>(?)</span>");
+		$('a.social.facebook').after("<span class='mtip' title='recent statuses'>(?)</span>");
+		$('a.social.tumblr').after("<span class='mtip' title='recent posts'>(?)</span>");
+		$('a.social.delicious').after("<span class='mtip' title='recently saved bookmarks'>(?)</span>");
+		$('a.social.lastfm').after("<span class='mtip' title='recently listened tracks'>(?)</span>");
+		$('a.social.wakoopa').after("<span class='mtip' title='recently used software'>(?)</span>");
 		
-		//hide social link text
-		$("div.stream a.social:not('.latitude')").text('');
 		
-		//Facebook stream
-		$('div.facebook img.loader').css('display','block');
-		$.getJSON('https://graph.facebook.com/miguel.mota2/feed?limit=3&callback=?', 
-				function(json){
-					$.each(json.data, function(i, fb){
-						var post = fb.message;
-						var post_id = fb.id.substr(16);
-						var type = fb.type;
-						var link = fb.link;
-						var name = fb.name;
-						var caption = fb.caption;
-						var description = fb.description;
-			    	  	var date = new Date(fb.created_time).toUTCString();		   
-			    	  	switch(type){
-			    	  	case 'status':
-				    	    $('ul.facebook_status').append("<li class='status'>&#187; <span class='post'>"+post+"</span> <span class='date'><a href='http://www.facebook.com/miguel.mota2/posts/"+post_id+"'>"+niceTime(date)+"</a></span></li>");
-				    	    break;
-			    	  	case 'link':
-			    	  		if(post){
-					    	    $('ul.facebook_status').append("<li class='status'>&#187; Link: <span class='post'>"+post+" <a href='"+link+"'>"+name+"</a></span> <span class='date'><a href='http://www.facebook.com/miguel.mota2/posts/"+post_id+"'>"+niceTime(date)+"</a></span></li>");
-			    	  		}
-			    	  		else{
-			    	  			$('ul.facebook_status').append("<li class='status'>&#187; Link: <a href='"+link+"'>"+name+"</a></span> <span class='date'><a href='http://www.facebook.com/miguel.mota2/posts/"+post_id+"'>"+niceTime(date)+"</a></span></li>");
-			    	  		}
-				    	    break;
-			    	  	case 'video':
-			    	  		if(post){
-			    	  			$('ul.facebook_status').append("<li class='status'>&#187; Video: <span class='post'>"+post+" <a href='"+link+"'>"+name+"</a></span> <span class='date'><a href='http://www.facebook.com/miguel.mota2/posts/"+post_id+"'>"+niceTime(date)+"</a></span></li>");
-			    	  		}
-			    	  		else{
-					    	    $('ul.facebook_status').append("<li class='status'>&#187; Video: <span class='post'><a href='"+link+"'>"+name+"</a></span> <span class='date'><a href='http://www.facebook.com/miguel.mota2/posts/"+post_id+"'>"+niceTime(date)+"</a></span></li>");
-			    	  		}
-				    	    break;
-			    	  	default:
-			    	  		break;
-			    	  	}
-					});
-					$('div.facebook img.loader').css('display','none');
-				}
-		);
-		
-		//Twitter stream
+		// Twitter stream
 		$('div.twitter img.loader').css('display','block');
 		$.getJSON('http://twitter.com/status/user_timeline/miguel_mota.json?&count=5&callback=?', 
 				function(data){
@@ -357,7 +378,49 @@ function streamPage(){
 				}
 		);
 		
-		//Tumblr stream
+		// Facebook stream
+		$('div.facebook img.loader').css('display','block');
+		$.getJSON('https://graph.facebook.com/miguel.mota2/feed?limit=3&callback=?', 
+				function(json){
+					$.each(json.data, function(i, fb){
+						var post = fb.message;
+						var post_id = fb.id.substr(16);
+						var type = fb.type;
+						var link = fb.link;
+						var name = fb.name;
+						var caption = fb.caption;
+						var description = fb.description;
+			    	  	var date = new Date(fb.created_time).toUTCString();		   
+			    	  	switch(type){
+			    	  	case 'status':
+				    	    $('ul.facebook-status').append("<li class='status'>&#187; <span class='post'>"+post+"</span> <span class='stream-date'><a href='http://www.facebook.com/miguel.mota2/posts/"+post_id+"'>"+niceTime(date)+"</a></span></li>");
+				    	    break;
+			    	  	case 'link':
+			    	  		if(post){
+					    	    $('ul.facebook-status').append("<li class='status'>&#187; Link: <span class='post'>"+post+" <a href='"+link+"'>"+name+"</a></span> <span class='stream-date'><a href='http://www.facebook.com/miguel.mota2/posts/"+post_id+"'>"+niceTime(date)+"</a></span></li>");
+			    	  		}
+			    	  		else{
+			    	  			$('ul.facebook-status').append("<li class='status'>&#187; Link: <a href='"+link+"'>"+name+"</a></span> <span class='stream-date'><a href='http://www.facebook.com/miguel.mota2/posts/"+post_id+"'>"+niceTime(date)+"</a></span></li>");
+			    	  		}
+				    	    break;
+			    	  	case 'video':
+			    	  		if(post){
+			    	  			$('ul.facebook-status').append("<li class='status'>&#187; Video: <span class='post'>"+post+" <a href='"+link+"'>"+name+"</a></span> <span class='stream-date'><a href='http://www.facebook.com/miguel.mota2/posts/"+post_id+"'>"+niceTime(date)+"</a></span></li>");
+			    	  		}
+			    	  		else{
+					    	    $('ul.facebook-status').append("<li class='status'>&#187; Video: <span class='post'><a href='"+link+"'>"+name+"</a></span> <span class='stream-date'><a href='http://www.facebook.com/miguel.mota2/posts/"+post_id+"'>"+niceTime(date)+"</a></span></li>");
+			    	  		}
+				    	    break;
+			    	  	default:
+			    	  		break;
+			    	  	}
+					});
+					$('div.facebook img.loader').css('display','none');
+				}
+		);
+		
+		
+		// Tumblr stream
 		$('div.tumblr img.loader').css('display','block');
 		$.getJSON('http://miguelmota.tumblr.com/api/read/json?num=3&callback=?', 
 				function(data){
@@ -366,13 +429,13 @@ function streamPage(){
 				    	  	var url = this.url;
 				    	  	var caption = this['photo-caption'];
 				    	  	var slug = this.slug.replace(/-/g,' ');
-				    	  	$('ul.tumblr_posts').append("<li>&#187; <a href='"+url+"'>"+slug.substring(0,1).toUpperCase()+slug.substr(1,200)+"</a> <span class='date'>"+niceTime(date)+"</span></li>");
+				    	  	$('ul.tumblr-posts').append("<li>&#187; <a href='"+url+"'>"+slug.substring(0,1).toUpperCase()+slug.substr(1,200)+"</a> <span class='stream-date'>"+niceTime(date)+"</span></li>");
 				      }); 
 					  $('div.tumblr img.loader').css('display','none');
 				  }
 		);
 		
-		//Delicious stream
+		// Delicious stream
 		$('div.delicious img.loader').css('display','block');
 		$.getJSON('http://feeds.delicious.com/v2/json/miguelmota/?count=3&callback=?', 
 				function(data){
@@ -380,13 +443,13 @@ function streamPage(){
 						var title = item.d;
 						var url = item.u;
 			    	  	var date = new Date(item.dt).toUTCString();
-						$('ul.delicious_bookmarks').append("<li>&#187; <a href='"+url+"'>"+title+"</a> <span class='date'>"+niceTime(date)+"</span></li>");
+						$('ul.delicious-bookmarks').append("<li>&#187; <a href='"+url+"'>"+title+"</a> <span class='stream-date'>"+niceTime(date)+"</span></li>");
 					});
 					$('div.delicious img.loader').css('display','none');
 			}
 		);
 		
-		//Last.fm stream
+		// Last.fm stream
 		$('div.lastfm img.loader').css('display','block');
 		$.getJSON('http://ws.audioscrobbler.com/2.0/?method=user.getRecentTracks&user=miguel_mota&api_key=b25b959554ed76058ac220b7b2e0a026&format=json&limit=5&callback=?', 
 				function(data){       
@@ -395,24 +458,24 @@ function streamPage(){
 							var name = item.name;
 							var artist = item.artist['#text'];
 							var date =  item.date['#text'];
-							$('ul.lastfm_tracks').append("<li><a class='link' href='"+url+"'>"+artist+" - "+name+"</a> <span class='date'>"+date+"</span></li>");
+							$('ul.lastfm-tracks').append("<li><a class='link' href='"+url+"'>"+artist+" - "+name+"</a> <span class='stream-date'>"+date+"</span></li>");
 					}); 
 					$('div.lastfm img.loader').css('display','none');
 				}
 		);
 		
-		//Wakoopa stream
+		// Wakoopa stream
 		$('div.wakoopa img.loader').css('display','block');
 		$.getJSON('http://api.wakoopa.com/miguelmota/recently_used.json?limit=3&callback=?', 
 			function wakoopaApi(data){
-				var html = ["<ul class='wakoopa_software'>"];
+				var html = ["<ul class='wakoopa-software'>"];
 				for(var i = 0; i < data.length; i++){
 					var entry = data[i].software;
 					var date = new Date(entry.last_active_at).toUTCString();
-					html.push("<li><a class='link' href='", entry.complete_url, "'>", entry.name, "</a> <span class='date'>"+niceTime(date)+"</span>", "</li>");
+					html.push("<li><a class='link' href='", entry.complete_url, "'>", entry.name, "</a> <span class='stream-date'>"+niceTime(date)+"</span>", "</li>");
 				}
 				html.push("</ul>");
-				document.getElementById('wakoopa_software').innerHTML = html.join("");
+				document.getElementById('wakoopa-software').innerHTML = html.join("");
 				$('div.wakoopa img.loader').css('display','none');
 			}
 		);
@@ -458,15 +521,15 @@ function portfolioPage(){
 	});
 	
 	//hover glow effect
-	$('section.portfolio div.container').hover(function(){
-				jQuery('div.overlay', this).fadeOut(300);
+	$('div.container').hover(function(){
+				jQuery('div.overlay', this).fadeOut(200);
 				$(this).css({
 					'-webkit-box-shadow': '0 0 10px #fff',
 					'-moz-box-shadow': '0 0 10px #fff',
 					'box-shadow': '0 0 10px #fff'
 					});
 	},function(){
-				jQuery('div.overlay', this).hide().fadeIn(300);
+				jQuery('div.overlay', this).hide().fadeIn(200);
 				$(this).css({
 					'-webkit-box-shadow': '2px 2px 5px #111',
 					'-moz-box-shadow': '2px 2px 5px #111',
@@ -475,28 +538,46 @@ function portfolioPage(){
 		  }
 	);
 	
+	
+	
+	// Show zoom icon on hover
+	$('a.fancybox').hover(function(){
+			jQuery('span.zoom-icon', this).css('display', 'block');
+	},function(){
+			jQuery('span.zoom-icon', this).hide();
+		  }
+	);
+	
+	
+	
 	//initialize fancybox
 	$('a.fancybox').fancybox({
+			'showCloseButton': false,
+			'titlePosition': 'inside',
+			'titleFormat': formatTitle,
 			'padding': 0,
 			'transitionIn': 'fade',
-			'transitionOut': 'fade',
-			'speedIn': 600, 
-			'speedOut': 200, 
+			'transitionOut': 'none',
+			'speedIn': 150, 
 			'overlayColor': '#000'
 	});
+	//custom fancybox title formatting
+	function formatTitle(title, currentArray, currentIndex, currentOpts) {
+	    return '<div id="fancybox_title"><span><a href="javascript:void(0);" onclick="$.fancybox.close();">close X</a></span>' + (title && title.length ? '<strong>' + title + '</strong>' : '' ) + 'Image ' + (currentIndex + 1) + ' of ' + currentArray.length + '</div>';
+	}
 	
 }
 
 function contactPage(){
 	
 	//create method to validate name
-	$('form.contact_form a.submit').live('click', function(){
+	$('a.contact-submit').live('click', function(){
 		$.validator.addMethod('namecheck', function(value, element){
 			return this.optional(element) || /^[a-zA-Z]+?\s?[a-zA-Z]+?\s?[a-zA-Z]+$/.test(value);
 	});
 		
 	//validate contact form
-	$('form.contact_form').validate({
+	$('form.contact-form').validate({
 		rules: {
 			name: {
 				namecheck: true,
@@ -506,29 +587,29 @@ function contactPage(){
 				required: true,
 				email: true
 			},
-				message: {
+			message: {
 				required: true,
 				minlength: 10
 			}
 		},
 		messages: {
 			name: {
-				namecheck: 'invalid',
-				required: 'required'
+				namecheck: '',
+				required: ''
 			},
 			email: {
-				required: 'required',
-				email: 'invalid'
+				required: '',
+				email: ''
 			},
-			message: 'required',
-			minlength: 'required'
+			message: '',
+			minlength: ''
 			},
 		onkeyup: true,
 		debug: true
 	});
 	
 	//if validates to true, then submit it
-	if ($('form.contact_form').valid() == true){						  
+	if ($('form.contact-form').valid() == true){						  
 		var str = $('form.contact_form').serialize();
 		$.ajax({
 			type: 'post',
@@ -549,21 +630,28 @@ function contactPage(){
 	
 	//hide contact form and display thank you message
 	function success(){
-		$('form.contact_form').slideUp(300);
+		$('form.contact-form').slideUp(300);
 		setTimeout(function(){
-			$('form.contact_form').html('<p>Thank you.<br />Your message has been successfully sent!<br />I will get in touch with you soon.</p>').fadeIn(1200);	
+			$('form.contact-form').html('<p>Thank you.<br />Your message has been successfully sent!<br />I will get in touch with you soon.</p>').fadeIn(1200);	
 		}, 300);
 	}
 	
 }
 
 function blogPage(){
+
+	//initialize AddThis
+	$.getScript('http://s7.addthis.com/js/250/addthis_widget.js#username=miguelmota');
+
 	
 	//initialize Google Search
 	loadSearch();
 	
 	//initialize Disqus
-	loadDisqus();
+	while(ldc = 0){
+		loadDisqus();
+		ldc++;
+	}
 	
 }
 
@@ -572,20 +660,20 @@ function loadDisqus(){
     var disqus_shortname = 'miguelmota';
     var disqus_url = 'http://wwww.miguelmota.com/{{ page.url }}';
     
+    //comment count
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(s);
+    }());
+    
     //comment box
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
         dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
-    
-    //comment count
-    (function () {
-        var s = document.createElement('script'); s.async = true;
-        s.type = 'text/javascript';
-        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
-        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('body')[0]).appendChild(s);
-    }());
 }
 
 //load Google Search function

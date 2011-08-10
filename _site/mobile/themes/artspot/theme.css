@@ -1,91 +1,23 @@
 /** CHANGE COLORS HERE **/
 
 body, .toolbar, #jqt ul, #jqt ul.individual li,#jqt ul li a.active,#jqt .info,#jqt #plastic,#tabbar, .s-scrollpane {
-    background-color: #000; /* main background color */
+    background-color: #519d00; /* main background color */
 }
 #jqt h1, #jqt h2, #jqt ul li a,#jqt .whiteButton, #jqt .button.active, #jqt .cancel.active, #jqt .add.active, #jqt .back.active,#jqt ul li small,#tabbar .badge,#jqt .info,#jqt .info a  {
-    color: #999; /* main text color */
+    color: #2e6c00; /* main text color */
 }
 
 /** END **/
 
-
-
-
-/* FONT_FACE ========================================================= */
-@font-face {
-	font-family: NeoSans;
-	src: url('/fonts/neosans-webfont/neosans-webfont.eot');
-	src: local('☺'),
-	url('/fonts/neosans-webfont/neosans-webfont.woff') format('woff'),
-	url('/fonts/neosans-webfont/neosans-webfont.ttf') format('truetype'),
-	url('/fonts/neosans-webfont/neosans-webfont.svg') format('svg');
-}
-@font-face {
-	font-family: NeoSans;
-	src: url('/fonts/neosans-webfont/neosans-bold-webfont.eot');
-	src: local('☺'),
-	url('/fonts/neosans-webfont/neosans-bold-webfont.woff') format('woff'),
-	url('/fonts/neosans-webfont/neosans-bold-webfont.ttf') format('truetype'),
-	url('/fonts/neosans-webfont/neosans-bold-webfont.svg') format('svg');
-	font-weight: bold;
-}
-@font-face {
-	font-family: NeoSans;
-	src: url('/fonts/neosans-italic-webfont.eot');
-	src: local('☺'),
-	url('/fonts/neosans-webfont/neosans-italic-webfont.woff') format('woff'),
-	url('/fonts/neosans-webfont/neosans-italic-webfont.ttf') format('truetype'),
-	url('/fonts/neosans-webfont/neosans-italic-webfont.svg') format('svg');
-	font-style: italic;
-}
-@font-face {
-	font-family: Klavika;
-	src: url('/fonts/klavika-webfont/klavika-regular-webfont.eot');
-	src: local('☺'),
-	url('/fonts/klavika-webfont/klavika-regular-webfont.woff') format('woff'),
-	url('/fonts/klavika-webfont/klavika-regular-webfont.ttf') format('truetype'),
-	url('/fonts/klavika-webfont/klavika-regular-webfont.svg') format('svg');
-}
-@font-face {
-	font-family: Klavika;
-	src: url('/fonts/klavika-webfont/klavika-bold-webfont.eot');
-	src: local('☺'),
-	url('/fonts/klavika-webfont/klavika-bold-webfont.woff') format('woff'),
-	url('/fonts/klavika-webfont/klavika-bold-webfont.ttf') format('truetype'),
-	url('/fonts/klavika-webfont/klavika-bold-webfont.svg') format('svg');
-	font-weight: bold;
-}
-@font-face {
-	font-family: Klavika;
-	src: url('/fonts/klavika-webfont/klavika-italic-webfont..eot');
-	src: local('☺'),
-	url('/fonts/klavika-webfont/klavika-italic-webfont.woff') format('woff'),
-	url('/fonts/klavika-webfont/klavika-italic-webfont.ttf') format('truetype'),
-	url('/fonts/klavika-webfont/klavika-italic-webfont.svg') format('svg');
-	font-style: italic;
-}
-@font-face {
-	font-family: Klavika-Light;
-	src: url('/fonts/klavika-webfont/klavika-light-webfont.eot');
-	src: local('☺'),
-	url('/fonts/klavika-webfont/klavika-light-webfont.woff') format('woff'),
-	url('/fonts/klavika-webfont/klavika-light-webfont.ttf') format('truetype'),
-	url('/fonts/klavika-webfont/klavika-light-webfont.svg') format('svg');
-}
-/* /FONT_FACE ======================================================== */
-
-
 body, .toolbar, #jqt ul, #jqt ul.individual li, #jqt ul li a.active,#tabbar,.s-scrollwrapper {
-    background-image: url(img/bg_noise.png); 
+    background-image: url(img/bg_noise.png);
 }
 #jqt > * {
-    /*background: rgba(255,255,255,0.9);*/
-    background-color: #333;
+    background: rgba(255,255,255,0.9);
 }
 #jqt h1, #jqt h2, #jqt ul li a {
-    font: bold 18px "NeoSans", "Helvetica Neue", Helvetica;
-    /* text-shadow: white 0 1px 0; */
+    font: bold 18px "Helvetica Neue", Helvetica;
+    text-shadow: white 0 1px 0;
     margin: 10px 20px 5px;
 }
 /* @group Toolbar */
@@ -110,30 +42,17 @@ body, .toolbar, #jqt ul, #jqt ul.individual li, #jqt ul li a.active,#tabbar,.s-s
     height: 40px;
     font-size: 20px;
     width: 150px;
+    font-weight: bold;
     text-shadow: rgba(0,0,0,0.5) 0 1px 1px;
     text-align: center;
     text-overflow: ellipsis;
     white-space: nowrap;
-    color: #999;
-    letter-spacing: -1px;
+    color: #fff;
 }
 #jqt.landscape .toolbar > h1 {
     margin-left: -125px;
     width: 250px;
 }
-
-
-
-h1 {
-	font-family: "Klavika", sans-serif !important;
-	text-transform: uppercase;
-}
-h1 span.mota {
-	font-weight: normal;
-}
-
-
-
 #jqt .button, #jqt .back, #jqt .cancel, #jqt .add {
     position: absolute;
     overflow: hidden;
@@ -158,8 +77,7 @@ h1 span.mota {
     border-radius: 8px;
 }
 #jqt .button.active, #jqt .cancel.active, #jqt .add.active, #jqt .back.active {
-    /* background: rgba(255,255,255,0.9); */
-    background: #222;
+    background: rgba(255,255,255,0.9);
     text-shadow: none;
 }
 #jqt .blueButton {
@@ -239,7 +157,7 @@ h1 span.mota {
 }
 #jqt ul {
     color: #aaa;
-    font: bold 18px "NeoSans", "Helvetica Neue", Helvetica;
+    font: bold 18px "Helvetica Neue", Helvetica;
     padding: 0;
     margin: 15px 10px 17px 10px;
 }
@@ -276,10 +194,9 @@ h1 span.mota {
     background-image: none;
 }
 #jqt ul li.arrow {
-    /*background-image: url(img/chevron.svg);
+    background-image: url(img/chevron.svg);
     background-position: right center !important;
-    background-repeat: no-repeat !important;*/
-    background-color: #222;
+    background-repeat: no-repeat !important;
 }
 
 #jqt ul li.arrow a {
@@ -307,21 +224,18 @@ h1 span.mota {
     background-position: 95% center;
     background-repeat: no-repeat;
 }
-
+/*
 #jqt ul li.arrow a.active {
-	/*
     background-image: url(img/chevron.svg);
     background-position: right center;
     background-repeat: no-repeat;
-    */
-    background-color: #000;
 }
 #jqt ul li.forward a.active {
     background-image: url(img/chevron_circle.png);
     background-position: right center;
     background-repeat: no-repeat;
 }
-
+*/
 #jqt ul li.img a + a {
     margin: -10px 10px -20px -5px;
     font-size: 17px;
@@ -350,7 +264,7 @@ h1 span.mota {
 }
 #jqt ul li a + a {
     color: #000;
-    font: 14px "NeoSans", "Helvetica Neue", Helvetica;
+    font: 14px "Helvetica Neue", Helvetica;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
@@ -360,7 +274,7 @@ h1 span.mota {
 }
 #jqt ul li a + a + a, #jqt ul li.img a + a + a + a, #jqt ul li.img a + small + a + a + a {
     color: #666;
-    font: 13px "NeoSans", "Helvetica Neue", Helvetica;
+    font: 13px "Helvetica Neue", Helvetica;
     margin: 0;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -392,7 +306,7 @@ h1 span.mota {
     color: white;
     background: transparent url('data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==');
     border: 0;
-    font: normal 17px "NeoSans", "Helvetica Neue", Helvetica;
+    font: normal 17px "Helvetica Neue", Helvetica;
     padding: 0;
     display: inline-block;
     margin-left: 0px;
@@ -420,7 +334,7 @@ h1 span.mota {
 }
 #jqt ul li input[type="checkbox"]:after, #jqt ul li input[type="radio"]:after {
     content: attr(title);
-    font: 17px "NeoSans", "Helvetica Neue", Helvetica;
+    font: 17px "Helvetica Neue", Helvetica;
     display: block;
     width: 246px;
     color: white;
@@ -429,7 +343,7 @@ h1 span.mota {
 /* @end */
 /* @group Mini Label */
 #jqt ul li small {
-    font: 17px "NeoSans", "Helvetica Neue", Helvetica;
+    font: 17px "Helvetica Neue", Helvetica;
     text-align: right;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -545,7 +459,7 @@ h1 span.mota {
 #jqt ul.edgetoedge li a.active {
   color: white;
   text-shadow: 0 1px 1px rgba(0,0,0,0.3);
-  webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.3);
+  -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.3);
 }
 #jqt ul.edgetoedge li.arrow {
     background-color: #404142 !important;
@@ -570,29 +484,24 @@ h1 span.mota {
 
 #jqt ul.plastic {
     color: rgba(0,0,0,0.3);
-    font: bold 18px "NeoSans", "Helvetica Neue", Helvetica;
+    font: bold 18px "Helvetica Neue", Helvetica;
     margin: 0;
     padding: 0;
     border-width: 0 0 1px 0;
     background: rgba(255,255,255,0.7);
 }
 #jqt ul.plastic li {
-    /* color: rgba(0,0,0,0.6); */
-    color: #999;
+    color: rgba(0,0,0,0.6);
     list-style-type: none;
     overflow: hidden;
-    /*  padding: 10px 10px 10px 10px; */
-    padding: 5px 10px 5px 10px;
+    padding: 10px 10px 10px 10px;
     margin: 0;
     border: none;
-    /* border-bottom: 1px solid rgba(0,0,0,0.1); */
-    border-bottom: 1px solid #000;
-    background-color: #222;
+    border-bottom: 1px solid rgba(0,0,0,0.1)
 }
 #jqt ul.plastic li a {
-  	 /* text-shadow: 0 1px 0 rgba(255,255,255,0.5); */
-  	 text-shadow: 0 -1px 0 #000;
-    /* background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(255,255,255,0)), to(rgba(255,255,255,0.5))); */
+  text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(255,255,255,0)), to(rgba(255,255,255,0.5)));
 }
 #jqt ul.plastic li a.active.loading {
     background-image: url(img/loading.gif);
@@ -617,8 +526,8 @@ h1 span.mota {
     background-repeat: no-repeat;
 }
 #jqt ul.plastic li a.active {
-    /* background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(255,255,255,0)), to(rgba(255,255,255,0.5)));
-    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.5); */
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(255,255,255,0)), to(rgba(255,255,255,0.5)));
+    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.5);
 }
 /* @group Metal */
 #jqt ul.metal {

@@ -1,13 +1,14 @@
 $(document).ready(function(){
 	
+	$('ul.nav li a, ul.contact li a').contents().wrap("<span class='text' />").end().append("<span class='rsaquo'>&#8250;</span>");
 
-
-	$('#stream div.content ul li.arrow').load('/stream section.content', function(){
+	$('#stream div.content').load('/stream section.content', function(){
 		streamPage();	
+		$('a.social').append("<span class='rsaquo'>&#8250;</span>");
 	});
 			
-	$('#about div.content ul li.arrow').load('/about section.content');
-	$('#portfolio div.content ul li.arrow').load('/portfolio section.content', function(){
+	$('#about div.content').load('/about section.content');
+	$('#portfolio div.content').load('/portfolio section.content', function(){
 		//initialize fancybox
 		/*$('a.fancybox').fancybox({
 			'padding': 0,
@@ -20,8 +21,33 @@ $(document).ready(function(){
 			'hideOnContentClick': true
 		});*/
 	});
-	$('#blog div.content ul li.arrow').load('/blog section.content');
+	
+	$('#blog div.content').load('/blog section.content', function(){
+		loadDisqus();
+		
+		
+		
+		
+		var link = $('#blog h1 a').attr('href');
+		$('#blog h1 a').attr('href', '#article').removeAttr('rel').live('click', function(){
+			
+			
+			
+			$('#article div.content').load('/article/make-an-awesome-tooltip-with-jquery/ section.content', function(){
+				//initialize Disqus
+				loadDisqus();
+			});
+		
+			
+		});
+		
+		
+		
+		$('#blog div.view_archive a').attr('href', '#archive').removeAttr('rel');
+		$('#archive div.content').load('/archive section.content');
+	});
 
+	$('div.page').prepend("<div class='footer'>&#169; "+thisYear+" miguel mota</div>");
 
 
 	
@@ -29,21 +55,19 @@ $(document).ready(function(){
 	
 	
 	setTimeout(function(){
-		$("div.content ul li.arrow a:not('a.fancybox'), a#standard_view").attr('rel', 'external');
+		$("div#home div.toolbar a, div.content a:not('a.fancybox'), a#standard_view").attr('rel', 'external');
 	}, 5000);
 
 	
 	
-	$('#blog div.content h3 a').live('click', function(){
-		//initialize Disqus
-		loadDisqus();
-		
-		$('#blog div.content ul li.arrow').load($(this).attr('href')+' section.content');
-		return false;
-	});
+
 
 
 });
+
+var date = new Date();
+var thisYear = date.getFullYear();
+
 
 var jQt = $.jQTouch({
 	icon: '/images/apple-touch-icon.png',
@@ -71,7 +95,7 @@ function loadDisqus(){
         var s = document.createElement('script'); s.async = true;
         s.type = 'text/javascript';
         s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
-        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('body')[0]).appendChild(s);
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(s);
     }());
 }
 

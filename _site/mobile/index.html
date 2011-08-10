@@ -25,10 +25,11 @@
 	<link rel='shortcut icon' href='/favicon.ico' />
 	<link href='/styles/reset.css' rel='stylesheet' />
    	<link href="jqtouch/jqtouch.css" rel='stylesheet' />
-    <link href="themes/artspot/theme.css" rel='stylesheet' />
+    <link href="themes/oblivion/theme.css" rel='stylesheet' />
     <link href='/plugins/fancybox/jquery.fancybox.css' rel='stylesheet' />
     <link href='/plugins/shadowbox/shadowbox.css' rel='stylesheet' />
-   	<link href="styles/global.css" rel='stylesheet' />
+    <link href='/styles/pygment_friendly.css' rel='stylesheet' />
+   	<link href='styles/global.css'' rel='stylesheet' />
 	<script src="jqtouch/jquery.js"></script>
 	<script src="jqtouch/jqtouch.js"></script>
 	<script src='/plugins/fancybox/jquery.fancybox-1.3.2.pack.js'></script>
@@ -38,9 +39,9 @@
 
 </head>
 <body>
-	<div id='home'>
+	<div id='home' class='page'>
 		<div class='toolbar'>
-			<img class='logo' src='../images/logo.png' /><h1>Miguel<span class='mota'>mota</span></h1>
+			<a href='./'><img class='logo' src='../images/logo.png' /></a><h1><a href='./'>Miguel<span class='mota'>mota</span></a></h1>
 		</div>
 		<ul class='plastic nav'>
 			<li class='arrow'><a href='#stream'>Stream</a></li>
@@ -51,46 +52,60 @@
 		</ul>
 		<a id='standard_view' href='http://www.miguelmota.com'>Standard view</a>
 	</div>
-	<div id='stream'>
+	<div id='stream' class='page'>
 		<div class='toolbar'>
 			<h1>Stream</h1>
 			<a class="back" href="#home">Home</a> 
 		</div>
-		<div class='content'><ul class='plastic'><li class='arrow'></li></ul></div>
+		<div class='content'></div>
 	</div>
-	<div id='about'>
+	<div id='about' class='page'>
 		<div class='toolbar'>
 			<h1>About</h1>
 			<a class="back" href="#home">Home</a> 
 		</div>
-		<div class='content'><ul class='plastic'><li class='arrow'></li></ul></div>
+		<div class='content'></div>
 	</div>
-	<div id='portfolio'>
+	<div id='portfolio' class='page'>
 		<div class='toolbar'>
 			<h1>Portfolio</h1>
 			<a class="back" href="#home">Home</a> 
 		</div>
-		<div class='content'><ul class='plastic'><li class='arrow'></li></ul></div>
+		<div class='content'></div>
 	</div>
-	<div id='contact'>
+	<div id='contact' class='page'>
 		<div class='toolbar'>
 			<h1>Contact</h1>
 			<a class="back" href="#home">Home</a> 
 		</div>
 		<div class='content'>
-			<ul class='plastic'>
-				<li class='arrow'><a href='mailto:hello@miguelmota.com'>Email <span class='sub'>hello@miguelmota.com</span></a></li>
-				<li class='arrow'><a href='skype:miguelmota5?chat'>Skype <span class='sub'>miguelmota5</span></a></li>
-				<li class='arrow'><a href='tel:1-951-215-6682'>Phone <span class='sub'>1.951.215.6682</span></a></li>
+			<ul class='plastic contact'>
+				<li class='arrow'><a href='mailto:hello@miguelmota.com'>Email: hello@miguelmota.com</a></li>
+				<li class='arrow'><a href='skype:miguelmota5?chat'>Skype: miguelmota5</a></li>
+				<li class='arrow'><a href='tel:1-951-215-6682'>Phone: 1.951.215.6682</a></li>
 			</ul>
 		</div>
 	</div>
-	<div class='page' id='blog'>
+	<div id='blog' class='page'>
 		<div class='toolbar'>
 			<h1>Blog</h1>
 			<a class="back" href="#home">Home</a> 
 		</div>
-		<div class='content'><ul class='plastic'><li class='arrow'></li></ul></div>
+		<div class='content'></div>
+	</div>
+	<div id='article' class='page'>
+		<div class='toolbar'>
+			<h1>Article</h1>
+			<a class="back" href="#blog">Blog</a> 
+		</div>
+		<div class='content'></div>
+	</div>
+	<div id='archive' class='page'>
+		<div class='toolbar'>
+			<h1>Archive</h1>
+			<a class="back" href="#blog">Blog</a> 
+		</div>
+		<div class='content'></div>
 	</div>
 	
 	

@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:fb="http://www.facebook.com/2008/fbml">
+  <head>
+    <meta charset="utf-8">
+    
+    <meta name="color:Background" content="#fff">
+      <meta name="color:Text" content="#424037">
+      <meta name="color:Post Title" content="#444">    
+      <meta name="color:Lighter Text" content="#999">
+      <meta name="color:Date" content="#C6C1A5">    
+      <meta name="color:Link" content="#bc7134">
+      
+      <link rel="icon" href="/images/favicon.png" type="image/x-png">
+      
+      <title>{PageTitle}</title>
+<link rel="stylesheet" type="text/css" href="/themes/cleansheet/styles.css" />
+      <style>
+        /* global styles */
+        body, html { text-align: center; width: 100%; height: 100%; margin: 0; padding: 0; background-color: {color:Background}; font-family: Arial, Helvetica, sans-serif; color: {color:Text}; }
+        
+        a { color: {color:Link}; text-decoration: none; }
+        a[name] { color: {color:Lighter Text}; text-decoration: none; }
+    
+        article header h1 a { color: {color:Post Title}; }
+        article header h1 a:hover { color: {color:Lighter Text}; text-decoration: none; }
+        
+        header#page_header hgroup { margin-top: 40px; {color:Lighter Text}; display: block; }
+        header#page_header hgroup a { color: {color:Lighter Text}; }
+        header#page_header hgroup h2 { margin: 10px 0 30px; font-size: 1.4em; font-weight: normal; color: {color:Lighter Text}; letter-spacing: 0px;}
+        
+      nav#navigation ul li a.current { color: {color:Lighter Text}; }
+      
+      section#extra_links h1 span { letter-spacing: 0; display: block; font-size: 10px; font-weight: normal; color: {color:Lighter Text}; }
+      section#extra_links ul { color: {color:Lighter Text}; font-size: 10px; }
+      
+      form.search input.text { font-size: 12px; padding: 2px 2px 2px 20px; border: 1px solid #ccc; background: {color:Background} url('/images/icons/search16.png') no-repeat 3px 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; }
+      
+      aside#sidebar { float: right; width: 175px; margin-top: 20px; font-size: 1.2em; color: {color:Lighter Text}; }
+      aside#sidebar section h1 { font-size: 11px; font-weight: normal; color: {color:Lighter Text}; letter-spacing: 0; }
+      aside#sidebar section ul li { list-style: none; color: {color:Lighter Text}; }
+      
+      section#statistics { font-size: 10px; color: {color:Lighter Text}; }
+      section#statistics strong { color: {color:Text}; }
+
+      section#tags li.selected a { color: {color:Text}; }
+            
+      h2#archive_list {margin-top: 0px; color: #111;}
+      section#archives {display:block;}
+      section#archives div.inner {margin-left:10px;line-height:1.5em;} 
+      section#archives div.year {margin-top:5px;margin-bottom:5px;}
+      
+      article header aside.sms { font-size: 11px; color: {color:Lighter Text}; }
+      
+      div.editbox a { color: {color:Lighter Text}; }
+        div.editbox a:hover { color: {color:Link}; }
+      
+      article time a { font-size: 14px; color: {color:Date}; }
+      
+      footer section.author { width: 500px; margin-left: 155px; float: none; margin-bottom: 15px; }
+      footer section.author h1 { font-size: 10px; font-weight: normal; color: {color:Lighter Text}; margin: 0 0 5px; }
+      footer section.author h1 a { color: {color:Lighter Text}; }
+      footer section.author:hover h1 a { color: {color:Link}; text-decoration: none; }
+      
+        div.comment_label { float: left; width: 130px; color: {color:Date}; font-size: 14px; padding-top: 2px; margin-top: 0px; text-align: right; }
+        div.comment_spacer { float: left; width: 130px; color: {color:Lighter Text}; font-size: 14px; padding-top: 14px; text-align: right; display: block; }
+        div.comment_date { color: {color:Date}; font-size: 14px; }
+        div.commentunit { margin: 10px 0px; color: {color:Text}; }
+
+      footer section.locations h1 { font-size: 11px; font-weight: normal; color: {color:Lighter Text}; line-height: 21px; margin-top: 0px; }
+    
+        .pagination a:hover, .pagination a:active { border: 1px solid #ca9d00; color: {color:Link}; }
+        .pagination span.current { padding: 2px 5px; margin: 2px; font-weight: bold; border: 1px solid {color:Link}; background-color: {color:Link}; color: {color:Background}; }
+        
+        input, select, textarea { color: {color:Post Title}; font-size: 1.6em; font-family: "Lucida Grande", sans-serif; 
+            line-height:1.3em !important; padding: 5px; }
+        input[type='text'], input[type='password'], select, textarea { background-color: {color:Background}; border: 1px solid #ccc; }
+        input[type='button'], input[type='submit'] { height: 2em; font-size: 1.4em; color: {color:Post Title}; margin-top: 10px; }
+        
+        #rss { margin: 10px 0px; }
+        
+      footer section.share, footer section.tags, footer section.locations { margin-bottom: 15px; }
+      footer section.share { margin-bottom: 18px; float: right; width: auto; margin: 10px 0 0; }
+      .p_response_widget { float: left; }
+      .p_response_container { clear: both; }
+      
+      div.posterous_tweet_button { margin-right: 0; }
+        
+      </style>
+  </head>
+  <body>
+    <div id="wrap">
+      <aside id="posterous_header" class="clearfix">
+        <a href="{PosterousURL}" title="Posterous" class="logo">Posterous</a>
+        <nav>{PosterousBar}</nav>
+      </aside>
+      <header id="page_header">
+        {block:HeaderImage}
+          <h1 class="header_image"><a href="{SiteURL}" title="{Title}" rel="index"><img src="{HeaderImageURL-500}" alt="{Title} - {Description}"></a></h1>
+        {Else}
+          <hgroup>
+            <h1><a href="{SiteURL}" title="{Title}" rel="index">{Title}</a></h1>
+            {block:Description}
+              <h2>{Description}</h2>
+            {/block:Description}
+              <p>(will start blogging soon. I promise!)</p>
+          </hgroup>
+        {/block:HeaderImage}
+        {block:HasPages}
+          <nav id="navigation">
+                <ul>
+                  {block:Pages}
+                    <li><a href="{URL}" class="{Current}" rel="{External}">{Label}</a></li>
+                  {/block:Pages}
+                </ul>
+              </nav>
+            {/block:HasPages}
+            <section id="extra_links">
+          {block:Show}
+            <a href="{BlogURL}" rel="up" class="back_to_blog">&laquo; Back to posts</a>
+          {/block:Show}
+          {block:Tag}
+            <h1><span>Filed under</span>{Tag}</h1>
+            <div>
+              <a href="{GlobalTagURL}" style="display:none" id="global_tags">See all posts on Posterous with this tag &raquo;</a>
+            </div>
+            {block:ShowOnHover action_id="extra_links" hidden_div="global_tags"/}
+          {/block:Tag}
+          {block:SearchPage}
+            <h1>
+              {block:SearchResultOne}One result found searching for{/block:SearchResultOne} 
+                          {block:SearchResultMany}{SearchResultCount} results found searching for{/block:SearchResultMany}
+                          {block:SearchResultNone}No results found searching for{/block:SearchResultNone}
+                      </h1>
+                      <form class="search">
+                        <input type="hidden" name="sort" value="{SearchSort}">
+                        <input type="text" name="search" class="text" value="{SearchQuery}">
+                        <input type="submit" value="Search" class="submit"><a href="{CurrentURL}">clear</a>
+                      </form>
+                      <ul>
+                        <li>Sort by</li>
+                        <li>{block:SearchSortBestmatch}Best match{Else}<a href="{CurrentURL}?search={SearchQuery}&amp;sort=bestmatch">Best match</a>{/block:SearchSortBestmatch}</li>
+                        <li>{block:SearchSortRecent}Most recent{Else}<a href="{CurrentURL}?search={SearchQuery}&amp;sort=recent">Most recent</a>{/block:SearchSortRecent}</li>
+                        <li>{block:SearchSortInteresting}Most interesting{Else}<a href="{CurrentURL}?search={SearchQuery}&amp;sort=interesting">Most interesting</a>{/block:SearchSortInteresting}</li>
+                      </ul>
+                      <a href="{PosterousURL}/explore/?search={SearchQuery}" id="search_all">Search all of Posterous for <strong>{SearchQuery}</strong> &raquo;</a>
+          {/block:SearchPage}
+          
+          {block:ArchiveList}
+              Archive for
+              <h2 id="archive_list">{ArchiveDate}</h2>
+          {/block:ArchiveList}
+        </section>
+      </header>
+      <aside id="sidebar">
+        {block:ListSidebar}
+          {block:Claimed}
+            <section id="profile">
+              <h1>
+                <a href="{ProfileLink}" title="{OwnerName}'s profile">
+                  <img src="{PortraitURL-45}" alt="{OwnerName}" class="profile_image">
+                </a>
+              </h1>
+              <p>{Profile}</p>
+              <div class="external">{ProfileExternalLinks}</div>
+              <a href="{ProfileLink}">{OwnerName}'s profile&nbsp;&raquo;</a>
+            </section>
+            {block:Contributors}
+              <section id="contributors">
+                <h1>Contributors</h1>
+                <ul>
+                  {block:Contributor collapsible="true" count="10" action_id="see_more_contributors"}
+                    {block:ContributorMore}
+                      <li><a href="#" id="see_more_contributors">View all {NumContributors} contributors &raquo;</a></li>
+                    {/block:ContributorMore}
+                    <li>
+                      <a href="{ContributorProfileLink}" rel="contributor" title="{ContributorName}'s profile">
+                        <img src="{ContributorPortraitURL-20}" alt="{ContributorName}">
+                      </a>
+                      <a href="{ContributorProfileLink}" rel="contributor">{ContributorName}</a>
+                    </li>
+                  {/block:Contributor}
+                </ul>
+              </section>
+            {/block:Contributors}
+            {block:NotSearchOrTag}
+              <section id="search">
+                <form class="search">
+                  <input type="hidden" name="sort" value="{SearchSort}">
+                  <input type="text" name="search" class="text" value="{SearchQuery}" id="searchbox">
+                  <input type="submit" value="Search" class="submit" id="searchbox_button" style="display:none">
+                </form>
+                {block:SearchBox searchbox_button="searchbox_button" searchbox="searchbox"/}
+              </section>
+            {/block:NotSearchOrTag}
+            {block:HasLinks}
+              {block:LinkCategories}
+                <section class="links">
+                  <h1>{Label}</h1>
+                  <ul>
+                    {block:Links}
+                      <li><a href="{URL}" rel="external">{Label}</a></li>
+                    {/block:Links}
+                  </ul>
+                </section>
+              {/block:LinkCategories}
+            {/block:HasLinks}
+            {block:TagList}
+              <section id="tags">
+                <h1>Tags</h1>
+                <ul>
+                  {block:TagListing collapsible="true" count="10" action_id="see_more_tags"}
+                    {block:TagListingMore}
+                      <li><a href="#" id="see_more_tags">View all {NumTags} tags &raquo;</a></li>
+                    {/block:TagListingMore}
+                    {block:TagItem}
+                      <li><a href="{TagLink}">{TagName}</a> <span>({TagCount})</span></li>
+                    {/block:TagItem}
+                    {block:TagItemSelected}
+                      <li class="selected"><a href="{TagLink}">{TagName}</a> <span>({TagCount})</span></li>
+                    {/block:TagItemSelected}
+                  {/block:TagListing}
+                </ul>
+              </section>
+            {/block:TagList}
+            
+            {block:HasArchives}
+              <section id="archives">
+                <h1>Archive</h1>
+                 {block:ArchiveYear}
+                    <div class="year"><a href="#" id="{ArchiveYearId}">{ArchiveDateYear} </a><span class="instances">({ArchiveYearCount})</span></div>
+                      <div id="{ArchiveMonthsId}" style="display:none;">
+                        <div class="inner">                      
+                          {block:Archive}                              
+                              <div><a href="{ArchiveLink}">{ArchiveMonth} </a> <span class="instances">({ArchiveCount})</span></div>
+                          {/block:Archive}
+                        </div>
+                      </div>
+                {/block:ArchiveYear}
+
+              </section>
+            {/block:HasArchives}
+            
+                        <section id="subscriptions">{block:Subscription}{/block:Subscription}</section>
+            {block:NotSearchOrTag}
+              <section id="rss">
+                <a href="{RSS}" rel="alternate" type="application/rss+xml">Subscribe via RSS</a>
+              </section>
+            {/block:NotSearchOrTag}
+          {/block:Claimed}
+        {/block:ListSidebar}
+        {block:ShowSidebar}
+          <section id="statistics">
+            <ul>
+              <li>Viewed <strong>{PostViews} times</strong></li>
+            </ul>
+          </section>
+          {block:TagList}
+            <section id="tags">
+              <h1>Filed under</h1>
+              <ul>
+                {block:TagListing}
+                  <li><a href="{TagLink}" rel="tag">{TagName}</a></li>
+                {/block:TagListing}
+              </ul>
+            </section>
+          {/block:TagList}
+        {/block:ShowSidebar}
+        {block:NotClaimed}
+          <section>
+            <div class="external">{UnclaimedExternalLinks}</div>
+            {NotClaimedCode}
+          </section>
+        {/block:NotClaimed}
+      </aside>
+      <div id="articles">
+        {block:Posts}
+          <article class="post clearfix" id="post_{PostID}">
+            <header>
+              <section>
+                {block:NewDayDate}
+                  <time datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}" pubdate="pubdate"><a href="{Permalink}">{Month} {DayOfMonth}, {Year}</a></time>
+                {/block:NewDayDate}
+                {block:Private}
+                  <aside class="private">
+                    <a href="{Permalink}" class="tooltip_link"><img src="/images/icons/lock12.png"></a>
+                    <div class="private_post_message">
+                      <h1>Private Post</h1>
+                      <p>This post has a secret URL and not linked on your public site. Send the secret URL to share it with anyone.</p>
+                    </div>
+                  </aside>
+                {/block:Private}
+              </section>
+              {block:Title}
+                <h1 class="post-title"><a href="{Permalink}">{Title}</a></h1>
+              {/block:Title}
+              {block:SMS}
+                <aside class="sms">Posted from my mobile phone (SMS)</aside>
+              {/block:SMS}
+              <div class="editbox">
+                {block:EditBox}
+                  {EditBoxContents}
+                {/block:EditBox}
+              </div>
+            </header>
+            <div class="body">
+              <div class="inner">
+                {Body}
+              </div>
+            </div>
+            <footer>
+              {block:List}
+                {block:TagList}
+                  <section class="tags">
+                    <h1>Filed under<span>&nbsp; //</span></h1>
+                    <ul>
+                      {block:TagListing}
+                        <li><a href="{TagLink}" rel="tag">{TagName}</a></li>
+                      {/block:TagListing}
+                    </ul>
+                  </section>
+                {/block:TagList}
+              {/block:List}
+              {block:PostLocations}
+                <section class="locations clearfix">
+                  <h1 id="location_collapsed_{PostID}">Posted from <a href="#" id="post_location_expander_{PostID}" onclick="return false;">{LocationsSummary}</a></h1>
+                  <div class="location_detail" style="display:none" id="post_location_expanded_{PostID}">
+                    <div class="map">
+                      {MapIframe}
+                    </div>
+                    <div class="summary">
+                      <h2>Posted from</h2>
+                      <ul>
+                        {block:PostLocation uniq_by="summary"}
+                          <li>{LocationSummary}</li>
+                        {/block:PostLocation}
+                      </ul>
+                    </div>
+                  </div>
+                  {block:ShowOnClick action_id="post_location_expander_{PostID}" hidden_div="post_location_expanded_{PostID}" to_hide_id="location_collapsed_{PostID}"/}
+                </section>
+              {/block:PostLocations}
+              {block:ShowOrList}
+                {block:Author}
+                  <section class="author">
+                    {block:AuthorUser}
+                      <h1>Posted by <a href="{AuthorURL}" rel="author">{AuthorName} <img src="{AuthorPortraitURL-35}" alt="{AuthorName}"></a></h1>
+                    {/block:AuthorUser}
+                    {block:AuthorEmail}
+                      <h1>Posted by email</h1>
+                    {/block:AuthorEmail}
+                  </section>
+                {/block:Author}
+                {block:Responses}
+                  {block:Sharing}
+                    <section class="share">
+                      <div class="facebook_like">{block:FbLike /}</div>
+                      {block:Tweet /}
+                    </section>
+                  {/block:Sharing}
+                  {block:ResponsesList}
+                    {ResponseWidget}
+                  {/block:ResponsesList}
+
+                  {block:ResponsesShow}
+                    {ResponseWidget}
+                        {Responses}
+                        {ResponseForm}
+                  {/block:ResponsesShow}
+                {/block:Responses}
+              {/block:ShowOrList}
+            </footer>
+          </article>
+        {/block:Posts}
+      </div>
+      {block:List}
+        <footer id="pagination">
+          {block:Pagination/}
+        </footer>
+      {/block:List}
+    </div>
+  </body>
+</html>​

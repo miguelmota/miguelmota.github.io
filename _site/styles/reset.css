@@ -1,3 +1,10 @@
+/*----------------------------------------
+ *	HTML5 Reset Stylesheet
+ *	v1.0 | 20101223
+ *	Author: Miguel Mota, www.miguelmota.com
+ *	License: Creative Commons Attribution 3.0 License
+----------------------------------------*/
+
 html, body, div, span, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 abbr, address, cite, code,
@@ -10,13 +17,13 @@ table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section, summary,
 time, mark, audio, video {
+	background: transparent;
+	border: 0;
+	font-size: 100%;
     margin: 0;
-    padding: 0;
-    border: 0;
     outline: 0;
-    font-size: 100%;
+    padding: 0;
     vertical-align: baseline;
-    background: transparent;
 }
 body {
 	line-height: 1;
@@ -65,14 +72,14 @@ table {
 	border-spacing: 0;
 }
 caption, th, td {
-	text-align: left;
 	font-weight: normal;
+	text-align: left;
 }
 hr {
+	border: 0;  
+	border-top: 1px solid #ccc;
     display: block;
     height: 1px;
-    border: 0;   
-    border-top: 1px solid #cccccc;
     margin: 1em 0;
     padding: 0;
 }
