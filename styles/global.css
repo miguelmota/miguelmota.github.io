@@ -152,6 +152,7 @@ div.image-container {
 	-webkit-box-shadow: 2px 2px 8px rgba(0,0,0,.7);
 	height: auto;
 	margin-bottom: 10px;
+	position: relative;
 	width: 650px;
 }
 div.image-container img {
@@ -534,40 +535,14 @@ ul.lastfm-tracks li span.stream-date {
 /* ==============================================================================
 	PORTFOLIO
 ============================================================================== */
-section.portfolio h1.title {
-	float: left;
-	width: 400px;
-}
-section.portfolio div.sort {
-	float: right;
-	clear: right;
-	margin-top: 10px;
-	font-size: 9px;
-}
-section.portfolio div.sort a {
-	color: #005577;
-}
-section.portfolio div.sort a:hover,
-section.portfolio div.sort a:hover {
-	color: #007799;
-}
-section.portfolio div.sort a.selected {
-	color: #007799;
-}
-section.portfolio div.work {
+div.project {
 	margin-bottom: 25px;
 }
-section.portfolio div.work div.container {
-	position: relative;
-	width: 100%;
+div.project div.image-container {
 	height: 200px;
-	overflow: hidden;
-	-webkit-transition: -webkit-box-shadow linear .2s;
-	-moz-transition: -moz-box-shadow linear .2s;
-	-o-transition: box-shadow linear .2s;
-	transition: box-shadow linear .2s;
 }
-section.portfolio div.work div.container div.overlay {
+span.overlay {
+	display: block;
 	position: absolute;
 	bottom: 0;
 	left: 0;
@@ -627,7 +602,7 @@ a.fancybox {
 }
 span.zoom-icon {
 	background-color: #000;
-	background-color: rgba(0,0,0,.7);
+	background-color: rgba(0,0,0,.8);
 	bottom: 10px;
 	color: #fff;
 	display: none;
@@ -932,7 +907,7 @@ section.tumblr ul.posts li.photo div.zoom {
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
-	opacity: .7;
+	opacity: .8;
 }
 section.tumblr ul.posts div.post_footer {
 	margin: 5px 0 15px 0;
