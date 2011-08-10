@@ -86,9 +86,9 @@ $(document).ready(function(){
 	default:
 		break;
 	}
-	$('ul#nav li a').each(function(){
+	$('ul.main-nav li a').each(function(){
 		if($(this).attr('href') == pathname){
-			//$('nav.main a#stream').removeClass('selected');
+			//$('ul.main-nav a#stream').removeClass('selected');
 			//$(this).addClass('selected');
 			
 		}
@@ -155,12 +155,12 @@ $(document).ajaxComplete(function(){
 	}
 	var title = $('h1.title span.sub:first').text()+$('div.theTitle').text();
 	document.title = title;
-	$('nav.main a').removeClass('selected');
+	$('ul.main-nav a').removeClass('selected');
 	if(path2 != ''){
-		$('nav.main a#'+path2).addClass('selected');
+		$('ul.main-nav a#'+path2).addClass('selected');
 	}
 	else{
-		$('nav.main a#stream').addClass('selected');
+		$('ul.main-nav a#stream').addClass('selected');
 		document.title = 'Miguel Mota | Freelance Web Developer';
 	}
 	switch(path2){
@@ -184,14 +184,14 @@ $(document).ajaxComplete(function(){
 	if(window.location.pathname.substr(1,4) == 'post'){
 		while(bc == 0) {
 			blogPage();
-			$('nav.main a#stream').removeClass('selected');
-			$('nav.main a#blog').addClass('selected');
+			$('ul.main-nav a#stream').removeClass('selected');
+			$('ul.main-nav a#blog').addClass('selected');
 			bc++;
 		}
 	}
 	if(window.location.pathname.substr(1) == 'archive'){
-		$('nav.main a#stream').removeClass('selected');
-		$('nav.main a#blog').addClass('selected');
+		$('ul.main-nav a#stream').removeClass('selected');
+		$('ul.main-nav a#blog').addClass('selected');
 	}
 });
 
@@ -242,7 +242,7 @@ var niceTime = (function(){
 	    };
 	})();
 
-$("nav.main a:not('#logo')").live('click', function(){
+$("ul.main-nav a:not('#logo')").live('click', function(){
 		if(typeof(window.history.pushState) == 'function'){
 			c = 0;
 			bc = 0;
@@ -290,7 +290,7 @@ $('div.posti h3 a').live('click', function(){
 	function loadContent2(){
 		$('div.posti').load(toLoad2,showNewContent2);
 		function showNewContent2(){
-			//$('nav.main a').removeClass('selected'); //commented because of testing
+			//$('ul.main-nav a').removeClass('selected'); //commented because of testing
 			//$('#'+window.location.hash.substr(2)).addClass('selected'); //commented because of testing
 			$('div.posti').fadeIn('normal',hideLoader);
 			//var title = $('span.sub').text()+$('div.theTitle').text(); //commented because of testing
