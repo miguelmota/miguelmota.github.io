@@ -9,7 +9,7 @@ $(document).ready(function(){
 			
 	$('#about div.content').load('/about section.content');
 	$('#portfolio div.content').load('/portfolio/miggs section.content', function(){
-		//$(this).append("<div class='foodfail' />");
+		$(this).append("<div class='foodfail' />");
 		
 		//$('#portfolio div.content').append($('div.foodfail').load('/portfolio/foodfail section.content'));
 		
