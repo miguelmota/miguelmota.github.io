@@ -737,6 +737,7 @@ div.gs-visibleUrl  {
 }
 div.gsc-cursor-box {
 	border: none !important;
+	background-color: #252525 !important;
 }
 div.gsc-cursor-page  {
 	color: #007799 !important;
@@ -746,7 +747,6 @@ div.gsc-cursor-current-page  {
 }
 div.gsc-result {
 	border: none !important;
-	border-bottom: 1px solid #292929 !important;
 }
 
 /* /GOOGLE SEARCH --------------------------------------------------- */
