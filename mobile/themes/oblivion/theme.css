@@ -982,6 +982,9 @@ div#portfolio span.work-date {
 	color: #555;
 	font-size: 10px !important;
 }
+div#portfolio span.zoom-icon {
+	display: none;
+}
 /* /PORTFOLIO_PAGE =========================================================== */
 
 /* BLOG_PAGE ================================================================= */
