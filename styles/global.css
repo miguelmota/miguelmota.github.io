@@ -564,14 +564,14 @@ span.work-date {
 a.site-link {
 	font-size: 10px;
 }
-img.miggs {
+img.miggs-thumb {
 	height: auto;
 	left: -300px;
 	position: absolute;
 	top: -100px;
 	width: 250%;
 }
-img.foodfail {
+img.foodfail-thumb {
 	height: auto;
 	position: absolute;
 	width: 130%;
