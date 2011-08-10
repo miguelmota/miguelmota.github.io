@@ -564,38 +564,17 @@ span.work-date {
 a.site-link {
 	font-size: 10px;
 }
-section.portfolio img.miggs {
+img.miggs {
+	height: auto;
+	left: -300px;
 	position: absolute;
 	top: -100px;
-	left: -300px;
 	width: 250%;
-	height: auto;
 }
-section.portfolio img.mrg {
-	position: absolute;
-	left: -300px;
-	top: -25px;
-	width: 300%;
+img.foodfail {
 	height: auto;
-}
-section.portfolio img.foodfail {
 	position: absolute;
 	width: 130%;
-	height: auto;
-}
-section.portfolio img.dunstar_logo {
-	position: absolute;
-	top: -250px;
-	right: -375px;
-	width: auto;
-	height: auto;
-}
-section.portfolio img.miguelmota_logo {
-	position: absolute;
-	top: -320px;
-	right: -160px;
-	width: 116%;
-	height: auto;
 }
 a.fancybox {
 	display: block;
@@ -612,28 +591,28 @@ span.zoom-icon {
 	position: absolute;
 	right: 10px;
 }
-#fancybox_title {
+div.fancybox-title {
+	background-color: #000;
+	color: #555;
 	margin-bottom: -10px;
 	padding: 5px;
 	text-align: left;
-	background-color: #000;
-	color: #555;
 }
-#fancybox_title strong {
+div.fancybox-title strong {
 	display: block;
 	margin-right: 80px;
 }
-#fancybox_title span {
+div.fancybox-title span {
 	float: right;
 }
 div.work-image {
-	width: 650px;
 	height: auto;
 	margin: 5px 0;
+	width: 650px;
 }
 div.work-image img {
-	width: 100%;
 	height: auto;
+	width: 100%;
 }
 /* ==============================================================================
 	END PORTFOLIO

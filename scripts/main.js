@@ -556,14 +556,14 @@ function portfolioPage(){
 			'titlePosition': 'inside',
 			'titleFormat': formatTitle,
 			'padding': 0,
-			'transitionIn': 'fade',
+			'transitionIn': 'none',
 			'transitionOut': 'none',
 			'speedIn': 150, 
 			'overlayColor': '#000'
 	});
 	//custom fancybox title formatting
 	function formatTitle(title, currentArray, currentIndex, currentOpts) {
-	    return '<div id="fancybox_title"><span><a href="javascript:void(0);" onclick="$.fancybox.close();">close X</a></span>' + (title && title.length ? '<strong>' + title + '</strong>' : '' ) + 'Image ' + (currentIndex + 1) + ' of ' + currentArray.length + '</div>';
+	    return '<div class="fancybox-title"><span><a href="javascript:void(0);" onclick="$.fancybox.close();">close X</a></span>' + (title && title.length ? '<strong>' + title + '</strong>' : '' ) + 'Image ' + (currentIndex + 1) + ' of ' + currentArray.length + '</div>';
 	}
 	
 }
