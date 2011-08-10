@@ -670,9 +670,6 @@ label[for='message'].error {
 	BLOG
 ============================================================================== */
 header.blog-header {
-	position: relative;
-	width: auto;
-	height: auto;
 	margin-bottom: 5px;
 }
 p.blog-description {
