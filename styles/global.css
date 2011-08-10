@@ -694,14 +694,15 @@ div.gsc-control-cse {
 }
 div#cse a {
 	color: #007299 !important;
-	font-size: 12px !important;
+	font-size: 14px !important;
 }
 div#cse a b {
 	color: #007299 !important;
-	font-size: 12px !important;
+	font-size: 14px !important;
 }
 div.gs-snippet {
-	font-size: 10px;
+	color: #999 !important;
+	font-size: 12px !important;
 }
 input[type=submit].gsc-search-button,
 td.gcsc-branding-text,
