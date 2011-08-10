@@ -725,7 +725,7 @@ div#cse div.gsc-control-cse  {
 }
 div#cse div.sce-results  {
 	padding: 2px;
-	background-color: #222;
+	background-color: #252525;
 	-webkit-box-shadow: 0 0 5px #111;
 	-moz-box-shadow: 0 0 5px #111;
 	-o-box-shadow: 0 0 5px #111;
@@ -735,11 +735,11 @@ div.gs-visibleUrl  {
 	color: #555 !important;
 	font-size: 10px;
 }
-div#cse div.gsc-cursor-page  {
+div.gsc-cursor-page  {
 	color: #007799;
 }
-div#cse div.gsc-cursor-current-page  {
-	color: #005577;
+div.gsc-cursor-current-page  {
+	color: #007299;
 }
 div.gsc-result {
 	border: none !important;
