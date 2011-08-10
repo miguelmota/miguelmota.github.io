@@ -140,7 +140,7 @@ div.highlight {
 	background-color: #202020;
 	margin: 10px 0;
 	padding: 5px;
-
+	text-shadow: none !important;
 }
 div.highlight code {
 	word-wrap: break-word;
@@ -670,9 +670,6 @@ label[for='message'].error {
 	BLOG
 ============================================================================== */
 header.blog-header {
-	position: relative;
-	width: auto;
-	height: auto;
 	margin-bottom: 5px;
 }
 p.blog-description {
@@ -680,7 +677,7 @@ p.blog-description {
 }
 /* GOOGLE SEARCH ----------------------------------------------------- */
 div#cse-search-form {
-	float: right;
+	
 }
 form.gsc-search-box {
 
@@ -692,7 +689,6 @@ div#cse td.gsc-branding-img  {
 }
 div#cse input[type=text].gsc-input {
 	width: 250px;
-	float: right;
 	border: 1px solid #555;
 }
 div#cse input[type=text].gsc-input:focus {
