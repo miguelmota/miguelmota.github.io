@@ -777,6 +777,7 @@ div#cse div.gsc-cursor-current-page  {
 /* /GOOGLE SEARCH --------------------------------------------------- */
 h1.post-title {
 	margin-bottom: 5px;
+	padding-bottom: 1px;
 }
 h1.post-title a {
 	border-bottom: 1px solid #999;
