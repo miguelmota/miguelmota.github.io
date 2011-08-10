@@ -716,20 +716,21 @@ label[for='message'].error {
 /* ==============================================================================
 	BLOG
 ============================================================================== */
-header.main {
+header.blog-header {
 	position: relative;
 	width: auto;
 	height: auto;
 	margin-bottom: 5px;
 }
-p.description {
+p.blog-description {
 	font-size: 10px;
 }
 /* GOOGLE SEARCH ----------------------------------------------------- */
+div#cse-search-form {
+	float: right;
+}
 form.gsc-search-box {
-	position: absolute;
-	right: 0;
-	top: 0;
+
 }
 div#cse input[type=submit].gsc-search-button,
 div#cse td.gsc-branding-text,
