@@ -330,10 +330,11 @@ ul.main-nav a.selected {
 section.content {
 	float: right;
 	text-shadow: 0 -1px 0 rgba(0,0,0,.5);
+	position: relative;
 	width: 650px;
 }
 div.main-content {
-	position: relative;
+
 }
 /* ==============================================================================
 	END CONTENT
