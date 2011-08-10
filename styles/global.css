@@ -670,6 +670,7 @@ label[for='message'].error {
 ============================================================================== */
 p.blog-description {
 	font-size: 10px;
+	display; none;
 }
 /* GOOGLE SEARCH ----------------------------------------------------- */
 div#cse-search-form {
