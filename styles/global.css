@@ -749,6 +749,11 @@ div.gsc-cursor-current-page  {
 div.gsc-result {
 	border: none !important;
 }
+div.gs-no-results-result {
+	background-color: #252525 !important;
+	border: none !important;
+	color: red !important;
+}
 
 /* /GOOGLE SEARCH --------------------------------------------------- */
 h1.post-title {
