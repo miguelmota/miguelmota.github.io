@@ -68,89 +68,89 @@
 	<div class='posti'>
 		<h1><a href='/article/html5-reset-stylesheet'>HTML5 Reset Stylesheet</a></h1>
 		<p>This is what I am currently using as my reset stylesheet. It's a modified version of <a href='http://meyerweb.com/eric/tools/css/reset/'>Eric Meyer's</a> 
-and <a href='http://meyerweb.com/eric/tools/css/reset/'>HTML5 Doctor's'</a> CSS reset.</p>
+and <a href='http://meyerweb.com/eric/tools/css/reset/'>HTML5 Doctor's</a> CSS reset.</p>
 
-<div class="highlight"><pre>	<span class="nt">html</span><span class="o">,</span> <span class="nt">body</span><span class="o">,</span> <span class="nt">div</span><span class="o">,</span> <span class="nt">span</span><span class="o">,</span> <span class="nt">object</span><span class="o">,</span> <span class="nt">iframe</span><span class="o">,</span>
-	<span class="nt">h1</span><span class="o">,</span> <span class="nt">h2</span><span class="o">,</span> <span class="nt">h3</span><span class="o">,</span> <span class="nt">h4</span><span class="o">,</span> <span class="nt">h5</span><span class="o">,</span> <span class="nt">h6</span><span class="o">,</span> <span class="nt">p</span><span class="o">,</span> <span class="nt">blockquote</span><span class="o">,</span> <span class="nt">pre</span><span class="o">,</span>
-	<span class="nt">abbr</span><span class="o">,</span> <span class="nt">address</span><span class="o">,</span> <span class="nt">cite</span><span class="o">,</span> <span class="nt">code</span><span class="o">,</span>
-	<span class="nt">del</span><span class="o">,</span> <span class="nt">dfn</span><span class="o">,</span> <span class="nt">em</span><span class="o">,</span> <span class="nt">img</span><span class="o">,</span> <span class="nt">ins</span><span class="o">,</span> <span class="nt">kbd</span><span class="o">,</span> <span class="nt">q</span><span class="o">,</span> <span class="nt">samp</span><span class="o">,</span>
-	<span class="nt">small</span><span class="o">,</span> <span class="nt">strong</span><span class="o">,</span> <span class="nt">sub</span><span class="o">,</span> <span class="nt">sup</span><span class="o">,</span> <span class="nt">var</span><span class="o">,</span>
-	<span class="nt">b</span><span class="o">,</span> <span class="nt">i</span><span class="o">,</span>
-	<span class="nt">dl</span><span class="o">,</span> <span class="nt">dt</span><span class="o">,</span> <span class="nt">dd</span><span class="o">,</span> <span class="nt">ol</span><span class="o">,</span> <span class="nt">ul</span><span class="o">,</span> <span class="nt">li</span><span class="o">,</span>
-	<span class="nt">fieldset</span><span class="o">,</span> <span class="nt">form</span><span class="o">,</span> <span class="nt">label</span><span class="o">,</span> <span class="nt">legend</span><span class="o">,</span>
-	<span class="nt">table</span><span class="o">,</span> <span class="nt">caption</span><span class="o">,</span> <span class="nt">tbody</span><span class="o">,</span> <span class="nt">tfoot</span><span class="o">,</span> <span class="nt">thead</span><span class="o">,</span> <span class="nt">tr</span><span class="o">,</span> <span class="nt">th</span><span class="o">,</span> <span class="nt">td</span><span class="o">,</span>
-	<span class="nt">article</span><span class="o">,</span> <span class="nt">aside</span><span class="o">,</span> <span class="nt">canvas</span><span class="o">,</span> <span class="nt">details</span><span class="o">,</span> <span class="nt">figcaption</span><span class="o">,</span> <span class="nt">figure</span><span class="o">,</span> 
-	<span class="nt">footer</span><span class="o">,</span> <span class="nt">header</span><span class="o">,</span> <span class="nt">hgroup</span><span class="o">,</span> <span class="nt">menu</span><span class="o">,</span> <span class="nt">nav</span><span class="o">,</span> <span class="nt">section</span><span class="o">,</span> <span class="nt">summary</span><span class="o">,</span>
-	<span class="nt">time</span><span class="o">,</span> <span class="nt">mark</span><span class="o">,</span> <span class="nt">audio</span><span class="o">,</span> <span class="nt">video</span> <span class="p">{</span>
-		<span class="k">background</span><span class="o">:</span> <span class="k">transparent</span><span class="p">;</span>
-		<span class="k">border</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
-		<span class="k">font-size</span><span class="o">:</span> <span class="m">100</span><span class="o">%</span><span class="p">;</span>
-	    <span class="k">margin</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
-	    <span class="k">outline</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
-	    <span class="k">padding</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
-	    <span class="k">vertical-align</span><span class="o">:</span> <span class="k">baseline</span><span class="p">;</span>
-	<span class="p">}</span>
-	<span class="nt">body</span> <span class="p">{</span>
-		<span class="k">line-height</span><span class="o">:</span> <span class="m">1</span><span class="p">;</span>
-	<span class="p">}</span>
-	<span class="nt">article</span><span class="o">,</span> <span class="nt">aside</span><span class="o">,</span> <span class="nt">details</span><span class="o">,</span> <span class="nt">figcaption</span><span class="o">,</span> <span class="nt">figure</span><span class="o">,</span>
-	<span class="nt">footer</span><span class="o">,</span> <span class="nt">header</span><span class="o">,</span> <span class="nt">hgroup</span><span class="o">,</span> <span class="nt">menu</span><span class="o">,</span> <span class="nt">nav</span><span class="o">,</span> <span class="nt">section</span> <span class="p">{</span> 
-	    <span class="k">display</span><span class="o">:</span> <span class="k">block</span><span class="p">;</span>
-	<span class="p">}</span>
-	<span class="nt">ol</span><span class="o">,</span> <span class="nt">ul</span> <span class="p">{</span>
-		<span class="k">list-style</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
-	<span class="p">}</span>
-	<span class="nt">h1</span><span class="o">,</span> <span class="nt">h2</span><span class="o">,</span> <span class="nt">h3</span><span class="o">,</span> <span class="nt">h4</span><span class="o">,</span> <span class="nt">h5</span><span class="o">,</span> <span class="nt">h6</span> <span class="p">{</span>
-		<span class="k">font-size</span><span class="o">:</span> <span class="m">100</span><span class="o">%</span><span class="p">;</span>
-		<span class="k">font-weight</span><span class="o">:</span> <span class="k">normal</span><span class="p">;</span>
-	<span class="p">}</span>
-	<span class="nt">blockquote</span><span class="o">,</span> <span class="nt">q</span> <span class="p">{</span>
-		<span class="k">quotes</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
-	<span class="p">}</span>
-	<span class="nt">blockquote</span><span class="nd">:before</span><span class="o">,</span> <span class="nt">blockquote</span><span class="nd">:after</span><span class="o">,</span>
-	<span class="nt">q</span><span class="nd">:before</span><span class="o">,</span> <span class="nt">q</span><span class="nd">:after</span> <span class="p">{</span>
-		<span class="k">content</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
-		<span class="k">content</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
-	<span class="p">}</span>
-	<span class="nd">:focus</span> <span class="p">{</span>
-		<span class="k">outline</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
-	<span class="p">}</span>
-	<span class="nt">a</span> <span class="p">{</span>
-		<span class="k">text-decoration</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
-	<span class="p">}</span>
-	<span class="nt">ins</span> <span class="p">{</span>
-	    <span class="k">text-decoration</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
-	<span class="p">}</span>
-	<span class="nt">mark</span> <span class="p">{</span>
-	    <span class="k">font-style</span><span class="o">:</span> <span class="k">italic</span><span class="p">;</span>
-	    <span class="k">font-weight</span><span class="o">:</span> <span class="k">bold</span><span class="p">;</span>
-	<span class="p">}</span>
-	<span class="nt">del</span> <span class="p">{</span>
-		<span class="k">text-decoration</span><span class="o">:</span> <span class="k">line-through</span><span class="p">;</span>
-	<span class="p">}</span>
-	<span class="nt">abbr</span><span class="o">[</span><span class="nt">title</span><span class="o">],</span> <span class="nt">dfn</span><span class="o">[</span><span class="nt">title</span><span class="o">]</span> <span class="p">{</span>
-	    <span class="k">border-bottom</span><span class="o">:</span> <span class="m">1px</span> <span class="k">dotted</span><span class="p">;</span>
-	    <span class="k">cursor</span><span class="o">:</span> <span class="k">help</span><span class="p">;</span>
-	<span class="p">}</span>
-	<span class="nt">table</span> <span class="p">{</span>
-		<span class="k">border-collapse</span><span class="o">:</span> <span class="k">collapse</span><span class="p">;</span>
-		<span class="k">border-spacing</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
-	<span class="p">}</span>
-	<span class="nt">caption</span><span class="o">,</span> <span class="nt">th</span><span class="o">,</span> <span class="nt">td</span> <span class="p">{</span>
-		<span class="k">font-weight</span><span class="o">:</span> <span class="k">normal</span><span class="p">;</span>
-		<span class="k">text-align</span><span class="o">:</span> <span class="k">left</span><span class="p">;</span>
-	<span class="p">}</span>
-	<span class="nt">hr</span> <span class="p">{</span>
-		<span class="k">border</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>  
-		<span class="k">border-top</span><span class="o">:</span> <span class="m">1px</span> <span class="k">solid</span> <span class="m">#ccc</span><span class="p">;</span>
-	    <span class="k">display</span><span class="o">:</span> <span class="k">block</span><span class="p">;</span>
-	    <span class="k">height</span><span class="o">:</span> <span class="m">1px</span><span class="p">;</span>
-	    <span class="k">margin</span><span class="o">:</span> <span class="m">1em</span> <span class="m">0</span><span class="p">;</span>
-	    <span class="k">padding</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
-	<span class="p">}</span>
-	<span class="nt">input</span><span class="o">,</span> <span class="nt">select</span> <span class="p">{</span>
-	    <span class="k">vertical-align</span><span class="o">:</span> <span class="k">middle</span><span class="p">;</span>
-	<span class="p">}</span>
+<div class="highlight"><pre><span class="nt">html</span><span class="o">,</span> <span class="nt">body</span><span class="o">,</span> <span class="nt">div</span><span class="o">,</span> <span class="nt">span</span><span class="o">,</span> <span class="nt">object</span><span class="o">,</span> <span class="nt">iframe</span><span class="o">,</span>
+<span class="nt">h1</span><span class="o">,</span> <span class="nt">h2</span><span class="o">,</span> <span class="nt">h3</span><span class="o">,</span> <span class="nt">h4</span><span class="o">,</span> <span class="nt">h5</span><span class="o">,</span> <span class="nt">h6</span><span class="o">,</span> <span class="nt">p</span><span class="o">,</span> <span class="nt">blockquote</span><span class="o">,</span> <span class="nt">pre</span><span class="o">,</span>
+<span class="nt">abbr</span><span class="o">,</span> <span class="nt">address</span><span class="o">,</span> <span class="nt">cite</span><span class="o">,</span> <span class="nt">code</span><span class="o">,</span>
+<span class="nt">del</span><span class="o">,</span> <span class="nt">dfn</span><span class="o">,</span> <span class="nt">em</span><span class="o">,</span> <span class="nt">img</span><span class="o">,</span> <span class="nt">ins</span><span class="o">,</span> <span class="nt">kbd</span><span class="o">,</span> <span class="nt">q</span><span class="o">,</span> <span class="nt">samp</span><span class="o">,</span>
+<span class="nt">small</span><span class="o">,</span> <span class="nt">strong</span><span class="o">,</span> <span class="nt">sub</span><span class="o">,</span> <span class="nt">sup</span><span class="o">,</span> <span class="nt">var</span><span class="o">,</span>
+<span class="nt">b</span><span class="o">,</span> <span class="nt">i</span><span class="o">,</span>
+<span class="nt">dl</span><span class="o">,</span> <span class="nt">dt</span><span class="o">,</span> <span class="nt">dd</span><span class="o">,</span> <span class="nt">ol</span><span class="o">,</span> <span class="nt">ul</span><span class="o">,</span> <span class="nt">li</span><span class="o">,</span>
+<span class="nt">fieldset</span><span class="o">,</span> <span class="nt">form</span><span class="o">,</span> <span class="nt">label</span><span class="o">,</span> <span class="nt">legend</span><span class="o">,</span>
+<span class="nt">table</span><span class="o">,</span> <span class="nt">caption</span><span class="o">,</span> <span class="nt">tbody</span><span class="o">,</span> <span class="nt">tfoot</span><span class="o">,</span> <span class="nt">thead</span><span class="o">,</span> <span class="nt">tr</span><span class="o">,</span> <span class="nt">th</span><span class="o">,</span> <span class="nt">td</span><span class="o">,</span>
+<span class="nt">article</span><span class="o">,</span> <span class="nt">aside</span><span class="o">,</span> <span class="nt">canvas</span><span class="o">,</span> <span class="nt">details</span><span class="o">,</span> <span class="nt">figcaption</span><span class="o">,</span> <span class="nt">figure</span><span class="o">,</span> 
+<span class="nt">footer</span><span class="o">,</span> <span class="nt">header</span><span class="o">,</span> <span class="nt">hgroup</span><span class="o">,</span> <span class="nt">menu</span><span class="o">,</span> <span class="nt">nav</span><span class="o">,</span> <span class="nt">section</span><span class="o">,</span> <span class="nt">summary</span><span class="o">,</span>
+<span class="nt">time</span><span class="o">,</span> <span class="nt">mark</span><span class="o">,</span> <span class="nt">audio</span><span class="o">,</span> <span class="nt">video</span> <span class="p">{</span>
+	<span class="k">background</span><span class="o">:</span> <span class="k">transparent</span><span class="p">;</span>
+	<span class="k">border</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+	<span class="k">font-size</span><span class="o">:</span> <span class="m">100</span><span class="o">%</span><span class="p">;</span>
+    <span class="k">margin</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="k">outline</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="k">padding</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="k">vertical-align</span><span class="o">:</span> <span class="k">baseline</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">body</span> <span class="p">{</span>
+	<span class="k">line-height</span><span class="o">:</span> <span class="m">1</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">article</span><span class="o">,</span> <span class="nt">aside</span><span class="o">,</span> <span class="nt">details</span><span class="o">,</span> <span class="nt">figcaption</span><span class="o">,</span> <span class="nt">figure</span><span class="o">,</span>
+<span class="nt">footer</span><span class="o">,</span> <span class="nt">header</span><span class="o">,</span> <span class="nt">hgroup</span><span class="o">,</span> <span class="nt">menu</span><span class="o">,</span> <span class="nt">nav</span><span class="o">,</span> <span class="nt">section</span> <span class="p">{</span> 
+    <span class="k">display</span><span class="o">:</span> <span class="k">block</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">ol</span><span class="o">,</span> <span class="nt">ul</span> <span class="p">{</span>
+	<span class="k">list-style</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">h1</span><span class="o">,</span> <span class="nt">h2</span><span class="o">,</span> <span class="nt">h3</span><span class="o">,</span> <span class="nt">h4</span><span class="o">,</span> <span class="nt">h5</span><span class="o">,</span> <span class="nt">h6</span> <span class="p">{</span>
+	<span class="k">font-size</span><span class="o">:</span> <span class="m">100</span><span class="o">%</span><span class="p">;</span>
+	<span class="k">font-weight</span><span class="o">:</span> <span class="k">normal</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">blockquote</span><span class="o">,</span> <span class="nt">q</span> <span class="p">{</span>
+	<span class="k">quotes</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">blockquote</span><span class="nd">:before</span><span class="o">,</span> <span class="nt">blockquote</span><span class="nd">:after</span><span class="o">,</span>
+<span class="nt">q</span><span class="nd">:before</span><span class="o">,</span> <span class="nt">q</span><span class="nd">:after</span> <span class="p">{</span>
+	<span class="k">content</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
+	<span class="k">content</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nd">:focus</span> <span class="p">{</span>
+	<span class="k">outline</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">a</span> <span class="p">{</span>
+	<span class="k">text-decoration</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">ins</span> <span class="p">{</span>
+    <span class="k">text-decoration</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">mark</span> <span class="p">{</span>
+    <span class="k">font-style</span><span class="o">:</span> <span class="k">italic</span><span class="p">;</span>
+    <span class="k">font-weight</span><span class="o">:</span> <span class="k">bold</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">del</span> <span class="p">{</span>
+	<span class="k">text-decoration</span><span class="o">:</span> <span class="k">line-through</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">abbr</span><span class="o">[</span><span class="nt">title</span><span class="o">],</span> <span class="nt">dfn</span><span class="o">[</span><span class="nt">title</span><span class="o">]</span> <span class="p">{</span>
+    <span class="k">border-bottom</span><span class="o">:</span> <span class="m">1px</span> <span class="k">dotted</span><span class="p">;</span>
+    <span class="k">cursor</span><span class="o">:</span> <span class="k">help</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">table</span> <span class="p">{</span>
+	<span class="k">border-collapse</span><span class="o">:</span> <span class="k">collapse</span><span class="p">;</span>
+	<span class="k">border-spacing</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">caption</span><span class="o">,</span> <span class="nt">th</span><span class="o">,</span> <span class="nt">td</span> <span class="p">{</span>
+	<span class="k">font-weight</span><span class="o">:</span> <span class="k">normal</span><span class="p">;</span>
+	<span class="k">text-align</span><span class="o">:</span> <span class="k">left</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">hr</span> <span class="p">{</span>
+	<span class="k">border</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>  
+	<span class="k">border-top</span><span class="o">:</span> <span class="m">1px</span> <span class="k">solid</span> <span class="m">#ccc</span><span class="p">;</span>
+    <span class="k">display</span><span class="o">:</span> <span class="k">block</span><span class="p">;</span>
+    <span class="k">height</span><span class="o">:</span> <span class="m">1px</span><span class="p">;</span>
+    <span class="k">margin</span><span class="o">:</span> <span class="m">1em</span> <span class="m">0</span><span class="p">;</span>
+    <span class="k">padding</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">input</span><span class="o">,</span> <span class="nt">select</span> <span class="p">{</span>
+    <span class="k">vertical-align</span><span class="o">:</span> <span class="k">middle</span><span class="p">;</span>
+<span class="p">}</span>
 </pre>
 </div>
 
