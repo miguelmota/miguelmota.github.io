@@ -10,6 +10,7 @@ $(document).ready(function(){
 	$('#about div.content').load('/about section.content');
 	$('#portfolio div.content').load('/portfolio/miggs section.content', function(){
 		$('div.work-image:not(:first)', this).hide();
+		
 		$('p.work-description', this).appendTo('div.work');
 		
 		$(this).append("<div class='foodfail' />");
@@ -18,7 +19,7 @@ $(document).ready(function(){
 			
 			$('div.foodfail div.work-image:not(:first)').hide();
 			
-			$('p.work-description', this).appendTo('div.work');
+			$('div.foodfail p.work-description').appendTo('div.foodfail div.work');
 			
 		});
 		
