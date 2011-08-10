@@ -685,8 +685,12 @@ div#cse-search-form {
 }
 form.gsc-search-box {
 
+
 }
-div.gs-title a {
+div#cse {
+	background-color: #252525;
+}
+a.gs-title {
 	color: #007299;
 	font-size: 12px;
 }
