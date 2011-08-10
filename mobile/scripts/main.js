@@ -13,7 +13,7 @@ $(document).ready(function(){
 		
 		$('div.foodfail').load('/portfolio/foodfail section.content', function(){
 			
-			$('div.work-image:not(:first)').hide();
+			$('div.work div.work-image:not(:first)').hide();
 			
 		});
 		
