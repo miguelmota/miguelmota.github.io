@@ -646,7 +646,7 @@ function blogPage(){
 
 	
 	//initialize Google Search
-	loadSearch();
+	//loadSearch();
 	
 	//initialize Disqus
 	while(ldc = 0){
