@@ -671,12 +671,12 @@ label[for='message'].error {
 	BLOG
 ============================================================================== */
 p.blog-description {
+	float: left;
 	font-size: 10px;
 }
 /* GOOGLE SEARCH ----------------------------------------------------- */
 
 div#cse-search-form {
-	width: 250px;
 	float: right;
 }
 form.gsc-search-box {
