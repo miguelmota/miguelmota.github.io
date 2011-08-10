@@ -676,7 +676,8 @@ p.blog-description {
 /* GOOGLE SEARCH ----------------------------------------------------- */
 
 div#cse-search-form {
-	
+	width: 250px;
+	float: right;
 }
 form.gsc-search-box {
 
