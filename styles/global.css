@@ -681,7 +681,7 @@ p.blog-description {
 /* GOOGLE SEARCH ----------------------------------------------------- */
 
 div#cse-search-form {
-	width: 250px;
+	width: 300px;
 	border: 1px solid blue;
 	float: right;
 }
