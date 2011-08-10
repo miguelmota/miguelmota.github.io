@@ -2,7 +2,7 @@
 
 /* ==============================================================================
 	FONT IMPORTS
-================================================================================= */
+============================================================================== */
 @font-face {
 	font-family: NeoSans;
 	src: url('../fonts/neosans-webfont/neosans-webfont.eot');
@@ -65,13 +65,13 @@
 }
 /* ==============================================================================
 	END FONT IMPORTS
-================================================================================= */
+============================================================================== */
 
 
 
 /* ==============================================================================
 	GENERAL
-================================================================================= */
+============================================================================== */
 html {
 	overflow-y: scroll;
 	overflow-y: -moz-scrollbars-vertical;
@@ -152,6 +152,8 @@ div.image-container {
 	-webkit-box-shadow: 2px 2px 8px rgba(0,0,0,.7);
 	height: auto;
 	margin-bottom: 10px;
+	overflow: hidden;
+	position: relative;
 	width: 650px;
 }
 div.image-container img {
@@ -272,13 +274,13 @@ ul li {
 }
 /* ==============================================================================
 	END GENERAL
-================================================================================= */
+============================================================================== */
 
 
 
 /* ==============================================================================
 	MAIN NAVIGATION
-================================================================================= */
+============================================================================== */
 nav.main-side-nav {
 	position: fixed;
 	top: 70px;
@@ -318,13 +320,13 @@ ul.main-nav a.selected {
 }
 /* ==============================================================================
 	END MAIN NAVIGATION
-================================================================================= */
+============================================================================== */
 
 
 
 /* ==============================================================================
 	CONTENT
-================================================================================= */
+============================================================================== */
 section.content {
 	float: right;
 	position: relative;
@@ -336,13 +338,13 @@ div.main-content {
 }
 /* ==============================================================================
 	END CONTENT
-================================================================================= */
+============================================================================== */
 
 
 
 /* ==============================================================================
 	LOADERS
-================================================================================= */
+============================================================================== */
 div.loader {
 	background: url('/images/ajax_loader.gif') no-repeat 0 0;
 	float: left;
@@ -373,13 +375,13 @@ img.loader {
 }
 /* ==============================================================================
 	END LOADERS
-================================================================================= */
+============================================================================== */
 
 
 
 /* ==============================================================================
 	STREAM
-================================================================================= */
+============================================================================== */
 div.stream {
 	margin-bottom: 10px;
 }
@@ -517,109 +519,60 @@ ul.lastfm-tracks li span.stream-date {
 }
 /* ==============================================================================
 	END STREAM
-================================================================================= */
+============================================================================== */
 
 
 
 /* ==============================================================================
 	ABOUT
-================================================================================= */
+============================================================================== */
 
 /* ==============================================================================
 	END ABOUT
-================================================================================= */
+============================================================================== */
 
 
 
 /* ==============================================================================
 	PORTFOLIO
-================================================================================= */
-section.portfolio h1.title {
-	float: left;
-	width: 400px;
-}
-section.portfolio div.sort {
-	float: right;
-	clear: right;
-	margin-top: 10px;
-	font-size: 9px;
-}
-section.portfolio div.sort a {
-	color: #005577;
-}
-section.portfolio div.sort a:hover,
-section.portfolio div.sort a:hover {
-	color: #007799;
-}
-section.portfolio div.sort a.selected {
-	color: #007799;
-}
-section.portfolio div.work {
+============================================================================== */
+div.project {
 	margin-bottom: 25px;
 }
-section.portfolio div.work div.container {
-	position: relative;
-	width: 100%;
+div.project div.image-container {
 	height: 200px;
-	overflow: hidden;
-	-webkit-transition: -webkit-box-shadow linear .2s;
-	-moz-transition: -moz-box-shadow linear .2s;
-	-o-transition: box-shadow linear .2s;
-	transition: box-shadow linear .2s;
 }
-section.portfolio div.work div.container div.overlay {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
+span.overlay {
 	background-color: #000;
+	bottom: 0;
+	display: block;
+	height: 100%;
+	left: 0;
 	opacity: .2;
+	position: absolute;
+	width: 100%;
 }
 p.work-description {
-	position: relative;
 	padding-left: 5px;
+	position: relative;
 }
-p.work-description  span.date {
+span.work-date {
+	color: #777;
 	float: right;
-	font-size: 9px;
-	color: #333;
-}
-p.work-description  a.link {
 	font-size: 10px;
 }
-section.portfolio img.miggs {
-	position: absolute;
-	top: -100px;
-	left: -300px;
-	width: 250%;
-	height: auto;
+a.site-link {
+	font-size: 10px;
 }
-section.portfolio img.mrg {
-	position: absolute;
-	left: -300px;
-	top: -25px;
-	width: 300%;
+img.miggs-thumb {
 	height: auto;
+	position: absolute;
+	width: 130% !important;
 }
-section.portfolio img.foodfail {
-	position: absolute;
-	width: 130%;
+img.foodfail-thumb {
 	height: auto;
-}
-section.portfolio img.dunstar_logo {
 	position: absolute;
-	top: -250px;
-	right: -375px;
-	width: auto;
-	height: auto;
-}
-section.portfolio img.miguelmota_logo {
-	position: absolute;
-	top: -320px;
-	right: -160px;
-	width: 116%;
-	height: auto;
+	width: 130% !important;
 }
 a.fancybox {
 	display: block;
@@ -627,7 +580,7 @@ a.fancybox {
 }
 span.zoom-icon {
 	background-color: #000;
-	background-color: rgba(0,0,0,.7);
+	background-color: rgba(0,0,0,.8);
 	bottom: 10px;
 	color: #fff;
 	display: none;
@@ -636,38 +589,38 @@ span.zoom-icon {
 	position: absolute;
 	right: 10px;
 }
-#fancybox_title {
+div.fancybox-title {
+	background-color: #000;
+	color: #555;
 	margin-bottom: -10px;
 	padding: 5px;
 	text-align: left;
-	background-color: #000;
-	color: #555;
 }
-#fancybox_title strong {
+div.fancybox-title strong {
 	display: block;
 	margin-right: 80px;
 }
-#fancybox_title span {
+div.fancybox-title span {
 	float: right;
 }
 div.work-image {
-	width: 650px;
 	height: auto;
 	margin: 5px 0;
+	width: 650px;
 }
 div.work-image img {
-	width: 100%;
 	height: auto;
+	width: 100%;
 }
 /* ==============================================================================
 	END PORTFOLIO
-================================================================================= */
+============================================================================== */
 
 
 
 /* ==============================================================================
 	CONTACT
-================================================================================= */
+============================================================================== */
 div.contact-qrcode {
 	background: url('/images/qrcode.png') no-repeat 0 0;
 	float: right;
@@ -709,27 +662,28 @@ label[for='message'].error {
 }
 /* ==============================================================================
 	END CONTACT
-================================================================================= */
+============================================================================== */
 
 
 
 /* ==============================================================================
 	BLOG
-================================================================================= */
-header.main {
+============================================================================== */
+header.blog-header {
 	position: relative;
 	width: auto;
 	height: auto;
 	margin-bottom: 5px;
 }
-p.description {
+p.blog-description {
 	font-size: 10px;
 }
 /* GOOGLE SEARCH ----------------------------------------------------- */
+div#cse-search-form {
+	float: right;
+}
 form.gsc-search-box {
-	position: absolute;
-	right: 0;
-	top: 0;
+
 }
 div#cse input[type=submit].gsc-search-button,
 div#cse td.gsc-branding-text,
@@ -775,13 +729,17 @@ div#cse div.gsc-cursor-current-page  {
 	color: #005577;
 }
 /* /GOOGLE SEARCH --------------------------------------------------- */
-div.posti h1 {
+h1.post-title {
+	border-bottom: 1px solid #777;
 	margin-bottom: 5px;
-	border-bottom: 1px dotted #999;
+	padding-bottom: 1px;
 }
-div.posti h1 a {
+h1.post-title a {
+	border-left-width: 5px;
+	display: block;
+	font-family: Klavika, Helvetica, Arial, sans-serif;
 	font-size: 26px;
-	font-family: Klavika-Light, Helvetica, Arial, sans-serif;
+	padding-left: 5px;
 }
 div.post {
 	margin-bottom: 55px;
@@ -790,21 +748,18 @@ div.post_footer {
 	margin-top: 20px;
 	font-size: 10px;
 }
-div.view_archive {
+a.archive-link {
 	margin-top: 25px;
-}
-div.view_archive a {
-	font-size: 10px;
 }
 /* ==============================================================================
 	END BLOG
-================================================================================= */
+============================================================================== */
 
 
 
 /* ==============================================================================
 	MAIN FOOTER
-================================================================================= */
+============================================================================== */
 footer.main {
 	position: relative;
 	margin-left: 110px;
@@ -823,13 +778,13 @@ footer.main a.top {
 }
 /* ==============================================================================
 	END MAIN FOOTER
-================================================================================= */
+============================================================================== */
 
 
 
 /* ==============================================================================
 	DISQUS
-================================================================================= */
+============================================================================== */
 #disqus_thread {
 	margin: 20px 0;
 }
@@ -869,13 +824,13 @@ div.dsq-trackback-url {
 }
 /* ==============================================================================
 	END DISQUS
-================================================================================= */
+============================================================================== */
 
 
 
 /* ==============================================================================
 	TUMBLR
-================================================================================= */
+============================================================================== */
 section.tumblr form.search_form {
 	position: absolute;
 	right: 0;
@@ -930,7 +885,7 @@ section.tumblr ul.posts li.photo div.zoom {
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
-	opacity: .7;
+	opacity: .8;
 }
 section.tumblr ul.posts div.post_footer {
 	margin: 5px 0 15px 0;
@@ -966,4 +921,4 @@ section.tumblr footer.main div.pagination {
 }
 /* ==============================================================================
 	END TUMBLR
-================================================================================= */
+============================================================================== */

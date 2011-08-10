@@ -7,8 +7,7 @@
 		
 			<item>
 				<title>HTML5 Reset Stylesheet</title>
-				<description>&lt;p&gt;This is what I am currently using as my reset stylesheet. It's a modified version of &lt;a href='http://meyerweb.com/eric/tools/css/reset/'&gt;Eric Meyer's&lt;/a&gt; 
-and &lt;a href='http://meyerweb.com/eric/tools/css/reset/'&gt;HTML5 Doctor's&lt;/a&gt; CSS reset.&lt;/p&gt;
+				<description>&lt;p&gt;I couldn't find an HTML5 reset stylesheet that suited my needs so I decided to modify &lt;a href='http://html5doctor.com/html-5-reset-stylesheet/'&gt;HTML5 Doctors'&lt;/a&gt; CSS reset a bit. This is what it looks like:&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nt&quot;&gt;html&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;span&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;object&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;iframe&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
 &lt;span class=&quot;nt&quot;&gt;h1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;h2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;h3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;h4&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;h5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;h6&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;blockquote&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;pre&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
@@ -96,8 +95,8 @@ and &lt;a href='http://meyerweb.com/eric/tools/css/reset/'&gt;HTML5 Doctor's&lt;
 
 &lt;p&gt;&lt;a href='/styles/reset.css'&gt;Download&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;This stylesheet is released under the &lt;a href='http://creativecommons.org/licenses/by/3.0/'&gt;Creative Commons Attribution 3.0 license&lt;/a&gt;, so feel free to use it!&lt;/p&gt;</description>
-				<link>http://www.miguelmota.com/article/html5-reset-stylesheet</link>
+&lt;p&gt;This stylesheet is released under the &lt;a href='http://creativecommons.org/licenses/by/3.0/'&gt;Creative Commons Attribution 3.0 License&lt;/a&gt;, so feel free to use it!&lt;/p&gt;</description>
+				<link>http://www.miguelmota.com/blog/html5-reset-stylesheet</link>
 				<pubDate>09 Aug 2011</pubDate>
 			</item>
 		
@@ -257,14 +256,14 @@ attribute and then removing the &lt;code&gt;title&lt;/code&gt; attribute. So wha
 &lt;/div&gt;
 
 &lt;p&gt;That's it folks! You should now have a functioning mini tooltip plugin. If I made mistakes or if you would like to add, please comment! any feedback is greatly appreciated.&lt;/p&gt;</description>
-				<link>http://www.miguelmota.com/article/make-an-awesome-tooltip-with-jquery</link>
+				<link>http://www.miguelmota.com/blog/make-an-awesome-tooltip-with-jquery</link>
 				<pubDate>24 May 2011</pubDate>
 			</item>
 		
 			<item>
 				<title>Hello World!</title>
 				<description>&lt;p&gt;This will be the best blog ever!&lt;/p&gt;</description>
-				<link>http://www.miguelmota.com/article/hello-world</link>
+				<link>http://www.miguelmota.com/blog/hello-world</link>
 				<pubDate>30 Mar 2011</pubDate>
 			</item>
 		

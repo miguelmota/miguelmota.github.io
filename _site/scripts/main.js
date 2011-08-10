@@ -370,7 +370,7 @@ function streamPage(){
 						var id = status.id_str;
 			    	  	var date = new Date(status.created_at).toUTCString();
 				        var newText = '<span>'+post.split(' ').join('</span> <span>')+'</span>';
-			    	  	$('ul.twitter_status').append("<li id='"+id+"' class='status'>&#187; <span class='post'>"+newText+"</span> <span class='date'><a href='http://twitter.com/miguel_mota/status/"+id+"'>"+niceTime(date)+"</a></span></li>");
+			    	  	$('ul.twitter-status').append("<li id='"+id+"' class='status'>&#187; <span class='post'>"+newText+"</span> <span class='date'><a href='http://twitter.com/miguel_mota/status/"+id+"'>"+niceTime(date)+"</a></span></li>");
 			    	    $("li.status[id='"+id+"'] span").find(":contains('http')").wrapInner("<a href='"+$("li.status[id='"+id+"'] span").find(":contains('http')").text()+"'> </a>");
 			    	    $("li.status[id='"+id+"'] span").find(":contains('@')").wrapInner("<a href='http://twitter.com/"+$("li.status[id='"+id+"'] span").find(":contains('@')").text().substr(1)+"'> </a>");
 					});
@@ -521,15 +521,15 @@ function portfolioPage(){
 	});
 	
 	//hover glow effect
-	$('div.container').hover(function(){
-				jQuery('div.overlay', this).fadeOut(200);
+	$('div.image-container').hover(function(){
+				jQuery('span.overlay', this).fadeOut(200);
 				$(this).css({
 					'-webkit-box-shadow': '0 0 10px #fff',
 					'-moz-box-shadow': '0 0 10px #fff',
 					'box-shadow': '0 0 10px #fff'
 					});
 	},function(){
-				jQuery('div.overlay', this).hide().fadeIn(200);
+				jQuery('span.overlay', this).hide().fadeIn(200);
 				$(this).css({
 					'-webkit-box-shadow': '2px 2px 5px #111',
 					'-moz-box-shadow': '2px 2px 5px #111',
@@ -556,14 +556,15 @@ function portfolioPage(){
 			'titlePosition': 'inside',
 			'titleFormat': formatTitle,
 			'padding': 0,
-			'transitionIn': 'fade',
+			'transitionIn': 'none',
 			'transitionOut': 'none',
 			'speedIn': 150, 
-			'overlayColor': '#000'
+			'overlayColor': '#000',
+			'overlayOpacity': .8
 	});
 	//custom fancybox title formatting
 	function formatTitle(title, currentArray, currentIndex, currentOpts) {
-	    return '<div id="fancybox_title"><span><a href="javascript:void(0);" onclick="$.fancybox.close();">close X</a></span>' + (title && title.length ? '<strong>' + title + '</strong>' : '' ) + 'Image ' + (currentIndex + 1) + ' of ' + currentArray.length + '</div>';
+	    return '<div class="fancybox-title"><span><a href="javascript:void(0);" onclick="$.fancybox.close();">close X</a></span>' + (title && title.length ? '<strong>' + title + '</strong>' : '' ) + 'Image ' + (currentIndex + 1) + ' of ' + currentArray.length + '</div>';
 	}
 	
 }
