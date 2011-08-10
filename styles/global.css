@@ -682,12 +682,12 @@ div#cse-search-form {
 form.gsc-search-box {
 
 }
-div#cse input[type=submit].gsc-search-button,
-div#cse td.gsc-branding-text,
-div#cse td.gsc-branding-img  {
+form.gsc-search-box input[type=submit].gsc-search-button,
+form.gsc-search-box td.gsc-branding-text,
+form.gsc-search-box td.gsc-branding-img  {
 	display: none;
 }
-div#cse input[type=text].gsc-input {
+div#cse-search-form input[type=text] {
 	width: 250px;
 	border: 1px solid #555;
 }
