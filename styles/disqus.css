@@ -50,7 +50,7 @@ div.dsq-trackback-url {
 	DISQUS - NARCISSUS THEME
 ============================================================================== */
 div#disqus_thread {
-	padding-top: 20px !important;
+	margin--top: 20px !important;
 }
 div#dsq-global-toolbar {
 	display: none !important;
