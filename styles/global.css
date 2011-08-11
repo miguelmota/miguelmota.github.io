@@ -336,6 +336,7 @@ section.content {
 }
 div.main-content {
 	height: auto;
+	float: right;
 	position: relative;
 	width: 650px;
 }
