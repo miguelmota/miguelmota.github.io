@@ -648,7 +648,7 @@ function blogPage(){
 	$.getScript('http://platform.twitter.com/widgets.js');
 	
 	//initialize Google Search
-	//loadSearch();
+	loadSearch();
 	
 	//initialize Disqus
 	while(ldc = 0){
@@ -698,13 +698,14 @@ function loadSearch(){
 	   ].join('');
 	   _gaq.push(["_trackPageview", url]);
 	 }
-
-   var customSearchControl = new google.search.CustomSearchControl('013110027163283765539:a-en5rcxdcu');
-   customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
-   customSearchControl.setSearchStartingCallback(null, _trackQuery);
-   var options = new google.search.DrawOptions();
-   options.setSearchFormRoot('cse-search-form');    
-   customSearchControl.draw('cse', options);
+	
+	   var customSearchControl = new google.search.CustomSearchControl('013110027163283765539:a-en5rcxdcu');
+	   customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	   customSearchControl.setSearchStartingCallback(null, _trackQuery);
+	   var options = new google.search.DrawOptions();
+	   options.setSearchFormRoot('cse-search-form');    
+	   customSearchControl.draw('cse', options);
+	 return true;
 }
 
 
