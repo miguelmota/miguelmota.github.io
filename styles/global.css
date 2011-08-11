@@ -699,6 +699,8 @@ a.subscribe-button {
 a.twitter-follow-button {
 	float: right;
 	display: inline;
+	width: 65px;
+	border: 1px solid black;
 }
 h1.post-title {
 	border-bottom: 1px solid #777;
