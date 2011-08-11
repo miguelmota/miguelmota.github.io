@@ -673,13 +673,11 @@ label[for='message'].error {
 /* ==============================================================================
 	BLOG
 ============================================================================== */
-div.description-container {
+div.blog-description {
 	clear: both;
-	height: 30px;
-}
-p.blog-description {
 	float: left;
 	font-size: 10px;
+	height: 30px;
 }
 h1.post-title {
 	border-bottom: 1px solid #777;
