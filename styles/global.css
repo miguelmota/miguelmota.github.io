@@ -693,10 +693,14 @@ div.subscribe-container {
 	float: right;
 	width: 300px;
 }
-a.subscribe-button {
+div.subscribe-container a {
+	float: right;
+	display: inline;
+}
+a.subscribe-but-ton {
 	float: left;
 }
-a.twitter-follow-button {
+a.twitter-follow-b-utton {
 	float: right;
 	display: inline;
 	width: 65px;
