@@ -329,11 +329,14 @@ ul.main-nav a.selected {
 	CONTENT
 ============================================================================== */
 section.content {
+	float: right;
+	height: auto;
+	position: relative;	
 	text-shadow: 0 -1px 0 rgba(0,0,0,.5);
-	position: relative;
+	width: 650px;
 }
 div.main-content {
-	float: right;
+	height: auto;
 	position: relative;
 	width: 650px;
 }
@@ -780,8 +783,11 @@ div.gsc-cursor-current-page  {
 ============================================================================== */
 footer.main-footer {
 	clear: both;
+	float: right;
+	height: auto;
 	padding: 25px 0 15px 0;
 	position: relative;
+	width: 650px;
 }
 footer.main-footer p {
 	background-color: inherit;
