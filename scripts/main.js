@@ -127,9 +127,9 @@ $(document).ready(function(){
 		var scrollTop = $(document).scrollTop();
 		scrollTop = parseInt(scrollTop);
 		var offset = topYloc+scrollTop+'px';  
-		$('a.top').animate({top:offset},{duration:500,queue:false});
+		$('a.top-link').animate({top:offset},{duration:500,queue:false});
 	});
-	topYloc = parseInt($('a.top').css('top').substring(0,$('a.top').css('top').indexOf('px')));
+	topYloc = parseInt($('a.top-link').css('top').substring(0,$('a.top-link').css('top').indexOf('px')));
 	
 });
 
@@ -137,10 +137,10 @@ $(window).scroll(function(){
 	
 	//toggle back to top link on scroll
 	if(window.pageYOffset >= 200){
-		$('a.top').fadeIn(600);
+		$('a.top-link').fadeIn(600);
 	}
 	if(window.pageYOffset < 200){
-		$('a.top').fadeOut(185);
+		$('a.top-link').fadeOut(185);
 	}
 	
 });

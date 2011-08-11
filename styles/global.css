@@ -670,7 +670,7 @@ label[for='message'].error {
 /* ==============================================================================
 	BLOG
 ============================================================================== */
-div.search-container {
+div.description-container {
 	clear: both;
 	height: 30px;
 }
@@ -678,93 +678,6 @@ p.blog-description {
 	float: left;
 	font-size: 10px;
 }
-/* GOOGLE SEARCH ----------------------------------------------------- */
-
-div#cse-search-form {
-	float: right;
-	position: relative;
-	top: -45px;
-	width: 300px;
-}
-form.gsc-search-box {
-
-
-}
-div#cse,
-div.gsc-control-cse {
-	background-color: #252525;
-	border: none;
-}
-div#cse a {
-	color: #007299 !important;
-	font-size: 14px !important;
-}
-div#cse a b {
-	color: #007299 !important;
-	font-size: 14px !important;
-}
-div.gs-snippet {
-	color: #999 !important;
-	font-size: 12px !important;
-}
-input[type=submit].gsc-search-button,
-td.gcsc-branding-text,
-td.gcsc-branding-img-noclear  {
-	display: none;
-}
-div#cse-search-form input[type=text] {
-	font-size: 12px important;
-	width: 250px;
-	color: #555 !important;
-	border: 1px solid #555;
-	border-left: 4px solid #555 !important;
-	background: #222 !important;
-}
-div#cse-search-form input[type=text]:focus {
-	border-color: #007299 !important;
-	color: #999 !important;
-}
-div.gs-spelling a {
-	color: #007799;
-}
-div#cse div.gsc-control-cse  {
-	display: block;
-	position: static;
-}
-div#cse div.sce-results  {
-	padding: 2px;
-	background-color: #252525;
-	-webkit-box-shadow: 0 0 5px #111;
-	-moz-box-shadow: 0 0 5px #111;
-	-o-box-shadow: 0 0 5px #111;
-	box-shadow: 0 0 5px #111;
-}
-div.gs-visibleUrl  {
-	color: #555 !important;
-	font-size: 10px;
-}
-div.gsc-cursor-box {
-	border: none !important;
-	background-color: #252525 !important;
-}
-div.gsc-cursor-page  {
-	color: #007799 !important;
-	background-color: #252525 !important;
-}
-div.gsc-cursor-current-page  {
-	color: #555 important;
-}
-div.gsc-result {
-	border: none !important;
-	padding-bottom: 2px !important;
-}
-div.gs-no-results-result div.gs-snippet {
-	background-color: #252525 !important;
-	border: none !important;
-	color: #870000 !important;
-}
-
-/* /GOOGLE SEARCH --------------------------------------------------- */
 h1.post-title {
 	border-bottom: 1px solid #777;
 	margin-bottom: 5px;
@@ -778,14 +691,14 @@ h1.post-title a {
 	padding-left: 5px;
 }
 div.post {
-	margin-bottom: 55px;
+	padding-bottom: 55px;
 }
-div.post_footer {
-	margin-top: 20px;
+div.post-footer {
 	font-size: 10px;
+	padding-top: 20px;
 }
 a.archive-link {
-	margin-top: 25px;
+	padding-top: 25px;
 }
 /* ==============================================================================
 	END BLOG
@@ -794,20 +707,88 @@ a.archive-link {
 
 
 /* ==============================================================================
+	GOOGLE CUSTOM SEARCH ENGINE
+============================================================================== */
+div#cse-search-form {
+	float: right;
+	position: relative;
+	top: -45px;
+	width: 300px;
+}
+div#cse-search-form input[type=text] {
+	background: #222 !important;
+	border: 1px solid #555;
+	border-left: 4px solid #555 !important;
+	color: #555 !important;
+	width: 250px !important;
+}
+div#cse-search-form input[type=text]:focus {
+	border-color: #007299 !important;
+	color: #999 !important;
+}
+div#cse,
+div.gsc-control-cse {
+	background-color: #252525 !important;
+	border: none !important;
+}
+div#cse a,
+div#cse a b {
+	color: #007299 !important;
+	font-size: 14px !important;
+}
+div.gs-snippet {
+	color: #999 !important;
+	font-size: 12px !important;
+}
+input[type=submit].gsc-search-button,
+td.gcsc-branding-text,
+td.gcsc-branding-img-noclear  {
+	display: none;
+}
+div.gsc-result {
+	border: none !important;
+	padding-bottom: 5px !important;
+}
+div.gs-no-results-result div.gs-snippet {
+	background-color: #252525 !important;
+	border: none !important;
+	color: #870000 !important;
+}
+div.gs-visibleUrl  {
+	color: #555 !important;
+	font-size: 10px;
+}
+div.gsc-cursor-box {
+	background-color: #252525 !important;
+	border: none !important;
+}
+div.gsc-cursor-page  {
+	background-color: #252525 !important;
+	color: #007299 !important;
+}
+div.gsc-cursor-current-page  {
+	color: #555 important;
+}
+/* ==============================================================================
+	END GOOGLE CUSTOM SEARCH ENGINE
+============================================================================== */
+
+
+
+/* ==============================================================================
 	MAIN FOOTER
 ============================================================================== */
-footer.main {
-	position: relative;
-	margin-left: 110px;
-	padding: 25px 0 15px 0;
+footer.main-footer {
 	clear: both;
+	padding: 25px 0 15px 0;
+	position: relative;
 }
-footer.main p {
-	font-size: 9px;
+footer.main-footer p {
 	background-color: inherit;
 	color: #333;
+	font-size: 9px;
 }
-footer.main a.top {
+a.top-link {
 	display: none;
 	position: absolute;
 	right: 0;
