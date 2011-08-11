@@ -696,9 +696,9 @@ div.subscribe-container {
 a.subscribe-button {
 	float: left;
 }
-a.twitter-follow-b-utton {
-	float: right !important;
+a.twitter-follow-button {
 	display: inline !important;
+	float: right !important;
 	width: 65px !important;
 	border: 1px solid black !important;
 }
