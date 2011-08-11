@@ -237,7 +237,7 @@ strong {
 }
 input[type=text],
 textarea {		
-	background-color: #252525;
+	background-color: #222;
 	border: 1px solid #555;
 	border-left: 4px solid #555;
 	color: #555;
@@ -253,7 +253,7 @@ textarea {
 }
 input[type=text]:focus,
 textarea:focus {
-	background-color: #262626;
+	background-color: #222;
 	border-color: #007299;
 	border-left: 4px solid #007299;
 	color: #999;
@@ -713,6 +713,7 @@ td.gcsc-branding-img-noclear  {
 	display: none;
 }
 div#cse-search-form input[type=text] {
+	border-left: 4px solid #555;
 	width: 250px;
 	color: #555 !important;
 	border: 1px solid #555;
@@ -754,6 +755,7 @@ div.gsc-cursor-current-page  {
 }
 div.gsc-result {
 	border: none !important;
+	padding-bottom: 2px !important;
 }
 div.gs-no-results-result div.gs-snippet {
 	background-color: #252525 !important;
