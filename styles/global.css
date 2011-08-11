@@ -695,7 +695,7 @@ div.follow-container {
 	position: relative;
 	width: 310px;
 }
-a.plus-one-button {
+.plus-one-button {
 	bottom: 5px;
 	position: absolute;
 	left: 50px;
