@@ -715,9 +715,10 @@ td.gcsc-branding-img-noclear  {
 div#cse-search-form input[type=text] {
 	width: 250px;
 	border: 1px solid #555;
+	background: #222 !important;
 }
-div#cse input[type=text].gsc-input:focus {
-	border-color: #007799;
+div#cse-search-form input[type=text]:focus {
+	border-color: #007299;
 	color: #333 !important;
 }
 div.gs-spelling a {
