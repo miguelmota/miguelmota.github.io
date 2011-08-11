@@ -693,10 +693,10 @@ div.subscribe-container {
 	float: right;
 	padding: 3px;
 	position: relative;
-	width: 280px;
+	width: 250px;
 }
 a.subscribe-button { 
-	bottom: 3px;
+	bottom: 5px;
 	border: none;
 	color: #ed7e2a;
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
