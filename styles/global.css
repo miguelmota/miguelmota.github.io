@@ -731,9 +731,11 @@ div.post {
 }
 div.blog-post {
 	height: 300px;
-	width: auto;
 	text-overflow: ellipsis;
 	overflow: hidden;
+	padding-bottom: 55px;
+	white-space: nowrap;
+	width: auto;
 }
 div.post-footer {
 	font-size: 10px;
