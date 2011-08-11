@@ -61,7 +61,15 @@ tr img {
 	border: none !important;
 	padding: 0 !important;
 }
+td#dsq-header-avatar {
+	border: none !important;
+	padding: 0 !important;
+}
 a.dsq-avatar {
+	border: none !important;
+	padding: 0 !important;
+}
+div.dsq-comment-header {
 	border: none !important;
 	padding: 0 !important;
 }
