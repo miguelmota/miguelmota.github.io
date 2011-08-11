@@ -713,7 +713,7 @@ td.gcsc-branding-img-noclear  {
 	display: none;
 }
 div#cse-search-form input[type=text] {
-
+	font-size: 12px important;
 	width: 250px;
 	color: #555 !important;
 	border: 1px solid #555;
