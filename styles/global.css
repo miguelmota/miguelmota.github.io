@@ -684,6 +684,12 @@ div.share-container {
 	width: 250px;
 	margin: 30px 0 20px 0;
 }
+div.comment-container a.dsq-comment-count {
+	float: none;
+}
+div.comment-container p {
+	font-size: 14px;
+}
 a.archive-link {
 	margin-top: 25px;
 }
