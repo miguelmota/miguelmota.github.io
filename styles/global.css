@@ -675,7 +675,6 @@ label[for='message'].error {
 ============================================================================== */
 div.blog-description {
 	clear: both;
-	float: left;
 	font-size: 10px;
 	height: 30px;
 	width: 330px; 
