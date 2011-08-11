@@ -686,14 +686,14 @@ div.blog-description {
 	float: left;
 	width: 300px;
 }
-div.subscribe-container {
+div.follow-container {
 	background-color: #222;
 	font-size: 12px;
 	height: 22px;
 	float: right;
 	padding: 5px;
 	position: relative;
-	width: 250px;
+	width: 280px;
 }
 a.subscribe-button { 
 	bottom: 5px;
