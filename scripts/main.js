@@ -640,6 +640,7 @@ function contactPage(){
 }
 
 function blogPage(){
+	
 
 	//initialize AddThis
 	//$.getScript('http://s7.addthis.com/js/250/addthis_widget.js#username=miguelmota');
@@ -655,6 +656,10 @@ function blogPage(){
 		loadDisqus();
 		ldc++;
 	}
+	
+	
+	$('div.blog-post').html($('div.blog-post').substring(0,300));
+	
 	
 }
 
