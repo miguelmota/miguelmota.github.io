@@ -648,7 +648,7 @@ function blogPage(){
 	$.getScript('http://platform.twitter.com/widgets.js');
 	
 	//initialize Google Search
-	loadSearch();
+	//loadSearch();
 	
 	//initialize Disqus
 	while(ldc = 0){
