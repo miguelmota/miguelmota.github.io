@@ -783,11 +783,8 @@ div.gsc-cursor-current-page  {
 ============================================================================== */
 footer.main-footer {
 	clear: both;
-	float: right;
-	height: auto;
 	padding: 25px 0 15px 0;
 	position: relative;
-	width: 650px;
 }
 footer.main-footer p {
 	background-color: inherit;
