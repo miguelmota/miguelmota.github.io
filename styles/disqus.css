@@ -54,13 +54,13 @@ div#disqus_thread {
 }
 tr {
 	border: none !important;
-	background: none !important;
+	background: #252525 !important;
 }
 a.dsq-avatar {
 	border: none !important;
 	padding: 0 !important;
 }
-div.dsq-comment-header-meta-wrapper {
+div.dsq-comment-header-meta-wrapper a {
 	font-size: 12px !important;
 }
 button.dsq-button-small {
