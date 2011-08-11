@@ -687,11 +687,12 @@ div.blog-description {
 	width: 300px;
 }
 div.subscribe-container {
-	background-color: #232323;
+	background-color: #222;
 	font-size: 12px;
 	height: auto;
 	float: right;
 	padding: 3px;
+	position: relative;
 	width: 295px;
 }
 a.subscribe-button {
