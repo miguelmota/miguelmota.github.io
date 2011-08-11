@@ -681,7 +681,8 @@ div.blog-description {
 	width: 500px; 
 }
 a.twitter-follow-button {
-
+	color: #007299;
+	display: inline;
 }
 h1.post-title {
 	border-bottom: 1px solid #777;
