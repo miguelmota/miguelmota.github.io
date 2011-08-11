@@ -694,7 +694,7 @@ div.follow-container {
 	float: right;
 	padding: 5px;
 	position: relative;
-	right: -25px;
+	right: -40px;
 	width: 340px;
 }
 a.subscribe-button { 
@@ -705,7 +705,7 @@ a.subscribe-button {
 	font-size: 12px;
 	font-weight: bold;
 	position: absolute;
-	right: 30px;
+	right: 45px;
 }
 a.subscribe-button:hover {
 	background-color: none;
