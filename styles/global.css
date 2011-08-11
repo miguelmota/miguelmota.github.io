@@ -717,9 +717,6 @@ div#cse-search-form {
 	top: 0;
 	width: 300px;
 }
-td.gsc-input {
-	padding: 0 !important;
-}
 div#cse-search-form input[type=text] {
 	background: #222 !important;
 	border: 1px solid #555;
@@ -730,9 +727,6 @@ div#cse-search-form input[type=text] {
 div#cse-search-form input[type=text]:focus {
 	border-color: #007299 !important;
 	color: #999 !important;
-}
-div.gsc-clear-button {
-	padding: 0 !important;
 }
 div#cse {
 	clear: both;
