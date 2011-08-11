@@ -1,15 +1,15 @@
 @charset 'utf-8';
 
 /* ==============================================================================
-	DISQUS
+	DISQUS - HOUDINI THEME
 ============================================================================== */
 #disqus_thread {
 	margin: 20px 0;
 }
 .p_comment_form input[type=text],
 .p_comment_form textarea {
-	border: 1px solid #999;
 	background-color: #222;
+	border: 1px solid #999;
 	color: #999;
 }
 .p_comment_form input[type=text]:focus,
@@ -41,5 +41,22 @@ div.dsq-trackback-url {
 	display: none !important;
 }
 /* ==============================================================================
-	END DISQUS
+	END DISQUS - HOUDINI THEME
+============================================================================== */
+
+
+
+/* ==============================================================================
+	DISQUS - NARCISSUS THEME
+============================================================================== */
+div.dsq-textarea {
+	background: #222;
+	border: 1px solid #555;
+}
+button#dsq-post-button {
+	background: #222;
+	color: #007299;
+}
+/* ==============================================================================
+	END DISQUS - NARCISSUS THEME
 ============================================================================== */
