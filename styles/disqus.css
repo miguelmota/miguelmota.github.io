@@ -53,9 +53,9 @@ div.dsq-textarea {
 	background: #222;
 	border: 1px solid #555;
 }
-button#dsq-post-button {
-	background: #222;
-	color: #007299;
+button.dsq-button {
+	background: #222 !important;
+	color: #007299 !important;
 }
 /* ==============================================================================
 	END DISQUS - NARCISSUS THEME
