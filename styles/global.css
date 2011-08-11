@@ -699,6 +699,7 @@ a.plus-one-button {
 	bottom: 5px;
 	position: absolute;
 	left: 50px;
+	border: 3px solid black;
 }
 a.subscribe-button { 
 	bottom: 5px;
