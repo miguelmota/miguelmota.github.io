@@ -660,7 +660,7 @@ function blogPage(){
 	
 	//initialize Disqus
 	while(ldc = 0){
-		loadDisqus();
+		//loadDisqus();
 		ldc++;
 	}
 	
