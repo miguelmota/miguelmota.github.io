@@ -729,17 +729,15 @@ h1.post-title a {
 div.post {
 	padding-bottom: 55px;
 }
-div.blog-post000 {
-	height: 300px;
-	text-overflow: ellipsis;
-	overflow: hidden;
-	padding-bottom: 55px;
-	white-space: nowrap;
-	width: auto;
-}
-div.post-footer {
+div.post-info {
 	font-size: 10px;
-	padding-top: 20px;
+	padding: 10px 0;
+}
+a.post-date {
+	float: left;
+}
+a.dsq-comment-count {
+	float: right;
 }
 a.archive-link {
 	margin-top: 25px;
