@@ -339,6 +339,7 @@ div.content-container {
 	float: right;
 	position: relative;
 	width: 650px;
+	overflow: hidden;
 }
 /* ==============================================================================
 	END CONTENT
@@ -693,6 +694,7 @@ div.follow-container {
 	float: right;
 	padding: 5px;
 	position: relative;
+	right: -25px;
 	width: 340px;
 }
 a.subscribe-button { 
@@ -703,7 +705,7 @@ a.subscribe-button {
 	font-size: 12px;
 	font-weight: bold;
 	position: absolute;
-	right: 5px;
+	right: 30px;
 }
 a.subscribe-button:hover {
 	background-color: none;
