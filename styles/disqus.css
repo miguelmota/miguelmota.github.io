@@ -49,6 +49,15 @@ div.dsq-trackback-url {
 /* ==============================================================================
 	DISQUS - NARCISSUS THEME
 ============================================================================== */
+div#dsq-global-toolbar {
+	display: none !important;
+}
+div.dsq-subscribe {
+	display: none !important;
+}
+div.dsq-pagination {
+	display: none !important;
+}
 div.dsq-textarea {
 	background: #222 !important;
 	border: 1px solid #555 !important;
@@ -72,6 +81,9 @@ button.dsq-button:hover {
 }
 button.dsq-button:active {
 	text-shadow: none !important;
+}
+div.dsq-item-trackback {
+	display: none !important;
 }
 /* ==============================================================================
 	END DISQUS - NARCISSUS THEME
