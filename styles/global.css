@@ -695,10 +695,24 @@ div.subscribe-container {
 	position: relative;
 	width: 295px;
 }
-a.subscribe-button {
+a.subscribe-button { 
 	bottom: 0;
-	position: abosolute;
+	border: none;
+	color: #ed7e2a;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	position: absolute;
 	right: 0;
+}
+a.subscribe-button:hover {
+	background-color: none;
+	text-decoration: underline;
+}
+a.subscribe-button img { 
+	height: 16px;
+	vertical-align: middle;
+	width: 16px;
 }
 h1.post-title {
 	border-bottom: 1px solid #777;
