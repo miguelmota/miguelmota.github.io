@@ -9,7 +9,7 @@ layout: default
 		<h1 class='post-title'><a href='{{ page.url }}'>{{ page.title }}</a></h1>
 		<div class='post-info'>
 			<p><a class='post-date' href='{{ page.url }}'>{{ page.date | date_to_string }}</a> 
-			<a class='dsq-comment-count' href='http://miguelmota.com{{ page.url }}#disqus_thread' data-disqus-identifier='http://www.miguelmota.com{{ page.url }}'>comments</a></p>
+			<a class='dsq-comment-count' href='http://miguelmota.com{{ page.url }}#disqus_thread' data-disqus-identifier='{{ page.url }}'>comments</a></p>
 	 	</div>
 		{{ content }}
 		<div class='share-container'>
