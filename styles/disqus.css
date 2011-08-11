@@ -66,7 +66,7 @@ tr img {
 	padding: 0 !important;
 }
 img.dsq-moderator-star {
-	display: none;
+	display: none !important;
 }
 td.dsq-header-avatar {
 	border: none !important;
