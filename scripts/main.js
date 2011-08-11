@@ -698,14 +698,13 @@ function loadSearch(){
 	   ].join('');
 	   _gaq.push(["_trackPageview", url]);
 	 }
-	 google.setOnLoadCallback(function() {
-	   var customSearchControl = new google.search.CustomSearchControl('013110027163283765539:a-en5rcxdcu');
-	   customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
-	   customSearchControl.setSearchStartingCallback(null, _trackQuery);
-	   var options = new google.search.DrawOptions();
-	   options.setSearchFormRoot('cse-search-form');    
-	   customSearchControl.draw('cse', options);
-	 }, true);
+
+   var customSearchControl = new google.search.CustomSearchControl('013110027163283765539:a-en5rcxdcu');
+   customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+   customSearchControl.setSearchStartingCallback(null, _trackQuery);
+   var options = new google.search.DrawOptions();
+   options.setSearchFormRoot('cse-search-form');    
+   customSearchControl.draw('cse', options);
 }
 
 
