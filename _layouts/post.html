@@ -12,18 +12,18 @@ layout: default
 	 	</div>
 		{{ content }}
 		<div class='share-container'>
-		<a class='twitter-share-button' href='http://twitter.com/share' data-count='true'>Tweet</a>
-		<!-- Place this tag where you want the +1 button to render -->
-<g:plusone size="medium"></g:plusone>
-
-<!--  Place this tag after the last plusone tag -->
-<script type="text/javascript">
-(function() {
-  var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-  po.src = 'https://apis.google.com/js/plusone.js';
-  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-})();
-</script>
+		
+			<a class='twitter-share-button' href='http://twitter.com/share' data-url='{{ page.url }}' data-count='horizontal'>Tweet</a>
+		
+			<g:plusone href='{{ page.url }}' size='medium'></g:plusone>
+			<script type="text/javascript">
+			(function() {
+			  var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+			  po.src = 'https://apis.google.com/js/plusone.js';
+			  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+			})();
+			</script>
+			
 		</div>
 		<div id='disqus_thread'></div>
 	</div>

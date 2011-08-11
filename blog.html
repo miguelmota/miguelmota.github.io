@@ -14,6 +14,20 @@ title: Blog &#8212;
 					<p><a class='post-date' href='{{ post.url }}'>{{ post.date | date_to_string }}</a> <a class='dsq-comment-count' href="{{ post.url }}#disqus_thread">comments</a></p>
 	 			</div>
 				{{ post.content }}
+				<div class='share-container'>
+				
+					<a class='twitter-share-button' href='http://twitter.com/share' data-url='{{ post.url }}' data-count='horizontal'>Tweet</a>
+				
+					<g:plusone href='{{ post.url }}' size='medium'></g:plusone>
+					<script type="text/javascript">
+					(function() {
+					  var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+					  po.src = 'https://apis.google.com/js/plusone.js';
+					  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+					})();
+					</script>
+					
+				</div>
 			</div>
 		{% endfor %}
 			<a class='archive-link' href='/archive'>view archive &#187;</a>
