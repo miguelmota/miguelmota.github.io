@@ -718,6 +718,7 @@ div#cse-search-form input[type=text] {
 }
 div#cse input[type=text].gsc-input:focus {
 	border-color: #007799;
+	color: #333 !important;
 }
 div.gs-spelling a {
 	color: #007799;
