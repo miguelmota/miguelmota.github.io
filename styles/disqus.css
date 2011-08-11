@@ -53,6 +53,7 @@ div#disqus_thread {
 
 }
 tr {
+	border: none !important;
 	background: #222 !important;
 }
 button.dsq-button-small {
@@ -65,6 +66,8 @@ a.dsq-request-user-logout {
 }
 td.dsq-header-avatar {
 	float: left !important;
+	height: 48px !important;
+	padding: 0 !important;
 	width: 48px !important;
 }
 div.dsq-request-user-info {
