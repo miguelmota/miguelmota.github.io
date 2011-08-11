@@ -680,6 +680,9 @@ div.blog-description {
 	padding-bottom: 10px;
 	width: 330px; 
 }
+a.twitter-follow-button {
+	display: inline;
+}
 h1.post-title {
 	border-bottom: 1px solid #777;
 	margin-bottom: 5px;
