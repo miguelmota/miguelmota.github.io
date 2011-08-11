@@ -29,8 +29,10 @@ title: Blog
 	</div>
 	<script>
 	
-	    var disqus_shortname = 'miguelmota';
-    var disqus_url = 'http://wwww.miguelmota.com/{{ page.url }}';
+	var disqus_shortname = 'miguelmota';
+    var disqus_url = 'http://wwww.miguelmota.com{{ post.url }}';
+    var disqus_identifier = 'http://wwww.miguelmota.com{{ post.url }}';
+    var disqus_title = '{{ post.title }}'
     
     //comment count
     (function () {
