@@ -691,20 +691,16 @@ div.subscribe-container {
 	font-size: 10px;
 	height: auto;
 	float: right;
-	width: 300px;
+	width: 280px;
 }
-div.subscribe-container a {
-	float: right;
-	display: inline;
-}
-a.subscribe-but-ton {
+a.subscribe-button {
 	float: left;
 }
 a.twitter-follow-b-utton {
-	float: right;
-	display: inline;
-	width: 65px;
-	border: 1px solid black;
+	float: right !important;
+	display: inline !important;
+	width: 65px !important;
+	border: 1px solid black !important;
 }
 h1.post-title {
 	border-bottom: 1px solid #777;
