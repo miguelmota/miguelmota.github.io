@@ -657,9 +657,6 @@ function blogPage(){
 		ldc++;
 	}
 	
-	var str = $('div.blog-post').html();
-	alert($('div.blog-post').html(str.substring(0,300)));	
-	
 }
 
 function loadDisqus(){
