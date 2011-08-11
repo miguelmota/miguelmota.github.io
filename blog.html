@@ -3,21 +3,9 @@ layout: default
 title: Blog &#8212;
 ---
 <h1 class='title'>Miguel<span class='mota'>Mota</span><span class='slash'>/</span><span class='sub'>Blog</span></h1>
-<div id='cse-search-form'></div> 
 
-<div class='blog-info'>
-	<div class='blog-description'><p><em>A blog on code, design and some other stuff.</em></p></div>
-	<div class='subscribe-container'>
-	
-		<a class='twitter-follow-button' href='https://twitter.com/miguel_mota' data-show-count='false' data-button='grey' data-link-color='#007299'>Follow @miguel_mota</a>
-		<script src='http://platform.twitter.com/widgets.js'></script>
-		
-		<a class='subscribe-button' href='http://feeds.feedburner.com/miguelmota'><img src='/images/rss_16.png' alt=''/> subscribe</a>
-	</div>
-</div>
-
-<div id='cse'></div>
 <section class='content blog'>
+	{% include header.html %}
 	<div class='posti'>
 		{% for post in site.posts %}
 			<div class='post'>
