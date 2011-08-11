@@ -658,8 +658,7 @@ function blogPage(){
 	}
 	
 	var str = $('div.blog-post').html();
-	$('div.blog-post').html(str.substring(0,300));
-	
+	alert($('div.blog-post').html(str.substring(0,300)));	
 	
 }
 
