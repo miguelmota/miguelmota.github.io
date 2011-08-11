@@ -721,7 +721,7 @@ div#cse-search-form input[type=text] {
 	background: #222 !important;
 }
 div#cse-search-form input[type=text]:focus {
-	border-color: #007299;
+	border-color: #007299 !important;
 	color: #999 !important;
 }
 div.gs-spelling a {
