@@ -52,6 +52,23 @@ div.dsq-trackback-url {
 div#disqus_thread {
 
 }
+a.dsq-request-user-logout {
+	display: none !important;
+}
+td.dsq-header-avatar {
+	float: left !important;
+}
+td.dsq-request-user-name,
+td.dsq-request-user-stats {
+	display: none !important;
+}
+img.dsq-request-user-avatar {
+	border: none !important;
+	padding: 0 !important;
+}
+div#dsq-form-area {
+	float: right !important;
+}
 div#dsq-global-toolbar {
 	display: none !important;
 }
