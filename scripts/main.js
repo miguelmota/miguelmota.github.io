@@ -643,7 +643,7 @@ function blogPage(){
 
 	//initialize AddThis
 	//$.getScript('http://s7.addthis.com/js/250/addthis_widget.js#username=miguelmota');
-
+	$.getScript('http://platform.twitter.com/widgets.js');
 	
 	//initialize Google Search
 	//loadSearch();
