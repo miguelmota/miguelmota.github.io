@@ -52,6 +52,14 @@ div.dsq-trackback-url {
 div#disqus_thread {
 
 }
+tr {
+	background: #222 !important;
+}
+button.dsq-button-small {
+	background: none !important;
+	border: none !important;
+	color: #007299 !important;
+}
 a.dsq-request-user-logout {
 	display: none !important;
 }
@@ -75,7 +83,7 @@ img.dsq-request-user-avatar {
 div#dsq-form-area {
 	clear: none !important;
 	float: right !important;
-	width: 600px !important;
+	width: 580px !important;
 }
 div#dsq-global-toolbar {
 	display: none !important;
