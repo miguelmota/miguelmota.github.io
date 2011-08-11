@@ -59,6 +59,10 @@ tr {
 tr img {
 	background: none !important;
 	border: none !important;
+	border-radius: 0 !important;
+	-moz-border-radius: 0 !important;
+	-o-border-radius: 0 !important;
+	-webkit-border-radius: 0 !important;
 	padding: 0 !important;
 }
 td#dsq-header-avatar {
