@@ -676,7 +676,9 @@ label[for='message'].error {
 div.blog-description {
 	clear: both;
 	font-size: 10px;
+	height: 30px;
 	padding-bottom: 10px;
+	width: 500px; 
 }
 a.twitter-follow-button {
 
