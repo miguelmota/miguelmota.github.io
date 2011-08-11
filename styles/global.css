@@ -729,6 +729,11 @@ h1.post-title a {
 div.post {
 	padding-bottom: 55px;
 }
+div.blog-post {
+	height: 300px;
+	width: auto;
+	text-overflow: ellipsis;
+}
 div.post-footer {
 	font-size: 10px;
 	padding-top: 20px;
