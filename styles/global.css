@@ -677,7 +677,7 @@ div.blog-info {
 	clear: both;
 	font-size: 10px;
 	height: 30px;
-	padding-bottom: 10px;
+	padding-bottom: 20px;
 	width: 650px; 
 }
 div.blog-description {
@@ -687,20 +687,13 @@ div.blog-description {
 	width: 300px;
 }
 div.subscribe-container {
-	background-color: #292929;
-	font-size: 10px;
+	font-size: 12px;
 	height: auto;
 	float: right;
-	width: 280px;
+	width: 295px;
 }
 a.subscribe-button {
-	float: left;
-}
-a.twitter-follow-button {
-	display: inline !important;
-	float: right !important;
-	width: 65px !important;
-	border: 1px solid black !important;
+	float: right;
 }
 h1.post-title {
 	border-bottom: 1px solid #777;
