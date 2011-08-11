@@ -65,9 +65,14 @@ tr img {
 	-webkit-border-radius: 0 !important;
 	padding: 0 !important;
 }
-td#dsq-header-avatar {
+img.dsq-moderator-star {
+	display: none;
+}
+td.dsq-header-avatar {
 	border: none !important;
+	height: 28px;
 	padding: 0 !important;
+	width: 28px;
 }
 a.dsq-avatar {
 	border: none !important;
