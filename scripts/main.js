@@ -648,7 +648,7 @@ function blogPage(){
 	$.getScript('http://platform.twitter.com/widgets.js');
 	
 	//initialize Google Search
-	loadSearch();
+	//loadSearch();
 	
 	//initialize Disqus
 	while(ldc = 0){
@@ -680,14 +680,9 @@ function loadDisqus(){
 }
 
 //load Google Search function
-google.load('search', '1', {language : 'en', style : google.loader.themes.MINIMALIST});
+
 function loadSearch(){
-	 
-		    var customSearchControl = new google.search.CustomSearchControl('013110027163283765539:a-en5rcxdcu');
-		    customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
-		    var options = new google.search.DrawOptions();
-		    options.setSearchFormRoot('cse-search-form');    
-		    customSearchControl.draw('cse', options);
+
 
 }
 
