@@ -95,7 +95,7 @@ $(document).ready(function(){
 		else{
 			//initialize stream
 			streamPage();
-			document.title = 'Miguel Mota | Freelance Web Developer';
+			//document.title = 'Miguel Mota | Freelance Web Developer';
 		}
 	});
 	$('a#'+$('span.sub').text()).addClass('selected');
@@ -154,14 +154,14 @@ $(document).ajaxComplete(function(){
 		var path2 = window.location.pathname.substr(1);
 	}
 	var title = $('h1.title span.sub:first').text()+$('div.theTitle').text();
-	document.title = title;
+	//document.title = title;
 	$('ul.main-nav a').removeClass('selected');
 	if(path2 != ''){
 		$('ul.main-nav a#'+path2).addClass('selected');
 	}
 	else{
 		$('ul.main-nav a#stream').addClass('selected');
-		document.title = 'Miguel Mota | Freelance Web Developer';
+		//document.title = 'Miguel Mota | Freelance Web Developer';
 	}
 	switch(path2){
 		case '':
