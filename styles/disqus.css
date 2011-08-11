@@ -57,6 +57,12 @@ a.dsq-request-user-logout {
 }
 td.dsq-header-avatar {
 	float: left !important;
+	width: 48px !important;
+}
+div.dsq-request-user-info {
+	clear: none !important;
+	float: left !important;
+	width: 48px !important;
 }
 td.dsq-request-user-name,
 td.dsq-request-user-stats {
@@ -67,7 +73,9 @@ img.dsq-request-user-avatar {
 	padding: 0 !important;
 }
 div#dsq-form-area {
+	clear: none !important;
 	float: right !important;
+	width: 600px !important;
 }
 div#dsq-global-toolbar {
 	display: none !important;
