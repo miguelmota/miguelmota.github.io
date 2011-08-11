@@ -698,9 +698,7 @@ function loadSearch(){
 	   ].join('');
 	   _gaq.push(["_trackPageview", url]);
 	 }
-}
-
-google.setOnLoadCallback(function() {
+	 google.setOnLoadCallback(function() {
 	   var customSearchControl = new google.search.CustomSearchControl('013110027163283765539:a-en5rcxdcu');
 	   customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
 	   customSearchControl.setSearchStartingCallback(null, _trackQuery);
@@ -708,6 +706,7 @@ google.setOnLoadCallback(function() {
 	   options.setSearchFormRoot('cse-search-form');    
 	   customSearchControl.draw('cse', options);
 	 }, true);
+}
 
 
 
