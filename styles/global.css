@@ -334,7 +334,7 @@ section.content {
 	text-shadow: 0 -1px 0 rgba(0,0,0,.5);
 	width: 650px;
 }
-div.main-content {
+div.content-container {
 	height: auto;
 	float: right;
 	position: relative;
@@ -714,8 +714,9 @@ a.archive-link {
 ============================================================================== */
 div#cse-search-form {
 	float: right;
-	position: relative;
-	top: -45px;
+	position: absolute;
+	right: 0;
+	top: 0;
 	width: 300px;
 }
 div#cse-search-form input[type=text] {
