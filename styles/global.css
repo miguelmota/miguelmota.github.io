@@ -693,7 +693,7 @@ div.subscribe-container {
 	float: right;
 	padding: 3px;
 	position: relative;
-	width: 295px;
+	width: 280px;
 }
 a.subscribe-button { 
 	bottom: 3px;
@@ -703,7 +703,7 @@ a.subscribe-button {
 	font-size: 12px;
 	font-weight: bold;
 	position: absolute;
-	right: 0;
+	right: 3px;
 }
 a.subscribe-button:hover {
 	background-color: none;
