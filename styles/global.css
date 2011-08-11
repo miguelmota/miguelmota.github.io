@@ -696,7 +696,7 @@ div.subscribe-container {
 	width: 295px;
 }
 a.subscribe-button { 
-	bottom: 0;
+	bottom: 3px;
 	border: none;
 	color: #ed7e2a;
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
