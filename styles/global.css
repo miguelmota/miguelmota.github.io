@@ -283,7 +283,8 @@ ul li {
 ============================================================================== */
 nav.main-side-nav {
 	background-color: #252525;
-
+	float: left;
+	width: 75px;
 	z-index: 1000;
 }
 a.nav-logo {
