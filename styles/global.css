@@ -695,12 +695,6 @@ div.follow-container {
 	position: relative;
 	width: 310px;
 }
-.plus-one-button {
-	bottom: 5px;
-	position: absolute;
-	left: 50px;
-	border: 3px solid black !important;
-}
 a.subscribe-button { 
 	bottom: 5px;
 	border: none;
