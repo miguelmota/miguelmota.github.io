@@ -16,9 +16,9 @@ title: Blog &#8212;
 				{{ post.content }}
 				<div class='share-container'>
 				
-					<a class='twitter-share-button' href='http://twitter.com/share' data-url='{{ post.url }}' data-count='horizontal'>Tweet</a>
+					<a class='twitter-share-button' href='http://twitter.com/share' data-text='{{ post.title }}' data-url='http://www.miguelmota.com{{ post.url }}' data-via='miguel_mota' data-count='horizontal'>Tweet</a>
 				
-					<g:plusone href='{{ post.url }}' size='medium'></g:plusone>
+					<g:plusone href='http://www.miguelmota.com{{ post.url }}' size='medium'></g:plusone>
 					<script type="text/javascript">
 					(function() {
 					  var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
