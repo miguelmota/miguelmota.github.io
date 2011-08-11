@@ -74,6 +74,7 @@ div.dsq-comment-header {
 	padding: 0 !important;
 }
 td.dsq-comment-header-meta {
+	float: left !important;
 	margin-left: -30px !important;
 }
 a.dsq-comment-hide-thread {
