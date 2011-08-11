@@ -740,8 +740,10 @@ a.post-date {
 a.dsq-comment-count {
 	float: right;
 }
-a.twitter-share-button {
+div.share-container {
+	background-color: #222;
 	clear: both;
+	padding: 3px;
 	margin-top: 30px;
 }
 a.archive-link {
