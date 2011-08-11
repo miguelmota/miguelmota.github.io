@@ -52,7 +52,9 @@ div.dsq-trackback-url {
 div.dsq-textarea {
 	background: #222 !important;
 	border: 1px solid #555 !important;
+	color: #555 !important;
 }
+div.dsq-textarea-wrapper,
 div.dsq-textarea-wrapper iframe {
 	background: #222 !important;
 	border: none !important;
