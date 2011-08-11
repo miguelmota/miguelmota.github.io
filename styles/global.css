@@ -678,7 +678,7 @@ div.blog-description {
 	font-size: 10px;
 	height: 30px;
 	padding-bottom: 10px;
-	width: 500px; 
+	width: 100%; 
 }
 a.twitter-follow-button {
 	float: right;
