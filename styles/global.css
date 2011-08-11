@@ -677,6 +677,7 @@ div.blog-description {
 	clear: both;
 	font-size: 10px;
 	height: 30px;
+	padding-bottom: 10px;
 	width: 330px; 
 }
 h1.post-title {
