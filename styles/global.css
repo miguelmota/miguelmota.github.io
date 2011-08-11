@@ -749,7 +749,7 @@ div#cse-search-form {
 	float: right;
 	position: absolute;
 	right: 0;
-	top: 0;
+	top: -50px;
 	width: 300px;
 }
 div#cse-search-form input[type=text] {
