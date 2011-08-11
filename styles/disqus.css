@@ -77,12 +77,11 @@ div#comment {
 }
 button.dsq-button {
 	background: #222 !important;
-	border: 1px solid #555 !important;
+	border: none !important;
 	color: #007299 !important;
 }
 button.dsq-button:hover {
 	background: #222 !important;
-	border: 1px solid #999 !important;
 	color: #007299 !important;
 }
 button.dsq-button:active {
