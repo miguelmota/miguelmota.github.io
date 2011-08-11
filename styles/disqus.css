@@ -49,10 +49,13 @@ div.dsq-trackback-url {
 /* ==============================================================================
 	DISQUS - NARCISSUS THEME
 ============================================================================== */
+div#disqus_thread {
+	padding-top: 20px;
+}
 div#dsq-global-toolbar {
 	display: none !important;
 }
-div.dsq-subscribe {
+div.dsq-options {
 	display: none !important;
 }
 div.dsq-pagination {
