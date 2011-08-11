@@ -730,8 +730,9 @@ div.post {
 	padding-bottom: 55px;
 }
 div.post-info {
+	clear: both;
 	font-size: 10px;
-	padding: 5px 20px;
+	padding-bottom: 20px;
 }
 a.post-date {
 	float: left;
