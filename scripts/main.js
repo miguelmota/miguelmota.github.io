@@ -680,8 +680,9 @@ function loadDisqus(){
 }
 
 // Load Google Custom Search Engine
+google.load('search', '1', {language : 'en', style : google.loader.themes.MINIMALIST});
 function loadSearch(){
-	 google.load('search', '1', {language : 'en', style : google.loader.themes.MINIMALIST});
+
 	 var _gaq = _gaq || [];
 	 _gaq.push(["_setAccount", "UA-12642068-1"]);
 	 function _trackQuery(control, searcher, query) {
