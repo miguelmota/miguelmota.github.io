@@ -728,10 +728,14 @@ div#cse-search-form input[type=text]:focus {
 	border-color: #007299 !important;
 	color: #999 !important;
 }
+div#cse {
+	clear: both;
+}
 div#cse,
 div.gsc-control-cse {
 	background-color: #252525 !important;
 	border: none !important;
+	padding: 0 !important;
 }
 div#cse a,
 div#cse a b {
