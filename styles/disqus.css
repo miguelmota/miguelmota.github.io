@@ -1,0 +1,45 @@
+@charset 'utf-8';
+
+/* ==============================================================================
+	DISQUS
+============================================================================== */
+#disqus_thread {
+	margin: 20px 0;
+}
+.p_comment_form input[type=text],
+.p_comment_form textarea {
+	border: 1px solid #999;
+	background-color: #222;
+	color: #999;
+}
+.p_comment_form input[type=text]:focus,
+.p_comment_form textarea:focus {
+	border: 1px solid #007799;
+}
+.p_no_responses {
+	display: none;
+}
+div#dsq-global-toolbar {
+}
+div#dsq-content h3 {
+	display: none !important;
+}
+div#dsq-account-dropdown {
+	display: none !important;
+}
+div.dsq-comment-body {
+}
+img.dsq-deferred-avatar {
+}
+div#dsq-subscribe {
+	display: none !important;
+}
+select#dsq-sort-select {
+	display: none !important;
+}
+div.dsq-trackback-url {
+	display: none !important;
+}
+/* ==============================================================================
+	END DISQUS
+============================================================================== */
