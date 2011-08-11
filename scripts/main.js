@@ -644,7 +644,7 @@ function blogPage(){
 	//initialize AddThis
 	//$.getScript('http://s7.addthis.com/js/250/addthis_widget.js#username=miguelmota');
 	
-	// Initialize Twitter button
+	// Initialize Twitter widgets
 	$.getScript('http://platform.twitter.com/widgets.js');
 	
 	//initialize Google Search
