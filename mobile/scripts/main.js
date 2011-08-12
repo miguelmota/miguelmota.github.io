@@ -38,6 +38,17 @@ $(document).ready(function(){
 	});
 	
 	$('#blog div.content').load('/blog section.content', function(){
+		
+		// Initialize Twitter widgets
+		$.getScript('http://platform.twitter.com/widgets.js');
+		
+		// Initiatlize Google Plus One
+		(function() {
+			  var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+			  po.src = 'https://apis.google.com/js/plusone.js';
+			  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+			})();
+		
 		loadDisqus();
 		
 		
