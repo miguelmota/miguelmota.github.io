@@ -20,7 +20,7 @@ a {
 	border-left: 3px solid #292929;
 	color: #007299;
 	padding: 1px 3px 1px 3px;
-	text-shadow: 0 1px 0 rgba(0,0,0,.5);
+	text-shadow: none 1px 0 rgba(0,0,0,.5);
 	transition: color linear .1s;
 	-moz-transition: color linear .1s;
 	-o-transition: color linear .1s;
@@ -30,10 +30,10 @@ a:hover {
  	background-color: #222;
  	border-left: 3px solid #333;
 	color: #0083aa;
-	text-shadow: 0 1px 0 rgba(0,0,0,.9);
+	text-shadow: none 1px 0 rgba(0,0,0,.9);
 }
 a:active {
-	text-shadow: 0 -1px 0 rgba(0,0,0,.5);
+	text-shadow: none -1px 0 rgba(0,0,0,.5);
 }
 a.mobile-bar {
 	display: block;
@@ -73,7 +73,7 @@ div.highlight {
 	background-color: #202020;
 	margin: 10px 0;
 	padding: 5px;
-	text-shadow: 0 !important;
+	text-shadow: none !important;
 }
 div.highlight code {
 	word-wrap: break-word;
@@ -122,7 +122,7 @@ h1.title {
 	letter-spacing: -2px;
 	margin-bottom: 10px;
 	position: relative;
-	text-shadow: 0 -1px 0 #000;
+	text-shadow: none -1px 0 #000;
 	text-transform: uppercase;
 	width: 650px;
 }
@@ -150,13 +150,13 @@ h1.title a:hover {
 	background-color: #000;
 	background-color: rgba(0,0,0,.8);
 	color: #fff;
-	text-shadow: 0 1px 0 rgba(0,0,0,.3);
+	text-shadow: none 1px 0 rgba(0,0,0,.3);
 }
 ::-moz-selection {
 	background-color: #000;
 	background-color: rgba(0,0,0,.8);
 	color: #fff;
-	text-shadow: 0 1px 0 rgba(0,0,0,.3);
+	text-shadow: none 1px 0 rgba(0,0,0,.3);
 }
 label {
 	margin-right: 5px;
@@ -264,7 +264,7 @@ section.content {
 	float: right;
 	height: auto;
 	position: relative;	
-	text-shadow: 0 -1px 0 rgba(0,0,0,.5);
+	text-shadow: none -1px 0 rgba(0,0,0,.5);
 	width: 650px;
 }
 div.content-container {
