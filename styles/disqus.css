@@ -105,8 +105,8 @@ div.dsq-comment-header {
 	padding: 0 !important;
 }
 td.dsq-comment-header-meta {
-	position: absolute;
-	right: 0;
+	position: absolute !important;
+	right: 0 !important;
 	width: 580px !important;
 }
 a.dsq-comment-hide-thread {
@@ -114,7 +114,7 @@ a.dsq-comment-hide-thread {
 }
 div.dsq-post-area h3 {
 	clear: both !important;
-	padding-bottom: 10px !important;
+	padding: 20px 0 10px 0 !important;
 }
 div.dsq-comment-header-meta-wrapper a {
 	font-size: 10px !important;
