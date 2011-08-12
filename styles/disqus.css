@@ -95,10 +95,10 @@ div.dsq-comment-text {
 	right: 0 !important;
 }
 div.dsq-comment-footer {
-	left: 80px !important;
 	position: absolute !important;
 	top: 0 !important;
-	width: 200px !important;
+	right: 0 !important;
+	width: 500px !important;
 }
 span.dsq-like {
 	display: none !important;
@@ -116,9 +116,9 @@ span.dsq-user-like {
 	display: none !important;
 }
 tr {
-	border: 50px solid #252525 !important;
+	border: 1px solid #252525 !important;
 	background: #252525 !important;
-	height: 1px !important;
+	height: 24px !important;
 }
 tr img {
 	background: none !important;
