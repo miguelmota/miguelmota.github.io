@@ -249,12 +249,12 @@ div#comment {
 }
 button.dsq-button {
 	background: #222 !important;
-	border: 0 !important;
+	border: 1px solid #000 !important;
 	color: #007299 !important;
 }
 button.dsq-button:hover {
 	background: #222 !important;
-	color: #007299 !important;
+	color: #0083aa !important;
 }
 button.dsq-button:active {
 	text-shadow: 0 !important;
