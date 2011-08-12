@@ -55,7 +55,7 @@ div#disqus_thread {
 
 }
 div#disqus_thread iframe {
-	background: #252525 !important;
+	background: #222 !important;
 	color: #999 !important;
 }
 div#dsq-comments-title {
@@ -74,7 +74,9 @@ div.dsq-comment-text {
 }
 div.dsq-comment-footer {
 	position: absolute !important;
-	top: 2px !important;
+	top: 0 !important;
+	right: 0 !important;
+	width: 500px;
 }
 tr {
 	border: 1px solid #252525 !important;
