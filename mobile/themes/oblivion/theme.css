@@ -1002,4 +1002,7 @@ div.post h1 a {
 	font-size: 16px !important;
 	word-wrap: break-word !important;
 }
+div.share-container {
+	padding-top: 10px;
+}
 /* BLOG_PAGE ================================================================= */

@@ -75,7 +75,7 @@ $(document).ready(function(){
 		$('#archive div.content').load('/archive section.content');
 	});
 
-	$('div.page').prepend("<div class='footer'>&#169; "+thisYear+" miguel mota</div>");
+	$('div.page').prepend("<div class='footer'>&#169; "+thisYear+" <a href='https://plus.google.com/102174577273194387652?rel=author' rel='author'>miguel mota</a> / powered by <a href='http://jqtouch.com/'>jQTouch</a></div>");
 
 
 	
