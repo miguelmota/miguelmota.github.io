@@ -63,11 +63,10 @@ div.dsq-full-comment {
 div.dsq-comment-message,
 div.dsq-comment-body,
 div.dsq-comment-text {
-	float: right !important;
 	position: absolute !important;
-	top: 5px !important;
-	width: 570px !important;
-	left: 20px !important;
+	top: 2px !important;
+	width: 580px !important;
+	right: 0 !important;
 }
 div.dsq-comment-footer {
 	display: none !important;
@@ -106,8 +105,9 @@ div.dsq-comment-header {
 	padding: 0 !important;
 }
 td.dsq-comment-header-meta {
-	float: right !important;
-	width: 570px !important;
+	position: absolute;
+	right: 0;
+	width: 580px !important;
 }
 a.dsq-comment-hide-thread {
 	display: none !important;
