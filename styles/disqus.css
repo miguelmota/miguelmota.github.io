@@ -137,7 +137,7 @@ span.dsq-user-like {
 div#disqus_thread tr {
 	border: 1px solid #252525 !important;
 	background: #252525 !important;
-	height: 48px !important;
+	height: 60px !important;
 }
 div#disqus_thread tr img {
 	background: none !important;
@@ -206,9 +206,8 @@ div.dsq-post-area h3 {
 	padding: 20px 0 10px 0 !important;
 }
 div.dsq-comment-header-meta-wrapper {
-	position: absolute !important;
-	right: 0 !important;
-	width: 580px !important;
+	float: left !important;
+	max-width: 580px !important;
 }
 div.dsq-comment-header-meta-wrapper a {
 	font-size: 10px !important;
