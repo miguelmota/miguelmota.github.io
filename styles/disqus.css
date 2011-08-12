@@ -73,7 +73,8 @@ div.dsq-comment-text {
 	right: 0 !important;
 }
 div.dsq-comment-footer {
-	display: none !important;
+	position: absolute !important;
+	top: 2px !important;
 }
 tr {
 	border: 1px solid #252525 !important;
