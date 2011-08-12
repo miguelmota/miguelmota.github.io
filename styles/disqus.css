@@ -157,7 +157,8 @@ a.dsq-comment-hide-thread {
 	display: none !important;
 }
 div.dsq-post-area {
-	float: right: !important;
+	position: relative !important;
+	right: 0 !important;
 	width: 580px !important;
 }
 div.dsq-post-area h3 {
