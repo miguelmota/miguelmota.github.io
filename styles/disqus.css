@@ -73,6 +73,9 @@ div#disqus_thread a:hover {
 div#disqus_thread a:active {
 	text-shadow: 0 -1px 0 rgba(0,0,0,.5)!important;
 }
+a.dsq-comment-footer-reply-tab {
+	text-shadow: none !important;
+}
 div#disqus_thread iframe {
 	background: #222 !important;
 	color: #999 !important;
