@@ -110,7 +110,7 @@ div.dsq-comment-footer-left {
 }
 a.dsq-post-report {
 	color: #555 !important;
-	font-size: 9px !important;
+	font-size: 10px !important;
 }
 span.dsq-user-like {
 	display: none !important;
@@ -156,10 +156,19 @@ td.dsq-comment-header-meta {
 a.dsq-comment-hide-thread {
 	display: none !important;
 }
-div.dsq-post-area {
-	position: relative !important;
+div.dsq-append-post {
+	position: absolute !important;
 	right: 0 !important;
 	width: 580px !important;
+}
+div.dsq-post-area {
+	position: absolute !important;
+	right: 0 !important;
+	width: 580px !important;
+}
+span.dsq-comment-header-time a {
+	border: 0 !important;
+	font-size: 10px !important
 }
 div.dsq-post-area h3 {
 	clear: both !important;
