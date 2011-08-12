@@ -134,12 +134,12 @@ a.dsq-post-report {
 span.dsq-user-like {
 	display: none !important;
 }
-tr {
+div#disqus_thread tr {
 	border: 1px solid #252525 !important;
 	background: #252525 !important;
 	height: 48px !important;
 }
-tr img {
+div#disqus_thread tr img {
 	background: none !important;
 	border: 0 !important;
 	border-radius: 0 !important;
