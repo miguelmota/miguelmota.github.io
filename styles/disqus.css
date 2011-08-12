@@ -143,6 +143,8 @@ a.dsq-avatar {
 	height: 28px;
 	padding: 0 !important;
 	width: 28px;
+	position: relative;
+	bottom: 50px;
 }
 div.dsq-comment-header {
 	border: none !important;
@@ -155,6 +157,9 @@ td.dsq-comment-header-meta {
 }
 a.dsq-comment-hide-thread {
 	display: none !important;
+}
+div.dsq-post-area {
+	width: 580px !important;
 }
 div.dsq-post-area h3 {
 	clear: both !important;
