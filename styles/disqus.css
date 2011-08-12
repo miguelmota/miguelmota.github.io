@@ -54,6 +54,15 @@ div.dsq-trackback-url {
 div#disqus_thread {
 
 }
+div#dsq-comments-title {
+	padding-bottom: 10px !important;
+}
+div.dsq-full-comment {
+	position: relative;
+}
+div.dsq-comment-body {
+	float: left;
+}
 tr {
 	border: 1px solid #252525 !important;
 	background: #252525 !important;
@@ -78,7 +87,9 @@ td.dsq-header-avatar {
 }
 a.dsq-avatar {
 	border: none !important;
+	height: 28px;
 	padding: 0 !important;
+	width: 28px;
 }
 div.dsq-comment-header {
 	border: none !important;
@@ -91,7 +102,7 @@ a.dsq-comment-hide-thread {
 	display: none !important;
 }
 div.dsq-post-area {
-	padding-bottom: 10px;
+	padding-bottom: 10px !important;
 }
 div.dsq-comment-header-meta-wrapper a {
 	font-size: 10px !important;
