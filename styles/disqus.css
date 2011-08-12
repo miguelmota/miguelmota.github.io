@@ -61,7 +61,8 @@ div.dsq-full-comment {
 	position: relative;
 }
 div.dsq-comment-message,
-div.dsq-comment-body {
+div.dsq-comment-body,
+div.dsq-comment-text {
 	float: right;
 	width: 580px;
 }
