@@ -134,18 +134,22 @@ img.dsq-moderator-star {
 }
 td.dsq-header-avatar {
 	border: 0 !important;
+	border-radius: 0 !important;
+	-moz-border-radius: 0 !important;
+	-o-border-radius: 0 !important;
+	-webkit-border-radius: 0 !important;
 	height: 48px !important;
 	padding: 0 !important;
 	width: 48px !important;
+	position: relative !important;
+	bottom: -30px !important;
 }
 a.dsq-avatar {
 	border: 0 !important;
-	height: 48px !important;
-	padding: 0 !important;
-	width: 48px !important;
-}
-a.dsq-avatar:hover {
-	border: 0 !important;
+	border-radius: 0 !important;
+	-moz-border-radius: 0 !important;
+	-o-border-radius: 0 !important;
+	-webkit-border-radius: 0 !important;
 	height: 48px !important;
 	padding: 0 !important;
 	width: 48px !important;
