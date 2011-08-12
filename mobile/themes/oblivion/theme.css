@@ -793,17 +793,13 @@ div.footer {
 }
 /*    custom            */
 
-div#blog p.description {
+p.blog-description {
 	background-color: #111;
 	padding: 5px;
 	margin-bottom: 15px;
 }
-div#article p.description {
+div.follow-container {
 	display: none;
-}
-
-div#blog p.description em {
-	display: block;
 }
 
 img.logo {
