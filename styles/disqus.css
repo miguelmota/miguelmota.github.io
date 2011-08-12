@@ -132,16 +132,7 @@ tr img {
 img.dsq-moderator-star {
 	display: none !important;
 }
-td.dsq-header-avatar {
-	border: 0 !important;
-	border-radius: 0 !important;
-	-moz-border-radius: 0 !important;
-	-o-border-radius: 0 !important;
-	-webkit-border-radius: 0 !important;
-	height: 48px !important;
-	padding: 0 !important;
-	width: 48px !important;
-}
+td.dsq-header-avatar,
 a.dsq-avatar,
 a.dsq-avatar:hover,
 a.dsq-avatar img,
@@ -155,9 +146,9 @@ a.dsq-avatar img:hover {
 	-moz-box-shadow: 0 !important;
 	-o-box-shadow: 0 !important;
 	-webkit-box-shadow: 0 !important;
-	height: 48px !important;
+	height: 0 !important;
 	padding: 0 !important;
-	width: 48px !important;
+	width: 0 !important;
 }
 div.dsq-comment-header {
 	border: none !important;
