@@ -82,9 +82,13 @@ span.dsq-like {
 	display: none !important;
 }
 div.dsq-comment-footer-left {
+	bottom: 0 !important;
 	position: absolute !important;
 	right: 40px;
-	top: 0px !important;
+}
+a.dsq-post-report {
+	color: #555 !important;
+	font-size: 9px !important;
 }
 span.dsq-user-like {
 	display: none !important;
