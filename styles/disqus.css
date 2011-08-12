@@ -67,7 +67,7 @@ div.dsq-comment-text {
 	position: absolute !important;
 	top: 0 !important;
 	width: 580px !important;
-	left: 70px !important;
+	left: 0 !important;
 }
 div.dsq-comment-footer {
 	display: none !important;
