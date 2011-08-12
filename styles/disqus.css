@@ -104,16 +104,13 @@ span.dsq-like {
 	display: none !important;
 }
 div.dsq-comment-footer-left {
-	bottom: 0 !important;
+	top: 0 !important;
 	position: absolute !important;
 	right: 40px !important;
 }
 a.dsq-post-report {
-	bottom: 0 !important;
 	color: #555 !important;
 	font-size: 10px !important;
-	position: absolute !important;
-	right: 40px !important;
 }
 span.dsq-user-like {
 	display: none !important;
