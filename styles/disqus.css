@@ -58,7 +58,7 @@ div#disqus_thread a {
 	border-left: 3px solid #292929 !important;
 	color: #007299 !important;
 	padding: 1px 3px 1px 3px !important;
-	text-shadow: none !important;
+	text-shadow: 0 1px 0 rgba(0,0,0,.5) !important;
 	transition: color linear .1s !important;
 	-moz-transition: color linear .1s !important;
 	-o-transition: color linear .1s !important;
@@ -68,7 +68,7 @@ div#disqus_thread a:hover {
  	background-color: #222 !important;
  	border-left: 3px solid #333 !important;
 	color: #0083aa !important;
-	text-shadow: none !important;
+	text-shadow: 0 1px 0 rgba(0,0,0,.9) !important;
 }
 div#disqus_thread a:active {
 	text-shadow: 0 -1px 0 rgba(0,0,0,.5) !important;
