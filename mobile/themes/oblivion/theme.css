@@ -759,7 +759,7 @@ div.content {
 }
 
 div.content a {
-	color: #007799;
+	color: #007299;
 }
 div.content a:active,
 div.content a.active {
@@ -790,6 +790,9 @@ div.footer {
 	font-size: 10px;
 	color: #555;
 	clear: both;
+}
+div.footer a {
+	color: #007299;
 }
 /*    custom            */
 
@@ -830,7 +833,7 @@ a#standard_view {
 	float: right;
 	padding: 5px 10px 5px 5px;
 	font-size: 12px;
-	color: #007799;
+	color: #007299;
 }
 /* STREAM_PAGE ============================================================ */
 span.mtip {
@@ -870,7 +873,7 @@ ul.contact li a {
 }
 div#stream a.social:active,
 div#stream a.social.active  {
-    background-color: #007799 !important;
+    background-color: #007299 !important;
     color: #fff;
 }
 div#stream ul {
@@ -895,7 +898,7 @@ div#stream ul li:nth-child(even) {
 
 div#stream ul li a {
 	display: inline;
-	color: #007799 !important;
+	color: #007299 !important;
     font: 12px normal "NeoSans", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
 }
 div#stream ul li a:active {
