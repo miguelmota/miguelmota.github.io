@@ -64,6 +64,8 @@ div.dsq-comment-message,
 div.dsq-comment-body,
 div.dsq-comment-text {
 	float: right !important;
+	position: absolute !important;
+	top: 24px !important;
 	width: 580px !important;
 }
 div.dsq-comment-footer {
@@ -72,6 +74,7 @@ div.dsq-comment-footer {
 tr {
 	border: 1px solid #252525 !important;
 	background: #252525 !important;
+	height: 24px !important;
 }
 tr img {
 	background: none !important;
@@ -109,6 +112,7 @@ a.dsq-comment-hide-thread {
 	display: none !important;
 }
 div.dsq-post-area h3 {
+	clear: both !important;
 	padding-bottom: 10px !important;
 }
 div.dsq-comment-header-meta-wrapper a {
