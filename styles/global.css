@@ -717,6 +717,7 @@ a.archive-link {
 ============================================================================== */
 div#cse-search-form {
 	float: right;
+	padding: 0;
 	position: absolute;
 	right: 0;
 	top: -45px;
