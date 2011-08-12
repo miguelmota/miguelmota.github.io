@@ -146,9 +146,9 @@ a.dsq-avatar img:hover {
 	-moz-box-shadow: 0 !important;
 	-o-box-shadow: 0 !important;
 	-webkit-box-shadow: 0 !important;
-	height: 28px !important;
+	height: 48px !important;
 	padding: 0 !important;
-	width: 28px !important;
+	width: 48px !important;
 }
 div.dsq-comment-header {
 	border: none !important;
@@ -163,9 +163,11 @@ a.dsq-comment-hide-thread {
 	display: none !important;
 }
 div.dsq-append-post {
+	float: right !important;
 	width: 580px !important;
 }
 div.dsq-post-area {
+	float: right !important;
 	width: 580px !important;
 }
 span.dsq-comment-header-time a {
