@@ -95,9 +95,9 @@ div.dsq-comment-text {
 	right: 0 !important;
 }
 div.dsq-comment-footer {
+	left: 80px !important;
 	position: absolute !important;
 	top: 0 !important;
-	right: 0 !important;
 	width: 200px !important;
 }
 span.dsq-like {
