@@ -148,6 +148,9 @@ a.dsq-avatar img:hover {
 	-webkit-box-shadow: 0 !important;
 	height: 48px !important;
 	padding: 0 !important;
+	position: absolute !important;
+	left: 0 !important;
+	top: 0 !important;
 	width: 48px !important;
 }
 div.dsq-comment-header {
@@ -164,7 +167,7 @@ a.dsq-comment-hide-thread {
 }
 div.dsq-append-post {
 	float: right !important;
-	width: 550px !important;
+	width: 580px !important;
 }
 div.dsq-post-area {
 	float: right !important;
