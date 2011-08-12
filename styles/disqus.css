@@ -257,7 +257,7 @@ button.dsq-button:hover {
 	color: #0083aa !important;
 }
 button.dsq-button:active {
-	text-shadow: 0 !important;
+	text-shadow: none !important;
 }
 div.dsq-item-trackback {
 	display: none !important;
