@@ -116,6 +116,11 @@ div.dsq-post-area h3 {
 	clear: both !important;
 	padding: 20px 0 10px 0 !important;
 }
+div.dsq-comment-header-meta-wrapper {
+	position: absolute !important;
+	right: 0 !important;
+	width: 580px !important;
+}
 div.dsq-comment-header-meta-wrapper a {
 	font-size: 10px !important;
 }
