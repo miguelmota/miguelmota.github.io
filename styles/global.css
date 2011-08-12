@@ -35,6 +35,18 @@ a:hover {
 a:active {
 	text-shadow: none -1px 0 rgba(0,0,0,.5);
 }
+a.button {
+	background: #222 !important;
+	border: 1px solid #000 !important;
+	color: #007299 !important;
+}
+a.button:hover {
+	background: #202020 !important;
+	color: #0083aa !important;
+}
+a.button:active {
+	text-shadow: none !important;
+}
 a.mobile-bar {
 	display: block;
 	position: relative;
