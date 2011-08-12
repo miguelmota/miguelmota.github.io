@@ -73,7 +73,7 @@ div#disqus_thread a:hover {
 div#disqus_thread a:active {
 	text-shadow: 0 -1px 0 rgba(0,0,0,.5)!important;
 }
-a.dsq-comment-footer-reply-tab {
+button..dsq-comment-footer-reply-tab {
 	text-shadow: 0 !important;
 }
 div#disqus_thread iframe {
@@ -96,7 +96,7 @@ div.dsq-comment-text {
 }
 div.dsq-comment-footer {
 	position: absolute !important;
-	top: 0 !important;
+	top: -10px !important;
 	right: 0 !important;
 	width: 500px !important;
 }
