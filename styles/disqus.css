@@ -98,7 +98,7 @@ div.dsq-comment-footer {
 	position: absolute !important;
 	top: 0 !important;
 	right: 0 !important;
-	width: 500px;
+	width: 500px !important;
 }
 span.dsq-like {
 	display: none !important;
@@ -106,7 +106,7 @@ span.dsq-like {
 div.dsq-comment-footer-left {
 	bottom: 0 !important;
 	position: absolute !important;
-	right: 40px;
+	right: 40px !important;
 }
 a.dsq-post-report {
 	color: #555 !important;
@@ -161,7 +161,7 @@ div.dsq-append-post {
 	right: 0 !important;
 	width: 580px !important;
 }
-div.dsq-post-area {
+div.dsq-post-area000 {
 	position: absolute !important;
 	right: 0 !important;
 	width: 580px !important;
