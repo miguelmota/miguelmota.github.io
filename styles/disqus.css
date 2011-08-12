@@ -104,7 +104,7 @@ span.dsq-like {
 	display: none !important;
 }
 div.dsq-comment-footer-left {
-	top: 0 !important;
+	top: 2px !important;
 	position: absolute !important;
 	right: 40px !important;
 }
