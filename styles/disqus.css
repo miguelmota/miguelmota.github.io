@@ -58,13 +58,13 @@ div#dsq-comments-title {
 	padding-bottom: 10px !important;
 }
 div.dsq-full-comment {
-	position: relative;
+	position: relative !important;
 }
 div.dsq-comment-message,
 div.dsq-comment-body,
 div.dsq-comment-text {
-	float: right;
-	width: 580px;
+	float: right !important;
+	width: 580px !important;
 }
 tr {
 	border: 1px solid #252525 !important;
