@@ -208,7 +208,7 @@ div.dsq-post-area h3 {
 div.dsq-comment-header-meta-wrapper {
 	position: absolute !important;
 	right: 0 !important;
-	max-width: 580px !important;
+	width: 580px !important;
 }
 div.dsq-comment-header-meta-wrapper a {
 	font-size: 10px !important;
