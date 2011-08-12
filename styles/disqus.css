@@ -109,8 +109,11 @@ div.dsq-comment-footer-left {
 	right: 40px !important;
 }
 a.dsq-post-report {
+	bottom: 0 !important;
 	color: #555 !important;
 	font-size: 10px !important;
+	position: absolute !important;
+	right: 40px !important;
 }
 span.dsq-user-like {
 	display: none !important;
@@ -171,7 +174,7 @@ div.dsq-append-post {
 	top: -9px !important;
 	width: 500px !important;
 }
-div.div.dsq-append-post div.dsq-post-area {
+div.dsq-append-post div.dsq-post-area {
 	width: 500px !important;
 }
 div.dsq-post-area {
