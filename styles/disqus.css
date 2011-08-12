@@ -74,7 +74,7 @@ div#disqus_thread a:active {
 	text-shadow: 0 -1px 0 rgba(0,0,0,.5)!important;
 }
 a.dsq-comment-footer-reply-tab {
-	text-shadow: none !important;
+	text-shadow: 0 !important;
 }
 div#disqus_thread iframe {
 	background: #222 !important;
@@ -122,7 +122,7 @@ tr {
 }
 tr img {
 	background: none !important;
-	border: none !important;
+	border: 0 !important;
 	border-radius: 0 !important;
 	-moz-border-radius: 0 !important;
 	-o-border-radius: 0 !important;
@@ -133,13 +133,13 @@ img.dsq-moderator-star {
 	display: none !important;
 }
 td.dsq-header-avatar {
-	border: none !important;
+	border: 0 !important;
 	height: 28px;
 	padding: 0 !important;
 	width: 28px;
 }
 a.dsq-avatar {
-	border: none !important;
+	border: 0 !important;
 	height: 28px;
 	padding: 0 !important;
 	width: 28px;
@@ -170,7 +170,7 @@ div.dsq-comment-header-meta-wrapper a {
 }
 button.dsq-button-small {
 	background: none !important;
-	border: none !important;
+	border: 0 !important;
 	color: #007299 !important;
 }
 a.dsq-request-user-logout {
@@ -192,11 +192,11 @@ td.dsq-request-user-stats {
 	display: none !important;
 }
 img.dsq-request-user-avatar {
-	border: none !important;
-	box-shadow: none !important;
-	-moz-box-shadow: none !important;
-	-o-box-shadow: none !important;
-	-webkit-box-shadow: none !important;
+	border: 0 !important;
+	box-shadow: 0 !important;
+	-moz-box-shadow: 0 !important;
+	-o-box-shadow: 0 !important;
+	-webkit-box-shadow: 0 !important;
 	padding: 0 !important;
 }
 div#dsq-form-area {
@@ -221,7 +221,7 @@ div.dsq-textarea {
 div.dsq-textarea-wrapper,
 div.dsq-textarea-wrapper iframe {
 	background: #222 !important;
-	border: none !important;
+	border: 0 !important;
 	color: #555 !important;
 }
 div#comment {
@@ -229,7 +229,7 @@ div#comment {
 }
 button.dsq-button {
 	background: #222 !important;
-	border: none !important;
+	border: 0 !important;
 	color: #007299 !important;
 }
 button.dsq-button:hover {
@@ -237,7 +237,7 @@ button.dsq-button:hover {
 	color: #007299 !important;
 }
 button.dsq-button:active {
-	text-shadow: none !important;
+	text-shadow: 0 !important;
 }
 div.dsq-item-trackback {
 	display: none !important;

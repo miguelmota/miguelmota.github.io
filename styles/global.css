@@ -73,7 +73,7 @@ div.highlight {
 	background-color: #202020;
 	margin: 10px 0;
 	padding: 5px;
-	text-shadow: none !important;
+	text-shadow: 0 !important;
 }
 div.highlight code {
 	word-wrap: break-word;
@@ -222,7 +222,7 @@ nav.main-side-nav {
 }
 a.nav-logo {
 	background: url('/images/logo.png') no-repeat 0 0;
-	border-left: none !important;
+	border-left: 0 !important;
 	display: block;
 	height: 50px;
 	margin: 0 auto;
@@ -335,7 +335,7 @@ span.mtip:hover {
 a.social {
 	background-position: 0 0;
 	background-repeat: no-repeat;
-	border-left: none !important;
+	border-left: 0 !important;
 	display: block;
 	float: left;
 	height: 16px;
@@ -351,7 +351,7 @@ a.latitude:hover {
 	color: #007799;
 }
 iframe.latitude {
-	border: none;
+	border: 0;
 	clear: both;
 	float: left;
 	height: 14px;
@@ -634,7 +634,7 @@ div.follow-container {
 }
 a.subscribe-button { 
 	bottom: 5px;
-	border: none;
+	border: 0;
 	color: #ed7e2a;
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	font-size: 12px;
@@ -643,7 +643,7 @@ a.subscribe-button {
 	right: 75px;
 }
 a.subscribe-button:hover {
-	background-color: none;
+	background-color: 0;
 	text-decoration: underline;
 }
 a.subscribe-button img { 
@@ -722,7 +722,7 @@ div.gsc-control-cse,
 div.gsc-results,
 div.gsc-resultsRoot {
 	background-color: #252525 !important;
-	border: none !important;
+	border: 0 !important;
 	padding: 0 !important;
 }
 div#cse a,
@@ -730,7 +730,7 @@ div#cse a b,
 a.gs-title {
 	color: #007299 !important;
 	font-size: 14px !important;
-	text-decoration: none !important;
+	text-decoration: 0 !important;
 }
 div.gs-snippet {
 	color: #999 !important;
@@ -743,12 +743,12 @@ td.gcsc-branding-img-noclear  {
 	display: none;
 }
 div.gsc-result {
-	border: none !important;
+	border: 0 !important;
 	padding: 0 !important;
 }
 div.gs-no-results-result div.gs-snippet {
 	background-color: #252525 !important;
-	border: none !important;
+	border: 0 !important;
 	color: #870000 !important;
 }
 div.gs-visibleUrl  {
@@ -758,7 +758,7 @@ div.gs-visibleUrl  {
 }
 div.gsc-cursor-box {
 	background-color: #252525 !important;
-	border: none !important;
+	border: 0 !important;
 	padding: 0 !important;
 }
 div.gsc-cursor-page  {
