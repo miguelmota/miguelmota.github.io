@@ -206,7 +206,8 @@ div.dsq-post-area h3 {
 	padding: 20px 0 10px 0 !important;
 }
 div.dsq-comment-header-meta-wrapper {
-	float: left !important;
+	position: absolute !important;
+	right: 0 !important;
 	max-width: 580px !important;
 }
 div.dsq-comment-header-meta-wrapper a {
