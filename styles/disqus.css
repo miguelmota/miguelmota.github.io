@@ -78,6 +78,14 @@ div.dsq-comment-footer {
 	right: 0 !important;
 	width: 500px;
 }
+div.dsq-comment-footer-left {
+	position: absolute !important;
+	right: 20px;
+	top: 2px !important;
+}
+span.dsq-user-like {
+	display: none !important;
+}
 tr {
 	border: 1px solid #252525 !important;
 	background: #252525 !important;
