@@ -20,7 +20,7 @@ a {
 	border-left: 3px solid #292929;
 	color: #007299;
 	padding: 1px 3px 1px 3px;
-	text-shadow: none 1px 0 rgba(0,0,0,.5);
+	text-shadow: 0 1px 0 rgba(0,0,0,.5);
 	transition: color linear .1s;
 	-moz-transition: color linear .1s;
 	-o-transition: color linear .1s;
@@ -30,21 +30,21 @@ a:hover {
  	background-color: #222;
  	border-left: 3px solid #333;
 	color: #0083aa;
-	text-shadow: none 1px 0 rgba(0,0,0,.9);
+	text-shadow: 0 1px 0 rgba(0,0,0,.9);
 }
 a:active {
-	text-shadow: none -1px 0 rgba(0,0,0,.5);
+	text-shadow: 0 -1px 0 rgba(0,0,0,.5);
 }
-a.button {
+button.dsq-button {
 	background: #222 !important;
 	border: 1px solid #000 !important;
 	color: #007299 !important;
 }
-a.button:hover {
+button.dsq-button:hover {
 	background: #202020 !important;
 	color: #0083aa !important;
 }
-a.button:active {
+button.dsq-button:active {
 	text-shadow: none !important;
 }
 a.mobile-bar {
@@ -134,7 +134,7 @@ h1.title {
 	letter-spacing: -2px;
 	margin-bottom: 10px;
 	position: relative;
-	text-shadow: none -1px 0 #000;
+	text-shadow: 0 -1px 0 #000;
 	text-transform: uppercase;
 	width: 650px;
 }
@@ -162,13 +162,13 @@ h1.title a:hover {
 	background-color: #000;
 	background-color: rgba(0,0,0,.8);
 	color: #fff;
-	text-shadow: none 1px 0 rgba(0,0,0,.3);
+	text-shadow: 0 1px 0 rgba(0,0,0,.3);
 }
 ::-moz-selection {
 	background-color: #000;
 	background-color: rgba(0,0,0,.8);
 	color: #fff;
-	text-shadow: none 1px 0 rgba(0,0,0,.3);
+	text-shadow: 0 1px 0 rgba(0,0,0,.3);
 }
 label {
 	margin-right: 5px;
@@ -234,7 +234,7 @@ nav.main-side-nav {
 }
 a.nav-logo {
 	background: url('/images/logo.png') no-repeat 0 0;
-	border-left: 0 !important;
+	border-left: none !important;
 	display: block;
 	height: 50px;
 	margin: 0 auto;
@@ -276,7 +276,7 @@ section.content {
 	float: right;
 	height: auto;
 	position: relative;	
-	text-shadow: none -1px 0 rgba(0,0,0,.5);
+	text-shadow: 0 -1px 0 rgba(0,0,0,.5);
 	width: 650px;
 }
 div.content-container {
@@ -347,7 +347,7 @@ span.mtip:hover {
 a.social {
 	background-position: 0 0;
 	background-repeat: no-repeat;
-	border-left: 0 !important;
+	border-left: none !important;
 	display: block;
 	float: left;
 	height: 16px;
@@ -655,7 +655,7 @@ a.subscribe-button {
 	right: 75px;
 }
 a.subscribe-button:hover {
-	background-color: 0;
+	background-color: none;
 	text-decoration: underline;
 }
 a.subscribe-button img { 
@@ -742,7 +742,7 @@ div#cse a b,
 a.gs-title {
 	color: #007299 !important;
 	font-size: 14px !important;
-	text-decoration: 0 !important;
+	text-decoration: none !important;
 }
 div.gs-snippet {
 	color: #999 !important;
