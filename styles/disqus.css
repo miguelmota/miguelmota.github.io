@@ -90,6 +90,9 @@ td.dsq-comment-header-meta {
 a.dsq-comment-hide-thread {
 	display: none !important;
 }
+div.dsq-post-area {
+	padding-bottom: 10px;
+}
 div.dsq-comment-header-meta-wrapper a {
 	font-size: 10px !important;
 }
@@ -118,6 +121,10 @@ td.dsq-request-user-stats {
 }
 img.dsq-request-user-avatar {
 	border: none !important;
+	box-shadow: none !important;
+	-moz-box-shadow: none !important;
+	-o-box-shadow: none !important;
+	-webkit-box-shadow: none !important;
 	padding: 0 !important;
 }
 div#dsq-form-area {
