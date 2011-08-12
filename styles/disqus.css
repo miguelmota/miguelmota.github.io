@@ -52,7 +52,7 @@ div.dsq-trackback-url {
 	DISQUS - NARCISSUS THEME
 ============================================================================== */
 div#disqus_thread {
-
+	font-family: NeoSans, Klavika-Light, Helvetica, Arial, sans-serif !important;
 }
 div#disqus_thread a {
 	border-left: 3px solid #292929 !important;
