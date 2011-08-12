@@ -98,7 +98,7 @@ div.dsq-comment-footer {
 	position: absolute !important;
 	top: 0 !important;
 	right: 0 !important;
-	width: 500px !important;
+	width: 200px !important;
 }
 span.dsq-like {
 	display: none !important;
@@ -184,7 +184,7 @@ div.dsq-post-area h3 {
 div.dsq-comment-header-meta-wrapper {
 	position: absolute !important;
 	right: 0 !important;
-	width: 580px !important;
+	width: 250px !important;
 }
 div.dsq-comment-header-meta-wrapper a {
 	font-size: 10px !important;
