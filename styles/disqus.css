@@ -71,7 +71,26 @@ div#disqus_thread a:hover {
 	text-shadow: 0 1px 0 rgba(0,0,0,.9) !important;
 }
 div#disqus_thread a:active {
-	text-shadow: 0 -1px 0 rgba(0,0,0,.5)!important;
+	text-shadow: 0 -1px 0 rgba(0,0,0,.5) !important;
+}
+div.dsq-popup a {
+	border-left: 0 !important;
+	color: #000 !important;
+	padding: 0 !important;
+	text-shadow: none !important;
+	transition: all linear 0s !important;
+	-moz-transition: all linear 0s !important;
+	-o-transition: all linear 0s !important;
+	-webkit-transition: all linear 0s !important;
+}
+div.dsq-popup a:hover {
+ 	background-color: #fff !important;
+ 	border-left: 0 !important;
+	color: #000 !important;
+	text-shadow: none !important;	
+}
+div.dsq-popup a:active {
+	text-shadow: none !important;
 }
 button..dsq-comment-footer-reply-tab {
 	text-shadow: 0 !important;
