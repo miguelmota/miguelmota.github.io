@@ -68,7 +68,7 @@ div#disqus_thread a:hover {
  	background-color: #222 !important;
  	border-left: 3px solid #333 !important;
 	color: #0083aa !important;
-	text-shadow: 0 1px 0 rgba(0,0,0,.9) !important;
+	text-shadow: none !important;
 }
 div#disqus_thread a:active {
 	text-shadow: 0 -1px 0 rgba(0,0,0,.5) !important;
@@ -117,7 +117,7 @@ div.dsq-comment-footer {
 	position: absolute !important;
 	top: -10px !important;
 	right: 0 !important;
-	width: 500px !important;
+	width: 200px !important;
 }
 span.dsq-like {
 	display: none !important;
