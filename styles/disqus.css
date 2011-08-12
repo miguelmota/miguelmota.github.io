@@ -54,6 +54,10 @@ div.dsq-trackback-url {
 div#disqus_thread {
 
 }
+div#disqus_thread iframe {
+	background: #252525 !important;
+	color: #999 !important;
+}
 div#dsq-comments-title {
 	padding-bottom: 10px !important;
 }
