@@ -602,7 +602,7 @@ textarea.contact-message {
 a.contact-submit {
 	float: right;
 	font-size: 14px;
-	padding: 8px;
+	padding: 8px 16px;
 }
 input.error,
 textarea.error {
