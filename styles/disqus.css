@@ -134,17 +134,17 @@ img.dsq-moderator-star {
 }
 td.dsq-header-avatar {
 	border: 0 !important;
-	height: 28px;
+	height: 48px !important;
 	padding: 0 !important;
-	width: 28px;
+	width: 48px !important;
 }
 a.dsq-avatar {
 	border: 0 !important;
-	height: 28px;
+	height: 48px !important;
 	padding: 0 !important;
-	width: 28px;
-	position: relative;
-	bottom: 50px;
+	width: 48px !important;
+	position: relative !important;
+	bottom: -60px !important;
 }
 div.dsq-comment-header {
 	border: none !important;
