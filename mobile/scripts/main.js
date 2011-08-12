@@ -42,6 +42,8 @@ $(document).ready(function(){
 		// Initialize Twitter widgets
 		$.getScript('http://platform.twitter.com/widgets.js');
 		
+		$('div.share-container').prepend("<g:plusone class='plus-one-button' href='http://www.miguelmota.com{{ post.url }}' size='medium'></g:plusone>");
+		
 		// Initiatlize Google Plus One
 		(function() {
 			  var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
