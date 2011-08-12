@@ -78,10 +78,13 @@ div.dsq-comment-footer {
 	right: 0 !important;
 	width: 500px;
 }
+div.dsq-like {
+	display: none !important;
+}
 div.dsq-comment-footer-left {
 	position: absolute !important;
-	right: 20px;
-	top: 2px !important;
+	right: 30px;
+	top: 0px !important;
 }
 span.dsq-user-like {
 	display: none !important;
