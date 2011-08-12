@@ -119,6 +119,9 @@ tr {
 	border: 1px solid #252525 !important;
 	background: #252525 !important;
 	height: 24px !important;
+	position: absolute !important;
+	right: 40px !important;
+	width: 200px !important;
 }
 tr img {
 	background: none !important;
