@@ -65,7 +65,7 @@ div.dsq-comment-body,
 div.dsq-comment-text {
 	float: right !important;
 	position: absolute !important;
-	top: 24px !important;
+	top: 0 !important;
 	width: 580px !important;
 }
 div.dsq-comment-footer {
