@@ -168,7 +168,10 @@ a.dsq-comment-hide-thread {
 div.dsq-append-post {
 	float: right !important;
 	position: relative !important;
-	top: -10px !important;
+	top: -9px !important;
+	width: 500px !important;
+}
+div.div.dsq-append-post div.dsq-post-area {
 	width: 500px !important;
 }
 div.dsq-post-area {
