@@ -793,7 +793,7 @@ div.footer {
 }
 /*    custom            */
 
-p.blog-description {
+div.blog-description {
 	background-color: #111;
 	padding: 5px;
 	margin-bottom: 15px;
@@ -984,12 +984,19 @@ div#portfolio span.zoom-icon {
 /* /PORTFOLIO_PAGE =========================================================== */
 
 /* BLOG_PAGE ================================================================= */
+div.post-info {
+	position: relative;
+	width: 100%;
+}
+a.dsq-comment-count {
+	float: right;
+}
 div.post {
 	margin-bottom: 50px;
 }
 div.post h1 {
 	margin: 0 !important;
-	border-bottom: 1px dotted #999;
+	border-bottom: 1px solid #555;
 }
 div.post h1 a {
 	font-size: 16px !important;
