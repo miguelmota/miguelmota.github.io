@@ -144,6 +144,12 @@ a.dsq-avatar {
 	padding: 0 !important;
 	width: 48px !important;
 }
+a.dsq-avatar:hover {
+	border: 0 !important;
+	height: 48px !important;
+	padding: 0 !important;
+	width: 48px !important;
+}
 div.dsq-comment-header {
 	border: none !important;
 	padding: 0 !important;
@@ -157,13 +163,9 @@ a.dsq-comment-hide-thread {
 	display: none !important;
 }
 div.dsq-append-post {
-	position: absolute !important;
-	right: 0 !important;
 	width: 580px !important;
 }
-div.dsq-post-area000 {
-	position: absolute !important;
-	right: 0 !important;
+div.dsq-post-area {
 	width: 580px !important;
 }
 span.dsq-comment-header-time a {
