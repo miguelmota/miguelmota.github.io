@@ -58,7 +58,7 @@ div#disqus_thread a {
 	border-left: 3px solid #292929 !important;
 	color: #007299 !important;
 	padding: 1px 3px 1px 3px !important;
-	text-shadow: 0 1px 0 rgba(0,0,0,.5) !important;
+	text-shadow: none !important;
 	transition: color linear .1s !important;
 	-moz-transition: color linear .1s !important;
 	-o-transition: color linear .1s !important;
