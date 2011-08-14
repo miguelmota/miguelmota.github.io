@@ -12,9 +12,11 @@
 			var title = $(this).attr('mtip');
 			$(this).wrap("<div class='tooltip-container' />");
 			$(this).after("<div class='tooltip'></div>");
-			$('div.tooltip').text(title);
 			$(this).hover(function() {
-						$('div.tooltip').hide().css('display','block');
+						$('div.tooltip').text(title).hide();
+						$('div.tooltip').css({
+							'display': 'block'
+						});
 						jQuery(this).next('div.tooltip').stop(true, true).animate({opacity: 'show', top: '-30'}, 'slow');
 				}, function() {
 						jQuery(this).next('div.tooltip').animate({opacity: 'hide', top: '-20'}, 'fast');
