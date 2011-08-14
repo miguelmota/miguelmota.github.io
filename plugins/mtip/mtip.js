@@ -7,11 +7,12 @@
 
 (function($) {
 	$.fn.mtip = function() {
-		$(this).attr('mtip' this, $(this).attr('title')).removeAttr('title');
+		$(this).attr('mtip', $(this).attr('title')).removeAttr('title');
 		var title = $(this).attr('mtip');
 		$(this).wrap("<div class='tooltip-container' />");
+		$(this).after("<div class='tooltip'></div>");
 		$(this).hover(function() {
-					$(this).after("<div class='tooltip'></div>");
+
 					$('div.tooltip').text(title).hide();
 					$('div.tooltip').css({
 						'visibility': 'visible'
