@@ -48,12 +48,12 @@
 			background-color: #dbf4ff;
 			color: #0e3b60;
 		}
-		p {
-			line-height: 120%;
-		}
 		h1 {
 			font-size: 26px;
 			padding-bottom: 10px;
+		}
+		p {
+			line-height: 120%;
 		}
 	</style>
 </head>
@@ -64,6 +64,20 @@
 		Nam interdum dictum accumsan. Morbi dapibus, sapien vel fringilla convallis, lacus nibh ultricies risus, sit amet tincidunt lacus lectus eu erat. 
 		Ut volutpat sapien nec mi <a class='mtip' href='javascript:void(0);' title='I am another awesome tooltip!'>hover over me too!</a> consectetur sed laoreet tellus scelerisque.
 		</p>
+		
+		<p>Installation:<br />
+		include jquery <code><script src='jquery.js'></script></code><br />
+		the mtip js <code><script src='mtip.js'></script></code></p><br />
+		and the mtip stylesheet <code><link href='mtip.css' rel='stylesheet' /></code><br />
+		Now to initialize it:
+		<pre>
+		<script>
+		$(document).ready(function(){
+			$('.mtip').mtip();
+		});
+		</script>
+		</pre>
+		<em>note: the selector can be anything you want, I just used the class <code>mtip</code> for the example</em>
 	</div>
 </body>
 </html>
