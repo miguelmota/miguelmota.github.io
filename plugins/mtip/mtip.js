@@ -13,16 +13,9 @@
 			$(this).wrap("<div class='tooltip-container' />");
 			$('div.tooltip-container').prepend("<div class='tooltip' />");
 			$(this).hover(function() {
-						$('div.tooltip').text(title);
-						$('div.tooltip').css({
-							'visibility': 'visible'
-						});
-						jQuery('div.tooltip', this).stop(true, true).animate({opacity: 'show', top: '-30'}, 'slow');
+						$('div.tooltip').text(title).show().stop(true, true).animate({opacity: 'show', top: '-30'}, 'slow');
 				}, function() {
-						jQuery('div.tooltip', this).animate({opacity: 'hide', top: '-20'}, 'fast');
-						$('div.tooltip').css({
-							'visibility': 'hidden'
-						});
+						$('div.tooltip').animate({opacity: 'hide', top: '-20'}, 'fast');
 			});	
 		});
 
