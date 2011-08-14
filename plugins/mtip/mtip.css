@@ -7,7 +7,6 @@
 ----------------------------------------*/
 
 div.tooltip-container {
-	display: none;
 	position: relative;
 }
 
@@ -20,6 +19,7 @@ div.tooltip  {
 	-moz-box-shadow: 1px 1px 3px #000;
 	-webkit-box-shadow: 1px 1px 3px #000;
 	color: #fff;
+		display: none;
 	font-family: Aria, sans-serif;
 	font-size: 12px;
 	opacity: .8;
