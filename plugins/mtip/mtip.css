@@ -19,7 +19,6 @@ div.tooltip  {
 	-moz-box-shadow: 1px 1px 3px #000;
 	-webkit-box-shadow: 1px 1px 3px #000;
 	color: #fff;
-	display: none;
 	font-family: Aria, sans-serif;
 	font-size: 12px;
 	opacity: .8;
@@ -27,6 +26,7 @@ div.tooltip  {
 	position: absolute;
 	text-align: center;
 	top: -20px;
+	visibility: hidden;
 	z-index: 1000;
 }
 
