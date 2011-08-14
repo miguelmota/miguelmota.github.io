@@ -13,6 +13,7 @@
 			$(this).wrap("<div class='tooltip-container' />");
 			$(this).after("<div class='tooltip'></div>");
 			$(this).hover(function() {
+						
 						$('div.tooltip').text(title).hide();
 						$('div.tooltip').css({
 							'visibility': 'visible'
