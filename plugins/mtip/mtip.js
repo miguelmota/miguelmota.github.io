@@ -13,13 +13,13 @@
 			$(this).wrap("<div class='tooltip-container' />");
 			$('div.tooltip-container').prepend("<div class='tooltip' />");
 			$(this).hover(function() {
-						$('div.tooltip').text(title).hide();
+						$('div.tooltip').text(title);
 						$('div.tooltip').css({
 							'visibility': 'visible'
 						});
-						jQuery(this).next('div.tooltip').stop(true, true).animate({opacity: 'show', top: '-30'}, 'slow');
+						jQuery('div.tooltip', this).stop(true, true).animate({opacity: 'show', top: '-30'}, 'slow');
 				}, function() {
-						jQuery(this).next('div.tooltip').animate({opacity: 'hide', top: '-20'}, 'fast');
+						jQuery('div.tooltip', this).animate({opacity: 'hide', top: '-20'}, 'fast');
 						$('div.tooltip').css({
 							'visibility': 'hidden'
 						});
