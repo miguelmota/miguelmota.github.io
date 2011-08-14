@@ -23,7 +23,7 @@ div.tooltip  {
 	display: none;
 	font-family: Aria, sans-serif;
 	font-size: 12px;
-	left: 5%;
+	left: -50%;
 	opacity: .8;
 	padding: 5px;
 	position: absolute;
