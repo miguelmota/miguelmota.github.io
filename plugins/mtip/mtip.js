@@ -14,9 +14,9 @@
 			$('div.tooltip-container').prepend("<div class='tooltip' />");
 			//$('div.tooltip').text(title);
 			$(this).hover(function() {
-					$(this).before().text(title).stop(true, true).animate({opacity: 'show', top: '-30'}, 'slow');
+					$(this).prev().text(title).stop(true, true).animate({opacity: 'show', top: '-30'}, 'slow');
 				}, function() {
-					$(this).before().animate({opacity: 'hide', top: '-20'}, 'fast');
+					$(this).prev().animate({opacity: 'hide', top: '-20'}, 'fast');
 			});	
 		});
 
