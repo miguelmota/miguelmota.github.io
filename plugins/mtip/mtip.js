@@ -11,7 +11,7 @@
 			$(this).attr('mtip', $(this).attr('title')).removeAttr('title');
 			var title = $(this).attr('mtip');
 			$(this).wrap("<div class='tooltip-container' />");
-			$('div.tooltip-container', this).append("<div class='tooltip' />");
+			$('div.tooltip-container', this).prepend("<div class='tooltip' />");
 			$(this).hover(function() {
 						$('div.tooltip').text(title).hide();
 						$('div.tooltip').css({
