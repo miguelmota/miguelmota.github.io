@@ -8,7 +8,6 @@
 
 div.tooltip-container {
 	display: inline;
-	overflow: visible;
 	position: relative;
 }
 
@@ -26,10 +25,8 @@ div.tooltip  {
 	font-size: 12px;
 	left: 5%;
 	opacity: .8;
-	overflow: visible;
 	padding: 5px;
 	position: absolute;
-	right: 5%;
 	text-align: center;
 	top: -20px;
 	z-index: 1000;
