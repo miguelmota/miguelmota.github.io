@@ -7,9 +7,9 @@
 
 (function($) {
 	$.fn.mtip = function() {
-		$(this).wrap("<div class='tooltip-container' />");
 		$(this).attr('mtip', $(this).attr('title')).removeAttr('title');
 		var title = $(this).attr('mtip');
+		$(this).wrap("<div class='tooltip-container' />");
 		$(this).hover(function() {
 					$(this).after("<div class='tooltip'></div>");
 					$('div.tooltip').text(title).hide();
