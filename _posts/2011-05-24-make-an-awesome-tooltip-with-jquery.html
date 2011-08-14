@@ -87,7 +87,7 @@ jQuery(this).next('div.tooltip').animate({opacity: 'hide', top: '-20'}, 'fast');
 	$.fn.mtip = function(options) {
 		$(this).attr('mtip', $(this).attr('title')).removeAttr('title');
 		var title = $(this).attr('mtip');
-		$(this).wrap('<div class="tooltip_container" />');
+		$(this).wrap("<div class='tooltip-container' />");
 		$(this).hover(function() {
 					$(this).after("<div class='tooltip'></div>");
 					$('div.tooltip').text(title).hide();
