@@ -29,6 +29,8 @@ div.tooltip  {
 	text-align: center;
 	top: -20px;
 	z-index: 1000;
+	left: 5%;
+	right: 5%;
 }
 
 /* triangle on the bottom */
