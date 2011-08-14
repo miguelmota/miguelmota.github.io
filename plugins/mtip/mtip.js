@@ -17,9 +17,9 @@
 						$('div.tooltip', this).css({
 							'visibility': 'visible'
 						});
-						jQuery(this).next('div.tooltip', this).stop(true, true).animate({opacity: 'show', top: '-30'}, 'slow');
+						jQuery(this).next('div.tooltip').stop(true, true).animate({opacity: 'show', top: '-30'}, 'slow');
 				}, function() {
-						jQuery(this).next('div.tooltip', this).animate({opacity: 'hide', top: '-20'}, 'fast');
+						jQuery(this).next('div.tooltip').animate({opacity: 'hide', top: '-20'}, 'fast');
 						$('div.tooltip', this).css({
 							'visibility': 'hidden'
 						});
