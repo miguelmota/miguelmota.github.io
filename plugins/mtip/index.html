@@ -57,6 +57,9 @@
 			line-height: 120%;
 			padding: 10px 0;
 		}
+		em.note {
+			font-size: 10px;
+		}
 	</style>
 </head>
 <body>
@@ -73,15 +76,17 @@
 			<li><code>&lt;script src='jquery.js'&gt;&lt;/script&gt;</code></li>
 			<li><code>&lt;script src='mtip.js'&gt;&lt;/script&gt;</code></li>
 			<li><code>&lt;link href='mtip.css' rel='stylesheet' /&gt;</code></li>
-			<li><pre>
+			<li>
+			<pre>
 			&lt;script&gt;
 			$(document).ready(function(){
 				$('.mtip').mtip();
 			});
 			&lt;/script&gt;
-			</pre></li>
+			</pre>
+			</li>
 		</ul>
-		<em>note: the selector can be anything you want, I just used the class <code>mtip</code> for the example</em>
+		<em class='note'>note: the selector can be anything you want, I just used the class <code>mtip</code> for the example</em>
 		</p>
 	</div>
 </body>
