@@ -15,7 +15,7 @@
 			$(this).hover(function() {
 						$('div.tooltip').text(title).hide();
 						$('div.tooltip').css({
-							'display': 'visible'
+							'visibility': 'visible'
 						});
 						jQuery(this).next('div.tooltip').stop(true, true).animate({opacity: 'show', top: '-30'}, 'slow');
 				}, function() {
