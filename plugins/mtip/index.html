@@ -50,10 +50,12 @@
 		}
 		h1 {
 			font-size: 26px;
+			font-weight: strong;
 			padding-bottom: 10px;
 		}
 		p {
-			line-height: 120%;
+			line-height: 120%
+			padding: 10px 0;
 		}
 	</style>
 </head>
@@ -65,19 +67,23 @@
 		Ut volutpat sapien nec mi <a class='mtip' href='javascript:void(0);' title='I am another awesome tooltip!'>hover over me too!</a> consectetur sed laoreet tellus scelerisque.
 		</p>
 		
-		<p>Installation:<br />
-		include jquery <code>&lt;script src='jquery.js'&gt;&lt;/script&gt;</code><br />
-		the mtip js <code><script src='mtip.js'></script></code></p><br />
-		and the mtip stylesheet <code><link href='mtip.css' rel='stylesheet' /></code><br />
-		Now to initialize it:
+		<p><strong>Installation</strong>
+		this goes in the <code>head</code> section
+		<ul>
+		<li>include jquery <code>&lt;script src='jquery.js'&gt;&lt;/script&gt;</code></li>
+		<li>include mtip js <code>&lt;script src='mtip.js'&gt;&lt;/script&gt;</code></p></li>
+		<li>include mtip stylesheet <code>&lt;link href='mtip.css' rel='stylesheet' /&gt;</code></li>
+		<ul>
+		initialize
 		<pre>
-		<script>
+		&lt;script&gt;
 		$(document).ready(function(){
 			$('.mtip').mtip();
 		});
-		</script>
+		&lt;/script&gt;
 		</pre>
 		<em>note: the selector can be anything you want, I just used the class <code>mtip</code> for the example</em>
+		</p>
 	</div>
 </body>
 </html>
