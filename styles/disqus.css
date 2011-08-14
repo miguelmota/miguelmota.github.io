@@ -101,6 +101,20 @@ button..dsq-comment-footer-reply-tab {
 	text-shadow: 0 !important;
 }
 */
+div.dsq-textarea {
+	background: #222 !important;
+	border: 1px solid #555 !important;
+	color: #555 !important;
+}
+div.dsq-textarea-wrapper,
+div.dsq-textarea-wrapper iframe {
+	background: #222 !important;
+	border: 0 !important;
+	color: #555 !important;
+}
+div#comment {
+	color: #555 !important;
+}
 div#disqus_thread iframe {
 	background: #222 !important;
 	color: #999 !important;
@@ -259,20 +273,7 @@ div.dsq-options {
 div.dsq-pagination {
 	display: none !important;
 }
-div.dsq-textarea {
-	background: #222 !important;
-	border: 1px solid #555 !important;
-	color: #555 !important;
-}
-div.dsq-textarea-wrapper,
-div.dsq-textarea-wrapper iframe {
-	background: #222 !important;
-	border: 0 !important;
-	color: #555 !important;
-}
-div#comment {
-	color: #555 !important;
-}
+*/
 button.dsq-button {
 	background: #222 !important;
 	border: 1px solid #000 !important;
@@ -288,7 +289,6 @@ button.dsq-button:active {
 div.dsq-item-trackback {
 	display: none !important;
 }
-*/
 /* ==============================================================================
 	END DISQUS - NARCISSUS THEME
 ============================================================================== */
