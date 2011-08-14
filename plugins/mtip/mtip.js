@@ -14,10 +14,10 @@
 			$(this).after("<div class='tooltip'></div>");
 			$('div.tooltip').text(title);
 			$(this).hover(function() {
-						$('div.tooltip').show();
+						$('div.tooltip').hide().css('display','block');
 						jQuery(this).next('div.tooltip').stop(true, true).animate({opacity: 'show', top: '-30'}, 'slow');
 				}, function() {
-						jQuery(this).next('div.tooltip').animate({opacity: 'hide', top: '-20'}, 'fast').hide();
+						jQuery(this).next('div.tooltip').animate({opacity: 'hide', top: '-20'}, 'fast');
 			});	
 		});
 
