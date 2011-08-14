@@ -24,14 +24,15 @@ div.tooltip  {
 	display: none;
 	font-family: Aria, sans-serif;
 	font-size: 12px;
+	left: 5%;
 	opacity: .8;
+	overflow: visible;
 	padding: 5px;
 	position: absolute;
+	right: 5%;
 	text-align: center;
 	top: -20px;
 	z-index: 1000;
-	left: 5%;
-	right: 5%;
 	white-space: nowrap;
 }
 
