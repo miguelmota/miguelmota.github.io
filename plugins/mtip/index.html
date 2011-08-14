@@ -54,7 +54,7 @@
 			padding-bottom: 10px;
 		}
 		p {
-			line-height: 120%
+			line-height: 120%;
 			padding: 10px 0;
 		}
 	</style>
@@ -68,20 +68,19 @@
 		</p>
 		
 		<p><strong>Installation</strong>
-		this goes in the <code>head</code> section
 		<ul>
-		<li>include jquery <code>&lt;script src='jquery.js'&gt;&lt;/script&gt;</code></li>
-		<li>include mtip js <code>&lt;script src='mtip.js'&gt;&lt;/script&gt;</code></p></li>
-		<li>include mtip stylesheet <code>&lt;link href='mtip.css' rel='stylesheet' /&gt;</code></li>
-		<ul>
-		initialize
-		<pre>
-		&lt;script&gt;
-		$(document).ready(function(){
-			$('.mtip').mtip();
-		});
-		&lt;/script&gt;
-		</pre>
+			<li>include this in the <code>head</code> section:</li>
+			<li><code>&lt;script src='jquery.js'&gt;&lt;/script&gt;</code></li>
+			<li><code>&lt;script src='mtip.js'&gt;&lt;/script&gt;</code></p></li>
+			<li><code>&lt;link href='mtip.css' rel='stylesheet' /&gt;</code></li>
+			<li><pre>
+			&lt;script&gt;
+			$(document).ready(function(){
+				$('.mtip').mtip();
+			});
+			&lt;/script&gt;
+			</pre></li>
+		</ul>
 		<em>note: the selector can be anything you want, I just used the class <code>mtip</code> for the example</em>
 		</p>
 	</div>
