@@ -8,6 +8,7 @@
 
 div.tooltip-container {
 	display: inline;
+	overflow: visible;
 	position: relative;
 }
 
