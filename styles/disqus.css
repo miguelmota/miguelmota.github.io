@@ -73,6 +73,8 @@ div#disqus_thread a:hover {
 div#disqus_thread a:active {
 	text-shadow: 0 -1px 0 rgba(0,0,0,.5) !important;
 }
+/*
+DON'T WORK
 div.dsq-popup a {
 	border-left: 0 !important;
 	color: #000 !important;
@@ -92,13 +94,18 @@ div.dsq-popup a:hover {
 div.dsq-popup a:active {
 	text-shadow: none !important;
 }
+*/
+/*
+DON'T WORK
 button..dsq-comment-footer-reply-tab {
 	text-shadow: 0 !important;
 }
+*/
 div#disqus_thread iframe {
 	background: #222 !important;
 	color: #999 !important;
 }
+/*
 div#dsq-comments-title {
 	padding-bottom: 10px !important;
 }
@@ -281,6 +288,7 @@ button.dsq-button:active {
 div.dsq-item-trackback {
 	display: none !important;
 }
+*/
 /* ==============================================================================
 	END DISQUS - NARCISSUS THEME
 ============================================================================== */
