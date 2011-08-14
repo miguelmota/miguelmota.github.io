@@ -7,19 +7,21 @@
 
 (function($) {
 	$.fn.mtip = function() {
-		$(this).attr('mtip', $(this).attr('title')).removeAttr('title');
-		var title = $(this).attr('mtip');
-		$(this).wrap("<div class='tooltip-container' />");
-		$(this).after("<div class='tooltip'></div>");
-		$(this).hover(function() {
-
-					$('div.tooltip').text(title).hide();
-					$('div.tooltip').css({
-						'visibility': 'visible'
-					});
-					jQuery(this).next('div.tooltip').stop(true, true).animate({opacity: 'show', top: '-30'}, 'slow');
-			}, function() {
-					jQuery(this).next('div.tooltip').animate({opacity: 'hide', top: '-20'}, 'fast');
+		$(this).each(function(){
+			$(this).attr('mtip', $(this).attr('title')).removeAttr('title');
+			var title = $(this).attr('mtip');
+			$(this).wrap("<div class='tooltip-container' />");
+			$(this).after("<div class='tooltip'></div>");
+			$(this).hover(function() {
+						$('div.tooltip').text(title).hide();
+						$('div.tooltip').css({
+							'visibility': 'visible'
+						});
+						jQuery(this).next('div.tooltip').stop(true, true).animate({opacity: 'show', top: '-30'}, 'slow');
+				}, function() {
+						jQuery(this).next('div.tooltip').animate({opacity: 'hide', top: '-20'}, 'fast');
+			});	
 		});
+
 	}
 })(jQuery);
