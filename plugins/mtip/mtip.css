@@ -1,49 +1,47 @@
 @charset 'utf-8';
-/*
-/---------------------------/
-//@Author: Miguel Mota
-//@website: www.miguelmota.com
-//@email: hello@miguelmota.com
-//@license: Feel free to use it, but keep these credits please!					
-/---------------------------/
-*/
+/*----------------------------------------
+ *	mtip jQuery tooltip plugin
+ *	v1.0 | 20100524
+ *	Author: Miguel Mota, www.miguelmota.com
+ *	License: Creative Commons Attribution 3.0 License
+----------------------------------------*/
 
-div.tooltip_container {
+div.tooltip-container {
 	position: relative;
 }
 
 div.tooltip  {
-	position: absolute;
-	top: -20px;
-	visibility: hidden;
-	padding: 5px;
-	z-index: 1000;
-	text-align: center;
-	font-family: Aria, sans-serif;
-	font-size: 12px;
-	-moz-box-shadow: 1px 1px 3px #000;
-	-webkit-box-shadow: 1px 1px 3px #000;
-	box-shadow: 1px 1px 3px #000;
+	background-color: #000;
+	border-radius: 5px;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
-	border-radius: 5px;
-	background-color: #000;
+	box-shadow: 1px 1px 3px #000;
+	-moz-box-shadow: 1px 1px 3px #000;
+	-webkit-box-shadow: 1px 1px 3px #000;
 	color: #fff;
+	font-family: Aria, sans-serif;
+	font-size: 12px;
 	opacity: .8;
+	padding: 5px;
+	position: absolute;
+	text-align: center;
+	top: -20px;
+	visibility: hidden;
+	z-index: 1000;
 }
 
 /* triangle on the bottom */
 div.tooltip:after {
+	border-color: #000 transparent;
+	border-style: solid;
+	border-width: 5px 5px 0; /* vary these values to change the angle of the vertex */
+	bottom: -5px; /* value = - border-top-width - border-bottom-width */
 	content: "";
 	display: block;
-	position: absolute;
-	bottom: -5px; /* value = - border-top-width - border-bottom-width */
+	height: 0;
 	left: 10px; /* controls horizontal position */
 	margin-left: -5px;
+	position: absolute;
 	width: 0;
-	height: 0;
 	z-index: 1000;
-	border-width: 5px 5px 0; /* vary these values to change the angle of the vertex */
-	border-style: solid;
-	border-color: #000 transparent;
 }

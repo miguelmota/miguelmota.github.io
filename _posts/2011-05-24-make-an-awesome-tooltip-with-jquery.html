@@ -45,7 +45,7 @@ var title = $(this).attr('mtip');
 <p>Next we want to wrap the link in a container:</p>
 
 {% highlight javascript %}
-$(this).wrap('<div class="tooltip_container" />');
+$(this).wrap("<div class='tooltip-container' />");
 {% endhighlight %}
 
 <p>Let's create the functions for the hover method:</p>
@@ -105,44 +105,44 @@ jQuery(this).next('div.tooltip').animate({opacity: 'hide', top: '-20'}, 'fast');
 <p>It's time to style the tooltip:</p>
 
 {% highlight css %}
-div.tooltip_container {
+div.tooltip-container {
 	position: relative;
 }
 
 div.tooltip  {
-	position: absolute;
-	top: -20px;
-	visibility: hidden;
-	padding: 5px;
-	z-index: 1000;
-	text-align: center;
-	font-family: Aria, sans-serif;
-	font-size: 12px;
-	-moz-box-shadow: 1px 1px 3px #000;
-	-webkit-box-shadow: 1px 1px 3px #000;
-	box-shadow: 1px 1px 3px #000;
+	background-color: #000;
+	border-radius: 5px;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
-	border-radius: 5px;
-	background-color: #000;
+	box-shadow: 1px 1px 3px #000;
+	-moz-box-shadow: 1px 1px 3px #000;
+	-webkit-box-shadow: 1px 1px 3px #000;
 	color: #fff;
+	font-family: Aria, sans-serif;
+	font-size: 12px;
 	opacity: .8;
+	padding: 5px;
+	position: absolute;
+	text-align: center;
+	top: -20px;
+	visibility: hidden;
+	z-index: 1000;
 }
 
 /* triangle on the bottom */
 div.tooltip:after {
+	border-color: #000 transparent;
+	border-style: solid;
+	border-width: 5px 5px 0; /* vary these values to change the angle of the vertex */
+	bottom: -5px; /* value = - border-top-width - border-bottom-width */
 	content: "";
 	display: block;
-	position: absolute;
-	bottom: -5px; /* value = - border-top-width - border-bottom-width */
+	height: 0;
 	left: 10px; /* controls horizontal position */
 	margin-left: -5px;
+	position: absolute;
 	width: 0;
-	height: 0;
 	z-index: 1000;
-	border-width: 5px 5px 0; /* vary these values to change the angle of the vertex */
-	border-style: solid;
-	border-color: #000 transparent;
 }
 {% endhighlight %}
 

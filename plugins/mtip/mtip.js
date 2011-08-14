@@ -1,15 +1,16 @@
-/***************************/
-//@Author: Miguel Mota
-//@website: www.miguelmota.com
-//@email: hello@miguelmota.com
-//@license: Feel free to use it, but keep these credits please!					
-/***************************/
+/*----------------------------------------
+ *	mtip jQuery tooltip plugin
+ *	v1.0 | 20100524
+ *	Author: Miguel Mota, www.miguelmota.com
+ *	License: Creative Commons Attribution 3.0 License
+----------------------------------------*/
+
 (function($) {
 	$.fn.mtip = function() {
-		$(this).wrap('<div class="tooltip_container" />');
+		$(this).wrap("<div class='tooltip-container' />");
 		$(this).hover(function() {
-					//$(this).attr('mtip', $(this).attr('title')).removeAttr('title');
-					var title = $(this).attr('title');
+					$(this).attr('mtip', $(this).attr('title')).removeAttr('title');
+					var title = $(this).attr('mtip');
 					$(this).after("<div class='tooltip'></div>");
 					$('div.tooltip').text(title).hide();
 					$('div.tooltip').css({
