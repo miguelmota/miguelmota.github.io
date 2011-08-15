@@ -267,6 +267,9 @@ td.dsq-comment-header-meta {
 span.dsq-user-like {
 	color: #555 !important;
 }
+.blog-entry-comments {
+	color: #999 !important;
+}
 button.dsq-button,
 button.dsq-button-small {
 	background: #222 !important;
