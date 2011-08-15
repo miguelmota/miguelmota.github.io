@@ -525,7 +525,7 @@ img.foodfail-thumb {
 img.miguelmota-thumb {
 	height: auto;
 	position: absolute;
-	width: 130% !important;
+	width: 100% !important;
 }
 a.fancybox {
 	background: url('/images/ajax-loader-image.gif') no-repeat 50% 50%;
