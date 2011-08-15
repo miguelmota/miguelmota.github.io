@@ -973,7 +973,7 @@ div#portfolio div.work-image {
 div#portfolio div.work-image img {
 	position: absolute;
 }
-div#portfolio p.work-description {
+div#portfolio div.work-description {
 	position: relative;
 }
 div#portfolio span.work-date {
