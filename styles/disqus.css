@@ -20,8 +20,6 @@
 .p_no_responses {
 	display: none;
 }
-div#dsq-global-toolbar {
-}
 div#dsq-content h3 {
 	display: none !important;
 }
@@ -251,9 +249,7 @@ div#dsq-form-area {
 	float: right !important;
 	width: 580px !important;
 }
-div#dsq-global-toolbar {
-	display: none !important;
-}
+
 div.dsq-options {
 	display: none !important;
 }
@@ -261,6 +257,9 @@ div.dsq-pagination {
 	display: none !important;
 }
 */
+div#dsq-global-toolbar {
+	display: none !important;
+}
 td.dsq-comment-header-meta {
 	background-color: #222 !important;
 }
