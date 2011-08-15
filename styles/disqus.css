@@ -283,9 +283,8 @@ button.dsq-button-small:active {
 	text-shadow: none !important;
 }
 a.dsq-subscribe-email {
-	float: left;
 	position: relative;
-	top: -20px;
+	top: -40px;
 }
 div.dsq-item-trackback {
 	display: none !important;
