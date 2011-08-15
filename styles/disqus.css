@@ -111,7 +111,7 @@ div.dsq-textarea-wrapper iframe {
 	color: #555 !important;
 }
 div#comment {
-	color: #555 !important;
+	color: #999 !important;
 }
 div#disqus_thread iframe {
 	background: #222 !important;
@@ -266,9 +266,6 @@ td.dsq-comment-header-meta {
 }
 span.dsq-user-like {
 	color: #555 !important;
-}
-.blog-entry-comments {
-	color: #999 !important;
 }
 button.dsq-button,
 button.dsq-button-small {
