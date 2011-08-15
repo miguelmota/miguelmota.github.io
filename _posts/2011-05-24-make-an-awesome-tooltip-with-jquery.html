@@ -33,7 +33,7 @@ title: Make an awesome tooltip with jQuery
 attribute and then removing the <code>title</code> attribute. So what's the point in doing this? if we don't, we will have our custom tooltip and the default tooltip pop up at the same time.. which will be a nuisance!</p>
 
 {% highlight javascript %}
-$(this).attr('mtip', $(this).attr('title')).removeAttr('title');
+$(this).attr('mtip',$(this).attr('title')).removeAttr('title');
 {% endhighlight %}
 
 <p>So now let's assign the <code>mtip</code> attribute to a variable named <code>title</code>:</p>
@@ -48,6 +48,17 @@ var title = $(this).attr('mtip');
 $(this).wrap("<div class='tooltip-container' />");
 {% endhighlight %}
 
+<p>We don't want the words in the link to break so we'll keep them in the same line:</p>
+{% highlight javascript %}
+$(this).css('white-space','nowrap');
+{% endhighlight %}
+
+<p>Let's prepend a new element with a class of <code>tooltip</code> inside the <code>tooltip-container</code> div:</p>
+
+{% highlight javascript %}
+$('div.tooltip-container').prepend("<div class='tooltip' />");
+{% endhighlight %}
+
 <p>Let's create the functions for the hover method:</p>
 
 {% highlight javascript %}
@@ -58,20 +69,16 @@ $(this).hover(function() {
 });
 {% endhighlight %}
 
-<p>Inside the first hover function let's make a <code>div</code> and give a class of <code>tooltip</code>, then insert the content from <code>title</code> variable in to the <code>div</code> and hide it:</p>
+<p>Inside the first hover function we are going to insert the content from <code>title</code> variable in to the previous element which is the <code>tooltip</code> div and animate it:</p>
 
 {% highlight javascript %}
-$(this).after("<div class='tooltip'></div>");
-$('div.tooltip').text(title).hide();
+$(this).prev().text(title).stop(true,true).animate({opacity: 'show', top: '-30'}, 'slow');
 {% endhighlight %}
 
 <p>We're going to make the tooltip fade in going upwards when they hover over:</p>
 
 {% highlight javascript %}
-$('div.tooltip').css({
-	'visibility': 'visible'
-});
-jQuery(this).next('div.tooltip').stop(true, true).animate({opacity: 'show', top: '-30'}, 'slow');
+$(this).prev().animate({opacity: 'hide', top: '-20'}, 'fast');
 {% endhighlight %}
 
 <p>Now make it fade out on hover out:</p>
@@ -85,18 +92,17 @@ jQuery(this).next('div.tooltip').animate({opacity: 'hide', top: '-20'}, 'fast');
 {% highlight javascript %}
 (function($) {
 	$.fn.mtip = function() {
-		$(this).wrap("<div class='tooltip-container' />");
-		$(this).attr('mtip', $(this).attr('title')).removeAttr('title');
-		var title = $(this).attr('mtip');
-		$(this).hover(function() {
-					$(this).after("<div class='tooltip'></div>");
-					$('div.tooltip').text(title).hide();
-					$('div.tooltip').css({
-						'visibility': 'visible'
-					});
-					jQuery(this).next('div.tooltip').stop(true, true).animate({opacity: 'show', top: '-30'}, 'slow');
-			}, function() {
-					jQuery(this).next('div.tooltip').animate({opacity: 'hide', top: '-20'}, 'fast');
+		$(this).each(function(){
+			$(this).attr('mtip',$(this).attr('title')).removeAttr('title');
+			var title = $(this).attr('mtip');
+			$(this).wrap("<div class='tooltip-container' />");
+			$(this).css('white-space','nowrap');
+			$('div.tooltip-container').prepend("<div class='tooltip' />");
+			$(this).hover(function() {
+					$(this).prev().text(title).stop(true,true).animate({opacity: 'show', top: '-30'}, 'slow');
+				}, function() {
+					$(this).prev().animate({opacity: 'hide', top: '-20'}, 'fast');
+			});	
 		});
 	}
 })(jQuery);
@@ -106,6 +112,7 @@ jQuery(this).next('div.tooltip').animate({opacity: 'hide', top: '-20'}, 'fast');
 
 {% highlight css %}
 div.tooltip-container {
+	display: inline;
 	position: relative;
 }
 
@@ -118,15 +125,18 @@ div.tooltip  {
 	-moz-box-shadow: 1px 1px 3px #000;
 	-webkit-box-shadow: 1px 1px 3px #000;
 	color: #fff;
+	display: none;
 	font-family: Aria, sans-serif;
 	font-size: 12px;
+	left: -35%;
+	right: -35%;
 	opacity: .8;
 	padding: 5px;
 	position: absolute;
 	text-align: center;
 	top: -20px;
-	visibility: hidden;
 	z-index: 1000;
+	white-space: nowrap;
 }
 
 /* triangle on the bottom */
@@ -138,7 +148,7 @@ div.tooltip:after {
 	content: "";
 	display: block;
 	height: 0;
-	left: 10px; /* controls horizontal position */
+	left: 50%; /* controls horizontal position */
 	margin-left: -5px;
 	position: absolute;
 	width: 0;
