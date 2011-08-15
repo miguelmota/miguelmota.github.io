@@ -567,7 +567,7 @@ div.fancybox-title span {
 	float: right;
 }
 div.work-image {
-	background: url('/images/ajax-loader.gif') no-repeat 50% 50%;
+	background: url('/images/ajax-loader-image.gif') no-repeat 50% 50%;
 	height: auto;
 	margin: 5px 0;
 	width: 650px;
