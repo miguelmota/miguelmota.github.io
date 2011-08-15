@@ -511,7 +511,7 @@ span.overlay {
 	width: 100%;
 }
 div.work-description {
-	padding-left: 5px;
+	padding-bottom: 10px;
 	position: relative;
 }
 span.work-date {
