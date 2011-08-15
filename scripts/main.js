@@ -130,10 +130,7 @@ $(document).ready(function(){
 		$('a.top-link').animate({top:offset},{duration:500,queue:false});
 	});
 	topYloc = parseInt($('a.top-link').css('top').substring(0,$('a.top-link').css('top').indexOf('px')));
-	
-	
-	//initialize mtip
-	$('.mtip').mtip();
+
 	
 });
 
@@ -354,6 +351,10 @@ function showMtip(element) {
 }
 
 function streamPage(){
+	
+	//initialize mtip
+	$('.mtip').mtip();
+	
 	
 	//hide social link text
 	$("div.stream a.social:not('.latitude')").text('');
