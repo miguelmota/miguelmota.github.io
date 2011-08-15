@@ -1,0 +1,96 @@
+<!doctype>
+<html lang='en'>
+<head>
+	<meta charset='utf-8' />
+<!-- 
+           _   _       
+          | | (_)      
+ _ __ ___ | |_ _ _ __  
+| '_ ` _ \| __| | '_ \ 
+| | | | | | |_| | |_) |
+|_| |_| |_|\__|_| .__/ 
+                | |    
+                |_|   
+-->
+	<meta name='description' content='A simple jQuery tooltip plugin' />
+	<meta name='keywords' content='mtip, jquery tooltip' />
+	<title>mtip - jQuery tooltip</title>
+	<link rel='canonical' href='http://www.miguelmota.com/' />
+	<link href='http://www.miguelmota.com/styles/reset.css' rel='stylesheet' />
+	<link href='mtip.css' rel='stylesheet' />
+	<script src='jquery.js'></script>
+	<script src='mtip.js'></script>
+	<script>
+	$(document).ready(function(){
+		$('.mtip').mtip();
+	});
+	</script>
+	<style>
+		body {
+			font-family: Helvetica, Arial, sans-serif;
+		}
+		div.main-wrap {
+			background-color: #f7f7f7;
+			border: 1px solid #ccc;
+			margin: 100px;
+			padding: 20px;
+		}
+		a {
+			background-color: #ededed;
+			transition: all linear .1s;
+			-moz-transition: all linear .1s;
+			-webkit-transition: all linear .1s;
+			-o-transition: all linear .1s;
+			color: #1f4970;
+			padding: 2px 4px;
+		}
+		a:hover {
+			background-color: #dbf4ff;
+			color: #0e3b60;
+		}
+		h1 {
+			font-size: 26px;
+			font-weight: bold;
+			padding-bottom: 10px;
+		}
+		p {
+			line-height: 120%;
+			padding: 10px 0;
+		}
+		ul {
+			padding-bottom: 10px;
+		}
+		em.note {
+			font-size: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div class='main-wrap'>
+		<h1>mtip demo</h1>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <a class='mtip' href='javascript:void(0);' title='Hello, I am a tooltip!'>hover over me</a>. Aenean dictum mattis mauris, quis euismod sem fringilla ut. Etiam non blandit libero. 
+		Nam interdum dictum accumsan. Morbi dapibus, sapien vel fringilla convallis, lacus nibh ultricies risus, sit amet tincidunt lacus lectus eu erat. 
+		Ut volutpat sapien nec mi <a class='mtip' href='javascript:void(0);' title='I am another awesome tooltip!'>hover over me too!</a> consectetur sed laoreet tellus scelerisque.
+		</p>
+		
+		<p><strong>Installation</strong>
+		(include this in the <code>head</code> section):
+		<ul>
+			<li><code>&lt;link href='mtip.css' rel='stylesheet' /&gt;</code></li>
+			<li><code>&lt;script src='jquery.js'&gt;&lt;/script&gt;</code></li>
+			<li><code>&lt;script src='mtip.js'&gt;&lt;/script&gt;</code></li>
+			<li>
+			<pre>&lt;script&gt;
+$(document).ready(function(){
+	$('.mtip').mtip();
+});
+&lt;/script&gt;</pre>
+			</li>
+		</ul>
+		<em class='note'><strong>Note:</strong> the selector can be anything you want, I just used the class <code>mtip</code> for the example</em>
+		</p>
+		
+		<p><a href='http://www.miguelmota.com/plugins/mtip/mtip-1.0.zip'>Download mtip-1.0.zip</a></p>
+	</div>
+</body>
+</html>

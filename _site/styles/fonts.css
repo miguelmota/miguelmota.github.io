@@ -1,0 +1,68 @@
+@charset 'utf-8';
+
+/* ==============================================================================
+	FONT IMPORTS
+============================================================================== */
+@font-face {
+	font-family: NeoSans;
+	src: url('../fonts/neosans-webfont/neosans-webfont.eot');
+	src: local('☺'),
+	url('../fonts/neosans-webfont/neosans-webfont.woff') format('woff'),
+	url('../fonts/neosans-webfont/neosans-webfont.ttf') format('truetype'),
+	url('../fonts/neosans-webfont/neosans-webfont.svg') format('svg');
+}
+@font-face {
+	font-family: NeoSans;
+	src: url('../fonts/neosans-webfont/neosans-bold-webfont.eot');
+	src: local('☺'),
+	url('../fonts/neosans-webfont/neosans-bold-webfont.woff') format('woff'),
+	url('../fonts/neosans-webfont/neosans-bold-webfont.ttf') format('truetype'),
+	url('../fonts/neosans-webfont/neosans-bold-webfont.svg') format('svg');
+	font-weight: bold;
+}
+@font-face {
+	font-family: NeoSans;
+	src: url('../fonts/neosans-italic-webfont.eot');
+	src: local('☺'),
+	url('../fonts/neosans-webfont/neosans-italic-webfont.woff') format('woff'),
+	url('../fonts/neosans-webfont/neosans-italic-webfont.ttf') format('truetype'),
+	url('../fonts/neosans-webfont/neosans-italic-webfont.svg') format('svg');
+	font-style: italic;
+}
+@font-face {
+	font-family: Klavika;
+	src: url('../fonts/klavika-webfont/klavika-regular-webfont.eot');
+	src: local('☺'),
+	url('../fonts/klavika-webfont/klavika-regular-webfont.woff') format('woff'),
+	url('../fonts/klavika-webfont/klavika-regular-webfont.ttf') format('truetype'),
+	url('../fonts/klavika-webfont/klavika-regular-webfont.svg') format('svg');
+}
+@font-face {
+	font-family: Klavika;
+	src: url('../fonts/klavika-webfont/klavika-bold-webfont.eot');
+	src: local('☺'),
+	url('../fonts/klavika-webfont/klavika-bold-webfont.woff') format('woff'),
+	url('../fonts/klavika-webfont/klavika-bold-webfont.ttf') format('truetype'),
+	url('../fonts/klavika-webfont/klavika-bold-webfont.svg') format('svg');
+	font-weight: bold;
+}
+@font-face {
+	font-family: Klavika;
+	src: url('../fonts/klavika-webfont/klavika-italic-webfont..eot');
+	src: local('☺'),
+	url('../fonts/klavika-webfont/klavika-italic-webfont.woff') format('woff'),
+	url('../fonts/klavika-webfont/klavika-italic-webfont.ttf') format('truetype'),
+	url('../fonts/klavika-webfont/klavika-italic-webfont.svg') format('svg');
+	font-style: italic;
+}
+@font-face {
+	font-family: Klavika-Light;
+	src: url('../fonts/klavika-webfont/klavika-light-webfont.eot');
+	src: local('☺'),
+	url('../fonts/klavika-webfont/klavika-light-webfont.woff') format('woff'),
+	url('../fonts/klavika-webfont/klavika-light-webfont.ttf') format('truetype'),
+	url('../fonts/klavika-webfont/klavika-light-webfont.svg') format('svg');
+}
+/* ==============================================================================
+	END FONT IMPORTS
+============================================================================== */
