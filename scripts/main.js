@@ -357,6 +357,7 @@ function streamPage(){
 	
 	//hide social link text
 	$("div.stream a.social:not('.latitude')").text('');
+	showMtip('a.social.latitude');
 	
 	while(c == 0){	
 		
