@@ -234,11 +234,6 @@ div.dsq-comment-header-meta-wrapper {
 div.dsq-comment-header-meta-wrapper a {
 	font-size: 10px !important;
 }
-button.dsq-button-small {
-	background: none !important;
-	border: 0 !important;
-	color: #007299 !important;
-}
 a.dsq-request-user-logout {
 	display: none !important;
 }
@@ -274,16 +269,19 @@ div.dsq-pagination {
 	display: none !important;
 }
 */
-button.dsq-button {
+button.dsq-button,
+button.dsq-button-small {
 	background: #222 !important;
 	border: 1px solid #000 !important;
 	color: #007299 !important;
 }
-button.dsq-button:hover {
+button.dsq-button:hover,
+button.dsq-button-small:hover {
 	background: #202020 !important;
 	color: #0083aa !important;
 }
-button.dsq-button:active {
+button.dsq-button:active,
+button.dsq-button-small:active {
 	text-shadow: none !important;
 }
 div.dsq-item-trackback {
