@@ -100,19 +100,19 @@ button..dsq-comment-footer-reply-tab {
 }
 */
 div.dsq-textarea {
-	background: #222 !important;
-	border: 1px solid #555 !important;
+	background: #999 !important;
+	border: 1px solid #999 !important;
 	color: #999 !important;
 }
 div.dsq-textarea-wrapper,
 div.dsq-textarea-wrapper iframe {
-	background: #323232 !important;
+	background: #999 !important;
 	border: 0 !important;
 	color: #999 !important;
 }
 }
 div#disqus_thread iframe {
-	background: #323232 !important;
+	background: #999 !important;
 	color: #999 !important;
 }
 /*
