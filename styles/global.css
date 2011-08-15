@@ -536,6 +536,9 @@ a.fancybox {
 	display: block;
 	position: relative;
 }
+div#fancybox-outer {
+	border: 0;
+}
 span.zoom-icon {
 	background-color: #000;
 	background-color: rgba(0,0,0,.8);
