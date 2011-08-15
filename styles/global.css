@@ -538,6 +538,7 @@ img.miguelmota-thumb {
 	width: 130% !important;
 }
 a.fancybox {
+	background: url('/images/ajax-loader-image.gif') no-repeat 50% 50%;
 	display: block;
 	position: relative;
 }
@@ -567,7 +568,6 @@ div.fancybox-title span {
 	float: right;
 }
 div.work-image {
-	background: url('/images/ajax-loader-image.gif') no-repeat 50% 50%;
 	height: auto;
 	margin: 5px 0;
 	width: 650px;
