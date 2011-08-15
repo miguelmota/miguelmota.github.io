@@ -536,7 +536,7 @@ a.fancybox {
 	display: block;
 	position: relative;
 }
-div#fancybox-outer {
+div#fancybox-outer a {
 	border: 0;
 }
 span.zoom-icon {
