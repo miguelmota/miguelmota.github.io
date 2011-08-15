@@ -532,6 +532,11 @@ img.foodfail-thumb {
 	position: absolute;
 	width: 130% !important;
 }
+img.miguelmota-thumb {
+	height: auto;
+	position: absolute;
+	width: 130% !important;
+}
 a.fancybox {
 	display: block;
 	position: relative;
@@ -562,6 +567,7 @@ div.fancybox-title span {
 	float: right;
 }
 div.work-image {
+	background: url('/images/ajax-loader.gif') no-repeat 50% 50%;
 	height: auto;
 	margin: 5px 0;
 	width: 650px;
