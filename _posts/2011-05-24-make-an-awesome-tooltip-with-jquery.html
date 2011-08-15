@@ -69,16 +69,10 @@ $(this).hover(function() {
 });
 {% endhighlight %}
 
-<p>Inside the first hover function we are going to insert the content from <code>title</code> variable in to the previous element which is the <code>tooltip</code> div and animate it:</p>
+<p>Inside the first hover function we are going to insert the content from <code>title</code> variable in to the previous element which is the <code>tooltip</code> div and animate the tooltip:</p>
 
 {% highlight javascript %}
 $(this).prev().text(title).stop(true,true).animate({opacity: 'show', top: '-30'}, 'slow');
-{% endhighlight %}
-
-<p>We're going to make the tooltip fade in going upwards when they hover over:</p>
-
-{% highlight javascript %}
-$(this).prev().animate({opacity: 'hide', top: '-20'}, 'fast');
 {% endhighlight %}
 
 <p>Now make it fade out on hover out:</p>
