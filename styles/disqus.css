@@ -100,20 +100,28 @@ button..dsq-comment-footer-reply-tab {
 }
 */
 div.dsq-textarea {
-	background: #999 !important;
-	border: 1px solid #999 !important;
-	color: #999 !important;
+	background: #222 !important;
+	border: 1px solid #555 !important;
+	color: #555 !important;
 }
 div.dsq-textarea-wrapper,
 div.dsq-textarea-wrapper iframe {
-	background: #999 !important;
+	background: #222 !important;
 	border: 0 !important;
-	color: #999 !important;
+	color: #555 !important;
 }
 }
 div#disqus_thread iframe {
-	background: #999 !important;
-	color: #999 !important;
+	background: #222 !important;
+}
+div.dsq-textarea:focus {
+	background: #777 !important;
+	border: 1px solid #555 !important;
+}
+div.dsq-textarea-wrapper:focus,
+div.dsq-textarea-wrapper iframe:focus {
+	background: #777 !important;
+}
 }
 /*
 div.dsq-full-comment {
