@@ -26,8 +26,8 @@ layout: default
 			        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
 			        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
 			        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-				    document.write("<a class='dsq-subscribe-email' href='#' onclick='return DISQUS.dtpl.actions.fire(\"thread.subscribe\");'>Subscribe by email</a>");
 			    })();
+			    $('div#dsq-form-area').append("<a class='dsq-subscribe-email' href='#' onclick='return DISQUS.dtpl.actions.fire(\"thread.subscribe\");'>Subscribe by email</a>");
 			</script>
 			<script>
 			    var disqus_shortname = 'miguelmota';
