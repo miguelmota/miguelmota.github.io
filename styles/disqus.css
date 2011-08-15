@@ -250,14 +250,15 @@ div#dsq-form-area {
 	width: 580px !important;
 }
 
-div.dsq-options {
-	display: none !important;
-}
+
 div.dsq-pagination {
 	display: none !important;
 }
 */
 div#dsq-global-toolbar {
+	display: none !important;
+}
+div.dsq-options {
 	display: none !important;
 }
 td.dsq-comment-header-meta {
