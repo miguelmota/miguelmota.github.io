@@ -7,7 +7,7 @@
 ----------------------------------------*/
 
 div.tooltip-container {
-	display: inline;
+	display: inline-block;
 	position: relative;
 }
 

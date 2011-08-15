@@ -131,6 +131,10 @@ $(document).ready(function(){
 	});
 	topYloc = parseInt($('a.top-link').css('top').substring(0,$('a.top-link').css('top').indexOf('px')));
 	
+	
+	//initialize mtip
+	$('.mtip').mtip();
+	
 });
 
 $(window).scroll(function(){
@@ -341,25 +345,20 @@ function hideLoader(){
 	
 }
 
+function showMtip(element) {
+	var link = element;
+	$(link).trigger('mouseenter');
+	setTimeout(function(){
+		$(link).trigger('mouseleave');
+	}, 3000);
+}
+
 function streamPage(){
 	
 	//hide social link text
 	$("div.stream a.social:not('.latitude')").text('');
 	
-	//initialize mtip
-	$('.mtip').mtip();
-	
-	while(c == 0){
-
-		//Add question mark next to social logo
-		$('a.social.latitude').after("<span class='mtip' title='recent location'>(?)</span>");
-		$('a.social.twitter').after("<span class='mtip' title='@miguel_mota recent tweets'>(?)</span>");
-		$('a.social.facebook').after("<span class='mtip' title='recent statuses'>(?)</span>");
-		$('a.social.tumblr').after("<span class='mtip' title='recent posts'>(?)</span>");
-		$('a.social.delicious').after("<span class='mtip' title='recently saved bookmarks'>(?)</span>");
-		$('a.social.lastfm').after("<span class='mtip' title='recently listened tracks'>(?)</span>");
-		$('a.social.wakoopa').after("<span class='mtip' title='recently used software'>(?)</span>");
-		
+	while(c == 0){	
 		
 		// Twitter stream
 		$('div.twitter div.loader').css('display','block');
@@ -375,6 +374,7 @@ function streamPage(){
 			    	    $("li.status[id='"+id+"'] span").find(":contains('@')").wrapInner("<a href='http://twitter.com/"+$("li.status[id='"+id+"'] span").find(":contains('@')").text().substr(1)+"'> </a>");
 					});
 					$('div.twitter div.loader').css('display','none');
+					showMtip('a.social.twitter');
 				}
 		);
 		
@@ -416,6 +416,7 @@ function streamPage(){
 			    	  	}
 					});
 					$('div.facebook div.loader').css('display','none');
+					showMtip('a.social.facebook');
 				}
 		);
 		
@@ -432,6 +433,7 @@ function streamPage(){
 				    	  	$('ul.tumblr-posts').append("<li>&#187; <a href='"+url+"'>"+slug.substring(0,1).toUpperCase()+slug.substr(1,200)+"</a> <span class='stream-date'>"+niceTime(date)+"</span></li>");
 				      }); 
 					  $('div.tumblr div.loader').css('display','none');
+					showMtip('a.social.tumblr');
 				  }
 		);
 		
@@ -446,6 +448,7 @@ function streamPage(){
 						$('ul.delicious-bookmarks').append("<li>&#187; <a href='"+url+"'>"+title+"</a> <span class='stream-date'>"+niceTime(date)+"</span></li>");
 					});
 					$('div.delicious div.loader').css('display','none');
+					showMtip('a.social.delicious');
 			}
 		);
 		
@@ -461,6 +464,7 @@ function streamPage(){
 							$('ul.lastfm-tracks').append("<li><a class='link' href='"+url+"'>"+artist+" - "+name+"</a> <span class='stream-date'>"+date+"</span></li>");
 					}); 
 					$('div.lastfm div.loader').css('display','none');
+					showMtip('a.social.lastfm');
 				}
 		);
 		
@@ -477,6 +481,7 @@ function streamPage(){
 				html.push("</ul>");
 				document.getElementById('wakoopa-software').innerHTML = html.join("");
 				$('div.wakoopa div.loader').css('display','none');
+				showMtip('a.social.wakoopa');
 			}
 		);
 		c++

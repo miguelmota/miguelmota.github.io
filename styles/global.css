@@ -291,7 +291,6 @@ div.content-container {
 	float: right;
 	position: relative;
 	width: 650px;
-	overflow: hidden;
 }
 /* ==============================================================================
 	END CONTENT
@@ -304,7 +303,6 @@ div.content-container {
 ============================================================================== */
 div.loader {
 	background: url('/images/ajax-loader.gif') no-repeat 0 0;
-	float: left;
 	height: 16px;
 	margin-right: 5px;
 	width: 16px;
@@ -341,15 +339,6 @@ img.loader {
 ============================================================================== */
 div.stream {
 	margin-bottom: 10px;
-}
-span.mtip {
-	color: #005577;
-	float: left;
-	font-size: 6px;
-	padding: 3px;
-}
-span.mtip:hover {
-	cursor: default;
 }
 a.social {
 	background-position: 0 0;
