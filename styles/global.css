@@ -302,7 +302,7 @@ div.content-container {
 	LOADERS
 ============================================================================== */
 div.loader {
-	background: url('/images/ajax_loader.gif') no-repeat 0 0;
+	background: url('/images/ajax-loader.gif') no-repeat 0 0;
 	float: left;
 	height: 16px;
 	margin-right: 5px;
@@ -317,7 +317,7 @@ div.loader-container {
 	width: 128px;
 }
 div.page-loader {
-	background: url('/images/ajax_loader_page.gif') no-repeat 0 0;
+	background: url('/images/ajax-loader-page.gif') no-repeat 0 0;
 	clear: both;
 	float: left;
 	height: 15px;
@@ -377,7 +377,7 @@ iframe.latitude {
 	width: 100%;
 }
 a.tumblr {
-	background: url('/images/tumblr_sprite.png');
+	background: url('/images/tumblr-sprite.png');
 	width: 75px;
 }
 a.tumblr:hover,
@@ -395,7 +395,7 @@ span.stream-date {
 	font-size: 9px;
 }
 a.facebook {
-	background: url('/images/facebook_sprite.png');
+	background: url('/images/facebook-sprite.png');
 	width: 73px;
 }
 a.facebook:hover,
@@ -403,7 +403,7 @@ a.facebook:active {
 	background-position: 0 16px;
 }
 a.twitter {
-	background: url('/images/twitter_sprite.png');
+	background: url('/images/twitter-sprite.png');
 	width: 78px;
 }
 a.twitter:hover,
@@ -411,7 +411,7 @@ a.twitter:active {
 	background-position: 0 16px;
 }
 a.delicious {
-	background: url('/images/delicious_sprite.png');
+	background: url('/images/delicious-sprite.png');
 	height: 15px;
 	width: 83px;
 }
@@ -420,7 +420,7 @@ a.delicious:active {
 	background-position: 0 16px;
 }
 a.lastfm {
-	background: url('/images/lastfm_sprite.png');
+	background: url('/images/lastfm-sprite.png');
 	width: 62px;
 }
 a.lastfm:hover,
@@ -428,7 +428,7 @@ a.lastfm:active {
 	background-position: 0 16px;
 }
 a.wakoopa {
-	background: url('/images/wakoopa_sprite.png');
+	background: url('/images/wakoopa-sprite.png');
 	width: 75px;
 	height: 18px;
 }
