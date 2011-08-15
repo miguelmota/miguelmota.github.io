@@ -510,7 +510,7 @@ span.overlay {
 	position: absolute;
 	width: 100%;
 }
-p.work-description {
+div.work-description {
 	padding-left: 5px;
 	position: relative;
 }
