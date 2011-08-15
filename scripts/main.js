@@ -538,7 +538,7 @@ function portfolioPage(){
 					'box-shadow': '0 0 10px #fff'
 					});
 	},function(){
-				jQuery('span.overlay', this).hide().fadeIn(200);
+				jQuery('span.overlay', this).hide().fadeIn(300);
 				$(this).css({
 					'-webkit-box-shadow': '2px 2px 5px #111',
 					'-moz-box-shadow': '2px 2px 5px #111',
