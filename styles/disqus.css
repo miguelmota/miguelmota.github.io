@@ -152,9 +152,6 @@ a.dsq-post-report {
 	color: #555 !important;
 	font-size: 10px !important;
 }
-span.dsq-user-like {
-	display: none !important;
-}
 div#disqus_thread tr {
 	border: 1px solid #252525 !important;
 	background: #252525 !important;
@@ -196,11 +193,6 @@ a.dsq-avatar img:hover {
 div.dsq-comment-header {
 	border: none !important;
 	padding: 0 !important;
-}
-td.dsq-comment-header-meta {
-	position: absolute !important;
-	right: 0 !important;
-	width: 580px !important;
 }
 a.dsq-comment-hide-thread {
 	display: none !important;
@@ -269,6 +261,12 @@ div.dsq-pagination {
 	display: none !important;
 }
 */
+td.dsq-comment-header-meta {
+	background-color: #222 !important;
+}
+span.dsq-user-like {
+	color: #555 !important;
+}
 button.dsq-button,
 button.dsq-button-small {
 	background: #222 !important;
