@@ -118,9 +118,6 @@ div#disqus_thread iframe {
 	color: #999 !important;
 }
 /*
-div#dsq-comments-title {
-	padding-bottom: 10px !important;
-}
 div.dsq-full-comment {
 	position: relative !important;
 }
@@ -255,6 +252,9 @@ div.dsq-pagination {
 	display: none !important;
 }
 */
+div#dsq-comments-title {
+	padding-bottom: 10px !important;
+}
 div#dsq-global-toolbar {
 	display: none !important;
 }
@@ -281,6 +281,9 @@ button.dsq-button-small:hover {
 button.dsq-button:active,
 button.dsq-button-small:active {
 	text-shadow: none !important;
+}
+a.dsq-subscribe-email {
+	float: left;
 }
 div.dsq-item-trackback {
 	display: none !important;
