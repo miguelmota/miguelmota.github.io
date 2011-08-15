@@ -488,7 +488,11 @@ div.project {
 	margin-bottom: 25px;
 }
 div.project div.image-container {
-	height: 200px;
+	height: 200px;.
+	transition: box-shadow linear .2s;
+	-moz-transition: -moz-box-shadow linear .2s;
+	-o-transition: -o-box-shadow linear .2s;
+	-webkit-transition: -webkit-box-shadow linear .2s;
 }
 span.overlay {
 	background-color: #000;
