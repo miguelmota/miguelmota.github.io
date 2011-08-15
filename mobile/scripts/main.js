@@ -11,7 +11,7 @@ $(document).ready(function(){
 	$('#portfolio div.content').load('/portfolio/miggs section.content', function(){
 		$('div.work-image:not(:first)', this).hide();
 		
-		$('p.work-description', this).appendTo('div.work');
+		$('div.work-description', this).appendTo('div.work');
 		
 		$(this).append("<div class='foodfail' />");
 		
@@ -19,7 +19,7 @@ $(document).ready(function(){
 			
 			$('div.foodfail div.work-image:not(:first)').hide();
 			
-			$('div.foodfail p.work-description').appendTo('div.foodfail div.work');
+			$('div.foodfail div.work-description').appendTo('div.foodfail div.work');
 			
 		});
 		
