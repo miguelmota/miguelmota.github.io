@@ -352,8 +352,7 @@ function showMtip(element) {
 
 function streamPage(){
 	
-	//initialize mtip
-	$('.mtip').mtip();
+
 	
 	
 	//hide social link text
@@ -361,6 +360,9 @@ function streamPage(){
 	showMtip('a.social.latitude');
 	
 	while(c == 0){	
+		
+		//initialize mtip
+		$('.mtip').mtip();
 		
 		// Twitter stream
 		$('div.twitter div.loader').css('display','block');
