@@ -806,10 +806,10 @@ div.follow-container {
 }
 a.twitter-follow-button {
 	float: left;
-	width: 100px;
+	width: 40%;
 }
 a.subscribe-button {
-	color: #ed7e2a;
+	color: #ed7e2a !important;
 	float: right;
 }
 a.subscribe-button img {
