@@ -184,7 +184,7 @@ function showMtip(element) {
 function streamPage(){
 		
 	//initialize mtip
-	$('.mtip').mtip();
+	//$('.mtip').mtip();
 	
 	// Twitter stream
 	$('div.twitter div.loader').css('display','block');
@@ -200,7 +200,7 @@ function streamPage(){
 		    	    $("li.status[id='"+id+"'] span").find(":contains('@')").wrapInner("<a href='http://twitter.com/"+$("li.status[id='"+id+"'] span").find(":contains('@')").text().substr(1)+"'> </a>");
 				});
 				$('div.twitter div.loader').css('display','none');
-				showMtip('a.social.twitter');
+				//showMtip('a.social.twitter');
 			}
 	);
 	
@@ -242,7 +242,7 @@ function streamPage(){
 		    	  	}
 				});
 				$('div.facebook div.loader').css('display','none');
-				showMtip('a.social.facebook');
+				//showMtip('a.social.facebook');
 			}
 	);
 	
@@ -259,7 +259,7 @@ function streamPage(){
 			    	  	$('ul.tumblr-posts').append("<li>&#187; <a href='"+url+"'>"+slug.substring(0,1).toUpperCase()+slug.substr(1,200)+"</a> <span class='stream-date'>"+niceTime(date)+"</span></li>");
 			      }); 
 				  $('div.tumblr div.loader').css('display','none');
-				showMtip('a.social.tumblr');
+				//showMtip('a.social.tumblr');
 			  }
 	);
 	
@@ -274,7 +274,7 @@ function streamPage(){
 					$('ul.delicious-bookmarks').append("<li>&#187; <a href='"+url+"'>"+title+"</a> <span class='stream-date'>"+niceTime(date)+"</span></li>");
 				});
 				$('div.delicious div.loader').css('display','none');
-				showMtip('a.social.delicious');
+				//showMtip('a.social.delicious');
 		}
 	);
 	
@@ -290,7 +290,7 @@ function streamPage(){
 						$('ul.lastfm-tracks').append("<li><a class='link' href='"+url+"'>"+artist+" - "+name+"</a> <span class='stream-date'>"+date+"</span></li>");
 				}); 
 				$('div.lastfm div.loader').css('display','none');
-				showMtip('a.social.lastfm');
+				//showMtip('a.social.lastfm');
 			}
 	);
 	
@@ -307,7 +307,7 @@ function streamPage(){
 			html.push("</ul>");
 			document.getElementById('wakoopa-software').innerHTML = html.join("");
 			$('div.wakoopa div.loader').css('display','none');
-			showMtip('a.social.wakoopa');
+			//showMtip('a.social.wakoopa');
 		}
 	);
 
