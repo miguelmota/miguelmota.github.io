@@ -107,6 +107,9 @@ div.image-container {
 	position: relative;
 	width: 650px;
 }
+div.image-container a {
+	display: block;
+}
 div.image-container img {
 	height: auto;
 	width: 100%;

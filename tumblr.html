@@ -51,6 +51,9 @@
 	div.pagination {
 		margin-bottom: 25px;
 	}
+	a.view-full-size {
+		float: right;
+	}
 	ul li {
 		list-style-type: none;
 	}
@@ -65,30 +68,6 @@
 		border-top: 1px solid #555;
 		padding-top: 10px;
 	}
-	div.image-container {
-		overflow: hidden;
-		position: relative;
-	}
-	div.image-container img {
-		box-shadow: 2px 2px 5px #111;
-		-moz-box-shadow: 2px 2px 5px #111;
-		-o-box-shadow: 2px 2px 5px #111;
-		-webkit-box-shadow: 2px 2px 5px #111;
-		height: auto;
-		width: 650px;
-	}
-	div.zoom-icon {
-		position: absolute;
-		bottom: 10px;	
-		right: 10px;
-		padding: 3px;
-		background-color: #000;
-		color: #fff;
-		-webkit-border-radius: 5px;
-		-moz-border-radius: 5px;
-		border-radius: 5px;
-		opacity: .8;
-	}
 	div.post-footer {
 		font-size: 10px;
 		padding: 5px 0 55px 0;
@@ -97,15 +76,15 @@
 		float: right;
 	}
 	ol.notes {
+		font-size: 10px;
 		margin: 5px 0 50px 0;
 	    padding: 0px;
-	    font-size: 10px;
 	}
 	img.avatar {
-		width: 16px;
 	    height: 16px;
 	    margin-right: 5px;
 	    vertical-align: -4px;
+	    width: 16px;
 	}
 	span.action {
 	    font-weight: bold;
@@ -114,15 +93,12 @@
 	    font-weight: normal;
 	}
 	li.note blockquote {
+		border-left: 1px solid #999;
 		margin: 5px 0 5px 35px;
 		padding-left: 5px;
-		border-left: 1px solid #999;
 	}
-	footer.main-footer {
-		margin-left: 0 !important;
-	}
-	footer.main-footer div.pagination {
-		margin-bottom: 25px;
+	div.pagination {
+		padding-bottom: 25px;
 	}
 	</style>
 	<!--[if lt IE 9]>
@@ -176,8 +152,8 @@
                     <li class='post photo'>
                     	<div class='image-container'>
 	                        {LinkOpenTag}<img src='{PhotoURL-HighRes}' alt='{PhotoAlt}' />{LinkCloseTag}
-	                        <a href='{PhotoURL-HighRes}'><div class='zoom-icon'>view full size</div></a>
 						</div>
+						<a class='view-full-size' href='{PhotoURL-HighRes}'>view full size</a>
                         {block:Caption}
                             <div class='caption'>{Caption}</div>
                         {/block:Caption}
@@ -297,6 +273,40 @@
 			}, function(){
 				jQuery('div.zoom-icon', this).fadeOut(200);
 			});
+			//back to top smooth scroll effect
+			$('a[href*=#]').click(function() {
+				if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
+				&& location.hostname == this.hostname) {
+		            var $target = $(this.hash);
+		            $target = $target.length && $target || $('[name=' + this.hash.slice(1) +']');
+		            if ($target.length) {
+		            	var targetOffset = $target.offset().top;
+		            	$('html,body').animate({scrollTop: targetOffset}, 1000);
+		                return false;
+		            }
+		        }
+		    });
+			$(window).scroll(function () { 
+				var scrollTop = $(document).scrollTop();
+				scrollTop = parseInt(scrollTop);
+				var offset = topYloc+scrollTop+'px';  
+				$('a.top-link').animate({top:offset},{duration:500,queue:false});
+			});
+			topYloc = parseInt($('a.top-link').css('top').substring(0,$('a.top-link').css('top').indexOf('px')));
+
+			
+		});
+
+		$(window).scroll(function(){
+			
+			//toggle back to top link on scroll
+			if(window.pageYOffset >= 200){
+				$('a.top-link').fadeIn(600);
+			}
+			if(window.pageYOffset < 200){
+				$('a.top-link').fadeOut(185);
+			}
+			
 		});
 		
 		$.getScript('http://platform.twitter.com/widgets.js');
