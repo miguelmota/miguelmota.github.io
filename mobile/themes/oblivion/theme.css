@@ -836,17 +836,11 @@ a#standard_view {
 	color: #007299;
 }
 /* STREAM_PAGE ============================================================ */
-span.mtip {
-	display: none;
-}
-div.content img.loader {
-	display: none;
+div.loader {
+	background: url('/images/ajax-loader.gif') no-repeat 0 0;
+	height: 16px;
+	margin-right: 5px;
 	width: 16px;
-	height: 16px;	
-	clear: both;
-	margin: 0 auto;
-	position: relative;
-	top: -25px;
 }
 div#stream a.social {
 	display: block !important;
