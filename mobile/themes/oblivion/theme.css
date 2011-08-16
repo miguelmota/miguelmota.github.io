@@ -981,6 +981,9 @@ div#portfolio span.work-date {
 	color: #555;
 	font-size: 10px !important;
 }
+div#portfolio a.site-link {
+	font-size: 10px !important;
+}
 div#portfolio span.zoom-icon {
 	display: none;
 }
