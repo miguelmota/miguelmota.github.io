@@ -365,7 +365,7 @@ iframe.latitude {
 	float: left;
 	height: 18px;
 	margin-bottom: 5px;
-	overflow: hidden;
+	overflow-y: hidden;
 	width: 100%;
 }
 a.tumblr {
