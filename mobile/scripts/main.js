@@ -145,6 +145,7 @@ function loadDisqus(){
         s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
         (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
     }());
+
 }
 
 //convert UTC time to niceTime, ie. 2 hours ago
