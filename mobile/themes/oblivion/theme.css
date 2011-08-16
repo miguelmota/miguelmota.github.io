@@ -805,9 +805,11 @@ div.follow-container {
 	padding-bottom: 15px;
 }
 a.twitter-follow-button {
-	width: 50%;
+	float: left;
+	width: 100px;
 }
 a.subscribe-button {
+	color: #ed7e2a;
 	float: right;
 }
 a.subscribe-button img {
