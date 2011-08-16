@@ -811,6 +811,7 @@ a.twitter-follow-button {
 a.subscribe-button {
 	color: #ed7e2a !important;
 	float: right;
+	font-size: 10px;
 }
 a.subscribe-button img {
 	height: 12px !important;
