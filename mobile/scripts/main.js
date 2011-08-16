@@ -1,5 +1,11 @@
 $(document).ready(function(){
 	
+	// Open external links in new tab
+	$('a[href^=http]').live('click', function(){
+		window.open(this.href);
+		return false;
+	});
+	
 	$('ul.nav li a, ul.contact li a').contents().wrap("<span class='text' />").end().append("<span class='rsaquo'>&#8250;</span>");
 
 	$('#stream div.content').load('/stream section.content', function(){
