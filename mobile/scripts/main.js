@@ -14,12 +14,25 @@ $(document).ready(function(){
 		$('div.work-description', this).appendTo('div.work');
 		
 		$(this).append("<div class='foodfail' />");
+
 		
 		$('div.foodfail').load('/portfolio/foodfail section.content', function(){
+			
+			$('div.foodfail').after("<div class='miguelmota' />");
 			
 			$('div.foodfail div.work-image:not(:first)').hide();
 			
 			$('div.foodfail div.work-description').appendTo('div.foodfail div.work');
+			
+				$('div.miguelmota').load('/portfolio/miguelmota section.content', function(){
+					
+					$('div.miguelmota div.work-image:not(:first)').hide();
+					
+					$('div.miguelmota div.work-description').appendTo('div.miguelmota div.work');
+					
+					
+					
+				});
 			
 		});
 		
