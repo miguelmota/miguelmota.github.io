@@ -178,7 +178,7 @@ var niceTime = (function(){
 function streamPage(){
 		
 		// Twitter stream
-		$('div.twitter img.loader').css('display','block');
+		$('div.twitter div.loader').css('display','block');
 		$.getJSON('http://twitter.com/status/user_timeline/miguel_mota.json?&count=5&callback=?', 
 				function(data){
 					$.each(data, function(i, status){
@@ -190,12 +190,12 @@ function streamPage(){
 			    	    $("li.status[id='"+id+"'] span").find(":contains('http')").wrapInner("<a href='"+$("li.status[id='"+id+"'] span").find(":contains('http')").text()+"'> </a>");
 			    	    $("li.status[id='"+id+"'] span").find(":contains('@')").wrapInner("<a href='http://twitter.com/"+$("li.status[id='"+id+"'] span").find(":contains('@')").text().substr(1)+"'> </a>");
 					});
-					$('div.twitter img.loader').css('display','none');
+					$('div.twitter div.loader').css('display','none');
 				}
 		);
 		
 		// Facebook stream
-		$('div.facebook img.loader').css('display','block');
+		$('div.facebook div.loader').css('display','block');
 		$.getJSON('https://graph.facebook.com/miguel.mota2/feed?limit=3&callback=?', 
 				function(json){
 					$.each(json.data, function(i, fb){
@@ -231,13 +231,13 @@ function streamPage(){
 			    	  		break;
 			    	  	}
 					});
-					$('div.facebook img.loader').css('display','none');
+					$('div.facebook div.loader').css('display','none');
 				}
 		);
 		
 		
 		// Tumblr stream
-		$('div.tumblr img.loader').css('display','block');
+		$('div.tumblr div.loader').css('display','block');
 		$.getJSON('http://miguelmota.tumblr.com/api/read/json?num=3&callback=?', 
 				function(data){
 					$.each(data.posts, function(i, posts){ 
@@ -247,12 +247,12 @@ function streamPage(){
 				    	  	var slug = this.slug.replace(/-/g,' ');
 				    	  	$('ul.tumblr-posts').append("<li>&#187; <a href='"+url+"'>"+slug.substring(0,1).toUpperCase()+slug.substr(1,200)+"</a> <span class='stream-date'>"+niceTime(date)+"</span></li>");
 				      }); 
-					  $('div.tumblr img.loader').css('display','none');
+					  $('div.tumblr div.loader').css('display','none');
 				  }
 		);
 		
 		// Delicious stream
-		$('div.delicious img.loader').css('display','block');
+		$('div.delicious div.loader').css('display','block');
 		$.getJSON('http://feeds.delicious.com/v2/json/miguelmota/?count=3&callback=?', 
 				function(data){
 					$.each(data, function(i, item){
@@ -261,12 +261,12 @@ function streamPage(){
 			    	  	var date = new Date(item.dt).toUTCString();
 						$('ul.delicious-bookmarks').append("<li>&#187; <a href='"+url+"'>"+title+"</a> <span class='stream-date'>"+niceTime(date)+"</span></li>");
 					});
-					$('div.delicious img.loader').css('display','none');
+					$('div.delicious div.loader').css('display','none');
 			}
 		);
 		
 		// Last.fm stream
-		$('div.lastfm img.loader').css('display','block');
+		$('div.lastfm div.loader').css('display','block');
 		$.getJSON('http://ws.audioscrobbler.com/2.0/?method=user.getRecentTracks&user=miguel_mota&api_key=b25b959554ed76058ac220b7b2e0a026&format=json&limit=5&callback=?', 
 				function(data){       
 					$.each(data.recenttracks.track, function(i, item){ 
@@ -276,12 +276,12 @@ function streamPage(){
 							var date =  item.date['#text'];
 							$('ul.lastfm-tracks').append("<li><a class='link' href='"+url+"'>"+artist+" - "+name+"</a> <span class='stream-date'>"+date+"</span></li>");
 					}); 
-					$('div.lastfm img.loader').css('display','none');
+					$('div.lastfm div.loader').css('display','none');
 				}
 		);
 		
 		// Wakoopa stream
-		$('div.wakoopa img.loader').css('display','block');
+		$('div.wakoopa div.loader').css('display','block');
 		$.getJSON('http://api.wakoopa.com/miguelmota/recently_used.json?limit=3&callback=?', 
 			function wakoopaApi(data){
 				var html = ["<ul class='wakoopa-software'>"];
@@ -292,7 +292,7 @@ function streamPage(){
 				}
 				html.push("</ul>");
 				document.getElementById('wakoopa-software').innerHTML = html.join("");
-				$('div.wakoopa img.loader').css('display','none');
+				$('div.wakoopa div.loader').css('display','none');
 			}
 		);
 
