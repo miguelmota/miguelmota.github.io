@@ -662,7 +662,7 @@ a.subscribe-button {
 	font-size: 12px;
 	font-weight: bold;
 	position: absolute;
-	right: 75px;
+	right: 0;
 }
 a.subscribe-button:hover {
 	background-color: none;
