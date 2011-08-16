@@ -802,9 +802,12 @@ div.blog-description {
 	margin-bottom: 15px;
 }
 div.follow-container {
-	display: none;
+	
 }
-
+a.subscribe-button img {
+	height: 12px;
+	width: 12px;
+}
 img.logo {
 	height: 32px;
 	width: auto;
