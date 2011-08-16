@@ -804,6 +804,9 @@ div.blog-description {
 div.follow-container {
 	
 }
+a.subscribe-button {
+	float: right;
+}
 a.subscribe-button img {
 	height: 12px !important;
 	width: 12px !important;
