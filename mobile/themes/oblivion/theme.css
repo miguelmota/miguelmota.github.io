@@ -805,8 +805,8 @@ div.follow-container {
 	
 }
 a.subscribe-button img {
-	height: 12px;
-	width: 12px;
+	height: 12px !important;
+	width: 12px !important;
 }
 img.logo {
 	height: 32px;
