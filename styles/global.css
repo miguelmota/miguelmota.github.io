@@ -639,6 +639,7 @@ div.blog-info {
 	clear: both;
 	font-size: 10px;
 	height: 30px;
+	overflow: hidden;
 	padding-bottom: 20px;
 	width: 650px; 
 }
