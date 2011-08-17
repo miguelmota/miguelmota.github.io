@@ -52,6 +52,7 @@
 		margin-bottom: 25px;
 	}
 	a.view-full-size {
+		font-size: 10px;
 		float: right;
 	}
 	ul li {
@@ -119,7 +120,7 @@
 			<li><a href='http://www.miguelmota.com/blog'>blog</a></li>
 		</ul>
 	</nav>
-	<div class='content-container''>
+	<div class='content-container'>
 			<h1 class='title'><a href='http://miguelmota.tumblr.com'>Miguel<span class='mota'>Mota</span><span class='slash'>/</span><span class='sub'>Tumblr</span></a></h1>
 			<form class='search-form' action='/search' method='get'>
 	   			<input type='text' class='search-input' name='q' value='[search]' onblur="if(this.value=='') this.value='[search]';" onfocus="if(this.value=='[search]') this.value='';" />
@@ -153,10 +154,13 @@
                     	<div class='image-container'>
 	                        {LinkOpenTag}<img src='{PhotoURL-HighRes}' alt='{PhotoAlt}' />{LinkCloseTag}
 						</div>
-						<a class='view-full-size' href='{PhotoURL-HighRes}'>view full size</a>
+						<a class='view-full-size' href='{PhotoURL-HighRes}' rel='external'>view full size</a>
                         {block:Caption}
                             <div class='caption'>{Caption}</div>
                         {/block:Caption}
+                        {block:Source}
+                            <div class='source'>{Source}</div>
+                        {/block:Source}
                     </li>
                 {/block:Photo}
                 {block:Photoset}
@@ -215,8 +219,8 @@
                             <div class='caption'>{Caption}</div>
                         {/block:Caption}
                     </li>
-	               {/block:Audio}
-	            <div class='post-footer'>
+	             {/block:Audio}
+	             <div class='post-footer'>
 	            	{block:Date}
 	            		 <a href='{Permalink}'>{TimeAgo}</a>
 	            	{/block:Date}
@@ -307,6 +311,12 @@
 				$('a.top-link').fadeOut(185);
 			}
 			
+		});
+		
+		// Open external links in new tab
+		$('a[rel=external]').live('click', function(){
+			window.open(this.href);
+			return false;
 		});
 		
 		$.getScript('http://platform.twitter.com/widgets.js');
