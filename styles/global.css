@@ -647,7 +647,7 @@ div.blog-description {
 	font-size: 10px;
 	height: auto;
 	float: left;
-	width: 300px;
+	width: 380px;
 }
 div.follow-container {
 	background-color: #222;
@@ -661,7 +661,7 @@ div.follow-container {
 }
 a.subscribe-button { 
 	bottom: 5px;
-	border: 0;
+	border: 2px;
 	color: #ed7e2a;
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	font-size: 12px;
