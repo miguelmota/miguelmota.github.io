@@ -185,12 +185,12 @@ function showMtip(element) {
 
 function streamPage(){
 	
-	$('a.twitter').text('Twitter <span class="sub">@miguel_mota</span>');
-	$('a.facebook').text('Facebook <span class="sub">miguel.mota2</span>');
-	$('a.tumblr').text('Tumblr <span class="sub">miguelmota</span>');
-	$('a.delicious').text('Delicious <span class="sub">miguelmota</span>');
-	$('a.lastfm').text('Last.fm <span class="sub">miguel_mota</span>');
-	$('a.wakoopa').text('Wakoopa <span class="sub">miguelmota</span>');	
+	$('a.twitter').html('Twitter <span class="sub">@miguel_mota</span>');
+	$('a.facebook').html('Facebook <span class="sub">miguel.mota2</span>');
+	$('a.tumblr').html('Tumblr <span class="sub">miguelmota</span>');
+	$('a.delicious').html('Delicious <span class="sub">miguelmota</span>');
+	$('a.lastfm').html('Last.fm <span class="sub">miguel_mota</span>');
+	$('a.wakoopa').html('Wakoopa <span class="sub">miguelmota</span>');	
 		
 	//initialize mtip
 	//$('.mtip').mtip();
