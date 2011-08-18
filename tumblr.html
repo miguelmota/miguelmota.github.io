@@ -24,7 +24,7 @@
 	<meta name='description' content='A tumblog about design, code and some other stuff. Mostly infographics.' />
 	<meta name='keywords' content='miguel mota,creative,freelance,web developer,web design,blog,infographics' />
 	<meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=1;' />
-	<title>{block:PostSummary}{PostSummary} &#187; {/block:PostSummary}{block:SearchPage}'{SearchQuery}' search results &#187; {/block:SearchPage}Tumblr &#8212; Miguel Mota</title>
+	<title>{block:PostSummary}{PostSummary} &#187; {/block:PostSummary}{block:SearchPage}'{SearchQuery}' search results &#187; {/block:SearchPage}Tumblr | Miguel Mota</title>
 	<link rel='canonical' href='http://www.miguelmota.com/' />
 	<link rel='alternate' type='application/rss+xml' href='http://feeds.feedburner.com/miguelmota/tumblr'>
 	<link rel='shortcut icon' href='http://www.miguelmota.com/favicon.ico' />
@@ -236,6 +236,11 @@
 				        	<a href='{Permalink}#notes'>{NoteCountWithLabel}</a>
 				        {/block:NoteCount}
 				    </span>
+				    <div class='share-container'>
+						<g:plusone class='plus-one-button' href='{Permalink}' size='medium'></g:plusone>
+						<a class='twitter-share-button' href='http://twitter.cosm/share' data-text='{block:PostSummary}{PostSummary} &#187; {/block:PostSummary}' data-url='{Permalink}' data-via='miguel_mota' data-count='horizontal'>Tweet</a>
+						<a href='http://www.tumblr.com/share' title='{block:PostSummary}{PostSummary} &#187; {/block:PostSummary}' style="display:inline-block; text-indent:-9999px; overflow:hidden; width:81px; height:20px; background:url('http://platform.tumblr.com/v1/share_1.png') top left no-repeat transparent;">Share on Tumblr</a>
+					</div>
 				</div>
 		        {block:PostNotes}
 		        {block:NoteCount} 
@@ -328,6 +333,10 @@
 			  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
 			})();
 		
+		// Initialize Tumblr share button
+		$.getScript('http://platform.tumblr.com/v1/share.js');
+		
+		// Google Analytics
   		var _gaq = _gaq || [];
   		_gaq.push(['_setAccount', 'UA-12642068-1']);
   		_gaq.push(['_setDomainName', '.miguelmota.com']);
