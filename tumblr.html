@@ -101,6 +101,14 @@
 	div.pagination {
 		padding-bottom: 25px;
 	}
+	a.tumblr-share-button {
+		background: url('http://platform.tumblr.com/v1/share_1.png') top left no-repeat transparent;
+		display: inline-block;
+		height: 20px;
+		text-indent: -9999px;
+		overflow: hidden;
+		width: 81px; 
+	}
 	</style>
 	<!--[if lt IE 9]>
 		<script src='http://html5shiv.googlecode.com/svn/trunk/html5.js'></script>
@@ -144,7 +152,7 @@
                 {block:Text}
                     <li class='post text'>
                         {block:Title}
-                            <h3><a href='{Permalink}'>{Title}</a></h3>
+                            <h3><a id='title' href='{Permalink}'>{Title}</a></h3>
                         {/block:Title}
                         {Body}
                     </li>
@@ -156,7 +164,7 @@
 						</div>
 						<a class='view-full-size' href='{PhotoURL-HighRes}' rel='external'>view full size</a>
                         {block:Caption}
-                            <div class='caption'>{Caption}</div>
+                            <div id='caption' class='caption'>{Caption}</div>
                         {/block:Caption}
                         {block:Source}
                             <div class='source'>{Source}</div>
@@ -238,8 +246,8 @@
 				    </span>
 				    <div class='share-container'>
 						<g:plusone class='plus-one-button' href='{Permalink}' size='medium'></g:plusone>
-						<a class='twitter-share-button' href='http://twitter.cosm/share' data-text='{block:PostSummary}{PostSummary} &#187; {/block:PostSummary}' data-url='{Permalink}' data-via='miguel_mota' data-count='horizontal'>Tweet</a>
-						<a href='http://www.tumblr.com/share' title='{block:PostSummary}{PostSummary} &#187; {/block:PostSummary}' style="display:inline-block; text-indent:-9999px; overflow:hidden; width:81px; height:20px; background:url('http://platform.tumblr.com/v1/share_1.png') top left no-repeat transparent;">Share on Tumblr</a>
+						<a id='twitter-share-button' class='twitter-share-button' href='http://twitter.cosm/share' data-text='{block:PostSummary}{PostSummary} &#187; {/block:PostSummary}' data-url='{Permalink}' data-via='miguel_mota' data-count='horizontal'>Tweet</a>
+						<a id='tumblr-share-button'>Share on Tumblr</a>
 					</div>
 				</div>
 		        {block:PostNotes}
@@ -324,7 +332,11 @@
 			return false;
 		});
 		
+		// Initialize Twitter Buttons
 		$.getScript('http://platform.twitter.com/widgets.js');
+		
+		// Initialize Tumblr share button
+		$.getScript('http://platform.tumblr.com/v1/share.js');
 		
 		// Initiatlize Google Plus One
 		(function() {
@@ -333,8 +345,7 @@
 			  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
 			})();
 		
-		// Initialize Tumblr share button
-		$.getScript('http://platform.tumblr.com/v1/share.js');
+
 		
 		// Google Analytics
   		var _gaq = _gaq || [];
@@ -347,6 +358,12 @@
     		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   		})();
   		var addthis_config = {'data_track_clickback':true};
+	</script>
+	<script>
+		document.getElementById('twitter-share-button').setAttribute('data-text', document.getElementById('caption').innerText);
+		
+		var tumblr_button = document.getElementById('tumblr-share-button');
+		tumblr_button.setAttribute('href', 'http://www.tumblr.com/share/&v=3&u='+document.getElementById('title').href+'&t='+document.getElementById('caption').innerText+'&s=');
 	</script>
 </div>
 </body>
