@@ -647,7 +647,7 @@ function contactPage(){
 	}
 	
 }
-
+tc = 0;
 function blogPage(){
 	
 
@@ -655,7 +655,10 @@ function blogPage(){
 	//$.getScript('http://s7.addthis.com/js/250/addthis_widget.js#username=miguelmota');
 	
 	// Initialize Twitter widgets
-	$.getScript('http://platform.twitter.com/widgets.js');
+	while(tc==0){
+		$.getScript('http://platform.twitter.com/widgets.js');
+		tc++;
+	}
 	
 	// Initiatlize Google Plus One
 	/*(function() {
