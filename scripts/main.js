@@ -664,6 +664,9 @@ function blogPage(){
 		  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
 		})();
 	
+	// Initialize Tumblr share button
+	$.getScript('http://platform.tumblr.com/v1/share.js');
+	
 	//initialize Google Search
 	//loadSearch();
 	
