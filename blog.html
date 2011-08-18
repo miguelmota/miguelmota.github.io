@@ -18,11 +18,14 @@ title: Blog
 					{{ post.content }}
 				</div>
 				<div class='share-container'>
-					<g:plusone class='plus-one-button' href='http://www.miguelmota.com{{ post.url }}' size='medium'></g:plusone>
+					
 					<a class='twitter-share-button' href='http://twitter.com/share' data-text='{{ post.title }}' data-url='http://www.miguelmota.com{{ post.url }}' data-via='miguel_mota' data-count='horizontal'>Tweet</a>
-				<a id='tumblr-share-button' class='tumblr-share-button' href='http://www.tumblr.com/share' title='{block:PostSummary}{PostSummary} &#187; {/block:PostSummary}'>Share on Tumblr</a>
-							<script>
 		
+							<script>
+							
+							/*
+									<a id='tumblr-share-button' class='tumblr-share-button' href='http://www.tumblr.com/share' title='{block:PostSummary}{PostSummary} &#187; {/block:PostSummary}'>Share on Tumblr</a>
+							<g:plusone class='plus-one-button' href='http://www.miguelmota.com{{ post.url }}' size='medium'></g:plusone>
 		   var tumblr_link_url = document.getElementById('post-link').getAttribute('href');
 		    var tumblr_link_name = document.getElementById('post-link').innerText;
 		    var tumblr_link_description = document.getElementById('post-content').innerText;
@@ -31,6 +34,7 @@ title: Blog
         tumblr_button.setAttribute("href", "http://www.tumblr.com/share/link?url=" + encodeURIComponent(tumblr_link_url) + "&name=" + encodeURIComponent(tumblr_link_name) + "&description=" + encodeURIComponent(tumblr_link_description));
         tumblr_button.setAttribute("title", tumblr_link_name);
         tumblr_button.setAttribute("style", "display:inline-block; text-indent:-9999px; overflow:hidden; width:81px; height:20px; background:url('http://platform.tumblr.com/v1/share_1.png') top left no-repeat transparent;");
+	*/
 	</script>
 				</div>
 			</div>
