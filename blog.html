@@ -9,16 +9,32 @@ title: Blog
 	<div class='posti'>
 		{% for post in site.posts %}
 			<div class='post blog-p'>
-				<h1 class='post-title'><a href='{{ post.url }}'>{{ post.title }}</a></h1>
+				<h1 class='post-title'><a id='post-link' href='{{ post.url }}'>{{ post.title }}</a></h1>
 				<div class='post-info'>
 					<p><a class='post-date' href='{{ post.url }}'>{{ post.date | date_to_string }}</a> 
 					<a class='dsq-comment-count' href='{{ post.url }}#disqus_thread' data-disqus-identifier='{{ post.url }}'>comments</a></p>
 	 			</div>
-				{{ post.content }}
+	 			<div id='post-content'>
+					{{ post.content }}
+				</div>
 				<div class='share-container'>
 					<g:plusone class='plus-one-button' href='http://www.miguelmota.com{{ post.url }}' size='medium'></g:plusone>
 					<a class='twitter-share-button' href='http://twitter.com/share' data-text='{{ post.title }}' data-url='http://www.miguelmota.com{{ post.url }}' data-via='miguel_mota' data-count='horizontal'>Tweet</a>
-				<a href="http://www.tumblr.com/share" title="{{ post.title }}" style="display:inline-block; text-indent:-9999px; overflow:hidden; width:81px; height:20px; background:url('http://platform.tumblr.com/v1/share_1.png') top left no-repeat transparent;">Share on Tumblr</a>
+				<a id='tumblr-share-button' class='tumblr-share-button' href='http://www.tumblr.com/share' title='{block:PostSummary}{PostSummary} &#187; {/block:PostSummary}'>Share on Tumblr</a>
+							<script>
+		document.getElementById('twitter-share-button').setAttribute('data-text', document.getElementById('caption').innerText);
+		
+		   var tumblr_link_url = document.getElementById('post-title').getAttribute('href');
+		    var tumblr_link_name = document.getElementById('post-title').innerText;
+		    var tumblr_link_description = document.getElementById('post-content').innerText;
+		
+        var tumblr_button = document.getElementById('tumblr-share-button');
+        var tumblr_button = document.createElement("a");
+        tumblr_button.setAttribute("href", "http://www.tumblr.com/share/link?url=" + encodeURIComponent(tumblr_link_url) + "&name=" + encodeURIComponent(tumblr_link_name) + "&description=" + encodeURIComponent(tumblr_link_description));
+        tumblr_button.setAttribute("title", tumblr_photo_title);
+        tumblr_button.setAttribute("style", "display:inline-block; text-indent:-9999px; overflow:hidden; width:81px; height:20px; background:url('http://platform.tumblr.com/v1/share_1.png') top left no-repeat transparent;");
+	</script>
+	 <script type="text/javascript" src="http://platform.tumblr.com/v1/share.js"></script> 
 				</div>
 			</div>
 		{% endfor %}
