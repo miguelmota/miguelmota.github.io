@@ -152,15 +152,15 @@
                 {block:Text}
                     <li class='post text'>
                         {block:Title}
-                            <h3><a id='title' href='{Permalink}'>{Title}</a></h3>
+                            <h3><a href='{Permalink}'>{Title}</a></h3>
                         {/block:Title}
                         {Body}
                     </li>
                 {/block:Text}
                 {block:Photo}
                     <li class='post photo'>
-                    	<div class='image-container'>
-	                        {LinkOpenTag}<img src='{PhotoURL-HighRes}' alt='{PhotoAlt}' />{LinkCloseTag}
+                    	<div id='image' class='image-container'>
+	                        {LinkOpenTag}<img id='photo' src='{PhotoURL-HighRes}' alt='{PhotoAlt}' />{LinkCloseTag}
 						</div>
 						<a class='view-full-size' href='{PhotoURL-HighRes}' rel='external'>view full size</a>
                         {block:Caption}
@@ -247,7 +247,7 @@
 				    <div class='share-container'>
 						<g:plusone class='plus-one-button' href='{Permalink}' size='medium'></g:plusone>
 						<a id='twitter-share-button' class='twitter-share-button' href='http://twitter.cosm/share' data-text='{block:PostSummary}{PostSummary} &#187; {/block:PostSummary}' data-url='{Permalink}' data-via='miguel_mota' data-count='horizontal'>Tweet</a>
-						<a id='tumblr-share-button'>Share on Tumblr</a>
+						<div id='share-button'></div>
 					</div>
 				</div>
 		        {block:PostNotes}
@@ -336,7 +336,7 @@
 		$.getScript('http://platform.twitter.com/widgets.js');
 		
 		// Initialize Tumblr share button
-		$.getScript('http://platform.tumblr.com/v1/share.js');
+		//$.getScript('http://platform.tumblr.com/v1/share.js');
 		
 		// Initiatlize Google Plus One
 		(function() {
@@ -362,9 +362,19 @@
 	<script>
 		document.getElementById('twitter-share-button').setAttribute('data-text', document.getElementById('caption').innerText);
 		
-		var tumblr_button = document.getElementById('tumblr-share-button');
-		tumblr_button.setAttribute('href', 'http://www.tumblr.com/share/&v=3&u='+document.getElementById('title').href+'&t='+document.getElementById('caption').innerText+'&s=');
+        var tumblr_photo_source = document.getElementById("photo").src;
+        var tumblr_photo_caption = document.getElementById("caption").innerText;
+        var tumblr_photo_title = document.getElementById("caption").innerText;
+        var tumblr_photo_click_thru = document.getElementById("image").firstChild.href;
+		
+        var tumblr_button = document.createElement("a");
+        tumblr_button.setAttribute("href", "http://www.tumblr.com/share/photo?source=" + encodeURIComponent(tumblr_photo_source) + "&caption=" + encodeURIComponent(tumblr_photo_caption) + "&click_thru=" + encodeURIComponent(tumblr_photo_click_thru));
+        tumblr_button.setAttribute("title", tumblr_photo_title);
+        tumblr_button.setAttribute("style", "display:inline-block; text-indent:-9999px; overflow:hidden; width:129px; height:20px; background:url('http://platform.tumblr.com/v1/share_3.png') top left no-repeat transparent;");
+        tumblr_button.innerHTML = "Share on Tumblr";
+		document.getElementById('share-button').appendChild(tumblr_button);
 	</script>
+	 <script type="text/javascript" src="http://platform.tumblr.com/v1/share.js"></script> 
 </div>
 </body>
 </html>
