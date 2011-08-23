@@ -96,7 +96,7 @@ $(document).ready(function(){
 	$('ul.main-nav li a').each(function(){ 
 		if($(this).attr('id') == $('section.content').attr('class').split(' ')[1]){
 			$(this).addClass('selected');
-			currentPage+Page();
+			currentPage+'Page();';
 		}
 	});
 	
