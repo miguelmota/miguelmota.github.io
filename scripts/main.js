@@ -44,6 +44,7 @@ $(document).ready(function(){
 	
 	//check pathname and add selected class to nav link
 	//run appropriate function
+	/*
 	switch(pathname.substr(1)){
 		case 'stream':
 			streamPage();
@@ -71,6 +72,7 @@ $(document).ready(function(){
 		portfolioPage();
 	}
 	
+	
 	switch(pathname.substr(1,4)){
 	case 'post':
 		blogPage();
@@ -86,6 +88,16 @@ $(document).ready(function(){
 	default:
 		break;
 	}
+	*/
+	
+	// add selected class base on the section block class
+	$('ul.main-nav li a').each(function(){ 
+		if('section.content').hasClass($(this).attr('id')){
+			$(this).addClass('selected');	
+		}
+	}
+	
+	
 	$('ul.main-nav li a').each(function(){
 		if($(this).attr('href') == pathname){
 			//$('ul.main-nav a#stream').removeClass('selected');
