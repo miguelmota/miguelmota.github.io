@@ -108,7 +108,7 @@ div.image-container {
 	width: 650px;
 }
 div.image-container a {
-	background: #222 !important;
+	background-color: #222;
 	border: 0;
 	display: block;
 	padding: 0;
@@ -539,7 +539,6 @@ img.miguelmota-thumb {
 	width: 110% !important;
 }
 a.fancybox {
-	background: #222 url('/images/ajax-loader-image.gif') no-repeat 50% 50%;
 	display: block;
 	position: relative;
 }
