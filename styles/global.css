@@ -108,7 +108,7 @@ div.image-container {
 	width: 650px;
 }
 div.image-container a {
-	background: #222;
+	background: #222 !important;
 	border: 0;
 	display: block;
 	padding: 0;
