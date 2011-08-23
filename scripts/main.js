@@ -97,9 +97,9 @@ $(document).ready(function(){
 		if($(this).attr('id') == $('section.content').attr('class').split(' ')[1]){
 			$(this).addClass('selected');	
 		}
-	}
+	});
 	
-	
+	/*
 	$('ul.main-nav li a').each(function(){
 		if($(this).attr('href') == pathname){
 			//$('ul.main-nav a#stream').removeClass('selected');
@@ -113,6 +113,7 @@ $(document).ready(function(){
 		}
 	});
 	$('a#'+$('span.sub').text()).addClass('selected');
+	*/
 	
 	//append title
 	$('body').append("<div class='theTitle' style='display: none;'> &#8212; Miguel Mota | Freelance Web Developer</div>");
