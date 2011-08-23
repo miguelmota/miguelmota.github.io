@@ -220,7 +220,7 @@ $(document).ajaxComplete(function(){
 	
 	// add selected class based on the section block class
 	$('ul.main-nav a').removeClass('selected');
-	$('ul.main-nav a#'+$('section.content').attr('class').split(' ')[1]).addClass('selected');
+	$('ul.main-nav a#'+$('section.content').attr('class').split(' ')[1].addClass('selected');
 	switch($('section.content').attr('class').split(' ')[1]){
 		case 'stream':
 			streamPage();
@@ -239,7 +239,7 @@ $(document).ajaxComplete(function(){
 			break;
 	}
 	
-	alert($('section.content').attr('class').split(' ')[1]).addClass('selected'));
+	alert($('section.content').attr('class').split(' ')[1]);
 	
 });
 
