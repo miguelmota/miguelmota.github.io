@@ -539,7 +539,7 @@ img.miguelmota-thumb {
 	width: 110% !important;
 }
 a.fancybox {
-	background: url('/images/ajax-loader-image.gif') no-repeat 50% 50%;
+	background: #222 url('/images/ajax-loader-image.gif') no-repeat 50% 50%;
 	display: block;
 	position: relative;
 }
