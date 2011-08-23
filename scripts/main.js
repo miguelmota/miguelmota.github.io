@@ -214,7 +214,7 @@ $(document).ajaxComplete(function(){
 		}
 		
 		
-	
+	alert(path2);
 		switch(path2){
 			case '':
 			case 'index':
