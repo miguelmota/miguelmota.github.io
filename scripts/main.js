@@ -96,25 +96,24 @@ $(document).ready(function(){
 		if($(this).attr('id') == $('section.content').attr('class').split(' ')[1]){
 			$(this).addClass('selected');
 			switch($('section.content').attr('class').split(' ')[1]){
-			case 'stream':
-				streamPage();
-				break;
-			case 'about':
-				break;
-			case 'portfolio':
-				portfolioPage();
-				break;
-			case 'contact':
-				contactPage();
-				break;
-			case 'blog':
-				blogPage();
-			default:
-				break;
-		}
+				case 'stream':
+					streamPage();
+					break;
+				case 'about':
+					break;
+				case 'portfolio':
+					portfolioPage();
+					break;
+				case 'contact':
+					contactPage();
+					break;
+				case 'blog':
+					blogPage();
+				default:
+					break;
+			}
 		}
 	});
-	alert($('section.content').attr('class').split(' ')[1]);
 	
 	
 	
@@ -181,6 +180,7 @@ $(window).scroll(function(){
 });
 
 $(document).ajaxComplete(function(){
+	/*
 	if(typeof(window.history.pushState) != 'function'){
 		//var path2 = window.location.hash.substr(2);
 		var path2 = window.location.pathname.substr(1);
@@ -198,6 +198,7 @@ $(document).ajaxComplete(function(){
 		$('ul.main-nav a#stream').addClass('selected');
 		//document.title = 'Miguel Mota | Freelance Web Developer';
 	}
+
 	switch(path2){
 		case '':
 		case 'index':
@@ -215,19 +216,8 @@ $(document).ajaxComplete(function(){
 			break;
 		default:
 			break;
-	}
-	if(window.location.pathname.substr(1,4) == 'post'){
-		while(bc == 0) {
-			blogPage();
-			$('ul.main-nav a#stream').removeClass('selected');
-			$('ul.main-nav a#blog').addClass('selected');
-			bc++;
-		}
-	}
-	if(window.location.pathname.substr(1) == 'archive'){
-		$('ul.main-nav a#stream').removeClass('selected');
-		$('ul.main-nav a#blog').addClass('selected');
-	}
+	}*/
+
 });
 
 //global variables
