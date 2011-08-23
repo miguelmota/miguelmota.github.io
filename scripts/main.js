@@ -178,6 +178,7 @@ $(window).scroll(function(){
 	}
 	
 });
+var bsc = 0;
 $(document).ajaxComplete(function(){
 	while (c == 0){
 		if(typeof(window.history.pushState) != 'function'){
@@ -191,7 +192,10 @@ $(document).ajaxComplete(function(){
 		//document.title = title;
 		
 		if($('section.content').attr('class').split(' ')[2] == 'post'){
-			$('ul.main-nav a#blog').addClass('selected');
+			while(bsc == 0) {
+				$('ul.main-nav a#blog').addClass('selected');
+			bsc++;
+			}
 		}
 		else {
 			$('ul.main-nav a').removeClass('selected');
