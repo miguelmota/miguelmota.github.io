@@ -114,6 +114,7 @@ $(document).ready(function(){
 		}
 		}
 	});
+	alert($('section.content').attr('class').split(' ')[1]);
 	
 	
 	
