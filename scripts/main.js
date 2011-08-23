@@ -90,14 +90,17 @@ $(document).ready(function(){
 	}
 	*/
 	
-	alert($('section.content').attr('class').split(' ')[1]);
 	
-	// add selected class base on the section block class
+	// add selected class based on the section block class
+	var currentPage = $('section.content').attr('class').split(' ')[1];
 	$('ul.main-nav li a').each(function(){ 
 		if($(this).attr('id') == $('section.content').attr('class').split(' ')[1]){
-			$(this).addClass('selected');	
+			$(this).addClass('selected');
+			currentPage+Page();
 		}
 	});
+	
+	
 	
 	/*
 	$('ul.main-nav li a').each(function(){
