@@ -572,7 +572,7 @@ div.fancybox-title span {
 }
 div.work-image {
 	height: auto;
-	margin: 5px 0;
+	margin-bottom: 15px;
 	width: 650px;
 }
 div.work-image img {
