@@ -192,7 +192,7 @@ $(document).ajaxComplete(function(){
 		//document.title = title;
 		
 		if($('section.content').attr('class').split(' ')[2] == 'post'){
-			while(bsc == 0) {
+			while(bsc == 1) {
 				$('ul.main-nav a#blog').addClass('selected');
 			bsc++;
 			}
