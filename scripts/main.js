@@ -213,8 +213,7 @@ $(document).ajaxComplete(function(){
 			//document.title = 'Miguel Mota | Freelance Web Developer';
 		}
 		
-		
-	alert(path2);
+	
 		switch(path2){
 			case '':
 			case 'index':
@@ -222,6 +221,7 @@ $(document).ajaxComplete(function(){
 				streamPage();
 				break;
 			case 'portfolio':
+			case 'portfolio/':
 				portfolioPage();
 				break;
 			case 'contact':
