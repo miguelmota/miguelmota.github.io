@@ -6,12 +6,14 @@ layout: default
 <section class='content blog'>
 	{% include header.html %}
 	<div class='posti'>
-		<h1 class='post-title'><a href='{{ page.url }}'>{{ page.title }}</a></h1>
+		<h1 class='post-title'><a class='post-link' href='{{ page.url }}'>{{ page.title }}</a></h1>
 		<div class='post-info'>
 			<p><a class='post-date' href='{{ page.url }}'>{{ page.date | date_to_string }}</a> 
 			<a class='dsq-comment-count' href='{{ page.url }}#disqus_thread' data-disqus-identifier='{{ page.url }}'>comments</a></p>
 	 	</div>
+	 	<div id='post-content'>
 		{{ content }}
+		</div>
 		<div class='share-container'>
 			<g:plusone class='plus-one-button' href='http://www.miguelmota.com{{ page.url }}' size='medium'></g:plusone>
 			<a class='twitter-share-button' href='http://twitter.com/share' data-text='{{ page.title }}' data-url='http://www.miguelmota.com{{ page.url }}' data-via='miguel_mota' data-count='horizontal'>Tweet</a>
