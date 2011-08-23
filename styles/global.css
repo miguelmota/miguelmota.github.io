@@ -108,12 +108,12 @@ div.image-container {
 	width: 650px;
 }
 div.image-container a {
+	background: #222;
 	border: 0;
 	display: block;
 	padding: 0;
 }
 div.image-container img {
-	background: #222;
 	height: auto;
 	width: 100%;
 }
