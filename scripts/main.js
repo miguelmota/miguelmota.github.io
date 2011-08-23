@@ -190,7 +190,15 @@ $(document).ajaxComplete(function(){
 		}
 		var title = $('h1.title span.sub:first').text()+$('div.theTitle').text();
 		//document.title = title;
-		$('ul.main-nav a').removeClass('selected');
+		
+		if($('section.content').attr('class').split(' ')[1] == 'blog'){
+		$('ul.main-nav a#blog').addClass('selected');
+		}
+		else {
+			$('ul.main-nav a').removeClass('selected');
+		}
+		
+		
 		if(path2 != ''){
 			$('ul.main-nav a#'+path2).addClass('selected');
 		}
@@ -198,6 +206,8 @@ $(document).ajaxComplete(function(){
 			$('ul.main-nav a#stream').addClass('selected');
 			//document.title = 'Miguel Mota | Freelance Web Developer';
 		}
+		
+		
 	
 		switch(path2){
 			case '':
