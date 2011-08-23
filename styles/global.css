@@ -96,7 +96,7 @@ div.highlight code {
 	word-wrap: break-word;
 }
 div.image-container {
-	background: url('/images/ajax-loader-image.gif') no-repeat 50% 50%;
+	background: #222 url('/images/ajax-loader-image.gif') no-repeat 50% 50%;
 	box-shadow: 2px 2px 8px rgba(0,0,0,.7);
 	-moz-box-shadow: 2px 2px 8px rgba(0,0,0,.7);
 	-o-box-shadow: 2px 2px 8px rgba(0,0,0,.7);
@@ -108,7 +108,6 @@ div.image-container {
 	width: 650px;
 }
 div.image-container a {
-	background-color: #222;
 	border: 0;
 	display: block;
 	padding: 0;
@@ -539,6 +538,7 @@ img.miguelmota-thumb {
 	width: 110% !important;
 }
 a.fancybox {
+	background: #222 url('/images/ajax-loader-image.gif') no-repeat 50% 50%;
 	display: block;
 	position: relative;
 }
