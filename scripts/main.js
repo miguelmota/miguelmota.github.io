@@ -180,41 +180,44 @@ $(window).scroll(function(){
 });
 
 $(document).ajaxComplete(function(){
-	if(typeof(window.history.pushState) != 'function'){
-		//var path2 = window.location.hash.substr(2);
-		var path2 = window.location.pathname.substr(1);
-	}
-	else{
-		var path2 = window.location.pathname.substr(1);
-	}
-	var title = $('h1.title span.sub:first').text()+$('div.theTitle').text();
-	//document.title = title;
-	$('ul.main-nav a').removeClass('selected');
-	if(path2 != ''){
-		$('ul.main-nav a#'+path2).addClass('selected');
-	}
-	else{
-		$('ul.main-nav a#stream').addClass('selected');
-		//document.title = 'Miguel Mota | Freelance Web Developer';
-	}
-
-	switch(path2){
-		case '':
-		case 'index':
-		case 'stream':
-			streamPage();
-			break;
-		case 'portfolio':
-			portfolioPage();
-			break;
-		case 'contact':
-			contactPage();
-			break;
-		case 'blog': 
-			blogPage();
-			break;
-		default:
-			break;
+	while (c == 0){
+		if(typeof(window.history.pushState) != 'function'){
+			//var path2 = window.location.hash.substr(2);
+			var path2 = window.location.pathname.substr(1);
+		}
+		else{
+			var path2 = window.location.pathname.substr(1);
+		}
+		var title = $('h1.title span.sub:first').text()+$('div.theTitle').text();
+		//document.title = title;
+		$('ul.main-nav a').removeClass('selected');
+		if(path2 != ''){
+			$('ul.main-nav a#'+path2).addClass('selected');
+		}
+		else{
+			$('ul.main-nav a#stream').addClass('selected');
+			//document.title = 'Miguel Mota | Freelance Web Developer';
+		}
+	
+		switch(path2){
+			case '':
+			case 'index':
+			case 'stream':
+				streamPage();
+				break;
+			case 'portfolio':
+				portfolioPage();
+				break;
+			case 'contact':
+				contactPage();
+				break;
+			case 'blog': 
+				blogPage();
+				break;
+			default:
+				break;
+		}
+		c++;
 	}
 
 	
