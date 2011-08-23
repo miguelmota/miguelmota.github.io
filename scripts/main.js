@@ -694,8 +694,8 @@ function blogPage(){
 	// Initialize Twitter widgets
 	while(tc==0){
 		$.getScript('http://platform.twitter.com/widgets.js');
-		tc++;
-	}
+
+	
 	
 	// Initiatlize Google Plus One
 	(function() {
@@ -715,6 +715,8 @@ function blogPage(){
     tumblr_button.setAttribute('title', tumblr_link_name);
     tumblr_button.setAttribute('style', "display:inline-block; text-indent:-9999px; overflow:hidden; width:81px; height:20px; background:url('http://platform.tumblr.com/v1/share_1.png') top left no-repeat transparent;");
 	
+    tc++;
+	}
 	//initialize Google Search
 	//loadSearch();
 	
