@@ -180,7 +180,6 @@ $(window).scroll(function(){
 });
 
 $(document).ajaxComplete(function(){
-	/*
 	if(typeof(window.history.pushState) != 'function'){
 		//var path2 = window.location.hash.substr(2);
 		var path2 = window.location.pathname.substr(1);
@@ -216,30 +215,8 @@ $(document).ajaxComplete(function(){
 			break;
 		default:
 			break;
-	}*/
-	
-	// add selected class based on the section block class
-	$('ul.main-nav a').removeClass('selected');
-	$('ul.main-nav a#'+$('section.content').attr('class').split(' ')[1]).addClass('selected');
-	switch($('section.content').attr('class').split(' ')[1]){
-		case 'stream':
-			streamPage();
-			break;
-		case 'about':
-			break;
-		case 'portfolio':
-			portfolioPage();
-			break;
-		case 'contact':
-			contactPage();
-			break;
-		case 'blog':
-			blogPage();
-		default:
-			break;
 	}
-	
-	alert($('section.content').attr('class').split(' ')[1]);
+
 	
 });
 
