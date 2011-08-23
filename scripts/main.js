@@ -92,11 +92,11 @@ $(document).ready(function(){
 	
 	
 	// add selected class based on the section block class
-	var currentPage = $('section.content').attr('class').split(' ')[1];
+	var currentPageFunction = $('section.content').attr('class').split(' ')[1]+'Page';
 	$('ul.main-nav li a').each(function(){ 
 		if($(this).attr('id') == $('section.content').attr('class').split(' ')[1]){
 			$(this).addClass('selected');
-			currentPage+'Page();';
+			currentPageFunction();
 		}
 	});
 	
