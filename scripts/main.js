@@ -101,7 +101,7 @@ $(document).ready(function(){
 				break;
 			case 'about':
 				break;
-			case 'portfolio/':
+			case 'portfolio':
 				portfolioPage();
 				break;
 			case 'contact':
