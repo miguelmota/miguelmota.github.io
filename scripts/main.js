@@ -218,27 +218,6 @@ $(document).ajaxComplete(function(){
 			break;
 	}*/
 	
-	// add selected class based on the section block class
-	$('ul.main-nav a').removeClass('selected');
-	$('ul.main-nav a#'+$('section.content').attr('class').split(' ')[1]).addClass('selected');
-	$(this).addClass('selected');
-	switch($('section.content').attr('class').split(' ')[1]){
-		case 'stream':
-			streamPage();
-			break;
-		case 'about':
-			break;
-		case 'portfolio':
-			portfolioPage();
-			break;
-		case 'contact':
-			contactPage();
-			break;
-		case 'blog':
-			blogPage();
-		default:
-			break;
-	}
 });
 
 //global variables
@@ -378,6 +357,28 @@ function showNewContent(){
 	}
 	$('h1.title span.sub').show();
 	$('section.content, footer.main').fadeIn('normal',hideLoader);
+	
+	// add selected class based on the section block class
+	$('ul.main-nav a').removeClass('selected');
+	$('ul.main-nav a#'+$('section.content').attr('class').split(' ')[1]).addClass('selected');
+	$(this).addClass('selected');
+	switch($('section.content').attr('class').split(' ')[1]){
+		case 'stream':
+			streamPage();
+			break;
+		case 'about':
+			break;
+		case 'portfolio':
+			portfolioPage();
+			break;
+		case 'contact':
+			contactPage();
+			break;
+		case 'blog':
+			blogPage();
+		default:
+			break;
+	}
 	
 }
 
