@@ -549,6 +549,8 @@ function streamPage(){
 
 function portfolioPage(){
 	
+	/*
+	
 	//show all work with effect
 	$('section.portfolio div.sort a#all').live('click', function(){
 		$('section.portfolio div.sort a').removeClass('selected');
@@ -571,16 +573,21 @@ function portfolioPage(){
 		$('section.portfolio div.web').slideUp('fast');
 		$('section.portfolio div.identity').slideDown('fast');
 	});
+	*/
 	
 	//hover glow effect
-	$('div.image-container').hover(function(){
+	$('div.image-container').live(
+		mouseenter:
+			function(){
 				jQuery('span.overlay', this).fadeOut(200);
 				$(this).css({
 					'-webkit-box-shadow': '0 0 10px #fff',
 					'-moz-box-shadow': '0 0 10px #fff',
 					'box-shadow': '0 0 10px #fff'
 					});
-	},function(){
+	},
+		mouseleave:
+			function(){
 				jQuery('span.overlay', this).hide().fadeIn(300);
 				$(this).css({
 					'-webkit-box-shadow': '2px 2px 5px #111',
