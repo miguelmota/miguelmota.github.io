@@ -90,9 +90,11 @@ $(document).ready(function(){
 	}
 	*/
 	
+	alert($('section.content').attr('class').split(' ')[1]);
+	
 	// add selected class base on the section block class
 	$('ul.main-nav li a').each(function(){ 
-		if('section.content').hasClass($(this).attr('id')){
+		if($(this).attr('id') == $('section.content').attr('class').split(' ')[1]){
 			$(this).addClass('selected');	
 		}
 	}
