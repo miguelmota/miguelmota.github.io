@@ -96,7 +96,7 @@ div.highlight code {
 	word-wrap: break-word;
 }
 div.image-container {
-	background: #000 url('/images/ajax-loader-image.gif') no-repeat 50% 50%;
+	background: url('/images/ajax-loader-image.gif') no-repeat 50% 50%;
 	box-shadow: 2px 2px 8px rgba(0,0,0,.7);
 	-moz-box-shadow: 2px 2px 8px rgba(0,0,0,.7);
 	-o-box-shadow: 2px 2px 8px rgba(0,0,0,.7);
@@ -113,6 +113,7 @@ div.image-container a {
 	padding: 0;
 }
 div.image-container img {
+	background: #222;
 	height: auto;
 	width: 100%;
 }
