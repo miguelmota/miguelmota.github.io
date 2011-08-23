@@ -576,7 +576,7 @@ function portfolioPage(){
 	*/
 	
 	//hover glow effect
-	$('div.image-container').live(
+	$('div.image-container').live({
 		mouseenter:
 			function(){
 				jQuery('span.overlay', this).fadeOut(200);
@@ -595,7 +595,7 @@ function portfolioPage(){
 					'box-shadow': '2px 2px 5px #111'
 					});
 		  }
-	);
+	});
 	
 	
 	
