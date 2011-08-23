@@ -243,7 +243,7 @@ var niceTime = (function(){
 	    };
 	})();
 
-$("ul.main-nav a:not('#logo')").live('click', function(){
+$("ul.main-nav a:not('.nav-logo, #blog')").live('click', function(){
 		if(typeof(window.history.pushState) == 'function'){
 			c = 0;
 			bc = 0;
