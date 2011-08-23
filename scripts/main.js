@@ -191,14 +191,17 @@ $(document).ajaxComplete(function(){
 		var title = $('h1.title span.sub:first').text()+$('div.theTitle').text();
 		//document.title = title;
 		
-		if($('section.content').attr('class').split(' ')[2] == 'post'){
-			while(bsc == 1) {
-				$('ul.main-nav a#blog').addClass('selected');
-			bsc++;
+		$('ul.main-nav a').removeClass('selected');
+		while(bsc == 0) {
+			if($('section.content').attr('class').split(' ')[2] == 'post'){
+	
+					$('ul.main-nav a#blog').addClass('selected');
+	
 			}
-		}
-		else {
-			$('ul.main-nav a').removeClass('selected');
+			else {
+				$('ul.main-nav a').removeClass('selected');
+			}
+		bsc++;
 		}
 		
 		
