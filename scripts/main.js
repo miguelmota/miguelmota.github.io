@@ -190,7 +190,7 @@ $(document).ajaxComplete(function(){
 		var title = $('h1.title span.sub:first').text()+$('div.theTitle').text();
 		//document.title = title;
 		
-		if($('section.content').attr('class').split(' ')[2] == 'post'){{
+		if($('section.content').attr('class').split(' ')[2] == 'post'){
 			$('ul.main-nav a#blog').addClass('selected');
 		}
 		else {
