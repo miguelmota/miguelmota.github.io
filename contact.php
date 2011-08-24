@@ -8,5 +8,5 @@ $message = stripslashes($_POST['message']);
 
 mail(WEBMASTER_EMAIL, $subject, $message,
      "From: ".$name." <".$email.">rn"
-    ."Reply-To: ".$email."rn";
+    ."Reply-To: ".$email."rn");
 ?>

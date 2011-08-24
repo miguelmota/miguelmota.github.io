@@ -670,7 +670,7 @@ function contactPage(){
 	
 	//if validates to true, then submit it
 	if ($('form.contact-form').valid() == true){						  
-		var str = $('form.contact_form').serialize();
+		var str = $('form.contact-form').serialize();
 		$.ajax({
 			type: 'post',
 			url: 'http://www.foodfail.org/miguelmota/contact.php',
