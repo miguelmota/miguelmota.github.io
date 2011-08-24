@@ -218,6 +218,8 @@ $(document).ajaxComplete(function(){
 			case '':
 			case 'index':
 			case 'stream':
+				//initialize mtip
+				$('.mtip').mtip();
 				streamPage();
 				break;
 			case 'portfolio':
@@ -382,8 +384,6 @@ function showNewContent(){
 function hideLoader(){
 	
 	$('div.loader-container').hide();
-	//initialize mtip
-	$('.mtip').mtip();
 	
 }
 
