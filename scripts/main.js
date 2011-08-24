@@ -673,7 +673,7 @@ function contactPage(){
 		var str = $('form.contact_form').serialize();
 		$.ajax({
 			type: 'post',
-			url: 'http://miguelmota.webuda.com/contact/mailer.php',
+			url: 'http://www.foodfail.org/miguelmota/contact.php',
 			data: str,
 			success: function(){
 				success();
