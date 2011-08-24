@@ -218,8 +218,6 @@ $(document).ajaxComplete(function(){
 			case '':
 			case 'index':
 			case 'stream':
-				//initialize mtip
-				$('.mtip').mtip();
 				streamPage();
 				break;
 			case 'portfolio':
@@ -385,6 +383,9 @@ function hideLoader(){
 	
 	$('div.loader-container').hide();
 	
+	//initialize mtip
+	$('.mtip').mtip();
+	
 }
 
 function showMtip(element) {
@@ -406,8 +407,7 @@ function streamPage(){
 	
 	while(c == 0){	
 		
-		//initialize mtip
-		//$('.mtip').mtip();
+	
 		
 		// Twitter stream
 		$('div.twitter div.loader').css('display','block');
