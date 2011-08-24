@@ -691,6 +691,7 @@ function contactPage(){
 	//hide contact form and display thank you message
 	function success(){
 		$('form.contact-form').slideUp(300);
+		$('a.contact-submit button').html('<span>sending...</span>');
 		setTimeout(function(){
 			$('form.contact-form').html('<p>Thank you.<br />Your message has been successfully sent!<br />I will get in touch with you soon.</p>').fadeIn(1200);	
 		}, 300);

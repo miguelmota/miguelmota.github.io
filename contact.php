@@ -1,4 +1,5 @@
 <?php
+header('Access-Control-Allow-Origin: *');
 define("WEBMASTER_EMAIL", 'miguelmota2@gmail.com');
 
 $name = stripslashes($_POST['name']);
