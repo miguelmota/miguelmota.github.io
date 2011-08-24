@@ -312,6 +312,9 @@ $("ul.main-nav a:not('.nav-logo, #blog')").live('click', function(){
 		else{
 			return true;
 		}
+		
+		//initialize mtip
+		$('.mtip').mtip();
 });
 
 
