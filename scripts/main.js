@@ -287,8 +287,6 @@ var niceTime = (function(){
 	})();
 
 $("ul.main-nav a:not('.nav-logo, #blog')").live('click', function(){
-	//initialize mtip
-	$('.mtip').mtip();
 		if(typeof(window.history.pushState) == 'function'){
 			c = 0;
 			bc = 0;
@@ -384,6 +382,8 @@ function showNewContent(){
 function hideLoader(){
 	
 	$('div.loader-container').hide();
+	//initialize mtip
+	$('.mtip').mtip();
 	
 }
 
