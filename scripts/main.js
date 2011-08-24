@@ -402,10 +402,12 @@ function streamPage(){
 	$("div.stream a.social:not('.latitude')").text('');
 	showMtip('a.social.latitude');
 	
+	//initialize mtip
+	$('.mtip').mtip();
+	
 	while(c == 0){	
 		
-		//initialize mtip
-		$('.mtip').mtip();
+
 		
 		// Twitter stream
 		$('div.twitter div.loader').css('display','block');
