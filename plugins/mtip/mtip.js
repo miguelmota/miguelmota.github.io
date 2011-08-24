@@ -16,12 +16,13 @@
 			$(this).live({
 				mouseenter:
 					function() {
-					$(this).prev().text(title).stop(true,true).animate({opacity: 'show', top: '-30'}, 'slow');
-				}, 
+						$(this).prev().text(title).stop(true,true).animate({opacity: 'show', top: '-30'}, 'slow');
+					}, 
 				mouseleave:
 					function() {
-					$(this).prev().animate({opacity: 'hide', top: '-20'}, 'fast');
-			}
+						$(this).prev().animate({opacity: 'hide', top: '-20'}, 'fast');
+					}
+			});
 		});
 	}
 })(jQuery);
