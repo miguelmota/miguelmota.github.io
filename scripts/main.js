@@ -407,7 +407,7 @@ function streamPage(){
 	while(c == 0){	
 		
 		//initialize mtip
-		$('.mtip').mtip();
+		//$('.mtip').mtip();
 		
 		// Twitter stream
 		$('div.twitter div.loader').css('display','block');
