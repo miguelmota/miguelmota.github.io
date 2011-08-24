@@ -312,9 +312,6 @@ $("ul.main-nav a:not('.nav-logo, #blog')").live('click', function(){
 		else{
 			return true;
 		}
-		
-		//initialize mtip
-		$('.mtip').mtip();
 });
 
 
@@ -386,9 +383,6 @@ function hideLoader(){
 	
 	$('div.loader-container').hide();
 	
-	//initialize mtip
-	$('.mtip').mtip();
-	
 }
 
 function showMtip(element) {
@@ -410,7 +404,8 @@ function streamPage(){
 	
 	while(c == 0){	
 		
-	
+		//initialize mtip
+		$('.mtip').mtip();
 		
 		// Twitter stream
 		$('div.twitter div.loader').css('display','block');
