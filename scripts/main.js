@@ -669,8 +669,8 @@ function contactPage(){
 	});
 	
 	//if validates to true, then submit it
-	/*
-	if ($('form.contact-form').valid() == true){	
+	//if ($('form.contact-form').valid() == true){	
+	if (1 == 4){	
 		var str = $('form.contact-form').serialize();
 		$.ajax({
 			type: 'post',
@@ -699,7 +699,7 @@ function contactPage(){
 			$('form.contact-form').html('<p>Thank you.<br />Your message has been successfully sent!<br />I will get in touch with you soon.</p>').fadeIn(1200);	
 		}, 300);
 	}
-	*/
+
 	
 }
 tc = 0;
