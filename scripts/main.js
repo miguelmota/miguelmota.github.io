@@ -679,7 +679,7 @@ function contactPage(){
 				success();
 			},
 			error: function(){
-				success();
+				$('form.contact-form').html('<p>Sorry, there was an error. Message not sent.</p>');
 			}
 		});
 		return false;
