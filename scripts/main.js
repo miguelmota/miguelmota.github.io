@@ -669,7 +669,8 @@ function contactPage(){
 	});
 	
 	//if validates to true, then submit it
-	if ($('form.contact-form').valid() == true){						  
+	/*
+	if ($('form.contact-form').valid() == true){	
 		var str = $('form.contact-form').serialize();
 		$.ajax({
 			type: 'post',
@@ -688,6 +689,7 @@ function contactPage(){
 	else
 		return false;
 	});
+	*/
 	
 	//hide contact form and display thank you message
 	function success(){
