@@ -669,11 +669,11 @@ function contactPage(){
 	});
 	
 	//if validates to true, then submit it
-	//if ($('form.contact-form').valid() == true){	
-	if (1 == 4){	
+	if ($('form.contact-form').valid() == true){	
+	//if (1 == 4){	
 		var str = $('form.contact-form').serialize();
 		$.ajax({
-			type: 'post',
+			type: 'get',
 			//url: 'http://www.foodfail.org/miguelmota/contact.php',
 			url: 'http://miguelmota.webuda.com/contact/contact.php',
 			data: str,
