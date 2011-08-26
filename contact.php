@@ -11,4 +11,6 @@ mail(WEBMASTER_EMAIL, $subject, $message,
      "From: ".$name." <".$email.">rn"
     ."Reply-To: ".$email."rn"
     ."X-Mailer: PHP/" . phpversion());
+    
+    echo $message;
 ?>
