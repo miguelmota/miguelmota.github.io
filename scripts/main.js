@@ -419,6 +419,7 @@ function streamPage(){
 			    	  	$('ul.twitter-status').append("<li id='"+id+"' class='status'>&#187; <span class='post'>"+newText+"</span> <span class='stream-date'><a href='http://twitter.com/miguel_mota/status/"+id+"'>"+niceTime(date)+"</a></span></li>");
 			    	    $("li.status[id='"+id+"'] span").find(":contains('http')").wrapInner("<a href='"+$("li.status[id='"+id+"'] span").find(":contains('http')").text()+"'> </a>");
 			    	    $("li.status[id='"+id+"'] span").find(":contains('@')").wrapInner("<a href='http://twitter.com/"+$("li.status[id='"+id+"'] span").find(":contains('@')").text().substr(1)+"'> </a>");
+			    	    $("li.status[id='"+id+"'] span").find(":contains('#')").wrapInner("<a href='http://twitter.com/#!/search/"+$("li.status[id='"+id+"'] span").find(":contains('#')").text().substr(1)+"'> </a>");
 					});
 					$('div.twitter div.loader').css('display','none');
 					showMtip('a.social.twitter');
