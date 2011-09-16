@@ -2,15 +2,15 @@
 * {
 	opacity: none;	
 }
-section.stream div.stream.latitude {
+div.stream.latitude {
 	display: none !important;	
 }
-section.portfolio div.container div.overlay {
+span.overlay {
 	display: none !important;
 }
-section.portfolio div.container {
+div.image-container {
 	border: 1px solid #999;
 }
-section.portfolio div.container:hover {
-	border-color: #007799;
+div.image-container:hover {
+	border-color: #007299;
 }
