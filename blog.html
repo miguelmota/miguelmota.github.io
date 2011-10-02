@@ -15,10 +15,10 @@ title: Blog
 					<a class='dsq-comment-count' href='{{ post.url }}#disqus_thread' data-disqus-identifier='{{ post.url }}'>comments</a></p>
 	 			</div>
 	 			<div id='post-content'>
-					{{ post.excerpt }}66
+					{{ post.excerpt }}
 				</div>
 						{% for category in post.categories %}
-							<a href='{{ post.category }}'>{{ post.category }}</a>-
+							<a name="{{ category | first }}">{{ category | first }}</a> 
 						{% endfor %}
 				<div class='share-container'>
 					<g:plusone class='plus-one-button' href='http://www.miguelmota.com{{ post.url }}' size='medium'></g:plusone>
