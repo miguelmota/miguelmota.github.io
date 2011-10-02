@@ -15,9 +15,9 @@ title: Blog
 					<a class='dsq-comment-count' href='{{ post.url }}#disqus_thread' data-disqus-identifier='{{ post.url }}'>comments</a></p>
 	 			</div>
 	 			<div id='post-content'>
-					{{ post.excerpt }}
+					{{ post.excerpt }}66
 				</div>
-						{% for post in post.categories %}
+						{% for category in post.categories %}
 							<a href='{{ post.category }}'>{{ post.category }}</a>-
 						{% endfor %}
 				<div class='share-container'>
