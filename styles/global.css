@@ -707,6 +707,9 @@ a.post-date {
 a.dsq-comment-count {
 	float: right;
 }
+div.tags-wrap {
+	padding-top: 10px;	
+}
 div.share-container {
 	background-color: #222;
 	clear: both;
