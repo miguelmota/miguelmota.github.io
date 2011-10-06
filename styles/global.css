@@ -708,14 +708,14 @@ a.dsq-comment-count {
 	float: right;
 }
 div.tags-wrap {
-	padding-top: 10px;	
+	padding-top: 30px;	
 }
 div.share-container {
 	background-color: #222;
 	clear: both;
 	padding: 5px;
 	width: 100%;
-	margin: 30px 0 20px 0;
+	margin: 15px 0 20px 0;
 }
 a.archive-link {
 	margin-top: 25px;
