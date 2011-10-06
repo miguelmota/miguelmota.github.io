@@ -708,6 +708,7 @@ a.dsq-comment-count {
 	float: right;
 }
 div.tags-wrap {
+	font-size: 10px;
 	padding-top: 30px;	
 }
 div.share-container {

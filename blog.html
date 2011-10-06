@@ -19,7 +19,7 @@ title: Blog
 				</div>
 				<div class='tags-wrap'>
 					{% for category in post.categories %}
-						<a name='{{ category | first }}'>{{ category | first }}</a> 
+						<a href='/tag/{{ category | first }}' name='{{ category | first }}'>{{ category | first }}</a> 
 					{% endfor %}
 				</div>
 				<div class='share-container'>
