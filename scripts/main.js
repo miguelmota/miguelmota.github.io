@@ -420,11 +420,13 @@ function streamPage(){
 			    	    $("li.status[id='"+id+"'] span").find(":contains('http')").wrapInner("<a href='"+$("li.status[id='"+id+"'] span").find(":contains('http')").text()+"'> </a>");
 			    	    $("li.status[id='"+id+"'] span").find(":contains('@')").wrapInner("<a href='http://twitter.com/"+$("li.status[id='"+id+"'] span").find(":contains('@')").text().substr(1)+"'> </a>");
 			    	    $("li.status[id='"+id+"'] span").find(":contains('#')").wrapInner("<a href='http://twitter.com/#!/search/"+$("li.status[id='"+id+"'] span").find(":contains('#')").text().substr(1)+"'> </a>");
+						$('div.twitter div.loader').css('display','none');
 					});
 					showMtip('a.social.twitter');
 				}
 		);
 		
+		});
 		
 		// Facebook stream
 		$('div.facebook div.loader').css('display','block');
@@ -487,7 +489,7 @@ function streamPage(){
 		
 		// Delicious stream
 		$('div.delicious div.loader').css('display','block');
-		$.getJSON('http://feeds.delicious.com/v2/json/miguelmota?count=3&callback=?', 
+		$.getJSON('http://feeds.delicious.com/v2/json/miguelmota/?count=3&callback=?', 
 				function(data){
 					$.each(data, function(i, item){
 						var title = item.d;
