@@ -420,15 +420,10 @@ function streamPage(){
 			    	    $("li.status[id='"+id+"'] span").find(":contains('http')").wrapInner("<a href='"+$("li.status[id='"+id+"'] span").find(":contains('http')").text()+"'> </a>");
 			    	    $("li.status[id='"+id+"'] span").find(":contains('@')").wrapInner("<a href='http://twitter.com/"+$("li.status[id='"+id+"'] span").find(":contains('@')").text().substr(1)+"'> </a>");
 			    	    $("li.status[id='"+id+"'] span").find(":contains('#')").wrapInner("<a href='http://twitter.com/#!/search/"+$("li.status[id='"+id+"'] span").find(":contains('#')").text().substr(1)+"'> </a>");
-			    	    $("div.twitter").html(data[0].text);
 					});
 					showMtip('a.social.twitter');
 				}
 		);
-		
-		$.getJSON("http://twitter.com/statuses/user_timeline/miguel_mota.json?callback=?", function(data) {
-		     $("div.twitter").html(data[0].text);
-		});
 		
 		// Facebook stream
 		$('div.facebook div.loader').css('display','block');
