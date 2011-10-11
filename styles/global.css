@@ -357,6 +357,9 @@ a.social {
 	padding: 0 !important;
 	width: auto;
 }
+div.latitude {
+	display: none;
+}
 a.latitude {
 	color: #999;
 	font-size: 18px;
