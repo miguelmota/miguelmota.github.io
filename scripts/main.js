@@ -425,9 +425,6 @@ function streamPage(){
 				}
 		);
 		
-		$.getJSON("http://twitter.com/statuses/user_timeline/miguel_mota.json?callback=?", function(data) {
-		     $("div.twitter").html(data[0].text);
-		});
 		
 		// Facebook stream
 		$('div.facebook div.loader').css('display','block');
