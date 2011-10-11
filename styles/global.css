@@ -292,6 +292,9 @@ section.content {
 	text-shadow: 0 -1px 0 rgba(0,0,0,.5);
 	width: 650px;
 }
+section.content img {
+	background-color: #000;	
+}
 div.content-container {
 	height: auto;
 	float: right;
@@ -356,6 +359,9 @@ a.social {
 	margin-bottom: 5px;
 	padding: 0 !important;
 	width: auto;
+}
+div.latitude {
+	display: none;
 }
 a.latitude {
 	color: #999;
@@ -590,7 +596,7 @@ div.work-image img {
 	CONTACT
 ============================================================================== */
 div.contact-qrcode {
-	background: url('/images/qrcode.png') no-repeat 0 0;
+	background: #000 url('/images/qrcode.png') no-repeat 0 0;
 	float: right;
 	height: 88px;
 	position: absolute;

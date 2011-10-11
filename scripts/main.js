@@ -490,7 +490,7 @@ function streamPage(){
 		
 		// Delicious stream
 		$('div.delicious div.loader').css('display','block');
-		$.getJSON('http://feeds.delicious.com/v2/json/miguelmota/?count=3&callback=?', 
+		$.getJSON('http://feeds.delicious.com/v2/json/miguelmota?count=3&callback=?', 
 				function(data){
 					$.each(data, function(i, item){
 						var title = item.d;
