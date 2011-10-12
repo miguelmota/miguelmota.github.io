@@ -431,7 +431,7 @@ function streamPage(){
 						return t.link("http://search.twitter.com/search?q="+tag);
 					});
 					
-					newText = newText.(parseURL().parseUsername()).parseHashtag();
+					newText = newText.parseURL().parseUsername().parseHashtag();
 			    	  	$('ul.twitter-status').append("<li id='"+id+"' class='status'>&#187; <span class='post'>"+newText+"</span> <span class='stream-date'><a href='http://twitter.com/miguel_mota/status/"+id+"'>"+niceTime(date)+"</a></span></li>");
 			    	   
 		
