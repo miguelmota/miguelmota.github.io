@@ -416,7 +416,7 @@ function streamPage(){
 						var id = status.id_str;
 			    	  	var date = new Date(status.created_at).toUTCString();
 				        //var newText = '<span>'+post.split(' ').join('</span> <span>')+'</span>';
-				       String.prototype.parseURL = function() {
+				     /*  String.prototype.parseURL = function() {
 						return this.replace(/[A-Za-z]+:\/\/[A-Za-z0-9-_]+\.[A-Za-z0-9-_:%&~\?\/.=]+/g, function(url) {
 						return url.link(url);
 					});
@@ -429,9 +429,9 @@ function streamPage(){
 					return this.replace(/[#]+[A-Za-z0-9-_]+/g, function(t) {
 						var tag = t.replace("#","%23")
 						return t.link("http://search.twitter.com/search?q="+tag);
-					});
+					}); */
 					
-					var newText = post;
+					var newText = '22';
 			    	  	$('ul.twitter-status').append("<li id='"+id+"' class='status'>&#187; <span class='post'>"+newText+"</span> <span class='stream-date'><a href='http://twitter.com/miguel_mota/status/"+id+"'>"+niceTime(date)+"</a></span></li>");
 			    	   
 		
