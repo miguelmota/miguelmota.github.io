@@ -27,7 +27,7 @@ a {
 }
 a:hover {
  	background-color: #222;
- 	border-left: 3px solid #333;
+ 	border-left-color: #333;
 	color: #0083aa;
 	text-shadow: 0 1px 0 rgba(0,0,0,.9);
 }
