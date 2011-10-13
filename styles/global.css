@@ -725,7 +725,7 @@ div.share-container {
 	margin: 15px 0 20px 0;
 }
 .tumblr-share-button {
-	border: 0;
+	border-left: 0;
 	padding: 0;
 }
 a.archive-link {
