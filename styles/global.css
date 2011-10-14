@@ -501,6 +501,8 @@ a.google-plus-link {
 	float: right;
 }
 .work-sort-wrap a.selected {
+	background-color: none;
+	border-left: 0;
 	color: #999;
 }
 div.project {
