@@ -577,7 +577,7 @@ function portfolioPage(){
 	*/
 	
 	//hover glow effect
-	$('div.image-container').live({
+	$("div.image-container:has('a')").live({
 		mouseenter:
 			function(){
 				jQuery('span.overlay', this).fadeOut(200);
