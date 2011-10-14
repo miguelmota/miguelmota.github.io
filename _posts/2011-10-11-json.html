@@ -35,8 +35,7 @@ $.getJSON('http://feeds.delicious.com/v2/json/miguelmota?count=3&callback=?',
 {% endhighlight %}
 
 <p>We are using the <code>$.getJSON</code> function. We're going to loop though the data with the <code>$.each</code> function and get the 
-<code>title</code>, <code>url</code> and <code>date</code>. For the date we are going to create a new <code>Date()</code> instance and converted to a 
-<code>UTC string</code>. Then we are appending a list item to our unordered list that we created earlier which will include our variables.
+<code>title</code>, <code>url</code> and <code>date</code>. For the date we are going to create a new <code>Date()</code> object and converted to a UTC string. Then we are appending a list item to our unordered list that we created earlier which will include our variables.
 So now after it complete the jquery, let's remove the loader:</p>
 
 {% highlight javascript %}
@@ -55,7 +54,7 @@ $.getJSON('http://feeds.delicious.com/v2/json/miguelmota?count=3&callback=?',
 
 <p>But hold on, if we leave it like that, the date will show as a UTF string and will look like <code>Tue, 11 Oct 2011 05:40:47 GMT</code>.
 We want to display it as <code>time ago</code> so we will use <a href='http://james.padolsey.com/javascript/recursive-pretty-date/'>James Padolsey's "pretty-date" function</a>.
-Before the <code>$.getJSON</code> function, include:</p>
+Before the <code>$.getJSON</code> function, add:</p>
 
 {% highlight javascript %}
 var niceTime = (function(){
@@ -83,7 +82,7 @@ var niceTime = (function(){
 })();
 {% endhighlight %}
 
-<p>Now add the <code>date</code> variable as the <code>niceTime()</code> function argument like so:</p>
+<p>Now include the <code>date</code> variable as the <code>niceTime()</code> function argument like so:</p>
 
 {% highlight javascript %}
 <time class='date'>"+niceTime(date)+"<time>
