@@ -8,8 +8,8 @@ categories:
 <p>If you look below you see my three most recently saved bookmarks from <a href='http://delicious.com/'>delicious</a>:</p>
 
 <div class='highlight'>
-<ul id='delicious-bookmarks'></ul>
-<div class='loader'>fetching bookmarks...</div>
+	<ul id='delicious-bookmarks'></ul>
+	<div class='loader'>fetching bookmarks...</div>
 </div>
 
 <script>
@@ -26,7 +26,6 @@ $.getJSON('http://feeds.delicious.com/v2/json/miguelmota?count=3&callback=?',
 );
 </script>
 
-
 <p>So how did I do this? First let's create an empty unordered list with a div below it that will serve as a loader:</p>
 
 {% highlight html %}
@@ -34,7 +33,7 @@ $.getJSON('http://feeds.delicious.com/v2/json/miguelmota?count=3&callback=?',
 <div class='loader'>fetching bookmarks...</div>
 {% endhighlight %}
 
-<p>We are using the <code>$.getJSON</code> function. Let's add our url and and then loop though the data with the <code>$.each</code> function and get the 
+<p>We are using the <code>$.getJSON()</code> function. Let's add our json request url and and then loop though the requested data with the <code>$.each()</code> function and get the 
 <code>title</code>, <code>url</code> and <code>date</code>. Then we are appending a list item to our unordered list that we created earlier which will include our variables.
 So now after it complete the jquery, let's remove the loader:</p>
 
@@ -54,7 +53,7 @@ $.getJSON('http://feeds.delicious.com/v2/json/miguelmota?count=3&callback=?',
 
 <p>But hold on, if we leave it like that, the date will show in ISO-8601 standard which will look like <script>var d = new Date().toISOString();</script><code><script>document.write(d);</script></code>.
 We want to display it as <code>time ago</code> so we will use <a href='http://james.padolsey.com/javascript/recursive-pretty-date/'>James Padolsey's "pretty-date" function</a>.
-Before the <code>$.getJSON</code> function, add:</p>
+Before the <code>$.getJSON()</code> function, add:</p>
 
 {% highlight javascript %}
 var niceTime = (function(){
