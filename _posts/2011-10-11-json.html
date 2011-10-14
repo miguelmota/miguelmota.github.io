@@ -5,23 +5,19 @@ categories:
 - jquery
 - json
 ---
-<p></p>
+<ul id='delicious-bookmarks'></ul>
 <script>
-$('div.delicious div.loader').css('display','block');
 $.getJSON('http://feeds.delicious.com/v2/json/miguelmota?count=3&callback=?',
   function(data){
     $.each(data, function(i, item){
-      var title = item.d;
-      var url = item.u;
-      var date = new Date(item.dt).toUTCString();
-$('ul.delicious-bookmarks').append("<li>&#187; <a href='"+url+"'>"+title+"</a> <span class='stream-date'>"+niceTime(date)+"</span></li>");
-});
-$('#delicious div.loader').css('display','none');
-showMtip('a.social.delicious');
-}
+        var title = item.d;
+	      var url = item.u;
+	      var date = new Date(item.dt).toUTCString();
+	      $('#delicious-bookmarks').append("<li>&#187; <a href='"+url+"'>"+title+"</a> <time class='date'>"+date+"</span></time>");
+    	});
+	}
 );
 </script>
-<ul id='delicious-bookmarks'></ul>
 
 <p>Let's create an empty unordered list:</p>
 
@@ -32,17 +28,15 @@ showMtip('a.social.delicious');
 <p>Now the fun part:</p>
 
 {% highlight javascript %}
-$('div.delicious div.loader').css('display','block');
 $.getJSON('http://feeds.delicious.com/v2/json/miguelmota?count=3&callback=?',
-  function(data){
-    $.each(data, function(i, item){
-      var title = item.d;
-      var url = item.u;
-      var date = new Date(item.dt).toUTCString();
-      $('ul#delicious-bookmarks').append("<li>&#187; <a href='"+url+"'>"+title+"<time class='stream-date'>"+niceTime(datetime</span></li>");
-});
-$('#delicious div.loader').css('display','none');
-}
+	  function(data){
+	    $.each(data, function(i, item){
+		      var title = item.d;
+		      var url = item.u;
+		      var date = new Date(item.dt).toUTCString();
+		      $('#delicious-bookmarks').append("<li>&#187; <a href='"+url+"'>"+title+"</a> <time class='date'>"+date+"</span></time>");
+	    	});
+		}
 );
 {% endhighlight %}
 
