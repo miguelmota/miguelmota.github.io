@@ -5,7 +5,7 @@ categories:
 - jquery
 - json
 ---
-<p>If you look below you see my three recently saved bookmarks in delicious.</p>
+<p>If you look below you see my three recently saved bookmarks in delicious"</p>
 
 <ul id='delicious-bookmarks'></ul>
 <div class='loader'>fetching bookmarks...</div>
@@ -14,7 +14,7 @@ categories:
 $.getJSON('http://feeds.delicious.com/v2/json/miguelmota?count=3&callback=?',
   function(data){
     $.each(data, function(i, item){
-        var title = item.d;
+	      var title = item.d;
 	      var url = item.u;
 	      var date = new Date(item.dt).toUTCString();
 	      $('#delicious-bookmarks').append("<li>&#187; <a href='"+url+"'>"+title+"</a> <time class='date'>"+date+"<time></li>");
@@ -25,7 +25,7 @@ $.getJSON('http://feeds.delicious.com/v2/json/miguelmota?count=3&callback=?',
 </script>
 
 
-<p>So how did I do this? First let's create an empty unordered list with a div with below it that will serve as a loader:</p>
+<p>So how did I do this? First let's create an empty unordered list with a div below it that will serve as a loader:</p>
 
 {% highlight html %}
 <ul id='delicious-bookmarks'></ul>
