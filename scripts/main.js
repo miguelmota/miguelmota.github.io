@@ -574,11 +574,11 @@ function portfolioPage(){
 	});
 	
 	// Show other work with effect
-	$('.work-sort-other').live('click', function(){
+	$('.work-sort-code').live('click', function(){
 		$('.work-sort-wrap a').removeClass('selected');
 		$(this).addClass('selected');
-		$(".project:not('.project-other')").slideUp('fast');
-		$('.project-other').slideDown('fast');
+		$(".project:not('.project-code')").slideUp('fast');
+		$('.project-code').slideDown('fast');
 	});
 
 	
