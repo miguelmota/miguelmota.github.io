@@ -149,7 +149,6 @@ h1.title {
 	text-shadow: 0 -1px 0 #000;
 	text-transform: uppercase;
 	width: 650px;
-	border: 1px solid black;
 }
 h1.title span.mota {
 	font-weight: normal;
@@ -507,6 +506,7 @@ a.google-plus-link {
 	background-color: #252525;
 	border-left-color: #252525;
 	color: #999;
+	text-shadow: 0 -1px 0 rgba(0,0,0,.5);
 }
 div.project {
 	margin-bottom: 25px;
