@@ -550,31 +550,37 @@ function streamPage(){
 
 function portfolioPage(){
 	
-	/*
-	
-	//show all work with effect
-	$('section.portfolio div.sort a#all').live('click', function(){
-		$('section.portfolio div.sort a').removeClass('selected');
+	// Show all work with effect
+	$('.work-sort-all').live('click', function(){
+		$('.work-sort-wrap a').removeClass('selected');
 		$(this).addClass('selected');
-		$('section.portfolio div.identity, section.portfolio div.web').slideDown('fast');
+		$('.project').slideDown('fast');
 	});
 
-	//show web work with effect 
-	$('section.portfolio div.sort a#web').live('click', function(){
-		$('section.portfolio div.sort a').removeClass('selected');
+	// Show web work with effect 
+	$('.work-sort-web').live('click', function(){
+		$('.work-sort-wrap a').removeClass('selected');
 		$(this).addClass('selected');
-		$('section.portfolio div.identity').slideUp('fast');
-		$('section.portfolio div.web').slideDown('fast');
+		$('.project').slideUp('fast');
+		$('.project-web').slideDown('fast');
 	});
 	
-	//show identity work with effect
-	$('section.portfolio div.sort a#identity').live('click', function(){
-		$('section.portfolio div.sort a').removeClass('selected');
+	// Show identity work with effect
+	$('.work-sort-identity').live('click', function(){
+		$('.work-sort-wrap a').removeClass('selected');
 		$(this).addClass('selected');
-		$('section.portfolio div.web').slideUp('fast');
-		$('section.portfolio div.identity').slideDown('fast');
+		$('.project').slideUp('fast');
+		$('.project-identity').slideDown('fast');
 	});
-	*/
+	
+	// Show other work with effect
+	$('.work-sort-other').live('click', function(){
+		$('.work-sort-wrap a').removeClass('selected');
+		$(this).addClass('selected');
+		$('.project').slideUp('fast');
+		$('.project-other').slideDown('fast');
+	});
+
 	
 	//hover glow effect
 	$("div.image-container:has('a')").live({
