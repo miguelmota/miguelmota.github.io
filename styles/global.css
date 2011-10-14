@@ -500,6 +500,9 @@ a.google-plus-link {
 .work-sort-wrap {
 	float: right;
 }
+.work-sort-wrap a.selected {
+	color: #999;
+}
 div.project {
 	margin-bottom: 25px;
 }
