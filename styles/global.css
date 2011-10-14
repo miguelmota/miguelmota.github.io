@@ -149,6 +149,7 @@ h1.title {
 	text-shadow: 0 -1px 0 #000;
 	text-transform: uppercase;
 	width: 650px;
+	border: 1px solid black;
 }
 h1.title span.mota {
 	font-weight: normal;
@@ -499,10 +500,11 @@ a.google-plus-link {
 ============================================================================== */
 .work-sort-wrap {
 	float: right;
+	border: 1px solid black;
 }
 .work-sort-wrap a.selected {
-	background-color: none;
-	border-left: 0;
+	background-color: #252525;
+	border-left-color: #252525;
 	color: #999;
 }
 div.project {
