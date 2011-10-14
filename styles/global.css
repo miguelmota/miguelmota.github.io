@@ -499,7 +499,9 @@ a.google-plus-link {
 	PORTFOLIO
 ============================================================================== */
 .work-sort-wrap {
-	float: right;
+	position: absolute;
+	right: 0;
+	top: -10px;
 	border: 1px solid black;
 }
 .work-sort-wrap a.selected {
