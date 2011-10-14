@@ -416,7 +416,7 @@ function streamPage(){
 						var id = status.id_str;
 			    	  	var date = new Date(status.created_at).toUTCString();
 					var newText = '<span>'+post.split(' ').join('</span> <span>')+'</span>';
-					$('ul.twitter-status').append("<li id='"+id+"' class='status'>&#187; <span class='post'>"+newText+"</span> <span class='stream-date'><a href='http://twitter.com/miguel_mota/status/"+id+"'>"+niceTime(date)+"</a></span></li>");
+					$('ul.twitter-status').append("<li id='"+id+"' class='status'>&#187; <span class='post'>"+newText+"</span> <time class='status-date'><a href='http://twitter.com/miguel_mota/status/"+id+"'>"+niceTime(date)+"</a></time></li>");
 					$("li.status[id='"+id+"'] span").find(":contains('http')").wrapInner("<a href='"+$("li.status[id='"+id+"'] span").find(":contains('http')").text()+"'> </a>");
 					$("li.status[id='"+id+"'] span").find(":contains('@')").wrapInner("<a href='http://twitter.com/"+$("li.status[id='"+id+"'] span").find(":contains('@')").text().substr(1)+"'> </a>");
 					$("li.status[id='"+id+"'] span").find(":contains('#')").wrapInner("<a href='http://twitter.com/#!/search/"+$("li.status[id='"+id+"'] span").find(":contains('#')").text().substr(1)+"'> </a>");
@@ -441,22 +441,22 @@ function streamPage(){
 			    	  	var date = new Date(fb.created_time).toUTCString();		   
 			    	  	switch(type){
 			    	  	case 'status':
-				    	    $('ul.facebook-status').append("<li class='status'>&#187; <span class='post'>"+post+"</span> <span class='stream-date'><a href='http://www.facebook.com/miguel.mota2/posts/"+post_id+"'>"+niceTime(date)+"</a></span></li>");
+				    	    $('ul.facebook-status').append("<li class='status'>&#187; <span class='post'>"+post+"</span> <time class='status-date'><a href='http://www.facebook.com/miguel.mota2/posts/"+post_id+"'>"+niceTime(date)+"</a></time></li>");
 				    	    break;
 			    	  	case 'link':
 			    	  		if(post){
-					    	    $('ul.facebook-status').append("<li class='status'>&#187; Link: <span class='post'>"+post+" <a href='"+link+"'>"+name+"</a></span> <span class='stream-date'><a href='http://www.facebook.com/miguel.mota2/posts/"+post_id+"'>"+niceTime(date)+"</a></span></li>");
+					    	    $('ul.facebook-status').append("<li class='status'>&#187; Link: <span class='post'>"+post+" <a href='"+link+"'>"+name+"</a></span> <time class='status-date'><a href='http://www.facebook.com/miguel.mota2/posts/"+post_id+"'>"+niceTime(date)+"</a></time></li>");
 			    	  		}
 			    	  		else{
-			    	  			$('ul.facebook-status').append("<li class='status'>&#187; Link: <a href='"+link+"'>"+name+"</a></span> <span class='stream-date'><a href='http://www.facebook.com/miguel.mota2/posts/"+post_id+"'>"+niceTime(date)+"</a></span></li>");
+			    	  			$('ul.facebook-status').append("<li class='status'>&#187; Link: <a href='"+link+"'>"+name+"</a></span> <time class='status-date'><a href='http://www.facebook.com/miguel.mota2/posts/"+post_id+"'>"+niceTime(date)+"</a></time></li>");
 			    	  		}
 				    	    break;
 			    	  	case 'video':
 			    	  		if(post){
-			    	  			$('ul.facebook-status').append("<li class='status'>&#187; Video: <span class='post'>"+post+" <a href='"+link+"'>"+name+"</a></span> <span class='stream-date'><a href='http://www.facebook.com/miguel.mota2/posts/"+post_id+"'>"+niceTime(date)+"</a></span></li>");
+			    	  			$('ul.facebook-status').append("<li class='status'>&#187; Video: <span class='post'>"+post+" <a href='"+link+"'>"+name+"</a></span> <time class='status-date'><a href='http://www.facebook.com/miguel.mota2/posts/"+post_id+"'>"+niceTime(date)+"</a></time></li>");
 			    	  		}
 			    	  		else{
-					    	    $('ul.facebook-status').append("<li class='status'>&#187; Video: <span class='post'><a href='"+link+"'>"+name+"</a></span> <span class='stream-date'><a href='http://www.facebook.com/miguel.mota2/posts/"+post_id+"'>"+niceTime(date)+"</a></span></li>");
+					    	    $('ul.facebook-status').append("<li class='status'>&#187; Video: <span class='post'><a href='"+link+"'>"+name+"</a></span> <time class='status-date'><a href='http://www.facebook.com/miguel.mota2/posts/"+post_id+"'>"+niceTime(date)+"</a></time></li>");
 			    	  		}
 				    	    break;
 			    	  	default:
@@ -478,7 +478,7 @@ function streamPage(){
 				    	  	var url = this.url;
 				    	  	var caption = this['photo-caption'];
 				    	  	var slug = this.slug.replace(/-/g,' ');
-				    	  	$('ul.tumblr-posts').append("<li>&#187; <a href='"+url+"'>"+slug.substring(0,1).toUpperCase()+slug.substr(1,200)+"</a> <span class='stream-date'>"+niceTime(date)+"</span></li>");
+				    	  	$('ul.tumblr-posts').append("<li>&#187; <a href='"+url+"'>"+slug.substring(0,1).toUpperCase()+slug.substr(1,200)+"</a> <time class='status-date'>"+niceTime(date)+"</time></li>");
 				      }); 
 					  $('div.tumblr div.loader').css('display','none');
 					showMtip('a.social.tumblr');
@@ -493,7 +493,7 @@ function streamPage(){
 						var title = item.d;
 						var url = item.u;
 			    	  	var date = new Date(item.dt).toUTCString();
-						$('ul.delicious-bookmarks').append("<li>&#187; <a href='"+url+"'>"+title+"</a> <span class='stream-date'>"+niceTime(date)+"</span></li>");
+						$('ul.delicious-bookmarks').append("<li>&#187; <a href='"+url+"'>"+title+"</a> <time class='status-date'>"+niceTime(date)+"</time></li>");
 					});
 					$('div.delicious div.loader').css('display','none');
 					showMtip('a.social.delicious');
@@ -509,7 +509,7 @@ function streamPage(){
 							var name = item.name;
 							var artist = item.artist['#text'];
 							var date =  item.date['#text'];
-							$('ul.lastfm-tracks').append("<li><a class='link' href='"+url+"'>"+artist+" - "+name+"</a> <span class='stream-date'>"+date+"</span></li>");
+							$('ul.lastfm-tracks').append("<li><a class='link' href='"+url+"'>"+artist+" - "+name+"</a> <time class='status-date'>"+date+"</time></li>");
 					}); 
 					$('div.lastfm div.loader').css('display','none');
 					showMtip('a.social.lastfm');
@@ -524,7 +524,7 @@ function streamPage(){
 				for(var i = 0; i < data.length; i++){
 					var entry = data[i].software;
 					var date = new Date(entry.last_active_at).toUTCString();
-					html.push("<li><a class='link' href='", entry.complete_url, "'>", entry.name, "</a> <span class='stream-date'>"+niceTime(date)+"</span>", "</li>");
+					html.push("<li><a class='link' href='", entry.complete_url, "'>", entry.name, "</a> <time class='status-date'>"+niceTime(date)+"</time>", "</li>");
 				}
 				html.push("</ul>");
 				document.getElementById('wakoopa-software').innerHTML = html.join("");

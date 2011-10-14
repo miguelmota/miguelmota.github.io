@@ -394,7 +394,7 @@ ul.delicious-bookmarks {
 	clear: both;
 	display: block;
 }
-span.stream-date {
+.status-date {
 	font-size: 9px;
 }
 a.facebook {
@@ -470,8 +470,8 @@ ul.wakoopa-software a.link:hover,
 ul.lastfm-tracks li  a.link:hover  {
 	text-decoration: underline;
 }
-ul.wakoopa-software li span.stream-date,
-ul.lastfm-tracks li span.stream-date {
+ul.wakoopa-software .status-date,
+ul.lastfm-tracks .status-date {
 	border-left: 2px solid #222;
 	float: right;
 	padding: 2px;
