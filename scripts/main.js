@@ -561,7 +561,7 @@ function portfolioPage(){
 	$('.work-sort-web').live('click', function(){
 		$('.work-sort-wrap a').removeClass('selected');
 		$(this).addClass('selected');
-		$('".project:not(.project-web')"').slideUp('fast');
+		$(".project:not('.project-web')").slideUp('fast');
 		$('.project-web').slideDown('fast');
 	});
 	
@@ -569,7 +569,7 @@ function portfolioPage(){
 	$('.work-sort-identity').live('click', function(){
 		$('.work-sort-wrap a').removeClass('selected');
 		$(this).addClass('selected');
-		$(".project:not(.project-identity')").slideUp('fast');
+		$(".project:not('.project-identity')").slideUp('fast');
 		$('.project-identity').slideDown('fast');
 	});
 	
@@ -577,7 +577,7 @@ function portfolioPage(){
 	$('.work-sort-other').live('click', function(){
 		$('.work-sort-wrap a').removeClass('selected');
 		$(this).addClass('selected');
-		$(".project:not(.project-other')").slideUp('fast');
+		$(".project:not('.project-other')").slideUp('fast');
 		$('.project-other').slideDown('fast');
 	});
 
