@@ -50,7 +50,7 @@ $.getJSON('http://feeds.delicious.com/v2/json/miguelmota?count=3&callback=?',
 );
 {% endhighlight %}
 
-<p>But hold on, if we leave it like that, the date will show as a UTF string and look like <code>Tue, 11 Oct 2011 05:40:47 GMT</code>.
+<p>But hold on, if we leave it like that, the date will show as a UTF string and will look like <code>Tue, 11 Oct 2011 05:40:47 GMT</code>.
 We want to display it as <code>time ago</code> so we will use <a href='http://james.padolsey.com/javascript/recursive-pretty-date/'>James Padolsey's "pretty-date" function</a>.
 Before the <code>$.getJSON</code> function, include:</p>
 
@@ -80,7 +80,7 @@ var niceTime = (function(){
 })();
 {% endhighlight %}
 
-<p>and include the <code>date</code> variable as the function argument like so:</p>
+<p>Now add the <code>date</code> variable as the function argument like so:</p>
 
 {% highlight javascript %}
 <time class='date'>"+niceTime(date)+"<time>
