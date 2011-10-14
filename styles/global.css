@@ -521,7 +521,7 @@ div.work-description {
 	padding-bottom: 10px;
 	position: relative;
 }
-span.work-date {
+.work-date {
 	color: #777;
 	float: right;
 	font-size: 10px;
