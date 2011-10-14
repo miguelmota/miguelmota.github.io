@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	
 	//display mobile link if window is 640px or less
-	if(window.innerWidth <= 640){
+	/*if(window.innerWidth <= 640){
 		window.location = 'http://www.miguelmota.com/mobile/';
 		$('div.main-wrap').prepend("<a class='mobile-bar' href='/mobile'>view mobile site &#187;</a><a class='mobile-bar-close' href='javascript:void(0);'>x</a>");
 		$('a.mobile-bar').hide();
@@ -12,7 +12,7 @@ $(document).ready(function(){
 			$(this).hide();
 			$('a.mobile-bar').slideUp('normal');
 		});
-	}
+	} */
 	
 	//display ie message
 	$('body').fadeIn(650, function(){
