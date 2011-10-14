@@ -5,10 +5,12 @@ categories:
 - jquery
 - json
 ---
-<p>If you look below you see my three recently saved bookmarks in delicious"</p>
+<p>If you look below you see my three most recently saved bookmarks from delicious:</p>
 
+<div class='highlight'>
 <ul id='delicious-bookmarks'></ul>
 <div class='loader'>fetching bookmarks...</div>
+</div>
 
 <script>
 $.getJSON('http://feeds.delicious.com/v2/json/miguelmota?count=3&callback=?',
@@ -35,17 +37,19 @@ $.getJSON('http://feeds.delicious.com/v2/json/miguelmota?count=3&callback=?',
 <p>Now we will fetch the json and once it's done remove the loader:</p>
 
 {% highlight javascript %}
-$.getJSON('http://feeds.delicious.com/v2/json/miguelmota?count=3&callback=?',
-		  function(data){
-		    $.each(data, function(i, item){
-			      var title = item.d;
-			      var url = item.u;
-			      var date = new Date(item.dt).toUTCString();
-			      $('#delicious-bookmarks').append("<li>&#187; <a href='"+url+"'>"+title+"</a> <time class='date'>"+date+"<time></li>");
-				});
-				$('.loader').css('display','none');
-			}
-		);
+<script>
+	$.getJSON('http://feeds.delicious.com/v2/json/miguelmota?count=3&callback=?',
+			  function(data){
+			    $.each(data, function(i, item){
+				      var title = item.d;
+				      var url = item.u;
+				      var date = new Date(item.dt).toUTCString();
+				      $('#delicious-bookmarks').append("<li>&#187; <a href='"+url+"'>"+title+"</a> <time class='date'>"+date+"<time></li>");
+					});
+					$('.loader').css('display','none');
+				}
+			);
+</script>
 {% endhighlight %}
 
 <p>Obviously replace my username with yours and that's it!</p>
