@@ -547,11 +547,11 @@ img.miguelmota-thumb {
 .mtip-thumb {
 	height: auto;
 	position: absolute;
-	top: -50px;
+	top: -60px;
 	width: 120% !important;
 }
 .retrofunk-thumb {
-	bottom: -50px;
+	bottom: -300px;
 	height: auto;
 	position: absolute;
 	width: 150% !important;
@@ -559,7 +559,7 @@ img.miguelmota-thumb {
 .mrgpropertiesinc-thumb {
 	height: auto;
 	position: absolute;
-	top: -50px;
+	top: -30px;
 	width: 150% !important;
 }
 a.fancybox {
