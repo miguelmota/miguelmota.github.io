@@ -34,7 +34,10 @@ $.getJSON('http://feeds.delicious.com/v2/json/miguelmota?count=3&callback=?',
 <div class='loader'>fetching bookmarks...</div>
 {% endhighlight %}
 
-<p>Now we will fetch the json and once it's done remove the loader:</p>
+<p>We are using the <code>$.getJSON</code> function. We're going to loop though the data with the <code>$.each</code> function and get the 
+<code>title</code>, <code>url</code> and <code>date</code>. For the date we are going to create a new <code>Date()</code> instance and converted to a 
+<code>UTC string</code>. Then we are appending a list item to our unordered list that we created earlier which will include our variables.
+So now after it complete the jquery, let's remove the loader:</p>
 
 {% highlight javascript %}
 $.getJSON('http://feeds.delicious.com/v2/json/miguelmota?count=3&callback=?',
