@@ -544,6 +544,22 @@ img.miguelmota-thumb {
 	position: absolute;
 	width: 110% !important;
 }
+.mtip-thumb {
+	height: auto;
+	position: absolute;
+
+	width: 120% !important;
+}
+.retrofunk-thumb {
+	height: auto;
+	position: absolute;
+	width: 150% !important;
+}
+.mrgpropertiesinc-thumb {
+	height: auto;
+	position: absolute;
+	width: 150% !important;
+}
 a.fancybox {
 	background: #222 url('/images/ajax-loader-image.gif') no-repeat 50% 50%;
 	display: block;
