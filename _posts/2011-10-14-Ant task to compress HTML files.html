@@ -1,0 +1,57 @@
+---
+layout: post
+title: Ant task to compress HTML files
+categories:
+- html
+- ant
+---
+<p>So your html code looks something like this:</p>
+{% hightlight html %}
+<!doctype html>
+<html>
+<head>
+	<title>htmlcompressor</title>
+</head>
+<body>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida suscipit lectus.</p>
+	<!-- comment -->
+</body>
+</html>
+{% endhighlight %}
+
+<p>After we compress it, it'll look like this:</p>
+
+{% hightlight html %}
+<!doctype html> <html> <head> <title>htmlcompressor</title> </head> <body> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida suscipit lectus.</p> </body> </html>
+{% endhighlight %}
+
+<p>Compressing your html files reduces it's size by ~20%, which equals to faster page load.</p>
+
+<p>Ok, so first make sure you have <code>ant</code> installed on <a href='http://www.eclipse.org/'>eclipse</a>. After go ahead and download the <code>htmlcompressor</code> <code>.jar</code> from it's <a href='http://code.google.com/p/htmlcompressor/'>Google Project</a> page. 
+Create a directory in the root of your project called <code>lib</code> and drop the <code>.jar</code> in it. Then again in the root directory, create the xml file called <code>build.xml</code>. Include the following code:</p>
+
+{% hightlight xml %}
+<?xml version='1.0' encoding='UTF-8'?>
+<project default='compress-html'>
+	
+	<target name='compress-html'>
+		<apply executable='java'>
+			<fileset dir="" includes='*.html'/>
+			<arg value='-jar'/>
+			<arg path='lib/htmlcompressor-1.5.2.jar'/>
+			<arg line='-t html'/>
+			<srcfile/>
+			<arg value='-o'/>
+			<mapper type='glob' from='*' to='compressed/*'/>
+			<targetfile/>
+		</apply>
+	</target>
+	
+</project>
+{% endhighlight %}
+
+<p>What we did is created a project which will execute the <code>compress-html</code> target by default. In the target we are telling it to include all the <code>html</code> files in the root directory 
+and then output the compressed files in a new directory called <code>compressed</code>. the <code>-t</code> flag means <code>type</code> and <code>-o</code> means output. By default the filenames of the source files will be added to 
+the end fo the command, so we use <code>srcfile</code> to place it where we want it. <code>targetfile</code> is used to add the target filenames to the command or else they'll be left out. The <code>mapper</code> type <code>glob</code> means that it will substitue the <code>*</code> in the <code>to</code> pattern with the text that matches the <code>*</code> in the <code>from</code> pattern.</p>
+
+<p>I hope this helped!</p>
