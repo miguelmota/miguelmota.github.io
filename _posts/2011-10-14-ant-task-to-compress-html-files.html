@@ -6,7 +6,7 @@ categories:
 - ant
 ---
 <p>So your html code looks something like this:</p>
-{% hightlight html %}
+{% highlight html %}
 <!doctype html>
 <html>
 <head>
@@ -21,7 +21,7 @@ categories:
 
 <p>After we compress it, it'll look like this:</p>
 
-{% hightlight html %}
+{% highlight html %}
 <!doctype html> <html> <head> <title>htmlcompressor</title> </head> <body> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida suscipit lectus.</p> </body> </html>
 {% endhighlight %}
 
@@ -30,7 +30,7 @@ categories:
 <p>Ok, so first make sure you have <code>ant</code> installed on <a href='http://www.eclipse.org/'>eclipse</a>. After go ahead and download the <code>htmlcompressor</code> <code>.jar</code> from it's <a href='http://code.google.com/p/htmlcompressor/'>Google Project</a> page. 
 Create a directory in the root of your project called <code>lib</code> and drop the <code>.jar</code> in it. Then again in the root directory, create the xml file called <code>build.xml</code>. Include the following code:</p>
 
-{% hightlight xml %}
+{% highlight xml %}
 <?xml version='1.0' encoding='UTF-8'?>
 <project default='compress-html'>
 	
