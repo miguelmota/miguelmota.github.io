@@ -27,7 +27,7 @@ categories:
 
 <p>Compressing your html files reduces it's size by ~20%, which equals to faster page load.</p>
 
-<p>Ok, so first make sure you have <code>ant</code> installed on <a href='http://www.eclipse.org/'>eclipse</a>. After go ahead and download the <code>htmlcompressor</code> <code>.jar</code> from it's <a href='http://code.google.com/p/htmlcompressor/'>Google Project</a> page. 
+<p>Ok, so first make sure you have <a href='http://ant.apache.org/'>ant</a> installed in <a href='http://www.eclipse.org/'>eclipse</a>. After go ahead and download the <code>htmlcompressor</code> <code>.jar</code> from it's <a href='http://code.google.com/p/htmlcompressor/'>Google Project page</a>. 
 Create a directory in the root of your project called <code>lib</code> and drop the <code>.jar</code> in it. Then again in the root directory, create the xml file called <code>build.xml</code>. Include the following code:</p>
 
 {% highlight xml %}
@@ -51,7 +51,7 @@ Create a directory in the root of your project called <code>lib</code> and drop 
 {% endhighlight %}
 
 <p>What we did is created a project which will execute the <code>compress-html</code> target by default. In the target we are telling it to include all the <code>html</code> files in the root directory 
-and then output the compressed files in a new directory called <code>compressed</code>. the <code>-t</code> flag means <code>type</code> and <code>-o</code> means output. By default the filenames of the source files will be added to 
+and then output the compressed files in a new directory called <code>compressed</code>. the <code>-t</code> flag means <code>type</code> and <code>-o</code> means <code>output</code>. By default the filenames of the source files will be added to 
 the end fo the command, so we use <code>srcfile</code> to place it where we want it. <code>targetfile</code> is used to add the target filenames to the command or else they'll be left out. The <code>mapper</code> type <code>glob</code> means that it will substitue the <code>*</code> in the <code>to</code> pattern with the text that matches the <code>*</code> in the <code>from</code> pattern.</p>
 
-<p>I hope this helped!</p>
+<p>Now run the <code>build.xml</code> as an <code>Ant Build</code> and everything should go as planned. I hope this helped!</p>
