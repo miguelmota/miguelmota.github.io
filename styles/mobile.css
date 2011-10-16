@@ -23,8 +23,8 @@ html {
 	padding: 8px 8px 8px 10px !important;
 }
 .logo-wrap {
-	margin: 0 auto 10px auto;
-	width: 100%;
+	margin: 0 auto 10px auto !important;
+	width: 100% !important;
 }
 .nav-logo {
 	display: inline-block !important;
