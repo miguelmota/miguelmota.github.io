@@ -637,6 +637,9 @@ div.contact-qrcode {
 .phone-wrap {
 	display: none;
 }
+.phone-wrap img {
+	vertical-align: middle;
+}
 form.contact-form {
 	float: left;
 }
