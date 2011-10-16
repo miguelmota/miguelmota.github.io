@@ -1,0 +1,7 @@
+@charset 'utf-8';
+
+.main-side-nav {
+	float: none;
+	position: relative;
+	width: 100%;
+}
