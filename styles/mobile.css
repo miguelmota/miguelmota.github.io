@@ -40,7 +40,7 @@ h1.title {
 .content {
 	clear: both !important;
 	float: none !important;
-	padding-top: 10px;
+	padding-top: 10px !important;
 	width: 100% !important;
 }
 .content-container {
