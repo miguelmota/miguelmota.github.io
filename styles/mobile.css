@@ -44,7 +44,7 @@ h1.title {
 .content-container {
 	float: none !important;
 	padding: 5px !important;
-	width: 100% !important;
+	width: 99% !important;
 }
 .image-container {
 	box-shadow: none !important;
