@@ -10,6 +10,7 @@ html {
 	width: 100% !important;
 }
 .main-side-nav {
+	clear: both !important;
 	float: none !important;
 	padding: 5px 0 10px 0 !important;
 	position: relative !important;
