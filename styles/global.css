@@ -523,7 +523,7 @@ span.overlay {
 	display: block;
 	height: 100%;
 	left: 0;
-	opac0ity: .2;
+	opacity: 1;
 	position: absolute;
 	width: 100%;
 }
