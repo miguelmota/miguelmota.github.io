@@ -15,9 +15,6 @@ html {
 	position: relative !important;
 	width: 100% !important;
 }
-.main-nav {
-	padding: 5px 0 40px 0 !important;
-}
 .main-nav a {
 	border-left: 4px solid #292929;
 	display: inline !important;
@@ -43,6 +40,7 @@ h1.title {
 .content {
 	clear: both !important;
 	float: none !important;
+	padding-top: 10px;
 	width: 100% !important;
 }
 .content-container {
