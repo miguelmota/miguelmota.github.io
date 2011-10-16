@@ -26,7 +26,7 @@ a.nav-logo {
 	display: inline-block !important;
 	margin: 0 5px 10px 16px !important;
 	padding: 0 !important;
-	vertical-align: sub !important;
+	vertical-align: middle !important;
 }
 h1.title {
 	display: inline !important;
