@@ -56,6 +56,13 @@ img {
 	max-width: 100% !important;
 	width: 100% !important;
 }
+#cse-search-form {
+	float: none !important;
+	position: relative !important;
+	right: 0 !important;
+	top: 0 !important;
+	width: 300px;
+}
 .blog-info {
 	width: 100% !important; 
 }
