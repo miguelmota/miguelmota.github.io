@@ -74,8 +74,8 @@ div.project div.image-container img {
 	float: none !important;
 }
 .contact-message {
-	max-width: 100% !important;
-	width: 100% !important;
+	max-width: auto !important;
+	width: 98% !important;
 }
 #cse-search-form {
 	float: none !important;
