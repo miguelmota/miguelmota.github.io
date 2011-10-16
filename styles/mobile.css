@@ -24,6 +24,7 @@ html {
 }
 .logo-wrap {
 	margin: 0 auto 10px auto;
+	width: 100%;
 }
 .nav-logo {
 	display: inline-block !important;
