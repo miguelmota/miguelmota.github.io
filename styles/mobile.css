@@ -25,6 +25,7 @@ html {
 .logo-wrap {
 	margin: 0 auto 10px auto !important;
 	width: 100% !important;
+	border: 1px solid red;
 }
 .nav-logo {
 	display: inline-block !important;
