@@ -52,6 +52,9 @@ h1.title {
 	-webkit-box-shadow:  none !important;
 	width: 100% !important;
 }
+div.project div.image-container {
+	height: 100% !important;
+}
 div.project div.image-container img {
 	height: 100% !important;
 	width: auto !important;
