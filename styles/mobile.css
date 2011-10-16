@@ -12,9 +12,11 @@ html {
 .main-side-nav {
 	clear: both !important;
 	float: none !important;
-	padding: 5px 0 40px 0 !important;
 	position: relative !important;
 	width: 100% !important;
+}
+.main-nav {
+	padding: 5px 0 40px 0 !important;
 }
 .main-nav a {
 	border-left: 4px solid #292929;
