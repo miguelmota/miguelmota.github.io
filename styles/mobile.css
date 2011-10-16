@@ -18,10 +18,11 @@
 	padding: 8px 8px 8px 12px !important;
 }
 a.nav-logo {
-	display: block;
-	margin: 0 auto;
+	display: inline-block !important;
+	margin: 0 !important;
 }
 h1.title {
+	display: inline !important;
 	float: none !important;
 	font-size: 24px !important;
 	width: 100% !important;
