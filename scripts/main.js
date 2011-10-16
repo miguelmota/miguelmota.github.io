@@ -16,7 +16,7 @@ $(document).ready(function(){
 	
 	// Move h1 title to top on mobile
 	if(window.innerWidth <= 480){
-	$('.nav-logo').insertAfter('h1.title')
+	$('h1.title').insertAfter('.nav-logo')
 	}
 	
 	//display ie message

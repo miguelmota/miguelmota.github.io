@@ -17,6 +17,10 @@
 	font-size: 16px !important;
 	padding: 8px 8px 8px 12px !important;
 }
+a.nav-logo {
+	display: block;
+	margin: 0 auto;
+}
 h1.title {
 	float: none !important;
 	font-size: 24px !important;
