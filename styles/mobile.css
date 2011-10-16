@@ -52,6 +52,7 @@ h1.title {
 	width: 100% !important;
 }
 .work-sort-wrap {
+	padding-bottom: 10px !important;
 	position: relative !important;
 	top: 0 !important;
 }
