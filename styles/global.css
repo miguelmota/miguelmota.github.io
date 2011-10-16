@@ -639,6 +639,7 @@ div.contact-qrcode {
 }
 .phone-icon {
 	background: url('/images/pictos/313-b7.png') no-repeat 0 0;
+	display: inline-block;
 	height: 16px;
 	vertical-align: middle;
 	width: 7px;
