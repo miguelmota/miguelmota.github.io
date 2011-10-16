@@ -30,7 +30,7 @@ h1.title {
 }
 .slash,
 .sub {
-	display: none;
+	display: none !important;
 }
 .content {
 	float: none !important;
