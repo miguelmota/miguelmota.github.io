@@ -12,17 +12,15 @@ html {
 .main-side-nav {
 	clear: both !important;
 	float: none !important;
-	padding: 5px 0 10px 0 !important;
+	margin: 5px 0 10px 0 !important;
 	position: relative !important;
 	width: 100% !important;
 	z-index: 0 !important;
 }
-.main-nav li {
-	float: left !important;
-}
 .main-nav a {
 	border-left: 4px solid #292929;
 	display: inline !important;
+	float: left !important;
 	font-size: 16px !important;
 	padding: 8px 8px 8px 10px !important;
 }
