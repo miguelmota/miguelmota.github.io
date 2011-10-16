@@ -1,5 +1,9 @@
 @charset 'utf-8';
 
+.main-wrap {
+	margin: 70px auto 0 auto !important;
+	width: 100% !important;
+}
 .main-side-nav {
 	float: none !important;
 	position: relative !important;
@@ -7,6 +11,12 @@
 }
 .nav-logo {
 	display: none !important;
+}
+.main-nav a {
+	border-left: 4px solid #292929;
+	color: #999;
+	font-size: 16px !important;
+	padding: 8px 8px 8px 12px !important;
 }
 .content {
 	float: none !important;
