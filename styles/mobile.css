@@ -32,7 +32,7 @@ html {
 	display: inline-block !important;
 	margin: 0 !important;
 	padding: 0 !important;
-	vertical-align: middle !important;
+	vertical-align: -30px !important;
 }
 h1.title {
 	display: inline !important;
