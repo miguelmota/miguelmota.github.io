@@ -16,10 +16,11 @@ $(document).ready(function(){
 	
 	// Move h1 title to top on mobile
 	if(window.innerWidth <= 640){
-		$('h1.title').insertAfter('.nav-logo',function(){
+		$('.nav-logo').wrap("<div class='logo-wrap' />", function(){
+			$('h1.title').insertAfter('.nav-logo',function(){
 				$('.sub').remove();
 			});
-		$('.nav-logo').wrap("<div class='logo-wrap' />");
+		});
 		$('#cse-search-form').insertAfter('.blog-description');
 	}
 	
