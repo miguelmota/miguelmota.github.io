@@ -5,3 +5,10 @@
 	position: relative;
 	width: 100%;
 }
+.nav-logo {
+	display: none;
+}
+.content {
+	float: none;
+	width: 100%;
+}
