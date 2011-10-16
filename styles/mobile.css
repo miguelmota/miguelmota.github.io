@@ -1,14 +1,14 @@
 @charset 'utf-8';
 
 .main-side-nav {
-	float: none;
-	position: relative;
-	width: 100%;
+	float: none !important;
+	position: relative !important;
+	width: 100% !important;
 }
 .nav-logo {
 	display: none !important;
 }
 .content {
-	float: none;
-	width: 100%;
+	float: none !important;
+	width: 100% !important;
 }
