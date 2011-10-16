@@ -23,7 +23,7 @@ html {
 }
 a.nav-logo {
 	display: inline-block !important;
-	margin: 0 5px 0 12px !important;
+	margin: 0 5px 0 16px !important;
 	padding: 0 !important;
 	vertical-align: middle !important;
 }
@@ -44,7 +44,7 @@ h1.title {
 .content-container {
 	float: none !important;
 	padding: 5px !important;
-	width: 99% !important;
+	width: 98% !important;
 }
 .image-container {
 	box-shadow: none !important;
