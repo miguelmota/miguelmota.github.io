@@ -45,7 +45,6 @@ img {
 	display: none !important;
 }
 .contact-message {
-
 	max-width: 100% !important;
-	width: 100% !important;
+	width: 480px !important;
 }
