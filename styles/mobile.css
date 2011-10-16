@@ -23,9 +23,10 @@ html {
 	padding: 8px 8px 8px 10px !important;
 }
 .logo-wrap {
-	width: 100% !important;
 	height: 50px !important;
-	border: 1px solid red;
+	width: 100% !important;
+	padding-bottom: 10px !important;
+	text-align: center !important;
 }
 .nav-logo {
 	display: inline-block !important;
