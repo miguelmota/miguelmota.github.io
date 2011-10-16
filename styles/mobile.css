@@ -18,6 +18,7 @@ html {
 .main-nav a {
 	border-left: 4px solid #292929;
 	display: inline !important;
+	float: left !important;
 	font-size: 16px !important;
 	padding: 8px 8px 8px 10px !important;
 }
