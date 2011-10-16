@@ -11,7 +11,7 @@ html {
 }
 .main-side-nav {
 	float: none !important;
-	margin-bottom: 10px !important;
+	padding: 5px 0 10px 0 !important;
 	position: relative !important;
 	width: 100% !important;
 }
@@ -24,7 +24,6 @@ html {
 a.nav-logo {
 	display: inline-block !important;
 	margin: 0 5px 0 16px !important;
-	padding-bottom: 5px !important;
 	vertical-align: middle !important;
 }
 h1.title {
