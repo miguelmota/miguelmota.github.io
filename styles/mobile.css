@@ -25,9 +25,10 @@
 }
 .content-container {
 	float: none !important;
+	padding: 5px !important;
 	width: 100% !important;
 }
-div.image-container {
+.image-container {
 	width: 100% !important;
 }
 img {
