@@ -634,6 +634,9 @@ div.contact-qrcode {
 	top: -25px;
 	width: 88px;
 }
+.phone-wrap {
+	display: none;
+}
 form.contact-form {
 	float: left;
 }

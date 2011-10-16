@@ -70,6 +70,10 @@ div.project div.image-container img {
 .contact-qrcode {
 	display: none !important;
 }
+.phone-wrap {
+	display: block !important;
+	margin-bottom: 10px !important;
+}
 .contact-form {
 	float: none !important;
 }
