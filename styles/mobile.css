@@ -19,7 +19,7 @@
 }
 a.nav-logo {
 	display: inline-block !important;
-	margin: 0 !important;
+	margin: 0 5px 0 12px !important;
 	vertical-align: middle !important;
 }
 h1.title {
