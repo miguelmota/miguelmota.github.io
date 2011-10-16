@@ -54,8 +54,8 @@ h1.title {
 	width: 100% !important;
 }
 div.project div.image-container img {
-	height: 100%;
-	width: auto;
+	height: 100% !important;
+	width: auto !important;
 }
 .work-image {
 	width: 100% !important;
