@@ -60,7 +60,7 @@ h1.title {
 	top: 0 !important;
 }
 .blog-info {
-	padding-bottom: 20px !important;
+	height: auto !important;
 	width: 100% !important; 
 }
 .blog-description {
