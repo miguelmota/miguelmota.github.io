@@ -29,10 +29,10 @@
 	width: 100% !important;
 }
 .image-container {
-	box-shadow: 0 !important;
-	-moz-box-shadow: 0 !important;
-	-o-box-shadow: 0 !important;
-	-webkit-box-shadow:  0 !important;
+	box-shadow: none !important;
+	-moz-box-shadow: none !important;
+	-o-box-shadow: none !important;
+	-webkit-box-shadow:  none !important;
 	width: 100% !important;
 }
 img {
