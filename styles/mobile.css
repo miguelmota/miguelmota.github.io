@@ -41,3 +41,12 @@ img {
 .work-image {
 	width: 100% !important;
 }
+.contact-qrcode {
+	display: none !important;
+}
+.contact-message {
+	height: 275px;
+	max-height: 275px;
+	max-width: 640px;
+	width: 100% !important;
+}
