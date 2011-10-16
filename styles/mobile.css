@@ -1,11 +1,12 @@
 @charset 'utf-8';
 
 .main-wrap {
-	margin: 70px auto 0 auto !important;
+	margin: 10px auto 0 auto !important;
 	width: 100% !important;
 }
 .main-side-nav {
 	float: none !important;
+	margin-bottom: 10px !important;
 	position: relative !important;
 	width: 100% !important;
 }
@@ -24,5 +25,8 @@
 }
 .content-container {
 	float: none !important;
+	width: 100% !important;
+}
+img {
 	width: 100% !important;
 }
