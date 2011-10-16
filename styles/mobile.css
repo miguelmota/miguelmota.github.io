@@ -12,7 +12,7 @@ html {
 .main-side-nav {
 	clear: both !important;
 	float: none !important;
-	margin: 5px 0 10px 0 !important;
+	padding: 5px 0 20px 0 !important;
 	position: relative !important;
 	width: 100% !important;
 }
