@@ -15,7 +15,7 @@ $(document).ready(function(){
 	} */
 	
 	// Move h1 title to top on mobile
-	if(window.innerWidth <= 640){
+	if(screen.width <= 640){
 		$('h1.title').insertAfter('.nav-logo',function(){
 				$('.sub').remove();
 			});
@@ -295,7 +295,7 @@ var niceTime = (function(){
 	})();
 
 $("ul.main-nav a:not('.nav-logo, #blog')").live('click', function(){
-		if(typeof(window.history.pushState) == 'function' && window.innerWidth > 640){
+		if(typeof(window.history.pushState) == 'function' && screen.width > 640){
 			c = 0;
 			bc = 0;
 			ldc = 0;
