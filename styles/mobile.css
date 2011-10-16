@@ -6,7 +6,7 @@
 	width: 100%;
 }
 .nav-logo {
-	display: none;
+	display: none !important;
 }
 .content {
 	float: none;
