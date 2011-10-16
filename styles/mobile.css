@@ -56,8 +56,8 @@ div.project div.image-container {
 	height: 100% !important;
 }
 div.project div.image-container img {
-	height: 100% !important;
-	width: auto !important;
+	height: auto !important;
+	width: 100% !important;
 }
 .work-image {
 	width: 100% !important;
