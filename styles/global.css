@@ -876,6 +876,7 @@ div.gsc-cursor-current-page  {
 ============================================================================== */
 footer.main-footer {
 	clear: both;
+	height: 20px;
 	padding: 25px 0 15px 0;
 	position: relative;
 	width: 100%;

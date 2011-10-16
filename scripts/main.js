@@ -295,7 +295,7 @@ var niceTime = (function(){
 	})();
 
 $("ul.main-nav a:not('.nav-logo, #blog')").live('click', function(){
-		if(typeof(window.history.pushState) == 'function'){
+		if(typeof(window.history.pushState) == 'function' || window.innerWidth >= 640){
 			c = 0;
 			bc = 0;
 			ldc = 0;
