@@ -2,7 +2,7 @@
 
 .main-wrap {
 	margin: 10px auto 0 auto !important;
-	padding: 5px !important;
+	padding: 0 !important;
 	width: 100% !important;
 }
 .main-side-nav {
@@ -19,6 +19,11 @@
 	color: #999;
 	font-size: 16px !important;
 	padding: 8px 8px 8px 12px !important;
+}
+h1.title {
+	float: none !important;
+	font-size: 32px;
+	width: 100% !important;
 }
 .content {
 	float: none !important;
