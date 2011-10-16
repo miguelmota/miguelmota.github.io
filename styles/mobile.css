@@ -51,6 +51,10 @@ h1.title {
 .work-image {
 	width: 100% !important;
 }
+.work-sort-wrap {
+	position: relative !important;
+	top: 0 !important;
+}
 .contact-qrcode {
 	display: none !important;
 }
