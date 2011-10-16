@@ -44,7 +44,10 @@ img {
 .contact-qrcode {
 	display: none !important;
 }
+.contact-form {
+	float: none !important;
+}
 .contact-message {
 	max-width: 100% !important;
-	width: 480px !important;
+	width: 100% !important;
 }
