@@ -68,4 +68,6 @@ h1.title {
 div.follow-container {
 	float: none !important;
 	position: relative;
+	right: 0 !important;
+	width: 340px;
 }
