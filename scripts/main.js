@@ -19,6 +19,7 @@ $(document).ready(function(){
 		$('h1.title').insertAfter('.nav-logo',function(){
 				$('.sub').remove();
 			});
+		$('.nav-logo').wrap("<div class='logo-wrap' />");
 		$('#cse-search-form').insertAfter('.blog-description');
 	}
 	

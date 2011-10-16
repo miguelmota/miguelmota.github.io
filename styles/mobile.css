@@ -22,9 +22,12 @@ html {
 	font-size: 16px !important;
 	padding: 8px 8px 8px 10px !important;
 }
-a.nav-logo {
+.logo-wrap {
+	margin: 0 auto 10px auto;
+}
+.nav-logo {
 	display: inline-block !important;
-	margin: 0 5px 10px 16px !important;
+	margin: 0 !important;
 	padding: 0 !important;
 	vertical-align: middle !important;
 }
