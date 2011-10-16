@@ -38,6 +38,7 @@ h1.title {
 }
 .content-container {
 	float: none !important;
+	padding: 5px !important;
 	width: 100% !important;
 }
 .image-container {
