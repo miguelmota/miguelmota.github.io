@@ -23,6 +23,7 @@ html {
 a.nav-logo {
 	display: inline-block !important;
 	margin: 0 5px 0 12px !important;
+	padding: 0 !important;
 	vertical-align: middle !important;
 }
 h1.title {
