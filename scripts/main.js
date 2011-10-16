@@ -14,6 +14,11 @@ $(document).ready(function(){
 		});
 	} */
 	
+	// Move h1 title to top on mobile
+	if(window.innerWidth <= 480){
+	$('.nav-logo').insertAfter('h1.title')
+	}
+	
 	//display ie message
 	$('body').fadeIn(650, function(){
 		$('div.ie-bar').slideDown('slow');
