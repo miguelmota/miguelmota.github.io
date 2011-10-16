@@ -17,7 +17,7 @@ $(document).ready(function(){
 	// Move h1 title to top on mobile
 	if(window.innerWidth <= 640){
 		$('.nav-logo').wrap("<div class='logo-wrap' />", function(){
-			$('h1.title').insertAfter('.nav-logo',function(){
+			$('.nav-logo').append('h1.title',function(){
 				$('.sub').remove();
 			});
 		});
