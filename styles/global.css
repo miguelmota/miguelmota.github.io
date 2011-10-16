@@ -878,17 +878,17 @@ footer.main-footer {
 	clear: both;
 	padding: 25px 0 15px 0;
 	position: relative;
+	width: 100%;
 }
 footer.main-footer p {
 	background-color: inherit;
 	color: #333;
 	font-size: 9px;
+	width: 100%;
 }
 a.top-link {
 	display: none;
-	position: absolute;
-	right: 0;
-	top: 0;
+	float: right;
 }
 /* ==============================================================================
 	END MAIN FOOTER
