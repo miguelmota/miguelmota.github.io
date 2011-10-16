@@ -511,7 +511,7 @@ div.project {
 	margin-bottom: 25px;
 }
 div.project div.image-container {
-	height: 200px;.
+	height: 200px;
 	transition: box-shadow linear .2s;
 	-moz-transition: -moz-box-shadow linear .2s;
 	-o-transition: -o-box-shadow linear .2s;
@@ -539,17 +539,18 @@ div.work-description {
 a.site-link {
 	font-size: 10px;
 }
-img.miggs-thumb {
+/*
+.miggs-thumb {
 	height: auto;
 	position: absolute;
 	width: 130% !important;
 }
-img.foodfail-thumb {
+.foodfail-thumb {
 	height: auto;
 	position: absolute;
 	width: 150% !important;
 }
-img.miguelmota-thumb {
+.miguelmota-thumb {
 	height: auto;
 	position: absolute;
 	width: 110% !important;
@@ -572,6 +573,7 @@ img.miguelmota-thumb {
 	top: -30px;
 	width: 150% !important;
 }
+*/
 a.fancybox {
 	background: #222 url('/images/ajax-loader-image.gif') no-repeat 50% 50%;
 	display: block;
