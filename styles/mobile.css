@@ -11,9 +11,6 @@
 	position: relative !important;
 	width: 100% !important;
 }
-.nav-logo {
-	display: none !important;
-}
 .main-nav a {
 	border-left: 4px solid #292929;
 	color: #999;
