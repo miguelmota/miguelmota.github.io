@@ -2,6 +2,7 @@
 
 .main-wrap {
 	margin: 10px auto 0 auto !important;
+	padding: 5px !important;
 	width: 100% !important;
 }
 .main-side-nav {
@@ -25,7 +26,6 @@
 }
 .content-container {
 	float: none !important;
-	padding: 5px !important;
 	width: 100% !important;
 }
 .image-container {
