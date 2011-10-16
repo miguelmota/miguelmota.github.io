@@ -62,6 +62,9 @@ h1.title {
 .blog-info {
 	width: 100% !important; 
 }
+.blog-description {
+	float: none !important;
+}
 div.follow-container {
 	float: none !important;
 	position: relative;
