@@ -16,9 +16,10 @@ $(document).ready(function(){
 	
 	// Move h1 title to top on mobile
 	if(window.innerWidth <= 480){
-	$('h1.title').insertAfter('.nav-logo',function(){
-			$('.sub').remove();
-		});
+		$('h1.title').insertAfter('.nav-logo',function(){
+				$('.sub').remove();
+			});
+		$('#cse-search-form').insertAfter('.blog-description');
 	}
 	
 	//display ie message
