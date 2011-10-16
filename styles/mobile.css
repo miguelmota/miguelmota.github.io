@@ -27,6 +27,9 @@
 	float: none !important;
 	width: 100% !important;
 }
+div.image-container {
+	width: 100% !important;
+}
 img {
 	width: 100% !important;
 }
