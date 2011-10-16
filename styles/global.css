@@ -680,6 +680,7 @@ div.blog-info {
 	overflow: hidden;
 	padding-bottom: 20px;
 	width: 650px; 
+	border: 1px solid red;
 }
 div.blog-description {
 	font-size: 10px;
