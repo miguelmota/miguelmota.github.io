@@ -900,8 +900,8 @@ a.top-link {
 /* ==============================================================================
 	IMPORT STYLESHEETS
 ============================================================================== */
-@media only screen and (max-device-width: 640px) {
-	@import 'mobile.css';
+@media all and (max-device-width: 640px) {
+	@import '/styles/mobile.css';
 }
 /* ==============================================================================
 	END IMPORT STYLESHEETS
