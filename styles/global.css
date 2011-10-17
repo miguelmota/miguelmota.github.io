@@ -712,6 +712,7 @@ div.follow-container {
 	background: url('/images/rss.png') no-repeat 0 0;
 	display: inline-block;
 	height: 16px;
+	vertical-align: middle;
 	width: 16px;
 }
 a.subscribe-button { 
