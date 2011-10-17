@@ -638,7 +638,7 @@ div.contact-qrcode {
 	display: none;
 }
 .phone-icon {
-	background: url('/images/pictos/313-b7.png') no-repeat 0 0;
+	background: url('/images/pictos/313-999.png') no-repeat 0 0;
 	display: inline-block;
 	height: 16px;
 	vertical-align: middle;
@@ -710,7 +710,7 @@ div.follow-container {
 }
 .rss-icon {
 	background: url('/images/rss.png') no-repeat 0 0;
-	display: block;
+	display: inline-block;
 	height: 16px;
 	width: 16px;
 }
@@ -752,6 +752,12 @@ div.post-info {
 	clear: both;
 	font-size: 10px;
 	padding-bottom: 20px;
+}
+.comment-bubble-icon {
+	background: url('/images/pictos/235-007299.png') no-repeat 0 0;
+	display: inline-block;
+	height: 16px;
+	width: 14px;
 }
 a.post-date {
 	float: left;
