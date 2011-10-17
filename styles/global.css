@@ -755,10 +755,11 @@ div.post-info {
 	padding-bottom: 20px;
 }
 .comment-bubble-icon {
+	display: none;
 	background: url('/images/pictos/235-007299.png') no-repeat 0 0;
 	display: inline-block;
-	height: 16px;
-	width: 14px;
+	height: 14px;
+	width: 16px;
 }
 a.post-date {
 	float: left;
