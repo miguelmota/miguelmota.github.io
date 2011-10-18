@@ -766,6 +766,7 @@ a.post-date {
 	background: url('/images/pictos/235-00374a.png') no-repeat 0 0;
 	display: inline-block;
 	height: 14px;
+	vertical-align: middle;
 	width: 16px;
 }
 div.tags-wrap {
