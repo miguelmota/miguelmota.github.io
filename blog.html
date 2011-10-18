@@ -11,8 +11,8 @@ title: Blog
 			<div class='post blog-p'>
 				<h1 class='post-title'><a id='post-link' href='{{ post.url }}'>{{ post.title }}</a></h1>
 				<div class='post-info'>
-					<p><a class='post-date' href='{{ post.url }}'>{{ post.date | date_to_string }}</a> 
-					<span class='comment-bubble-icon'></span><a class='dsq-comment-count' href='{{ post.url }}#disqus_thread' data-disqus-identifier='{{ post.url }}'>comments</a></p>
+					<a class='post-date' href='{{ post.url }}'>{{ post.date | date_to_string }}</a> 
+					<div class='comment-count-wrap'><span class='comment-bubble-icon'></span><a class='dsq-comment-count' href='{{ post.url }}#disqus_thread' data-disqus-identifier='{{ post.url }}'>comments</a></div>
 	 			</div>
 	 			<div id='post-content'>
 					{{ post.content }}
