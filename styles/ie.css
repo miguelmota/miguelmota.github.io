@@ -1,12 +1,7 @@
 @charset 'utf-8';
-* {
-	opacity: none;	
-}
+
 div.stream.latitude {
 	display: none !important;	
-}
-span.overlay {
-	display: none !important;
 }
 div.image-container {
 	border: 1px solid #999;
