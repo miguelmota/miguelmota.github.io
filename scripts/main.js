@@ -604,9 +604,6 @@ function portfolioPage(){
 		mouseleave:
 			function(){
 				jQuery('span.overlay', this).hide().fadeIn(300);
-				jQuery('span.overlay', this).css('-ms-filter','progid:DXImageTransform.Microsoft.Alpha(Opacity=20)"');
-				jQuery('span.overlay', this).css('filter:','alpha(opacity=20)');
-
 				$(this).css({
 					'-webkit-box-shadow': '2px 2px 5px #111',
 					'-moz-box-shadow': '2px 2px 5px #111',
