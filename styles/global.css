@@ -524,8 +524,8 @@ span.overlay {
 	height: 100%;
 	left: 0;
 	opacity: .2;
-	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
-	filter: alpha(opacity=20);
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)" !important;
+	filter: alpha(opacity=20) !important;
 	position: absolute;
 	width: 100%;
 }
