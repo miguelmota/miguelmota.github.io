@@ -1,11 +1,8 @@
 @charset 'utf-8';
 
-div.stream.latitude {
-	display: none !important;	
+.work .image-container {
+	border: 1px solid #252525;
 }
-div.image-container {
-	border: 1px solid #999;
-}
-div.image-container:hover {
+.work .image-container:hover {
 	border-color: #007299;
 }
