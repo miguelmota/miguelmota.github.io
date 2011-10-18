@@ -637,7 +637,7 @@ div.contact-qrcode {
 	width: 88px;
 }
 .phone-wrap {
-	
+	display: none;
 }
 .phone-icon {
 	background: url('/images/pictos/313-999.png') no-repeat 0 0;
