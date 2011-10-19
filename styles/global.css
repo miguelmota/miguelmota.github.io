@@ -89,6 +89,7 @@ code {
 div.highlight {
 	background-color: #202020;
 	margin: 10px 0;
+	overflow: scroll;
 	padding: 5px;
 	text-shadow: none !important;
 	word-wrap: break-word;
