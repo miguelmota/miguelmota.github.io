@@ -17,7 +17,7 @@ body {
 }
 a {
 	border-left: 3px solid #292929;
-	color: #007299;
+	color: #007299;f
 	padding: 1px 3px 1px 3px;
 	text-shadow: 0 1px 0 rgba(0,0,0,.5);
 	transition: color linear .1s;
@@ -91,6 +91,7 @@ div.highlight {
 	margin: 10px 0;
 	padding: 5px;
 	text-shadow: none !important;
+	word-wrap: break-word;
 }
 div.highlight code {
 	word-wrap: break-word;
@@ -505,6 +506,7 @@ a.google-plus-link {
 	background-color: #252525;
 	border-left-color: #252525;
 	color: #999;
+	cursor: default; 
 	text-shadow: 0 -1px 0 rgba(0,0,0,.5);
 }
 div.project {
