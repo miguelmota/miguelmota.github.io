@@ -89,13 +89,12 @@ code {
 div.highlight {
 	background-color: #202020;
 	margin: 10px 0;
-	overflow-x: -moz-scrollbars-horizontal;
 	padding: 5px;
 	text-shadow: none !important;
-	word-wrap: break-word;
+	word-wrap: break-word !important;
 }
 div.highlight code {
-	word-wrap: break-word;
+	word-wrap: break-word !important;
 }
 div.image-container {
 	background: #222 url('/images/ajax-loader-image.gif') no-repeat 50% 50%;
