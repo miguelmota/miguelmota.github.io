@@ -389,6 +389,7 @@ a.tumblr:hover,
 a.tumblr:active {
 	background-position: 0 16px;
 }
+ul.blog-posts,
 ul.tumblr-posts,
 ul.twitter-status,
 ul.facebook-status,
