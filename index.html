@@ -5,21 +5,13 @@ title:
 <h1 class='title'>{% include title.html %}<span class='sub'>Stream</span></h1>
 <section class='content stream'>
 
-	<ul>
-		{% for post in site.posts %}
-	    	{% unless post.next %}
-	    		<strong>{{ post.date | date: '%Y' }}</strong>
-	    	{% else %}
-	      		{% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
-	     		{% capture nyear %}{{ post.next.date | date: '%Y' }}{% endcapture %}
-	      		{% if year != nyear %}
-	       			<strong>{{ post.date | date: '%Y' }}</strong>
-	      		{% endif %}
-	    	{% endunless %}
-	    	<li>{{ post.date | date:"%B" }} <a href='{{ post.url }}'>{{ post.title }}</a></li>
-		{% endfor %}
-	</ul>
-
+	<div class='stream blog'>
+		<ul>
+			{% for post in site.posts %}
+		    	<li><a href='{{ post.url }}'>{{ post.title }}</a> <time class='status-date'>{{ post.date | date:"%d %B" }}</time></li>
+			{% endfor %}
+		</ul>
+	</div>
 
 	<div class='stream latitude'>
 		<a class='social latitude mtip' href='http://www.google.com/latitude/apps/badge/api?user=7812482200199007583&amp;type=iframe&amp;maptype=roadmap' title='my current location'>latitude</a>
