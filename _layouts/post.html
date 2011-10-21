@@ -23,7 +23,7 @@ layout: default
 		
 		<div class="prev_next post_nav">
 		    {% if page.previous.url %}
-		    <p class="previous">
+		    <p class="previous" style='float: left;'>
 		        «&nbsp;<a href="{{ page.previous.url }}/" rel="previous" title="{{ page.previous.title }}">{{ page.previous.title | truncatewords: 15 }}</a>
 		    </p>
 		    {% endif %}
