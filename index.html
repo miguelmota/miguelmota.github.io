@@ -7,10 +7,8 @@ title:
 
 	<div class='stream blog'>
 		<ul>
-			{% for post in site.posts %}
-				{% if site.posts < 2 %}
+			{% for post in site.posts limit:3 %}
 		    	<li><a href='{{ post.url }}'>{{ post.title }}</a> <time class='status-date'>{{ post.date | date:"%d %B" }}</time></li>
-		    	{% endif %}
 			{% endfor %}
 		</ul>
 	</div>
