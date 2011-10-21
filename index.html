@@ -9,7 +9,7 @@ title:
 		<a class='social blog mtip' href='/blog' title='my blog'>Blog</a>
 		<ul>
 			{% for post in site.posts limit:3 %}
-		    	<li><a href='{{ post.url }}'>{{ post.title }}</a> <time class='status-date'><script>niceTime("{{ post.date | date:'%d %B' }}");</script></time></li>
+		    	<li><a href='{{ post.url }}'>{{ post.title }}</a> <time class='status-date'>{{ post.date | date:"%d %B" }}</time></li>
 			{% endfor %}
 		</ul>
 	</div>
