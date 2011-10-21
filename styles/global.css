@@ -364,7 +364,8 @@ a.social {
 div.latitude {
 	display: none;
 }
-a.latitude {
+a.latitude,
+a.blog-social {
 	color: #999;
 	font-size: 18px;
 }
