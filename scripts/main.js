@@ -425,7 +425,7 @@ function streamPage(){
 	
 	
 	//hide social link text
-	$("div.stream a.social:not('.blog-social')").text('');
+	$("a.social:not('.blog-social')").text('');
 	showMtip('a.social.latitude');
 	showMtip('a.blog-social');
 	
