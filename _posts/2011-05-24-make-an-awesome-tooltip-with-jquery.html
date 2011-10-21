@@ -107,12 +107,12 @@ jQuery(this).next('div.tooltip').animate({opacity: 'hide', top: '-20'}, 'fast');
 <p>It's time to style the tooltip:</p>
 
 {% highlight css %}
-div.tooltip-container {
+.tooltip-container {
 	display: inline-block;
 	position: relative;
 }
 
-div.tooltip  {
+.tooltip  {
 	background-color: #000;
 	border-radius: 5px;
 	-moz-border-radius: 5px;
@@ -127,6 +127,8 @@ div.tooltip  {
 	left: -35%;
 	right: -35%;
 	opacity: .8;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+	filter: alpha(opacity=80);
 	padding: 5px;
 	position: absolute;
 	text-align: center;
@@ -136,7 +138,7 @@ div.tooltip  {
 }
 
 /* triangle on the bottom */
-div.tooltip:after {
+.tooltip:after {
 	border-color: #000 transparent;
 	border-style: solid;
 	border-width: 5px 5px 0; /* vary these values to change the angle of the vertex */
@@ -159,6 +161,17 @@ div.tooltip:after {
 $(document).ready(function(){
 	$('.mtip').mtip();
 });
+{% endhighlight %}
+
+<p>But wait.. since Internet Explorer doesn't support <code>border-raidus</code> we have to use a script to render it. I will use <a href='http://css3pie.com/'>CSS3 PIE</a>. Simply add the <code>behavior</code> 
+rule at the end of the <code>tooltip</code> class, but make sure the path is relative to the HTML file being viewed, so for example if you upload the <code>PIE</code> folder to the root of your site; 
+it should look like this:</p>
+
+{% highlight css %}
+div.tooltip  {
+	...
+	behavior: url('/PIE/PIE.htc');
+}
 {% endhighlight %}
 
 <p>That's it folks! You should now have a functioning mini tooltip plugin. If I made mistakes or if you would like to add, please comment! any feedback is greatly appreciated.</p>

@@ -29,11 +29,18 @@
 		body {
 			font-family: Helvetica, Arial, sans-serif;
 		}
-		div.main-wrap {
+		.main-wrap {
 			background-color: #f7f7f7;
 			border: 1px solid #ccc;
 			margin: 100px;
 			padding: 20px;
+		}
+		.mtip-wrap {
+			background-color: dddbdb;
+			padding: 10px;
+		}
+		.mtip-wrap a {
+			font-size: 22px;
 		}
 		a {
 			background-color: #ededed;
@@ -68,10 +75,10 @@
 <body>
 	<div class='main-wrap'>
 		<h1>mtip demo</h1>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <a class='mtip' href='javascript:void(0);' title='Hello, I am a tooltip!'>hover over me</a>. Aenean dictum mattis mauris, quis euismod sem fringilla ut. Etiam non blandit libero. 
-		Nam interdum dictum accumsan. Morbi dapibus, sapien vel fringilla convallis, lacus nibh ultricies risus, sit amet tincidunt lacus lectus eu erat. 
-		Ut volutpat sapien nec mi <a class='mtip' href='javascript:void(0);' title='I am another awesome tooltip!'>hover over me too!</a> consectetur sed laoreet tellus scelerisque.
-		</p>
+		
+		<div class='mtip-wrap'><a class='mtip' href='javascript:void(0);' title='Hello, I am a tooltip!'>hover over me</a></div>
+		
+		<p><a href='http://www.miguelmota.com/make-an-awesome-tooltip-with-jquery/'>how to article</a></p>
 		
 		<p><strong>Installation</strong>
 		(include this in the <code>head</code> section):
