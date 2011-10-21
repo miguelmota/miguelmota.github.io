@@ -425,8 +425,9 @@ function streamPage(){
 	
 	
 	//hide social link text
-	$("div.stream a.social:not('.latitude')").text('');
+	$("div.stream a.social:not('.latitude, .blog-social')").text('');
 	showMtip('a.social.latitude');
+	showMtip('a.blog-social');
 	
 	while(c == 0){	
 		

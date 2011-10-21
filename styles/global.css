@@ -364,7 +364,7 @@ a.social {
 a.latitude,
 a.blog-social {
 	color: #999;
-	display: inline-block;
+	display: block;
 	font-size: 18px;
 	margin-bottom: 5px;
 }
