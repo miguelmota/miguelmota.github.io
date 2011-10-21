@@ -425,9 +425,10 @@ function streamPage(){
 	
 	
 	//hide social link text
-	$("a.social:not('.blog-social')").text('');
-	showMtip('a.social.latitude');
+	$("a.social:not('.latitude, .blog-social')").text('');
 	showMtip('a.blog-social');
+	showMtip('a.social.latitude');
+
 	
 	while(c == 0){	
 		
