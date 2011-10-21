@@ -1,0 +1,52 @@
+---
+layout: default
+---
+
+{% for post in paginator.posts %}
+    <div class="post-list">
+
+    	<h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+
+    	<ul>
+    		<li class="first"><strong>Published:</strong> {{ post.date | date: "%B %d, %Y" }}</li>
+    		<li><strong>Topic:</strong> <a href="/{{post.category}}">{{ post.category | category_name}}</a></li>
+    	</ul>
+
+    	<div class="thumb"><a href="{{ post.url }}"><img src="/assets/img/thumbs/{{post.thumbnail}}" /></a></div>
+
+    	<p>{{ post.excerpt }}</p>
+
+    </div>
+{% endfor %}
+
+{% if paginator.total_pages > 1 %}
+<nav class="pagination">
+    
+    {% if paginator.previous_page %}
+        {% if paginator.previous_page == 1 %}
+            <span class="prev"><a href="/{{paginator.posts[0].category}}/" rel="prev">&laquo; Prev</a></span>
+        {% else %}
+            <span class="prev"><a href="/{{paginator.posts[0].category}}/page{{paginator.previous_page}}" rel="prev">&laquo; Prev</a></span>
+        {% endif %}
+    {% endif %}
+    
+    {% for page in (1..paginator.total_pages) %}
+    
+        {% if page == paginator.page %}
+            <span class="page current">{{ page }}</span>
+        {% else %}
+            {% if page == 1 %}
+                <span class="page"><a href="/{{paginator.posts[0].category}}/">{{ page }}</a></span>
+            {% else %}
+                <span class="page"><a href="/{{paginator.posts[0].category}}/page{{page}}">{{ page }}</a></span>
+            {% endif %}
+        {% endif %}
+    
+    {% endfor %}
+
+    {% if paginator.next_page %}
+        <span class="next"><a href="/{{paginator.posts[0].category}}/page{{paginator.next_page}}" rel="next">Next &raquo;</a></span>
+    {% endif %}
+    
+</nav>
+{% endif %}
