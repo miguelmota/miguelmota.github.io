@@ -18,7 +18,7 @@ title: Blog
 	 				{% if post.excerpt %}
 	 					{{ post.excerpt }}
 	 				{% else %}
-						{{ post.content || truncatewords: 300 }}
+						{{ post.content || truncatewords: 5000 }}
 					{% endif %}
 					<p><a href='{{ post.url }}'>more &#187;</a></p>
 				</div>
@@ -33,6 +33,22 @@ title: Blog
 				</div>
 			</div>
 		{% endfor %}
+		
+				<div class="prev_next post_nav">
+		    {% if page.previous.url %}
+		    <p class="previous" style='float: left;'>
+		        «&nbsp;<a href="{{ page.previous.url }}/" rel="previous" title="{{ page.previous.title }}">{{ page.previous.title | truncatewords: 15 }}</a>
+		    </p>
+		    {% endif %}
+		    {% if page.next.url %}
+		    <p class="next" style='float: right;'>
+		        <a href="{{ page.next.url }}/" rel="next" title="{{ page.next.title }}">{{ page.next.title | truncatewords: 15 }}</a>&nbsp;»
+		    </p>
+		    {% endif %}
+		</div>
+		
+		
+		
 		<a class='archive-link' href='/archive'>view archive &#187;</a>
 	</div>
 	<script>
