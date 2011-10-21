@@ -373,7 +373,7 @@ a.blog-social:hover {
 	color: #007799;
 }
 iframe.latitude {
-	background: url('/images/ajax-loader.gif') no-repeat 0 0;
+	background: #252525 url('/images/ajax-loader.gif') no-repeat 0 0;
 	border: 0;
 	clear: both;
 	float: left;
