@@ -26,8 +26,8 @@ div.tooltip  {
 	left: -35%;
 	right: -35%;
 	opacity: .8;
-	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
-	filter: alpha(opacity=80);
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+	filter: alpha(opacity=50);
 	padding: 5px;
 	position: absolute;
 	text-align: center;
