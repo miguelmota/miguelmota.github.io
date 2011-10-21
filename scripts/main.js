@@ -434,6 +434,8 @@ function streamPage(){
 		//initialize mtip
 		$('.mtip').mtip();
 		
+		showMtip('a.blog-social');
+		
 		// Twitter stream
 		$('div.twitter div.loader').css('display','block');
 		$.getJSON('http://twitter.com/status/user_timeline/miguel_mota.json?&count=5&callback=?', 
