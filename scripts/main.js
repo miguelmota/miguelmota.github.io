@@ -427,14 +427,12 @@ function streamPage(){
 	//hide social link text
 	$("div.stream a.social:not('.latitude')").text('');
 	showMtip('a.social.latitude');
-	showMtip('a.blog-social');
 	
 	while(c == 0){	
 		
 		//initialize mtip
 		$('.mtip').mtip();
 		
-		showMtip('a.blog-social');
 		
 		// Twitter stream
 		$('div.twitter div.loader').css('display','block');
@@ -452,6 +450,7 @@ function streamPage(){
 					});
 					$('div.twitter div.loader').css('display','none');
 					showMtip('a.social.twitter');
+					showMtip('a.blog-social');
 				}
 		);
 		
