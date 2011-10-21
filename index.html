@@ -6,7 +6,7 @@ title:
 <section class='content stream'>
 
 	<div class='stream blog-stream'>
-		<a class='blog-social mtip' href='/blog' title='my blog'>Blog</a>
+		<a class='social blog-social mtip' href='/blog' title='my blog'>Blog</a>
 		<ul>
 			{% for post in site.posts limit:3 %}
 		    	<li>&#187; <a href='{{ post.url }}'>{{ post.title }}</a> <time class='status-date'>{{ post.date | date:"%d %B" }}</time></li>

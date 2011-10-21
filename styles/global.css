@@ -361,9 +361,6 @@ a.social {
 	padding: 0 !important;
 	width: auto;
 }
-div.latitude {
-
-}
 a.latitude,
 a.blog-social {
 	color: #999;
@@ -371,7 +368,8 @@ a.blog-social {
 	font-size: 18px;
 	margin-bottom: 5px;
 }
-a.latitude:hover {
+a.latitude:hover,
+a.blog-social:hover {
 	color: #007799;
 }
 iframe.latitude {
