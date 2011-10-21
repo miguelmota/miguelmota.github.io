@@ -8,7 +8,7 @@ title:
 	<div class='stream blog'>
 		<ul>
 			{% for post in site.posts %}
-				{% if post <= site.posts[2] %}
+				{% if site.posts < 2 %}
 		    	<li><a href='{{ post.url }}'>{{ post.title }}</a> <time class='status-date'>{{ post.date | date:"%d %B" }}</time></li>
 		    	{% endif %}
 			{% endfor %}
