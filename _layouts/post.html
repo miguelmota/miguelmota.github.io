@@ -18,9 +18,22 @@ layout: default
 			<g:plusone class='plus-one-button' href='http://www.miguelmota.com{{ page.url }}' size='medium'></g:plusone>
 			<a class='twitter-share-button' href='http://twitter.com/share' data-text='{{ page.title }}' data-url='http://www.miguelmota.com{{ page.url }}' data-via='miguel_mota' data-count='horizontal'>Tweet</a>
 			<a id='tumblr-share-button' class='tumblr-share-button' href='http://www.tumblr.com/share' title='{block:PostSummary}{PostSummary} &#187; {/block:PostSummary}'>Share on Tumblr</a>
-			<script>
 
-			</script>
+
+<div class="prev_next post_nav">
+    {% if page.previous.url %}
+    <p class="previous">
+        «&nbsp;<a href="{{ page.previous.url }}/" rel="previous" title="{{ page.previous.title }}">{{ page.previous.title | truncatewords: 15 }}</a>
+    </p>
+    {% endif %}
+    {% if page.next.url %}
+    <p class="next">
+        <a href="{{ page.next.url }}/" rel="next" title="{{ page.next.title }}">{{ page.next.title | truncatewords: 15 }}</a>&nbsp;»
+    </p>
+    {% endif %}
+</div>
+
+
 		</div>
 		<div class='comment-container'>
 			<div id='disqus_thread'></div>
