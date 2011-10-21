@@ -18,7 +18,7 @@ title: Blog
 	 				{% if post.excerpt %}
 	 					{{ post.excerpt }}
 	 				{% else %}
-						{{ post.content || truncatewords: 5000 }}
+						{{ post.content || truncatehtml: 300 }}
 					{% endif %}
 					<p><a href='{{ post.url }}'>more &#187;</a></p>
 				</div>
