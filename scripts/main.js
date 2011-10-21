@@ -433,7 +433,7 @@ function streamPage(){
 		//initialize mtip
 		$('.mtip').mtip();
 		
-		showMtip('a.social.blog');
+		showMtip('a.social.blog-stream');
 		
 		// Twitter stream
 		$('div.twitter div.loader').css('display','block');
