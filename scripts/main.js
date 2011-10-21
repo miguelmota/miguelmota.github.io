@@ -450,7 +450,6 @@ function streamPage(){
 					});
 					$('div.twitter div.loader').css('display','none');
 					showMtip('a.social.twitter');
-					showMtip('a.blog-social');
 				}
 		);
 		
