@@ -427,13 +427,12 @@ function streamPage(){
 	//hide social link text
 	$("div.stream a.social:not('.latitude')").text('');
 	showMtip('a.social.latitude');
+	showMtip('a.blog-social');
 	
 	while(c == 0){	
 		
 		//initialize mtip
 		$('.mtip').mtip();
-		
-		showMtip('a.blog-social');
 		
 		// Twitter stream
 		$('div.twitter div.loader').css('display','block');
