@@ -3,6 +3,16 @@
 <title></title>
 <link href='http://www.miguelmota.com/styles/reset.css' rel='stylesheet' />
 <link href='http://www.miguelmota.com/styles/global.css' rel='stylesheet' />
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js'></script>
+<script>
+$(document).ready(function(){
+	// Open external links in new tab
+	$('a[rel*=external]').live('click', function(){
+		window.open(this.href);
+		return false;
+	});
+});
+</script>
 <body style='display: block;'>
 
 <?
@@ -16,7 +26,7 @@ $latitude=json_decode($info,true);
 $place=$latitude["features"]["0"]["properties"]["reverseGeocode"];
 $timestamp=$latitude["features"]["0"]["properties"]["timeStamp"];
 
-echo "<div class='location'><a href='http://maps.google.com/?q=$place' target='_top'>$place</a> <span class='stream-date' style='font-size:9px;'>".getRelativeTime($timestamp)."</span></div>";
+echo "<div class='location'><a href='http://maps.google.com/?q=$place' rel='external'>$place</a> <time class='status-date'>".getRelativeTime($timestamp)."</time></div>";
 
 function plural($num) {
     if ($num != 1)
