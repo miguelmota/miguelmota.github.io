@@ -612,7 +612,7 @@ function portfolioPage(){
 
 	
 	//hover glow effect
-	$("div.image-container:has('a')").live({
+	$(".project .image-container").live({
 		mouseenter:
 			function(){
 				jQuery('span.overlay', this).fadeOut(200);
@@ -636,12 +636,12 @@ function portfolioPage(){
 	
 	
 	// Inner wrap image-container with link to page
-	$(".image-container").wrapInner("<a href='"+$(this).attr('data-link')+"'></a>")
+	$(".project .image-container img").wrapInner("<a href='"+$(this).attr('data-link')+"'></a>")
 	
 	
 	
 	// Show overlay popup on project hover
-	$('.image-container').live({
+	$('.project .image-container').live({
 		mouseenter:
 			function(){
 				jQuery('.overlay-popup', this).animate({bottom: '0'}, 200);

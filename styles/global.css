@@ -17,7 +17,7 @@ body {
 }
 a {
 	border-left: 3px solid #292929;
-	color: #007299;f
+	color: #007299;
 	padding: 1px 3px 1px 3px;
 	text-shadow: 0 1px 0 rgba(0,0,0,.5);
 	transition: color linear .1s;
@@ -109,11 +109,6 @@ div.image-container {
 	overflow: hidden;
 	position: relative;
 	width: 650px;
-}
-div.image-container a {
-	border: 0;
-	display: block;
-	padding: 0;
 }
 div.image-container img {
 	height: auto;
@@ -534,7 +529,7 @@ div.project {
 	width: 100%;
 }
 .overlay-popup a {
-	display: inline !important;
+	
 }
 .view-details-link {
 	float: right;
