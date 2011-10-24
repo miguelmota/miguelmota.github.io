@@ -531,6 +531,7 @@ div.project {
 	opacity: .9;
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)" !important;
 	filter: alpha(opacity=90) !important;
+	padding: 10px;
 	position: absolute;
 	width: 100%;
 }
