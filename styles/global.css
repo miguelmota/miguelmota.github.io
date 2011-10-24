@@ -524,7 +524,7 @@ div.project {
 	-webkit-transition: -webkit-box-shadow linear .2s;
 }
 .overlay-popup {
-	background: #000;
+	background: blue;
 	bottom: 0;
 	height: 100px;
 
