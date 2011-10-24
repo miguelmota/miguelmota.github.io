@@ -641,7 +641,7 @@ function portfolioPage(){
 			function(){
 			
 				// Inner wrap image-container with link to page
-				$(".project .image-container img").wrap("<a href='/portfolio/"+$(this).attr('data-link')+"'></a>");
+				$(".project .image-container img").wrap("<a href='/portfolio/"+$(this).attr('datalink')+"'></a>");
 				
 				jQuery('.overlay-popup', this).animate({bottom: '0'}, 200);
 	},
