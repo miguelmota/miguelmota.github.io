@@ -643,7 +643,7 @@ function portfolioPage(){
 	},
 		mouseleave:
 			function(){
-				jQuery('.overlay-popup', this).animate({bottom: '-100px'}, 150);
+				jQuery('.overlay-popup', this).animate({bottom: '-100px'}, 150).stop();
 		  }
 	});
 	
