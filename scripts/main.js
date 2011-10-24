@@ -636,14 +636,14 @@ function portfolioPage(){
 	
 	
 	// Show overlay popup on project hover
-	$('.image-container:has(".overlay-popup")').live({
+	$('.image-container').live({
 		mouseenter:
 			function(){
 				jQuery('.overlay-popup', this).animate({bottom: '100px'}, 200);
 	},
 		mouseleave:
 			function(){
-				jQuery('span.overlay', this).animate({bottom: '-100px'}, 100);
+				jQuery('.overlay-popup', this).animate({bottom: '-100px'}, 100);
 		  }
 	});
 	
