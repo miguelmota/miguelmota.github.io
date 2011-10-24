@@ -639,6 +639,7 @@ function portfolioPage(){
 	$('.image-container').live({
 		mouseenter:
 			function(){
+			alert('df');
 				jQuery('.overlay-popup', this).animate({bottom: '150px'}, 200);
 	},
 		mouseleave:
