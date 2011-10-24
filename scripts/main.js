@@ -635,6 +635,11 @@ function portfolioPage(){
 	
 	
 	
+	// Inner wrap image-container with link to page
+	$(".image-container").wrapInner("<a href='"+$(this).attr('data-link')+"'></a>")
+	
+	
+	
 	// Show overlay popup on project hover
 	$('.image-container').live({
 		mouseenter:
@@ -643,7 +648,7 @@ function portfolioPage(){
 	},
 		mouseleave:
 			function(){
-				jQuery('.overlay-popup', this).animate({bottom: '-100px'}, 100);
+				jQuery('.overlay-popup', this).animate({bottom: '-100px'}, 150);
 		  }
 	});
 	
