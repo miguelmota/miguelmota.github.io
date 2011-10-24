@@ -112,8 +112,6 @@ div.image-container {
 }
 div.image-container img {
 	height: auto;
-	left: 0;
-	position: absolute;
 	width: 100%;
 }
 div.main-wrap {
@@ -519,6 +517,12 @@ div.project {
 	-moz-transition: -moz-box-shadow linear .2s;
 	-o-transition: -o-box-shadow linear .2s;
 	-webkit-transition: -webkit-box-shadow linear .2s;
+}
+.project .image-container img {
+	height: auto;
+	left: 0;
+	position: absolute;
+	width: 100%;
 }
 .overlay-popup {
 	background: #000;
