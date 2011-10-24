@@ -621,7 +621,7 @@ function portfolioPage(){
 					'-moz-box-shadow': '0 0 10px #fff',
 					'box-shadow': '0 0 10px #fff'
 					});
-				jQuery('.overlay-popup', this).animate({bottom: '150px'}, 200);
+				jQuery('.overlay-popup', this).animate({hieght: '150px'}, 200);
 	},
 		mouseleave:
 			function(){
