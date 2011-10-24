@@ -527,6 +527,7 @@ div.project {
 .overlay-popup {
 	background: #000;
 	bottom: -90px;
+	box-sizing: border-box;
 	height: 100px;
 	opacity: .9;
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)" !important;

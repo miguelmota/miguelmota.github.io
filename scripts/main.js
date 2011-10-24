@@ -639,11 +639,11 @@ function portfolioPage(){
 	$('.project .image-container').live({
 		mouseenter:
 			function(){
-				jQuery('.overlay-popup', this).stop().clearQueue().animate({bottom: '0'}, {duration: 200, easing: "cubicEaseOut"});
+				jQuery('.overlay-popup', this).stop().clearQueue().animate({bottom: '0'}, {queue: false, duration: 200, easing: "cubicEaseOut"});
 	},
 		mouseleave:
 			function(){
-				jQuery('.overlay-popup', this).animate({bottom: '-90px'}, 150);
+				jQuery('.overlay-popup', this).animate({bottom: '-90px'}, {queue: false, duration: 200, easing: "bounceEaseOut"});
 		  }
 	});
 	
