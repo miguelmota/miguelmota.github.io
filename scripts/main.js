@@ -639,11 +639,11 @@ function portfolioPage(){
 	$('.image-container:has(".overlay-popup")').live({
 		mouseenter:
 			function(){
-				jQuery('.overlay-popup', this).animate({'top': 100}, 200);
+				jQuery('.overlay-popup', this).animate({bottom: '100px'}, 200);
 	},
 		mouseleave:
 			function(){
-				jQuery('span.overlay', this).animate({'top': 00}, 100);
+				jQuery('span.overlay', this).animate({bottom: '-100px'}, 100);
 		  }
 	});
 	
