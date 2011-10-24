@@ -524,8 +524,12 @@ div.project {
 	-webkit-transition: -webkit-box-shadow linear .2s;
 }
 .overlay-popup {
+	background: #000;
 	bottom: 0;
 	height: 100px;
+	opacity: .8;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)" !important;
+	filter: alpha(opacity=80) !important;
 	position: absolute;
 	width: 100%;
 }
