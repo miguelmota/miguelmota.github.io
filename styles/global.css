@@ -527,8 +527,14 @@ div.project {
 	background: #000;
 	bottom: 0;
 	height: 100px;
+	opacity: .5;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)" !important;
+	filter: alpha(opacity=20) !important;
 	position: absolute;
 	width: 100%;
+}
+.overlay-popup a {
+	display: inline;
 }
 .overlay {
 	background-color: #000;
