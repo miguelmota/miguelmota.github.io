@@ -639,11 +639,11 @@ function portfolioPage(){
 	$('.project .image-container').live({
 		mouseenter:
 			function(){
-				jQuery('.overlay-popup', this).stop().clearQueue().animate({bottom: '0'}, 200);
+				jQuery('.overlay-popup', this).stop().clearQueue().animate({bottom: '10'}, 200);
 	},
 		mouseleave:
 			function(){
-				jQuery('.overlay-popup', this).animate({bottom: '-100px'}, 150);
+				jQuery('.overlay-popup', this).animate({bottom: '-90px'}, 150);
 		  }
 	});
 	
