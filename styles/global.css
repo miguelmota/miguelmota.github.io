@@ -516,14 +516,20 @@ a.google-plus-link {
 div.project {
 	margin-bottom: 25px;
 }
-div.project div.image-container {
+.project .image-container {
 	height: 200px;
 	transition: box-shadow linear .2s;
 	-moz-transition: -moz-box-shadow linear .2s;
 	-o-transition: -o-box-shadow linear .2s;
 	-webkit-transition: -webkit-box-shadow linear .2s;
 }
-span.overlay {
+.overlay-popup {
+	bottom: 0;
+	height: 100px;
+	position: absolute;
+	width: 100%;
+}
+.overlay {
 	background-color: #000;
 	bottom: 0;
 	display: block;
