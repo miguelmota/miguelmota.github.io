@@ -635,6 +635,20 @@ function portfolioPage(){
 	
 	
 	
+	// Show overlay popup on project hover
+	$('.image-container:has(".overlay-popup")').live({
+		mouseenter:
+			function(){
+				jQuery('.overlay-popup', this).animate({'top': 100}, 200);
+	},
+		mouseleave:
+			function(){
+				jQuery('span.overlay', this).animate({'top': 00}, 100);
+		  }
+	});
+	
+	
+	
 	// Show zoom icon on hover
 	$('a.fancybox').hover(function(){
 			jQuery('span.zoom-icon', this).css('display', 'block');
