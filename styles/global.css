@@ -112,6 +112,8 @@ div.image-container {
 }
 div.image-container img {
 	height: auto;
+	left: 0;
+	position: absolute;
 	width: 100%;
 }
 div.main-wrap {
