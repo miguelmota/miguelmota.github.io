@@ -534,7 +534,11 @@ div.project {
 	width: 100%;
 }
 .overlay-popup a {
-	display: inline;
+	display: inline !important;
+}
+.view-details-link {
+	float: right;
+	vertical-align: middle;
 }
 .overlay {
 	background-color: #000;
