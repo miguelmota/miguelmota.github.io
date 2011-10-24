@@ -636,7 +636,7 @@ function portfolioPage(){
 	
 	
 	// Inner wrap image-container with link to page
-	$(".project .image-container img").wrap("<a href='"+$(this).prev('.project').attr('data-link')+"'></a>")
+	$(".project .image-container img").wrap("<a href='"+$(this).attr('data-link')+"'></a>")
 	
 	
 	
