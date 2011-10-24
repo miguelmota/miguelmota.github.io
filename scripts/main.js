@@ -621,7 +621,6 @@ function portfolioPage(){
 					'-moz-box-shadow': '0 0 10px #fff',
 					'box-shadow': '0 0 10px #fff'
 					});
-				jQuery('.overlay-popup', this).animate({height: '150px'}, 200);
 	},
 		mouseleave:
 			function(){
@@ -640,12 +639,11 @@ function portfolioPage(){
 	$('.image-container').live({
 		mouseenter:
 			function(){
-			//alert('df');
-			//	jQuery('.overlay-popup', this).animate({bottom: '150px'}, 200);
+				jQuery('.overlay-popup', this).animate({bottom: '150px'}, 200);
 	},
 		mouseleave:
 			function(){
-			//	jQuery('.overlay-popup', this).animate({bottom: '-100px'}, 100);
+				jQuery('.overlay-popup', this).animate({bottom: '-100px'}, 100);
 		  }
 	});
 	
