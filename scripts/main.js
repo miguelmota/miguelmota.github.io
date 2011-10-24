@@ -639,7 +639,7 @@ function portfolioPage(){
 	$('.project .image-container').live({
 		mouseenter:
 			function(){
-				jQuery('.overlay-popup', this).stop().clearQueue().animate({bottom: '0'}, 200);
+				jQuery('.overlay-popup', this).stop().clearQueue().animate({bottom: '0'}, {duration: 200, easing: "cubicEaseOut"});
 	},
 		mouseleave:
 			function(){
