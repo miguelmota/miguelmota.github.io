@@ -528,7 +528,7 @@ div.project {
 	background: #000;
 	bottom: -100px;
 	height: 100px;
-	opacity: .5;
+	opacity: .2;
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)" !important;
 	filter: alpha(opacity=20) !important;
 	position: absolute;
