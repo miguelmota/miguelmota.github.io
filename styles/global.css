@@ -686,7 +686,6 @@ a.contact-submit {
 input.error,
 textarea.error {
 	border-color: #870000;
-	color: #870000;
 }
 label.error {
 	background-color: inherit;
