@@ -555,6 +555,7 @@ div.project {
 	display: block;
 	float: right;
 	width: 150px;	
+	border: 1px solid red;
 }
 .project-view a:hover {
 	background: #000;
