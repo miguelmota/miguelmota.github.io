@@ -563,12 +563,12 @@ div.project {
 	display: block;
 	float: left;
 	width: 240px;	
-	height: 100px;
+	height: 80px;
 	vertical-align: middle;
 }
 .project-role-ul {
 	list-style-type: square;
-	padding-top: 20px 0 0 10px;
+	padding: 20px 0 0 20;
 }
 .project-view {
 	display: block;
