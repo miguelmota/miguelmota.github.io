@@ -547,13 +547,13 @@ div.project {
 	float: left;
 	font-size: 20px;
 	font-weight: bold;
-	line-height: 400%;
+	line-height: 75px;
 	width: 220px;	
 }
 .project-role {
 	display: block;
 	float: left;
-	line-height: 400%;
+	line-height: 75px;
 	width: 250px;	
 }
 .project-role-ul {
@@ -562,7 +562,7 @@ div.project {
 .project-view {
 	display: block;
 	float: right;
-	line-height: 400%;
+	line-height: 75px;
 	width: 120px;	
 }
 .project-view a:hover {
