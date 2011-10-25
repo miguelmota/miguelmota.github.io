@@ -615,7 +615,7 @@ function portfolioPage(){
 	$(".project .image-container").live({
 		mouseenter:
 			function(){
-				jQuery('span.overlay', this).fadeOut(200);
+				jQuery('.overlay', this).fadeOut(200);
 				$(this).css({
 					'-webkit-box-shadow': '0 0 10px #fff',
 					'-moz-box-shadow': '0 0 10px #fff',
@@ -624,7 +624,7 @@ function portfolioPage(){
 	},
 		mouseleave:
 			function(){
-				jQuery('span.overlay', this).hide().fadeIn(300);
+				jQuery('.overlay', this).hide().fadeIn(300);
 				$(this).css({
 					'-webkit-box-shadow': '2px 2px 5px #111',
 					'-moz-box-shadow': '2px 2px 5px #111',
@@ -636,14 +636,14 @@ function portfolioPage(){
 	
 	
 	// Show overlay popup on project hover
-	$('.project .image-container').live({
+	$('.project').live({
 		mouseenter:
 			function(){
-				jQuery('.overlay-popup', this).stop().clearQueue().animate({bottom: '0'}, {queue: false, duration: 200, easing: "cubicEaseOut"});
+				jQuery('.overlay-popup', this).animate({bottom: '0'}, {queue: false, duration: 200, easing: "ExpoEaseIn"});
 	},
 		mouseleave:
 			function(){
-				jQuery('.overlay-popup', this).animate({bottom: '-90px'}, {queue: false, duration: 200, easing: "bounceEaseOut"});
+				jQuery('.overlay-popup', this).animate({bottom: '-95px'}, {queue: false, duration: 200, easing: "ExpoEaseOut"});
 		  }
 	});
 	
