@@ -541,6 +541,7 @@ div.project {
 	font-size: 20px;
 	font-weight: bold;
 	width: 200px;	
+	vertical-align: middle;
 }
 .role {
 	width: 200px;	
