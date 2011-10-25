@@ -553,10 +553,10 @@ div.project {
 .project-role {
 	display: block;
 	float: left;
-	line-height: 75px;
 	width: 250px;	
 }
 .project-role-ul {
+	line-height: 75px;
 	list-style-type: square;
 }
 .project-view {
