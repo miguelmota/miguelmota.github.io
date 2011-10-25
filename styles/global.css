@@ -554,7 +554,7 @@ div.project {
 .project-view {
 	display: block;
 	float: right;
-	width: 150px;	
+	width: 120px;	
 	border: 1px solid red;
 }
 .project-view a:hover {
