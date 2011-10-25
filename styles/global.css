@@ -554,6 +554,7 @@ div.project {
 	display: block;
 	float: left;
 	font-style: italic;
+		width: 220px;	
 }
 .project-role {
 	display: block;
