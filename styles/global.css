@@ -536,8 +536,19 @@ div.project {
 	position: absolute;
 	width: 100%;
 }
-.overlay-popup a {
-	
+.site-name {
+	float: left;
+	font-size: 20px;
+	font-weight: bold;
+	width: 200px;	
+}
+.role {
+	width: 200px;	
+}
+.view-link {
+	float: right;
+	text-align: right;
+	width: 100px;	
 }
 .view-details-link {
 	float: right;
