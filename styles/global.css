@@ -560,7 +560,6 @@ div.project {
 	list-style-type: square;
 }
 .project-role-ul li {
-	display: table-cell;
 	vertical-align: middle;
 }
 .project-view {
