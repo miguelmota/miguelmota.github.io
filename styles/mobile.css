@@ -70,12 +70,15 @@ h1.title {
 	-webkit-box-shadow:  none !important;
 	width: 100% !important;
 }
-div.project div.image-container {
+.image-container {
 	height: 100% !important;
 }
-div.project div.image-container img {
+.image-container img {
 	height: auto !important;
 	width: 100% !important;
+}
+.overlay-popup {
+	display: none;
 }
 .work-image {
 	width: 100% !important;
