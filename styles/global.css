@@ -545,6 +545,7 @@ div.project {
 }
 .project-role {
 	display: block;
+	float: left;
 	width: 200px;	
 }
 .project-role-ul {
