@@ -551,14 +551,16 @@ div.project {
 	width: 220px;	
 }
 .project-role {
-	display: block;
+	display: table-cell;
 	float: left;
-		height: 100px;
+	position: absolute;
+	top: 50%;
 	width: 250px;	
+	vertical-align: middle;
 }
 .project-role-ul {
-	line-height: 75px;
-	height: 100px;
+	position: relative;
+	top: -50%;
 	list-style-type: square;
 }
 .project-role-ul li {
