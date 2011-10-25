@@ -1,7 +1,4 @@
 paginate: 2
 paginate: true
-paginate_file: blog.html
 permalink: /:title
 pygments: true
-server: true
-server_port: 4001
