@@ -1,3 +1,4 @@
 paginate: 2
+paginate_file: blog.html
 permalink: /:title
 pygments: true
