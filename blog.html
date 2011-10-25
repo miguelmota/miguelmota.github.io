@@ -34,20 +34,18 @@ title: Blog
 			</div>
 		{% endfor %}
 		
-				<div class="prev_next post_nav">
+		<div class='navigation'>
 		    {% if page.previous.url %}
-		    <p class="previous" style='float: left;'>
-		        «&nbsp;<a href="{{ page.previous.url }}/" rel="previous" title="{{ page.previous.title }}">{{ page.previous.title | truncatewords: 15 }}</a>
-		    </p>
+				<a class='previous-url' href='{{ page.previous.url }}'>&#171; {{ page.previous.title | truncatewords: 15 }}</a>
 		    {% endif %}
 		    {% if page.next.url %}
-		    <p class="next" style='float: right;'>
-		        <a href="{{ page.next.url }}/" rel="next" title="{{ page.next.title }}">{{ page.next.title | truncatewords: 15 }}</a>&nbsp;»
-		    </p>
+			    <a class='next-url' href='{{ page.next.url }}'>{{ page.next.title | truncatewords: 15 }} &#187;</a>
 		    {% endif %}
 		</div>
 		
-		
+		{% for page in paginator.posts %}
+  1
+{% endfor %}
 		
 		<a class='archive-link' href='/archive'>view archive &#187;</a>
 	</div>
