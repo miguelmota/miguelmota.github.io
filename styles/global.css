@@ -52,6 +52,9 @@ a.button:hover {
 a.button:active {
 	text-shadow: none;
 }
+.hide {
+	display: none;
+}
 a.mobile-bar {
 	display: block;
 	position: relative;

@@ -20,7 +20,7 @@ title: Blog
 	 				{% else %}
 						{{ post.content || truncatehtml: 300 }}
 					{% endif %}
-					<p><a href='{{ post.url }}'>more &#187;</a></p>
+					<p class='hide'><a href='{{ post.url }}'>more &#187;</a></p>
 				</div>
 				<div class='tags-wrap'>
 					{% for category in post.categories %}
