@@ -550,6 +550,10 @@ div.project {
 	line-height: 75px;
 	width: 220px;	
 }
+.project-description {
+	display: block;
+	float: left;
+}
 .project-role {
 	display: block;
 	float: left;
@@ -557,12 +561,8 @@ div.project {
 	vertical-align: middle;
 }
 .project-role-ul {
-	position: relative;
-	top: 50%;
 	list-style-type: square;
-}
-.project-role-ul li {
-	vertical-align: middle;
+	padding-top: 20px;
 }
 .project-view {
 	display: block;
