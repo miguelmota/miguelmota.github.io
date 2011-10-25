@@ -542,20 +542,19 @@ div.project {
 	position: relative;
 	width: 100%;
 }
-.project-name {
+.project-name-wrap {
 	display: block;
 	float: left;
+	width: 220px;
+}
+.project-name {
+	display: block;
 	font-size: 20px;
-	font-weight: bold;
-border: 1px solid red;
-	width: 220px;	
+	font-weight: bold;	
 }
 .project-description {
 	display: block;
-	float: left;
-	font-style: italic;
-		width: 220px;	
-		border: 1px solid red;
+	font-style: italic;	
 }
 .project-role {
 	display: block;
