@@ -544,7 +544,7 @@ div.project {
 	vertical-align: middle;
 }
 .overlay {
-	display: none;
+	display: none !important;
 	background-color: #000;
 	bottom: 0;
 	display: block;
