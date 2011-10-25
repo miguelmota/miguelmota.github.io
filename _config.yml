@@ -1,4 +1,4 @@
-paginate: 10
+paginate: 2
 paginate: true
 permalink: /:title
 pygments: true
