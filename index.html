@@ -51,15 +51,15 @@ title:
 		<div class='loader'></div>
 	</div>
 	
-	
-			<div class='navigation'>
-		    {% if page.previous.url %}
-				<a class='previous-url' href='{{ page.previous.url }}'>&#171; {{ page.previous.title | truncatewords: 15 }}</a>
-		    {% endif %}
-		    {% if page.next.url %}
-			    <a class='next-url' href='{{ page.next.url }}'>{{ page.next.title | truncatewords: 15 }} &#187;</a>
-		    {% endif %}
-		</div>
-	
+	{% for post in paginator.posts %} 
+<div class="post"> 
+  <div class="content"> 
+    <h2 class="title"><a href="{{ post.url }}">{{ post.title }}</a></ 
+h2> 
+    <span class="date">{{ post.date | date:"%B %d, %Y" }}</span> 
+    {{ post.content }} 
+  </div> 
+</div> 
+{% endfor %} 
 	
 </section>
