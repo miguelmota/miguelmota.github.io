@@ -545,6 +545,7 @@ div.project {
 .project-name-wrap {
 	display: block;
 	float: left;
+	padding-top: 25px;
 	width: 220px;
 }
 .project-name {
