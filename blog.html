@@ -7,7 +7,7 @@ title: Blog
 <section class='content blog'>
 	{% include header.html %}
 	<div class='posti'>
-		{% for post in paginator.posts %}
+		{% for post in site.posts %}
 			<div class='post blog-p'>
 				<h1 class='post-title'><a id='post-link' href='{{ post.url }}'>{{ post.title }}</a></h1>
 				<div class='post-info'>
@@ -39,6 +39,7 @@ title: Blog
 		
 		
 		<!-- Pagination links -->
+		<!-- 
 <div class="pagination">
   {% if paginator.previous_page %}
     <a href="/page{{paginator.previous_page}}" class="previous">Previous</a>
@@ -51,7 +52,7 @@ title: Blog
   {% else %}
     <span class="next ">Next</span>
   {% endif %}
-</div>
+</div> -->
 		
 		<a class='archive-link' href='/archive'>view archive &#187;</a>
 	</div>
