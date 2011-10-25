@@ -68,8 +68,8 @@ h1.title {
 	-moz-box-shadow: none !important;
 	-o-box-shadow: none !important;
 	-webkit-box-shadow:  none !important;
-	min-height: 10px !important;
-	height: auto !important;
+	min-height: 50px !important;
+	height: 100% !important;
 	width: 100% !important;
 }
 .image-container img {
