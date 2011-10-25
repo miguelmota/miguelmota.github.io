@@ -537,15 +537,21 @@ div.project {
 	width: 100%;
 }
 .project-name {
+	display: block;
 	float: left;
 	font-size: 20px;
 	font-weight: bold;
 	width: 200px;	
 }
 .project-role {
+	display: block;
 	width: 200px;	
 }
+.project-role-ul {
+	list-style-type: square;
+}
 .project-view {
+	display: block;
 	float: right;
 	text-align: right;
 	width: 100px;	
