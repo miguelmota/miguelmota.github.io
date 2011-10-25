@@ -78,6 +78,9 @@ h1.title {
 .overlay-popup {
 	display: none;
 }
+.overlay {
+	display: none;
+}
 .work-image {
 	width: 100% !important;
 }
