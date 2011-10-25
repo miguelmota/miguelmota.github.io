@@ -848,6 +848,16 @@ div.share-container {
 	float: right;
 	padding: 0;
 }
+.navigation {
+	padding-bottom: 20px;
+	position: relative;
+}
+.previous-url {
+	float: left;
+}
+.next-url {
+	float: right;
+}
 a.archive-link {
 	margin-top: 25px;
 }
