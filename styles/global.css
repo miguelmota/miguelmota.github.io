@@ -849,7 +849,7 @@ div.share-container {
 	padding: 0;
 }
 .navigation {
-	padding-bottom: 20px;
+	margin-bottom: 20px;
 	position: relative;
 }
 .previous-url {
