@@ -68,11 +68,11 @@ h1.title {
 	-moz-box-shadow: none !important;
 	-o-box-shadow: none !important;
 	-webkit-box-shadow:  none !important;
-	height: 100% !important;
+	min-height: 200px !important;
 	width: 100% !important;
 }
 .image-container img {
-	height: 100% !important;
+	height: auto !important;
 	width: 100% !important;
 }
 .overlay-popup {
