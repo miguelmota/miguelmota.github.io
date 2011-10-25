@@ -561,6 +561,7 @@ div.project {
 .project-view {
 	display: block;
 	float: right;
+	line-height: 400%;
 	width: 120px;	
 }
 .project-view a:hover {
