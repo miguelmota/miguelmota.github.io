@@ -539,6 +539,7 @@ div.project {
 .overlay-project-description {
 	display: block;
 	position: relative;
+	width: 100%;
 }
 .project-name {
 	display: block;
