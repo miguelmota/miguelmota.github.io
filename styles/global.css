@@ -541,6 +541,8 @@ div.project {
 	float: left;
 	font-size: 20px;
 	font-weight: bold;
+	position: absolute;
+	top: 50%;
 	width: 250px;	
 }
 .project-role {
@@ -555,7 +557,6 @@ div.project {
 	display: block;
 	float: right;
 	width: 120px;	
-	border: 1px solid red;
 }
 .project-view a:hover {
 	background: #000;
