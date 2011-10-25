@@ -547,8 +547,8 @@ div.project {
 	float: left;
 	font-size: 20px;
 	font-weight: bold;
-
-	width: 250px;	
+	line-height: 300%
+	width: 220px;	
 }
 .project-role {
 	display: block;
