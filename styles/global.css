@@ -547,7 +547,7 @@ div.project {
 	float: left;
 	font-size: 20px;
 	font-weight: bold;
-
+border: 1px solid red;
 	width: 220px;	
 }
 .project-description {
@@ -555,6 +555,7 @@ div.project {
 	float: left;
 	font-style: italic;
 		width: 220px;	
+		border: 1px solid red;
 }
 .project-role {
 	display: block;
