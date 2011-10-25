@@ -559,9 +559,11 @@ div.project {
 	font-style: italic;	
 }
 .project-role {
+	border-left: 1px solid #555;
 	display: block;
 	float: left;
-	width: 250px;	
+	width: 240px;	
+	padding-left: 10px;
 	vertical-align: middle;
 }
 .project-role-ul {
