@@ -553,14 +553,12 @@ div.project {
 .project-role {
 	display: block;
 	float: left;
-	position: absolute;
-	top: 50%;
 	width: 250px;	
 	vertical-align: middle;
 }
 .project-role-ul {
 	position: relative;
-	top: -50%;
+	top: 50%;
 	list-style-type: square;
 }
 .project-role-ul li {
