@@ -556,7 +556,7 @@ div.project {
 	width: 250px;	
 }
 .project-role-ul {
-	line-height: 75px;
+	line-height: 75px !important;
 	list-style-type: square;
 }
 .project-view {
