@@ -551,6 +551,7 @@ div.project {
 	width: 220px;	
 }
 .project-role {
+	display: block;
 	float: left;
 	position: absolute;
 	top: 50%;
