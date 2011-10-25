@@ -68,7 +68,7 @@ h1.title {
 	-moz-box-shadow: none !important;
 	-o-box-shadow: none !important;
 	-webkit-box-shadow:  none !important;
-	min-height: 50px !important;
+	min-height: 100px !important;
 	height: 100% !important;
 	width: 100% !important;
 }
