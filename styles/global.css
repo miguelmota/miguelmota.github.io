@@ -538,6 +538,7 @@ div.project {
 }
 .overlay-project-description {
 	display: block;
+	height: 100px;
 	position: relative;
 	width: 100%;
 }
