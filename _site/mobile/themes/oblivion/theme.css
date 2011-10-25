@@ -799,12 +799,25 @@ div.footer a {
 div.blog-description {
 	background-color: #111;
 	padding: 5px;
-	margin-bottom: 15px;
+	margin-bottom: 10px;
 }
 div.follow-container {
-	display: none;
+	padding-bottom: 15px;
 }
-
+a.twitter-follow-button {
+	float: left;
+	width: 40%;
+}
+a.subscribe-button {
+	color: #ed7e2a !important;
+	float: right;
+	font-size: 12px;
+}
+a.subscribe-button img {
+	height: 12px !important;
+	vertical-align: middle;
+	width: 12px !important;
+}
 img.logo {
 	height: 32px;
 	width: auto;
@@ -836,17 +849,11 @@ a#standard_view {
 	color: #007299;
 }
 /* STREAM_PAGE ============================================================ */
-span.mtip {
-	display: none;
-}
-div.content img.loader {
-	display: none;
+div.loader {
+	background: url('/images/ajax-loader.gif') no-repeat 0 0;
+	height: 16px;
+	margin-right: 5px;
 	width: 16px;
-	height: 16px;	
-	clear: both;
-	margin: 0 auto;
-	position: relative;
-	top: -25px;
 }
 div#stream a.social {
 	display: block !important;
@@ -979,6 +986,9 @@ div#portfolio div.work-description {
 div#portfolio span.work-date {
 	float: right;
 	color: #555;
+	font-size: 10px !important;
+}
+div#portfolio a.site-link {
 	font-size: 10px !important;
 }
 div#portfolio span.zoom-icon {

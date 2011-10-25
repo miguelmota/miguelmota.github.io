@@ -1,16 +1,8 @@
 @charset 'utf-8';
-* {
-	opacity: none;	
+
+.project .image-container {
+	border: 1px solid #252525;
 }
-section.stream div.stream.latitude {
-	display: none !important;	
-}
-section.portfolio div.container div.overlay {
-	display: none !important;
-}
-section.portfolio div.container {
-	border: 1px solid #999;
-}
-section.portfolio div.container:hover {
-	border-color: #007799;
+.project .image-container:hover {
+	border-color: #007299;
 }

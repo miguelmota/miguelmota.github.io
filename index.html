@@ -50,4 +50,16 @@ title:
 		<div id='wakoopa-software'></div>
 		<div class='loader'></div>
 	</div>
-</section></section>
+	
+	
+			<div class='navigation'>
+		    {% if page.previous.url %}
+				<a class='previous-url' href='{{ page.previous.url }}'>&#171; {{ page.previous.title | truncatewords: 15 }}</a>
+		    {% endif %}
+		    {% if page.next.url %}
+			    <a class='next-url' href='{{ page.next.url }}'>{{ page.next.title | truncatewords: 15 }} &#187;</a>
+		    {% endif %}
+		</div>
+	
+	
+</section>

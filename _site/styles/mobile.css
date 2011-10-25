@@ -1,0 +1,123 @@
+@charset 'utf-8';
+
+/* ==============================================================================
+	IMPORT STYLESHEETS
+============================================================================== */
+@import 'global.css';
+/* ==============================================================================
+	END IMPORT STYLESHEETS
+============================================================================== */
+
+html {
+	overflow-x: hidden !important;
+
+}
+.main-wrap {
+	margin: 10px auto 0 auto !important;
+	padding: 0 !important;
+	width: 100% !important;
+}
+.main-side-nav {
+	clear: both !important;
+	float: none !important;
+	position: relative !important;
+	width: 100% !important;
+}
+.main-nav a {
+	border-left: 4px solid #292929;
+	display: inline !important;
+	float: left !important;
+	font-size: 16px !important;
+	padding: 8px 8px 8px 10px !important;
+}
+.logo-wrap {
+	height: 50px !important;
+	width: 100% !important;
+	padding-bottom: 10px !important;
+	text-align: center !important;
+}
+.nav-logo {
+	display: inline-block !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	vertical-align: -25px !important;
+}
+h1.title {
+	display: inline !important;
+	float: none !important;
+	font-size: 32px !important;
+	width: 100% !important;
+}
+.slash,
+.sub {
+	display: none !important;
+}
+.content {
+	clear: both !important;
+	float: none !important;
+	padding-top: 10px !important;
+	width: 100% !important;
+}
+.content-container {
+	float: none !important;
+	padding: 5px !important;
+	width: 97% !important;
+}
+.image-container {
+	box-shadow: none !important;
+	-moz-box-shadow: none !important;
+	-o-box-shadow: none !important;
+	-webkit-box-shadow:  none !important;
+	width: 100% !important;
+}
+.image-container {
+	height: 100% !important;
+}
+.image-container img {
+	height: auto !important;
+	width: 100% !important;
+}
+.overlay-popup {
+	display: none;
+}
+.work-image {
+	width: 100% !important;
+}
+.work-sort-wrap {
+	padding-bottom: 10px !important;
+	position: relative !important;
+	top: 0 !important;
+}
+.contact-qrcode {
+	display: none !important;
+}
+.phone-wrap {
+	display: block !important;
+	margin-bottom: 10px !important;
+}
+.contact-form {
+	float: none !important;
+}
+.contact-message {
+	max-width: auto !important;
+	width: 97% !important;
+}
+#cse-search-form {
+	float: none !important;
+	position: relative !important;
+	right: 0 !important;
+	top: 0 !important;
+}
+.blog-info {
+	height: auto !important;
+	width: 100% !important; 
+}
+.blog-description {
+	float: none !important;
+}
+div.follow-container {
+	float: none !important;
+	position: relative;
+	right: 0 !important;
+	width: 340px;
+}

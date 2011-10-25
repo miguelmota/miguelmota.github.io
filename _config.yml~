@@ -1,4 +1,6 @@
-paginate: 10
+paginate: 2
 paginate: true
+paginate_file: blog.html
 permalink: /:title
 pygments: true
+server_port: 4000

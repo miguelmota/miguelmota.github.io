@@ -1,5 +1,11 @@
 $(document).ready(function(){
 	
+	// Open external links in new tab
+	$('a[href^=http]').live('click', function(){
+		window.open(this.href);
+		return false;
+	});
+	
 	$('ul.nav li a, ul.contact li a').contents().wrap("<span class='text' />").end().append("<span class='rsaquo'>&#8250;</span>");
 
 	$('#stream div.content').load('/stream section.content', function(){
@@ -11,15 +17,28 @@ $(document).ready(function(){
 	$('#portfolio div.content').load('/portfolio/miggs section.content', function(){
 		$('div.work-image:not(:first)', this).hide();
 		
-		$('p.work-description', this).appendTo('div.work');
+		$('div.work-description', this).appendTo('div.work');
 		
 		$(this).append("<div class='foodfail' />");
+
 		
 		$('div.foodfail').load('/portfolio/foodfail section.content', function(){
 			
+			$('div.foodfail').after("<div class='miguelmota' />");
+			
 			$('div.foodfail div.work-image:not(:first)').hide();
 			
-			$('div.foodfail p.work-description').appendTo('div.foodfail div.work');
+			$('div.foodfail div.work-description').appendTo('div.foodfail div.work');
+			
+				$('div.miguelmota').load('/portfolio/miguelmota section.content', function(){
+					
+					$('div.miguelmota div.work-image:not(:first)').hide();
+					
+					$('div.miguelmota div.work-description').appendTo('div.miguelmota div.work');
+					
+					
+					
+				});
 			
 		});
 		
@@ -108,10 +127,10 @@ var jQt = $.jQTouch({
 
 function loadDisqus(){
 	
+	//comment form
     var disqus_shortname = 'miguelmota';
-    var disqus_url = 'http://wwww.miguelmota.com/{{ page.url }}';
-    
-    //comment box
+    var disqus_identifier = '{{ page.url }}';
+    var disqus_url = 'http://www.miguelmota.com{{ page.url }}';
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
         dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
@@ -119,12 +138,14 @@ function loadDisqus(){
     })();
     
     //comment count
+    var disqus_shortname = 'miguelmota';
     (function () {
         var s = document.createElement('script'); s.async = true;
         s.type = 'text/javascript';
         s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(s);
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
     }());
+
 }
 
 //convert UTC time to niceTime, ie. 2 hours ago
@@ -153,129 +174,152 @@ var niceTime = (function(){
 	})();
 
 
-
+function showMtip(element) {
+	var link = element;
+	$(link).trigger('mouseenter');
+	setTimeout(function(){
+		$(link).trigger('mouseleave');
+	}, 3000);
+}
 
 
 function streamPage(){
+	
+	$('a.twitter').html('Twitter <span class="sub">@miguel_mota</span>');
+	$('a.facebook').html('Facebook <span class="sub">miguel.mota2</span>');
+	$('a.tumblr').html('Tumblr <span class="sub">miguelmota</span>');
+	$('a.delicious').html('Delicious <span class="sub">miguelmota</span>');
+	$('a.lastfm').html('Last.fm <span class="sub">miguel_mota</span>');
+	$('a.wakoopa').html('Wakoopa <span class="sub">miguelmota</span>');	
 		
-		// Twitter stream
-		$('div.twitter img.loader').css('display','block');
-		$.getJSON('http://twitter.com/status/user_timeline/miguel_mota.json?&count=5&callback=?', 
-				function(data){
-					$.each(data, function(i, status){
-						var post = status.text;
-						var id = status.id_str;
-			    	  	var date = new Date(status.created_at).toUTCString();
-				        var newText = '<span>'+post.split(' ').join('</span> <span>')+'</span>';
-			    	  	$('ul.twitter-status').append("<li id='"+id+"' class='status'>&#187; <span class='post'>"+newText+"</span> <span class='date'><a href='http://twitter.com/miguel_mota/status/"+id+"'>"+niceTime(date)+"</a></span></li>");
-			    	    $("li.status[id='"+id+"'] span").find(":contains('http')").wrapInner("<a href='"+$("li.status[id='"+id+"'] span").find(":contains('http')").text()+"'> </a>");
-			    	    $("li.status[id='"+id+"'] span").find(":contains('@')").wrapInner("<a href='http://twitter.com/"+$("li.status[id='"+id+"'] span").find(":contains('@')").text().substr(1)+"'> </a>");
-					});
-					$('div.twitter img.loader').css('display','none');
-				}
-		);
-		
-		// Facebook stream
-		$('div.facebook img.loader').css('display','block');
-		$.getJSON('https://graph.facebook.com/miguel.mota2/feed?limit=3&callback=?', 
-				function(json){
-					$.each(json.data, function(i, fb){
-						var post = fb.message;
-						var post_id = fb.id.substr(16);
-						var type = fb.type;
-						var link = fb.link;
-						var name = fb.name;
-						var caption = fb.caption;
-						var description = fb.description;
-			    	  	var date = new Date(fb.created_time).toUTCString();		   
-			    	  	switch(type){
-			    	  	case 'status':
-				    	    $('ul.facebook-status').append("<li class='status'>&#187; <span class='post'>"+post+"</span> <span class='stream-date'><a href='http://www.facebook.com/miguel.mota2/posts/"+post_id+"'>"+niceTime(date)+"</a></span></li>");
-				    	    break;
-			    	  	case 'link':
-			    	  		if(post){
-					    	    $('ul.facebook-status').append("<li class='status'>&#187; Link: <span class='post'>"+post+" <a href='"+link+"'>"+name+"</a></span> <span class='stream-date'><a href='http://www.facebook.com/miguel.mota2/posts/"+post_id+"'>"+niceTime(date)+"</a></span></li>");
-			    	  		}
-			    	  		else{
-			    	  			$('ul.facebook-status').append("<li class='status'>&#187; Link: <a href='"+link+"'>"+name+"</a></span> <span class='stream-date'><a href='http://www.facebook.com/miguel.mota2/posts/"+post_id+"'>"+niceTime(date)+"</a></span></li>");
-			    	  		}
-				    	    break;
-			    	  	case 'video':
-			    	  		if(post){
-			    	  			$('ul.facebook-status').append("<li class='status'>&#187; Video: <span class='post'>"+post+" <a href='"+link+"'>"+name+"</a></span> <span class='stream-date'><a href='http://www.facebook.com/miguel.mota2/posts/"+post_id+"'>"+niceTime(date)+"</a></span></li>");
-			    	  		}
-			    	  		else{
-					    	    $('ul.facebook-status').append("<li class='status'>&#187; Video: <span class='post'><a href='"+link+"'>"+name+"</a></span> <span class='stream-date'><a href='http://www.facebook.com/miguel.mota2/posts/"+post_id+"'>"+niceTime(date)+"</a></span></li>");
-			    	  		}
-				    	    break;
-			    	  	default:
-			    	  		break;
-			    	  	}
-					});
-					$('div.facebook img.loader').css('display','none');
-				}
-		);
-		
-		
-		// Tumblr stream
-		$('div.tumblr img.loader').css('display','block');
-		$.getJSON('http://miguelmota.tumblr.com/api/read/json?num=3&callback=?', 
-				function(data){
-					$.each(data.posts, function(i, posts){ 
-				    	  	var date = new Date(this['date-gmt']).toUTCString();
-				    	  	var url = this.url;
-				    	  	var caption = this['photo-caption'];
-				    	  	var slug = this.slug.replace(/-/g,' ');
-				    	  	$('ul.tumblr-posts').append("<li>&#187; <a href='"+url+"'>"+slug.substring(0,1).toUpperCase()+slug.substr(1,200)+"</a> <span class='stream-date'>"+niceTime(date)+"</span></li>");
-				      }); 
-					  $('div.tumblr img.loader').css('display','none');
-				  }
-		);
-		
-		// Delicious stream
-		$('div.delicious img.loader').css('display','block');
-		$.getJSON('http://feeds.delicious.com/v2/json/miguelmota/?count=3&callback=?', 
-				function(data){
-					$.each(data, function(i, item){
-						var title = item.d;
-						var url = item.u;
-			    	  	var date = new Date(item.dt).toUTCString();
-						$('ul.delicious-bookmarks').append("<li>&#187; <a href='"+url+"'>"+title+"</a> <span class='stream-date'>"+niceTime(date)+"</span></li>");
-					});
-					$('div.delicious img.loader').css('display','none');
+	//initialize mtip
+	//$('.mtip').mtip();
+	
+	// Twitter stream
+	$('div.twitter div.loader').css('display','block');
+	$.getJSON('http://twitter.com/status/user_timeline/miguel_mota.json?&count=5&callback=?', 
+			function(data){
+				$.each(data, function(i, status){
+					var post = status.text;
+					var id = status.id_str;
+		    	  	var date = new Date(status.created_at).toUTCString();
+			        var newText = '<span>'+post.split(' ').join('</span> <span>')+'</span>';
+		    	  	$('ul.twitter-status').append("<li id='"+id+"' class='status'>&#187; <span class='post'>"+newText+"</span> <span class='date'><a href='http://twitter.com/miguel_mota/status/"+id+"'>"+niceTime(date)+"</a></span></li>");
+		    	    $("li.status[id='"+id+"'] span").find(":contains('http')").wrapInner("<a href='"+$("li.status[id='"+id+"'] span").find(":contains('http')").text()+"'> </a>");
+		    	    $("li.status[id='"+id+"'] span").find(":contains('@')").wrapInner("<a href='http://twitter.com/"+$("li.status[id='"+id+"'] span").find(":contains('@')").text().substr(1)+"'> </a>");
+		    	    $("li.status[id='"+id+"'] span").find(":contains('#')").wrapInner("<a href='http://twitter.com/#!/search/"+$("li.status[id='"+id+"'] span").find(":contains('#')").text().substr(1)+"'> </a>");
+				});
+				$('div.twitter div.loader').css('display','none');
+				//showMtip('a.social.twitter');
 			}
-		);
-		
-		// Last.fm stream
-		$('div.lastfm img.loader').css('display','block');
-		$.getJSON('http://ws.audioscrobbler.com/2.0/?method=user.getRecentTracks&user=miguel_mota&api_key=b25b959554ed76058ac220b7b2e0a026&format=json&limit=5&callback=?', 
-				function(data){       
-					$.each(data.recenttracks.track, function(i, item){ 
-							var url = item.url;
-							var name = item.name;
-							var artist = item.artist['#text'];
-							var date =  item.date['#text'];
-							$('ul.lastfm-tracks').append("<li><a class='link' href='"+url+"'>"+artist+" - "+name+"</a> <span class='stream-date'>"+date+"</span></li>");
-					}); 
-					$('div.lastfm img.loader').css('display','none');
-				}
-		);
-		
-		// Wakoopa stream
-		$('div.wakoopa img.loader').css('display','block');
-		$.getJSON('http://api.wakoopa.com/miguelmota/recently_used.json?limit=3&callback=?', 
-			function wakoopaApi(data){
-				var html = ["<ul class='wakoopa-software'>"];
-				for(var i = 0; i < data.length; i++){
-					var entry = data[i].software;
-					var date = new Date(entry.last_active_at).toUTCString();
-					html.push("<li><a class='link' href='", entry.complete_url, "'>", entry.name, "</a> <span class='stream-date'>"+niceTime(date)+"</span>", "</li>");
-				}
-				html.push("</ul>");
-				document.getElementById('wakoopa-software').innerHTML = html.join("");
-				$('div.wakoopa img.loader').css('display','none');
+	);
+	
+	// Facebook stream
+	$('div.facebook div.loader').css('display','block');
+	$.getJSON('https://graph.facebook.com/miguel.mota2/feed?limit=3&callback=?', 
+			function(json){
+				$.each(json.data, function(i, fb){
+					var post = fb.message;
+					var post_id = fb.id.substr(16);
+					var type = fb.type;
+					var link = fb.link;
+					var name = fb.name;
+					var caption = fb.caption;
+					var description = fb.description;
+		    	  	var date = new Date(fb.created_time).toUTCString();		   
+		    	  	switch(type){
+		    	  	case 'status':
+			    	    $('ul.facebook-status').append("<li class='status'>&#187; <span class='post'>"+post+"</span> <span class='stream-date'><a href='http://www.facebook.com/miguel.mota2/posts/"+post_id+"'>"+niceTime(date)+"</a></span></li>");
+			    	    break;
+		    	  	case 'link':
+		    	  		if(post){
+				    	    $('ul.facebook-status').append("<li class='status'>&#187; Link: <span class='post'>"+post+" <a href='"+link+"'>"+name+"</a></span> <span class='stream-date'><a href='http://www.facebook.com/miguel.mota2/posts/"+post_id+"'>"+niceTime(date)+"</a></span></li>");
+		    	  		}
+		    	  		else{
+		    	  			$('ul.facebook-status').append("<li class='status'>&#187; Link: <a href='"+link+"'>"+name+"</a></span> <span class='stream-date'><a href='http://www.facebook.com/miguel.mota2/posts/"+post_id+"'>"+niceTime(date)+"</a></span></li>");
+		    	  		}
+			    	    break;
+		    	  	case 'video':
+		    	  		if(post){
+		    	  			$('ul.facebook-status').append("<li class='status'>&#187; Video: <span class='post'>"+post+" <a href='"+link+"'>"+name+"</a></span> <span class='stream-date'><a href='http://www.facebook.com/miguel.mota2/posts/"+post_id+"'>"+niceTime(date)+"</a></span></li>");
+		    	  		}
+		    	  		else{
+				    	    $('ul.facebook-status').append("<li class='status'>&#187; Video: <span class='post'><a href='"+link+"'>"+name+"</a></span> <span class='stream-date'><a href='http://www.facebook.com/miguel.mota2/posts/"+post_id+"'>"+niceTime(date)+"</a></span></li>");
+		    	  		}
+			    	    break;
+		    	  	default:
+		    	  		break;
+		    	  	}
+				});
+				$('div.facebook div.loader').css('display','none');
+				//showMtip('a.social.facebook');
 			}
-		);
+	);
+	
+	
+	// Tumblr stream
+	$('div.tumblr div.loader').css('display','block');
+	$.getJSON('http://miguelmota.tumblr.com/api/read/json?num=3&callback=?', 
+			function(data){
+				$.each(data.posts, function(i, posts){ 
+			    	  	var date = new Date(this['date-gmt']).toUTCString();
+			    	  	var url = this.url;
+			    	  	var caption = this['photo-caption'];
+			    	  	var slug = this.slug.replace(/-/g,' ');
+			    	  	$('ul.tumblr-posts').append("<li>&#187; <a href='"+url+"'>"+slug.substring(0,1).toUpperCase()+slug.substr(1,200)+"</a> <span class='stream-date'>"+niceTime(date)+"</span></li>");
+			      }); 
+				  $('div.tumblr div.loader').css('display','none');
+				//showMtip('a.social.tumblr');
+			  }
+	);
+	
+	// Delicious stream
+	$('div.delicious div.loader').css('display','block');
+	$.getJSON('http://feeds.delicious.com/v2/json/miguelmota/?count=3&callback=?', 
+			function(data){
+				$.each(data, function(i, item){
+					var title = item.d;
+					var url = item.u;
+		    	  	var date = new Date(item.dt).toUTCString();
+					$('ul.delicious-bookmarks').append("<li>&#187; <a href='"+url+"'>"+title+"</a> <span class='stream-date'>"+niceTime(date)+"</span></li>");
+				});
+				$('div.delicious div.loader').css('display','none');
+				//showMtip('a.social.delicious');
+		}
+	);
+	
+	// Last.fm stream
+	$('div.lastfm div.loader').css('display','block');
+	$.getJSON('http://ws.audioscrobbler.com/2.0/?method=user.getRecentTracks&user=miguel_mota&api_key=b25b959554ed76058ac220b7b2e0a026&format=json&limit=5&callback=?', 
+			function(data){       
+				$.each(data.recenttracks.track, function(i, item){ 
+						var url = item.url;
+						var name = item.name;
+						var artist = item.artist['#text'];
+						var date =  item.date['#text'];
+						$('ul.lastfm-tracks').append("<li><a class='link' href='"+url+"'>"+artist+" - "+name+"</a> <span class='stream-date'>"+date+"</span></li>");
+				}); 
+				$('div.lastfm div.loader').css('display','none');
+				//showMtip('a.social.lastfm');
+			}
+	);
+	
+	// Wakoopa stream
+	$('div.wakoopa div.loader').css('display','block');
+	$.getJSON('http://api.wakoopa.com/miguelmota/recently_used.json?limit=3&callback=?', 
+		function wakoopaApi(data){
+			var html = ["<ul class='wakoopa-software'>"];
+			for(var i = 0; i < data.length; i++){
+				var entry = data[i].software;
+				var date = new Date(entry.last_active_at).toUTCString();
+				html.push("<li><a class='link' href='", entry.complete_url, "'>", entry.name, "</a> <span class='stream-date'>"+niceTime(date)+"</span>", "</li>");
+			}
+			html.push("</ul>");
+			document.getElementById('wakoopa-software').innerHTML = html.join("");
+			$('div.wakoopa div.loader').css('display','none');
+			//showMtip('a.social.wakoopa');
+		}
+	);
 
 	
 }
