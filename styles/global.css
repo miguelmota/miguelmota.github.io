@@ -553,9 +553,11 @@ div.project {
 .project-role {
 	display: block;
 	float: left;
+		height: 100px;
 	width: 250px;	
 }
 .project-role-ul {
+	line-height: 75px;
 	height: 100px;
 	list-style-type: square;
 }
