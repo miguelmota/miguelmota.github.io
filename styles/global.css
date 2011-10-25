@@ -556,10 +556,11 @@ div.project {
 	width: 250px;	
 }
 .project-role-ul {
-	display: table-cell;
+	display: table-row;
 	list-style-type: square;
 }
 .project-role-ul li {
+	display: table-cell;
 	vertical-align: middle;
 }
 .project-view {
