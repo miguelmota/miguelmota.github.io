@@ -559,8 +559,8 @@ div.project {
 	font-style: italic;	
 }
 .project-role {
-	border-left: 1px solid #222;
-	border-right: 1px solid #222;
+	border-left: 1px solid #111;
+	border-right: 1px solid #111;
 	display: block;
 	float: left;
 	width: 240px;	
