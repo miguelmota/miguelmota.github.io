@@ -541,12 +541,12 @@ div.project {
 	float: left;
 	font-size: 20px;
 	font-weight: bold;
-	width: 200px;	
+	width: 250px;	
 }
 .project-role {
 	display: block;
 	float: left;
-	width: 200px;	
+	width: 250px;	
 }
 .project-role-ul {
 	list-style-type: square;
@@ -554,7 +554,7 @@ div.project {
 .project-view {
 	display: block;
 	float: right;
-	width: 100px;	
+	width: 150px;	
 }
 .project-view a:hover {
 	background: #000;
