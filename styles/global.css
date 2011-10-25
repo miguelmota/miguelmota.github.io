@@ -559,16 +559,16 @@ div.project {
 	font-style: italic;	
 }
 .project-role {
-	border-left: 1px solid #555;
+	border-left: 1px solid #222;
 	display: block;
 	float: left;
 	width: 240px;	
-	padding-left: 10px;
+	height: 100px;
 	vertical-align: middle;
 }
 .project-role-ul {
 	list-style-type: square;
-	padding-top: 20px;
+	padding-top: 20px 0 0 10px;
 }
 .project-view {
 	display: block;
