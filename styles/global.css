@@ -551,7 +551,10 @@ div.project {
 	width: 220px;	
 }
 .project-description {
+	display: block;
 	float: left;
+	font-style: italic;
+	width: 100px;
 }
 .project-role {
 	display: block;
