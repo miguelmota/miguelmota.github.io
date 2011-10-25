@@ -551,10 +551,9 @@ div.project {
 	width: 220px;	
 }
 .project-description {
-	display: block;
+	display: table-cell;
 	float: left;
 	font-style: italic;
-	width: 100px;
 }
 .project-role {
 	display: block;
