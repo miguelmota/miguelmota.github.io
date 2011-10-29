@@ -484,13 +484,13 @@ img.loader {
 .stream-ul-flickr li a {
 	display: inline;
 	float: left;
-	height: 75px;
+	height: auto;
 	margin-right: 5px;
 	transition: all .2s ease-in-out;
 	-moz-transition: all .2s ease-in-out;
 	-o-transition: all .2s ease-in-out;
 	-webkit-transition: all .2s ease-in-out;
-	width: auto;
+	width: 80px;
 }
 .stream-ul-flickr a:hover,
 .stream-ul-flickr a:hover {
