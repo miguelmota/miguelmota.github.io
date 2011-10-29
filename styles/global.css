@@ -189,6 +189,9 @@ p {
 	line-height: 125%;
 	padding: 4px 0;
 }
+p:first-child {
+	padding-top: 10px;
+}
 strong {
 	font-weight: bold;
 }
@@ -299,7 +302,6 @@ section.content {
 	-o-box-shadow: 2px 2px 8px rgba(0,0,0,.7);
 	-webkit-box-shadow: 2px 2px 8px rgba(0,0,0,.7);
 	height: auto;
-	padding-bottom: 10px;
 	width: 100%;
 }
 div.content-container {
