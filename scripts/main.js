@@ -790,16 +790,15 @@ function contactPage(){
 		$.ajax({
 			type: 'get',
 			url: 'http://www.foodfail.org/miguelmota/contact.php',
-			url: 'http://miguelmota.webuda.com/contact/contact.php',
+			//url: 'http://miguelmota.webuda.com/contact/contact.php',
 			data: str,
 			success: function(){
 				success();
 			},
 			error: function(){
 				$('a.contact-submit').html('<span>sending...</span>');
-				var message = $('input#message').val();
 				$('form.contact-form').slideUp(300, function(){
-					$('.contact-form-thank-you').html("<p>Sorry, there was an error. Message was not sent.</p><p>Email <a href='mailto:hello@miguelmota.com?body="+message+"'>hello@miguelmota.com</a>?</p>");
+					$('.contact-form-thank-you').html("<p>Sorry, there was an error. Message was not sent.</p><p>Email <a href='mailto:hello@miguelmota.com'>hello@miguelmota.com</a>?</p>");
 				});
 			}
 		});
