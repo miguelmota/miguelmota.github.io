@@ -36,11 +36,6 @@ a:active {
 }
 a.button {
 	background: #222;
-	border: 1px solid #000;
-	border-radius: 5px;
-	-moz-border-radius: 5px;
-	-o-border-radius: 5px;
-	-webkit-border-radius: 5px;
 	color: #007299;
 	font-size: 12px;
 	padding: 5px 10px;
