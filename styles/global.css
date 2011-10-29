@@ -28,7 +28,7 @@ a {
 a:hover {
  	background-color: #222;
  	border-left-color: #333;
-	color: #007faa;
+	color: #0098cc;
 	text-shadow: 0 1px 0 rgba(0,0,0,.9);
 }
 a:active {
@@ -195,8 +195,7 @@ strong {
 input[type=text],
 textarea {		
 	background-color: #222;
-	border: 1px solid #555;
-	border-left: 4px solid #555;
+
 	color: #555;
 	font-family: inherit;
 	font-size: 12px;
