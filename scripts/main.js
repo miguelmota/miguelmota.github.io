@@ -815,7 +815,7 @@ function contactPage(){
 		$('a.contact-submit').html('<span>sending...</span>');
 		var name = $('input#name').val();
 		$('form.contact-form').slideUp(300, function(){
-			$('.contact-form-thank-you').html('<p>Thank you <strong>'+name+'</strong>, <br />Your message has been successfully sent!<br />I will get in touch with you soon.</p>').fadeIn(1200);
+			$('.contact-form-thank-you').html('<p>Thank you <strong>'+name+'</strong>.</p><p>Your message has been successfully sent!<br />I will get in touch with you soon.</p>').fadeIn(1200);
 		});
 	}
 
