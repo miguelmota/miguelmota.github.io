@@ -202,7 +202,7 @@ textarea {
 	font-size: 12px;
 	height: 20px;
 	width: 225px;
-	padding: 2px 2px 2px 4px;
+	padding: 2px 2px 2px 5px;
 	transition: border-color .3s linear, color .1s linear;
 	-moz-transition: border-color .3s linear, color .1s linear;
 	-o-transition: border-color .3s linear, color .1s linear;
