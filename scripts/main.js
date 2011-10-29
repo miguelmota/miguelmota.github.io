@@ -580,7 +580,9 @@ function streamPage(){
 						return false;
 						}
 					});
-					$('.flickr-stream').html(htmlString +'</ul>');
+					$('.flickr-stream div.loader').css('display','none');
+					$('.flickr-stream').append(htmlString +'</ul>');
+					showMtip('.flickr-logo');
 				}
 		
 		c++
