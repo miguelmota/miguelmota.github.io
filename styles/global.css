@@ -189,7 +189,7 @@ p {
 	line-height: 125%;
 	padding: 4px 0;
 }
-p:first-child {
+.content p:first-child {
 	padding-top: 10px;
 }
 strong {
