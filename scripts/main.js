@@ -598,7 +598,8 @@ function streamPage(){
 				function jsonFlickrFeed(data) {
 					var htmlString = '<ul class="stream-ul stream-ul-flickr">';
 					$.each(data.items, function(i,item) {
-						var thumbnail = (item.media.m).replace('_m.jpg','_s.jpg');
+						var thumbnail = (item.media.m);
+						var thumbnail_small = (item.media.m).replace('_m.jpg','_s.jpg');
 						var photo = (item.media.m).replace('_m.jpg','_b.jpg');
 
 						htmlString += "<li><a class='fancybox' rel='flickr' href='"+photo+"' title='"+item.title+"' ><img src='"+thumbnail+"' alt='' /></a></li>";
