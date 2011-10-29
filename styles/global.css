@@ -395,7 +395,7 @@ img.loader {
 }
 .stream-logo-tumblr:hover,
 .stream-logo-tumblr:active {
-	background-position: 0 16px;
+	background-position: 0 15px;
 }
 .stream-logo-facebook {
 	background: url('/images/facebook-sprite.png');
