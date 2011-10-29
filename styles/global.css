@@ -292,8 +292,12 @@ section.content {
 	text-shadow: 0 -1px 0 rgba(0,0,0,.5);
 	width: 650px;
 }
-section.content img {
-	background-color: #222;	
+.content img {
+	background: #222 url('/images/ajax-loader-image.gif') no-repeat 50% 50%;
+	box-shadow: 2px 2px 8px rgba(0,0,0,.7);
+	-moz-box-shadow: 2px 2px 8px rgba(0,0,0,.7);
+	-o-box-shadow: 2px 2px 8px rgba(0,0,0,.7);
+	-webkit-box-shadow: 2px 2px 8px rgba(0,0,0,.7);
 }
 div.content-container {
 	height: auto;
@@ -643,9 +647,11 @@ a.site-link {
 	width: 150% !important;
 }
 */
-a.fancybox {
+.fancybox {
 	background: #222 url('/images/ajax-loader-image.gif') no-repeat 50% 50%;
+	border: 0;
 	display: block;
+	padding: 0;
 	position: relative;
 }
 div#fancybox-wrap a {
