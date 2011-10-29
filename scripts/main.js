@@ -571,11 +571,11 @@ function streamPage(){
 				tagmode: 'any'
 			}, displayImages);
 				function displayImages(data) {
-					var htmlString = '<ul>';
+					var htmlString = '<ul class="flickr-ul">';
 					$.each(data.items, function(i,item) {
 						var sourceSquare = (item.media.m).replace('_m.jpg','_s.jpg');
 
-						htmlString += "<li><a href='"+item.link+"'><img src='"+sourceSquare+"' alt='' /></a></li>";
+						htmlString += "<li><a class='fancybox' rel='miguelmota' href='"+item.link+"' title='"+item.title+"' ><img src='"+sourceSquare+"' alt='' /></a></li>";
 						if(i==3){
 						return false;
 						}
