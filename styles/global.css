@@ -439,9 +439,9 @@ img.loader {
 	background-position: 0 18px;
 }
 .stream-logo-flickr {
-	background: url('/images/wakoopa-sprite.png');
-	width: 75px;
-	height: 18px;
+	background: url('/images/flickr-sprite.png');
+	width: 51px;
+	height: 32px;
 }
 .stream-logo-flickr:hover,
 .stream-logo-flickr:active {
