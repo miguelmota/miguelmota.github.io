@@ -366,7 +366,6 @@ img.loader {
 	width: 100%;
 }
 .stream-logo {
-	background-color: 0;
 	background-position: 0 0;
 	background-repeat: no-repeat;
 	border-left: none !important;
@@ -375,6 +374,9 @@ img.loader {
 	margin-bottom: 5px;
 	padding: 0 !important;
 	width: auto;
+}
+.stream-logo:hover {
+	background-color: 0;
 }
 .stream-logo-blog,
 .stream-logo-latitude {
