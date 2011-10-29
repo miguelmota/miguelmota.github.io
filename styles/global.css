@@ -394,7 +394,7 @@ img.loader {
 }
 .stream-logo-tumblr:hover,
 .stream-logo-tumblr:active {
-	background-position: 0 16px;
+	background-position: 0 15px;
 }
 .stream-logo-facebook {
 	background: url('/images/facebook-sprite.png');
@@ -441,7 +441,7 @@ img.loader {
 .stream-logo-flickr {
 	background: url('/images/flickr-sprite.png');
 	width: 51px;
-	height: 32px;
+	height: 18px;
 }
 .stream-logo-flickr:hover,
 .stream-logo-flickr:active {
