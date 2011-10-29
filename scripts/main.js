@@ -798,7 +798,7 @@ function contactPage(){
 			error: function(){
 				$('a.contact-submit').html('<span>sending...</span>');
 				$('form.contact-form').slideUp(300, function(){
-					$('form.contact-form').html("<p>Sorry, there was an error. Message was not sent.</p><p>Email <a href='mailto:hello@miguelmota.com?body="+$('input#message').val()+"'>hello@miguelmota.com</a>?</p>");
+					$('.content').append("<p>Sorry, there was an error. Message was not sent.</p><p>Email <a href='mailto:hello@miguelmota.com?body="+$('input#message').val()+"'>hello@miguelmota.com</a>?</p>");
 				});
 			}
 		});
@@ -813,7 +813,7 @@ function contactPage(){
 	function success(){
 		$('a.contact-submit').html('<span>sending...</span>');
 		$('form.contact-form').slideUp(300, function(){
-			$('form.contact-form').html('<p>Thank you <strong>'+$('input#name').val()+'</strong>, <br />Your message has been successfully sent!<br />I will get in touch with you soon.</p>').fadeIn(1200);
+			$('.content').append('<p>Thank you <strong>'+$('input#name').val()+'</strong>, <br />Your message has been successfully sent!<br />I will get in touch with you soon.</p>').fadeIn(1200);
 		});
 	}
 
