@@ -797,8 +797,8 @@ function contactPage(){
 				success();
 			},
 			error: function(){
-				alert('sdfsdE#EEEEEf');
-				$('form.contact-form').slideUp(300);
+				//alert('sdfsdE#EEEEEf');
+				//$('form.contact-form').slideUp(300);
 				$('a.contact-submit').html('<span>sending...</span>');
 				setTimeout(function(){
 					$('form.contact-form').html('<p>Sorry, there was an error. Message was not sent.</p>');
