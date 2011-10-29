@@ -28,7 +28,7 @@ a {
 a:hover {
  	background-color: #222;
  	border-left-color: #333;
-	color: #0083aa;
+	color: #007faa;
 	text-shadow: 0 1px 0 rgba(0,0,0,.9);
 }
 a:active {
@@ -43,9 +43,11 @@ a:active {
 }
 .button:hover {
 	background: #007299;
+	color: #fff;
 }
 .button:active {
 	text-shadow: none;
+	color: #fff;
 }
 .hide {
 	display: none;
