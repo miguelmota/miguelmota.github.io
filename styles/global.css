@@ -45,9 +45,11 @@ a:active {
 .button:hover {
 	background: #007299;
 	color: #fff;
+	text-shadow: none;
 }
 .button:active {
 	color: #fff;
+	text-shadow: none;
 }
 .hide {
 	display: none;
