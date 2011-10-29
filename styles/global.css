@@ -352,7 +352,7 @@ img.loader {
 	background: #252525 url('/images/ajax-loader.gif') no-repeat 0 0;
 	border: 0 !important;
 	clear: both;
-	height: 16px;
+	height: 12px;
 	overflow: hidden;
 	width: 100%;
 }
