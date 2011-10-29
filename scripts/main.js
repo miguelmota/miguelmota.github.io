@@ -789,17 +789,18 @@ function contactPage(){
 		var str = $('form.contact-form').serialize();
 		$.ajax({
 			type: 'get',
-			url: 'http://www.foodfail.org/miguelmota/contact.php',
-			//url: 'http://miguelmota.webuda.com/contact/contact.php',
+			//url: 'http://www.foodfail.org/miguelmota/contact.php',
+			url: 'http://miguelmota.webuda.com/contact/contact.php',
 			data: str,
 			success: function(){
 				success();
 			},
 			error: function(){
 				$('a.contact-submit').html('<span>sending...</span>');
-				//$('form.contact-form').slideUp(300, function(){
-					$('form.contact-form').html("<p>Sorry, there was an error. Message was not sent.</p><p>Email <a href='mailto:hello@miguelmota.com'>hello@miguelmota.com</a>?</p>");
-				//});
+				var message = $('input#message').val();
+				$('form.contact-form').slideUp(300, function(){
+					$('.content').append("<p>Sorry, there was an error. Message was not sent.</p><p>Email <a href='mailto:hello@miguelmota.com?body="+message+"'>hello@miguelmota.com</a>?</p>");
+				});
 			}
 		});
 		return false;
@@ -812,9 +813,10 @@ function contactPage(){
 	//hide contact form and display thank you message
 	function success(){
 		$('a.contact-submit').html('<span>sending...</span>');
-		//$('form.contact-form').slideUp(300, function(){
-			$('form.contact-form').html('<p>Thank you <strong>'+$('input#name').val()+'</strong>, <br />Your message has been successfully sent!<br />I will get in touch with you soon.</p>').fadeIn(1200);
-		//});
+		var name = $('input#name').val()
+		$('form.contact-form').slideUp(300, function(){
+			$('.content').append('<p>Thank you <strong>'+name+'</strong>, <br />Your message has been successfully sent!<br />I will get in touch with you soon.</p>').fadeIn(1200);
+		});
 	}
 
 	
