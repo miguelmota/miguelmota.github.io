@@ -376,7 +376,7 @@ img.loader {
 	width: auto;
 }
 .stream-logo:hover {
-	background-color: none;
+	background-color: none !important;
 }
 .stream-logo-blog,
 .stream-logo-latitude {
