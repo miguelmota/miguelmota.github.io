@@ -390,7 +390,7 @@ img.loader {
 }
 .stream-logo-tumblr {
 	background: url('/images/tumblr-sprite.png');
-	height: 15px;
+	height: 14px;
 	width: 75px;
 }
 .stream-logo-tumblr:hover,
@@ -415,7 +415,7 @@ img.loader {
 }
 .stream-logo-delicious {
 	background: url('/images/delicious-sprite.png');
-	height: 13px;
+	height: 15px;
 	width: 83px;
 }
 .stream-logo-delicious:hover,
@@ -442,7 +442,7 @@ img.loader {
 .stream-logo-flickr {
 	background: url('/images/flickr-sprite.png');
 	width: 51px;
-	height: 18px;
+	height: 15px;
 }
 .stream-logo-flickr:hover,
 .stream-logo-flickr:active {
