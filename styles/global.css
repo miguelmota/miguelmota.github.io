@@ -40,13 +40,13 @@ a:active {
 	color: #fff;
 	font-size: 12px;
 	padding: 5px 10px;
+	text-shadow: none;
 }
 .button:hover {
 	background: #007299;
 	color: #fff;
 }
 .button:active {
-	text-shadow: none;
 	color: #fff;
 }
 .hide {
