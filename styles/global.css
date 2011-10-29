@@ -196,13 +196,13 @@ input[type=text],
 textarea {		
 	background-color: #222;
 	border: 0;
-	border-left: 4px solid #555;
+	border-left: 4px solid #333;
 	color: #555;
 	font-family: inherit;
 	font-size: 12px;
 	height: 20px;
 	width: 225px;
-	padding: 2px;
+	padding: 2px 2px 4px 2px;
 	transition: border-color .3s linear, color .1s linear;
 	-moz-transition: border-color .3s linear, color .1s linear;
 	-o-transition: border-color .3s linear, color .1s linear;
