@@ -478,8 +478,9 @@ ul.lastfm-tracks .status-date {
 	float: right;
 	padding: 2px;
 }
-.flickr-ul li {
+.flickr-ul li a {
 	display: inline;
+	float: left;
 }
 /* ==============================================================================
 	END STREAM
