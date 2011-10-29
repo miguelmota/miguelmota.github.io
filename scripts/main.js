@@ -561,6 +561,28 @@ function streamPage(){
 				showMtip('a.social.wakoopa');
 			}
 		);
+		
+		// Flickr stream
+		$.getJSON('http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?',
+			{
+				format: 'json',
+				id: '40464790@N08',
+				tags: "outdoors, los angeles, vans warped tour",
+				tagmode: 'any'
+			}, displayImages);
+				function displayImages(data) {
+					var htmlString = '<ul>';
+					$.each(data.items, function(i,item) {
+						var sourceSquare = (item.media.m).replace('_m.jpg','_s.jpg');
+
+						htmlString += "<li><a href='"+item.link+"'><img src='"+sourceSquare+"' alt='' /></a></li>";
+						if(i==3){
+						return false;
+						}
+					});
+					$('.flickr-stream').html(htmlString +'</ul>');
+				}
+		
 		c++
 		refreshStream();
 	}
