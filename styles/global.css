@@ -377,6 +377,9 @@ img.loader {
 .stream-logo:hover {
 	background-color: #252525;
 }
+.stream-logo-blog {
+	font-weight: bold;
+}
 .stream-logo-blog,
 .stream-logo-latitude {
 	color: #999;
