@@ -448,9 +448,9 @@ function streamPage(){
 						$("li.status[id='"+id+"'] span").find(":contains('http')").wrapInner("<a href='"+$("li.status[id='"+id+"'] span").find(":contains('http')").text()+"'> </a>");
 						$("li.status[id='"+id+"'] span").find(":contains('@')").wrapInner("<a href='http://twitter.com/"+$("li.status[id='"+id+"'] span").find(":contains('@')").text().substr(1)+"'> </a>");
 						$("li.status[id='"+id+"'] span").find(":contains('#')").wrapInner("<a href='http://twitter.com/#!/search/"+$("li.status[id='"+id+"'] span").find(":contains('#')").text().substr(1)+"'> </a>");
+						$('.stream-twitter').append(htmlString +'</ul>');
 					});
 					$('.stream-twitter div.loader').css('display','none');
-					$('.stream-twitter').append(htmlString +'</ul>');
 					showMtip('.stream-logo-twitter');
 				}
 		);
@@ -515,9 +515,9 @@ function streamPage(){
 				    	  	var caption = this['photo-caption'];
 				    	  	var slug = this.slug.replace(/-/g,' ');
 				    	  	htmlString += "<li>&#187; <a href='"+url+"'>"+slug.substring(0,1).toUpperCase()+slug.substr(1,200)+"</a> <time class='status-date'>"+niceTime(date)+"</time></li>";
+							$('.stream-tumblr').append(htmlString +'</ul>');
 				      }); 
 					  $('.stream-tumblr div.loader').css('display','none');
-					  $('.stream-tumblr').append(htmlString +'</ul>');
 					  showMtip('.stream-logo-tumblr');
 				  }
 		);
@@ -535,9 +535,9 @@ function streamPage(){
 						var url = item.u;
 			    	  	var date = new Date(item.dt).toUTCString();
 			    	  	htmlString += "<li>&#187; <a href='"+url+"'>"+title+"</a> <time class='status-date'>"+niceTime(date)+"</time></li>";
+						$('.stream-delicious').append(htmlString +'</ul>');
 					});
 					$('.stream-delicious div.loader').css('display','none');
-					$('.stream-delicious').append(htmlString +'</ul>');
 					showMtip('.stream-logo-delicious');
 			}
 		);
