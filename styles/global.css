@@ -359,15 +359,15 @@ img.loader {
 	padding: 0 !important;
 	width: auto;
 }
-.stream-logo.blog,
-.stream-logo.latitude {
+.stream-logo-blog,
+.stream-logo-latitude {
 	color: #999;
 	display: block;
 	font-size: 18px;
 	margin-bottom: 5px;
 }
-.stream-logo.blog:hover,
-.stream-logo.latitude:hover {
+.stream-logo-blog:hover,
+.stream-logo-latitude:hover {
 	color: #007799;
 }
 .stream-iframe-latitude {
@@ -475,13 +475,12 @@ img.loader {
 	float: right;
 	padding: 2px;
 }
-.flickr-ul li a {
+.stream-ul-flickr li a {
 	display: inline;
 	float: left;
 }
 .status-date {
 	font-size: 9px;
-	float: right;
 }
 /* ==============================================================================
 	END STREAM

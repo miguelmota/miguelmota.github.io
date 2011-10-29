@@ -554,7 +554,7 @@ function streamPage(){
 				},
 				function(data){       
 					$.each(data.recenttracks.track, function(i, item){ 
-							var htmlString = '<ul class="stream-ul stream-ul-lastfm">';
+							var htmlString = '<ul class="stream-ul stream-ul-lastfm stream-ul-chart">';
 							var url = item.url;
 							var name = item.name;
 							var artist = item.artist['#text'];
@@ -574,7 +574,7 @@ function streamPage(){
 				limit: '3'
 			},
 			function wakoopaApi(data){
-				var html = ["<ul class='stream-ul stream-ul-wakoopa'>"];
+				var html = ["<ul class='stream-ul stream-ul-wakoopa stream-ul-chart'>"];
 				for(var i = 0; i < data.length; i++){
 					var entry = data[i].software;
 					var date = new Date(entry.last_active_at).toUTCString();
