@@ -390,11 +390,12 @@ img.loader {
 }
 .stream-logo-tumblr {
 	background: url('/images/tumblr-sprite.png');
+	height: 15px;
 	width: 75px;
 }
 .stream-logo-tumblr:hover,
 .stream-logo-tumblr:active {
-	background-position: 0 15px;
+	background-position: 0 16px;
 }
 .stream-logo-facebook {
 	background: url('/images/facebook-sprite.png');
@@ -414,7 +415,7 @@ img.loader {
 }
 .stream-logo-delicious {
 	background: url('/images/delicious-sprite.png');
-	height: 15px;
+	height: 13px;
 	width: 83px;
 }
 .stream-logo-delicious:hover,
