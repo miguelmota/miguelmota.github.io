@@ -573,9 +573,10 @@ function streamPage(){
 				function displayImages(data) {
 					var htmlString = '<ul class="flickr-ul">';
 					$.each(data.items, function(i,item) {
-						var sourceSquare = (item.media.m).replace('_m.jpg','_s.jpg');
+						var thumbnail = (item.media.m).replace('_m.jpg','_s.jpg');
+						var photo = (item.media.m).replace('_m.jpg','_s.jpg');
 
-						htmlString += "<li><a class='fancybox' rel='miguelmota' href='"+item.link+"' title='"+item.title+"' ><img src='"+sourceSquare+"' alt='' /></a></li>";
+						htmlString += "<li><a class='fancybox' rel='flickr' href='"+photo+"' title='"+item.title+"' ><img src='"+thumbnail+"' alt='' /></a></li>";
 						if(i==3){
 						return false;
 						}
@@ -583,6 +584,23 @@ function streamPage(){
 					$('.flickr-stream div.loader').css('display','none');
 					$('.flickr-stream').append(htmlString +'</ul>');
 					showMtip('.flickr-logo');
+					
+					//initialize fancybox
+					$('a.fancybox').fancybox({
+							'showCloseButton': false,
+							'titlePosition': 'inside',
+							'titleFormat': formatTitle,
+							'padding': 0,
+							'transitionIn': 'none',
+							'transitionOut': 'none',
+							'speedIn': 150, 
+							'overlayColor': '#000',
+							'overlayOpacity': .8
+					});
+					//custom fancybox title formatting
+					function formatTitle(title, currentArray, currentIndex, currentOpts) {
+					    return '<div class="fancybox-title"><span><a href="javascript:void(0);" onclick="$.fancybox.close();">close X</a></span>' + (title && title.length ? '<strong>' + title + '</strong>' : '' ) + 'Image ' + (currentIndex + 1) + ' of ' + currentArray.length + '</div>';
+					}
 				}
 		
 		c++
@@ -596,24 +614,6 @@ function streamPage(){
 				$('a#stream').trigger('click');
 			}
 		},30000);
-	}
-	
-	
-	//initialize fancybox
-	$('a.fancybox').fancybox({
-			'showCloseButton': false,
-			'titlePosition': 'inside',
-			'titleFormat': formatTitle,
-			'padding': 0,
-			'transitionIn': 'none',
-			'transitionOut': 'none',
-			'speedIn': 150, 
-			'overlayColor': '#000',
-			'overlayOpacity': .8
-	});
-	//custom fancybox title formatting
-	function formatTitle(title, currentArray, currentIndex, currentOpts) {
-	    return '<div class="fancybox-title"><span><a href="javascript:void(0);" onclick="$.fancybox.close();">close X</a></span>' + (title && title.length ? '<strong>' + title + '</strong>' : '' ) + 'Image ' + (currentIndex + 1) + ' of ' + currentArray.length + '</div>';
 	}
 	
 }
