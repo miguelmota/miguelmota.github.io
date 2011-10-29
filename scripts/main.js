@@ -44,14 +44,11 @@ $(document).ready(function(){
 	$('a[rel*=internal]').live('click', function(e){
 		e.preventDefault();
 		return false;
-	
-		if($('a[href^=http]')){
-			window.open(this.href);
-			return false;
-		}
-		
 	});
-
+	$('a[href^=http]:not([rel*=internal])').live('click', function(){
+		window.open(this.href);
+		return false;
+	});
 	
 	
 	//initialize text ticker
