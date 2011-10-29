@@ -345,10 +345,10 @@ img.loader {
 /* ==============================================================================
 	STREAM
 ============================================================================== */
-div.stream {
+.stream {
 	margin-bottom: 10px;
 }
-a.social {
+.stream-logo {
 	background-position: 0 0;
 	background-repeat: no-repeat;
 	border-left: none !important;
@@ -359,18 +359,18 @@ a.social {
 	padding: 0 !important;
 	width: auto;
 }
-a.latitude,
-a.blog-social {
+.stream-logo.blog,
+.stream-logo.latitude {
 	color: #999;
 	display: block;
 	font-size: 18px;
 	margin-bottom: 5px;
 }
-a.latitude:hover,
-a.blog-social:hover {
+.stream-logo.blog:hover,
+.stream-logo.latitude:hover {
 	color: #007799;
 }
-iframe.latitude {
+.stream-iframe-latitude {
 	background: #252525 url('/images/ajax-loader.gif') no-repeat 0 0;
 	border: 0 !important;
 	clear: both;
@@ -380,100 +380,97 @@ iframe.latitude {
 	overflow: hidden;
 	width: 100%;
 }
-a.tumblr {
+.stream-logo-tumblr {
 	background: url('/images/tumblr-sprite.png');
 	width: 75px;
 }
-a.tumblr:hover,
-a.tumblr:active {
+.stream-logo-tumblr:hover,
+.stream-logo-tumblr:active {
 	background-position: 0 16px;
 }
-ul.blog-posts,
-ul.tumblr-posts,
-ul.twitter-status,
-ul.facebook-status,
-ul.delicious-bookmarks {
-	clear: both;
-	display: block;
-}
-.status-date {
-	font-size: 9px;
-}
-a.facebook {
+.stream-logo-facebook {
 	background: url('/images/facebook-sprite.png');
 	width: 73px;
 }
-a.facebook:hover,
-a.facebook:active {
+.stream-logo-facebook:hover,
+.stream-logo-facebook:active {
 	background-position: 0 16px;
 }
-a.twitter {
+.stream-logo-twitter {
 	background: url('/images/twitter-sprite.png');
 	width: 78px;
 }
-a.twitter:hover,
-a.twitter:active {
+.stream-logo-twitter:hover,
+.stream-logo-twitter:active {
 	background-position: 0 16px;
 }
-a.delicious {
+.stream-logo-delicious {
 	background: url('/images/delicious-sprite.png');
 	height: 15px;
 	width: 83px;
 }
-a.delicious:hover,
-a.delicious:active {
+.stream-logo-delicious:hover,
+.stream-logo-delicious:active {
 	background-position: 0 16px;
 }
-a.lastfm {
+.stream-logo-lastfm {
 	background: url('/images/lastfm-sprite.png');
 	width: 62px;
 }
-a.lastfm:hover,
-a.lastfm:active {
+.stream-logo-lastfm:hover,
+.stream-logo-lastfm:active {
 	background-position: 0 16px;
 }
-a.wakoopa {
+.stream-logo-wakoopa {
 	background: url('/images/wakoopa-sprite.png');
 	width: 75px;
 	height: 18px;
 }
-a.wakoopa:hover,
-a.wakoopa:active {
+.stream-logo-wakoopa:hover,
+.stream-logo-wakoopa:active {
 	background-position: 0 18px;
 }
-ul.wakoopa-software {
+.stream-logo-flickr {
+	background: url('/images/wakoopa-sprite.png');
+	width: 75px;
+	height: 18px;
+}
+.stream-logo-flickr:hover,
+.stream-logo-flickr:active {
+	background-position: 0 18px;
+}
+.stream-ul {
+	clear: both;
+	display: block;
+}
+.stream-ul-wakoopa {
 	clear: both;
 	height: auto;
 	width: 200px;
 }
-ul.lastfm-tracks {
+.stream-ul-lastfm {
 	clear: both;
 	height: auto;
 	width: 300px;
 }
-ul.wakoopa-software li,
-ul.lastfm-tracks li {
+.stream-ul-chart li {
 	font-size: 10px;
 	margin: 2px;
 	padding: 2px;
 }
-ul.lastfm-tracks {
-	display: block;
-}
-ul.wakoopa-software li:nth-child(odd),
-ul.lastfm-tracks li:nth-child(odd) {
+.stream-ul-chart li:nth-child(odd),
+.stream-ul-chart li:nth-child(odd) {
 	background-color: #202020;	
 }
-ul.wakoopa-software a.link,
-ul.lastfm-tracks li a.link  {
+.stream-ul-chart a  {
 	color: #999;
 }
-ul.wakoopa-software a.link:hover,
-ul.lastfm-tracks li  a.link:hover  {
+.stream-ul-chart a:hover,
+.stream-ul-chart a:active  {
 	text-decoration: underline;
 }
-ul.wakoopa-software .status-date,
-ul.lastfm-tracks .status-date {
+.stream-ul-chart .status-date,
+.stream-ul-chart .status-date {
 	border-left: 2px solid #222;
 	float: right;
 	padding: 2px;
@@ -481,6 +478,10 @@ ul.lastfm-tracks .status-date {
 .flickr-ul li a {
 	display: inline;
 	float: left;
+}
+.status-date {
+	font-size: 9px;
+	float: right;
 }
 /* ==============================================================================
 	END STREAM
