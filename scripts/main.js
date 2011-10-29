@@ -560,9 +560,9 @@ function streamPage(){
 							var artist = item.artist['#text'];
 							var date =  item.date['#text'];
 							htmlString += "<li><a href='"+url+"'>"+artist+" - "+name+"</a> <time class='status-date'>"+date+"</time></li>";
+							$('.stream-lastfm').append(htmlString +'</ul>');
 					}); 
 					$('.stream-lastfm div.loader').css('display','none');
-					$('.stream-lastfm').append(htmlString +'</ul>');
 					showMtip('.stream-logo-lastfm');
 				}
 		);
