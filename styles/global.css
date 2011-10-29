@@ -700,6 +700,7 @@ div.fancybox-title strong {
 }
 div.fancybox-title span {
 	float: right;
+	padding-top: 5px;
 }
 div.work-image {
 	height: auto;

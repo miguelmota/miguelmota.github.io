@@ -231,6 +231,9 @@ $(window).scroll(function(){
 });
 var bsc = 0;
 $(document).ajaxComplete(function(){
+	
+	$('.fancybox').fancybox();
+	
 	while (c == 0){
 		if(typeof(window.history.pushState) != 'function'){
 			//var path2 = window.location.hash.substr(2);
