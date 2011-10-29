@@ -6,7 +6,14 @@ title:
 
 <section class='content stream'>
 
-	<div class='stream stream-blog'>
+	<div class='stream-wrap stream-latitude'>
+		<a class='stream-logo stream-logo-latitude mtip' href='http://www.google.com/latitude/apps/badge/api?user=7812482200199007583&type=iframe&maptype=roadmap' title='my location'>latitude</a>
+		<ul class='stream-ul stream-ul-latitude'>
+			<li><iframe class='stream-iframe-latitude' src='http://www.ffirl.com/miguelmota/location.php' scrolling='no'></iframe></li>
+		</ul>
+	</div>
+	
+	<div class='stream-wrap stream-blog'>
 		<a class='stream-logo stream-logo-blog mtip' href='/blog' title='my blog'>Blog</a>
 		<ul class='stream-ul stream-ul-blog'>
 			{% for post in site.posts limit:3 %}
@@ -15,45 +22,38 @@ title:
 		</ul>
 	</div>
 
-	<div class='stream stream-latitude'>
-		<a class='stream-logo stream-logo-latitude mtip' href='http://www.google.com/latitude/apps/badge/api?user=7812482200199007583&type=iframe&maptype=roadmap' title='my location'>latitude</a>
-		<ul class='stream-ul stream-ul-latitude'>
-			<li><iframe class='stream-iframe-latitude' src='http://www.ffirl.com/miguelmota/location.php' scrolling='no'></iframe></li>
-		</ul>
-	</div>
-	
-	<div class='stream stream-twitter'>
+	<div class='stream-wrap stream-twitter'>
 		<a class='stream-logo stream-logo-twitter mtip' href='http://twitter.com/#!/miguel_mota' title='my tweets'></a>
 		<div class='loader'></div>
 	</div>
 	
-	<div class='stream stream-facebook'>
+	<div class='stream-wrap stream-facebook'>
 		<a class='stream-logo stream-logo-facebook mtip' href='http://www.facebook.com/miguel.mota2' title='my statuses'></a>
 		<div class='loader'></div>
 	</div>
 	
-	<div class='stream steam-tumblr'>
+	<div class='stream-wrap steam-tumblr'>
 		<a class='stream-logo stream-logo-tumblr mtip' href='http://miguelmota.tumblr.com'  title='my tumblog'></a>
 		<div class='loader'></div>
 	</div>
 	
-	<div class='stream stream-delicious'>
+	<div class='stream-wrap stream-delicious'>
 		<a class='stream-logo stream-logo-delicious mtip' href='http://www.delicious.com/miguelmota' title='my bookmarks'></a>
 		<div class='loader'></div>
 	</div>
 	
-	<div class='stream stream-lastfm'>
+	<div class='stream-wrap stream-lastfm'>
 		<a class='stream-logo stream-logo-lastfm mtip' href='http://www.last.fm/user/miguel_mota' title='my music'></a>
 		<div class='loader'></div>
 	</div>
 	
-	<div class='stream stream-wakoopa'>
+	<div class='stream-wrap stream-wakoopa'>
 		<a class='stream-logo stream-logo-wakoopa mtip' href='http://social.wakoopa.com/miguelmota' title='my software'></a>
 		<div id='stream-wakoopa-software'></div>
 		<div class='loader'></div>
 	</div>
 	
-	<div class='stream stream-flickr'>
+	<div class='stream-wrap stream-flickr'>
 		<a class='stream-logo stream-logo-flickr mtip' href='http://www.flickr.com/photos/miguelmota' title='my photos'></a>
 		<div class='loader'></div>
 	</div>
