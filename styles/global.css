@@ -348,6 +348,19 @@ img.loader {
 .stream {
 	margin-bottom: 10px;
 }
+.stream-latitude {
+	height: 16px;
+		border: 1px solid green;
+}
+.stream-iframe-latitude {
+	background: #252525 url('/images/ajax-loader.gif') no-repeat 0 0;
+	border: 0 !important;
+	clear: both;
+	height: 18px;
+	overflow: hidden;
+	width: 100%;
+	border: 1px solid blue;
+}
 .stream-logo {
 	background-position: 0 0;
 	background-repeat: no-repeat;
@@ -368,14 +381,6 @@ img.loader {
 .stream-logo-blog:hover,
 .stream-logo-latitude:hover {
 	color: #007799;
-}
-.stream-iframe-latitude {
-	background: #252525 url('/images/ajax-loader.gif') no-repeat 0 0;
-	border: 0 !important;
-	clear: both;
-	height: 18px;
-	overflow: hidden;
-	width: 100%;
 }
 .stream-logo-tumblr {
 	background: url('/images/tumblr-sprite.png');
@@ -440,22 +445,21 @@ img.loader {
 	clear: both;
 	display: block;
 }
-.stream-ul-wakoopa {
-	clear: both;
-	height: auto;
-	width: 200px;
-}
 .stream-ul-lastfm {
 	clear: both;
 	height: auto;
 	width: 300px;
+}
+.stream-ul-wakoopa {
+	clear: both;
+	height: auto;
+	width: 200px;
 }
 .stream-ul-chart li {
 	font-size: 10px;
 	margin: 2px;
 	padding: 2px;
 }
-.stream-ul-chart li:nth-child(odd),
 .stream-ul-chart li:nth-child(odd) {
 	background-color: #202020;	
 }

@@ -504,7 +504,9 @@ function streamPage(){
 		// Tumblr stream
 		$('.stream-tumblr div.loader').css('display','block');
 		$.getJSON('http://miguelmota.tumblr.com/api/read/json?num=3&callback=?', 
-
+				{
+					num: '3'
+				},
 				function(data){
 					$.each(data.posts, function(i, posts){ 
 							var htmlString = '<ul class="stream-ul stream-ul-tumblr">';
