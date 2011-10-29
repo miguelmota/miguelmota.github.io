@@ -187,10 +187,10 @@ label {
 }
 p {
 	line-height: 125%;
-	padding: 4px 0;
-}
-.content p:first-child {
 	padding: 10px 0 4px 0;
+}
+p+p {
+	padding: 4px 0;
 }
 strong {
 	font-weight: bold;
