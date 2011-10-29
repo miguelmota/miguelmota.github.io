@@ -797,7 +797,7 @@ function contactPage(){
 				success();
 			},
 			error: function(){
-
+				alert('sdfsdE#EEEEEf');
 				$('form.contact-form').slideUp(300);
 				$('a.contact-submit').html('<span>sending...</span>');
 				setTimeout(function(){
