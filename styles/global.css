@@ -35,14 +35,15 @@ a:active {
 	text-shadow: 0 -1px 0 rgba(0,0,0,.5);
 }
 a.button {
-	background: #222;
+	background: #202020;
+	border-left: none;
 	color: #007299;
 	font-size: 12px;
 	padding: 5px 10px;
 }
 a.button:hover {
-	background: #202020;
-	color: #0083aa;
+	background: #007299;
+	color: #fff;
 }
 a.button:active {
 	text-shadow: none;
