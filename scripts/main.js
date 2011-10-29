@@ -52,24 +52,9 @@ $(document).ready(function(){
 	
 	
 	
+	initializeFancybox();
 	
-	
-	//initialize fancybox
-	$('a.fancybox').fancybox({
-			'showCloseButton': false,
-			'titlePosition': 'inside',
-			'titleFormat': formatTitle,
-			'padding': 0,
-			'transitionIn': 'none',
-			'transitionOut': 'none',
-			'speedIn': 150, 
-			'overlayColor': '#000',
-			'overlayOpacity': .8
-	});
-	//custom fancybox title formatting
-	function formatTitle(title, currentArray, currentIndex, currentOpts) {
-	    return '<div class="fancybox-title"><span><a class="button" href="javascript:void(0);" onclick="$.fancybox.close();">close X</a></span>' + (title && title.length ? '<strong>' + title + '</strong>' : '' ) + 'Image ' + (currentIndex + 1) + ' of ' + currentArray.length + '</div>';
-	}
+
 	
 	
 	//initialize text ticker
@@ -232,7 +217,7 @@ $(window).scroll(function(){
 var bsc = 0;
 $(document).ajaxComplete(function(){
 	
-	$('.fancybox').fancybox();
+	initializeFancybox()
 	
 	while (c == 0){
 		if(typeof(window.history.pushState) != 'function'){
@@ -292,6 +277,26 @@ $(document).ajaxComplete(function(){
 
 	
 });
+
+function initializeFancybox() {
+	
+	//initialize fancybox
+	$('a.fancybox').fancybox({
+			'showCloseButton': false,
+			'titlePosition': 'inside',
+			'titleFormat': formatTitle,
+			'padding': 0,
+			'transitionIn': 'none',
+			'transitionOut': 'none',
+			'speedIn': 150, 
+			'overlayColor': '#000',
+			'overlayOpacity': .8
+	});
+	//custom fancybox title formatting
+	function formatTitle(title, currentArray, currentIndex, currentOpts) {
+	    return '<div class="fancybox-title"><span><a class="button" href="javascript:void(0);" onclick="$.fancybox.close();">close X</a></span>' + (title && title.length ? '<strong>' + title + '</strong>' : '' ) + 'Image ' + (currentIndex + 1) + ' of ' + currentArray.length + '</div>';
+	}
+}
 
 //global variables
 var c = 0;
