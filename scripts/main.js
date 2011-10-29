@@ -790,7 +790,7 @@ function contactPage(){
 		$.ajax({
 			type: 'get',
 			url: 'http://www.foodfail.org/miguelmota/contact.php',
-			//url: 'http://miguelmota.webuda.com/contact/contact.php',
+			url: 'http://miguelmota.webuda.com/contact/contact.php',
 			data: str,
 			success: function(){
 				success();
