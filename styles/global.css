@@ -674,21 +674,7 @@ a.site-link {
 	position: relative;
 }
 #fancybox-wrap a {
-	background: #004c66;
-	border-left: none;
-	color: #fff;
-	font-size: 12px;
-	padding: 5px 10px;
-	text-shadow: none;
-}
-#fancybox-wrap a:hover {
-	background: #007299;
-	color: #fff;
-	text-shadow: none;
-}
-#fancybox-wrap a:active {
-	color: #fff;
-	text-shadow: none;
+	border: 0;
 }
 span.zoom-icon {
 	background-color: #000;
