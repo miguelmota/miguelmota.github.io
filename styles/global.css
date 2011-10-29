@@ -350,12 +350,11 @@ img.loader {
 }
 .stream-iframe-latitude {
 	background: #252525 url('/images/ajax-loader.gif') no-repeat 0 0;
-
+	border: 0 !important;
 	clear: both;
-	height: 18px;
+	height: 16px;
 	overflow: hidden;
 	width: 100%;
-	border: 1px solid blue;
 }
 .stream-logo {
 	background-position: 0 0;
