@@ -366,6 +366,7 @@ img.loader {
 	width: 100%;
 }
 .stream-logo {
+	background-color: 0;
 	background-position: 0 0;
 	background-repeat: no-repeat;
 	border-left: none !important;
@@ -483,6 +484,15 @@ img.loader {
 .stream-ul-flickr li a {
 	display: inline;
 	float: left;
+	margin-right: 5px;
+	transition: all .2s ease-in-out;
+	-moz-transition: all .2s ease-in-out;
+	-o-transition: all .2s ease-in-out;
+	-webkit-transition: all .2s ease-in-out;
+}
+.stream-ul-flickr a:hover,
+.stream-ul-flickr a:hover {
+	-webkit-transform: scale(1.5);
 }
 .status-date {
 	font-size: 9px;
