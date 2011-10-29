@@ -190,7 +190,7 @@ p {
 	padding: 4px 0;
 }
 .content p:first-child {
-	padding-top: 10px;
+	padding: 10px 0 4px 0;
 }
 strong {
 	font-weight: bold;
