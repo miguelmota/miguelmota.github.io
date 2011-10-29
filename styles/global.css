@@ -442,7 +442,7 @@ img.loader {
 .stream-logo-flickr {
 	background: url('/images/flickr-sprite.png');
 	width: 51px;
-	height: 15px;
+	height: 16px;
 }
 .stream-logo-flickr:hover,
 .stream-logo-flickr:active {
