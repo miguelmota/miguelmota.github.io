@@ -596,6 +596,24 @@ function streamPage(){
 		},30000);
 	}
 	
+	
+	//initialize fancybox
+	$('a.fancybox').fancybox({
+			'showCloseButton': false,
+			'titlePosition': 'inside',
+			'titleFormat': formatTitle,
+			'padding': 0,
+			'transitionIn': 'none',
+			'transitionOut': 'none',
+			'speedIn': 150, 
+			'overlayColor': '#000',
+			'overlayOpacity': .8
+	});
+	//custom fancybox title formatting
+	function formatTitle(title, currentArray, currentIndex, currentOpts) {
+	    return '<div class="fancybox-title"><span><a href="javascript:void(0);" onclick="$.fancybox.close();">close X</a></span>' + (title && title.length ? '<strong>' + title + '</strong>' : '' ) + 'Image ' + (currentIndex + 1) + ' of ' + currentArray.length + '</div>';
+	}
+	
 }
 
 
