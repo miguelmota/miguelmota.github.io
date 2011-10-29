@@ -793,6 +793,7 @@ function contactPage(){
 			url: 'http://miguelmota.webuda.com/contact/contact.php',
 			data: str,
 			success: function(){
+				alert('sdfsdf');
 				success();
 			},
 			error: function(){
