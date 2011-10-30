@@ -35,6 +35,10 @@ textarea:blur {
 	border: 1px solid #555 !important;
 	border-left: 4px solid #007299 !important;
 }
+input.error,
+textarea.error {
+	border-color: #870000 !important;
+}
 .main-side-nav {
 	clear: both !important;
 	float: none !important;
