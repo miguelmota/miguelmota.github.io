@@ -516,7 +516,9 @@ img.loader {
 	top: 50%;
 }
 .stream-ul-flickr li a {
-	display: inline-b
+	display: inline-block;
+	float: left;
+	min-height: 100%;
 	height: auto;
 	margin-right: 5px;
 	transition: all .2s ease-in-out;
