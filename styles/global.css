@@ -491,8 +491,7 @@ img.loader {
 	float: right;
 	padding: 2px;
 }
-.stream-carousel-wrap {	
-	min-height: 60px;	
+.stream-carousel-wrap {		
 	position: relative;
 }
 .stream-carousel {
@@ -518,7 +517,7 @@ img.loader {
 .stream-ul-flickr li a {
 	display: inline-block;
 	float: left;
-	min-height: 55px;
+	min-height: 60px;
 	height: auto;
 	margin-right: 5px;
 	transition: all .2s ease-in-out;
