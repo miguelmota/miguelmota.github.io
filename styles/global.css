@@ -492,7 +492,7 @@ img.loader {
 	padding: 2px;
 }
 .stream-carousel-wrap {	
-	min-height: 60px;	
+	min-height: 70px;	
 	border: 1px solid red;
 	position: relative;
 }
@@ -506,7 +506,7 @@ img.loader {
 	display: inline-block;
 	border-left: 0;
 	float: left;
-	min-height: 80px;
+	min-height: 70px;
 	padding: 0 8px;
 	position: relative;
 	text-align: center;
