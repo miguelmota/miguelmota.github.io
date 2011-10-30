@@ -491,10 +491,11 @@ img.loader {
 .stream-carousel-wrap {	
 	min-height: 50px;
 	position: relative;
+	overflow: visible;
 }
 .stream-carousel {
 	float: left;
-	margin: 0 5px;
+	margin: 0 5px;	overflow: visible;
 }
 .stream-carousel-nav {	
 	display: inline-block;
