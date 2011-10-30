@@ -507,6 +507,7 @@ img.loader {
 }
 .stream-carousel-nav-inner {
 	left: 50%;
+	margin-top: -12px;
 	position: absolute;
 	top: 50%;
 }
