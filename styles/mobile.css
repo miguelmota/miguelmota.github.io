@@ -17,6 +17,24 @@ html {
 	padding: 0 !important;
 	width: 100% !important;
 }
+input[type=text],
+input[type=password],
+textarea {		
+	border: 1px solid #292929;
+	border-left: 4px solid #292929;
+}
+input[type=text]:focus,
+input[type=password]:focus,
+textarea:focus {	
+	border: 1px solid #007299;
+	border-left: 4px solid #007299;
+}
+input[type=text]:blur,
+input[type=password]:blur,
+textarea:blur {
+	border: 1px solid #555;
+	border-left: 4px solid #007299;
+}
 .main-side-nav {
 	clear: both !important;
 	float: none !important;
@@ -100,7 +118,6 @@ h1.title {
 }
 .phone-wrap {
 	display: block !important;
-	margin-bottom: 10px !important;
 }
 .contact-form {
 	float: none !important;

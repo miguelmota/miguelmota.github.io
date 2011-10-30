@@ -196,6 +196,7 @@ strong {
 	font-weight: bold;
 }
 input[type=text],
+input[type=password],
 textarea {		
 	background-color: #222;
 	border: 0;
@@ -212,6 +213,7 @@ textarea {
 	-webkit-transition: border-color .1s linear, color .1s linear;
 }
 input[type=text]:focus,
+input[type=password]:focus,
 textarea:focus {
 	background-color: #222;
 	border-color: #007299;
@@ -219,6 +221,7 @@ textarea:focus {
 	color: #999;
 }
 input[type=text]:blur,
+input[type=password]:blur,
 textarea:blur {
 	background-color: inherit;
 	border-color: #555;
@@ -763,6 +766,7 @@ div.contact-qrcode {
 }
 .phone-wrap {
 	display: none;
+	margin-bottom: 10px;
 }
 .phone-icon {
 	background: url('/images/pictos/313-999.png') no-repeat 0 0;
