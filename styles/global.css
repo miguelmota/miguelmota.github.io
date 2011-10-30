@@ -490,7 +490,7 @@ img.loader {
 }
 .stream-carousel-flickr {	
 	background-color: #252525;
-	height: auto;
+	height: 75px;
 	padding: 5px;
 	width: 80px;
 }
