@@ -629,7 +629,7 @@ function streamPage(){
 				tagmode: 'any'
 			}, jsonFlickrFeed);
 				function jsonFlickrFeed(data) {
-					var htmlString = '<a href="javascript:void(0);" class="prev">prev</a><ul class="stream-ul stream-ul-flickr jcarousel-skin-tango">';
+					var htmlString = '<a href="javascript:void(0);" class="prev">prev</a><div class="stream-carousel-flickr"><ul class="stream-ul stream-ul-flickr jcarousel-skin-tango">';
 					$.each(data.items, function(i,item) {
 						var thumbnail = (item.media.m);
 						var thumbnail_small = (item.media.m).replace('_m.jpg','_s.jpg');
@@ -641,10 +641,10 @@ function streamPage(){
 						}
 					});
 					$('.stream-flickr div.loader').css('display','none');
-					$('.stream-flickr').append(htmlString +'</ul><a href="javascript:void(0);" class="next">next</a>');
+					$('.stream-flickr').append(htmlString +'</ul></div><a href="javascript:void(0);" class="next">next</a>');
 					showMtip('.stream-logo-flickr');
 					
-					$('.stream-ul-flickr').jCarouselLite({
+					$('.stream-carousel-flickr').jCarouselLite({
 						 btnNext: ".next",
 						 btnPrev: ".prev"
 					});
