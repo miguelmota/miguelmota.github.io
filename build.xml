@@ -46,7 +46,6 @@
 				<file name="plugins/fancybox/jquery.fancybox-1.3.2.pack.js" />				
 				<!--<file name="plugins/easing/jquery.animation.easing.js" />-->
 				<!--<file name="plugins/shadowbox/shadowbox.js" />-->
-				<file name="scripts/main.js" />
 			</sources>
 		</jscomp>    
 	</target>
