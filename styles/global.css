@@ -506,9 +506,9 @@ img.loader {
 	text-align: center;
 }
 .stream-carousel-nav-inner {
-	left: 45%;
+	left: 50%;
 	position: absolute;
-	top: 45%;
+	top: 50%;
 }
 .stream-ul-flickr li a {
 	display: inline-block;
