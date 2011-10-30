@@ -111,6 +111,7 @@ div.image-container {
 	overflow: hidden;
 	position: relative;
 	width: 650px;
+	behavior: url('/PIE/PIE.htc');
 }
 div.image-container img {
 	height: auto;
@@ -302,6 +303,7 @@ section.content {
 	-webkit-box-shadow: 2px 2px 8px rgba(0,0,0,.7);
 	height: auto;
 	width: 100%;
+	behavior: url('/PIE/PIE.htc');
 }
 div.content-container {
 	height: auto;
@@ -547,6 +549,7 @@ div.project {
 	-moz-transition: -moz-box-shadow linear .2s;
 	-o-transition: -o-box-shadow linear .2s;
 	-webkit-transition: -webkit-box-shadow linear .2s;
+	behavior: url('/PIE/PIE.htc');
 }
 .project .image-container img {
 	height: auto;
