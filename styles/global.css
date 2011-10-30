@@ -499,14 +499,14 @@ img.loader {
 .stream-carousel {
 	border: 1px solid blue;
 	float: left;
-	min-height: 60px;
+	min-height: 70px;
 	margin: 0 5px;
 }
 .stream-carousel-nav {	
 	display: inline-block;
 	border-left: 0;
 	float: left;
-	min-height: 50px;
+	min-height: 80px;
 	padding: 0 8px;
 	position: relative;
 	text-align: center;
@@ -521,7 +521,7 @@ img.loader {
 .stream-ul-flickr li a {
 	display: inline-block;
 	float: left;
-	min-height: 50px;
+	min-height: 70px;
 	height: auto;
 	margin-right: 5px;
 	transition: all .2s ease-in-out;
