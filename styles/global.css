@@ -502,7 +502,7 @@ img.loader {
 	display: inline-block;
 	border-left: 0;
 	float: left;
-	min-height: 70px;
+	min-height: 60px;
 	padding: 0 8px;
 	position: relative;
 	text-align: center;
