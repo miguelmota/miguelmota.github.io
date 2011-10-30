@@ -489,10 +489,14 @@ img.loader {
 	padding: 2px;
 }
 .stream-carousel-flickr {	
-	background-color: #252525;
+	background-color: #222;
 	height: 75px;
 	padding: 5px;
-	width: 80px;
+	width: auto;
+}
+.stream-ul-flickr {
+	height: 75px;
+	width: auto;
 }
 .stream-ul-flickr li a {
 	display: inline;
