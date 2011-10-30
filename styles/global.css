@@ -515,6 +515,7 @@ img.loader {
 	top: 50%;
 }
 .stream-ul-flickr li a {
+	background-color: #252525;
 	display: inline-block;
 	float: left;
 	min-height: 60px;
