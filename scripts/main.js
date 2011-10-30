@@ -478,9 +478,9 @@ function streamPage(){
 			    	  	var date = new Date(status.created_at).toUTCString();
 						var newText = '<span>'+post.split(' ').join('</span> <span>')+'</span>';
 						htmlString += "<li id='"+id+"' class='status'>&#187; <span class='post'>"+newText+"</span> <time class='status-date'><a href='http://twitter.com/miguel_mota/status/"+id+"'>"+niceTime(date)+"</a></time></li>";
-						htmlString += $("li.status[id='"+id+"'] span").find(":contains('http')").wrapInner("<a href='"+$("li.status[id='"+id+"'] span").find(":contains('http')").text()+"'> </a>");
-						htmlString += $("li.status[id='"+id+"'] span").find(":contains('@')").wrapInner("<a href='http://twitter.com/"+$("li.status[id='"+id+"'] span").find(":contains('@')").text().substr(1)+"'> </a>");
-						htmlString += $("li.status[id='"+id+"'] span").find(":contains('#')").wrapInner("<a href='http://twitter.com/#!/search/"+$("li.status[id='"+id+"'] span").find(":contains('#')").text().substr(1)+"'> </a>");
+						$("li.status[id='"+id+"'] span").find(":contains('http')").wrapInner("<a href='"+$("li.status[id='"+id+"'] span").find(":contains('http')").text()+"'> </a>");
+						$("li.status[id='"+id+"'] span").find(":contains('@')").wrapInner("<a href='http://twitter.com/"+$("li.status[id='"+id+"'] span").find(":contains('@')").text().substr(1)+"'> </a>");
+						$("li.status[id='"+id+"'] span").find(":contains('#')").wrapInner("<a href='http://twitter.com/#!/search/"+$("li.status[id='"+id+"'] span").find(":contains('#')").text().substr(1)+"'> </a>");
 						$('.stream-twitter').append(htmlString +'</ul>');
 					});
 					$('.stream-twitter div.loader').css('display','none');
@@ -536,10 +536,7 @@ function streamPage(){
 		
 		// Tumblr stream
 		$('.stream-tumblr div.loader').css('display','block');
-		$.getJSON('http://miguelmota.tumblr.com/api/read/json?callback=?', 
-				{
-					num: '3'
-				},
+		$.getJSON('http://miguelmota.tumblr.com/api/read/json?num=3&callback=?',
 				function(data){
 					$.each(data.posts, function(i, posts){ 
 							var htmlString = '<ul class="stream-ul stream-ul-tumblr">';
