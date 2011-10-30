@@ -478,9 +478,9 @@ function streamPage(){
 			    	  	var date = new Date(status.created_at).toUTCString();
 						var newText = '<span>'+post.split(' ').join('</span> <span>')+'</span>';
 						htmlString += "<li id='"+id+"' class='status'>&#187; <span class='post'>"+newText+"</span> <time class='status-date'><a href='http://twitter.com/miguel_mota/status/"+id+"'>"+niceTime(date)+"</a></time></li>";
-						$("li.status[id='"+id+"'] span").find(":contains('http')").wrapInner("<a href='"+$("li.status[id='"+id+"'] span").find(":contains('http')").text()+"'> </a>");
-						$("li.status[id='"+id+"'] span").find(":contains('@')").wrapInner("<a href='http://twitter.com/"+$("li.status[id='"+id+"'] span").find(":contains('@')").text().substr(1)+"'> </a>");
-						$("li.status[id='"+id+"'] span").find(":contains('#')").wrapInner("<a href='http://twitter.com/#!/search/"+$("li.status[id='"+id+"'] span").find(":contains('#')").text().substr(1)+"'> </a>");
+						htmlString += $("li.status[id='"+id+"'] span").find(":contains('http')").wrapInner("<a href='"+$("li.status[id='"+id+"'] span").find(":contains('http')").text()+"'> </a>");
+						htmlString += $("li.status[id='"+id+"'] span").find(":contains('@')").wrapInner("<a href='http://twitter.com/"+$("li.status[id='"+id+"'] span").find(":contains('@')").text().substr(1)+"'> </a>");
+						htmlString += $("li.status[id='"+id+"'] span").find(":contains('#')").wrapInner("<a href='http://twitter.com/#!/search/"+$("li.status[id='"+id+"'] span").find(":contains('#')").text().substr(1)+"'> </a>");
 						$('.stream-twitter').append(htmlString +'</ul>');
 					});
 					$('.stream-twitter div.loader').css('display','none');
@@ -635,7 +635,7 @@ function streamPage(){
 						var thumbnail_small = (item.media.m).replace('_m.jpg','_s.jpg');
 						var photo = (item.media.m).replace('_m.jpg','_b.jpg');
 
-						htmlString += "<li><a class='fancybox' rel='flickr internal' href='"+photo+"' title='"+item.title+" [<a href='"+item.link+"'>permanlink</a>]'><img src='"+thumbnail+"' alt='' /></a></li>";
+						htmlString += "<li><a class='fancybox' rel='flickr internal' href='"+photo+"' title='"+item.title+" ["+item.link+"]'><img src='"+thumbnail+"' alt='' /></a></li>";
 						if(i==19){
 						return false;
 						}
