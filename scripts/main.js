@@ -536,7 +536,7 @@ function streamPage(){
 		
 		// Tumblr stream
 		$('.stream-tumblr div.loader').css('display','block');
-		$.getJSON('http://miguelmota.tumblr.com/api/read/json?num=3&callback=?', 
+		$.getJSON('http://miguelmota.tumblr.com/api/read/json?callback=?', 
 				{
 					num: '3'
 				},
@@ -548,9 +548,9 @@ function streamPage(){
 				    	  	var caption = this['photo-caption'];
 				    	  	var slug = this.slug.replace(/-/g,' ');
 				    	  	htmlString += "<li>&#187; <a href='"+url+"'>"+slug.substring(0,1).toUpperCase()+slug.substr(1,200)+"</a> <time class='status-date'>"+niceTime(date)+"</time></li>";
-							$('.stream-tumblr').append(htmlString +'</ul>');
 				      }); 
 					  $('.stream-tumblr div.loader').css('display','none');
+					  $('.stream-tumblr').append(htmlString +'</ul>');
 					  showMtip('.stream-logo-tumblr');
 				  }
 		);
