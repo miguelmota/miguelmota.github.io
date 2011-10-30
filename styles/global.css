@@ -507,11 +507,13 @@ img.loader {
 	padding: 0 8px;
 	position: relative;
 	text-align: center;
+	text-shadow: none;
 }
 .stream-carousel-nav:hover,
 .stream-carousel-nav:active {	
-	background-color: #007299;
+	background-color: #004c66;
 	color: #fff;
+	text-shadow: none;
 }
 .stream-carousel-nav-inner {
 	left: 5%;
