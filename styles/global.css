@@ -491,6 +491,7 @@ img.loader {
 .stream-carousel-wrap {	
 	min-height: 50px;
 	position: relative;
+	min-width: 300px;
 }
 .stream-carousel {
 	float: left;
@@ -499,6 +500,7 @@ img.loader {
 	border-left: 0;
 	min-height: 50px;
 	padding: 0 8px;
+	vertical-align: middle;
 }
 .stream-carousel-nav-prev {
 	float: left;
