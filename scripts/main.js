@@ -489,7 +489,7 @@ function streamPage(){
 		);
 		
 		// Facebook stream
-		$('.stream-facebook div.loader').css({'background':'none','display':'block'}).html('<span style="color: #555; width: 200px;">[fetch failed]</span>');
+		$('.stream-facebook div.loader').css({'background':'none','display':'block'}).html('<span style="display: block; color: #555; width: 200px;">[fetch failed]</span>');
 		$.getJSON('https://graph.facebook.com/miguel.mota2/feed?&callback=?', 
 				{
 					limit: '3'
