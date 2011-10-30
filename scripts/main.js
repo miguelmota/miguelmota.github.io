@@ -635,7 +635,7 @@ function streamPage(){
 						var thumbnail_small = (item.media.m).replace('_m.jpg','_s.jpg');
 						var photo = (item.media.m).replace('_m.jpg','_b.jpg');
 
-						htmlString += "<li><a class='fancybox' rel='flickr internal' href='"+photo+"' title='"+item.title+" [<a href='"+item.link+"</a>]'><img src='"+thumbnail+"' alt='' /></a></li>";
+						htmlString += "<li><a class='fancybox' rel='flickr internal' href='"+photo+"' title='"+item.title+" [<a href='"+item.link+"'>permanlink</a>]'><img src='"+thumbnail+"' alt='' /></a></li>";
 						if(i==19){
 						return false;
 						}
