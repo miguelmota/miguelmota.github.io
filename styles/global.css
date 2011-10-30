@@ -488,13 +488,19 @@ img.loader {
 	float: right;
 	padding: 2px;
 }
-.stream-carousel-flickr {	
-
+.stream-carousel-nav {	
+	min-height: 50px;
+	padding: 10px;
+}
+.stream-carousel-nav-prev {
+	float: left;
+}.stream-carousel-nav-next {
+	float: right;
 }
 .stream-ul-flickr li a {
 	display: inline-block;
 	float: left;
-	min-height: 75px;
+	min-height: 50px;
 	height: auto;
 	margin-right: 5px;
 	transition: all .2s ease-in-out;
