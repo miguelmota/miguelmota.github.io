@@ -497,14 +497,12 @@ img.loader {
 }
 .stream-carousel {
 	float: left;
-	min-height: 60px;
 	margin: 0 5px;
 }
 .stream-carousel-nav {	
 	display: inline-block;
 	border-left: 0;
 	float: left;
-	min-height: 60px;
 	padding: 0 8px;
 	position: relative;
 	text-align: center;
