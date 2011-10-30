@@ -499,6 +499,7 @@ img.loader {
 	margin: 0 5px;
 }
 .stream-carousel-nav {	
+	background-color: #222;
 	display: inline-block;
 	border-left: 0;
 	float: left;
@@ -506,6 +507,10 @@ img.loader {
 	padding: 0 8px;
 	position: relative;
 	text-align: center;
+}
+.stream-carousel-nav:hover,
+.stream-carousel-nav:active {	
+	background-color: #007299;
 }
 .stream-carousel-nav-inner {
 	left: 5%;
