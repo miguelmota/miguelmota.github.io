@@ -20,8 +20,8 @@ html {
 input[type=text],
 input[type=password],
 textarea {		
-	border: 1px solid #292929 !important;
-	border-left: 4px solid #292929 !important;
+	border: 1px solid #555 !important;
+	border-left: 4px solid #555 !important;
 }
 input[type=text]:focus,
 input[type=password]:focus,
@@ -32,8 +32,8 @@ textarea:focus {
 input[type=text]:blur,
 input[type=password]:blur,
 textarea:blur {
-	border: 1px solid #555;
-	border-left: 4px solid #007299;
+	border: 1px solid #555 !important;
+	border-left: 4px solid #007299 !important;
 }
 .main-side-nav {
 	clear: both !important;
