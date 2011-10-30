@@ -629,7 +629,7 @@ function streamPage(){
 				tagmode: 'any'
 			}, jsonFlickrFeed);
 				function jsonFlickrFeed(data) {
-					var htmlString = '<div class="stream-carousel-wrap"><a href="javascript:void(0);" class="stream-carousel-nav stream-carousel-nav-prev">&#171;</a><div class="stream-carousel-flickr"><ul class="stream-ul stream-ul-flickr jcarousel-skin-tango">';
+					var htmlString = '<div class="stream-carousel-wrap"><a href="javascript:void(0);" class="stream-carousel-nav stream-carousel-nav-prev">&#171;</a><div class="stream-carousel stream-carousel-flickr"><ul class="stream-ul stream-ul-flickr jcarousel-skin-tango">';
 					$.each(data.items, function(i,item) {
 						var thumbnail = (item.media.m);
 						var thumbnail_small = (item.media.m).replace('_m.jpg','_s.jpg');
