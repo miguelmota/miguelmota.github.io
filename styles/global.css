@@ -499,7 +499,7 @@ img.loader {
 	width: auto;
 }
 .stream-ul-flickr li a {
-	display: inline;
+	display: inline-block;
 	float: left;
 	height: auto;
 	margin-right: 5px;
