@@ -545,9 +545,9 @@ function streamPage(){
 				    	  	var caption = this['photo-caption'];
 				    	  	var slug = this.slug.replace(/-/g,' ');
 				    	  	htmlString += "<li>&#187; <a href='"+url+"'>"+slug.substring(0,1).toUpperCase()+slug.substr(1,200)+"</a> <time class='status-date'>"+niceTime(date)+"</time></li>";
+							$('.stream-tumblr').append(htmlString +'</ul>');
 				      }); 
 					  $('.stream-tumblr div.loader').css('display','none');
-					  $('.stream-tumblr').append(htmlString +'</ul>');
 					  showMtip('.stream-logo-tumblr');
 				  }
 		);
