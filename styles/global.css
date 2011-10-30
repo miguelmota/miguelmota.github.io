@@ -497,13 +497,18 @@ img.loader {
 	margin: 0 5px;
 }
 .stream-carousel-nav {	
-	display: table-cell;
+	display: inline-block;
 	border-left: 0;
 	float: left;
 	min-height: 50px;
 	padding: 0 8px;
+	position: relative;
 	text-align: center;
-	vertical-align: middle;
+}
+.stream-carousel-nav-inner {
+	left: 45%;
+	position: absolute;
+	top: 45%;
 }
 .stream-ul-flickr li a {
 	display: inline-block;
