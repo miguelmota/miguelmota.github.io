@@ -491,7 +491,6 @@ img.loader {
 .stream-carousel-wrap {	
 	min-height: 50px;
 	position: relative;
-	min-width: 300px;
 }
 .stream-carousel {
 	float: left;
@@ -506,7 +505,7 @@ img.loader {
 	float: left;
 }
 .stream-carousel-nav-next {
-	float: right;
+	float: left;
 }
 .stream-ul-flickr li a {
 	display: inline-block;
