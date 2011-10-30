@@ -494,18 +494,14 @@ img.loader {
 }
 .stream-carousel {
 	float: left;
+	padding: 0 5px;
 }
 .stream-carousel-nav {	
 	border-left: 0;
+	float: left;
 	min-height: 50px;
 	padding: 0 8px;
-	vertical-align: middle;
-}
-.stream-carousel-nav-prev {
-	float: left;
-}
-.stream-carousel-nav-next {
-	float: left;
+	text-align: center;
 }
 .stream-ul-flickr li a {
 	display: inline-block;
