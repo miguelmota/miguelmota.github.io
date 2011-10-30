@@ -503,6 +503,7 @@ img.loader {
 	display: inline-block;
 	border-left: 0;
 	float: left;
+	min-height: 70px;
 	padding: 0 8px;
 	position: relative;
 	text-align: center;
@@ -515,9 +516,7 @@ img.loader {
 	top: 50%;
 }
 .stream-ul-flickr li a {
-	display: inline-block;
-	float: left;
-	min-height: 70px;
+	display: inline-b
 	height: auto;
 	margin-right: 5px;
 	transition: all .2s ease-in-out;
