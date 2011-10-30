@@ -488,6 +488,12 @@ img.loader {
 	float: right;
 	padding: 2px;
 }
+.stream-carousel-flickr {	
+	background-color: #252525;
+	height: auto;
+	padding: 5px;
+	width: 80px;
+}
 .stream-ul-flickr li a {
 	display: inline;
 	float: left;
