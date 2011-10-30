@@ -493,11 +493,13 @@ img.loader {
 }
 .stream-carousel-wrap {	
 	min-height: 50px;
+	padding: 10px 0;
 	position: relative;
 }
 .stream-carousel {
 	float: left;
 	margin: 0 5px;
+	padding: 10px 0;
 }
 .stream-carousel-nav {	
 	display: inline-block;
