@@ -492,19 +492,19 @@ img.loader {
 	padding: 2px;
 }
 .stream-carousel-wrap {	
-	min-height: 70px;	
+	min-height: 60px;	
 	position: relative;
 }
 .stream-carousel {
 	float: left;
-	min-height: 70px;
+	min-height: 60px;
 	margin: 0 5px;
 }
 .stream-carousel-nav {	
 	display: inline-block;
 	border-left: 0;
 	float: left;
-	min-height: 70px;
+	min-height: 60px;
 	padding: 0 8px;
 	position: relative;
 	text-align: center;
@@ -526,7 +526,7 @@ img.loader {
 	-moz-transition: all .2s ease-in-out;
 	-o-transition: all .2s ease-in-out;
 	-webkit-transition: all .2s ease-in-out;
-	min-width: 80px;
+	width: 80px;
 }
 .stream-ul-flickr a:hover,
 .stream-ul-flickr a:hover {
