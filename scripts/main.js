@@ -489,7 +489,7 @@ function streamPage(){
 		);
 		
 		// Facebook stream
-		$('.stream-facebook div.loader').css({'background':'none','display':'block'}).html('<span style="clear: both; color: #555; width: 200px;">[fetch failed]</span>');
+		$('.stream-facebook div.loader').css('display','block');
 		$.getJSON('https://graph.facebook.com/miguel.mota2/feed?&callback=?', 
 				{
 					limit: '3'
@@ -528,7 +528,7 @@ function streamPage(){
 			    	  		break;
 			    	  	}
 					});
-					$('.stream-facebook div.loader').css('display','none');
+					$('.stream-facebook div.loader').html('<span style="color: #555;>"[fetch failed]</span>');
 					showMtip('a.social.facebook');
 				}
 		);
