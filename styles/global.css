@@ -493,11 +493,9 @@ img.loader {
 }
 .stream-carousel-wrap {	
 	min-height: 70px;	
-	border: 1px solid red;
 	position: relative;
 }
 .stream-carousel {
-	border: 1px solid blue;
 	float: left;
 	min-height: 70px;
 	margin: 0 5px;
