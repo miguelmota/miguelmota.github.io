@@ -636,7 +636,7 @@ function streamPage(){
 						var photo = (item.media.m).replace('_m.jpg','_b.jpg');
 
 						htmlString += "<li><a class='fancybox' rel='flickr internal' href='"+photo+"' title='"+item.title+"' ><img src='"+thumbnail+"' alt='' /></a></li>";
-						if(i==3){
+						if(i==19){
 						return false;
 						}
 					});
@@ -644,7 +644,7 @@ function streamPage(){
 					$('.stream-flickr').append(htmlString +'</ul>');
 					showMtip('.stream-logo-flickr');
 					
-					$('.stream-ul-flickr').jcarousel();
+					$('.stream-ul-flickr').jCarouselLite();
 
 				}
 		

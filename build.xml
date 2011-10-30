@@ -27,7 +27,6 @@
 	    	<fileset dir="styles" includes="pygment_friendly.css" />
 	    	<!-- <fileset dir="plugins/mtip" includes="mtip.css" /> -->
 	    	<fileset dir="plugins/fancybox" includes="jquery.fancybox.css" />
-	    	<fileset dir="plugins/jcarousel" includes="skin.css" />
 	    	<!--<fileset dir="plugins/shadowbox" includes="shadowbox.css" />-->
 	    </concat>
 	    <yuicompressor warn="false" charset="UTF-8" fromdir="styles" todir="styles" csssuffix=".min.css">
@@ -45,7 +44,6 @@
 				<file name="plugins/mtip/mtip.js" />
 				<file name="plugins/validate/jquery.validate.min.js" />
 				<file name="plugins/fancybox/jquery.fancybox-1.3.2.pack.js" />				
-				<file name="plugins/jcarousel/jquery.jcarousel.min.js" />
 				<!--<file name="plugins/easing/jquery.animation.easing.js" />-->
 				<!--<file name="plugins/shadowbox/shadowbox.js" />-->
 				<file name="scripts/main.js" />
