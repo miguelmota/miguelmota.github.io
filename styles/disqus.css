@@ -104,6 +104,11 @@ div.dsq-textarea {
 	border: 1px solid #555 !important;
 	color: #999 !important;
 }
+div.dsq-textarea:focus {
+	background: #999 !important;
+	border: 1px solid #007299 !important;
+	color: #000 !important;
+}
 div.dsq-textarea-wrapper,
 div.dsq-textarea-wrapper iframe {
 	background: #222 !important;
