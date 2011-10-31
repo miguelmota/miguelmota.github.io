@@ -40,7 +40,6 @@
 		<jscomp compilationLevel="whitespace" warning="verbose" 
 	    	debug="false" output="${static.dir}scripts/main.min.js">
 			<sources dir="${static.dir}">
-				<file name="scripts/jquery.min.js" />
 				<file name="plugins/mtip/mtip.js" />
 				<file name="plugins/validate/jquery.validate.min.js" />
 				<file name="plugins/fancybox/jquery.fancybox-1.3.2.pack.js" />				
