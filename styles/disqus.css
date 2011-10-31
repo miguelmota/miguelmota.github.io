@@ -268,9 +268,14 @@ span.dsq-user-like {
 button.dsq-button,
 button.dsq-button-small {
 	background: #004c66 !important;
-	border-left: none !important;
+	border: none !important;
+	border-radius: 0 !important;
+	-moz-border-radius: 0 !important;
+	-o-border-radius: 0 !important;	
+	-webkit-border-radius: 0 !important;
 	color: #fff !important;
 	font-size: 12px !important;
+	font-weight: normal !important;
 	padding: 5px 10px !important;
 	text-shadow: none !important;
 }
