@@ -618,21 +618,20 @@ function streamPage(){
 		);
 		
 		// Flickr stream
-		$.getJSON('http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?',
+		$.getJSON('http://api.flickr.com/services/rest/?method=flickr.people.getPublicPhotos&jsoncallback=?',
 			{
 				format: 'json',
-				id: '40464790@N08',
-				//tags: "outdoors, los angeles, vans warped tour",
-				//tagmode: 'any'
+				user_id: '40464790@N08',
+				api_key: '2a3074a0411f6d3649972787fcacea59'
 			}, jsonFlickrFeed);
 				function jsonFlickrFeed(data) {
 					var htmlString = '<div class="stream-carousel-wrap"><a href="javascript:void(0);" class="stream-carousel-nav stream-carousel-nav-prev"><span class="stream-carousel-nav-inner">&#171;</span></a><div class="stream-carousel stream-carousel-flickr"><ul class="stream-ul stream-ul-flickr jcarousel-skin-tango">';
 					$.each(data.items, function(i,item) {
-						var thumbnail = (item.media.m);
-						var thumbnail_small = (item.media.m).replace('_m.jpg','_s.jpg');
-						var photo = (item.media.m).replace('_m.jpg','_b.jpg');
+						//var thumbnail = (item.media.m);
+						//var thumbnail_small = (item.media.m).replace('_m.jpg','_s.jpg');
+						//var photo = (item.media.m).replace('_m.jpg','_b.jpg');
 
-						htmlString += "<li><a class='fancybox' rel='flickr internal' href='"+photo+"' title='"+item.title+" ["+item.link+"]'><img src='"+thumbnail+"' alt='' /></a></li>";
+						htmlString += "<li><a class='fancybox' rel='flickr internal' href='"+photo+"' title='"+item.title+" ["+item.id+"]'><img src='"+thumbnail+"' alt='' /></a></li>";
 						if(i==49){
 						return false;
 						}

@@ -58,7 +58,7 @@
 			<li><a id='blog' href='/blog'>blog</a></li>
 		</ul>
 	</nav>
-	<div class='content-container'>
+	<div class='content-container' id='swivel'>
 		{{ content }}
 		<div class='loader-container'><div class='page-loader'></div></div>
 		<footer class='main-footer'>
@@ -107,6 +107,20 @@
 		   options.setSearchFormRoot('cse-search-form');    
 		   customSearchControl.draw('cse', options);
 		 }, true);
+		 
+		 
+		 
+	        (function(D,W) {
+	            var M=Math,R=function(){return M.floor(M.random()*(200-50+1))+50;},
+	            A=D.getElementsByTagName('a'),L=A.length,C,S;el=D.getElementById('swivel');
+	            while(L--){C='rgb('+R()+','+R()+','+R()+')',S=A[L].style;S.color=C,S.borderColor=C}
+	            if(typeof D.documentElement.style.WebkitTransform!='undefined' && !('ontouchstart' in D)){
+	                var w,h,x=0,y=0,tx=0,ty=0,r=function(){w=window.innerWidth;h=window.innerHeight;},
+	                c=function(e,t){return (((e/t)*2)-1)*-5};W.addEventListener('resize',r);r();
+	                D.addEventListener('mousemove',function(e){tx=c(e.pageX,w);ty=c(h-e.pageY,h);});
+	                W.setInterval(function(){x+=(tx-x)/10;y+=(ty-y)/10;el.style.WebkitTransform='rotateY('+x+'deg) rotateX('+y+'deg)';},20);}
+	            W.setTimeout(function(){el.className='show'},500);W.setTimeout(function(){el.style.display='block'},10);
+	        })(document,window);
 	</script>
 </div>
 </body>
