@@ -626,7 +626,7 @@ function streamPage(){
 			}, jsonFlickrFeed);
 				function jsonFlickrFeed(data) {
 					var htmlString = '<div class="stream-carousel-wrap"><a href="javascript:void(0);" class="stream-carousel-nav stream-carousel-nav-prev"><span class="stream-carousel-nav-inner">&#171;</span></a><div class="stream-carousel stream-carousel-flickr"><ul class="stream-ul stream-ul-flickr jcarousel-skin-tango">';
-					$.each(data.items, function(i,item) {	
+					$.each(data.photos, function(i,item) {	
 						
 						var id = item.id;
 						var farm = item.farm;
