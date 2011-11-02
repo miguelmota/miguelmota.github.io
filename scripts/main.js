@@ -626,13 +626,13 @@ function streamPage(){
 			}, jsonFlickrFeed);
 				function jsonFlickrFeed(data) {
 					var htmlString = '<div class="stream-carousel-wrap"><a href="javascript:void(0);" class="stream-carousel-nav stream-carousel-nav-prev"><span class="stream-carousel-nav-inner">&#171;</span></a><div class="stream-carousel stream-carousel-flickr"><ul class="stream-ul stream-ul-flickr jcarousel-skin-tango">';
-					$.each(data.photos, function(i,item) {	
+					$.each(data.photos.photo, function(i,item) {	
 						
-						var flickr_id = item.photo.id;
-						var flickr_farm = item.photo.farm;
-						var flickr_server = item.photo.server;					
-						var flickr_secret = item.photo.secret;
-						var flickr_title = item.photo.title;
+						var flickr_id = item.id;
+						var flickr_farm = item.farm;
+						var flickr_server = item.server;					
+						var flickr_secret = item.secret;
+						var flickr_title = item.title;
 						
 						//var thumbnail = (item.media.m);
 						var flickr_thumbnail = "http://farm"+flickr_farm+".static.flickr.com/"+flickr_server+"/"+flickr_id+"_"+flickr_secret+"_m.jpg";
