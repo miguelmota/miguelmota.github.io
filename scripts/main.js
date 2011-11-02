@@ -621,8 +621,8 @@ function streamPage(){
 		$.getJSON('http://api.flickr.com/services/rest/?method=flickr.people.getPublicPhotos&jsoncallback=?',
 			{
 				format: 'json',
+				api_key: '2a3074a0411f6d3649972787fcacea59',
 				user_id: '40464790@N08',
-				api_key: '2a3074a0411f6d3649972787fcacea59'
 			}, jsonFlickrFeed);
 				function jsonFlickrFeed(data) {
 					var htmlString = '<div class="stream-carousel-wrap"><a href="javascript:void(0);" class="stream-carousel-nav stream-carousel-nav-prev"><span class="stream-carousel-nav-inner">&#171;</span></a><div class="stream-carousel stream-carousel-flickr"><ul class="stream-ul stream-ul-flickr jcarousel-skin-tango">';
