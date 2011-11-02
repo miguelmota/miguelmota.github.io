@@ -626,13 +626,13 @@ function streamPage(){
 			}, jsonFlickrFeed);
 				function jsonFlickrFeed(data) {
 					var htmlString = '<div class="stream-carousel-wrap"><a href="javascript:void(0);" class="stream-carousel-nav stream-carousel-nav-prev"><span class="stream-carousel-nav-inner">&#171;</span></a><div class="stream-carousel stream-carousel-flickr"><ul class="stream-ul stream-ul-flickr jcarousel-skin-tango">';
-					$.each(data.photo, function(i,item) {	
+					$.each(data.photos, function(i,photo) {	
 						
-						var id = item.id;
-						var farm = item.farm;
-						var server = item.server;					
-						var secret = item.secret;
-						var title = item.title;
+						var id = photo.id;
+						var farm = photo.farm;
+						var server = photo.server;					
+						var secret = photo.secret;
+						var title = photo.title;
 						
 						//var thumbnail = (item.media.m);
 						var thumbnail = "http://farm"+farm+".static.flickr.com/"+server+"/"+id+"_"+secret+"_m.jpg";
