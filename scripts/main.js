@@ -628,20 +628,20 @@ function streamPage(){
 					var htmlString = '<div class="stream-carousel-wrap"><a href="javascript:void(0);" class="stream-carousel-nav stream-carousel-nav-prev"><span class="stream-carousel-nav-inner">&#171;</span></a><div class="stream-carousel stream-carousel-flickr"><ul class="stream-ul stream-ul-flickr jcarousel-skin-tango">';
 					$.each(data.photos, function(i,item) {	
 						
-						var photo_id = item.id;
-						var photo_farm = item.farm;
-						var photo_server = item.server;					
-						var photo_secret = item.secret;
-						var photo_title = item.title;
+						var flickr_id = item.photo.id;
+						var flickr_farm = item.photo.farm;
+						var flickr_server = item.photo.server;					
+						var flickr_secret = item.photo.secret;
+						var flickr_title = item.photo.title;
 						
 						//var thumbnail = (item.media.m);
-						var thumbnail = "http://farm"+photo_farm+".static.flickr.com/"+photo_server+"/"+photo_id+"_"+photo_secret+"_m.jpg";
+						var flickr_thumbnail = "http://farm"+flickr_farm+".static.flickr.com/"+flickr_server+"/"+flickr_id+"_"+flickr_secret+"_m.jpg";
 						//var thumbnail_small = (item.media.m).replace('_m.jpg','_s.jpg');
 						//var photo = (item.media.m).replace('_m.jpg','_b.jpg');						
-						var photo = "http://farm"+photo_farm+".static.flickr.com/"+photo_server+"/"+photo_id+"_"+photo_secret+"_b.jpg";
+						var flickr_photo = "http://farm"+flickr_farm+".static.flickr.com/"+flickr_server+"/"+flickr_id+"_"+flickr_secret+"_b.jpg";
 
 
-						htmlString += "<li><a class='fancybox' rel='flickr internal' href='"+photo+"' title='"+photo_title+" ["+photo_id+"]'><img src='"+thumbnail+"' alt='' /></a></li>";
+						htmlString += "<li><a class='fancybox' rel='flickr internal' href='"+flickr_photo+"' title='"+flickr_title+" ["+flickr_id+"]'><img src='"+flickr_thumbnail+"' alt='' /></a></li>";
 					});
 					$('.stream-flickr div.loader').css('display','none');
 					$('.stream-flickr').append(htmlString +'</ul></div><a href="javascript:void(0);" class="stream-carousel-nav stream-carousel-nav-next"><span class="stream-carousel-nav-inner">&#187;</span></a></div>');
