@@ -628,23 +628,20 @@ function streamPage(){
 					var htmlString = '<div class="stream-carousel-wrap"><a href="javascript:void(0);" class="stream-carousel-nav stream-carousel-nav-prev"><span class="stream-carousel-nav-inner">&#171;</span></a><div class="stream-carousel stream-carousel-flickr"><ul class="stream-ul stream-ul-flickr jcarousel-skin-tango">';
 					$.each(data.photos, function(i,item) {	
 						
-						var id = item.photo.id;
-						var farm = item.photo.farm;
-						var server = item.photo.server;					
-						var secret = item.photo.secret;
-						var title = item.photo.title;
+						var photo_id = item.id;
+						var photo_farm = item.farm;
+						var photo_server = item.server;					
+						var photo_secret = item.secret;
+						var photo_title = item.title;
 						
 						//var thumbnail = (item.media.m);
-						var thumbnail = "http://farm"+farm+".static.flickr.com/"+server+"/"+id+"_"+secret+"_m.jpg";
+						var thumbnail = "http://farm"+photo_farm+".static.flickr.com/"+photo_server+"/"+photo_id+"_"+photo_secret+"_m.jpg";
 						//var thumbnail_small = (item.media.m).replace('_m.jpg','_s.jpg');
 						//var photo = (item.media.m).replace('_m.jpg','_b.jpg');						
-						var photo = "http://farm"+farm+".static.flickr.com/"+server+"/"+id+"_"+secret+"_b.jpg";
+						var photo = "http://farm"+photo_farm+".static.flickr.com/"+photo_server+"/"+photo_id+"_"+photo_secret+"_b.jpg";
 
 
-						htmlString += "<li><a class='fancybox' rel='flickr internal' href='"+photo+"' title='"+title+" ["+id+"]'><img src='"+thumbnail+"' alt='' /></a></li>";
-						if(i==49){
-						return false;
-						}
+						htmlString += "<li><a class='fancybox' rel='flickr internal' href='"+photo+"' title='"+photo_title+" ["+photo_id+"]'><img src='"+thumbnail+"' alt='' /></a></li>";
 					});
 					$('.stream-flickr div.loader').css('display','none');
 					$('.stream-flickr').append(htmlString +'</ul></div><a href="javascript:void(0);" class="stream-carousel-nav stream-carousel-nav-next"><span class="stream-carousel-nav-inner">&#187;</span></a></div>');
