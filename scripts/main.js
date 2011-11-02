@@ -626,17 +626,20 @@ function streamPage(){
 			}, jsonFlickrFeed);
 				function jsonFlickrFeed(data) {
 					var htmlString = '<div class="stream-carousel-wrap"><a href="javascript:void(0);" class="stream-carousel-nav stream-carousel-nav-prev"><span class="stream-carousel-nav-inner">&#171;</span></a><div class="stream-carousel stream-carousel-flickr"><ul class="stream-ul stream-ul-flickr jcarousel-skin-tango">';
-					$.each(data.items, function(i,item) {
+					$.each(data.items, function(i,item) {	
+						
+						var id = item.id;
+						var farm = item.farm;
+						var server = item.server;					
+						var secret = item.secret;
+						var title = item.title;
+						
 						//var thumbnail = (item.media.m);
 						var thumbnail = "http://farm"+farm+".static.flickr.com/"+server+"/"+id+"_"+secret+"_m.jpg";
 						//var thumbnail_small = (item.media.m).replace('_m.jpg','_s.jpg');
 						//var photo = (item.media.m).replace('_m.jpg','_b.jpg');						
 						var photo = "http://farm"+farm+".static.flickr.com/"+server+"/"+id+"_"+secret+"_b.jpg";
-						var farm = item.farm;
-						var server = item.server;					
-						var id = item.id;
-						var secret = item.secret;
-						var title = item.title;
+
 
 						htmlString += "<li><a class='fancybox' rel='flickr internal' href='"+photo+"' title='"+title+" ["+id+"]'><img src='"+thumbnail+"' alt='' /></a></li>";
 						if(i==49){
