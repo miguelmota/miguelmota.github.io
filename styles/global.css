@@ -264,6 +264,8 @@ a.nav-logo:hover {
 	background-color: #252525 !important;
 }
 ul.main-nav a {
+	border-bottom: 1px solid #22929;
+	border-top: 1px solid #22929;
 	border-left: 4px solid #444;
 	color: #999;
 	display: block;
