@@ -110,6 +110,9 @@
 	}
 	</script>
 	<style>
+	/* ==============================================================================
+		BASIC
+	============================================================================== */
 	body {
 		background-color: #252525;
 		color: #999;
@@ -227,7 +230,7 @@
 		line-height: 125%;
 	}
 	/* ==============================================================================
-		END GENERAL
+		END BASIC
 	============================================================================== */
 
 
@@ -330,72 +333,49 @@
 
 
 
-/* ==============================================================================
-	CONTENT
-============================================================================== */
-section.content {
-	float: right;
-	height: auto;
-	position: relative;	
-	text-shadow: 0 -1px 0 rgba(0,0,0,.5);
-	width: 100%;
-	
-	border: 1px solid red;
-}
-.content img {
-	background: #222 url('/images/ajax-loader-image.gif') no-repeat 50% 50%;
-	box-shadow: 2px 2px 8px rgba(0,0,0,.7);
-	-moz-box-shadow: 2px 2px 8px rgba(0,0,0,.7);
-	-o-box-shadow: 2px 2px 8px rgba(0,0,0,.7);
-	-webkit-box-shadow: 2px 2px 8px rgba(0,0,0,.7);
-	height: auto;
-	width: 100%;
-	behavior: url('/PIE/PIE.htc');
-}
-.content-container {
-	height: auto;
-	float: right;
-	position: relative;
-	width: 100%;
-}
-/* ==============================================================================
-	END CONTENT
-============================================================================== */
+	/* ==============================================================================
+		CONTENT
+	============================================================================== */
+	.content {
+		float: right;
+		height: auto;
+		position: relative;	
+		width: 100%;
+	}
+	.content img {
+		background: #222 url('http://wwww.miguelmota.com/images/ajax-loader-image.gif') no-repeat 50% 50%;
+		box-shadow: 2px 2px 8px rgba(0,0,0,.7);
+		-moz-box-shadow: 2px 2px 8px rgba(0,0,0,.7);
+		-o-box-shadow: 2px 2px 8px rgba(0,0,0,.7);
+		-webkit-box-shadow: 2px 2px 8px rgba(0,0,0,.7);
+		height: auto;
+		width: 100%;
+		behavior: url('http://wwww.miguelmota.com/PIE/PIE.htc');
+	}
+	.content-container {
+		height: auto;
+		float: right;
+		position: relative;
+		width: 100%;
+	}
+	/* ==============================================================================
+		END CONTENT
+	============================================================================== */
 
 
 
-/* ==============================================================================
-	LOADERS
-============================================================================== */
-div.loader {
-	background: url('/images/ajax-loader.gif') no-repeat 0 0;
-	height: 16px;
-	margin-right: 5px;
-	width: 16px;
-}
-div.loader-container {
-	clear: both;
-	display: none;
-	height: 15px;
-	padding-top: 20px;
-	width: 128px;
-}
-div.page-loader {
-	background: url('/images/ajax-loader-page.gif') no-repeat 0 0;
-	clear: both;
-	float: left;
-	height: 15px;
-	width: 128px;
-}
-img.loader {	
-	clear: both;
-	display: block;
-	height: 16px;
-	width: 16px;
-}
-/* ==============================================================================
-	END LOADERS
-============================================================================== */
+	/* ==============================================================================
+		LOADERS
+	============================================================================== */
+	.loader {
+		background: url('http://wwww.miguelmota.com/images/ajax-loader.gif') no-repeat 0 0;
+		height: 16px;
+		margin-right: 5px;
+		width: 16px;
+	}
+	/* ==============================================================================
+		END LOADERS
+	============================================================================== */
 	
 
 	
@@ -462,7 +442,13 @@ img.loader {
 		width: 81px; 
 	}
 	
-	
+	.exif-ul {
+		color: #555;
+		font-size: 10px;
+	}
+	.exif-ul li {
+		display: inline;
+	}
 
 	.post {
 		background-color: #222;
@@ -498,32 +484,57 @@ img.loader {
 		padding: 0;
 		border: 0;
 	}
-	
+	/* ==============================================================================
+		ICONS
+	============================================================================== */
+	.icon {
+		height: 16px;
+		padding: 0;
+		width: 16px;
+	}
+	.icon-top {
+		float: right;
+		height: 24px;
+		margin-bottom: 5px;
+		width: 24px;
+	}
+	.icon:hover {
+		background-color: #252525;
+	}
+	.icon-date {
+		background: url('http://www.miguelmota.com/images/tumblr/16/date.png');
+	}
+	.icon-photo {
+		background: url('http://www.miguelmota.com/images/tumblr/24/permalink.png');
+	}
+	/* ==============================================================================
+		END ICONS
+	============================================================================== */
 	
 	
 	/* ==============================================================================
-	MAIN FOOTER
-============================================================================== */
-footer.main-footer {
-	clear: both;
-	height: 20px;
-	padding: 25px 0 15px 0;
-	position: relative;
-	width: 100%;
-}
-footer.main-footer p {
-	background-color: inherit;
-	color: #333;
-	font-size: 9px;
-	width: 100%;
-}
-a.top-link {
-	display: none;
-	float: right;
-}
-/* ==============================================================================
-	END MAIN FOOTER
-============================================================================== */
+		MAIN BOTTOM FOOTER
+	============================================================================== */
+	.main-bottom-footer {
+		clear: both;
+		height: 20px;
+		padding: 25px 0 15px 0;
+		position: relative;
+		width: 100%;
+	}
+	.main-bottom-footer p {
+		background-color: inherit;
+		color: #333;
+		font-size: 9px;
+		width: 100%;
+	}
+	.top-link {
+		display: none;
+		float: right;
+	}
+	/* ==============================================================================
+		END MAIN BOTTOM FOOTER
+	============================================================================== */
 
 	{CustomCSS}
 	</style>
@@ -640,29 +651,29 @@ a.top-link {
                 
                 {block:Photo}
                     <li class='post photo'>
-                    		<div class='icon icon-photo'></div>
-	                        <div class='photo-wrap'>{LinkOpenTag}<img id='photo' src='{PhotoURL-HighRes}' alt='{PhotoAlt}' link='{LinkURL}' />{LinkCloseTag}</div>
+                    	<a href='{Permalink}' class='icon icon-top icon-photo'></a>
+	                    <div class='photo-wrap'>{LinkOpenTag}<img id='photo' src='{PhotoURL-HighRes}' alt='{PhotoAlt}' link='{LinkURL}' />{LinkCloseTag}</div>
 						<a class='view-full-size' href='{PhotoURL-HighRes}' rel='external'>view full size</a>
                         {block:Caption}
                             <div id='caption' class='caption'>{Caption}</div>
                         {/block:Caption}
                         
-                            {block:Exif}
-        <ul>
-            {block:Camera}
-                <li>Camera: {Camera}</li>
-            {/block:Camera}
-            {block:Aperture}
-                <li>Aperture: {Aperture}</li>
-            {/block:Aperture}
-            {block:Exposure}
-                <li>Exposure: {Exposure}</li>
-            {/block:Exposure}
-            {block:FocalLength}
-                <li>Focal Length: {FocalLength}</li>
-            {/block:FocalLength}
-        </ul>
-    {/block:Exif}
+                        {block:Exif}
+        					<ul class='exif-ul'>
+				            {block:Camera}
+				                <li>Camera: {Camera}</li>
+				            {/block:Camera}
+				            {block:Aperture}
+				                <li>Aperture: {Aperture}</li>
+				            {/block:Aperture}
+				            {block:Exposure}
+				                <li>Exposure: {Exposure}</li>
+				            {/block:Exposure}
+				            {block:FocalLength}
+				                <li>Focal Length: {FocalLength}</li>
+				            {/block:FocalLength}
+       						</ul>
+    					{/block:Exif}
     
                         {block:Source}
                             <div class='source'>{Source}</div>
@@ -696,7 +707,7 @@ a.top-link {
                         
                         	             <div class='post-footer'>
 	            	{block:Date}
-	            		 <a href='{Permalink}'>{TimeAgo}</a>
+	            		 <a href='{Permalink}'><span class='icon icon-date'></span> {TimeAgo}</a>
 	            	{/block:Date}
 	                <a href='http://tmv.proto.jp/reblog.php?post_url={Permalink}'>reblog</a> 
 	            	{block:HasTags} 
@@ -863,7 +874,7 @@ a.top-link {
         
         
         
-		<footer class='main-footer'>
+		<footer class='main-bottom-footer'>
 			<div class='pagination'>
 			{block:Pagination}
 		        {block:PreviousPage}
