@@ -54,7 +54,7 @@ $(document).ready(function(){
 	
 	initializeFancybox();
 	
-	$('ul.main-nav a')).live({
+	$('ul.main-nav a').live({
 		mouseenter:
 			function(){
 			$(this).animate({border-left-width: '6px'}, 50);
