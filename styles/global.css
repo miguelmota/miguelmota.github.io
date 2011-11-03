@@ -276,7 +276,7 @@ ul.main-nav a {
 ul.main-nav a:hover,
 ul.main-nav a:active {
 	background-color: #292929;
-	border-left: 5px solid #999;
+	border-left: 4px solid #999;
 	color: #fff;
 }
 ul.main-nav a.selected {

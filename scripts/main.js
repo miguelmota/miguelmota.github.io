@@ -54,7 +54,16 @@ $(document).ready(function(){
 	
 	initializeFancybox();
 	
-
+	$('ul.main-nav a')).live({
+		mouseenter:
+			function(){
+			$(this).animate({border-left-width: '6px'}, 50);
+			},
+			mouseleave:
+			function(){
+				$(this).animate({border-left-width: '4px'}, 50);
+			}
+		});
 	
 	
 	//initialize text ticker
