@@ -264,18 +264,19 @@ a.nav-logo:hover {
 	background-color: #252525 !important;
 }
 ul.main-nav a {
-	border-bottom: 1px solid #22929;
-	border-top: 1px solid #22929;
+	border-bottom: 1px solid #292929;
+	border-top: 1px solid #292929;
 	border-left: 4px solid #444;
 	color: #999;
 	display: block;
 	font-size: 13px;
 	padding: 2px 2px 2px 4px;
+	position: relative;
 }
 ul.main-nav a:hover,
 ul.main-nav a:active {
 	background-color: #292929;
-	border-left: 4px solid #999;
+	border-left: 5px solid #999;
 	color: #fff;
 }
 ul.main-nav a.selected {
