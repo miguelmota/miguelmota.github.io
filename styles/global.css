@@ -264,7 +264,7 @@ a.nav-logo:hover {
 	background-color: #252525 !important;
 }
 ul.main-nav a {
-	border-left: 4px solid #292929;
+	border-left: 4px solid #444;
 	color: #999;
 	display: block;
 	font-size: 13px;
@@ -273,7 +273,7 @@ ul.main-nav a {
 ul.main-nav a:hover,
 ul.main-nav a:active {
 	background-color: #292929;
-	border-left: 4px solid #444;
+	border-left: 4px solid #999;
 	color: #fff;
 }
 ul.main-nav a.selected {
