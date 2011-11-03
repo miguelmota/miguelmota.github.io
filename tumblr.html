@@ -532,6 +532,12 @@
 		margin-bottom: 10px;
 		width: 24px;
 	}
+	.icon-audio {
+		background: url('http://www.miguelmota.com/images/tumblr/24/audio.png');
+	}
+	.icon-chat {
+		background: url('http://www.miguelmota.com/images/tumblr/24/chat.png');
+	}
 	.icon-date {
 		background: url('http://www.miguelmota.com/images/tumblr/16/date.png');
 	}
@@ -539,14 +545,27 @@
 		background: url('http://www.miguelmota.com/images/tumblr/16/heart.png');
 		height: 14px;
 	}
+	.icon-link {
+		background: url('http://www.miguelmota.com/images/tumblr/24/link.png');
+	}
 	.icon-photo {
-		background: url('http://www.miguelmota.com/images/tumblr/24/permalink.png');
+		background: url('http://www.miguelmota.com/images/tumblr/24/photo.png');
+	}
+	.icon-quote {
+		background: url('http://www.miguelmota.com/images/tumblr/24/quote.png');
 	}
 	.icon-reblog {
 		background: url('http://www.miguelmota.com/images/tumblr/16/reblog.png');
 	}
 	.icon-tag {
-		background: url('http://www.miguelmota.com/images/tumblr/16/tag.png');
+		background: url('http://www.miguelmota.com/images/tumblr/16/tags.png');
+		width: 12px;
+	}
+	.icon-text {
+		background: url('http://www.miguelmota.com/images/tumblr/24/text.png');
+	}
+	.icon-video {
+		background: url('http://www.miguelmota.com/images/tumblr/24/video.png');
 	}
 	/* ==============================================================================
 		END ICONS
@@ -645,6 +664,7 @@
             
                 {block:Text}
                     <li class='post text'>
+                    	<a href='{Permalink}' class='icon icon-top icon-text'></a>
                         {block:Title}
                             <h3><a href='{Permalink}'>{Title}</a></h3>
                         {/block:Title}
@@ -803,6 +823,7 @@
                 {/block:Photo}
 
                 {block:Photoset}
+               		<a href='{Permalink}' class='icon icon-top icon-photo'></a>
                     <li class='post photoset'>
                         {Photoset-500}
                         {block:Caption}
@@ -873,6 +894,7 @@
                 {/block:Photoset}
                 
                 {block:Quote}
+                	<a href='{Permalink}' class='icon icon-top icon-quote'></a>
                     <li class='post quote'>
                         <div class='quote-wrap'>"{Quote}"</div>
                         
@@ -941,6 +963,7 @@
                 
                 {block:Link}
                     <li class='post link'>
+                    	<a href='{Permalink}' class='icon icon-top icon-link'></a>
                         <h3><a href='{URL}' {Target}>{Name} &#8594;</a></h3>
                         {block:Description}
                             <div class='description'>{Description}</div>
@@ -1010,6 +1033,7 @@
                 {/block:Link}
                 
                 {block:Chat}
+                	<a href='{Permalink}' class='icon icon-top icon-chat'></a>
                     <li class='post chat'>
                         {block:Title}
                             <h3><a href='{Permalink}'>{Title}</a></h3>
@@ -1089,6 +1113,7 @@
                 {/block:Chat}
                 
                 {block:Video}
+               		<a href='{Permalink}' class='icon icon-top icon-video'></a>
                     <li class='post video'>
                         {Video-500}
                         {block:Caption}
@@ -1159,6 +1184,7 @@
                 {/block:Video}
                 
                 {block:Audio}
+               		<a href='{Permalink}' class='icon icon-top icon-audio'></a>
                     <li class='post audio'>
                         {AudioPlayerBlack}
                         {block:Caption}
