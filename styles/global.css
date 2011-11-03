@@ -278,7 +278,7 @@ ul.main-nav a:active {
 }
 ul.main-nav a.selected {
 	background-color: #323232;
-	border-left: 4px solid #999;
+	border-left: 4px solid #007299;
 	color: #fff;
 	font-weight: bold;
 }
