@@ -57,11 +57,11 @@ $(document).ready(function(){
 	$('ul.main-nav a').live({
 		mouseenter:
 			function(){
-				$(this).animate({borderLeftWidth: '6px'}, 500);
+				$(this).animate({borderLeftWidth: '6px'}, 60);
 			},
 			mouseleave:
 			function(){
-				$(this).animate({borderLeftWidth: '4px'}, 500);
+				$(this).animate({borderLeftWidth: '4px'}, 60);
 			}
 		});
 	
