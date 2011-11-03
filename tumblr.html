@@ -397,11 +397,26 @@
 		font-size: 14px;
 	}
 
-	div.post-footer {
+	.post-footer {
+		border-top: 1px solid #333;
 		font-size: 12px;
-		padding: 5px 0;
+		margin: 10px 0;
+		padding: 10px 0;
 	}
-	span.note-count {
+	
+	
+	.post-source {
+		font-size: 10px;
+	}
+	.post-tags {
+		font-size: 10px;
+	}
+	.post-tags a {
+		font-weight: normal;
+	}
+	
+	
+	.note-count {
 		float: right;
 	}
 	ol.notes {
@@ -457,6 +472,9 @@
 		padding: 20px;
 	  	position: relative;
 	}
+	.caption {
+		padding: 5px 0 10px 0;
+	}
 	.photo img {
 		width: 100%;
 		height: auto;
@@ -511,6 +529,7 @@
 	}
 	.icon-heart {
 		background: url('http://www.miguelmota.com/images/tumblr/16/heart.png');
+		height: 14px;
 	}
 	.icon-photo {
 		background: url('http://www.miguelmota.com/images/tumblr/24/permalink.png');
@@ -618,26 +637,7 @@
                         
      
                         
-                        
-                        				    <div class='share-container'>
-						<g:plusone class='plus-one-button' href='{Permalink}' size='medium'></g:plusone>
-						<a id='twitter-share-button' class='twitter-share-button' href='http://twitter.cosm/share' data-text='{block:PostSummary}{PostSummary} &#187; {/block:PostSummary}' data-url='{Permalink}' data-via='miguel_mota' data-count='horizontal'>Tweet</a>
-						
-						{block:PermalinkPagination}
-							<a id='tumblr-share-button' class='tumblr-share-button' href='http://www.tumblr.com/share' title='{block:PostSummary}{PostSummary} &#187; {/block:PostSummary}'>Share on Tumblr</a>
-							<script>
-								document.getElementById('twitter-share-button').setAttribute('data-text', document.getElementById('caption').innerText);
-								var tumblr_photo_source = document.getElementById('photo').src;
-						        var tumblr_photo_caption = document.getElementById('caption').innerText;
-						        var tumblr_photo_title = document.getElementById('caption').innerText;
-						        var tumblr_photo_click_thru = document.getElementById("photo").getAttribute('link');
-						        var tumblr_button = document.getElementById('tumblr-share-button');
-						        tumblr_button.setAttribute('href', 'http://www.tumblr.com/share/photo?source='+encodeURIComponent(tumblr_photo_source)+'&caption='+encodeURIComponent(tumblr_photo_caption)+'&click_thru='+encodeURIComponent(tumblr_photo_click_thru));
-						        tumblr_button.setAttribute('title', tumblr_photo_title);
-							</script>
-		 					<script src='http://platform.tumblr.com/v1/share.js'></script> 
-	 				 	{/block:PermalinkPagination}
-					</div>
+
                         
                         
 
@@ -663,9 +663,34 @@
 	                    <div class='photo-wrap'>{LinkOpenTag}<img id='photo' src='{PhotoURL-HighRes}' alt='{PhotoAlt}' link='{LinkURL}' />{LinkCloseTag}</div>
 						<a class='view-full-size' href='{PhotoURL-HighRes}' rel='external'>view full size</a>
                         {block:Caption}
-                            <div id='caption' class='caption'>{Caption}</div>
+                            <div class='caption'>{Caption}</div>
                         {/block:Caption}
-                        
+
+	                    
+					    {block:ContentSource}
+					    	<div class='post-source'>
+					    		{lang:Source} 
+	    						<a href='{SourceURL}'>
+			        				{block:SourceLogo}
+			            				<img src='{BlackLogoURL}' width='{LogoWidth}' height='{LogoHeight}' alt='{SourceTitle}' />
+			        				{/block:SourceLogo}
+							        {block:NoSourceLogo}
+							            {SourceTitle}
+							        {/block:NoSourceLogo}
+	    						</a>
+	    					</div>
+						{/block:ContentSource}
+						
+
+			            {block:HasTags} 
+			            	<div class='post-tags'>
+			            		tags: 
+			            		{block:Tags}
+			            			<a href='{TagURL}'>{Tag}</a> 
+			            		{/block:Tags}
+			            	</div>
+			            {/block:HasTags}
+
                         {block:Exif}
         					<ul class='exif-ul'>
 				            {block:Camera}
@@ -687,7 +712,33 @@
                             <div class='source'>{Source}</div>
                         {/block:Source}
                         
-                                        				    <div class='share-container'>
+
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                    <div class='post-footer'>
+	            	{block:Date}
+	            		 <a href='{Permalink}'><span class='icon icon-date'></span> {TimeAgo}</a>
+	            	{/block:Date}
+	                <a href='http://tmv.proto.jp/reblog.php?post_url={Permalink}'>reblog</a>
+	                 
+
+	            	
+					<span class='note-count'>
+			            {block:NoteCount} 
+				        	<a href='{Permalink}#notes'><span class='icon icon-heart'></span> {NoteCount}</a>
+				        {/block:NoteCount}
+				    </span>
+
+				</div>
+                        
+                        
+                        
+                                             <div class='share-container'>
 						<g:plusone class='plus-one-button' href='{Permalink}' size='medium'></g:plusone>
 						<a id='twitter-share-button' class='twitter-share-button' href='http://twitter.cosm/share' data-text='{block:PostSummary}{PostSummary} &#187; {/block:PostSummary}' data-url='{Permalink}' data-via='miguel_mota' data-count='horizontal'>Tweet</a>
 						
@@ -706,62 +757,6 @@
 		 					<script src='http://platform.tumblr.com/v1/share.js'></script> 
 	 				 	{/block:PermalinkPagination}
 					</div>
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        	             <div class='post-footer'>
-	            	{block:Date}
-	            		 <a href='{Permalink}'><span class='icon icon-date'></span> {TimeAgo}</a>
-	            	{/block:Date}
-	                <a href='http://tmv.proto.jp/reblog.php?post_url={Permalink}'>reblog</a> 
-	            	{block:HasTags} 
-	            		tags: 
-	            		{block:Tags}
-	            			<a href='{TagURL}'>{Tag}</a> 
-	            		{/block:Tags}
-	            	{/block:HasTags}
-					<span class='note-count'>
-			            {block:NoteCount} 
-				        	<a href='{Permalink}#notes'><span class='icon icon-heart'></span> {NoteCount}</a>
-				        {/block:NoteCount}
-				    </span>
-				    
-				    
-				    	             {block:ContentSource}
-    <a href="{SourceURL}">
-        {lang:Source}:
-        {block:SourceLogo}
-            <img src="{BlackLogoURL}" width="{LogoWidth}"
-            height="{LogoHeight}" alt="{SourceTitle}" />
-        {/block:SourceLogo}
-        {block:NoSourceLogo}
-            {SourceTitle}
-        {/block:NoSourceLogo}
-    </a>
-{/block:ContentSource}
-				    
-				    
-				    
-				    
-				    
-				    
-				    
-				    
-				    
-
-					
-					
-					
-					
-				</div>
-                        
-                        
-                        
-                        
                         
                         <div class='clear'></div>
                     </li>
