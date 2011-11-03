@@ -54,6 +54,7 @@ $(document).ready(function(){
 	
 	initializeFancybox();
 	
+	// Navigation hover effect
 	$('ul.main-nav a').live({
 		mouseenter:
 			function(){

@@ -21,41 +21,387 @@
  \/_/\/_/\/_/\/___/  \/__/\/__/\/_/
                                    
 -->
-	<meta name='description' content='A tumblog about design, code and some other stuff. Mostly infographics.' />
-	<meta name='keywords' content='miguel mota,creative,freelance,web developer,web design,blog,infographics' />
+	{block:Description}
+		<meta name='description' content='{MetaDescription}' />
+	{/block:Description}
+	<meta name='keywords' content='KEYWORDS_GO_HERE' />
 	<meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=1;' />
-	<title>{block:PostSummary}{PostSummary} &#187; {/block:PostSummary}{block:SearchPage}'{SearchQuery}' search results &#187; {/block:SearchPage}Tumblr | Miguel Mota</title>
-	<link rel='canonical' href='http://www.miguelmota.com/' />
-	<link rel='alternate' type='application/rss+xml' href='http://feeds.feedburner.com/miguelmota/tumblr'>
-	<link rel='shortcut icon' href='http://www.miguelmota.com/favicon.ico' />
-	<link rel='apple-touch-icon' href='http://www.miguelmota.com/images/apple-touch-icon.png' />
+	
+	<!-- Custom colors -->
+	<meta name='color:Link' content='#007299' />
+	<meta name='color:Link Hover' content='#0098cc' />
+	<meta name='color:Link Hover Background' content='#004c66' />
+	
+	<title>{Title} {block:PostSummary}{PostSummary}{/block:PostSummary}{block:SearchPage}'{SearchQuery}' search results{/block:SearchPage}</title>
+	<link rel='canonical' href='http://YOUR_TUMBLR_URL' />
+	<link rel='alternate' type='application/rss+xml' href='{RSS}'>
+	<link rel='shortcut icon' href='{Favicon}' />
+	<link rel='apple-touch-icon' href='{PortraitURL-128}' />
 	<link rel='stylesheet' href='http://www.miguelmota.com/styles/reset.css' />
-	<link rel='stylesheet' href='http://www.miguelmota.com/styles/global.css' />
-	<script src='http://www.miguelmota.com/scripts/jquery.min.js'></script>
+	<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js'></script>
+	<script src='http://masonry.desandro.com/jquery.masonry.min.js'></script>
 	<script>		
-	// display the year
+	$(document).ready(function(){
+		
+		// Navigation hover effect
+		$('.main-side-nav-ul a').live({
+			mouseenter:
+				function(){
+					$(this).animate({borderLeftWidth: '6px'}, {queue: false, duration: 60});
+				},
+				mouseleave:
+				function(){
+					$(this).animate({borderLeftWidth: '4px'}, {queue: false, duration: 60});
+				}
+			});
+		
+		// Initialize Masonry plugin, [http://masonry.desandro.com]
+	    $('.posts').masonry({
+	    	itemSelector: '.post'
+	    });
+	
+		// Open external links in new tab
+		$('a[rel=external]').live('click', function(){
+			window.open(this.href);
+			return false;
+		});
+
+		// Back to top smooth scroll effect
+		$('a[href*=#]').click(function() {
+			if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
+			&& location.hostname == this.hostname) {
+	            var $target = $(this.hash);
+	            $target = $target.length && $target || $('[name=' + this.hash.slice(1) +']');
+	            if ($target.length) {
+	            	var targetOffset = $target.offset().top;
+	            	$('html,body').animate({scrollTop: targetOffset}, 1000);
+	                return false;
+	            }
+	        }
+	    });
+		$(window).scroll(function () { 
+			var scrollTop = $(document).scrollTop();
+			scrollTop = parseInt(scrollTop);
+			var offset = topYloc+scrollTop+'px';  
+			$('.top-link').animate({top:offset},{duration:500,queue:false});
+		});
+		topYloc = parseInt($('.top-link').css('top').substring(0,$('.top-link').css('top').indexOf('px')));
+
+	});
+
+	$(window).scroll(function(){
+		
+		// Toggle back to top link on scroll
+		if(window.pageYOffset >= 200){
+			$('a.top-link').fadeIn(600);
+		}
+		if(window.pageYOffset < 200){
+			$('a.top-link').fadeOut(185);
+		}
+		
+	});
+	
+	// Display the year
 	function displayYear(){
 		var date = new Date();
 		var thisYear = date.getFullYear();
-		
+	
 		document.write(thisYear);
-	}</script>
+	}
+	</script>
 	<style>
-	form.search-form {
-		height: auto;
+	body {
+		background-color: #252525;
+		color: #999;
+		font-family: Helvetica, Arial, sans-serif;
+		font-size: 14px;
+		text-shadow: 0 -1px 0 rgba(0,0,0,.8);
+	}
+	.noscript {
+		background-color: #a80f0f;
+		color: #fff;
+		padding: 10px;
 		position: absolute;
-		right: 0;
 		top: 0;
-		width: 150px;
+		width: 760px;
 	}
-	input.search-input {
-		font-size: 10px;
+	#top {
+		position: absolute;
+		top: 0;
+	}
+	.main-wrap {
 		height: auto;
-		width: 150px;
+		margin: 70px auto 0 auto;
+		width: 80%;
+		word-wrap: break-word;
+		padding-left: 250px;
+		position: relative;
 	}
-	input.search-button {
+	.clear {
+		clear: both;
+	}
+	.hide {
 		display: none;
 	}
+	a {
+		background-color: #202020;
+		border-left: 3px solid #292929;
+		color: {color:Link};
+		padding: 1px 3px 1px 3px;
+		text-shadow: 0 1px 0 rgba(0,0,0,.5);
+		transition: background-color linear, .1s color linear .1s;
+		-moz-transition: background-color linear, .1s color linear .1s;
+		-o-transition: background-color linear, .1s color linear .1s;
+		-webkit-transition: background-color linear;
+	}
+	a:hover {
+	 	background-color: {color:Link Hover Background};
+	 	border-left-color: #292929;
+		color: #fff;
+		text-shadow: 0;
+	}
+	a:active {
+		text-shadow: 0 -1px 0 rgba(0,0,0,.5);
+	}
+	.button {
+		background: #004c66;
+		border-left: none;
+		color: #fff;
+		font-size: 12px;
+		padding: 5px 10px;
+		text-shadow: none;
+	}
+	.button:hover {
+		background: {color:Link};
+		color: #fff;
+		text-shadow: none;
+	}
+	.button:active {
+		color: #fff;
+		text-shadow: none;
+	}
+	code {
+		background-color: #202020;
+	}
+	.highlight {
+		background-color: #202020;
+		margin: 10px 0;
+		overflow-x: auto;
+		padding: 5px;
+		text-shadow: none !important;
+		word-wrap: break-word;
+	}
+	em {
+		display: inline;
+	}
+	::selection {
+		background-color: #000;
+		background-color: rgba(0,0,0,.8);
+		color: #fff;
+		text-shadow: 0 1px 0 rgba(0,0,0,.3);
+	}
+	::-moz-selection {
+		background-color: #000;
+		background-color: rgba(0,0,0,.8);
+		color: #fff;
+		text-shadow: 0 1px 0 rgba(0,0,0,.3);
+	}
+	label {
+		margin-right: 5px;
+	}
+	p {
+		line-height: 125%;
+		padding: 12px 0 4px 0;
+	}
+	p+p {
+		padding: 4px 0;
+	}
+	strong {
+		font-weight: bold;
+	}
+	textarea {
+		overflow: auto;
+		resize: none;
+	}
+	ul li {
+		line-height: 125%;
+	}
+	/* ==============================================================================
+		END GENERAL
+	============================================================================== */
+
+
+
+	/* ==============================================================================
+		MAIN SIDE NAVIGATION
+	============================================================================== */
+	.main-side-nav-wrap {
+		left: 0;
+		position: absolute;
+		width: 200px;
+	}
+	.main-side-nav {
+		position: fixed;	
+		width: 200px;
+	}
+	.nav-logo {
+		border-left: none !important;
+		display: block;
+		height: 64px;
+		padding: 0;
+		width: 64px;
+	}
+	.site-title {
+		font-size: 24px;
+		font-weight: bold;
+		letter-spacing: -2px;
+		padding: 15px 0 5px 0;
+		text-shadow: 0 -1px 0 #000;
+		text-transform: uppercase;
+	}
+	.site-description {
+		color: #555;
+		padding-bottom: 10px;
+	}
+	.main-side-nav-ul a {
+		border-left: 4px solid #444;
+		color: #999;
+		display: block;
+		font-size: 13px;
+		padding: 4px 4px 4px 8px;
+		position: relative;
+		text-transform: uppercase;
+		width: 100%;
+	}
+	.main-side-nav-ul a:hover,
+	.main-side-nav-ul a:active {
+		background-color: #292929;
+		border-left: 4px solid #999;
+		color: #fff;
+	}
+	.main-side-nav-ul a.selected {
+		background-color: #323232;
+		border-left: 4px solid {color:Link};
+		color: #fff;
+		font-weight: bold;
+	}
+	.search-form {
+		padding: 15px 0;
+		width: 200px;
+	}
+	input[type=text],
+	input[type=password],
+	textarea {		
+		background-color: #222;
+		border: 0;
+		border-left: 4px solid #292929;
+		color: #555;
+		font-family: inherit;
+		font-size: 14px;
+		width: 100%;
+		padding: 4px 4px 4px 8px;
+		transition: border-color .3s linear, color .1s linear;
+		-moz-transition: border-color .3s linear, color .1s linear;
+		-o-transition: border-color .3s linear, color .1s linear;
+		-webkit-transition: border-color .1s linear, color .1s linear;
+	}
+	input[type=text]:focus,
+	input[type=password]:focus,
+	textarea:focus {
+		background-color: #222;
+		border-color: {color:Link};
+		border-left: 4px solid {color:Link};
+		color: #999;
+	}
+	input[type=text]:blur,
+	input[type=password]:blur,
+	textarea:blur {
+		background-color: inherit;
+		border-color: #555;
+		border-left: 4px solid #555;
+		color: #555;
+	}
+	.search-button {
+		display: none;
+	}
+	/* ==============================================================================
+		END MAIN SIDE NAVIGATION
+	============================================================================== */
+
+
+
+/* ==============================================================================
+	CONTENT
+============================================================================== */
+section.content {
+	float: right;
+	height: auto;
+	position: relative;	
+	text-shadow: 0 -1px 0 rgba(0,0,0,.5);
+	width: 100%;
+	
+	border: 1px solid red;
+}
+.content img {
+	background: #222 url('/images/ajax-loader-image.gif') no-repeat 50% 50%;
+	box-shadow: 2px 2px 8px rgba(0,0,0,.7);
+	-moz-box-shadow: 2px 2px 8px rgba(0,0,0,.7);
+	-o-box-shadow: 2px 2px 8px rgba(0,0,0,.7);
+	-webkit-box-shadow: 2px 2px 8px rgba(0,0,0,.7);
+	height: auto;
+	width: 100%;
+	behavior: url('/PIE/PIE.htc');
+}
+.content-container {
+	height: auto;
+	float: right;
+	position: relative;
+	width: 100%;
+}
+/* ==============================================================================
+	END CONTENT
+============================================================================== */
+
+
+
+/* ==============================================================================
+	LOADERS
+============================================================================== */
+div.loader {
+	background: url('/images/ajax-loader.gif') no-repeat 0 0;
+	height: 16px;
+	margin-right: 5px;
+	width: 16px;
+}
+div.loader-container {
+	clear: both;
+	display: none;
+	height: 15px;
+	padding-top: 20px;
+	width: 128px;
+}
+div.page-loader {
+	background: url('/images/ajax-loader-page.gif') no-repeat 0 0;
+	clear: both;
+	float: left;
+	height: 15px;
+	width: 128px;
+}
+img.loader {	
+	clear: both;
+	display: block;
+	height: 16px;
+	width: 16px;
+}
+/* ==============================================================================
+	END LOADERS
+============================================================================== */
+	
+
+	
+	
+	
+
 	div.pagination {
 		margin-bottom: 25px;
 	}
@@ -73,10 +419,7 @@
 	h3 {
 		font-size: 14px;
 	}
-	ul.posts li.post {
-		border-top: 1px solid #555;
-		padding-top: 10px;
-	}
+
 	div.post-footer {
 		font-size: 10px;
 		padding: 5px 0 55px 0;
@@ -118,6 +461,71 @@
 		overflow: hidden;
 		width: 81px; 
 	}
+	
+	
+
+	.post {
+		background-color: #222;
+		dipslay: block;  
+		float: left;	
+		margin: 5px;
+		max-width: 500px;
+		width: 500px;
+		padding: 10px;
+	  	position: relative;
+	}
+	.photo img {
+		width: 100%;
+		height: auto;
+	}
+
+.text h3 {
+	font-size: 24px;
+}
+.link h3 {
+	font-size: 26px;
+}
+	
+	.quote-wrap {
+		font-size: 22px;
+		padding-bottom: 5px;
+	}
+	ul.following-ul img {
+		float: left;
+	}
+	.photo-wrap a {
+		background-color: #222;
+		padding: 0;
+		border: 0;
+	}
+	
+	
+	
+	/* ==============================================================================
+	MAIN FOOTER
+============================================================================== */
+footer.main-footer {
+	clear: both;
+	height: 20px;
+	padding: 25px 0 15px 0;
+	position: relative;
+	width: 100%;
+}
+footer.main-footer p {
+	background-color: inherit;
+	color: #333;
+	font-size: 9px;
+	width: 100%;
+}
+a.top-link {
+	display: none;
+	float: right;
+}
+/* ==============================================================================
+	END MAIN FOOTER
+============================================================================== */
+
+	{CustomCSS}
 	</style>
 	<!--[if lt IE 9]>
 		<script src='http://html5shiv.googlecode.com/svn/trunk/html5.js'></script>
@@ -127,35 +535,59 @@
 <body>
 <div id='top'></div>
 <div class='main-wrap'>
-	<nav class='main-side-nav'>
-		<a class='nav-logo' href='http://www.miguelmota.com'></a>
-		<ul class='main-nav'>
-			<li><a href='http://www.miguelmota.com/stream'>stream</a></li>
-			<li><a href='http://www.miguelmota.com/about'>about</a></li>
-			<li><a href='http://www.miguelmota.com/portfolio'>portfolio</a></li>
-			<li><a href='http://www.miguelmota.com/contact'>contact</a></li>
-			<li><a href='http://www.miguelmota.com/blog'>blog</a></li>
-		</ul>
-	</nav>
-	<div class='content-container'>
-			<h1 class='title'><a href='http://miguelmota.tumblr.com'><span class='miguel'>Miguel</span><span class='mota'>Mota</span><span class='slash'>/</span><span class='sub'>Tumblr</span></a></h1>
+	<div class='main-side-nav-wrap'>
+		<nav class='main-side-nav'>
+			<a class='nav-logo' href='/'><img src='{PortraitURL-64}' alt='' /></a>
+			<h1 class='site-title'>{Title}</h1>
+			{block:Description}
+				<div class='site-description'>{Description}</div>
+			{/block:Description}
+			
+			<ul class='main-side-nav-ul'>
+				<li><a href='/'>Home</a></li>
+	    	 {block:HasPages}
+	    	 	{block:Pages} 
+					<li><a href='{URL}'>{Label}</a></li>
+				{/block:Pages}
+	         {/block:HasPages}
+			</ul>
+			
+			
 			<form class='search-form' action='/search' method='get'>
 	   			<input type='text' class='search-input' name='q' value='[search]' onblur="if(this.value=='') this.value='[search]';" onfocus="if(this.value=='[search]') this.value='';" />
 	    		<input type='submit' class='search-button' value='Search' />
 			</form>
-			<div class='blog-info'>
-				<div class='blog-description'><p><em>A tumblog about design, code and some other stuff. Mostly infographics.</em></p></div>
-				<div class='follow-container'>
-					<g:plusone class='plus-one-button' href='http://www.miguelmota.com' count='false' size='medium'></g:plusone>
-					<a class='twitter-follow-button' href='https://twitter.com/miguel_mota' data-show-count='false' data-button='grey' data-link-color='#007299'>Follow @miguel_mota</a>
-					<a class='subscribe-button' href='http://feeds.feedburner.com/miguelmota/tumblr'><img src='http://www.miguelmota.com/images/rss.png' alt=''/> subscribe</a>
+			
+				<div class='blog-info hide'>
+					<div class='blog-description'><p><em>A tumblog about design, code and some other stuff. Mostly infographics.</em></p></div>
+					<div class='follow-container'>
+						<g:plusone class='plus-one-button' href='http://www.miguelmota.com' count='false' size='medium'></g:plusone>
+						<a class='twitter-follow-button' href='https://twitter.com/miguel_mota' data-show-count='false' data-button='grey' data-link-color='{color:Link}'>Follow @miguel_mota</a>
+						<a class='subscribe-button' href='http://feeds.feedburner.com/miguelmota/tumblr'><img src='http://www.miguelmota.com/images/rss.png' alt=''/> subscribe</a>
+					</div>
 				</div>
-			</div>
-		<div class='search_results'>
+
+			{block:Following}
+	    		<ul class='following-ul'>
+	        		{block:Followed}
+	            		<li>
+	                		<a href='{FollowedURL}'><img src='{FollowedPortraitURL-16}' alt='' /></a>
+	            		</li>
+	        		{/block:Followed}
+	    		</ul>
+			{/block:Following}
+		</nav>
+	</div>
+	
+	
+	<div class='content-container'>
+			
+		<div class='search_results hide'>
 			{block:SearchPage}
 				<strong>'{SearchQuery}'</strong> returned {SearchResultCount} result(s).
 			{/block:SearchPage}
 		</div>
+		
 		 <ul class='posts'>
             {block:Posts}
                 {block:Text}
@@ -164,96 +596,11 @@
                             <h3><a href='{Permalink}'>{Title}</a></h3>
                         {/block:Title}
                         {Body}
-                    </li>
-                {/block:Text}
-                {block:Photo}
-                    <li class='post photo'>
-                    	<div id='image' class='image-container'>
-	                        {LinkOpenTag}<img id='photo' src='{PhotoURL-HighRes}' alt='{PhotoAlt}' link='{LinkURL}' />{LinkCloseTag}
-						</div>
-						<a class='view-full-size' href='{PhotoURL-HighRes}' rel='external'>view full size</a>
-                        {block:Caption}
-                            <div id='caption' class='caption'>{Caption}</div>
-                        {/block:Caption}
-                        {block:Source}
-                            <div class='source'>{Source}</div>
-                        {/block:Source}
-                    </li>
-                {/block:Photo}
-                {block:Photoset}
-                    <li class='post photoset'>
-                        {Photoset-500}
-                        {block:Caption}
-                            <div class='caption'>{Caption}</div>
-                        {/block:Caption}
-                    </li>
-                {/block:Photoset}
-                {block:Quote}
-                    <li class='post quote'>
-                        "{Quote}"
-                        {block:Source}
-                            <div class='source'>{Source}</div>
-                        {/block:Source}
-                    </li>
-                {/block:Quote}
-                {block:Link}
-                    <li class='post link'>
-                        <h3><a class='link' href='{URL}' {Target}>{Name} &#8594;</a></h3>
-                        {block:Description}
-                            <div class='description'>{Description}</div>
-                        {/block:Description}
-                    </li>
-                {/block:Link}
-                {block:Chat}
-                    <li class='post chat'>
-                        {block:Title}
-                            <h3><a href='{Permalink}'>{Title}</a></h3>
-                        {/block:Title}
-                        <ul class='chat'>
-                            {block:Lines}
-                                <li class='{Alt} user_{UserNumber}'>
-                                    {block:Label}
-                                        <span class='label'>{Label}</span>
-                                    {/block:Label}
-                                    {Line}
-                                </li>
-                            {/block:Lines}
-                        </ul>
-                    </li>
-                {/block:Chat}
-                {block:Video}
-                    <li class='post video'>
-                        {Video-500}
-                        {block:Caption}
-                            <div class='caption'>{Caption}</div>
-                        {/block:Caption}
-                    </li>
-                {/block:Video}
-                {block:Audio}
-                    <li class='post audio'>
-                        {AudioPlayerBlack}
-                        {block:Caption}
-                            <div class='caption'>{Caption}</div>
-                        {/block:Caption}
-                    </li>
-	             {/block:Audio}
-	             <div class='post-footer'>
-	            	{block:Date}
-	            		 <a href='{Permalink}'>{TimeAgo}</a>
-	            	{/block:Date}
-	                <a href='http://tmv.proto.jp/reblog.php?post_url={Permalink}'>reblog</a> 
-	            	{block:HasTags} 
-	            		tags: 
-	            		{block:Tags}
-	            			<a href='{TagURL}'>{Tag}</a> 
-	            		{/block:Tags}
-	            	{/block:HasTags}
-					<span class='note-count'>
-			            {block:NoteCount} 
-				        	<a href='{Permalink}#notes'>{NoteCountWithLabel}</a>
-				        {/block:NoteCount}
-				    </span>
-				    <div class='share-container'>
+                        
+     
+                        
+                        
+                        				    <div class='share-container'>
 						<g:plusone class='plus-one-button' href='{Permalink}' size='medium'></g:plusone>
 						<a id='twitter-share-button' class='twitter-share-button' href='http://twitter.cosm/share' data-text='{block:PostSummary}{PostSummary} &#187; {/block:PostSummary}' data-url='{Permalink}' data-via='miguel_mota' data-count='horizontal'>Tweet</a>
 						
@@ -272,7 +619,222 @@
 		 					<script src='http://platform.tumblr.com/v1/share.js'></script> 
 	 				 	{/block:PermalinkPagination}
 					</div>
+                        
+                        
+
+                        
+                        <div class='clear'></div>
+                    </li>
+                {/block:Text}
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                {block:Photo}
+                    <li class='post photo'>
+                    		<div class='icon icon-photo'></div>
+	                        <div class='photo-wrap'>{LinkOpenTag}<img id='photo' src='{PhotoURL-HighRes}' alt='{PhotoAlt}' link='{LinkURL}' />{LinkCloseTag}</div>
+						<a class='view-full-size' href='{PhotoURL-HighRes}' rel='external'>view full size</a>
+                        {block:Caption}
+                            <div id='caption' class='caption'>{Caption}</div>
+                        {/block:Caption}
+                        
+                            {block:Exif}
+        <ul>
+            {block:Camera}
+                <li>Camera: {Camera}</li>
+            {/block:Camera}
+            {block:Aperture}
+                <li>Aperture: {Aperture}</li>
+            {/block:Aperture}
+            {block:Exposure}
+                <li>Exposure: {Exposure}</li>
+            {/block:Exposure}
+            {block:FocalLength}
+                <li>Focal Length: {FocalLength}</li>
+            {/block:FocalLength}
+        </ul>
+    {/block:Exif}
+    
+                        {block:Source}
+                            <div class='source'>{Source}</div>
+                        {/block:Source}
+                        
+                                        				    <div class='share-container'>
+						<g:plusone class='plus-one-button' href='{Permalink}' size='medium'></g:plusone>
+						<a id='twitter-share-button' class='twitter-share-button' href='http://twitter.cosm/share' data-text='{block:PostSummary}{PostSummary} &#187; {/block:PostSummary}' data-url='{Permalink}' data-via='miguel_mota' data-count='horizontal'>Tweet</a>
+						
+						{block:PermalinkPagination}
+							<a id='tumblr-share-button' class='tumblr-share-button' href='http://www.tumblr.com/share' title='{block:PostSummary}{PostSummary} &#187; {/block:PostSummary}'>Share on Tumblr</a>
+							<script>
+								document.getElementById('twitter-share-button').setAttribute('data-text', document.getElementById('caption').innerText);
+								var tumblr_photo_source = document.getElementById('photo').src;
+						        var tumblr_photo_caption = document.getElementById('caption').innerText;
+						        var tumblr_photo_title = document.getElementById('caption').innerText;
+						        var tumblr_photo_click_thru = document.getElementById("photo").getAttribute('link');
+						        var tumblr_button = document.getElementById('tumblr-share-button');
+						        tumblr_button.setAttribute('href', 'http://www.tumblr.com/share/photo?source='+encodeURIComponent(tumblr_photo_source)+'&caption='+encodeURIComponent(tumblr_photo_caption)+'&click_thru='+encodeURIComponent(tumblr_photo_click_thru));
+						        tumblr_button.setAttribute('title', tumblr_photo_title);
+							</script>
+		 					<script src='http://platform.tumblr.com/v1/share.js'></script> 
+	 				 	{/block:PermalinkPagination}
+					</div>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        	             <div class='post-footer'>
+	            	{block:Date}
+	            		 <a href='{Permalink}'>{TimeAgo}</a>
+	            	{/block:Date}
+	                <a href='http://tmv.proto.jp/reblog.php?post_url={Permalink}'>reblog</a> 
+	            	{block:HasTags} 
+	            		tags: 
+	            		{block:Tags}
+	            			<a href='{TagURL}'>{Tag}</a> 
+	            		{/block:Tags}
+	            	{/block:HasTags}
+					<span class='note-count'>
+			            {block:NoteCount} 
+				        	<a href='{Permalink}#notes'>{NoteCountWithLabel}</a>
+				        {/block:NoteCount}
+				    </span>
+				    
+				    
+				    	             {block:ContentSource}
+    <a href="{SourceURL}">
+        {lang:Source}:
+        {block:SourceLogo}
+            <img src="{BlackLogoURL}" width="{LogoWidth}"
+            height="{LogoHeight}" alt="{SourceTitle}" />
+        {/block:SourceLogo}
+        {block:NoSourceLogo}
+            {SourceTitle}
+        {/block:NoSourceLogo}
+    </a>
+{/block:ContentSource}
+				    
+				    
+				    
+				    
+				    
+				    
+				    
+				    
+				    
+
+					
+					
+					
+					
 				</div>
+                        
+                        
+                        
+                        
+                        
+                        <div class='clear'></div>
+                    </li>
+                {/block:Photo}
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                {block:Photoset}
+                    <li class='post photoset'>
+                        {Photoset-500}
+                        {block:Caption}
+                            <div class='caption'>{Caption}</div>
+                        {/block:Caption}
+                        <div class='clear'></div>
+                    </li>
+                {/block:Photoset}
+                
+                {block:Quote}
+                    <li class='post quote'>
+                        <div class='quote-wrap'>"{Quote}"</div>
+                        {block:Source}
+                            <div class='source'>{Source}</div>
+                        {/block:Source}
+                        <div class='clear'></div>
+                    </li>
+                {/block:Quote}
+                
+                {block:Link}
+                    <li class='post link'>
+                        <h3><a href='{URL}' {Target}>{Name} &#8594;</a></h3>
+                        {block:Description}
+                            <div class='description'>{Description}</div>
+                        {/block:Description}
+                        <div class='clear'></div>
+                    </li>
+                {/block:Link}
+                
+                {block:Chat}
+                    <li class='post chat'>
+                        {block:Title}
+                            <h3><a href='{Permalink}'>{Title}</a></h3>
+                        {/block:Title}
+                        <ul class='chat'>
+                            {block:Lines}
+                                <li class='{Alt} user_{UserNumber}'>
+                                    {block:Label}
+                                        <span class='label'>{Label}</span>
+                                    {/block:Label}
+                                    {Line}
+                                </li>
+                            {/block:Lines}
+                        </ul>
+                        <div class='clear'></div>
+                    </li>
+                {/block:Chat}
+                
+                {block:Video}
+                    <li class='post video'>
+                        {Video-500}
+                        {block:Caption}
+                            <div class='caption'>{Caption}</div>
+                        {/block:Caption}
+                        <div class='clear'></div>
+                    </li>
+                {/block:Video}
+                
+                {block:Audio}
+                    <li class='post audio'>
+                        {AudioPlayerBlack}
+                        {block:Caption}
+                            <div class='caption'>{Caption}</div>
+                        {/block:Caption}
+                        <div class='clear'></div>
+                    </li>
+	             {/block:Audio}
+	             
+	             
+	             
+	             
+	             
+
+	          
+	             
+	             
+
+				
 		        {block:PostNotes}
 		        {block:NoteCount} 
 		        	<span id='notes'>{NoteCountWithLabel}</span>
@@ -281,7 +843,26 @@
 		        {/block:PostNotes}
             {/block:Posts}
 			{/block:Permalink}
+			
+			
         </ul>
+        
+        
+        
+        
+    	 {block:HasPages}
+	    	 {block:Pages} 
+	    	 {/block:Pages}
+         {/block:HasPages}
+        
+        
+        
+        
+        
+        
+        
+        
+        
 		<footer class='main-footer'>
 			<div class='pagination'>
 			{block:Pagination}
@@ -315,55 +896,7 @@
 	</div>
 
 	<script>
-		$(document).ready(function(){
-			$('div.zoom-icon').hide();
-			$('li.photo div.container').hover(function(){
-				jQuery('div.zoom-icon', this).hide().fadeIn(200);
-			}, function(){
-				jQuery('div.zoom-icon', this).fadeOut(200);
-			});
-			//back to top smooth scroll effect
-			$('a[href*=#]').click(function() {
-				if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
-				&& location.hostname == this.hostname) {
-		            var $target = $(this.hash);
-		            $target = $target.length && $target || $('[name=' + this.hash.slice(1) +']');
-		            if ($target.length) {
-		            	var targetOffset = $target.offset().top;
-		            	$('html,body').animate({scrollTop: targetOffset}, 1000);
-		                return false;
-		            }
-		        }
-		    });
-			$(window).scroll(function () { 
-				var scrollTop = $(document).scrollTop();
-				scrollTop = parseInt(scrollTop);
-				var offset = topYloc+scrollTop+'px';  
-				$('a.top-link').animate({top:offset},{duration:500,queue:false});
-			});
-			topYloc = parseInt($('a.top-link').css('top').substring(0,$('a.top-link').css('top').indexOf('px')));
 
-			
-		});
-
-		$(window).scroll(function(){
-			
-			//toggle back to top link on scroll
-			if(window.pageYOffset >= 200){
-				$('a.top-link').fadeIn(600);
-			}
-			if(window.pageYOffset < 200){
-				$('a.top-link').fadeOut(185);
-			}
-			
-		});
-
-		
-		// Open external links in new tab
-		$('a[rel=external]').live('click', function(){
-			window.open(this.href);
-			return false;
-		});
 		
 		// Initialize Twitter Buttons
 		$.getScript('http://platform.twitter.com/widgets.js');
@@ -392,6 +925,8 @@
   		})();
   		var addthis_config = {'data_track_clickback':true};
 	</script>
+	
+	<div class='clear'></div>
 </div>
 </body>
 </html>

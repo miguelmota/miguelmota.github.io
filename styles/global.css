@@ -20,10 +20,10 @@ a {
 	color: #007299;
 	padding: 1px 3px 1px 3px;
 	text-shadow: 0 1px 0 rgba(0,0,0,.5);
-	transition: color linear .1s, background-color linear .1s;
-	-moz-transition: color linear .1s, background-color linear .1s;
-	-o-transition: color linear .1s, background-color linear .1s;
-	-webkit-transition: color linear .1s, background-color linear .1s;
+	transition: background-color linear .1s, color linear .1s;
+	-moz-transition: background-color linear .1s, color linear .1s;
+	-o-transition: background-color linear .1s, color linear .1s;
+	-webkit-transition: background-color linear .1s, color linear .1s;
 }
 a:hover {
  	background-color: #222;
