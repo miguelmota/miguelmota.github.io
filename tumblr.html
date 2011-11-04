@@ -1,61 +1,70 @@
 <!doctype html>
 <html lang='en'>
 <head>
-	<meta charset='utf-8' />
+    <meta charset='utf-8' />
 <!--
-                                      ___      
-           __                        /\_ \     
-  ___ ___ /\_\     __   __  __     __\//\ \    
-/' __` __`\/\ \  /'_ `\/\ \/\ \  /'__`\\ \ \   
-/\ \/\ \/\ \ \ \/\ \L\ \ \ \_\ \/\  __/ \_\ \_ 
-\ \_\ \_\ \_\ \_\ \____ \ \____/\ \____\/\____\
- \/_/\/_/\/_/\/_/\/___L\ \/___/  \/____/\/____/
-                   /\____/                     
-                   \_/__/                      
-                  __               
-                 /\ \__            
-  ___ ___     ___\ \ ,_\    __     
-/' __` __`\  / __`\ \ \/  /'__`\   
-/\ \/\ \/\ \/\ \L\ \ \ \_/\ \L\.\_ 
-\ \_\ \_\ \_\ \____/\ \__\ \__/.\_\
- \/_/\/_/\/_/\/___/  \/__/\/__/\/_/
-                                   
+ *	Oblivion Theme, obliviontheme.tumblr.com
+ *	v1.0 | 20111103
+ *	Author: Miguel Mota, www.miguelmota.com
+ *	License: Creative Commons Attribution 3.0 License
+ _____   __       ___                                        
+/\  __`\/\ \     /\_ \    __           __                    
+\ \ \/\ \ \ \____\//\ \  /\_\  __  __ /\_\    ___     ___    
+ \ \ \ \ \ \ '__`\ \ \ \ \/\ \/\ \/\ \\/\ \  / __`\ /' _ `\  
+  \ \ \_\ \ \ \L\ \ \_\ \_\ \ \ \ \_/ |\ \ \/\ \L\ \/\ \/\ \ 
+   \ \_____\ \_,__/ /\____\\ \_\ \___/  \ \_\ \____/\ \_\ \_\
+    \/_____/\/___/  \/____/ \/_/\/__/    \/_/\/___/  \/_/\/_/
 -->
-	{block:Description}
+    {block:Description}
 		<meta name='description' content='{MetaDescription}' />
 	{/block:Description}
-	<meta name='keywords' content='miguel mota, web developer, tumblr' />
+	<meta name='keywords' content='{Title}' />
 	<meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=1;' />
 	
+	<!-- Custom fields -->
+	<meta name='text:Twitter Username' content='' />
+	<meta name='text:Disqus Shortname' content='' />
+	<meta name='if:Twitter Status' content='0' />
+	<meta name='if:Disqus Comments' content='0' />
+	<meta name='if:Show People Following' content='1' />
+		
 	<!-- Custom colors -->
 	<meta name='color:Link' content='#007299' />
 	<meta name='color:Link Hover' content='#0098cc' />
 	<meta name='color:Link Hover Background' content='#004c66' />
 	
-	<title>{block:PostSummary}{PostSummary} &#187; {/block:PostSummary}{block:SearchPage}'{SearchQuery}' search results &#187; {/block:SearchPage}Links, Photos, and Stuff | Miguel Mota's Tumblog</title>
-	<link rel='canonical' href='http://www.miguelmota.com/' />
+	<title>{block:PostTitle}{PostTitle} &#187; {/block:PostTitle}{block:PostSummary}{PostSummary} &#187; {/block:PostSummary}{block:SearchPage}'{SearchQuery}' search results &#187; {/block:SearchPage}Oblivion Theme by Miguel Mota</title>
+	<link rel='canonical' href='YOUR_SITE_URL' />
 	<link rel='alternate' type='application/rss+xml' href='{RSS}'>
 	<link rel='shortcut icon' href='{Favicon}' />
 	<link rel='apple-touch-icon' href='{PortraitURL-128}' />
+	
+	<!-- Google Ubuntu Web Font, code.google.com/webfonts/specimen/Ubuntu -->
+	<link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Ubuntu+Condensed' />
+	
+	<!-- CSS Reset, www.miguelmota.com/styles/reset.css -->
 	<link rel='stylesheet' href='http://www.miguelmota.com/styles/reset.css' />
+	
+	<!-- jQuery, jquery.com -->
 	<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js'></script>
+	
+	<!-- jQuery Masonry, masonry.desandro.com -->
 	<script src='http://masonry.desandro.com/jquery.masonry.min.js'></script>
-	<script>		
+	
+	<!-- jQuery timeago, timeago.yarp.com -->
+	<script src='http://timeago.yarp.com/jquery.timeago.js'></script>
+	<script>
 	$(document).ready(function(){
 		
 		// Navigation hover effect
-		/*
-		$('.main-side-nav-ul a').live({
-			mouseenter:
+		$('.main-side-nav-ul a').hover(
 				function(){
 					$(this).animate({borderLeftWidth: '6px'}, {queue: false, duration: 60});
 				},
-				mouseleave:
 				function(){
 					$(this).animate({borderLeftWidth: '4px'}, {queue: false, duration: 60});
 				}
-			}); 
-		*/
+			);
 		
 		// Initialize Masonry plugin, [http://masonry.desandro.com]
 		var $tumblelog = $('.posts');
@@ -65,6 +74,17 @@
 		    isFitWidth: true
 		  });
 		});
+		
+		// Add selected class to nav link based on page name
+		$('.main-side-nav-ul a').each(function(){ 
+			if($(this).attr('id') == $('.content-wrap').attr('class').split(' ')[1]){
+				$('#home').removeClass('selected');
+				$(this).addClass('selected');
+			}
+		});
+		
+		// Format Tweet date to timeago
+		$('.tweet-date').timeago();
 		
 		// Highlight short url on focus
 		$('.short-url').focus(function(){
@@ -105,7 +125,7 @@
 
 	$(window).scroll(function(){
 		
-		// Toggle back to top link on scroll
+		// Toggle back to top button on scroll
 		if(window.pageYOffset >= 200){
 			$('a.top-link').fadeIn(600);
 		}
@@ -123,6 +143,7 @@
 		document.write(thisYear);
 	}
 	</script>
+
 	<style>
 	/* ==============================================================================
 		BASIC
@@ -130,7 +151,7 @@
 	body {
 		background-color: #252525;
 		color: #999;
-		font-family: Helvetica, Arial, sans-serif;
+		font-family: 'Ubuntu Condensed', Helvetica, Arial, sans-serif;
 		font-size: 14px;
 		text-shadow: 0 -1px 0 rgba(0,0,0,.8);
 	}
@@ -261,34 +282,38 @@
 		border-left: none !important;
 		display: block;
 		height: 64px;
-		padding: 0;
+		padding: 0 0 15px 0;
 		width: 64px;
 	}
 	.site-title {
 		font-size: 24px;
 		font-weight: bold;
-		letter-spacing: -2px;
-		padding: 15px 0 5px 0;
+		padding-bottom: 5px;
 		text-shadow: 0 -1px 0 #000;
 		text-transform: uppercase;
 	}
 	.site-description {
 		color: #555;
-		padding-bottom: 10px;
+		padding-bottom: 15px;
+	}
+	.main-side-nav-ul {
+		padding-bottom: 15px;
 	}
 	.main-side-nav-ul a {
+		background-color: #292929;
 		border-left: 4px solid #444;
 		color: #999;
 		display: block;
 		font-size: 13px;
-		padding: 4px 4px 4px 8px;
+		margin: 1px 0;
+		padding: 6px 6px 6px 12px;
 		position: relative;
 		text-transform: uppercase;
 		width: 100%;
 	}
 	.main-side-nav-ul a:hover,
 	.main-side-nav-ul a:active {
-		background-color: #292929;
+		background-color: #222;
 		border-left: 4px solid #999;
 		color: #fff;
 	}
@@ -299,7 +324,7 @@
 		font-weight: bold;
 	}
 	.search-form {
-		padding: 15px 0;
+		padding-bottom: 15px;
 		width: 200px;
 	}
 	input[type=text],
@@ -307,7 +332,6 @@
 	textarea {		
 		background-color: #222;
 		border: 0;
-		border-left: 4px solid #292929;
 		color: #555;
 		font-family: inherit;
 		font-size: 14px;
@@ -337,8 +361,41 @@
 	.search-button {
 		display: none;
 	}
-	.top-link {
+	.follow-wrap {
+		clear: both;
+		padding-bottom: 15px;
+		width: 100%;
+	}
+	.following-wrap {
+		clear: both;
+		padding-bottom: 15px;
+		width: 100%;
+	}
+	.following-ul li {
+		display: inline;
+		float: left;
+		line-height: 100%;
+		margin: 0;
+		padding: 0 1px;
+	}
+	.following-ul img {
+		margin: 0;
+		padding: 0;
+	}
+	#tweet-wrap {
 		display: none;
+		padding-bottom: 15px;
+	}
+	.tweet-content {
+		display: block;
+	}
+	.tweet-date {
+		font-size: 12px;
+	}
+	.top-link-wrap {
+		clear: both;
+		padding: 10px 0 15px 0;
+		width: 100%;
 	}
 	/* ==============================================================================
 		END MAIN SIDE NAVIGATION
@@ -349,7 +406,7 @@
 	/* ==============================================================================
 		CONTENT
 	============================================================================== */
-	.content-container {
+	.content-wrap {
 		height: auto;
 		float: right;
 		position: relative;
@@ -404,7 +461,9 @@
 		margin: 10px 0;
 		padding: 10px 0;
 	}
-	
+	.share-wrap {
+		
+	}
 	
 	.post-source {
 		color: #777;
@@ -423,11 +482,19 @@
 	}
 	.note-count {
 		float: right;
+		margin-right: 10px;
 	}
-	ol.notes {
-		font-size: 10px;
-		margin: 5px 0 50px 0;
-	    padding: 0px;
+
+	.notes-wrap {
+		font-size: 12px;
+		padding: 10px;
+	}
+	.note-count-label {
+		font-size: 14px;
+		padding-bottom: 10px;
+	}
+	.notes {
+		font-size: 12px;
 	}
 	img.avatar {
 	    height: 16px;
@@ -450,19 +517,26 @@
 	.pagination {
 		clear: both;
 		font-size: 18px;
-		padding: 25px 0 10px 0;
+		padding: 25px 10px 10px 10px;
 		text-align: center;
 	}
 	.pagination-jump {
 		display: inline-block;
-		width: 25px;
+	}
+	.pagination-jump span {
+		padding: 10px;
+	}
+	.pagination-jump a {
+		padding: 10px;
 	}
 	.pagination-next {
 		float: right;
+		text-align: right;
 		width: 200px;
 	}
 	.pagination-previous {
 		float: left;
+		text-align: left;
 		width: 200px;
 	}
 	.tumblr-share-button {
@@ -514,11 +588,9 @@
 		font-size: 14px;
 		padding: 10px 0 10px 15px;
 	}
-	.photo img {
-		width: 100%;
-		height: auto;
-	}
-
+.chat h3 {
+	font-size: 20px;
+}
 .text h3 {
 	font-size: 24px;
 }
@@ -528,17 +600,18 @@
 	
 	input.short-url {
 		background: #202020;
+		border: 1px solid #202020;
 		float: right;
 		font-size: 10px;
 		margin: 0 0 0 5px;
+		padding: 4px;
 		width: 180px;
 	}
-
-	ul.following-ul li {
-		display: inline;
-		float: left;
+	input.short-url:focus {
+		border: 1px solid {color:Link};
 	}
-	.content-container img {
+
+	.photo img {
 		background: #222 url('http://www.miguelmota.com/images/ajax-loader-image.gif') no-repeat 50% 50%;
 		box-shadow: 2px 2px 8px rgba(0,0,0,.7);
 		-moz-box-shadow: 2px 2px 8px rgba(0,0,0,.7);
@@ -574,14 +647,30 @@
 		margin-bottom: 10px;
 		width: 24px;
 	}
+	.icon-social {
+		height: 24px;
+		width: 24px;
+	}
 	.icon-audio {
 		background: url('http://www.miguelmota.com/images/tumblr/24/audio.png');
 	}
 	.icon-chat {
 		background: url('http://www.miguelmota.com/images/tumblr/24/chat.png');
 	}
+	.icon-comments {
+		background: url('http://www.miguelmota.com/images/tumblr/16/comments.png');
+	}
 	.icon-date {
 		background: url('http://www.miguelmota.com/images/tumblr/16/date.png');
+	}
+	.icon-dribbble {
+		background: url('http://www.miguelmota.com/images/tumblr/24/dribbble.png');
+	}
+	.icon-facebook {
+		background: url('http://www.miguelmota.com/images/tumblr/24/facebook.png');
+	}
+	.icon-flickr {
+		background: url('http://www.miguelmota.com/images/tumblr/24/flickr.png');
 	}
 	.icon-heart {
 		background: url('http://www.miguelmota.com/images/tumblr/16/heart.png');
@@ -596,8 +685,14 @@
 	.icon-quote {
 		background: url('http://www.miguelmota.com/images/tumblr/24/quote.png');
 	}
+	.icon-random {
+		background: url('http://www.miguelmota.com/images/tumblr/24/random.png');
+	}
 	.icon-reblog {
 		background: url('http://www.miguelmota.com/images/tumblr/16/reblog.png');
+	}
+	.icon-subscribe {
+		background: url('http://www.miguelmota.com/images/tumblr/24/rss.png');
 	}
 	.icon-tag {
 		background: url('http://www.miguelmota.com/images/tumblr/16/tags.png');
@@ -611,10 +706,17 @@
 	.icon-text {
 		background: url('http://www.miguelmota.com/images/tumblr/24/text.png');
 	}
+	.icon-twitter {
+		background: url('http://www.miguelmota.com/images/tumblr/24/twitter.png');
+	}
 	.icon-up {
 		background: url('http://www.miguelmota.com/images/tumblr/24/up.png');
 		height: 24px;
 		width: 24px;
+	}
+	.top-link {
+		display: none;
+		float: right;
 	}
 	.icon-video {
 		background: url('http://www.miguelmota.com/images/tumblr/24/video.png');
@@ -630,10 +732,14 @@
 	.main-bottom-footer {
 		clear: both;
 		font-size: 12px;
-		padding: 25px 0;
+		padding: 25px 10px;
 		position: relative;
 		text-shadow: 0 -1px 0 rgba(0,0,0,.5);
 		width: 100%;
+	}
+	.twitter-follow-button {
+		float: right;
+		max-width: 180px !important;
 	}
 	/* ==============================================================================
 		END MAIN BOTTOM FOOTER
@@ -649,65 +755,106 @@
 <body>
 <div id='top'></div>
 <div class='main-wrap'>
+
+	<!-- Side content -->
 	<div class='main-side-nav-wrap'>
 		<nav class='main-side-nav'>
+			
+			<!-- Portrait -->
 			<a class='nav-logo' href='/'><img src='{PortraitURL-64}' alt='' /></a>
+			
+			<!-- Title -->
 			<h1 class='site-title'>{Title}</h1>
+			
+			<!-- Description -->
 			{block:Description}
 				<div class='site-description'>{Description}</div>
 			{/block:Description}
 			
+			<!-- Side navigation -->
 			<ul class='main-side-nav-ul'>
-				<li><a href='/'>Home</a></li>
+				<li><a class='selected' id='home' href='/'>Home</a></li>
 	    	 {block:HasPages}
 	    	 	{block:Pages} 
-					<li><a href='{URL}'>{Label}</a></li>
+					<li><a id='{Label}' href='{URL}'>{Label}</a></li>
 				{/block:Pages}
 	         {/block:HasPages}
 			</ul>
 	
+			<!-- Search form -->
 			<form class='search-form' action='/search' method='get'>
 	   			<input type='text' class='search-input' name='q' value='[search]' onblur="if(this.value=='') this.value='[search]';" onfocus="if(this.value=='[search]') this.value='';" />
 	    		<input type='submit' class='search-button' value='Search' />
 			</form>
 			
-				<div class='blog-info hide'>
-					<div class='blog-description'><p><em>A tumblog about design, code and some other stuff. Mostly infographics.</em></p></div>
-					<div class='follow-container'>
-						<g:plusone class='plus-one-button' href='http://www.miguelmota.com' count='false' size='medium'></g:plusone>
-						<a class='twitter-follow-button' href='https://twitter.com/miguel_mota' data-show-count='false' data-button='grey' data-link-color='{color:Link}'>Follow @miguel_mota</a>
-						<a class='subscribe-button' href='http://feeds.feedburner.com/miguelmota/tumblr'><img src='http://www.miguelmota.com/images/rss.png' alt=''/> subscribe</a>
-					</div>
-				</div>
-
-			{block:Following}
-	    		<ul class='following-ul'>
-	        		{block:Followed}
-	            		<li>
-	                		<a href='{FollowedURL}'><img src='{FollowedPortraitURL-16}' alt='' /></a>
-	            		</li>
-	        		{/block:Followed}
-	    		</ul>
-			{/block:Following}
+			<!-- Social links -->
+			<div class='follow-wrap hide'>
 			
-			<a class='top-link icon icon-up' href='#top'></a>
+				<g:plusone class='plus-one-button' href='http://www.miguelmota.com' count='false' size='medium'></g:plusone>
+				
+				<a class='icon icon-twitter icon-social' href='http://twitter.com/miguel_mota'></a>
+				<a class='icon icon-facebook icon-social' href='http://www.facebook.com/miguel.mota2'></a>
+				<a class='icon icon-flickr icon-social' href='http://www.flickr.com/photos/miguelmota'></a>
+				<a class='icon icon-subscribe icon-social' href='{RSS}'></a>
+				<a class='icon icon-random icon-social' href='/random'></a>
+			</div>
+			
+			<!-- Following on Tumblr -->
+			{block:IfShowPeopleFollowing}
+				{block:Following}
+					<div class='following-wrap'>
+			    		<ul class='following-ul'>
+			        		{block:Followed}
+			            		<li>
+			                		<a href='{FollowedURL}'><img src='{FollowedPortraitURL-16}' alt='' /></a>
+			            		</li>
+			        		{/block:Followed}
+			        		<div class='clear'></div>
+			    		</ul>
+		    		</div>
+				{/block:Following}
+			{block:IfShowPeopleFollowing}
+			
+			<!-- Twitter status -->
+			{block:IfTwitterStatus}
+				<div id='tweet-wrap'>
+					<a href=''>twitter</a>
+					<div id='tweets'></div>
+				</div>
+				<script>
+					function recent_tweets(data) {
+						for (i=0; i<1; i++) {
+							var date = new Date(data[i].created_at);
+							document.getElementById('tweets').innerHTML +=
+								'<div class="tweet-content"><a href="http://twitter.com/{text:Twitter Username}/status/'+
+								+(data[i].id_str ? data[i].id_str : data[i].id)+'">'+data[i].text+'</a> <time class="tweet-date" datetime="'+ date.toISOString()+'">'+data[i].created_at+'</time></div>';
+						}
+						document.getElementById('tweet-wrap').style.display = 'block';
+					}
+				</script>
+				<script src='/tweets.js'></script>
+			{/block:IfTwitterStatus}
+			
+			<!-- Back to top arrow -->
+			<div class='top-link-wrap'><a class='top-link icon icon-up' href='#top'></a></div>
 		</nav>
 	</div>
 	
 	
-	<div class='content-container'>
+	<div class='content-wrap{block:PostTitle} {PostTitle}{/block:PostTitle}'>
 			
-		
+		<!-- Search results -->
 		{block:SearchPage}
 			<div class='search-results'>
 				<strong>'{SearchQuery}'</strong> returned {SearchResultCount} result(s).
 			</div>
 		{/block:SearchPage}
 		
-		
+		<!-- Posts -->
 		 <ul class='posts'>
             {block:Posts}
             
+            	<!-- Text post -->
                 {block:Text}
                     <li class='post text'>
                     	<a href='{Permalink}' class='icon icon-top icon-text'></a>
@@ -749,6 +896,8 @@
 				            {block:NoteCount} 
 					        	<a class='note-count' href='{Permalink}#notes'><span class='icon icon-heart'></span> {NoteCount}</a>
 					        {/block:NoteCount}
+					        
+					        <div class='clear'></div>
 						</div>
  
                         <div class='share-wrap'>
@@ -756,27 +905,14 @@
 							<a id='twitter-share-button' class='twitter-share-button' href='http://twitter.cosm/share' data-text='{block:PostSummary}{PostSummary} &#187; {/block:PostSummary}' data-url='{Permalink}' data-via='miguel_mota' data-count='horizontal'>Tweet</a>
 							
 							<input class='short-url' type='text' value='{ShortURL}' />
-							
-							{block:PermalinkPagination}
-								<a id='tumblr-share-button' class='tumblr-share-button' href='http://www.tumblr.com/share' title='{block:PostSummary}{PostSummary} &#187; {/block:PostSummary}'>Share on Tumblr</a>
-								<script>
-									document.getElementById('twitter-share-button').setAttribute('data-text', document.getElementById('caption').innerText);
-									var tumblr_photo_source = document.getElementById('photo').src;
-							        var tumblr_photo_caption = document.getElementById('caption').innerText;
-							        var tumblr_photo_title = document.getElementById('caption').innerText;
-							        var tumblr_photo_click_thru = document.getElementById("photo").getAttribute('link');
-							        var tumblr_button = document.getElementById('tumblr-share-button');
-							        tumblr_button.setAttribute('href', 'http://www.tumblr.com/share/photo?source='+encodeURIComponent(tumblr_photo_source)+'&caption='+encodeURIComponent(tumblr_photo_caption)+'&click_thru='+encodeURIComponent(tumblr_photo_click_thru));
-							        tumblr_button.setAttribute('title', tumblr_photo_title);
-								</script>
-			 					<script src='http://platform.tumblr.com/v1/share.js'></script> 
-		 				 	{/block:PermalinkPagination}
+
 						</div>
                         
 						<div class='clear'></div>
                     </li>
                 {/block:Text}
 
+				<!-- Photo post -->
                 {block:Photo}
                     <li class='post photo'>
                     	<a href='{Permalink}' class='icon icon-top icon-photo'></a>
@@ -808,7 +944,8 @@
 			            		{/block:Tags}
 			            	</div>
 			            {/block:HasTags}
-
+	
+						<!-- Photo info -->
                         {block:Exif}
         					<ul class='exif-ul'>
 				            {block:Camera}
@@ -836,6 +973,8 @@
 				            {block:NoteCount} 
 					        	<a class='note-count' href='{Permalink}#notes'><span class='icon icon-heart'></span> {NoteCount}</a>
 					        {/block:NoteCount}
+					        
+					        <div class='clear'></div>
 						</div>
  
                         <div class='share-wrap'>
@@ -863,7 +1002,8 @@
 						<div class='clear'></div>
                     </li>
                 {/block:Photo}
-
+			
+				<!-- Photoset post -->
                 {block:Photoset}
                     <li class='post photoset'>
                     	<a href='{Permalink}' class='icon icon-top icon-photo'></a>
@@ -905,6 +1045,8 @@
 				            {block:NoteCount} 
 					        	<a class='note-count' href='{Permalink}#notes'><span class='icon icon-heart'></span> {NoteCount}</a>
 					        {/block:NoteCount}
+					        
+					        <div class='clear'></div>
 						</div>
  
                         <div class='share-wrap'>
@@ -912,27 +1054,13 @@
 							<a id='twitter-share-button' class='twitter-share-button' href='http://twitter.cosm/share' data-text='{block:PostSummary}{PostSummary} &#187; {/block:PostSummary}' data-url='{Permalink}' data-via='miguel_mota' data-count='horizontal'>Tweet</a>
 						
 							<input class='short-url' type='text' value='{ShortURL}' />
-						
-							{block:PermalinkPagination}
-								<a id='tumblr-share-button' class='tumblr-share-button' href='http://www.tumblr.com/share' title='{block:PostSummary}{PostSummary} &#187; {/block:PostSummary}'>Share on Tumblr</a>
-								<script>
-									document.getElementById('twitter-share-button').setAttribute('data-text', document.getElementById('caption').innerText);
-									var tumblr_photo_source = document.getElementById('photo').src;
-							        var tumblr_photo_caption = document.getElementById('caption').innerText;
-							        var tumblr_photo_title = document.getElementById('caption').innerText;
-							        var tumblr_photo_click_thru = document.getElementById("photo").getAttribute('link');
-							        var tumblr_button = document.getElementById('tumblr-share-button');
-							        tumblr_button.setAttribute('href', 'http://www.tumblr.com/share/photo?source='+encodeURIComponent(tumblr_photo_source)+'&caption='+encodeURIComponent(tumblr_photo_caption)+'&click_thru='+encodeURIComponent(tumblr_photo_click_thru));
-							        tumblr_button.setAttribute('title', tumblr_photo_title);
-								</script>
-			 					<script src='http://platform.tumblr.com/v1/share.js'></script> 
-		 				 	{/block:PermalinkPagination}
 						</div>
                         
 						<div class='clear'></div>
                     </li>
                 {/block:Photoset}
                 
+                <!-- Quote post -->
                 {block:Quote}
                     <li class='post quote'>
                    		<a href='{Permalink}' class='icon icon-top icon-quote'></a>
@@ -975,6 +1103,8 @@
 				            {block:NoteCount} 
 					        	<a class='note-count' href='{Permalink}#notes'><span class='icon icon-heart'></span> {NoteCount}</a>
 					        {/block:NoteCount}
+					        
+					        <div class='clear'></div>
 						</div>
  
                         <div class='share-wrap'>
@@ -982,27 +1112,13 @@
 							<a id='twitter-share-button' class='twitter-share-button' href='http://twitter.cosm/share' data-text='{block:PostSummary}{PostSummary} &#187; {/block:PostSummary}' data-url='{Permalink}' data-via='miguel_mota' data-count='horizontal'>Tweet</a>
 						
 							<input class='short-url' type='text' value='{ShortURL}' />
-						
-							{block:PermalinkPagination}
-								<a id='tumblr-share-button' class='tumblr-share-button' href='http://www.tumblr.com/share' title='{block:PostSummary}{PostSummary} &#187; {/block:PostSummary}'>Share on Tumblr</a>
-								<script>
-									document.getElementById('twitter-share-button').setAttribute('data-text', document.getElementById('caption').innerText);
-									var tumblr_photo_source = document.getElementById('photo').src;
-							        var tumblr_photo_caption = document.getElementById('caption').innerText;
-							        var tumblr_photo_title = document.getElementById('caption').innerText;
-							        var tumblr_photo_click_thru = document.getElementById("photo").getAttribute('link');
-							        var tumblr_button = document.getElementById('tumblr-share-button');
-							        tumblr_button.setAttribute('href', 'http://www.tumblr.com/share/photo?source='+encodeURIComponent(tumblr_photo_source)+'&caption='+encodeURIComponent(tumblr_photo_caption)+'&click_thru='+encodeURIComponent(tumblr_photo_click_thru));
-							        tumblr_button.setAttribute('title', tumblr_photo_title);
-								</script>
-			 					<script src='http://platform.tumblr.com/v1/share.js'></script> 
-		 				 	{/block:PermalinkPagination}
 						</div>
                         
 						<div class='clear'></div>
                     </li>
                 {/block:Quote}
                 
+                <!-- Link post -->
                 {block:Link}
                     <li class='post link'>
                     	<a href='{Permalink}' class='icon icon-top icon-link'></a>
@@ -1044,6 +1160,8 @@
 				            {block:NoteCount} 
 					        	<a class='note-count' href='{Permalink}#notes'><span class='icon icon-heart'></span> {NoteCount}</a>
 					        {/block:NoteCount}
+					        
+					        <div class='clear'></div>
 						</div>
  
                         <div class='share-wrap'>
@@ -1051,27 +1169,13 @@
 							<a id='twitter-share-button' class='twitter-share-button' href='http://twitter.cosm/share' data-text='{block:PostSummary}{PostSummary} &#187; {/block:PostSummary}' data-url='{Permalink}' data-via='miguel_mota' data-count='horizontal'>Tweet</a>
 						
 							<input class='short-url' type='text' value='{ShortURL}' />
-						
-							{block:PermalinkPagination}
-								<a id='tumblr-share-button' class='tumblr-share-button' href='http://www.tumblr.com/share' title='{block:PostSummary}{PostSummary} &#187; {/block:PostSummary}'>Share on Tumblr</a>
-								<script>
-									document.getElementById('twitter-share-button').setAttribute('data-text', document.getElementById('caption').innerText);
-									var tumblr_photo_source = document.getElementById('photo').src;
-							        var tumblr_photo_caption = document.getElementById('caption').innerText;
-							        var tumblr_photo_title = document.getElementById('caption').innerText;
-							        var tumblr_photo_click_thru = document.getElementById("photo").getAttribute('link');
-							        var tumblr_button = document.getElementById('tumblr-share-button');
-							        tumblr_button.setAttribute('href', 'http://www.tumblr.com/share/photo?source='+encodeURIComponent(tumblr_photo_source)+'&caption='+encodeURIComponent(tumblr_photo_caption)+'&click_thru='+encodeURIComponent(tumblr_photo_click_thru));
-							        tumblr_button.setAttribute('title', tumblr_photo_title);
-								</script>
-			 					<script src='http://platform.tumblr.com/v1/share.js'></script> 
-		 				 	{/block:PermalinkPagination}
 						</div>
                         
 						<div class='clear'></div>
                     </li>
                 {/block:Link}
                 
+                <!-- Chat post -->
                 {block:Chat}
                     <li class='post chat'>
                     	<a href='{Permalink}' class='icon icon-top icon-chat'></a>
@@ -1124,6 +1228,8 @@
 				            {block:NoteCount} 
 					        	<a class='note-count' href='{Permalink}#notes'><span class='icon icon-heart'></span> {NoteCount}</a>
 					        {/block:NoteCount}
+					        
+					        <div class='clear'></div>
 						</div>
  
                         <div class='share-wrap'>
@@ -1131,27 +1237,13 @@
 							<a id='twitter-share-button' class='twitter-share-button' href='http://twitter.cosm/share' data-text='{block:PostSummary}{PostSummary} &#187; {/block:PostSummary}' data-url='{Permalink}' data-via='miguel_mota' data-count='horizontal'>Tweet</a>
 						
 							<input class='short-url' type='text' value='{ShortURL}' />
-						
-							{block:PermalinkPagination}
-								<a id='tumblr-share-button' class='tumblr-share-button' href='http://www.tumblr.com/share' title='{block:PostSummary}{PostSummary} &#187; {/block:PostSummary}'>Share on Tumblr</a>
-								<script>
-									document.getElementById('twitter-share-button').setAttribute('data-text', document.getElementById('caption').innerText);
-									var tumblr_photo_source = document.getElementById('photo').src;
-							        var tumblr_photo_caption = document.getElementById('caption').innerText;
-							        var tumblr_photo_title = document.getElementById('caption').innerText;
-							        var tumblr_photo_click_thru = document.getElementById("photo").getAttribute('link');
-							        var tumblr_button = document.getElementById('tumblr-share-button');
-							        tumblr_button.setAttribute('href', 'http://www.tumblr.com/share/photo?source='+encodeURIComponent(tumblr_photo_source)+'&caption='+encodeURIComponent(tumblr_photo_caption)+'&click_thru='+encodeURIComponent(tumblr_photo_click_thru));
-							        tumblr_button.setAttribute('title', tumblr_photo_title);
-								</script>
-			 					<script src='http://platform.tumblr.com/v1/share.js'></script> 
-		 				 	{/block:PermalinkPagination}
 						</div>
                         
 						<div class='clear'></div>
                     </li>
                 {/block:Chat}
                 
+                <!-- Video post -->
                 {block:Video}
                     <li class='post video'>
                         <a href='{Permalink}' class='icon icon-top icon-video'></a>
@@ -1193,6 +1285,8 @@
 				            {block:NoteCount} 
 					        	<a class='note-count' href='{Permalink}#notes'><span class='icon icon-heart'></span> {NoteCount}</a>
 					        {/block:NoteCount}
+					        
+					        <div class='clear'></div>
 						</div>
  
                         <div class='share-wrap'>
@@ -1200,27 +1294,13 @@
 							<a id='twitter-share-button' class='twitter-share-button' href='http://twitter.cosm/share' data-text='{block:PostSummary}{PostSummary} &#187; {/block:PostSummary}' data-url='{Permalink}' data-via='miguel_mota' data-count='horizontal'>Tweet</a>
 						
 							<input class='short-url' type='text' value='{ShortURL}' />
-						
-							{block:PermalinkPagination}
-								<a id='tumblr-share-button' class='tumblr-share-button' href='http://www.tumblr.com/share' title='{block:PostSummary}{PostSummary} &#187; {/block:PostSummary}'>Share on Tumblr</a>
-								<script>
-									document.getElementById('twitter-share-button').setAttribute('data-text', document.getElementById('caption').innerText);
-									var tumblr_photo_source = document.getElementById('photo').src;
-							        var tumblr_photo_caption = document.getElementById('caption').innerText;
-							        var tumblr_photo_title = document.getElementById('caption').innerText;
-							        var tumblr_photo_click_thru = document.getElementById("photo").getAttribute('link');
-							        var tumblr_button = document.getElementById('tumblr-share-button');
-							        tumblr_button.setAttribute('href', 'http://www.tumblr.com/share/photo?source='+encodeURIComponent(tumblr_photo_source)+'&caption='+encodeURIComponent(tumblr_photo_caption)+'&click_thru='+encodeURIComponent(tumblr_photo_click_thru));
-							        tumblr_button.setAttribute('title', tumblr_photo_title);
-								</script>
-			 					<script src='http://platform.tumblr.com/v1/share.js'></script> 
-		 				 	{/block:PermalinkPagination}
 						</div>
                         
 						<div class='clear'></div>
                     </li>
                 {/block:Video}
                 
+                <!-- Audio post -->
                 {block:Audio}
                     <li class='post audio'>
                     	<a href='{Permalink}' class='icon icon-top icon-audio'></a>
@@ -1262,6 +1342,8 @@
 				            {block:NoteCount} 
 					        	<a class='note-count' href='{Permalink}#notes'><span class='icon icon-heart'></span> {NoteCount}</a>
 					        {/block:NoteCount}
+					        
+					        <div class='clear'></div>
 						</div>
  
                         <div class='share-wrap'>
@@ -1269,39 +1351,54 @@
 							<a id='twitter-share-button' class='twitter-share-button' href='http://twitter.cosm/share' data-text='{block:PostSummary}{PostSummary} &#187; {/block:PostSummary}' data-url='{Permalink}' data-via='miguel_mota' data-count='horizontal'>Tweet</a>
 						
 							<input class='short-url' type='text' value='{ShortURL}' />
-						
-							{block:PermalinkPagination}
-								<a id='tumblr-share-button' class='tumblr-share-button' href='http://www.tumblr.com/share' title='{block:PostSummary}{PostSummary} &#187; {/block:PostSummary}'>Share on Tumblr</a>
-								<script>
-									document.getElementById('twitter-share-button').setAttribute('data-text', document.getElementById('caption').innerText);
-									var tumblr_photo_source = document.getElementById('photo').src;
-							        var tumblr_photo_caption = document.getElementById('caption').innerText;
-							        var tumblr_photo_title = document.getElementById('caption').innerText;
-							        var tumblr_photo_click_thru = document.getElementById("photo").getAttribute('link');
-							        var tumblr_button = document.getElementById('tumblr-share-button');
-							        tumblr_button.setAttribute('href', 'http://www.tumblr.com/share/photo?source='+encodeURIComponent(tumblr_photo_source)+'&caption='+encodeURIComponent(tumblr_photo_caption)+'&click_thru='+encodeURIComponent(tumblr_photo_click_thru));
-							        tumblr_button.setAttribute('title', tumblr_photo_title);
-								</script>
-			 					<script src='http://platform.tumblr.com/v1/share.js'></script> 
-		 				 	{/block:PermalinkPagination}
 						</div>
                         
 						<div class='clear'></div>
                     </li>
 	             {/block:Audio}
-
-		        {block:PostNotes}
-		        {block:NoteCount} 
-		        	<span id='notes'>{NoteCountWithLabel}</span>
-		        {/block:NoteCount}
-		            {PostNotes}
-		        {/block:PostNotes}
-            {/block:Posts}
-			{/block:Permalink}
-			
+	
 			<div class='clear'></div>
+			{/block:Posts}
         </ul>
+        
+        <!-- Disqus comments -->
+        {block:IfDisqusComments}
+			<script>var disqus_url = '{Permalink}'; var disqus_title ="{block:PostTitle}{PostTitle}{/block:PostTitle}";</script>{block:Permalink}<div id='disqus_thread'></div>
+			<script>
+				  /**
+				    * var disqus_identifier; [Optional but recommended: Define a unique identifier (e.g. post id or slug) for this thread] 
+				    */
+				  (function() {
+				   var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+				   dsq.src = 'http://{text:Disqus Shortname}.disqus.com/embed.js';
+				   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+				  })();
+				</script>
+				<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript={text:Disqus Shortname}">comments powered by Disqus.</a></noscript>
+				<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+				{/block:Permalink}<script type="text/javascript">
+				var disqus_shortname = '{text:Disqus Shortname}';
+				(function () {
+				  var s = document.createElement('script'); s.async = true;
+				  s.src = 'http://miguelmota.disqus.com/count.js';
+				  (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+				}());
+			</script>
+        {/block:IfDisqusComments}
     
+    	<!-- Notes -->
+		{block:Posts}
+	        {block:PostNotes}
+	        	<div class='notes-wrap' id='notes'>
+			        {block:NoteCount} 
+			        	<div class='note-count-label'>{NoteCountWithLabel}</div>
+			        {/block:NoteCount}
+			        {PostNotes}
+			  </div>
+			{/block:PostNotes}
+		{/block:Posts}
+    
+    	<!-- Pagination -->
    		{block:Pagination}
 			<div class='pagination'>
 		        {block:PreviousPage}
@@ -1323,7 +1420,8 @@
 		        <div class='clear'></div>
 		    </div>
 		{/block:Pagination}
-		    
+		
+		<!-- Permalink pagination -->
 	    {block:PermalinkPagination}
 		    <div class='pagination'>
 		    	{block:PreviousPost}
@@ -1336,32 +1434,37 @@
 		    </div>
 	  	{/block:PermalinkPagination}
 	  		
+	  	<!-- Site footer -->
 		<footer class='main-bottom-footer'>
 			<strong>&#169; <script>displayYear();</script></strong> &#8226; powered by <a href='http://www.tumblr.com'>tumblr</a> / 
-			<a href='http://www.tumblr.com'>Oblivion</a> by <a href='http://www.miguelmota.com'>Miguel Mota</a><a href='https://plus.google.com/102174577273194387652?rel=author'>+</a>
+			<a href='http://obliviontheme.tumblr.com'>Oblivion theme</a> by <a href='http://www.miguelmota.com'>Miguel Mota</a><a href='https://plus.google.com/102174577273194387652?rel=author'>+</a> 
+			
+			<!-- Twitter follow button -->
+			{block:IfTwitterStatus}
+				<a class='twitter-follow-button' href='https://twitter.com/{text:Twitter Username}' data-show-count='false' data-button='grey' data-link-color='{color:Link}'>Follow @{text:Twitter Username}</a>
+			{/block:IfTwitterStatus}
 		</footer>
 	</div>
-
+	
+	<!-- Twitter scripts -->
+	<script src='http://platform.twitter.com/widgets.js'></script>
+	<script src='http://platform.tumblr.com/v1/share.js'></script>
+	
+	<!-- Google Plus one script -->
 	<script>
-		// Initialize Twitter Buttons
-		$.getScript('http://platform.twitter.com/widgets.js');
-		
-		// Initialize Tumblr share button
-		//$.getScript('http://platform.tumblr.com/v1/share.js');
-		
-		// Initiatlize Google Plus One
-		(function() {
-			  var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-			  po.src = 'https://apis.google.com/js/plusone.js';
-			  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-			})();
-		
-
-		
-		// Google Analytics
+	(function() {
+		  var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+		  po.src = 'https://apis.google.com/js/plusone.js';
+		  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+		})();
+	</script>
+	
+	<!-- Google Analytics -->
+	<!--
+	<script>
   		var _gaq = _gaq || [];
-  		_gaq.push(['_setAccount', 'UA-12642068-1']);
-  		_gaq.push(['_setDomainName', '.miguelmota.com']);
+  		_gaq.push(['_setAccount', 'UA-XXXXXXXX-X']);
+  		_gaq.push(['_setDomainName', 'YOUR_DOMAIN_NAME']);
   		_gaq.push(['_trackPageview']);
   		(function() {
     		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
@@ -1370,7 +1473,7 @@
   		})();
   		var addthis_config = {'data_track_clickback':true};
 	</script>
-	
+	 -->
 	<div class='clear'></div>
 </div>
 </body>
