@@ -24,6 +24,9 @@
 	<!-- Custom fields -->
 	<meta name='text:Twitter Username' content='' />
 	<meta name='text:Disqus Shortname' content='' />
+	<meta name='text:Facebook Username' content='' />
+	<meta name='text:Flickr Username' content='' />
+	<meta name='text:Dribbble Username' content='' />
 	<meta name='if:Twitter Status' content='0' />
 	<meta name='if:Disqus Comments' content='0' />
 	<meta name='if:Show People Following' content='1' />
@@ -687,6 +690,7 @@
 	}
 	.icon-random {
 		background: url('http://www.miguelmota.com/images/tumblr/24/random.png');
+		height: 18px;
 	}
 	.icon-reblog {
 		background: url('http://www.miguelmota.com/images/tumblr/16/reblog.png');
@@ -708,6 +712,9 @@
 	}
 	.icon-twitter {
 		background: url('http://www.miguelmota.com/images/tumblr/24/twitter.png');
+	}
+	.icon-twitter-bird {
+		background: url('http://www.miguelmota.com/images/tumblr/24/twitter-bird.png');
 	}
 	.icon-up {
 		background: url('http://www.miguelmota.com/images/tumblr/24/up.png');
@@ -788,13 +795,16 @@
 			</form>
 			
 			<!-- Social links -->
-			<div class='follow-wrap hide'>
+			<div class='follow-wrap'>
 			
-				<g:plusone class='plus-one-button' href='http://www.miguelmota.com' count='false' size='medium'></g:plusone>
+				<!-- Google Plus One -->
+				<!-- <g:plusone class='plus-one-button' href='YOUR_SITE_NAME' count='false' size='medium'></g:plusone> -->
 				
-				<a class='icon icon-twitter icon-social' href='http://twitter.com/miguel_mota'></a>
-				<a class='icon icon-facebook icon-social' href='http://www.facebook.com/miguel.mota2'></a>
-				<a class='icon icon-flickr icon-social' href='http://www.flickr.com/photos/miguelmota'></a>
+				<a class='icon icon-twitter icon-social' href='http://twitter.com/{text:Twitter Username}'></a>
+				<a class='icon icon-facebook icon-social' href='http://www.facebook.com/{text:Facebook Username}'></a>
+				<a class='icon icon-flickr icon-social' href='http://www.flickr.com/photos/{text:Flickr Username}'></a>
+				<a class='icon icon-dribbble icon-social' href='http://dribbble.com/{text:Dribbble Username}'></a>
+				<a class='icon icon-tumblr icon-social' href='http://{text:tumblr Username}.tumblr.com'></a>
 				<a class='icon icon-subscribe icon-social' href='{RSS}'></a>
 				<a class='icon icon-random icon-social' href='/random'></a>
 			</div>
@@ -818,7 +828,7 @@
 			<!-- Twitter status -->
 			{block:IfTwitterStatus}
 				<div id='tweet-wrap'>
-					<a href=''>twitter</a>
+					<a class='icon icon-twitter-bird icon-social' href='http://twitter.com/{text:Twitter Username}'></a>
 					<div id='tweets'></div>
 				</div>
 				<script>
