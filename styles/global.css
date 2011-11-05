@@ -116,9 +116,12 @@ div.image-container {
 	width: 650px;
 	behavior: url('/PIE/PIE.htc');
 }
-
 em {
 	display: inline;
+}
+img {
+	background-color: #222;
+	border: 0;
 }
 h1.title {
 	font-family: Klavika, Helvetica, Arial, sans-serif;
@@ -740,7 +743,7 @@ div.project {
 	-webkit-transition: -webkit-box-shadow linear .2s;
 	behavior: url('/PIE/PIE.htc');
 }
-.project .image-container img {
+.project .image-container {
 	height: auto;
 	left: 0;
 	position: absolute;
