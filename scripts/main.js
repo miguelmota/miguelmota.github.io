@@ -66,13 +66,13 @@ $(document).ready(function(){
 	$('.content-item').draggable({
 			cursor: 'move'
 		});
-	$('.content-item:not(".stream-latitude, .stream-flickr")').resizable({  
+	/* $('.content-item:not(".stream-latitude, .stream-flickr")').resizable({  
 			minHeight: 100,
 			maxHeight: 500,
 		    minWidth: 250,
 		    maxWidth: 700,
 		    handles: 'se'
-	    });
+	    }); */
 	
 	
 	// Move h1 title to top on mobile
