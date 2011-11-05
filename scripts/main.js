@@ -102,10 +102,10 @@ $(document).ready(function(){
 	
 	// Move h1 title to top on mobile
 	if(screen.width <= 640){
-		$('h1.title').insertAfter('.nav-logo',function(){
-				$('.sub').remove();
-			});
-		$('#cse-search-form').insertAfter('.blog-description');
+		$('main-side-nav-ul').css({
+			position: 'absolute'
+		});
+		//$('#cse-search-form').insertAfter('.blog-description');
 	}
 	
 	//display ie message
