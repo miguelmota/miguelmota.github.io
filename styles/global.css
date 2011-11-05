@@ -904,8 +904,7 @@ div.work-image img {
 /* ==============================================================================
 	CONTACT
 ============================================================================== */
-div.contact-qrcode {
-	background: #222 url('/images/qrcode.png') no-repeat 0 0;
+.contact-qrcode {
 	float: right;
 	height: 88px;
 	position: absolute;
