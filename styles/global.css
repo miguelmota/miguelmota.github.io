@@ -191,12 +191,12 @@ ul li {
 input[type=text],
 input[type=password],
 textarea {		
-	background-color: #222;
+	background-color: #202020;
 	border: 0;
 	border-left: 4px solid #292929;
 	color: #555;
 	font-family: inherit;
-	font-size: 12px;
+	font-size: 14px;
 	height: 20px;
 	width: 225px;
 	padding: 4px 4px 4px 8px;
@@ -208,18 +208,10 @@ textarea {
 input[type=text]:focus,
 input[type=password]:focus,
 textarea:focus {
-	background-color: #222;
+	background-color: #202020;
 	border-color: #007299;
 	border-left: 4px solid #007299;
 	color: #999;
-}
-input[type=text]:blur,
-input[type=password]:blur,
-textarea:blur {
-	background-color: inherit;
-	border-color: #555;
-	border-left: 4px solid #555;
-	color: #555;
 }
 textarea {
 	overflow: auto;
