@@ -526,6 +526,9 @@ img.loader {
 .stream-wakoopa {
 	width: 250px;
 }
+.stream-flickr {
+	width: 500px;
+}
 .stream-iframe-latitude {
 	background: #222 url('/images/ajax-loader.gif') no-repeat 0 0;
 	border: 0 !important;
@@ -690,7 +693,7 @@ img.loader {
 	-moz-transition: all .2s ease-in-out;
 	-o-transition: all .2s ease-in-out;
 	-webkit-transition: all .2s ease-in-out;
-	width: 80px;
+	width: 150px;
 }
 .stream-ul-flickr a:hover,
 .stream-ul-flickr a:hover {
