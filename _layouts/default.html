@@ -104,52 +104,52 @@
 			<a class='twitter-follow-button' href='https://twitter.com/miguel_mota' data-show-count='false' data-button='grey' data-link-color='{color:Link}'>Follow @miguel_mota</a>
 		</footer>
 	</div>
-	<script src='http://miguelmota.tumblr.com/tweets.js'></script>
-	<script src='http://platform.twitter.com/widgets.js'></script>
-	<script src='http://platform.tumblr.com/v1/share.js'></script>
-	<script>
-		/* 
-		 * Google Analytics
-		 */
-  		var _gaq = _gaq || [];
-  		_gaq.push(['_setAccount', 'UA-12642068-1']);
-  		_gaq.push(['_setDomainName', '.miguelmota.com']);
- 		_gaq.push(['_trackPageview']);
-  		(function() {
-    		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  		})();
-  		
-		/* 
-		 * Google Search Form
-		 */
-		 google.load('search', '1', {language : 'en', style : google.loader.themes.MINIMALIST});
-		 var _gaq = _gaq || [];
-		 _gaq.push(["_setAccount", "UA-12642068-1"]);
-		 function _trackQuery(control, searcher, query) {
-		   var gaQueryParamName = "q";
-		   var loc = document.location;
-		   var url = [
-		     loc.pathname,
-		     loc.search,
-		     loc.search ? '&' : '?',
-		     gaQueryParamName == '' ? 'q' : encodeURIComponent(gaQueryParamName),
-		     '=',
-		     encodeURIComponent(query)
-		   ].join('');
-		   _gaq.push(["_trackPageview", url]);
-		 }
-		 google.setOnLoadCallback(function() {
-		   var customSearchControl = new google.search.CustomSearchControl('013110027163283765539:a-en5rcxdcu');
-		   customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
-		   customSearchControl.setSearchStartingCallback(null, _trackQuery);
-		   var options = new google.search.DrawOptions();
-		   options.setSearchFormRoot('cse-search-form');    
-		   customSearchControl.draw('cse', options);
-		 }, true);
-	</script>
 </div>
+<script src='http://miguelmota.tumblr.com/tweets.js'></script>
+<script src='http://platform.twitter.com/widgets.js'></script>
+<script src='http://platform.tumblr.com/v1/share.js'></script>
+<script>
+	/* 
+	 * Google Search Form
+	 */
+	 google.load('search', '1', {language : 'en', style : google.loader.themes.MINIMALIST});
+	 var _gaq = _gaq || [];
+	 _gaq.push(["_setAccount", "UA-12642068-1"]);
+	 function _trackQuery(control, searcher, query) {
+	   var gaQueryParamName = "q";
+	   var loc = document.location;
+	   var url = [
+	     loc.pathname,
+	     loc.search,
+	     loc.search ? '&' : '?',
+	     gaQueryParamName == '' ? 'q' : encodeURIComponent(gaQueryParamName),
+	     '=',
+	     encodeURIComponent(query)
+	   ].join('');
+	   _gaq.push(["_trackPageview", url]);
+	 }
+	 google.setOnLoadCallback(function() {
+	   var customSearchControl = new google.search.CustomSearchControl('013110027163283765539:a-en5rcxdcu');
+	   customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	   customSearchControl.setSearchStartingCallback(null, _trackQuery);
+	   var options = new google.search.DrawOptions();
+	   options.setSearchFormRoot('cse-search-form');    
+	   customSearchControl.draw('cse', options);
+	 }, true);
+	 
+	 /* 
+	 * Google Analytics
+	 */
+ 		var _gaq = _gaq || [];
+ 		_gaq.push(['_setAccount', 'UA-12642068-1']);
+ 		_gaq.push(['_setDomainName', '.miguelmota.com']);
+		_gaq.push(['_trackPageview']);
+ 		(function() {
+   		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+   		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+   		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+ 		})();
+</script>
 <noscript><div class='noscript'>please enable javascript</div></noscript>
 </body>
 </html>

@@ -5,15 +5,11 @@
 /* ==============================================================================
 	BASIC
 ============================================================================== */
-html {
-	overflow-y: scroll;
-	overflow-y: -moz-scrollbars-vertical;
-}
 body {
 	background-color: #252525;
 	color: #999;
 	font-family: 'Ubuntu Condensed', Helvetica, Arial, sans-serif;
-	font-size: 12px;
+	font-size: 14px;
 	text-shadow: 0 -1px 0 rgba(0,0,0,.8);
 }
 .noscript {
@@ -129,7 +125,6 @@ em {
 	display: inline;
 }
 h1.title {
-	float: right;
 	font-family: Klavika, Helvetica, Arial, sans-serif;
 	font-size: 32px;
 	font-weight: bold;

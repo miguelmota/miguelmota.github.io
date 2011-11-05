@@ -1564,36 +1564,36 @@
 			{/block:IfTwitterStatus}
 		</footer>
 	</div>
-	
-	<!-- Twitter share script -->
-	<script src='http://platform.tumblr.com/v1/share.js'></script>
-	
-	<!-- Google Plus one script -->
-	<script>
-	(function() {
-		  var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-		  po.src = 'https://apis.google.com/js/plusone.js';
-		  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-		})();
-	</script>
-	
-	<!-- Google Analytics -->
-	{block:IfGoogleAnalytics}
-		<script>
-	  		var _gaq = _gaq || [];
-	  		_gaq.push(['_setAccount', 'UA-{text:Google Analytics ID}']);
-	  		_gaq.push(['_setDomainName', 'http://obliviontheme.tumblr.com']);
-	  		_gaq.push(['_trackPageview']);
-	  		(function() {
-	    		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-	    		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-	    		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-	  		})();
-	  		var addthis_config = {'data_track_clickback':true};
-		</script>
-	{block:IfGoogleAnalytics}
 	<div class='clear'></div>
 </div>
+
+<!-- Tweet button script -->
+<script src='http://platform.tumblr.com/v1/share.js'></script>
+
+<!-- Google Plus one script -->
+<script>
+(function() {
+	  var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+	  po.src = 'https://apis.google.com/js/plusone.js';
+	  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+	})();
+</script>
+
+<!-- Google Analytics -->
+{block:IfGoogleAnalytics}
+	<script>
+  		var _gaq = _gaq || [];
+  		_gaq.push(['_setAccount', 'UA-{text:Google Analytics ID}']);
+  		_gaq.push(['_setDomainName', 'http://obliviontheme.tumblr.com']);
+  		_gaq.push(['_trackPageview']);
+  		(function() {
+    		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  		})();
+  		var addthis_config = {'data_track_clickback':true};
+	</script>
+{block:IfGoogleAnalytics}
 <noscript><div class='noscript'>MUST ENABLE JAVASCRIPT</div></noscript>
 </body>
 </html>
