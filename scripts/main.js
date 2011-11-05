@@ -90,10 +90,10 @@ $(document).ready(function(){
 	
 	
 	// Open external links in new tab
-	//$('a[rel*=internal]').live('click', function(e){
-		//e.preventDefault();
-		//return false;
-	//});
+	$('a[rel*=internal]').live('click', function(e){
+		e.preventDefault();
+		return false;
+	});
 	$('a[href^=http]').live('click', function(){
 		window.open(this.href);
 		return false;
@@ -560,11 +560,7 @@ function streamPage(){
 						var post = status.text;
 						var id = status.id_str;
 			    	  	var date = new Date(status.created_at).toUTCString();
-						var newText = '<span>'+post.split(' ').join('</span> <span>')+'</span>';
-						htmlString += "<li id='"+id+"' class='status'>&#187; <span class='post'>"+newText+"</span> <time class='status-date'><a href='http://twitter.com/miguel_mota/status/"+id+"'>"+niceTime(date)+"</a></time></li>";
-						$("li.status[id='"+id+"'] span").find(":contains('http')").wrapInner("<a href='"+$("li.status[id='"+id+"'] span").find(":contains('http')").text()+"'> </a>");
-						$("li.status[id='"+id+"'] span").find(":contains('@')").wrapInner("<a href='http://twitter.com/"+$("li.status[id='"+id+"'] span").find(":contains('@')").text().substr(1)+"'> </a>");
-						$("li.status[id='"+id+"'] span").find(":contains('#')").wrapInner("<a href='http://twitter.com/#!/search/"+$("li.status[id='"+id+"'] span").find(":contains('#')").text().substr(1)+"'> </a>");
+						htmlString += "<li id='"+id+"' class='status'>&#187; <span class='post'><a href='http://twitter.com/miguel_mota/status/"+id+"'>"+post+"</a></span> <time class='status-date'>"+niceTime(date)+"</time></li>";
 						$('.stream-twitter').append(htmlString +'</ul>');
 					});
 					$('.stream-twitter div.loader').css('display','none');
