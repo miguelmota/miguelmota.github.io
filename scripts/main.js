@@ -494,7 +494,7 @@ function streamPage(){
 	$('.stream-wrap').live({
 			mouseenter:
 				function(){
-					showMtip('.'+$(this).attr('class').split(' ')[1]);
+					showMtip('.'+$(this).attr('class').split(' ')[1]+' .stream-logo');
 			},
 			mouseleave:
 				function(){
