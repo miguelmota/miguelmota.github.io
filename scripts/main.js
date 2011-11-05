@@ -30,7 +30,7 @@ $(document).ready(function(){
 	}); */
 	  
 		// Navigation hover effect
-		$('.main-side-nav-ul a').hover(
+		$(".main-side-nav-ul a:not('.selected')").hover(
 				function(){
 					$(this).animate({borderLeftWidth: '6px'}, {queue: false, duration: 60});
 				},
