@@ -65,8 +65,9 @@ $(document).ready(function(){
 	// Draggable;
 	$('.content-item').draggable({
 			cursor: 'move'
-		}).resizable({  
-			minHeight: 50,
+		});
+	$('.content-item:not(".stream-latitude, .stream-flickr")').resizable({  
+			minHeight: 100,
 			maxHeight: 500,
 		    minWidth: 250,
 		    maxWidth: 700,
