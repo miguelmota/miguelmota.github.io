@@ -637,7 +637,8 @@ img.loader {
 	width: 100%;
 }
 .stream-ul-chart li {
-	padding: 5px;
+	margin-bottom: 2px;
+	padding: 3px;
 }
 .stream-ul-chart li:nth-child(odd) {
 	background-color: #202020;	
