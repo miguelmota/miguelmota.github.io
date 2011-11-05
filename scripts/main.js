@@ -66,10 +66,10 @@ $(document).ready(function(){
 	$('.content-item').draggable({
 			cursor: 'move'
 		}).resizable({  
-			minHeight: 250,
+			minHeight: 100,
 			maxHeight: 500,
 		    minWidth: 250,
-		    maxWidth: 500,
+		    maxWidth: 700,
 		    handles: 'se'
 	    });
 	
