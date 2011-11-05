@@ -27,14 +27,6 @@ layout: default
 			<input class='short-url' type='text' value='http://www.miguelmota.com{{ page.url }}' />
 			<a id='tumblr-share-button' class='tumblr-share-button' href='http://www.tumblr.com/share' title='{block:PostSummary}{PostSummary} &#187; {/block:PostSummary}'>Share on Tumblr</a>
 		</div>
-		<div class='navigation'>
-		    {% if page.previous.url %}
-				<a class='previous-url' href='{{ page.previous.url }}'>&#171; {{ page.previous.title | truncatewords: 15 }}</a>
-		    {% endif %}
-		    {% if page.next.url %}
-			    <a class='next-url' href='{{ page.next.url }}'>{{ page.next.title | truncatewords: 15 }} &#187;</a>
-		    {% endif %}
-		</div>
 
 		<div class='comment-container'>
 			<div id='disqus_thread'></div>
@@ -57,6 +49,15 @@ layout: default
 			        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
 			    }());
 			</script>
+		</div>
+		
+		<div class='pagination'>
+		    {% if page.previous.url %}
+				<a class='previous-url' href='{{ page.previous.url }}'>&#171; {{ page.previous.title | truncatewords: 15 }}</a>
+		    {% endif %}
+		    {% if page.next.url %}
+			    <a class='next-url' href='{{ page.next.url }}'>{{ page.next.title | truncatewords: 15 }} &#187;</a>
+		    {% endif %}
 		</div>
 	</div>
 </section>
