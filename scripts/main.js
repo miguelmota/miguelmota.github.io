@@ -102,10 +102,10 @@ $(document).ready(function(){
 	
 	
 	// Open external links in new tab
-	$('a[rel*=internal]').live('click', function(e){
-		e.preventDefault();
-		return false;
-	});
+	//$('a[rel*=internal]').live('click', function(e){
+		//e.preventDefault();
+		//return false;
+	//});
 	$('a[href^=http]').live('click', function(){
 		window.open(this.href);
 		return false;
