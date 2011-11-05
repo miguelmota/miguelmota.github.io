@@ -646,7 +646,9 @@ img.loader {
 	float: right;
 }
 .stream-thumb {
+	background: none;
 	height: 16px;
+	min-height: 8px;
 	width: 16px;
 }
 .stream-carousel-wrap {		
