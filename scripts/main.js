@@ -106,10 +106,10 @@ $(document).ready(function(){
 		//e.preventDefault();
 		//return false;
 	//});
-	$('a[href^=http]').live('click', function(){
-		window.open(this.href);
-		return false;
-	});
+	//$('a[href^=http]').live('click', function(){
+		//window.open(this.href);
+		//return false;
+	//});
 	
 	
 	
