@@ -733,8 +733,6 @@ a.google-plus-link {
 }
 .project .image-container {
 	height: auto;
-	left: 0;
-	position: absolute;
 	width: 99%;
 }
 .overlay-popup {
