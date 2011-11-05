@@ -199,7 +199,7 @@ textarea {
 	font-size: 12px;
 	height: 20px;
 	width: 225px;
-	padding: 2px 2px 2px 5px;
+	padding: 4px 4px 4px 8px;
 	transition: border-color .3s linear, color .1s linear;
 	-moz-transition: border-color .3s linear, color .1s linear;
 	-o-transition: border-color .3s linear, color .1s linear;
@@ -957,7 +957,7 @@ div.input {
 }
 textarea.contact-message {
 	height: 300px;
-	width: 100%;
+	width: 99%;
 }
 a.contact-submit {
 	float: right;
