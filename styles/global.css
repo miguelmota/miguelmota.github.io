@@ -332,13 +332,6 @@ textarea {
 	position: relative;
 	width: 100%;
 }
-section.content {
-	float: right;
-	height: auto;
-	position: relative;	
-	text-shadow: 0 -1px 0 rgba(0,0,0,.5);
-	width: 650px;
-}
 /* ==============================================================================
 	END CONTENT
 ============================================================================== */

@@ -51,7 +51,7 @@
 	<!-- Side content -->
 	<div class='main-side-nav-wrap'>
 		<nav class='main-side-nav'>
-			<a class='nav-logo' href='/'><img src='/images/logo.png' alt='' /></a>
+			<a class='nav-logo' href='/'><img src='/images/apple-touch-icon.png' alt='' /></a>
 			<h1 class='site-title'>Miguel Mota</h1>
 			<div class='site-description'>Web Developer</div>
 			<ul class='main-side-nav-ul'>
@@ -64,16 +64,16 @@
 			</ul>
 			<div class='follow-wrap'>
 				<!-- <g:plusone class='plus-one-button' href='http://miguelmota.tumblr.com' count='false' size='medium'></g:plusone> -->
-				<a class='icon icon-twitter icon-social' href='http://twitter.com/{text:Twitter Username}'></a>
-				<a class='icon icon-facebook icon-social' href='http://www.facebook.com/{text:Facebook Username}'></a>
-				<a class='icon icon-flickr icon-social' href='http://www.flickr.com/photos/{text:Flickr Username}'></a>
-				<!-- <a class='icon icon-dribbble icon-social' href='http://dribbble.com/{text:Dribbble Username}'></a> -->
-				<a class='icon icon-tumblr icon-social' href='http://{text:tumblr Username}.tumblr.com'></a>
-				<a class='icon icon-subscribe icon-social' href='{RSS}'></a>
-				<a class='icon icon-random icon-social' href='/random'></a>
+				<a class='icon icon-twitter icon-social' href='http://twitter.com/miguel_mota}'></a>
+				<a class='icon icon-facebook icon-social' href='http://www.facebook.com/miguel.mota2'></a>
+				<a class='icon icon-flickr icon-social' href='http://www.flickr.com/photos/miguelmota'></a>
+				<!-- <a class='icon icon-dribbble icon-social' href='http://dribbble.com/miguelmota'></a> -->
+				<!-- <a class='icon icon-tumblr icon-social' href='http://miguelmota.tumblr.com'></a> -->
+				<a class='icon icon-subscribe icon-social' href='http://feeds.feedburner.com/miguelmota'></a>
+				<!-- <a class='icon icon-random icon-social' href='/random'></a>-->
 			</div>
 			<div id='tweet-wrap'>
-				<a class='icon icon-twitter-bird icon-social' href='http://twitter.com/{text:Twitter Username}'></a>
+				<a class='icon icon-twitter-bird icon-social' href='http://twitter.com/miguelmota'></a>
 				<div id='tweets'></div>
 			</div>
 			<script>
@@ -81,13 +81,13 @@
 					for (i=0; i<1; i++) {
 						var date = new Date(data[i].created_at);
 						document.getElementById('tweets').innerHTML +=
-							'<div class="tweet-content"><a href="http://twitter.com/{text:Twitter Username}/status/'+
+							'<div class="tweet-content"><a href="http://twitter.com/miguelmota/status/'+
 							+(data[i].id_str ? data[i].id_str : data[i].id)+'">'+data[i].text+'</a> <time class="tweet-date" datetime="'+ date.toISOString()+'">'+data[i].created_at+'</time></div>';
 					}
 					document.getElementById('tweet-wrap').style.display = 'block';
 				}
 			</script>
-			<script src='/tweets.js'></script>
+			<script src='http://miguelmota.tumblr.com/tweets.js'></script>
 			<div class='top-link-wrap'><a class='top-link icon icon-up' href='#top'></a></div>
 		</nav>
 	</div>
