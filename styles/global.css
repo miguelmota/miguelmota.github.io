@@ -635,10 +635,11 @@ img.loader {
 	height: auto;
 	width: 200px;
 }
-.stream-ul-chart li {
-	display: block;
-	padding: 5px;
+.stream-ul-chart {
 	width: 100%;
+}
+.stream-ul-chart li {
+	padding: 5px;
 }
 .stream-ul-chart li:nth-child(odd) {
 	background-color: #202020;	
