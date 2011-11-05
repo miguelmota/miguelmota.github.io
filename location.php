@@ -3,16 +3,6 @@
 <title></title>
 <link href='http://www.miguelmota.com/styles/reset.css' rel='stylesheet' />
 <link href='http://www.miguelmota.com/styles/global.css' rel='stylesheet' />
-<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js'></script>
-<script>
-$(document).ready(function(){
-	// Open external links in new tab
-	$('a[rel*=external]').live('click', function(){
-		window.open(this.href);
-		return false;
-	});
-});
-</script>
 <body style='display: block;'>
 
 <?

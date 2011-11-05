@@ -524,7 +524,7 @@ img.loader {
 	width: auto;
 }
 .stream-iframe-latitude {
-	background: #222 url('/images/ajax-loader.gif') no-repeat 0 0;
+	background: #222 url('/images/ajax-loader.gif') no-repeat 0 0 !important;
 	border: 0 !important;
 	clear: both;
 	height: 16px;
