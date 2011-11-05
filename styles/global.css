@@ -996,6 +996,10 @@ label[for='message'].error {
 	display: block;
 	font-size: 32px;
 }
+.blog-item h1 a {
+	display: block;
+	font-size: 24px;
+}
 .post-text {
 	padding-bottom: 10px;
 }
