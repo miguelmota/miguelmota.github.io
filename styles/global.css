@@ -994,10 +994,9 @@ label[for='message'].error {
 .blog-post {
 	max-width: 100%;
 	min-width: 500px;
-	width: 100%;
+	width: 80%;
 }
-
-.blog-item a {
+.blog-post h1 a {
 	font-size: 24px;
 }
 .comment-count-wrap {
