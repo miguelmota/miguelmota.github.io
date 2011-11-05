@@ -944,6 +944,7 @@ div.input input,
 div.input textarea {
 	background-color: #202020;
 	font-size: 16px;
+	padding: 6px 6px 6px 12px;
 }
 div.input {
 	margin-bottom: 15px;
