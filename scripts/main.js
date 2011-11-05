@@ -1,5 +1,10 @@
 $(document).ready(function(){
 	
+	  $('.content').masonry({
+		    // options
+		    itemSelector : '.content-item'
+		 });
+	
 	//display mobile link if window is 640px or less
 	/*if(window.innerWidth <= 640){
 		window.location = 'http://www.miguelmota.com/mobile/';
@@ -23,12 +28,33 @@ $(document).ready(function(){
 	    isFitWidth: true
 	  });
 	}); */
+	  
+		// Navigation hover effect
+		$('.main-side-nav-ul a').hover(
+				function(){
+					$(this).animate({borderLeftWidth: '6px'}, {queue: false, duration: 60});
+				},
+				function(){
+					$(this).animate({borderLeftWidth: '4px'}, {queue: false, duration: 60});
+				}
+			);
 	
+	// Highlight short url on focus
+	$('.short-url').focus(function(){
+		$(this).select();
+	});
+	$('.short-url').mouseup(function(e){
+        e.preventDefault();
+	});
 	
-	  $('.content').masonry({
-		    // options
-		    itemSelector : '.content-item'
-		 });
+	// Add selected class to nav link based on page name
+	$('.main-side-nav-ul a').each(function(){ 
+		if($(this).attr('id') == $('.main-content-wrap').attr('class').split(' ')[1]){
+			$('#stream').removeClass('selected');
+			$(this).addClass('selected');
+		}
+	});
+
 	
 	
 	// Move h1 title to top on mobile
