@@ -66,7 +66,7 @@ $(document).ready(function(){
 	$('.content-item').draggable({
 			cursor: 'move'
 		}).resizable({  
-			minHeight: 100,
+			minHeight: 50,
 			maxHeight: 500,
 		    minWidth: 250,
 		    maxWidth: 700,
