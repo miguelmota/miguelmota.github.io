@@ -669,7 +669,7 @@ function streamPage(){
 							var url = item.url;
 							var name = item.name;
 							var artist = item.artist['#text'];
-							var image = item.image.small;
+							var image = item.image.small['#text'];
 							var date =  item.date['#text'];
 							htmlString += "<li><a href='"+url+"'><img class='stream-thumb' src='"+image+"' alt='' /> "+artist+" - "+name+"</a> <time class='status-date'>"+date+"</time></li>";
 							$('.stream-lastfm').append(htmlString +'</ul>');
