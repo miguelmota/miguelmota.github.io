@@ -994,78 +994,11 @@ label[for='message'].error {
 .blog-post {
 	max-width: 100%;
 	min-width: 500px;
-	width: 800px;
+	width: 100%;
 }
-div.blog-info {
-	clear: both;
-	font-size: 10px;
-	height: 30px;
-	overflow: hidden;
-	padding-bottom: 20px;
-	width: 650px; 
-}
-div.blog-description {
-	font-size: 10px;
-	height: auto;
-	float: left;
-	width: 300px;
-}
-div.follow-container {
-	font-size: 12px;
-	height: 22px;
-	float: right;
-	padding: 5px;
-	position: relative;
-	right: -70px;
-	width: 340px;
-}
-.rss-icon {
-	background: url('/images/rss.png') no-repeat 0 0;
-	display: inline-block;
-	height: 16px;
-	vertical-align: middle;
-	width: 16px;
-}
-a.subscribe-button { 
-	bottom: 5px;
-	border: 2px;
-	color: #ed7e2a;
-	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-	font-size: 12px;
-	font-weight: bold;
-	position: absolute;
-	right: 75px;
-}
-a.subscribe-button:hover {
-	background-color: none;
-	text-decoration: underline;
-}
-a.subscribe-button img { 
-	height: 16px;
-	vertical-align: middle;
-	width: 16px;
-}
-h1.post-title {
-	border-bottom: 1px solid #555;
-	margin-bottom: 5px;
-	padding-bottom: 1px;
-}
-h1.post-title a {
-	border-left-width: 5px;
-	display: block;
-	font-size: 26px;
-	padding-left: 5px;
-}
-div.post {
-	padding-bottom: 55px;
-}
-div.post-info {
-	clear: both;
-	font-size: 10px;
-	padding-bottom: 20px;
-}
-a.post-date {
-	float: left;
+
+.blog-item a {
+	font-size: 24px;
 }
 .comment-count-wrap {
 	float: right;
@@ -1077,20 +1010,42 @@ a.post-date {
 	vertical-align: middle;
 	width: 16px;
 }
-div.tags-wrap {
+.post-tags {
+	color: #777;
 	font-size: 10px;
-	padding-top: 30px;	
 }
-div.share-container {
-	clear: both;
-	padding: 5px;
-	width: 100%;
-	margin: 15px 0 20px 0;
+.post-tags a {
+	font-weight: normal;
+}
+.post-footer {
+	border-top: 1px solid #333;
+	font-size: 12px;
+	margin: 10px 0;
+	padding: 10px 0;
+}
+.share-wrap {}
+input.short-url {
+	background: #202020;
+	border: 1px solid #202020;
+	float: right;
+	font-size: 10px;
+	margin: 0 0 0 5px;
+	padding: 4px;
+	width: 160px;
+}
+.short-url:focus {
+	border: 1px solid {color:Link};
 }
 .tumblr-share-button {
-	border-left: 0;
+	background: url('http://platform.tumblr.com/v1/share_1.png') top left no-repeat transparent;
+	display: inline-block;
 	float: right;
+	height: 20px;
+	margin: 0;
+	text-indent: -9999px;
+	overflow: hidden;
 	padding: 0;
+	width: 81px; 
 }
 .navigation {
 	height: 20px;

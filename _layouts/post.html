@@ -6,20 +6,27 @@ layout: default
 <section class='content blog blog-post'>
 	{% include header.html %}
 	<div class='blog-post content-item'>
-		<h1 class='post-title'><a id='post-link' href='{{ page.url }}'>{{ page.title }}</a></h1>
-		<div class='post-info'>
-			<a class='post-date' href='{{ page.url }}'>{{ page.date | date_to_string }}</a> 
-			<div class='comment-count-wrap'><a class='dsq-comment-count' href='{{ page.url }}#disqus_thread' data-disqus-identifier='{{ page.url }}'>comments</a><span class='comment-bubble-icon'></span></div>
-	 	</div>
-	 	<div id='post-content'>
-		{{ content }}
+		<h1><a href='{{ page.url }}'>{{ page.title }}</a></h1>
+	 	<div id='post-text'>
+			{{ content }}
 		</div>
-		<div class='share-container'>
+		<div class='post-tags'>
+			<span class='icon icon-tag'></span>
+			{% for category in post.categories %}
+				<span name='{{ category | first }}'>[{{ category | first }}]</span>
+			{% endfor %}
+		</div>
+		<div class='post-footer'>
+			<a href='{{ page.url }}'><span class='icon icon-date'></span> {{ page.date | date_to_string }}</a> 
+			<span class='dsq-comment-count-wrap'><a class='icon icon-comments' href='{{ page.url }}#disqus_thread'></a> <a class='dsq-comment-count' href='{{ page.url }}#disqus_thread' data-disqus-identifier='{{ page.url }}'>comments</a><span class='comment-bubble-icon'></span></div>
+			<div class='clear'></div>
+		</div>
+		<div class='share-wrap'>
 			<g:plusone class='plus-one-button' href='http://www.miguelmota.com{{ page.url }}' size='medium'></g:plusone>
 			<a class='twitter-share-button' href='http://twitter.com/share' data-text='{{ page.title }}' data-url='http://www.miguelmota.com{{ page.url }}' data-via='miguel_mota' data-count='horizontal'>Tweet</a>
 			<a id='tumblr-share-button' class='tumblr-share-button' href='http://www.tumblr.com/share' title='{block:PostSummary}{PostSummary} &#187; {/block:PostSummary}'>Share on Tumblr</a>
+			<input class='short-url' type='text' value='http://www.miguelmota.com{{ page.url }}' />
 		</div>
-		
 		<div class='navigation'>
 		    {% if page.previous.url %}
 				<a class='previous-url' href='{{ page.previous.url }}'>&#171; {{ page.previous.title | truncatewords: 15 }}</a>
