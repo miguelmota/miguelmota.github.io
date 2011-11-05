@@ -116,10 +116,6 @@ div.image-container {
 	width: 650px;
 	behavior: url('/PIE/PIE.htc');
 }
-div.image-container img {
-	height: auto;
-	width: 100%;
-}
 
 em {
 	display: inline;
@@ -339,6 +335,16 @@ textarea {
 	margin: 10px;
 	padding: 20px;
 	width: 600px;
+}
+.content-item img {
+	background: #222 url('http://static.tumblr.com/r8galzl/wmilu4kzw/ajax-loader-image.gif') no-repeat 50% 50%;
+	box-shadow: 2px 2px 8px rgba(0,0,0,.7);
+	-moz-box-shadow: 2px 2px 8px rgba(0,0,0,.7);
+	-o-box-shadow: 2px 2px 8px rgba(0,0,0,.7);
+	-webkit-box-shadow: 2px 2px 8px rgba(0,0,0,.7);
+	min-height: 32px;
+	height: auto;
+	width: 100%;
 }
 /* ==============================================================================
 	END MAIN CONTENT
