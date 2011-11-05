@@ -690,7 +690,7 @@ function streamPage(){
 				for(var i = 0; i < data.length; i++){
 					var entry = data[i].software;
 					var date = new Date(entry.last_active_at).toUTCString();
-					html.push("<li><img class='stream-thumb' style='width:16px;height:16px;float:left;' src='", entry.complete_thumb_url ,"' alt='' /> <a href='", entry.complete_url, "'> ", entry.name, "</a> <time class='status-date'>"+niceTime(date)+"</time>", "</li>");
+					html.push("<li><img class='stream-thumb' style='width:16px;height:16px;min-height:8px;background:0;' src='", entry.complete_thumb_url ,"' alt='' /> <a href='", entry.complete_url, "'> ", entry.name, "</a> <time class='status-date'>"+niceTime(date)+"</time>", "</li>");
 				}
 				html.push("</ul>");
 				document.getElementById('stream-wakoopa-software').innerHTML = html.join("");

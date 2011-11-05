@@ -328,7 +328,7 @@ textarea {
 	padding: 20px;
 	width: 700px;
 }
-.content-item img {
+.content-item img.000 {
 	background: #222 url('http://static.tumblr.com/r8galzl/wmilu4kzw/ajax-loader-image.gif') no-repeat 50% 50%;
 	box-shadow: 2px 2px 8px rgba(0,0,0,.7);
 	-moz-box-shadow: 2px 2px 8px rgba(0,0,0,.7);
