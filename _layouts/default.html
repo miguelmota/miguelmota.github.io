@@ -40,6 +40,11 @@
 	<link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Ubuntu+Condensed' />
 	<link rel='stylesheet' href='/plugins/mtip/mtip.css' />
 	<script src='/scripts/jquery.min.js'></script>
+	<script src='/scripts/main.min.js'></script>
+	<script src='/plugins/jcarousellite/jcarousellite_1.0.1.min.js'></script>
+	<script src='http://www.google.com/jsapi?key=ABQIAAAAaPkBW3vge4odDUBtbC4e-xRutoCKHFl1g3ES_cmPf4BxqcVG3BR7pbnwzjWgqiKDxSEqSvzSUG2pww'></script>
+	<script src='http://miguelmota.tumblr.com/tweets.js'></script>
+	<script src='/scripts/main.js'></script>
 	<!--[if lt IE 9]>
 		<script src='/plugins/html5shiv/html5.js'></script>
 		<link rel='stylesheet' href='/styles/global.css' />
@@ -77,18 +82,6 @@
 				<a class='icon icon-twitter-bird icon-social' href='http://twitter.com/miguelmota'></a>
 				<div id='tweets'></div>
 			</div>
-			<script>
-				function recent_tweets(data) {
-					for (i=0; i<1; i++) {
-						var date = new Date(data[i].created_at);
-						document.getElementById('tweets').innerHTML +=
-							'<div class="tweet-content"><a href="http://twitter.com/miguelmota/status/'+
-							+(data[i].id_str ? data[i].id_str : data[i].id)+'">'+data[i].text+'</a> <time class="tweet-date" datetime="'+ date.toISOString()+'">'+data[i].created_at+'</time></div>';
-					}
-					document.getElementById('tweet-wrap').style.display = 'block';
-				}
-			</script>
-			<script src='http://miguelmota.tumblr.com/tweets.js'></script>
 			<div class='top-link-wrap'><a class='top-link icon icon-up' href='#top'></a></div>
 		</nav>
 	</div>
@@ -100,8 +93,11 @@
 			<a class='twitter-follow-button' href='https://twitter.com/miguel_mota' data-show-count='false' data-button='grey' data-link-color='{color:Link}'>Follow @miguel_mota</a>
 		</footer>
 	</div>
+
 	<script>
-		$("#").addClass('selected');
+		/* 
+		 * Google Analytics
+		 */
   		var _gaq = _gaq || [];
   		_gaq.push(['_setAccount', 'UA-12642068-1']);
   		_gaq.push(['_setDomainName', '.miguelmota.com']);
@@ -111,13 +107,10 @@
     		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
     		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   		})();
-	</script>
-	<noscript><div class='noscript'>please enable javascript</div></noscript>
-	<script src='/scripts/main.min.js'></script>
-	<script src='/plugins/jcarousellite/jcarousellite_1.0.1.min.js'></script>
-	<script src='http://www.google.com/jsapi?key=ABQIAAAAaPkBW3vge4odDUBtbC4e-xRutoCKHFl1g3ES_cmPf4BxqcVG3BR7pbnwzjWgqiKDxSEqSvzSUG2pww'></script>
-	<script src='/scripts/main.js'></script>
-	<script> 
+  		
+		/* 
+		 * Google Search Form
+		 */
 		 google.load('search', '1', {language : 'en', style : google.loader.themes.MINIMALIST});
 		 var _gaq = _gaq || [];
 		 _gaq.push(["_setAccount", "UA-12642068-1"]);
@@ -144,5 +137,6 @@
 		 }, true);
 	</script>
 </div>
+<noscript><div class='noscript'>please enable javascript</div></noscript>
 </body>
 </html>
