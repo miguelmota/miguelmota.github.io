@@ -503,6 +503,7 @@ img.loader {
 	background-color: #222;
 	padding: 20px;
 	margin-bottom: 10px;
+	width: 350px
 }
 .stream-iframe-latitude {
 	background: #252525 url('/images/ajax-loader.gif') no-repeat 0 0;
