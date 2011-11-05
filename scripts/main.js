@@ -835,7 +835,7 @@ function contactPage(){
 	//create method to validate name
 	$('a.contact-submit').live('click', function(){
 		$.validator.addMethod('namecheck', function(value, element){
-			return this.optional(element) || /^[a-zA-Z]+?\s?[a-zA-Z]+?\s?[a-zA-Z]+$/.test(value);
+			return this.optional(element) || /^[a-zA-Z]*$/.test(value);
 	});
 		
 	//validate contact form
