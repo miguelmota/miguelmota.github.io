@@ -12,7 +12,7 @@ html {
 body {
 	background-color: #252525;
 	color: #999;
-	font-family: NeoSans, Klavika-Light, Helvetica, Arial, sans-serif;
+	font-family: 'Ubuntu Condensed', Helvetica, Arial, sans-serif;
 	font-size: 12px;
 	text-shadow: 0 -1px 0 rgba(0,0,0,.8);
 }
@@ -1027,7 +1027,6 @@ h1.post-title {
 h1.post-title a {
 	border-left-width: 5px;
 	display: block;
-	font-family: Klavika, Helvetica, Arial, sans-serif;
 	font-size: 26px;
 	padding-left: 5px;
 }
