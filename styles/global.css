@@ -301,7 +301,7 @@ textarea {
 }
 .main-side-nav-ul a.selected {
 	background-color: #323232;
-	border-left: 4px solid #007299;
+	border-left: 6px solid #007299;
 	color: #fff;
 	font-weight: bold;
 }
