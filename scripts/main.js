@@ -66,8 +66,10 @@ $(document).ready(function(){
 	$('.content-item').draggable({
 			cursor: 'move'
 		}).resizable({  
-			minWidth: 100,
-		    maxWidth: 800,
+			minHeight: 250,
+			maxHeight: 500,
+		    minWidth: 250,
+		    maxWidth: 500,
 		    handles: 'se'
 	    });
 	
@@ -188,6 +190,7 @@ $(document).ready(function(){
 				case 'about':
 					break;
 				case 'portfolio':
+				case 'portfolio/':
 					portfolioPage();
 					break;
 				case 'contact':
