@@ -1000,6 +1000,9 @@ label[for='message'].error {
 	display: block;
 	font-size: 32px;
 }
+.post-text {
+	padding-bottom: 10px;
+}
 .post-tags {
 	color: #777;
 	font-size: 10px;
@@ -1040,17 +1043,6 @@ input.short-url {
 	overflow: hidden;
 	padding: 0;
 	width: 81px; 
-}
-.navigation {
-	height: 20px;
-	padding-bottom: 20px;
-	position: relative;
-}
-.previous-url {
-	float: left;
-}
-.next-url {
-	float: right;
 }
 /* ==============================================================================
 	END BLOG

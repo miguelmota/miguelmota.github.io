@@ -27,36 +27,35 @@ layout: default
 			<input class='short-url' type='text' value='http://www.miguelmota.com{{ page.url }}' />
 			<a id='tumblr-share-button' class='tumblr-share-button' href='http://www.tumblr.com/share' title='{block:PostSummary}{PostSummary} &#187; {/block:PostSummary}'>Share on Tumblr</a>
 		</div>
-
-		<div class='comment-container'>
-			<div id='disqus_thread'></div>
-			<script>
-			    var disqus_shortname = 'miguelmota';
-			    var disqus_identifier = '{{ page.url }}';
-			    var disqus_url = 'http://www.miguelmota.com{{ page.url }}';
-			    (function() {
-			        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-			        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-			        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-			    })();
-			</script>
-			<script>
-			    var disqus_shortname = 'miguelmota';
-			    (function () {
-			        var s = document.createElement('script'); s.async = true;
-			        s.type = 'text/javascript';
-			        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
-			        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-			    }());
-			</script>
-		</div>
+	</div>
+	<div class='comment-container'>
+		<div id='disqus_thread'></div>
+		<script>
+		    var disqus_shortname = 'miguelmota';
+		    var disqus_identifier = '{{ page.url }}';
+		    var disqus_url = 'http://www.miguelmota.com{{ page.url }}';
+		    (function() {
+		        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+		        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+		    })();
+		</script>
+		<script>
+		    var disqus_shortname = 'miguelmota';
+		    (function () {
+		        var s = document.createElement('script'); s.async = true;
+		        s.type = 'text/javascript';
+		        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+		        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+		    }());
+		</script>
 	</div>
 	<div class='pagination'>
 	    {% if page.previous.url %}
-			<a class='previous-url' href='{{ page.previous.url }}'>&#171; {{ page.previous.title | truncatewords: 15 }}</a>
+			<a class='.pagination-previous' href='{{ page.previous.url }}'>&#171; {{ page.previous.title | truncatewords: 15 }}</a>
 	    {% endif %}
 	    {% if page.next.url %}
-		    <a class='next-url' href='{{ page.next.url }}'>{{ page.next.title | truncatewords: 15 }} &#187;</a>
+		    <a class='.pagination-next' href='{{ page.next.url }}'>{{ page.next.title | truncatewords: 15 }} &#187;</a>
 	    {% endif %}
 	</div>
 </section>
