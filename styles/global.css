@@ -301,7 +301,7 @@ textarea {
 }
 .main-side-nav-ul a.selected {
 	background-color: #323232;
-	border-left: 4px solid {color:Link};
+	border-left: 4px solid #007299;
 	color: #fff;
 	font-weight: bold;
 }
@@ -1035,7 +1035,7 @@ input.short-url {
 	width: 160px;
 }
 .short-url:focus {
-	border: 1px solid {color:Link};
+	border: 1px solid #007299;
 }
 .tumblr-share-button {
 	background: url('http://platform.tumblr.com/v1/share_1.png') top left no-repeat transparent;
