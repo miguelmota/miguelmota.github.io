@@ -1206,6 +1206,10 @@ div.gsc-cursor-current-page  {
 	text-shadow: 0 -1px 0 rgba(0,0,0,.5);
 	width: 100%;
 }
+.main-bottom-footer-content {
+	float: left;
+	width: 500px;
+}
 .twitter-follow-button {
 	float: right;
 	max-width: 180px !important;
