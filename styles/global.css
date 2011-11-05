@@ -721,6 +721,7 @@ a.google-plus-link {
 }
 .project {
 	height: 200px;
+	padding: 20px;
 	width: 100%;
 }
 .project .image-container {
@@ -729,6 +730,7 @@ a.google-plus-link {
 	-moz-transition: -moz-box-shadow linear .2s;
 	-o-transition: -o-box-shadow linear .2s;
 	-webkit-transition: -webkit-box-shadow linear .2s;
+	overflow: hidden;
 	behavior: url('/PIE/PIE.htc');
 }
 .project .image-container {
@@ -775,7 +777,6 @@ a.google-plus-link {
 	border-left: 1px solid #212121;
 	border-right: 1px solid #212121;
 	display: block;
-	float: left;
 	width: 240px;	
 	height: 80px;
 	vertical-align: middle;
