@@ -1105,6 +1105,38 @@ a.archive-link {
 	END BLOG
 ============================================================================== */
 
+/* ==============================================================================
+	PAGINATION
+============================================================================== */
+.pagination {
+	clear: both;
+	font-size: 18px;
+	padding: 25px 10px 10px 10px;
+	text-align: center;
+}
+.pagination-jump {
+	display: inline-block;
+}
+.pagination-jump span {
+	padding: 10px;
+}
+.pagination-jump a {
+	padding: 10px;
+}
+.pagination-next {
+	float: right;
+	text-align: right;
+	width: 200px;
+}
+.pagination-previous {
+	float: left;
+	text-align: left;
+	width: 200px;
+}
+/* ==============================================================================
+	END PAGINATION
+============================================================================== */
+
 
 /* ==============================================================================
 	PAYPAL PAGE
