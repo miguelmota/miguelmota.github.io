@@ -500,6 +500,8 @@ img.loader {
 	STREAM
 ============================================================================== */
 .stream-wrap {
+	background-color: #222;
+	padding: 20px;
 	margin-bottom: 10px;
 }
 .stream-iframe-latitude {
