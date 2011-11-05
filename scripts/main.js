@@ -38,6 +38,12 @@ $(document).ready(function(){
 					$(this).animate({borderLeftWidth: '4px'}, {queue: false, duration: 60});
 				}
 			);
+		
+		
+		// Default test on input color
+		$('input:text, input:password, textarea').focus(function(){
+			$(this).css('color', '#999');
+		});
 	
 	// Highlight short url on focus
 	$('.short-url').focus(function(){
