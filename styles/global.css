@@ -992,9 +992,7 @@ label[for='message'].error {
 	width: 400px;
 }
 .blog-post {
-	max-width: 100%;
-	min-width: 500px;
-	width: 80%;
+	width: 99%;
 }
 .blog-post h1 a {
 	display: block;
