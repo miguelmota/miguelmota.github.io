@@ -527,7 +527,8 @@ img.loader {
 	width: 250px;
 }
 .stream-flickr {
-	width: 500px;
+	min-width: 500px;
+	max-width: 700px;
 }
 .stream-iframe-latitude {
 	background: #222 url('/images/ajax-loader.gif') no-repeat 0 0;
@@ -686,9 +687,9 @@ img.loader {
 	background-color: #252525;
 	display: inline-block;
 	float: left;
-	min-height: 60px;
+	min-height: 120px;
 	height: auto;
-	margin-right: 5px;
+	margin-right: 10px;
 	transition: all .2s ease-in-out;
 	-moz-transition: all .2s ease-in-out;
 	-o-transition: all .2s ease-in-out;
