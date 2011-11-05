@@ -332,7 +332,7 @@ textarea {
 }
 .content-item {
 	background-color: #222;
-	margin: 10px;
+	margin: 5px;
 	padding: 20px;
 	width: 700px;
 }
@@ -520,6 +520,9 @@ img.loader {
 .stream-twitter {
 	width: 500px;
 }
+.stream-lastfm {
+	width: 500px;
+}
 .stream-wakoopa {
 	width: 250px;
 }
@@ -633,24 +636,15 @@ img.loader {
 	width: 200px;
 }
 .stream-ul-chart li {
-	margin: 2px;
-	padding: 10px;
+	padding: 5px;
 }
 .stream-ul-chart li:nth-child(odd) {
 	background-color: #202020;	
-}
-.stream-ul-chart a  {
-	
-}
-.stream-ul-chart a:hover,
-.stream-ul-chart a:active  {
-
 }
 .stream-ul-chart .status-date,
 .stream-ul-chart .status-date {
 	border-left: 2px solid #222;
 	float: right;
-	padding: 2px;
 }
 .stream-carousel-wrap {		
 	position: relative;
