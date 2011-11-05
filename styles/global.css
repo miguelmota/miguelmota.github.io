@@ -1153,9 +1153,6 @@ div.share-container {
 div#cse-search-form {
 	float: right;
 	padding: 0;
-	position: absolute;
-	right: 0;
-	top: -45px;
 	width: 300px;
 }
 div#cse-search-form input[type=text] {
