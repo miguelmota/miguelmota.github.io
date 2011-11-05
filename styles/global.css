@@ -710,7 +710,6 @@ a.google-plus-link {
 .work-sort-wrap {
 	position: absolute;
 	right: 0;
-	top: -15px;
 }
 .work-sort-wrap a.selected {
 	background-color: #252525;
@@ -734,7 +733,7 @@ a.google-plus-link {
 .project .image-container {
 	height: auto;
 	position: absolute;
-	width: 98%;
+	width: 97%;
 }
 .overlay-popup {
 	background: #000;
