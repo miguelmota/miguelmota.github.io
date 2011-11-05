@@ -928,6 +928,9 @@ div.contact-qrcode {
 	background: #222 url('/images/qrcode.png') no-repeat 0 0;
 	float: right;
 	height: 88px;
+	position: absolute;
+	right: 20px;
+	top: 20px;
 	width: 88px;
 }
 .phone-wrap {
@@ -943,9 +946,10 @@ div.contact-qrcode {
 }
 form.contact-form {
 	float: left;
-	width: 99%;
+	width: 100%;
 }
-div.input input, div.input textarea {
+div.input input, 
+div.input textarea {
 	background-color: #202020;
 }
 div.input {
@@ -953,7 +957,7 @@ div.input {
 }
 textarea.contact-message {
 	height: 300px;
-	width: 99%;
+	width: 100%;
 }
 a.contact-submit {
 	float: right;
