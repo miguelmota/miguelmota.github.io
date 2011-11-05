@@ -110,7 +110,7 @@ img {
 	border: 0;
 }
 h1.title {
-	font-family: Klavika, Helvetica, Arial, sans-serif;
+	font-family: Klavika, 'Ubuntu Condensed', Helvetica, Arial, sans-serif;
 	font-size: 32px;
 	font-weight: bold;
 	letter-spacing: -2px;
@@ -124,13 +124,13 @@ h1.title span.mota {
 	font-weight: normal;
 }
 h1.title span.slash {
-	font-family: klavika-Light, Helvetica, Arial, sans-serif;	
+	font-family: klavika-Light, 'Ubuntu Condensed', Helvetica, Arial, sans-serif;	
 	font-weight: normal;
 	position: relative;
 	top: -2px;
 }
 h1.title span.sub {
-	font-family: klavika-Light, Helvetica, Arial, sans-serif;	
+	font-family: klavika-Light, 'Ubuntu Condensed', Helvetica, Arial, sans-serif;	
 	font-weight: normal;
 	margin-left: -2px;
 }
@@ -860,6 +860,7 @@ a.site-link {
 #fancybox-wrap a {
 	border: 0;
 }
+
 span.zoom-icon {
 	background-color: #000;
 	background-color: rgba(0,0,0,.8);
@@ -885,6 +886,9 @@ div.fancybox-title strong {
 div.fancybox-title span {
 	float: right;
 	padding-top: 5px;
+}
+.fancybox-bg {
+	display: none;
 }
 div.work-image {
 	float: left;
