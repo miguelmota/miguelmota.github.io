@@ -296,7 +296,7 @@ $(window).scroll(function(){
 
 
 
-
+/*
 var bsc = 0;
 $(document).ajaxComplete(function(){
 	
@@ -360,6 +360,7 @@ $(document).ajaxComplete(function(){
 
 	
 });
+*/
 
 function initializeFancybox() {
 	
