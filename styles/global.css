@@ -943,6 +943,7 @@ form.contact-form {
 div.input input, 
 div.input textarea {
 	background-color: #202020;
+	font-size: 16px;
 }
 div.input {
 	margin-bottom: 15px;
