@@ -3,7 +3,7 @@
 @import url('tumblr.css');
 
 /* ==============================================================================
-	GENERAL
+	BASIC
 ============================================================================== */
 html {
 	overflow-y: scroll;
@@ -14,11 +14,38 @@ body {
 	color: #999;
 	font-family: NeoSans, Klavika-Light, Helvetica, Arial, sans-serif;
 	font-size: 12px;
+	text-shadow: 0 -1px 0 rgba(0,0,0,.8);
+}
+.noscript {
+	background-color: #a80f0f;
+	color: #fff;
+	font-size: 24px;
+	font-weight: bold;
+	padding: 20px;
+	position: fixed;
+	text-align: center;
+	top: 0;
+	width: 100%;
+}
+.main-wrap {
+	height: auto;
+	margin: 70px auto 0 auto;
+	width: 760px;
+	word-wrap: break-word;
+}
+#top {
+	position: absolute;
+	top: 0;
+}
+.clear {
+	clear: both;
+}
+.hide {
+	display: none;
 }
 a {
-	border-left: 3px solid #292929;
 	color: #007299;
-	padding: 1px 3px 1px 3px;
+	font-weight: bold;
 	text-shadow: 0 1px 0 rgba(0,0,0,.5);
 	transition: background-color linear .1s, color linear .1s;
 	-moz-transition: background-color linear .1s, color linear .1s;
@@ -26,33 +53,11 @@ a {
 	-webkit-transition: background-color linear .1s, color linear .1s;
 }
 a:hover {
- 	background-color: #222;
- 	border-left-color: #333;
 	color: #0098cc;
-	text-shadow: 0 1px 0 rgba(0,0,0,.9);
+	text-shadow: 0 -1px 0 rgba(0,0,0,.5);
 }
 a:active {
 	text-shadow: 0 -1px 0 rgba(0,0,0,.5);
-}
-.button {
-	background: #004c66;
-	border-left: none;
-	color: #fff;
-	font-size: 12px;
-	padding: 5px 10px;
-	text-shadow: none;
-}
-.button:hover {
-	background: #007299;
-	color: #fff;
-	text-shadow: none;
-}
-.button:active {
-	color: #fff;
-	text-shadow: none;
-}
-.hide {
-	display: none;
 }
 a.mobile-bar {
 	display: block;
@@ -117,24 +122,7 @@ div.image-container img {
 	height: auto;
 	width: 100%;
 }
-div.main-wrap {
-	height: auto;
-	margin: 70px auto 0 auto;
-	width: 760px;
-	word-wrap: break-word;
-}
-div.noscript {
-	background-color: #a80f0f;
-	color: #fff;
-	padding: 10px;
-	position: absolute;
-	top: 0;
-	width: 760px;
-}
-div#top {
-	position: absolute;
-	top: 0;
-}
+
 em {
 	display: inline;
 }
@@ -195,6 +183,18 @@ p+p {
 strong {
 	font-weight: bold;
 }
+ul li {
+	line-height: 125%;
+}
+/* ==============================================================================
+	END BASIC
+============================================================================== */
+
+
+
+/* ==============================================================================
+	INPUT
+============================================================================== */
 input[type=text],
 input[type=password],
 textarea {		
@@ -232,11 +232,25 @@ textarea {
 	overflow: auto;
 	resize: none;
 }
-ul li {
-	line-height: 125%;
+.button {
+	background: #004c66;
+	border-left: none;
+	color: #fff;
+	font-size: 12px;
+	padding: 5px 10px;
+	text-shadow: none;
+}
+.button:hover {
+	background: #007299;
+	color: #fff;
+	text-shadow: none;
+}
+.button:active {
+	color: #fff;
+	text-shadow: none;
 }
 /* ==============================================================================
-	END GENERAL
+	END	INPUT
 ============================================================================== */
 
 
@@ -244,44 +258,64 @@ ul li {
 /* ==============================================================================
 	MAIN NAVIGATION
 ============================================================================== */
-nav.main-side-nav {
-	background-color: #252525;
-	float: left;
-	position: fixed;
-	width: 75px;
-	z-index: 1000;
+.main-side-nav-wrap {
+	left: 0;
+	position: absolute;
+	width: 200px;
 }
-a.nav-logo {
-	background: url('/images/logo.png') no-repeat 0 0;
+.main-side-nav {
+	position: fixed;	
+	width: 200px;
+}
+.nav-logo {
 	border-left: none !important;
 	display: block;
-	height: 50px;
-	margin: 0 auto;
-	padding: 0 0 10px 0 !important;
-	width: 48px;
+	height: 64px;
+	padding: 0 0 15px 0;
+	width: 64px;
 }
-a.nav-logo:hover {
-	background-color: #252525 !important;
+.site-title {
+	font-size: 24px;
+	font-weight: bold;
+	padding-bottom: 5px;
+	text-shadow: 0 -1px 0 #000;
+	text-transform: uppercase;
 }
-ul.main-nav a {
+.site-description {
+	color: #555;
+	padding-bottom: 15px;
+}
+.main-side-nav-ul {
+	padding-bottom: 15px;
+}
+.main-side-nav-ul a {
+	background-color: #292929;
 	border-left: 4px solid #444;
 	color: #999;
 	display: block;
 	font-size: 13px;
-	padding: 2px 2px 2px 4px;
+	margin: 1px 0;
+	padding: 6px 6px 6px 12px;
 	position: relative;
+	text-transform: uppercase;
+	width: 100%;
 }
-ul.main-nav a:hover,
-ul.main-nav a:active {
-	background-color: #292929;
+.main-side-nav-ul a:hover,
+.main-side-nav-ul a:active {
+	background-color: #222;
 	border-left: 4px solid #999;
 	color: #fff;
 }
-ul.main-nav a.selected {
+.main-side-nav-ul a.selected {
 	background-color: #323232;
-	border-left: 4px solid #007299;
+	border-left: 4px solid {color:Link};
 	color: #fff;
 	font-weight: bold;
+}
+.top-link-wrap {
+	clear: both;
+	padding: 10px 0 15px 0;
+	width: 100%;
 }
 /* ==============================================================================
 	END MAIN NAVIGATION
@@ -292,27 +326,17 @@ ul.main-nav a.selected {
 /* ==============================================================================
 	CONTENT
 ============================================================================== */
+.main-content-wrap {
+	height: auto;
+	float: right;
+	position: relative;
+	width: 100%;
+}
 section.content {
 	float: right;
 	height: auto;
 	position: relative;	
 	text-shadow: 0 -1px 0 rgba(0,0,0,.5);
-	width: 650px;
-}
-.content img {
-	background: #222 url('/images/ajax-loader-image.gif') no-repeat 50% 50%;
-	box-shadow: 2px 2px 8px rgba(0,0,0,.7);
-	-moz-box-shadow: 2px 2px 8px rgba(0,0,0,.7);
-	-o-box-shadow: 2px 2px 8px rgba(0,0,0,.7);
-	-webkit-box-shadow: 2px 2px 8px rgba(0,0,0,.7);
-	height: auto;
-	width: 100%;
-	behavior: url('/PIE/PIE.htc');
-}
-div.content-container {
-	height: auto;
-	float: right;
-	position: relative;
 	width: 650px;
 }
 /* ==============================================================================
@@ -352,6 +376,127 @@ img.loader {
 }
 /* ==============================================================================
 	END LOADERS
+============================================================================== */
+
+
+
+/* ==============================================================================
+	ICONS
+============================================================================== */
+.icon {
+	border: 0;
+	display: inline-block;
+	height: 16px;
+	opacity: .5;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+	filter: alpha(opacity=50);
+	padding: 0;
+	transition: opacity linear .1s;
+	-moz-transition: opacity linear .1s;
+	-o-transition: opacity linear .1s;
+	-webkit-transition: opacity linear .1s;
+	vertical-align: middle;
+	width: 16px;
+}
+.icon:hover {
+	opacity: 1;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	filter: alpha(opacity=100);
+}
+.icon-top {
+	float: right;
+	height: 24px;
+	margin-bottom: 10px;
+	width: 24px;
+}
+.icon-social {
+	height: 24px;
+	margin-right: 2px;
+	width: 24px;
+}
+.icon-audio {
+	background: url('http://static.tumblr.com/r8galzl/0jWlu4l1b/audio.png');
+}
+.icon-chat {
+	background: url('http://static.tumblr.com/r8galzl/gNzlu4l1p/chat.png');
+}
+.icon-comments {
+	background: url('http://static.tumblr.com/r8galzl/rxvlu4l2l/comments.png');
+	height: 13px;
+}
+.icon-date {
+	background: url('http://static.tumblr.com/r8galzl/siClu4l2w/date.png');
+}
+.icon-dribbble {
+	background: url('http://static.tumblr.com/r8galzl/84llu4l3m/dribbble.png');
+}
+.icon-facebook {
+	background: url('http://static.tumblr.com/r8galzl/14Elu4l3x/facebook.png');
+}
+.icon-flickr {
+	background: url('http://static.tumblr.com/r8galzl/g0tlu4l4b/flickr.png');
+}
+.icon-heart {
+	background: url('http://static.tumblr.com/r8galzl/nf8lu4l37/heart.png');
+	height: 14px;
+}
+.icon-link {
+	background: url('http://static.tumblr.com/r8galzl/hPxlu4l4s/link.png');
+}
+.icon-photo {
+	background: url('http://static.tumblr.com/r8galzl/1Rclu4l5d/photo.png');
+}
+.icon-quote {
+	background: url('http://static.tumblr.com/r8galzl/PBclu4l5q/quote.png');
+}
+.icon-random {
+	background: url('http://static.tumblr.com/r8galzl/m4Tlu4l61/random.png');
+	height: 18px;
+}
+.icon-reblog {
+	background: url('http://static.tumblr.com/r8galzl/B6Hlu4l6v/reblog.png');
+}
+.icon-subscribe {
+	background: url('http://static.tumblr.com/r8galzl/mutlu4l6b/rss.png');
+}
+.icon-tag {
+	background: url('http://static.tumblr.com/r8galzl/fgnlu4l7c/tags.png');
+	width: 12px;
+}
+.icon-tag:hover {
+	opacity: .5;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+	filter: alpha(opacity=50);
+}
+.icon-text {
+	background: url('http://static.tumblr.com/r8galzl/NMVlu4l9k/text.png');
+}
+.icon-tumblr {
+	background: url('http://static.tumblr.com/r8galzl/obJlu4l9w/tumblr.png');
+}
+.icon-twitter {
+	background: url('http://static.tumblr.com/r8galzl/5ehlu4l99/twitter.png');
+}
+.icon-twitter-bird {
+	background: url('http://static.tumblr.com/r8galzl/73Ilu4l8u/twitter-bird.png');
+	float: left;
+	height: 13px;
+	margin: 0 10px 10px 0;
+}
+.icon-up {
+	background: url('http://static.tumblr.com/r8galzl/zt1lu4l89/up.png');
+	height: 24px;
+	width: 24px;
+}
+.top-link {
+	display: none;
+	float: right;
+}
+.icon-video {
+	background: url('http://static.tumblr.com/r8galzl/B5blu4l8k/video.png');
+}
+/* ==============================================================================
+	END ICONS
 ============================================================================== */
 
 
@@ -1036,25 +1181,20 @@ div.gsc-cursor-current-page  {
 
 
 /* ==============================================================================
-	MAIN FOOTER
+	MAIN BOTTOM FOOTER
 ============================================================================== */
-footer.main-footer {
+.main-bottom-footer {
 	clear: both;
-	height: 20px;
-	padding: 25px 0 15px 0;
+	font-size: 12px;
+	padding: 25px 10px;
 	position: relative;
+	text-shadow: 0 -1px 0 rgba(0,0,0,.5);
 	width: 100%;
 }
-footer.main-footer p {
-	background-color: inherit;
-	color: #333;
-	font-size: 9px;
-	width: 100%;
-}
-a.top-link {
-	display: none;
+.twitter-follow-button {
 	float: right;
+	max-width: 180px !important;
 }
 /* ==============================================================================
-	END MAIN FOOTER
+	END MAIN BOTTOM FOOTER
 ============================================================================== */
