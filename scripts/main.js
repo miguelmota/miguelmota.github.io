@@ -27,7 +27,7 @@ $(document).ready(function(){
 	
 	  $('.content').masonry({
 		    // options
-		    itemSelector : '.stream-wrap'
+		    itemSelector : '.content-item'
 		 });
 	
 	

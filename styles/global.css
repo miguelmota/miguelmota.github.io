@@ -326,7 +326,7 @@ textarea {
 
 
 /* ==============================================================================
-	CONTENT
+	MAIN CONTENT
 ============================================================================== */
 .main-content-wrap {
 	height: auto;
@@ -334,8 +334,14 @@ textarea {
 	position: relative;
 	width: 100%;
 }
+.content-item {
+	background-color: #222;
+	margin: 10px;
+	padding: 20px;
+	width: 600px;
+}
 /* ==============================================================================
-	END CONTENT
+	END MAIN CONTENT
 ============================================================================== */
 
 
@@ -500,9 +506,6 @@ img.loader {
 	STREAM
 ============================================================================== */
 .stream-wrap {
-	background-color: #222;
-	padding: 20px;
-	margin-bottom: 10px;
 	width: 350px
 }
 .stream-iframe-latitude {
