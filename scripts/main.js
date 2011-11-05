@@ -479,17 +479,26 @@ function hideLoader(){
 function showMtip(element) {
 	var link = element;
 	$(link).trigger('mouseenter');
+}
+function hideMtip(element) {
+	var link = element;
+	$(link).trigger('mouseleave');
+}
+function showMtipTimeout(element) {
+	var link = element;
+	$(link).trigger('mouseenter');
 	setTimeout(function(){
 		$(link).trigger('mouseleave');
 	}, 3000);
 }
 
+
 function streamPage(){
 	
 	// Hide stream logo text
 	$(".stream-logo:not('.stream-logo-blog ,.stream-logo-latitude')").text('');
-	showMtip('.stream-logo-blog');
-	showMtip('.stream-logo-latitude');
+	showMtipTimeout('.stream-logo-blog');
+	showMtipTimeout('.stream-logo-latitude');
 	
 	$('.stream-wrap').live({
 			mouseenter:
@@ -498,7 +507,7 @@ function streamPage(){
 			},
 			mouseleave:
 				function(){
-				
+				hideMtip('.'+$(this).attr('class').split(' ')[1]+' .stream-logo');
 			}
 	});
 
@@ -527,7 +536,7 @@ function streamPage(){
 						$('.stream-twitter').append(htmlString +'</ul>');
 					});
 					$('.stream-twitter div.loader').css('display','none');
-					showMtip('.stream-logo-twitter');
+					showMtipTimeout('.stream-logo-twitter');
 				}
 		);
 		
@@ -572,7 +581,7 @@ function streamPage(){
 			    	  	}
 					});
 					$('.stream-facebook div.loader').html('<span style="color: #555;>"[fetch failed]</span>');
-					showMtip('a.social.facebook');
+					showMtipTimeout('a.social.facebook');
 				}
 		);
 		
@@ -591,7 +600,7 @@ function streamPage(){
 							$('.stream-tumblr').append(htmlString +'</ul>');
 				      }); 
 					  $('.stream-tumblr div.loader').css('display','none');
-					  showMtip('.stream-logo-tumblr');
+					  showMtipTimeout('.stream-logo-tumblr');
 				  }
 		);
 		
@@ -611,7 +620,7 @@ function streamPage(){
 						$('.stream-delicious').append(htmlString +'</ul>');
 					});
 					$('.stream-delicious div.loader').css('display','none');
-					showMtip('.stream-logo-delicious');
+					showMtipTimeout('.stream-logo-delicious');
 			}
 		);
 		
@@ -636,7 +645,7 @@ function streamPage(){
 							$('.stream-lastfm').append(htmlString +'</ul>');
 					}); 
 					$('.stream-lastfm div.loader').css('display','none');
-					showMtip('.stream-logo-lastfm');
+					showMtipTimeout('.stream-logo-lastfm');
 				}
 		);
 		
@@ -656,7 +665,7 @@ function streamPage(){
 				html.push("</ul>");
 				document.getElementById('stream-wakoopa-software').innerHTML = html.join("");
 				$('.stream-wakoopa div.loader').css('display','none');
-				showMtip('.stream-logo-wakoopa');
+				showMtipTimeout('.stream-logo-wakoopa');
 			}
 		);
 		
@@ -688,7 +697,7 @@ function streamPage(){
 					});
 					$('.stream-flickr div.loader').css('display','none');
 					$('.stream-flickr').append(htmlString +'</ul></div><a href="javascript:void(0);" class="stream-carousel-nav stream-carousel-nav-next"><span class="stream-carousel-nav-inner">&#187;</span></a></div>');
-					showMtip('.stream-logo-flickr');
+					showMtipTimeout('.stream-logo-flickr');
 					
 					$('.stream-carousel-flickr').jCarouselLite({
 						 btnNext: '.stream-carousel-nav-next',
