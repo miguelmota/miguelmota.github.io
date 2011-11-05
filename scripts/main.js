@@ -670,8 +670,8 @@ function streamPage(){
 							var name = item.name;
 							var artist = item.artist['#text'];
 							var image = item.image['#text'];
-							var date =  item.date['#text'].size['small'];
-							htmlString += "<li><a href='"+url+"'><img src='"+image+"' alt='' /> "+artist+" - "+name+"</a> <time class='status-date'>"+date+"</time></li>";
+							var date =  item.date['#text'];
+							htmlString += "<li><a href='"+url+"'><img class='stream-thumb' src='"+image+"' alt='' /> "+artist+" - "+name+"</a> <time class='status-date'>"+date+"</time></li>";
 							$('.stream-lastfm').append(htmlString +'</ul>');
 					}); 
 					$('.stream-lastfm div.loader').css('display','none');
@@ -690,7 +690,7 @@ function streamPage(){
 				for(var i = 0; i < data.length; i++){
 					var entry = data[i].software;
 					var date = new Date(entry.last_active_at).toUTCString();
-					html.push("<li><a href='", entry.complete_url, "'><img src='", entry.complete_thumb_url ,"' alt='' /> ", entry.name, "</a> <time class='status-date'>"+niceTime(date)+"</time>", "</li>");
+					html.push("<li><a href='", entry.complete_url, "'><img class='stream-thumb' src='", entry.complete_thumb_url ,"' alt='' /> ", entry.name, "</a> <time class='status-date'>"+niceTime(date)+"</time>", "</li>");
 				}
 				html.push("</ul>");
 				document.getElementById('stream-wakoopa-software').innerHTML = html.join("");

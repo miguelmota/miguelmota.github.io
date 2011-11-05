@@ -645,6 +645,10 @@ img.loader {
 	border-left: 2px solid #222;
 	float: right;
 }
+.stream-thumb {
+	height: 16px;
+	width: 16px;
+}
 .stream-carousel-wrap {		
 	position: relative;
 }
