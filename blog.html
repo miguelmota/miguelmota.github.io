@@ -8,7 +8,7 @@ title: Blog
 	{% include header.html %}
 	<div class='posti'>
 		{% for post in site.posts %}
-			<div class='post blog-p'>
+			<div class='post content-item'>
 				<h1 class='post-title'><a id='post-link' href='{{ post.url }}'>{{ post.title }}</a></h1>
 				<div class='post-info'>
 					<a class='post-date' href='{{ post.url }}'>{{ post.date | date_to_string }}</a> 
