@@ -490,6 +490,17 @@ function streamPage(){
 	$(".stream-logo:not('.stream-logo-blog ,.stream-logo-latitude')").text('');
 	showMtip('.stream-logo-blog');
 	showMtip('.stream-logo-latitude');
+	
+	$('.stream-wrap').live(
+			mouseenter:
+				function(){
+					showMtip($(this).attr('class').split(' ')[1]);
+			},
+			mouseleave:
+				function(){
+				
+			}
+		);
 
 	while(c == 0){	
 		
