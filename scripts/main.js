@@ -15,6 +15,23 @@ $(document).ready(function(){
 	} */
 	
 	
+	// Initialize Masonry plugin, [http://masonry.desandro.com]
+	/* var $tumblelog = $('.posts');
+
+	$tumblelog.imagesLoaded( function(){
+	  $tumblelog.masonry({
+	    isFitWidth: true
+	  });
+	}); */
+	
+	
+	  $('.conent').masonry({
+		    // options
+		    itemSelector : '.stream-wrap',
+		    columnWidth : 400
+		 });
+	
+	
 	// Move h1 title to top on mobile
 	if(screen.width <= 640){
 		$('h1.title').insertAfter('.nav-logo',function(){

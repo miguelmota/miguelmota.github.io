@@ -188,21 +188,6 @@
 		font-size: 14px;
 		text-shadow: 0 -1px 0 rgba(0,0,0,.8);
 	}
-	.noscript {
-		background-color: #a80f0f;
-		color: #fff;
-		font-size: 24px;
-		font-weight: bold;
-		padding: 20px;
-		position: fixed;
-		text-align: center;
-		top: 0;
-		width: 100%;
-	}
-	#top {
-		position: absolute;
-		top: 0;
-	}
 	.main-wrap {
 		height: auto;
 		margin: 70px auto 0 auto;
@@ -217,6 +202,53 @@
 	.hide {
 		display: none;
 	}
+	ul li {
+		list-style-type: none;
+		line-height: 125%;
+	}
+	code {
+		background-color: #202020;
+	}
+	::selection {
+		background-color: #000;
+		background-color: rgba(0,0,0,.8);
+		color: #fff;
+		text-shadow: 0 1px 0 rgba(0,0,0,.3);
+	}
+	::-moz-selection {
+		background-color: #000;
+		background-color: rgba(0,0,0,.8);
+		color: #fff;
+		text-shadow: 0 1px 0 rgba(0,0,0,.3);
+	}
+	p {
+		line-height: 125%;
+		padding: 12px 0 4px 0;
+	}
+	p+p {
+		padding: 4px 0;
+	}
+	strong {
+		font-weight: bold;
+	}
+	.noscript {
+		background-color: #a80f0f;
+		color: #fff;
+		font-size: 24px;
+		font-weight: bold;
+		padding: 20px;
+		position: fixed;
+		text-align: center;
+		top: 0;
+		width: 100%;
+	}
+	/* ==============================================================================
+		END BASIC
+	============================================================================== */
+		
+	/* ==============================================================================
+		LINKS
+	============================================================================== */
 	a {
 		color: {color:Link};
 		font-weight: bold;
@@ -233,57 +265,8 @@
 	a:active {
 		text-shadow: 0 -1px 0 rgba(0,0,0,.5);
 	}
-	ul li {
-		list-style-type: none;
-	}
-	code {
-		background-color: #202020;
-	}
-	.highlight {
-		background-color: #202020;
-		margin: 10px 0;
-		overflow-x: auto;
-		padding: 5px;
-		text-shadow: none !important;
-		word-wrap: break-word;
-	}
-	em {
-		display: inline;
-	}
-	::selection {
-		background-color: #000;
-		background-color: rgba(0,0,0,.8);
-		color: #fff;
-		text-shadow: 0 1px 0 rgba(0,0,0,.3);
-	}
-	::-moz-selection {
-		background-color: #000;
-		background-color: rgba(0,0,0,.8);
-		color: #fff;
-		text-shadow: 0 1px 0 rgba(0,0,0,.3);
-	}
-	label {
-		margin-right: 5px;
-	}
-	p {
-		line-height: 125%;
-		padding: 12px 0 4px 0;
-	}
-	p+p {
-		padding: 4px 0;
-	}
-	strong {
-		font-weight: bold;
-	}
-	textarea {
-		overflow: auto;
-		resize: none;
-	}
-	ul li {
-		line-height: 125%;
-	}
 	/* ==============================================================================
-		END BASIC
+		END LINKS
 	============================================================================== */
 	
 	/* ==============================================================================
@@ -320,6 +303,10 @@
 		border-color: #555;
 		border-left: 4px solid #555;
 		color: #555;
+	}
+	textarea {
+		overflow: auto;
+		resize: none;
 	}
 	.button {
 		background: #004c66;
@@ -399,11 +386,6 @@
 		color: #fff;
 		font-weight: bold;
 	}
-	.top-link-wrap {
-		clear: both;
-		padding: 10px 0 15px 0;
-		width: 100%;
-	}
 	/* ==============================================================================
 		END MAIN SIDE NAVIGATION
 	============================================================================== */
@@ -449,6 +431,25 @@
 	}
 	/* ==============================================================================
 		END FOLLOWING
+	============================================================================== */
+	
+	/* ==============================================================================
+		BACK TO TOP BUTTON
+	============================================================================== */
+	#top {
+		position: absolute;
+		top: 0;
+	}
+	.top-link {
+		display: none;
+		float: right;
+	}
+	/* ==============================================================================
+		END BACK TO TOP BUTTON
+	============================================================================== */
+	
+	/* ==============================================================================
+		TWEETS
 	============================================================================== */
 	#tweet-wrap {
 		display: none;
@@ -809,10 +810,6 @@
 		background: url('http://static.tumblr.com/r8galzl/zt1lu4l89/up.png');
 		height: 24px;
 		width: 24px;
-	}
-	.top-link {
-		display: none;
-		float: right;
 	}
 	.icon-video {
 		background: url('http://static.tumblr.com/r8galzl/B5blu4l8k/video.png');
