@@ -987,8 +987,6 @@ label[for='message'].error {
 	BLOG
 ============================================================================== */
 .blog-item {
-	height: 500px;
-	overflow: hidden;
 	width: 400px;
 }
 .blog-post {
