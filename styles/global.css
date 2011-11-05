@@ -720,7 +720,6 @@ a.google-plus-link {
 }
 .project {
 	height: 200px;
-	width: 650px;
 }
 .project .image-container {
 	transition: box-shadow linear .2s;
@@ -733,7 +732,7 @@ a.google-plus-link {
 .project .image-container {
 	height: auto;
 	position: absolute;
-	width: 97%;
+	width: 610px;
 }
 .overlay-popup {
 	background: #000;
