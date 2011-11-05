@@ -943,6 +943,7 @@ div.contact-qrcode {
 }
 form.contact-form {
 	float: left;
+	width: 99%;
 }
 div.input input, div.input textarea {
 	background-color: #202020;
