@@ -527,8 +527,8 @@ img.loader {
 	width: 250px;
 }
 .stream-flickr {
-	min-width: 500px;
 	max-width: 700px;
+	min-width: 500px;
 	width: auto;
 }
 .stream-iframe-latitude {
@@ -990,6 +990,11 @@ label[for='message'].error {
 	height: 500px;
 	overflow: hidden;
 	width: 400px;
+}
+.blog-post {
+	max-width: 100%;
+	min-width: 500px;
+	width: 800px;
 }
 div.blog-info {
 	clear: both;

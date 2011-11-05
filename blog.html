@@ -6,9 +6,8 @@ title: Blog
 
 <section class='content blog'>
 	{% include header.html %}
-	<div class='posti'>
 		{% for post in site.posts %}
-			<div class='post content-item blog-item'>
+			<div class='content-item blog-item'>
 				<h1 class='post-title'><a id='post-link' href='{{ post.url }}'>{{ post.title }}</a></h1>
 				<div class='post-info'>
 					<a class='post-date' href='{{ post.url }}'>{{ post.date | date_to_string }}</a> 
@@ -52,14 +51,13 @@ title: Blog
 		-->
 		
 		<div class='pagination'><a href='/archive'>view archive &#187;</a></div>
-	</div>
-	<script>
-	    var disqus_shortname = 'miguelmota';
-	    (function () {
-	        var s = document.createElement('script'); s.async = true;
-	        s.type = 'text/javascript';
-	        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
-	        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-	    }());
-	</script>
+		<script>
+		    var disqus_shortname = 'miguelmota';
+		    (function () {
+		        var s = document.createElement('script'); s.async = true;
+		        s.type = 'text/javascript';
+		        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+		        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+		    }());
+		</script>
 </section>
