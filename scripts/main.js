@@ -63,7 +63,7 @@ $(document).ready(function(){
 	
 	
 	// Draggable;
-	$('.content-item').draggable('option','cursor','crosshair');
+	$('.content-item').draggable({cursor: 'move'});
 	
 	
 	// Move h1 title to top on mobile
