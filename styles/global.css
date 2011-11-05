@@ -987,8 +987,9 @@ label[for='message'].error {
 	BLOG
 ============================================================================== */
 .blog-item {
-	width: 400px;
 	height: 500px;
+	overflow: hidden;
+	width: 400px;
 }
 div.blog-info {
 	clear: both;
