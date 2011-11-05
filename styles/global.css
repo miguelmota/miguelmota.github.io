@@ -636,6 +636,7 @@ img.loader {
 	width: 200px;
 }
 .stream-ul-chart li {
+	display: block;
 	padding: 5px;
 	width: 100%;
 }
