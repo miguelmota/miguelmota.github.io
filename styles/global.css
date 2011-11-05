@@ -891,7 +891,7 @@ div.fancybox-title span {
 div.work-image {
 	height: auto;
 	margin-bottom: 15px;
-	width: 650px;
+	width: 100%;
 }
 div.work-image img {
 	height: auto;
