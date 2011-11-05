@@ -358,7 +358,7 @@ textarea {
 div.loader {
 	background: url('/images/ajax-loader.gif') no-repeat 0 0;
 	height: 16px;
-	margin-right: 5px;
+	margin: 0 auto;
 	width: 16px;
 }
 div.loader-container {
