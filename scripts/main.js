@@ -60,7 +60,10 @@ $(document).ready(function(){
 			$(this).addClass('selected');
 		}
 	});
-
+	
+	
+	// Draggable;
+	$('.content-item').draggable();
 	
 	
 	// Move h1 title to top on mobile
