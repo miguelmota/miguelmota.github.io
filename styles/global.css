@@ -709,6 +709,7 @@ a.google-plus-link {
 ============================================================================== */
 .work-sort-wrap {
 	clear: both;
+	margin-top: -20px;
 	padding: 10px;
 	text-align: right;
 	width: 650px;
