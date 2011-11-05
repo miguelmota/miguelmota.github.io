@@ -334,7 +334,7 @@ textarea {
 	background-color: #222;
 	margin: 10px;
 	padding: 20px;
-	width: 600px;
+	width: 700px;
 }
 .content-item img {
 	background: #222 url('http://static.tumblr.com/r8galzl/wmilu4kzw/ajax-loader-image.gif') no-repeat 50% 50%;
@@ -514,8 +514,17 @@ img.loader {
 .stream-wrap {
 	width: 350px
 }
+.stream-latitude {
+	width: 250px;
+}
+.stream-twitter {
+	width: 500px;
+}
+.stream-wakoopa {
+	width: 250px;
+}
 .stream-iframe-latitude {
-	background: #252525 url('/images/ajax-loader.gif') no-repeat 0 0;
+	background: #222 url('/images/ajax-loader.gif') no-repeat 0 0;
 	border: 0 !important;
 	clear: both;
 	height: 16px;
@@ -624,19 +633,18 @@ img.loader {
 	width: 200px;
 }
 .stream-ul-chart li {
-	font-size: 10px;
 	margin: 2px;
-	padding: 2px;
+	padding: 10px;
 }
 .stream-ul-chart li:nth-child(odd) {
 	background-color: #202020;	
 }
 .stream-ul-chart a  {
-	color: #999;
+	
 }
 .stream-ul-chart a:hover,
 .stream-ul-chart a:active  {
-	text-decoration: underline;
+
 }
 .stream-ul-chart .status-date,
 .stream-ul-chart .status-date {
@@ -694,7 +702,7 @@ img.loader {
 	z-index: 100;
 }
 .status-date {
-	font-size: 9px;
+	font-size: 12px;
 }
 /* ==============================================================================
 	END STREAM
