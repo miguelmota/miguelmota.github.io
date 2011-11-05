@@ -3,7 +3,7 @@
 <title></title>
 <link href='http://www.miguelmota.com/styles/reset.css' rel='stylesheet' />
 <link href='http://www.miguelmota.com/styles/global.css' rel='stylesheet' />
-<body style='display: block; background-color: #222;'>
+<body style='display: block;'>
 
 <?
 
