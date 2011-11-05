@@ -25,10 +25,9 @@ $(document).ready(function(){
 	}); */
 	
 	
-	  $('.conent').masonry({
+	  $('.content').masonry({
 		    // options
-		    itemSelector : '.stream-wrap',
-		    columnWidth : 400
+		    itemSelector : '.stream-wrap'
 		 });
 	
 	
