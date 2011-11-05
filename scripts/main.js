@@ -63,7 +63,7 @@ $(document).ready(function(){
 	
 	
 	// Draggable;
-	$('.content-item').draggable({
+	$('.stream-wrap').draggable({
 			cursor: 'move'
 		});
 	/* $('.content-item:not(".stream-latitude, .stream-flickr")').resizable({  
