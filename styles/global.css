@@ -1008,15 +1008,14 @@ label[for='message'].error {
 .post-tags a {
 	font-weight: normal;
 }
-.dsq-comment-count-wrap {
-	float: right;
-	padding-right: 5px;
+.dsq-comment-wrap {
+	padding: 10px 5px 5px;
 }
 .post-footer {
 	border-top: 1px solid #333;
 	font-size: 12px;
 	margin: 10px 0;
-	padding: 10px 0;
+	padding: 5px 0;
 }
 .share-wrap {}
 input.short-url {
@@ -1052,7 +1051,7 @@ input.short-url {
 .pagination {
 	clear: both;
 	font-size: 18px;
-	padding: 25px 10px 10px 10px;
+	padding: 25px 5px 5px 5px;
 	text-align: center;
 }
 .pagination-jump {
