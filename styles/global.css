@@ -1069,12 +1069,10 @@ input.short-url {
 .pagination-next {
 	float: right;
 	text-align: right;
-	width: 200px;
 }
 .pagination-previous {
 	float: left;
 	text-align: left;
-	width: 200px;
 }
 /* ==============================================================================
 	END PAGINATION
