@@ -30,8 +30,10 @@ body {
 .main-wrap {
 	height: auto;
 	margin: 70px auto 0 auto;
-	width: 760px;
+	width: 80%;
 	word-wrap: break-word;
+	padding-left: 250px;
+	position: relative;
 }
 #top {
 	position: absolute;
