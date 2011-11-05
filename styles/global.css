@@ -685,7 +685,7 @@ img.loader {
 	float: left;
 	min-height: 120px;
 	height: auto;
-	margin-right: 10px;
+	margin-right: 50px;
 	transition: all .2s ease-in-out;
 	-moz-transition: all .2s ease-in-out;
 	-o-transition: all .2s ease-in-out;
