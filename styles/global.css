@@ -665,8 +665,8 @@ img.loader {
 	display: inline-block;
 	border-left: 0;
 	float: left;
-	min-height: 60px;
-	padding: 0 8px;
+	min-height: 120px;
+	padding: 0 14px;
 	position: relative;
 	text-align: center;
 	text-shadow: none;
@@ -685,7 +685,7 @@ img.loader {
 	top: 50%;
 }
 .stream-ul-flickr li a {
-	background-color: #252525;
+	background-color: #222;
 	display: inline-block;
 	float: left;
 	min-height: 120px;
