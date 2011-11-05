@@ -1010,6 +1010,10 @@ label[for='message'].error {
 .post-tags a {
 	font-weight: normal;
 }
+.dsq-comment-count-wrap {
+	float: right;
+	padding-right: 5px;
+}
 .dsq-comment-wrap {
 	padding: 10px 5px 5px;
 	width: 100%;
