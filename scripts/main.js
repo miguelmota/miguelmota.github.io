@@ -654,13 +654,13 @@ function streamPage(){
 		
 		// Last.fm stream
 		$('.stream-lastfm div.loader').css('display','block');
-		// http://ws.audioscrobbler.com/2.0/?format=json&method=user.getRecentTracks&user=miguel_mota&api_key=b25b959554ed76058ac220b7b2e0a026&limit=5&callback=?
+		// http://ws.audioscrobbler.com/2.0/?format=json&method=user.getRecentTracks&user=miguel_mota&api_key=dc0e875b6c0fd8ac4891b0716897e6c1&limit=5&callback=?
 		$.getJSON('http://ws.audioscrobbler.com/2.0/?callback=?', 
 				{
 					format: 'json',
 					method: 'user.getRecentTracks',
 					user: 'miguel_mota',
-					api_key: 'b25b959554ed76058ac220b7b2e0a026',
+					api_key: 'dc0e875b6c0fd8ac4891b0716897e6c1',
 					limit: '5'
 				},
 				function(data){       
@@ -669,7 +669,7 @@ function streamPage(){
 							var url = item.url;
 							var name = item.name;
 							var artist = item.artist['#text'];
-							var image = item.image.size["small"];
+							var image = item.image.small;
 							var date =  item.date['#text'];
 							htmlString += "<li><a href='"+url+"'><img class='stream-thumb' src='"+image+"' alt='' /> "+artist+" - "+name+"</a> <time class='status-date'>"+date+"</time></li>";
 							$('.stream-lastfm').append(htmlString +'</ul>');
