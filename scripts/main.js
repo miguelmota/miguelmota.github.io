@@ -9,8 +9,7 @@ $(document).ready(function(){
 
 		$tumblelog.imagesLoaded( function(){
 		  $tumblelog.masonry({
-		    isFitWidth: true,
-		    itemSelector : '.content-item'
+		    isFitWidth: true
 		  });
 		});
 	
