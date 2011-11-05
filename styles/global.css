@@ -807,8 +807,6 @@ a.google-plus-link {
 	width: 100%;
 }
 div.work-description {
-	padding-bottom: 10px;
-	position: relative;
 }
 .work-date {
 	color: #777;
@@ -890,7 +888,6 @@ div.fancybox-title span {
 }
 div.work-image {
 	height: auto;
-	margin-bottom: 15px;
 	width: 250px;
 }
 div.work-image img {
