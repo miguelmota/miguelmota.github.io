@@ -708,8 +708,10 @@ a.google-plus-link {
 	PORTFOLIO
 ============================================================================== */
 .work-sort-wrap {
+	clear: both;
 	position: absolute;
-	right: 0;
+	float: right;
+	width: 100%;
 }
 .work-sort-wrap a.selected {
 	background-color: #252525;
@@ -720,6 +722,7 @@ a.google-plus-link {
 }
 .project {
 	height: 200px;
+	width: 610px;
 }
 .project .image-container {
 	transition: box-shadow linear .2s;
