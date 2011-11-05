@@ -721,7 +721,7 @@ a.google-plus-link {
 }
 .project {
 	height: 200px;
-	width: 610px;
+	width: 100%;
 }
 .project .image-container {
 	height: 200px;
