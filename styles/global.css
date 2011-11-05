@@ -739,7 +739,7 @@ a.google-plus-link {
 }
 .overlay-popup {
 	background: #000;
-	bottom: -90px;
+	bottom: -100px;
 	box-sizing: border-box;
 	height: 100px;
 	opacity: .9;
