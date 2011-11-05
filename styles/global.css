@@ -724,7 +724,6 @@ a.google-plus-link {
 	width: 100%;
 }
 .project .image-container {
-	height: 200px;
 	transition: box-shadow linear .2s;
 	-moz-transition: -moz-box-shadow linear .2s;
 	-o-transition: -o-box-shadow linear .2s;
@@ -733,7 +732,10 @@ a.google-plus-link {
 	behavior: url('/PIE/PIE.htc');
 }
 .project .image-container {
-	width: 97%;
+	height: auto;
+	left: 0;
+	position: absolute;
+	width: 99%;
 }
 .overlay-popup {
 	background: #000;
