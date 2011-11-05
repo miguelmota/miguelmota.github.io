@@ -179,12 +179,17 @@ $(document).ready(function(){
 	}
 	*/
 	
+	streamPage();
+	portfolioPage();
+	contactPage();
+	blogPage();
+	
 	
 	// add selected class based on the section block class
 	$('ul.main-nav li a').each(function(){ 
 		if($(this).attr('id') == $('section.content').attr('class').split(' ')[1]){
 			$(this).addClass('selected');
-			switch($('section.content').attr('class').split(' ')[1]){
+			/*switch($('section.content').attr('class').split(' ')[1]){
 				case 'stream':
 					streamPage();
 					break;
@@ -201,7 +206,8 @@ $(document).ready(function(){
 					blogPage();
 				default:
 					break;
-			}
+			}*/
+		
 		}
 	});
 	
@@ -224,14 +230,14 @@ $(document).ready(function(){
 	*/
 	
 	//append title
-	$('body').append("<div class='theTitle' style='display: none;'> &#8212; Miguel Mota | Freelance Web Developer</div>");
+	// $('body').append("<div class='theTitle' style='display: none;'> &#8212; Miguel Mota | Freelance Web Developer</div>");
 	
-	//redirect to poper page if pushSate not supported
-	if(typeof(window.history.pushState) != 'function'){
+	// redirect to poper page if pushSate not supported
+	/*if(typeof(window.history.pushState) != 'function'){
 		if(window.location.hash){
 			window.location = '/'+window.location.hash.substr(2);
 		}
-	}
+	}*/
 	
 	//back to top smooth scroll effect
 	$('a[href*=#]').click(function() {
@@ -422,6 +428,8 @@ var niceTime = (function(){
 	    };
 	})();
 
+// ajax load page
+/*
 $("ul.main-nav a:not('.nav-logo, #blog')").live('click', function(){
 		if(typeof(window.history.pushState) == 'function' && screen.width > 640){
 			c = 0;
@@ -449,6 +457,7 @@ $("ul.main-nav a:not('.nav-logo, #blog')").live('click', function(){
 			return true;
 		}
 });
+*/
 
 
 /*
