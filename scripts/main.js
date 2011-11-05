@@ -1,9 +1,18 @@
 $(document).ready(function(){
 	
-	  $('.content').masonry({
+	  //$('.content').masonry({
 		    // options
+		  //  itemSelector : '.content-item'
+		 //});
+	  
+		var $tumblelog = $('.content');
+
+		$tumblelog.imagesLoaded( function(){
+		  $tumblelog.masonry({
+		    isFitWidth: true,
 		    itemSelector : '.content-item'
-		 });
+		  });
+		});
 	
 	//display mobile link if window is 640px or less
 	/*if(window.innerWidth <= 640){
