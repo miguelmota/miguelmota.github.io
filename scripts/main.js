@@ -103,7 +103,7 @@ $(document).ready(function(){
 	// Move h1 title to top on mobile
 	if(screen.width <= 640){
 		$('main-side-nav-ul').css({
-			position: 'absolute'
+			'position': 'absolute'
 		});
 		//$('#cse-search-form').insertAfter('.blog-description');
 	}
