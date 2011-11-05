@@ -94,7 +94,8 @@ $(document).ready(function(){
 		e.preventDefault();
 		return false;
 	});
-	$('a[href^=http]:not([rel*=internal])').live('click', function(){
+	$('a[href^=http]:not([rel*=internal])').attr('rel','external');
+	$('a[rel*=external])').live('click', function(){
 		window.open(this.href);
 		return false;
 	});
