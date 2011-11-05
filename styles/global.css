@@ -997,17 +997,8 @@ label[for='message'].error {
 	width: 80%;
 }
 .blog-post h1 a {
+	display: block;
 	font-size: 24px;
-}
-.comment-count-wrap {
-	float: right;
-}
-.comment-bubble-icon {
-	background: url('/images/pictos/235-00374a.png') no-repeat 0 0;
-	display: inline-block;
-	height: 14px;
-	vertical-align: middle;
-	width: 16px;
 }
 .post-tags {
 	color: #777;
@@ -1015,6 +1006,10 @@ label[for='message'].error {
 }
 .post-tags a {
 	font-weight: normal;
+}
+.dsq-comment-count-wrap {
+	float: right;
+	padding-right: 5px;
 }
 .post-footer {
 	border-top: 1px solid #333;
