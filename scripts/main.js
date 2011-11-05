@@ -63,7 +63,13 @@ $(document).ready(function(){
 	
 	
 	// Draggable;
-	$('.content-item').draggable({cursor: 'move'}).resizable();
+	$('.content-item').draggable({
+			cursor: 'move'
+		}).resizable({  
+			minWidth: 100,
+		    maxWidth: 800,
+		    handles: 'se'
+	    });
 	
 	
 	// Move h1 title to top on mobile
