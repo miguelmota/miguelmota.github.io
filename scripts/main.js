@@ -49,7 +49,7 @@ $(document).ready(function(){
 	
 	// Add selected class to nav link based on page name
 	$('.main-side-nav-ul a').each(function(){ 
-		if($(this).attr('id') == $('.main-content-wrap').attr('class').split(' ')[1]){
+		if($(this).attr('id') == $('.content').attr('class').split(' ')[1]){
 			$('#stream').removeClass('selected');
 			$(this).addClass('selected');
 		}
