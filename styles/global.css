@@ -643,6 +643,7 @@ img.loader {
 }
 .stream-thumb {
 	background: none;
+	border: 0;
 	height: 16px;
 	min-height: 8px;
 	width: 16px;
