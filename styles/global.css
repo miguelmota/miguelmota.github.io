@@ -235,7 +235,6 @@ textarea {
 ============================================================================== */
 .main-side-nav-wrap {
 	left: 0;
-	position: absolute;
 	width: 200px;
 }
 .main-side-nav {
@@ -309,7 +308,6 @@ textarea {
 .main-content-wrap {
 	height: auto;
 	position: relative;
-	margin-left: 250px;
 }
 .content-item {
 	background-color: #222;
