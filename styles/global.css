@@ -1102,6 +1102,13 @@ input.short-url {
 /* ==============================================================================
 	GOOGLE CUSTOM SEARCH ENGINE
 ============================================================================== */
+.cse-search-form-wrap {
+	float: right;
+	margin-top: -15px;
+	padding: 0;
+	text-align: right;
+	width: 650px;
+}
 div#cse-search-form {
 	float: right;
 	padding: 0;
