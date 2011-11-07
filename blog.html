@@ -14,7 +14,7 @@ title: Blog
 				</div>
 				<div class='view-post-wrap'>&#8230; <a href='{{ post.url }}'>view full post &#187;</a></div>
 				<div class='post-tags'>
-					<span class='icon icon-tags-16'></span>
+					<span class='icon icon-tags-16 icon-no-hover'></span>
 					{% for category in post.categories %}
 						<span name='{{ category | first }}'>[{{ category | first }}]</span>
 					{% endfor %}
