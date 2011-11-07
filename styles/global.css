@@ -27,7 +27,6 @@ body {
 	height: auto;
 	margin: 70px 20px 0 20px;
 	word-wrap: break-word;
-	padding-left: 250px;
 	position: relative;
 }
 .main-wrap-left-stop {
@@ -310,7 +309,7 @@ textarea {
 .main-content-wrap {
 	height: auto;
 	position: relative;
-	margin-left: 250px;
+	margin-left: 450px;
 }
 .content-item {
 	background-color: #222;
