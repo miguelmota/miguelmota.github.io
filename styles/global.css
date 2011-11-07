@@ -502,9 +502,7 @@ img.loader {
 }
 */
 .stream-flickr {
-	max-width: 700px;
-	min-width: 500px;
-	width: auto;
+	width: 700px;
 }
 .stream-iframe-latitude {
 	background: #222 url('/images/ajax-loader.gif') no-repeat 0 0 !important;
