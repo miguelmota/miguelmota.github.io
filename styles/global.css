@@ -983,8 +983,9 @@ label[for='message'].error {
 	width: 400px;
 }
 .blog-item .post-text {
-	max-height: 310px;
+	max-height: 309px;
 	overflow: hidden;
+	text-overflow: ellipsis;
 }
 .blog-post {
 	width: 99%;
