@@ -233,7 +233,8 @@ textarea {
 	MAIN NAVIGATION
 ============================================================================== */
 .main-side-nav-wrap {
-	float: left;
+	left: 0;
+	position: absolute;
 	width: 200px;
 }
 .main-side-nav {
