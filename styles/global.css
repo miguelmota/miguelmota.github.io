@@ -27,6 +27,7 @@ body {
 	height: auto;
 	margin: 70px 20px 0 20px;
 	word-wrap: break-word;
+	padding-left: 250px;
 	position: relative;
 }
 .main-wrap-left-stop {
