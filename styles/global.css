@@ -821,7 +821,9 @@ a.google-plus-link {
 	position: absolute;
 	width: 100%;
 }
-.work-description {
+.work-description {;
+}
+.work-description-footer {
 	border-top: 1px solid #333;
 	margin-top: 10px;
 	padding-top: 10px;
