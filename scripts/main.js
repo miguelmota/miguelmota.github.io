@@ -88,9 +88,9 @@ $(document).ready(function(){
 	
 	
 	// Draggable;
-	$('.stream-wrap').draggable({
-			cursor: 'move'
-		});
+	//$('.stream-wrap').draggable({
+			//cursor: 'move'
+		//});
 	/* $('.content-item:not(".stream-latitude, .stream-flickr")').resizable({  
 			minHeight: 100,
 			maxHeight: 500,
