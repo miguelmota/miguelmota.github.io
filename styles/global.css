@@ -30,7 +30,8 @@ body {
 	position: relative;
 }
 .main-wrap-left-stop {
-
+	width: 250px
+	height: 600px;
 }
 #top {
 	position: absolute;
@@ -234,10 +235,12 @@ textarea {
 	MAIN NAVIGATION
 ============================================================================== */
 .main-side-nav-wrap {
-	float: left;
+	left: 0;
+	position: absolute;
 	width: 200px;
 }
 .main-side-nav {
+	position: fixed;	
 	width: 200px;
 }
 .nav-logo {
