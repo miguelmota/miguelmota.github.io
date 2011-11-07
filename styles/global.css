@@ -821,10 +821,9 @@ a.google-plus-link {
 div.work-description {
 }
 .work-date {
-
+	float: right;
 }
 a.site-link {
-
 }
 /*
 .miggs-thumb {
