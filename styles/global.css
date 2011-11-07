@@ -1125,18 +1125,18 @@ div#cse-search-form input[type=text]:focus {
 	border-color: #007299 !important;
 	color: #999 !important;
 }
-.cse-wrap {
-	clear: both;
-	width: 100%;
-}
 div#cse {
+	background-color: #222 !important;
+	border: 0 !important;
 	clear: both;
+	padding: 20px;
+	width: 700px;
+	z-index: 100;
 }
-div#cse,
 div.gsc-control-cse,
 div.gsc-results,
 div.gsc-resultsRoot {
-	background-color: #252525 !important;
+	background-color: #222 !important;
 	border: 0 !important;
 	padding: 0 !important;
 }
