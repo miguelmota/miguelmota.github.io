@@ -713,7 +713,7 @@ function streamPage(){
 							var name = item.name;
 							var artist = item.artist['#text'];
 							var image = item.image[0]['#text'];
-							var date =  item.date['#text']
+							var date =  item.date['#text'];
 							var date_uts =  new Date(item.date['uts']).toUTCString();
 							htmlString += "<li><a href='"+url+"'><img class='stream-thumb' src='"+image+"' alt='' /> "+artist+" - "+name+"</a> <time class='status-date'>"+niceTime(date_uts)+"</time></li>";
 							$('.stream-lastfm').append(htmlString +'</ul>');
