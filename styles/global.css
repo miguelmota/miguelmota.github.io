@@ -573,7 +573,7 @@ img.loader {
 	color: #007799;
 }
 .stream-logo-tumblr {
-	background: url('/images/tumblr-sprite.png');
+	background: url('/images/sprites/tumblr-sprite.png');
 	height: 16px;
 	width: 75px;
 }
@@ -582,7 +582,7 @@ img.loader {
 	background-position: 0 15px;
 }
 .stream-logo-facebook {
-	background: url('/images/facebook-sprite.png');
+	background: url('/images/sprites/facebook-sprite.png');
 	width: 73px;
 }
 .stream-logo-facebook:hover,
@@ -590,7 +590,7 @@ img.loader {
 	background-position: 0 16px;
 }
 .stream-logo-twitter {
-	background: url('/images/twitter-sprite.png');
+	background: url('/images/sprites/twitter-sprite.png');
 	width: 78px;
 }
 .stream-logo-twitter:hover,
@@ -598,7 +598,7 @@ img.loader {
 	background-position: 0 16px;
 }
 .stream-logo-delicious {
-	background: url('/images/delicious-sprite.png');
+	background: url('/images/sprites/delicious-sprite.png');
 	height: 15px;
 	width: 83px;
 }
@@ -607,7 +607,7 @@ img.loader {
 	background-position: 0 16px;
 }
 .stream-logo-lastfm {
-	background: url('/images/lastfm-sprite.png');
+	background: url('/images/sprites/lastfm-sprite.png');
 	width: 62px;
 }
 .stream-logo-lastfm:hover,
@@ -615,7 +615,7 @@ img.loader {
 	background-position: 0 16px;
 }
 .stream-logo-wakoopa {
-	background: url('/images/wakoopa-sprite.png');
+	background: url('/images/sprites/wakoopa-sprite.png');
 	width: 75px;
 	height: 18px;
 }
@@ -624,7 +624,7 @@ img.loader {
 	background-position: 0 18px;
 }
 .stream-logo-flickr {
-	background: url('/images/flickr-sprite.png');
+	background: url('/images/sprites/flickr-sprite.png');
 	width: 51px;
 	height: 16px;
 }
