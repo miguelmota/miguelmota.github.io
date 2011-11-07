@@ -1131,7 +1131,7 @@ div#cse {
 	clear: both;
 	padding: 20px;
 	width: 700px;
-	z-index: 100;
+	z-index: 10000;
 }
 div.gsc-control-cse,
 div.gsc-results,
