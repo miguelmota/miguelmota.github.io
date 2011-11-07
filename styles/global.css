@@ -30,6 +30,8 @@ body {
 	position: relative;
 }
 .main-wrap-left-stop {
+	float: left;
+	border: 1px solid black;
 	width: 250px;
 	height: 600px;
 }
