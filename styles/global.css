@@ -304,6 +304,10 @@ textarea {
 	padding-bottom: 15px;
 	width: 100%;
 }
+.top-link {
+	display: none;
+	float: right;
+}
 /* ==============================================================================
 	END MAIN NAVIGATION
 ============================================================================== */
@@ -403,84 +407,99 @@ img.loader {
 	margin-right: 2px;
 	width: 24px;
 }
-.icon-audio {
-	background: url('http://static.tumblr.com/r8galzl/0jWlu4l1b/audio.png');
+.icon-audio-24 {
+	background: url('/images/icons/pictos/24/audio.png');
 }
-.icon-chat {
-	background: url('http://static.tumblr.com/r8galzl/gNzlu4l1p/chat.png');
+.icon-calendar-16 {
+	background: url('/images/icons/pictos/16/calendar.png');
 }
-.icon-comments {
-	background: url('http://static.tumblr.com/r8galzl/rxvlu4l2l/comments.png');
+.icon-calendar-check-16 {
+	background: url('/images/icons/pictos/16/check.png');
+}
+.icon-chat-16 {
+	background: url('/images/icons/pictos/16/chat.png');
+}
+.icon-chat-24 {
+	background: url('/images/icons/pictos/24/chat.png');
+}
+.icon-checkmark-16 {
+	background: url('/images/icons/pictos/16/checkmark.png');
+	height: 16px;
+}
+.icon-clock-16 {
+	background: url('/images/icons/pictos/16/clock.png');
+}
+.icon-comments-16 {
+	background: url('/images/icons/pictos/16/comments.png');
 	height: 13px;
 }
-.icon-date {
-	background: url('http://static.tumblr.com/r8galzl/siClu4l2w/date.png');
+.icon-dribbble-24 {
+	background: url('/images/icons/pictos/24/dribbble.png');
 }
-.icon-dribbble {
-	background: url('http://static.tumblr.com/r8galzl/84llu4l3m/dribbble.png');
+.icon-facebook-24 {
+	background: url('/images/icons/pictos/24/facebook.png');
 }
-.icon-facebook {
-	background: url('http://static.tumblr.com/r8galzl/14Elu4l3x/facebook.png');
+.icon-flickr-24 {
+	background: url('/images/icons/pictos/24/flickr.png');
 }
-.icon-flickr {
-	background: url('http://static.tumblr.com/r8galzl/g0tlu4l4b/flickr.png');
-}
-.icon-heart {
-	background: url('http://static.tumblr.com/r8galzl/nf8lu4l37/heart.png');
+.icon-heart-16 {
+	background: url('/images/icons/pictos/16/heart.png');
 	height: 14px;
 }
-.icon-link-post {
-	background: url('http://static.tumblr.com/r8galzl/hPxlu4l4s/link.png');
+.icon-link-16 {
+	background: url('/images/icons/pictos/16/link.png');
 }
-.icon-link {
-	background: url('/images/tumblr/16/link.png');
+.icon-link-24 {
+	background: url('/images/icons/pictos/24/link.png');
 }
-.icon-photo {
-	background: url('http://static.tumblr.com/r8galzl/1Rclu4l5d/photo.png');
+.icon-phone-16 {
+	background: url('/images/icons/pictos/16/phone.png');
 }
-.icon-quote {
-	background: url('http://static.tumblr.com/r8galzl/PBclu4l5q/quote.png');
+.icon-photo-16 {
+	background: url('/images/icons/pictos/16/photo.png');
 }
-.icon-random {
-	background: url('http://static.tumblr.com/r8galzl/m4Tlu4l61/random.png');
+.icon-photo-24 {
+	background: url('/images/icons/pictos/24/photo.png');
+}
+.icon-quote-24 {
+	background: url('/images/icons/pictos/24/quote.png');
+}
+.icon-random-24 {
+	background: url('/images/icons/pictos/24/random.png');
 	height: 18px;
 }
-.icon-reblog {
-	background: url('http://static.tumblr.com/r8galzl/B6Hlu4l6v/reblog.png');
+.icon-reblog-16 {
+	background: url('/images/icons/pictos/16/reblog.png');
 }
-.icon-subscribe {
-	background: url('http://static.tumblr.com/r8galzl/mutlu4l6b/rss.png');
+.icon-subscribe-24 {
+	background: url('/images/icons/pictos/24/rss.png');
 }
-.icon-tag {
-	background: url('http://static.tumblr.com/r8galzl/fgnlu4l7c/tags.png');
+.icon-tags-16 {
+	background: url('/images/icons/pictos/16/tags.png');
 	width: 12px;
 }
-.icon-text {
-	background: url('http://static.tumblr.com/r8galzl/NMVlu4l9k/text.png');
+.icon-text-24 {
+	background: url('/images/icons/pictos/24/text.png');
 }
-.icon-tumblr {
-	background: url('http://static.tumblr.com/r8galzl/obJlu4l9w/tumblr.png');
+.icon-tumblr-24 {
+	background: url('/images/icons/pictos/24/tumblr.png');
 }
-.icon-twitter {
-	background: url('http://static.tumblr.com/r8galzl/5ehlu4l99/twitter.png');
+.icon-twitter-24 {
+	background: url('/images/icons/pictos/24/twitter.png');
 }
-.icon-twitter-bird {
-	background: url('http://static.tumblr.com/r8galzl/73Ilu4l8u/twitter-bird.png');
+.icon-twitter-bird-16 {
+	background: url('/images/icons/pictos/16/twitter-bird.png');
 	float: left;
 	height: 13px;
 	margin: 0 10px 10px 0;
 }
-.icon-up {
-	background: url('http://static.tumblr.com/r8galzl/zt1lu4l89/up.png');
+.icon-video-24 {
+	background: url('/images/icons/pictos/24/video.png');
+}
+.icon-up-24 {
+	background: url('/images/icons/pictos/24/up.png');
 	height: 24px;
 	width: 24px;
-}
-.top-link {
-	display: none;
-	float: right;
-}
-.icon-video {
-	background: url('http://static.tumblr.com/r8galzl/B5blu4l8k/video.png');
 }
 /* ==============================================================================
 	END ICONS
@@ -938,13 +957,6 @@ div.work-image img {
 	display: none;
 	margin-bottom: 10px;
 }
-.phone-icon {
-	background: url('/images/pictos/313-999.png') no-repeat 0 0;
-	display: inline-block;
-	height: 16px;
-	vertical-align: middle;
-	width: 7px;
-}
 form.contact-form {
 	float: left;
 	width: 100%;
@@ -1035,6 +1047,9 @@ label[for='message'].error {
 }
 .post-tags a {
 	font-weight: normal;
+}
+.post-tags .icon-post-tags {
+	margin-right: 4px;
 }
 .dsq-comment-count-wrap {
 	float: right;

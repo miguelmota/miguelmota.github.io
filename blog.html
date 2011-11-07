@@ -14,14 +14,14 @@ title: Blog
 				</div>
 				<div class='view-post-wrap'>&#8230; <a href='{{ post.url }}'>view full post &#187;</a></div>
 				<div class='post-tags'>
-					<span class='icon icon-tag'></span>
+					<span class='icon icon-tags-16'></span>
 					{% for category in post.categories %}
 						<span name='{{ category | first }}'>[{{ category | first }}]</span>
 					{% endfor %}
 				</div>
 				<div class='post-footer'>
-					<a href='{{ post.url }}'><span class='icon icon-date'></span> {{ post.date | date_to_string }}</a> 
-					<span class='dsq-comment-count-wrap'><a class='icon icon-comments' href='{{ post.url }}'></a> <a class='dsq-comment-count' href='{{ post.url }}#disqus_thread' data-disqus-identifier='{{ page.url }}'>comments</a></span>
+					<a href='{{ post.url }}'><span class='icon icon-date-16'></span> {{ post.date | date_to_string }}</a> 
+					<span class='dsq-comment-count-wrap'><a class='icon icon-comments-16' href='{{ post.url }}'></a> <a class='dsq-comment-count' href='{{ post.url }}#disqus_thread' data-disqus-identifier='{{ page.url }}'>comments</a></span>
 					<div class='clear'></div>
 				</div>
 				<div class='share-wrap'>
