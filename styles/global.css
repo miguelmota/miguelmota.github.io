@@ -980,7 +980,7 @@ label[for='message'].error {
 	BLOG
 ============================================================================== */
 .blog-item {
-	width: 400px;
+	width: 500px;
 }
 .blog-item .post-text {
 	max-height: 308px;
