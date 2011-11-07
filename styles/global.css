@@ -981,7 +981,6 @@ label[for='message'].error {
 ============================================================================== */
 .blog-item {
 	width: 500px;
-	margin: 0;
 }
 .blog-item .post-text {
 	max-height: 308px;
