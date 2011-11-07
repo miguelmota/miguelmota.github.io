@@ -450,6 +450,10 @@ img.loader {
 .icon-link-24 {
 	background: url('/images/icons/pictos/24/link.png');
 }
+.icon-location-marker-16 {
+	background: url('/images/icons/pictos/16/location-marker.png');
+	width: 13px;
+}
 .icon-phone-16 {
 	background: url('/images/icons/pictos/16/phone.png');
 }
