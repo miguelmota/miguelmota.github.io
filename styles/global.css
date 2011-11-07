@@ -1125,6 +1125,9 @@ div#cse-search-form input[type=text]:focus {
 	border-color: #007299 !important;
 	color: #999 !important;
 }
+.cse-wrap {
+	z-index: 100000000000;
+}
 div#cse {
 	background-color: #222 !important;
 	border: 0 !important;
