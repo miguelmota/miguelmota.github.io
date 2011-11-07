@@ -306,7 +306,6 @@ textarea {
 ============================================================================== */
 .main-content-wrap {
 	height: auto;
-	float: right;
 	position: relative;
 }
 .content-item {
