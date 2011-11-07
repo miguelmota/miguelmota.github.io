@@ -309,6 +309,9 @@ textarea {
 	position: relative;
 	width: 100%;
 }
+.content {
+	padding-left: 350px;
+}
 .content-item {
 	background-color: #222;
 	margin: 5px;
