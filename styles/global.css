@@ -304,10 +304,6 @@ textarea {
 	padding-bottom: 15px;
 	width: 100%;
 }
-.top-link {
-	display: none;
-	float: right;
-}
 /* ==============================================================================
 	END MAIN NAVIGATION
 ============================================================================== */
@@ -502,6 +498,10 @@ img.loader {
 	background: url('/images/icons/pictos/24/up.png');
 	height: 24px;
 	width: 24px;
+}
+.top-link {
+	display: none;
+	float: right;
 }
 /* ==============================================================================
 	END ICONS
