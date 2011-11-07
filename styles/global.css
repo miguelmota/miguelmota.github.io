@@ -234,7 +234,7 @@ textarea {
 	MAIN NAVIGATION
 ============================================================================== */
 .main-side-nav-wrap {
-	left: 0;
+	float: left;
 	width: 200px;
 }
 .main-side-nav {
@@ -306,6 +306,7 @@ textarea {
 ============================================================================== */
 .main-content-wrap {
 	height: auto;
+	float: right;
 	position: relative;
 }
 .content-item {
