@@ -12,7 +12,7 @@ layout: default
 		</div>
 		<div class='post-tags'>
 			<span class='icon icon-tags-16'></span>
-			{% for category in post.categories %}
+			{% for category in page.categories %}
 				<span name='{{ category | first }}'>[{{ category | first }}]</span>
 			{% endfor %}
 		</div>
