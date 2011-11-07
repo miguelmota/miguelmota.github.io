@@ -28,11 +28,11 @@ body {
 	margin: 70px auto 0 auto;
 	width: 80%;
 	word-wrap: break-word;
-	padding-left: 300px;
 	position: relative;
 }
 .main-wrap-left-stop {
-	height: 100%;
+	float: left;
+	height: 800px;
 	width: 300px;
 	border: 1px solid black;
 }
