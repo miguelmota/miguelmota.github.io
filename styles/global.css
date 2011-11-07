@@ -28,7 +28,7 @@ body {
 	margin: 70px auto 0 auto;
 	width: 80%;
 	word-wrap: break-word;
-	padding-left: 300px;
+	padding-left: 400px;
 	position: relative;
 }
 #top {
@@ -307,7 +307,6 @@ textarea {
 ============================================================================== */
 .main-content-wrap {
 	height: auto;
-	float: right;
 	position: relative;
 	width: 100%;
 }
