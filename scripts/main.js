@@ -714,7 +714,7 @@ function streamPage(){
 							var artist = item.artist['#text'];
 							var image = item.image[0]['#text'];
 							var date =  item.date['#text'];
-							htmlString += "<li><a href='"+url+"'><img class='stream-thumb' src='"+image+"' alt='' /> "+artist+" - "+name+"</a> <time class='status-date'>"+date+"</time></li>";
+							htmlString += "<li><a href='"+url+"'><img class='stream-thumb' src='"+image+"' alt='' /> "+artist+" - "+name+"</a> <time class='status-date'>"+niceTime(date)+"</time></li>";
 							$('.stream-lastfm').append(htmlString +'</ul>');
 					}); 
 					$('.stream-lastfm div.loader').css('display','none');
