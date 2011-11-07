@@ -26,7 +26,7 @@ body {
 .main-wrap {
 	height: auto;
 	margin: 70px auto 0 auto;
-	width: 80%;
+	width: 100%;
 	word-wrap: break-word;
 	padding-left: 250px;
 	position: relative;
