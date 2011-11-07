@@ -983,7 +983,7 @@ label[for='message'].error {
 	width: 400px;
 }
 .blog-item .post-text {
-	max-height: 315px;
+	max-height: 310px;
 	overflow: hidden;
 }
 .blog-post {
@@ -1012,7 +1012,8 @@ label[for='message'].error {
 	width: 100%;
 }
 .view-post-wrap {
-	padding: 10px;
+	padding: 10px 0;
+	text-align: right;
 }
 .post-tags {
 	color: #777;
