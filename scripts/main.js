@@ -713,8 +713,8 @@ function streamPage(){
 							var name = item.name;
 							var artist = item.artist['#text'];
 							var image = item.image[0]['#text'];
-							var date =  new Date(item.date['#text']).toUTCString();
-							htmlString += "<li><a href='"+url+"'><img class='stream-thumb' src='"+image+"' alt='' /> "+artist+" - "+name+"</a> <time class='status-date'>"+niceTime(date)+"</time></li>";
+							var time =  new Date(item.date['#text']).toUTCString();
+							htmlString += "<li><a href='"+url+"'><img class='stream-thumb' src='"+image+"' alt='' /> "+artist+" - "+name+"</a> <time class='status-date'>"+niceTime(time)+"</time></li>";
 							$('.stream-lastfm').append(htmlString +'</ul>');
 					}); 
 					$('.stream-lastfm div.loader').css('display','none');
