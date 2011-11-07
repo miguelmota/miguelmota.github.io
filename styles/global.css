@@ -35,6 +35,9 @@ body {
 	width: 250px;
 	height: 600px;
 }
+.content {
+	float: left;
+}
 #top {
 	position: absolute;
 	top: 0;
