@@ -387,7 +387,7 @@ img.loader {
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
 	filter: alpha(opacity=100);
 }
-.icon-no-hover {
+.icon-no-hover:hover {
 	opacity: .5;
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
 	filter: alpha(opacity=50);
