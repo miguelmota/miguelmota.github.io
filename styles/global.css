@@ -1128,6 +1128,7 @@ div#cse-search-form input[type=text]:focus {
 .cse-wrap {
 	background-color: #222;
 	clear: both;
+	float: left;
 	width: 650px;
 	z-index: 100;
 }
