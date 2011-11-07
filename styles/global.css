@@ -412,9 +412,11 @@ img.loader {
 }
 .icon-calendar-16 {
 	background: url('/images/icons/pictos/16/calendar.png');
+	width: 13px;
 }
 .icon-calendar-check-16 {
 	background: url('/images/icons/pictos/16/calendar-check.png');
+	width: 13px;
 }
 .icon-chat-16 {
 	background: url('/images/icons/pictos/16/chat.png');
