@@ -1129,6 +1129,7 @@ div#cse-search-form input[type=text]:focus {
 	background-color: #222;
 	clear: both;
 	float: left;
+	padding: 20px;
 	width: 650px;
 	z-index: 100;
 }
