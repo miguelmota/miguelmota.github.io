@@ -28,6 +28,7 @@ body {
 	margin: 70px auto 0 auto;
 	width: 80%;
 	word-wrap: break-word;
+	padding-left: 300px;
 	position: relative;
 }
 #top {
@@ -233,6 +234,7 @@ textarea {
 ============================================================================== */
 .main-side-nav-wrap {
 	left: 0;
+	margin-right: 25px;
 	position: absolute;
 	width: 200px;
 }
@@ -308,9 +310,6 @@ textarea {
 	height: auto;
 	position: relative;
 	width: 100%;
-}
-.content {
-	padding-left: 350px;
 }
 .content-item {
 	background-color: #222;
