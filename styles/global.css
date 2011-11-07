@@ -1104,7 +1104,7 @@ input.short-url {
 ============================================================================== */
 .cse-search-form-wrap {
 	float: right;
-	margin-top: -15px;
+	margin-top: -35px;
 	padding: 0;
 	text-align: right;
 	width: 650px;
@@ -1124,6 +1124,10 @@ div#cse-search-form input[type=text] {
 div#cse-search-form input[type=text]:focus {
 	border-color: #007299 !important;
 	color: #999 !important;
+}
+.cse-wrap {
+	clear: both;
+	width: 100%;
 }
 div#cse {
 	clear: both;
