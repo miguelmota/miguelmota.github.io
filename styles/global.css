@@ -387,6 +387,11 @@ img.loader {
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
 	filter: alpha(opacity=100);
 }
+.icon-no-hover {
+	opacity: .5;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+	filter: alpha(opacity=50);
+}
 .icon-top {
 	float: right;
 	height: 24px;
@@ -424,8 +429,11 @@ img.loader {
 	background: url('http://static.tumblr.com/r8galzl/nf8lu4l37/heart.png');
 	height: 14px;
 }
-.icon-link {
+.icon-link-post {
 	background: url('http://static.tumblr.com/r8galzl/hPxlu4l4s/link.png');
+}
+.icon-link {
+	background: url('/images/tumblr/16/link.png');
 }
 .icon-photo {
 	background: url('http://static.tumblr.com/r8galzl/1Rclu4l5d/photo.png');
@@ -446,11 +454,6 @@ img.loader {
 .icon-tag {
 	background: url('http://static.tumblr.com/r8galzl/fgnlu4l7c/tags.png');
 	width: 12px;
-}
-.icon-tag:hover {
-	opacity: .5;
-	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
-	filter: alpha(opacity=50);
 }
 .icon-text {
 	background: url('http://static.tumblr.com/r8galzl/NMVlu4l9k/text.png');
