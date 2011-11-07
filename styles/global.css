@@ -28,13 +28,11 @@ body {
 	margin: 70px auto 0 auto;
 	width: 80%;
 	word-wrap: break-word;
+	padding-left: 40%;
 	position: relative;
 }
 .main-wrap-left-stop {
-	float: left;
-	height: 800px;
-	width: 300px;
-	border: 1px solid black;
+
 }
 #top {
 	position: absolute;
@@ -312,7 +310,6 @@ textarea {
 ============================================================================== */
 .main-content-wrap {
 	height: auto;
-	float: right;
 	position: relative;
 	width: 100%;
 }
