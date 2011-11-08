@@ -1062,10 +1062,10 @@ div.work-image {
 	width: 88px;
 }
 .contact-info-wrap {
-	line-height: 130%;
+	line-height: 150%;
 	position: absolute;
 	right: 150px;
-	top: 50px;
+	top: 45px;
 }
 .contact-info-wrap a {
 	color: #999;
