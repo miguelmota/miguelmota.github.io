@@ -686,7 +686,7 @@ function streamPage(){
 			    	  		default:
 			    	  			icon_type = 'text';
 			    	  		}
-				    	  	htmlString += "<li><a href='"+url+"'><span class='icon icon-"+icon_type+"-16'></span> "+slug.substring(0,1).toUpperCase()+slug.substr(1,200)+"</a> <time class='status-date'>"+niceTime(date)+"</time></li>";
+				    	  	htmlString += "<li><a href='"+url+"'><span class='icon icon-"+type+"-16'></span> "+type+slug.substring(0,1).toUpperCase()+slug.substr(1,200)+"</a> <time class='status-date'>"+niceTime(date)+"</time></li>";
 							$('.stream-tumblr').append(htmlString +'</ul>');
 				      }); 
 					  $('.stream-tumblr div.loader').css('display','none');
