@@ -687,7 +687,7 @@ function streamPage(){
 						var title = item.d;
 						var url = item.u;
 			    	  	var date = new Date(item.dt).toUTCString();
-			    	  	htmlString += "<li>&#187; <a href='"+url+"'>"+title+"</a> <time class='status-date'>"+niceTime(date)+"</time></li>";
+			    	  	htmlString += "<li>&#187; <a href='"+url+"'><span class='icon icon-link-16'></span> "+title+"</a> <time class='status-date'>"+niceTime(date)+"</time></li>";
 						$('.stream-delicious').append(htmlString +'</ul>');
 					});
 					$('.stream-delicious div.loader').css('display','none');
