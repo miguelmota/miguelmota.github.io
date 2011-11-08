@@ -770,7 +770,7 @@ function streamPage(){
 						htmlString += "<li><a class='fancybox' rel='flickr internal' href='"+flickr_photo+"' title='"+flickr_title+" ["+flickr_id+"]'><img src='"+flickr_thumbnail+"' alt='' /></a></li>";
 					});
 					$('.stream-flickr div.loader').css('display','none');
-					$('.stream-flickr').append(htmlString +'</ul></div><a href="javascript:void(0);" class="stream-carousel-nav stream-carousel-nav-next"><span class="stream-carousel-nav-inner">&#187;</span></a></div>');
+					$('.stream-flickr').append(htmlString +'</ul></div><a href="javascript:void(0);" class="stream-carousel-nav stream-carousel-nav-next"><span class="stream-carousel-nav-inner">&#187;</span><span class="zoom-wrap"><span class="icon icon-zoom-24"></span></span></a></div>');
 					showMtipTimeout('.stream-logo-flickr');
 					
 					$('.stream-carousel-flickr').jCarouselLite({
