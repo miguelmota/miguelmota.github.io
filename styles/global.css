@@ -609,8 +609,8 @@ img.loader {
 	bottom:-15px; /* value = - border-top-width - border-bottom-width */
 	border-color: #222 transparent;
 	border-style: solid;
-	border-width: 10px 50px 10px 0;
-    left: -10px; /* value = - border-left-width - border-right-width */
+	border-width: 10px 20px 10px 0;
+    left: -20px; /* value = - border-left-width - border-right-width */
     top: 10px;
 	bottom:auto;
 	position: absolute;
