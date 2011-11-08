@@ -1192,8 +1192,9 @@ input.short-url {
 	padding: 4px;
 	width: 160px;
 }
-.short-url:focus {
+input.short-url:focus {
 	border: 1px solid #007299;
+	border-left-width: 1px;
 }
 .tumblr-share-button {
 	background: url('/images/buttons/tumblr-share-1.png') top left no-repeat transparent;
