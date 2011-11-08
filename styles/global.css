@@ -597,6 +597,7 @@ img.loader {
 	display: inline-block;
 	float: right;
 	padding: 10px;
+	width: 100px;
 }
 .tweet-content:after {
 	top: 16px; /* controls vertical position */
