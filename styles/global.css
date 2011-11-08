@@ -598,6 +598,13 @@ img.loader {
 	float: right;
 	padding: 10px;
 }
+.tweet-content:after {
+	top: 16px; /* controls vertical position */
+	left: -50px; /* value = - border-left-width - border-right-width */
+	bottom: auto;
+	border-width: 10px 50px 10px 0;
+	border-color: transparent #f3961c;
+}
 .tweet-content a {
 	font-weight: normal;
 }
