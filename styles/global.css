@@ -595,28 +595,25 @@ img.loader {
 #tweets {
 	float: right;
 	position: relative;
-	width: 60%;
+	width: 120px;
 }
 .tweet-content {
 	background-color: #222;
 	float: right;
 	padding: 10px;
-	width: 80%;
+	width: 100%;
 }
 .tweet-content:after {
-
+	border-color: transparent #222;
+	border-style: solid;
+	border-width: 10px 20px 10px 0;
+	bottom: auto;
 	content: "";
-	position: absolute;
-	border-style:solid;
-    /* reduce the damage in FF3.0 */
-    display:block; 
-    width:0;
-    
-    top: 10px;
+	display: block; 	
 	left: -20px; /* value = - border-left-width - border-right-width */
-	bottom:auto;
-	border-width:10px 20px 10px 0;
-	border-color:transparent #222;
+	top: 10px;
+	position: absolute;
+	width: 0;
 }
 .tweet-content a {
 	font-weight: normal;
