@@ -382,17 +382,25 @@ img.loader {
 	vertical-align: middle;
 	width: 16px;
 }
-.icon:hover {
+.icon:hover,
+.icon:active {
 	opacity: 1;
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
 	filter: alpha(opacity=100);
 }
-.icon-no-hover:hover {
+.icon-no-hover:hover,
+.icon-no-hover:active {
 	opacity: .5;
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
 	filter: alpha(opacity=50);
 }
 .icon-no-opacity {
+	opacity: 1;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	filter: alpha(opacity=100);
+}
+.icon-no-opacity:hover,
+.icon-no-opacity:active {
 	opacity: 1;
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
 	filter: alpha(opacity=100);
