@@ -1056,8 +1056,9 @@ div.work-image {
 	width: 88px;
 }
 .contact-phone-wrap {
-	float: right;
-	margin-bottom: 10px;
+	position: absolute;
+	right: 110px;
+	top: 20px;
 }
 .contact-form {
 	float: left;
