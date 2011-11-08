@@ -198,7 +198,7 @@ textarea {
 	INPUT ERROR
 ------------------------------------------------------------------------------ */
 .error,
-.error {
+input.error {
 	border-color: #870000;
 }
 .error {
