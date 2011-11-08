@@ -1188,7 +1188,7 @@ input.short-url {
 	border-left-width: 1px;
 	float: right;
 	font-size: 10px;
-	margin: 0 0 0 5px;
+	margin: 0;
 	padding: 4px;
 	width: 160px;
 }
@@ -1201,7 +1201,7 @@ input.short-url:focus {
 	display: inline-block;
 	float: right;
 	height: 20px;
-	margin: 0;
+	margin: 0 10px 0 0;
 	text-indent: -9999px;
 	overflow: hidden;
 	padding: 0;
