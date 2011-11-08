@@ -587,8 +587,10 @@ img.loader {
 	LATEST TWEET
 ============================================================================== */
 #tweet-wrap {
+	background-color: #202020;
 	display: none;
-	padding-bottom: 15px;
+	margin-bottom: 15px;
+	padding: 10px;
 }
 .tweet-content {
 	display: block;
