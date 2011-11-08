@@ -589,15 +589,15 @@ img.loader {
 	padding-bottom: 15px;
 }
 .tweet-bird-icon {
-	display: inline-block;
 	float: left;
 	margin-right: 10px;
 }
 #tweets {
-	background-color: #202020;
-	display: inline-block;
+	background-color: #222;
+	display: block;
 	float: right;
 	padding: 10px;
+	width: 80%;
 }
 #tweets:after {
 	border-color: #000 transparent;
@@ -607,7 +607,7 @@ img.loader {
 	content: "";
 	display: block;
 	height: 0;
-	left: 10px; /* controls horizontal position */
+	top: 10px; /* controls horizontal position */
 	margin-left: -5px;
 	position: absolute;
 	width: 0;
