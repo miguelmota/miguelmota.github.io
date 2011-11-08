@@ -945,14 +945,18 @@ a.site-link {
 	height: 100%;
 	position: absolute;
 	top: 0;
+	transition: opacity linear .1s;
+	-moz-transition: opacity linear .1s;
+	-o-transition: opacity linear .1s;
+	-webkit-transition: opacity linear .1s;
 	width: 100%;
 }
 .icon-zoom-24 {
 	left: 50%;
 	margin: -12px 0 0 -12px;
 	opacity: 1;
-	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
-	filter: alpha(opacity=50);
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	filter: alpha(opacity=100);
 	position: absolute;
 	top: 50%;
 }
