@@ -770,13 +770,11 @@ img.loader {
 	-webkit-box-shadow: 2px 2px 8px rgba(0,0,0,.7);
 	min-height: 32px;
 	height: auto;
-	width: 100%;
-}
-.stream-ul-flickr img {
 	transition: all .2s ease-in-out;
 	-moz-transition: all .2s ease-in-out;
 	-o-transition: all .2s ease-in-out;
 	-webkit-transition: all .2s ease-in-out;
+	width: 100%;
 }
 .stream-ul-flickr img:hover,
 .stream-ul-flickr img:active {
