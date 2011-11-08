@@ -417,7 +417,7 @@ img.loader {
 	background: url('/images/icons/pictos/24/video.png');
 }
 .icon-up-24 {
-	background: url('/images/icons/pictos/24/up.png');
+	background: url('/images/icons/pictos/24/up-2.png');
 	height: 24px;
 	width: 24px;
 }
@@ -1055,7 +1055,7 @@ div.work-image {
 	top: 20px;
 	width: 88px;
 }
-.contact-phone-wrap {
+.contact-info-wrap {
 	position: absolute;
 	right: 150px;
 	top: 55px;
