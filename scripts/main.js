@@ -108,6 +108,9 @@ $(document).ready(function(){
 		//$('#cse-search-form').insertAfter('.blog-description');
 	}
 	
+	// Initialize mtip
+	$('.mtip').mtip();
+	
 	//display ie message
 	$('body').fadeIn(650, function(){
 		$('div.ie-bar').slideDown('slow');
