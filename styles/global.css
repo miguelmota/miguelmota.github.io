@@ -463,6 +463,9 @@ img.loader {
 .icon-photo-24 {
 	background: url('/images/icons/pictos/24/photo.png');
 }
+.icon-quote-16 {
+	background: url('/images/icons/pictos/16/quote.png');
+}
 .icon-quote-24 {
 	background: url('/images/icons/pictos/24/quote.png');
 }
@@ -480,6 +483,9 @@ img.loader {
 	background: url('/images/icons/pictos/16/tags.png');
 	width: 12px;
 }
+.icon-text-16 {
+	background: url('/images/icons/pictos/16/text.png');
+}
 .icon-text-24 {
 	background: url('/images/icons/pictos/24/text.png');
 }
@@ -494,6 +500,9 @@ img.loader {
 	float: left;
 	height: 13px;
 	margin: 0 10px 10px 0;
+}
+.icon-video-16 {
+	background: url('/images/icons/pictos/16/video.png');
 }
 .icon-video-24 {
 	background: url('/images/icons/pictos/24/video.png');
