@@ -922,7 +922,7 @@ function contactPage(){
 			error: function(){
 				$('.contact-form-submit').html('<span>sending...</span>');
 				$('.contact-form').slideUp(300, function(){
-					$('.contact-form-thank-you').html("<p>Sorry, there was an error. Message was not sent.</p><p>Email <a href='mailto:hello@miguelmota.com'>hello@miguelmota.com</a>?</p>");
+					$('.contact-form-thank-you').html('<p>Sorry, there was an error. Message was not sent.</p><p>Email <a href="mailto:hello@miguelmota.com">hello@miguelmota.com</a>?</p>');
 				});
 			}
 		});
@@ -935,7 +935,7 @@ function contactPage(){
 	
 	//hide contact form and display thank you message
 	function success(){
-		var name = $('input#name').val();
+		var name = $('#contact-form-name').val();
 		$('.contact-form').slideUp(300, function(){
 			$('.contact-form-thank-you').html('<p class="thank-you-name">Thank you, <strong>'+name+'</strong>.</p><p>Your message has been successfully sent <span class="icon icon-checkmark-16 icon-no-hover icon-no-opacity"></span><br />I will get in touch with you soon.</p>').fadeIn(1200);
 		});
