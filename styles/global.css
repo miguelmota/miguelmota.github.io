@@ -1101,7 +1101,7 @@ label[for='message'].error {
 	width: 500px;
 }
 .blog-post-item .post-text {
-	max-height: 308px;
+	max-height: 408px;
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
@@ -1123,8 +1123,7 @@ label[for='message'].error {
 	width: 100%;
 }
 .blog-post-single .blog-post-thumb {
-	height: auto;
-	width: auto;
+	display: none;
 }
 .post-text {
 	padding-bottom: 10px;
