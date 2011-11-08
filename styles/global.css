@@ -594,6 +594,7 @@ img.loader {
 }
 #tweets {
 	float: right;
+	position: relative;
 	width: 60%;
 }
 .tweet-content {
@@ -615,7 +616,7 @@ img.loader {
     display:block; 
     width:0;
     
-    	top:16px; /* controls vertical position */
+    top:16px; /* controls vertical position */
 	left:-50px; /* value = - border-left-width - border-right-width */
 	bottom:auto;
 	border-width:10px 50px 10px 0;
