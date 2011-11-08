@@ -596,6 +596,7 @@ img.loader {
 #tweets {
 	float: right;
 	position: relative;
+	height: 20px;
 	width: 150px;
 	border: 1px solid black;
 }
