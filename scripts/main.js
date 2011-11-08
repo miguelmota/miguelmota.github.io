@@ -603,7 +603,7 @@ function streamPage(){
 						var post = status.text;
 						var id = status.id_str;
 			    	  	var date = new Date(status.created_at).toUTCString();
-						htmlString += "<li id='"+id+"' class='status'>&#187; <span class='post'><a href='http://twitter.com/miguel_mota/status/"+id+"'><span class='icon icon-twitter-bird-16'></span> "+post+"</a></span> <time class='status-date'>"+niceTime(date)+"</time></li>";
+						htmlString += "<li id='"+id+"' class='status'><span class='post'><a href='http://twitter.com/miguel_mota/status/"+id+"'><span class='icon icon-twitter-bird-16'></span> "+post+"</a></span> <time class='status-date'>"+niceTime(date)+"</time></li>";
 						$('.stream-twitter').append(htmlString +'</ul>');
 					});
 					$('.stream-twitter div.loader').css('display','none');
@@ -665,9 +665,20 @@ function streamPage(){
 							var htmlString = '<ul class="stream-ul stream-ul-tumblr">';
 				    	  	var date = new Date(this['date-gmt']).toUTCString();
 				    	  	var url = this.url;
+				    	  	var type = this.type;
 				    	  	var caption = this['photo-caption'];
 				    	  	var slug = this.slug.replace(/-/g,' ');
-				    	  	htmlString += "<li>&#187; <a href='"+url+"'>"+slug.substring(0,1).toUpperCase()+slug.substr(1,200)+"</a> <time class='status-date'>"+niceTime(date)+"</time></li>";
+				    	  	htmlString += "<li><a href='"+url+"'><span class='icon icon-"
+				    	  		switch(type)
+				    	  		{
+				    	  		case 'link':
+				    	  			'link';
+				    	  		case 'photo':
+				    	  			'photo';
+				    	  		default:
+				    	  			'text';
+				    	  		}
+				    	  		"-16'></span> "+slug.substring(0,1).toUpperCase()+slug.substr(1,200)+"</a> <time class='status-date'>"+niceTime(date)+"</time></li>";
 							$('.stream-tumblr').append(htmlString +'</ul>');
 				      }); 
 					  $('.stream-tumblr div.loader').css('display','none');
@@ -687,7 +698,7 @@ function streamPage(){
 						var title = item.d;
 						var url = item.u;
 			    	  	var date = new Date(item.dt).toUTCString();
-			    	  	htmlString += "<li>&#187; <a href='"+url+"'><span class='icon icon-link-r-16'></span> "+title+"</a> <time class='status-date'>"+niceTime(date)+"</time></li>";
+			    	  	htmlString += "<li><a href='"+url+"'><span class='icon icon-link-r-16'></span> "+title+"</a> <time class='status-date'>"+niceTime(date)+"</time></li>";
 						$('.stream-delicious').append(htmlString +'</ul>');
 					});
 					$('.stream-delicious div.loader').css('display','none');
