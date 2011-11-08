@@ -463,6 +463,12 @@ img.loader {
 .icon-photo-24 {
 	background: url('/images/icons/pictos/24/photo.png');
 }
+.icon-photoset-16 {
+	background: url('/images/icons/pictos/16/photoset.png');
+}
+.icon-photoset-24 {
+	background: url('/images/icons/pictos/24/photoset.png');
+}
 .icon-quote-16 {
 	background: url('/images/icons/pictos/16/quote.png');
 }
@@ -518,6 +524,10 @@ img.loader {
 .top-link {
 	display: none;
 	float: right;
+}
+.icon-zoom-24 {
+	background: url('/images/icons/pictos/16/checkmark.png');
+	height: 16px;
 }
 /* ==============================================================================
 	END ICONS
@@ -921,19 +931,23 @@ a.site-link {
 	border: 0;
 }
 
-.zoom-icon {
+.zoom-wrap {
 	background-color: #000;
-	background-color: rgba(0,0,0,.8);
-	bottom: 10px;
-	color: #fff;
+	opacity: .8;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+	filter: alpha(opacity=80);
 	display: none;
 	left: 0;
-	font-size: 18px;
 	height: 100%;
 	position: absolute;
-	text-shadow: 0;
 	top: 0;
 	width: 100%;
+}
+.icon-zoom-24 {
+	left: 50%;
+	margin-top: -12px;
+	position: absolute;
+	top: 50%;
 }
 div.fancybox-title {
 	background-color: #000;

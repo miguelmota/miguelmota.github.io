@@ -870,9 +870,9 @@ function portfolioPage(){
 	
 	// Show zoom icon on hover
 	$('a.fancybox').hover(function(){
-			jQuery('span.zoom-icon', this).css('display', 'block');
+			jQuery('span.zoom-wrap', this).css('display', 'block');
 	},function(){
-			jQuery('span.zoom-icon', this).hide();
+			jQuery('span.zoom-wrap', this).hide();
 		  }
 	);
 	
