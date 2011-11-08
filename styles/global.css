@@ -921,17 +921,20 @@ a.site-link {
 	border: 0;
 }
 
-span.zoom-icon {
+.zoom-icon {
 	background-color: #000;
 	background-color: rgba(0,0,0,.8);
 	bottom: 10px;
 	color: #fff;
 	display: none;
+	left: 0;
 	font-size: 18px;
+	height: 100%;
 	padding: 5px;
 	position: absolute;
-	right: 10px;
 	text-shadow: 0;
+	top: 0;
+	width: 100%;
 }
 div.fancybox-title {
 	background-color: #000;
