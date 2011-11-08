@@ -7,7 +7,7 @@ title: Blog
 <section class='content blog'>
 	{% include header.html %}
 		{% for post in site.posts %}
-			<div class='content-item blog-post'>
+			<div class='content-item blog-post-item'>
 				<h1><a href='{{ post.url }}'>{{ post.title }}</a></h1>
 	 			<div class='post-text'>
 					{{ post.content }}
