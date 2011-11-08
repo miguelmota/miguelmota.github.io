@@ -760,9 +760,9 @@ img.loader {
 }
 .stream-ul-flickr .zoom-wrap {
 	background-color: none;
-	opacity: 0;
-	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-	filter: alpha(opacity=0);
+	opacity: 1;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=1)";
+	filter: alpha(opacity=1);
 }
 .stream-ul-flickr img {
 	background: #222 url('http://static.tumblr.com/r8galzl/wmilu4kzw/ajax-loader-image.gif') no-repeat 50% 50%;
