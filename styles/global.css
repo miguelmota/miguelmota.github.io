@@ -412,9 +412,7 @@ img.loader {
 }
 .icon-twitter-bird-24 {
 	background: url('/images/icons/pictos/24/twitter-bird.png');
-	float: left;
 	height: 13px;
-	margin: 0 10px 10px 0;
 }
 .icon-video-16 {
 	background: url('/images/icons/pictos/16/video.png');
@@ -587,13 +585,17 @@ img.loader {
 	LATEST TWEET
 ============================================================================== */
 #tweet-wrap {
-	background-color: #202020;
 	display: none;
-	margin-bottom: 15px;
-	padding: 10px;
+	padding-bottom: 15px;
+}
+.tweet-bird-icon {
+	float: left;
+	margin-right: 10px;
 }
 .tweet-content {
+	background-color: #202020;
 	display: block;
+	padding: 10px;
 }
 .tweet-content a {
 	font-weight: normal;
@@ -1034,7 +1036,7 @@ a.google-plus-link {
 /* -----------------------------------------------------------------------------
 	PROJECT IMAGES
 ------------------------------------------------------------------------------ */
-div.project-image {
+.project-image {
 	float: left;
 	height: auto;
 	width: 350px;
