@@ -1113,12 +1113,6 @@ label[for='message'].error {
 	display: block;
 	font-size: 32px;
 }
-.blog-post-single .blog-post-thumb {
-	float: left;
-	height: auto;
-	margin: 15px 15px 15px 0;
-	width: 500px;
-}
 .blog-post-item h1 a {
 	display: block;
 	font-size: 24px;
@@ -1127,6 +1121,10 @@ label[for='message'].error {
 	height: auto;
 	margin: 15px 0;
 	width: 100%;
+}
+.blog-post-single .blog-post-thumb {
+	height: auto;
+	width: auto;
 }
 .post-text {
 	padding-bottom: 10px;
