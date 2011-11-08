@@ -108,17 +108,6 @@ $(document).ready(function(){
 		//$('#cse-search-form').insertAfter('.blog-description');
 	}
 	
-	
-	//display ie message
-	$('body').fadeIn(650, function(){
-		$('div.ie-bar').slideDown('slow');
-	});
-	
-	//close ie message
-	$('div.ie-bar a.ie-bar-close').click(function(){
-		$('div.ie-bar').slideUp('normal');
-	});
-	
 	//redirect to homepage if window location alone is #!
 	if(typeof(window.history.pushState) != 'function'){
 		if(window.location.hash == '#!') {
@@ -881,13 +870,13 @@ function portfolioPage(){
 function contactPage(){
 	
 	//create method to validate name
-	$('a.contact-submit').live('click', function(){
+	$('.contact-form-submit').live('click', function(){
 		$.validator.addMethod('namecheck', function(value, element){
 			return this.optional(element) || /^[a-zA-Z]*$/.test(value);
 	});
 		
 	//validate contact form
-	$('form.contact-form').validate({
+	$('.contact-form').validate({
 		rules: {
 			name: {
 				namecheck: true,
@@ -919,9 +908,9 @@ function contactPage(){
 	});
 	
 	//if validates to true, then submit it
-	if ($('form.contact-form').valid() == true){	
-		$('.contact-submit').html('<span>sending...</span>');
-		var str = $('form.contact-form').serialize();
+	if ($('.contact-form').valid() == true){	
+		$('.contact-form-submit').html('<span>sending...</span>');
+		var str = $('.contact-form').serialize();
 		$.ajax({
 			type: 'get',
 			url: 'http://www.foodfail.org/miguelmota/contact.php',
@@ -931,8 +920,8 @@ function contactPage(){
 				success();
 			},
 			error: function(){
-				$('a.contact-submit').html('<span>sending...</span>');
-				$('form.contact-form').slideUp(300, function(){
+				$('.contact-form-submit').html('<span>sending...</span>');
+				$('.contact-form').slideUp(300, function(){
 					$('.contact-form-thank-you').html("<p>Sorry, there was an error. Message was not sent.</p><p>Email <a href='mailto:hello@miguelmota.com'>hello@miguelmota.com</a>?</p>");
 				});
 			}
@@ -947,7 +936,7 @@ function contactPage(){
 	//hide contact form and display thank you message
 	function success(){
 		var name = $('input#name').val();
-		$('form.contact-form').slideUp(300, function(){
+		$('.contact-form').slideUp(300, function(){
 			$('.contact-form-thank-you').html('<p class="thank-you-name">Thank you, <strong>'+name+'</strong>.</p><p>Your message has been successfully sent <span class="icon icon-checkmark-16 icon-no-hover icon-no-opacity"></span><br />I will get in touch with you soon.</p>').fadeIn(1200);
 		});
 	}
