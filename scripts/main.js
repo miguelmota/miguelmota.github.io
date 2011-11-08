@@ -920,6 +920,7 @@ function contactPage(){
 	
 	//if validates to true, then submit it
 	if ($('form.contact-form').valid() == true){	
+		$('.contact-submit').html('<span>sending...</span>');
 		var str = $('form.contact-form').serialize();
 		$.ajax({
 			type: 'get',
@@ -945,7 +946,6 @@ function contactPage(){
 	
 	//hide contact form and display thank you message
 	function success(){
-		$('a.contact-submit').html('<span>sending...</span>');
 		var name = $('input#name').val();
 		$('form.contact-form').slideUp(300, function(){
 			$('.contact-form-thank-you').html('<p class="thank-you-name">Thank you, <strong>'+name+'</strong>.</p><p>Your message has been successfully sent <span class="icon icon-checkmark-16 icon-no-hover icon-no-opacity"></span><br />I will get in touch with you soon.</p>').fadeIn(1200);
