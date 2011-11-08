@@ -731,6 +731,11 @@ img.loader {
 	right: 5%;
 	top: 50%;
 }
+.stream-ul-flickr,
+.stream-ul-flickr li,
+.stream-ul-flickr li a {
+	overflow: visible;
+}
 .stream-ul-flickr li a {
 	background-color: #222;
 	display: inline-block;
