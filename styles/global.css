@@ -1116,7 +1116,8 @@ label[for='message'].error {
 .blog-post-single .blog-post-thumb {
 	float: left;
 	height: auto;
-	width: 300px;
+	margin: 0 15px 15px 0;
+	width: 500px;
 }
 .blog-post h1 a {
 	display: block;
