@@ -392,6 +392,11 @@ img.loader {
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
 	filter: alpha(opacity=50);
 }
+.icon-no-opacity {
+	opacity: 1;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	filter: alpha(opacity=100);
+}
 .icon-top {
 	float: right;
 	height: 24px;
