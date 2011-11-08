@@ -605,21 +605,17 @@ img.loader {
 }
 .tweet-content:after {
 
-	content:"";
-	position:absolute;
-	bottom:-15px; /* value = - border-top-width - border-bottom-width */
-	left:50px; /* controls horizontal position */
-	border-width:15px 15px 0; /* vary these values to change the angle of the vertex */
+	content: "";
+	position: absolute;
 	border-style:solid;
-	border-color:#222 transparent;
     /* reduce the damage in FF3.0 */
     display:block; 
     width:0;
     
     top: 10px;
-	left: -50px; /* value = - border-left-width - border-right-width */
+	left: -20px; /* value = - border-left-width - border-right-width */
 	bottom:auto;
-	border-width:10px 50px 10px 0;
+	border-width:10px 20px 10px 0;
 	border-color:transparent #222;
 }
 .tweet-content a {
