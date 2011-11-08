@@ -354,6 +354,9 @@ img.loader {
 	background: url('/images/icons/pictos/16/location-marker.png');
 	width: 13px;
 }
+.icon-mail-16 {
+	background: url('/images/icons/pictos/16/mail.png');
+}
 .icon-mail-24 {
 	background: url('/images/icons/pictos/24/mail.png');
 }
@@ -1059,9 +1062,10 @@ div.work-image {
 	width: 88px;
 }
 .contact-info-wrap {
+	line-height: 130%
 	position: absolute;
 	right: 150px;
-	top: 55px;
+	top: 50px;
 }
 .contact-info-wrap a {
 	color: #999;
