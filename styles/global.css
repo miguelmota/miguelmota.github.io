@@ -591,8 +591,6 @@ img.loader {
 }
 .tweet-bird-icon {
 	float: left;
-	position: relative;
-	bottom: -15px;
 }
 #tweets {
 	float: right;
@@ -614,7 +612,7 @@ img.loader {
 	content: "";
 	display: block; 	
 	left: -15px; /* value = - border-left-width - border-right-width */
-	top: 10px;
+	top: 5px;
 	position: absolute;
 	width: 0;
 }
