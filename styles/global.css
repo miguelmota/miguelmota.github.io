@@ -1106,7 +1106,7 @@ label[for='message'].error {
 	text-overflow: ellipsis;
 }
 .blog-post {
-	width: 99%;
+	width: 70%;
 }
 .blog-post h1 a {
 	display: block;
@@ -1260,7 +1260,7 @@ div#cse-search-form input[type=text]:focus {
 	clear: both;
 	float: left;
 	padding: 20px;
-	width: 650px;
+	width: 500px;
 	z-index: 100;
 }
 div#cse {
