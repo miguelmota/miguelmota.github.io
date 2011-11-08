@@ -593,13 +593,16 @@ img.loader {
 	margin-right: 10px;
 }
 #tweets {
+	float: right;
+	width: 60%;
+}
+.tweet-content {
 	background-color: #222;
-	display: block;
 	float: right;
 	padding: 10px;
 	width: 80%;
 }
-#tweets:after {
+.tweet-content:after {
 
 	content:"";
 	position:absolute;
