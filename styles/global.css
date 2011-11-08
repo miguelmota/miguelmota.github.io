@@ -591,26 +591,25 @@ img.loader {
 }
 .tweet-bird-icon {
 	float: left;
-	margin: 10px 10px 0 0;
+	position: relative;
+	bottom: -10px;
 }
 #tweets {
 	float: right;
 	position: relative;
-	height: 20px;
 	width: 150px;
-	border: 1px solid black;
 }
 .tweet-content {
 	background-color: #222;
 	float: right;
-	height: 20px;
+	min-height: 20px;
 	padding: 10px;
 	width: 130px;
 }
 .tweet-content:after {
 	border-color: transparent #222;
 	border-style: solid;
-	border-width: 10px 20px 10px 0;
+	border-width: 5px 20px 5px 0;
 	bottom: auto;
 	content: "";
 	display: block; 	
