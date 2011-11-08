@@ -704,7 +704,7 @@ img.loader {
 	position: relative;
 }
 .stream-carousel {
-	background-color: #202020;
+	background-color: #222;
 	float: left;
 	margin: 0 5px;
 	padding: 20px 0;
@@ -714,6 +714,7 @@ img.loader {
 	display: inline-block;
 	border-left: 0;
 	float: left;
+	margin: 20px 0;
 	min-height: 120px;
 	padding: 0 14px;
 	position: relative;
@@ -738,7 +739,7 @@ img.loader {
 	overflow: visible !important;
 }
 .stream-ul-flickr li a {
-	background-color: #202020;
+	background-color: #222;
 	display: inline-block;
 	float: left;
 	min-height: 120px;
