@@ -983,7 +983,8 @@ div.work-image {
 	height: auto;
 	width: 350px;
 }
-div.work-image img {
+.work-image img {
+	background: #222 url('http://static.tumblr.com/r8galzl/wmilu4kzw/ajax-loader-image.gif') no-repeat 50% 50%;
 	height: auto;
 	width: 100%;
 }
