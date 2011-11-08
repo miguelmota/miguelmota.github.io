@@ -610,7 +610,7 @@ img.loader {
 	left:50px; /* controls horizontal position */
 	border-width:15px 15px 0; /* vary these values to change the angle of the vertex */
 	border-style:solid;
-	border-color:#f3961c transparent;
+	border-color:#000 transparent;
     /* reduce the damage in FF3.0 */
     display:block; 
     width:0;
@@ -619,7 +619,7 @@ img.loader {
 	left:-50px; /* value = - border-left-width - border-right-width */
 	bottom:auto;
 	border-width:10px 50px 10px 0;
-	border-color:transparent #f3961c;
+	border-color:transparent #000;
 }
 .tweet-content a {
 	font-weight: normal;
