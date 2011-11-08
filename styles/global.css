@@ -743,6 +743,7 @@ img.loader {
 	min-height: 120px;
 	height: auto;
 	margin-right: 1px;
+	position: relative;
 	transition: all .2s ease-in-out;
 	-moz-transition: all .2s ease-in-out;
 	-o-transition: all .2s ease-in-out;
