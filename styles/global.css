@@ -1060,6 +1060,12 @@ div.work-image {
 	right: 150px;
 	top: 55px;
 }
+.contact-phone-wrap a {
+	color: #999;
+}
+.contact-phone-wrap a:hover {
+	color: #999;
+}
 .contact-form {
 	float: left;
 	width: 100%;
