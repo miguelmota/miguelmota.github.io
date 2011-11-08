@@ -758,8 +758,14 @@ img.loader {
 	z-index: 100;
 }
 .stream-ul-flickr img {
-	width: 100%;
+	background: #222 url('http://static.tumblr.com/r8galzl/wmilu4kzw/ajax-loader-image.gif') no-repeat 50% 50%;
+	box-shadow: 2px 2px 8px rgba(0,0,0,.7);
+	-moz-box-shadow: 2px 2px 8px rgba(0,0,0,.7);
+	-o-box-shadow: 2px 2px 8px rgba(0,0,0,.7);
+	-webkit-box-shadow: 2px 2px 8px rgba(0,0,0,.7);
+	min-height: 32px;
 	height: auto;
+	width: 100%;
 }
 .status-date {
 	font-size: 12px;
