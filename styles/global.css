@@ -1017,29 +1017,27 @@ a.google-plus-link {
 /* -----------------------------------------------------------------------------
 	PROJECT DETAILS
 ------------------------------------------------------------------------------ */
-.work-description .icon-link-16 {
+.project-description .icon-link-16 {
 	background: url('/images/icons/pictos/16/link-2.png');
 }
-.work-description-footer {
+.project-description-footer {
 	border-top: 1px solid #333;
 	margin-top: 10px;
 	padding-top: 10px;
 }
-
-.work-date {
+.site-link {}
+.project-date {
 	float: right;
-}
-a.site-link {
 }
 /* -----------------------------------------------------------------------------
 	PROJECT IMAGES
 ------------------------------------------------------------------------------ */
-div.work-image {
+div.project-image {
 	float: left;
 	height: auto;
 	width: 350px;
 }
-.work-image img {
+.project-image img {
 	background: #202020 url('http://static.tumblr.com/r8galzl/wmilu4kzw/ajax-loader-image.gif') no-repeat 50% 50%;
 	height: auto;
 	width: 100%;

@@ -798,31 +798,31 @@ function streamPage(){
 function portfolioPage(){
 	
 	// Show all work with effect
-	$('.work-sort-all').live('click', function(){
-		$('.work-sort-wrap a').removeClass('selected');
+	$('.project-sort-all').live('click', function(){
+		$('.project-sort-wrap a').removeClass('selected');
 		$(this).addClass('selected');
 		$('.project').slideDown('fast');
 	});
 
 	// Show web work with effect 
-	$('.work-sort-web').live('click', function(){
-		$('.work-sort-wrap a').removeClass('selected');
+	$('.project-sort-web').live('click', function(){
+		$('.project-sort-wrap a').removeClass('selected');
 		$(this).addClass('selected');
 		$(".project:not('.project-web')").slideUp('fast');
 		$('.project-web').slideDown('fast');
 	});
 	
 	// Show identity work with effect
-	$('.work-sort-identity').live('click', function(){
-		$('.work-sort-wrap a').removeClass('selected');
+	$('.project-sort-identity').live('click', function(){
+		$('.project-sort-wrap a').removeClass('selected');
 		$(this).addClass('selected');
 		$(".project:not('.project-identity')").slideUp('fast');
 		$('.project-identity').slideDown('fast');
 	});
 	
 	// Show other work with effect
-	$('.work-sort-code').live('click', function(){
-		$('.work-sort-wrap a').removeClass('selected');
+	$('.project-sort-code').live('click', function(){
+		$('.project-sort-wrap a').removeClass('selected');
 		$(this).addClass('selected');
 		$(".project:not('.project-code')").slideUp('fast');
 		$('.project-code').slideDown('fast');
