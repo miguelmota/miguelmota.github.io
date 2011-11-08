@@ -587,10 +587,11 @@ img.loader {
 #tweet-wrap {
 	display: none;
 	padding-bottom: 15px;
+	position: relative;
 }
 .tweet-bird-icon {
 	float: left;
-	margin-right: 10px;
+	margin: 10px 10px 0 0;
 }
 #tweets {
 	float: right;
