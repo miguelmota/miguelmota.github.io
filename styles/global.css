@@ -447,6 +447,9 @@ img.loader {
 .icon-link-16 {
 	background: url('/images/icons/pictos/16/link.png');
 }
+.icon-link-r-16 {
+	background: url('/images/icons/pictos/16/link-r.png');
+}
 .icon-link-24 {
 	background: url('/images/icons/pictos/24/link.png');
 }
@@ -494,6 +497,9 @@ img.loader {
 }
 .icon-twitter-24 {
 	background: url('/images/icons/pictos/24/twitter.png');
+}
+.icon-twitter-bird-16 {
+	background: url('/images/icons/pictos/16/twitter-bird.png');
 }
 .icon-twitter-bird-24 {
 	background: url('/images/icons/pictos/24/twitter-bird.png');

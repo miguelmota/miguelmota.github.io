@@ -603,7 +603,7 @@ function streamPage(){
 						var post = status.text;
 						var id = status.id_str;
 			    	  	var date = new Date(status.created_at).toUTCString();
-						htmlString += "<li id='"+id+"' class='status'>&#187; <span class='post'><a href='http://twitter.com/miguel_mota/status/"+id+"'>"+post+"</a></span> <time class='status-date'>"+niceTime(date)+"</time></li>";
+						htmlString += "<li id='"+id+"' class='status'>&#187; <span class='post'><a href='http://twitter.com/miguel_mota/status/"+id+"'><span class='icon icon-twitter-bird-16'></span> "+post+"</a></span> <time class='status-date'>"+niceTime(date)+"</time></li>";
 						$('.stream-twitter').append(htmlString +'</ul>');
 					});
 					$('.stream-twitter div.loader').css('display','none');
