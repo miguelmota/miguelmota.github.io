@@ -909,15 +909,15 @@ a.google-plus-link {
 	PORTFOLIO PAGE
 ============================================================================== */
 /* -----------------------------------------------------------------------------
-	WORK SORT
+	PROJECT SORT
 ------------------------------------------------------------------------------ */
-.work-sort-wrap {
+.project-sort-wrap {
 	margin-top: -40px;
 	padding: 10px;
 	text-align: right;
 	width: 650px;
 }
-.work-sort-wrap a.selected {
+.project-sort-wrap a.selected {
 	background-color: #252525;
 	border-left-color: #252525;
 	color: #999;
