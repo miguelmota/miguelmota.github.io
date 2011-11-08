@@ -602,7 +602,7 @@ img.loader {
 .tweet-content {
 	background-color: #222;
 	float: right;
-	min-height: 20px;
+	height: 20px;
 	padding: 10px;
 	width: 130px;
 }
