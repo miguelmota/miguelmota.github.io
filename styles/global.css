@@ -1105,6 +1105,10 @@ label[for='message'].error {
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
+.post-text-single {
+	max-height: auto;
+	overflow: auto;
+}
 .blog-post-single {
 	max-width: 1000px;
 	width: 99%;
