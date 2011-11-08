@@ -232,6 +232,15 @@ $(document).ready(function(){
 	});
 	
 	
+	// Show zoom icon on hover
+	$('a.fancybox').hover(function(){
+			jQuery('span.zoom-wrap', this).css('display', 'block');
+	},function(){
+			jQuery('span.zoom-wrap', this).hide();
+		  }
+	);
+	
+	
 	
 	/*
 	$('ul.main-nav li a').each(function(){
@@ -865,16 +874,6 @@ function portfolioPage(){
 				jQuery('.overlay-popup', this).animate({bottom: '-100px'}, {queue: false, duration: 125});
 		  }
 	});
-	
-	
-	
-	// Show zoom icon on hover
-	$('a.fancybox').hover(function(){
-			jQuery('span.zoom-wrap', this).css('display', 'block');
-	},function(){
-			jQuery('span.zoom-wrap', this).hide();
-		  }
-	);
 	
 }
 
