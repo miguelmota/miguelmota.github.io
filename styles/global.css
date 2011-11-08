@@ -422,7 +422,7 @@ img.loader {
 }
 .icon-checkmark-16 {
 	background: url('/images/icons/pictos/16/checkmark.png');
-	height: 16px;
+	height: 11px;
 }
 .icon-clock-16 {
 	background: url('/images/icons/pictos/16/clock.png');
@@ -1073,7 +1073,7 @@ label[for='message'].error {
 	margin: 10px 0 0 0;
 }
 .thank-you-name {
-	font-size: 16px;
+	font-size: 20px;
 }
 /* ==============================================================================
 	END CONTACT
