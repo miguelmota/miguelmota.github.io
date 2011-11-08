@@ -1097,7 +1097,7 @@ label[for='message'].error {
 /* ==============================================================================
 	BLOG
 ============================================================================== */
-.blog-post {
+.blog-post-item {
 	width: 500px;
 }
 .blog-post-item .post-text {
@@ -1119,7 +1119,7 @@ label[for='message'].error {
 	margin: 15px 15px 15px 0;
 	width: 500px;
 }
-.blog-post h1 a {
+.blog-post-item h1 a {
 	display: block;
 	font-size: 24px;
 }
