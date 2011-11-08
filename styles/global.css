@@ -1118,8 +1118,7 @@ label[for='message'].error {
 	font-size: 24px;
 }
 .blog-post-thumb {
-	max-height: 200px;
-	overflow: hidden;
+	height: auto;
 	margin: 15px 0;
 	width: 100%;
 }
