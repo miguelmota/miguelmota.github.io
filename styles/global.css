@@ -1097,23 +1097,28 @@ label[for='message'].error {
 /* ==============================================================================
 	BLOG
 ============================================================================== */
-.blog-item {
+.blog-post {
 	width: 500px;
 }
-.blog-item .post-text {
+.blog-post .post-text {
 	max-height: 308px;
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
-.blog-post {
+.blog-post-single {
 	max-width: 1000px;
 	width: 99%;
 }
-.blog-post h1 a {
+.blog-post-single h1 a {
 	display: block;
 	font-size: 32px;
 }
-.blog-item h1 a {
+.blog-post-single .blog-post-thumb {
+	float: left;
+	height: auto;
+	width: 300px;
+}
+.blog-post h1 a {
 	display: block;
 	font-size: 24px;
 }
