@@ -1182,7 +1182,7 @@ label[for='message'].error {
 	BLOG POST SHARE
 ------------------------------------------------------------------------------ */
 .share-wrap {}
-input.short-url {
+.short-url {
 	background: #202020;
 	border: 1px solid #202020;
 	border-left-width: 1px;
