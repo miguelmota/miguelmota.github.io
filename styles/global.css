@@ -945,10 +945,6 @@ a.site-link {
 	height: 100%;
 	position: absolute;
 	top: 0;
-	transition: opacity linear .1s;
-	-moz-transition: opacity linear .1s;
-	-o-transition: opacity linear .1s;
-	-webkit-transition: opacity linear .1s;
 	width: 100%;
 }
 .icon-zoom-24 {
