@@ -201,11 +201,6 @@ textarea {
 input.error {
 	border-color: #870000;
 }
-.error {
-	background-color: inherit;
-	color: #870000;
-	margin-left: 5px;
-}
 /* ==============================================================================
 	END	INPUT
 ============================================================================== */
@@ -1076,10 +1071,6 @@ div.work-image {
 	float: right;
 	font-size: 20px;
 	padding: 10px 20px;
-}
-label[for='message'].error {
-	float: left;
-	margin: 10px 0 0 0;
 }
 .thank-you-name {
 	font-size: 20px;
