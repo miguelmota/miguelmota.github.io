@@ -668,17 +668,25 @@ function streamPage(){
 				    	  	var type = this.type;
 				    	  	var caption = this['photo-caption'];
 				    	  	var slug = this.slug.replace(/-/g,' ');
-				    	  	htmlString += "<li><a href='"+url+"'><span class='icon icon-"
-				    	  		switch(type)
-				    	  		{
-				    	  		case 'link':
-				    	  			'link';
-				    	  		case 'photo':
-				    	  			'photo';
-				    	  		default:
-				    	  			'text';
-				    	  		}
-				    	  		"-16'></span> "+slug.substring(0,1).toUpperCase()+slug.substr(1,200)+"</a> <time class='status-date'>"+niceTime(date)+"</time></li>";
+				    	  	var icon_type = '';
+			    	  		switch(type)
+			    	  		{
+			    	  		case 'chat':
+			    	  			icon_type = 'chat';
+			    	  		case 'link':
+			    	  			icon_type = 'link';
+			    	  		case 'photo':
+			    	  			icon_type = 'photo';
+			    	  		case 'quote':
+			    	  			icon_type = 'quote';
+			    	  		case 'text':
+			    	  			icon_type = 'text';
+			    	  		case 'video':
+			    	  			icon_type = 'video';
+			    	  		default:
+			    	  			icon_type = 'text';
+			    	  		}
+				    	  	htmlString += "<li><a href='"+url+"'><span class='icon icon-"+icon_type+"-16'></span> "+slug.substring(0,1).toUpperCase()+slug.substr(1,200)+"</a> <time class='status-date'>"+niceTime(date)+"</time></li>";
 							$('.stream-tumblr').append(htmlString +'</ul>');
 				      }); 
 					  $('.stream-tumblr div.loader').css('display','none');
