@@ -595,13 +595,13 @@ img.loader {
 #tweets {
 	float: right;
 	position: relative;
-	width: 120px;
+	width: 175px;
 }
 .tweet-content {
 	background-color: #222;
 	float: right;
 	padding: 10px;
-	width: 100%;
+	width: 150px;
 }
 .tweet-content:after {
 	border-color: transparent #222;
