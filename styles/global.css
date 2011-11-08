@@ -602,8 +602,7 @@ img.loader {
 	background-color: #222;
 	float: right;
 	padding: 10px;
-	width: 100%;
-	border: 1px solid blue;
+	width: 150px;
 }
 .tweet-content:after {
 	border-color: transparent #222;
