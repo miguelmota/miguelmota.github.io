@@ -447,9 +447,6 @@ img.loader {
 .icon-link-16 {
 	background: url('/images/icons/pictos/16/link.png');
 }
-.icon-link-r-16 {
-	background: url('/images/icons/pictos/16/link-r.png');
-}
 .icon-link-24 {
 	background: url('/images/icons/pictos/24/link.png');
 }
@@ -865,13 +862,15 @@ a.google-plus-link {
 	position: absolute;
 	width: 100%;
 }
-.work-description {;
+.work-description .icon-link-16 {
+	background: url('/images/icons/pictos/16/link-2.png');
 }
 .work-description-footer {
 	border-top: 1px solid #333;
 	margin-top: 10px;
 	padding-top: 10px;
 }
+
 .work-date {
 	float: right;
 }
