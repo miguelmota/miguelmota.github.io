@@ -595,6 +595,7 @@ img.loader {
 .tweet-content {
 	background-color: #202020;
 	display: block;
+	float: right;
 	padding: 10px;
 }
 .tweet-content a {
