@@ -706,6 +706,7 @@ img.loader {
 .stream-carousel {
 	float: left;
 	margin: 0 5px;
+	padding: 20px 0;
 }
 .stream-carousel-nav {	
 	background-color: #202020;
