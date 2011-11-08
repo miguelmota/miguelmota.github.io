@@ -598,7 +598,6 @@ img.loader {
 	display: inline-block;
 	float: right;
 	padding: 10px;
-	width: 100px;
 }
 #tweets:after {
 	border-color: #000 transparent;
