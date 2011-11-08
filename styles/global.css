@@ -950,6 +950,9 @@ a.site-link {
 .icon-zoom-24 {
 	left: 50%;
 	margin: -12px 0 0 -12px;
+	opacity: 1;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+	filter: alpha(opacity=50);
 	position: absolute;
 	top: 50%;
 }
