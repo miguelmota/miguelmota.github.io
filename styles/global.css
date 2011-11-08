@@ -704,6 +704,7 @@ img.loader {
 	position: relative;
 }
 .stream-carousel {
+	background-color: #202020;
 	float: left;
 	margin: 0 5px;
 	padding: 20px 0;
@@ -742,7 +743,7 @@ img.loader {
 	float: left;
 	min-height: 120px;
 	height: auto;
-	margin-right: 5px;
+	margin-right: 1px;
 	transition: all .2s ease-in-out;
 	-moz-transition: all .2s ease-in-out;
 	-o-transition: all .2s ease-in-out;
