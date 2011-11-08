@@ -1106,7 +1106,8 @@ label[for='message'].error {
 	text-overflow: ellipsis;
 }
 .blog-post {
-	width: 70%;
+	max-width: 1000px;
+	width: 99%;
 }
 .blog-post h1 a {
 	display: block;
