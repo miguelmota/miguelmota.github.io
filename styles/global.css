@@ -530,6 +530,8 @@ img.loader {
 }
 .icon-zoom-24 {
 	background: url('/images/icons/pictos/24/zoom.png');
+	height: 24px;
+	width: 24px;
 }
 /* ==============================================================================
 	END ICONS
