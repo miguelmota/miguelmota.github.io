@@ -538,6 +538,9 @@ img.loader {
 	min-width: 670px;
 	width: auto;
 }
+.stream-latitude .icon-location-marker-16 {
+	float: left;
+}
 .stream-iframe-latitude {
 	background: #222 url('/images/ajax-loader.gif') no-repeat 0 0 !important;
 	border: 0 !important;
