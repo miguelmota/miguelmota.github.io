@@ -525,9 +525,11 @@ img.loader {
 	display: none;
 	float: right;
 }
+.icon-zoom-16 {
+	background: url('/images/icons/pictos/16/zoom.png');
+}
 .icon-zoom-24 {
-	background: url('/images/icons/pictos/16/checkmark.png');
-	height: 16px;
+	background: url('/images/icons/pictos/24/zoom.png');
 }
 /* ==============================================================================
 	END ICONS
