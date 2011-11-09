@@ -597,7 +597,7 @@ img.loader {
 	padding-bottom: 15px;
 	width: 100%;;
 }
-.search-input {
+input.search-input {
 	border-left: 4px solid #222;
 }
 .search-button {
