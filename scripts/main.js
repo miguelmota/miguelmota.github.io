@@ -556,7 +556,7 @@ function streamPage(){
 	
 	
 	// Initialize masonry
-	setTimeout('loadMasonry()', 1);
+	setTimeout('loadMasonry()', 100);
 	
 }
 
@@ -643,7 +643,7 @@ function portfolioPage(){
 	
 	
 	// Initialize masonry
-	setTimeout('loadMasonry()', 1000);
+	setTimeout('loadMasonry()', 100);
 	
 }
 
@@ -778,6 +778,11 @@ function blogPage(){
 	$('.short-url').mouseup(function(e){
         e.preventDefault();
 	});
+	
+	
+	
+	// Initialize masonry
+	setTimeout('loadMasonry()', 100);
 
 }
 
