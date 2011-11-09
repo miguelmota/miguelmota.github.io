@@ -258,7 +258,7 @@ function textTicker(){
 }
 
 // textTicker on selected nav link
-var length_selected = $('.content').attr('class').split(' ')[1]).text($('.content').attr('class').split(' ')[1].length;
+var length_selected = $('.content').attr('class').split(' ')[1].length;
 function textTickerSelected(){
 
 	$('#'+$('.content').attr('class').split(' ')[1]).text($('.content').attr('class').split(' ')[1].substring(0,position));
