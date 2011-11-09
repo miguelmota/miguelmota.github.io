@@ -597,11 +597,11 @@ img.loader {
 .search-form {
 	clear: both;
 	padding-bottom: 15px;
-	width: 200px;
 }
 input.search-input {
 	background-color: #222;
 	border-left-color: #222;
+	width: 200px;
 }
 .search-button {
 	display: none;
