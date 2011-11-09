@@ -248,7 +248,7 @@ function textTicker(){
 	$('#contact').text('contact'.substring(0,position));
 	$('#blog').text('blog'.substring(0,position));
 	
-	if(position++ == length){
+	if(position++ == 8){
 		setTimeout('textTicker()',1000);
 	} 
 	else{
@@ -262,7 +262,7 @@ function textTickerSelected(){
 
 	$('#'+$('.content').attr('class').split(' ')[1]).text($('.content').attr('class').split(' ')[1].substring(0,position));
 
-	if(position++ == 2){
+	if(position++ == 1){
 		setTimeout('textTickerSelected()',30);
 	} 
 	else{
