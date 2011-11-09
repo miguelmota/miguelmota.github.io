@@ -556,7 +556,7 @@ function streamPage(){
 	
 	
 	// Initialize masonry
-	setTimeout('loadMasonry()', 100);
+	setTimeout('loadMasonry()', 1000);
 	
 }
 
@@ -643,7 +643,7 @@ function portfolioPage(){
 	
 	
 	// Initialize masonry
-	setTimeout('loadMasonry()', 100);
+	setTimeout('loadMasonry()', 1000);
 	
 }
 
@@ -782,7 +782,7 @@ function blogPage(){
 	
 	
 	// Initialize masonry
-	setTimeout('loadMasonry()', 100);
+	setTimeout('loadMasonry()', 1000);
 
 }
 
