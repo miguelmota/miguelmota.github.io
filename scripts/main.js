@@ -101,9 +101,8 @@ $(document).ready(function(){
 	
 	
 	// Initialize side nav text ticker
-	//Disabled; causes bug in Firefox
+	// NOTE: might cause bug in Firefox
 	textticker();
-	
 	
 	
 	
@@ -227,43 +226,14 @@ var niceTime = (function(){
 	    };
 	})();
 
-// ajax load page
-/*
-$("ul.main-nav a:not('.nav-logo, #blog')").live('click', function(){
-		if(typeof(window.history.pushState) == 'function' && screen.width > 640){
-			c = 0;
-			bc = 0;
-			ldc = 0;
-			var loadSubTitle = $(this).attr('href')+' span.sub';
-			var toLoad = $(this).attr('href')+' section.content';
-			$('h1.title span.sub').fadeOut('fast');
-			$('section.content').fadeOut('fast',loadContent);
-			$('div.loader-container').fadeIn('normal');
-			function loadContent(){
-				$('h1.title span.sub').load(loadSubTitle);
-				$('section.content').load(toLoad,showNewContent);
-			}
-			if(typeof(window.history.pushState) == 'function'){
-				var stateObj = { foo:  $(this).attr('href') };
-				history.pushState(stateObj, "Title", $(this).attr('href'));
-			}
-			else{
-				window.location.hash = '!'+$(this).attr('href').substr(1,$(this).attr('href').length);
-			}
-			return false;
-		}
-		else{
-			return true;
-		}
-});
-*/
 
-
-
-var position = 0;
-var length = 'portfolio'.length;
+// Right scroll effect on navigation links
 function textticker(){
 	
+	var position = 0;
+	var length = 'portfolio'.length;
+	
+	$('#tumblog').text('tumblog'.substring(0,position));
 	$('#stream').text('stream'.substring(0,position));
 	$('#about').text('about'.substring(0,position));
 	$('#portfolio').text('portfolio'.substring(0,position));
@@ -277,6 +247,23 @@ function textticker(){
 		setTimeout('textticker()',60);
 	}
 	
+}
+
+
+
+//Display the year
+function displayYear(){
+	var date = new Date();
+	var thisYear = date.getFullYear();
+	
+	document.write(thisYear);
+}
+
+
+
+// Display pathanme
+function displayURL(){
+	document.write(pathname);
 }
 
 function showNewContent(){
@@ -733,14 +720,39 @@ function loadSearch(){
 
 
 
-function displayYear(){
-	var date = new Date();
-	var thisYear = date.getFullYear();
-	
-	document.write(thisYear);
-}
 
 
-function displayURL(){
-	document.write(pathname);
-}
+
+
+
+
+//ajax load page
+/*
+$("ul.main-nav a:not('.nav-logo, #blog')").live('click', function(){
+		if(typeof(window.history.pushState) == 'function' && screen.width > 640){
+			c = 0;
+			bc = 0;
+			ldc = 0;
+			var loadSubTitle = $(this).attr('href')+' span.sub';
+			var toLoad = $(this).attr('href')+' section.content';
+			$('h1.title span.sub').fadeOut('fast');
+			$('section.content').fadeOut('fast',loadContent);
+			$('div.loader-container').fadeIn('normal');
+			function loadContent(){
+				$('h1.title span.sub').load(loadSubTitle);
+				$('section.content').load(toLoad,showNewContent);
+			}
+			if(typeof(window.history.pushState) == 'function'){
+				var stateObj = { foo:  $(this).attr('href') };
+				history.pushState(stateObj, "Title", $(this).attr('href'));
+			}
+			else{
+				window.location.hash = '!'+$(this).attr('href').substr(1,$(this).attr('href').length);
+			}
+			return false;
+		}
+		else{
+			return true;
+		}
+});
+*/
