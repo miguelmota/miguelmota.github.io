@@ -102,7 +102,7 @@ $(document).ready(function(){
 	
 	// Initialize side nav text ticker
 	// NOTE: might cause bug in Firefox
-	textticker();
+	textTicker();
 	
 	
 	
@@ -231,7 +231,7 @@ var niceTime = (function(){
 var position = 0;
 var length = 'portfolio'.length;
 
-function textticker(){
+function textTicker(){
 	
 	$('#tumblog').text('tumblog'.substring(0,position));
 	$('#stream').text('stream'.substring(0,position));
@@ -241,10 +241,10 @@ function textticker(){
 	$('#blog').text('blog'.substring(0,position));
 	
 	if(position++ == 8){
-		setTimeout('textticker()',1000);
+		setTimeout('textTicker()',1000);
 	} 
 	else{
-		setTimeout('textticker()',60);
+		setTimeout('textTicker()',60);
 	}
 	
 }
