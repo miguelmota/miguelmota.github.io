@@ -1342,44 +1342,17 @@ input.short-url:focus {
 /* ==============================================================================
 	GOOGLE CUSTOM SEARCH ENGINE
 ============================================================================== */
-.cse-search-form-wrap {
-	float: right;
-	margin-top: -45px;
-	padding: 0;
-	text-align: right;
-	width: 650px;
-}
-#cse-search-form {
-	float: right;
-	padding: 0;
-	width: 300px;
-}
-#cse-search-form input[type=text] {
-	background: #222 !important;
-	border: 0;
-	border-left: 4px solid #292929 !important;
-	color: #555 !important;
-	width: 250px !important;
-}
-#cse-search-form input[type=text]:focus {
-	border-color: #007299 !important;
-	color: #999 !important;
-}
 .cse-wrap {
-	background-color: #222;
 	clear: both;
 	max-width: 1000px;
 	width: 1000%;
-	z-index: 100;
-}
-.gsc-result-info {
-	border-bottom: 1px solid #555 !important;
 }
 #cse {
 	background-color: #222 !important;
 	border: 0 !important;
-	clear: both;
-	z-index: 100;
+}
+.gsc-result-info {
+	border-bottom: 1px solid #555 !important;
 }
 .gsc-control-cse,
 .gsc-results,
@@ -1395,6 +1368,11 @@ input.short-url:focus {
 	font-size: 14px !important;
 	text-decoration: none !important;
 }
+#cse a:hover,
+#cse a b:hover,
+.gs-title:hover {
+	color: #0098cc !important;
+}
 .gs-snippet {
 	color: #999 !important;
 	font-size: 12px !important;
@@ -1408,7 +1386,7 @@ input.short-url:focus {
 	border: 0 !important;
 	padding: 0 !important;
 }
-.gs-no-results-result div.gs-snippet {
+.gs-no-results-result .gs-snippet {
 	background-color: #222 !important;
 	border: 0 !important;
 	color: #870000 !important;
