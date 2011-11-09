@@ -558,6 +558,9 @@ img.loader {
 	color: #fff;
 	font-weight: bold;
 }
+.plus-one-button-follow {
+	float: right;
+}
 .top-link-wrap {
 	clear: both;
 	padding: 10px 0 15px 0;
