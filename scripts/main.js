@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
 	// Initialize side nav text ticker; NOTE: might cause bug in Firefox
-	textTicker();
+	textTickerSelected();
 	
 	
 	
@@ -243,6 +243,21 @@ function textTicker(){
 	} 
 	else{
 		setTimeout('textTicker()',60);
+	}
+	
+}
+
+
+// textTicker on selected nav link
+function textTickerSelected(){
+
+	$('#'+$('.content').attr('class').split(' ')[1]).text('tumblog'.substring(0,position));
+
+	if(position++ == 8){
+		setTimeout('textTickerSelected()',1000);
+	} 
+	else{
+		setTimeout('textTickerSelected()',60);
 	}
 	
 }
