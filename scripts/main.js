@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	
 	// Initialize side nav text ticker; NOTE: might cause bug in Firefox
-	// textTicker();
+	textTicker();
 	
 	
 	
@@ -447,7 +447,7 @@ function streamPage(){
 			for(var i = 0; i < data.length; i++){
 				var entry = data[i].software;
 				var date = new Date(entry.last_active_at).toUTCString();
-				html.push("<li><a href='", entry.complete_url, "' rel='external'> <img class='stream-thumb' src='", entry.complete_thumb_url ,"' alt='' /> ", entry.name, "</a> <time class='status-date'>"+niceTime(date)+"</time>", "</li>");
+				html.push("<li><a href='"+entry.complete_url+"' rel='external'> <img class='stream-thumb' src='"+entry.complete_thumb_url+"' alt='' /> "+entry.name+"</a> <time class='status-date'>"+niceTime(date)+"</time>", "</li>");
 			}
 			html.push("</ul>");
 			document.getElementById('stream-wakoopa-software').innerHTML = html.join("");
