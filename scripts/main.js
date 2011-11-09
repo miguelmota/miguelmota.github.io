@@ -42,18 +42,9 @@ $(document).ready(function(){
 	});
 	
 	
-	
-	// Initialize Google Plus One
-	(function() {
-		  var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-		  po.src = 'https://apis.google.com/js/plusone.js';
-		  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-		})();
-	
-	
-	
+
 	// Navigation hover effect
-	$(".main-side-nav-ul a").hover(
+	$('.main-side-nav-ul a').hover(
 			function(){
 				$(this).animate({borderLeftWidth: '6px'}, {queue: false, duration: 60});
 			},
