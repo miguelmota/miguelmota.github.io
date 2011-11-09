@@ -1223,8 +1223,10 @@ h6 {
 }
 .addthis_toolbox {
 	display: inline;
-	float: right;
-	text-shadow: 0;
+	left: 200px;
+	position: absolute;
+	text-shadow: 0;	
+	top: 0;
 }
 input.short-url {
 	background: #202020;

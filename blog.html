@@ -27,7 +27,7 @@ title: Blog
 				<div class='share-wrap'>
 					<g:plusone class='plus-one-button' href='http://www.miguelmota.com{{ post.url }}' size='medium'></g:plusone>
 					<a class='twitter-share-button' href='http://twitter.com/share' data-text='{{ page.title }}' data-url='http://www.miguelmota.com{{ post.url }}' data-via='miguel_mota' data-count='horizontal'>Tweet</a>
-					<div class='addthis_toolbox addthis_default_style'><a class='addthis_counter addthis_pill_style'></a></div>
+					<div class='addthis_toolbox addthis_default_style' addthis:url='{{ post.url }}' addthis:url='{{ post.title }}'><a class='addthis_counter addthis_pill_style'></a></div>
 					<input class='short-url' type='text' value='http://www.miguelmota.com{{ post.url }}' />
 				</div>
 			</div>
