@@ -607,12 +607,12 @@ img.loader {
 .tweet-content:after {
 	border-color: transparent #222;
 	border-style: solid;
-	border-width: 8px 15px 8px 0;
+	border-width: 8px 15px 5px 0;
 	bottom: auto;
 	content: "";
 	display: block; 	
 	left: -15px; /* value = - border-left-width - border-right-width */
-	top: 0;
+	top: 3px;
 	position: absolute;
 	width: 0;
 }
