@@ -598,7 +598,7 @@ img.loader {
 	width: 100%;;
 }
 .search-input {
-	border-left-color: #222;
+	border-left: 4px solid #222;
 }
 .search-button {
 	display: none;
