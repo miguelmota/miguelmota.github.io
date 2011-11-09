@@ -228,10 +228,10 @@ var niceTime = (function(){
 
 
 // Right scroll effect on navigation links
+var position = 0;
+var length = 'portfolio'.length;
+
 function textticker(){
-	
-	var position = 0;
-	var length = 'portfolio'.length;
 	
 	$('#tumblog').text('tumblog'.substring(0,position));
 	$('#stream').text('stream'.substring(0,position));
