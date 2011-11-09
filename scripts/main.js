@@ -258,12 +258,11 @@ function textTicker(){
 }
 
 // textTicker on selected nav link
-var length_selected = 4;
 function textTickerSelected(){
 
 	$('#'+$('.content').attr('class').split(' ')[1]).text($('.content').attr('class').split(' ')[1].substring(0,position));
 
-	if(position++ == length_selected){
+	if(position++ == 2){
 		setTimeout('textTickerSelected()',30);
 	} 
 	else{
