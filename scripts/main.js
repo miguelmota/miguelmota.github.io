@@ -1,5 +1,16 @@
 $(document).ready(function(){
 	
+	// Initialize Masonry plugin, masonry.desandro.com
+	var $tumblelog = $('.content');
+	
+	$tumblelog.imagesLoaded( function(){
+	  $tumblelog.masonry({
+	    isFitWidth: true
+	  });
+	});
+	
+	
+	
 	// Initialize side nav text ticker; NOTE: might cause bug in Firefox
 	textTicker();
 	
@@ -29,18 +40,7 @@ $(document).ready(function(){
 			}
 		}
 	});
-	
-	
-	
-	// Initialize Masonry plugin, masonry.desandro.com
-	var $tumblelog = $('.content');
-	
-	$tumblelog.imagesLoaded( function(){
-	  $tumblelog.masonry({
-	    isFitWidth: true
-	  });
-	});
-	
+
 	
 
 	// Navigation hover effect
