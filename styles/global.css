@@ -615,6 +615,7 @@ img.loader {
 	top: 3px;
 	position: absolute;
 	width: 0;
+	z-index: -100;
 }
 .tweet-content a {
 	font-weight: normal;
