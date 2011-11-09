@@ -602,7 +602,7 @@ img.loader {
 	float: right;
 	min-height: 20px;
 	padding: 10px;
-	width: 145px;
+	width: 140px;
 }
 .tweet-content:after {
 	border-color: transparent #222;
@@ -612,7 +612,7 @@ img.loader {
 	content: "";
 	display: block; 	
 	left: -15px; /* value = - border-left-width - border-right-width */
-	top: 5px;
+	top: 4px;
 	position: absolute;
 	width: 0;
 }
