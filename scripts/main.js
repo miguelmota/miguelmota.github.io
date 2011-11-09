@@ -247,7 +247,6 @@ function textTicker(){
 	
 }
 
-
 // textTicker on selected nav link
 function textTickerSelected(){
 
