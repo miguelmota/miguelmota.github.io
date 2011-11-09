@@ -1266,7 +1266,8 @@ input.short-url:focus {
 	position: relative;
 	width: 100%;
 }
-.disqus_thread {
+#disqus_thread {
+	clear: both;
 	margin-top: 15px;
 }
 /* ==============================================================================
