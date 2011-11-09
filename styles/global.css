@@ -596,8 +596,8 @@ img.loader {
 	SEARCH FORM
 ============================================================================== */
 .search-form {
+	clear: both;
 	padding-bottom: 15px;
-	width: 100%;;
 }
 input.search-input {
 	background-color: #222;
