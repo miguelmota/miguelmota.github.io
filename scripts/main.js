@@ -1,59 +1,36 @@
 $(document).ready(function(){
 	
-	  //$('.content').masonry({
-		    // options
-		  //  itemSelector : '.content-item'
-		 //});
-	  
-		var $tumblelog = $('.content');
-
-		$tumblelog.imagesLoaded( function(){
-		  $tumblelog.masonry({
-		    isFitWidth: true
-		  });
-		});
+	// Initialize Masonry plugin, masonry.desandro.com
+	var $tumblelog = $('.content');
 	
-	//display mobile link if window is 640px or less
-	/*if(window.innerWidth <= 640){
-		window.location = 'http://www.miguelmota.com/mobile/';
-		$('div.main-wrap').prepend("<a class='mobile-bar' href='/mobile'>view mobile site &#187;</a><a class='mobile-bar-close' href='javascript:void(0);'>x</a>");
-		$('a.mobile-bar').hide();
-		setTimeout(function(){
-			$('a.mobile-bar').slideDown('slow');
-		}, 2500);
-		$('a.mobile-bar-close').live('click', function(){
-			$(this).hide();
-			$('a.mobile-bar').slideUp('normal');
-		});
-	} */
-	
-	
-	// Initialize Masonry plugin, [http://masonry.desandro.com]
-	/* var $tumblelog = $('.posts');
-
 	$tumblelog.imagesLoaded( function(){
 	  $tumblelog.masonry({
 	    isFitWidth: true
 	  });
-	}); */
-	  
-		// Navigation hover effect
-		$(".main-side-nav-ul a").hover(
-				function(){
-					$(this).animate({borderLeftWidth: '6px'}, {queue: false, duration: 60});
-				},
-				function(){
-					$(this).animate({borderLeftWidth: '4px'}, {queue: false, duration: 60});
-				}
-			);
-		
-		
-		// Default test on input color
-		$('input:text, input:password, textarea').focus(function(){
-			$(this).css('color', '#999');
-		});
+	});
 	
-	// Highlight short url on focus
+	
+	
+	// Navigation hover effect
+	$(".main-side-nav-ul a").hover(
+			function(){
+				$(this).animate({borderLeftWidth: '6px'}, {queue: false, duration: 60});
+			},
+			function(){
+				$(this).animate({borderLeftWidth: '4px'}, {queue: false, duration: 60});
+			}
+		);
+		
+		
+	
+	// Change default text color on input focus
+	$('input:text, input:password, textarea').focus(function(){
+		$(this).css('color', '#999');
+	});
+	
+	
+	
+	// Highlight and select short url on focus
 	$('.short-url').focus(function(){
 		$(this).select();
 	});
@@ -61,7 +38,9 @@ $(document).ready(function(){
         e.preventDefault();
 	});
 	
-	// Add selected class to nav link based on page name
+	
+	
+	// Add selected class to nav link based on page content class name
 	$('.main-side-nav-ul a').each(function(){ 
 		if($(this).attr('id') == $('.content').attr('class').split(' ')[1]){
 			$('#stream').removeClass('selected');
@@ -87,32 +66,19 @@ $(document).ready(function(){
 	});
 	
 	
-	// Draggable;
+	
+	// Initalize draggable on stream items
 	$('.stream-wrap').draggable({
 			cursor: 'move'
 		});
-	/* $('.content-item:not(".stream-latitude, .stream-flickr")').resizable({  
-			minHeight: 100,
-			maxHeight: 500,
-		    minWidth: 250,
-		    maxWidth: 700,
-		    handles: 'se'
-	    }); */
+
 	
 	
-	// Move h1 title to top on mobile
+	// Make navigation absolute on mobile screens
 	if(screen.width <= 640){
 		$('.main-side-nav').css({
 			'position': 'absolute'
 		});
-		//$('#cse-search-form').insertAfter('.blog-description');
-	}
-	
-	//redirect to homepage if window location alone is #!
-	if(typeof(window.history.pushState) != 'function'){
-		if(window.location.hash == '#!') {
-			window.location = '/';
-		}
 	}
 	
 	
@@ -121,105 +87,24 @@ $(document).ready(function(){
 		e.preventDefault();
 		return false;
 	});
-	//$('a[href^=http]').live('click', function(){
-		//window.open(this.href);
-		//return false;
-	//});
-	
-	
-	
-	initializeFancybox();
-	
-	// Navigation hover effect
-	$('ul.main-nav a').live({
-		mouseenter:
-			function(){
-				$(this).animate({borderLeftWidth: '6px'}, {queue: false, duration: 60});
-			},
-			mouseleave:
-			function(){
-				$(this).animate({borderLeftWidth: '4px'}, {queue: false, duration: 60});
-			}
-		});
-	
-	
-	//initialize text ticker
-	//textticker(); //disabled, firefox bug
-	
-	//check pathname and add selected class to nav link
-	//run appropriate function
-	/*
-	switch(pathname.substr(1)){
-		case 'stream':
-			streamPage();
-			$('a#stream').addClass('selected');
-			break;
-		case 'about':
-			$('a#about').addClass('selected');
-			break;
-		case 'portfolio/':
-			portfolioPage();
-			$('a#portfolio').addClass('selected');
-			break;
-		case 'contact':
-			contactPage();
-			$('a#contact').addClass('selected');
-			break;
-		case 'blog':
-		default:
-			blogPage();
-			$('a#blog').addClass('selected');
-			break;
-	}
-	
-	if(pathname.substr(1,10) == 'portfolio/'){
-		portfolioPage();
-	}
-	
-	
-	switch(pathname.substr(1,4)){
-	case 'post':
-		blogPage();
-		$('a#blog').addClass('selected');
-		break;
-	default:
-		break;
-	}
-	switch(pathname.substr(1,7)){
-	case 'archive':
-		$('a#blog').addClass('selected');
-		break;
-	default:
-		break;
-	}
+	/* Disabled; opens two tabs instead of one
+	$('a[href^=http]').live('click', function(){
+		window.open(this.href);
+		return false;
+	});
 	*/
 	
 	
+	// Initialize Fancybox
+	initializeFancybox();
 	
-	// add selected class based on the section block class
-	$('ul.main-nav li a').each(function(){ 
-		if($(this).attr('id') == $('.content').attr('class').split(' ')[1]){
-			$(this).addClass('selected');
-			switch($('section.content').attr('class').split(' ')[1]){
-				case 'stream':
-					streamPage();
-					break;
-				case 'about':
-					break;
-				case 'portfolio':
-					portfolioPage();
-					break;
-				case 'contact':
-					contactPage();
-					break;
-				case 'blog':
-					blogPage();
-				default:
-					break;
-			}
-		
-		}
-	});
+	
+	
+	// Initialize side nav text ticker
+	//Disabled; causes bug in Firefox
+	textticker();
+	
+	
 	
 	
 	// Show zoom icon on hover
@@ -229,36 +114,10 @@ $(document).ready(function(){
 			jQuery('.zoom-wrap', this).hide();
 		  }
 	);
+
 	
 	
-	
-	/*
-	$('ul.main-nav li a').each(function(){
-		if($(this).attr('href') == pathname){
-			//$('ul.main-nav a#stream').removeClass('selected');
-			//$(this).addClass('selected');
-			
-		}
-		else{
-			//initialize stream
-			streamPage();
-			//document.title = 'Miguel Mota | Freelance Web Developer';
-		}
-	});
-	$('a#'+$('span.sub').text()).addClass('selected');
-	*/
-	
-	//append title
-	// $('body').append("<div class='theTitle' style='display: none;'> &#8212; Miguel Mota | Freelance Web Developer</div>");
-	
-	// redirect to poper page if pushSate not supported
-	/*if(typeof(window.history.pushState) != 'function'){
-		if(window.location.hash){
-			window.location = '/'+window.location.hash.substr(2);
-		}
-	}*/
-	
-	//back to top smooth scroll effect
+	// Back to top smooth scroll effect
 	$('a[href*=#]').click(function() {
 		if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
 		&& location.hostname == this.hostname) {
@@ -275,11 +134,10 @@ $(document).ready(function(){
 		var scrollTop = $(document).scrollTop();
 		scrollTop = parseInt(scrollTop);
 		var offset = topYloc+scrollTop+'px';  
-		$('a.top-link').animate({top:offset},{duration:500,queue:false});
+		$('.top-link').animate({top:offset},{duration:500,queue:false});
 	});
-	topYloc = parseInt($('a.top-link').css('top').substring(0,$('a.top-link').css('top').indexOf('px')));
+	topYloc = parseInt($('.top-link').css('top').substring(0,$('.top-link').css('top').indexOf('px')));
 
-	
 	
 	
 	// Initialize Tumblr share button
@@ -291,18 +149,14 @@ $(document).ready(function(){
     tumblr_button.setAttribute('href', 'http://www.tumblr.com/share/link?url='+encodeURIComponent(tumblr_link_url)+'&name='+encodeURIComponent(tumblr_link_name)+'&description='+encodeURIComponent(tumblr_link_description));
     tumblr_button.setAttribute('title', tumblr_link_name);
     tumblr_button.setAttribute('style', "display:inline-block; text-indent:-9999px; overflow:hidden; width:81px; height:20px; background:url('http://platform.tumblr.com/v1/share_1.png') top left no-repeat transparent;");
-	
-	
-	
-	
-	
-	
-	
+    
 });
+
+
 
 $(window).scroll(function(){
 	
-	//toggle back to top link on scroll
+	// Toggle back to top link on scroll
 	if(window.pageYOffset >= 200){
 		$('a.top-link').fadeIn(600);
 	}
@@ -312,78 +166,15 @@ $(window).scroll(function(){
 	
 });
 
-
-
-
 /*
-var bsc = 0;
-$(document).ajaxComplete(function(){
-	
-	initializeFancybox()
-	
-	while (c == 0){
-		if(typeof(window.history.pushState) != 'function'){
-			//var path2 = window.location.hash.substr(2);
-			var path2 = window.location.pathname.substr(1);
-		}
-		else{
-			var path2 = window.location.pathname.substr(1);
-		}
-		var title = $('h1.title span.sub:first').text()+$('div.theTitle').text();
-		//document.title = title;
-		
-		$('ul.main-nav a').removeClass('selected');
-		while(bsc == 0) {
-			if($('section.content').attr('class').split(' ')[2] == 'post' || $('section.content').attr('class').split(' ')[2] == 'archive'){
-	
-					$('ul.main-nav a#blog').addClass('selected');
-	
-			}
-			else {
-				$('ul.main-nav a').removeClass('selected');
-			}
-		bsc++;
-		}
-		
-		
-		if(path2 != ''){
-			$('ul.main-nav a#'+path2).addClass('selected');
-		}
-		else{
-			$('ul.main-nav a#stream').addClass('selected');
-			//document.title = 'Miguel Mota | Freelance Web Developer';
-		}
-		
-	
-		switch(path2){
-			case '':
-			case 'index':
-			case 'stream':
-				streamPage();
-				break;
-			case 'portfolio':
-			case 'portfolio/':
-				portfolioPage();
-				break;
-			case 'contact':
-				contactPage();
-				break;
-			case 'blog': 
-				blogPage();
-				break;
-			default:
-				break;
-		}
-		c++;
-	}
-
-	
-});
-*/
+ * --------------------------------------------------------------------------------
+ *	FUNCTIONS
+ * --------------------------------------------------------------------------------
+ */
 
 function initializeFancybox() {
 	
-	//initialize fancybox
+	// Initialize fancybox
 	$('a.fancybox').fancybox({
 			'showCloseButton': false,
 			'titlePosition': 'inside',
@@ -395,7 +186,8 @@ function initializeFancybox() {
 			'overlayColor': '#000',
 			'overlayOpacity': .8
 	});
-	//custom fancybox title formatting
+	
+	// Custom Fancybox caption formatting
 	function formatTitle(title, currentArray, currentIndex, currentOpts) {
 	    return '<div class="fancybox-title"><span><a class="button" href="javascript:void(0);" onclick="$.fancybox.close();">close X</a></span>' + (title && title.length ? '<strong>' + title + '</strong>' : '' ) + 'Image ' + (currentIndex + 1) + ' of ' + currentArray.length + '</div>';
 	}
@@ -408,22 +200,9 @@ var ldc = 0;
 
 var pathname = window.location.pathname;
 
-/*
-//can't get it to work
-function loadPage(){
-	
-	var toLoad = '/'+window.location.hash.substr(12)+' section.content';
-	//window.location.hash = window.location.hash.substr(1);
-	$('section.content').fadeOut('fast',loadContent);
-	$('div.loader-container').fadeIn('normal');
-	function loadContent(){
-		$('section.content').load(toLoad, showNewContent);
-	}
-	return false;
-}
-*/
 
-//convert UTC time to niceTime, ie. 2 hours ago
+
+// Convert UTC time to niceTime ie. 2 hours ago, james.padolsey.com/javascript/recursive-pretty-date
 var niceTime = (function(){
 	    var ints = {
 	        second: 1,
@@ -480,50 +259,16 @@ $("ul.main-nav a:not('.nav-logo, #blog')").live('click', function(){
 */
 
 
-/*
- //not gonna use anymore
-$('div.posti h3 a').live('click', function(){
-	var toLoad2 = $(this).attr('href')+' div.posti';
-
-	$('div.posti').fadeOut('fast',loadContent2);
-	$('div.loader-container').fadeIn('normal');
-	if(typeof(window.history.pushState) == 'function'){
-		var stateObj2 = { foo2:  $(this).attr('href') };
-		history.pushState(stateObj2, "Title2", $(this).attr('href'));
-	}
-	else{
-		window.location.hash = '!'+$(this).attr('href').substr(1,$(this).attr('href').length);
-	}
-	var title2 = $(this).text()+$('div.theTitle').text();
-	document.title = title2;
-	function loadContent2(){
-		$('div.posti').load(toLoad2,showNewContent2);
-		function showNewContent2(){
-			//$('ul.main-nav a').removeClass('selected'); //commented because of testing
-			//$('#'+window.location.hash.substr(2)).addClass('selected'); //commented because of testing
-			$('div.posti').fadeIn('normal',hideLoader);
-			//var title = $('span.sub').text()+$('div.theTitle').text(); //commented because of testing
-			//document.title = title; //commented because of testing
-			//if(window.location.hash == '#!'){
-				//document.title = theTitle; //commented because testing
-			//}
-			loadDisqus();
-		}
-	}
-	return false;
-});
-
-*/
 
 var position = 0;
 var length = 'portfolio'.length;
 function textticker(){
 	
-	$('a#stream').text('stream'.substring(0,position));
-	$('a#about').text('about'.substring(0,position));
-	$('a#portfolio').text('portfolio'.substring(0,position));
-	$('a#contact').text('contact'.substring(0,position));
-	$('a#blog').text('blog'.substring(0,position));
+	$('#stream').text('stream'.substring(0,position));
+	$('#about').text('about'.substring(0,position));
+	$('#portfolio').text('portfolio'.substring(0,position));
+	$('#contact').text('contact'.substring(0,position));
+	$('#blog').text('blog'.substring(0,position));
 	
 	if(position++ == 8){
 		setTimeout('textticker()',1000);
