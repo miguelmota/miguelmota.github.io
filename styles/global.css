@@ -1353,7 +1353,7 @@ input.short-url:focus {
 	clear: both;
 	padding: 20px;
 	position: absolute;
-	top: 25px;
+	top: 50px;
 	width: 500px;
 	z-index: 100;
 }
