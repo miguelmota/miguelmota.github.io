@@ -248,7 +248,7 @@ function textTicker(){
 	$('#contact').text('contact'.substring(0,position));
 	$('#blog').text('blog'.substring(0,position));
 	
-	if(position++ == 8){
+	if(position++ == length){
 		setTimeout('textTicker()',1000);
 	} 
 	else{
@@ -258,11 +258,12 @@ function textTicker(){
 }
 
 // textTicker on selected nav link
+var length_selected = $('.content').attr('class').split(' ')[1]).text($('.content').attr('class').split(' ')[1].length;
 function textTickerSelected(){
 
 	$('#'+$('.content').attr('class').split(' ')[1]).text($('.content').attr('class').split(' ')[1].substring(0,position));
 
-	if(position++ == 8){
+	if(position++ == length_selected){
 		setTimeout('textTickerSelected()',1000);
 	} 
 	else{
