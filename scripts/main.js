@@ -514,9 +514,9 @@ function streamPage(){
 	
 	
 	// Initalize draggable on stream items
-	/*$('.stream-wrap').draggable({
+	$('.stream-wrap').draggable({
 			cursor: 'move'
-		});*/
+		});
 
 }
 
