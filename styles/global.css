@@ -1415,6 +1415,11 @@ input.short-url:focus {
 .gsc-cursor-current-page a:active {
 	color: #555 important;
 }
+.gsc-search-button,
+.gcsc-branding-text,
+.gcsc-branding-img-noclear  {
+	display: none !important;
+}
 /* ==============================================================================
 	END GOOGLE CUSTOM SEARCH ENGINE
 ============================================================================== */
