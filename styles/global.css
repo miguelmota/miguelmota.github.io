@@ -1275,7 +1275,9 @@ input.short-url:focus {
 	clear: both;
 	font-size: 18px;
 	padding: 25px 5px 5px 5px;
+	position: relative;
 	text-align: center;
+	width: 100%;
 }
 .pagination-jump {
 	display: inline-block;
@@ -1287,12 +1289,12 @@ input.short-url:focus {
 	padding: 10px;
 }
 .pagination-next {
-	float: right;
-	text-align: right;
+	position: absolute;
+	right: 0;
 }
 .pagination-previous {
-	float: left;
-	text-align: left;
+	left: 0;
+	position: absolute;
 }
 /* ==============================================================================
 	END PAGINATION
