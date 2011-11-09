@@ -237,7 +237,6 @@ var niceTime = (function(){
 
 // Right scroll effect on navigation links
 var position = 0;
-var length = 'portfolio'.length;
 
 function textTicker(){
 	
