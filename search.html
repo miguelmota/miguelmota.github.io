@@ -4,8 +4,7 @@ title: Search
 ---
 <h1 class='title'>{% include title.html %}<span class='sub'>Search</span></h1>
 <section class='content search'>
-	<div id="cse" style="width: 100%;">Loading</div>
-	<script src="//www.google.com/jsapi" type="text/javascript"></script>
+	<div class='cse-wrap'><div id='cse'><div class='loader'></div></div></div>
 	<script type="text/javascript"> 
 	  function parseQueryFromUrl () {
 	    var queryParamName = "q";

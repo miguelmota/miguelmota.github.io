@@ -1368,10 +1368,8 @@ input.short-url:focus {
 .cse-wrap {
 	background-color: #222;
 	clear: both;
-	padding: 20px;
-	position: absolute;
-	top: 50px;
-	width: 500px;
+	max-width: 1000px;
+	width: 1000%;
 	z-index: 100;
 }
 #cse {
