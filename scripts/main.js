@@ -29,17 +29,7 @@ $(document).ready(function(){
 	});
 	
 	
-	
-	// Highlight and select short url on focus
-	$('.short-url').focus(function(){
-		$(this).select();
-	});
-	$('.short-url').mouseup(function(e){
-        e.preventDefault();
-	});
-	
-	
-	
+
 	// Add selected class to nav link based on page content class name
 	$('.main-side-nav-ul a').each(function(){ 
 		if($(this).attr('id') == $('.content').attr('class').split(' ')[1]){
@@ -65,14 +55,7 @@ $(document).ready(function(){
 		}
 	});
 	
-	
-	
-	// Initalize draggable on stream items
-	$('.stream-wrap').draggable({
-			cursor: 'move'
-		});
 
-	
 	
 	// Make navigation absolute on mobile screens
 	if(screen.width <= 640){
@@ -109,16 +92,6 @@ $(document).ready(function(){
 	
 	
 	
-	// Show zoom icon on hover
-	$('.fancybox').hover(function(){
-			jQuery('.zoom-wrap', this).css('display', 'block');
-	},function(){
-			jQuery('.zoom-wrap', this).hide();
-		  }
-	);
-
-	
-	
 	// Back to top smooth scroll effect
 	$('a[href*=#]').click(function() {
 		if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
@@ -139,19 +112,16 @@ $(document).ready(function(){
 		$('.top-link').animate({top:offset},{duration:500,queue:false});
 	});
 	topYloc = parseInt($('.top-link').css('top').substring(0,$('.top-link').css('top').indexOf('px')));
+	
+	
+	
+	// Initialize Google Plus One
+	(function() {
+		  var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+		  po.src = 'https://apis.google.com/js/plusone.js';
+		  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+		})();
 
-	
-	
-	// Initialize Tumblr share button
-	$.getScript('http://platform.tumblr.com/v1/share.js');
-	var tumblr_link_url = document.getElementById('post-link').getAttribute('href');
-	var tumblr_link_name = document.getElementById('post-link').innerText;
-	var tumblr_link_description = document.getElementById('post-content').innerText;
-    var tumblr_button = document.getElementById('tumblr-share-button');
-    tumblr_button.setAttribute('href', 'http://www.tumblr.com/share/link?url='+encodeURIComponent(tumblr_link_url)+'&name='+encodeURIComponent(tumblr_link_name)+'&description='+encodeURIComponent(tumblr_link_description));
-    tumblr_button.setAttribute('title', tumblr_link_name);
-    tumblr_button.setAttribute('style', "display:inline-block; text-indent:-9999px; overflow:hidden; width:81px; height:20px; background:url('http://platform.tumblr.com/v1/share_1.png') top left no-repeat transparent;");
-    
 });
 
 
@@ -197,6 +167,17 @@ function initializeFancybox() {
 	function formatTitle(title, currentArray, currentIndex, currentOpts) {
 	    return '<div class="fancybox-title"><span><a class="button" href="javascript:void(0);" onclick="$.fancybox.close();">close X</a></span>' + (title && title.length ? '<strong>' + title + '</strong>' : '' ) + 'Image ' + (currentIndex + 1) + ' of ' + currentArray.length + '</div>';
 	}
+	
+	
+	
+	// Show zoom icon on hover
+	$('.fancybox').hover(function(){
+			jQuery('.zoom-wrap', this).css('display', 'block');
+	},function(){
+			jQuery('.zoom-wrap', this).hide();
+		  }
+	);
+	
 }
 
 
@@ -324,6 +305,13 @@ function streamPage(){
 				hideMtip('.'+$(this).attr('class').split(' ')[1]+' .stream-logo');
 			}
 	});
+	
+	
+	
+	// Initalize draggable on stream items
+	$('.stream-wrap').draggable({
+			cursor: 'move'
+		});
 	
 
 	
@@ -733,20 +721,32 @@ function blogPage(){
 	// Get AddThis script
 	// $.getScript('http://s7.addthis.com/js/250/addthis_widget.js#username=miguelmota');
 	
-	// Get tumblr share script
-	$.getScript('http://platform.tumblr.com/v1/share.js');
 	
+	
+	// Initialize Tumblr share button
+	$.getScript('http://platform.tumblr.com/v1/share.js');
+	var tumblr_link_url = document.getElementById('post-link').getAttribute('href');
+	var tumblr_link_name = document.getElementById('post-link').innerText;
+	var tumblr_link_description = document.getElementById('post-content').innerText;
+    var tumblr_button = document.getElementById('tumblr-share-button');
+    tumblr_button.setAttribute('href', 'http://www.tumblr.com/share/link?url='+encodeURIComponent(tumblr_link_url)+'&name='+encodeURIComponent(tumblr_link_name)+'&description='+encodeURIComponent(tumblr_link_description));
+    tumblr_button.setAttribute('title', tumblr_link_name);
+    tumblr_button.setAttribute('style', "display:inline-block; text-indent:-9999px; overflow:hidden; width:81px; height:20px; background:url('http://platform.tumblr.com/v1/share_1.png') top left no-repeat transparent;");
+    
+	
+    
 	// Get Twitter widgets script
 	$.getScript('http://platform.twitter.com/widgets.js');
-
 	
 	
-	// Initiatlize Google Plus One
-	(function() {
-		  var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-		  po.src = 'https://apis.google.com/js/plusone.js';
-		  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-		})();
+	
+	// Highlight and select short url on focus
+	$('.short-url').focus(function(){
+		$(this).select();
+	});
+	$('.short-url').mouseup(function(e){
+        e.preventDefault();
+	});
 
 }
 
