@@ -517,6 +517,7 @@ img.loader {
 	position: absolute;
 	width: 200px;
 	border: 1px solid black;
+	overflow: hidden;
 }
 .main-side-nav {
 	position: fixed;	
