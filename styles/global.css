@@ -1080,8 +1080,10 @@ a.google-plus-link {
 /* ==============================================================================
 	CONTACT PAGE
 ============================================================================== */
+.contact-item {
+	position: relative;
+}
 .contact-qrcode {
-	float: right;
 	height: 88px;
 	position: absolute;
 	right: 20px;
