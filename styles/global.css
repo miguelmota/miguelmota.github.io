@@ -1413,9 +1413,7 @@ input.short-url:focus {
 }
 .gsc-search-button,
 .gcsc-branding-text,
-.gcsc-branding-img-noclear  {
-	display: none !important;
-}
+.gcsc-branding-img-noclear  {}
 /* ==============================================================================
 	END GOOGLE CUSTOM SEARCH ENGINE
 ============================================================================== */

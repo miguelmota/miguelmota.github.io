@@ -52,6 +52,16 @@ $(document).ready(function(){
 	
 	
 
+	// Search input focus effect
+	$('.search-input').focus(function(){
+				$(this).animate({padding: '4px 4px 4px 8px'}, {queue: false, duration: 60});
+			});
+	$('.search-input').blur(function(){
+				$(this).animate({padding: '4px'}, {queue: false, duration: 60});
+			});
+	
+	
+	
 	// Make navigation absolute on mobile screens
 	if(screen.width <= 640){
 		$('.main-side-nav').css({
