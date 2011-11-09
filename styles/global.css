@@ -516,8 +516,6 @@ img.loader {
 	height: 100%;
 	position: absolute;
 	width: 200px;
-	border: 1px solid black;
-	overflow: hidden;
 }
 .main-side-nav {
 	position: fixed;	
@@ -599,6 +597,7 @@ img.loader {
 .search-form {
 	clear: both;
 	padding-bottom: 15px;
+	width: 200px;
 }
 input.search-input {
 	background-color: #222;
