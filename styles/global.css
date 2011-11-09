@@ -564,11 +564,14 @@ img.loader {
 	width: 100%;
 }
 .plus-one-button-follow {
-	float: right;
+	bottom: 0;
+	position: absolute;
+	right: 0;
 }
 .top-link-wrap {
 	clear: both;
 	padding: 10px 0 15px 0;
+	position: relative;
 	width: 100%;
 }
 .top-link {
