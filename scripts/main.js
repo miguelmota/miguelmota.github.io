@@ -267,7 +267,7 @@ function textTickerSelected(){
 		setTimeout('textTickerSelected()',1000);
 	} 
 	else{
-		setTimeout('textTickerSelected()',60);
+		setTimeout('textTickerSelected()',30);
 	}
 	
 }
