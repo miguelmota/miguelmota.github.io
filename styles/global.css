@@ -612,7 +612,7 @@ img.loader {
 	content: "";
 	display: block; 	
 	left: -15px; /* value = - border-left-width - border-right-width */
-	top: 4px;
+	top: 3px;
 	position: absolute;
 	width: 0;
 }
