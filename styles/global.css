@@ -1351,8 +1351,9 @@ input.short-url:focus {
 .cse-wrap {
 	background-color: #222;
 	clear: both;
-	float: left;
 	padding: 20px;
+	position: absolute;
+	top: 25px;
 	width: 500px;
 	z-index: 100;
 }
