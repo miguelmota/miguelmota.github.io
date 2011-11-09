@@ -1235,7 +1235,8 @@ input.short-url {
 	padding: 4px;
 	position: absolute;
 	right: 0;
-	width: 120px;
+	top: 0;
+	width: 160px;
 }
 input.short-url:focus {
 	border: 1px solid #007299;
