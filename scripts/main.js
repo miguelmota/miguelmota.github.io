@@ -82,13 +82,18 @@ $(document).ready(function(){
 	}
 	
 	
+	
 	// Open external links in new tab
-	$('a[rel*=internal]').live('click', function(e){
-		e.preventDefault();
-		return false;
-	});
 	$('a[rel*=external]').live('click', function(){
 		window.open(this.href);
+		return false;
+	});
+	
+	
+	
+	// Don't open link if rel = internal
+	$('a[rel*=internal]').live('click', function(e){
+		e.preventDefault();
 		return false;
 	});
 	
@@ -155,10 +160,10 @@ $(window).scroll(function(){
 	
 	// Toggle back to top link on scroll
 	if(window.pageYOffset >= 200){
-		$('a.top-link').fadeIn(600);
+		$('.top-link').fadeIn(600);
 	}
 	if(window.pageYOffset < 200){
-		$('a.top-link').fadeOut(185);
+		$('.top-link').fadeOut(185);
 	}
 	
 });
@@ -184,7 +189,7 @@ var pathname = window.location.pathname;
 function initializeFancybox() {
 	
 	// Initialize fancybox
-	$('a.fancybox').fancybox({
+	$('.fancybox').fancybox({
 			'showCloseButton': false,
 			'titlePosition': 'inside',
 			'titleFormat': formatTitle,
@@ -282,15 +287,11 @@ function showMtip(element) {
 	$(link).trigger('mouseenter');
 }
 
-
-
 // Hide mtip on element mouseleave
 function hideMtip(element) {
 	var link = element;
 	$(link).trigger('mouseleave');
 }
-
-
 
 // Show mtip and then hide after 3 seconds
 function showMtipTimeout(element) {
@@ -301,13 +302,11 @@ function showMtipTimeout(element) {
 	}, 3000);
 }
 
-/* ------------------------
- * END mtip functions
- * --------------------- */
 
 
-
-// Stream functions
+/* --------------------------------------------------
+ * Stream page functions
+ * ----------------------------------------------- */
 function streamPage(){
 	
 	// Hide stream logo text
@@ -339,8 +338,10 @@ function streamPage(){
 		
 		
 		
-		// Twitter stream
-		$('.stream-twitter div.loader').css('display','block');
+		/* ------------------------
+		 * Twitter stream
+		 * --------------------- */
+		$('.stream-twitter .loader').css('display','block');
 		$.getJSON('http://twitter.com/status/user_timeline/miguel_mota.json?callback=?', 
 				{
 					count: '5'
@@ -351,18 +352,20 @@ function streamPage(){
 						var post = status.text;
 						var id = status.id_str;
 			    	  	var date = new Date(status.created_at).toUTCString();
-						htmlString += "<li id='"+id+"' class='status'><span class='post'><a href='http://twitter.com/miguel_mota/status/"+id+"'><span class='icon icon-twitter-bird-16'></span> "+post+"</a></span> <time class='status-date'>"+niceTime(date)+"</time></li>";
+						htmlString += "<li id='"+id+"' class='status'><span class='post'><a href='http://twitter.com/miguel_mota/status/"+id+"' rel='external'><span class='icon icon-twitter-bird-16'></span> "+post+"</a></span> <time class='status-date'>"+niceTime(date)+"</time></li>";
 						$('.stream-twitter').append(htmlString +'</ul>');
 					});
-					$('.stream-twitter div.loader').css('display','none');
+					$('.stream-twitter .loader').css('display','none');
 					showMtipTimeout('.stream-logo-twitter');
 				}
 		);
 		
 		
 		
-		// Facebook stream
-		$('.stream-facebook div.loader').css('display','block');
+		/* ------------------------
+		 * Facebook stream
+		 * --------------------- */
+		$('.stream-facebook .loader').css('display','block');
 		$.getJSON('https://graph.facebook.com/miguel.mota2/feed?&callback=?', 
 				{
 					limit: '3'
@@ -379,37 +382,39 @@ function streamPage(){
 			    	  	var date = new Date(fb.created_time).toUTCString();		   
 			    	  	switch(type){
 			    	  	case 'status':
-				    	    $('ul.facebook-status').append("<li class='status'>&#187; <span class='post'>"+post+"</span> <time class='status-date'><a href='http://www.facebook.com/miguel.mota2/posts/"+post_id+"'>"+niceTime(date)+"</a></time></li>");
+				    	    $('ul.facebook-status').append("<li class='status'>&#187; <span class='post'>"+post+"</span> <time class='status-date'><a href='http://www.facebook.com/miguel.mota2/posts/"+post_id+"' rel='external'>"+niceTime(date)+"</a></time></li>");
 				    	    break;
 			    	  	case 'link':
 			    	  		if(post){
-					    	    $('ul.facebook-status').append("<li class='status'>&#187; Link: <span class='post'>"+post+" <a href='"+link+"'>"+name+"</a></span> <time class='status-date'><a href='http://www.facebook.com/miguel.mota2/posts/"+post_id+"'>"+niceTime(date)+"</a></time></li>");
+					    	    $('ul.facebook-status').append("<li class='status'>&#187; Link: <span class='post'>"+post+" <a href='"+link+"' rel='external'>"+name+"</a></span> <time class='status-date'><a href='http://www.facebook.com/miguel.mota2/posts/"+post_id+"'>"+niceTime(date)+"</a></time></li>");
 			    	  		}
 			    	  		else{
-			    	  			$('ul.facebook-status').append("<li class='status'>&#187; Link: <a href='"+link+"'>"+name+"</a></span> <time class='status-date'><a href='http://www.facebook.com/miguel.mota2/posts/"+post_id+"'>"+niceTime(date)+"</a></time></li>");
+			    	  			$('ul.facebook-status').append("<li class='status'>&#187; Link: <a href='"+link+"' rel='external'>"+name+"</a></span> <time class='status-date'><a href='http://www.facebook.com/miguel.mota2/posts/"+post_id+"'>"+niceTime(date)+"</a></time></li>");
 			    	  		}
 				    	    break;
 			    	  	case 'video':
 			    	  		if(post){
-			    	  			$('ul.facebook-status').append("<li class='status'>&#187; Video: <span class='post'>"+post+" <a href='"+link+"'>"+name+"</a></span> <time class='status-date'><a href='http://www.facebook.com/miguel.mota2/posts/"+post_id+"'>"+niceTime(date)+"</a></time></li>");
+			    	  			$('ul.facebook-status').append("<li class='status'>&#187; Video: <span class='post'>"+post+" <a href='"+link+"' rel='external'>"+name+"</a></span> <time class='status-date'><a href='http://www.facebook.com/miguel.mota2/posts/"+post_id+"'>"+niceTime(date)+"</a></time></li>");
 			    	  		}
 			    	  		else{
-					    	    $('ul.facebook-status').append("<li class='status'>&#187; Video: <span class='post'><a href='"+link+"'>"+name+"</a></span> <time class='status-date'><a href='http://www.facebook.com/miguel.mota2/posts/"+post_id+"'>"+niceTime(date)+"</a></time></li>");
+					    	    $('ul.facebook-status').append("<li class='status'>&#187; Video: <span class='post'><a href='"+link+"' rel='external'>"+name+"</a></span> <time class='status-date'><a href='http://www.facebook.com/miguel.mota2/posts/"+post_id+"'>"+niceTime(date)+"</a></time></li>");
 			    	  		}
 				    	    break;
 			    	  	default:
 			    	  		break;
 			    	  	}
 					});
-					$('.stream-facebook div.loader').html('<span style="color: #555;>"[fetch failed]</span>');
-					showMtipTimeout('a.social.facebook');
+					$('.stream-facebook .loader').html('<span style="color: #555;>"[fetch failed]</span>');
+					showMtipTimeout('.social.facebook');
 				}
 		);
 		
 		
 		
-		// Tumblr stream
-		$('.stream-tumblr div.loader').css('display','block');
+		/* ------------------------
+		 * Tumblr stream
+		 * --------------------- */
+		$('.stream-tumblr .loader').css('display','block');
 		$.getJSON('http://miguelmota.tumblr.com/api/read/json?num=3&callback=?',
 				function(data){
 					$.each(data.posts, function(i, posts){ 
@@ -419,18 +424,20 @@ function streamPage(){
 				    	  	var type = this.type;
 				    	  	var caption = this['photo-caption'];
 				    	  	var slug = this.slug.replace(/-/g,' ');
-				    	  	htmlString += "<li><a href='"+url+"'><span class='icon icon-"+type+"-16'></span> "+slug.substring(0,1).toUpperCase()+slug.substr(1,200)+"</a> <time class='status-date'>"+niceTime(date)+"</time></li>";
+				    	  	htmlString += "<li><a href='"+url+"' rel='external'><span class='icon icon-"+type+"-16'></span> "+slug.substring(0,1).toUpperCase()+slug.substr(1,200)+"</a> <time class='status-date'>"+niceTime(date)+"</time></li>";
 							$('.stream-tumblr').append(htmlString +'</ul>');
 				      }); 
-					  $('.stream-tumblr div.loader').css('display','none');
+					  $('.stream-tumblr .loader').css('display','none');
 					  showMtipTimeout('.stream-logo-tumblr');
 				  }
 		);
 		
 		
 		
-		// Delicious stream
-		$('.stream-delicious div.loader').css('display','block');
+		/* ------------------------
+		 * Delicious stream
+		 * --------------------- */
+		$('.stream-delicious .loader').css('display','block');
 		$.getJSON('http://feeds.delicious.com/v2/json/miguelmota?callback=?', 
 				{
 					count: '3'
@@ -441,18 +448,20 @@ function streamPage(){
 						var title = item.d;
 						var url = item.u;
 			    	  	var date = new Date(item.dt).toUTCString();
-			    	  	htmlString += "<li><a href='"+url+"'><span class='icon icon-link-16'></span> "+title+"</a> <time class='status-date'>"+niceTime(date)+"</time></li>";
+			    	  	htmlString += "<li><a href='"+url+"' rel='external'><span class='icon icon-link-16'></span> "+title+"</a> <time class='status-date'>"+niceTime(date)+"</time></li>";
 						$('.stream-delicious').append(htmlString +'</ul>');
 					});
-					$('.stream-delicious div.loader').css('display','none');
+					$('.stream-delicious .loader').css('display','none');
 					showMtipTimeout('.stream-logo-delicious');
 			}
 		);
 		
 		
 		
-		// Last.fm stream
-		$('.stream-lastfm div.loader').css('display','block');
+		/* ------------------------
+		 * Last fm stream
+		 * --------------------- */
+		$('.stream-lastfm .loader').css('display','block');
 		// All parameters in url: http://ws.audioscrobbler.com/2.0/?format=json&method=user.getRecentTracks&user=miguel_mota&api_key=dc0e875b6c0fd8ac4891b0716897e6c1&limit=5&callback=?
 		$.getJSON('http://ws.audioscrobbler.com/2.0/?callback=?', 
 				{
@@ -470,18 +479,20 @@ function streamPage(){
 							var artist = item.artist['#text'];
 							var image = item.image[0]['#text'];
 							var date =  item.date['#text'];
-							htmlString += "<li><a href='"+url+"'><img class='stream-thumb' src='"+image+"' alt='' /> "+artist+" - "+name+"</a> <time class='status-date'>"+date+"</time></li>";
+							htmlString += "<li><a href='"+url+"' rel='external'><img class='stream-thumb' src='"+image+"' alt='' /> "+artist+" - "+name+"</a> <time class='status-date'>"+date+"</time></li>";
 							$('.stream-lastfm').append(htmlString +'</ul>');
 					}); 
-					$('.stream-lastfm div.loader').css('display','none');
+					$('.stream-lastfm .loader').css('display','none');
 					showMtipTimeout('.stream-logo-lastfm');
 				}
 		);
 		
 		
 		
-		// Wakoopa stream
-		$('.stream-wakoopa div.loader').css('display','block');
+		/* ------------------------
+		 * Wakoopa stream
+		 * --------------------- */
+		$('.stream-wakoopa .loader').css('display','block');
 		$.getJSON('http://api.wakoopa.com/miguelmota/recently_used.json?callback=?',
 			{
 				limit: '3'
@@ -491,18 +502,20 @@ function streamPage(){
 				for(var i = 0; i < data.length; i++){
 					var entry = data[i].software;
 					var date = new Date(entry.last_active_at).toUTCString();
-					html.push("<li><a href='", entry.complete_url, "'> <img class='stream-thumb' src='", entry.complete_thumb_url ,"' alt='' /> ", entry.name, "</a> <time class='status-date'>"+niceTime(date)+"</time>", "</li>");
+					html.push("<li><a href='", entry.complete_url, "' rel='external'> <img class='stream-thumb' src='", entry.complete_thumb_url ,"' alt='' /> ", entry.name, "</a> <time class='status-date'>"+niceTime(date)+"</time>", "</li>");
 				}
 				html.push("</ul>");
 				document.getElementById('stream-wakoopa-software').innerHTML = html.join("");
-				$('.stream-wakoopa div.loader').css('display','none');
+				$('.stream-wakoopa .loader').css('display','none');
 				showMtipTimeout('.stream-logo-wakoopa');
 			}
 		);
 		
 		
 		
-		// Flickr stream
+		/* ------------------------
+		 * Flickr stream
+		 * --------------------- */
 		$.getJSON('http://api.flickr.com/services/rest/?method=flickr.people.getPublicPhotos&jsoncallback=?',
 			{
 				format: 'json',
@@ -528,7 +541,7 @@ function streamPage(){
 
 						htmlString += "<li><a class='fancybox' rel='flickr internal' href='"+flickr_photo+"' title='"+flickr_title+" ["+flickr_id+"]'><img src='"+flickr_thumbnail+"' alt='' /><span class='zoom-wrap zoom-wrap-flickr'><span class='icon icon-zoom-24 icon-zoom-flickr'></span></span></a></li>";
 					});
-					$('.stream-flickr div.loader').css('display','none');
+					$('.stream-flickr .loader').css('display','none');
 					$('.stream-flickr').append(htmlString +'</ul></div><a href="javascript:void(0);" class="stream-carousel-nav stream-carousel-nav-next"><span class="stream-carousel-nav-inner">&#187;</span></a></div>');
 					showMtipTimeout('.stream-logo-flickr');
 					
@@ -556,7 +569,9 @@ function streamPage(){
 
 
 
-// Portfolio functions
+/* --------------------------------------------------
+ * Portfolio page functions
+ * ----------------------------------------------- */
 function portfolioPage(){
 	
 	// Show all work with effect
@@ -629,6 +644,11 @@ function portfolioPage(){
 	
 }
 
+
+
+/* --------------------------------------------------
+ * Contact functions
+ * ----------------------------------------------- */
 function contactPage(){
 	
 	//create method to validate name
@@ -705,6 +725,12 @@ function contactPage(){
 
 	
 }
+
+
+
+/* --------------------------------------------------
+ * Blog page functions
+ * ----------------------------------------------- */
 tc = 0;
 function blogPage(){
 	
