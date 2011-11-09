@@ -533,7 +533,7 @@ function streamPage(){
 		});
 	
 	// Initialize masonry
-	setTimeout('loadMasonry()', 5000);
+	setTimeout('loadMasonry()', 2000);
 	
 	// Show mtip on stream-wrap mouseenter
 	$('.stream-wrap').live({
