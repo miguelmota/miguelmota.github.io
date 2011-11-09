@@ -135,19 +135,19 @@ function recent_tweets(data) {
 			+(data[i].id_str ? data[i].id_str : data[i].id)+'" rel="external">'+data[i].text+'</a> <time class="tweet-date">'+niceTime(data[i].created_at)+'</time></div>';
 	}
 	document.getElementById('tweet-wrap').style.display = 'block';
+	// Initialize latest tweet mtip
+	$('.mtip-tweet').mtip();
+	$('#tweet-wrap').live({
+		mouseenter:
+			function(){
+				showMtip('.icon-twitter-bird-24', this);
+		},
+		mouseleave:
+			function(){
+			hideMtip('.icon-twitter-bird-24', this);
+		}
+	});
 }
-// Initialize latest tweet mtip
-$('.mtip-tweet').mtip();
-$('#tweet-wrap').live({
-	mouseenter:
-		function(){
-			showMtip('.icon-twitter-bird-24', this);
-	},
-	mouseleave:
-		function(){
-		hideMtip('.icon-twitter-bird-24', this);
-	}
-});
 $.getScript('http://miguelmota.tumblr.com/tweets.js');
 
 
@@ -570,7 +570,7 @@ function streamPage(){
 	
 	
 	// Initialize masonry
-	setTimeout('loadMasonry()', 1000);
+	setTimeout('loadMasonry()', 2000);
 	
 }
 
