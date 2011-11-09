@@ -1372,6 +1372,9 @@ input.short-url:focus {
 	width: 1000%;
 	z-index: 100;
 }
+.gsc-result-info {
+	border-bottom: 1px solid #555;
+}
 #cse {
 	background-color: #222 !important;
 	border: 0 !important;
