@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	
 	// Initialize side nav text ticker; NOTE: might cause bug in Firefox
-	//textTicker();
+	textTicker();
 	
 	
 	
@@ -714,6 +714,7 @@ function blogPage(){
 	$.getScript('http://platform.twitter.com/widgets.js');
 
 	// Initialize Tumblr share button
+	/*
 	$.getScript('http://platform.tumblr.com/v1/share.js');
 	var tumblr_link_url = document.getElementById('post-link').getAttribute('href');
 	var tumblr_link_name = document.getElementById('post-link').innerText;
@@ -722,7 +723,7 @@ function blogPage(){
     tumblr_button.setAttribute('href', 'http://www.tumblr.com/share/link?url='+encodeURIComponent(tumblr_link_url)+'&name='+encodeURIComponent(tumblr_link_name)+'&description='+encodeURIComponent(tumblr_link_description));
     tumblr_button.setAttribute('title', tumblr_link_name);
     tumblr_button.setAttribute('style', "display:inline-block; text-indent:-9999px; overflow:hidden; width:81px; height:20px; background:url('http://platform.tumblr.com/v1/share_1.png') top left no-repeat transparent;");
-    
+    */
 	
     
 	// Highlight and select short url on focus
