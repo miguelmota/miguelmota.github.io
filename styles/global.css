@@ -1373,7 +1373,7 @@ input.short-url:focus {
 	z-index: 100;
 }
 .gsc-result-info {
-	border-bottom: 1px solid #555;
+	border-bottom: 1px solid #555 !important;
 }
 #cse {
 	background-color: #222 !important;
