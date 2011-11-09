@@ -87,12 +87,11 @@ $(document).ready(function(){
 		e.preventDefault();
 		return false;
 	});
-	/* Disabled; opens two tabs instead of one
-	$('a[href^=http]').live('click', function(){
+	$('a[rel*=external]').live('click', function(){
 		window.open(this.href);
 		return false;
 	});
-	*/
+	
 	
 	
 	// Initialize Fancybox
@@ -100,8 +99,7 @@ $(document).ready(function(){
 	
 	
 	
-	// Initialize side nav text ticker
-	// NOTE: might cause bug in Firefox
+	// Initialize side nav text ticker; NOTE: might cause bug in Firefox
 	textTicker();
 	
 	
@@ -165,11 +163,23 @@ $(window).scroll(function(){
 	
 });
 
+
+
+
 /*
  * --------------------------------------------------------------------------------
  *	FUNCTIONS
  * --------------------------------------------------------------------------------
  */
+
+
+// Global variables
+var c = 0;
+var bc = 0;
+var ldc = 0;
+var pathname = window.location.pathname;
+
+
 
 function initializeFancybox() {
 	
@@ -191,13 +201,6 @@ function initializeFancybox() {
 	    return '<div class="fancybox-title"><span><a class="button" href="javascript:void(0);" onclick="$.fancybox.close();">close X</a></span>' + (title && title.length ? '<strong>' + title + '</strong>' : '' ) + 'Image ' + (currentIndex + 1) + ' of ' + currentArray.length + '</div>';
 	}
 }
-
-//global variables
-var c = 0;
-var bc = 0;
-var ldc = 0;
-
-var pathname = window.location.pathname;
 
 
 
@@ -227,6 +230,7 @@ var niceTime = (function(){
 	})();
 
 
+
 // Right scroll effect on navigation links
 var position = 0;
 var length = 'portfolio'.length;
@@ -251,7 +255,7 @@ function textTicker(){
 
 
 
-//Display the year
+// Display the year
 function displayYear(){
 	var date = new Date();
 	var thisYear = date.getFullYear();
@@ -266,30 +270,29 @@ function displayURL(){
 	document.write(pathname);
 }
 
-function showNewContent(){
-	
-	if(typeof(window.history.pushState) != 'function'){
-		//$('#'+window.location.hash.substr(2)).addClass('selected');
-	}
-	$('h1.title span.sub').show();
-	$('section.content, footer.main').fadeIn('normal',hideLoader);
-	
-}
 
-function hideLoader(){
-	
-	$('div.loader-container').hide();
-	
-}
 
+/* ------------------------
+ * mtip functions
+ * --------------------- */
+
+// Show mtip on element mouseenter
 function showMtip(element) {
 	var link = element;
 	$(link).trigger('mouseenter');
 }
+
+
+
+// Hide mtip on element mouseleave
 function hideMtip(element) {
 	var link = element;
 	$(link).trigger('mouseleave');
 }
+
+
+
+// Show mtip and then hide after 3 seconds
 function showMtipTimeout(element) {
 	var link = element;
 	$(link).trigger('mouseenter');
@@ -298,7 +301,13 @@ function showMtipTimeout(element) {
 	}, 3000);
 }
 
+/* ------------------------
+ * END mtip functions
+ * --------------------- */
 
+
+
+// Stream functions
 function streamPage(){
 	
 	// Hide stream logo text
@@ -306,6 +315,9 @@ function streamPage(){
 	showMtipTimeout('.stream-logo-blog');
 	showMtipTimeout('.stream-logo-latitude');
 	
+	
+	
+	// Show mtip on stream-wrap mouseenter
 	$('.stream-wrap').live({
 			mouseenter:
 				function(){
@@ -316,11 +328,16 @@ function streamPage(){
 				hideMtip('.'+$(this).attr('class').split(' ')[1]+' .stream-logo');
 			}
 	});
-
+	
+	
+	
+	// While count == 0 run stream json functions
 	while(c == 0){	
 		
 		// Initialize mtip
 		$('.mtip').mtip();
+		
+		
 		
 		// Twitter stream
 		$('.stream-twitter div.loader').css('display','block');
@@ -341,6 +358,8 @@ function streamPage(){
 					showMtipTimeout('.stream-logo-twitter');
 				}
 		);
+		
+		
 		
 		// Facebook stream
 		$('.stream-facebook div.loader').css('display','block');
@@ -388,6 +407,7 @@ function streamPage(){
 		);
 		
 		
+		
 		// Tumblr stream
 		$('.stream-tumblr div.loader').css('display','block');
 		$.getJSON('http://miguelmota.tumblr.com/api/read/json?num=3&callback=?',
@@ -406,6 +426,8 @@ function streamPage(){
 					  showMtipTimeout('.stream-logo-tumblr');
 				  }
 		);
+		
+		
 		
 		// Delicious stream
 		$('.stream-delicious div.loader').css('display','block');
@@ -427,9 +449,11 @@ function streamPage(){
 			}
 		);
 		
+		
+		
 		// Last.fm stream
 		$('.stream-lastfm div.loader').css('display','block');
-		// http://ws.audioscrobbler.com/2.0/?format=json&method=user.getRecentTracks&user=miguel_mota&api_key=dc0e875b6c0fd8ac4891b0716897e6c1&limit=5&callback=?
+		// All parameters in url: http://ws.audioscrobbler.com/2.0/?format=json&method=user.getRecentTracks&user=miguel_mota&api_key=dc0e875b6c0fd8ac4891b0716897e6c1&limit=5&callback=?
 		$.getJSON('http://ws.audioscrobbler.com/2.0/?callback=?', 
 				{
 					format: 'json',
@@ -454,6 +478,8 @@ function streamPage(){
 				}
 		);
 		
+		
+		
 		// Wakoopa stream
 		$('.stream-wakoopa div.loader').css('display','block');
 		$.getJSON('http://api.wakoopa.com/miguelmota/recently_used.json?callback=?',
@@ -473,6 +499,8 @@ function streamPage(){
 				showMtipTimeout('.stream-logo-wakoopa');
 			}
 		);
+		
+		
 		
 		// Flickr stream
 		$.getJSON('http://api.flickr.com/services/rest/?method=flickr.people.getPublicPhotos&jsoncallback=?',
@@ -515,7 +543,7 @@ function streamPage(){
 		refreshStream();
 	}
 	
-	//refresh stream page every 30 seconds
+	// Refresh stream page every 30 seconds
 	function refreshStream(){
 		setTimeout(function(){
 			if(window.location.pathname.substr(1) == 'stream' || window.location.pathname.substr(1) == 'index' || window.location.pathname == ''){
@@ -527,6 +555,8 @@ function streamPage(){
 }
 
 
+
+// Portfolio functions
 function portfolioPage(){
 	
 	// Show all work with effect
@@ -718,6 +748,11 @@ function loadSearch(){
 
 }
 
+/*
+ * --------------------------------------------------------------------------------
+ *	END FUNCTIONS
+ * --------------------------------------------------------------------------------
+ */
 
 
 
@@ -726,6 +761,14 @@ function loadSearch(){
 
 
 
+
+
+
+/*
+ * --------------------------------------------------------------------------------
+ *	OLD STUFF
+ * --------------------------------------------------------------------------------
+ */
 //ajax load page
 /*
 $("ul.main-nav a:not('.nav-logo, #blog')").live('click', function(){
@@ -755,4 +798,21 @@ $("ul.main-nav a:not('.nav-logo, #blog')").live('click', function(){
 			return true;
 		}
 });
+
+
+function showNewContent(){
+	
+	if(typeof(window.history.pushState) != 'function'){
+		//$('#'+window.location.hash.substr(2)).addClass('selected');
+	}
+	$('h1.title span.sub').show();
+	$('section.content, footer.main').fadeIn('normal',hideLoader);
+	
+}
+
+function hideLoader(){
+	
+	$('div.loader-container').hide();
+	
+}
 */
