@@ -264,7 +264,7 @@ function textTickerSelected(){
 	$('#'+$('.content').attr('class').split(' ')[1]).text($('.content').attr('class').split(' ')[1].substring(0,position));
 
 	if(position++ == length_selected){
-		setTimeout('textTickerSelected()',1000);
+		setTimeout('textTickerSelected()',30);
 	} 
 	else{
 		setTimeout('textTickerSelected()',30);
