@@ -1349,6 +1349,7 @@ input.short-url:focus {
 	color: #999 !important;
 }
 .cse-wrap {
+	display: none;
 	background-color: #222;
 	clear: both;
 	padding: 20px;
