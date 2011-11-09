@@ -515,6 +515,7 @@ img.loader {
 	left: 0;
 	position: absolute;
 	width: 200px;
+	border: 1px solid black;
 }
 .main-side-nav {
 	position: fixed;	
@@ -598,7 +599,8 @@ img.loader {
 	width: 100%;;
 }
 input.search-input {
-	border-left: 4px solid #222;
+	background-color: #222;
+	border-left-color: #222;
 }
 .search-button {
 	display: none;
