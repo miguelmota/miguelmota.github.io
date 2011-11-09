@@ -1290,7 +1290,7 @@ input.short-url:focus {
 }
 #disqus_thread {
 	clear: both;
-	margin-top: 15px;
+	margin: 15px 0 35px 0;
 }
 /* ==============================================================================
 	END BLOG
