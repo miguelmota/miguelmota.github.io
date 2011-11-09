@@ -81,6 +81,10 @@ Some things on here may not load or look right because <span class='ie-color-red
 				<li><a id='contact' href='/contact'>contact</a></li>
 				<li><a id='blog' href='/blog'>blog</a></li>
 			</ul>
+			<form class='search-form' action='/search' method='get'>
+	   			<input type='text' class='search-input' name='q' value='[search]' onblur="if(this.value=='') this.value='[search]';" onfocus="if(this.value=='[search]') this.value='';" />
+	    		<input type='submit' class='search-button' value='Search' />
+			</form>
 			<div class='follow-wrap'>
 				<a class='icon icon-twitter-24 icon-social' href='http://twitter.com/miguel_mota' rel='external'></a>
 				<a class='icon icon-facebook-24 icon-social' href='http://www.facebook.com/miguel.mota2' rel='external'></a>
