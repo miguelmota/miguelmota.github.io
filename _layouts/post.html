@@ -30,6 +30,14 @@ layout: default
 		</div>
 	</div>
 	<div class='dsq-comment-wrap'>
+		<div class='pagination'>
+		    {% if page.previous.url %}
+				<a class='pagination-previous' href='{{ page.previous.url }}'>&#171; {{ page.previous.title | truncatewords: 15 }}</a>
+		    {% endif %}
+		    {% if page.next.url %}
+			    <a class='pagination-next' href='{{ page.next.url }}'>{{ page.next.title | truncatewords: 15 }} &#187;</a>
+		    {% endif %}
+		</div>
 		<div id='disqus_thread'></div>
 		<div class='clear'></div>
 		<script>
@@ -51,13 +59,5 @@ layout: default
 		        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
 		    }());
 		</script>
-	</div>
-	<div class='pagination'>
-	    {% if page.previous.url %}
-			<a class='pagination-previous' href='{{ page.previous.url }}'>&#171; {{ page.previous.title | truncatewords: 15 }}</a>
-	    {% endif %}
-	    {% if page.next.url %}
-		    <a class='pagination-next' href='{{ page.next.url }}'>{{ page.next.title | truncatewords: 15 }} &#187;</a>
-	    {% endif %}
 	</div>
 </section>
