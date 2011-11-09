@@ -251,7 +251,7 @@ function textTicker(){
 // textTicker on selected nav link
 function textTickerSelected(){
 
-	$('#'+$('.content').attr('class').split(' ')[1]).text('tumblog'.substring(0,position));
+	$('#'+$('.content').attr('class').split(' ')[1]).text($('.content').attr('class').split(' ')[1].substring(0,position));
 
 	if(position++ == 8){
 		setTimeout('textTickerSelected()',1000);
