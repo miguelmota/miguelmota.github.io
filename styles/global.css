@@ -558,17 +558,17 @@ img.loader {
 	color: #fff;
 	font-weight: bold;
 }
+.follow-wrap {
+	clear: both;
+	padding-bottom: 15px;
+	width: 100%;
+}
 .plus-one-button-follow {
 	float: right;
 }
 .top-link-wrap {
 	clear: both;
 	padding: 10px 0 15px 0;
-	width: 100%;
-}
-.follow-wrap {
-	clear: both;
-	padding-bottom: 15px;
 	width: 100%;
 }
 .top-link {
