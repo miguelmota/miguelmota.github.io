@@ -599,7 +599,7 @@ img.loader {
 }
 .tweet-content {
 	background-color: #222;
-	float: right;
+	float: left;
 	min-height: 20px;
 	padding: 10px;
 	width: 145px;
