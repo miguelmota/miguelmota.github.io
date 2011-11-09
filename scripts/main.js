@@ -556,7 +556,7 @@ function streamPage(){
 	
 	
 	// Initialize masonry
-	setTimeout('loadMasonry()', 1000);
+	setTimeout('loadMasonry()', 1);
 	
 }
 
