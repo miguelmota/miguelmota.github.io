@@ -532,8 +532,7 @@ function streamPage(){
 
 		});
 	
-	// Initialize masonry
-	setTimeout('loadMasonry()', 2000);
+	
 	
 	// Show mtip on stream-wrap mouseenter
 	$('.stream-wrap').live({
@@ -554,6 +553,11 @@ function streamPage(){
 			cursor: 'move'
 		});
 
+	
+	
+	// Initialize masonry
+	setTimeout('loadMasonry()', 1000);
+	
 }
 
 
@@ -635,6 +639,11 @@ function portfolioPage(){
 		$(".project:not('.project-code')").slideUp('fast');
 		$('.project-code').slideDown('fast');
 	});
+	
+	
+	
+	// Initialize masonry
+	setTimeout('loadMasonry()', 1000);
 	
 }
 
