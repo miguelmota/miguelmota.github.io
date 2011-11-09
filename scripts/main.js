@@ -32,32 +32,6 @@ $(document).ready(function(){
 	});
 	
 	
-	
-	// Display latest tweet
-	$.getScript('http://miguelmota.tumblr.com/tweets.js');
-	function recent_tweets(data) {
-		for (i=0; i<1; i++) {
-			var date = new Date(data[i].created_at);
-			document.getElementById('tweets').innerHTML +=
-				'<div class="tweet-content"><a href="http://twitter.com/miguelmota/status/'+
-				+(data[i].id_str ? data[i].id_str : data[i].id)+'" rel="external">'+data[i].text+'</a> <time class="tweet-date">'+niceTime(data[i].created_at)+'</time></div>';
-		}
-		document.getElementById('tweet-wrap').style.display = 'block';
-	}
-	// Initialize latest tweet mtip
-	$('.mtip-tweet').mtip();
-	$('#tweet-wrap').live({
-		mouseenter:
-			function(){
-				showMtip('.icon-twitter-bird-24', this);
-		},
-		mouseleave:
-			function(){
-			hideMtip('.icon-twitter-bird-24', this);
-		}
-	});
-
-	
 
 	// Navigation hover effect
 	$('.main-side-nav-ul a').hover(
@@ -162,6 +136,31 @@ $(window).scroll(function(){
  *	FUNCTIONS
  * --------------------------------------------------------------------------------
  */
+
+// Display latest tweet
+function recent_tweets(data) {
+	for (i=0; i<1; i++) {
+		var date = new Date(data[i].created_at);
+		document.getElementById('tweets').innerHTML +=
+			'<div class="tweet-content"><a href="http://twitter.com/miguelmota/status/'+
+			+(data[i].id_str ? data[i].id_str : data[i].id)+'" rel="external">'+data[i].text+'</a> <time class="tweet-date">'+niceTime(data[i].created_at)+'</time></div>';
+	}
+	document.getElementById('tweet-wrap').style.display = 'block';
+}
+// Initialize latest tweet mtip
+$('.mtip-tweet').mtip();
+$('#tweet-wrap').live({
+	mouseenter:
+		function(){
+			showMtip('.icon-twitter-bird-24', this);
+	},
+	mouseleave:
+		function(){
+		hideMtip('.icon-twitter-bird-24', this);
+	}
+});
+$.getScript('http://miguelmota.tumblr.com/tweets.js');
+
 
 // Initialize fancybox
 function initializeFancybox() {
