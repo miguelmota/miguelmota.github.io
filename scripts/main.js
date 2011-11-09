@@ -1,35 +1,10 @@
 $(document).ready(function(){
 	
-	// Initialize Masonry plugin, masonry.desandro.com
-	var $tumblelog = $('.content');
-	
-	$tumblelog.imagesLoaded( function(){
-	  $tumblelog.masonry({
-	    isFitWidth: true
-	  });
-	});
+	// Initialize side nav text ticker; NOTE: might cause bug in Firefox
+	textTicker();
 	
 	
 	
-	// Navigation hover effect
-	$(".main-side-nav-ul a").hover(
-			function(){
-				$(this).animate({borderLeftWidth: '6px'}, {queue: false, duration: 60});
-			},
-			function(){
-				$(this).animate({borderLeftWidth: '4px'}, {queue: false, duration: 60});
-			}
-		);
-		
-		
-	
-	// Change default text color on input focus
-	$('input:text, input:password, textarea').focus(function(){
-		$(this).css('color', '#999');
-	});
-	
-	
-
 	// Add selected class to nav link based on page content class name
 	$('.main-side-nav-ul a').each(function(){ 
 		if($(this).attr('id') == $('.content').attr('class').split(' ')[1]){
@@ -55,8 +30,47 @@ $(document).ready(function(){
 		}
 	});
 	
-
 	
+	
+	// Initialize Masonry plugin, masonry.desandro.com
+	var $tumblelog = $('.content');
+	
+	$tumblelog.imagesLoaded( function(){
+	  $tumblelog.masonry({
+	    isFitWidth: true
+	  });
+	});
+	
+	
+	
+	// Initialize Google Plus One
+	(function() {
+		  var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+		  po.src = 'https://apis.google.com/js/plusone.js';
+		  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+		})();
+	
+	
+	
+	// Navigation hover effect
+	$(".main-side-nav-ul a").hover(
+			function(){
+				$(this).animate({borderLeftWidth: '6px'}, {queue: false, duration: 60});
+			},
+			function(){
+				$(this).animate({borderLeftWidth: '4px'}, {queue: false, duration: 60});
+			}
+		);
+		
+		
+	
+	// Change default text color on input focus
+	$('input:text, input:password, textarea').focus(function(){
+		$(this).css('color', '#999');
+	});
+	
+	
+
 	// Make navigation absolute on mobile screens
 	if(screen.width <= 640){
 		$('.main-side-nav').css({
@@ -72,8 +86,6 @@ $(document).ready(function(){
 		return false;
 	});
 	
-	
-	
 	// Don't open link if rel = internal
 	$('a[rel*=internal]').live('click', function(e){
 		e.preventDefault();
@@ -84,12 +96,7 @@ $(document).ready(function(){
 	
 	// Initialize Fancybox
 	initializeFancybox();
-	
-	
-	
-	// Initialize side nav text ticker; NOTE: might cause bug in Firefox
-	textTicker();
-	
+
 	
 	
 	// Back to top smooth scroll effect
@@ -112,15 +119,6 @@ $(document).ready(function(){
 		$('.top-link').animate({top:offset},{duration:500,queue:false});
 	});
 	topYloc = parseInt($('.top-link').css('top').substring(0,$('.top-link').css('top').indexOf('px')));
-	
-	
-	
-	// Initialize Google Plus One
-	(function() {
-		  var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-		  po.src = 'https://apis.google.com/js/plusone.js';
-		  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-		})();
 
 });
 
@@ -291,29 +289,8 @@ function streamPage(){
 	
 	// Initialize mtip
 	$('.mtip').mtip();
-	
-	
-	
-	// Show mtip on stream-wrap mouseenter
-	$('.stream-wrap').live({
-			mouseenter:
-				function(){
-					showMtip('.'+$(this).attr('class').split(' ')[1]+' .stream-logo');
-			},
-			mouseleave:
-				function(){
-				hideMtip('.'+$(this).attr('class').split(' ')[1]+' .stream-logo');
-			}
-	});
-	
-	
-	
-	// Initalize draggable on stream items
-	$('.stream-wrap').draggable({
-			cursor: 'move'
-		});
-	
 
+	
 	
 	/* ------------------------
 	 * Twitter stream
@@ -528,6 +505,27 @@ function streamPage(){
 				});
 
 			});
+	
+	
+	
+	// Show mtip on stream-wrap mouseenter
+	$('.stream-wrap').live({
+			mouseenter:
+				function(){
+					showMtip('.'+$(this).attr('class').split(' ')[1]+' .stream-logo');
+			},
+			mouseleave:
+				function(){
+				hideMtip('.'+$(this).attr('class').split(' ')[1]+' .stream-logo');
+			}
+	});
+	
+	
+	
+	// Initalize draggable on stream items
+	$('.stream-wrap').draggable({
+			cursor: 'move'
+		});
 
 }
 
@@ -537,43 +535,6 @@ function streamPage(){
  * Portfolio page functions
  * ----------------------------------------------- */
 function portfolioPage(){
-	
-	/* ------------------------
-	 * Project sort functions
-	 * --------------------- */
-	
-	// Show all work
-	$('.project-sort-all').live('click', function(){
-		$('.project-sort-wrap a').removeClass('selected');
-		$(this).addClass('selected');
-		$('.project').slideDown('fast');
-	});
-
-	// Show web work
-	$('.project-sort-web').live('click', function(){
-		$('.project-sort-wrap a').removeClass('selected');
-		$(this).addClass('selected');
-		$(".project:not('.project-web')").slideUp('fast');
-		$('.project-web').slideDown('fast');
-	});
-	
-	// Show logo work
-	$('.project-sort-identity').live('click', function(){
-		$('.project-sort-wrap a').removeClass('selected');
-		$(this).addClass('selected');
-		$(".project:not('.project-identity')").slideUp('fast');
-		$('.project-identity').slideDown('fast');
-	});
-	
-	// Show code work
-	$('.project-sort-code').live('click', function(){
-		$('.project-sort-wrap a').removeClass('selected');
-		$(this).addClass('selected');
-		$(".project:not('.project-code')").slideUp('fast');
-		$('.project-code').slideDown('fast');
-	});
-
-	
 	
 	// Project hover border glow effect
 	$(".project .image-container").live({
@@ -609,6 +570,43 @@ function portfolioPage(){
 			function(){
 				jQuery('.overlay-popup', this).animate({bottom: '-100px'}, {queue: false, duration: 125});
 		}
+	});
+	
+	
+	
+	/* ------------------------
+	 * Project sort functions
+	 * --------------------- */
+	
+	// Show all work
+	$('.project-sort-all').live('click', function(){
+		$('.project-sort-wrap a').removeClass('selected');
+		$(this).addClass('selected');
+		$('.project').slideDown('fast');
+	});
+
+	// Show web work
+	$('.project-sort-web').live('click', function(){
+		$('.project-sort-wrap a').removeClass('selected');
+		$(this).addClass('selected');
+		$(".project:not('.project-web')").slideUp('fast');
+		$('.project-web').slideDown('fast');
+	});
+	
+	// Show logo work
+	$('.project-sort-identity').live('click', function(){
+		$('.project-sort-wrap a').removeClass('selected');
+		$(this).addClass('selected');
+		$(".project:not('.project-identity')").slideUp('fast');
+		$('.project-identity').slideDown('fast');
+	});
+	
+	// Show code work
+	$('.project-sort-code').live('click', function(){
+		$('.project-sort-wrap a').removeClass('selected');
+		$(this).addClass('selected');
+		$(".project:not('.project-code')").slideUp('fast');
+		$('.project-code').slideDown('fast');
 	});
 	
 }
@@ -721,8 +719,9 @@ function blogPage(){
 	// Get AddThis script
 	// $.getScript('http://s7.addthis.com/js/250/addthis_widget.js#username=miguelmota');
 	
-	
-	
+	// Get Twitter widgets script
+	$.getScript('http://platform.twitter.com/widgets.js');
+
 	// Initialize Tumblr share button
 	$.getScript('http://platform.tumblr.com/v1/share.js');
 	var tumblr_link_url = document.getElementById('post-link').getAttribute('href');
@@ -735,11 +734,6 @@ function blogPage(){
     
 	
     
-	// Get Twitter widgets script
-	$.getScript('http://platform.twitter.com/widgets.js');
-	
-	
-	
 	// Highlight and select short url on focus
 	$('.short-url').focus(function(){
 		$(this).select();
