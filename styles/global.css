@@ -1219,9 +1219,8 @@ h6 {
 }
 .dsq-comment-wrap {
 	max-width: 1000px;
-	padding: 10px 5px 5px;
 	position: relative;
-	width: 99%;
+	width: 100%;
 }
 /* -----------------------------------------------------------------------------
 	BLOG POST SHARE
