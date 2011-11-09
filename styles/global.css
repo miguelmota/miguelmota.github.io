@@ -25,6 +25,9 @@ body {
 .clear {
 	clear: both;
 }
+.hide {
+	display: none !important;
+}
 a {
 	color: #007299;
 	font-weight: bold;
@@ -514,7 +517,7 @@ img.loader {
 	width: 200px;
 }
 .nav-logo {
-	border-left: none !important;
+	border: 0;
 	display: block;
 	height: 64px;
 	padding: 0 0 15px 0;
@@ -691,11 +694,11 @@ img.loader {
 .stream-logo {
 	background-position: 0 0;
 	background-repeat: no-repeat;
-	border-left: none !important;
+	border: 0;
 	display: block;
 	height: 16px;
 	margin-bottom: 5px;
-	padding: 0 !important;
+	padding: 0;
 	width: auto;
 }
 .stream-logo:hover {
@@ -1228,6 +1231,8 @@ input.short-url {
 	font-size: 10px;
 	margin: 0;
 	padding: 4px;
+	position: absolute;
+	right: 0;
 	width: 160px;
 }
 input.short-url:focus {
@@ -1455,16 +1460,4 @@ input.short-url:focus {
 }
 /* ==============================================================================
 	INTERNET EXPLORER MESSAGE
-============================================================================== */
-
-
-
-/* ==============================================================================
-	HIDE
-============================================================================== */
-.hide {
-	display: none !important;
-}
-/* ==============================================================================
-	END HIDE
 ============================================================================== */
