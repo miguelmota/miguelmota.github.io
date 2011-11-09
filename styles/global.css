@@ -1216,6 +1216,10 @@ h6 {
 	BLOG POST SHARE
 ------------------------------------------------------------------------------ */
 .share-wrap {}
+.addthis_toolbox {
+	display: inline;
+	text-shadow: 0;
+}
 input.short-url {
 	background: #202020;
 	border: 1px solid #202020;
