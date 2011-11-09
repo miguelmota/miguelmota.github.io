@@ -1290,12 +1290,10 @@ input.short-url:focus {
 	padding: 10px;
 }
 .pagination-next {
-	position: absolute;
-	right: 0;
+	float: right;
 }
 .pagination-previous {
-	left: 0;
-	position: absolute;
+	float: left;
 }
 /* ==============================================================================
 	END PAGINATION
