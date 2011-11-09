@@ -605,7 +605,7 @@ img.loader {
 	width: 145px;
 }
 .tweet-content:after {
-	border-color: transparent #222;
+	border-color: #222;
 	border-style: solid;
 	border-width: 8px 15px 8px 0;
 	bottom: auto;
