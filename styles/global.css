@@ -1408,7 +1408,11 @@ input.short-url:focus {
 .gsc-cursor-page:active  {
 	color: #0098cc !important;
 }
-.gsc-cursor-current-page  {
+.gsc-cursor-current-page a {
+	color: #555 important;
+}
+.gsc-cursor-current-page a:hover,
+.gsc-cursor-current-page a:active {
 	color: #555 important;
 }
 /* ==============================================================================
