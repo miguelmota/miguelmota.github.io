@@ -1369,18 +1369,16 @@ input.short-url:focus {
 	text-decoration: none !important;
 }
 #cse a:hover,
+#cse a:active,
 #cse a b:hover,
-.gs-title:hover {
+#cse a b:active,
+.gs-title:hover,
+.gs-title:active {
 	color: #0098cc !important;
 }
 .gs-snippet {
 	color: #999 !important;
 	font-size: 12px !important;
-}
-.gsc-search-button,
-.gcsc-branding-text,
-.gcsc-branding-img-noclear  {
-	display: none;
 }
 .gsc-result {
 	border: 0 !important;
@@ -1404,6 +1402,11 @@ input.short-url:focus {
 .gsc-cursor-page  {
 	background-color: #222 !important;
 	color: #007299 !important;
+	text-decoration: none !important;
+}
+.gsc-cursor-page:hover,
+.gsc-cursor-page:active  {
+	color: #0098cc !important;
 }
 .gsc-cursor-current-page  {
 	color: #555 important;
