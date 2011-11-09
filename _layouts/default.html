@@ -79,12 +79,12 @@ Some things on here may not load or look right because <span class='ie-color-red
 			</ul>
 			<div class='follow-wrap'>
 				<g:plusone class='plus-one-button' href='http://miguelmota.tumblr.com' count='false' size='medium'></g:plusone>
-				<a class='icon icon-twitter-24 icon-social' href='http://twitter.com/miguel_mota'></a>
-				<a class='icon icon-facebook-24 icon-social' href='http://www.facebook.com/miguel.mota2'></a>
-				<a class='icon icon-flickr-24 icon-social' href='http://www.flickr.com/photos/miguelmota'></a>
-				<a class='hide icon icon-dribbble-24 icon-social' href='http://dribbble.com/miguelmota'></a>
-				<a class='icon icon-tumblr-24 icon-social' href='http://miguelmota.tumblr.com'></a>
-				<a class='icon icon-subscribe-24 icon-social' href='http://feeds.feedburner.com/miguelmota'></a>
+				<a class='icon icon-twitter-24 icon-social' href='http://twitter.com/miguel_mota' rel='external'></a>
+				<a class='icon icon-facebook-24 icon-social' href='http://www.facebook.com/miguel.mota2' rel='external'></a>
+				<a class='icon icon-flickr-24 icon-social' href='http://www.flickr.com/photos/miguelmota' rel='external'></a>
+				<a class='hide icon icon-dribbble-24 icon-social' href='http://dribbble.com/miguelmota' rel='external'></a>
+				<a class='icon icon-tumblr-24 icon-social' href='http://miguelmota.tumblr.com' rel='external'></a>
+				<a class='icon icon-subscribe-24 icon-social' href='http://feeds.feedburner.com/miguelmota' rel='external'></a>
 				<a class='hide icon icon-random-24 icon-social' href='/random'></a>
 			</div>
 			<div id='tweet-wrap'>
@@ -97,7 +97,7 @@ Some things on here may not load or look right because <span class='ie-color-red
 							var date = new Date(data[i].created_at);
 							document.getElementById('tweets').innerHTML +=
 								'<div class="tweet-content"><a href="http://twitter.com/miguelmota/status/'+
-								+(data[i].id_str ? data[i].id_str : data[i].id)+'">'+data[i].text+'</a> <time class="tweet-date">'+niceTime(data[i].created_at)+'</time></div>';
+								+(data[i].id_str ? data[i].id_str : data[i].id)+'" rel="external">'+data[i].text+'</a> <time class="tweet-date">'+niceTime(data[i].created_at)+'</time></div>';
 						}
 						document.getElementById('tweet-wrap').style.display = 'block';
 					}
@@ -123,7 +123,7 @@ Some things on here may not load or look right because <span class='ie-color-red
 		<div class='loader-container'><div class='page-loader'></div></div>
 		<div class='clear'></div>
 		<footer class='main-footer'>
-			<div class='main-footer-content'><strong>&#169; <script>displayYear();</script></strong> <a href='https://plus.google.com/102174577273194387652?rel=author'>miguel mota+</a> / powered by <a href='http://jekyllrb.com'>jekyll</a></div>
+			<div class='main-footer-content'><strong>&#169; <script>displayYear();</script></strong> <a href='https://plus.google.com/102174577273194387652?rel=author' rel='external'>miguel mota+</a> / powered by <a href='http://jekyllrb.com' rel='external'>jekyll</a></div>
 			<div class='clear'></div>
 		</footer>
 	</div>
