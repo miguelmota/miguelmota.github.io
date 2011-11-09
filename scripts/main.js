@@ -177,18 +177,10 @@ $(window).scroll(function(){
  * --------------------------------------------------------------------------------
  */
 
-
-// Global variables
-var c = 0;
-var bc = 0;
-var ldc = 0;
-var pathname = window.location.pathname;
-
-
-
+// Initialize fancybox
 function initializeFancybox() {
 	
-	// Initialize fancybox
+	// Fancybox options
 	$('.fancybox').fancybox({
 			'showCloseButton': false,
 			'titlePosition': 'inside',
@@ -316,6 +308,11 @@ function streamPage(){
 	
 	
 	
+	// Initialize mtip
+	$('.mtip').mtip();
+	
+	
+	
 	// Show mtip on stream-wrap mouseenter
 	$('.stream-wrap').live({
 			mouseenter:
@@ -328,243 +325,222 @@ function streamPage(){
 			}
 	});
 	
+
 	
-	
-	// While count == 0 run stream json functions
-	while(c == 0){	
-		
-		// Initialize mtip
-		$('.mtip').mtip();
-		
-		
-		
-		/* ------------------------
-		 * Twitter stream
-		 * --------------------- */
-		$('.stream-twitter .loader').css('display','block');
-		$.getJSON('http://twitter.com/status/user_timeline/miguel_mota.json?callback=?', 
-				{
-					count: '5'
-				},
-				function(data){
-					$.each(data, function(i, status){
-						var htmlString = '<ul class="stream-ul stream-ul-twitter">';
-						var post = status.text;
-						var id = status.id_str;
-			    	  	var date = new Date(status.created_at).toUTCString();
-						htmlString += "<li id='"+id+"' class='status'><span class='post'><a href='http://twitter.com/miguel_mota/status/"+id+"' rel='external'><span class='icon icon-twitter-bird-16'></span> "+post+"</a></span> <time class='status-date'>"+niceTime(date)+"</time></li>";
-						$('.stream-twitter').append(htmlString +'</ul>');
-					});
-					$('.stream-twitter .loader').css('display','none');
-					showMtipTimeout('.stream-logo-twitter');
-				}
-		);
-		
-		
-		
-		/* ------------------------
-		 * Facebook stream
-		 * --------------------- */
-		$('.stream-facebook .loader').css('display','block');
-		$.getJSON('https://graph.facebook.com/miguel.mota2/feed?&callback=?', 
-				{
-					limit: '3'
-				},
-				function(json){
-					$.each(json.data, function(i, fb){
-						var post = fb.message;
-						var post_id = fb.id.substr(16);
-						var type = fb.type;
-						var link = fb.link;
-						var name = fb.name;
-						var caption = fb.caption;
-						var description = fb.description;
-			    	  	var date = new Date(fb.created_time).toUTCString();		   
-			    	  	switch(type){
-			    	  	case 'status':
-				    	    $('ul.facebook-status').append("<li class='status'>&#187; <span class='post'>"+post+"</span> <time class='status-date'><a href='http://www.facebook.com/miguel.mota2/posts/"+post_id+"' rel='external'>"+niceTime(date)+"</a></time></li>");
-				    	    break;
-			    	  	case 'link':
-			    	  		if(post){
-					    	    $('ul.facebook-status').append("<li class='status'>&#187; Link: <span class='post'>"+post+" <a href='"+link+"' rel='external'>"+name+"</a></span> <time class='status-date'><a href='http://www.facebook.com/miguel.mota2/posts/"+post_id+"'>"+niceTime(date)+"</a></time></li>");
-			    	  		}
-			    	  		else{
-			    	  			$('ul.facebook-status').append("<li class='status'>&#187; Link: <a href='"+link+"' rel='external'>"+name+"</a></span> <time class='status-date'><a href='http://www.facebook.com/miguel.mota2/posts/"+post_id+"'>"+niceTime(date)+"</a></time></li>");
-			    	  		}
-				    	    break;
-			    	  	case 'video':
-			    	  		if(post){
-			    	  			$('ul.facebook-status').append("<li class='status'>&#187; Video: <span class='post'>"+post+" <a href='"+link+"' rel='external'>"+name+"</a></span> <time class='status-date'><a href='http://www.facebook.com/miguel.mota2/posts/"+post_id+"'>"+niceTime(date)+"</a></time></li>");
-			    	  		}
-			    	  		else{
-					    	    $('ul.facebook-status').append("<li class='status'>&#187; Video: <span class='post'><a href='"+link+"' rel='external'>"+name+"</a></span> <time class='status-date'><a href='http://www.facebook.com/miguel.mota2/posts/"+post_id+"'>"+niceTime(date)+"</a></time></li>");
-			    	  		}
-				    	    break;
-			    	  	default:
-			    	  		break;
-			    	  	}
-					});
-					$('.stream-facebook .loader').html('<span style="color: #555;>"[fetch failed]</span>');
-					showMtipTimeout('.social.facebook');
-				}
-		);
-		
-		
-		
-		/* ------------------------
-		 * Tumblr stream
-		 * --------------------- */
-		$('.stream-tumblr .loader').css('display','block');
-		$.getJSON('http://miguelmota.tumblr.com/api/read/json?num=3&callback=?',
-				function(data){
-					$.each(data.posts, function(i, posts){ 
-							var htmlString = '<ul class="stream-ul stream-ul-tumblr">';
-				    	  	var date = new Date(this['date-gmt']).toUTCString();
-				    	  	var url = this.url;
-				    	  	var type = this.type;
-				    	  	var caption = this['photo-caption'];
-				    	  	var slug = this.slug.replace(/-/g,' ');
-				    	  	htmlString += "<li><a href='"+url+"' rel='external'><span class='icon icon-"+type+"-16'></span> "+slug.substring(0,1).toUpperCase()+slug.substr(1,200)+"</a> <time class='status-date'>"+niceTime(date)+"</time></li>";
-							$('.stream-tumblr').append(htmlString +'</ul>');
-				      }); 
-					  $('.stream-tumblr .loader').css('display','none');
-					  showMtipTimeout('.stream-logo-tumblr');
-				  }
-		);
-		
-		
-		
-		/* ------------------------
-		 * Delicious stream
-		 * --------------------- */
-		$('.stream-delicious .loader').css('display','block');
-		$.getJSON('http://feeds.delicious.com/v2/json/miguelmota?callback=?', 
-				{
-					count: '3'
-				},
-				function(data){
-					$.each(data, function(i, item){
-						var htmlString = '<ul class="stream-ul stream-ul-delicious">';
-						var title = item.d;
-						var url = item.u;
-			    	  	var date = new Date(item.dt).toUTCString();
-			    	  	htmlString += "<li><a href='"+url+"' rel='external'><span class='icon icon-link-16'></span> "+title+"</a> <time class='status-date'>"+niceTime(date)+"</time></li>";
-						$('.stream-delicious').append(htmlString +'</ul>');
-					});
-					$('.stream-delicious .loader').css('display','none');
-					showMtipTimeout('.stream-logo-delicious');
+	/* ------------------------
+	 * Twitter stream
+	 * --------------------- */
+	$('.stream-twitter .loader').css('display','block');
+	$.getJSON('http://twitter.com/status/user_timeline/miguel_mota.json?callback=?', 
+			{
+				count: '5'
+			},
+			function(data){
+				$.each(data, function(i, status){
+					var htmlString = '<ul class="stream-ul stream-ul-twitter">';
+					var post = status.text;
+					var id = status.id_str;
+		    	  	var date = new Date(status.created_at).toUTCString();
+					htmlString += "<li id='"+id+"' class='status'><span class='post'><a href='http://twitter.com/miguel_mota/status/"+id+"' rel='external'><span class='icon icon-twitter-bird-16'></span> "+post+"</a></span> <time class='status-date'>"+niceTime(date)+"</time></li>";
+					$('.stream-twitter').append(htmlString +'</ul>');
+				});
+				$('.stream-twitter .loader').css('display','none');
+				showMtipTimeout('.stream-logo-twitter');
 			}
-		);
-		
-		
-		
-		/* ------------------------
-		 * Last fm stream
-		 * --------------------- */
-		$('.stream-lastfm .loader').css('display','block');
-		// All parameters in url: http://ws.audioscrobbler.com/2.0/?format=json&method=user.getRecentTracks&user=miguel_mota&api_key=dc0e875b6c0fd8ac4891b0716897e6c1&limit=5&callback=?
-		$.getJSON('http://ws.audioscrobbler.com/2.0/?callback=?', 
-				{
-					format: 'json',
-					method: 'user.getRecentTracks',
-					user: 'miguel_mota',
-					api_key: 'dc0e875b6c0fd8ac4891b0716897e6c1',
-					limit: '5'
-				},
-				function(data){       
-					$.each(data.recenttracks.track, function(i, item){ 
-							var htmlString = '<ul class="stream-ul stream-ul-lastfm stream-ul-chart">';
-							var url = item.url;
-							var name = item.name;
-							var artist = item.artist['#text'];
-							var image = item.image[0]['#text'];
-							var date =  item.date['#text'];
-							htmlString += "<li><a href='"+url+"' rel='external'><img class='stream-thumb' src='"+image+"' alt='' /> "+artist+" - "+name+"</a> <time class='status-date'>"+date+"</time></li>";
-							$('.stream-lastfm').append(htmlString +'</ul>');
-					}); 
-					$('.stream-lastfm .loader').css('display','none');
-					showMtipTimeout('.stream-logo-lastfm');
-				}
-		);
-		
-		
-		
-		/* ------------------------
-		 * Wakoopa stream
-		 * --------------------- */
-		$('.stream-wakoopa .loader').css('display','block');
-		$.getJSON('http://api.wakoopa.com/miguelmota/recently_used.json?callback=?',
+	);
+	
+	
+	
+	/* ------------------------
+	 * Facebook stream
+	 * --------------------- */
+	$('.stream-facebook .loader').css('display','block');
+	$.getJSON('https://graph.facebook.com/miguel.mota2/feed?&callback=?', 
 			{
 				limit: '3'
 			},
-			function wakoopaApi(data){
-				var html = ["<ul class='stream-ul stream-ul-wakoopa stream-ul-chart'>"];
-				for(var i = 0; i < data.length; i++){
-					var entry = data[i].software;
-					var date = new Date(entry.last_active_at).toUTCString();
-					html.push("<li><a href='", entry.complete_url, "' rel='external'> <img class='stream-thumb' src='", entry.complete_thumb_url ,"' alt='' /> ", entry.name, "</a> <time class='status-date'>"+niceTime(date)+"</time>", "</li>");
-				}
-				html.push("</ul>");
-				document.getElementById('stream-wakoopa-software').innerHTML = html.join("");
-				$('.stream-wakoopa .loader').css('display','none');
-				showMtipTimeout('.stream-logo-wakoopa');
+			function(json){
+				$.each(json.data, function(i, fb){
+					var post = fb.message;
+					var post_id = fb.id.substr(16);
+					var type = fb.type;
+					var link = fb.link;
+					var name = fb.name;
+					var caption = fb.caption;
+					var description = fb.description;
+		    	  	var date = new Date(fb.created_time).toUTCString();		   
+		    	  	switch(type){
+		    	  	case 'status':
+			    	    $('ul.facebook-status').append("<li class='status'>&#187; <span class='post'>"+post+"</span> <time class='status-date'><a href='http://www.facebook.com/miguel.mota2/posts/"+post_id+"' rel='external'>"+niceTime(date)+"</a></time></li>");
+			    	    break;
+		    	  	case 'link':
+		    	  		if(post){
+				    	    $('ul.facebook-status').append("<li class='status'>&#187; Link: <span class='post'>"+post+" <a href='"+link+"' rel='external'>"+name+"</a></span> <time class='status-date'><a href='http://www.facebook.com/miguel.mota2/posts/"+post_id+"'>"+niceTime(date)+"</a></time></li>");
+		    	  		}
+		    	  		else{
+		    	  			$('ul.facebook-status').append("<li class='status'>&#187; Link: <a href='"+link+"' rel='external'>"+name+"</a></span> <time class='status-date'><a href='http://www.facebook.com/miguel.mota2/posts/"+post_id+"'>"+niceTime(date)+"</a></time></li>");
+		    	  		}
+			    	    break;
+		    	  	case 'video':
+		    	  		if(post){
+		    	  			$('ul.facebook-status').append("<li class='status'>&#187; Video: <span class='post'>"+post+" <a href='"+link+"' rel='external'>"+name+"</a></span> <time class='status-date'><a href='http://www.facebook.com/miguel.mota2/posts/"+post_id+"'>"+niceTime(date)+"</a></time></li>");
+		    	  		}
+		    	  		else{
+				    	    $('ul.facebook-status').append("<li class='status'>&#187; Video: <span class='post'><a href='"+link+"' rel='external'>"+name+"</a></span> <time class='status-date'><a href='http://www.facebook.com/miguel.mota2/posts/"+post_id+"'>"+niceTime(date)+"</a></time></li>");
+		    	  		}
+			    	    break;
+		    	  	default:
+		    	  		break;
+		    	  	}
+				});
+				$('.stream-facebook .loader').html('<span style="color: #555;>"[fetch failed]</span>');
+				showMtipTimeout('.social.facebook');
 			}
-		);
-		
-		
-		
-		/* ------------------------
-		 * Flickr stream
-		 * --------------------- */
-		$.getJSON('http://api.flickr.com/services/rest/?method=flickr.people.getPublicPhotos&jsoncallback=?',
+	);
+	
+	
+	
+	/* ------------------------
+	 * Tumblr stream
+	 * --------------------- */
+	$('.stream-tumblr .loader').css('display','block');
+	$.getJSON('http://miguelmota.tumblr.com/api/read/json?num=3&callback=?',
+			function(data){
+				$.each(data.posts, function(i, posts){ 
+						var htmlString = '<ul class="stream-ul stream-ul-tumblr">';
+			    	  	var date = new Date(this['date-gmt']).toUTCString();
+			    	  	var url = this.url;
+			    	  	var type = this.type;
+			    	  	var caption = this['photo-caption'];
+			    	  	var slug = this.slug.replace(/-/g,' ');
+			    	  	htmlString += "<li><a href='"+url+"' rel='external'><span class='icon icon-"+type+"-16'></span> "+slug.substring(0,1).toUpperCase()+slug.substr(1,200)+"</a> <time class='status-date'>"+niceTime(date)+"</time></li>";
+						$('.stream-tumblr').append(htmlString +'</ul>');
+			      }); 
+				  $('.stream-tumblr .loader').css('display','none');
+				  showMtipTimeout('.stream-logo-tumblr');
+			  }
+	);
+	
+	
+	
+	/* ------------------------
+	 * Delicious stream
+	 * --------------------- */
+	$('.stream-delicious .loader').css('display','block');
+	$.getJSON('http://feeds.delicious.com/v2/json/miguelmota?callback=?', 
+			{
+				count: '3'
+			},
+			function(data){
+				$.each(data, function(i, item){
+					var htmlString = '<ul class="stream-ul stream-ul-delicious">';
+					var title = item.d;
+					var url = item.u;
+		    	  	var date = new Date(item.dt).toUTCString();
+		    	  	htmlString += "<li><a href='"+url+"' rel='external'><span class='icon icon-link-16'></span> "+title+"</a> <time class='status-date'>"+niceTime(date)+"</time></li>";
+					$('.stream-delicious').append(htmlString +'</ul>');
+				});
+				$('.stream-delicious .loader').css('display','none');
+				showMtipTimeout('.stream-logo-delicious');
+		}
+	);
+	
+	
+	
+	/* ------------------------
+	 * Last fm stream
+	 * --------------------- */
+	$('.stream-lastfm .loader').css('display','block');
+	// All parameters in url: http://ws.audioscrobbler.com/2.0/?format=json&method=user.getRecentTracks&user=miguel_mota&api_key=dc0e875b6c0fd8ac4891b0716897e6c1&limit=5&callback=?
+	$.getJSON('http://ws.audioscrobbler.com/2.0/?callback=?', 
 			{
 				format: 'json',
-				api_key: '2a3074a0411f6d3649972787fcacea59',
-				user_id: '40464790@N08',
+				method: 'user.getRecentTracks',
+				user: 'miguel_mota',
+				api_key: 'dc0e875b6c0fd8ac4891b0716897e6c1',
+				limit: '5'
 			},
-				function jsonFlickrFeed(data) {
-					var htmlString = '<div class="stream-carousel-wrap"><a href="javascript:void(0);" class="stream-carousel-nav stream-carousel-nav-prev"><span class="stream-carousel-nav-inner">&#171;</span></a><div class="stream-carousel stream-carousel-flickr"><ul class="stream-ul stream-ul-flickr jcarousel-skin-tango">';
-					$.each(data.photos.photo, function(i,item) {	
-						
-						var flickr_id = item.id;
-						var flickr_farm = item.farm;
-						var flickr_server = item.server;					
-						var flickr_secret = item.secret;
-						var flickr_title = item.title;
-						
-						//var thumbnail = (item.media.m);
-						var flickr_thumbnail = "http://farm"+flickr_farm+".static.flickr.com/"+flickr_server+"/"+flickr_id+"_"+flickr_secret+"_m.jpg";
-						//var thumbnail_small = (item.media.m).replace('_m.jpg','_s.jpg');
-						//var photo = (item.media.m).replace('_m.jpg','_b.jpg');						
-						var flickr_photo = "http://farm"+flickr_farm+".static.flickr.com/"+flickr_server+"/"+flickr_id+"_"+flickr_secret+"_b.jpg";
-
-
-						htmlString += "<li><a class='fancybox' rel='flickr internal' href='"+flickr_photo+"' title='"+flickr_title+" ["+flickr_id+"]'><img src='"+flickr_thumbnail+"' alt='' /><span class='zoom-wrap zoom-wrap-flickr'><span class='icon icon-zoom-24 icon-zoom-flickr'></span></span></a></li>";
-					});
-					$('.stream-flickr .loader').css('display','none');
-					$('.stream-flickr').append(htmlString +'</ul></div><a href="javascript:void(0);" class="stream-carousel-nav stream-carousel-nav-next"><span class="stream-carousel-nav-inner">&#187;</span></a></div>');
-					showMtipTimeout('.stream-logo-flickr');
-					
-					$('.stream-carousel-flickr').jCarouselLite({
-						 btnNext: '.stream-carousel-nav-next',
-						 btnPrev: '.stream-carousel-nav-prev'
-					});
-
-				});
-		
-		c++
-		refreshStream();
-	}
-	
-	// Refresh stream page every 30 seconds
-	function refreshStream(){
-		setTimeout(function(){
-			if(window.location.pathname.substr(1) == 'stream' || window.location.pathname.substr(1) == 'index' || window.location.pathname == ''){
-				$('a#stream').trigger('click');
+			function(data){       
+				$.each(data.recenttracks.track, function(i, item){ 
+						var htmlString = '<ul class="stream-ul stream-ul-lastfm stream-ul-chart">';
+						var url = item.url;
+						var name = item.name;
+						var artist = item.artist['#text'];
+						var image = item.image[0]['#text'];
+						var date =  item.date['#text'];
+						htmlString += "<li><a href='"+url+"' rel='external'><img class='stream-thumb' src='"+image+"' alt='' /> "+artist+" - "+name+"</a> <time class='status-date'>"+date+"</time></li>";
+						$('.stream-lastfm').append(htmlString +'</ul>');
+				}); 
+				$('.stream-lastfm .loader').css('display','none');
+				showMtipTimeout('.stream-logo-lastfm');
 			}
-		},30000);
-	}
+	);
 	
+	
+	
+	/* ------------------------
+	 * Wakoopa stream
+	 * --------------------- */
+	$('.stream-wakoopa .loader').css('display','block');
+	$.getJSON('http://api.wakoopa.com/miguelmota/recently_used.json?callback=?',
+		{
+			limit: '3'
+		},
+		function wakoopaApi(data){
+			var html = ["<ul class='stream-ul stream-ul-wakoopa stream-ul-chart'>"];
+			for(var i = 0; i < data.length; i++){
+				var entry = data[i].software;
+				var date = new Date(entry.last_active_at).toUTCString();
+				html.push("<li><a href='", entry.complete_url, "' rel='external'> <img class='stream-thumb' src='", entry.complete_thumb_url ,"' alt='' /> ", entry.name, "</a> <time class='status-date'>"+niceTime(date)+"</time>", "</li>");
+			}
+			html.push("</ul>");
+			document.getElementById('stream-wakoopa-software').innerHTML = html.join("");
+			$('.stream-wakoopa .loader').css('display','none');
+			showMtipTimeout('.stream-logo-wakoopa');
+		}
+	);
+		
+		
+	
+	/* ------------------------
+	 * Flickr stream
+	 * --------------------- */
+	$.getJSON('http://api.flickr.com/services/rest/?method=flickr.people.getPublicPhotos&jsoncallback=?',
+		{
+			format: 'json',
+			api_key: '2a3074a0411f6d3649972787fcacea59',
+			user_id: '40464790@N08',
+		},
+			function jsonFlickrFeed(data) {
+				var htmlString = '<div class="stream-carousel-wrap"><a href="javascript:void(0);" class="stream-carousel-nav stream-carousel-nav-prev"><span class="stream-carousel-nav-inner">&#171;</span></a><div class="stream-carousel stream-carousel-flickr"><ul class="stream-ul stream-ul-flickr jcarousel-skin-tango">';
+				$.each(data.photos.photo, function(i,item) {	
+					
+					var flickr_id = item.id;
+					var flickr_farm = item.farm;
+					var flickr_server = item.server;					
+					var flickr_secret = item.secret;
+					var flickr_title = item.title;
+					
+					//var thumbnail = (item.media.m);
+					var flickr_thumbnail = "http://farm"+flickr_farm+".static.flickr.com/"+flickr_server+"/"+flickr_id+"_"+flickr_secret+"_m.jpg";
+					//var thumbnail_small = (item.media.m).replace('_m.jpg','_s.jpg');
+					//var photo = (item.media.m).replace('_m.jpg','_b.jpg');						
+					var flickr_photo = "http://farm"+flickr_farm+".static.flickr.com/"+flickr_server+"/"+flickr_id+"_"+flickr_secret+"_b.jpg";
+
+
+					htmlString += "<li><a class='fancybox' rel='flickr internal' href='"+flickr_photo+"' title='"+flickr_title+" ["+flickr_id+"]'><img src='"+flickr_thumbnail+"' alt='' /><span class='zoom-wrap zoom-wrap-flickr'><span class='icon icon-zoom-24 icon-zoom-flickr'></span></span></a></li>";
+				});
+				$('.stream-flickr .loader').css('display','none');
+				$('.stream-flickr').append(htmlString +'</ul></div><a href="javascript:void(0);" class="stream-carousel-nav stream-carousel-nav-next"><span class="stream-carousel-nav-inner">&#187;</span></a></div>');
+				showMtipTimeout('.stream-logo-flickr');
+				
+				$('.stream-carousel-flickr').jCarouselLite({
+					 btnNext: '.stream-carousel-nav-next',
+					 btnPrev: '.stream-carousel-nav-prev'
+				});
+
+			});
+
 }
 
 
@@ -574,14 +550,18 @@ function streamPage(){
  * ----------------------------------------------- */
 function portfolioPage(){
 	
-	// Show all work with effect
+	/* ------------------------
+	 * Project sort functions
+	 * --------------------- */
+	
+	// Show all work
 	$('.project-sort-all').live('click', function(){
 		$('.project-sort-wrap a').removeClass('selected');
 		$(this).addClass('selected');
 		$('.project').slideDown('fast');
 	});
 
-	// Show web work with effect 
+	// Show web work
 	$('.project-sort-web').live('click', function(){
 		$('.project-sort-wrap a').removeClass('selected');
 		$(this).addClass('selected');
@@ -589,7 +569,7 @@ function portfolioPage(){
 		$('.project-web').slideDown('fast');
 	});
 	
-	// Show identity work with effect
+	// Show logo work
 	$('.project-sort-identity').live('click', function(){
 		$('.project-sort-wrap a').removeClass('selected');
 		$(this).addClass('selected');
@@ -597,7 +577,7 @@ function portfolioPage(){
 		$('.project-identity').slideDown('fast');
 	});
 	
-	// Show other work with effect
+	// Show code work
 	$('.project-sort-code').live('click', function(){
 		$('.project-sort-wrap a').removeClass('selected');
 		$(this).addClass('selected');
@@ -606,26 +586,27 @@ function portfolioPage(){
 	});
 
 	
-	//hover glow effect
+	
+	// Project hover border glow effect
 	$(".project .image-container").live({
 		mouseenter:
 			function(){
-				//jQuery('.overlay', this).fadeOut(200);
+				// jQuery('.overlay', this).fadeOut(200);
 				$(this).css({
 					'-webkit-box-shadow': '0 0 10px #fff',
 					'-moz-box-shadow': '0 0 10px #fff',
 					'box-shadow': '0 0 10px #fff'
 					});
-	},
+		},
 		mouseleave:
 			function(){
-				//jQuery('.overlay', this).hide().fadeIn(300);
+				// jQuery('.overlay', this).hide().fadeIn(300);
 				$(this).css({
 					'-webkit-box-shadow': '2px 2px 5px #111',
 					'-moz-box-shadow': '2px 2px 5px #111',
 					'box-shadow': '2px 2px 5px #111'
 					});
-		  }
+		}
 	});
 	
 	
@@ -635,11 +616,11 @@ function portfolioPage(){
 		mouseenter:
 			function(){
 				jQuery('.overlay-popup', this).animate({bottom: '0'}, {queue: false, duration: 150});
-	},
+		},
 		mouseleave:
 			function(){
 				jQuery('.overlay-popup', this).animate({bottom: '-100px'}, {queue: false, duration: 125});
-		  }
+		}
 	});
 	
 }
@@ -647,17 +628,19 @@ function portfolioPage(){
 
 
 /* --------------------------------------------------
- * Contact functions
+ * Contact page functions
  * ----------------------------------------------- */
 function contactPage(){
 	
-	//create method to validate name
+	// Create method to validate name input
 	$('.contact-form-submit').live('click', function(){
 		$.validator.addMethod('namecheck', function(value, element){
 			return this.optional(element) || /^[a-zA-Z]*$/.test(value);
 	});
+
 		
-	//validate contact form
+		
+	// Validate contact form
 	$('.contact-form').validate({
 		rules: {
 			name: {
@@ -670,7 +653,7 @@ function contactPage(){
 			},
 			message: {
 				required: true,
-				minlength: 10
+				minlength: 2
 			}
 		},
 		messages: {
@@ -689,23 +672,27 @@ function contactPage(){
 		debug: true
 	});
 	
-	//if validates to true, then submit it
+	
+	
+	// If contact form validates to true then submit it
 	if ($('.contact-form').valid() == true){	
+		
 		$('.contact-form-submit').html('<span>sending...</span>');
+		
 		var str = $('.contact-form').serialize();
+		
 		$.ajax({
 			type: 'get',
 			url: 'http://www.foodfail.org/miguelmota/contact.php',
-			//url: 'http://miguelmota.webuda.com/contact/contact.php',
+			// url: 'http://miguelmota.webuda.com/contact/contact.php',
 			data: str,
 			success: function(){
-				success();
+
+				sendSuccess();
 			},
 			error: function(){
-				$('.contact-form-submit').html('<span>sending...</span>');
-				$('.contact-form').slideUp(300, function(){
-					$('.contact-form-thank-you').html('<p>Sorry, there was an error. Message was not sent.</p><p>Email <a href="mailto:hello@miguelmota.com">hello@miguelmota.com</a>?</p>');
-				});
+				
+				sendError();
 			}
 		});
 		return false;
@@ -715,11 +702,21 @@ function contactPage(){
 	});
 	
 	
-	//hide contact form and display thank you message
-	function success(){
+	
+	// Hide contact form and display thank you message
+	function sendSuccess(){
 		var name = $('#contact-form-name').val();
 		$('.contact-form').slideUp(300, function(){
 			$('.contact-form-thank-you').html('<p class="thank-you-name">Thank you, <strong>'+name+'</strong>.</p><p>Your message has been successfully sent <span class="icon icon-checkmark-16 icon-no-hover icon-no-opacity"></span><br />I will get in touch with you soon.</p>').fadeIn(1200);
+		});
+	}
+	
+	
+	
+	// Display error message submit failed
+	function sendError(){
+		$('.contact-form').slideUp(300, function(){
+			$('.contact-form-thank-you').html('<p>Sorry, there was an error. Message was not sent.</p><p>Email <a href="mailto:hello@miguelmota.com">hello@miguelmota.com</a>?</p>');
 		});
 	}
 
@@ -731,16 +728,16 @@ function contactPage(){
 /* --------------------------------------------------
  * Blog page functions
  * ----------------------------------------------- */
-tc = 0;
 function blogPage(){
 	
-
-	//initialize AddThis
-	//$.getScript('http://s7.addthis.com/js/250/addthis_widget.js#username=miguelmota');
+	// Get AddThis script
+	// $.getScript('http://s7.addthis.com/js/250/addthis_widget.js#username=miguelmota');
 	
-	// Initialize Twitter widgets
-	while(tc==0){
-		$.getScript('http://platform.twitter.com/widgets.js');
+	// Get tumblr share script
+	$.getScript('http://platform.tumblr.com/v1/share.js');
+	
+	// Get Twitter widgets script
+	$.getScript('http://platform.twitter.com/widgets.js');
 
 	
 	
@@ -750,27 +747,6 @@ function blogPage(){
 		  po.src = 'https://apis.google.com/js/plusone.js';
 		  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
 		})();
-
-    tc++;
-	}
-	//initialize Google Search
-	//loadSearch();
-	
-	//initialize Disqus
-	while(ldc = 0){
-		//loadDisqus();
-		ldc++;
-	}
-	
-}
-
-function loadDisqus(){
-}
-
-//load Google Search function
-
-function loadSearch(){
-
 
 }
 
