@@ -1223,6 +1223,7 @@ h6 {
 }
 .addthis_toolbox {
 	display: inline;
+	float: right;
 	text-shadow: 0;
 }
 input.short-url {
