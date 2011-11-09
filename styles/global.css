@@ -513,6 +513,7 @@ img.loader {
 ============================================================================== */
 .main-side-nav-wrap {
 	left: 0;
+	height: 100%;
 	position: absolute;
 	width: 200px;
 	border: 1px solid black;
