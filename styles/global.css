@@ -209,6 +209,8 @@ textarea {
 .error,
 input.error {
 	border-color: #870000;
+}
+label.error {
 	margin: 0;
 	padding: 0;
 }
