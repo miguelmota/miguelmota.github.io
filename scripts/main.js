@@ -327,6 +327,7 @@ function streamPage(){
 					htmlString += "<li id='"+id+"' class='status'><span class='post'><a href='http://twitter.com/miguel_mota/status/"+id+"' rel='external'><span class='icon icon-twitter-bird-16'></span> "+post+"</a></span> <time class='status-date'>"+niceTime(date)+"</time></li>";
 					$('.stream-twitter').append(htmlString +'</ul>');
 				});
+				
 				$('.stream-twitter .loader').css('display','none');
 				showMtipTimeout('.stream-logo-twitter');
 			}
@@ -376,6 +377,7 @@ function streamPage(){
 		    	  		break;
 		    	  	}
 				});
+				
 				$('.stream-facebook .loader').html('<span style="color: #555;>"[fetch failed]</span>');
 				showMtipTimeout('.social.facebook');
 			}
@@ -399,6 +401,7 @@ function streamPage(){
 			    	  	htmlString += "<li><a href='"+url+"' rel='external'><span class='icon icon-"+type+"-16'></span> "+slug.substring(0,1).toUpperCase()+slug.substr(1,200)+"</a> <time class='status-date'>"+niceTime(date)+"</time></li>";
 						$('.stream-tumblr').append(htmlString +'</ul>');
 			      }); 
+				
 				  $('.stream-tumblr .loader').css('display','none');
 				  showMtipTimeout('.stream-logo-tumblr');
 			  }
@@ -423,6 +426,7 @@ function streamPage(){
 		    	  	htmlString += "<li><a href='"+url+"' rel='external'><span class='icon icon-link-16'></span> "+title+"</a> <time class='status-date'>"+niceTime(date)+"</time></li>";
 					$('.stream-delicious').append(htmlString +'</ul>');
 				});
+				
 				$('.stream-delicious .loader').css('display','none');
 				showMtipTimeout('.stream-logo-delicious');
 		}
@@ -454,6 +458,7 @@ function streamPage(){
 						htmlString += "<li><a href='"+url+"' rel='external'><img class='stream-thumb' src='"+image+"' alt='' /> "+artist+" - "+name+"</a> <time class='status-date'>"+date+"</time></li>";
 						$('.stream-lastfm').append(htmlString +'</ul>');
 				}); 
+				
 				$('.stream-lastfm .loader').css('display','none');
 				showMtipTimeout('.stream-logo-lastfm');
 			}
@@ -476,6 +481,7 @@ function streamPage(){
 				var date = new Date(entry.last_active_at).toUTCString();
 				html.push("<li><a href='"+entry.complete_url+"' rel='external'> <img class='stream-thumb' src='"+entry.complete_thumb_url+"' alt='' /> "+entry.name+"</a> <time class='status-date'>"+niceTime(date)+"</time>", "</li>");
 			}
+			
 			html.push("</ul>");
 			document.getElementById('stream-wakoopa-software').innerHTML = html.join("");
 			$('.stream-wakoopa .loader').css('display','none');
@@ -514,8 +520,6 @@ function streamPage(){
 				htmlString += "<li><a class='fancybox' rel='flickr internal' href='"+flickr_photo+"' title='"+flickr_title+" ["+flickr_id+"]'><img src='"+flickr_thumbnail+"' alt='' /><span class='zoom-wrap zoom-wrap-flickr'><span class='icon icon-zoom-24 icon-zoom-flickr'></span></span></a></li>";
 			});
 			
-			// Initialize masonry
-			loadMasonry();
 			
 			$('.stream-flickr .loader').css('display','none');
 			$('.stream-flickr').append(htmlString +'</ul></div><a href="javascript:void(0);" class="stream-carousel-nav stream-carousel-nav-next"><span class="stream-carousel-nav-inner">&#187;</span></a></div>');
@@ -528,7 +532,8 @@ function streamPage(){
 
 		});
 	
-	
+	// Initialize masonry
+	setTimeout(loadMasonry(), 3000);
 	
 	// Show mtip on stream-wrap mouseenter
 	$('.stream-wrap').live({
