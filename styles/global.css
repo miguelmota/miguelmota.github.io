@@ -540,6 +540,7 @@ img.loader {
 	padding-bottom: 15px;
 }
 .main-side-nav-ul {
+	clear: both;
 	padding-bottom: 15px;
 }
 .main-side-nav-ul a {
@@ -1518,11 +1519,7 @@ input.short-url:focus {
 		width: 100%;
 	}
 	.main-side-nav-ul li {
-		display: inline;
 		float: left;
-	}
-	.main-side-nav-ul a {
-		padding: 6px 10px 6px 12px;
 	}
 	
 	
