@@ -1500,7 +1500,8 @@ input.short-url:focus {
 @media all and (max-width: 640px) {
 	.main-wrap {
 		margin: 0;
-		padding: 0;
+		overflow: hidden;
+		padding: 5px;
 	}
 	.main-side-nav-wrap {
 		position: static;
