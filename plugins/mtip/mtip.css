@@ -45,7 +45,7 @@
 	content: "";
 	display: block;
 	height: 0;
-	left: 50%; /* controls horizontal position */
+	left: 5; /* controls horizontal position */
 	margin-left: -5px;
 	position: absolute;
 	width: 0;
