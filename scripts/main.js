@@ -157,7 +157,7 @@ function loadMasonry(){
 	var $tumblelog = $('.content');
 	
 	if(window.width <= 640){
-		var $tumblelog = '';
+		$tumblelog = '';
 	}
 	
 	$tumblelog.imagesLoaded( function(){
