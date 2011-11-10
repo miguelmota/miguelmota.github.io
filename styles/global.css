@@ -527,7 +527,6 @@ img.loader {
 	height: 64px;
 	padding: 0 0 15px 0;
 	width: 64px;
-	vertical-align: middle;
 }
 .site-title {
 	font-size: 24px;
@@ -1522,6 +1521,7 @@ input.short-url:focus {
 		padding: 0 0 15px 0;
 	}
 	.site-title {
+		clear: right;
 		float: left;
 		padding-bottom: 5px;
 	}
@@ -1555,7 +1555,9 @@ input.short-url:focus {
 		padding: 5px;
 		width: 95%;
 	}
-	
+	.title .miguel {
+		display: none;
+	}
 	.title .mota {
 		display: none;
 	}
