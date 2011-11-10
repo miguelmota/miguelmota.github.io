@@ -23,12 +23,12 @@
 	display: none;
 	font-family: Aria, sans-serif;
 	font-size: 12px;
-	left: -35%;
-	right: -35%;
+	left: -5%;
+	right: -5%;
 	opacity: .8;
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
 	filter: alpha(opacity=80);
-	padding: 5px 10px;
+	padding: 5px;
 	position: absolute;
 	text-align: center;
 	top: -20px;
