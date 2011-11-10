@@ -545,9 +545,9 @@ function streamPage(){
 			
 			
 			// Initialize masonry
-			//if(window.width >= 641){
-			loadMasonry();
-
+			if(window.width >= 641){
+				loadMasonry();
+			}
 			
 			// Initalize draggable on stream items
 			/*setTimeout(function(){
