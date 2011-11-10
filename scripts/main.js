@@ -535,7 +535,7 @@ function streamPage(){
 			
 			
 			$('.stream-flickr .loader').css('display','none');
-			$('.stream-flickr').append(htmlString +'</ul></div><a href="javascript:void(0);" class="stream-carousel-nav stream-carousel-nav-next"><span class="stream-carousel-nav-inner">&#187;</span></a></div>');
+			$('.stream-flickr').append(htmlString +'</ul></div><a href="javascript:void(0);" class="stream-carousel-nav stream-carousel-nav-next"><span class="stream-carousel-nav-inner">&#187;</span></a></div><div class="clear"></div>);
 			showMtipTimeout('.stream-logo-flickr');
 			
 			$('.stream-carousel-flickr').jCarouselLite({
@@ -549,11 +549,11 @@ function streamPage(){
 				setTimeout('loadMasonry()', 2000);
 				
 				// Initalize draggable on stream items
-				setTimeout(function(){
+				/*setTimeout(function(){
 					$('.stream-wrap').draggable({
 						cursor: 'move'
 					}, 2010);
-				});
+				});*
 			}
 			
 			// Initialize Fancybox
