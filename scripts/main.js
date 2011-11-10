@@ -114,7 +114,7 @@ $(document).ready(function(){
 	
 	
 	// Initialize mtip
-	$('.mtip').mtip();
+	//$('.mtip').mtip();
 	
 });
 
