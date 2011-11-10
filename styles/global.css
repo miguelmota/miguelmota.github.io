@@ -1522,7 +1522,7 @@ input.short-url:focus {
 		float: left;
 	}
 	.main-side-nav-ul a {
-		width: 100px;
+		padding: 6px 10px 6px 12px;
 	}
 	
 	
