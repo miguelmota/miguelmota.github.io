@@ -1510,6 +1510,10 @@ input.short-url:focus {
 		position: static;	
 		width: 100%;
 	}
+	.content-item {
+		padding: 5px;
+		width: 100%;
+	}
 }
 /* ==============================================================================
 	END MOBILE STYLES
