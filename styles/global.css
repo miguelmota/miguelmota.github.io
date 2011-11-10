@@ -1672,6 +1672,10 @@ input.short-url:focus {
 	.pagination {
 		width: 92%;
 	}
+	.dsq-comment-wrap {
+		max-width: 92%;
+		width: 92%;
+	}
 	
 }
 /* ==============================================================================
