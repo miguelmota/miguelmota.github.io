@@ -1641,7 +1641,7 @@ input.short-url:focus {
 	.project .image-container {
 		clear: both;
 		position: relative;
-		width: 95%;
+		width: 100%;
 	}
 	.project .image-container img {
 		height: auto;
