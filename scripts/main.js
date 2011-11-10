@@ -65,7 +65,7 @@ $(document).ready(function(){
 	// Make navigation absolute on mobile screens
 	if(screen.width <= 640){
 		$('.main-side-nav').css({
-			'position': 'absolute'
+			//'position': 'absolute'
 		});
 	}
 	
