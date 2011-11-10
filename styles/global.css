@@ -585,6 +585,16 @@ img.loader {
 	display: none;
 	float: right;
 }
+@media all and (max-width: 640px) {
+	.main-side-nav-wrap {
+		position: static;
+		width: 100%
+	}
+	.main-side-nav {
+		position: static;	
+		width: 100%;
+	}
+}
 /* ==============================================================================
 	END MAIN SIDE NAVIGATION
 ============================================================================== */
