@@ -1578,6 +1578,7 @@ input.short-url:focus {
 		height: auto;
 	}
 	.project .image-container {
+		height: auto;
 		width: 95%;
 	}
 	.project .image-container img {
