@@ -153,15 +153,17 @@ $.getScript('http://miguelmota.tumblr.com/tweets.js');
 
 // Initialize Masonry plugin, masonry.desandro.com
 function loadMasonry(){
-	//if(window.width >= 641){
+
 		var $tumblelog = $('.content');
 		
-		$tumblelog.imagesLoaded( function(){
-		  $tumblelog.masonry({
-		    isFitWidth: true
-		  });
+		$tumblelog.imagesLoaded(function(){
+			if(window.width >= 641){
+			  $tumblelog.masonry({
+			    isFitWidth: true
+			  });
+			}
 		});
-	//}
+
 }
 
 
