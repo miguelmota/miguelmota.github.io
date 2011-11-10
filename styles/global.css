@@ -1541,14 +1541,14 @@ input.short-url:focus {
 	.project-sort-wrap {
 		margin-top: 0;
 		padding: 10px;
-		width: 100%;
+		width: 95%;
 	}
 	.project {
 		height: 200px;
-		width: 100%;
+		width: 95%;
 	}
 	.project .image-container {
-		width: 100%;
+		width: 95%;
 	}
 	.project .image-container img {
 		height: auto;
