@@ -543,6 +543,7 @@ img.loader {
 	clear: both;
 	display: block;
 	padding-bottom: 15px;
+	width: 100%;
 }
 .main-side-nav-ul a {
 	background-color: #292929;
