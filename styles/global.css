@@ -1513,21 +1513,26 @@ input.short-url:focus {
 	MOBILE STYLES
 ============================================================================== */
 @media all and (max-width: 640px) {
-	
+	/* ------------------------
+	 * Main wrap
+	 * --------------------- */
 	.main-wrap {
 		margin: 0;
 		overflow: hidden;
 		padding: 0;
 	}
 	
-	
+	/* ------------------------
+	 * Main side nav wrap
+	 * --------------------- */
 	.main-side-nav-wrap {
 		position: static;
 		width: 100%
 	}
-	.main-side-nav {
-		padding-top: 10px;
-	}
+	
+	/* ------------------------
+	 * Site title
+	 * --------------------- */
 	.nav-logo {
 		display: block;
 		float: left;
@@ -1538,12 +1543,16 @@ input.short-url:focus {
 		display: block;
 		padding: 10px 0 5px 0;
 	}
-
 	.site-description {
 		display: inline-block;
 		padding-bottom: 0;
 	}
+	
+	/* ------------------------
+	 * Navigation links
+	 * --------------------- */
 	.main-side-nav {
+		padding-top: 10px;
 		position: static;	
 		width: 100%;
 	}
@@ -1551,31 +1560,41 @@ input.short-url:focus {
 		float: left;
 	}
 	
-	
+	/* ------------------------
+	 * Social icons
+	 * --------------------- */
 	.follow-wrap {
 		width: 92%;
 	}
 	
-	
+	/* ------------------------
+	 * Search box
+	 * --------------------- */
 	input.search-input {
 		width: 92%;
 	}
 	
-	
+	/* ------------------------
+	 * Latest tweet
+	 * --------------------- */
 	#tweet-wrap {
-		width: 85%;
+		width: 87%;
 	}
 	#tweets {
 		width: 92%;
 	}
 	
-	
+	/* ------------------------
+	 * Content
+	 * --------------------- */
 	.content-item {
 		padding: 5px;
 		width: 92%;
 	}
 	
-	
+	/* ------------------------
+	 * Page title
+	 * --------------------- */
 	.title .miguel {
 		display: none;
 	}
@@ -1586,7 +1605,9 @@ input.short-url:focus {
 		display: none;
 	}
 	
-	
+	/* ------------------------
+	 * Portfolio page
+	 * --------------------- */
 	.project-sort-wrap {
 		margin-top: 0;
 		padding: 10px;
@@ -1607,7 +1628,9 @@ input.short-url:focus {
 		display: none;
 	}
 	
-	
+	/* ------------------------
+	 * Contact page
+	 * --------------------- */
 	.contact-qrcode {
 		display: none;
 	}
@@ -1623,6 +1646,9 @@ input.short-url:focus {
 		width: 92%;
 	}
 	
+	/* ------------------------
+	 * Blog page
+	 * --------------------- */
 	input.short-url {
 		display: none;
 	}
