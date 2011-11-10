@@ -153,13 +153,15 @@ $.getScript('http://miguelmota.tumblr.com/tweets.js');
 
 // Initialize Masonry plugin, masonry.desandro.com
 function loadMasonry(){
-	var $tumblelog = $('.content');
-	
-	$tumblelog.imagesLoaded( function(){
-	  $tumblelog.masonry({
-	    isFitWidth: true
-	  });
-	});
+	if(window.width >= 641){
+		var $tumblelog = $('.content');
+		
+		$tumblelog.imagesLoaded( function(){
+		  $tumblelog.masonry({
+		    isFitWidth: true
+		  });
+		});
+	}
 }
 
 
@@ -545,11 +547,7 @@ function streamPage(){
 			
 			
 			// Initialize masonry
-			setTimeout(function(){
-				if(window.width >= 641){
-					loadMasonry();
-				}
-			}, 2000);
+			setTimeout('loadMasonry()', 2000);
 
 			
 			// Initalize draggable on stream items
@@ -664,9 +662,7 @@ function portfolioPage(){
 	
 	
 	// Initialize masonry
-	if(window.width >= 641){
-		setTimeout('loadMasonry()', 1000);
-	}
+	setTimeout('loadMasonry()', 1000);
 	
 	
 	
@@ -810,9 +806,7 @@ function blogPage(){
 	
 	
 	// Initialize masonry
-	if(window.width >= 641){
-		setTimeout('loadMasonry()', 1000);
-	}
+	setTimeout('loadMasonry()', 1000);
 
 }
 
