@@ -1572,10 +1572,10 @@ input.short-url:focus {
 	.project-sort-wrap {
 		margin-top: 0;
 		padding: 10px;
+		width: 92%;
 	}
 	.project {
 		height: 200px;
-		width: 95%;
 	}
 	.project .image-container {
 		width: 95%;
