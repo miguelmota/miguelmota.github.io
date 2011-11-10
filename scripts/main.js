@@ -559,7 +559,7 @@ function streamPage(){
 						cursor: 'move'
 					}, 2010);
 				});
-			|
+			}
 			
 			
 			// Initialize Fancybox
