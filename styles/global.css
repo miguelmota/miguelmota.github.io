@@ -1553,8 +1553,10 @@ input.short-url:focus {
 	
 	.content-item {
 		padding: 5px;
-		width: 95%;
+		width: 92%;
 	}
+	
+	
 	.title .miguel {
 		display: none;
 	}
