@@ -553,7 +553,7 @@ function streamPage(){
 					$('.stream-wrap').draggable({
 						cursor: 'move'
 					}, 2010);
-				});*
+				});*/
 			}
 			
 			// Initialize Fancybox
