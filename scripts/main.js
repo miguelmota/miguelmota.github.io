@@ -113,8 +113,8 @@ $(document).ready(function(){
 	
 	
 	
-	// Initialize mtip
-	//$('.mtip').mtip();
+	// Initialize mtip on social icons
+	$('.icon-social').mtip();
 	
 });
 
