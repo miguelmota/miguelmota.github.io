@@ -1003,17 +1003,18 @@ a.google-plus-link {
 	width: 610px;
 }
 .project .image-container {
+	height: auto;
 	transition: box-shadow linear .2s;
 	-moz-transition: -moz-box-shadow linear .2s;
 	-o-transition: -o-box-shadow linear .2s;
 	-webkit-transition: -webkit-box-shadow linear .2s;
 	overflow: hidden;
-	behavior: url('/PIE/PIE.htc');
-}
-.project .image-container {
-	height: auto;
 	position: absolute;
 	width: 610px;
+	behavior: url('/PIE/PIE.htc');
+}
+.project .image-container a {
+	display: block;
 }
 .overlay-popup {
 	background: #000;
@@ -1633,7 +1634,6 @@ input.short-url:focus {
 	.project {
 	}
 	.project .image-container {
-		min-height: 50px;
 		width: 95%;
 	}
 	.project .image-container img {
