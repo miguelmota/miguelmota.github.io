@@ -801,7 +801,9 @@ function blogPage(){
 	
 	
 	// Initialize masonry
-	setTimeout('loadMasonry()', 1000);
+	if(window.width >= 641){
+		setTimeout('loadMasonry()', 3000);
+	}
 
 }
 
