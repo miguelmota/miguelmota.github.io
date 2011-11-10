@@ -619,6 +619,7 @@ input.search-input {
 	display: none;
 	padding-bottom: 15px;
 	position: relative;
+	width: 100%;
 }
 .tweet-bird-icon {
 	float: left;
@@ -626,14 +627,14 @@ input.search-input {
 #tweets {
 	float: right;
 	position: relative;
-	width: 95%;
+	width: 90%;
 }
 .tweet-content {
 	background-color: #222;
 	float: left;
 	min-height: 20px;
 	padding: 10px;
-	width: 95%;
+	width: 90%;
 }
 .tweet-content:after {
 	border-color: transparent #222;
