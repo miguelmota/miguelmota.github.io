@@ -1519,14 +1519,13 @@ input.short-url:focus {
 		width: 100%
 	}
 	.nav-logo {
-		display: inline-block;
+		display: block;
+		float: left;
 		padding: 0 0 15px 0;
 		vertical-align: middle;
 	}
 	.site-title {
-	
-		display: inline-block;
-		clear: right;
+		display: block;
 		padding-bottom: 5px;
 	}
 	.site-description {
@@ -1553,7 +1552,7 @@ input.short-url:focus {
 	
 	
 	#tweet-wrap {
-		width: 100%;
+		width: 92%;
 	}
 	#tweets {
 		width: 92%;
