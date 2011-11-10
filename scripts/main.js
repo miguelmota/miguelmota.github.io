@@ -72,11 +72,6 @@ $(document).ready(function(){
 		e.preventDefault();
 		return false;
 	});
-	
-	
-	
-	// Initialize Fancybox
-	initializeFancybox();
 
 	
 	
@@ -576,6 +571,11 @@ function streamPage(){
 	// Initialize masonry
 	setTimeout('loadMasonry()', 2000);
 	
+	
+	
+	// Initialize Fancybox
+	initializeFancybox();
+	
 }
 
 
@@ -662,6 +662,11 @@ function portfolioPage(){
 	
 	// Initialize masonry
 	setTimeout('loadMasonry()', 1000);
+	
+	
+	
+	// Initialize Fancybox
+	initializeFancybox();
 	
 }
 
