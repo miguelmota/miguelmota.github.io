@@ -984,9 +984,9 @@ a.google-plus-link {
 	PROJECT SORT
 ------------------------------------------------------------------------------ */
 .project-sort-wrap {
-	margin-top: -40px;
-	padding: 10px;
+	position: absolute;
 	text-align: right;
+	top: 0;
 	width: 650px;
 }
 .project-sort-wrap a.selected {
@@ -1629,8 +1629,6 @@ input.short-url:focus {
 	 * Portfolio page
 	 * --------------------- */
 	.project-sort-wrap {
-		top: 0;
-		position: absolute;
 		width: 92%;
 	}
 	.project {
