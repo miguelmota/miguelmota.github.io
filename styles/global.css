@@ -1599,7 +1599,9 @@ input.short-url:focus {
 	 * Page title
 	 * --------------------- */
 	.title {
+		clear: both;
 		display: block;
+		width: 100%;
 	}
 	.title .miguel {
 		display: none;
