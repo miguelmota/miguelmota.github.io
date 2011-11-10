@@ -620,7 +620,6 @@ input.search-input {
 	height: auto;
 	padding-bottom: 15px;
 	position: relative;
-	overflow: hidden;
 	width: 200px;
 }
 .tweet-bird-icon {
@@ -630,7 +629,7 @@ input.search-input {
 	left: 34px;
 	position: absolute;
 	top: 0;
-	width: 100%;
+	width: 166px;
 }
 .tweet-content {
 	background-color: #222;
