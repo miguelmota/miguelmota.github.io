@@ -1518,6 +1518,9 @@ input.short-url:focus {
 		position: static;
 		width: 100%
 	}
+	.main-side-nav {
+		padding-top: 10px;
+	}
 	.nav-logo {
 		display: block;
 		float: left;
