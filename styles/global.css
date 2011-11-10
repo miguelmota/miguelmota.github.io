@@ -1575,10 +1575,10 @@ input.short-url:focus {
 		width: 92%;
 	}
 	.project {
-		height: 200px;
+		min-height: 50px;
 	}
 	.project .image-container {
-		height: 200px;
+		min-height: 50px;
 		width: 95%;
 	}
 	.project .image-container img {
