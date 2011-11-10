@@ -1585,7 +1585,7 @@ input.short-url:focus {
 	}
 	
 	/* ------------------------
-	 * Content
+	 * Main content
 	 * --------------------- */
 	.content-item {
 		padding: 5px;
@@ -1604,6 +1604,14 @@ input.short-url:focus {
 	.title .slash {
 		display: none;
 	}
+	
+	/* ------------------------
+	 * Flickr carousel
+	 * --------------------- */
+	 .stream-ul-flickr li a {
+	 	min-height: 20px;
+	 	width: 20px;
+	 }
 	
 	/* ------------------------
 	 * Portfolio page
