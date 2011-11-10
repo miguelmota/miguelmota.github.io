@@ -550,14 +550,16 @@ function streamPage(){
 			
 			
 			// Initialize masonry
-			loadMasonry();
+			setTimeout('loadMasonry()', 2000);
 			
 			// Initalize draggable on stream items
-			/*setTimeout(function(){
-				$('.stream-wrap').draggable({
-					cursor: 'move'
-				}, 2010);
-			});*/
+			if(window.width >= 641) {
+				setTimeout(function(){
+					$('.stream-wrap').draggable({
+						cursor: 'move'
+					}, 2010);
+				});
+			|
 			
 			
 			// Initialize Fancybox
