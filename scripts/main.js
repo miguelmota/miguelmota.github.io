@@ -548,6 +548,7 @@ function streamPage(){
 			setTimeout(function(){
 				if(window.width >= 641){
 					loadMasonry();
+				}
 			}, 2000);
 
 			
