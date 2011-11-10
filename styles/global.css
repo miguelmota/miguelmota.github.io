@@ -1521,7 +1521,7 @@ input.short-url:focus {
 		display: inline;
 		float: left;
 	}
-	.main-side-nav-ul  {
+	.main-side-nav-ul a {
 		width: 100px;
 	}
 	
