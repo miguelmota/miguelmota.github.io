@@ -156,10 +156,11 @@ function recent_tweets(data) {
 $.getScript('http://miguelmota.tumblr.com/tweets.js');
 
 
+
 // Initialize Masonry plugin, masonry.desandro.com
 function loadMasonry(){
 	
-	// Load masonry on if screen not less than 641px
+	// Load masonry only if screen not less than 641px
 	if(window.width >= 641){
 		setTimeout('initializeMasonry()', 3000);
 	}
