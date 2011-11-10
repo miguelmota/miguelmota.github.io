@@ -619,6 +619,7 @@ input.search-input {
 	display: none;
 	padding-bottom: 15px;
 	position: relative;
+	overflow: hidden;
 	width: 200px;
 }
 .tweet-bird-icon {
