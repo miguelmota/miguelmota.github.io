@@ -1582,9 +1582,14 @@ input.short-url:focus {
 	}
 	.contact-info-wrap {
 		line-height: 150%;
+		padding-bottom: 15px;
 		position: static;
 		right: 0;
 		top: 0;
+	}
+	.contact-form-message {
+		height: 200px;
+		width: 90%;
 	}
 	
 }
