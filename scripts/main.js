@@ -156,19 +156,8 @@ function recent_tweets(data) {
 $.getScript('http://miguelmota.tumblr.com/tweets.js');
 
 
-
 // Initialize Masonry plugin, masonry.desandro.com
 function loadMasonry(){
-	
-	// Load masonry only if screen not less than 641px
-	if(window.width >= 641){
-		setTimeout('initMasonry()', 3000);
-	}
-	
-}
-
-// Initialize masonry with options
-function initMasonry(){
 	var $tumblelog = $('.content');
 	
 	$tumblelog.imagesLoaded( function(){
@@ -177,7 +166,6 @@ function initMasonry(){
 	  });
 	});
 }
-
 
 
 // Initialize fancybox
@@ -552,7 +540,7 @@ function streamPage(){
 			
 			
 			$('.stream-flickr .loader').css('display','none');
-			$('.stream-flickr').append(htmlString +'</ul></div><a href="javascript:void(0);" class="stream-carousel-nav stream-carousel-nav-next"><span class="stream-carousel-nav-inner">&#187;</span></a></div><div class="clear"></div>');
+			$('.stream-flickr').append(htmlString +'</ul></div><a href="javascript:void(0);" class="stream-carousel-nav stream-carousel-nav-next"><span class="stream-carousel-nav-inner">&#187;</span></a></div>');
 			showMtipTimeout('.stream-logo-flickr');
 			
 			$('.stream-carousel-flickr').jCarouselLite({
@@ -585,9 +573,9 @@ function streamPage(){
 
 	
 	
-	// Load masonry only if screen not less than 641px
+	// Initialize masonry
 	if(window.width >= 641){
-		setTimeout('initMasonry()', 3000);
+		setTimeout('loadMasonry()', 4000);
 	}
 	
 }
@@ -674,10 +662,8 @@ function portfolioPage(){
 	
 	
 	
-	// Load masonry only if screen not less than 641px
-	if(window.width >= 641){
-		setTimeout('initMasonry()', 3000);
-	}
+	// Initialize masonry
+	setTimeout('loadMasonry()', 1000);
 	
 }
 
@@ -815,10 +801,11 @@ function blogPage(){
 	
 	
 	
-	// Load masonry only if screen not less than 641px
+	// Initialize masonry
 	if(window.width >= 641){
-		setTimeout('initMasonry()', 3000);
+		setTimeout('loadMasonry()', 4000);
 	}
+	
 
 }
 
