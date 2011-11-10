@@ -544,18 +544,20 @@ function streamPage(){
 			});
 			
 			// Initialize masonry
-			if(window.width <= 640){
+			if(window.width >= 641){
+				
 				setTimeout('loadMasonry()', 2000);
+				
+				// Initalize draggable on stream items
+				setTimeout(function(){
+					$('.stream-wrap').draggable({
+						cursor: 'move'
+					}, 2010);
+				});
 			}
 			
 			// Initialize Fancybox
 			initializeFancybox();
-			// Initalize draggable on stream items
-			setTimeout(function(){
-				$('.stream-wrap').draggable({
-					cursor: 'move'
-				}, 2010);
-			});
 
 		});
 	
@@ -658,7 +660,9 @@ function portfolioPage(){
 	
 	
 	// Initialize masonry
-	setTimeout('loadMasonry()', 1000);
+	if(window.width >= 641){
+		setTimeout('loadMasonry()', 1000);
+	}
 	
 	
 	
@@ -802,7 +806,9 @@ function blogPage(){
 	
 	
 	// Initialize masonry
-	setTimeout('loadMasonry()', 1000);
+	if(window.width >= 641){
+		setTimeout('loadMasonry()', 1000);
+	}
 
 }
 
