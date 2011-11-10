@@ -544,7 +544,9 @@ function streamPage(){
 			});
 			
 			// Initialize masonry
-			setTimeout('loadMasonry()', 2000);
+			if(window.width <= 640){
+				setTimeout('loadMasonry()', 2000);
+			}
 			
 			// Initialize Fancybox
 			initializeFancybox();
