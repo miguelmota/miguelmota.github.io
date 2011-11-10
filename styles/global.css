@@ -1528,7 +1528,7 @@ input.short-url:focus {
 		padding-bottom: 5px;
 	}
 	.site-description {
-		display: inline-block;
+		display: block;
 		padding-bottom: 15px;
 	}
 	.main-side-nav {
@@ -1541,7 +1541,7 @@ input.short-url:focus {
 	
 	
 	.follow-wrap {
-		width: 100%;
+		width: 92%;
 	}
 	
 	
