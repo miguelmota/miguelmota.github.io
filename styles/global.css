@@ -1593,6 +1593,7 @@ input.short-url:focus {
 	 * Main content
 	 * --------------------- */
 	.content-item {
+		float: none;
 		padding: 5px;
 		width: 92%;
 	}
@@ -1638,6 +1639,7 @@ input.short-url:focus {
 		width: 92%;
 	}
 	.project .image-container {
+		position: relative;
 		width: 95%;
 	}
 	.project .image-container img {
