@@ -1667,6 +1667,9 @@ input.short-url:focus {
 	/* ------------------------
 	 * Blog page
 	 * --------------------- */
+	 .blog-post-single h1 a {
+		font-size: 28px;
+	}
 	input.short-url {
 		display: none;
 	}
