@@ -541,6 +541,7 @@ img.loader {
 }
 .main-side-nav-ul {
 	clear: both;
+	display: block;
 	padding-bottom: 15px;
 }
 .main-side-nav-ul a {
@@ -1514,6 +1515,19 @@ input.short-url:focus {
 		position: static;
 		width: 100%
 	}
+	.nav-logo {
+		display: block;
+		float: left;
+		padding: 0 0 15px 0;
+	}
+	.site-title {
+		float: left;
+		padding-bottom: 5px;
+	}
+	.site-description {
+		float: left;
+		padding-bottom: 15px;
+	}
 	.main-side-nav {
 		position: static;	
 		width: 100%;
@@ -1560,6 +1574,17 @@ input.short-url:focus {
 	}
 	.overlay-popup {
 		display: none;
+	}
+	
+	
+	.contact-qrcode {
+		display: none;
+	}
+	.contact-info-wrap {
+		line-height: 150%;
+		position: static;
+		right: 0;
+		top: 0;
 	}
 	
 }
