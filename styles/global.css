@@ -1501,11 +1501,14 @@ input.short-url:focus {
 	MOBILE STYLES
 ============================================================================== */
 @media all and (max-width: 640px) {
+	
 	.main-wrap {
 		margin: 0;
 		overflow: hidden;
 		padding: 0;
 	}
+	
+	
 	.main-side-nav-wrap {
 		position: static;
 		width: 100%
@@ -1514,19 +1517,43 @@ input.short-url:focus {
 		position: static;	
 		width: 100%;
 	}
+	
+	
 	input.search-input {
 		width: 100%;
 	}
+	
+	
 	#tweet-wrap {
 		width: 100%;
 	}
 	#tweets {
 		width: 100%;
 	}
+	
+	
 	.content-item {
 		padding: 5px;
 		width: 95%;
 	}
+	
+	
+	.project-sort-wrap {
+		margin-top: 0;
+		padding: 10px;
+		width: 100%px;
+	}
+	.project {
+		height: 200px;
+		width: 100%;
+	}
+	.project .image-container {
+		width: 100%;
+	}
+	.overlay-popup {
+		display: none;
+	}
+	
 }
 /* ==============================================================================
 	END MOBILE STYLES
