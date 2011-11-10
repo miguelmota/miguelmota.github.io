@@ -1524,8 +1524,9 @@ input.short-url:focus {
 		vertical-align: middle;
 	}
 	.site-title {
-		clear: right;
+	
 		display: inline-block;
+		clear: right;
 		padding-bottom: 5px;
 	}
 	.site-description {
