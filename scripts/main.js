@@ -554,10 +554,8 @@ function streamPage(){
 			
 			// Initalize draggable on stream items
 			if(window.width >= 641) {
-				setTimeout(function(){
-					$('.stream-wrap').draggable({
-						cursor: 'move'
-					}, 2010);
+				$('.stream-wrap').draggable({
+					cursor: 'move'
 				});
 			}
 			
