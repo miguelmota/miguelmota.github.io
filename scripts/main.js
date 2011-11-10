@@ -162,13 +162,13 @@ function loadMasonry(){
 	
 	// Load masonry only if screen not less than 641px
 	if(window.width >= 641){
-		setTimeout('initializeMasonry()', 3000);
+		setTimeout('initMasonry()', 3000);
 	}
 	
 }
 
 // Initialize masonry with options
-function initializeMasonry(){
+function initMasonry(){
 	var $tumblelog = $('.content');
 	
 	$tumblelog.imagesLoaded( function(){
@@ -587,7 +587,7 @@ function streamPage(){
 	
 	// Load masonry only if screen not less than 641px
 	if(window.width >= 641){
-		setTimeout('initializeMasonry()', 3000);
+		setTimeout('initMasonry()', 3000);
 	}
 	
 }
@@ -676,7 +676,7 @@ function portfolioPage(){
 	
 	// Load masonry only if screen not less than 641px
 	if(window.width >= 641){
-		setTimeout('initializeMasonry()', 3000);
+		setTimeout('initMasonry()', 3000);
 	}
 	
 }
@@ -817,7 +817,7 @@ function blogPage(){
 	
 	// Load masonry only if screen not less than 641px
 	if(window.width >= 641){
-		setTimeout('initializeMasonry()', 3000);
+		setTimeout('initMasonry()', 3000);
 	}
 
 }
