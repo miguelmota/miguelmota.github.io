@@ -548,6 +548,12 @@ function streamPage(){
 			
 			// Initialize Fancybox
 			initializeFancybox();
+			// Initalize draggable on stream items
+			setTimeout(function(){
+				$('.stream-wrap').draggable({
+					cursor: 'move'
+				}, 2010);
+			});
 
 		});
 	
@@ -564,14 +570,7 @@ function streamPage(){
 				hideMtip('.'+$(this).attr('class').split(' ')[1]+' .stream-logo');
 			}
 	});
-	
-	
-	
-	// Initalize draggable on stream items
-	$('.stream-wrap').draggable({
-			cursor: 'move'
-		});
-	
+		
 }
 
 
