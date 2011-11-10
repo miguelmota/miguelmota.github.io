@@ -111,6 +111,11 @@ $(document).ready(function(){
 	});
 	topYloc = parseInt($('.top-link').css('top').substring(0,$('.top-link').css('top').indexOf('px')));
 	
+	
+	
+	// Initialize mtip
+	$('.mtip').mtip();
+	
 });
 
 
