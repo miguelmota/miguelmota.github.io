@@ -553,11 +553,9 @@ function streamPage(){
 			setTimeout('loadMasonry()', 2000);
 			
 			// Initalize draggable on stream items
-			if(window.width >= 641) {
-				$('.stream-wrap').draggable({
-					cursor: 'move'
-				});
-			}
+			$('.stream-wrap').draggable({
+				cursor: 'move'
+			});
 			
 			
 			// Initialize Fancybox
