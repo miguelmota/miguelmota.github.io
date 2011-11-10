@@ -9,6 +9,7 @@
 .tooltip-container {
 	display: inline-block;
 	position: relative;
+	margin-left: -50%;
 }
 
 .tooltip  {
@@ -23,7 +24,6 @@
 	display: none;
 	font-family: Aria, sans-serif;
 	font-size: 12px;
-
 	opacity: .8;
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
 	filter: alpha(opacity=80);
