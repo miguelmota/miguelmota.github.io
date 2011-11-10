@@ -625,9 +625,9 @@ input.search-input {
 	float: left;
 }
 #tweets {
-	float: right;
 	left: 26px;
 	position: absolute;
+	top: 0;
 	width: 100%;
 }
 .tweet-content {
