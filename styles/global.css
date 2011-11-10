@@ -572,6 +572,7 @@ img.loader {
 .follow-wrap {
 	clear: both;
 	padding-bottom: 15px;
+	position: relative;
 	width: 100%;
 }
 .plus-one-button-wrap {
@@ -1518,7 +1519,7 @@ input.short-url:focus {
 		width: 100%
 	}
 	.nav-logo {
-		display: block;
+		display: inline-block;
 		padding: 0 0 15px 0;
 		vertical-align: middle;
 	}
