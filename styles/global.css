@@ -676,6 +676,7 @@ input.search-input {
 	background-color: #222;
 	margin: 5px;
 	padding: 20px;
+	position: relative;
 	width: 700px;
 }
 /* ==============================================================================
@@ -1571,7 +1572,6 @@ input.short-url:focus {
 	.project-sort-wrap {
 		margin-top: 0;
 		padding: 10px;
-		width: 95%;
 	}
 	.project {
 		height: 200px;
