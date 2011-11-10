@@ -1639,11 +1639,12 @@ input.short-url:focus {
 		width: 92%;
 	}
 	.project .image-container {
+		clear: both;
 		position: relative;
 		width: 95%;
 	}
 	.project .image-container img {
-		height: 100%;
+		height: auto;
 		width: 100%;
 	}
 	.overlay-popup {
