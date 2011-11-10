@@ -1632,6 +1632,7 @@ input.short-url:focus {
 		width: 92%;
 	}
 	.project {
+		height: auto;
 	}
 	.project .image-container {
 		width: 95%;
