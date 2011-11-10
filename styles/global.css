@@ -1524,10 +1524,11 @@ input.short-url:focus {
 		vertical-align: middle;
 	}
 	.site-title {
-		float: left;
+		display: inline-block;
 		padding-bottom: 5px;
 	}
 	.site-description {
+		display: inline-block;
 		padding-bottom: 15px;
 	}
 	.main-side-nav {
@@ -1540,7 +1541,7 @@ input.short-url:focus {
 	
 	
 	.follow-wrap {
-		width: 92%;
+		width: 100%;
 	}
 	
 	
