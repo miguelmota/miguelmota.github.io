@@ -1511,9 +1511,12 @@ input.short-url:focus {
 		position: static;	
 		width: 100%;
 	}
+	input.search-input {
+		width: 100%;
+	}
 	.content-item {
 		padding: 5px;
-		width: 94%;
+		width: 95%;
 	}
 }
 /* ==============================================================================
