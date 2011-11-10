@@ -1602,6 +1602,10 @@ input.short-url:focus {
 		width: 92%;
 	}
 	
+	input.short-url {
+		display: none;
+	}
+	
 }
 /* ==============================================================================
 	END MOBILE STYLES
