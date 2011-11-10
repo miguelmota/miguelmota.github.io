@@ -94,6 +94,12 @@ img {
 	text-transform: uppercase;
 	width: 650px;
 }
+.title a {
+	color: #999;
+}
+.title a:hover {
+	color: #fff;
+}
 .title .mota {
 	font-weight: normal;
 }
