@@ -1531,7 +1531,7 @@ input.short-url:focus {
 	.nav-logo {
 		display: block;
 		float: left;
-		margin: 0 10px 15px 0;
+		margin: 0 10px 0 0;
 		vertical-align: middle;
 	}
 	.site-title {
