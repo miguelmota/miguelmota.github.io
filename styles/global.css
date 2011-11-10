@@ -535,6 +535,13 @@ img.loader {
 	text-shadow: 0 -1px 0 #000;
 	text-transform: uppercase;
 }
+.site-title a {
+	color: #999;
+}
+.site-title a:hover,
+.site-title a:active {
+	color: #fff;
+}
 .site-description {
 	color: #555;
 	padding-bottom: 15px;
@@ -1531,13 +1538,7 @@ input.short-url:focus {
 		display: block;
 		padding-bottom: 5px;
 	}
-	.site-title a {
-		color: #999;
-	}
-	.site-title a:hover,
-	.site-title a:active {
-		color: #fff;
-	}
+
 	.site-description {
 		display: inline-block;
 		padding-bottom: 15px;
