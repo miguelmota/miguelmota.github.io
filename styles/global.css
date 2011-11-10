@@ -1521,6 +1521,9 @@ input.short-url:focus {
 		display: inline;
 		float: left;
 	}
+	.main-side-nav-ul  {
+		width: 100px;
+	}
 	
 	
 	input.search-input {
