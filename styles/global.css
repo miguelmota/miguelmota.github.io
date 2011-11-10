@@ -617,6 +617,7 @@ input.search-input {
 ============================================================================== */
 #tweet-wrap {
 	display: none;
+	height: auto;
 	padding-bottom: 15px;
 	position: relative;
 	overflow: hidden;
