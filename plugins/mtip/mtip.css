@@ -28,7 +28,7 @@
 	opacity: .8;
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
 	filter: alpha(opacity=80);
-	padding: 5px;
+	padding: 5px 10px;
 	position: absolute;
 	text-align: center;
 	top: -20px;
