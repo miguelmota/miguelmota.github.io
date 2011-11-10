@@ -1536,12 +1536,12 @@ input.short-url:focus {
 	}
 	.site-title {
 		display: block;
-		padding-bottom: 5px;
+		padding: 10px 0 5px 0;
 	}
 
 	.site-description {
 		display: inline-block;
-		padding-bottom: 15px;
+		padding-bottom: 0;
 	}
 	.main-side-nav {
 		position: static;	
