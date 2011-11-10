@@ -986,7 +986,7 @@ a.google-plus-link {
 .project-sort-wrap {
 	position: absolute;
 	text-align: right;
-	top: 0;
+	top: 10px;
 	width: 650px;
 }
 .project-sort-wrap a.selected {
