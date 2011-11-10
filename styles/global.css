@@ -1629,7 +1629,8 @@ input.short-url:focus {
 	 * Portfolio page
 	 * --------------------- */
 	.project-sort-wrap {
-		margin-top: -40px;
+		top: -40px;
+		position: absolute;
 		width: 92%;
 	}
 	.project {
