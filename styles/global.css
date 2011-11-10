@@ -1607,6 +1607,9 @@ input.short-url:focus {
 	input.short-url {
 		display: none;
 	}
+	.pagination {
+		width: 92%;
+	}
 	
 }
 /* ==============================================================================
