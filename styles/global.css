@@ -1524,12 +1524,19 @@ input.short-url:focus {
 	.nav-logo {
 		display: block;
 		float: left;
-		padding: 0 0 15px 0;
+		margin: 0 10px 15px 0;
 		vertical-align: middle;
 	}
 	.site-title {
 		display: block;
 		padding-bottom: 5px;
+	}
+	.site-title a {
+		color: #999;
+	}
+	.site-title a:hover,
+	.site-title a:active {
+		color: #fff;
 	}
 	.site-description {
 		display: inline-block;
