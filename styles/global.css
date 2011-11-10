@@ -627,6 +627,7 @@ input.search-input {
 	LATEST TWEET
 ============================================================================== */
 #tweet-wrap {
+	clear: both;
 	display: none;
 	height: auto;
 	padding-bottom: 15px;
