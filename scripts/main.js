@@ -543,18 +543,21 @@ function streamPage(){
 				 btnPrev: '.stream-carousel-nav-prev'
 			});
 			
+			
 			// Initialize masonry
-			if(window.width >= 641){
-				
-				setTimeout('loadMasonry()', 2000);
-				
-				// Initalize draggable on stream items
-				/*setTimeout(function(){
-					$('.stream-wrap').draggable({
-						cursor: 'move'
-					}, 2010);
-				});*/
-			}
+			setTimeout(function(){
+				if(window.width >= 641){
+					loadMasonry();
+			}, 2000);
+
+			
+			// Initalize draggable on stream items
+			/*setTimeout(function(){
+				$('.stream-wrap').draggable({
+					cursor: 'move'
+				}, 2010);
+			});*/
+			
 			
 			// Initialize Fancybox
 			initializeFancybox();
