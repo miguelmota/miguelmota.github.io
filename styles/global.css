@@ -1501,7 +1501,7 @@ input.short-url:focus {
 	.main-wrap {
 		margin: 0;
 		overflow: hidden;
-		padding: 5px;
+		padding: 0;
 	}
 	.main-side-nav-wrap {
 		position: static;
