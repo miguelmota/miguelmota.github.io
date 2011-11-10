@@ -136,7 +136,7 @@ function recent_tweets(data) {
 	}
 	document.getElementById('tweet-wrap').style.display = 'block';
 	// Initialize latest tweet mtip
-	$('.mtip-tweet').mtip();
+	$('.tweet-bird-icon').mtip();
 	$('#tweet-wrap').live({
 		mouseenter:
 			function(){
@@ -542,6 +542,12 @@ function streamPage(){
 				 btnNext: '.stream-carousel-nav-next',
 				 btnPrev: '.stream-carousel-nav-prev'
 			});
+			
+			// Initialize masonry
+			setTimeout('loadMasonry()', 2000);
+			
+			// Initialize Fancybox
+			initializeFancybox();
 
 		});
 	
@@ -565,16 +571,6 @@ function streamPage(){
 	$('.stream-wrap').draggable({
 			cursor: 'move'
 		});
-
-	
-	
-	// Initialize masonry
-	setTimeout('loadMasonry()', 2000);
-	
-	
-	
-	// Initialize Fancybox
-	initializeFancybox();
 	
 }
 
