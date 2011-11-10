@@ -574,9 +574,7 @@ function streamPage(){
 	
 	
 	// Initialize masonry
-	if(window.width >= 641){
-		setTimeout('loadMasonry()', 4000);
-	}
+	setTimeout('loadMasonry()', 2000);
 	
 }
 
@@ -802,10 +800,7 @@ function blogPage(){
 	
 	
 	// Initialize masonry
-	if(window.width >= 641){
-		setTimeout('loadMasonry()', 4000);
-	}
-	
+	setTimeout('loadMasonry()', 1000);
 
 }
 
