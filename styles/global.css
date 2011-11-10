@@ -1519,16 +1519,14 @@ input.short-url:focus {
 	}
 	.nav-logo {
 		display: block;
-		float: left;
 		padding: 0 0 15px 0;
+		vertical-align: middle;
 	}
 	.site-title {
-		clear: right;
 		float: left;
 		padding-bottom: 5px;
 	}
 	.site-description {
-		float: left;
 		padding-bottom: 15px;
 	}
 	.main-side-nav {
@@ -1537,6 +1535,11 @@ input.short-url:focus {
 	}
 	.main-side-nav-ul li {
 		float: left;
+	}
+	
+	
+	.follow-wrap {
+		width: 92%;
 	}
 	
 	
