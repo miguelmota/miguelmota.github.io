@@ -1529,6 +1529,9 @@ input.short-url:focus {
 		position: static;
 		width: 100%
 	}
+	.top-link-wrap {
+		display: none;
+	}
 	
 	/* ------------------------
 	 * Site title
