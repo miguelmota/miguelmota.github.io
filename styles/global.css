@@ -1524,11 +1524,12 @@ input.short-url:focus {
 		vertical-align: middle;
 	}
 	.site-title {
+		clear: right;
 		display: inline-block;
 		padding-bottom: 5px;
 	}
 	.site-description {
-		display: block;
+		display: inline-block;
 		padding-bottom: 15px;
 	}
 	.main-side-nav {
