@@ -1640,7 +1640,7 @@ input.short-url:focus {
 		width: 95%;
 	}
 	.project .image-container img {
-		height: auto;
+		height: 100%;
 		width: 100%;
 	}
 	.overlay-popup {
