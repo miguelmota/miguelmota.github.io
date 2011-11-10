@@ -1517,6 +1517,10 @@ input.short-url:focus {
 		position: static;	
 		width: 100%;
 	}
+	.main-side-nav-ul li {
+		display: inline;
+		float: left;
+	}
 	
 	
 	input.search-input {
