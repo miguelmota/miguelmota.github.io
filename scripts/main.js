@@ -49,16 +49,7 @@ $(document).ready(function(){
 	$('input:text, input:password, textarea').focus(function(){
 		$(this).css('color', '#999');
 	});
-	
-	
-	
-	// Make navigation absolute on mobile screens
-	if(screen.width <= 640){
-		$('.main-side-nav').css({
-			//'position': 'absolute'
-		});
-	}
-	
+
 	
 	
 	// Open external links in new tab
