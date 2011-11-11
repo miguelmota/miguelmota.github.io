@@ -1553,7 +1553,7 @@ input.short-url:focus {
 	clear: both;
 	color: #fff;
 	display: none; 
-	font-size: 12px;
+	font-size: 14px;
 	position: fixed;
 	top: 0;
 	width: 100%;
@@ -1571,7 +1571,7 @@ input.short-url:focus {
 	top: 15px;
 }
 .ie-notice-font-big {
-	font-size: 14px;
+	font-size: 16px;
 }
 .ie-notice-color-red {
 	color: #8e4848;
