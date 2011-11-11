@@ -716,6 +716,7 @@ input.search-input {
 	STREAM PAGE
 ============================================================================== */
 .stream-wrap {
+	float: left;
 	width: 350px
 }
 /*
@@ -1019,6 +1020,7 @@ a.google-plus-link {
 	PROJECT ITEMS
 ------------------------------------------------------------------------------ */
 .project {
+	float: left;
 	height: 200px;
 	width: 610px;
 }
@@ -1030,7 +1032,7 @@ a.google-plus-link {
 	-webkit-transition: -webkit-box-shadow linear .2s;
 	overflow: hidden;
 	position: absolute;
-	width: 610px;
+	width: 95%;
 	behavior: url('/PIE/PIE.htc');
 }
 .project .image-container a {
@@ -1195,6 +1197,7 @@ a.google-plus-link {
 	BLOG POST ITEM
 ------------------------------------------------------------------------------ */
 .blog-post-item {
+	float: left;
 	width: 500px;
 }
 .blog-post-single {
