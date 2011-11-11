@@ -63,7 +63,7 @@
 	    <yuicompressor warn="false" charset="UTF-8" fromdir="plugins/mtip" todir="plugins/mtip" csssuffix=".min.css">
 	    	<include name="jquery.mtip.con.css" />
 	    </yuicompressor>
-		<move file="plugins/mtip/jquery.mtip.con.min.css" tofile="${static.dir}styles/jquery.mtip.min.css"/>
+		<move file="plugins/mtip/jquery.mtip.con.min.css" tofile="${static.dir}plugins/mtip/jquery.mtip.min.css"/>
 		<delete file="plugins/mtip/jquery.mtip.con.css" />
 		
 		
