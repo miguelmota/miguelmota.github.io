@@ -351,6 +351,9 @@ img.loader {
 .icon-flickr-24 {
 	background: url('/images/icons/pictos/24/flickr.png');
 }
+.icon-grid-16 {
+	background: url('/images/icons/pictos/16/grid.png');
+}
 .icon-heart-16 {
 	background: url('/images/icons/pictos/16/heart.png');
 	height: 14px;
@@ -360,6 +363,9 @@ img.loader {
 }
 .icon-link-24 {
 	background: url('/images/icons/pictos/24/link.png');
+}
+.icon-list-16 {
+	background: url('/images/icons/pictos/16/list.png');
 }
 .icon-location-marker-16 {
 	background: url('/images/icons/pictos/16/location-marker.png');
@@ -430,6 +436,9 @@ img.loader {
 }
 .icon-video-24 {
 	background: url('/images/icons/pictos/24/video.png');
+}
+.icon-x-16 {
+	background: url('/images/icons/pictos/16/x.png');
 }
 .icon-up-24 {
 	background: url('/images/icons/pictos/24/up-2.png');
