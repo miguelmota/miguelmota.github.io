@@ -6,11 +6,13 @@
 	<script src='/scripts/jquery.min.js'></script>
 	<script src='/plugins/cookie/jquery.cookie.js'></script>
 	<script>
-	$.cookie('car', 'bmw', {
-			expires: 7,
-			path: '/'
-		}
-	);
+	$(document).ready(function(){
+		$.cookie('car', 'bmw', {
+				expires: 7,
+				path: '/'
+			}
+		);
+	});
 	</script>
 </head>
 <body>
