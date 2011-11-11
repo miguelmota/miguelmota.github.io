@@ -1,5 +1,6 @@
 $(document).ready(function(){
 	
+	// Set IE notice cookie
 	if($.cookie('IE') == null) {
 		$.cookie('IE', '1', {
 				expires: 7,
@@ -8,20 +9,23 @@ $(document).ready(function(){
 		);
 	}
 	
+	// If cookie active show IE notice
 	if($.cookie('IE') == '1') {
-		$('#ie-notice').show().slideDown('slow');
+		$('.ie-notice-wrap').show().slideDown('slow');
 	}
 	else {
-		$('#ie-notice').css('display','none');
+		// Else hide IE notice
+		$('.ie-notice-wrap').css('display','none');
 	}
 	
+	// Hide IE notice and change IE cookie on close button click
 	$('.ie-notice-close').live('click', function(){
-		$('#ie-notice').slideUp('slow');
+		$('.ie-notice-wrap').slideUp('slow');
 		$.cookie('IE','0');
 	});
 	
-	$('#ie-notice').show().html($.cookie('IE'));
 
+	
 	// Initialize side nav text ticker; NOTE: might cause bug in Firefox
 	textTickerSelected();
 	

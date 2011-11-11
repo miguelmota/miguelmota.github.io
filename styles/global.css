@@ -1502,18 +1502,27 @@ input.short-url:focus {
 /* ==============================================================================
 	INTERNET EXPLORER MESSAGE
 ============================================================================== */
-#ie-notice {
+.ie-notice-wrap {
 	background-color: #000;
 	clear: both;
 	color: #fff;
 	display: none; 
-	font-size: 10px;
-	text-align: center;
+	font-size: 14px;
 	padding: 20px;
 	width: 100%;
 }
-.ie-font-34 {
-	font-size: 12px;
+.ie-notice {
+	margin: 0 auto;
+	position: relative;
+	width: 650px;
+}
+.ie-notice-close {
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+.ie-font-big {
+	font-size: 20px;
 }
 .ie-color-red {
 	color: #8e4848;
