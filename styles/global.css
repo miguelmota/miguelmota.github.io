@@ -1239,9 +1239,10 @@ h6 {
 	display: none;
 }
 .blog-post-thumb-list {
-	height: 46px;
+	float: left;
+	height: auto;
 	margin: 15px 15px;
-	width: auto;
+	width: 46px;
 }
 /* -----------------------------------------------------------------------------
 	BLOG POST TEXT
