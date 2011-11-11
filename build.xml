@@ -23,11 +23,10 @@
 		</taskdef>
 	    <concat destfile="styles/global.con.css" force="no">
 	    	<fileset dir="styles" includes="reset.css" />
-	    	<!-- <fileset dir="styles" includes="global.css" /> -->
 	    	<fileset dir="styles" includes="pygment_friendly.css" />
-	    	<!-- <fileset dir="plugins/mtip" includes="mtip.css" /> -->
+	        <fileset dir="plugins/mtip" includes="mtip.css" />
 	    	<fileset dir="plugins/fancybox" includes="jquery.fancybox.css" />
-	    	<!--<fileset dir="plugins/shadowbox" includes="shadowbox.css" />-->
+	    	<fileset dir="styles" includes="global.css" />
 	    </concat>
 	    <yuicompressor warn="false" charset="UTF-8" fromdir="styles" todir="styles" csssuffix=".min.css">
 	    	<include name="global.con.css" />
