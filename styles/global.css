@@ -1502,17 +1502,17 @@ input.short-url:focus {
 /* ==============================================================================
 	INTERNET EXPLORER MESSAGE
 ============================================================================== */
-.ie-message {
+#ie-notice {
 	background-color: #000;
 	clear: both;
 	color: #fff; 
-	font-size: 24px;
+	font-size: 10px;
 	text-align: center;
 	padding: 20px;
 	width: 100%;
 }
 .ie-font-34 {
-	font-size: 34px;
+	font-size: 12px;
 }
 .ie-color-red {
 	color: #8e4848;

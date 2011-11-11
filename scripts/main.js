@@ -1,4 +1,19 @@
 $(document).ready(function(){
+	
+	$.cookie('IE', '1', {
+			expires: 7,
+			path: '/'
+		}
+	);
+	
+	if($.cookie('IE') == '0') {
+		$('#ie-notice').css('display','none');
+	}
+	
+	$('.ie-notice-close').live('click', function(){
+		$('#ie-notice').slideUp('slow');
+		$.cookie('IE',null);
+	});
 
 	// Initialize side nav text ticker; NOTE: might cause bug in Firefox
 	textTickerSelected();

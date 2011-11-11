@@ -37,6 +37,7 @@
 	<link rel='stylesheet' href='/styles/global.css' media='all' />
 	<script src='/scripts/jquery.min.js'></script>
 	<script src='/scripts/jquery-ui.min.js'></script>
+	<script src='/plugins/cookie/jquery.cookie.js'></script>
 	<script src='/plugins/masonry/jquery.masonry.min.js'></script>
 	<script src='/plugins/jcarousellite/jcarousellite.min.js'></script>
 	<script src='/plugins/mtip/mtip.js'></script>
@@ -51,11 +52,11 @@
 </head>
 <body>
 <!--[if lt IE 9]>
-<div class='ie-message'><span class='ie-font-34'>Boo!</span> It looks like you're using <span class='ie-color-red'>Internet Explorer</span>.<br />
+<div id='ie-notice'><span class='ie-font-34'>Boo!</span> It looks like you're using <span class='ie-color-red'>Internet Explorer</span>.<br />
 Some things on here may not load or look right because <span class='ie-color-red'>Internet Explorer</span> <strong>refuses</strong> to implement new web standards<br />
  and therefore it is extremely buggy and outdated with old technology.<br />
 <strong class='ie-font-34'>HELP MOVE THE WEB FORWARD</strong> by using <a href='http://www.google.com/chrome'>Google Chrome</a>, 
-<a href='http://www.mozilla.org/en-US/firefox/new/'>Firefox</a> or <a href='http://www.opera.com/browser/'>Opera</a>.</div>
+<a href='http://www.mozilla.org/en-US/firefox/new/'>Firefox</a> or <a href='http://www.opera.com/browser/'>Opera</a>. <a class='ie-notice-close' href='javascript:void(0);'>close</a></div>
 <![endif]-->
 <div id='top'></div>
 <div class='main-wrap'>
