@@ -41,6 +41,7 @@ title: Blog
 		{% for post in site.posts %}
 			<div class='blog-post-list'>
 				<h1><a class='content-item blog-post-item' href='{{ post.url }}'><img class='blog-post-thumb-list' src='/images/blog/thumbs/{{ post.thumbnail }}' alt='' /> {{ post.title }}</a></h1>
+				<div class='clear'></div>
 			</div>
 		{% endfor %}
 
