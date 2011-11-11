@@ -788,6 +788,28 @@ function contactPage(){
  * ----------------------------------------------- */
 function blogPage(){
 	
+	/* ------------------------
+	 * Blog post sort functions
+	 * --------------------- */
+	
+	// Show grid sort
+	$('.post-sort-grid').live('click', function(){
+		$('.post-sort-wrap a').removeClass('no-icon-hover');
+		$(this).addClass('no-icon-hover');
+		$(".project:not('.project-identity')").slideUp('fast');
+		$('.project-identity').slideDown('fast');
+	});
+	
+	// Show list sort
+	$('.post-sort-list').live('click', function(){
+		$('.post-sort-wrap a').removeClass('no-icon-hover');
+		$(this).addClass('no-icon-hover');
+		$(".project:not('.project-code')").slideUp('fast');
+		$('.project-code').slideDown('fast');
+	});
+	
+	
+	
 	// Get AddThis script
 	$.getScript('http://s7.addthis.com/js/250/addthis_widget.js#username=miguelmota');
 	

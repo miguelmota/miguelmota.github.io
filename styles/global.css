@@ -288,6 +288,7 @@ img.loader {
 }
 .icon-no-hover:hover,
 .icon-no-hover:active {
+	cursor: default;
 	opacity: .5;
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
 	filter: alpha(opacity=50);
@@ -1205,7 +1206,7 @@ a.google-plus-link {
 	position: absolute;
 	text-align: right;
 	top: 10px;
-	width: 650px;
+	width: 500px;
 }
 /* -----------------------------------------------------------------------------
 	BLOG POST TITLE
