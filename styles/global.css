@@ -1216,6 +1216,8 @@ a.google-plus-link {
 ------------------------------------------------------------------------------ */
 .blog-post-list {
 	display: none;
+}
+.blog-post-list .blog-post-item {
 	float: none;
 }
 .blog-post-list h1 {
