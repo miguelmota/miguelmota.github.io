@@ -643,7 +643,7 @@ input.search-input {
 /* ==============================================================================
 	LATEST TWEET
 ============================================================================== */
-#tweet-wrap {
+#latest-tweet-wrap {
 	clear: both;
 	height: auto;
 	padding-bottom: 15px;
@@ -653,20 +653,20 @@ input.search-input {
 .tweet-bird-icon {
 	float: left;
 }
-#tweets {
+#latest-tweet {
 	left: 34px;
 	position: absolute;
 	top: 0;
 	width: 166px;
 }
-.tweet-content {
+.latest-tweet-content {
 	background-color: #222;
 	float: left;
 	min-height: 20px;
 	padding: 10px;
 	width: 100%;
 }
-.tweet-content:after {
+.latest-tweet-content:after {
 	border-color: transparent #222;
 	border-style: solid;
 	border-width: 8px 15px 8px 0;
@@ -679,10 +679,10 @@ input.search-input {
 	width: 0;
 	z-index: -100;
 }
-.tweet-content a {
+.latest-tweet-content a {
 	font-weight: normal;
 }
-.tweet-date {
+.latest-tweet-date {
 	font-size: 12px;
 }
 /* ==============================================================================
