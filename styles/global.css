@@ -1508,6 +1508,7 @@ input.short-url:focus {
 	color: #fff;
 	display: none; 
 	font-size: 12px;
+	line-spacing: 130%;
 	position: fixed;
 	top: 0;
 	width: 100%;
