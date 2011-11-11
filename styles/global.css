@@ -367,6 +367,7 @@ img.loader {
 }
 .icon-list-16 {
 	background: url('/images/icons/pictos/16/list.png');
+	height: 13px;
 }
 .icon-location-marker-16 {
 	background: url('/images/icons/pictos/16/location-marker.png');
