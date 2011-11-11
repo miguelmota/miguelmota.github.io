@@ -991,11 +991,13 @@ a.google-plus-link {
 	PROJECT SORT
 ------------------------------------------------------------------------------ */
 .project-sort-wrap {
-	background-color: #222;
 	position: absolute;
 	text-align: right;
 	top: 10px;
 	width: 650px;
+}
+.project-sort-wrap a {
+	background-color: #252525;
 }
 .project-sort-wrap a.selected {
 	background-color: #252525;
