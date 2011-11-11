@@ -19,6 +19,8 @@ $(document).ready(function(){
 		$('#ie-notice').slideUp('slow');
 		$.cookie('IE','0');
 	});
+	
+	$('#ie-notice').show().html($.cookie('IE'));
 
 	// Initialize side nav text ticker; NOTE: might cause bug in Firefox
 	textTickerSelected();
