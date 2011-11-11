@@ -11,9 +11,10 @@ title: Blog
 		</div>
 
 		{% for post in site.posts %}
-			<div class='content-item blog-post-item'>
+			<div class='content-item blog-post-item blog-post-grid'>
 				<h1><a href='{{ post.url }}'>{{ post.title }}</a></h1>
 	 			<div class='post-text'>
+	 				<img class='blog-post-thumb' src='/images/blog/thumbs/{{ post.thumbnail }}' alt='' />
 					{{ post.content }}
 				</div>
 				<div class='view-post-wrap'>&#8230; <a href='{{ post.url }}'>view full post &#187;</a></div>
@@ -34,6 +35,12 @@ title: Blog
 					<div class='addthis_toolbox addthis_default_style' addthis:url='{{ post.url }}' addthis:url='{{ post.title }}'><a class='addthis_counter addthis_pill_style'></a></div>
 					<input class='short-url' type='text' value='http://www.miguelmota.com{{ post.url }}' />
 				</div>
+			</div>
+		{% endfor %}
+		
+		{% for post in site.posts %}
+			<div class='blog-post-thumb' class='content-item blog-post-item blog-post-list'>
+				<img src='/images/blog/thumbs/{{ post.thumbnail }}' alt='' /> <h1><a href='{{ post.url }}'>{{ post.title }}</a></h1>
 			</div>
 		{% endfor %}
 
