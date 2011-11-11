@@ -3,7 +3,15 @@
 <head>
 	<meta name='description' content='Creative freelance web developer from the always sunny Southern California.' />
 	<title>{{ page.title }} &#187; Miguel Mota</title>
+	<script src='/scripts/jquery.min.js'></script>
 	<script src='/plugins/cookie/jquery.cookie.js'></script>
+	<script>
+	$.cookie('car', 'bmw', {
+			expires: 7,
+			path: '/'
+		}
+	);
+	</script>
 </head>
 <body>
 	{{ content }}
