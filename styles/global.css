@@ -1508,12 +1508,14 @@ input.short-url:focus {
 	color: #fff;
 	display: none; 
 	font-size: 12px;
-	padding: 20px;
+	position: fixed;
+	top: 0;
 	width: 100%;
 }
 .ie-notice {
 	margin: 0 auto;
 	position: relative;
+	padding: 20px;
 	width: 650px;
 }
 .ie-notice-close {
