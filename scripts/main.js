@@ -794,7 +794,7 @@ function blogPage(){
 	
 	// Show grid sort
 	$('.post-sort-grid').live('click', function(){
-		$('.post-sort-wrap a').removeClass('icon-no-hover');
+		$('.post-sort-wrap a').removeClass('icon-no-hover icon-no-opacity');
 		$(this).addClass('icon-no-hover icon-no-opacity');
 		$(".project:not('.project-identity')").slideUp('fast');
 		$('.project-identity').slideDown('fast');
