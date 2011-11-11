@@ -1531,20 +1531,20 @@ input.short-url:focus {
 	 * Main wrap
 	 * --------------------- */
 	.main-wrap {
-		margin: 0 !important;
-		overflow: hidden !important;
-		padding: 0 !important;
+		margin: 0;
+		overflow: hidden;
+		padding: 0;
 	}
 	
 	/* ------------------------
 	 * Main side nav wrap
 	 * --------------------- */
 	.main-side-nav-wrap {
-		position: static !important;
-		width: 100% !important;
+		position: static;
+		width: 100%
 	}
 	.top-link-wrap {
-		display: none !important;
+		display: none;
 	}
 	
 	/* ------------------------
@@ -1569,36 +1569,36 @@ input.short-url:focus {
 	 * Navigation links
 	 * --------------------- */
 	.main-side-nav {
-		padding-top: 10px !important;
+		padding-top: 10px;
 		position: static;	
 		width: 100%;
 	}
 	.main-side-nav-ul li {
-		float: left !important;
+		float: left;
 	}
 	
 	/* ------------------------
 	 * Social icons
 	 * --------------------- */
 	.follow-wrap {
-		width: 92% !important;
+		width: 92%;
 	}
 	
 	/* ------------------------
 	 * Search box
 	 * --------------------- */
 	input.search-input {
-		width: 92% !important;
+		width: 92%;
 	}
 	
 	/* ------------------------
 	 * Latest tweet
 	 * --------------------- */
 	#tweet-wrap {
-		width: 89% !important;
+		width: 89%;
 	}
 	#tweets {
-		width: 92% !important;
+		width: 92%;
 	}
 	
 	/* ------------------------
