@@ -795,7 +795,7 @@ function blogPage(){
 	// Show grid sort
 	$('.post-sort-grid').live('click', function(){
 		$('.post-sort-wrap a').removeClass('icon-no-hover');
-		$(this).addClass('no-icon-hover');
+		$(this).addClass('icon-no-hover');
 		$(".project:not('.project-identity')").slideUp('fast');
 		$('.project-identity').slideDown('fast');
 	});
@@ -803,7 +803,7 @@ function blogPage(){
 	// Show list sort
 	$('.post-sort-list').live('click', function(){
 		$('.post-sort-wrap a').removeClass('icon-no-hover');
-		$(this).addClass('no-icon-hover');
+		$(this).addClass('icon-no-hover');
 		$(".project:not('.project-code')").slideUp('fast');
 		$('.project-code').slideDown('fast');
 	});

@@ -1193,7 +1193,7 @@ a.google-plus-link {
 	BLOG
 ============================================================================== */
 .blog-post-item {
-	width: 520px;
+	width: 500px;
 }
 .blog-post-single {
 	max-width: 1000px;
@@ -1206,7 +1206,7 @@ a.google-plus-link {
 	position: absolute;
 	text-align: right;
 	top: 10px;
-	width: 500px;
+	width: 520px;
 }
 /* -----------------------------------------------------------------------------
 	BLOG POST TITLE
