@@ -1,15 +1,11 @@
----
-layout: post
-title: HTML5 Reset Stylesheet
-categories:
-- html5
-- css
----
-<img class='blog-post-thumb' src='/images/blog/thumbs/3.png' />
+/*----------------------------------------
+ * HTML5 Reset Stylesheet
+ * v1.0 | 20101223
+ * Author: Miguel Mota, www.miguelmota.com
+ * License: Creative Commons Attribution 3.0 License
+ * Inspired by Richard Clark's CSS Reset, html5doctor.com/html-5-reset-stylesheet
+----------------------------------------*/
 
-<p>I couldn't find an HTML5 reset stylesheet that suited my needs so I decided to modify <a href='http://html5doctor.com/html-5-reset-stylesheet/' rel='external'>HTML5 Doctors'</a> CSS reset a bit. This is what it looks like:</p>
-
-{% highlight css %}
 html, body, div, span, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 abbr, address, cite, code,
@@ -91,9 +87,3 @@ hr {
 input, select {
     vertical-align: middle;
 }
-
-{% endhighlight %}
-
-<p><a href='/styles/reset.css.txt' rel='external'>reset.css</a> | <a href='/styles/reset.css.txt' rel='external'>reset.min.css</a></p>
-
-<p>This stylesheet is released under the <a href='http://creativecommons.org/licenses/by/3.0/' rel='external'>Creative Commons Attribution 3.0 License</a>, so feel free to use it!</p>
