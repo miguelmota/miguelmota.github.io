@@ -1507,7 +1507,7 @@ input.short-url:focus {
 	clear: both;
 	color: #fff;
 	display: none; 
-	font-size: 14px;
+	font-size: 12px;
 	padding: 20px;
 	width: 100%;
 }
@@ -1522,7 +1522,7 @@ input.short-url:focus {
 	top: 0;
 }
 .ie-font-big {
-	font-size: 20px;
+	font-size: 14px;
 }
 .ie-color-red {
 	color: #8e4848;

@@ -11,7 +11,7 @@ $(document).ready(function(){
 	
 	// If cookie active show IE notice
 	if($.cookie('IE') == '1') {
-		$('.ie-notice-wrap').show().slideDown('slow');
+		$('.ie-notice-wrap').slideDown('slow');
 	}
 	else {
 		// Else hide IE notice
