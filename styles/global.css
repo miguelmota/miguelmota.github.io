@@ -1210,6 +1210,7 @@ a.google-plus-link {
 }
 .blog-post-list {
 	display: none;
+	float: none;
 }
 /* -----------------------------------------------------------------------------
 	BLOG POST TITLE
@@ -1240,7 +1241,7 @@ h6 {
 }
 .blog-post-thumb-list {
 	float: left;
-	height: auto;
+	height: 46px;
 	margin: 15px 15px;
 	width: 46px;
 }
