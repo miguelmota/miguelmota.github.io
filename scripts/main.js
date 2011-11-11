@@ -793,16 +793,16 @@ function blogPage(){
 	 * --------------------- */
 	
 	// Show grid sort
-	$('.post-sort-grid').live('click', function(){
-		$('.post-sort-wrap a').removeClass('icon-no-hover icon-no-opacity');
+	$('.blog-post-sort-grid').live('click', function(){
+		$('.blog-post-sort-wrap a').removeClass('icon-no-hover icon-no-opacity');
 		$(this).addClass('icon-no-hover icon-no-opacity');
 		$('.blog-post-list').slideUp('fast');
 		$('.blog-post-grid').slideDown('fast');
 	});
 	
 	// Show list sort
-	$('.post-sort-list').live('click', function(){
-		$('.post-sort-wrap a').removeClass('icon-no-hover icon-no-opacity');
+	$('.blog-post-sort-list').live('click', function(){
+		$('.blog-post-sort-wrap a').removeClass('icon-no-hover icon-no-opacity');
 		$(this).addClass('icon-no-hover icon-no-opacity');
 		$('.blog-post-grid').slideUp('fast');
 		$('.blog-post-list').slideDown('fast');

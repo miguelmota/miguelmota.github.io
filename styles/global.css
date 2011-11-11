@@ -1192,6 +1192,9 @@ a.google-plus-link {
 /* ==============================================================================
 	BLOG
 ============================================================================== */
+/* -----------------------------------------------------------------------------
+	BLOG POST ITEM
+------------------------------------------------------------------------------ */
 .blog-post-item {
 	width: 500px;
 }
@@ -1202,15 +1205,24 @@ a.google-plus-link {
 /* -----------------------------------------------------------------------------
 	BLOG POST SORT
 ------------------------------------------------------------------------------ */
-.post-sort-wrap {
+.blog-post-sort-wrap {
 	position: absolute;
 	text-align: right;
 	top: 10px;
 	width: 520px;
 }
+/* -----------------------------------------------------------------------------
+	BLOG POST LIST
+------------------------------------------------------------------------------ */
 .blog-post-list {
 	display: none;
 	float: none;
+}
+.blog-post-list h1 {
+	display: inline-block;
+}
+.blog-post-list h1 a {
+	font-size: 32px;
 }
 .blog-post-list	.blog-post-item {
 	width: 700px;
@@ -1239,11 +1251,7 @@ h6 {
 	margin: 15px 0;
 	width: 100%;
 }
-.blog-post-single .blog-post-thumb {
-	display: none;
-}
 .blog-post-thumb-list {
-	float: left;
 	height: 46px;
 	margin-right: 15px;
 	vertical-align: middle;
@@ -1257,14 +1265,14 @@ h6 {
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
-.view-post-wrap {
+.blog-view-post-wrap {
 	padding: 10px 0;
 	text-align: right;
 }
-.post-text {
+.blog-post-text {
 	padding-bottom: 10px;
 }
-.post-text img,
+.blog-post-text img,
 .photo {
 	background: #222 url('http://static.tumblr.com/r8galzl/wmilu4kzw/ajax-loader-image.gif') no-repeat 50% 50%;
 	box-shadow: 2px 2px 8px rgba(0,0,0,.7);
@@ -1278,20 +1286,20 @@ h6 {
 /* -----------------------------------------------------------------------------
 	BLOG POST TAGS
 ------------------------------------------------------------------------------ */
-.post-tags {
+.blog-post-tags {
 	color: #777;
 	font-size: 10px;
 }
-.post-tags a {
+.blog-post-tags a {
 	font-weight: normal;
 }
-.post-tags .icon-tags-16 {
+.blog-post-tags .icon-tags-16 {
 	margin-right: 2px;
 }
 /* -----------------------------------------------------------------------------
 	BLOG POST FOOTER
 ------------------------------------------------------------------------------ */
-.post-footer {
+.blog-post-footer {
 	border-top: 1px solid #333;
 	font-size: 12px;
 	margin: 10px 0;
@@ -1304,7 +1312,7 @@ h6 {
 /* -----------------------------------------------------------------------------
 	BLOG POST SHARE
 ------------------------------------------------------------------------------ */
-.share-wrap {
+.blog-share-wrap {
 	position: relative;
 }
 .addthis_toolbox {
@@ -1728,7 +1736,7 @@ input.short-url:focus {
 	/* ------------------------
 	 * Blog page
 	 * --------------------- */
-	.post-sort-wrap {
+	.blog-post-sort-wrap {
 		width: 95%;
 	}
 	.blog-post-single h1 a {
