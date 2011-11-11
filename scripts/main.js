@@ -795,15 +795,15 @@ function blogPage(){
 	// Show grid sort
 	$('.post-sort-grid').live('click', function(){
 		$('.post-sort-wrap a').removeClass('icon-no-hover');
-		$(this).addClass('icon-no-hover');
+		$(this).addClass('icon-no-hover icon-no-opacity');
 		$(".project:not('.project-identity')").slideUp('fast');
 		$('.project-identity').slideDown('fast');
 	});
 	
 	// Show list sort
 	$('.post-sort-list').live('click', function(){
-		$('.post-sort-wrap a').removeClass('icon-no-hover');
-		$(this).addClass('icon-no-hover');
+		$('.post-sort-wrap a').removeClass('icon-no-hover icon-no-opacity');
+		$(this).addClass('icon-no-hover icon-no-opacity');
 		$(".project:not('.project-code')").slideUp('fast');
 		$('.project-code').slideDown('fast');
 	});
