@@ -701,7 +701,6 @@ input.search-input {
 }
 .content-item {
 	background-color: #222;
-	float: left;
 	margin: 5px;
 	padding: 20px;
 	position: relative;
