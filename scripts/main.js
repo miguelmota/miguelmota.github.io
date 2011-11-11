@@ -9,7 +9,7 @@ $(document).ready(function(){
 	}
 	
 	if($.cookie('IE') == '1') {
-		$('#ie-notice').slideDown('slow');
+		$('#ie-notice').show().slideDown('slow');
 	}
 	else {
 		$('#ie-notice').css('display','none');
