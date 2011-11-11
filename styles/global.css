@@ -1227,6 +1227,11 @@ a.google-plus-link {
 .blog-post-list	.blog-post-item {
 	width: 700px;
 }
+.blog-post-list-date {
+	color: #999;
+	float: right;
+	font-size: 14px;
+}
 /* -----------------------------------------------------------------------------
 	BLOG POST TITLE
 ------------------------------------------------------------------------------ */

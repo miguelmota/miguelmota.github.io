@@ -40,7 +40,8 @@ title: Blog
 		
 		{% for post in site.posts %}
 			<div class='blog-post-list'>
-				<h1><a class='content-item blog-post-item' href='{{ post.url }}'><img class='blog-post-thumb-list' src='/images/blog/thumbs/{{ post.thumbnail }}' alt='' /> {{ post.title }}</a></h1>
+				<h1><a class='content-item blog-post-item' href='{{ post.url }}'><img class='blog-post-thumb-list' src='/images/blog/thumbs/{{ post.thumbnail }}' alt='' /> {{ post.title }} 
+				<time class='blog-post-list-date'><span class='icon icon-clock-16'></span> {{ post.date | date_to_string }}</time> </a></h1>
 			</div>
 		{% endfor %}
 
