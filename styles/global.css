@@ -991,6 +991,7 @@ a.google-plus-link {
 	PROJECT SORT
 ------------------------------------------------------------------------------ */
 .project-sort-wrap {
+	background-color: #222;
 	position: absolute;
 	text-align: right;
 	top: 10px;
