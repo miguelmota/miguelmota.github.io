@@ -1762,7 +1762,7 @@ input.short-url:focus {
 	.dsq-comment-wrap {
 		max-width: 92%;
 		overflow: hidden;
-		width: 92%;
+		width: 200px;
 	}
 	#disqus_thread {
 		width: 92%	
