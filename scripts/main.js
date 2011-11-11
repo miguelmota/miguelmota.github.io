@@ -11,6 +11,9 @@ $(document).ready(function(){
 	if($.cookie('IE') == '1') {
 		$('#ie-notice').slideDown('slow');
 	}
+	else {
+		$('#ie-notice').css('display','none');
+	}
 	
 	$('.ie-notice-close').live('click', function(){
 		$('#ie-notice').slideUp('slow');
