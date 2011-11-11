@@ -56,6 +56,21 @@
 		<delete file="styles/pygment.friendly.con.css" />
 		
 		
+		
+		
+		
+		<!-- FANCYBOX -->
+		<concat destfile="plugins/fancybox/jquery.fancybox.con.css" force="no">
+	    	<fileset dir="plugins/fancybox" includes="jquery.fancybox.css" />
+	    </concat>
+	    <yuicompressor warn="false" charset="UTF-8" fromdir="plugins/fancybox" todir="plugins/fancybox" csssuffix=".min.css">
+	    	<include name="jquery.fancybox.con.css" />
+	    </yuicompressor>
+		<move file="plugins/fancybox/jquery.fancybox.con.min.css" tofile="${static.dir}plugins/fancybox/jquery.fancybox.min.css"/>
+		<delete file="plugins/fancybox/jquery.fancybox.con.css" />
+	
+		
+		
 		<!-- MTIP CSS -->
 	    <concat destfile="plugins/mtip/jquery.mtip.con.css" force="no">
 	        <fileset dir="plugins/mtip" includes="jquery.mtip.css" />
@@ -96,6 +111,20 @@
 		</jscomp>  
 		
 		
+		
+		
+		
+		<!-- JQUERY COOKIE -->
+		<taskdef name="jscomp" classname="com.google.javascript.jscomp.ant.CompileTask"
+	    	classpath="${lib.dir}/compiler.jar" />
+		<jscomp compilationLevel="whitespace" warning="verbose" 
+	    	debug="false" output="${static.dir}plugins/cookie/jquery.cookie.min.js">
+			<sources dir="${static.dir}">
+
+				<file name="plugins/cookie/jquery.cookie.js" />
+
+			</sources>
+		</jscomp>  
 		
 		
 	</target>
