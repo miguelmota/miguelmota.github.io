@@ -1089,7 +1089,7 @@ a.google-plus-link {
 .project-view {
 	display: block;
 	float: right;
-	line-height: 110%;
+	line-height: 10px;
 	margin-top: 30px;
 	width: 130px;	
 }
