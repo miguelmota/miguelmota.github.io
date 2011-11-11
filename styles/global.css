@@ -96,6 +96,7 @@ img {
 }
 .title a {
 	color: #999;
+	font-weight: normal;
 }
 .title a:hover {
 	color: #fff;
