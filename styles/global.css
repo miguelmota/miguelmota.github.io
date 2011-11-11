@@ -1238,6 +1238,11 @@ h6 {
 .blog-post-single .blog-post-thumb {
 	display: none;
 }
+.blog-post-thumb-list {
+	height: 46px;
+	margin: 15px 15px;
+	width: auto;
+}
 /* -----------------------------------------------------------------------------
 	BLOG POST TEXT
 ------------------------------------------------------------------------------ */

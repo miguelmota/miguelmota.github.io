@@ -39,8 +39,8 @@ title: Blog
 		{% endfor %}
 		
 		{% for post in site.posts %}
-			<div class='blog-post-thumb' class='content-item blog-post-item blog-post-list'>
-				<img src='/images/blog/thumbs/{{ post.thumbnail }}' alt='' /> <h1><a href='{{ post.url }}'>{{ post.title }}</a></h1>
+			<div class='content-item blog-post-item blog-post-list'>
+				<img class='blog-post-thumb blog-post-thumb-list' src='/images/blog/thumbs/{{ post.thumbnail }}' alt='' /> <h1><a href='{{ post.url }}'>{{ post.title }}</a></h1>
 			</div>
 		{% endfor %}
 
