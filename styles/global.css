@@ -1505,7 +1505,8 @@ input.short-url:focus {
 #ie-notice {
 	background-color: #000;
 	clear: both;
-	color: #fff; 
+	color: #fff;
+	display: none; 
 	font-size: 10px;
 	text-align: center;
 	padding: 20px;

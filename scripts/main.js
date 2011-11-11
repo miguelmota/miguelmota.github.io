@@ -1,18 +1,20 @@
 $(document).ready(function(){
 	
-	$.cookie('IE', '1', {
-			expires: 7,
-			path: '/'
-		}
-	);
+	if($.cookie('IE') == null) {
+		$.cookie('IE', '1', {
+				expires: 7,
+				path: '/'
+			}
+		);
+	}
 	
-	if($.cookie('IE') == '0') {
-		$('#ie-notice').css('display','none');
+	if($.cookie('IE') == '1') {
+		$('#ie-notice').slideDown('slow');
 	}
 	
 	$('.ie-notice-close').live('click', function(){
 		$('#ie-notice').slideUp('slow');
-		$.cookie('IE',null);
+		$.cookie('IE','0');
 	});
 
 	// Initialize side nav text ticker; NOTE: might cause bug in Firefox
