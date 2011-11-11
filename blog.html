@@ -14,7 +14,7 @@ title: Blog
 			<div class='content-item blog-post-item blog-post-grid'>
 				<h1><a href='{{ post.url }}'>{{ post.title }}</a></h1>
 	 			<div class='post-text'>
-	 				<img class='blog-post-thumb' src='/images/blog/thumbs/{{ post.thumbnail }}' alt='' />
+	 				<a href='{{ post.url }}'><img class='blog-post-thumb' src='/images/blog/thumbs/{{ post.thumbnail }}' alt='' /></a>
 					{{ post.content }}
 				</div>
 				<div class='view-post-wrap'>&#8230; <a href='{{ post.url }}'>view full post &#187;</a></div>
@@ -40,7 +40,8 @@ title: Blog
 		
 		{% for post in site.posts %}
 			<div class='content-item blog-post-item blog-post-list'>
-				<img class='blog-post-thumb blog-post-thumb-list' src='/images/blog/thumbs/{{ post.thumbnail }}' alt='' /> <h1><a href='{{ post.url }}'>{{ post.title }}</a></h1>
+				<a href='{{ post.url }}'><img class='blog-post-thumb blog-post-thumb-list' src='/images/blog/thumbs/{{ post.thumbnail }}' alt='' /></a> 
+				<h1><a href='{{ post.url }}'>{{ post.title }}</a></h1>
 			</div>
 		{% endfor %}
 
