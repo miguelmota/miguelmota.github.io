@@ -1265,7 +1265,7 @@ h6 {
 /* -----------------------------------------------------------------------------
 	BLOG POST TEXT
 ------------------------------------------------------------------------------ */
-.blog-post-grid .post-text {
+.blog-post-grid .blog-post-text {
 	max-height: 408px;
 	overflow: hidden;
 	text-overflow: ellipsis;
