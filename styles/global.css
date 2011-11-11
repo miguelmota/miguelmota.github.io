@@ -1516,18 +1516,18 @@ input.short-url:focus {
 .ie-notice {
 	margin: 0 auto;
 	position: relative;
-	padding: 20px;
+	padding: 10px 0;
 	width: 650px;
 }
 .ie-notice-close {
 	position: absolute;
 	right: 0;
-	top: 0;
+	top: 15px;
 }
-.ie-font-big {
+.ie-notice-font-big {
 	font-size: 14px;
 }
-.ie-color-red {
+.ie-notice-color-red {
 	color: #8e4848;
 }
 /* ==============================================================================
