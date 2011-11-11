@@ -21,10 +21,10 @@ time, mark, audio, video {
 	background: transparent;
 	border: 0;
 	font-size: 100%;
-    margin: 0;
-    outline: 0;
-    padding: 0;
-    vertical-align: baseline;
+	margin: 0;
+	outline: 0;
+	padding: 0;
+	vertical-align: baseline;
 }
 body {
 	line-height: 1;
@@ -85,5 +85,5 @@ hr {
 	padding: 0;
 }
 input, select {
-    vertical-align: middle;
+	vertical-align: middle;
 }
