@@ -658,12 +658,7 @@ function portfolioPage(){
 		$(".project:not('.project-code')").slideUp('fast');
 		$('.project-code').slideDown('fast');
 	});
-	
-	
-	
-	// Initialize masonry
-	// setTimeout('loadMasonry()', 1000);
-	
+
 	
 	
 	// Initialize Fancybox
@@ -802,11 +797,6 @@ function blogPage(){
 	$('.short-url').mouseup(function(e){
         e.preventDefault();
 	});
-	
-	
-	
-	// Initialize masonry
-	setTimeout('loadMasonry()', 1000);
 
 }
 
