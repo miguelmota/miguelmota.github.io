@@ -1220,6 +1220,7 @@ a.google-plus-link {
 	display: inline-block;
 }
 .blog-post-list h1 a {
+	display: block;
 	font-size: 30px;
 }
 .blog-post-list	.blog-post-item {
