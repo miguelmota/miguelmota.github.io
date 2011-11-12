@@ -649,6 +649,7 @@ input.search-input {
 	padding-bottom: 15px;
 	position: relative;
 	width: 200px;
+		border: 1px solid black;
 }
 .tweet-bird-icon {
 	float: left;
@@ -658,7 +659,6 @@ input.search-input {
 	position: absolute;
 	top: 0;
 	width: 166px;
-	border: 1px solid black;
 }
 .latest-tweet-content {
 	background-color: #222;
