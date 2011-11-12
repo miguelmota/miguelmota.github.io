@@ -594,7 +594,6 @@ img.loader {
 	font-weight: bold;
 }
 .follow-wrap {
-	clear: both;
 	padding-bottom: 15px;
 	position: relative;
 	width: 100%;
@@ -651,9 +650,7 @@ input.search-input {
 	width: 200px;
 		border: 1px solid black;
 }
-.tweet-bird-icon {
-	float: left;
-}
+.tweet-bird-icon {}
 #latest-tweet {
 	right: -34px;
 	position: relative;
