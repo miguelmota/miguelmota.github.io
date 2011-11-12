@@ -1762,6 +1762,9 @@ input.short-url:focus {
 		font-size: 18px;
 		width: 100%;
 	}
+	.blog-post-list-date {
+		font-size: 12px;
+	}
 	.blog-post-single h1 a {
 		font-size: 20px;
 	}
