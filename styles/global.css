@@ -653,12 +653,14 @@ input.search-input {
 }
 .tweet-bird-icon {
 	float: left;
+			border: 1px solid black;
 }
 #latest-tweet {
 	right: -34px;
 	position: relative;
 	top: 0;
 	width: 166px;
+			border: 1px solid black;
 }
 .latest-tweet-content {
 	background-color: #222;
