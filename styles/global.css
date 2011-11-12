@@ -1655,7 +1655,7 @@ input.short-url:focus {
 	#tweet-wrap {
 		width: 89%;
 	}
-	#tweets {
+	#latest-tweet {
 		width: 92%;
 	}
 	
@@ -1745,6 +1745,7 @@ input.short-url:focus {
 	}
 	.blog-post-list h1 a {
 		font-size: 18px;
+		width: 92%;
 	}
 	.blog-post-single h1 a {
 		font-size: 28px;
