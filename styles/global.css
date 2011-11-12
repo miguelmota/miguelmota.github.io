@@ -1746,6 +1746,9 @@ input.short-url:focus {
 	.blog-post-sort-wrap {
 		width: 95%;
 	}
+	.blog-post-item {
+		font-size: 20px;
+	}
 	.blog-post-list {
 		width: 92%;
 	}
@@ -1756,11 +1759,11 @@ input.short-url:focus {
 		width: 100%;
 	}
 	.blog-post-list h1 a {
-		font-size: 24px;
+		font-size: 20px;
 		width: 100%;
 	}
 	.blog-post-single h1 a {
-		font-size: 28px;
+		font-size: 20px;
 	}
 	input.short-url {
 		display: none;
