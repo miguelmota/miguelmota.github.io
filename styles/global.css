@@ -605,7 +605,7 @@ img.loader {
 }
 .top-link-wrap {
 	clear: both;
-	padding: 25px 0 15px 0;
+	padding: 0 0 15px 0;
 	position: relative;
 	width: 100%;
 }
@@ -658,6 +658,7 @@ input.search-input {
 	position: absolute;
 	top: 0;
 	width: 166px;
+	border: 1px solid black;
 }
 .latest-tweet-content {
 	background-color: #222;
