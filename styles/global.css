@@ -655,7 +655,9 @@ input.search-input {
 	float: left;
 }
 #latest-tweet {
-	float: right;
+	right: -34px;
+	position: relative;
+	top: 0;
 	width: 166px;
 }
 .latest-tweet-content {
@@ -671,7 +673,7 @@ input.search-input {
 	border-width: 8px 15px 8px 0;
 	bottom: auto;
 	content: "";
-	display: block; 	
+	display: inline-block; 	
 	left: -10px; /* value = - border-left-width - border-right-width */
 	top: 3px;
 	position: absolute;
