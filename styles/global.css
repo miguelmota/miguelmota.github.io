@@ -1750,13 +1750,13 @@ input.short-url:focus {
 		width: 92%;
 	}
 	.blog-post-list	.blog-post-item {
-		width: 92%;
+		width: 100%;
 	}
 	.blog-post-list h1 {
-		width: 92%;
+		width: 100%;
 	}
 	.blog-post-list h1 a {
-		width: 92%;
+		width: 100%;
 	}
 	.blog-post-single h1 a {
 		font-size: 28px;
