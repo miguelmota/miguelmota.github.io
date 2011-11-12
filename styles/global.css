@@ -1765,6 +1765,9 @@ input.short-url:focus {
 	.blog-post-list-date {
 		font-size: 12px;
 	}
+	.blog-post-list-date .icon {
+		display: none;
+	}
 	.blog-post-single h1 a {
 		font-size: 20px;
 	}
