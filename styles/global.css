@@ -1746,7 +1746,13 @@ input.short-url:focus {
 	.blog-post-sort-wrap {
 		width: 95%;
 	}
+	.blog-post-list {
+		width: 92%;
+	}
 	.blog-post-list	.blog-post-item {
+		width: 92%;
+	}
+	.blog-post-list h1 {
 		width: 92%;
 	}
 	.blog-post-list h1 a {
