@@ -713,7 +713,8 @@ input.search-input {
 ============================================================================== */
 .stream-wrap {
 	float: left;
-	width: 350px
+	width: 350px;
+	z-index: 100;
 }
 /*
 .stream-latitude {
