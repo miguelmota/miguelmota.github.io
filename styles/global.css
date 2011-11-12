@@ -1225,7 +1225,7 @@ a.google-plus-link {
 .blog-post-list h1 a {
 	display: block;
 	float: left;
-	font-size: 30px;
+	font-size: 28px;
 }
 .blog-post-list-date {
 	color: #999;
@@ -1759,7 +1759,7 @@ input.short-url:focus {
 		width: 100%;
 	}
 	.blog-post-list h1 a {
-		font-size: 20px;
+		font-size: 18px;
 		width: 100%;
 	}
 	.blog-post-single h1 a {
