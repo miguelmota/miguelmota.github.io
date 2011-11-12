@@ -653,7 +653,7 @@ input.search-input {
 #latest-tweet {
 	right: -34px;
 	position: relative;
-	top: -17px;
+	top: -18px;
 	width: 166px;
 }
 .latest-tweet-content {
@@ -1652,7 +1652,7 @@ input.short-url:focus {
 	/* ------------------------
 	 * Latest tweet
 	 * --------------------- */
-	#tweet-wrap {
+	#latest-tweet-wrap {
 		width: 89%;
 	}
 	#latest-tweet {
