@@ -1756,6 +1756,7 @@ input.short-url:focus {
 		width: 100%;
 	}
 	.blog-post-list h1 a {
+		font-size: 24px;
 		width: 100%;
 	}
 	.blog-post-single h1 a {
