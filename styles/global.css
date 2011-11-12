@@ -655,9 +655,10 @@ input.search-input {
 	float: left;
 }
 #latest-tweet {
-	float: left;
+	right: -34px;
+	position: relative;
 	top: 0;
-	width: 166px;
+	width: 146px;
 }
 .latest-tweet-content {
 	background-color: #222;
