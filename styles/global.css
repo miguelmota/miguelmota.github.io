@@ -648,13 +648,12 @@ input.search-input {
 	padding-bottom: 15px;
 	position: relative;
 	width: 200px;
-		border: 1px solid black;
 }
 .tweet-bird-icon {}
 #latest-tweet {
 	right: -34px;
 	position: relative;
-	top: -16px;
+	top: -17px;
 	width: 166px;
 }
 .latest-tweet-content {
@@ -1675,7 +1674,6 @@ input.short-url:focus {
 	.title {
 		clear: both;
 		display: block;
-		margin-top: 15px;
 		width: 100%;
 	}
 	.title .miguel {

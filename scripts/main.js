@@ -152,8 +152,7 @@ function recent_tweets(data) {
 			+(data[i].id_str ? data[i].id_str : data[i].id)+'" rel="external">'+data[i].text+'</a> <time class="latest-tweet-date">'+niceTime(data[i].created_at)+'</time></div>';
 	}
 	
-	// Initialize latest tweet mtip
-	$('.tweet-bird-icon').mtip();
+	// Show mtip on twitter bird hover
 	$('#latest-tweet-wrap').live({
 		mouseenter:
 			function(){
