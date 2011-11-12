@@ -1674,6 +1674,7 @@ input.short-url:focus {
 	.title {
 		clear: both;
 		display: block;
+		margin-top: 5px;
 		width: 100%;
 	}
 	.title .miguel {
