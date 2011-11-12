@@ -1216,15 +1216,15 @@ a.google-plus-link {
 	display: none;
 	float: none;
 }
+.blog-post-list	.blog-post-item {
+	width: 700px;
+}
 .blog-post-list h1 {
 	display: inline-block;
 }
 .blog-post-list h1 a {
 	display: block;
 	font-size: 30px;
-}
-.blog-post-list	.blog-post-item {
-	width: 700px;
 }
 .blog-post-list-date {
 	color: #999;
@@ -1744,8 +1744,10 @@ input.short-url:focus {
 	.blog-post-sort-wrap {
 		width: 95%;
 	}
+	.blog-post-list	.blog-post-item {
+		width: 92%;
+	}
 	.blog-post-list h1 a {
-		margin-bottom: 10px;
 		width: 92%;
 	}
 	.blog-post-single h1 a {
