@@ -1825,8 +1825,8 @@ input.short-url:focus {
 	 * Flickr carousel
 	 * --------------------- */
 	 .stream-ul-flickr li a {
-	 	min-height: 84px;
-	 	width: 84px;
+	 	min-height: 74px;
+	 	width: 74px;
 	 }
 	 
 	 /* ------------------------
