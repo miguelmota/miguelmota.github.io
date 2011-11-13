@@ -1828,6 +1828,13 @@ input.short-url:focus {
 	 	min-height: 64px;
 	 	width: 64px;
 	 }
+	 
+	 /* ------------------------
+	 * Portfolio page
+	 * --------------------- */
+	.project-image {
+		width: 300px;
+	}
 	
 	/* ------------------------
 	 * Blog page
