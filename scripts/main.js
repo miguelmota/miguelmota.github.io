@@ -125,21 +125,47 @@ var fixed = false;
 $(window).scroll(function(){
 	
 	// Main side nav scroll to fixed
-	if($(this).scrollTop() >= 50){
-		if(!fixed){
-			fixed = true;
-			$('.main-side-nav').css({
-				position: 'fixed'
-			});
+	if(window.screen >= 1025) {
+		
+		if($(this).scrollTop() >= 50){
+			if(!fixed){
+				fixed = true;
+				$('.main-side-nav').css({
+					position: 'fixed'
+				});
+			}
 		}
+		else {
+			if(fixed){
+				fixed = false;
+				$('.main-side-nav').css({
+					position: 'static'
+				});
+			}
+		}
+		
 	}
-	else {
-		if(fixed){
-			fixed = false;
-			$('.main-side-nav').css({
-				position: 'static'
-			});
+	
+	// Main side nav scroll to fixed tablet
+	if(window.screen >= 641 && <= 1024) {
+		
+		if($(this).scrollTop() >= 10){
+			if(!fixed){
+				fixed = true;
+				$('.main-side-nav-ul').css({
+					position: 'fixed'
+				});
+			}
 		}
+		else {
+			if(fixed){
+				fixed = false;
+				$('.main-side-nav').css({
+					position: 'static'
+				});
+			}
+		}
+		
 	}
 	
 	
