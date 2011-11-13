@@ -1807,7 +1807,7 @@ input.short-url:focus {
 	 * Main content
 	 * --------------------- */
 	.content-item {
-		width: 650px;
+		width: 610px;
 	}
 	
 	/* ------------------------
@@ -1834,14 +1834,14 @@ input.short-url:focus {
 	.blog-post-item {
 		width: 300px;
 	}
-	.blog-post-list {
-		width: 650px;
+	.blog-post-list	.blog-post-item {
+		width: 610px;
 	}
 	.blog-post-single {
-		width: 650px;
+		width: 610px;
 	}
 	.dsq-comment-wrap {
-		width: 650px;
+		width: 610px;
 	}
 	
 }
