@@ -147,7 +147,7 @@ $(window).scroll(function(){
 	}
 	
 	// Main side nav scroll to fixed tablet
-	if(screen.width >= 641 && <= 1024) {
+	if(screen.width >= 641 && screen.width <= 1024) {
 		
 		if($(this).scrollTop() >= 10){
 			if(!fixed){
