@@ -125,7 +125,7 @@ var fixed = false;
 $(window).scroll(function(){
 	
 	// Main side nav scroll to fixed
-	if(window.screen >= 1025) {
+	if(screen.width >= 1025) {
 		
 		if($(this).scrollTop() >= 50){
 			if(!fixed){
@@ -147,7 +147,7 @@ $(window).scroll(function(){
 	}
 	
 	// Main side nav scroll to fixed tablet
-	if(window.screen >= 641 && <= 1024) {
+	if(screen.width >= 641 && <= 1024) {
 		
 		if($(this).scrollTop() >= 10){
 			if(!fixed){
@@ -160,7 +160,7 @@ $(window).scroll(function(){
 		else {
 			if(fixed){
 				fixed = false;
-				$('.main-side-nav').css({
+				$('.main-side-nav-ul').css({
 					position: 'static'
 				});
 			}

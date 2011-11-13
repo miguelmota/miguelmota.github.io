@@ -568,6 +568,8 @@ img.loader {
 	clear: both;
 	display: block;
 	padding-bottom: 15px;
+	position: static;	
+	top: 20px;
 	width: 100%;
 }
 .main-side-nav-ul a {
