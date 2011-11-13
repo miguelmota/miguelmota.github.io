@@ -694,6 +694,7 @@ input.search-input {
 .main-content-wrap {
 	height: auto;
 	position: relative;
+	width: auto;
 }
 .content-item {
 	background-color: #222;
