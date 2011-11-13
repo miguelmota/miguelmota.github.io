@@ -68,11 +68,6 @@ $(document).ready(function(){
 				$(this).animate({borderLeftWidth: '4px'}, {queue: false, duration: 60});
 			}
 		);
-		
-		
-	
-	// Main side nav scroll to fixed
-	//$('.main-side-nav')
 	
 	
 	
@@ -126,8 +121,28 @@ $(document).ready(function(){
 });
 
 
-
+var fixed = false;
 $(window).scroll(function(){
+	
+	// Main side nav scroll to fixed
+	if($(this).scrollTop() >= 100){
+		if(!fixed){
+			fixed = true;
+			$('.main-side-nav').css({
+				position: 'fixed'
+			});
+		}
+		else {
+			if(fixed){
+				fixed = false;
+				$('.main-side-nav').css({
+					position: 'static'
+				});
+			}
+		}
+	}
+	
+	
 	
 	// Toggle back to top link on scroll
 	if(window.pageYOffset >= 200){

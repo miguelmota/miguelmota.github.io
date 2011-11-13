@@ -536,6 +536,7 @@ img.loader {
 }
 .main-side-nav {
 	position: static;	
+	top: 20px;
 	width: 200px;
 }
 .nav-logo {
