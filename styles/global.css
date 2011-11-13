@@ -1381,7 +1381,7 @@ input.short-url:focus {
 	padding-bottom: 10px;
 }
 .archive-month {
-	font-size: 14px;
+	width: 100px;
 }
 /* ==============================================================================
 	END BLOG
