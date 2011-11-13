@@ -1002,7 +1002,7 @@ a.google-plus-link {
 	position: absolute;
 	text-align: right;
 	top: 10px;
-	width: 650px;
+	width: 670px;
 }
 .project-sort-wrap a {
 	background-color: #252525;
@@ -1840,7 +1840,7 @@ input.short-url:focus {
 	 * Blog page
 	 * --------------------- */
 	.blog-post-sort-wrap {
-		width: 650px;
+		width: 670px;
 	}
 	.blog-post-item {
 		width: 300px;
