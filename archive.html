@@ -2,10 +2,11 @@
 layout: default
 title: Archive
 ---
-<h1 class='title'>Miguel<span class='mota'>Mota</span><span class='slash'>/</span><span class='sub'>Archive</span></h1>
+<h1 class='title'>{% include title.html %}<span class='sub'><a href='/archive'>archive</a></span></h1>
 <section class='content blog archive'>
-	<ul>
+
 		{% for post in site.posts %}
+			<div class='blog-post-list'>
 	    	{% unless post.next %}
 	    		<strong>{{ post.date | date: '%Y' }}</strong>
 	    	{% else %}
@@ -15,7 +16,11 @@ title: Archive
 	       			<strong>{{ post.date | date: '%Y' }}</strong>
 	      		{% endif %}
 	    	{% endunless %}
-	    	<li>{{ post.date | date:"%B" }} <a href='{{ post.url }}'>{{ post.title }}</a></li>
+	    	{{ post.date | date:"%B" }}<h1><a class='content-item blog-post-item' href='{{ post.url }}'><img class='blog-post-thumb-list' src='/images/blog/thumbs/{{ post.thumbnail }}' alt='' /> {{ post.title }} 
+	    	<time class='blog-post-list-date'><span class='icon icon-clock-16'></span> {{ post.date | date_to_string }}</time></a></h1><div class='clear'></div>
+	    	<div class='clear'></div>
+			</div>
 		{% endfor %}
-	</ul>
+
+
 </section>
