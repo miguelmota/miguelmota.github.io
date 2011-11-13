@@ -1840,19 +1840,19 @@ input.short-url:focus {
 	 * Blog page
 	 * --------------------- */
 	.blog-post-sort-wrap {
-		width: 95%;
+		width: 650px;
 	}
 	.blog-post-item {
 		width: 300px;
 	}
 	.blog-post-list	.blog-post-item {
-		width: 610px;
+		width: 650px;
 	}
 	.blog-post-single {
-		width: 610px;
+		width: 650px;
 	}
 	.dsq-comment-wrap {
-		width: 610px;
+		width: 650px;
 	}
 	
 }
