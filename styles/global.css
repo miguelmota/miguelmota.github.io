@@ -1374,10 +1374,14 @@ input.short-url:focus {
 /* -----------------------------------------------------------------------------
 	ARCHIVE
 ------------------------------------------------------------------------------ */
-.archive-date {
+.archive-year {
+	display: block;
+	font-size: 24px;
+	font-weight: bold;
+}
+.archive-month {
 	display: block;
 	font-size: 18px;
-	font-weight: bold;
 }
 /* ==============================================================================
 	END BLOG

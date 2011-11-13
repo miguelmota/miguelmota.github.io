@@ -4,19 +4,19 @@ title: Archive
 ---
 <h1 class='title'>{% include title.html %}<span class='sub'><a href='/archive'>archive</a></span></h1>
 <section class='content blog archive'>
-	<ul>
+
 		{% for post in site.posts %}
 	    	{% unless post.next %}
-	    		<span class='archive-date'>{{ post.date | date: '%Y' }}</span>
+	    		<span class='archive-year'>{{ post.date | date: '%Y' }}</span>
 	    	{% else %}
 	      		{% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
 	     		{% capture nyear %}{{ post.next.date | date: '%Y' }}{% endcapture %}
 	      		{% if year != nyear %}
-	       			<span class='archive-date'>{{ post.date | date: '%Y' }}</span>
+	       			<span class='archive-year'>{{ post.date | date: '%Y' }}</span>
 	      		{% endif %}
 	    	{% endunless %}
-	    	<li>{{ post.date | date:"%B" }} <a class='content-item' href='{{ post.url }}'>{{ post.title }}</a></li>
+	    	<span class='archive-month'>{{ post.date | date:"%B" }}</span> <a href='{{ post.url }}'>{{ post.title }}</a>
 		{% endfor %}
-	</ul>
+
 </section>
 
