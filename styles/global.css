@@ -700,7 +700,7 @@ input.search-input {
 	margin: 5px;
 	padding: 20px;
 	position: relative;
-	width: 700px;
+	width: 750px;
 }
 /* ==============================================================================
 	END MAIN CONTENT
@@ -1198,8 +1198,7 @@ a.google-plus-link {
 	width: 500px;
 }
 .blog-post-single {
-	max-width: 1000px;
-	width: 99%;
+	width: 750px;
 }
 /* -----------------------------------------------------------------------------
 	BLOG POST SORT
@@ -1218,7 +1217,7 @@ a.google-plus-link {
 	float: none;
 }
 .blog-post-list	.blog-post-item {
-	width: 700px;
+	width: 750px;
 }
 .blog-post-list h1 {
 	display: inline-block;
