@@ -1418,6 +1418,10 @@ input.short-url:focus {
 	float: left;
 	text-align: left;
 }
+.pagination-archive {
+	float: left;
+	text-align: left;
+}
 /* ==============================================================================
 	END PAGINATION
 ============================================================================== */
