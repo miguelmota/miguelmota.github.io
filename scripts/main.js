@@ -152,7 +152,8 @@ $(window).scroll(function(){
 		if($(this).scrollTop() >= 10){
 			if(!fixed){
 				fixed = true;
-				$('.main-side-nav-ul').css({
+				$('.main-side-nav-info').hide();
+				$('.main-side-nav').css({
 					position: 'fixed'
 				});
 			}
@@ -160,7 +161,8 @@ $(window).scroll(function(){
 		else {
 			if(fixed){
 				fixed = false;
-				$('.main-side-nav-ul').css({
+				$('.main-side-nav-info').show();
+				$('.main-side-nav').css({
 					position: 'static'
 				});
 			}
