@@ -1376,12 +1376,12 @@ input.short-url:focus {
 ------------------------------------------------------------------------------ */
 .archive-year {
 	display: block;
-	font-size: 24px;
+	font-size: 22px;
 	font-weight: bold;
+	padding-bottom: 10px;
 }
 .archive-month {
-	display: block;
-	font-size: 18px;
+	font-size: 14px;
 }
 /* ==============================================================================
 	END BLOG
