@@ -72,9 +72,7 @@ $(document).ready(function(){
 		
 	
 	// Main side nav scroll to fixed
-	$('.main-side-nav').scrollToFixed({
-		marginTop: 20
-	})
+	//$('.main-side-nav')
 	
 	
 	
