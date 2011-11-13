@@ -125,7 +125,7 @@ var fixed = false;
 $(window).scroll(function(){
 	
 	// Main side nav scroll to fixed
-	if($(this).scrollTop() >= 70){
+	if($(this).scrollTop() >= 1){
 		if(!fixed){
 			fixed = true;
 			$('.main-side-nav').css({
