@@ -1237,7 +1237,7 @@ a.google-plus-link {
 ------------------------------------------------------------------------------ */
 .blog-post-single h1 a {
 	display: block;
-	font-size: 38px;
+	font-size: 34px;
 }
 .blog-post-item h1 a {
 	display: block;
@@ -1360,9 +1360,8 @@ input.short-url:focus {
 	DISQUS
 ------------------------------------------------------------------------------ */
 .dsq-comment-wrap {
-	max-width: 1000px;
 	position: relative;
-	width: 100%;
+	width: 750px;
 }
 #disqus_thread {
 	clear: both;
