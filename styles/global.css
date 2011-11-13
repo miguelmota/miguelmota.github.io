@@ -13,7 +13,7 @@ body {
 }
 .main-wrap {
 	height: auto;
-	margin: 70px 20px 0 20px;
+	margin: 70px 20px 25px 20px;
 	word-wrap: break-word;
 	padding-left: 250px;
 	position: relative;
@@ -1506,7 +1506,7 @@ input.short-url:focus {
 .main-footer {
 	clear: both;
 	font-size: 12px;
-	padding: 25px 10px 10px 10px;
+	padding: 25px 10px 0 10px;
 	position: relative;
 	text-shadow: 0 -1px 0 rgba(0,0,0,.5);
 	width: 100%;
@@ -1591,7 +1591,7 @@ input.short-url:focus {
 	 * Main wrap
 	 * --------------------- */
 	.main-wrap {
-		margin: 0;
+		margin: 0 0 10px 0;
 		overflow: hidden;
 		padding: 0;
 	}
@@ -1800,7 +1800,7 @@ input.short-url:focus {
 	 * Main wrap
 	 * --------------------- */
 	.main-wrap {
-		margin: 30px 5px 0 5px;
+		margin: 30px 5px 25px 5px;
 	}
 	
 	/* ------------------------
