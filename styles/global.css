@@ -1800,7 +1800,7 @@ input.short-url:focus {
 	 * Main wrap
 	 * --------------------- */
 	.main-wrap {
-		margin: 30px 5px 25px 5px;
+		margin: 30px 0 25px 0;
 		padding-left: 220px;
 	}
 	
