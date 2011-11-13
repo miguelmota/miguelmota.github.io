@@ -71,6 +71,13 @@ $(document).ready(function(){
 		
 		
 	
+	// Main side nav scroll to fixed
+	$('.main-side-nav').scrollToFixed({
+		marginTop: 20px
+	})
+	
+	
+	
 	// Change default text color on input focus
 	$('input:text, input:password, textarea').focus(function(){
 		$(this).css('color', '#999');
