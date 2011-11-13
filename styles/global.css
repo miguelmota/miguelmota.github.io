@@ -1808,7 +1808,7 @@ input.short-url:focus {
 	 * Main content
 	 * --------------------- */
 	.main-content-wrap {
-		
+		width: 660px
 	}
 	.content-item {
 		width: 610px;
