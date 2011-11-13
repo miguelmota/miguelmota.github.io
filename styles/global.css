@@ -1800,7 +1800,7 @@ input.short-url:focus {
 	 * Main wrap
 	 * --------------------- */
 	.main-wrap {
-		margin: 50px 10px 0 10px;
+		margin: 30px 5px 0 5px;
 	}
 	
 	/* ------------------------
@@ -1832,8 +1832,10 @@ input.short-url:focus {
 		width: 95%;
 	}
 	.blog-post-item {
-		float: left;
 		width: 300px;
+	}
+	.blog-post-list {
+		width: 650px;
 	}
 	.blog-post-single {
 		width: 650px;
