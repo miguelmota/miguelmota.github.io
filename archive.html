@@ -5,6 +5,7 @@ title: Archive
 <h1 class='title'>{% include title.html %}<span class='sub'><a href='/archive'>archive</a></span></h1>
 <section class='content blog archive'>
 
+	<ul class='content-item'>
 		{% for post in site.posts %}
 	    	{% unless post.next %}
 	    		<span class='archive-year'>{{ post.date | date: '%Y' }}</span>
@@ -15,8 +16,9 @@ title: Archive
 	       			<span class='archive-year'>{{ post.date | date: '%Y' }}</span>
 	      		{% endif %}
 	    	{% endunless %}
-	    	<span class='archive-month'>{{ post.date | date:"%B" }}</span> <a href='{{ post.url }}'>{{ post.title }}</a>
+	    	<li><span class='archive-month'>{{ post.date | date:"%B" }}</span> <a href='{{ post.url }}'>{{ post.title }}</a></li>
 		{% endfor %}
-
+	</ul>
+	
 </section>
 
