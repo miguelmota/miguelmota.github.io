@@ -570,7 +570,7 @@ function streamPage(){
 			showMtipTimeout('.stream-logo-wakoopa');
 			
 			// Initialize masonry
-			setTimeloadMasonry();
+			loadMasonry();
 		}
 	);
 		
