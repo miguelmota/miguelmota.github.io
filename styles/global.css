@@ -702,7 +702,7 @@ input.search-input {
 .content {
 	height: auto;
 	border: 1px solid blue;
-	width: 100%;
+	width: auto;
 }
 .content-item {
 	background-color: #222;
