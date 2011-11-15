@@ -401,8 +401,9 @@ function streamPage(){
 				//count: '3'
 			//},
 			function(data){
+		alert(data.properties);
 				$.each(data.properties, function(i, item){
-					alert(data.properties);
+					
 					var htmlString = '<ul class="stream-ul stream-ul-latitude2">';
 					var url = 'http://www.google.com/latitude/apps/badge/api?user=7812482200199007583&type=iframe&maptype=roadmap';
 					var location = this.reverseGeocode;
