@@ -721,25 +721,25 @@ input.search-input {
 	z-index: 100;
 }
 .stream-latitude {
-	height: 200px;
+	height: 80px;
 }
 .stream-blog {
-	height: 200px;
+	height: 80px;
 }
 .stream-twitter {
-	height: 250px;
+	height: 200px;
 }
 .stream-facebook {
-	height: 200px;
+	height: 80px;
 }
 .stream-tumblr {
-	height: 200px;
+	height: 80px;
 }
 .stream-delicious {
-	height: 200px;
+	height: 80px;
 }
 .stream-lastfm {
-	height: 250px;
+	height: 200px;
 }
 .stream-wakoopa {
 	height: 200px;
