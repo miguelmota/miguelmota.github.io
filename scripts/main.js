@@ -23,8 +23,8 @@ $(document).ready(function(){
 		$('.ie-notice-wrap').slideUp('slow');
 		$.cookie('IE','0');
 	});
-	
 
+	
 	
 	// Initialize side nav text ticker; NOTE: might cause bug in Firefox
 	textTickerSelected();
@@ -617,9 +617,26 @@ function streamPage(){
 			setTimeout('loadMasonry()', 2000);
 			
 			// Initalize draggable on stream items
-			$('.stream-wrap').draggable({
-				cursor: 'move'
-			});
+			//$('.stream-wrap').draggable({
+				//cursor: 'move'
+			//});
+			
+			// jQuery Draggable cookie to remember location
+			$('.stream-twitter').css({
+				top: $.cookie('streamTwitterY'),
+				left: $.cookie('streamTwitterX')
+			}).draggable({
+				stop: function(event, ui) {
+					$.cookie('streamTwitterX', ui.position.left, {
+						expires: 7,
+						path: '/'
+					});
+					$.cookie('streamTwitterY', ui.position.top, {
+						expires: 7,
+						path: '/'	
+					});
+				}
+			})
 			
 			
 			// Initialize Fancybox
