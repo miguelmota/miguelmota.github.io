@@ -400,7 +400,6 @@ function streamPage(){
 			//{
 				//count: '3'
 			//},
-			,
 			function(data){
 				$.each(data, function(i, item){
 					var htmlString = '<ul class="stream-ul stream-ul-latitude2">';
