@@ -701,7 +701,6 @@ input.search-input {
 }
 .content {
 	height: auto;
-	border: 1px solid blue;
 	width: auto;
 }
 .content-item {
