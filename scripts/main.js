@@ -1,8 +1,8 @@
 $(document).ready(function(){
 	
 	// Set IE notice cookie
-	if($.cookie('IE') == null) {
-		$.cookie('IE', '1', {
+	if($.cookie('ieNotice') == null) {
+		$.cookie('ieNotice', '1', {
 				expires: 7,
 				path: '/'
 			}
@@ -10,7 +10,7 @@ $(document).ready(function(){
 	}
 	
 	// If cookie active show IE notice
-	if($.cookie('IE') == '1') {
+	if($.cookie('ieNotice') == '1') {
 		$('.ie-notice-wrap').slideDown('slow');
 	}
 	else {
@@ -21,7 +21,7 @@ $(document).ready(function(){
 	// Hide IE notice and change IE cookie on close button click
 	$('.ie-notice-close').live('click', function(){
 		$('.ie-notice-wrap').slideUp('slow');
-		$.cookie('IE','0');
+		$.cookie('ieNotice','0');
 	});
 
 	
@@ -620,8 +620,35 @@ function streamPage(){
 			//$('.stream-wrap').draggable({
 				//cursor: 'move'
 			//});
+		
 			
-			// jQuery Draggable cookie to remember location
+			
+			/* ------------------------
+			 *  jQuery Draggable cookies to remember location
+			 * --------------------- */
+			// Latitude stream cookie
+			$('.stream-latitude').css({
+				top: $.cookie('streamLatitudeY')*1,
+				left: $.cookie('streamLatitudeX')*1
+			}).draggable({
+				stop: function(event, ui) {
+					$.cookie('streamLatitudeX',ui.position.left);
+					$.cookie('streamLatitudeY',ui.position.top);
+				}
+			});
+			
+			// Blog stream cookie
+			$('.stream-blog').css({
+				top: $.cookie('streamBlogY')*1,
+				left: $.cookie('streamBlogX')*1
+			}).draggable({
+				stop: function(event, ui) {
+					$.cookie('streamBlogX',ui.position.left);
+					$.cookie('streamBlogY',ui.position.top);
+				}
+			});
+			
+			// Twitter stream cookie
 			$('.stream-twitter').css({
 				top: $.cookie('streamTwitterY')*1,
 				left: $.cookie('streamTwitterX')*1
@@ -630,7 +657,41 @@ function streamPage(){
 					$.cookie('streamTwitterX',ui.position.left);
 					$.cookie('streamTwitterY',ui.position.top);
 				}
-			})
+			});
+			
+			// Facebook stream cookie
+			$('.stream-facebook').css({
+				top: $.cookie('streamFacebookY')*1,
+				left: $.cookie('streamFacebookX')*1
+			}).draggable({
+				stop: function(event, ui) {
+					$.cookie('streamFacebookX',ui.position.left);
+					$.cookie('streamFacebookY',ui.position.top);
+				}
+			});
+			
+			// Tumblr stream cookie
+			$('.stream-tumblr').css({
+				top: $.cookie('streamTumblrY')*1,
+				left: $.cookie('streamTumblrX')*1
+			}).draggable({
+				stop: function(event, ui) {
+					$.cookie('streamTumblrX',ui.position.left);
+					$.cookie('streamTumblrY',ui.position.top);
+				}
+			});
+			
+			// Delicious stream cookie
+			$('.stream-delicious').css({
+				top: $.cookie('streamDeliciousY')*1,
+				left: $.cookie('streamDeliciousX')*1
+			}).draggable({
+				stop: function(event, ui) {
+					$.cookie('streamDeliciousX',ui.position.left);
+					$.cookie('streamDeliciousY',ui.position.top);
+				}
+			});
+			
 			
 			
 			// Initialize Fancybox
