@@ -613,15 +613,11 @@ function streamPage(){
 			});
 			
 			
+			
 			// Initialize masonry
-			//setTimeout('loadMasonry()', 2000);
-			
-			// Initalize draggable on stream items
-			//$('.stream-wrap').draggable({
-				//cursor: 'move'
-			//});
-		
-			
+			loadMasonry());
+
+	
 			
 			/* ------------------------
 			 *  jQuery Draggable cookies to remember location
@@ -724,6 +720,8 @@ function streamPage(){
 					$.cookie('streamFlickrY',ui.position.top);
 				}
 			});
+			
+			
 			
 			// Draggable cursor
 			$('.stream-wrap').draggable({
