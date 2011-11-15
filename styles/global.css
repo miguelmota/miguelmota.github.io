@@ -720,20 +720,30 @@ input.search-input {
 	width: 350px;
 	z-index: 100;
 }
-/*
 .stream-latitude {
-	width: 250px;
+	height: 200px;
+}
+.stream-blog {
+	height: 200px;
 }
 .stream-twitter {
-	width: 500px;
+	height: 250px;
+}
+.stream-facebook {
+	height: 200px;
+}
+.stream-tumblr {
+	height: 200px;
+}
+.stream-delicious {
+	height: 200px;
 }
 .stream-lastfm {
-	width: 500px;
+	height: 250px;
 }
 .stream-wakoopa {
-	width: 250px;
+	height: 200px;
 }
-*/
 .stream-flickr {
 	width: 535px;
 }
