@@ -614,7 +614,7 @@ function streamPage(){
 			
 			
 			// Initialize masonry
-			setTimeout('loadMasonry()', 2000);
+			//setTimeout('loadMasonry()', 2000);
 			
 			// Initalize draggable on stream items
 			//$('.stream-wrap').draggable({
