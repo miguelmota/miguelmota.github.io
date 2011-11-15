@@ -1850,6 +1850,30 @@ input.short-url:focus {
 	.stream-wrap {
 		width: 300px;
 	}
+	.stream-latitude {
+		height: 40px;
+	}
+	.stream-blog {
+		height: 100px;
+	}
+	.stream-twitter {
+		height: 200px;
+	}
+	.stream-facebook {
+		height: 40px;
+	}
+	.stream-tumblr {
+		height: 100px;
+	}
+	.stream-delicious {
+		height: 80px;
+	}
+	.stream-lastfm {
+		height: 200px;
+	}
+	.stream-wakoopa {
+		height: 100px;
+	}
 	
 	/* ------------------------
 	 * Flickr carousel
