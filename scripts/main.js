@@ -611,12 +611,16 @@ function streamPage(){
 				 btnNext: '.stream-carousel-nav-next',
 				 btnPrev: '.stream-carousel-nav-prev'
 			});
+
+		
+			
+			// Draggable cursor
+			$('.stream-wrap').draggable({
+				containment: '.main-content-wrap',
+				cursor: 'move'
+			});
 			
 			
-			// Initialize masonry
-			//setTimeout('loadMasonry()', 2000);
-		
-		
 			
 			/* ------------------------
 			 *  jQuery Draggable cookies to remember location
@@ -720,12 +724,7 @@ function streamPage(){
 				}
 			});
 			
-			// Draggable cursor
-			$('.stream-wrap').draggable({
-				cursor: 'move'
-			});
-			
-			
+	
 			
 			// Initialize Fancybox
 			initializeFancybox();
