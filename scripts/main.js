@@ -517,7 +517,7 @@ function streamPage(){
 	
 	
 	/* ------------------------
-	 * Last fm stream
+	 * Last.fm stream
 	 * --------------------- */
 	$('.stream-lastfm .loader').css('display','block');
 	// All parameters in url: http://ws.audioscrobbler.com/2.0/?format=json&method=user.getRecentTracks&user=miguel_mota&api_key=dc0e875b6c0fd8ac4891b0716897e6c1&limit=5&callback=?
@@ -690,6 +690,44 @@ function streamPage(){
 					$.cookie('streamDeliciousX',ui.position.left);
 					$.cookie('streamDeliciousY',ui.position.top);
 				}
+			});
+			
+			// Last.fm stream cookie
+			$('.stream-lastfm').css({
+				top: $.cookie('streamLastfmY')*1,
+				left: $.cookie('streamLastfmX')*1
+			}).draggable({
+				stop: function(event, ui) {
+					$.cookie('streamLastfmX',ui.position.left);
+					$.cookie('streamLastfmY',ui.position.top);
+				}
+			});
+			
+			// Wakoopa stream cookie
+			$('.stream-wakoopa').css({
+				top: $.cookie('streamWakoopaY')*1,
+				left: $.cookie('streamWakoopaX')*1
+			}).draggable({
+				stop: function(event, ui) {
+					$.cookie('streamWakoopaX',ui.position.left);
+					$.cookie('streamWakoopaY',ui.position.top);
+				}
+			});
+			
+			// Flickr stream cookie
+			$('.stream-flickr').css({
+				top: $.cookie('streamFlickrY')*1,
+				left: $.cookie('streamFlickrX')*1
+			}).draggable({
+				stop: function(event, ui) {
+					$.cookie('streamFlickrX',ui.position.left);
+					$.cookie('streamFlickrY',ui.position.top);
+				}
+			});
+			
+			// Draggable cursor
+			$('.stream-wrap').draggable({
+				cursor: 'move'
 			});
 			
 			
