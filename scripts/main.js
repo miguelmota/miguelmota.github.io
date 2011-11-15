@@ -392,6 +392,11 @@ function streamPage(){
 	
 	
 	
+	// Initialize masonry
+	loadMasonry();
+	
+	
+	
 	/* ------------------------
 	 *  jQuery Draggable cookies to remember location
 	 * --------------------- */
@@ -724,11 +729,6 @@ function streamPage(){
 			});
 			
 			
-			
-			// Initialize masonry
-			loadMasonry();
-
-	
 
 			// Initialize Fancybox
 			initializeFancybox();
