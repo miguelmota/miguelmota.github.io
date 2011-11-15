@@ -698,6 +698,8 @@ input.search-input {
 	height: auto;
 	position: relative;
 	width: auto;
+}
+.content {
 	border: 1px solid blue;
 }
 .content-item {

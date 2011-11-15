@@ -616,7 +616,7 @@ function streamPage(){
 			
 			// Draggable cursor
 			$('.stream-wrap').draggable({
-				containment: '.main-content-wrap',
+				containment: '.content',
 				cursor: 'move'
 			});
 			
