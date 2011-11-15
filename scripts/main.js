@@ -396,7 +396,7 @@ function streamPage(){
 	 * Latitude stream
 	 * --------------------- */
 	$('.stream-latitude2 .loader').css('display','block');
-	$.getJSON('http://www.google.com/latitude/apps/badge/api?user=7812482200199007583&type=json&callback=?', 
+	$.getJSON('http://www.google.com/latitude/apps/badge/api?user=7812482200199007583&type=json&callback=parse', 
 			//{
 				//count: '3'
 			//},
