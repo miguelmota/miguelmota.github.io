@@ -568,6 +568,9 @@ function streamPage(){
 			document.getElementById('stream-wakoopa-software').innerHTML = html.join("");
 			$('.stream-wakoopa .loader').css('display','none');
 			showMtipTimeout('.stream-logo-wakoopa');
+			
+			// Initialize masonry
+			setTimeloadMasonry();
 		}
 	);
 		
@@ -612,12 +615,7 @@ function streamPage(){
 				 btnPrev: '.stream-carousel-nav-prev'
 			});
 			
-			
-			
-			// Initialize masonry
-			loadMasonry();
-			
-			
+				
 			
 			/* ------------------------
 			 *  jQuery Draggable cookies to remember location
