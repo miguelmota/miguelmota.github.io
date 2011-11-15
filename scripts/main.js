@@ -405,7 +405,7 @@ function streamPage(){
 					var htmlString = '<ul class="stream-ul stream-ul-latitude2">';
 					var url = 'http://www.google.com/latitude/apps/badge/api?user=7812482200199007583&type=iframe&maptype=roadmap';
 					var location = item.features.properties.reverseGeocode;
-		    	  	var date = new Date(item.features.properties.timeStamp;).toUTCString();
+		    	  	var date = new Date(item.features.properties.timeStamp).toUTCString();
 		    	  	htmlString += "<li><a href='"+url+"' rel='external'><span class='icon icon-link-16'></span> "+location+"</a> <time class='status-date'>"+niceTime(date)+"</time></li>";
 					$('.stream-latitude2').append(htmlString +'</ul>');
 				});
