@@ -623,18 +623,12 @@ function streamPage(){
 			
 			// jQuery Draggable cookie to remember location
 			$('.stream-twitter').css({
-				top: $.cookie('streamTwitterY'),
-				left: $.cookie('streamTwitterX')
+				top: $.cookie('streamTwitterY')*1,
+				left: $.cookie('streamTwitterX')*1
 			}).draggable({
 				stop: function(event, ui) {
-					$.cookie('streamTwitterX', ui.position.left, {
-						expires: 7,
-						path: '/'
-					});
-					$.cookie('streamTwitterY', ui.position.top, {
-						expires: 7,
-						path: '/'	
-					});
+					$.cookie('streamTwitterX',ui.position.left);
+					$.cookie('streamTwitterY',ui.position.top);
 				}
 			})
 			
