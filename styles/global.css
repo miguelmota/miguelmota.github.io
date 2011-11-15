@@ -721,16 +721,16 @@ input.search-input {
 	z-index: 100;
 }
 .stream-latitude {
-	height: 80px;
+	height: 30px;
 }
 .stream-blog {
 	height: 80px;
 }
 .stream-twitter {
-	height: 150px;
+	height: 100px;
 }
 .stream-facebook {
-	height: 80px;
+	height: 30px;
 }
 .stream-tumblr {
 	height: 80px;
