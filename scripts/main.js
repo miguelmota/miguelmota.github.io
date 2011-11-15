@@ -389,7 +389,7 @@ function streamPage(){
 	
 	// Initialize mtip
 	$('.mtip').mtip();
-	
+
 	
 	
 	/* ------------------------
@@ -568,9 +568,6 @@ function streamPage(){
 			document.getElementById('stream-wakoopa-software').innerHTML = html.join("");
 			$('.stream-wakoopa .loader').css('display','none');
 			showMtipTimeout('.stream-logo-wakoopa');
-			
-			// Initialize masonry
-			loadMasonry();
 		}
 	);
 		
@@ -615,7 +612,11 @@ function streamPage(){
 				 btnPrev: '.stream-carousel-nav-prev'
 			});
 			
-				
+			
+			// Initialize masonry
+			setTimeout('loadMasonry()', 2000);
+		
+		
 			
 			/* ------------------------
 			 *  jQuery Draggable cookies to remember location
@@ -719,8 +720,6 @@ function streamPage(){
 				}
 			});
 			
-			
-			
 			// Draggable cursor
 			$('.stream-wrap').draggable({
 				cursor: 'move'
@@ -732,7 +731,7 @@ function streamPage(){
 			initializeFancybox();
 
 		});
-
+	
 	
 	
 	// Show mtip on stream-wrap mouseenter
