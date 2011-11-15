@@ -721,16 +721,16 @@ input.search-input {
 	z-index: 100;
 }
 .stream-latitude {
-	height: 30px;
+	height: 40px;
 }
 .stream-blog {
 	height: 80px;
 }
 .stream-twitter {
-	height: 100px;
+	height: 180px;
 }
 .stream-facebook {
-	height: 30px;
+	height: 40px;
 }
 .stream-tumblr {
 	height: 80px;
@@ -739,7 +739,7 @@ input.search-input {
 	height: 80px;
 }
 .stream-lastfm {
-	height: 200px;
+	height: 180px;
 }
 .stream-wakoopa {
 	height: 100px;
