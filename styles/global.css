@@ -1721,6 +1721,14 @@ input.short-url:focus {
 	}
 	
 	/* ------------------------
+	 * Stream wrap
+	 * --------------------- */
+	.stream-wrap {
+		height: auto;
+		width: 300px;
+	}
+	
+	/* ------------------------
 	 * Flickr carousel
 	 * --------------------- */
 	 .stream-ul-flickr li a {
