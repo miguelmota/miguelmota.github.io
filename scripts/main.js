@@ -404,7 +404,7 @@ function streamPage(){
 				$.each(data.FeatureCollection, function(i, item){
 					var htmlString = '<ul class="stream-ul stream-ul-latitude2">';
 					var url = 'http://www.google.com/latitude/apps/badge/api?user=7812482200199007583&type=iframe&maptype=roadmap';
-					var location = item[0];
+					var location = '220';
 		    	  	//var date = new Date(item.features[0].properties.timeStamp).toUTCString();
 		    	  	htmlString += "<li><a href='"+url+"' rel='external'><span class='icon icon-link-16'></span> "+location+"</a> <time class='status-date'>"+"1"+"</time></li>";
 					$('.stream-latitude2').append(htmlString +'</ul>');
