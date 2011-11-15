@@ -700,7 +700,9 @@ input.search-input {
 	width: auto;
 }
 .content {
+	height: auto;
 	border: 1px solid blue;
+	width: 100%;
 }
 .content-item {
 	background-color: #222;
