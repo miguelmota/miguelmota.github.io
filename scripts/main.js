@@ -259,7 +259,7 @@ function initializeFancybox() {
 		'showCloseButton': false,
 		'titleShow': false,
 		'titlePosition': 'inside',
-		'titleFormat': formatTitle,
+		'titleFormat': formatIframeTitle,
 		'padding': 0,
 		'transitionIn': 'none',
 		'transitionOut': 'none',
@@ -273,6 +273,13 @@ function initializeFancybox() {
 	// Custom Fancybox caption formatting
 	function formatTitle(title, currentArray, currentIndex, currentOpts) {
 	    return '<div class="fancybox-title"><span><a class="button" href="javascript:void(0);" onclick="$.fancybox.close();">close X</a></span>' + (title && title.length ? '<strong>' + title + '</strong>' : '' ) + 'Image ' + (currentIndex + 1) + ' of ' + currentArray.length + '</div>';
+	}
+	
+	
+	
+	// Custom Fancybox iframe caption formatting
+	function formatIframeTitle(title, currentArray, currentIndex, currentOpts) {
+	    return '<div class="fancybox-title"><span><a class="button" href="javascript:void(0);" onclick="$.fancybox.close();">close X</a></span></div>';
 	}
 	
 	
