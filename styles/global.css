@@ -1061,7 +1061,6 @@ a.google-plus-link {
 	opacity: .9;
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)" !important;
 	filter: alpha(opacity=90) !important;
-	padding: 10px;
 	position: absolute;
 	width: 100%;
 }
@@ -1073,8 +1072,9 @@ a.google-plus-link {
 }
 .project-name-wrap {
 	display: block;
-	float: left;
-	padding-top: 25px;
+	left: 10px;
+	position: absolute;
+	top: 25px;
 	width: 210px;
 }
 .project-name {
@@ -1090,11 +1090,12 @@ a.google-plus-link {
 }
 .project-role {
 	border-left: 1px solid #212121;
-	border-right: 1px solid #212121;
 	display: block;
-	float: left;
-	width: 240px;	
 	height: 80px;
+	left: 35%;
+	position: absolute;
+	top: 25px;
+	width: 240px;	
 	vertical-align: middle;
 }
 .project-role-ul {
@@ -1102,10 +1103,12 @@ a.google-plus-link {
 	padding: 25px 20px 0 20px;
 }
 .project-view {
+	border-left: 1px solid #212121;
 	display: block;
-	float: right;
 	line-height: 10px;
-	margin-top: 30px;
+	position: absolute;
+	right: 10px;
+	top: 25px;
 	width: 130px;	
 }
 .project-view a:hover {
