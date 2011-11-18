@@ -1107,11 +1107,14 @@ a.google-plus-link {
 	display: block;
 	height: 80px;
 	line-height: 10px;
-	padding-left: 20px;
+	padding-left: 10px;
 	position: absolute;
 	right: 10px;
 	top: 10px;
 	width: 130px;	
+}
+.project-view a:first-child {
+	margin-top: 25px;
 }
 .project-view a:hover {
 	background: #000;
