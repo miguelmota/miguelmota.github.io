@@ -1,11 +1,4 @@
-<!doctype html>
-<html>
-<title></title>
-<link href='http://www.miguelmota.com/styles/reset.min.css' rel='stylesheet' />
-<link href='http://www.miguelmota.com/styles/global.css' rel='stylesheet' />
-<body style='display: block; background-color: #222;'>
-
-<?
+<?php 
 
 //v2.1: Properly decodes JSON using PHP's inbuilt functions
 //v2: now returns time since I last checked in to Google Latitude.
@@ -16,7 +9,28 @@ $latitude=json_decode($info,true);
 $place=$latitude["features"]["0"]["properties"]["reverseGeocode"];
 $timestamp=$latitude["features"]["0"]["properties"]["timeStamp"];
 
-echo "<div class='location'><a style='color: #007299;' href='http://maps.google.com/?q=$place' rel='external'>$place</a> <time class='status-date'>".getRelativeTime($timestamp)."</time></div>";
+ $lat = $latitude["features"]["0"]["geometry"]["coordinates"][0];
+ $long = $latitude["features"]["0"]["geometry"]["coordinates"][1];
+ $coordinates = $long.", ".$lat;
+ 
+?>
+<!doctype html>
+<html>
+<title></title>
+<head>
+<link href='http://www.miguelmota.com/styles/reset.min.css' rel='stylesheet' />
+<link href='http://www.miguelmota.com/styles/global.css' rel='stylesheet' />
+<script src='http://www.miguelmota.com/scripts/jquery.min.js'></script>
+<style>
+body {
+	background-color: #222;
+	display: block;
+}
+</style>
+</head>
+<body>
+<?
+echo "<div class='location'><a style='color: #007299;' href='http://maps.google.com/?q=$place' rel='external' target='_blank' title='".$coordinates."'>$place</a> <time class='status-date'>".getRelativeTime($timestamp)."</time></div>";
 
 function plural($num) {
     if ($num != 1)
@@ -42,5 +56,18 @@ function getRelativeTime($date) {
     return "on " . date("F j, Y", strtotime($date));
 }
 ?>
+<div id='latcoords2'></div>
+<script>
+/*
+//$.getJSON(eval("http://www.foodfail.org/miguelmota/latitude.json"),
+$.getJSON(eval("http://www.google.com/latitude/apps/badge/api?user=7812482200199007583&type=json"),
+	function(data){
+		$.each(data, function(i, item){
+			var coords = item.features[0].geometry.coordinates[0];
+	      	$('#latcoords').append("<span>"+coords+"</span>");
+		});
+	}
+);*/
+</script>
 </body>
 </html>
