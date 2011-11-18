@@ -13,6 +13,7 @@ html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address
 .tooltip-wrap {
 	display: inline-block;
 	position: relative;
+	z-index: 1000;
 }
 
 .tooltip  {
@@ -27,6 +28,7 @@ html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address
 	display: none;
 	font-family: Aria, sans-serif;
 	font-size: 12px;
+	font-weight: normal;
 	opacity: .8;
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
 	filter: alpha(opacity=80);
