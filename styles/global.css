@@ -143,7 +143,9 @@ strong {
 ul li {
 	line-height: 125%;
 }
-.mtip {
+.mtip,
+.tooltip-container,
+.tooltip {
 	z-index: 10000 !important;
 }
 /* ==============================================================================
@@ -761,9 +763,7 @@ input.search-input {
 	width: 535px;
 }
 .latitude-map-button {
-	position: absolute;
-	right: 20px;
-	top: 20px;
+	float: right;
 }
 .stream-latitude .icon-location-marker-16 {
 	float: left;
@@ -794,6 +794,7 @@ input.search-input {
 	background-color: #222;
 }
 .stream-logo-latitude {
+	float: left;
 	font-weight: normal;
 }
 .stream-logo-blog {
