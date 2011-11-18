@@ -6,21 +6,21 @@ layout: default
 <section class='content blog blog-post'>
 	<div class='blog-post-single content-item'>
 		<h1><a href='{{ page.url }}'>{{ page.title }}</a></h1>
-	 	<div class='post-text'>
+	 	<div class='blog-post-text'>
 			{{ content }}
 		</div>
-		<div class='post-tags'>
+		<div class='blog-post-tags'>
 			<span class='icon icon-tags-16 icon-no-hover'></span>
 			{% for category in page.categories %}
 				<span name='{{ category | first }}'>[{{ category | first }}]</span>
 			{% endfor %}
 		</div>
-		<div class='post-footer'>
+		<div class='blog-post-footer'>
 			<a href='{{ page.url }}'><span class='icon icon-clock-16'></span> {{ page.date | date_to_string }}</a> 
 			<span class='dsq-comment-count-wrap'><a class='icon icon-comments-16' href='{{ page.url }}'></a> <a class='dsq-comment-count' href='{{ page.url }}#disqus_thread' data-disqus-identifier='{{ page.url }}'></a></span>
 			<div class='clear'></div>
 		</div>
-		<div class='share-wrap'>
+		<div class='blog-share-wrap'>
 			<g:plusone class='plus-one-button' href='http://www.miguelmota.com{{ page.url }}' size='medium'></g:plusone>
 			<a class='twitter-share-button' href='http://twitter.com/share' data-text='{{ page.title }}' data-url='http://www.miguelmota.com{{ page.url }}' data-via='miguel_mota' data-count='horizontal'>Tweet</a>
 			<div class='addthis_toolbox addthis_default_style' addthis:url='{{ page.url }}' addthis:url='{{ page.title }}'><a class='addthis_counter addthis_pill_style'></a></div>

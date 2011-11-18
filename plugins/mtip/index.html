@@ -3,6 +3,10 @@
 <head>
 	<meta charset='utf-8' />
 <!-- 
+ *	mtip - jQuery tooltip plugin
+ *	v1.0 | 20100524
+ *	Author: Miguel Mota, www.miguelmota.com
+ *	License: Creative Commons Attribution 3.0 License
            _   _       
           | | (_)      
  _ __ ___ | |_ _ _ __  
@@ -16,16 +20,27 @@
 	<meta name='keywords' content='mtip, jquery tooltip' />
 	<title>mtip - jQuery tooltip</title>
 	<link rel='canonical' href='http://www.miguelmota.com/' />
-	<link href='http://www.miguelmota.com/styles/reset.css' rel='stylesheet' />
-	<link href='mtip.css' rel='stylesheet' />
-	<script src='jquery.js'></script>
-	<script src='mtip.js'></script>
+	<link href='jquery.mtip.min.css' rel='stylesheet' />
+	<script src='jquery.min.js'></script>
+	<script src='jquery.mtip.min.js'></script>
 	<script>
 	$(document).ready(function(){
+		
+		// Initialize mtip
 		$('.mtip').mtip();
+		
+		
+		
+		/* Demo scripts */
+		$('a[rel*=external]').live('click', function(){
+			window.open(this.href);
+			return false;
+		});
+		
 	});
 	</script>
 	<style>
+		/* Demo styles */
 		body {
 			font-family: Helvetica, Arial, sans-serif;
 		}
@@ -33,6 +48,7 @@
 			background-color: #f7f7f7;
 			border: 1px solid #ccc;
 			margin: 100px;
+			min-width: 500px;
 			padding: 20px;
 		}
 		.mtip-wrap {
@@ -64,8 +80,12 @@
 		ul {
 			padding-bottom: 10px;
 		}
-		em.note {
+		.note {
 			font-size: 10px;
+		}
+		.credit {
+			font-size: 12px;
+			padding: 15px 0 0 0;
 		}
 	</style>
 </head>
@@ -75,7 +95,7 @@
 		
 		<div class='mtip-wrap'><a class='mtip' href='javascript:void(0);' title='Hello, I am a tooltip!'>hover over me</a></div>
 		
-		<p><a href='http://www.miguelmota.com/make-an-awesome-tooltip-with-jquery/' rel='external'>&#171; how-to article</a></p>
+		<p><a href='http://www.miguelmota.com/make-an-awesome-tooltip-with-jquery' rel='external'>&#171; how-to article</a></p>
 		
 		<p><strong>Installation</strong>
 		(include this in the <code>head</code> section):
@@ -94,7 +114,9 @@ $(document).ready(function(){
 		<em class='note'><strong>Note:</strong> the selector can be anything you want, I just used the class <code>mtip</code> for the example</em>
 		</p>
 		
-		<p><a href='http://www.miguelmota.com/plugins/mtip/mtip-1.0.zip'>Download mtip-1.0.zip</a></p>
+		<p><a href='http://www.miguelmota.com/plugins/mtip/jquery.mtip-1.0.zip'>Download jquery.mtip-1.0.zip</a></p>
+		
+		<div class='credit'>created by <a href='http://www.miguelmota.com' rel='external'>Miguel Mota</a></div>
 	</div>
 </body>
 </html>

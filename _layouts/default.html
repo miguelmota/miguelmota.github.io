@@ -31,39 +31,39 @@
 	<link rel='apple-touch-icon-precomposed' href='/images/apple-touch-icon.png' />
 	<link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Ubuntu+Condensed' />
 	<link rel='stylesheet' href='/styles/reset.min.css' />
-	<link rel='stylesheet' href='/styles/pygment.friendly.css' />
-	<link rel='stylesheet' href='/plugins/fancybox/jquery.fancybox.css' />
-	<link rel='stylesheet' href='/plugins/mtip/mtip.css' />
+	<link rel='stylesheet' href='/styles/pygment.friendly.min.css' />
+	<link rel='stylesheet' href='/plugins/fancybox/jquery.fancybox.min.css' />
+	<link rel='stylesheet' href='/plugins/mtip/jquery.mtip.min.css' />
 	<link rel='stylesheet' href='/styles/global.css' media='all' />
 	<script src='/scripts/jquery.min.js'></script>
 	<script src='/scripts/jquery-ui.min.js'></script>
-	<script src='/plugins/cookie/jquery.cookie.js'></script>
+	<script src='/plugins/cookie/jquery.cookie.min.js'></script>
 	<script src='/plugins/masonry/jquery.masonry.min.js'></script>
 	<script src='/plugins/jcarousellite/jcarousellite.min.js'></script>
-	<script src='/plugins/mtip/mtip.js'></script>
+	<script src='/plugins/mtip/jquery.mtip.min.js'></script>
 	<script src='/plugins/fancybox/jquery.fancybox.pack.js'></script>
 	<script src='/plugins/validate/jquery.validate.min.js'></script>
 	<script src='http://www.google.com/jsapi?key=ABQIAAAAaPkBW3vge4odDUBtbC4e-xRutoCKHFl1g3ES_cmPf4BxqcVG3BR7pbnwzjWgqiKDxSEqSvzSUG2pww'></script>
 	<script src='/scripts/main.js'></script>
 	<!--[if lt IE 9]>
 		<script src='/scripts/html5.js'></script>
-		<link rel='stylesheet' href='/styles/ie.css' />
 	<![endif]-->
 </head>
 <body>
-<!--[if lt IE 9]>
+<!--[if IE]>
 <div class='ie-notice-wrap'><div class='ie-notice'>Boo! It looks like you're using <span class='ie-notice-color-red'>Internet Explorer</span>.<br />
 <strong class='ie-noice-font-big'>HELP MOVE THE WEB FORWARD</strong> by using <a href='http://www.google.com/chrome' rel='external'>Google Chrome</a>, 
-<a href='http://www.mozilla.org/en-US/firefox/new/' rel='external'>Firefox</a> or <a href='http://www.opera.com/browser/' rel='external'>Opera</a>. <a class='ie-notice-close' href='javascript:void(0);'>close</a></div></div>
+<a href='http://www.mozilla.org/en-US/firefox/new/' rel='external'>Firefox</a> or <a href='http://www.opera.com/browser/' rel='external'>Opera</a>. <a class='icon icon-x-16 ie-notice-close' href='javascript:void(0);'></a></div></div>
 <![endif]-->
 <div id='top'></div>
 <div class='main-wrap'>
-	<!-- Side content -->
 	<div class='main-side-nav-wrap'>
 		<nav class='main-side-nav'>
-			<a class='nav-logo' href='/'><img src='/images/logo.png' alt='' /></a>
-			<h1 class='site-title'><a href='/'>Miguel Mota</a></h1>
-			<div class='site-description'>Web Developer</div>
+			<div class='main-side-nav-info'>
+				<a class='nav-logo' href='/'><img src='/images/logo.png' alt='' /></a>
+				<h1 class='site-title'><a href='/'>Miguel Mota</a></h1>
+				<div class='site-description'>Web Developer</div>
+			</div>
 			<ul class='main-side-nav-ul'>
 				<li><a id='tumblog' href='http://miguelmota.tumblr.com'>tumblog</a></li>
 				<li><a id='stream' href='/stream'>stream</a></li>
@@ -87,9 +87,10 @@
 				<a class='hide icon icon-random-24 icon-social' href='/random' title='random'></a>
 				<span class='plus-one-button-wrap'><g:plusone class='plus-one-button' href='http://www.miguelmota.com' count='false' size='medium'></g:plusone></span>
 			</div>
-			<div id='tweet-wrap'>
-				<a class='icon icon-twitter-bird-24 icon-social tweet-brid-icon' href='http://twitter.com/miguel_mota' title='follow'></a>
-				<div id='tweets'></div>
+			<div id='latest-tweet-wrap'>
+				<a class='icon icon-twitter-bird-24 icon-social tweet-bird-icon' href='http://twitter.com/miguel_mota' title='follow' rel='external'></a>
+				<div id='latest-tweet'><div class='latest-tweet-content'>loading tweet...</div></div>
+				<div class='clear'></div>
 			</div>
 			<div class='top-link-wrap'><a class='top-link icon icon-up-24' href='#top'></a><div class='clear'></div></div>
 		</nav>

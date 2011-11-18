@@ -1,9 +1,36 @@
 <!doctype html>
+<!--
+ ***************************************************************
+	TO DO:
+		- change reblog image;
+		- add liked posts
+		- add ask button
+		- add submit button
+		- add answer posts
+		- day pages
+		- tag page
+		- ajax loader change
+		- fix notes
+		- fix footer
+		- fix pagination padding
+		- fix selected border
+		- icon-no-hover
+		- icon photoset
+		- plus one button right
+		- up arrow change
+		- addthis
+		- dsq wrap width
+		- remove search effect
+		- site-title a
+		- fixed scroll nav
+		- post source img
+ ***************************************************************
+-->
 <html lang='en'>
 <head>
     <meta charset='utf-8' />
 <!--
- *  Oblivion Theme, miguelmota.tumblr.com
+ *	Oblivion Theme, obliviontheme.tumblr.com
  *	v1.0 | 20111103
  *	Author: Miguel Mota, www.miguelmota.com
  *	License: Creative Commons Attribution 3.0 License
@@ -46,9 +73,9 @@
 	<meta name='color:Link Hover' content='#0098cc' />
 	<meta name='color:Link Hover Background' content='#004c66' />
 	
-	<title>{block:PostTitle}{PostTitle} &#187; {/block:PostTitle}{block:PostSummary}{PostSummary} &#187; {/block:PostSummary}{block:SearchPage}'{SearchQuery}' search results &#187; {/block:SearchPage}Links, Photos, and Stuff | Miguel Mota's Tumblog</title>
-	<link rel='canonical' href='http://miguelmota.tumblr.com/' />
-	<link rel='alternate' type='application/rss+xml' href='http://feeds.feedburner.com/miguelmota/tumblr'>
+	<title>{block:PostTitle}{PostTitle} &#187; {/block:PostTitle}{block:PostSummary}{PostSummary} &#187; {/block:PostSummary}{block:SearchPage}'{SearchQuery}' search results &#187; {/block:SearchPage}Oblivion Theme by Miguel Mota</title>
+	<link rel='canonical' href='http://obliviontheme.tumblr.com/' />
+	<link rel='alternate' type='application/rss+xml' href='{RSS}'>
 	<link rel='shortcut icon' href='{Favicon}' />
 	<link rel='apple-touch-icon' href='{PortraitURL-128}' />
 	
@@ -176,21 +203,6 @@
 		font-size: 14px;
 		text-shadow: 0 -1px 0 rgba(0,0,0,.8);
 	}
-	.noscript {
-		background-color: #a80f0f;
-		color: #fff;
-		font-size: 24px;
-		font-weight: bold;
-		padding: 20px;
-		position: fixed;
-		text-align: center;
-		top: 0;
-		width: 100%;
-	}
-	#top {
-		position: absolute;
-		top: 0;
-	}
 	.main-wrap {
 		height: auto;
 		margin: 70px auto 0 auto;
@@ -205,6 +217,53 @@
 	.hide {
 		display: none;
 	}
+	ul li {
+		list-style-type: none;
+		line-height: 125%;
+	}
+	code {
+		background-color: #202020;
+	}
+	::selection {
+		background-color: #000;
+		background-color: rgba(0,0,0,.8);
+		color: #fff;
+		text-shadow: 0 1px 0 rgba(0,0,0,.3);
+	}
+	::-moz-selection {
+		background-color: #000;
+		background-color: rgba(0,0,0,.8);
+		color: #fff;
+		text-shadow: 0 1px 0 rgba(0,0,0,.3);
+	}
+	p {
+		line-height: 125%;
+		padding: 12px 0 4px 0;
+	}
+	p+p {
+		padding: 4px 0;
+	}
+	strong {
+		font-weight: bold;
+	}
+	.noscript {
+		background-color: #a80f0f;
+		color: #fff;
+		font-size: 24px;
+		font-weight: bold;
+		padding: 20px;
+		position: fixed;
+		text-align: center;
+		top: 0;
+		width: 100%;
+	}
+	/* ==============================================================================
+		END BASIC
+	============================================================================== */
+		
+	/* ==============================================================================
+		LINKS
+	============================================================================== */
 	a {
 		color: {color:Link};
 		font-weight: bold;
@@ -221,57 +280,8 @@
 	a:active {
 		text-shadow: 0 -1px 0 rgba(0,0,0,.5);
 	}
-	ul li {
-		list-style-type: none;
-	}
-	code {
-		background-color: #202020;
-	}
-	.highlight {
-		background-color: #202020;
-		margin: 10px 0;
-		overflow-x: auto;
-		padding: 5px;
-		text-shadow: none !important;
-		word-wrap: break-word;
-	}
-	em {
-		display: inline;
-	}
-	::selection {
-		background-color: #000;
-		background-color: rgba(0,0,0,.8);
-		color: #fff;
-		text-shadow: 0 1px 0 rgba(0,0,0,.3);
-	}
-	::-moz-selection {
-		background-color: #000;
-		background-color: rgba(0,0,0,.8);
-		color: #fff;
-		text-shadow: 0 1px 0 rgba(0,0,0,.3);
-	}
-	label {
-		margin-right: 5px;
-	}
-	p {
-		line-height: 125%;
-		padding: 12px 0 4px 0;
-	}
-	p+p {
-		padding: 4px 0;
-	}
-	strong {
-		font-weight: bold;
-	}
-	textarea {
-		overflow: auto;
-		resize: none;
-	}
-	ul li {
-		line-height: 125%;
-	}
 	/* ==============================================================================
-		END BASIC
+		END LINKS
 	============================================================================== */
 	
 	/* ==============================================================================
@@ -308,6 +318,10 @@
 		border-color: #555;
 		border-left: 4px solid #555;
 		color: #555;
+	}
+	textarea {
+		overflow: auto;
+		resize: none;
 	}
 	.button {
 		background: #004c66;
@@ -387,11 +401,6 @@
 		color: #fff;
 		font-weight: bold;
 	}
-	.top-link-wrap {
-		clear: both;
-		padding: 10px 0 15px 0;
-		width: 100%;
-	}
 	/* ==============================================================================
 		END MAIN SIDE NAVIGATION
 	============================================================================== */
@@ -437,6 +446,25 @@
 	}
 	/* ==============================================================================
 		END FOLLOWING
+	============================================================================== */
+	
+	/* ==============================================================================
+		BACK TO TOP BUTTON
+	============================================================================== */
+	#top {
+		position: absolute;
+		top: 0;
+	}
+	.top-link {
+		display: none;
+		float: right;
+	}
+	/* ==============================================================================
+		END BACK TO TOP BUTTON
+	============================================================================== */
+	
+	/* ==============================================================================
+		TWEETS
 	============================================================================== */
 	#tweet-wrap {
 		display: none;
@@ -517,7 +545,7 @@
 	.chat-ul li {
 		padding: 5px 0;
 	}
-	.chat-ul li:nth-child(even) {
+	.chat-ul li:nth-child(odd) {
 		background-color: #202020;
 	}
 	.post-text-quote {
@@ -798,10 +826,6 @@
 		height: 24px;
 		width: 24px;
 	}
-	.top-link {
-		display: none;
-		float: right;
-	}
 	.icon-video {
 		background: url('http://static.tumblr.com/r8galzl/B5blu4l8k/video.png');
 	}
@@ -856,12 +880,7 @@
 			
 			<!-- Side navigation -->
 			<ul class='main-side-nav-ul'>
-				<li><a class='selected' id='tumblog' href='/'>Tumblog</a></li>
-				<li><a id='home' href='http://www.miguelmota.com/stream'>Stream</a></li>
-				<li><a id='about' href='http://www.miguelmota.com/about'>About</a></li>
-				<li><a id='portfolio' href='http://www.miguelmota.com/portfolio'>Portfolio</a></li>
-				<li><a id='contact' href='http://www.miguelmota.com/contact'>Contact</a></li>
-				<li><a id='blog' href='http://www.miguelmota.com/blog'>Blog</a></li>
+				<li><a class='selected' id='home' href='/'>Home</a></li>
 	    	 {block:HasPages}
 	    	 	{block:Pages} 
 					<li><a id='{Label}' href='{URL}'>{Label}</a></li>
@@ -879,7 +898,7 @@
 			<div class='follow-wrap'>
 			
 				<!-- Google Plus One -->
-				<!-- <g:plusone class='plus-one-button' href='http://miguelmota.tumblr.com' count='false' size='medium'></g:plusone> -->
+				<!-- <g:plusone class='plus-one-button' href='http://obliviontheme.tumblr.com' count='false' size='medium'></g:plusone> -->
 				
 				{block:IfTwitterIcon}<a class='icon icon-twitter icon-social' href='http://twitter.com/{text:Twitter Username}'></a>{/block:IfTwitterIcon}
 				{block:IfFacebookIcon}<a class='icon icon-facebook icon-social' href='http://www.facebook.com/{text:Facebook Username}'></a>{/block:IfFacebookIcon}
@@ -1560,45 +1579,45 @@
 	  	<!-- Site footer -->
 		<footer class='main-bottom-footer'>
 			<strong>&#169; <script>displayYear();</script></strong> &#8226; powered by <a href='http://www.tumblr.com'>tumblr</a> / 
-			<a href='http://miguelmota.tumblr.com'>Oblivion theme</a> by <a href='http://www.miguelmota.com'>Miguel Mota</a><a href='https://plus.google.com/102174577273194387652?rel=author'>+</a> 
+			<a href='http://obliviontheme.tumblr.com'>Oblivion theme</a> by <a href='http://www.miguelmota.com'>Miguel Mota</a><a href='https://plus.google.com/102174577273194387652?rel=author'>+</a> 
 			
 			<!-- Twitter follow button -->
 			{block:IfTwitterStatus}
 				<a class='twitter-follow-button' href='https://twitter.com/{text:Twitter Username}' data-show-count='false' data-button='grey' data-link-color='{color:Link}'>Follow @{text:Twitter Username}</a>
+				<script src='http://platform.twitter.com/widgets.js'></script>
 			{/block:IfTwitterStatus}
 		</footer>
 	</div>
-	
-	<!-- Twitter scripts -->
-	<script src='http://platform.twitter.com/widgets.js'></script>
-	<script src='http://platform.tumblr.com/v1/share.js'></script>
-	
-	<!-- Google Plus one script -->
-	<script>
-	(function() {
-		  var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-		  po.src = 'https://apis.google.com/js/plusone.js';
-		  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-		})();
-	</script>
-	
-	<!-- Google Analytics -->
-	{block:IfGoogleAnalytics}
-		<script>
-	  		var _gaq = _gaq || [];
-	  		_gaq.push(['_setAccount', 'UA-{text:Google Analytics ID}']);
-	  		_gaq.push(['_setDomainName', 'http://miguelmota.tumblr.com']);
-	  		_gaq.push(['_trackPageview']);
-	  		(function() {
-	    		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-	    		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-	    		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-	  		})();
-	  		var addthis_config = {'data_track_clickback':true};
-		</script>
-	{block:IfGoogleAnalytics}
 	<div class='clear'></div>
 </div>
+
+<!-- Tweet button script -->
+<script src='http://platform.tumblr.com/v1/share.js'></script>
+
+<!-- Google Plus one script -->
+<script>
+(function() {
+	  var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+	  po.src = 'https://apis.google.com/js/plusone.js';
+	  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+	})();
+</script>
+
+<!-- Google Analytics -->
+{block:IfGoogleAnalytics}
+	<script>
+  		var _gaq = _gaq || [];
+  		_gaq.push(['_setAccount', 'UA-{text:Google Analytics ID}']);
+  		_gaq.push(['_setDomainName', 'http://obliviontheme.tumblr.com']);
+  		_gaq.push(['_trackPageview']);
+  		(function() {
+    		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  		})();
+  		var addthis_config = {'data_track_clickback':true};
+	</script>
+{block:IfGoogleAnalytics}
 <noscript><div class='noscript'>MUST ENABLE JAVASCRIPT</div></noscript>
 </body>
 </html>

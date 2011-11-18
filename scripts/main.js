@@ -1,8 +1,8 @@
 $(document).ready(function(){
 	
 	// Set IE notice cookie
-	if($.cookie('IE') == null) {
-		$.cookie('IE', '1', {
+	if($.cookie('ieNotice') == null) {
+		$.cookie('ieNotice', '1', {
 				expires: 7,
 				path: '/'
 			}
@@ -10,7 +10,7 @@ $(document).ready(function(){
 	}
 	
 	// If cookie active show IE notice
-	if($.cookie('IE') == '1') {
+	if($.cookie('ieNotice') == '1') {
 		$('.ie-notice-wrap').slideDown('slow');
 	}
 	else {
@@ -21,10 +21,10 @@ $(document).ready(function(){
 	// Hide IE notice and change IE cookie on close button click
 	$('.ie-notice-close').live('click', function(){
 		$('.ie-notice-wrap').slideUp('slow');
-		$.cookie('IE','0');
+		$.cookie('ieNotice','0');
 	});
-	
 
+	
 	
 	// Initialize side nav text ticker; NOTE: might cause bug in Firefox
 	textTickerSelected();
@@ -68,8 +68,8 @@ $(document).ready(function(){
 				$(this).animate({borderLeftWidth: '4px'}, {queue: false, duration: 60});
 			}
 		);
-		
-		
+	
+	
 	
 	// Change default text color on input focus
 	$('input:text, input:password, textarea').focus(function(){
@@ -121,8 +121,56 @@ $(document).ready(function(){
 });
 
 
-
+var fixed = false;
 $(window).scroll(function(){
+	
+	// Main side nav scroll to fixed
+	if(window.innerWidth >= 1025) {
+		
+		if($(this).scrollTop() >= 50){
+			if(!fixed){
+				fixed = true;
+				$('.main-side-nav').css({
+					position: 'fixed'
+				});
+			}
+		}
+		else {
+			if(fixed){
+				fixed = false;
+				$('.main-side-nav').css({
+					position: 'static'
+				});
+			}
+		}
+		
+	}
+	
+	// Main side nav scroll to fixed tablet
+	if(window.innerWidth >= 641 && window.innerWidth <= 1024) {
+		
+		if($(this).scrollTop() >= 10){
+			if(!fixed){
+				fixed = true;
+				$('.main-side-nav-info').hide();
+				$('.main-side-nav').css({
+					position: 'fixed'
+				});
+			}
+		}
+		else {
+			if(fixed){
+				fixed = false;
+				$('.main-side-nav-info').show();
+				$('.main-side-nav').css({
+					position: 'static'
+				});
+			}
+		}
+		
+	}
+	
+	
 	
 	// Toggle back to top link on scroll
 	if(window.pageYOffset >= 200){
@@ -147,14 +195,13 @@ $(window).scroll(function(){
 function recent_tweets(data) {
 	for (i=0; i<1; i++) {
 		var date = new Date(data[i].created_at);
-		document.getElementById('tweets').innerHTML +=
-			'<div class="tweet-content"><a href="http://twitter.com/miguelmota/status/'+
-			+(data[i].id_str ? data[i].id_str : data[i].id)+'" rel="external">'+data[i].text+'</a> <time class="tweet-date">'+niceTime(data[i].created_at)+'</time></div>';
+		document.getElementById('latest-tweet').innerHTML =
+			'<div class="latest-tweet-content"><a href="http://twitter.com/miguelmota/status/'+
+			+(data[i].id_str ? data[i].id_str : data[i].id)+'" rel="external">'+data[i].text+'</a> <time class="latest-tweet-date">'+niceTime(data[i].created_at)+'</time></div>';
 	}
-	document.getElementById('tweet-wrap').style.display = 'block';
-	// Initialize latest tweet mtip
-	$('.tweet-bird-icon').mtip();
-	$('#tweet-wrap').live({
+	
+	// Show mtip on twitter bird hover
+	$('#latest-tweet-wrap').live({
 		mouseenter:
 			function(){
 				showMtip('.icon-twitter-bird-24', this);
@@ -346,6 +393,35 @@ function streamPage(){
 	
 	
 	/* ------------------------
+	 * Latitude stream
+	 * --------------------- */
+	/*
+	$('.stream-latitude2 .loader').css('display','block');
+	$.getJSON('http://www.google.com/latitude/apps/badge/api?user=7812482200199007583&type=json&callback=?', 
+			//{
+				//count: '3'
+			//},
+			function(data){
+		alert(data.properties);
+				$.each(data.properties, function(i, item){
+					
+					var htmlString = '<ul class="stream-ul stream-ul-latitude2">';
+					var url = 'http://www.google.com/latitude/apps/badge/api?user=7812482200199007583&type=iframe&maptype=roadmap';
+					var location = this.reverseGeocode;
+		    	  	//var date = new Date(item.features[0].properties.timeStamp).toUTCString();
+		    	  	htmlString += "<li><a href='"+url+"' rel='external'><span class='icon icon-link-16'></span> "+location+"</a> <time class='status-date'>"+"1"+"</time></li>";
+					$('.stream-latitude2').append(htmlString +'</ul>');
+				});
+				
+				$('.stream-latitude2 .loader').css('display','none');
+				showMtipTimeout('.stream-logo-latitude');
+		}
+	);
+	*/
+	
+	
+	
+	/* ------------------------
 	 * Twitter stream
 	 * --------------------- */
 	$('.stream-twitter .loader').css('display','block');
@@ -470,7 +546,7 @@ function streamPage(){
 	
 	
 	/* ------------------------
-	 * Last fm stream
+	 * Last.fm stream
 	 * --------------------- */
 	$('.stream-lastfm .loader').css('display','block');
 	// All parameters in url: http://ws.audioscrobbler.com/2.0/?format=json&method=user.getRecentTracks&user=miguel_mota&api_key=dc0e875b6c0fd8ac4891b0716897e6c1&limit=5&callback=?
@@ -533,7 +609,7 @@ function streamPage(){
 		{
 			format: 'json',
 			api_key: '2a3074a0411f6d3649972787fcacea59',
-			user_id: '40464790@N08',
+			user_id: '40464790@N08'
 		},
 		function jsonFlickrFeed(data) {
 			var htmlString = '<div class="stream-carousel-wrap"><a href="javascript:void(0);" class="stream-carousel-nav stream-carousel-nav-prev"><span class="stream-carousel-nav-inner">&#171;</span></a><div class="stream-carousel stream-carousel-flickr"><ul class="stream-ul stream-ul-flickr jcarousel-skin-tango">';
@@ -564,16 +640,120 @@ function streamPage(){
 				 btnNext: '.stream-carousel-nav-next',
 				 btnPrev: '.stream-carousel-nav-prev'
 			});
+
+		
 			
-			
-			// Initialize masonry
-			setTimeout('loadMasonry()', 2000);
-			
-			// Initalize draggable on stream items
+			// Draggable cursor
 			$('.stream-wrap').draggable({
+				containment: '.content',
 				cursor: 'move'
 			});
 			
+			
+			
+			/* ------------------------
+			 *  jQuery Draggable cookies to remember location
+			 * --------------------- */
+			// Latitude stream cookie
+			$('.stream-latitude').css({
+				top: $.cookie('streamLatitudeY')*1,
+				left: $.cookie('streamLatitudeX')*1
+			}).draggable({
+				stop: function(event, ui) {
+					$.cookie('streamLatitudeX',ui.position.left);
+					$.cookie('streamLatitudeY',ui.position.top);
+				}
+			});
+			
+			// Blog stream cookie
+			$('.stream-blog').css({
+				top: $.cookie('streamBlogY')*1,
+				left: $.cookie('streamBlogX')*1
+			}).draggable({
+				stop: function(event, ui) {
+					$.cookie('streamBlogX',ui.position.left);
+					$.cookie('streamBlogY',ui.position.top);
+				}
+			});
+			
+			// Twitter stream cookie
+			$('.stream-twitter').css({
+				top: $.cookie('streamTwitterY')*1,
+				left: $.cookie('streamTwitterX')*1
+			}).draggable({
+				stop: function(event, ui) {
+					$.cookie('streamTwitterX',ui.position.left);
+					$.cookie('streamTwitterY',ui.position.top);
+				}
+			});
+			
+			// Facebook stream cookie
+			$('.stream-facebook').css({
+				top: $.cookie('streamFacebookY')*1,
+				left: $.cookie('streamFacebookX')*1
+			}).draggable({
+				stop: function(event, ui) {
+					$.cookie('streamFacebookX',ui.position.left);
+					$.cookie('streamFacebookY',ui.position.top);
+				}
+			});
+			
+			// Tumblr stream cookie
+			$('.stream-tumblr').css({
+				top: $.cookie('streamTumblrY')*1,
+				left: $.cookie('streamTumblrX')*1
+			}).draggable({
+				stop: function(event, ui) {
+					$.cookie('streamTumblrX',ui.position.left);
+					$.cookie('streamTumblrY',ui.position.top);
+				}
+			});
+			
+			// Delicious stream cookie
+			$('.stream-delicious').css({
+				top: $.cookie('streamDeliciousY')*1,
+				left: $.cookie('streamDeliciousX')*1
+			}).draggable({
+				stop: function(event, ui) {
+					$.cookie('streamDeliciousX',ui.position.left);
+					$.cookie('streamDeliciousY',ui.position.top);
+				}
+			});
+			
+			// Last.fm stream cookie
+			$('.stream-lastfm').css({
+				top: $.cookie('streamLastfmY')*1,
+				left: $.cookie('streamLastfmX')*1
+			}).draggable({
+				stop: function(event, ui) {
+					$.cookie('streamLastfmX',ui.position.left);
+					$.cookie('streamLastfmY',ui.position.top);
+				}
+			});
+			
+			// Wakoopa stream cookie
+			$('.stream-wakoopa').css({
+				top: $.cookie('streamWakoopaY')*1,
+				left: $.cookie('streamWakoopaX')*1
+			}).draggable({
+				stop: function(event, ui) {
+					$.cookie('streamWakoopaX',ui.position.left);
+					$.cookie('streamWakoopaY',ui.position.top);
+				}
+			});
+			
+			// Flickr stream cookie
+			$('.stream-flickr').css({
+				top: $.cookie('streamFlickrY')*1,
+				left: $.cookie('streamFlickrX')*1
+			}).draggable({
+				stop: function(event, ui) {
+					$.cookie('streamFlickrX',ui.position.left);
+					$.cookie('streamFlickrY',ui.position.top);
+				}
+			});
+			
+	
 			
 			// Initialize Fancybox
 			initializeFancybox();
@@ -787,6 +967,28 @@ function contactPage(){
  * Blog page functions
  * ----------------------------------------------- */
 function blogPage(){
+	
+	/* ------------------------
+	 * Blog post sort functions
+	 * --------------------- */
+	
+	// Show grid sort
+	$('.blog-post-sort-grid').live('click', function(){
+		$('.blog-post-sort-wrap a').removeClass('icon-no-hover icon-no-opacity');
+		$(this).addClass('icon-no-hover icon-no-opacity');
+		$('.blog-post-list').slideUp('fast');
+		$('.blog-post-grid').slideDown('fast');
+	});
+	
+	// Show list sort
+	$('.blog-post-sort-list').live('click', function(){
+		$('.blog-post-sort-wrap a').removeClass('icon-no-hover icon-no-opacity');
+		$(this).addClass('icon-no-hover icon-no-opacity');
+		$('.blog-post-grid').slideUp('fast');
+		$('.blog-post-list').slideDown('fast');
+	});
+	
+	
 	
 	// Get AddThis script
 	$.getScript('http://s7.addthis.com/js/250/addthis_widget.js#username=miguelmota');

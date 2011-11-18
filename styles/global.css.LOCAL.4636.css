@@ -13,7 +13,7 @@ body {
 }
 .main-wrap {
 	height: auto;
-	margin: 70px 20px 25px 20px;
+	margin: 70px 20px 0 20px;
 	word-wrap: break-word;
 	padding-left: 250px;
 	position: relative;
@@ -288,7 +288,6 @@ img.loader {
 }
 .icon-no-hover:hover,
 .icon-no-hover:active {
-	cursor: default;
 	opacity: .5;
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
 	filter: alpha(opacity=50);
@@ -352,9 +351,6 @@ img.loader {
 .icon-flickr-24 {
 	background: url('/images/icons/pictos/24/flickr.png');
 }
-.icon-grid-16 {
-	background: url('/images/icons/pictos/16/grid.png');
-}
 .icon-heart-16 {
 	background: url('/images/icons/pictos/16/heart.png');
 	height: 14px;
@@ -364,9 +360,6 @@ img.loader {
 }
 .icon-link-24 {
 	background: url('/images/icons/pictos/24/link.png');
-}
-.icon-list-16 {
-	background: url('/images/icons/pictos/16/list-2.png');
 }
 .icon-location-marker-16 {
 	background: url('/images/icons/pictos/16/location-marker.png');
@@ -437,9 +430,6 @@ img.loader {
 }
 .icon-video-24 {
 	background: url('/images/icons/pictos/24/video.png');
-}
-.icon-x-16 {
-	background: url('/images/icons/pictos/16/x.png');
 }
 .icon-up-24 {
 	background: url('/images/icons/pictos/24/up-2.png');
@@ -535,8 +525,7 @@ img.loader {
 	width: 200px;
 }
 .main-side-nav {
-	position: static;	
-	top: 20px;
+	position: fixed;	
 	width: 200px;
 }
 .nav-logo {
@@ -568,8 +557,6 @@ img.loader {
 	clear: both;
 	display: block;
 	padding-bottom: 15px;
-	position: static;	
-	top: 20px;
 	width: 100%;
 }
 .main-side-nav-ul a {
@@ -597,6 +584,7 @@ img.loader {
 	font-weight: bold;
 }
 .follow-wrap {
+	clear: both;
 	padding-bottom: 15px;
 	position: relative;
 	width: 100%;
@@ -607,7 +595,7 @@ img.loader {
 }
 .top-link-wrap {
 	clear: both;
-	padding: 0 0 15px 0;
+	padding: 10px 0 15px 0;
 	position: relative;
 	width: 100%;
 }
@@ -645,44 +633,47 @@ input.search-input {
 /* ==============================================================================
 	LATEST TWEET
 ============================================================================== */
-#latest-tweet-wrap {
+#tweet-wrap {
 	clear: both;
+	display: none;
 	height: auto;
 	padding-bottom: 15px;
 	position: relative;
 	width: 200px;
 }
-.tweet-bird-icon {}
-#latest-tweet {
-	right: -34px;
-	position: relative;
-	top: -18px;
+.tweet-bird-icon {
+	float: left;
+}
+#tweets {
+	left: 34px;
+	position: absolute;
+	top: 0;
 	width: 166px;
 }
-.latest-tweet-content {
+.tweet-content {
 	background-color: #222;
 	float: left;
 	min-height: 20px;
 	padding: 10px;
 	width: 100%;
 }
-.latest-tweet-content:after {
+.tweet-content:after {
 	border-color: transparent #222;
 	border-style: solid;
 	border-width: 8px 15px 8px 0;
 	bottom: auto;
 	content: "";
-	display: inline-block; 	
+	display: block; 	
 	left: -10px; /* value = - border-left-width - border-right-width */
 	top: 3px;
 	position: absolute;
 	width: 0;
 	z-index: -100;
 }
-.latest-tweet-content a {
+.tweet-content a {
 	font-weight: normal;
 }
-.latest-tweet-date {
+.tweet-date {
 	font-size: 12px;
 }
 /* ==============================================================================
@@ -697,18 +688,14 @@ input.search-input {
 .main-content-wrap {
 	height: auto;
 	position: relative;
-	width: auto;
-}
-.content {
-	height: auto;
-	width: auto;
 }
 .content-item {
 	background-color: #222;
+	float: left;
 	margin: 5px;
 	padding: 20px;
 	position: relative;
-	width: 750px;
+	width: 700px;
 }
 /* ==============================================================================
 	END MAIN CONTENT
@@ -720,34 +707,22 @@ input.search-input {
 	STREAM PAGE
 ============================================================================== */
 .stream-wrap {
-	float: left;
-	width: 350px;
-	z-index: 50;
+	width: 350px
 }
+/*
 .stream-latitude {
-	height: 40px;
-}
-.stream-blog {
-	height: 80px;
+	width: 250px;
 }
 .stream-twitter {
-	height: 180px;
-}
-.stream-facebook {
-	height: 40px;
-}
-.stream-tumblr {
-	height: 80px;
-}
-.stream-delicious {
-	height: 80px;
+	width: 500px;
 }
 .stream-lastfm {
-	height: 180px;
+	width: 500px;
 }
 .stream-wakoopa {
-	height: 100px;
+	width: 250px;
 }
+*/
 .stream-flickr {
 	width: 535px;
 }
@@ -983,7 +958,7 @@ input.search-input {
 	-moz-transform: scale(1.3);
 	-o-transform: scale(1.3);
 	-webkit-transform: scale(1.3);
-	z-index: 50;
+	z-index: 100;
 }
 /* -----------------------------------------------------------------------------
 	STREAM DATE
@@ -1019,7 +994,7 @@ a.google-plus-link {
 	position: absolute;
 	text-align: right;
 	top: 10px;
-	width: 670px;
+	width: 650px;
 }
 .project-sort-wrap a {
 	background-color: #252525;
@@ -1035,7 +1010,6 @@ a.google-plus-link {
 	PROJECT ITEMS
 ------------------------------------------------------------------------------ */
 .project {
-	float: left;
 	height: 200px;
 	width: 610px;
 }
@@ -1047,7 +1021,7 @@ a.google-plus-link {
 	-webkit-transition: -webkit-box-shadow linear .2s;
 	overflow: hidden;
 	position: absolute;
-	width: 95%;
+	width: 610px;
 	behavior: url('/PIE/PIE.htc');
 }
 .project .image-container a {
@@ -1055,12 +1029,13 @@ a.google-plus-link {
 }
 .overlay-popup {
 	background: #000;
-	bottom: -120px;
+	bottom: -100px;
 	box-sizing: border-box;
 	height: 100px;
 	opacity: .9;
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)" !important;
 	filter: alpha(opacity=90) !important;
+	padding: 10px;
 	position: absolute;
 	width: 100%;
 }
@@ -1072,9 +1047,8 @@ a.google-plus-link {
 }
 .project-name-wrap {
 	display: block;
-	left: 10px;
-	position: absolute;
-	top: 25px;
+	float: left;
+	padding-top: 25px;
 	width: 210px;
 }
 .project-name {
@@ -1090,12 +1064,11 @@ a.google-plus-link {
 }
 .project-role {
 	border-left: 1px solid #212121;
+	border-right: 1px solid #212121;
 	display: block;
-	height: 80px;
-	left: 35%;
-	position: absolute;
-	top: 10px;
+	float: left;
 	width: 240px;	
+	height: 80px;
 	vertical-align: middle;
 }
 .project-role-ul {
@@ -1103,18 +1076,11 @@ a.google-plus-link {
 	padding: 25px 20px 0 20px;
 }
 .project-view {
-	border-left: 1px solid #212121;
 	display: block;
-	height: 80px;
-	line-height: 10px;
-	padding-left: 10px;
-	position: absolute;
-	right: 10px;
-	top: 10px;
+	float: right;
+	line-height: 130%;
+	margin-top: 30px;
 	width: 130px;	
-}
-.project-view a:first-child {
-	margin-top: 25px;
 }
 .project-view a:hover {
 	background: #000;
@@ -1216,54 +1182,19 @@ a.google-plus-link {
 /* ==============================================================================
 	BLOG
 ============================================================================== */
-/* -----------------------------------------------------------------------------
-	BLOG POST ITEM
------------------------------------------------------------------------------- */
 .blog-post-item {
-	float: left;
 	width: 500px;
 }
 .blog-post-single {
-	width: 750px;
-}
-/* -----------------------------------------------------------------------------
-	BLOG POST SORT
------------------------------------------------------------------------------- */
-.blog-post-sort-wrap {
-	position: absolute;
-	text-align: right;
-	top: 10px;
-	width: 520px;
-}
-/* -----------------------------------------------------------------------------
-	BLOG POST LIST
------------------------------------------------------------------------------- */
-.blog-post-list {
-	display: none;
-	float: none;
-}
-.blog-post-list	.blog-post-item {
-	width: 750px;
-}
-.blog-post-list h1 {
-	display: inline-block;
-}
-.blog-post-list h1 a {
-	display: block;
-	float: left;
-	font-size: 28px;
-}
-.blog-post-list-date {
-	color: #555;
-	float: right;
-	font-size: 14px;
+	max-width: 1000px;
+	width: 99%;
 }
 /* -----------------------------------------------------------------------------
 	BLOG POST TITLE
 ------------------------------------------------------------------------------ */
 .blog-post-single h1 a {
 	display: block;
-	font-size: 34px;
+	font-size: 38px;
 }
 .blog-post-item h1 a {
 	display: block;
@@ -1282,29 +1213,25 @@ h6 {
 	margin: 15px 0;
 	width: 100%;
 }
-.blog-post-thumb-list {
-	float: left;
-	height: 46px;
-	margin-right: 15px;
-	vertical-align: middle;
-	width: 46px;
+.blog-post-single .blog-post-thumb {
+	display: none;
 }
 /* -----------------------------------------------------------------------------
 	BLOG POST TEXT
 ------------------------------------------------------------------------------ */
-.blog-post-grid .blog-post-text {
+.blog-post-item .post-text {
 	max-height: 408px;
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
-.blog-view-post-wrap {
+.view-post-wrap {
 	padding: 10px 0;
 	text-align: right;
 }
-.blog-post-text {
+.post-text {
 	padding-bottom: 10px;
 }
-.blog-post-text img,
+.post-text img,
 .photo {
 	background: #222 url('http://static.tumblr.com/r8galzl/wmilu4kzw/ajax-loader-image.gif') no-repeat 50% 50%;
 	box-shadow: 2px 2px 8px rgba(0,0,0,.7);
@@ -1318,20 +1245,20 @@ h6 {
 /* -----------------------------------------------------------------------------
 	BLOG POST TAGS
 ------------------------------------------------------------------------------ */
-.blog-post-tags {
+.post-tags {
 	color: #777;
 	font-size: 10px;
 }
-.blog-post-tags a {
+.post-tags a {
 	font-weight: normal;
 }
-.blog-post-tags .icon-tags-16 {
+.post-tags .icon-tags-16 {
 	margin-right: 2px;
 }
 /* -----------------------------------------------------------------------------
 	BLOG POST FOOTER
 ------------------------------------------------------------------------------ */
-.blog-post-footer {
+.post-footer {
 	border-top: 1px solid #333;
 	font-size: 12px;
 	margin: 10px 0;
@@ -1344,7 +1271,7 @@ h6 {
 /* -----------------------------------------------------------------------------
 	BLOG POST SHARE
 ------------------------------------------------------------------------------ */
-.blog-share-wrap {
+.share-wrap {
 	position: relative;
 }
 .addthis_toolbox {
@@ -1386,25 +1313,13 @@ input.short-url:focus {
 	DISQUS
 ------------------------------------------------------------------------------ */
 .dsq-comment-wrap {
+	max-width: 1000px;
 	position: relative;
-	width: 750px;
+	width: 100%;
 }
 #disqus_thread {
 	clear: both;
 	margin: 15px 0 35px 0;
-}
-/* -----------------------------------------------------------------------------
-	ARCHIVE
------------------------------------------------------------------------------- */
-.archive-year {
-	display: block;
-	font-size: 22px;
-	font-weight: bold;
-	padding-bottom: 10px;
-}
-.archive-month {
-	display: inline-block;
-	width: 55px;
 }
 /* ==============================================================================
 	END BLOG
@@ -1437,10 +1352,6 @@ input.short-url:focus {
 	text-align: right;
 }
 .pagination-previous {
-	float: left;
-	text-align: left;
-}
-.pagination-archive {
 	float: left;
 	text-align: left;
 }
@@ -1549,7 +1460,7 @@ input.short-url:focus {
 .main-footer {
 	clear: both;
 	font-size: 12px;
-	padding: 35px 10px 0 10px;
+	padding: 25px 10px;
 	position: relative;
 	text-shadow: 0 -1px 0 rgba(0,0,0,.5);
 	width: 100%;
@@ -1596,8 +1507,8 @@ input.short-url:focus {
 	clear: both;
 	color: #fff;
 	display: none; 
-	font-size: 14px;
-	line-height: 130%;
+	font-size: 12px;
+	line-spacing: 130%;
 	position: fixed;
 	top: 0;
 	width: 100%;
@@ -1612,10 +1523,10 @@ input.short-url:focus {
 .ie-notice-close {
 	position: absolute;
 	right: 0;
-	top: 20px;
+	top: 15px;
 }
 .ie-notice-font-big {
-	font-size: 16px;
+	font-size: 14px;
 }
 .ie-notice-color-red {
 	color: #8e4848;
@@ -1634,7 +1545,7 @@ input.short-url:focus {
 	 * Main wrap
 	 * --------------------- */
 	.main-wrap {
-		margin: 0 0 10px 0;
+		margin: 0;
 		overflow: hidden;
 		padding: 0;
 	}
@@ -1697,10 +1608,10 @@ input.short-url:focus {
 	/* ------------------------
 	 * Latest tweet
 	 * --------------------- */
-	#latest-tweet-wrap {
+	#tweet-wrap {
 		width: 89%;
 	}
-	#latest-tweet {
+	#tweets {
 		width: 92%;
 	}
 	
@@ -1709,7 +1620,6 @@ input.short-url:focus {
 	 * --------------------- */
 	.content-item {
 		float: none;
-		margin-bottom: 10px;
 		padding: 5px;
 		width: 92%;
 	}
@@ -1720,7 +1630,7 @@ input.short-url:focus {
 	.title {
 		clear: both;
 		display: block;
-		margin-top: 5px;
+		margin-top: 15px;
 		width: 100%;
 	}
 	.title .miguel {
@@ -1731,14 +1641,6 @@ input.short-url:focus {
 	}
 	.title .slash {
 		display: none;
-	}
-	
-	/* ------------------------
-	 * Stream wrap
-	 * --------------------- */
-	.stream-wrap {
-		height: auto;
-		width: 92%;
 	}
 	
 	/* ------------------------
@@ -1794,33 +1696,8 @@ input.short-url:focus {
 	/* ------------------------
 	 * Blog page
 	 * --------------------- */
-	.blog-post-sort-wrap {
-		width: 95%;
-	}
-	.blog-post-item h1 a {
-		font-size: 20px;
-	}
-	.blog-post-list {
-		width: 92%;
-	}
-	.blog-post-list	.blog-post-item {
-		width: 100%;
-	}
-	.blog-post-list h1 {
-		width: 100%;
-	}
-	.blog-post-list h1 a {
-		font-size: 18px;
-		width: 100%;
-	}
-	.blog-post-list-date {
-		font-size: 12px;
-	}
-	.blog-post-list-date .icon {
-		display: none;
-	}
-	.blog-post-single h1 a {
-		font-size: 20px;
+	 .blog-post-single h1 a {
+		font-size: 28px;
 	}
 	input.short-url {
 		display: none;
@@ -1830,107 +1707,10 @@ input.short-url:focus {
 	}
 	.dsq-comment-wrap {
 		max-width: 92%;
-		overflow: hidden;
-		width: 200px;
-	}
-	#disqus_thread {
-		width: 92%	
+		width: 92%;
 	}
 	
 }
 /* ==============================================================================
 	END MOBILE STYLES
-============================================================================== */
-
-
-
-/* ==============================================================================
-	TABLET STYLES
-============================================================================== */
-@media all and (min-width: 641px) and (max-width: 1024px) {
-	/* ------------------------
-	 * Main wrap
-	 * --------------------- */
-	.main-wrap {
-		margin: 30px 5px 25px 5px;
-	}
-	
-	/* ------------------------
-	 * Main content
-	 * --------------------- */
-	.main-content-wrap {
-		width: 700px
-	}
-	.content-item {
-		width: 650px;
-	}
-	
-	/* ------------------------
-	 * Stream wrap
-	 * --------------------- */
-	.stream-wrap {
-		width: 300px;
-	}
-	.stream-latitude {
-		height: 40px;
-	}
-	.stream-blog {
-		height: 100px;
-	}
-	.stream-twitter {
-		height: 200px;
-	}
-	.stream-facebook {
-		height: 40px;
-	}
-	.stream-tumblr {
-		height: 100px;
-	}
-	.stream-delicious {
-		height: 80px;
-	}
-	.stream-lastfm {
-		height: 200px;
-	}
-	.stream-wakoopa {
-		height: 100px;
-	}
-	
-	/* ------------------------
-	 * Flickr carousel
-	 * --------------------- */
-	 .stream-ul-flickr li a {
-	 	min-height: 74px;
-	 	width: 74px;
-	 }
-	 
-	 /* ------------------------
-	 * Portfolio page
-	 * --------------------- */
-	.project-image {
-		width: 300px;
-	}
-	
-	/* ------------------------
-	 * Blog page
-	 * --------------------- */
-	.blog-post-sort-wrap {
-		width: 670px;
-	}
-	.blog-post-item {
-		width: 300px;
-	}
-	.blog-post-list	.blog-post-item {
-		width: 650px;
-	}
-	.blog-post-single {
-		width: 650px;
-	}
-	.dsq-comment-wrap {
-		width: 650px;
-	}
-	
-}
-/* ==============================================================================
-	END TABLET STYLES
 ============================================================================== */

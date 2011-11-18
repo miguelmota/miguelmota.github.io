@@ -1,9 +1,9 @@
 <!doctype html>
 <html>
 <title></title>
-<link href='http://www.miguelmota.com/styles/reset.css' rel='stylesheet' />
+<link href='http://www.miguelmota.com/styles/reset.min.css' rel='stylesheet' />
 <link href='http://www.miguelmota.com/styles/global.css' rel='stylesheet' />
-<body style='display: block;'>
+<body style='display: block; background-color: #222;'>
 
 <?
 
@@ -16,7 +16,7 @@ $latitude=json_decode($info,true);
 $place=$latitude["features"]["0"]["properties"]["reverseGeocode"];
 $timestamp=$latitude["features"]["0"]["properties"]["timeStamp"];
 
-echo "<div class='location'><a href='http://maps.google.com/?q=$place' rel='external'>$place</a> <time class='status-date'>".getRelativeTime($timestamp)."</time></div>";
+echo "<div class='location'><a style='color: #007299;' href='http://maps.google.com/?q=$place' rel='external'>$place</a> <time class='status-date'>".getRelativeTime($timestamp)."</time></div>";
 
 function plural($num) {
     if ($num != 1)
