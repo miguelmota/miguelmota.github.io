@@ -1094,7 +1094,7 @@ a.google-plus-link {
 	height: 80px;
 	left: 35%;
 	position: absolute;
-	top: 25px;
+	top: 10px;
 	width: 240px;	
 	vertical-align: middle;
 }
@@ -1105,10 +1105,12 @@ a.google-plus-link {
 .project-view {
 	border-left: 1px solid #212121;
 	display: block;
+	height: 80px;
 	line-height: 10px;
+	padding-left: 20px;
 	position: absolute;
 	right: 10px;
-	top: 25px;
+	top: 10px;
 	width: 130px;	
 }
 .project-view a:hover {
