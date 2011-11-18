@@ -513,6 +513,7 @@ img.loader {
 	text-align: left;
 }
 .fancybox-title-iframe {
+	background-color: none;
 	padding: 0;
 }
 .fancybox-title strong {
