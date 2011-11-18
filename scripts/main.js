@@ -236,7 +236,7 @@ function loadMasonry(){
 function initializeFancybox() {
 	
 	// Fancybox options
-	$('.fancybox, .fancybox-iframe').fancybox({
+	$('.fancybox').fancybox({
 			'showCloseButton': false,
 			'titlePosition': 'inside',
 			'titleFormat': formatTitle,
