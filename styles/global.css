@@ -144,7 +144,7 @@ ul li {
 	line-height: 125%;
 }
 .mtip {
-	z-index: 15;
+	z-index: 10000 !important;
 }
 /* ==============================================================================
 	END BASIC
@@ -516,7 +516,7 @@ img.loader {
 	text-align: left;
 }
 .fancybox-title-iframe {
-	background-color: none;
+	background: none;
 }
 .fancybox-title strong {
 	display: block;
