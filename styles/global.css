@@ -755,7 +755,9 @@ input.search-input {
 	width: 535px;
 }
 .latitude-map-button {
-	float: right;
+	position: absolute;
+	right: 20px;
+	top: 20px;
 }
 .stream-latitude .icon-location-marker-16 {
 	float: left;
