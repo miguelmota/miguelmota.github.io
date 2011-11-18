@@ -514,8 +514,7 @@ img.loader {
 	text-align: left;
 }
 .fancybox-title-iframe {
-	background: none;
-	padding-top: 10px;
+	padding: 5px;
 }
 .fancybox-title strong {
 	display: block;
@@ -523,7 +522,7 @@ img.loader {
 }
 .fancybox-title span {
 	float: right;
-	padding-top: 5px;
+	padding-top: 10px;
 }
 .fancybox-bg {
 	display: none;
@@ -730,6 +729,7 @@ input.search-input {
 .stream-wrap {
 	float: left;
 	width: 350px;
+	z-index: 10;
 }
 .stream-latitude {
 	height: 40px;
