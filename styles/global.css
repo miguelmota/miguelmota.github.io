@@ -438,6 +438,9 @@ img.loader {
 .icon-video-24 {
 	background: url('/images/icons/pictos/24/video.png');
 }
+.icon-world-16 {
+	background: url('/images/icons/pictos/16/world.png');
+}
 .icon-x-16 {
 	background: url('/images/icons/pictos/16/x.png');
 }
@@ -750,6 +753,9 @@ input.search-input {
 }
 .stream-flickr {
 	width: 535px;
+}
+.latitude-map-icon {
+	float: right;
 }
 .stream-latitude .icon-location-marker-16 {
 	float: left;
