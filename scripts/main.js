@@ -236,7 +236,7 @@ function loadMasonry(){
 function initializeFancybox() {
 	
 	// Fancybox options
-	$('.fancybox').fancybox({
+	$('.fancybox, .fancybox-iframe').fancybox({
 			'showCloseButton': false,
 			'titlePosition': 'inside',
 			'titleFormat': formatTitle,
@@ -249,8 +249,8 @@ function initializeFancybox() {
 	});
 	
 	$('.fancybox-iframe').fancybox({
-			'height': '500',
-			'width': '500',
+			'height': 500,
+			'width': 500,
 			'type': 'iframe',
 			'autoScale': 'false'
 	});
