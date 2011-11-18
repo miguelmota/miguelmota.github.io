@@ -28,6 +28,7 @@ html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address
 	display: none;
 	font-family: Aria, sans-serif;
 	font-size: 12px;
+	font-style: normal;
 	font-weight: normal;
 	opacity: .8;
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";

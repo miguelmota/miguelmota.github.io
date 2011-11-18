@@ -111,6 +111,7 @@ jQuery(this).next('div.tooltip').animate({opacity: 'hide', top: '-20'}, 'fast');
 .tooltip-container {
 	display: inline-block;
 	position: relative;
+	z-index: 1000;
 }
 
 .tooltip  {
@@ -125,6 +126,8 @@ jQuery(this).next('div.tooltip').animate({opacity: 'hide', top: '-20'}, 'fast');
 	display: none;
 	font-family: Aria, sans-serif;
 	font-size: 12px;
+	font-style: normal;
+	font-weight: normal;
 	opacity: .8;
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
 	filter: alpha(opacity=80);
@@ -132,8 +135,8 @@ jQuery(this).next('div.tooltip').animate({opacity: 'hide', top: '-20'}, 'fast');
 	position: absolute;
 	text-align: center;
 	top: -20px;
-	z-index: 1000;
 	white-space: nowrap;
+	z-index: 1000;
 }
 
 /* triangle on the bottom */
