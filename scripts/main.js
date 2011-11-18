@@ -257,7 +257,6 @@ function initializeFancybox() {
 		'type': 'iframe',
 		'autoScale': 'false',
 		'showCloseButton': false,
-		'titleShow': false,
 		'titlePosition': 'inside',
 		'titleFormat': formatIframeTitle,
 		'padding': 0,
