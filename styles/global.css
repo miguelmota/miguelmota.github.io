@@ -143,11 +143,6 @@ strong {
 ul li {
 	line-height: 125%;
 }
-.mtip,
-.tooltip-container,
-.tooltip {
-	z-index: 10000 !important;
-}
 /* ==============================================================================
 	END BASIC
 ============================================================================== */
@@ -733,7 +728,6 @@ input.search-input {
 .stream-wrap {
 	float: left;
 	width: 350px;
-	z-index: 10;
 }
 .stream-latitude {
 	height: 40px;
@@ -763,7 +757,9 @@ input.search-input {
 	width: 535px;
 }
 .latitude-map-button {
-	float: right;
+	position: absolute;
+	right: 20px;
+	top: 20px;
 }
 .stream-latitude .icon-location-marker-16 {
 	float: left;
@@ -794,7 +790,6 @@ input.search-input {
 	background-color: #222;
 }
 .stream-logo-latitude {
-	float: left;
 	font-weight: normal;
 }
 .stream-logo-blog {
@@ -1642,6 +1637,99 @@ input.short-url:focus {
 
 
 /* ==============================================================================
+	TABLET STYLES
+============================================================================== */
+@media all and (min-width: 641px) and (max-width: 1024px) {
+	/* ------------------------
+	 * Main wrap
+	 * --------------------- */
+	.main-wrap {
+		margin: 30px 5px 25px 5px;
+	}
+	
+	/* ------------------------
+	 * Main content
+	 * --------------------- */
+	.main-content-wrap {
+		width: 700px
+	}
+	.content-item {
+		width: 650px;
+	}
+	
+	/* ------------------------
+	 * Stream wrap
+	 * --------------------- */
+	.stream-wrap {
+		width: 300px;
+	}
+	.stream-latitude {
+		height: 40px;
+	}
+	.stream-blog {
+		height: 100px;
+	}
+	.stream-twitter {
+		height: 200px;
+	}
+	.stream-facebook {
+		height: 40px;
+	}
+	.stream-tumblr {
+		height: 100px;
+	}
+	.stream-delicious {
+		height: 80px;
+	}
+	.stream-lastfm {
+		height: 200px;
+	}
+	.stream-wakoopa {
+		height: 100px;
+	}
+	
+	/* ------------------------
+	 * Flickr carousel
+	 * --------------------- */
+	 .stream-ul-flickr li a {
+	 	min-height: 74px;
+	 	width: 74px;
+	 }
+	 
+	 /* ------------------------
+	 * Portfolio page
+	 * --------------------- */
+	.project-image {
+		width: 300px;
+	}
+	
+	/* ------------------------
+	 * Blog page
+	 * --------------------- */
+	.blog-post-sort-wrap {
+		width: 670px;
+	}
+	.blog-post-item {
+		width: 300px;
+	}
+	.blog-post-list	.blog-post-item {
+		width: 650px;
+	}
+	.blog-post-single {
+		width: 650px;
+	}
+	.dsq-comment-wrap {
+		width: 650px;
+	}
+	
+}
+/* ==============================================================================
+	END TABLET STYLES
+============================================================================== */
+
+
+
+/* ==============================================================================
 	MOBILE STYLES
 ============================================================================== */
 @media all and (max-width: 640px) {
@@ -1755,6 +1843,11 @@ input.short-url:focus {
 		height: auto;
 		width: 92%;
 	}
+	.latitude-map-button {
+		position: absolute;
+		right: 5px;
+		top: 5px;
+	}
 	
 	/* ------------------------
 	 * Flickr carousel
@@ -1855,97 +1948,4 @@ input.short-url:focus {
 }
 /* ==============================================================================
 	END MOBILE STYLES
-============================================================================== */
-
-
-
-/* ==============================================================================
-	TABLET STYLES
-============================================================================== */
-@media all and (min-width: 641px) and (max-width: 1024px) {
-	/* ------------------------
-	 * Main wrap
-	 * --------------------- */
-	.main-wrap {
-		margin: 30px 5px 25px 5px;
-	}
-	
-	/* ------------------------
-	 * Main content
-	 * --------------------- */
-	.main-content-wrap {
-		width: 700px
-	}
-	.content-item {
-		width: 650px;
-	}
-	
-	/* ------------------------
-	 * Stream wrap
-	 * --------------------- */
-	.stream-wrap {
-		width: 300px;
-	}
-	.stream-latitude {
-		height: 40px;
-	}
-	.stream-blog {
-		height: 100px;
-	}
-	.stream-twitter {
-		height: 200px;
-	}
-	.stream-facebook {
-		height: 40px;
-	}
-	.stream-tumblr {
-		height: 100px;
-	}
-	.stream-delicious {
-		height: 80px;
-	}
-	.stream-lastfm {
-		height: 200px;
-	}
-	.stream-wakoopa {
-		height: 100px;
-	}
-	
-	/* ------------------------
-	 * Flickr carousel
-	 * --------------------- */
-	 .stream-ul-flickr li a {
-	 	min-height: 74px;
-	 	width: 74px;
-	 }
-	 
-	 /* ------------------------
-	 * Portfolio page
-	 * --------------------- */
-	.project-image {
-		width: 300px;
-	}
-	
-	/* ------------------------
-	 * Blog page
-	 * --------------------- */
-	.blog-post-sort-wrap {
-		width: 670px;
-	}
-	.blog-post-item {
-		width: 300px;
-	}
-	.blog-post-list	.blog-post-item {
-		width: 650px;
-	}
-	.blog-post-single {
-		width: 650px;
-	}
-	.dsq-comment-wrap {
-		width: 650px;
-	}
-	
-}
-/* ==============================================================================
-	END TABLET STYLES
 ============================================================================== */
