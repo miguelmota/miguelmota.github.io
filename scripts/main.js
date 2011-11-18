@@ -235,6 +235,16 @@ function loadMasonry(){
 // Initialize fancybox
 function initializeFancybox() {
 	
+	// Fancybox iframe options
+	$('.fancybox-iframe').fancybox({
+		'height': 500,
+		'width': 500,
+		'type': 'iframe',
+		'autoScale': 'false'
+	});
+	
+	
+	
 	// Fancybox options
 	$('.fancybox').fancybox({
 			'showCloseButton': false,
@@ -247,13 +257,8 @@ function initializeFancybox() {
 			'overlayColor': '#000',
 			'overlayOpacity': .8
 	});
+
 	
-	$('.fancybox-iframe').fancybox({
-			'height': 500,
-			'width': 500,
-			'type': 'iframe',
-			'autoScale': 'false'
-	});
 	
 	// Custom Fancybox caption formatting
 	function formatTitle(title, currentArray, currentIndex, currentOpts) {
