@@ -36,8 +36,8 @@ html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address
 	position: absolute;
 	text-align: center;
 	top: -20px;
-	z-index: 1000;
 	white-space: nowrap;
+	z-index: 1000;
 	behavior: url('/PIE/PIE.htc');
 }
 
