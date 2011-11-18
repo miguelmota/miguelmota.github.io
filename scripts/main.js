@@ -278,8 +278,8 @@ function initializeFancybox() {
 	
 	
 	// Custom Fancybox iframe caption formatting
-	function formatIframeTitle() {
-	    return '<div class="fancybox-title"><span><a class="button" href="javascript:void(0);" onclick="$.fancybox.close();">close X</a></span></div>';
+	function formatIframeTitle(title, currentArray, currentIndex, currentOpts) {
+	    return '<div class="fancybox-title"><span><a class="button" href="javascript:void(0);" onclick="$.fancybox.close();">close X</a></span>' + (title && title.length ? '<strong>' + title + '</strong>' : '' ) + '</div>';
 	}
 	
 	
