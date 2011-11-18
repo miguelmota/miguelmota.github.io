@@ -514,7 +514,7 @@ img.loader {
 	text-align: left;
 }
 .fancybox-title-iframe {
-	padding: 0;
+	background-color: transparent;
 }
 .fancybox-title strong {
 	display: block;
