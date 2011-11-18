@@ -815,7 +815,7 @@ function portfolioPage(){
 		},
 		mouseleave:
 			function(){
-				jQuery('.overlay-popup', this).animate({bottom: '-100px'}, {queue: false, duration: 125});
+				jQuery('.overlay-popup', this).animate({bottom: '-120px'}, {queue: false, duration: 125});
 		}
 	});
 	
