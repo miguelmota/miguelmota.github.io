@@ -811,11 +811,11 @@ function portfolioPage(){
 	$('.project').live({
 		mouseenter:
 			function(){
-				jQuery('.overlay-popup', this).animate({bottom: '-20px'}, {queue: false, duration: 150});
+				jQuery('.overlay-popup', this).animate({bottom: '0'}, {queue: false, duration: 150});
 		},
 		mouseleave:
 			function(){
-				jQuery('.overlay-popup', this).animate({bottom: '-120px'}, {queue: false, duration: 125});
+				jQuery('.overlay-popup', this).animate({bottom: '-100px'}, {queue: false, duration: 125});
 		}
 	});
 	
