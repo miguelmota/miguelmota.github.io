@@ -518,11 +518,11 @@ img.loader {
 }
 .fancybox-title strong {
 	display: block;
-	margin-right: 80px;
 }
 .fancybox-title span {
-	float: right;
-	padding-top: 10px;
+	position: absolute;
+	right: 0;
+	top: 10px;
 }
 .fancybox-bg {
 	display: none;
