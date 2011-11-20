@@ -527,7 +527,9 @@ img.loader {
 	top: 10px;
 }
 .fancybox-title-iframe span {
-
+	bottom: -20px;
+	position: absolute;
+	right: 5px;
 }
 .fancybox-title-iframe .title-wrap {
 	display: none;
