@@ -515,7 +515,11 @@ img.loader {
 }
 .fancybox-title-iframe {
 	background-color: transparent;
-	margin-bottom: -10px;
+}
+.fancybox-title-iframe span {
+	position: absolute;
+	right: 5px;
+	top: 20px;
 }
 .fancybox-title strong {
 	display: block;
