@@ -743,6 +743,7 @@ input.search-input {
 }
 .stream-latitude {
 	height: 40px;
+	z-index: 11;
 }
 .stream-blog {
 	height: 80px;
