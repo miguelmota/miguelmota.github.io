@@ -529,6 +529,9 @@ img.loader {
 	right: 5px;
 	top: 20px;
 }
+.fancybox-title-iframe .title-wrap {
+	display: none;
+}
 .fancybox-bg {
 	display: none;
 }
