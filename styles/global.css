@@ -513,7 +513,8 @@ img.loader {
 	padding: 5px;
 	text-align: left;
 }
-.fancybox-title-iframe {
+.fancybox-title-iframe,
+.fancybox-title-inside {
 	background-color: transparent;
 	margin: 0;
 	padding: 0;
@@ -527,9 +528,9 @@ img.loader {
 	top: 10px;
 }
 .fancybox-title-iframe span {
-	bottom: -20px;
 	position: absolute;
 	right: 5px;
+	top: 20px;
 }
 .fancybox-title-iframe .title-wrap {
 	display: none;
