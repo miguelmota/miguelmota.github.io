@@ -624,7 +624,7 @@ function streamPage(){
 						var url = item.url;
 						var name = item.name;
 						var artist = item.artist['name'];
-						var image = item.image[0]['#text'];
+						var image = "item.image[0]['#text']";
 						var playcount =  item.playcount;
 						htmlString += "<li><a href='"+url+"' rel='external'><img class='stream-thumb' src='"+image+"' alt='' /> "+artist+" - "+name+"</a> <time class='status-date'>"+playcount+" plays</time></li>";
 						$('.stream-lastfm').append(htmlString +'</ul>');
