@@ -574,7 +574,7 @@ function streamPage(){
 	
 	
 	/* ------------------------
-	 * Last.fm stream
+	 * Last.fm stream recent tracks
 	 * --------------------- */
 	$('.stream-lastfm .loader').css('display','block');
 	// All parameters in url: http://ws.audioscrobbler.com/2.0/?format=json&method=user.getRecentTracks&user=miguel_mota&api_key=dc0e875b6c0fd8ac4891b0716897e6c1&limit=5&callback=?
@@ -588,7 +588,7 @@ function streamPage(){
 			},
 			function(data){       
 				$.each(data.recenttracks.track, function(i, item){ 
-						var htmlString = '<ul class="stream-ul stream-ul-lastfm stream-ul-chart">';
+						var htmlString = '<ul class="stream-ul stream-ul-lastfm stream-ul-lastfm-recent stream-ul-chart">';
 						var url = item.url;
 						var name = item.name;
 						var artist = item.artist['#text'];
@@ -606,7 +606,7 @@ function streamPage(){
 	
 	
 	/* ------------------------
-	 * Last.fm stream 2
+	 * Last.fm stream top tracks
 	 * --------------------- */
 	//$('.stream-lastfm .loader').css('display','block');
 	// All parameters in url: http://ws.audioscrobbler.com/2.0/?format=json&method=user.getTopTracks&user=miguel_mota&api_key=dc0e875b6c0fd8ac4891b0716897e6c1&limit=5&callback=?
@@ -620,7 +620,7 @@ function streamPage(){
 			},
 			function(data){       
 				$.each(data.toptracks.track, function(i, item){ 
-						var htmlString = '<ul class="stream-ul stream-ul-lastfm-2 stream-ul-chart">';
+						var htmlString = '<ul class="stream-ul stream-ul-lastfm stream-ul-lastfm-top stream-ul-chart">';
 						var url = item.url;
 						var name = item.name;
 						var artist = item.artist['name'];
@@ -832,6 +832,25 @@ function streamPage(){
 				function(){
 				hideMtip('.'+$(this).attr('class').split(' ')[1]+' .stream-logo');
 			}
+	});
+	
+	
+	
+
+	// Show last.fm recent tracks
+	$('.stream-sort-lastfm-recent').live('click', function(){
+		$('.stream-sort-lastfm a').removeClass('selected');
+		$(this).addClass('selected');
+		$(".stream-ul-lastfm:not('.stream-ul-lastfm-recent')").slideUp('fast');
+		$('.stream-ul-lastfm-top').slideDown('fast');
+	});	
+	
+	// Show last.fm top tracks
+	$('.stream-sort-lastfm-top').live('click', function(){
+		$('.stream-sort-lastfm a').removeClass('selected');
+		$(this).addClass('selected');
+		$(".stream-ul-lastfm:not('.stream-ul-lastfm-top')").slideUp('fast');
+		$('.stream-ul-lastfm-recent').slideDown('fast');
 	});
 		
 }
