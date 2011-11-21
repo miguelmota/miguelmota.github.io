@@ -629,7 +629,7 @@ function streamPage(){
 						$('.stream-lastfm').append(htmlString +'</ul>');
 				}); 
 				
-				$('.stream-ul-lastfm-top .loader').css('display','none');
+				$('.stream-ul-lastfm-top').css('display','none');
 			}
 	);
 	
