@@ -840,7 +840,7 @@ function streamPage(){
 		$('.stream-sort-lastfm a').removeClass('selected');
 		$(this).addClass('selected');
 		$(".stream-ul-lastfm:not('.stream-ul-lastfm-recent')").slideUp('fast');
-		$('.stream-ul-lastfm-top').slideDown('fast');
+		$('.stream-ul-lastfm-top').slideDown('fast').hide();
 	});	
 	
 	// Show last.fm top tracks
@@ -848,7 +848,7 @@ function streamPage(){
 		$('.stream-sort-lastfm a').removeClass('selected');
 		$(this).addClass('selected');
 		$(".stream-ul-lastfm:not('.stream-ul-lastfm-top')").slideUp('fast');
-		$('.stream-ul-lastfm-recent').slideDown('fast');
+		$('.stream-ul-lastfm-recent').slideDown('fast').hide();
 	});
 		
 }
