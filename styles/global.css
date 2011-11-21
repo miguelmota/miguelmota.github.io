@@ -750,7 +750,7 @@ input.search-input {
 	height: 80px;
 }
 .stream-twitter {
-	height: 180px;
+	min-height: 180px;
 }
 .stream-facebook {
 	height: 40px;
@@ -762,7 +762,7 @@ input.search-input {
 	height: 80px;
 }
 .stream-lastfm {
-	height: 180px;
+	min-height: 180px;
 }
 .stream-wakoopa {
 	height: 100px;

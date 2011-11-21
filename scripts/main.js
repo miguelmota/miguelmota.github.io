@@ -606,6 +606,38 @@ function streamPage(){
 	
 	
 	/* ------------------------
+	 * Last.fm stream 2
+	 * --------------------- */
+	$('.stream-lastfm .loader').css('display','block');
+	// All parameters in url: http://ws.audioscrobbler.com/2.0/?format=json&method=user.getTopTracks&user=miguel_mota&api_key=dc0e875b6c0fd8ac4891b0716897e6c1&limit=5&callback=?
+	$.getJSON('http://ws.audioscrobbler.com/2.0/?callback=?', 
+			{
+				format: 'json',
+				method: 'user.getTopTracks',
+				user: 'miguel_mota',
+				api_key: 'dc0e875b6c0fd8ac4891b0716897e6c1',
+				limit: '5'
+			},
+			function(data){       
+				$.each(data.toptracks.track, function(i, item){ 
+						var htmlString = '<ul class="stream-ul stream-ul-lastfm stream-ul-chart">';
+						var url = item.url;
+						var name = item.name;
+						var artist = item.artist['name'];
+						var image = item.image[0]['#text'];
+						var date =  item.playcount;
+						htmlString += "<li><a href='"+url+"' rel='external'><img class='stream-thumb' src='"+image+"' alt='' /> "+artist+" - "+name+"</a> <time class='status-date'>"+date+"</time></li>";
+						$('.stream-lastfm').append(htmlString +'</ul>');
+				}); 
+				
+				$('.stream-lastfm .loader').css('display','none');
+				showMtipTimeout('.stream-logo-lastfm');
+			}
+	);
+	
+	
+	
+	/* ------------------------
 	 * Wakoopa stream
 	 * --------------------- */
 	$('.stream-wakoopa .loader').css('display','block');
