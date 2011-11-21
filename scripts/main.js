@@ -839,16 +839,16 @@ function streamPage(){
 	$('.stream-sort-lastfm-recent').live('click', function(){
 		$('.stream-sort-lastfm a').removeClass('selected');
 		$(this).addClass('selected');
-		$(".stream-ul-lastfm:not('.stream-ul-lastfm-recent')").slideUp('fast');
-		$('.stream-ul-lastfm-top').slideDown('fast').hide();
+		$(".stream-ul-lastfm:not('.stream-ul-lastfm-recent')").slideUp('fast').hide();
+		$('.stream-ul-lastfm-recent').slideDown('fast')
 	});	
 	
 	// Show last.fm top tracks
 	$('.stream-sort-lastfm-top').live('click', function(){
 		$('.stream-sort-lastfm a').removeClass('selected');
 		$(this).addClass('selected');
-		$(".stream-ul-lastfm:not('.stream-ul-lastfm-top')").slideUp('fast');
-		$('.stream-ul-lastfm-recent').slideDown('fast').hide();
+		$(".stream-ul-lastfm:not('.stream-ul-lastfm-top')").slideUp('fast').hide();;
+		$('.stream-ul-lastfm-top').slideDown('fast');
 	});
 		
 }
