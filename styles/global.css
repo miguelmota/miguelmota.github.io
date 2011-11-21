@@ -747,25 +747,25 @@ input.search-input {
 	z-index: 11;
 }
 .stream-blog {
-	height: 80px;
+	min-height: 80px;
 }
 .stream-twitter {
 	min-height: 180px;
 }
 .stream-facebook {
-	height: 40px;
+	min-height: 40px;
 }
 .stream-tumblr {
-	height: 80px;
+	min-height: 80px;
 }
 .stream-delicious {
-	height: 80px;
+	mmin-height: 80px;
 }
 .stream-lastfm {
 	min-height: 180px;
 }
 .stream-wakoopa {
-	height: 100px;
+	min-height: 100px;
 }
 .stream-flickr {
 	width: 535px;
