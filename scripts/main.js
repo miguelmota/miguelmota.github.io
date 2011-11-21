@@ -608,7 +608,7 @@ function streamPage(){
 	/* ------------------------
 	 * Last.fm stream 2
 	 * --------------------- */
-	$('.stream-lastfm .loader').css('display','block');
+	//$('.stream-lastfm .loader').css('display','block');
 	// All parameters in url: http://ws.audioscrobbler.com/2.0/?format=json&method=user.getTopTracks&user=miguel_mota&api_key=dc0e875b6c0fd8ac4891b0716897e6c1&limit=5&callback=?
 	$.getJSON('http://ws.audioscrobbler.com/2.0/?callback=?', 
 			{
@@ -620,7 +620,7 @@ function streamPage(){
 			},
 			function(data){       
 				$.each(data.toptracks.track, function(i, item){ 
-						var htmlString = '<ul class="stream-ul stream-ul-lastfm stream-ul-chart">';
+						var htmlString = '<ul class="stream-ul stream-ul-lastfm-2 stream-ul-chart">';
 						var url = item.url;
 						var name = item.name;
 						var artist = item.artist['name'];
@@ -630,8 +630,8 @@ function streamPage(){
 						$('.stream-lastfm').append(htmlString +'</ul>');
 				}); 
 				
-				$('.stream-lastfm .loader').css('display','none');
-				showMtipTimeout('.stream-logo-lastfm');
+				//$('.stream-lastfm .loader').css('display','none');
+				//showMtipTimeout('.stream-logo-lastfm');
 			}
 	);
 	
