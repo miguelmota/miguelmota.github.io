@@ -1015,6 +1015,20 @@ input.search-input {
 .status-date {
 	font-size: 12px;
 }
+/* -----------------------------------------------------------------------------
+	STREAM VIEW WRAP
+------------------------------------------------------------------------------ */
+.stream-sort-wrap {
+	position: absolute;
+	right: 20px;
+	top: 20px;
+}
+.stream-sort-wrap a.selected {
+	background-color: #222;
+	color: #999;
+	cursor: text; 
+	text-shadow: 0 -1px 0 rgba(0,0,0,.5);
+}
 /* ==============================================================================
 	END STREAM PAGE
 ============================================================================== */
@@ -1050,9 +1064,8 @@ a.google-plus-link {
 }
 .project-sort-wrap a.selected {
 	background-color: #252525;
-	border-left-color: #252525;
 	color: #999;
-	cursor: default; 
+	cursor: text; 
 	text-shadow: 0 -1px 0 rgba(0,0,0,.5);
 }
 /* -----------------------------------------------------------------------------
