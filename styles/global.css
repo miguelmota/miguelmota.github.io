@@ -1871,7 +1871,8 @@ input.short-url:focus {
 		height: auto;
 		width: 92%;
 	}
-	.latitude-map-button {
+	.latitude-map-button,
+	.stream-sort-wrap {
 		position: absolute;
 		right: 5px;
 		top: 5px;
