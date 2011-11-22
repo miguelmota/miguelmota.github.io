@@ -618,7 +618,7 @@ function streamPage(){
 	 * --------------------- */
 	function loadLastfmLoved(){
 		
-		$('.stream-delicious .loader').css('display','block');
+		$('.stream-lastfm .loader').css('display','block');
 		
 		// All parameters in url: http://ws.audioscrobbler.com/2.0/?format=json&method=user.getLovedTracks&user=miguel_mota&api_key=dc0e875b6c0fd8ac4891b0716897e6c1&limit=5&callback=?
 		$.getJSON('http://ws.audioscrobbler.com/2.0/?callback=?', 
@@ -642,7 +642,7 @@ function streamPage(){
 					}); 
 					
 					$('.stream-lastfm .loader').css('display','none');
-					$('.stream-ul-lastfm-loved').css('display','none');
+					//$('.stream-ul-lastfm-loved').css('display','none');
 				}
 		);
 		
@@ -655,7 +655,7 @@ function streamPage(){
 	 * --------------------- */
 	function loadLastfmTop(){
 		
-		$('.stream-delicious .loader').css('display','block');
+		$('.stream-lastfm .loader').css('display','block');
 		
 		// All parameters in url: http://ws.audioscrobbler.com/2.0/?format=json&method=user.getTopTracks&user=miguel_mota&api_key=dc0e875b6c0fd8ac4891b0716897e6c1&limit=5&callback=?
 		$.getJSON('http://ws.audioscrobbler.com/2.0/?callback=?', 
@@ -679,7 +679,7 @@ function streamPage(){
 					}); 
 					
 					$('.stream-lastfm .loader').css('display','none');
-					$('.stream-ul-lastfm-top').css('display','none');
+					//$('.stream-ul-lastfm-top').css('display','none');
 				}
 		);
 		
