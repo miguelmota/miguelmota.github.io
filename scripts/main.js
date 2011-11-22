@@ -572,99 +572,118 @@ function streamPage(){
 	);
 	
 	
+	loadLastfmRecent();
 	
 	/* ------------------------
 	 * Last.fm stream recent tracks
 	 * --------------------- */
-	$('.stream-lastfm .loader').css('display','block');
-	// All parameters in url: http://ws.audioscrobbler.com/2.0/?format=json&method=user.getRecentTracks&user=miguel_mota&api_key=dc0e875b6c0fd8ac4891b0716897e6c1&limit=5&callback=?
-	$.getJSON('http://ws.audioscrobbler.com/2.0/?callback=?', 
-			{
-				format: 'json',
-				method: 'user.getRecentTracks',
-				user: 'miguel_mota',
-				api_key: 'dc0e875b6c0fd8ac4891b0716897e6c1',
-				limit: '5'
-			},
-			function(data){       
-				$.each(data.recenttracks.track, function(i, item){ 
-						var htmlString = '<ul class="stream-ul stream-ul-lastfm stream-ul-lastfm-recent stream-ul-chart">';
-						var url = item.url;
-						var name = item.name;
-						var artist = item.artist['#text'];
-						var image = '/images/logo-16.png';
-						if (item.image[0]['#text']) {
-							image = item.image[0]['#text'];
-						}
-						var date =  item.date['#text'];
-						htmlString += "<li><a href='"+url+"' rel='external'><img class='stream-thumb' src='"+image+"' alt='' /> "+artist+" - "+name+"</a> <time class='status-date'>"+date+"</time></li>";
-						$('.stream-lastfm').append(htmlString +'</ul>');
-				}); 
-				
-				$('.stream-lastfm .loader').css('display','none');
-				showMtipTimeout('.stream-logo-lastfm');
-			}
-	);
+	function loadLastfmRecent(){
+		$('.stream-lastfm .loader').css('display','block');
+		
+		// All parameters in url: http://ws.audioscrobbler.com/2.0/?format=json&method=user.getRecentTracks&user=miguel_mota&api_key=dc0e875b6c0fd8ac4891b0716897e6c1&limit=5&callback=?
+		$.getJSON('http://ws.audioscrobbler.com/2.0/?callback=?', 
+				{
+					format: 'json',
+					method: 'user.getRecentTracks',
+					user: 'miguel_mota',
+					api_key: 'dc0e875b6c0fd8ac4891b0716897e6c1',
+					limit: '5'
+				},
+				function(data){       
+					$.each(data.recenttracks.track, function(i, item){ 
+							var htmlString = '<ul class="stream-ul stream-ul-lastfm stream-ul-lastfm-recent stream-ul-chart">';
+							var url = item.url;
+							var name = item.name;
+							var artist = item.artist['#text'];
+							var image = '/images/logo-16.png';
+							if (item.image[0]['#text']) {
+								image = item.image[0]['#text'];
+							}
+							var date =  item.date['#text'];
+							htmlString += "<li><a href='"+url+"' rel='external'><img class='stream-thumb' src='"+image+"' alt='' /> "+artist+" - "+name+"</a> <time class='status-date'>"+date+"</time></li>";
+							$('.stream-lastfm').append(htmlString +'</ul>');
+					}); 
+					
+					$('.stream-lastfm .loader').css('display','none');
+					showMtipTimeout('.stream-logo-lastfm');
+				}
+		);
+	
+	}
 	
 	
 	
 	/* ------------------------
 	 * Last.fm stream loved tracks
 	 * --------------------- */
-	// All parameters in url: http://ws.audioscrobbler.com/2.0/?format=json&method=user.getLovedTracks&user=miguel_mota&api_key=dc0e875b6c0fd8ac4891b0716897e6c1&limit=5&callback=?
-	$.getJSON('http://ws.audioscrobbler.com/2.0/?callback=?', 
-			{
-				format: 'json',
-				method: 'user.getLovedTracks',
-				user: 'miguel_mota',
-				api_key: 'dc0e875b6c0fd8ac4891b0716897e6c1',
-				limit: '5'
-			},
-			function(data){       
-				$.each(data.lovedtracks.track, function(i, item){ 
-						var htmlString = '<ul class="stream-ul stream-ul-lastfm stream-ul-lastfm-loved stream-ul-chart">';
-						var url = item.url;
-						var name = item.name;
-						var artist = item.artist['name'];
-						var image = item.image[0]['#text'];
-						var date =  item.date['#text'];
-						htmlString += "<li><a href='"+url+"' rel='external'><img class='stream-thumb' src='"+image+"' alt='' /> "+artist+" - "+name+"</a> <time class='status-date'>"+date+"</time></li>";
-						$('.stream-lastfm').append(htmlString +'</ul>');
-				}); 
-				
-				$('.stream-ul-lastfm-loved').css('display','none');
-			}
-	);
+	function loadLastfmLoved(){
+		
+		$('.stream-delicious .loader').css('display','block');
+		
+		// All parameters in url: http://ws.audioscrobbler.com/2.0/?format=json&method=user.getLovedTracks&user=miguel_mota&api_key=dc0e875b6c0fd8ac4891b0716897e6c1&limit=5&callback=?
+		$.getJSON('http://ws.audioscrobbler.com/2.0/?callback=?', 
+				{
+					format: 'json',
+					method: 'user.getLovedTracks',
+					user: 'miguel_mota',
+					api_key: 'dc0e875b6c0fd8ac4891b0716897e6c1',
+					limit: '5'
+				},
+				function(data){       
+					$.each(data.lovedtracks.track, function(i, item){ 
+							var htmlString = '<ul class="stream-ul stream-ul-lastfm stream-ul-lastfm-loved stream-ul-chart">';
+							var url = item.url;
+							var name = item.name;
+							var artist = item.artist['name'];
+							var image = item.image[0]['#text'];
+							var date =  item.date['#text'];
+							htmlString += "<li><a href='"+url+"' rel='external'><img class='stream-thumb' src='"+image+"' alt='' /> "+artist+" - "+name+"</a> <time class='status-date'>"+date+"</time></li>";
+							$('.stream-lastfm').append(htmlString +'</ul>');
+					}); 
+					
+					$('.stream-lastfm .loader').css('display','none');
+					$('.stream-ul-lastfm-loved').css('display','none');
+				}
+		);
+		
+	}
 	
 	
 	
 	/* ------------------------
 	 * Last.fm stream top tracks
 	 * --------------------- */
-	// All parameters in url: http://ws.audioscrobbler.com/2.0/?format=json&method=user.getTopTracks&user=miguel_mota&api_key=dc0e875b6c0fd8ac4891b0716897e6c1&limit=5&callback=?
-	$.getJSON('http://ws.audioscrobbler.com/2.0/?callback=?', 
-			{
-				format: 'json',
-				method: 'user.getTopTracks',
-				user: 'miguel_mota',
-				api_key: 'dc0e875b6c0fd8ac4891b0716897e6c1',
-				limit: '5'
-			},
-			function(data){       
-				$.each(data.toptracks.track, function(i, item){ 
-						var htmlString = '<ul class="stream-ul stream-ul-lastfm stream-ul-lastfm-top stream-ul-chart">';
-						var url = item.url;
-						var name = item.name;
-						var artist = item.artist['name'];
-						var image = '/images/logo-16.png';
-						var playcount =  item.playcount;
-						htmlString += "<li><a href='"+url+"' rel='external'><img class='stream-thumb' src='"+image+"' alt='' /> "+artist+" - "+name+"</a> <time class='status-date'>"+playcount+" plays</time></li>";
-						$('.stream-lastfm').append(htmlString +'</ul>');
-				}); 
-				
-				$('.stream-ul-lastfm-top').css('display','none');
-			}
-	);
+	function loadLastfmTop(){
+		
+		$('.stream-delicious .loader').css('display','block');
+		
+		// All parameters in url: http://ws.audioscrobbler.com/2.0/?format=json&method=user.getTopTracks&user=miguel_mota&api_key=dc0e875b6c0fd8ac4891b0716897e6c1&limit=5&callback=?
+		$.getJSON('http://ws.audioscrobbler.com/2.0/?callback=?', 
+				{
+					format: 'json',
+					method: 'user.getTopTracks',
+					user: 'miguel_mota',
+					api_key: 'dc0e875b6c0fd8ac4891b0716897e6c1',
+					limit: '5'
+				},
+				function(data){       
+					$.each(data.toptracks.track, function(i, item){ 
+							var htmlString = '<ul class="stream-ul stream-ul-lastfm stream-ul-lastfm-top stream-ul-chart">';
+							var url = item.url;
+							var name = item.name;
+							var artist = item.artist['name'];
+							var image = '/images/logo-16.png';
+							var playcount =  item.playcount;
+							htmlString += "<li><a href='"+url+"' rel='external'><img class='stream-thumb' src='"+image+"' alt='' /> "+artist+" - "+name+"</a> <time class='status-date'>"+playcount+" plays</time></li>";
+							$('.stream-lastfm').append(htmlString +'</ul>');
+					}); 
+					
+					$('.stream-lastfm .loader').css('display','none');
+					$('.stream-ul-lastfm-top').css('display','none');
+				}
+		);
+		
+	}
 	
 	
 	
@@ -911,14 +930,16 @@ function streamPage(){
 	
 	// Show last.fm recent tracks
 	$('.stream-sort-lastfm-recent').live('click', function(){
+		loadLastfmRecent();
 		$('.stream-sort-lastfm a').removeClass('selected');
 		$(this).addClass('selected');
 		$(".stream-ul-lastfm:not('.stream-ul-lastfm-recent')").slideUp('fast');
-		$('.stream-ul-lastfm-recent').slideDown('fast')
+		$('.stream-ul-lastfm-recent').slideDown('fast');
 	});	
 	
 	// Show last.fm loved
 	$('.stream-sort-lastfm-loved').live('click', function(){
+		loadLastfmLoved();
 		$('.stream-sort-lastfm a').removeClass('selected');
 		$(this).addClass('selected');
 		$(".stream-ul-lastfm:not('.stream-ul-lastfm-loved')").slideUp('fast');
@@ -927,6 +948,7 @@ function streamPage(){
 	
 	// Show last.fm top tracks
 	$('.stream-sort-lastfm-top').live('click', function(){
+		loadLastfmTop();
 		$('.stream-sort-lastfm a').removeClass('selected');
 		$(this).addClass('selected');
 		$(".stream-ul-lastfm:not('.stream-ul-lastfm-top')").slideUp('fast');
