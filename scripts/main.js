@@ -669,7 +669,7 @@ function streamPage(){
 	
 	
 	/* ------------------------
-	 * Wakoopa stream
+	 * Wakoopa stream lastest software
 	 * --------------------- */
 	$('.stream-wakoopa .loader').css('display','block');
 	$.getJSON('http://api.wakoopa.com/miguelmota/recently_used.json?callback=?',
@@ -692,6 +692,29 @@ function streamPage(){
 	);
 		
 		
+	
+	/* ------------------------
+	 * Wakoopa stream top software
+	 * --------------------- */
+	$.getJSON('http://api.wakoopa.com/miguelmota/most_used.json?callback=?',
+		{
+			limit: '3'
+		},
+		function wakoopaApi(data){
+			var html = ["<ul class='stream-ul stream-ul-wakoopa stream-ul-chart'>"];
+			for(var i = 0; i < data.length; i++){
+				var entry = data[i].software;
+				var date = new Date(entry.last_active_at).toUTCString();
+				html.push("<li><a href='"+entry.complete_url+"' rel='external'> <img class='stream-thumb' src='"+entry.complete_thumb_url+"' alt='' /> "+entry.name+"</a> <time class='status-date'>"+niceTime(date)+"</time>", "</li>");
+			}
+			
+			html.push("</ul>");
+			document.getElementById('stream-wakoopa-software').innerHTML = html.join("");
+			//$('.stream-wakoopa-top').css('display','none');
+		}
+	);
+	
+	
 	
 	/* ------------------------
 	 * Flickr stream
