@@ -710,7 +710,7 @@ function streamPage(){
 			
 			html.push("</ul>");
 			document.getElementById('stream-wakoopa-software-top').innerHTML = html.join("");
-			$('#stream-wakoopa-software-top').css('display','none');
+			$('.stream-ul-wakoopa-top').css('display','none');
 		}
 	);
 	
