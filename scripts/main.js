@@ -677,7 +677,7 @@ function streamPage(){
 			limit: '3'
 		},
 		function wakoopaApi(data){
-			var html = ["<ul class='stream-ul stream-ul-wakoopa stream-ul-chart'>"];
+			var html = ["<ul class='stream-ul stream-ul-wakoopa stream-ul-wakoopa-recent stream-ul-chart'>"];
 			for(var i = 0; i < data.length; i++){
 				var entry = data[i].software;
 				var date = new Date(entry.last_active_at).toUTCString();
@@ -685,7 +685,7 @@ function streamPage(){
 			}
 			
 			html.push("</ul>");
-			document.getElementById('stream-wakoopa-software').innerHTML = html.join("");
+			document.getElementById('stream-wakoopa-software-recent').innerHTML = html.join("");
 			$('.stream-wakoopa .loader').css('display','none');
 			showMtipTimeout('.stream-logo-wakoopa');
 		}
@@ -701,7 +701,7 @@ function streamPage(){
 			limit: '3'
 		},
 		function wakoopaApi(data){
-			var html = ["<ul class='stream-ul stream-ul-wakoopa stream-ul-chart'>"];
+			var html = ["<ul class='stream-ul stream-ul-wakoopa stream-ul-wakoopa-top stream-ul-chart'>"];
 			for(var i = 0; i < data.length; i++){
 				var entry = data[i].software;
 				var date = new Date(entry.last_active_at).toUTCString();
@@ -709,7 +709,7 @@ function streamPage(){
 			}
 			
 			html.push("</ul>");
-			document.getElementById('stream-wakoopa-software').innerHTML = html.join("");
+			document.getElementById('stream-wakoopa-software-top').innerHTML = html.join("");
 			//$('.stream-wakoopa-top').css('display','none');
 		}
 	);
@@ -891,6 +891,24 @@ function streamPage(){
 	
 	
 
+	// Show wakoopa software recent
+	$('.stream-sort-wakoopa-recent').live('click', function(){
+		$('.stream-sort-lastfm a').removeClass('selected');
+		$(this).addClass('selected');
+		$(".stream-ul-wakoopa:not('.stream-ul-wakoopa-recent')").slideUp('fast');
+		$('.stream-ul-wakoopa-recent').slideDown('fast');
+	});
+	
+	// Show wakoopa software top
+	$('.stream-sort-wakoopa-top').live('click', function(){
+		$('.stream-sort-wakoopa a').removeClass('selected');
+		$(this).addClass('selected');
+		$(".stream-ul-wakoopa:not('.stream-ul-wakoopa-top')").slideUp('fast');
+		$('.stream-ul-wakoopa-top').slideDown('fast');
+	});
+	
+	
+	
 	// Show last.fm recent tracks
 	$('.stream-sort-lastfm-recent').live('click', function(){
 		$('.stream-sort-lastfm a').removeClass('selected');
