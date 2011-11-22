@@ -730,7 +730,7 @@ function streamPage(){
 	function loadWakoopaTop() {
 		
 		$('#stream-wakoopa-software-top').html('');
-		$('.stream-ul-wakoopa-recent').remove();
+		$('.stream-ul-wakoopa-top').remove();
 		$('.stream-wakoopa .loader').css('display','block');
 		
 		$.getJSON('http://api.wakoopa.com/miguelmota/most_used.json?callback=?',
