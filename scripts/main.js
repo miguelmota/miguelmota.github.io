@@ -606,6 +606,36 @@ function streamPage(){
 	
 	
 	/* ------------------------
+	 * Last.fm stream loved tracks
+	 * --------------------- */
+	// All parameters in url: http://ws.audioscrobbler.com/2.0/?format=json&method=user.getLovedTracks&user=miguel_mota&api_key=dc0e875b6c0fd8ac4891b0716897e6c1&limit=5&callback=?
+	$.getJSON('http://ws.audioscrobbler.com/2.0/?callback=?', 
+			{
+				format: 'json',
+				method: 'user.getLovedTracks',
+				user: 'miguel_mota',
+				api_key: 'dc0e875b6c0fd8ac4891b0716897e6c1',
+				limit: '5'
+			},
+			function(data){       
+				$.each(data.lovedtracks.track, function(i, item){ 
+						var htmlString = '<ul class="stream-ul stream-ul-lastfm stream-ul-lastfm-loved stream-ul-chart">';
+						var url = item.url;
+						var name = item.name;
+						var artist = item.artist['name'];
+						var image = item.image[0]['#text'];
+						var date =  item.date['#text'];
+						htmlString += "<li><a href='"+url+"' rel='external'><img class='stream-thumb' src='"+image+"' alt='' /> "+artist+" - "+name+"</a> <time class='status-date'>"+date+" plays</time></li>";
+						$('.stream-lastfm').append(htmlString +'</ul>');
+				}); 
+				
+				$('.stream-ul-lastfm-loved').css('display','none');
+			}
+	);
+	
+	
+	
+	/* ------------------------
 	 * Last.fm stream top tracks
 	 * --------------------- */
 	// All parameters in url: http://ws.audioscrobbler.com/2.0/?format=json&method=user.getTopTracks&user=miguel_mota&api_key=dc0e875b6c0fd8ac4891b0716897e6c1&limit=5&callback=?
@@ -842,6 +872,14 @@ function streamPage(){
 		$(".stream-ul-lastfm:not('.stream-ul-lastfm-recent')").slideUp('fast');
 		$('.stream-ul-lastfm-recent').slideDown('fast')
 	});	
+	
+	// Show last.fm loved
+	$('.stream-sort-lastfm-loved').live('click', function(){
+		$('.stream-sort-lastfm a').removeClass('selected');
+		$(this).addClass('selected');
+		$(".stream-ul-lastfm:not('.stream-ul-lastfm-loved')").slideUp('fast');
+		$('.stream-ul-lastfm-loved').slideDown('fast');
+	});
 	
 	// Show last.fm top tracks
 	$('.stream-sort-lastfm-top').live('click', function(){
