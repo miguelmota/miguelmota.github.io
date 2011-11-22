@@ -710,7 +710,7 @@ function streamPage(){
 			
 			html.push("</ul>");
 			document.getElementById('stream-wakoopa-software-top').innerHTML = html.join("");
-			//$('.stream-wakoopa-top').css('display','none');
+			$('.stream-wakoopa-software-top').css('display','none');
 		}
 	);
 	
@@ -893,7 +893,7 @@ function streamPage(){
 
 	// Show wakoopa software recent
 	$('.stream-sort-wakoopa-recent').live('click', function(){
-		$('.stream-sort-lastfm a').removeClass('selected');
+		$('.stream-sort-wakoopa a').removeClass('selected');
 		$(this).addClass('selected');
 		$(".stream-ul-wakoopa:not('.stream-ul-wakoopa-recent')").slideUp('fast');
 		$('.stream-ul-wakoopa-recent').slideDown('fast');
