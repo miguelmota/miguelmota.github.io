@@ -579,7 +579,7 @@ function streamPage(){
 	 * --------------------- */
 	function loadLastfmRecent(){
 		
-		$('.stream-lastfm').remove();
+		$('.stream-ul-lastfm').remove();
 		$('.stream-lastfm .loader').css('display','block');
 		
 		// All parameters in url: http://ws.audioscrobbler.com/2.0/?format=json&method=user.getRecentTracks&user=miguel_mota&api_key=dc0e875b6c0fd8ac4891b0716897e6c1&limit=5&callback=?
@@ -620,7 +620,7 @@ function streamPage(){
 	 * --------------------- */
 	function loadLastfmLoved(){
 		
-		$('.stream-lastfm').remove();
+		$('.stream-ul-lastfm').remove();
 		$('.stream-lastfm .loader').css('display','block');
 		
 		// All parameters in url: http://ws.audioscrobbler.com/2.0/?format=json&method=user.getLovedTracks&user=miguel_mota&api_key=dc0e875b6c0fd8ac4891b0716897e6c1&limit=5&callback=?
@@ -658,7 +658,7 @@ function streamPage(){
 	 * --------------------- */
 	function loadLastfmTop(){
 		
-		$('.stream-lastfm').remove();
+		$('.stream-ul-lastfm').remove();
 		$('.stream-lastfm .loader').css('display','block');
 		
 		// All parameters in url: http://ws.audioscrobbler.com/2.0/?format=json&method=user.getTopTracks&user=miguel_mota&api_key=dc0e875b6c0fd8ac4891b0716897e6c1&limit=5&callback=?
