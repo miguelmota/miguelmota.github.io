@@ -699,6 +699,7 @@ function streamPage(){
 		
 		$('#stream-wakoopa-software-recent').html('');
 		$('.stream-ul-wakoopa-recent').remove();
+		$('.stream-ul-wakoopa-top').remove();
 		$('.stream-wakoopa .loader').css('display','block');
 		
 		$.getJSON('http://api.wakoopa.com/miguelmota/recently_used.json?callback=?',
@@ -731,6 +732,7 @@ function streamPage(){
 		
 		$('#stream-wakoopa-software-top').html('');
 		$('.stream-ul-wakoopa-top').remove();
+		$('.stream-ul-wakoopa-recent').remove();
 		$('.stream-wakoopa .loader').css('display','block');
 		
 		$.getJSON('http://api.wakoopa.com/miguelmota/most_used.json?callback=?',
