@@ -616,6 +616,7 @@ img.loader {
 	background-color: #292929;
 	border-left: 4px solid #444;
 	color: #999;
+	clear: both;
 	display: block;
 	font-size: 13px;
 	margin: 1px 0;
