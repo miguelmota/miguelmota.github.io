@@ -27,7 +27,7 @@ $(document).ready(function(){
 	
 	
 	// Initialize side nav text ticker; NOTE: might cause bug in Firefox
-	textTickerSelected();
+	//textTickerSelected();
 	
 	
 	
