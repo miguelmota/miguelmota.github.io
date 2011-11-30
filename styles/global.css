@@ -304,15 +304,21 @@ img.loader {
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
 	filter: alpha(opacity=100);
 }
-.icon-top {
-	float: right;
-	height: 24px;
-	margin-bottom: 10px;
-	width: 24px;
+.icon-nav {
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	float: left;
+	margin-right: 5px;
 }
 .icon-social {
 	height: 24px;
 	margin-right: 2px;
+	width: 24px;
+}
+.icon-top {
+	float: right;
+	height: 24px;
+	margin-bottom: 10px;
 	width: 24px;
 }
 .icon-audio-24 {
@@ -339,6 +345,10 @@ img.loader {
 .icon-clock-16 {
 	background: url('/images/icons/pictos/16/clock.png');
 }
+.icon-cloud-16 {
+	background: url('/images/icons/pictos/16/cloud.png');
+	height: 11px;
+}
 .icon-comments-16 {
 	background: url('/images/icons/pictos/16/comments.png');
 	height: 13px;
@@ -359,6 +369,9 @@ img.loader {
 	background: url('/images/icons/pictos/16/heart.png');
 	height: 14px;
 }
+.icon-home-16 {
+	background: url('/images/icons/pictos/16/home.png');
+}
 .icon-link-16 {
 	background: url('/images/icons/pictos/16/link.png');
 }
@@ -375,8 +388,16 @@ img.loader {
 .icon-mail-16 {
 	background: url('/images/icons/pictos/16/mail.png');
 }
+.icon-mail2-16 {
+	background: url('/images/icons/pictos/16/mail-2.png');
+	height: 11px;
+}
 .icon-mail-24 {
 	background: url('/images/icons/pictos/24/mail.png');
+}
+.icon-person-16 {
+	background: url('/images/icons/pictos/16/person.png');
+	height: 14px;
 }
 .icon-phone-16 {
 	background: url('/images/icons/pictos/16/phone.png');
@@ -409,6 +430,10 @@ img.loader {
 .icon-subscribe-24 {
 	background: url('/images/icons/pictos/24/rss.png');
 }
+.icon-suitcase-16 {
+	background: url('/images/icons/pictos/16/suitcase.png');
+	height: 12px;
+}
 .icon-tags-16 {
 	background: url('/images/icons/pictos/16/tags.png');
 	width: 12px;
@@ -418,6 +443,9 @@ img.loader {
 }
 .icon-text-24 {
 	background: url('/images/icons/pictos/24/text.png');
+}
+.icon-tumblr-16 {
+	background: url('/images/icons/pictos/16/tumblr.png');
 }
 .icon-tumblr-24 {
 	background: url('/images/icons/pictos/24/tumblr.png');

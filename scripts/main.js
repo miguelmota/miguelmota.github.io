@@ -208,7 +208,7 @@ function recent_tweets(data) {
 		},
 		mouseleave:
 			function(){
-			hideMtip('.icon-twitter-bird-24', this);
+				hideMtip('.icon-twitter-bird-24', this);
 		}
 	});
 }
@@ -925,7 +925,7 @@ function streamPage(){
 			},
 			mouseleave:
 				function(){
-				hideMtip('.'+$(this).attr('class').split(' ')[1]+' .stream-logo');
+					hideMtip('.'+$(this).attr('class').split(' ')[1]+' .stream-logo');
 			}
 	});
 	
