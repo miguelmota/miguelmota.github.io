@@ -307,6 +307,7 @@ img.loader {
 .icon-nav {
 	background-position: 50% 50%;
 	background-repeat: no-repeat;
+	float: left;
 	margin-right: 5px;
 }
 .icon-social {
@@ -588,18 +589,18 @@ img.loader {
 	border: 0;
 	display: block;
 	height: 64px;
-	margin: 0 0 15px 0;
+	margin-bottom: 26px;
 	width: 64px;
 }
 .site-title {
-	font-size: 24px;
-	font-weight: bold;
-	padding-bottom: 5px;
-	text-shadow: 0 -1px 0 #000;
-	text-transform: uppercase;
+	margin-bottom: 5px;
 }
 .site-title a {
 	color: #999;
+	font-size: 24px;
+	font-weight: bold;
+	text-shadow: 0 -1px 0 #000;
+	text-transform: uppercase;
 }
 .site-title a:hover,
 .site-title a:active {
@@ -607,15 +608,9 @@ img.loader {
 }
 .site-description {
 	color: #555;
-	padding-bottom: 15px;
 }
 .main-side-nav-ul {
-	clear: both;
-	display: block;
-	padding-bottom: 15px;
-	position: static;	
-	top: 20px;
-	width: 100%;
+	padding: 15px 0;
 }
 .main-side-nav-ul a {
 	background-color: #292929;
