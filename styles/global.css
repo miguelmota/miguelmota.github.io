@@ -390,14 +390,12 @@ img.loader {
 }
 .icon-mail2-16 {
 	background: url('/images/icons/pictos/16/mail-2.png');
-	height: 11px;
 }
 .icon-mail-24 {
 	background: url('/images/icons/pictos/24/mail.png');
 }
 .icon-person-16 {
 	background: url('/images/icons/pictos/16/person.png');
-	height: 14px;
 }
 .icon-phone-16 {
 	background: url('/images/icons/pictos/16/phone.png');
@@ -432,7 +430,6 @@ img.loader {
 }
 .icon-suitcase-16 {
 	background: url('/images/icons/pictos/16/suitcase.png');
-	height: 12px;
 }
 .icon-tags-16 {
 	background: url('/images/icons/pictos/16/tags.png');
