@@ -472,6 +472,7 @@ function streamPage(){
 				count: '5'
 			},
 			function(data){
+				var proImg = 0;
 				$.each(data, function(i, status){
 					var htmlString = '<ul class="stream-ul stream-ul-twitter">';
 					var profile_image = status.user.profile_image_url;
@@ -480,7 +481,10 @@ function streamPage(){
 		    	  	var date = new Date(status.created_at).toUTCString();
 					htmlString += "<li id='"+id+"' class='status'><span class='post'><a href='http://twitter.com/miguel_mota/status/"+id+"' rel='external'><span class='icon icon-twitter-bird-16'></span> "+post+"</a></span> <time class='status-date'>"+niceTime(date)+"</time></li>";
 					$('.stream-twitter').append(htmlString +'</ul>');
-					$('.stream-twitter').prepend('<img src="'+profile_image+'" alt="" />');
+					while(proImg == 0){
+						$('.stream-logo-twitter').after('<img class="stream-profile-image" src="'+profile_image+'" alt="" />');
+						proImg ++;
+					}
 				});
 				
 				$('.stream-twitter .loader').css('display','none');
