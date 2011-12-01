@@ -57,6 +57,14 @@ $(document).ready(function(){
 		
 	});
 	
+	$('a').has('.icon').hover(
+		function(){
+			$('.icon', this).addClass('icon-no-opacity');
+		},
+		function(){
+			$('.icon', this).removeClass('icon-no-opacity');
+		}
+	);
 	
 
 	// Navigation hover effect
