@@ -229,7 +229,7 @@ function recent_tweets(data) {
 		var date = new Date(data[i].created_at);
 		document.getElementById('latest-tweet').innerHTML =
 			'<div class="latest-tweet-content"><a href="http://twitter.com/miguelmota/status/'+
-			+(data[i].id_str ? data[i].id_str : data[i].id)+'" rel="external">'+data[i].text+'</a> <time class="latest-tweet-date" datetime="'+data[i].created_at.toUTCSTring().toISOString()+'">'+data[i].created_at+'</time></div>';
+			+(data[i].id_str ? data[i].id_str : data[i].id)+'" rel="external">'+data[i].text+'</a> <time class="latest-tweet-date" datetime="'+date.toISOString()+'">'+date+'</time></div>';
 	}
 	
 	// Show mtip on twitter bird hover
