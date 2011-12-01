@@ -924,28 +924,21 @@ input.search-input {
 .stream-ul {
 	clear: both;
 	display: block;
-}
-.stream-ul-lastfm {
-	clear: both;
 	height: auto;
-}
-.stream-ul-wakoopa {
-	clear: both;
-	height: auto;
-}
-.stream-ul-chart {
 	width: 100%;
 }
-.stream-ul-chart li {
+.stream-ul li {
 	margin-bottom: 2px;
 	padding: 3px;
 }
-.stream-ul-chart li:nth-child(odd) {
+.stream-ul li:nth-child(odd) {
 	background-color: #202020;	
 }
-.stream-ul-chart .status-date,
-.stream-ul-chart .status-date {
-	border-left: 2px solid #222;
+/* -----------------------------------------------------------------------------
+	STATUS DATE
+------------------------------------------------------------------------------ */
+.status-date {
+	font-size: 12px;
 	float: right;
 }
 /* -----------------------------------------------------------------------------
@@ -1046,12 +1039,6 @@ input.search-input {
 	-o-transform: scale(1.3);
 	-webkit-transform: scale(1.3);
 	z-index: 10;
-}
-/* -----------------------------------------------------------------------------
-	STREAM DATE
------------------------------------------------------------------------------- */
-.status-date {
-	font-size: 12px;
 }
 /* -----------------------------------------------------------------------------
 	STREAM VIEW WRAP

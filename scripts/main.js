@@ -642,7 +642,7 @@ function streamPage(){
 				},
 				function(data){       
 					$.each(data.recenttracks.track, function(i, item){ 
-							var htmlString = '<ul class="stream-ul stream-ul-lastfm stream-ul-lastfm-recent stream-ul-chart">';
+							var htmlString = '<ul class="stream-ul stream-ul-lastfm stream-ul-lastfm-recent">';
 							var url = item.url;
 							var name = item.name;
 							var artist = item.artist['#text'];
@@ -686,7 +686,7 @@ function streamPage(){
 				},
 				function(data){       
 					$.each(data.lovedtracks.track, function(i, item){ 
-							var htmlString = '<ul class="stream-ul stream-ul-lastfm stream-ul-lastfm-loved stream-ul-chart">';
+							var htmlString = '<ul class="stream-ul stream-ul-lastfm stream-ul-lastfm-loved">';
 							var url = item.url;
 							var name = item.name;
 							var artist = item.artist['name'];
@@ -727,7 +727,7 @@ function streamPage(){
 				},
 				function(data){       
 					$.each(data.toptracks.track, function(i, item){ 
-							var htmlString = '<ul class="stream-ul stream-ul-lastfm stream-ul-lastfm-top stream-ul-chart">';
+							var htmlString = '<ul class="stream-ul stream-ul-lastfm stream-ul-lastfm-top">';
 							var url = item.url;
 							var name = item.name;
 							var artist = item.artist['name'];
@@ -762,7 +762,7 @@ function streamPage(){
 				limit: '3'
 			},
 			function wakoopaApi(data){
-				var html = ["<ul class='stream-ul stream-ul-wakoopa-recent stream-ul-chart'>"];
+				var html = ["<ul class='stream-ul stream-ul-wakoopa-recent'>"];
 				for(var i = 0; i < data.length; i++){
 					var entry = data[i].software;
 					var date = new Date(entry.last_active_at);
@@ -799,7 +799,7 @@ function streamPage(){
 				limit: '3'
 			},
 			function wakoopaApi(data){
-				var html = ["<ul class='stream-ul stream-ul-wakoopa-top stream-ul-chart'>"];
+				var html = ["<ul class='stream-ul stream-ul-wakoopa-top'>"];
 				for(var i = 0; i < data.length; i++){
 					var entry = data[i].software;
 					var date = new Date(entry.last_active_at);
