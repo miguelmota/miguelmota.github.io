@@ -29,11 +29,6 @@ $(document).ready(function(){
 	// Initialize side nav text ticker; NOTE: might cause bug in Firefox
 	// textTickerSelected();
 	
-	
-	
-	// Initialize timeago
-	$('.latest-tweet-date').timeago();
-
 
 
 	// Add selected class to nav link based on page content class name
@@ -230,6 +225,8 @@ function recent_tweets(data) {
 		document.getElementById('latest-tweet').innerHTML =
 			'<div class="latest-tweet-content"><a href="http://twitter.com/miguelmota/status/'+
 			+(data[i].id_str ? data[i].id_str : data[i].id)+'" rel="external">'+data[i].text+'</a> <time class="latest-tweet-date" datetime="'+date.toISOString()+'">'+date+'</time></div>';
+				// Initialize timeago
+	$('.latest-tweet-date').timeago();
 	}
 	
 	// Show mtip on twitter bird hover
