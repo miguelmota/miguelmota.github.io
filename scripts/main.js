@@ -73,10 +73,23 @@ $(document).ready(function(){
 	
 	// Change default text color on input focus
 	$('input:text, input:password, textarea').focus(function(){
+		if(this.value === this.defaultValue){
+			this.value = '';
+		}
 		$(this).css({
 			color: '#999',
 			fontStyle: 'normal'
 		});
+	}).blur(function(){
+		if(this.value === ''){
+
+			this.value = this.defaultValue;
+
+			$(this).css({
+			color: '#555',
+			fontStyle: 'italic'
+		});
+		}
 	});
 
 	
