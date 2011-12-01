@@ -1840,6 +1840,9 @@ input.short-url:focus {
 	.main-side-nav-ul li {
 		float: left;
 	}
+	.main-side-nav-ul a {
+		padding-left: 8px;
+	}
 	
 	/* ------------------------
 	 * Social icons
