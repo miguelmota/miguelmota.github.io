@@ -931,6 +931,10 @@ input.search-input {
 	margin-bottom: 2px;
 	padding: 3px;
 }
+.stream-ul-flickr li {
+	margin: 0;
+	padding: 0;
+}
 .stream-ul li:nth-child(odd) {
 	background-color: #202020;	
 }

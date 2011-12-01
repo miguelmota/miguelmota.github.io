@@ -648,9 +648,9 @@ function streamPage(){
 					api_key: 'dc0e875b6c0fd8ac4891b0716897e6c1',
 					limit: '5'
 				},
-				function(data){       
+				function(data){   
+					$('.stream-lastfm').append('<ul class="stream-ul stream-ul-lastfm-recent">');    
 					$.each(data.recenttracks.track, function(i, item){ 
-							var htmlString = '<ul class="stream-ul stream-ul-lastfm stream-ul-lastfm-recent">';
 							var url = item.url;
 							var name = item.name;
 							var artist = item.artist['#text'];
@@ -659,10 +659,12 @@ function streamPage(){
 								image = item.image[0]['#text'];
 							}
 							var date =  new Date(item.date['#text']);
-							htmlString += "<li><a href='"+url+"' rel='external'><img class='stream-thumb' src='"+image+"' alt='' /> "+artist+" - "+name+"</a> <time class='status-date' datetime='"+date.toISOString()+"'>"+date+"</time></li>";
-							$('.stream-lastfm').append(htmlString +'</ul>');
+							var list_item = "<li><a href='"+url+"' rel='external'><img class='stream-thumb' src='"+image+"' alt='' /> "+artist+" - "+name+"</a> <time class='status-date' datetime='"+date.toISOString()+"'>"+date+"</time></li>";
+							$('.stream-ul-lastfm-recent').append(list_item);
 					}); 
 					
+					$('.stream-ul-lastfm-recent').append('</ul>');
+
 					// Initialize timeago
 					$('.stream-ul-lastfm-recent .status-date').timeago();
 
@@ -693,17 +695,19 @@ function streamPage(){
 					limit: '5'
 				},
 				function(data){       
+					$('.stream-lastfm').append('<ul class="stream-ul stream-ul-lastfm-loved">');    
 					$.each(data.lovedtracks.track, function(i, item){ 
-							var htmlString = '<ul class="stream-ul stream-ul-lastfm stream-ul-lastfm-loved">';
 							var url = item.url;
 							var name = item.name;
 							var artist = item.artist['name'];
 							var image = item.image[0]['#text'];
 							var date =  new Date(item.date['#text']);
-							htmlString += "<li><a href='"+url+"' rel='external'><img class='stream-thumb' src='"+image+"' alt='' /> "+artist+" - "+name+"</a> <time class='status-date' datetime='"+date.toISOString()+"'>"+date+"</time></li>";
-							$('.stream-lastfm').append(htmlString +'</ul>');
+							var list_item = "<li><a href='"+url+"' rel='external'><img class='stream-thumb' src='"+image+"' alt='' /> "+artist+" - "+name+"</a> <time class='status-date' datetime='"+date.toISOString()+"'>"+date+"</time></li>";
+							$('.stream-ul-lastfm-loved').append(list_item);
 					}); 
-					
+
+					$('.stream-ul-lastfm-loved').append('</ul>');
+
 					// Initialize timeago
 					$('.stream-ul-lastfm-loved .status-date').timeago();
 
@@ -734,17 +738,19 @@ function streamPage(){
 					limit: '5'
 				},
 				function(data){       
+					$('.stream-lastfm').append('<ul class="stream-ul stream-ul-lastfm-top">');
 					$.each(data.toptracks.track, function(i, item){ 
-							var htmlString = '<ul class="stream-ul stream-ul-lastfm stream-ul-lastfm-top">';
 							var url = item.url;
 							var name = item.name;
 							var artist = item.artist['name'];
 							var image = '/images/logo-16.png';
 							var playcount =  item.playcount;
-							htmlString += "<li><a href='"+url+"' rel='external'><img class='stream-thumb' src='"+image+"' alt='' /> "+artist+" - "+name+"</a> <time class='status-date'>"+playcount+" plays</time></li>";
-							$('.stream-lastfm').append(htmlString +'</ul>');
+							var list_item = "<li><a href='"+url+"' rel='external'><img class='stream-thumb' src='"+image+"' alt='' /> "+artist+" - "+name+"</a> <time class='status-date'>"+playcount+" plays</time></li>";
+							$('.stream-ul-lastfm-top').append(list_item);
 					}); 
 					
+					$('.stream-ul-lastfm-top').append('</ul>');
+
 					$('.stream-lastfm .loader').css('display','none');
 					//$('.stream-ul-lastfm-top').css('display','none');
 				}
