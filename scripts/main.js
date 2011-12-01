@@ -1271,9 +1271,9 @@ function blogPage(){
 	
 	$('.blog-post-list a').hover(
 		function(){
-			$('.icon', this).addClass('icon-no-opacity');
+			$('.icon', this).removeClass('icon-no-opacity').addClass('icon-no-hover');
 		},function(){
-			$('.icon', this).addClass('icon-no-opacity');
+			$('.icon', this).removeClass('icon-no-opacity').addClass('icon-no-hover');
 		}
 	);
 	
