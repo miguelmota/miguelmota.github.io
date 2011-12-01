@@ -442,6 +442,9 @@ function streamPage(){
 	$(".stream-logo:not('.stream-logo-blog ,.stream-logo-latitude')").text('');
 	showMtipTimeout('.stream-logo-blog');
 	showMtipTimeout('.stream-logo-latitude');
+
+	// Initialize timeago
+	$('.stream-ul-blog .status-date').timeago();
 	
 	
 	
