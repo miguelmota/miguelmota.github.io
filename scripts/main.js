@@ -1269,6 +1269,14 @@ function blogPage(){
 		$('.blog-post-list').slideDown('fast');
 	});
 	
+	$('.blog-post-list a').hover(
+		function{
+			$('.icon', this).removeClass('icon-no-opacity');
+		},function{
+			$('.icon', this).removeClass('icon-no-opacity');
+		}
+	);
+	
 	
 	
 	// Get AddThis script
