@@ -1626,11 +1626,11 @@ input.short-url:focus {
 	width: 100%;
 }
 .main-footer a {
-	color: #002633;
+	color: #004c66;
 }
 .main-footer a:hover,
 .main-footer a:active, {
-	color: #034;
+	color: #005977;
 }
 
 .main-footer-content {
