@@ -61,7 +61,7 @@ $(document).ready(function(){
 
 
 	// Highlight icon on link hover
-	$('a').has('.icon').hover(
+	$('a:not(".selected")').has('.icon').hover(
 		function(){
 			$('.icon', this).addClass('icon-no-opacity');
 		},
@@ -73,7 +73,7 @@ $(document).ready(function(){
 
 
 	// Navigation hover effect
-	$('.main-side-nav-ul a').hover(
+	$('.main-side-nav-ul a:not(".selected")').hover(
 			function(){
 				$(this).animate({borderLeftWidth: '6px'}, {queue: false, duration: 60});
 			},
