@@ -1629,8 +1629,8 @@ input.short-url:focus {
 	color: #004c66;
 }
 .main-footer a:hover,
-.main-footer a:active, {
-	color: #005977;
+.main-footer a:active {
+	color: #007299;
 }
 
 .main-footer-content {
