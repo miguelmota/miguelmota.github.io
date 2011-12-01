@@ -603,6 +603,7 @@ img.loader {
 	color: #555;
 }
 .main-side-nav-ul {
+	clear: both;
 	padding: 15px 0;
 }
 .main-side-nav-ul a {
