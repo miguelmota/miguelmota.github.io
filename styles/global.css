@@ -778,22 +778,22 @@ input.search-input {
 	min-height: 80px;
 }
 .stream-twitter {
-	min-height: 200px;
+	min-height: 180px;
 }
 .stream-facebook {
 	min-height: 40px;
 }
 .stream-tumblr {
-	min-height: 140px;
+	min-height: 120px;
 }
 .stream-delicious {
-	mmin-height: 140px;
+	min-height: 120px;
 }
 .stream-lastfm {
-	min-height: 200px;
+	min-height: 180px;
 }
 .stream-wakoopa {
-	min-height: 140px;
+	min-height: 120px;
 }
 .stream-flickr {
 	min-height: 200px;
