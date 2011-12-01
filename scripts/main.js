@@ -1163,7 +1163,7 @@ function contactPage(){
 		},
 		messages: {
 			name: {
-				namecheck: '',
+				nameCheck: '',
 				required: ''
 			},
 			email: {
