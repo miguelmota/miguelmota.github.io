@@ -1631,6 +1631,7 @@ input.short-url:focus {
 .main-footer a:hover,
 .main-footer a:active {
 	color: #005977;
+	text-shadow: 0 -1px 0 rgba(0,0,0,.3);
 }
 
 .main-footer-content {
