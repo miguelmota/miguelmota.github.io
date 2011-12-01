@@ -479,11 +479,11 @@ function streamPage(){
 					var screen_name = status.user.screen_name;
 					var post = status.text;
 					var id = status.id_str;
-		    	  	var date = new Date(status.created_at).toUTCString();
+		    	  	var date = new Date(status.created_at).to`	```UTCString();
 					htmlString += "<li id='"+id+"' class='status'><span class='post'><a href='http://twitter.com/miguel_mota/status/"+id+"' rel='external'><span class='icon icon-twitter-bird-16'></span> "+post+"</a></span> <time class='status-date'>"+niceTime(date)+"</time></li>";
 					$('.stream-twitter').append(htmlString +'</ul>');
 					while(pro_img_cnt == 0){
-						$('.stream-logo-twitter').before('<a href="http://twitter.com/'+screen_name+'"><img class="stream-profile-image" src="'+profile_image+'" alt="" /></a>');
+						$('.stream-wrap-twitter').prepend('<a href="http://twitter.com/'+screen_name+'"><img class="stream-profile-image" src="'+profile_image+'" alt="" /></a>');
 						pro_img_cnt ++;
 					}
 				});
