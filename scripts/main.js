@@ -82,9 +82,7 @@ $(document).ready(function(){
 		});
 	}).blur(function(){
 		if(this.value === ''){
-
 			this.value = this.defaultValue;
-
 			$(this).css({
 			color: '#555',
 			fontStyle: 'italic'

@@ -189,6 +189,7 @@ textarea {
 .input textarea {
 	background-color: #202020;
 	font-size: 16px;
+	font-style: italic;
 	padding: 6px 6px 6px 12px;
 }
 .input {
@@ -1247,9 +1248,6 @@ a.google-plus-link {
 .contact-form {
 	float: left;
 	width: 100%;
-}
-.contact-form input[type=text] {
-	font-style: italic;
 }
 .contact-form-message {
 	height: 300px;
