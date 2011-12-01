@@ -1142,12 +1142,6 @@ function contactPage(){
 		$.validator.addMethod('nameCheck', function(value, element){
 			return this.optional(element) || /^[a-zA-Z]*$/.test(value);
 	});
-
-	// Create method to validate message input
-	$('.contact-form-submit').live('click', function(){
-		$.validator.addMethod('messageCheck', function(value, element){
-			return this.optional(element) || /^[message]/.test(value);
-	});
 		
 
 		
@@ -1163,9 +1157,8 @@ function contactPage(){
 				email: true
 			},
 			message: {
-				messageCheck: true,
 				required: true,
-				minlength: 2
+				minlength: 10
 			}
 		},
 		messages: {
