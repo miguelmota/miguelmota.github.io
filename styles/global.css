@@ -784,16 +784,16 @@ input.search-input {
 	min-height: 40px;
 }
 .stream-tumblr {
-	min-height: 100px;
+	min-height: 140px;
 }
 .stream-delicious {
-	mmin-height: 100px;
+	mmin-height: 140px;
 }
 .stream-lastfm {
 	min-height: 200px;
 }
 .stream-wakoopa {
-	min-height: 100px;
+	min-height: 140px;
 }
 .stream-flickr {
 	min-height: 200px;
