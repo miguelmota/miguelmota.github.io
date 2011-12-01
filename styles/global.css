@@ -807,6 +807,7 @@ input.search-input {
 	STREAM PROFILE IMAGE
 ------------------------------------------------------------------------------ */
 .stream-profile-image {
+	float: left;
 	height: 24px;
 	width: 24px;
 }
