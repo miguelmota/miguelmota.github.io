@@ -1838,7 +1838,7 @@ input.short-url:focus {
 		width: 100%;
 	}
 	.main-side-nav-ul {
-		border: 3px solid red;
+		border: 3px solid blue;
 	}
 	.main-side-nav-ul li {
 		float: left;
