@@ -649,7 +649,7 @@ function streamPage(){
 					limit: '5'
 				},
 				function(data){   
-					$('.stream-lastfm').append('<ul class="stream-ul stream-ul-lastfm-recent">');    
+					$('.stream-lastfm').append('<ul class="stream-ul stream-ul-lastfm stream-ul-lastfm-recent">');    
 					$.each(data.recenttracks.track, function(i, item){ 
 							var url = item.url;
 							var name = item.name;
@@ -695,7 +695,7 @@ function streamPage(){
 					limit: '5'
 				},
 				function(data){       
-					$('.stream-lastfm').append('<ul class="stream-ul stream-ul-lastfm-loved">');    
+					$('.stream-lastfm').append('<ul class="stream-ul stream-ul-lastfm stream-ul-lastfm-loved">');    
 					$.each(data.lovedtracks.track, function(i, item){ 
 							var url = item.url;
 							var name = item.name;
@@ -738,7 +738,7 @@ function streamPage(){
 					limit: '5'
 				},
 				function(data){       
-					$('.stream-lastfm').append('<ul class="stream-ul stream-ul-lastfm-top">');
+					$('.stream-lastfm').append('<ul class="stream-ul stream-ul-lastfm stream-ul-lastfm-top">');
 					$.each(data.toptracks.track, function(i, item){ 
 							var url = item.url;
 							var name = item.name;
