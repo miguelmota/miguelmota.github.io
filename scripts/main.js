@@ -505,7 +505,7 @@ function streamPage(){
 				});
 				
 				// Initialize timeago
-				$('.stream-twitter .status-date').timeago();
+				$('.stream-ul-twitter .status-date').timeago();
 
 				$('.stream-twitter .loader').css('display','none');
 				showMtipTimeout('.stream-logo-twitter');
@@ -582,7 +582,7 @@ function streamPage(){
 			    }); 
 				
 				// Initialize timeago
-				$('.stream-tumblr .status-date').timeago();
+				$('.stream-ul-tumblr .status-date').timeago();
 
 				$('.stream-tumblr .loader').css('display','none');
 				showMtipTimeout('.stream-logo-tumblr');
@@ -604,10 +604,13 @@ function streamPage(){
 					var htmlString = '<ul class="stream-ul stream-ul-delicious">';
 					var title = item.d;
 					var url = item.u;
-		    	  	var date = new Date(item.dt).toUTCString();
-		    	  	htmlString += "<li><a href='"+url+"' rel='external'><span class='icon icon-link-16'></span> "+title+"</a> <time class='status-date' datetime='"+date+"'>"+date+"</time></li>";
+		    	  	var date = new Date(item.dt);
+		    	  	htmlString += "<li><a href='"+url+"' rel='external'><span class='icon icon-link-16'></span> "+title+"</a> <time class='status-date' datetime='"+date.toISOString()+"'>"+date+"</time></li>";
 					$('.stream-delicious').append(htmlString +'</ul>');
 				});
+
+				// Initialize timeago
+				$('.stream-ul-delicious .status-date').timeago();
 				
 				$('.stream-delicious .loader').css('display','none');
 				showMtipTimeout('.stream-logo-delicious');
@@ -645,10 +648,13 @@ function streamPage(){
 								image = item.image[0]['#text'];
 							}
 							var date =  item.date['#text'];
-							htmlString += "<li><a href='"+url+"' rel='external'><img class='stream-thumb' src='"+image+"' alt='' /> "+artist+" - "+name+"</a> <time class='status-date'>"+date+"</time></li>";
+							htmlString += "<li><a href='"+url+"' rel='external'><img class='stream-thumb' src='"+image+"' alt='' /> "+artist+" - "+name+"</a> <time class='status-date' datetime='"+date.toISOString()+"'>"+date+"</time></li>";
 							$('.stream-lastfm').append(htmlString +'</ul>');
 					}); 
 					
+					// Initialize timeago
+					$('.stream-ul-lastfm-recent .status-date').timeago();
+
 					$('.stream-lastfm .loader').css('display','none');
 					showMtipTimeout('.stream-logo-lastfm');
 				}
@@ -683,10 +689,13 @@ function streamPage(){
 							var artist = item.artist['name'];
 							var image = item.image[0]['#text'];
 							var date =  item.date['#text'];
-							htmlString += "<li><a href='"+url+"' rel='external'><img class='stream-thumb' src='"+image+"' alt='' /> "+artist+" - "+name+"</a> <time class='status-date'>"+date+"</time></li>";
+							htmlString += "<li><a href='"+url+"' rel='external'><img class='stream-thumb' src='"+image+"' alt='' /> "+artist+" - "+name+"</a> <time class='status-date' datetime='"+date.toISOString()+"'>"+date+"</time></li>";
 							$('.stream-lastfm').append(htmlString +'</ul>');
 					}); 
 					
+					// Initialize timeago
+					$('.stream-ul-lastfm-loved .status-date').timeago();
+
 					$('.stream-lastfm .loader').css('display','none');
 					//$('.stream-ul-lastfm-loved').css('display','none');
 				}
@@ -753,12 +762,16 @@ function streamPage(){
 				var html = ["<ul class='stream-ul stream-ul-wakoopa-recent stream-ul-chart'>"];
 				for(var i = 0; i < data.length; i++){
 					var entry = data[i].software;
-					var date = new Date(entry.last_active_at).toUTCString();
-					html.push("<li><a href='"+entry.complete_url+"' rel='external'> <img class='stream-thumb' src='"+entry.complete_thumb_url+"' alt='' /> "+entry.name+"</a> <time class='status-date'>"+niceTime(date)+"</time>", "</li>");
+					var date = new Date(entry.last_active_at);
+					html.push("<li><a href='"+entry.complete_url+"' rel='external'> <img class='stream-thumb' src='"+entry.complete_thumb_url+"' alt='' /> "+entry.name+"</a> <time class='status-date' datetime='"+date.toISOString()+"'>"+date+"</time>", "</li>");
 				}
 				
 				html.push("</ul>");
 				document.getElementById('stream-wakoopa-software-recent').innerHTML = html.join("");
+
+				// Initialize timeago
+				$('.stream-ul-wakoopa-recent .status-date').timeago();
+
 				$('.stream-wakoopa .loader').css('display','none');
 				showMtipTimeout('.stream-logo-wakoopa');
 			}
@@ -786,12 +799,15 @@ function streamPage(){
 				var html = ["<ul class='stream-ul stream-ul-wakoopa-top stream-ul-chart'>"];
 				for(var i = 0; i < data.length; i++){
 					var entry = data[i].software;
-					var date = new Date(entry.last_active_at).toUTCString();
-					html.push("<li><a href='"+entry.complete_url+"' rel='external'> <img class='stream-thumb' src='"+entry.complete_thumb_url+"' alt='' /> "+entry.name+"</a> <time class='status-date'>"+niceTime(date)+"</time>", "</li>");
+					var date = new Date(entry.last_active_at);
+					html.push("<li><a href='"+entry.complete_url+"' rel='external'> <img class='stream-thumb' src='"+entry.complete_thumb_url+"' alt='' /> "+entry.name+"</a> <time class='status-date' datetime='"+date.toISOString()+"'>"+date+"</time>", "</li>");
 				}
 				
 				html.push("</ul>");
 				document.getElementById('stream-wakoopa-software-top').innerHTML = html.join("");
+
+				// Initialize timeago
+				$('.stream-ul-wakoopa-top .status-date').timeago();
 				$('.stream-wakoopa .loader').css('display','none');
 			}
 		);
