@@ -1270,9 +1270,9 @@ function blogPage(){
 	});
 	
 	$('.blog-post-list a').hover(
-		function{
+		function(){
 			$('.icon', this).addClass('icon-no-opacity');
-		},function{
+		},function(){
 			$('.icon', this).addClass('icon-no-opacity');
 		}
 	);
