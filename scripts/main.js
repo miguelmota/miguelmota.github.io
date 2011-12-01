@@ -1139,17 +1139,23 @@ function contactPage(){
 	
 	// Create method to validate name input
 	$('.contact-form-submit').live('click', function(){
-		$.validator.addMethod('namecheck', function(value, element){
+		$.validator.addMethod('nameCheck', function(value, element){
 			return this.optional(element) || /^[a-zA-Z]*$/.test(value);
 	});
 
+	// Create method to validate message input
+	$('.contact-form-submit').live('click', function(){
+		$.validator.addMethod('messageCheck', function(value, element){
+			return this.optional(element) || /^[message]/.test(value);
+	});
 		
+
 		
 	// Validate contact form
 	$('.contact-form').validate({
 		rules: {
 			name: {
-				namecheck: true,
+				nameCheck: true,
 				required: true
 			},
 			email: {
@@ -1157,6 +1163,7 @@ function contactPage(){
 				email: true
 			},
 			message: {
+				messageCheck: true,
 				required: true,
 				minlength: 2
 			}
@@ -1170,9 +1177,12 @@ function contactPage(){
 				required: '',
 				email: ''
 			},
-			message: '',
-			minlength: ''
-			},
+			message: {
+				messageCheck: '',
+				required: '',
+				minlength: ''
+			}
+		},
 		onkeyup: true,
 		debug: true
 	});
