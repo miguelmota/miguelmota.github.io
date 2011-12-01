@@ -495,7 +495,7 @@ function streamPage(){
 					var username = status.user.screen_name;
 					var post = status.text;
 					var id = status.id_str;
-		    	  	var date = new Date(status.created_at).toUTCString();
+		    	  	var date = new Date(status.created_at);
 					htmlString += "<li id='"+id+"' class='status'><span class='post'><a href='http://twitter.com/miguel_mota/status/"+id+"' rel='external'><span class='icon icon-twitter-bird-16'></span> "+post+"</a></span> <time class='status-date' datetime='"+date.toISOString()+"'>"+date+"</time></li>";
 					$('.stream-twitter').append(htmlString +'</ul>');
 					while(pro_img_cnt == 0){
@@ -572,7 +572,7 @@ function streamPage(){
 			function(data){
 				$.each(data.posts, function(i, posts){ 
 						var htmlString = '<ul class="stream-ul stream-ul-tumblr">';
-			    	  	var date = new Date(this['date-gmt']).toUTCString();
+			    	  	var date = new Date(this['date-gmt']);
 			    	  	var url = this.url;
 			    	  	var type = this.type;
 			    	  	var caption = this['photo-caption'];
@@ -582,7 +582,7 @@ function streamPage(){
 			    }); 
 				
 				// Initialize timeago
-				$('.stream-twitter .status-date').timeago();
+				$('.stream-tumblr .status-date').timeago();
 
 				$('.stream-tumblr .loader').css('display','none');
 				showMtipTimeout('.stream-logo-tumblr');
