@@ -32,7 +32,7 @@ $(document).ready(function(){
 	
 	
 	// Initialize timeago
-	$('time[datetime]').timeago();
+	$('.latest-tweet-date').timeago();
 
 
 
