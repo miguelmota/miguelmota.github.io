@@ -647,7 +647,7 @@ function streamPage(){
 							if (item.image[0]['#text']) {
 								image = item.image[0]['#text'];
 							}
-							var date =  new Date(item.date['uts']);
+							var date =  new Date(item.date['#text']);
 							htmlString += "<li><a href='"+url+"' rel='external'><img class='stream-thumb' src='"+image+"' alt='' /> "+artist+" - "+name+"</a> <time class='status-date' datetime='"+date.toISOString()+"'>"+date+"</time></li>";
 							$('.stream-lastfm').append(htmlString +'</ul>');
 					}); 
@@ -688,7 +688,7 @@ function streamPage(){
 							var name = item.name;
 							var artist = item.artist['name'];
 							var image = item.image[0]['#text'];
-							var date =  new Date(item.date['uts']);
+							var date =  new Date(item.date['#text']);
 							htmlString += "<li><a href='"+url+"' rel='external'><img class='stream-thumb' src='"+image+"' alt='' /> "+artist+" - "+name+"</a> <time class='status-date' datetime='"+date.toISOString()+"'>"+date+"</time></li>";
 							$('.stream-lastfm').append(htmlString +'</ul>');
 					}); 
