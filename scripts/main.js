@@ -73,7 +73,10 @@ $(document).ready(function(){
 	
 	// Change default text color on input focus
 	$('input:text, input:password, textarea').focus(function(){
-		$(this).css('color', '#999');
+		$(this).css({
+			color: '#999',
+			fontStyle: 'normal'
+		});
 	});
 
 	
