@@ -662,7 +662,7 @@ img.loader {
 	width: 100%;
 }
 input.search-input {
-	background: #222 url('/images/icons/pictos/16/search-2.png') no-repeat 10px 4px;
+	background: #222 url('/images/icons/pictos/16/search-2.png') no-repeat right 4px;
 	border-left-color: #292929;
 	font-style: italic;
 	padding-right: 25px;
