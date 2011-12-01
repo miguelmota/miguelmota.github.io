@@ -1622,7 +1622,7 @@ input.short-url:focus {
 	font-size: 12px;
 	padding: 35px 10px 0 10px;
 	position: relative;
-	text-shadow: 0 -1px 0 rgba(0,0,0,.5);
+	text-shadow: 0 -1px 0 rgba(0,0,0,.3);
 	width: 100%;
 }
 .main-footer a {
@@ -1630,7 +1630,7 @@ input.short-url:focus {
 }
 .main-footer a:hover,
 .main-footer a:active {
-	color: #007299;
+	color: #005977;
 }
 
 .main-footer-content {
