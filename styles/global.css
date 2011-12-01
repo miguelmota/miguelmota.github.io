@@ -1248,6 +1248,9 @@ a.google-plus-link {
 	float: left;
 	width: 100%;
 }
+.contact-form input[type=text] {
+	font-style: italic;
+}
 .contact-form-message {
 	height: 300px;
 	width: 97%;
