@@ -1618,12 +1618,21 @@ input.short-url:focus {
 ============================================================================== */
 .main-footer {
 	clear: both;
+	color: #555;
 	font-size: 12px;
 	padding: 35px 10px 0 10px;
 	position: relative;
 	text-shadow: 0 -1px 0 rgba(0,0,0,.5);
 	width: 100%;
 }
+.main-footer a {
+	color: #002633;
+}
+.main-footer a:hover,
+.main-footer a:active, {
+	color: #034;
+}
+
 .main-footer-content {
 	float: left;
 	width: 500px;
