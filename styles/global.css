@@ -778,24 +778,25 @@ input.search-input {
 	min-height: 80px;
 }
 .stream-twitter {
-	min-height: 180px;
+	min-height: 200px;
 }
 .stream-facebook {
 	min-height: 40px;
 }
 .stream-tumblr {
-	min-height: 80px;
+	min-height: 100px;
 }
 .stream-delicious {
-	mmin-height: 80px;
+	mmin-height: 100px;
 }
 .stream-lastfm {
-	min-height: 180px;
+	min-height: 200px;
 }
 .stream-wakoopa {
 	min-height: 100px;
 }
 .stream-flickr {
+	min-height: 200px;
 	width: 535px;
 }
 .latitude-map-button {
