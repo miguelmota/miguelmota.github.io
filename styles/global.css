@@ -578,10 +578,11 @@ img.loader {
 	width: 200px;
 }
 .nav-logo {
-	border: 0;
+	border-left: none !important;
 	display: block;
 	height: 64px;
 	margin-bottom: 15px;
+	padding: 0;
 	width: 64px;
 }
 .site-title {
