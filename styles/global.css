@@ -1833,7 +1833,7 @@ input.short-url:focus {
 	 * Navigation links
 	 * --------------------- */
 	.main-side-nav {
-		padding-top: 10px;
+		padding: 10px 0;
 		position: static;	
 		width: 100%;
 	}
@@ -1852,7 +1852,7 @@ input.short-url:focus {
 	 * Search box
 	 * --------------------- */
 	input.search-input {
-		width: 92%;
+		width: 87%;
 	}
 	
 	/* ------------------------
