@@ -474,11 +474,13 @@ function streamPage(){
 			function(data){
 				$.each(data, function(i, status){
 					var htmlString = '<ul class="stream-ul stream-ul-twitter">';
+					var profile_image = status.user.profile_image_url;
 					var post = status.text;
 					var id = status.id_str;
 		    	  	var date = new Date(status.created_at).toUTCString();
 					htmlString += "<li id='"+id+"' class='status'><span class='post'><a href='http://twitter.com/miguel_mota/status/"+id+"' rel='external'><span class='icon icon-twitter-bird-16'></span> "+post+"</a></span> <time class='status-date'>"+niceTime(date)+"</time></li>";
 					$('.stream-twitter').append(htmlString +'</ul>');
+					$('.stream-twitter').prepend('<img src="'+profile_image+'" alt='' />');
 				});
 				
 				$('.stream-twitter .loader').css('display','none');
