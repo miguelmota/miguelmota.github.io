@@ -330,11 +330,9 @@ img.loader {
 }
 .icon-calendar-16 {
 	background-image: url('/images/icons/pictos/16/calendar.png');
-	width: 13px;
 }
 .icon-calendar-check-16 {
 	background-image: url('/images/icons/pictos/16/calendar-check.png');
-	width: 13px;
 }
 .icon-chat-16 {
 	background-image: url('/images/icons/pictos/16/chat.png');
@@ -344,7 +342,6 @@ img.loader {
 }
 .icon-checkmark-16 {
 	background-image: url('/images/icons/pictos/16/checkmark.png');
-	height: 11px;
 }
 .icon-clock-16 {
 	background-image: url('/images/icons/pictos/16/clock.png');
@@ -354,7 +351,6 @@ img.loader {
 }
 .icon-comments-16 {
 	background-image: url('/images/icons/pictos/16/comments.png');
-	height: 13px;
 }
 .icon-dribbble-24 {
 	background: url('/images/icons/pictos/24/dribbble.png');
@@ -370,7 +366,6 @@ img.loader {
 }
 .icon-heart-16 {
 	background-image: url('/images/icons/pictos/16/heart.png');
-	height: 14px;
 }
 .icon-home-16 {
 	background-image: url('/images/icons/pictos/16/home.png');
@@ -386,7 +381,6 @@ img.loader {
 }
 .icon-location-marker-16 {
 	background-image: url('/images/icons/pictos/16/location-marker.png');
-	width: 13px;
 }
 .icon-mail-16 {
 	background-image: url('/images/icons/pictos/16/mail.png');
@@ -423,7 +417,6 @@ img.loader {
 }
 .icon-random-24 {
 	background-image: url('/images/icons/pictos/24/random.png');
-	height: 18px;
 }
 .icon-reblog-16 {
 	background-image: url('/images/icons/pictos/16/reblog.png');
@@ -436,7 +429,6 @@ img.loader {
 }
 .icon-tags-16 {
 	background-image: url('/images/icons/pictos/16/tags.png');
-	width: 12px;
 }
 .icon-text-16 {
 	background-image: url('/images/icons/pictos/16/text.png');
@@ -458,7 +450,6 @@ img.loader {
 }
 .icon-twitter-bird-24 {
 	background-image: url('/images/icons/pictos/24/twitter-bird.png');
-	height: 13px;
 }
 .icon-video-16 {
 	background-image: url('/images/icons/pictos/16/video.png');
