@@ -573,17 +573,20 @@ function streamPage(){
 	$('.stream-tumblr .loader').css('display','block');
 	$.getJSON('http://miguelmota.tumblr.com/api/read/json?num=3&callback=?',
 			function(data){
+				var htmlString = '<ul class="stream-ul stream-ul-tumblr">';
 				$.each(data.posts, function(i, posts){ 
-						var htmlString = '<ul class="stream-ul stream-ul-tumblr">';
+						
 			    	  	var date = new Date(this['date-gmt']);
 			    	  	var url = this.url;
 			    	  	var type = this.type;
 			    	  	var caption = this['photo-caption'];
 			    	  	var slug = this.slug.replace(/-/g,' ');
-			    	  	htmlString += "<li><a href='"+url+"' rel='external'><span class='icon icon-"+type+"-16'></span> "+slug.substring(0,1).toUpperCase()+slug.substr(1,200)+"</a> <time class='status-date' datetime='"+date.toISOString()+"'>"+date+"</time></li>";
-						$('.stream-tumblr').append(htmlString +'</ul>');
+			    	  	var list = '';
+			    	  	list += "<li><a href='"+url+"' rel='external'><span class='icon icon-"+type+"-16'></span> "+slug.substring(0,1).toUpperCase()+slug.substr(1,200)+"</a> <time class='status-date' datetime='"+date.toISOString()+"'>"+date+"</time></li>";
 			    }); 
-				
+
+				$('.stream-tumblr').append(htmlString+list+'</ul>');
+
 				// Initialize timeago
 				$('.stream-ul-tumblr .status-date').timeago();
 
