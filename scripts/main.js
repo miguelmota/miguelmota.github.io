@@ -85,7 +85,7 @@ $(document).ready(function(){
 	
 	
 	// Change default text color on input focus
-	$('input:text, input:password, textarea').focus(function(){
+	$('input:text:not(".short-url"), input:password, textarea').focus(function(){
 		if(this.value === this.defaultValue){
 			this.value = '';
 		}
