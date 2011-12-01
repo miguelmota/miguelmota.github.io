@@ -1833,9 +1833,11 @@ input.short-url:focus {
 	 * Navigation links
 	 * --------------------- */
 	.main-side-nav {
-		padding: 10px 0;
 		position: static;	
 		width: 100%;
+	}
+	.main-side-nav-ul {
+		margin: 10px 0;
 	}
 	.main-side-nav-ul li {
 		float: left;
