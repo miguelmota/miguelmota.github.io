@@ -716,6 +716,10 @@ input.search-input {
 .latest-tweet-content a {
 	font-weight: normal;
 }
+.latest-tweet-loading {
+	color: #555;
+	font-style: italic;
+}
 .latest-tweet-date {
 	font-size: 12px;
 }
