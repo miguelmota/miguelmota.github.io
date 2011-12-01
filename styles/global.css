@@ -807,9 +807,11 @@ input.search-input {
 	STREAM PROFILE IMAGE
 ------------------------------------------------------------------------------ */
 .stream-profile-image {
+	display: none;
 	float: left;
-	height: 24px;
-	width: 24px;
+	height: 18px;
+	margin-right: 5px;
+	width: 18px;
 }
 /* -----------------------------------------------------------------------------
 	STREAM LOGO
