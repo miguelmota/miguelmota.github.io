@@ -492,6 +492,7 @@ function streamPage(){
 			},
 			function(data){
 				var pro_img_cnt = 0;
+				$('.stream-twitter').append('<ul class="stream-ul stream-ul-twitter">');
 				$.each(data, function(i, status){
 					var htmlString = '<ul class="stream-ul stream-ul-twitter">';
 					var profile_image = status.user.profile_image_url;
@@ -499,14 +500,16 @@ function streamPage(){
 					var post = status.text;
 					var id = status.id_str;
 		    	  	var date = new Date(status.created_at);
-					htmlString += "<li id='"+id+"' class='status'><span class='post'><a href='http://twitter.com/miguel_mota/status/"+id+"' rel='external'><span class='icon icon-twitter-bird-16'></span> "+post+"</a></span> <time class='status-date' datetime='"+date.toISOString()+"'>"+date+"</time></li>";
-					$('.stream-twitter').append(htmlString +'</ul>');
+					var list_item = "<li id='"+id+"' class='status'><span class='post'><a href='http://twitter.com/miguel_mota/status/"+id+"' rel='external'><span class='icon icon-twitter-bird-16'></span> "+post+"</a></span> <time class='status-date' datetime='"+date.toISOString()+"'>"+date+"</time></li>";
+					$('.stream-ul-twitter').append(list_item);
 					while(pro_img_cnt == 0){
 						$('.stream-twitter').prepend('<a href="http://twitter.com/'+username+'"><img class="stream-profile-image" src="'+profile_image+'" alt="" /></a>');
 						pro_img_cnt ++;
 					}
 				});
-				
+
+				$('.stream-ul-twitter').append('</ul>');
+
 				// Initialize timeago
 				$('.stream-ul-twitter .status-date').timeago();
 
@@ -606,14 +609,16 @@ function streamPage(){
 				count: '3'
 			},
 			function(data){
+				$('.stream-delicious').append('<ul class="stream-ul stream-ul-delicious">');
 				$.each(data, function(i, item){
-					var htmlString = '<ul class="stream-ul stream-ul-delicious">';
 					var title = item.d;
 					var url = item.u;
 		    	  	var date = new Date(item.dt);
-		    	  	htmlString += "<li><a href='"+url+"' rel='external'><span class='icon icon-link-16'></span> "+title+"</a> <time class='status-date' datetime='"+date.toISOString()+"'>"+date+"</time></li>";
-					$('.stream-delicious').append(htmlString +'</ul>');
+		    	  	var list_item = "<li><a href='"+url+"' rel='external'><span class='icon icon-link-16'></span> "+title+"</a> <time class='status-date' datetime='"+date.toISOString()+"'>"+date+"</time></li>";
+					$('.stream-ul-delicious').append(list_item);
 				});
+					
+				$('.stream-ul-delicious').append('</ul>');
 
 				// Initialize timeago
 				$('.stream-ul-delicious .status-date').timeago();
