@@ -36,6 +36,7 @@ $(document).ready(function(){
 		if($(this).attr('id') == $('.content').attr('class').split(' ')[1]){
 			$('#stream').removeClass('selected');
 			$(this).addClass('selected');
+			$('.icon', this).addClass('icon-no-opacity');
 				switch($('.content').attr('class').split(' ')[1]){
 				case 'stream':
 					streamPage();
@@ -57,6 +58,9 @@ $(document).ready(function(){
 		
 	});
 	
+
+
+	// Highlight icon on link hover
 	$('a').has('.icon').hover(
 		function(){
 			$('.icon', this).addClass('icon-no-opacity');
@@ -66,6 +70,7 @@ $(document).ready(function(){
 		}
 	);
 	
+
 
 	// Navigation hover effect
 	$('.main-side-nav-ul a').hover(
