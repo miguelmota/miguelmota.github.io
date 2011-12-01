@@ -225,8 +225,9 @@ function recent_tweets(data) {
 		document.getElementById('latest-tweet').innerHTML =
 			'<div class="latest-tweet-content"><a href="http://twitter.com/miguelmota/status/'+
 			+(data[i].id_str ? data[i].id_str : data[i].id)+'" rel="external">'+data[i].text+'</a> <time class="latest-tweet-date" datetime="'+date.toISOString()+'">'+date+'</time></div>';
-				// Initialize timeago
-	$('.latest-tweet-date').timeago();
+	
+		// Initialize timeago
+		$('.latest-tweet-date').timeago();
 	}
 	
 	// Show mtip on twitter bird hover
@@ -495,7 +496,7 @@ function streamPage(){
 					var post = status.text;
 					var id = status.id_str;
 		    	  	var date = new Date(status.created_at).toUTCString();
-					htmlString += "<li id='"+id+"' class='status'><span class='post'><a href='http://twitter.com/miguel_mota/status/"+id+"' rel='external'><span class='icon icon-twitter-bird-16'></span> "+post+"</a></span> <time class='status-date' datetime='"+date+"'>"+date+"</time></li>";
+					htmlString += "<li id='"+id+"' class='status'><span class='post'><a href='http://twitter.com/miguel_mota/status/"+id+"' rel='external'><span class='icon icon-twitter-bird-16'></span> "+post+"</a></span> <time class='status-date' datetime='"+date.toISOString()+"'>"+date+"</time></li>";
 					$('.stream-twitter').append(htmlString +'</ul>');
 					while(pro_img_cnt == 0){
 						$('.stream-twitter').prepend('<a href="http://twitter.com/'+username+'"><img class="stream-profile-image" src="'+profile_image+'" alt="" /></a>');
@@ -503,6 +504,9 @@ function streamPage(){
 					}
 				});
 				
+				// Initialize timeago
+				$('.stream-twitter .status-date').timeago();
+
 				$('.stream-twitter .loader').css('display','none');
 				showMtipTimeout('.stream-logo-twitter');
 			}
@@ -573,13 +577,16 @@ function streamPage(){
 			    	  	var type = this.type;
 			    	  	var caption = this['photo-caption'];
 			    	  	var slug = this.slug.replace(/-/g,' ');
-			    	  	htmlString += "<li><a href='"+url+"' rel='external'><span class='icon icon-"+type+"-16'></span> "+slug.substring(0,1).toUpperCase()+slug.substr(1,200)+"</a> <time class='status-date' datetime='"+date+"'>"+date+"</time></li>";
+			    	  	htmlString += "<li><a href='"+url+"' rel='external'><span class='icon icon-"+type+"-16'></span> "+slug.substring(0,1).toUpperCase()+slug.substr(1,200)+"</a> <time class='status-date' datetime='"+date.toISOString()+"'>"+date+"</time></li>";
 						$('.stream-tumblr').append(htmlString +'</ul>');
-			      }); 
+			    }); 
 				
-				  $('.stream-tumblr .loader').css('display','none');
-				  showMtipTimeout('.stream-logo-tumblr');
-			  }
+				// Initialize timeago
+				$('.stream-twitter .status-date').timeago();
+
+				$('.stream-tumblr .loader').css('display','none');
+				showMtipTimeout('.stream-logo-tumblr');
+			}
 	);
 	
 	
