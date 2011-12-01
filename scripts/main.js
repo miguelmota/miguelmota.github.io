@@ -1177,12 +1177,9 @@ function contactPage(){
 				required: '',
 				email: ''
 			},
-			message: {
-				messageCheck: '',
-				required: '',
-				minlength: ''
-			}
-		},
+			message: '',
+			minlength: ''
+			},
 		onkeyup: true,
 		debug: true
 	});
