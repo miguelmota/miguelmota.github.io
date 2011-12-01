@@ -73,7 +73,7 @@
 				<li><a id='blog' href='/blog'><span class='icon icon-nav icon-text-16'></span> blog</a></li>
 			</ul>
 			<form class='search-form' action='/search' method='get'>
-	   			<input type='text' class='search-input' name='q' value='[search]' onfocus="if(this.value=='[search]') this.value='';" onblur="if(this.value=='') this.value='[search]';" />
+	   			<input type='text' class='search-input' name='q' value='[search]' onfocus="if(this.value=='[search]') this.value='';" onblur="if(this.value==''){ this.value='[search]'; this.style.color = '#555'; this.style.fontStyle= 'italic';}" />
 	    		<input type='submit' class='search-button' value='Search' />
 			</form>
 			<div class='follow-wrap'>
