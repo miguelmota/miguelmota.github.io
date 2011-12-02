@@ -312,8 +312,9 @@ img.loader {
 	filter: alpha(opacity=100);
 }
 .icon-title {
+	background-position: 50% 50%;
 	height: 32px;
-	margin-right: 5px;
+	margin-left: 5px;
 	width: 32px;
 }
 .icon-nav {
