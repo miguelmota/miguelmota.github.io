@@ -227,7 +227,7 @@ function recent_tweets(data) {
 			+(data[i].id_str ? data[i].id_str : data[i].id)+'" rel="external">'+data[i].text+'</a> <time class="latest-tweet-date" datetime="'+date+'">'+date+'</time></div>';
 	
 		// Initialize timeago
-		//$('.latest-tweet-date').timeago();
+		$('.latest-tweet-date').timeago();
 	}
 	
 	// Show mtip on twitter bird hover
@@ -500,7 +500,7 @@ function streamPage(){
 					var post = status.text;
 					var id = status.id_str;
 		    	  	var date = new Date(status.created_at);
-					var list_item = "<li id='"+id+"' class='status'><span class='post'><a href='http://twitter.com/miguel_mota/status/"+id+"' rel='external'><span class='icon icon-twitter-bird-16'></span> "+post+"</a></span> <time class='status-date' datetime='"+date"'>"+date+"</time></li>";
+					var list_item = "<li id='"+id+"' class='status'><span class='post'><a href='http://twitter.com/miguel_mota/status/"+id+"' rel='external'><span class='icon icon-twitter-bird-16'></span> "+post+"</a></span> <time class='status-date' datetime='"+date+"'>"+date+"</time></li>";
 					$('.stream-ul-twitter').append(list_item);
 					while(pro_img_cnt == 0){
 						$('.stream-twitter').prepend('<a href="http://twitter.com/'+username+'"><img class="stream-profile-image" src="'+profile_image+'" alt="" /></a>');
