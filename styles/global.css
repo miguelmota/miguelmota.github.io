@@ -1094,12 +1094,10 @@ input.search-input {
 	font-size: 10px;
 }
 .about-column-left {
-	border: 1px solid red;
 	float: left;
-	width: 65%;
+	width: 68%;
 }
 .about-column-right {
-	border: 1px solid right;
 	float: right;
 	width: 30%;
 }
