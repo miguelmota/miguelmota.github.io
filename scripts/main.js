@@ -61,7 +61,7 @@ $(document).ready(function(){
 
 
 	// Highlight icon on link hover
-	$('a:not(".selected")').has('.icon').hover(
+	$('a:not(".selected, .blog-post-list a")').has('.icon').hover(
 		function(){
 			$('.icon', this).addClass('icon-no-opacity');
 		},
@@ -1268,16 +1268,6 @@ function blogPage(){
 		$('.blog-post-grid').slideUp('fast');
 		$('.blog-post-list').slideDown('fast');
 	});
-	
-	$('.blog-post-list a').hover(
-		function(){
-			$('.icon', this).removeClass('icon-no-opacity').addClass('icon-no-hover');
-		},function(){
-			$('.icon', this).removeClass('icon-no-opacity').addClass('icon-no-hover');
-		}
-	);
-	
-	
 	
 	// Get AddThis script
 	$.getScript('http://s7.addthis.com/js/250/addthis_widget.js#username=miguelmota');
