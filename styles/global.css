@@ -311,6 +311,11 @@ img.loader {
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
 	filter: alpha(opacity=100);
 }
+.icon-title {
+	height: 32px;
+	margin-right: 5px;
+	width: 32px;
+}
 .icon-nav {
 	float: left;
 	margin-right: 5px;
@@ -352,6 +357,9 @@ img.loader {
 }
 .icon-cloud-16 {
 	background-image: url('/images/icons/pictos/16/cloud.png');
+}
+.icon-clock-32 {
+	background-image: url('/images/icons/pictos/32/cloud.png');
 }
 .icon-comments-16 {
 	background-image: url('/images/icons/pictos/16/comments.png');
