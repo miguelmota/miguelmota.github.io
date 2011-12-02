@@ -514,7 +514,7 @@ function streamPage(){
 					var post = status.text;
 					var id = status.id_str;
 		    	  	var date = new Date(status.created_at);
-					var list_item = "<li id='"+id+"' class='status'><span class='post'><a href='http://twitter.com/miguel_mota/status/"+id+"' rel='external'><span class='icon icon-twitter-bird-16'></span> "+post+"</a></span> <time class='status-date' datetime='"+date+"'>"+date+"</time></li>";
+					var list_item = "<li id='"+id+"' class='status'><span class='post'><a href='http://twitter.com/miguel_mota/status/"+id+"' rel='external'><span class='icon icon-twitter-bird-16'></span> "+post+"</a></span> <time class='status-date' datetime='"+ISODateString(date)+"'>"+ISODateString(date)+"</time></li>";
 					$('.stream-ul-twitter').append(list_item);
 					while(pro_img_cnt == 0){
 						$('.stream-twitter').prepend('<a href="http://twitter.com/'+username+'"><img class="stream-profile-image" src="'+profile_image+'" alt="" /></a>');
@@ -598,7 +598,7 @@ function streamPage(){
 			    	  	var type = this.type;
 			    	  	var caption = this['photo-caption'];
 			    	  	var slug = this.slug.replace(/-/g,' ');
-			    	  	var list_item = "<li><a href='"+url+"' rel='external'><span class='icon icon-"+type+"-16'></span> "+slug.substring(0,1).toUpperCase()+slug.substr(1,200)+"</a> <time class='status-date' datetime='"+date+"'>"+date+"</time></li>";
+			    	  	var list_item = "<li><a href='"+url+"' rel='external'><span class='icon icon-"+type+"-16'></span> "+slug.substring(0,1).toUpperCase()+slug.substr(1,200)+"</a> <time class='status-date' datetime='"+ISODateString(date)+"'>"+ISODateString(date)+"</time></li>";
 			    		$('.stream-ul-tumblr').append(list_item);
 				}); 
 
@@ -628,7 +628,7 @@ function streamPage(){
 					var title = item.d;
 					var url = item.u;
 		    	  	var date = new Date(item.dt);
-		    	  	var list_item = "<li><a href='"+url+"' rel='external'><span class='icon icon-link-16'></span> "+title+"</a> <time class='status-date' datetime='"+date+"'>"+date+"</time></li>";
+		    	  	var list_item = "<li><a href='"+url+"' rel='external'><span class='icon icon-link-16'></span> "+title+"</a> <time class='status-date' datetime='"+ISODateString(date)+"'>"+ISODateString(date)+"</time></li>";
 					$('.stream-ul-delicious').append(list_item);
 				});
 					
@@ -673,7 +673,7 @@ function streamPage(){
 								image = item.image[0]['#text'];
 							}
 							var date =  new Date(item.date['#text']);
-							var list_item = "<li><a href='"+url+"' rel='external'><img class='stream-thumb' src='"+image+"' alt='' /> "+artist+" - "+name+"</a> <time class='status-date' datetime='"+date+"'>"+date+"</time></li>";
+							var list_item = "<li><a href='"+url+"' rel='external'><img class='stream-thumb' src='"+image+"' alt='' /> "+artist+" - "+name+"</a> <time class='status-date' datetime='"+ISODateString(date)+"'>"+ISODateString(date)+"</time></li>";
 							$('.stream-ul-lastfm-recent').append(list_item);
 					}); 
 					
@@ -716,7 +716,7 @@ function streamPage(){
 							var artist = item.artist['name'];
 							var image = item.image[0]['#text'];
 							var date =  new Date(item.date['#text']);
-							var list_item = "<li><a href='"+url+"' rel='external'><img class='stream-thumb' src='"+image+"' alt='' /> "+artist+" - "+name+"</a> <time class='status-date' datetime='"+date+"'>"+date+"</time></li>";
+							var list_item = "<li><a href='"+url+"' rel='external'><img class='stream-thumb' src='"+image+"' alt='' /> "+artist+" - "+name+"</a> <time class='status-date' datetime='"+ISODateString(date)+"'>"+ISODateString(date)+"</time></li>";
 							$('.stream-ul-lastfm-loved').append(list_item);
 					}); 
 
@@ -794,7 +794,7 @@ function streamPage(){
 				for(var i = 0; i < data.length; i++){
 					var entry = data[i].software;
 					var date = new Date(entry.last_active_at);
-					html.push("<li><a href='"+entry.complete_url+"' rel='external'> <img class='stream-thumb' src='"+entry.complete_thumb_url+"' alt='' /> "+entry.name+"</a> <time class='status-date' datetime='"+date+"'>"+date+"</time>", "</li>");
+					html.push("<li><a href='"+entry.complete_url+"' rel='external'> <img class='stream-thumb' src='"+entry.complete_thumb_url+"' alt='' /> "+entry.name+"</a> <time class='status-date' datetime='"+ISODateString(date)+"'>"+ISODateString(date)+"</time>", "</li>");
 				}
 				
 				html.push("</ul>");
@@ -831,7 +831,7 @@ function streamPage(){
 				for(var i = 0; i < data.length; i++){
 					var entry = data[i].software;
 					var date = new Date(entry.last_active_at);
-					html.push("<li><a href='"+entry.complete_url+"' rel='external'> <img class='stream-thumb' src='"+entry.complete_thumb_url+"' alt='' /> "+entry.name+"</a> <time class='status-date' datetime='"+date+"'>"+date+"</time>", "</li>");
+					html.push("<li><a href='"+entry.complete_url+"' rel='external'> <img class='stream-thumb' src='"+entry.complete_thumb_url+"' alt='' /> "+entry.name+"</a> <time class='status-date' datetime='"+ISODateString(date)+"'>"+ISODateString(date)+"</time>", "</li>");
 				}
 				
 				html.push("</ul>");
