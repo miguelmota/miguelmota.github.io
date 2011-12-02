@@ -1096,12 +1096,12 @@ input.search-input {
 .about-column-left {
 	border: 1px solid red;
 	float: left;
-	width: 78%;
+	width: 60%;
 }
 .about-column-right {
 	border: 1px solid right;
 	float: right;
-	width: 20%;
+	width: 40%;
 }
 /* ==============================================================================
 	END ABOUT PAGE
