@@ -1090,8 +1090,18 @@ input.search-input {
 /* ==============================================================================
 	ABOUT PAGE
 ============================================================================== */
-a.google-plus-link {
+.google-plus-link {
 	font-size: 10px;
+}
+.about-column-left {
+	border: 1px solid red;
+	float: left;
+	width: 78%;
+}
+.about-column-right {
+	border: 1px solid right;
+	float: right;
+	width: 20%;
 }
 /* ==============================================================================
 	END ABOUT PAGE
