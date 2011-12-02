@@ -227,7 +227,7 @@ function recent_tweets(data) {
 			+(data[i].id_str ? data[i].id_str : data[i].id)+'" rel="external">'+data[i].text+'</a> <time class="latest-tweet-date" datetime="'+date+'">'+date+'</time></div>';
 	
 		// Initialize timeago
-		$('.latest-tweet-date').timeago();
+		//$('.latest-tweet-date').timeago();
 	}
 	
 	// Show mtip on twitter bird hover
