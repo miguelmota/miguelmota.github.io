@@ -218,13 +218,27 @@ $(window).scroll(function(){
  * --------------------------------------------------------------------------------
  */
 
+// Convert date to ISO format
+function ISODateString(d){
+	function pad(n){return n<10 ? '0'+n : n}
+	return d.getUTCFullYear()+'-'
+	      + pad(d.getUTCMonth()+1)+'-'
+	      + pad(d.getUTCDate())+'T'
+	      + pad(d.getUTCHours())+':'
+	      + pad(d.getUTCMinutes())+':'
+	      + pad(d.getUTCSeconds())+'Z'
+ }
+
+
+
+
 // Display latest tweet
 function recent_tweets(data) {
 	for (i=0; i<1; i++) {
 		var date = new Date(data[i].created_at);
 		document.getElementById('latest-tweet').innerHTML =
 			'<div class="latest-tweet-content"><a href="http://twitter.com/miguelmota/status/'+
-			+(data[i].id_str ? data[i].id_str : data[i].id)+'" rel="external">'+data[i].text+'</a> <time class="latest-tweet-date" datetime="'+date+'">'+date+'</time></div>';
+			+(data[i].id_str ? data[i].id_str : data[i].id)+'" rel="external">'+data[i].text+'</a> <time class="latest-tweet-date" datetime="'+ISODateString(date)+'">'+ISODateString(date)+'</time></div>';
 	
 		// Initialize timeago
 		$('.latest-tweet-date').timeago();
