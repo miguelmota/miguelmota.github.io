@@ -157,7 +157,7 @@ input[type=password],
 textarea {		
 	background-color: #141414;
 	border: 0;
-	border-left: 4px solid #292929;
+	border-left: 4px solid #2d2d2d;
 	color: #555;
 	font-family: inherit;
 	font-size: 14px;
@@ -629,7 +629,7 @@ img.loader {
 	padding: 15px 0;
 }
 .main-side-nav-ul a {
-	background-color: #292929;
+	background-color: #2d2d2d;
 	border-left: 4px solid #444;
 	color: #999;
 	display: block;
@@ -686,7 +686,7 @@ img.loader {
 }
 input.search-input {
 	background: #1d1d1d url('/images/icons/pictos/16/search-2.png') no-repeat 98% 4px;
-	border-left-color: #292929;
+	border-left-color: #2d2d2d;
 	font-style: italic;
 	padding-right: 25px;
 	width: 175px;
