@@ -1816,6 +1816,10 @@ input.short-url:focus {
 	 /* ------------------------
 	  * About page
 	  * --------------------- */
+	  .about-photo-desc {
+		right: 40px;
+		top: 20px;
+	}
 	 .about-column-left {
 		width: 480px;
 	}
