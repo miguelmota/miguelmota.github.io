@@ -1822,7 +1822,7 @@ input.short-url:focus {
 	 /* ------------------------
 	  * About page
 	  * --------------------- */
-	  .about-photo-desc {
+	.about-photo-desc {
 		right: 40px;
 		top: 20px;
 	}
@@ -2000,6 +2000,31 @@ input.short-url:focus {
 	 	min-height: 64px;
 	 	width: 64px;
 	 }
+
+  	/* ------------------------
+  	 * About page
+  	 * --------------------- */
+  	.about-photo-wrap .photo {
+		min-height: 50px;
+	}
+    .about-photo-desc {
+    	font-size: 12px;
+    	right: 10px;
+		top: 10px;
+	}
+	.about-column-left {
+		float: none;
+		width: 100%;
+	}
+	.about-column-right {
+		float: none;
+		width: 100%;
+	}
+	#mapabout {
+		width: 100%;
+		height: 200px;
+	}
+		
 	
 	/* ------------------------
 	 * Portfolio page
