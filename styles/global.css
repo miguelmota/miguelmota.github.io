@@ -1095,18 +1095,18 @@ input.search-input {
 	width: 100%;
 }
 .about-photo-wrap .photo {
-	min-height: 80px;
+	min-height: 450px;
 }
 .about-photo-desc {
 	color: #222;
 	font-size: 22px;
 	position: absolute;
 	right: 60px;
-	text-shadow: 0 -1px 0 rgba(255,255,255,.8);
+	text-shadow: 0 1px 0 rgba(255,255,255,.8);
 	top: 40px;
 }
 .about-photo-desc p:first-child {
-	font-size: 26px;
+	font-size: 30px;
 }
 .about-column-left {
 	float: left;
