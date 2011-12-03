@@ -148,7 +148,7 @@ $(document).ready(function(){
 
 
 	// Initialize about page map
-	initializeAboutMap();
+	i6nitializeAboutMap();
 	
 });
 
