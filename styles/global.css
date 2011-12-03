@@ -79,10 +79,6 @@ code {
 em {
 	display: inline;
 }
-img {
-	background-color: #222;
-	border: 0;
-}
 .title {
 	font-family: Klavika, 'Ubuntu Condensed', Helvetica, Arial, sans-serif;
 	font-size: 32px;
