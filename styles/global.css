@@ -1091,6 +1091,7 @@ input.search-input {
 ============================================================================== */
 .about-photo-wrap {
 	height: 100%;
+	margin-bottom: 10px;
 	position: relative;
 	width: 100%;
 }

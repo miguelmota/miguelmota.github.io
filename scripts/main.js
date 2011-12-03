@@ -231,6 +231,32 @@ function ISODateString(d){
 
 
 
+// Convert UTC time to niceTime ie. 2 hours ago, james.padolsey.com/javascript/recursive-pretty-date
+var niceTime = (function(){
+	    var ints = {
+	        second: 1,
+	        minute: 60,
+	        hour: 3600,
+	        day: 86400,
+	        week: 604800,
+	        month: 2592000,
+	        year: 31536000
+	    };
+	    return function(time){
+	        time = +new Date(time);
+	        var gap = ((+new Date()) - time) / 1000,
+	            amount, measure;
+	        for (var i in ints){
+	            if (gap > ints[i]){ measure = i; }
+	        }
+	        amount = gap / ints[measure];
+	        amount = gap > ints.day ? (Math.round(amount)) : Math.round(amount);
+	        amount += ' ' + measure + (amount > 1 ? 's' : '') + ' ago';			    	  	 
+	        return amount;
+	    };
+	})();
+
+
 
 // Display latest tweet
 function recent_tweets(data) {
@@ -339,30 +365,28 @@ function initializeFancybox() {
 
 
 
-// Convert UTC time to niceTime ie. 2 hours ago, james.padolsey.com/javascript/recursive-pretty-date
-var niceTime = (function(){
-	    var ints = {
-	        second: 1,
-	        minute: 60,
-	        hour: 3600,
-	        day: 86400,
-	        week: 604800,
-	        month: 2592000,
-	        year: 31536000
-	    };
-	    return function(time){
-	        time = +new Date(time);
-	        var gap = ((+new Date()) - time) / 1000,
-	            amount, measure;
-	        for (var i in ints){
-	            if (gap > ints[i]){ measure = i; }
-	        }
-	        amount = gap / ints[measure];
-	        amount = gap > ints.day ? (Math.round(amount)) : Math.round(amount);
-	        amount += ' ' + measure + (amount > 1 ? 's' : '') + ' ago';			    	  	 
-	        return amount;
-	    };
-	})();
+// Initialize about page map
+function initializeAboutMap() {
+
+	var latlng = new google.maps.LatLng(33.927124, -117.561326);
+	var myOptions = {
+			zoom: 5,
+			center: latlng,
+			mapTypeId: google.maps.MapTypeId.ROADMAP
+		};
+
+	var map = new google.maps.Map(document.getElementById('map-about'), myOptions);
+
+	var marker = new google.maps.Marker({
+			position: latlng,
+			map: map,
+			title: "Norco, CA"
+		});
+	
+	marker.setAnimation(google.maps.Animation.DROP);
+
+
+
 
 
 
@@ -1310,6 +1334,11 @@ function blogPage(){
 	$('.short-url').mouseup(function(e){
         e.preventDefault();
 	});
+
+
+
+	// Show Google Map
+	initializeAboutMap();
 
 }
 
