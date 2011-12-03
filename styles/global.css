@@ -1095,9 +1095,10 @@ input.search-input {
 	width: 100%;
 }
 .about-photo-desc {
-	font-size: 16px;
+	color: #222;
+	font-size: 18px;
 	position: absolute;
-	right: 30;
+	right: 30px;
 	top: 30px;
 }
 
