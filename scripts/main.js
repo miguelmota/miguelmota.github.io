@@ -368,7 +368,7 @@ function initializeFancybox() {
 // Initialize about page map
 function initializeAboutMap() {
 
-	var latlng = new google.maps.LatLng(33.927124, -117.561326);
+	var latlng = new google.maps.LatLng(33.934815,-117.547703);
 	var myOptions = {
 			zoom: 5,
 			center: latlng,
