@@ -1105,6 +1105,9 @@ input.search-input {
 .about-photo-desc p:first-child {
 	font-size: 30px;
 }
+.about-photo-desc br {
+    display: none;
+}
 .about-column-left {
 	float: left;
 	width: 520px;
@@ -2014,6 +2017,9 @@ input.short-url:focus {
 	}
 	.about-photo-desc p:first-child {
 		font-size: 16px;
+	}
+	.about-photo-desc br {
+    	display: block;
 	}
 	.about-column-left {
 		float: none;
