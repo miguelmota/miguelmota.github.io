@@ -1126,6 +1126,7 @@ input.search-input {
 #mapabout span {
 	color: #555;
 	position: absolute;
+	top: 50%;
 }
 .google-plus-link {
 	font-size: 10px;
