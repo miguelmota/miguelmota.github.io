@@ -1125,10 +1125,9 @@ input.search-input {
 }
 #mapabout span {
 	color: #555;
-	left: 50%;
-	margin: -5px 0 0 -20px;
+	left: 30%;
 	position: absolute;
-	top: 50%;
+	top: 45%;
 }
 .google-plus-link {
 	font-size: 10px;
