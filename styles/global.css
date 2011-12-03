@@ -63,10 +63,10 @@ a.mobile-bar-close {
 	left: -20px;
 }
 code {
-	background-color: #2d2d2d;
+	background-color: #141414;
 }
 .highlight {
-	background-color: #2d2d2d;
+	background-color: #141414;
 	margin: 10px 0;
 	overflow-x: auto;
 	padding: 5px;
@@ -155,7 +155,7 @@ ul li {
 input[type=text],
 input[type=password],
 textarea {		
-	background-color: #2d2d2d;
+	background-color: #141414;
 	border: 0;
 	border-left: 4px solid #292929;
 	color: #555;
@@ -172,7 +172,7 @@ textarea {
 input[type=text]:focus,
 input[type=password]:focus,
 textarea:focus {
-	background-color: #2d2d2d;
+	background-color: #141414;
 	border-color: #007299;
 	border-left: 4px solid #007299;
 	color: #999;
@@ -183,7 +183,7 @@ textarea {
 }
 .input input, 
 .input textarea {
-	background-color: #2d2d2d;
+	background-color: #141414;
 	font-size: 16px;
 	font-style: italic;
 	padding: 6px 6px 6px 12px;
@@ -953,7 +953,7 @@ input.search-input {
 	padding: 0;
 }
 .stream-ul li:nth-child(odd) {
-	background-color: #2d2d2d;	
+	background-color: #141414;	
 }
 /* -----------------------------------------------------------------------------
 	STATUS DATE
@@ -982,7 +982,7 @@ input.search-input {
 	padding: 20px 0;
 }
 .stream-carousel-nav {	
-	background-color: #2d2d2d;
+	background-color: #141414;
 	display: inline-block;
 	border-left: 0;
 	float: left;
@@ -1117,7 +1117,7 @@ input.search-input {
 	width: 200px;
 }
 #mapabout {
-	background-color: #2d2d2d;
+	background-color: #141414;
 	height: 200px;
 	margin: 10px 0;
 	position: relative;
@@ -1284,7 +1284,7 @@ input.search-input {
 	width: 350px;
 }
 .project-image img {
-	background: #2d2d2d url('/images/ajax-loader-image.gif') no-repeat 50% 50%;
+	background: #141414 url('/images/ajax-loader-image.gif') no-repeat 50% 50%;
 	height: auto;
 	width: 100%;
 }
@@ -1483,8 +1483,8 @@ h6 {
 	top: 0;
 }
 input.short-url {
-	background: #2d2d2d;
-	border: 1px solid #2d2d2d;
+	background: #141414;
+	border: 1px solid #141414;
 	border-left-width: 1px;
 	float: right;
 	font-size: 10px;
