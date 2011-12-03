@@ -1098,11 +1098,12 @@ input.search-input {
 }
 .about-column-right {
 	float: right;
-	width: 150px;
+	width: 200px;
+	border: 1px solid red;
 }
 .about-iframe-latitude {
-	height: 150px;
-	width: 150px;
+	height: 200px;
+	width: 200px;
 }
 /* ==============================================================================
 	END ABOUT PAGE
