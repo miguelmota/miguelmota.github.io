@@ -1092,7 +1092,7 @@ input.search-input {
 	width: 100%;
 }
 .about-photo-wrap .photo {
-	min-height: 459px;
+	min-height: 300px;
 }
 .about-photo-desc {
 	color: #222;
@@ -1812,6 +1812,23 @@ input.short-url:focus {
 	 	min-height: 74px;
 	 	width: 74px;
 	 }
+
+	 /* ------------------------
+	  * About page
+	  * --------------------- */
+	 .about-column-left {
+		float: left;
+		width: 500px;
+	}
+	.about-column-right {
+		float: right;
+		width: 150px;
+	}
+	#mapabout {
+		height: 150px;
+		margin: 10px 0;
+		width: 150px;
+	}
 	 
 	 /* ------------------------
 	 * Portfolio page
