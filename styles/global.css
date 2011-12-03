@@ -1113,9 +1113,9 @@ input.search-input {
 	float: right;
 	width: 200px;
 }
-#mapabout {
+#map-about {
 	height: 200px;
-	margin-top: 10px;
+	margin: 10px 0;
 	width: 200px;
 }
 .google-plus-link {

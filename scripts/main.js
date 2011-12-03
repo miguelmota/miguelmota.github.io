@@ -207,7 +207,9 @@ $(window).scroll(function(){
 		$('.top-link').fadeOut(185);
 	}
 
-		// Show Google Map
+
+
+	// Initialize about page map
 	initializeAboutMap();
 	
 });
@@ -378,7 +380,7 @@ function initializeAboutMap() {
 			mapTypeId: google.maps.MapTypeId.ROADMAP
 		};
 
-	var map = new google.maps.Map(document.getElementById('mapabout'), myOptions);
+	var map = new google.maps.Map(document.getElementById('map-about'), myOptions);
 
 	var marker = new google.maps.Marker({
 			position: latlng,
@@ -388,8 +390,6 @@ function initializeAboutMap() {
 	
 	marker.setAnimation(google.maps.Animation.DROP);
 }
-
-
 
 
 
