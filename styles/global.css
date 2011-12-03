@@ -1090,19 +1090,24 @@ input.search-input {
 	ABOUT PAGE
 ============================================================================== */
 .about-photo-wrap {
-	min-height: 80px;
 	height: 100%;
 	position: relative;
 	width: 100%;
+}
+.about-photo-wrap .photo {
+	min-height: 80px;
 }
 .about-photo-desc {
 	color: #222;
 	font-size: 22px;
 	position: absolute;
 	right: 60px;
+	text-shadow: 0 -1px 0 rgba(255,255,255,.8);
 	top: 40px;
 }
-
+.about-photo-desc p:first-child {
+	font-size: 26px;
+}
 .about-column-left {
 	float: left;
 	width: 520px;
