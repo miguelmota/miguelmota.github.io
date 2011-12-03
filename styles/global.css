@@ -1817,16 +1817,13 @@ input.short-url:focus {
 	  * About page
 	  * --------------------- */
 	 .about-column-left {
-		float: left;
 		width: 500px;
 	}
 	.about-column-right {
-		float: right;
 		width: 150px;
 	}
 	#mapabout {
 		height: 150px;
-		margin: 10px 0;
 		width: 150px;
 	}
 	 
