@@ -375,7 +375,7 @@ function initializeAboutMap() {
 			mapTypeId: google.maps.MapTypeId.ROADMAP
 		};
 
-	var map = new google.maps.Map(document.getElementById('map-about'), myOptions);
+	var map = new google.maps.Map(document.getElementById('mapabout'), myOptions);
 
 	var marker = new google.maps.Marker({
 			position: latlng,
