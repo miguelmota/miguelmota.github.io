@@ -23,7 +23,7 @@ $timestamp=$latitude["features"]["0"]["properties"]["timeStamp"];
 <script src='http://www.miguelmota.com/scripts/jquery.min.js'></script>
 <style>
 body {
-	background-color: #202020;
+	background-color: #141414;
 	display: block;
 }
 </style>
