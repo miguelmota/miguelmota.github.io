@@ -1117,7 +1117,7 @@ input.search-input {
 	float: right;
 	width: 200px;
 }
-.about-iframe-latitude {
+#map-about {
 	height: 200px;
 	margin-top: 10px;
 	width: 200px;
