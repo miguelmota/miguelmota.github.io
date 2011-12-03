@@ -1983,6 +1983,9 @@ input.short-url:focus {
 	.title .slash {
 		display: none;
 	}
+	.title .sub2 {
+		display: none;
+	}
 	
 	/* ------------------------
 	 * Stream wrap
