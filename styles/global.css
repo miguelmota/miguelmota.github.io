@@ -1122,10 +1122,7 @@ input.search-input {
 }
 #mapabout span {
 	color: #555;
-	left: 50%;
-	margin: -10px 0 0 -20px;
 	position: absolute;
-	top: 50%;
 }
 .google-plus-link {
 	font-size: 10px;
