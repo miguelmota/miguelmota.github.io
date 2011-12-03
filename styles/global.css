@@ -1115,10 +1115,16 @@ input.search-input {
 }
 #mapabout {
 	background-color: #202020;
-	color: #555;
 	height: 200px;
 	margin: 10px 0;
 	width: 200px;
+}
+#mapabout span {
+	color: #555;
+	left: 50%;
+	margin: -10px 0 0 -20px;
+	position: absolute;
+	top: 50%;
 }
 .google-plus-link {
 	font-size: 10px;
