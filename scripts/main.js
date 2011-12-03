@@ -148,7 +148,9 @@ $(document).ready(function(){
 
 
 	// Initialize about page map
-	//initializeAboutMap();
+	if($('.content').attr('class').split(' ')[1] == 'about'){
+		initializeAboutMap();
+	}
 	
 });
 
