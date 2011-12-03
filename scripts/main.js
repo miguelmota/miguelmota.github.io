@@ -384,7 +384,7 @@ function initializeAboutMap() {
 		});
 	
 	marker.setAnimation(google.maps.Animation.DROP);
-
+}
 
 
 
