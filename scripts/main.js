@@ -144,6 +144,11 @@ $(document).ready(function(){
 	
 	// Initialize mtip on social icons
 	$('.icon-social').mtip();
+
+
+
+	// Initialize about page map
+	initializeAboutMap();
 	
 });
 
@@ -207,11 +212,6 @@ $(window).scroll(function(){
 		$('.top-link').fadeOut(185);
 	}
 
-
-
-	// Initialize about page map
-	initializeAboutMap();
-	
 });
 
 
