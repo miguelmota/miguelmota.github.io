@@ -206,6 +206,9 @@ $(window).scroll(function(){
 	if(window.pageYOffset < 200){
 		$('.top-link').fadeOut(185);
 	}
+
+		// Show Google Map
+	initializeAboutMap();
 	
 });
 
@@ -1334,11 +1337,6 @@ function blogPage(){
 	$('.short-url').mouseup(function(e){
         e.preventDefault();
 	});
-
-
-
-	// Show Google Map
-	initializeAboutMap();
 
 }
 
