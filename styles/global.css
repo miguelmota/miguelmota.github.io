@@ -2010,7 +2010,10 @@ input.short-url:focus {
     .about-photo-desc {
     	font-size: 12px;
     	right: 10px;
-		top: 10px;
+		top: 0px;
+	}
+	.about-photo-desc p:first-child {
+		font-size: 16px;
 	}
 	.about-column-left {
 		float: none;
