@@ -1114,6 +1114,8 @@ input.search-input {
 	width: 200px;
 }
 #mapabout {
+	background-color: #202020;
+	color: #555;
 	height: 200px;
 	margin: 10px 0;
 	width: 200px;
