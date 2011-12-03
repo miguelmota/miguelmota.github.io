@@ -1125,6 +1125,8 @@ input.search-input {
 }
 #mapabout span {
 	color: #555;
+	left: 50%;
+	margin: -5px 0 0 -20px;
 	position: absolute;
 	top: 50%;
 }
