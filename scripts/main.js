@@ -1240,7 +1240,10 @@ function contactPage(){
 			minlength: ''
 			},
 		onkeyup: true,
-		debug: true
+		// debug: true,
+		success: function(label) {
+			label.addClass('valid');	
+		}
 	});
 	
 	
