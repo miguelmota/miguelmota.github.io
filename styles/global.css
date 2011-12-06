@@ -601,7 +601,7 @@ img.loader {
 }
 .nav-logo {
 	border-left: none !important;
-	display: block;
+	display: inline-block;
 	height: 64px;
 	margin-bottom: 15px;
 	padding: 0;
@@ -1972,7 +1972,7 @@ input.short-url:focus {
 	 * --------------------- */
 	.title {
 		clear: both;
-		display: block;
+		display: inline-block;
 		margin-top: 5px;
 		width: 100%;
 	}
