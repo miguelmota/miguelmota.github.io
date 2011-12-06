@@ -216,7 +216,7 @@ textarea {
 ------------------------------------------------------------------------------ */
 .error,
 input.error {
-	border-color: #870000;
+	border-color: #700;
 }
 label.error {
 	margin: 0;
@@ -224,7 +224,7 @@ label.error {
 }
 .valid,
 input.valid {
-	border-color: #28a328;
+	border-color: #070;
 }
 /* ==============================================================================
 	END	INPUT
