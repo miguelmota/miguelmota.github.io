@@ -120,8 +120,8 @@ $(document).ready(function(){
 
 
 	// Zebra stripe every other list item
-	$('.stream-ul li:odd, .stream ul li.odd').css({
-		'background-color': '#141414'	
+	$('.stream-ul li:odd').css({
+		//'background-color': '#141414'	
 	});
 
 	
