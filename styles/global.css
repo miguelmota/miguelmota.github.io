@@ -954,7 +954,7 @@ input.search-input {
 	padding: 0;
 }
 .stream-ul .44li:nth-child(odd),
-.stream-ul li.odd, {
+.stream-ul li.odd {
 	background-color: #141414;	
 }
 /* -----------------------------------------------------------------------------
