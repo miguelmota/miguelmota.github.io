@@ -953,7 +953,8 @@ input.search-input {
 	margin: 0;
 	padding: 0;
 }
-.stream-ul .44li:nth-child(odd) {
+.stream-ul .44li:nth-child(odd),
+.stream-ul li.odd, {
 	background-color: #141414;	
 }
 /* -----------------------------------------------------------------------------

@@ -120,7 +120,7 @@ $(document).ready(function(){
 
 
 	// Zebra stripe every other list item
-	$('.stream-ul li:odd').css({
+	$('.stream-ul li:odd, .stream ul li.odd').css({
 		'background-color': '#141414'	
 	});
 
@@ -559,6 +559,7 @@ function streamPage(){
 				});
 
 				$('.stream-ul-twitter').append('</ul>');
+				$('.stream-ul-twitter li:odd').addClass('odd');
 
 				// Initialize timeago
 				$('.stream-ul-twitter .status-date').timeago();
@@ -639,6 +640,7 @@ function streamPage(){
 				}); 
 
 				$('.stream-ul-tumblr').append('</ul>');
+				$('.stream-ul-tumblr li:odd').addClass('odd');
 
 				// Initialize timeago
 				$('.stream-ul-tumblr .status-date').timeago();
@@ -669,6 +671,7 @@ function streamPage(){
 				});
 					
 				$('.stream-ul-delicious').append('</ul>');
+				$('.stream-ul-delicious li:odd').addClass('odd');
 
 				// Initialize timeago
 				$('.stream-ul-delicious .status-date').timeago();
@@ -714,6 +717,7 @@ function streamPage(){
 					}); 
 					
 					$('.stream-ul-lastfm-recent').append('</ul>');
+					$('.stream-ul-lastfm-recent li:odd').addClass('odd');
 
 					// Initialize timeago
 					$('.stream-ul-lastfm-recent .status-date').timeago();
@@ -757,6 +761,7 @@ function streamPage(){
 					}); 
 
 					$('.stream-ul-lastfm-loved').append('</ul>');
+					$('.stream-ul-lastfm-loved li:odd').addClass('odd');
 
 					// Initialize timeago
 					$('.stream-ul-lastfm-loved .status-date').timeago();
@@ -800,6 +805,7 @@ function streamPage(){
 					}); 
 					
 					$('.stream-ul-lastfm-top').append('</ul>');
+					$('.stream-ul-lastfm-top li:odd').addClass('odd');
 
 					$('.stream-lastfm .loader').css('display','none');
 					//$('.stream-ul-lastfm-top').css('display','none');
@@ -835,6 +841,8 @@ function streamPage(){
 				
 				html.push("</ul>");
 				document.getElementById('stream-wakoopa-software-recent').innerHTML = html.join("");
+					
+				$('.stream-ul-wakoopa-recent li:odd').addClass('odd');
 
 				// Initialize timeago
 				$('.stream-ul-wakoopa-recent .status-date').timeago();
@@ -872,6 +880,7 @@ function streamPage(){
 				
 				html.push("</ul>");
 				document.getElementById('stream-wakoopa-software-top').innerHTML = html.join("");
+				$('.stream-ul-wakoopa-top li:odd').addClass('odd');
 
 				// Initialize timeago
 				$('.stream-ul-wakoopa-top .status-date').timeago();
