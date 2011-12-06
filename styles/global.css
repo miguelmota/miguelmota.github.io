@@ -953,6 +953,7 @@ input.search-input {
 	margin: 0;
 	padding: 0;
 }
+.stream-ul li:nth-child(odd),
 .odd {
 	background-color: #141414;	
 }
