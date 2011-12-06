@@ -117,6 +117,13 @@ $(document).ready(function(){
 		return false;
 	});
 
+
+
+	// Zebra stripe every other list item
+	$('.stream-ul liodd').css({
+		'background-color': '#141414'	
+	});
+
 	
 	
 	// Back to top smooth scroll effect
