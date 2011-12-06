@@ -448,14 +448,6 @@ function displayYear(){
 }
 
 
-
-// Display pathanme
-function displayURL(){
-	document.write(pathname);
-}
-
-
-
 /* ------------------------
  * mtip functions
  * --------------------- */
