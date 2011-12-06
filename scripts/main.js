@@ -121,7 +121,7 @@ $(document).ready(function(){
 
 	// Zebra stripe every other list item
 	$('.stream-ul li:even').css({
-		//'background-color': '#141414'	
+		'background-color': '#141414'	
 	});
 
 	
