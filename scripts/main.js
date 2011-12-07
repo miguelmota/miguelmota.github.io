@@ -475,6 +475,32 @@ function showMtipTimeout(element) {
 
 
 
+/* ------------------------
+ * Blog post sort functions
+ * --------------------- */
+
+// Show grid sort
+function blogSortGrid() {
+	//$('.blog-post-sort-grid').live('click', function(){
+		$('.blog-post-sort-wrap a').removeClass('icon-no-hover icon-no-opacity');
+		$(this).addClass('icon-no-hover icon-no-opacity');
+		$('.blog-post-list').slideUp('fast');
+		$('.blog-post-grid').slideDown('fast');
+	//});
+}
+
+// Show list sort
+function blogSortList() {
+	//$('.blog-post-sort-list').live('click', function(){
+		$('.blog-post-sort-wrap a').removeClass('icon-no-hover icon-no-opacity');
+		$(this).addClass('icon-no-hover icon-no-opacity');
+		$('.blog-post-grid').slideUp('fast');
+		$('.blog-post-list').slideDown('fast');
+	//});
+}
+
+
+
 /* --------------------------------------------------
  * Stream page functions
  * ----------------------------------------------- */
@@ -1302,32 +1328,6 @@ function contactPage(){
  * Blog page functions
  * ----------------------------------------------- */
 function blogPage(){
-	
-	/* ------------------------
-	 * Blog post sort functions
-	 * --------------------- */
-	
-	// Show grid sort
-	function blogSortGrid() {
-		//$('.blog-post-sort-grid').live('click', function(){
-			$('.blog-post-sort-wrap a').removeClass('icon-no-hover icon-no-opacity');
-			$(this).addClass('icon-no-hover icon-no-opacity');
-			$('.blog-post-list').slideUp('fast');
-			$('.blog-post-grid').slideDown('fast');
-		//});
-	}
-	
-	// Show list sort
-	function blogSortList() {
-		//$('.blog-post-sort-list').live('click', function(){
-			$('.blog-post-sort-wrap a').removeClass('icon-no-hover icon-no-opacity');
-			$(this).addClass('icon-no-hover icon-no-opacity');
-			$('.blog-post-grid').slideUp('fast');
-			$('.blog-post-list').slideDown('fast');
-		//});
-	}
-
-
 	
 	// Get AddThis script
 	$.getScript('http://s7.addthis.com/js/250/addthis_widget.js#username=miguelmota');
