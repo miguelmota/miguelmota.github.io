@@ -485,6 +485,7 @@ function blogSortGrid() {
 		$('.blog-post-sort-grid').addClass('icon-no-hover icon-no-opacity');
 		$('.blog-post-list').slideUp('fast');
 		$('.blog-post-grid').slideDown('fast');
+		$.cookie('blogSort', 'grid');
 }
 
 // Show list sort
@@ -493,6 +494,7 @@ function blogSortList() {
 		$('.blog-post-sort-list').addClass('icon-no-hover icon-no-opacity');
 		$('.blog-post-grid').slideUp('fast');
 		$('.blog-post-list').slideDown('fast');
+		$.cookie('blogSort', 'list');
 }
 
 
@@ -1324,6 +1326,27 @@ function contactPage(){
  * Blog page functions
  * ----------------------------------------------- */
 function blogPage(){
+
+	// Set blog sort cookie
+	if($.cookie('blogSort') == null) {
+		$.cookie('blogSort', 'grid', {
+				expires: 7,
+				path: '/'
+			}
+		);
+	}
+	
+	// Sort blog posts based on cookie
+	if ($.cookie('blogSort') == 'grid') {
+		blogSortGrid();
+	}
+	else if($.cookie('blogSort') == 'list') {
+		blogSortList();
+	}
+	else {
+		$.cookie('blogSort', 'grid');
+	}
+
 	
 	// Get AddThis script
 	$.getScript('http://s7.addthis.com/js/250/addthis_widget.js#username=miguelmota');
