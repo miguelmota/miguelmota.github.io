@@ -25,7 +25,7 @@ title:
 		<a class='stream-logo stream-logo-blog mtip' href='/blog' title='my blog'>Blog</a>
 		<ul class='stream-ul stream-ul-blog'>
 			{% for post in site.posts limit:3 %}
-		    	<li><a href='{{ post.url }}'><span class='icon icon-text-16'></span> {{ post.title }}</a> <time class='status-date' datetime='{{ post.date | date:"%d %B %Y"  }}'>{{ post.date | date:"%d %B" }}</time><div class='clear'></div></li>
+		    	<li><a href='{{ post.url }}'><span class='icon icon-text-16'></span> {{ post.title }}</a> <time class='status-date' datetime='{{ post.date | date:"%d %B %Y"  }}'>{{ post.date | date:"%d %B"  }}</time><div class='clear'></div></li>
 			{% endfor %}
 		</ul>
 	</div>
@@ -43,8 +43,8 @@ title:
 	<div class='stream-wrap stream-wakoopa content-item'>
 		<a class='stream-logo stream-logo-wakoopa mtip' href='http://social.wakoopa.com/miguelmota' title='my software' rel='external'></a>
 		<div class='stream-sort-wrap stream-sort-wakoopa'>
-			<a class='stream-sort-wakoopa-recent selected' href='javascript:void(0);'>recent</a> /
-			<a class='stream-sort-wakoopa-top' href='javascript:void(0);'>top</a>
+			<a class='stream-sort-wakoopa-recent selected' href='javascript:void(0);' onclick='streamSortWakoopaRecent();'>recent</a> /
+			<a class='stream-sort-wakoopa-top' href='javascript:void(0);' onclick='streamSortWakoopaTop();'>top</a>
 		</div>
 		<div id='stream-wakoopa-software-recent'></div>
 		<div id='stream-wakoopa-software-top'></div>
