@@ -228,7 +228,7 @@ $(window).scroll(function(){
 
 /*
  * --------------------------------------------------------------------------------
- *	FUNCTIONS
+ *	GLOBAL FUNCTIONS
  * --------------------------------------------------------------------------------
  */
 
@@ -299,22 +299,6 @@ function recent_tweets(data) {
 $.getScript('http://miguelmota.tumblr.com/tweets.js');
 
 
-// Initialize Masonry plugin, masonry.desandro.com
-function loadMasonry(){
-
-	var $tumblelog = $('.content');
-	
-	if(window.width <= 640){
-		$tumblelog = '';
-	}
-	
-	$tumblelog.imagesLoaded( function(){
-	  $tumblelog.masonry({
-	    isFitWidth: true
-	  });
-	});
-}
-
 
 // Initialize fancybox
 function initializeFancybox() {
@@ -375,29 +359,6 @@ function initializeFancybox() {
 		  }
 	);
 	
-}
-
-
-
-// Initialize about page map
-function initializeAboutMap() {
-
-	var latlng = new google.maps.LatLng(33.934815,-117.547703);
-	var myOptions = {
-			zoom: 5,
-			center: latlng,
-			mapTypeId: google.maps.MapTypeId.ROADMAP
-		};
-
-	var map = new google.maps.Map(document.getElementById('mapabout'), myOptions);
-
-	var marker = new google.maps.Marker({
-			position: latlng,
-			map: map,
-			title: "Norco, CA"
-		});
-	
-	marker.setAnimation(google.maps.Animation.DROP);
 }
 
 
@@ -475,33 +436,28 @@ function showMtipTimeout(element) {
 
 
 
-/* ------------------------
- * Blog post sort functions
- * --------------------- */
-
-// Show grid sort
-function blogSortGrid() {
-		$('.blog-post-sort-wrap a').removeClass('icon-no-hover icon-no-opacity');
-		$('.blog-post-sort-grid').addClass('icon-no-hover icon-no-opacity');
-		$('.blog-post-list').slideUp('fast');
-		$('.blog-post-grid').slideDown('fast');
-		$.cookie('blogSort', 'grid');
-}
-
-// Show list sort
-function blogSortList() {
-		$('.blog-post-sort-wrap a').removeClass('icon-no-hover icon-no-opacity');
-		$('.blog-post-sort-list').addClass('icon-no-hover icon-no-opacity');
-		$('.blog-post-grid').slideUp('fast');
-		$('.blog-post-list').slideDown('fast');
-		$.cookie('blogSort', 'list');
-}
-
-
-
 /* --------------------------------------------------
  * Stream page functions
  * ----------------------------------------------- */
+
+// Initialize Masonry plugin, masonry.desandro.com
+function loadMasonry(){
+
+	var $tumblelog = $('.content');
+	
+	if(window.width <= 640){
+		$tumblelog = '';
+	}
+	
+	$tumblelog.imagesLoaded( function(){
+	  $tumblelog.masonry({
+	    isFitWidth: true
+	  });
+	});
+}
+
+
+
 function streamPage(){
 	
 	// Hide stream logo text
@@ -1136,9 +1092,106 @@ function streamPage(){
 
 
 /* --------------------------------------------------
+ * About page functions
+ * ----------------------------------------------- */
+
+// Initialize about page map
+function initializeAboutMap() {
+
+	var latlng = new google.maps.LatLng(33.934815,-117.547703);
+	var myOptions = {
+			zoom: 5,
+			center: latlng,
+			mapTypeId: google.maps.MapTypeId.ROADMAP
+		};
+
+	var map = new google.maps.Map(document.getElementById('mapabout'), myOptions);
+
+	var marker = new google.maps.Marker({
+			position: latlng,
+			map: map,
+			title: "Norco, CA"
+		});
+	
+	marker.setAnimation(google.maps.Animation.DROP);
+}
+
+
+
+/* --------------------------------------------------
  * Portfolio page functions
  * ----------------------------------------------- */
+
+/* ------------------------
+ * Project sort functions
+ * --------------------- */
+
+// Show all work
+function portfolioSortAll() {
+	$('.project-sort-wrap a').removeClass('selected');
+	$('.project-sort-all').addClass('selected');
+	$('.project').slideDown('fast');
+	$.cookie('portfolioSort', 'all');
+}
+
+// Show web work
+function portfolioSortWeb() {
+	$('.project-sort-wrap a').removeClass('selected');
+	$('.project-sort-web').addClass('selected');
+	$(".project:not('.project-web')").slideUp('fast');
+	$('.project-web').slideDown('fast');
+	$.cookie('portfolioSort', 'web');
+}
+
+// Show logo work
+function portfolioSortLogo() {
+	$('.project-sort-wrap a').removeClass('selected');
+	$('.project-sort-identity').addClass('selected');
+	$(".project:not('.project-identity')").slideUp('fast');
+	$('.project-identity').slideDown('fast');
+	$.cookie('portfolioSort', 'logo');
+});
+
+// Show code work
+function portfolioSortCode() {
+	$('.project-sort-wrap a').removeClass('selected');
+	$('.project-sort-code').addClass('selected');
+	$(".project:not('.project-code')").slideUp('fast');
+	$('.project-code').slideDown('fast');
+	$.cookie('portfolioSort', 'code');
+}
+
+
+
 function portfolioPage(){
+
+	// Set portfolio sort cookie
+	if($.cookie('portfolioSort') == null) {
+		$.cookie('portfolioSort', 'all', {
+				expires: 7,
+				path: '/'
+			}
+		);
+	}
+	
+	// Sort blog posts based on cookie
+	if ($.cookie('portfolioSort') == 'all') {
+		portfolioSortAll();
+	}
+	else if ($.cookie('portfolioSort') == 'web') {
+		portfolioSortWeb();
+	}
+	else if($.cookie('portfolioSort') == 'logo') {
+		portfolioSortlogo();
+	}
+	else if($.cookie('portfolioSort') == 'code') {
+		portfolioSortCode();
+	}
+	else {
+		$.cookie('portfolioSort', 'all');
+	}
+
+
 	
 	// Project hover border glow effect
 	$(".project .image-container").live({
@@ -1176,44 +1229,7 @@ function portfolioPage(){
 		}
 	});
 	
-	
-	
-	/* ------------------------
-	 * Project sort functions
-	 * --------------------- */
-	
-	// Show all work
-	$('.project-sort-all').live('click', function(){
-		$('.project-sort-wrap a').removeClass('selected');
-		$(this).addClass('selected');
-		$('.project').slideDown('fast');
-	});
 
-	// Show web work
-	$('.project-sort-web').live('click', function(){
-		$('.project-sort-wrap a').removeClass('selected');
-		$(this).addClass('selected');
-		$(".project:not('.project-web')").slideUp('fast');
-		$('.project-web').slideDown('fast');
-	});
-	
-	// Show logo work
-	$('.project-sort-identity').live('click', function(){
-		$('.project-sort-wrap a').removeClass('selected');
-		$(this).addClass('selected');
-		$(".project:not('.project-identity')").slideUp('fast');
-		$('.project-identity').slideDown('fast');
-	});
-	
-	// Show code work
-	$('.project-sort-code').live('click', function(){
-		$('.project-sort-wrap a').removeClass('selected');
-		$(this).addClass('selected');
-		$(".project:not('.project-code')").slideUp('fast');
-		$('.project-code').slideDown('fast');
-	});
-
-	
 	
 	// Initialize Fancybox
 	initializeFancybox();
@@ -1325,6 +1341,31 @@ function contactPage(){
 /* --------------------------------------------------
  * Blog page functions
  * ----------------------------------------------- */
+
+ /* ------------------------
+ * Blog post sort functions
+ * --------------------- */
+
+// Show grid sort
+function blogSortGrid() {
+		$('.blog-post-sort-wrap a').removeClass('icon-no-hover icon-no-opacity');
+		$('.blog-post-sort-grid').addClass('icon-no-hover icon-no-opacity');
+		$('.blog-post-list').slideUp('fast');
+		$('.blog-post-grid').slideDown('fast');
+		$.cookie('blogSort', 'grid');
+}
+
+// Show list sort
+function blogSortList() {
+		$('.blog-post-sort-wrap a').removeClass('icon-no-hover icon-no-opacity');
+		$('.blog-post-sort-list').addClass('icon-no-hover icon-no-opacity');
+		$('.blog-post-grid').slideUp('fast');
+		$('.blog-post-list').slideDown('fast');
+		$.cookie('blogSort', 'list');
+}
+
+
+
 function blogPage(){
 
 	// Set blog sort cookie
@@ -1346,6 +1387,7 @@ function blogPage(){
 	else {
 		$.cookie('blogSort', 'grid');
 	}
+
 
 	
 	// Get AddThis script
