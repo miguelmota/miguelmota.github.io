@@ -556,9 +556,174 @@ function streamSortWakoopaTop(){
 
 
 
+/* ------------------------
+ * Last.fm stream recent tracks
+ * --------------------- */
+function loadLastfmRecent(){
+	
+	$('.stream-ul-lastfm').remove();
+	$('.stream-lastfm .loader').css('display','block');
+	
+	// All parameters in url: http://ws.audioscrobbler.com/2.0/?format=json&method=user.getRecentTracks&user=miguel_mota&api_key=dc0e875b6c0fd8ac4891b0716897e6c1&limit=5&callback=?
+	$.getJSON('http://ws.audioscrobbler.com/2.0/?callback=?', 
+			{
+				format: 'json',
+				method: 'user.getRecentTracks',
+				user: 'miguel_mota',
+				api_key: 'dc0e875b6c0fd8ac4891b0716897e6c1',
+				limit: '5'
+			},
+			function(data){   
+				$('.stream-lastfm').append('<ul class="stream-ul stream-ul-lastfm stream-ul-lastfm-recent">');    
+				$.each(data.recenttracks.track, function(i, item){ 
+						var url = item.url;
+						var name = item.name;
+						var artist = item.artist['#text'];
+						var image = '/images/logo-16.png';
+						if (item.image[0]['#text']) {
+							image = item.image[0]['#text'];
+						}
+						var date =  new Date(item.date['#text']);
+						var list_item = "<li><a href='"+url+"' rel='external'><img class='stream-thumb' src='"+image+"' alt='' /> "+artist+" - "+name+"</a> <time class='status-date' datetime='"+ISODateString(date)+"'>"+ISODateString(date)+"</time><div class='clear'></div></li>";
+						$('.stream-ul-lastfm-recent').append(list_item);
+				}); 
+				
+				$('.stream-ul-lastfm-recent').append('</ul>');
+				$('.stream-ul-lastfm-recent li:even').addClass('odd');
+
+				// Initialize timeago
+				$('.stream-ul-lastfm-recent .status-date').timeago();
+
+				$('.stream-lastfm .loader').css('display','none');
+				showMtipTimeout('.stream-logo-lastfm');
+			}
+	);
+
+}
+
+
+
+/* ------------------------
+ * Last.fm stream loved tracks
+ * --------------------- */
+function loadLastfmLoved(){
+	
+	$('.stream-ul-lastfm').remove();
+	$('.stream-lastfm .loader').css('display','block');
+	
+	// All parameters in url: http://ws.audioscrobbler.com/2.0/?format=json&method=user.getLovedTracks&user=miguel_mota&api_key=dc0e875b6c0fd8ac4891b0716897e6c1&limit=5&callback=?
+	$.getJSON('http://ws.audioscrobbler.com/2.0/?callback=?', 
+			{
+				format: 'json',
+				method: 'user.getLovedTracks',
+				user: 'miguel_mota',
+				api_key: 'dc0e875b6c0fd8ac4891b0716897e6c1',
+				limit: '5'
+			},
+			function(data){       
+				$('.stream-lastfm').append('<ul class="stream-ul stream-ul-lastfm stream-ul-lastfm-loved">');    
+				$.each(data.lovedtracks.track, function(i, item){ 
+						var url = item.url;
+						var name = item.name;
+						var artist = item.artist['name'];
+						var image = item.image[0]['#text'];
+						var date =  new Date(item.date['#text']);
+						var list_item = "<li><a href='"+url+"' rel='external'><img class='stream-thumb' src='"+image+"' alt='' /> "+artist+" - "+name+"</a> <time class='status-date' datetime='"+ISODateString(date)+"'>"+ISODateString(date)+"</time><div class='clear'></div></li>";
+						$('.stream-ul-lastfm-loved').append(list_item);
+				}); 
+
+				$('.stream-ul-lastfm-loved').append('</ul>');
+				$('.stream-ul-lastfm-loved li:even').addClass('odd');
+
+				// Initialize timeago
+				$('.stream-ul-lastfm-loved .status-date').timeago();
+
+				$('.stream-lastfm .loader').css('display','none');
+				//$('.stream-ul-lastfm-loved').css('display','none');
+			}
+	);
+	
+}
+
+
+
+/* ------------------------
+ * Last.fm stream top tracks
+ * --------------------- */
+function loadLastfmTop(){
+	
+	$('.stream-ul-lastfm').remove();
+	$('.stream-lastfm .loader').css('display','block');
+	
+	// All parameters in url: http://ws.audioscrobbler.com/2.0/?format=json&method=user.getTopTracks&user=miguel_mota&api_key=dc0e875b6c0fd8ac4891b0716897e6c1&limit=5&callback=?
+	$.getJSON('http://ws.audioscrobbler.com/2.0/?callback=?', 
+			{
+				format: 'json',
+				method: 'user.getTopTracks',
+				user: 'miguel_mota',
+				api_key: 'dc0e875b6c0fd8ac4891b0716897e6c1',
+				limit: '5'
+			},
+			function(data){       
+				$('.stream-lastfm').append('<ul class="stream-ul stream-ul-lastfm stream-ul-lastfm-top">');
+				$.each(data.toptracks.track, function(i, item){ 
+						var url = item.url;
+						var name = item.name;
+						var artist = item.artist['name'];
+						var image = '/images/logo-16.png';
+						var playcount =  item.playcount;
+						var list_item = "<li><a href='"+url+"' rel='external'><img class='stream-thumb' src='"+image+"' alt='' /> "+artist+" - "+name+"</a> <time class='status-date'>"+playcount+" plays</time><div class='clear'></div></li>";
+						$('.stream-ul-lastfm-top').append(list_item);
+				}); 
+				
+				$('.stream-ul-lastfm-top').append('</ul>');
+				$('.stream-ul-lastfm-top li:even').addClass('odd');
+
+				$('.stream-lastfm .loader').css('display','none');
+				//$('.stream-ul-lastfm-top').css('display','none');
+			}
+	);
+	
+}
+
+
+
+// Show last.fm recent tracks
+function streamSortLastfmRecent(){
+	loadLastfmRecent();
+	$('.stream-sort-lastfm a').removeClass('selected');
+	$('.stream-sort-lastfm-recent').addClass('selected');
+	$(".stream-ul-lastfm:not('.stream-ul-lastfm-recent')").slideUp('fast');
+	$('.stream-ul-lastfm-recent').slideDown('fast');
+	$.cookie('streamSortLastfm', 'recent');
+}
+
+// Show last.fm loved
+function streamSortLastfmLoved(){
+	loadLastfmLoved();
+	$('.stream-sort-lastfm a').removeClass('selected');
+	$('.stream-sort-lastfm-loved').addClass('selected');
+	$(".stream-ul-lastfm:not('.stream-ul-lastfm-loved')").slideUp('fast');
+	$('.stream-ul-lastfm-loved').slideDown('fast');
+	$.cookie('streamSortLastfm', 'loved');
+}
+
+// Show last.fm top tracks
+function streamSortLastfmTop(){
+$('.stream-sort-lastfm-top').live('click', function(){
+	loadLastfmTop();
+	$('.stream-sort-lastfm a').removeClass('selected');
+	$('.stream-sort-lastfm-top').addClass('selected');
+	$(".stream-ul-lastfm:not('.stream-ul-lastfm-top')").slideUp('fast');
+	$('.stream-ul-lastfm-top').slideDown('fast');
+	$.cookie('streamSortLastfm', 'top');
+}
+
+
+
 function streamPage(){
 
-	// Set portfolio sort cookie
+	// Set wakoopa stream cookie
 	if($.cookie('streamSortWakoopa') == null) {
 		$.cookie('streamSortWakoopa', 'recent', {
 				expires: 7,
@@ -567,7 +732,7 @@ function streamPage(){
 		);
 	}
 	
-	// Sort blog posts based on cookie
+	// Sort wakoopa stream based on cookie
 	if ($.cookie('streamSortWakoopa') == 'recent') {
 		streamSortWakoopaRecent();
 	}
@@ -576,6 +741,30 @@ function streamPage(){
 	}
 	else {
 		$.cookie('streamSortWakoopa', 'recent');
+	}
+
+
+
+	// Set lastfm stream cookie
+	if($.cookie('streamSortLastfm') == null) {
+		$.cookie('streamSortLastfm', 'recent', {
+				expires: 7,
+				path: '/'
+			}
+		);
+	}
+	// Sort Lastfm stream based on cookie
+	if ($.cookie('streamSortLastfm') == 'recent') {
+		streamSortLastfmRecent();
+	}
+	else if ($.cookie('streamSortLastfm') == 'loved') {
+		streamSortLastfmLoved();
+	}
+	else if ($.cookie('streamSortLastfm') == 'top') {
+		streamSortLastfmTop();
+	}
+	else {
+		$.cookie('streamSortLastfm', 'recent');
 	}
 
 
@@ -773,141 +962,8 @@ function streamPage(){
 		}
 	);
 	
-	
-	loadLastfmRecent();
-	
-	/* ------------------------
-	 * Last.fm stream recent tracks
-	 * --------------------- */
-	function loadLastfmRecent(){
-		
-		$('.stream-ul-lastfm').remove();
-		$('.stream-lastfm .loader').css('display','block');
-		
-		// All parameters in url: http://ws.audioscrobbler.com/2.0/?format=json&method=user.getRecentTracks&user=miguel_mota&api_key=dc0e875b6c0fd8ac4891b0716897e6c1&limit=5&callback=?
-		$.getJSON('http://ws.audioscrobbler.com/2.0/?callback=?', 
-				{
-					format: 'json',
-					method: 'user.getRecentTracks',
-					user: 'miguel_mota',
-					api_key: 'dc0e875b6c0fd8ac4891b0716897e6c1',
-					limit: '5'
-				},
-				function(data){   
-					$('.stream-lastfm').append('<ul class="stream-ul stream-ul-lastfm stream-ul-lastfm-recent">');    
-					$.each(data.recenttracks.track, function(i, item){ 
-							var url = item.url;
-							var name = item.name;
-							var artist = item.artist['#text'];
-							var image = '/images/logo-16.png';
-							if (item.image[0]['#text']) {
-								image = item.image[0]['#text'];
-							}
-							var date =  new Date(item.date['#text']);
-							var list_item = "<li><a href='"+url+"' rel='external'><img class='stream-thumb' src='"+image+"' alt='' /> "+artist+" - "+name+"</a> <time class='status-date' datetime='"+ISODateString(date)+"'>"+ISODateString(date)+"</time><div class='clear'></div></li>";
-							$('.stream-ul-lastfm-recent').append(list_item);
-					}); 
-					
-					$('.stream-ul-lastfm-recent').append('</ul>');
-					$('.stream-ul-lastfm-recent li:even').addClass('odd');
 
-					// Initialize timeago
-					$('.stream-ul-lastfm-recent .status-date').timeago();
 
-					$('.stream-lastfm .loader').css('display','none');
-					showMtipTimeout('.stream-logo-lastfm');
-				}
-		);
-	
-	}
-	
-	
-	
-	/* ------------------------
-	 * Last.fm stream loved tracks
-	 * --------------------- */
-	function loadLastfmLoved(){
-		
-		$('.stream-ul-lastfm').remove();
-		$('.stream-lastfm .loader').css('display','block');
-		
-		// All parameters in url: http://ws.audioscrobbler.com/2.0/?format=json&method=user.getLovedTracks&user=miguel_mota&api_key=dc0e875b6c0fd8ac4891b0716897e6c1&limit=5&callback=?
-		$.getJSON('http://ws.audioscrobbler.com/2.0/?callback=?', 
-				{
-					format: 'json',
-					method: 'user.getLovedTracks',
-					user: 'miguel_mota',
-					api_key: 'dc0e875b6c0fd8ac4891b0716897e6c1',
-					limit: '5'
-				},
-				function(data){       
-					$('.stream-lastfm').append('<ul class="stream-ul stream-ul-lastfm stream-ul-lastfm-loved">');    
-					$.each(data.lovedtracks.track, function(i, item){ 
-							var url = item.url;
-							var name = item.name;
-							var artist = item.artist['name'];
-							var image = item.image[0]['#text'];
-							var date =  new Date(item.date['#text']);
-							var list_item = "<li><a href='"+url+"' rel='external'><img class='stream-thumb' src='"+image+"' alt='' /> "+artist+" - "+name+"</a> <time class='status-date' datetime='"+ISODateString(date)+"'>"+ISODateString(date)+"</time><div class='clear'></div></li>";
-							$('.stream-ul-lastfm-loved').append(list_item);
-					}); 
-
-					$('.stream-ul-lastfm-loved').append('</ul>');
-					$('.stream-ul-lastfm-loved li:even').addClass('odd');
-
-					// Initialize timeago
-					$('.stream-ul-lastfm-loved .status-date').timeago();
-
-					$('.stream-lastfm .loader').css('display','none');
-					//$('.stream-ul-lastfm-loved').css('display','none');
-				}
-		);
-		
-	}
-	
-	
-	
-	/* ------------------------
-	 * Last.fm stream top tracks
-	 * --------------------- */
-	function loadLastfmTop(){
-		
-		$('.stream-ul-lastfm').remove();
-		$('.stream-lastfm .loader').css('display','block');
-		
-		// All parameters in url: http://ws.audioscrobbler.com/2.0/?format=json&method=user.getTopTracks&user=miguel_mota&api_key=dc0e875b6c0fd8ac4891b0716897e6c1&limit=5&callback=?
-		$.getJSON('http://ws.audioscrobbler.com/2.0/?callback=?', 
-				{
-					format: 'json',
-					method: 'user.getTopTracks',
-					user: 'miguel_mota',
-					api_key: 'dc0e875b6c0fd8ac4891b0716897e6c1',
-					limit: '5'
-				},
-				function(data){       
-					$('.stream-lastfm').append('<ul class="stream-ul stream-ul-lastfm stream-ul-lastfm-top">');
-					$.each(data.toptracks.track, function(i, item){ 
-							var url = item.url;
-							var name = item.name;
-							var artist = item.artist['name'];
-							var image = '/images/logo-16.png';
-							var playcount =  item.playcount;
-							var list_item = "<li><a href='"+url+"' rel='external'><img class='stream-thumb' src='"+image+"' alt='' /> "+artist+" - "+name+"</a> <time class='status-date'>"+playcount+" plays</time><div class='clear'></div></li>";
-							$('.stream-ul-lastfm-top').append(list_item);
-					}); 
-					
-					$('.stream-ul-lastfm-top').append('</ul>');
-					$('.stream-ul-lastfm-top li:even').addClass('odd');
-
-					$('.stream-lastfm .loader').css('display','none');
-					//$('.stream-ul-lastfm-top').css('display','none');
-				}
-		);
-		
-	}
-
-	
-	
 	/* ------------------------
 	 * Flickr stream
 	 * --------------------- */
@@ -1078,35 +1134,6 @@ function streamPage(){
 				function(){
 					hideMtip('.'+$(this).attr('class').split(' ')[1]+' .stream-logo');
 			}
-	});
-	
-	
-
-	// Show last.fm recent tracks
-	$('.stream-sort-lastfm-recent').live('click', function(){
-		loadLastfmRecent();
-		$('.stream-sort-lastfm a').removeClass('selected');
-		$(this).addClass('selected');
-		$(".stream-ul-lastfm:not('.stream-ul-lastfm-recent')").slideUp('fast');
-		$('.stream-ul-lastfm-recent').slideDown('fast');
-	});	
-	
-	// Show last.fm loved
-	$('.stream-sort-lastfm-loved').live('click', function(){
-		loadLastfmLoved();
-		$('.stream-sort-lastfm a').removeClass('selected');
-		$(this).addClass('selected');
-		$(".stream-ul-lastfm:not('.stream-ul-lastfm-loved')").slideUp('fast');
-		$('.stream-ul-lastfm-loved').slideDown('fast');
-	});
-	
-	// Show last.fm top tracks
-	$('.stream-sort-lastfm-top').live('click', function(){
-		loadLastfmTop();
-		$('.stream-sort-lastfm a').removeClass('selected');
-		$(this).addClass('selected');
-		$(".stream-ul-lastfm:not('.stream-ul-lastfm-top')").slideUp('fast');
-		$('.stream-ul-lastfm-top').slideDown('fast');
 	});
 		
 }
