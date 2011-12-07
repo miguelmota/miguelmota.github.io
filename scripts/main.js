@@ -458,6 +458,82 @@ function loadMasonry(){
 
 
 
+/* ------------------------
+ * Wakoopa stream recent software
+ * --------------------- */
+function loadWakoopaRecent() {
+	
+	$('#stream-wakoopa-software-recent').html('');
+	$('.stream-ul-wakoopa-recent').remove();
+	$('.stream-ul-wakoopa-top').remove();
+	$('.stream-wakoopa .loader').css('display','block');
+	
+	$.getJSON('http://api.wakoopa.com/miguelmota/recently_used.json?callback=?',
+		{
+			limit: '3'
+		},
+		function wakoopaApi(data){
+			var html = ["<ul class='stream-ul stream-ul-wakoopa-recent'>"];
+			for(var i = 0; i < data.length; i++){
+				var entry = data[i].software;
+				var date = new Date(entry.last_active_at);
+				html.push("<li><a href='"+entry.complete_url+"' rel='external'> <img class='stream-thumb' src='"+entry.complete_thumb_url+"' alt='' /> "+entry.name+"</a> <time class='status-date' datetime='"+ISODateString(date)+"'>"+ISODateString(date)+"</time>", "<div class='clear'></div></li>");
+			}
+			
+			html.push("</ul>");
+			document.getElementById('stream-wakoopa-software-recent').innerHTML = html.join("");
+				
+			$('.stream-ul-wakoopa-recent li:even').addClass('odd');
+
+			// Initialize timeago
+			$('.stream-ul-wakoopa-recent .status-date').timeago();
+
+			$('.stream-wakoopa .loader').css('display','none');
+			showMtipTimeout('.stream-logo-wakoopa');
+		}
+	);
+	
+}
+	
+	
+
+/* ------------------------
+ * Wakoopa stream top software
+ * --------------------- */
+function loadWakoopaTop() {
+	
+	$('#stream-wakoopa-software-top').html('');
+	$('.stream-ul-wakoopa-top').remove();
+	$('.stream-ul-wakoopa-recent').remove();
+	$('.stream-wakoopa .loader').css('display','block');
+	
+	$.getJSON('http://api.wakoopa.com/miguelmota/most_used.json?callback=?',
+		{
+			limit: '3'
+		},
+		function wakoopaApi(data){
+			var html = ["<ul class='stream-ul stream-ul-wakoopa-top'>"];
+			for(var i = 0; i < data.length; i++){
+				var entry = data[i].software;
+				var date = new Date(entry.last_active_at);
+				html.push("<li><a href='"+entry.complete_url+"' rel='external'> <img class='stream-thumb' src='"+entry.complete_thumb_url+"' alt='' /> "+entry.name+"</a> <time class='status-date' datetime='"+ISODateString(date)+"'>"+ISODateString(date)+"</time>", "<div class='clear'></div></li>");
+			}
+			
+			html.push("</ul>");
+			document.getElementById('stream-wakoopa-software-top').innerHTML = html.join("");
+			$('.stream-ul-wakoopa-top li:even').addClass('odd');
+
+			// Initialize timeago
+			$('.stream-ul-wakoopa-top .status-date').timeago();
+			
+			$('.stream-wakoopa .loader').css('display','none');
+		}
+	);
+	
+}
+
+
+
 // Show wakoopa software recent
 function streamSortWakoopaRecent(){
 	loadWakoopaRecent();
@@ -831,81 +907,9 @@ function streamPage(){
 	}
 	
 	
+
+	// Load Wakoopa json
 	loadWakoopaRecent();
-	
-	/* ------------------------
-	 * Wakoopa stream recent software
-	 * --------------------- */
-	function loadWakoopaRecent() {
-		
-		$('#stream-wakoopa-software-recent').html('');
-		$('.stream-ul-wakoopa-recent').remove();
-		$('.stream-ul-wakoopa-top').remove();
-		$('.stream-wakoopa .loader').css('display','block');
-		
-		$.getJSON('http://api.wakoopa.com/miguelmota/recently_used.json?callback=?',
-			{
-				limit: '3'
-			},
-			function wakoopaApi(data){
-				var html = ["<ul class='stream-ul stream-ul-wakoopa-recent'>"];
-				for(var i = 0; i < data.length; i++){
-					var entry = data[i].software;
-					var date = new Date(entry.last_active_at);
-					html.push("<li><a href='"+entry.complete_url+"' rel='external'> <img class='stream-thumb' src='"+entry.complete_thumb_url+"' alt='' /> "+entry.name+"</a> <time class='status-date' datetime='"+ISODateString(date)+"'>"+ISODateString(date)+"</time>", "<div class='clear'></div></li>");
-				}
-				
-				html.push("</ul>");
-				document.getElementById('stream-wakoopa-software-recent').innerHTML = html.join("");
-					
-				$('.stream-ul-wakoopa-recent li:even').addClass('odd');
-
-				// Initialize timeago
-				$('.stream-ul-wakoopa-recent .status-date').timeago();
-
-				$('.stream-wakoopa .loader').css('display','none');
-				showMtipTimeout('.stream-logo-wakoopa');
-			}
-		);
-		
-	}
-		
-		
-	
-	/* ------------------------
-	 * Wakoopa stream top software
-	 * --------------------- */
-	function loadWakoopaTop() {
-		
-		$('#stream-wakoopa-software-top').html('');
-		$('.stream-ul-wakoopa-top').remove();
-		$('.stream-ul-wakoopa-recent').remove();
-		$('.stream-wakoopa .loader').css('display','block');
-		
-		$.getJSON('http://api.wakoopa.com/miguelmota/most_used.json?callback=?',
-			{
-				limit: '3'
-			},
-			function wakoopaApi(data){
-				var html = ["<ul class='stream-ul stream-ul-wakoopa-top'>"];
-				for(var i = 0; i < data.length; i++){
-					var entry = data[i].software;
-					var date = new Date(entry.last_active_at);
-					html.push("<li><a href='"+entry.complete_url+"' rel='external'> <img class='stream-thumb' src='"+entry.complete_thumb_url+"' alt='' /> "+entry.name+"</a> <time class='status-date' datetime='"+ISODateString(date)+"'>"+ISODateString(date)+"</time>", "<div class='clear'></div></li>");
-				}
-				
-				html.push("</ul>");
-				document.getElementById('stream-wakoopa-software-top').innerHTML = html.join("");
-				$('.stream-ul-wakoopa-top li:even').addClass('odd');
-
-				// Initialize timeago
-				$('.stream-ul-wakoopa-top .status-date').timeago();
-				
-				$('.stream-wakoopa .loader').css('display','none');
-			}
-		);
-		
-	}
 	
 	
 	
