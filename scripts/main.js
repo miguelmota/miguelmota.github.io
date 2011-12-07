@@ -1182,7 +1182,7 @@ function portfolioPage(){
 		portfolioSortWeb();
 	}
 	else if($.cookie('portfolioSort') == 'logo') {
-		portfolioSortlogo();
+		portfolioSortLogo();
 	}
 	else if($.cookie('portfolioSort') == 'code') {
 		portfolioSortCode();
