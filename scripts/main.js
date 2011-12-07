@@ -774,6 +774,7 @@ function streamPage(){
 	);
 	
 	
+	loadLastfmRecent();
 	
 	/* ------------------------
 	 * Last.fm stream recent tracks
@@ -904,12 +905,7 @@ function streamPage(){
 		);
 		
 	}
-	
-	
 
-	// Load Wakoopa json
-	loadWakoopaRecent();
-	
 	
 	
 	/* ------------------------
