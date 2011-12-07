@@ -27,7 +27,7 @@ $(document).ready(function(){
 	
 	
 	// Initialize side nav text ticker; NOTE: might cause bug in Firefox
-	// textTickerSelected();
+	textTickerSelected();
 	
 
 
@@ -426,7 +426,7 @@ function textTicker(){
 // textTicker on selected nav link
 function textTickerSelected(){
 
-	$('#'+$('.content').attr('class').split(' ')[1]).text($('.content').attr('class').split(' ')[1].substring(0,position));
+	$('#'+$('.content').attr('class').split(' ')[1]+' .page').text($('.content').attr('class').split(' ')[1].substring(0,position));
 
 	if(position++ == 1){
 		setTimeout('textTickerSelected()',30);
