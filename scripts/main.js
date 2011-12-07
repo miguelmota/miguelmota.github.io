@@ -1308,20 +1308,26 @@ function blogPage(){
 	 * --------------------- */
 	
 	// Show grid sort
-	$('.blog-post-sort-grid').live('click', function(){
-		$('.blog-post-sort-wrap a').removeClass('icon-no-hover icon-no-opacity');
-		$(this).addClass('icon-no-hover icon-no-opacity');
-		$('.blog-post-list').slideUp('fast');
-		$('.blog-post-grid').slideDown('fast');
-	});
+	function blogSortGrid() {
+		//$('.blog-post-sort-grid').live('click', function(){
+			$('.blog-post-sort-wrap a').removeClass('icon-no-hover icon-no-opacity');
+			$(this).addClass('icon-no-hover icon-no-opacity');
+			$('.blog-post-list').slideUp('fast');
+			$('.blog-post-grid').slideDown('fast');
+		//});
+	}
 	
 	// Show list sort
-	$('.blog-post-sort-list').live('click', function(){
-		$('.blog-post-sort-wrap a').removeClass('icon-no-hover icon-no-opacity');
-		$(this).addClass('icon-no-hover icon-no-opacity');
-		$('.blog-post-grid').slideUp('fast');
-		$('.blog-post-list').slideDown('fast');
-	});
+	function blogSortList() {
+		//$('.blog-post-sort-list').live('click', function(){
+			$('.blog-post-sort-wrap a').removeClass('icon-no-hover icon-no-opacity');
+			$(this).addClass('icon-no-hover icon-no-opacity');
+			$('.blog-post-grid').slideUp('fast');
+			$('.blog-post-list').slideDown('fast');
+		//});
+	}
+
+
 	
 	// Get AddThis script
 	$.getScript('http://s7.addthis.com/js/250/addthis_widget.js#username=miguelmota');

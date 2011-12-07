@@ -6,8 +6,8 @@ title: Blog
 <section class='content blog'>
 
 		<div class='blog-post-sort-wrap'>
-			<a class='icon icon-grid-16 icon-no-hover icon-no-opacity blog-post-sort-grid' href='javascript:void(0);'></a> 
-			<a class='icon icon-list-16 blog-post-sort-list' href='javascript:void(0);'></a>
+			<a class='icon icon-grid-16 icon-no-hover icon-no-opacity blog-post-sort-grid' href='javascript:void(0);' onclick='blogSortGrid();'></a> 
+			<a class='icon icon-list-16 blog-post-sort-list' href='javascript:void(0);' onclick='blogSortList();'></a>
 		</div>
 
 		{% for post in site.posts %}
