@@ -774,7 +774,6 @@ function streamPage(){
 	);
 	
 	
-	loadLastfmRecent();
 	
 	/* ------------------------
 	 * Last.fm stream recent tracks
