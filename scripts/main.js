@@ -1150,7 +1150,7 @@ function portfolioSortLogo() {
 	$(".project:not('.project-identity')").slideUp('fast');
 	$('.project-identity').slideDown('fast');
 	$.cookie('portfolioSort', 'logo');
-});
+}
 
 // Show code work
 function portfolioSortCode() {
