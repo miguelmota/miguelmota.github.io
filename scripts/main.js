@@ -741,7 +741,7 @@ function streamPositionReset(){
 	$.cookie('streamFlickrX',null);
 	$.cookie('streamFlickrY',null);
 
-	loadMasonry();
+	$('.stream-wrap').css('float', 'lest');
 
 	$('.stream-position-reset-wrap').css('display', 'none');
 }
