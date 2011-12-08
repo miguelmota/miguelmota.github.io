@@ -721,6 +721,7 @@ function streamSortLastfmTop(){
 
 
 function streamPositionReset(){
+
 	$.cookie('streamLatitudeX',null);
 	$.cookie('streamLatitudeY',null);
 	$.cookie('streamBlogX',null);
@@ -740,7 +741,9 @@ function streamPositionReset(){
 	$.cookie('streamFlickrX',null);
 	$.cookie('streamFlickrY',null);
 
-	// loadMasonry();
+	loadMasonry();
+
+	$('.stream-position-reset-wrap').css('display', 'none');
 }
 
 
@@ -1032,7 +1035,10 @@ function streamPage(){
 			// Draggable cursor
 			$('.stream-wrap').draggable({
 				containment: '.content',
-				cursor: 'move'
+				cursor: 'move',
+				stop: function(){
+					$('.stream-position-reset-wrap').css('display', 'block');
+				}
 			});
 			
 			
