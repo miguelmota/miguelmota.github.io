@@ -1036,7 +1036,7 @@ function streamPage(){
 			$('.stream-wrap').draggable({
 				containment: '.content',
 				cursor: 'move',
-				stop: function(){
+				stop: function(event, ui){
 					$('.stream-position-reset-wrap').css('display', 'block');
 				}
 			});
