@@ -786,11 +786,11 @@ input.search-input {
 	STREAM PAGE
 ============================================================================== */
 .stream-position-reset-wrap {
-	clear: both;
 	display: none;
-	position: relative;
+	position: absolute;
 	text-align: right;
-	top: -20px;
+	top: -25px;
+	width: 670px;
 }
 .stream-wrap {
 	float: left;
