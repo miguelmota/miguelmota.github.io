@@ -720,6 +720,31 @@ function streamSortLastfmTop(){
 
 
 
+function streamMasonryReset(){
+	$.cookie('streamLatitudeX',null);
+	$.cookie('streamLatitudeY',null);
+	$.cookie('streamBlogX',null);
+	$.cookie('streamBlogY',null);
+	$.cookie('streamTwitterX',null);
+	$.cookie('streamTwitterY',null);
+	$.cookie('streamFacebookX',null);
+	$.cookie('streamFacebookY',null);
+	$.cookie('streamTumblrX',null);
+	$.cookie('streamTumblrY',null);
+	$.cookie('streamDeliciousX',null);
+	$.cookie('streamDeliciousY',null);
+	$.cookie('streamLastfmX',null);
+	$.cookie('streamLastfmY',null);
+	$.cookie('streamWakoopaX',null);
+	$.cookie('streamWakoopaY',null);
+	$.cookie('streamFlickrX',null);
+	$.cookie('streamFlickrY',null);
+
+	loadMasonry();
+}
+
+
+
 function streamPage(){
 
 	// Set wakoopa stream cookie
