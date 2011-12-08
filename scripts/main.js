@@ -725,7 +725,7 @@ function streamPage(){
 
 	// Set wakoopa stream cookie
 	if($.cookie('streamSortWakoopa') == null) {
-		$.cookie('streamSortWakoopa', 'recent', {
+		$.cookie('streamSortWakoopa', 'recent') {
 				expires: 7,
 				path: '/'
 			}
