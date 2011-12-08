@@ -710,7 +710,6 @@ function streamSortLastfmLoved(){
 
 // Show last.fm top tracks
 function streamSortLastfmTop(){
-$('.stream-sort-lastfm-top').live('click', function(){
 	loadLastfmTop();
 	$('.stream-sort-lastfm a').removeClass('selected');
 	$('.stream-sort-lastfm-top').addClass('selected');
