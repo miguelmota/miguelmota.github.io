@@ -741,7 +741,7 @@ function streamPositionReset(){
 	$.cookie('streamFlickrX',null);
 	$.cookie('streamFlickrY',null);
 
-	$('.stream-wrap').css('float', 'lest');
+	$('.stream-wrap').css('float', 'left');
 
 	$('.stream-position-reset-wrap').css('display', 'none');
 }
