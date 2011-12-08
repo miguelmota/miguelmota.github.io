@@ -2032,12 +2032,12 @@ input.short-url:focus {
 		min-height: 50px;
 	}
     .about-photo-desc {
-    	font-size: 150%px;
-    	right: 10%;
-		top: 10%;
+    	font-size: 12px;
+    	right: 10px;
+		top: 0px;
 	}
 	.about-photo-desc p:first-child {
-		font-size: 100%px;
+		font-size: 16px;
 	}
 	.about-photo-desc br {
     	display: block;
