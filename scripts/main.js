@@ -1032,11 +1032,6 @@ function streamPage(){
 
 		
 
-			// Initialize masonry
-			loadMasonry();
-			
-			
-			
 			// Draggable cursor
 			$('.stream-wrap').draggable({
 				containment: '.content',
