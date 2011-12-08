@@ -1054,6 +1054,7 @@ function streamPage(){
 				stop: function(event, ui) {
 					$.cookie('streamLatitudeX',ui.position.left);
 					$.cookie('streamLatitudeY',ui.position.top);
+					$('.stream-position-reset-wrap').css('display', 'block');
 				}
 			});
 			
