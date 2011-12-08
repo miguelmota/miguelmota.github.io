@@ -787,7 +787,10 @@ input.search-input {
 ============================================================================== */
 .stream-position-reset-wrap {
 	display: none;
-	float: right;
+	position: absolute;
+	text-align: right;
+	top: 10px;
+	width: 670px;
 }
 .stream-wrap {
 	float: left;
