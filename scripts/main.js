@@ -743,7 +743,7 @@ function streamPositionReset(){
 
 	loadMasonry();
 
-	$('.stream-position-reset-wrap').css('visibility', 'hidden');
+	$('.stream-position-reset-wrap').css('display', 'none');
 }
 
 
@@ -1051,7 +1051,7 @@ function streamPage(){
 				stop: function(event, ui) {
 					$.cookie('streamLatitudeX',ui.position.left);
 					$.cookie('streamLatitudeY',ui.position.top);
-					$('.stream-position-reset-wrap').css('visibility', 'visible');
+					$('.stream-position-reset-wrap').css('display', 'block');
 				}
 			});
 			
@@ -1063,7 +1063,7 @@ function streamPage(){
 				stop: function(event, ui) {
 					$.cookie('streamBlogX',ui.position.left);
 					$.cookie('streamBlogY',ui.position.top);
-					$('.stream-position-reset-wrap').css('visibility', 'visible');
+					$('.stream-position-reset-wrap').css('display', 'block');
 				}
 			});
 			
@@ -1075,7 +1075,7 @@ function streamPage(){
 				stop: function(event, ui) {
 					$.cookie('streamTwitterX',ui.position.left);
 					$.cookie('streamTwitterY',ui.position.top);
-					$('.stream-position-reset-wrap').css('visibility', 'visible');
+					$('.stream-position-reset-wrap').css('display', 'block');
 				}
 			});
 			
@@ -1087,7 +1087,7 @@ function streamPage(){
 				stop: function(event, ui) {
 					$.cookie('streamFacebookX',ui.position.left);
 					$.cookie('streamFacebookY',ui.position.top);
-					$('.stream-position-reset-wrap').css('visibility', 'visible');
+					$('.stream-position-reset-wrap').css('display', 'block');
 				}
 			});
 			
@@ -1099,7 +1099,7 @@ function streamPage(){
 				stop: function(event, ui) {
 					$.cookie('streamTumblrX',ui.position.left);
 					$.cookie('streamTumblrY',ui.position.top);
-					$('.stream-position-reset-wrap').css('visibility', 'visible');
+					$('.stream-position-reset-wrap').css('display', 'block');
 				}
 			});
 			
@@ -1111,7 +1111,7 @@ function streamPage(){
 				stop: function(event, ui) {
 					$.cookie('streamDeliciousX',ui.position.left);
 					$.cookie('streamDeliciousY',ui.position.top);
-					$('.stream-position-reset-wrap').css('visibility', 'visible');
+					$('.stream-position-reset-wrap').css('display', 'block');
 				}
 			});
 			
@@ -1123,7 +1123,7 @@ function streamPage(){
 				stop: function(event, ui) {
 					$.cookie('streamLastfmX',ui.position.left);
 					$.cookie('streamLastfmY',ui.position.top);
-					$('.stream-position-reset-wrap').css('visibility', 'visible');
+					$('.stream-position-reset-wrap').css('display', 'block');
 				}
 			});
 			
@@ -1135,7 +1135,7 @@ function streamPage(){
 				stop: function(event, ui) {
 					$.cookie('streamWakoopaX',ui.position.left);
 					$.cookie('streamWakoopaY',ui.position.top);
-					$('.stream-position-reset-wrap').css('visibility', 'visible');
+					$('.stream-position-reset-wrap').css('display', 'block');
 				}
 			});
 			
@@ -1147,7 +1147,7 @@ function streamPage(){
 				stop: function(event, ui) {
 					$.cookie('streamFlickrX',ui.position.left);
 					$.cookie('streamFlickrY',ui.position.top);
-					$('.stream-position-reset-wrap').css('visibility', 'visible');
+					$('.stream-position-reset-wrap').css('display', 'block');
 				}
 			});
 			
