@@ -13,9 +13,9 @@ body {
 }
 .main-wrap {
 	height: auto;
-	margin: 70px 20px 25px 20px;
+	margin: 0 20px 0 20px;
 	word-wrap: break-word;
-	padding-left: 250px;
+	padding: 70px 0 25px 250px;
 	position: relative;
 }
 #top {
@@ -1447,7 +1447,7 @@ h6 {
 }
 .blog-post-text img,
 .photo {
-	background: #1d1d1d url('/images/ajax-loader-image.gif') no-repeat 50% 50%;
+	background: #1d1d1d url('/images/bg-checker-dark') repeat 0 0;
 	box-shadow: 2px 2px 8px rgba(0,0,0,.7);
 	-moz-box-shadow: 2px 2px 8px rgba(0,0,0,.7);
 	-o-box-shadow: 2px 2px 8px rgba(0,0,0,.7);
@@ -1704,14 +1704,9 @@ input.short-url:focus {
 	color: #005977;
 	text-shadow: 0 -1px 0 rgba(0,0,0,.3);
 }
-
 .main-footer-content {
 	float: left;
 	width: 500px;
-}
-.twitter-follow-button {
-	float: right;
-	max-width: 180px !important;
 }
 /* ==============================================================================
 	END MAIN FOOTER
@@ -1765,7 +1760,8 @@ input.short-url:focus {
 	 * Main wrap
 	 * --------------------- */
 	.main-wrap {
-		margin: 30px 5px 25px 5px;
+		margin: 0 5px 0 5px;
+		padding: 30px 0 25px 250;
 	}
 	
 	/* ------------------------
@@ -1876,9 +1872,9 @@ input.short-url:focus {
 	 * Main wrap
 	 * --------------------- */
 	.main-wrap {
-		margin: 0 0 10px 0;
+		margin: 0 0;
 		overflow: hidden;
-		padding: 0;
+		padding: 0 0 10px 0;
 	}
 	
 	/* ------------------------
