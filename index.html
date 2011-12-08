@@ -4,9 +4,10 @@ title:
 ---
 <h1 class='title'><span class='icon icon-cloud-32 icon-title icon-no-hover'></span> {% include title.html %}<span class='sub'><a href='/stream'>Stream</a></span></h1>
 
-<section class='content stream'>
+<div class='stream-position-reset-wrap'><a class='stream-position-reset' href='javascript:void(0);' onclick='streamPositionReset();'>reset</a></div>
 
-	<div class='stream-position-reset-wrap'><a class='stream-position-reset' href='javascript:void(0);' onclick='streamPositionReset();'>reset</a></div>
+<div class='clear'></div>
+<section class='content stream'>
 
 	<div class='stream-wrap stream-latitude content-item'>
 		<a class='stream-logo stream-logo-latitude mtip' href='http://www.google.com/latitude/apps/badge/api?user=7812482200199007583&type=iframe&maptype=roadmap' title='my location' rel='external'>latitude</a>

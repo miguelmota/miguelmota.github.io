@@ -2003,6 +2003,9 @@ input.short-url:focus {
 	/* ------------------------
 	 * Stream wrap
 	 * --------------------- */
+	 .stream-position-reset-wrap {
+		width: 95%;
+	}
 	.stream-wrap {
 		height: auto;
 		width: 92%;
@@ -2029,12 +2032,12 @@ input.short-url:focus {
 		min-height: 50px;
 	}
     .about-photo-desc {
-    	font-size: 12px;
-    	right: 10px;
-		top: 0px;
+    	font-size: 150%px;
+    	right: 10%;
+		top: 10%;
 	}
 	.about-photo-desc p:first-child {
-		font-size: 16px;
+		font-size: 100%px;
 	}
 	.about-photo-desc br {
     	display: block;
