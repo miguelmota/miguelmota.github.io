@@ -788,7 +788,9 @@ input.search-input {
 .stream-position-reset-wrap {
 	clear: both;
 	display: none;
+	position: relative;
 	text-align: right;
+	top: -20px;
 }
 .stream-wrap {
 	float: left;
