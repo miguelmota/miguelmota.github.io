@@ -720,7 +720,7 @@ function streamSortLastfmTop(){
 
 
 
-function streamMasonryReset(){
+function streamPositionReset(){
 	$.cookie('streamLatitudeX',null);
 	$.cookie('streamLatitudeY',null);
 	$.cookie('streamBlogX',null);
@@ -740,7 +740,7 @@ function streamMasonryReset(){
 	$.cookie('streamFlickrX',null);
 	$.cookie('streamFlickrY',null);
 
-	loadMasonry();
+	// loadMasonry();
 }
 
 
