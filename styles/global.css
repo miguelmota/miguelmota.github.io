@@ -786,6 +786,7 @@ input.search-input {
 	STREAM PAGE
 ============================================================================== */
 .stream-position-reset-wrap {
+	clear: both;
 	display: none;
 	position: absolute;
 	text-align: right;
