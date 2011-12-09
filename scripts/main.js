@@ -591,7 +591,7 @@ function loadLastfmRecent(){
 				}); 
 				
 				$('.stream-ul-lastfm-recent').append('</ul>');
-				$('.stream-ul-lastfm-recent li:nth-child("odd")').addClass('odd');
+				$('.stream-ul-lastfm-recent li:nth-child(odd)').addClass('odd');
 
 				// Initialize timeago
 				$('.stream-ul-lastfm-recent .status-date').timeago();
