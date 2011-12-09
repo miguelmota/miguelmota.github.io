@@ -1191,8 +1191,8 @@ input.search-input {
 	width: 95%;
 	behavior: url('/PIE/PIE.htc');
 }
-.project .image-container a {
-	display: inline-block;
+.project .image-container a:first-child {
+	display: block;
 }
 .overlay-popup {
 	background: #000;
@@ -1205,13 +1205,6 @@ input.search-input {
 	position: absolute;
 	width: 100%;
 }
-
-/* IE fix */
-.overlay-popup a:hover,
-.overlay-popup a:active {
-	background: transparent;
-}
-
 .overlay-project-description {
 	display: block;
 	height: 100px;
@@ -1261,11 +1254,11 @@ input.search-input {
 	top: 10px;
 	width: 130px;	
 }
+.project-view a {
+	clear: both;
+}
 .project-view a:first-child {
 	margin-top: 25px;
-}
-.project-view a:hover {
-	background: #000;
 }
 .overlay {
 	display: none !important;
