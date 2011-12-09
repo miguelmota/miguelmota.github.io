@@ -1205,6 +1205,13 @@ input.search-input {
 	position: absolute;
 	width: 100%;
 }
+
+/* IE fix */
+.overlay-popup a:hover,
+.overlay-popup a:active {
+	background: transparent;
+}
+
 .overlay-project-description {
 	display: block;
 	height: 100px;
