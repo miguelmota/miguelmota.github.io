@@ -12,8 +12,7 @@ $(document).ready(function(){
 	// If cookie active show IE notice
 	if($.cookie('ieNotice') == '1') {
 		setTimeout(function(){
-			$('.ie-notice-wrap').fadeIn('fast');
-			
+			$('.ie-notice-wrap').fadeIn('slow');
 		}, 2000);
 	}
 	else {
@@ -23,7 +22,7 @@ $(document).ready(function(){
 	
 	// Hide IE notice and change IE cookie on close button click
 	$('.ie-notice-close').live('click', function(){
-		$('.ie-notice-wrap').slideUp('slow');
+		$('.ie-notice-wrap').fadeOut('slow');
 		$.cookie('ieNotice','0');
 	});
 
