@@ -885,6 +885,7 @@ function streamPage(){
 	 * Facebook stream
 	 * --------------------- */
 	$('.stream-facebook .loader').css('display','block');
+	/*
 	$.getJSON('https://graph.facebook.com/miguel.mota2/feed?&callback=?', 
 			{
 				limit: '3'
@@ -928,6 +929,7 @@ function streamPage(){
 				showMtipTimeout('.social.facebook');
 			}
 	);
+	*/
 	
 	
 	
