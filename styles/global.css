@@ -1192,7 +1192,7 @@ input.search-input {
 	behavior: url('/PIE/PIE.htc');
 }
 .project .image-container a {
-	display: block;
+	display: inline-block;
 }
 .overlay-popup {
 	background: #000;
