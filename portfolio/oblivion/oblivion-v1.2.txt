@@ -1336,15 +1336,15 @@
 			            		 <a href='{Permalink}'><span class='icon icon-clock-16'></span> {TimeAgo}</a>
 			            	{/block:Date}
 			            	
-			                <a class='reblog-button' href='http://tmv.proto.jp/reblog.php?post_url={Permalink}'><span class='icon icon-reblog-16'></span> reblog</a>
+			                <a class='reblog-button' href='{ReblogURL}'><span class='icon icon-reblog-16'></span> reblog</a>
 
  							<a class='like-button' href='javascript:void(0);' data-id='{PostId}' data-url='{ReblogURL}'><span class='icon icon-heart-16'></span> like</a>
 
- 							<a class='note-count' href='{Permalink}#notes'>{NoteCountWithLabel}</a>
-
-					        {block:IfDisqusComments}
+ 							{block:IfDisqusComments}
 					        	<span class='dsq-comment-count-wrap'><a class='icon icon-bubble-16' href='{Permalink}'></a> <a class='dsq-comment-count' href='{Permalink}#disqus_thread'> </a></span>
 					        {block:IfDisqusComments}
+
+ 							<a class='note-count' href='{Permalink}#notes'>{NoteCountWithLabel}</a>
 					        					        
 					        <div class='clear'></div>
 						</div>
@@ -1420,15 +1420,15 @@
 			            		 <a href='{Permalink}'><span class='icon icon-clock-16'></span> {TimeAgo}</a>
 			            	{/block:Date}
 			            	
-			                <a class='reblog-button' href='http://tmv.proto.jp/reblog.php?post_url={Permalink}'><span class='icon icon-reblog-16'></span> reblog</a>
+			                <a class='reblog-button' href='{ReblogURL}'><span class='icon icon-reblog-16'></span> reblog</a>
 
  							<a class='like-button' href='javascript:void(0);' data-id='{PostId}' data-url='{ReblogURL}'><span class='icon icon-heart-16'></span> like</a>
 
-					        <a class='note-count' href='{Permalink}#notes'>{NoteCountWithLabel}</a>
-
-					        {block:IfDisqusComments}
+ 							{block:IfDisqusComments}
 					        	<span class='dsq-comment-count-wrap'><a class='icon icon-bubble-16' href='{Permalink}'></a> <a class='dsq-comment-count' href='{Permalink}#disqus_thread'> </a></span>
 					        {block:IfDisqusComments}
+
+ 							<a class='note-count' href='{Permalink}#notes'>{NoteCountWithLabel}</a>
 					        					        
 					        <div class='clear'></div>
 						</div>
@@ -1483,15 +1483,15 @@
 			            		 <a href='{Permalink}'><span class='icon icon-clock-16'></span> {TimeAgo}</a>
 			            	{/block:Date}
 			            	
-			                <a class='reblog-button' href='http://tmv.proto.jp/reblog.php?post_url={Permalink}'><span class='icon icon-reblog-16'></span> reblog</a>
+			                <a class='reblog-button' href='{ReblogURL}'><span class='icon icon-reblog-16'></span> reblog</a>
 
  							<a class='like-button' href='javascript:void(0);' data-id='{PostId}' data-url='{ReblogURL}'><span class='icon icon-heart-16'></span> like</a>
 
- 							<a class='note-count' href='{Permalink}#notes'>{NoteCountWithLabel}</a>
-
-					        {block:IfDisqusComments}
+ 							{block:IfDisqusComments}
 					        	<span class='dsq-comment-count-wrap'><a class='icon icon-bubble-16' href='{Permalink}'></a> <a class='dsq-comment-count' href='{Permalink}#disqus_thread'> </a></span>
 					        {block:IfDisqusComments}
+
+ 							<a class='note-count' href='{Permalink}#notes'>{NoteCountWithLabel}</a>
 					        					        
 					        <div class='clear'></div>
 						</div>
@@ -1547,15 +1547,15 @@
 			            		 <a href='{Permalink}'><span class='icon icon-clock-16'></span> {TimeAgo}</a>
 			            	{/block:Date}
 			            	
-			                <a class='reblog-button' href='http://tmv.proto.jp/reblog.php?post_url={Permalink}'><span class='icon icon-reblog-16'></span> reblog</a>
+			                <a class='reblog-button' href='{ReblogURL}'><span class='icon icon-reblog-16'></span> reblog</a>
 
  							<a class='like-button' href='javascript:void(0);' data-id='{PostId}' data-url='{ReblogURL}'><span class='icon icon-heart-16'></span> like</a>
 
- 							<a class='note-count' href='{Permalink}#notes'>{NoteCountWithLabel}</a>
-
-					        {block:IfDisqusComments}
+ 							{block:IfDisqusComments}
 					        	<span class='dsq-comment-count-wrap'><a class='icon icon-bubble-16' href='{Permalink}'></a> <a class='dsq-comment-count' href='{Permalink}#disqus_thread'> </a></span>
 					        {block:IfDisqusComments}
+
+ 							<a class='note-count' href='{Permalink}#notes'>{NoteCountWithLabel}</a>
 					        					        
 					        <div class='clear'></div>
 						</div>
@@ -1610,15 +1610,15 @@
 			            		 <a href='{Permalink}'><span class='icon icon-clock-16'></span> {TimeAgo}</a>
 			            	{/block:Date}
 			            	
-			                <a class='reblog-button' href='http://tmv.proto.jp/reblog.php?post_url={Permalink}'><span class='icon icon-reblog-16'></span> reblog</a>
+			                <a class='reblog-button' href='{ReblogURL}'><span class='icon icon-reblog-16'></span> reblog</a>
 
 			                <a class='like-button' href='javascript:void(0);' data-id='{PostId}' data-url='{ReblogURL}'><span class='icon icon-heart-16'></span> like</a>
 	
-				            <a class='note-count' href='{Permalink}#notes'>{NoteCountWithLabel}</a>
-
-					        {block:IfDisqusComments}
+ 							{block:IfDisqusComments}
 					        	<span class='dsq-comment-count-wrap'><a class='icon icon-bubble-16' href='{Permalink}'></a> <a class='dsq-comment-count' href='{Permalink}#disqus_thread'> </a></span>
 					        {block:IfDisqusComments}
+
+ 							<a class='note-count' href='{Permalink}#notes'>{NoteCountWithLabel}</a>
 					        					        
 					        <div class='clear'></div>
 						</div>
@@ -1684,15 +1684,15 @@
 			            		 <a href='{Permalink}'><span class='icon icon-clock-16'></span> {TimeAgo}</a>
 			            	{/block:Date}
 			            	
-			                <a class='reblog-button' href='http://tmv.proto.jp/reblog.php?post_url={Permalink}'><span class='icon icon-reblog-16'></span> reblog</a>
+			                <a class='reblog-button' href='{ReblogURL}'><span class='icon icon-reblog-16'></span> reblog</a>
 
  							<a class='like-button' href='javascript:void(0);' data-id='{PostId}' data-url='{ReblogURL}'><span class='icon icon-heart-16'></span> like</a>
 
- 							<a class='note-count' href='{Permalink}#notes'>{NoteCountWithLabel}</a>
-					        
-					        {block:IfDisqusComments}
+ 							{block:IfDisqusComments}
 					        	<span class='dsq-comment-count-wrap'><a class='icon icon-bubble-16' href='{Permalink}'></a> <a class='dsq-comment-count' href='{Permalink}#disqus_thread'> </a></span>
 					        {block:IfDisqusComments}
+
+ 							<a class='note-count' href='{Permalink}#notes'>{NoteCountWithLabel}</a>
 					        
 					        <div class='clear'></div>
 						</div>
@@ -1747,15 +1747,15 @@
 			            		 <a href='{Permalink}'><span class='icon icon-clock-16'></span> {TimeAgo}</a>
 			            	{/block:Date}
 			            	
-			                <a class='reblog-button' href='http://tmv.proto.jp/reblog.php?post_url={Permalink}'><span class='icon icon-reblog-16'></span> reblog</a>
+			                <a class='reblog-button' href='{ReblogURL}'><span class='icon icon-reblog-16'></span> reblog</a>
 
  							<a class='like-button' href='javascript:void(0);' data-id='{PostId}' data-url='{ReblogURL}'><span class='icon icon-heart-16'></span> like</a>
 
- 							<a class='note-count' href='{Permalink}#notes'>{NoteCountWithLabel}</a>
-					        
-					        {block:IfDisqusComments}
+ 							{block:IfDisqusComments}
 					        	<span class='dsq-comment-count-wrap'><a class='icon icon-bubble-16' href='{Permalink}'></a> <a class='dsq-comment-count' href='{Permalink}#disqus_thread'> </a></span>
 					        {block:IfDisqusComments}
+
+ 							<a class='note-count' href='{Permalink}#notes'>{NoteCountWithLabel}</a>
 					        
 					        <div class='clear'></div>
 						</div>
@@ -1824,15 +1824,15 @@
 			            		 <a href='{Permalink}'><span class='icon icon-clock-16'></span> {TimeAgo}</a>
 			            	{/block:Date}
 			            	
-			                <a class='reblog-button' href='http://tmv.proto.jp/reblog.php?post_url={Permalink}'><span class='icon icon-reblog-16'></span> reblog</a>
+			                <a class='reblog-button' href='{ReblogURL}'><span class='icon icon-reblog-16'></span> reblog</a>
 
  							<a class='like-button' href='javascript:void(0);' data-id='{PostId}' data-url='{ReblogURL}'><span class='icon icon-heart-16'></span> like</a>
 
- 							<a class='note-count' href='{Permalink}#notes'>{NoteCountWithLabel}</a>
-					        
-					        {block:IfDisqusComments}
+ 							{block:IfDisqusComments}
 					        	<span class='dsq-comment-count-wrap'><a class='icon icon-bubble-16' href='{Permalink}'></a> <a class='dsq-comment-count' href='{Permalink}#disqus_thread'> </a></span>
 					        {block:IfDisqusComments}
+
+ 							<a class='note-count' href='{Permalink}#notes'>{NoteCountWithLabel}</a>
 					        
 					        <div class='clear'></div>
 						</div>
@@ -1858,7 +1858,7 @@
 	        {block:PostNotes}
 	        	<div class='notes-wrap'>
 			        {block:NoteCount} 
-			        	<div class='note-count-label'><span class='icon icon-heart-16 icon-no-hover'></span> {NoteCountWithLabel}</div>
+			        	<div class='note-count-label'>{NoteCountWithLabel}</div>
 			        {/block:NoteCount}
 			        {PostNotes}
 			  </div>
