@@ -11,7 +11,9 @@ $(document).ready(function(){
 	
 	// If cookie active show IE notice
 	if($.cookie('ieNotice') == '1') {
-		$('.ie-notice-wrap').slideDown('slow');
+		setTimeout(function(){
+			$('.ie-notice-wrap').fadeIn('slow');
+		}, 2000);
 	}
 	else {
 		// Else hide IE notice
@@ -20,7 +22,7 @@ $(document).ready(function(){
 	
 	// Hide IE notice and change IE cookie on close button click
 	$('.ie-notice-close').live('click', function(){
-		$('.ie-notice-wrap').slideUp('slow');
+		$('.ie-notice-wrap').fadeOut('slow');
 		$.cookie('ieNotice','0');
 	});
 
@@ -483,7 +485,7 @@ function loadWakoopaRecent() {
 			html.push("</ul>");
 			document.getElementById('stream-wakoopa-software-recent').innerHTML = html.join("");
 				
-			$('.stream-ul-wakoopa-recent li:even').addClass('odd');
+			$('.stream-ul-wakoopa-recent li:nth-child(odd)').addClass('odd');
 
 			// Initialize timeago
 			$('.stream-ul-wakoopa-recent .status-date').timeago();
@@ -521,7 +523,7 @@ function loadWakoopaTop() {
 			
 			html.push("</ul>");
 			document.getElementById('stream-wakoopa-software-top').innerHTML = html.join("");
-			$('.stream-ul-wakoopa-top li:even').addClass('odd');
+			$('.stream-ul-wakoopa-top li:nth-child(odd)').addClass('odd');
 
 			// Initialize timeago
 			$('.stream-ul-wakoopa-top .status-date').timeago();
@@ -589,7 +591,7 @@ function loadLastfmRecent(){
 				}); 
 				
 				$('.stream-ul-lastfm-recent').append('</ul>');
-				$('.stream-ul-lastfm-recent li:even').addClass('odd');
+				$('.stream-ul-lastfm-recent li:nth-child(odd)').addClass('odd');
 
 				// Initialize timeago
 				$('.stream-ul-lastfm-recent .status-date').timeago();
@@ -633,7 +635,7 @@ function loadLastfmLoved(){
 				}); 
 
 				$('.stream-ul-lastfm-loved').append('</ul>');
-				$('.stream-ul-lastfm-loved li:even').addClass('odd');
+				$('.stream-ul-lastfm-loved li:nth-child(odd)').addClass('odd');
 
 				// Initialize timeago
 				$('.stream-ul-lastfm-loved .status-date').timeago();
@@ -677,7 +679,7 @@ function loadLastfmTop(){
 				}); 
 				
 				$('.stream-ul-lastfm-top').append('</ul>');
-				$('.stream-ul-lastfm-top li:even').addClass('odd');
+				$('.stream-ul-lastfm-top li:nth-child(odd)').addClass('odd');
 
 				$('.stream-lastfm .loader').css('display','none');
 				//$('.stream-ul-lastfm-top').css('display','none');
@@ -867,7 +869,7 @@ function streamPage(){
 				});
 
 				$('.stream-ul-twitter').append('</ul>');
-				$('.stream-ul-twitter li:even').addClass('odd');
+				$('.stream-ul-twitter li:nth-child(odd)').addClass('odd');
 
 				// Initialize timeago
 				$('.stream-ul-twitter .status-date').timeago();
@@ -883,6 +885,7 @@ function streamPage(){
 	 * Facebook stream
 	 * --------------------- */
 	$('.stream-facebook .loader').css('display','block');
+	/*
 	$.getJSON('https://graph.facebook.com/miguel.mota2/feed?&callback=?', 
 			{
 				limit: '3'
@@ -926,6 +929,7 @@ function streamPage(){
 				showMtipTimeout('.social.facebook');
 			}
 	);
+	*/
 	
 	
 	
@@ -948,7 +952,7 @@ function streamPage(){
 				}); 
 
 				$('.stream-ul-tumblr').append('</ul>');
-				$('.stream-ul-tumblr li:even').addClass('odd');
+				$('.stream-ul-tumblr li:nth-child(odd)').addClass('odd');
 
 				// Initialize timeago
 				$('.stream-ul-tumblr .status-date').timeago();
@@ -979,7 +983,7 @@ function streamPage(){
 				});
 					
 				$('.stream-ul-delicious').append('</ul>');
-				$('.stream-ul-delicious li:even').addClass('odd');
+				$('.stream-ul-delicious li:nth-child(odd)').addClass('odd');
 
 				// Initialize timeago
 				$('.stream-ul-delicious .status-date').timeago();
