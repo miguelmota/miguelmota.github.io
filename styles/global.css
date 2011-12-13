@@ -370,6 +370,9 @@ img.loader {
 .icon-counter-clock-16 {
 	background-image: url('/images/icons/pictos/16/counter-clock.png');
 }
+.icon-counter-clock-24 {
+	background-image: url('/images/icons/pictos/24/counter-clock.png');
+}
 .icon-counter-clock-32 {
 	background-image: url('/images/icons/pictos/32/counter-clock.png');
 }
