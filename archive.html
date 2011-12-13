@@ -5,7 +5,7 @@ title: Archive
 <h1 class='title'><span class='icon icon-counter-clock-32 icon-title icon-no-hover'></span> {% include title.html %}<span class='sub'><a href='/archive'>archive</a></span></h1>
 <section class='content blog archive'>
 
-	<ul class='content-item'>
+	<ul class='content-item archive-ul'>
 		{% for post in site.posts %}
 	    	{% unless post.next %}
 	    		<span class='archive-year'>{{ post.date | date: '%Y' }}</span>
