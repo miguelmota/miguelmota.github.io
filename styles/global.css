@@ -1559,14 +1559,14 @@ input.short-url:focus {
 	width: 55px;
 }
 .archive-ul li {
-	margin-bottom: 2;
+	margin-bottom: 2px;
 	padding: 3px;
 }
 .archive-ul li:nth-child(odd) {
 	background-color: #141414;
 }
 .archive-ul li:nth-child(even) {
-	background-color: #252525;
+	background-color: #1c1c1c;
 }
 /* ==============================================================================
 	END BLOG
