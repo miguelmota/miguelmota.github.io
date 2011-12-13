@@ -975,10 +975,12 @@ input.search-input {
 	margin: 0;
 	padding: 0;
 }
-.archive-ul li:nth-child(odd),
 .stream-ul li:nth-child(odd),
 .odd {
 	background-color: #141414;	
+}
+.archive-ul li:nth-child(odd) {
+	background-color: red;
 }
 /* -----------------------------------------------------------------------------
 	STATUS DATE
