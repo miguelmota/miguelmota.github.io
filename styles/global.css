@@ -1565,9 +1565,6 @@ input.short-url:focus {
 .archive-ul li:nth-child(odd) {
 	background-color: #141414;
 }
-.archive-ul li:nth-child(even) {
-	background-color: #0c0c0c;
-}
 /* ==============================================================================
 	END BLOG
 ============================================================================== */
