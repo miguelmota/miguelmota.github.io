@@ -1310,6 +1310,7 @@ input.search-input {
 	padding-top: 14px;
 }
 .project-image img {
+	background: #1d1d1d url('/images/bg-checker-dark') repeat 0 0;
 	height: auto;
 	width: 100%;
 }
