@@ -1302,7 +1302,7 @@ input.search-input {
 	PROJECT IMAGES
 ------------------------------------------------------------------------------ */
 .project-image {
-	border: 2px solid #b7b7b7;
+	border: 1px solid #b7b7b7;
 	border-top: 10px solid #b7b7b7;
 	float: left;
 	height: auto;
