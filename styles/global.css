@@ -1311,6 +1311,7 @@ input.search-input {
 }
 .project-image img {
 	background: #1d1d1d url('/images/bg-checker-dark') repeat 0 0;
+	min-height: 32px;
 	height: auto;
 	width: 100%;
 }
