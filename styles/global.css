@@ -848,7 +848,6 @@ input.search-input {
 }
 .stream-iframe-latitude {
 	background: #1d1d1d url('/images/ajax-loader.gif') no-repeat 0 0 !important;
-	display: none;
 	border: 0 !important;
 	float: left;
 	height: 16px;
