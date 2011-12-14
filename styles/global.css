@@ -1302,10 +1302,10 @@ input.search-input {
 	PROJECT IMAGES
 ------------------------------------------------------------------------------ */
 .project-image {
-	background-image: url('/images/chrome-buttons.png') top left no-repeat;
+	background-image: url('/wrappers/chrome-wrap-300.png') top left no-repeat;
 	float: left;
 	height: auto;
-	padding-top: 9px;
+	padding-top: 18px;
 	width: 350px;
 }
 .project-image img {
