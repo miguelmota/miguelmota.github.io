@@ -1302,6 +1302,7 @@ input.search-input {
 	PROJECT IMAGES
 ------------------------------------------------------------------------------ */
 .project-image {
+	background-image: url('/images/chrome-buttons.png') top left no-repeat;
 	border: 1px solid #b7b7b7;
 	border-top: 10px solid #b7b7b7;
 	float: left;
