@@ -1307,13 +1307,14 @@ input.search-input {
 	width: 350px;
 }
 .project-image .fancybox {
-	background: url('/images/wrappers/chrome-wrap-350.gif') 0 0 no-repeat;
 	padding-top: 14px;
 }
 .project-image img {
-	background: #141414 url('/images/ajax-loader-image.gif') no-repeat 50% 50%;
 	height: auto;
 	width: 100%;
+}
+.project-image-web {
+	background: url('/images/wrappers/chrome-wrap-350.gif') 0 0 no-repeat;
 }
 /* ==============================================================================
 	END PORTFOLIO
