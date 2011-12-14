@@ -1307,8 +1307,8 @@ input.search-input {
 	width: 350px;
 }
 .project-image .fancybox {
-	background: url('/images/wrappers/chrome-wrap-350.png') 0 0 no-repeat;
-	padding-top: 18px;
+	background: url('/images/wrappers/chrome-wrap-350.gif') 0 0 no-repeat;
+	padding-top: 14px;
 }
 .project-image img {
 	background: #141414 url('/images/ajax-loader-image.gif') no-repeat 50% 50%;
