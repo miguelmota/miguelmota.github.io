@@ -1302,7 +1302,7 @@ input.search-input {
 	PROJECT IMAGES
 ------------------------------------------------------------------------------ */
 .project-image {
-	background-image: url('/images/wrappers/chrome-wrap-300.png') 20px 0 no-repeat;
+	background: url('/images/wrappers/chrome-wrap-300.png') 0 0 no-repeat;
 	float: left;
 	height: auto;
 	padding-top: 38px;
