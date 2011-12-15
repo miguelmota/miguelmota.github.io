@@ -282,8 +282,10 @@ img.loader {
 	display: block;
 	color: #007299;
 	font-family: 'Pictos';
-	width: 100px;
-	height: 100px;
+	font-size: 42px;
+}
+.test-icon:hover {
+	color: black;
 }
 .icon {
 	background-position: 50% 50%;
