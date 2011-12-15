@@ -105,6 +105,15 @@ $(document).ready(function(){
 		}
 	});
 
+
+
+	// Highlight search icon on focus
+	$('input.search-input').focus(function(){
+		$(this).css({
+			backgroundImage: "url('/images/icons/pictos/16/search.png')"
+		});
+	});
+
 	
 	
 	// Open external links in new tab
