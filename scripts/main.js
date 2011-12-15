@@ -112,6 +112,10 @@ $(document).ready(function(){
 		$(this).css({
 			backgroundImage: "url('/images/icons/pictos/16/search.png')"
 		});
+	}).blur(function(){
+		$(this).css({
+			backgroundImage: "url('/images/icons/pictos/16/search-2.png')"
+		});
 	});
 
 	

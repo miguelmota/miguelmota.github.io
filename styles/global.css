@@ -456,6 +456,9 @@ img.loader {
 .icon-reblog-16 {
 	background-image: url('/images/icons/pictos/16/reblog.png');
 }
+.icon-revert-16 {
+	background-image: url('/images/icons/pictos/16/revert.png');
+}
 .icon-subscribe-24 {
 	background-image: url('/images/icons/pictos/24/rss.png');
 }
