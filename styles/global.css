@@ -502,7 +502,7 @@ img.loader {
 	background-image: url('/images/icons/pictos/16/x.png');
 }
 .icon-up-24 {
-	background-image: url('/images/icons/pictos/24/up-2.png');
+	background-image: url('/images/icons/pictos/24/up-4.png');
 	height: 24px;
 	width: 24px;
 }
@@ -676,19 +676,25 @@ img.loader {
 	position: absolute;
 	right: 0;
 }
-.top-link-wrap {
-	clear: both;
-	padding: 0 0 15px 0;
-	position: relative;
-	width: 100%;
-}
-.top-link {
-	display: none;
-	float: right;
-}
 /* ==============================================================================
 	END MAIN SIDE NAVIGATION
 ============================================================================== */
+
+
+
+/* ------------------------------------------------
+ * TOP LINK
+ * --------------------------------------------- */
+#top {
+	position: absolute;
+	top: 0;
+}
+.top-link {
+	bottom: 20px;
+	display: none;
+	position: fixed;
+	right: 20px;
+}
 
 
 
@@ -1881,6 +1887,9 @@ input.short-url:focus {
 	.blog-post-single {
 		width: 650px;
 	}
+	input.short-url {
+		width: 140px;
+	}
 	.dsq-comment-wrap {
 		width: 650px;
 	}
@@ -1912,7 +1921,7 @@ input.short-url:focus {
 		position: static;
 		width: 100%
 	}
-	.top-link-wrap {
+	.top-link {
 		display: none;
 	}
 	
