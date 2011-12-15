@@ -270,9 +270,18 @@ img.loader {
 /* ==============================================================================
 	ICONS
 ============================================================================== */
+@font-face {
+	font-family: 'Pictos';
+	src: url('/fonts/pictos-webfont/pictos-web.eot');
+	src: local('☺'), url('/fonts/pictos-webfont/pictos-web.woff') format('woff'), url('/fonts/pictos-webfont/pictos-web.ttf') format('truetype'), url('/fonts/pictos-webfont/pictos-web.svg#webfontphKv1xv9') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
 .test-icon {
-	background: #007299 url('/images/icons/pictos/pictos1.eps') 24px 24px no-repeat;
 	display: block;
+	color: #007299;
+	font-family: 'Pictos';
 	width: 100px;
 	height: 100px;
 }
