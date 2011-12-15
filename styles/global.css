@@ -270,6 +270,12 @@ img.loader {
 /* ==============================================================================
 	ICONS
 ============================================================================== */
+.test-icon {
+	background: #007299 url('/images/icons/pictos/pictos1.eps') 24px 24px no-repeat;
+	display: block;
+	width: 100px;
+	height: 100px;
+}
 .icon {
 	background-position: 50% 50%;
 	background-repeat: no-repeat;
