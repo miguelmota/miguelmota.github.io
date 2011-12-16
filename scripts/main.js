@@ -154,16 +154,8 @@ $(document).ready(function(){
             }
         }
     });
-	$(window).scroll(function () { 
-		var scrollTop = $(document).scrollTop();
-		scrollTop = parseInt(scrollTop);
-		var offset = topYloc+scrollTop+'px';  
-		$('.top-link').animate({top:offset},{duration:500,queue:false});
-	});
-	topYloc = parseInt($('.top-link').css('top').substring(0,$('.top-link').css('top').indexOf('px')));
 	
-	
-	
+
 	// Initialize mtip on social icons
 	$('.icon-social').mtip();
 
@@ -988,12 +980,13 @@ function streamPage(){
 				$('.stream-tumblr').append('<ul class="stream-ul stream-ul-tumblr">');
 				$.each(data.posts, function(i, posts){ 
 						
-			    	  	var date = new Date(this['date-gmt']);
+			    	  	//var date = new Date(this['date-gmt']);
+			    	  	var date = '';
 			    	  	var url = this.url;
 			    	  	var type = this.type;
 			    	  	var caption = this['photo-caption'];
 			    	  	var slug = this.slug.replace(/-/g,' ');
-			    	  	var list_item = "<li><a href='"+url+"' rel='external'><span class='icon icon-"+type+"-16'></span> "+slug.substring(0,1).toUpperCase()+slug.substr(1,200)+"</a> <time class='status-date' datetime='"+relative_time(date)+"'>"+relative_time(date)+"</time><div class='clear'></div></li>";
+			    	  	var list_item = "<li><a href='"+url+"' rel='external'><span class='icon icon-"+type+"-16'></span> "+slug.substring(0,1).toUpperCase()+slug.substr(1,200)+"</a> <time class='status-date' datetime='"+date+"'>"+date+"</time><div class='clear'></div></li>";
 			    		$('.stream-ul-tumblr').append(list_item);
 				}); 
 
