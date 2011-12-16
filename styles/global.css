@@ -1315,9 +1315,6 @@ input.search-input {
 	height: auto;
 	width: 350px;
 }
-.project-image .fancybox {
-	padding-top: 14px;
-}
 .project-image img {
 	background: #1d1d1d url('/images/bg-checker-dark.png') repeat 0 0;
 	min-height: 32px;
@@ -1325,7 +1322,8 @@ input.search-input {
 	width: 100%;
 }
 .project-image-web {
-	background: url('/images/wrappers/chrome-wrap-350.gif') 0 0 no-repeat;
+	/*background: url('/images/wrappers/chrome-wrap-350.gif') 0 0 no-repeat;
+	padding-top: 14px*/
 }
 /* ==============================================================================
 	END PORTFOLIO
