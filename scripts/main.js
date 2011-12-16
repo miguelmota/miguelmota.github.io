@@ -312,6 +312,34 @@ function relative_time(date_str) {
 
 
 
+// Display latest tweet
+function recent_tweets(data) {
+	for (i=0; i<1; i++) {
+		var date = new Date(data[i].created_at);
+		document.getElementById('latest-tweet').innerHTML =
+		'<div class="latest-tweet-content"><a href="http://twitter.com/miguel_mota/status/'+
+		+(data[i].id_str ? data[i].id_str : data[i].id)+'" rel="external">'+data[i].text+'</a> <time class="latest-tweet-date" datetime="'+ISODateString(date)+'">'+ISODateString(date)+'</time></div>';
+		
+		// Initialize timeago
+		$('.latest-tweet-date').timeago();
+	}
+	
+	// Show mtip on twitter bird hover
+	$('#latest-tweet-wrap').live({
+		mouseenter:
+			function(){
+				showMtip('.icon-twitter-bird-24', this);
+		},
+		mouseleave:
+			function(){
+				hideMtip('.icon-twitter-bird-24', this);
+		}
+	});
+}
+$.getScript('http://miguelmota.tumblr.com/tweets.js');
+
+
+
 // Initialize fancybox
 function initializeFancybox() {
 	
