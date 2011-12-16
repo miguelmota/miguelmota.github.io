@@ -267,17 +267,27 @@ span.dsq-user-like {
 }
 button.dsq-button,
 button.dsq-button-small {
-	background: #222 !important;
-	border: 1px solid #000 !important;
-	color: #007299 !important;
+	background: #004c66 !important;
+	border: none !important;
+	border-radius: 0 !important;
+	-moz-border-radius: 0 !important;
+	-o-border-radius: 0 !important;	
+	-webkit-border-radius: 0 !important;
+	color: #fff !important;
+	font-size: 16px !important;
+	font-weight: bold !important;
+	padding: 8px 16px !important;
+	text-shadow: none !important;
 }
 button.dsq-button:hover,
 button.dsq-button-small:hover {
-	background: #202020 !important;
-	color: #0083aa !important;
+	background: #007299 !important;
+	color: #fff !important;
+	text-shadow: none !important;
 }
 button.dsq-button:active,
 button.dsq-button-small:active {
+	color: #fff !important;
 	text-shadow: none !important;
 }
 div.dsq-item-trackback {

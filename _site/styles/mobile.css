@@ -17,6 +17,28 @@ html {
 	padding: 0 !important;
 	width: 100% !important;
 }
+input[type=text],
+input[type=password],
+textarea {		
+	border: 1px solid #555 !important;
+	border-left: 4px solid #555 !important;
+}
+input[type=text]:focus,
+input[type=password]:focus,
+textarea:focus {	
+	border: 1px solid #007299 !important;
+	border-left: 4px solid #007299 !important;
+}
+input[type=text]:blur,
+input[type=password]:blur,
+textarea:blur {
+	border: 1px solid #555 !important;
+	border-left: 4px solid #007299 !important;
+}
+input.error,
+textarea.error {
+	border-color: #870000 !important;
+}
 .main-side-nav {
 	clear: both !important;
 	float: none !important;
@@ -68,16 +90,23 @@ h1.title {
 	-moz-box-shadow: none !important;
 	-o-box-shadow: none !important;
 	-webkit-box-shadow:  none !important;
+	min-height: 100px !important;
+	height: 100% !important;
 	width: 100% !important;
 }
-.image-container {
-	height: 100% !important;
+.image-container a {
+	display: block;
+	height: auto !important;
+	width: 100% !important;
 }
 .image-container img {
 	height: auto !important;
 	width: 100% !important;
 }
 .overlay-popup {
+	display: none;
+}
+.overlay {
 	display: none;
 }
 .work-image {
@@ -93,7 +122,6 @@ h1.title {
 }
 .phone-wrap {
 	display: block !important;
-	margin-bottom: 10px !important;
 }
 .contact-form {
 	float: none !important;
