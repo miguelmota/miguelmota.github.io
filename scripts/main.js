@@ -336,7 +336,7 @@ function recent_tweets(data) {
 		}
 	});
 }
-$.getScript('http://miguelmota.tumblr.com/tweets.js');
+$.getScript('https://twitter.com/statuses/user_timeline/miguel_mota.json?callback=recent_tweets&count=1');
 
 
 
