@@ -154,21 +154,14 @@ $(document).ready(function(){
             }
         }
     });
-	$(window).scroll(function () { 
-		var scrollTop = $(document).scrollTop();
-		scrollTop = parseInt(scrollTop);
-		var offset = topYloc+scrollTop+'px';  
-		$('.top-link').animate({top:offset},{duration:500,queue:false});
-	});
-	topYloc = parseInt($('.top-link').css('top').substring(0,$('.top-link').css('top').indexOf('px')));
 	
 	
 	
 	// Initialize mtip on social icons
 	$('.icon-social').mtip();
-
-
-
+	
+	
+	
 	// Initialize about page map
 	if($('.content').attr('class').split(' ')[1] == 'about'){
 		initializeAboutMap();
@@ -178,7 +171,15 @@ $(document).ready(function(){
 
 
 var fixed = false;
-$(window).scroll(function(){
+topYloc = parseInt($('.top-link').css('top').substring(0,$('.top-link').css('top').indexOf('px')));
+$(window).scroll(function () { 
+	
+	var scrollTop = $(document).scrollTop();
+	scrollTop = parseInt(scrollTop);
+	var offset = topYloc+scrollTop+'px';  
+	$('.top-link').animate({top:offset},{duration:500,queue:false});
+	
+	
 	
 	// Main side nav scroll to fixed
 	if(window.innerWidth >= 1025) {
