@@ -170,7 +170,6 @@ $(document).ready(function(){
 
 
 var fixed = false;
-topYloc = parseInt($('.top-link').css('top').substring(0,$('.top-link').css('top').indexOf('px')));
 $(window).scroll(function(){
 	
 	var scrollTop = $(document).scrollTop();
@@ -235,6 +234,7 @@ $(window).scroll(function(){
 	}
 
 });
+topYloc = parseInt($('.top-link').css('top').substring(0,$('.top-link').css('top').indexOf('px')));
 
 
 
