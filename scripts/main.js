@@ -168,14 +168,8 @@ $(document).ready(function(){
 	
 });
 
-var topYloc = parseInt($('.top-link').css('top').substring(0,$('.top-link').css('top').indexOf('px')));
 var fixed = false;
 $(window).scroll(function(){
-	
-	var scrollTop = $(document).scrollTop();
-	scrollTop = parseInt(scrollTop);
-	var offset = topYloc+scrollTop+'px';  
-	$('.top-link').animate({top:offset},{duration:500,queue:false});
 	
 	// Main side nav scroll to fixed
 	if(window.innerWidth >= 1025) {
