@@ -168,7 +168,7 @@ $(document).ready(function(){
 	
 });
 
-
+var topYloc = parseInt($('.top-link').css('top').substring(0,$('.top-link').css('top').indexOf('px')));
 var fixed = false;
 $(window).scroll(function(){
 	
@@ -234,8 +234,6 @@ $(window).scroll(function(){
 	}
 
 });
-topYloc = parseInt($('.top-link').css('top').substring(0,$('.top-link').css('top').indexOf('px')));
-
 
 
 
