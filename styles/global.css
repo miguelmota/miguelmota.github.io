@@ -692,7 +692,7 @@ img.loader {
 	position: absolute;
 	top: 0;
 }
-.top-link-wrap {
+.top-link {
 	bottom: 20px;
 	display: none;
 	position: fixed;
