@@ -106,6 +106,7 @@
 							+(data[i].id_str ? data[i].id_str : data[i].id)+'" rel="external">'+data[i].text+'</a> <time class="latest-tweet-date" datetime="'+ date.toISOString()+'">'+data[i].created_at+'</time></div>';
 					}
 					document.getElementById('tweet-wrap').style.display = 'block';
+					$('latest-tweet-date').timeago();
 				}
 			</script>
 			<script src='https://twitter.com/statuses/user_timeline/miguel_mota.json?callback=recent_tweets&count=5'></script>
