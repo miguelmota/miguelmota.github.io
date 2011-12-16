@@ -18,10 +18,6 @@ body {
 	padding: 70px 0 25px 250px;
 	position: relative;
 }
-#top {
-	position: absolute;
-	top: 0;
-}
 .clear {
 	clear: both;
 }
