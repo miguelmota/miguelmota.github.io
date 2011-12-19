@@ -689,11 +689,11 @@ function loadLastfmTop(){
 				api_key: 'dc0e875b6c0fd8ac4891b0716897e6c1',
 				limit: '5'
 			},
-			function(data){       
+			function(data){  
+				var rank = 1;     
+				
 				$('.stream-lastfm').append('<ul class="stream-ul stream-ul-lastfm stream-ul-lastfm-top">');
-						var rank = 1;
 				$.each(data.toptracks.track, function(i, item){ 
-						
 						var url = item.url;
 						var name = item.name;
 						var artist = item.artist['name'];
