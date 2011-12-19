@@ -712,7 +712,7 @@ input.search-input {
 	width: 175px;
 }
 input.search-input:before {
-	background: url('/images/icons/sprites/icons.png') no-repeat 16px 16px;
+	background: url('/images/sprites/icons.png') no-repeat 16px 0;
 	height: 16px;
 	width: 16px;
 }
