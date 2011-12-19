@@ -705,11 +705,16 @@ img.loader {
 	width: 100%;
 }
 input.search-input {
-	background: #1d1d1d url('/images/icons/pictos/16/search-2.png') no-repeat 98% 4px;
+	background-color: #1d1d1d;
 	border-left-color: #2d2d2d;
 	font-style: italic;
 	padding-right: 25px;
 	width: 175px;
+}
+input.search-input:before {
+	background: url('/images/icons/sprites/icons.png') no-repeat 16px 16px;
+	height: 16px;
+	width: 16px;
 }
 .search-button {
 	display: none;
