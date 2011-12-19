@@ -905,7 +905,7 @@ input.search-input {
 .stream-logo-tumblr {
 	background-image: url('/images/sprites/tumblr-sprite.png');
 	height: 16px;
-	/* width: 75px; */
+	width: 75px;
 }
 .stream-logo-tumblr:hover,
 .stream-logo-tumblr:active {
