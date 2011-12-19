@@ -502,7 +502,7 @@ function loadWakoopaRecent() {
 			for(var i = 0; i < data.length; i++){
 				var entry = data[i].software;
 				var date = new Date(entry.last_active_at);
-				html.push("<li><a href='"+entry.complete_url+"' rel='external'> <img class='stream-thumb' src='"+entry.complete_thumb_url+"' alt='' /> "+entry.name+"</a> <time class='status-date' datetime='"+ISODateString(date)+"'>"+ISODateString(date)+"</time>", "<div class='clear'></div></li>");
+				html.push("<li><a href='"+entry.complete_url+"' rel='external'><img class='stream-thumb' src='"+entry.complete_thumb_url+"' alt='' /> "+entry.name+" <time class='status-date' datetime='"+ISODateString(date)+"'>"+ISODateString(date)+"</time></a>", "<div class='clear'></div></li>");
 			}
 			
 			html.push("</ul>");
@@ -541,7 +541,7 @@ function loadWakoopaTop() {
 			for(var i = 0; i < data.length; i++){
 				var entry = data[i].software;
 				var date = new Date(entry.last_active_at);
-				html.push("<li><a href='"+entry.complete_url+"' rel='external'> <img class='stream-thumb' src='"+entry.complete_thumb_url+"' alt='' /> "+entry.name+"</a> <time class='status-date' datetime='"+ISODateString(date)+"'>"+ISODateString(date)+"</time>", "<div class='clear'></div></li>");
+				html.push("<li><a href='"+entry.complete_url+"' rel='external'><img class='stream-thumb' src='"+entry.complete_thumb_url+"' alt='' /> "+entry.name+" <time class='status-date' datetime='"+ISODateString(date)+"'>"+ISODateString(date)+"</time></a>", "<div class='clear'></div></li>");
 			}
 			
 			html.push("</ul>");
@@ -609,7 +609,7 @@ function loadLastfmRecent(){
 							image = item.image[0]['#text'];
 						}
 						var date =  new Date(item.date['#text']);
-						var list_item = "<li><a href='"+url+"' rel='external'><img class='stream-thumb' src='"+image+"' alt='' /> "+artist+" - "+name+"</a> <time class='status-date' datetime='"+ISODateString(date)+"'>"+ISODateString(date)+"</time><div class='clear'></div></li>";
+						var list_item = "<li><a href='"+url+"' rel='external'><img class='stream-thumb' src='"+image+"' alt='' /> "+artist+" - "+name+" <time class='status-date' datetime='"+ISODateString(date)+"'>"+ISODateString(date)+"</time></a><div class='clear'></div></li>";
 						$('.stream-ul-lastfm-recent').append(list_item);
 				}); 
 				
@@ -653,7 +653,7 @@ function loadLastfmLoved(){
 						var artist = item.artist['name'];
 						var image = item.image[0]['#text'];
 						var date =  new Date(item.date['#text']);
-						var list_item = "<li><a href='"+url+"' rel='external'><img class='stream-thumb' src='"+image+"' alt='' /> "+artist+" - "+name+"</a> <time class='status-date' datetime='"+ISODateString(date)+"'>"+ISODateString(date)+"</time><div class='clear'></div></li>";
+						var list_item = "<li><a href='"+url+"' rel='external'><img class='stream-thumb' src='"+image+"' alt='' /> "+artist+" - "+name+" <time class='status-date' datetime='"+ISODateString(date)+"'>"+ISODateString(date)+"</time></a><div class='clear'></div></li>";
 						$('.stream-ul-lastfm-loved').append(list_item);
 				}); 
 
@@ -697,7 +697,7 @@ function loadLastfmTop(){
 						var artist = item.artist['name'];
 						var image = '/images/logo-16.png';
 						var playcount =  item.playcount;
-						var list_item = "<li><a href='"+url+"' rel='external'><img class='stream-thumb' src='"+image+"' alt='' /> "+artist+" - "+name+"</a> <time class='status-date'>"+playcount+" plays</time><div class='clear'></div></li>";
+						var list_item = "<li><a href='"+url+"' rel='external'><img class='stream-thumb' src='"+image+"' alt='' /> "+artist+" - "+name+" <time class='status-date'>"+playcount+" plays</time></a><div class='clear'></div></li>";
 						$('.stream-ul-lastfm-top').append(list_item);
 				}); 
 				

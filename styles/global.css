@@ -903,7 +903,7 @@ input.search-input {
 	color: #007799;
 }
 .stream-logo-tumblr {
-	background-image: url('/images/sprites/tumblr-sprite.png');
+	background: url('/images/sprites/tumblr-sprite.png');
 	height: 16px;
 	width: 75px;
 }
