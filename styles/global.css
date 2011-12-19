@@ -390,6 +390,9 @@ img.loader {
 .icon-heart-16 {
 	background-image: url('/images/icons/pictos/16/heart.png');
 }
+.icon-heart-red-16 {
+	background-image: url('/images/icons/pictos/16/heart-red.png');
+}
 .icon-home-16 {
 	background-image: url('/images/icons/pictos/16/home.png');
 }
@@ -974,6 +977,7 @@ input.search-input {
 }
 .stream-ul li a {
 	display: block;
+	margin-bottom: 2px;
 	padding: 5px;
 }
 .stream-ul li a:hover {

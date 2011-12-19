@@ -640,7 +640,8 @@ function loadLastfmLoved(){
 	$.getJSON('http://ws.audioscrobbler.com/2.0/?callback=?', 
 			{
 				format: 'json',
-				method: 'user.getLovedTracks',
+				//method: 'user.getLovedTracks',
+				method: 'user.getRecentTracks',
 				user: 'miguel_mota',
 				api_key: 'dc0e875b6c0fd8ac4891b0716897e6c1',
 				limit: '5'
@@ -653,7 +654,7 @@ function loadLastfmLoved(){
 						var artist = item.artist['name'];
 						var image = item.image[0]['#text'];
 						var date =  new Date(item.date['#text']);
-						var list_item = "<li><a href='"+url+"' rel='external'><img class='stream-thumb' src='"+image+"' alt='' /> "+artist+" - "+name+" <time class='status-date' datetime='"+ISODateString(date)+"'>"+ISODateString(date)+"</time><span class='clear'></span></a></li>";
+						var list_item = "<li><a href='"+url+"' rel='external'><span class='icon icon-heart-red-16'></span> <img class='stream-thumb' src='"+image+"' alt='' /> "+artist+" - "+name+" <time class='status-date' datetime='"+ISODateString(date)+"'>"+ISODateString(date)+"</time><span class='clear'></span></a></li>";
 						$('.stream-ul-lastfm-loved').append(list_item);
 				}); 
 
@@ -699,7 +700,7 @@ function loadLastfmTop(){
 						var artist = item.artist['name'];
 						var image = '/images/logo-16.png';
 						var playcount =  item.playcount;
-						var list_item = "<li><a href='"+url+"' rel='external'><span class='rank-number'>"+rank+"</span><img class='stream-thumb' src='"+image+"' alt='' /> "+artist+" - "+name+" <time class='status-date'>"+playcount+" plays</time><span class='clear'></span></a></li>";
+						var list_item = "<li><a href='"+url+"' rel='external'><span class='rank-number'>"+rank+"</span> <img class='stream-thumb' src='"+image+"' alt='' /> "+artist+" - "+name+" <time class='status-date'>"+playcount+" plays</time><span class='clear'></span></a></li>";
 						$('.stream-ul-lastfm-top').append(list_item);
 						rank++;
 				}); 
