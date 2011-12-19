@@ -1004,6 +1004,7 @@ input.search-input {
 ------------------------------------------------------------------------------ */
 .rank-number {
 	color: #999;
+	display: inline-block;
 	font-size: 14px;
 	font-weight: bold;
 	margin-right: 5px;
