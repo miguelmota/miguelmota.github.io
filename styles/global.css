@@ -1086,7 +1086,10 @@ input.search-input {
 	width: 150px;
 }
 .stream-ul-flickr li a:hover {
-	background: transparent;
+	background: #1d1d1d;
+}
+.stream-ul-flickr li:nth-child(odd) a:hover {
+	background: #1d1d1d;
 }
 .stream-ul-flickr .zoom-wrap {
 	background-color: transparent;
