@@ -1076,13 +1076,17 @@ input.search-input {
 	float: left;
 	min-height: 120px;
 	height: auto;
-	margin-right: 1px;
+	margin: 0 1px 0 0;
+	padding: 0;
 	position: relative;
 	transition: all .2s ease-in-out;
 	-moz-transition: all .2s ease-in-out;
 	-o-transition: all .2s ease-in-out;
 	-webkit-transition: all .2s ease-in-out;
 	width: 150px;
+}
+.stream-ul-flickr li a:hover {
+	background: transparent;
 }
 .stream-ul-flickr .zoom-wrap {
 	background-color: transparent;
