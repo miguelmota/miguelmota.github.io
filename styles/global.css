@@ -866,7 +866,7 @@ input.search-input {
 	display: none;
 	float: left;
 	height: 18px;
-	margin-right: 5px;
+	margin-right: 10px;
 	width: 18px;
 }
 /* -----------------------------------------------------------------------------
@@ -976,7 +976,7 @@ input.search-input {
 	padding: 5px;
 }
 .stream-ul li a:hover {
-	background-color: #252525;
+	background-color: #000d11;
 }
 .stream-ul-flickr li {
 	margin: 0;
@@ -985,6 +985,10 @@ input.search-input {
 .stream-ul li:nth-child(odd) a,
 .odd {
 	background-color: #141414;	
+}
+.stream-ul li:nth-child(odd) a:hover,
+.odd:hover {
+	background-color: #000d11;	
 }
 /* -----------------------------------------------------------------------------
 	STATUS DATE
