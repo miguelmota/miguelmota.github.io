@@ -609,7 +609,7 @@ function loadLastfmRecent(){
 							image = item.image[0]['#text'];
 						}
 						var date =  new Date(item.date['#text']);
-						var list_item = "<li><a href='"+url+"' rel='external'><img class='stream-thumb' src='"+image+"' alt='' /> "+artist+" - "+name+" <time class='status-date' datetime='"+ISODateString(date)+"'>"+ISODateString(date)+"</time><span class='clear'></span></a></li>";
+						var list_item = "<li><a href='"+url+"' rel='external'><span class='icon icon-heart-red-16'></span> <img class='stream-thumb' src='"+image+"' alt='' /> "+artist+" - "+name+" <time class='status-date' datetime='"+ISODateString(date)+"'>"+ISODateString(date)+"</time><span class='clear'></span></a></li>";
 						$('.stream-ul-lastfm-recent').append(list_item);
 				}); 
 				
@@ -640,8 +640,7 @@ function loadLastfmLoved(){
 	$.getJSON('http://ws.audioscrobbler.com/2.0/?callback=?', 
 			{
 				format: 'json',
-				//method: 'user.getLovedTracks',
-				method: 'user.getRecentTracks',
+				method: 'user.getLovedTracks',
 				user: 'miguel_mota',
 				api_key: 'dc0e875b6c0fd8ac4891b0716897e6c1',
 				limit: '5'
