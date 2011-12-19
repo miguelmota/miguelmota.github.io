@@ -972,6 +972,7 @@ input.search-input {
 	width: 100%;
 }
 .stream-ul .status {
+	display: block;
 	margin-bottom: 2px;
 	padding: 3px;
 }
@@ -990,7 +991,9 @@ input.search-input {
 	STATUS DATE
 ------------------------------------------------------------------------------ */
 .status-date {
+	color: #999;
 	font-size: 12px;
+	font-weight: normal;
 	float: right;
 }
 /* -----------------------------------------------------------------------------
