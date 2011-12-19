@@ -648,13 +648,15 @@ function loadLastfmLoved(){
 			function(data){       
 				$('.stream-lastfm').append('<ul class="stream-ul stream-ul-lastfm stream-ul-lastfm-loved">');    
 				$.each(data.lovedtracks.track, function(i, item){ 
+						var rank = 1;
 						var url = item.url;
 						var name = item.name;
 						var artist = item.artist['name'];
 						var image = item.image[0]['#text'];
 						var date =  new Date(item.date['#text']);
-						var list_item = "<li><a href='"+url+"' rel='external'><img class='stream-thumb' src='"+image+"' alt='' /> "+artist+" - "+name+" <time class='status-date' datetime='"+ISODateString(date)+"'>"+ISODateString(date)+"</time></a><div class='clear'></div></li>";
+						var list_item = "<li><a href='"+url+"' rel='external'><span class='rank-number'>"+rank+"</span><img class='stream-thumb' src='"+image+"' alt='' /> "+artist+" - "+name+" <time class='status-date' datetime='"+ISODateString(date)+"'>"+ISODateString(date)+"</time></a><div class='clear'></div></li>";
 						$('.stream-ul-lastfm-loved').append(list_item);
+						rank++;
 				}); 
 
 				$('.stream-ul-lastfm-loved').append('</ul>');
