@@ -538,10 +538,12 @@ function loadWakoopaTop() {
 		},
 		function wakoopaApi(data){
 			var html = ["<ul class='stream-ul stream-ul-wakoopa-top'>"];
+			var rank = 1;
 			for(var i = 0; i < data.length; i++){
 				var entry = data[i].software;
 				var date = new Date(entry.last_active_at);
-				html.push("<li><a href='"+entry.complete_url+"' rel='external'><img class='stream-thumb' src='"+entry.complete_thumb_url+"' alt='' /> "+entry.name+" <time class='status-date' datetime='"+ISODateString(date)+"'>"+ISODateString(date)+"</time><span class='clear'></span></a></li>");
+				html.push("<li><a href='"+entry.complete_url+"' rel='external'><span class='rank-number'>"+rank+"</span> <img class='stream-thumb' src='"+entry.complete_thumb_url+"' alt='' /> "+entry.name+" <time class='status-date' datetime='"+ISODateString(date)+"'>"+ISODateString(date)+"</time><span class='clear'></span></a></li>");
+				rank++;
 			}
 			
 			html.push("</ul>");
