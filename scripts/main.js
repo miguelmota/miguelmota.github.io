@@ -691,8 +691,9 @@ function loadLastfmTop(){
 			},
 			function(data){       
 				$('.stream-lastfm').append('<ul class="stream-ul stream-ul-lastfm stream-ul-lastfm-top">');
-				$.each(data.toptracks.track, function(i, item){ 
 						var rank = 1;
+				$.each(data.toptracks.track, function(i, item){ 
+						
 						var url = item.url;
 						var name = item.name;
 						var artist = item.artist['name'];
