@@ -973,11 +973,10 @@ input.search-input {
 }
 .stream-ul li a {
 	display: block;
-	margin-bottom: 2px;
-	padding: 3px;
+	padding: 5px;
 }
-.stream-ul li :hover {
-	background: #000;
+.stream-ul li a:hover {
+	background-color: #252525;
 }
 .stream-ul-flickr li {
 	margin: 0;
