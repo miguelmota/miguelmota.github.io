@@ -880,7 +880,7 @@ input.search-input {
 	height: 16px;
 	margin-bottom: 10px;
 	padding: 0;
-	width: 100%;
+	width: auto;
 }
 .stream-logo:hover {
 	background-color: #1d1d1d;
@@ -903,7 +903,7 @@ input.search-input {
 	color: #007799;
 }
 .stream-logo-tumblr {
-	background: url('/images/sprites/tumblr-sprite.png');
+	background-image: url('/images/sprites/tumblr-sprite.png');
 	height: 16px;
 	/* width: 75px; */
 }
@@ -976,7 +976,7 @@ input.search-input {
 	padding: 5px;
 }
 .stream-ul li a:hover {
-	background-color: #151515;
+	background-color: #000;
 }
 .stream-ul-flickr li {
 	margin: 0;
