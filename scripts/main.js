@@ -609,7 +609,7 @@ function loadLastfmRecent(){
 							image = item.image[0]['#text'];
 						}
 						var date =  new Date(item.date['#text']);
-						var list_item = "<li><a href='"+url+"' rel='external'><span class='icon icon-heart-red-16 icon-heart-lastfm'></span> <img class='stream-thumb' src='"+image+"' alt='' /> "+artist+" - "+name+" <time class='status-date' datetime='"+ISODateString(date)+"'>"+ISODateString(date)+"</time><span class='clear'></span></a></li>";
+						var list_item = "<li><a href='"+url+"' rel='external'><img class='stream-thumb' src='"+image+"' alt='' /> "+artist+" - "+name+" <time class='status-date' datetime='"+ISODateString(date)+"'>"+ISODateString(date)+"</time><span class='clear'></span></a></li>";
 						$('.stream-ul-lastfm-recent').append(list_item);
 				}); 
 				
@@ -653,7 +653,7 @@ function loadLastfmLoved(){
 						var artist = item.artist['name'];
 						var image = item.image[0]['#text'];
 						var date =  new Date(item.date['#text']);
-						var list_item = "<li><a href='"+url+"' rel='external'><span class='icon icon-heart-red-16'></span> <img class='stream-thumb' src='"+image+"' alt='' /> "+artist+" - "+name+" <time class='status-date' datetime='"+ISODateString(date)+"'>"+ISODateString(date)+"</time><span class='clear'></span></a></li>";
+						var list_item = "<li><a href='"+url+"' rel='external'><span class='icon icon-heart-red-16 icon-heart-lastfm'></span> <img class='stream-thumb' src='"+image+"' alt='' /> "+artist+" - "+name+" <time class='status-date' datetime='"+ISODateString(date)+"'>"+ISODateString(date)+"</time><span class='clear'></span></a></li>";
 						$('.stream-ul-lastfm-loved').append(list_item);
 				}); 
 
