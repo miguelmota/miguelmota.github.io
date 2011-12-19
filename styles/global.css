@@ -866,7 +866,7 @@ input.search-input {
 	display: none;
 	float: left;
 	height: 18px;
-	margin-right: 10px;
+	margin-right: 5px;
 	width: 18px;
 }
 /* -----------------------------------------------------------------------------
@@ -878,7 +878,7 @@ input.search-input {
 	border: 0;
 	display: block;
 	height: 16px;
-	margin-bottom: 5px;
+	margin-bottom: 10px;
 	padding: 0;
 	width: auto;
 }
@@ -976,7 +976,7 @@ input.search-input {
 	padding: 5px;
 }
 .stream-ul li a:hover {
-	background-color: #000d11;
+	background-color: #1c1c1c;
 }
 .stream-ul-flickr li {
 	margin: 0;
@@ -988,7 +988,7 @@ input.search-input {
 }
 .stream-ul li:nth-child(odd) a:hover,
 .odd:hover {
-	background-color: #000d11;	
+	background-color: #1c1c1c;	
 }
 /* -----------------------------------------------------------------------------
 	STATUS DATE
