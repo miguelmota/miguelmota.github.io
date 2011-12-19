@@ -971,15 +971,18 @@ input.search-input {
 	height: auto;
 	width: 100%;
 }
-.stream-ul li {
+.stream-ul .status {
 	margin-bottom: 2px;
 	padding: 3px;
+}
+.stream-ul .status:hover {
+	background: #000;
 }
 .stream-ul-flickr li {
 	margin: 0;
 	padding: 0;
 }
-.stream-ul li:nth-child(odd),
+.stream-ul li:nth-child(odd) .status,
 .odd {
 	background-color: #141414;	
 }
