@@ -460,7 +460,10 @@ function showMtipTimeout(element,delay) {
 	}, time);
 }
 
-
+// Show map button mtip
+function mapButtonMtip(){
+	showMtipTimeout('.latitude-map-button .mtip',3000);
+}
 
 /* --------------------------------------------------
  * Stream page functions
@@ -835,9 +838,6 @@ function streamPage(){
 	showMtipTimeout('.stream-logo-blog',3000);
 	showMtipTimeout('.stream-logo-latitude',3000);
 	setTimeout('mapButtonMtip()', 1500);
-	function mapButtonMtip(){
-		showMtipTimeout('.latitude-map-button .mtip',3000);
-	}
 
 
 	// Initialize timeago
