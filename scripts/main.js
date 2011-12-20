@@ -451,12 +451,13 @@ function hideMtip(element) {
 }
 
 // Show mtip and then hide after 3 seconds
-function showMtipTimeout(element) {
+function showMtipTimeout(element,delay) {
 	var link = element;
+	var time = delay;
 	$(link).trigger('mouseenter');
 	setTimeout(function(){
 		$(link).trigger('mouseleave');
-	}, 3000);
+	}, time);
 }
 
 
@@ -514,7 +515,7 @@ function loadWakoopaRecent() {
 			$('.stream-ul-wakoopa-recent .status-date').timeago();
 
 			$('.stream-wakoopa .loader').css('display','none');
-			showMtipTimeout('.stream-logo-wakoopa');
+			showMtipTimeout('.stream-logo-wakoopa',3000);
 		}
 	);
 	
@@ -622,7 +623,7 @@ function loadLastfmRecent(){
 				$('.stream-ul-lastfm-recent .status-date').timeago();
 
 				$('.stream-lastfm .loader').css('display','none');
-				showMtipTimeout('.stream-logo-lastfm');
+				showMtipTimeout('.stream-logo-lastfm',3000);
 			}
 	);
 
@@ -831,9 +832,9 @@ function streamPage(){
 
 	// Hide stream logo text
 	$(".stream-logo:not('.stream-logo-blog ,.stream-logo-latitude')").text('');
-	showMtipTimeout('.stream-logo-blog');
-	showMtipTimeout('.stream-logo-latitude');
-	showMtipTimeout('.latitude-map-button .mtip');
+	showMtipTimeout('.stream-logo-blog',3000);
+	showMtipTimeout('.stream-logo-latitude',3000);
+	showMtipTimeout('.latitude-map-button .mtip',5000);
 
 
 	// Initialize timeago
@@ -903,7 +904,7 @@ function streamPage(){
 				$('.stream-ul-twitter .status-date').timeago();
 
 				$('.stream-twitter .loader').css('display','none');
-				showMtipTimeout('.stream-logo-twitter');
+				showMtipTimeout('.stream-logo-twitter',3000);
 			}
 	);
 	
@@ -987,7 +988,7 @@ function streamPage(){
 				//$('.stream-ul-tumblr .status-date').timeago();
 
 				$('.stream-tumblr .loader').css('display','none');
-				showMtipTimeout('.stream-logo-tumblr');
+				showMtipTimeout('.stream-logo-tumblr',3000);
 			}
 	);
 	
@@ -1018,7 +1019,7 @@ function streamPage(){
 				$('.stream-ul-delicious .status-date').timeago();
 				
 				$('.stream-delicious .loader').css('display','none');
-				showMtipTimeout('.stream-logo-delicious');
+				showMtipTimeout('.stream-logo-delicious',3000);
 		}
 	);
 	
@@ -1056,7 +1057,7 @@ function streamPage(){
 			
 			$('.stream-flickr .loader').css('display','none');
 			$('.stream-flickr').append(htmlString +'</ul></div><a href="javascript:void(0);" class="stream-carousel-nav stream-carousel-nav-next"><span class="stream-carousel-nav-inner">&#187;</span></a></div><div class="clear"></div>');
-			showMtipTimeout('.stream-logo-flickr');
+			showMtipTimeout('.stream-logo-flickr',3000);
 			
 			$('.stream-carousel-flickr').jCarouselLite({
 				 btnNext: '.stream-carousel-nav-next',

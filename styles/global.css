@@ -1450,6 +1450,9 @@ input.search-input {
 	float: left;
 	font-size: 28px;
 }
+.blog-post-list h1 a:hover {
+	background-color: #000;
+}
 .blog-post-list-date {
 	color: #555;
 	float: right;
