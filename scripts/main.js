@@ -833,7 +833,7 @@ function streamPage(){
 	$(".stream-logo:not('.stream-logo-blog ,.stream-logo-latitude')").text('');
 	showMtipTimeout('.stream-logo-blog');
 	showMtipTimeout('.stream-logo-latitude');
-	showMtipTimeout('.latitude-map-button');
+	showMtipTimeout('.latitude-map-button .mtip');
 
 
 	// Initialize timeago
