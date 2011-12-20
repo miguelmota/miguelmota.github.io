@@ -825,19 +825,32 @@ function streamPage(){
 	}
 
 
+	// Initialize mtip
+	$('.mtip').mtip();
+
 
 	// Hide stream logo text
 	$(".stream-logo:not('.stream-logo-blog ,.stream-logo-latitude')").text('');
 	showMtipTimeout('.stream-logo-blog');
 	showMtipTimeout('.stream-logo-latitude');
 
+
 	// Initialize timeago
 	$('.stream-ul-blog .status-date').timeago();
 	
 	
-	
-	// Initialize mtip
-	$('.mtip').mtip();
+
+	// Show map mtip on latutude stream hover
+	$('.stream-latitude').live({
+		mouseenter:
+			function(){
+				showMtip('.latitude-map-button', this);
+		},
+		mouseleave:
+			function(){
+				hideMtip('.latitude-map-button', this);
+		}
+	});
 
 	
 	
