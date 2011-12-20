@@ -839,20 +839,6 @@ function streamPage(){
 	$('.stream-ul-blog .status-date').timeago();
 	
 	
-
-	// Show map mtip on latutude stream hover
-	$('.stream-latitude').live({
-		mouseenter:
-			function(){
-				showMtip('.latitude-map-button', this);
-		},
-		mouseleave:
-			function(){
-				hideMtip('.latitude-map-button', this);
-		}
-	});
-
-	
 	
 	/* ------------------------
 	 * Latitude stream
@@ -1211,10 +1197,20 @@ function streamPage(){
 			mouseenter:
 				function(){
 					showMtip('.'+$(this).attr('class').split(' ')[1]+' .stream-logo');
+
+					// Show map mtip on latutude stream mouseenter
+					if($(this).attr('class').split(' ')[1] == 'stream-latitude'){
+						showMtip('.latitude-map-button', this);
+					}
 			},
 			mouseleave:
 				function(){
 					hideMtip('.'+$(this).attr('class').split(' ')[1]+' .stream-logo');
+
+					// Hide map mtip on latutude stream mouseout
+					if($(this).attr('class').split(' ')[1] == 'stream-latitude'){
+						showMtip('.latitude-map-button', this);
+					}
 			}
 	});
 		
