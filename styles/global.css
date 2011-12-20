@@ -859,7 +859,7 @@ input.search-input {
 	background: #1d1d1d url('/images/ajax-loader.gif') no-repeat 0 0 !important;
 	border: 0 !important;
 	float: left;
-	height: 16px;
+	height: 26px;
 	overflow: hidden;
 	width: 80%;
 }
