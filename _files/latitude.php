@@ -30,7 +30,7 @@ body {
 </head>
 <body>
 <?
-echo "<a style='color:#007299;padding:5px;background:#141414' href='http://maps.google.com/?q=$place' rel='external' target='_blank'><span class='icon icon-location-marker-16'></span> $place <time class='status-date'>".getRelativeTime($timestamp)."</time></a>";
+echo "<a style='color:#007299;display:block;padding:5px;background:#141414' href='http://maps.google.com/?q=$place' rel='external' target='_blank'><span class='icon icon-location-marker-16'></span> $place <time class='status-date'>".getRelativeTime($timestamp)."</time></a>";
 
 function plural($num) {
     if ($num != 1)
