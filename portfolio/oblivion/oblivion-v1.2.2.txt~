@@ -349,7 +349,7 @@
 	}
 	.main-wrap {
 		height: auto;
-		margin: 0 20px 0 20px;
+		margin: 70px 20px 0 20px;
 		word-wrap: break-word;
 		padding: 0 0 0 250px;
 		position: relative;
@@ -684,8 +684,7 @@
 	 * --------------------------------------------- */
 	.main-side-nav-wrap {
 		left: 0;
-		height: auto;
-		padding-top: 70px;
+		height: 100%;
 		position: absolute;
 		width: 200px;
 	}
@@ -885,7 +884,6 @@
 	 * --------------------------------------------- */
 	.main-content-wrap {
 		height: auto;
-		padding-top: 70px;
 		position: relative;
 		width: auto;
 	}
