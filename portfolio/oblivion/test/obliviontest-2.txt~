@@ -341,9 +341,7 @@
 	 * 01 BASIC
 	 * --------------------------------------------- */
 	body {
-		/* CHANGE BACKGROUND IMAGE HERE!! */
 		background: {color:Background} url('http://static.tumblr.com/ctuvo3d/aDtlxxmm7/bringingbackthatoldtimemusic.jpg') repeat 0 0;
-		
 		color: {color:Text};
 		font-family: 'Ubuntu Condensed', Helvetica, Arial, sans-serif;
 		font-size: 14px;
