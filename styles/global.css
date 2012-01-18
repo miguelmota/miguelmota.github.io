@@ -1,9 +1,34 @@
 @charset 'utf-8';
 @import url('fonts.css');
 
-/* ==============================================================================
-	BASIC
-============================================================================== */
+ /* ------------------------------------------------
+  * TABLE OF CONTENTS
+  * ------------------------------------------------
+  * 01 BASIC
+  * 02 SCROLLBAR
+  * 03 LINKS
+  * 05 ICONS
+  * 04 INPUT
+  * 06 NAVIGATION
+  * 07 SEARCH FORM
+  * 08 SOCIAL LINKS
+  * 09 LATEST TWEET
+  * 10 LIKES
+  * 11 FOLLOWING
+  * 12 CONTENT
+  * 13 POSTS
+  * 14 SHARE
+  * 15 NOTES
+  * 16 DISQUS
+  * 17 PAGINATION
+  * 18 TOP LINK
+  * 19 FOOTER
+  * 20 CUSTOM CSS
+  * --------------------------------------------- */
+
+/* ------------------------------------------------
+ * 01 BASIC
+ * --------------------------------------------- */
 body {
 	background-color: #252525;
 	color: #999;
@@ -140,9 +165,42 @@ strong {
 ul li {
 	line-height: 125%;
 }
-/* ==============================================================================
-	END BASIC
-============================================================================== */
+
+
+
+/* ------------------------------------------------
+ * SCROLLBAR
+ * --------------------------------------------- */
+::-webkit-scrollbar {
+	background: #1d1d1d;
+	height: auto;
+	width: 12px;
+}
+::-webkit-scrollbar-button {
+	background: #141414;
+}
+::-webkit-scrollbar-button:hover {
+	background: #151515;
+}
+::-webkit-scrollbar-track {
+	background: #1d1d1d;
+}
+::-webkit-scrollbar-track-piece {
+	background: #1d1d1d;
+}
+::-webkit-scrollbar-thumb {
+	background: #141414;
+	border: 0;
+}
+::-webkit-scrollbar-thumb:hover {
+	background: #151515;
+}
+::-webkit-scrollbar-corner {
+	background: #1d1d1d;
+}
+::-webkit-resizer {
+	background: #141414;
+}
 
 
 
