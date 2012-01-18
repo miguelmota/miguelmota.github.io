@@ -4,7 +4,7 @@
     <meta charset='utf-8' />
 <!--
  *	Oblivion Theme, obliviontheme.tumblr.com
- *	v1.2.2 | 20111220
+ *	v1.2.2 | 20120117
  *	Author: Miguel Mota, www.miguelmota.com
  * 	Contact: hello@miguelmota.com
  *	License: Creative Commons Attribution 3.0 License
@@ -949,8 +949,16 @@
 	.zoom-button {
 		bottom: 10px;
 		display: none;
+		opacity: .8;
+		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+		filter: alpha(opacity=80);
+		{block:IfEnableTextShadow}text-shadow: 0 1px 0 rgba(0,0,0,.3);{/block:IfEnableTextShadow}
 		position: absolute;
 		right: 10px;
+	}
+	.zoom-button:hover,
+	.zoom-button:hover {
+		opacity: 1;
 	}
 	.audio-player {}
 	.audio-album-art {
@@ -1211,7 +1219,7 @@
 		clear: both;
 		color: #555;
 		font-size: 12px;
-		padding: 25px 10px 0 10px;
+		padding: 25px 10px 20px 10px;
 		position: relative;
 		{block:IfEnableTextShadow}text-shadow: 0 -1px 0 rgba(0,0,0,.5);{/block:IfEnableTextShadow}
 		width: 100%;
