@@ -1117,7 +1117,7 @@ input.search-input {
 	font-size: 12px;
 	position: absolute;
 	right: 20px;
-	top: 90px;
+	top: 20px;
 }
 .stream-sort-wrap a.selected {
 	background-color: #1d1d1d;
