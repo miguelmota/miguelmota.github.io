@@ -1117,7 +1117,7 @@ input.search-input {
 	font-size: 12px;
 	position: absolute;
 	right: 20px;
-	top: 20px;
+	top: 90px;
 }
 .stream-sort-wrap a.selected {
 	background-color: #1d1d1d;
@@ -1190,7 +1190,7 @@ input.search-input {
 .project-sort-wrap {
 	position: absolute;
 	text-align: right;
-	top: 10px;
+	top: 80px;
 	width: 670px;
 }
 .project-sort-wrap a {
@@ -1402,7 +1402,7 @@ input.search-input {
 .blog-post-sort-wrap {
 	position: absolute;
 	text-align: right;
-	top: 10px;
+	top: 80px;
 	width: 520px;
 }
 /*
@@ -2119,7 +2119,7 @@ input.short-url:focus {
 	.about-photo-desc p:first-child {
 		font-size: 16px;
 	}
-	@media all and (landscape: orientation){
+	@media all and (orientation: landscape){
 		.about-photo-desc p:first-child {
 			font-size: 22px;
 		}
