@@ -2135,7 +2135,7 @@ input.short-url:focus {
 		height: 200px;
 	}
 
-	@media all and (min-width: 321px) {
+	@media all and (min-width: 480px) and (max-width: 640px) {
 		.about-photo-desc {
 	    	font-size: 18px;
 	    	right: 20px;
