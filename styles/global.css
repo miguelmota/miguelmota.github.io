@@ -611,6 +611,7 @@ img.loader {
 .main-side-nav-wrap {
 	left: 0;
 	height: 100%;
+	padding-top: 70px;
 	position: absolute;
 	width: 200px;
 }
