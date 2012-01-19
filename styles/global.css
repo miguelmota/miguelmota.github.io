@@ -2119,6 +2119,11 @@ input.short-url:focus {
 	.about-photo-desc p:first-child {
 		font-size: 16px;
 	}
+	@media all and (landscape: orientation){
+		.about-photo-desc p:first-child {
+			font-size: 22px;
+		}
+	}
 	.about-photo-desc br {
     	display: block;
 	}
