@@ -1,197 +1,76 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
+---
+layout: default
+title:
+---
+<h1 class='title'><span class='icon icon-cloud-32 icon-title icon-no-hover'></span> {% include title.html %}<span class='sub'><a href='/stream'>Stream</a></span></h1>
 
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<div class='stream-position-reset-wrap'><a class='stream-position-reset' href='javascript:void(0);' onclick='streamPositionReset();'><span class='icon icon-revert-16'></span> reset</a></div>
 
-<title>STOP SOPA!</title>
+<div class='clear'></div>
+<section class='content stream'>
 
-<style type="text/css" media="all">
-html,
-body {
-    margin: 0;
-    padding: 0;
-}
-
-#text-shadow-box {
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    background: #444;
-    font-family: Helvetica, Arial, sans-serif;
-    -webkit-tap-highlight-color: rgba(0,0,0,0);
-	-webkit-user-select: none;
-}
-
-#text-shadow-box #tsb-text,
-#text-shadow-box #tsb-link {
-    position: absolute;
-    top: 40%;
-    left: 0;
-    width: 100%;
-    height: 1em;
-    margin: -0.77em 0 0 0;
-    font-size: 90px;
-    line-height: 1em;
-    font-weight: bold;
-    text-align: center;
-}
-
-#text-shadow-box #tsb-text {
-    font-size: 100px;
-    color: transparent;
-    text-shadow: black 0px -45.2px 19px; 
-}
-
-#text-shadow-box #tsb-link a {
-    color: #999;
-    text-decoration: none;
-}
-
-#text-shadow-box #tsb-box,
-#text-shadow-box #tsb-wall {
-    position: absolute;
-    top: 40%;
-    left: 0;
-    width: 100%;
-    height: 60%;
-}
-
-#text-shadow-box #tsb-box {
-    -webkit-box-shadow: black 0px -45.2px 39px;
-    -moz-box-shadow: black 0px -45.2px 39px;
-}
-
-#text-shadow-box #tsb-wall {
-    background: #999;
-}
-
-#text-shadow-box #tsb-wall p {
-    position: relative;
-    font-size: 18px;
-    line-height: 1.5em;
-    text-align: justify;
-    color: #222;
-    width: 550px;
-    margin: 1.5em auto;
-    cursor: default;
-}
-
-#text-shadow-box #tsb-wall p a {
-    color: #fff;
-}
-
-#text-shadow-box #tsb-wall p a:hover {
-    text-decoration: none;
-    color: #000;
-    background: #fff;
-}
-
-#tsb-spot {
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    pointer-events: none;
-    background: -webkit-gradient(radial, center center, 0, center center, 450, from(rgba(0,0,0,0)), to(rgba(0,0,0,1)));
-    background: -moz-radial-gradient(center 45deg, circle closest-side, transparent 0, black 450px);
-}
-</style>
-
-<!--[if IE]>
-<style type="text/css">
-/* Sadly no IE9 support for pointer-events: none; nor CSS2 text-shadow */
-#tsb-spot {
-    display: none;
-}
-#tsb-ie {
-    position: absolute;
-    top: -90%;
-    left: -50%;
-    width: 200%;
-    height: 334%;
-    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPHJhZGlhbEdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjUwJSIgY3k9IjUwJSIgcj0iNzUlIj4KICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMCIvPgogICAgPHN0b3Agb2Zmc2V0PSI3NCUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMDAwMDAwIiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L3JhZGlhbEdyYWRpZW50PgogIDxyZWN0IHg9Ii01MCIgeT0iLTUwIiB3aWR0aD0iMTAxIiBoZWlnaHQ9IjEwMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-}
-</style>
-<![endif]-->
-
-</head>
-<body>
-    
-<div id="text-shadow-box">
-    <div id="tsb-box"></div>
-    <p id="tsb-text">STOP SOPA!</p>
-    <p id="tsb-link"><a href="http://americancensorship.org/">STOP SOPA!</a></p>
-    <div id="tsb-wall">
-        <div id="tsb-ie"></div>
-        
-        <p>This site has gone dark today in protest of the U.S. Stop Online Piracy Act (SOPA) and PROTECT-IP Act (PIPA).  The U.S. Congress is about to censor the Internet, even though the vast majority of Americans are opposed. We need to kill these bills to protect our rights to free speech, privacy, and prosperity.  Learn more at <a href="http://americancensorship.org/">AmericanCensorship.org</a></p>
-        <p><a href="/stream">Continue to site...</a></p>
+    <div class='stream-wrap stream-latitude content-item'>
+        <a class='stream-logo stream-logo-latitude mtip' href='http://www.google.com/latitude/apps/badge/api?user=7812482200199007583&type=iframe&maptype=roadmap' title='my location' rel='external'>latitude</a>
+        <a class='fancybox-iframe latitude-map-button' href='http://www.foodfail.org/miguelmota/map.php' rel='internal'><span class='icon icon-world-16 mtip' title='view map'></span></a>
+        <ul class='stream-ul stream-ul-latitude'>
+            <li><iframe class='stream-iframe-latitude' src='http://www.foodfail.org/miguelmota/latitude.php' scrolling='no' frameborder='0'></iframe><div class='clear'></div></li>
+        </ul>
+        <div class='clear'></div>
     </div>
-    <div id="tsb-spot"></div>
-</div>
-
-<script type="text/javascript" language="javascript" charset="utf-8">
-/**
- * Zachary Johnson
- * http://www.zachstronaut.com
- * I place the following code in the public domain.
- *
- * Fork it on GitHub: https://github.com/zachstronaut/stop-sopa
- */
- 
-var text = null;
-var spot = null;
-var box = null;
-var boxProperty = '';
-
-init();
-
-function init() {
-    text = document.getElementById('tsb-text');
-    spot = document.getElementById('tsb-spot');
-    box = document.getElementById('tsb-box');
     
-    if (typeof box.style.webkitBoxShadow == 'string') {
-        boxProperty = 'webkitBoxShadow';
-    } else if (typeof box.style.MozBoxShadow == 'string') {
-        boxProperty = 'MozBoxShadow';
-    } else if (typeof box.style.boxShadow == 'string') {
-        boxProperty = 'boxShadow';
-    }
-
-    if (text && spot && box) {
-        document.getElementById('text-shadow-box').onmousemove = onMouseMove;
-        document.getElementById('text-shadow-box').ontouchmove = function (e) {e.preventDefault(); e.stopPropagation(); onMouseMove({clientX: e.touches[0].clientX, clientY: e.touches[0].clientY});};
-    }
-}
-
-function onMouseMove(e) {
-    if (typeof e === 'undefined' || typeof e.clientX === 'undefined') {
-        return;
-    }
+    <div class='stream-wrap stream-facebook content-item'>
+        <a class='stream-logo stream-logo-facebook mtip' href='http://www.facebook.com/miguel.mota2' title='my facebook' rel='external'></a>
+        <div class='loader'></div>
+    </div>
     
-    var xm = (e.clientX - Math.floor(window.innerWidth / 2)) * 0.4;
-    var ym = (e.clientY - Math.floor(window.innerHeight / 3)) * 0.4;
-    var d = Math.round(Math.sqrt(xm*xm + ym*ym) / 5);
-    text.style.textShadow = -xm + 'px ' + -ym + 'px ' + (d + 10) + 'px black';
-    
-    if (boxProperty) {
-        box.style[boxProperty] = '0 ' + -ym + 'px ' + (d + 30) + 'px black';
-    }
-    
-    xm = e.clientX - Math.floor(window.innerWidth / 2);
-    ym = e.clientY - Math.floor(window.innerHeight / 2);
-    spot.style.backgroundPosition = xm + 'px ' + ym + 'px';
-}
-</script>
+    <div class='stream-wrap stream-blog content-item'>
+        <a class='stream-logo stream-logo-blog mtip' href='/blog' title='my blog'>Blog</a>
+        <ul class='stream-ul stream-ul-blog'>
+            {% for post in site.posts limit:3 %}
+                <li><a class='status' href='{{ post.url }}'><span class='icon icon-text-16'></span> {{ post.title }} <time class='status-date' datetime='{{ post.date | date:"%d %B %Y"  }}'>{{ post.date | date:"%d %B"  }}</time><span class='clear'></span></a></li>
+            {% endfor %}
+        </ul>
+    </div>
 
-</body>
-</html>
+    <div class='stream-wrap stream-tumblr content-item'>
+        <a class='stream-logo stream-logo-tumblr mtip' href='http://miguelmota.tumblr.com'  title='my tumblog' rel='external'></a>
+        <div class='loader'></div>
+    </div>
+    
+    <div class='stream-wrap stream-delicious content-item'>
+        <a class='stream-logo stream-logo-delicious mtip' href='http://www.delicious.com/miguelmota' title='my bookmarks' rel='external'></a>
+        <div class='loader'></div>
+    </div>
+    
+    <div class='stream-wrap stream-wakoopa content-item'>
+        <a class='stream-logo stream-logo-wakoopa mtip' href='http://social.wakoopa.com/miguelmota' title='my software' rel='external'></a>
+        <div class='stream-sort-wrap stream-sort-wakoopa'>
+            <a class='stream-sort-wakoopa-recent selected' href='javascript:void(0);' onclick='streamSortWakoopaRecent();'>recent</a> /
+            <a class='stream-sort-wakoopa-top' href='javascript:void(0);' onclick='streamSortWakoopaTop();'>top</a>
+        </div>
+        <div id='stream-wakoopa-software-recent'></div>
+        <div id='stream-wakoopa-software-top'></div>
+        <div class='loader'></div>
+    </div>
+    
+    <div class='stream-wrap stream-lastfm content-item'>
+        <a class='stream-logo stream-logo-lastfm mtip' href='http://www.last.fm/user/miguel_mota' title='my music' rel='external'></a>
+        <div class='stream-sort-wrap stream-sort-lastfm'>
+            <a class='stream-sort-lastfm-recent selected' href='javascript:void(0);' onclick='streamSortLastfmRecent();'>recent</a> /
+            <a class='stream-sort-lastfm-loved' href='javascript:void(0);' onclick='streamSortLastfmLoved();'>loved</a> / 
+            <a class='stream-sort-lastfm-top' href='javascript:void(0);' onclick='streamSortLastfmTop();'>top</a>
+        </div>
+        <div class='loader'></div>
+    </div>
+    
+    <div class='stream-wrap stream-twitter content-item'>
+        <a class='stream-logo stream-logo-twitter mtip' href='http://twitter.com/#!/miguel_mota' title='my tweets' rel='external'></a>
+        <div class='loader'></div>
+    </div>
+    
+    <div class='stream-wrap stream-flickr content-item'>
+        <a class='stream-logo stream-logo-flickr mtip' href='http://www.flickr.com/photos/miguelmota' title='my photos' rel='external'></a>
+        <div class='loader'></div>
+    </div>
+    <div class='clear'></div>
+</section>
