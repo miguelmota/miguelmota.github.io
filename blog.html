@@ -20,8 +20,8 @@ title: Blog
 				<div class='blog-view-post-wrap'>&#8230; <a href='{{ post.url }}'>view full post &#187;</a></div>
 				<div class='blog-post-tags'>
 					<span class='icon icon-tags-16 icon-no-hover'></span>
-					{% for category in post.categories %}
-						<span name='{{ category | first }}'>[{{ category | first }}]</span>
+					{% for tag in post.tags %}
+						<span name='{{ tags | first }}'>[{{ tag | first }}]</span>
 					{% endfor %}
 				</div>
 				<div class='blog-post-footer'>

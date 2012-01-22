@@ -11,8 +11,8 @@ layout: default
 		</div>
 		<div class='blog-post-tags'>
 			<span class='icon icon-tags-16 icon-no-hover'></span>
-			{% for category in page.categories %}
-				<span name='{{ category | first }}'>[{{ category | first }}]</span>
+			{% for tag in page.tags %}
+				<span name='{{ tag | first }}'>[{{ tag | first }}]</span>
 			{% endfor %}
 		</div>
 		<div class='blog-post-footer'>
