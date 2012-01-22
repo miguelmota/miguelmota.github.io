@@ -1442,22 +1442,22 @@ input.search-input {
 	display: block;
 	font-size: 24px;
 }
-.blog-post-item h3 {
+.blog-post-text h3 {
 	font-size: 28px;
 	font-weight: bold;
 	padding: 15px 0 10px 0;
 }
-.blog-post-item h4 {
+.blog-post-text h4 {
 	font-size: 20px;
 	font-weight: bold;
 	padding: 10px 0 0 0;
 }
-.blog-post-item h5 {
+.blog-post-text h5 {
 	font-size: 18px;
 	font-weight: bold;
 	padding: 10px 0 0 0;
 }
-.blog-post-item h6 {
+.blog-post-text h6 {
 	font-size: 14px;
 	font-weight: bold;
 	padding: 10px 0 0 0;
