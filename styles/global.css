@@ -1599,6 +1599,13 @@ input.short-url:focus {
 	padding: 0;
 	width: 81px; 
 }
+/*
+	BLOG POST END
+*/
+.blog-post-end-wrap {
+	position: relative;
+	width: 750px;
+}
 
 
 
@@ -1723,13 +1730,9 @@ input.short-url:focus {
 /* ------------------------------------------------
  * 19 DISQUS
  * --------------------------------------------- */
-.dsq-comment-wrap {
-	margin: 35px 0 35px 0;
-	position: relative;
-	width: 750px;
-}
 #disqus_thread {
 	clear: both;
+	margin: 35px 0 35px 0;
 }
 
 

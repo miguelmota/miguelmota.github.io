@@ -24,9 +24,10 @@ layout: default
 			<span class='st_twitter' st_url='{{ page.url }}' st_title='{{ page.title }}'></span><span class='st_facebook' st_url='{{ page.url }}' st_title='{{ page.title }}'></span><span class='st_tumblr' st_url='{{ page.url }}' st_title='{{ page.title }}'></span><span class='st_stumbleupon' st_url='{{ page.url }}' st_title='{{ page.title }}'></span><span class='st_delicious' st_url='{{ page.url }}' st_title='{{ page.title }}'></span><span class='st_email' st_url='{{ page.url }}' st_title='{{ page.title }}'></span><span class='st_sharethis' st_url='{{ page.url }}' st_title='{{ page.title }}'></span>
 			<script>var switchTo5x=true;</script><script src='http://w.sharethis.com/button/buttons.js'></script><script>stLight.options({publisher:'bf5b1133-3663-44ea-a232-a2c2265b117f'});</script>
 			<input class='short-url' type='text' value='http://www.miguelmota.com{{ page.url }}' />
+			<div class='clear'></div>
 		</div>
 	</div>
-	<div class='dsq-comment-wrap'>
+	<div class='blog-post-end-wrap'>
 		<div class='pagination'>
 		    {% if page.previous.url %}
 				<a class='pagination-previous' href='{{ page.previous.url }}'>&#171; {{ page.previous.title | truncatewords: 15 }}</a>
