@@ -71,6 +71,9 @@ div.dsq-trackback-url {
 #disqus_thread a:active {
 	text-shadow: 0 -1px 0 rgba(0,0,0,.5) !important;
 }
+#disqus_thread h3 {
+	font-size: 14px !important;
+}
 /*
 DON'T WORK
 div.dsq-popup a {
