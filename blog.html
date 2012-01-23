@@ -14,7 +14,7 @@ title: Blog
 			<div class='content-item blog-post-item blog-post-grid'>
 				<h1><a href='{{ post.url }}'>{{ post.title }}</a></h1>
 	 			<div class='blog-post-text'>
-	 				<a href='{{ post.url }}'><img class='blog-post-thumb' src='/images/blog/thumbs/{{ post.thumbnail }}' alt='' /></a>
+	 				<a href='{{ post.url }}'><img class='blog-post-thumb' src='/assets/blog/{{ post.url }}/{{ post.thumbnail }}' alt='' /></a>
 					{{ post.content }}
 				</div>
 				<div class='blog-view-post-wrap'>&#8230; <a href='{{ post.url }}'>view full post &#187;</a></div>
