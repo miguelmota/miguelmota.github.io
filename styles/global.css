@@ -1724,12 +1724,12 @@ input.short-url:focus {
  * 19 DISQUS
  * --------------------------------------------- */
 .dsq-comment-wrap {
+	margin: 35px 0 35px 0;
 	position: relative;
 	width: 750px;
 }
 #disqus_thread {
 	clear: both;
-	margin: 15px 0 35px 0;
 }
 
 
