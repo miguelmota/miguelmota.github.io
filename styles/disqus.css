@@ -49,10 +49,10 @@ div.dsq-trackback-url {
 /* ==============================================================================
 	DISQUS - NARCISSUS THEME
 ============================================================================== */
-div#disqus_thread {
+#disqus_thread {
 	font-family: NeoSans, Klavika-Light, Helvetica, Arial, sans-serif !important;
 }
-div#disqus_thread a {
+#disqus_thread a {
 	border-left: 3px solid #292929 !important;
 	color: #007299 !important;
 	padding: 1px 3px 1px 3px !important;
@@ -62,13 +62,13 @@ div#disqus_thread a {
 	-o-transition: color linear .1s !important;
 	-webkit-transition: color linear .1s !important;
 }
-div#disqus_thread a:hover {
+#disqus_thread a:hover {
  	background-color: #222 !important;
  	border-left: 3px solid #333 !important;
 	color: #0083aa !important;
 	text-shadow: 0 1px 0 rgba(0,0,0,.9) !important;
 }
-div#disqus_thread a:active {
+#disqus_thread a:active {
 	text-shadow: 0 -1px 0 rgba(0,0,0,.5) !important;
 }
 /*
@@ -99,6 +99,9 @@ button..dsq-comment-footer-reply-tab {
 	text-shadow: 0 !important;
 }
 */
+#dsq-sort-by {
+	display: none !important;;
+}
 div.dsq-textarea {}
 div.dsq-textarea-wrapper,
 div.dsq-textarea-wrapper iframe {}
@@ -238,23 +241,23 @@ div.dsq-pagination {
 	display: none !important;
 }
 */
-div#dsq-comments-title {
+#dsq-comments-title {
 	padding-bottom: 10px !important;
 }
-div#dsq-global-toolbar {
+#dsq-global-toolbar {
 	display: none !important;
 }
-div.dsq-options {
+.dsq-options {
 	display: none !important;
 }
-td.dsq-comment-header-meta {
+.dsq-comment-header-meta {
 	background-color: #222 !important;
 }
-span.dsq-user-like {
+.dsq-user-like {
 	color: #555 !important;
 }
-button.dsq-button,
-button.dsq-button-small {
+.dsq-button,
+-button-small {
 	background: #004c66 !important;
 	border: none !important;
 	border-radius: 0 !important;
@@ -267,18 +270,19 @@ button.dsq-button-small {
 	padding: 8px 16px !important;
 	text-shadow: none !important;
 }
-button.dsq-button:hover,
-button.dsq-button-small:hover {
+.dsq-button:hover,
+.dsq-button-small:hover {
 	background: #007299 !important;
 	color: #fff !important;
 	text-shadow: none !important;
 }
-button.dsq-button:active,
-button.dsq-button-small:active {
+.dsq-button:active,
+.dsq-button-small:active {
 	color: #fff !important;
 	text-shadow: none !important;
 }
-div.dsq-item-trackback {
+.dsq-trackback-url,
+.dsq-item-trackback {
 	display: none !important;
 }
 img {
