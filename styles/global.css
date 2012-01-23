@@ -1466,6 +1466,7 @@ input.search-input {
 	BLOG POST THUMB
 */
 .blog-post-thumb {
+	background: #1d1d1d url('/images/bg-checker-dark.png') repeat 0 0;
 	height: auto;
 	margin: 15px 0;
 	width: 100%;
@@ -1507,8 +1508,7 @@ input.search-input {
 	BLOG POST PHOTO
 */
 .blog-post-photo-wrap {
-	clear: both;
-	margin: 10px 0;
+
 }
 .blog-post-photo,
 .photo {
@@ -1521,8 +1521,12 @@ input.search-input {
 	height: auto;
 	width: 100%;
 }
+.blog-post-photo {
+	margin-bottom: 5px;
+}
 .blog-post-photo-source {
 	clear: both;
+	display: block;
 	font-size: 10px;
 	margin-bottom: 5px;
 	text-align: right;
