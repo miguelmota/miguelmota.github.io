@@ -1506,6 +1506,10 @@ input.search-input {
 /*
 	BLOG POST PHOTO
 */
+.blog-post-photo-wrap {
+	clear: both;
+	margin: 10px 0;
+}
 .blog-post-photo,
 .photo {
 	background: #1d1d1d url('/images/bg-checker-dark.png') repeat 0 0;
@@ -1517,13 +1521,11 @@ input.search-input {
 	height: auto;
 	width: 100%;
 }
-.blog-post-photo {
-	margin: 10px 0;
-}
 .blog-post-photo-source {
 	clear: both;
 	font-size: 10px;
 	margin-bottom: 5px;
+	text-align: right;
 }
 .blog-post-photo-source:before {}
 /*
