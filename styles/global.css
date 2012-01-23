@@ -1437,6 +1437,7 @@ input.search-input {
 .blog-post-single h1 a {
 	display: block;
 	font-size: 34px;
+	margin-bottom: 10px;
 }
 .blog-post-item h1 a {
 	display: block;
