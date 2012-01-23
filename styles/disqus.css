@@ -99,21 +99,10 @@ button..dsq-comment-footer-reply-tab {
 	text-shadow: 0 !important;
 }
 */
-div.dsq-textarea {
-	border: 1px solid #555 !important;
-	color: #999 !important;
-}
+div.dsq-textarea {}
 div.dsq-textarea-wrapper,
-div.dsq-textarea-wrapper iframe {
-	background: #222 !important;
-	border: 0 !important;
-	color: #999 !important;
-}
-}
-div#disqus_thread iframe {
-	background: #222 !important;
-	color: #999;
-}
+div.dsq-textarea-wrapper iframe {}
+div#disqus_thread iframe {}
 /*
 div.dsq-full-comment {
 	position: relative !important;
