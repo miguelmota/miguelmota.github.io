@@ -2067,16 +2067,14 @@ input.short-url:focus {
 	}
 	.main-side-nav-ul li {
 		display: table-cell;
-		float: none;
+		float: left;
 		text-align: center;
-		width: 100%;
 	}
 	.main-side-nav-ul a {
 		display: table-cell;
-		float: none;
+		float: left;
 		padding-left: 8px;
 		text-align: center;
-		width: 100%;
 	}
 	.nav-break {
 		clear: both;
@@ -2113,6 +2111,7 @@ input.short-url:focus {
 	 * --------------------- */
 	 .main-content-wrap {
 		padding: 0;
+		width: 100%;
 	}
 	.content-item {
 		float: none;
