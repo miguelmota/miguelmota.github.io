@@ -2063,17 +2063,15 @@ input.short-url:focus {
 		width: 100%;
 	}
 	.main-side-nav-ul li {
-		display: table-cell;
 		float: none;
-		text-align: center;
 	}
 	.main-side-nav-ul a {
-				display: table-cell;
+		display: table-cell;
 		float: none;
 		padding-left: 8px;
-				text-align: center;
+		text-align: center;
 	}
-	.main-side-nav-ul #about {
+	.main-side-nav-ul .about-li {
 		clear: right;
 	}
 	
