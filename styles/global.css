@@ -2074,9 +2074,9 @@ input.short-url:focus {
 	}
 	.main-side-nav-ul li {
 		display: inline;
+		float: left;
 	}
 	.main-side-nav-ul a {
-		float: left;
 		padding: 10px 10px;
 		width: 120px;
 	}
@@ -2290,13 +2290,12 @@ input.short-url:focus {
 	.pagination {
 		width: 89%;
 	}
-	.dsq-comment-wrap {
-		max-width: 93%;
-		overflow: hidden;
-		width: 200px;
+	.blog-post-end-wrap {
+		position: relative;
+		width: 89%;
 	}
 	#disqus_thread {
-		width: 320px;
+		width: 89%;
 	}
 
 	/* ------------------------
