@@ -2288,14 +2288,14 @@ input.short-url:focus {
 		display: none;
 	}
 	.pagination {
-		width: 89%;
+		width: 100%;
 	}
 	.blog-post-end-wrap {
 		position: relative;
 		width: 89%;
 	}
 	#disqus_thread {
-		width: 89%;
+		width: 100%;
 	}
 
 	/* ------------------------
