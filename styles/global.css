@@ -1924,12 +1924,15 @@ input.short-url:focus {
 	 * Main side nav wrap
 	 * --------------------- */
 	.main-side-nav-wrap {
-		padding-top: 70px;
+		padding-top: 30px;
 	}
 
 	/* ------------------------
 	 * Stream wrap
 	 * --------------------- */
+	.stream-position-reset-wrap {
+    	top: 40px;
+    }
 	.stream-wrap {
 		width: 300px;
 	}
@@ -1987,6 +1990,9 @@ input.short-url:focus {
 	 /* ------------------------
 	 * Portfolio page
 	 * --------------------- */
+	 .project-sort-wrap {
+    	top: 40px;
+	}
 	.project-image {
 		width: 300px;
 	}
@@ -1995,6 +2001,7 @@ input.short-url:focus {
 	 * Blog page
 	 * --------------------- */
 	.blog-post-sort-wrap {
+		top: 40px;
 		width: 670px;
 	}
 	.blog-post-item {
