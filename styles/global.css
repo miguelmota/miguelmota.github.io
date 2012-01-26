@@ -2110,7 +2110,7 @@ input.short-url:focus {
 	 .main-content-wrap {
 		padding: 0;
 		position: relative;
-		width: 98%;
+		width: 97%;
 	}
 	.content-item {
 		float: none;
@@ -2212,7 +2212,7 @@ input.short-url:focus {
 	 * Portfolio page
 	 * --------------------- */
 	.project-sort-wrap {
-		width: 95%;
+		width: 85%;
 	}
 	.project {
 		clear: both;
