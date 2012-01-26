@@ -2068,12 +2068,14 @@ input.short-url:focus {
 		display: table-cell;
 		float: none;
 		text-align: center;
+		width: 100%;
 	}
 	.main-side-nav-ul a {
 		display: table-cell;
 		float: none;
 		padding-left: 8px;
 		text-align: center;
+		width: 100%;
 	}
 	.nav-break {
 		clear: both;
@@ -2113,7 +2115,7 @@ input.short-url:focus {
 	}
 	.content-item {
 		float: none;
-		margin: 0 0 10px 0;
+		margin: 0 2px 10px 2px;
 		padding: 5px;
 		width: 100%;
 	}
