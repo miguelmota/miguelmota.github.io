@@ -1906,19 +1906,27 @@ input.short-url:focus {
 	 * --------------------- */
 	.main-wrap {
 		margin: 0 5px 0 5px;
-		padding: 30px 0 25px 250px;
+		padding: 0 0 0 250px;
 	}
 	
 	/* ------------------------
 	 * Main content
 	 * --------------------- */
 	.main-content-wrap {
+		padding-top: 30px;
 		width: 700px
 	}
 	.content-item {
 		width: 650px;
 	}
-	
+
+	/* ------------------------
+	 * Main side nav wrap
+	 * --------------------- */
+	.main-side-nav-wrap {
+		padding-top: 70px;
+	}
+
 	/* ------------------------
 	 * Stream wrap
 	 * --------------------- */
