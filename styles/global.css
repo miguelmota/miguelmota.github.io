@@ -2026,6 +2026,7 @@ input.short-url:focus {
 	 * Main side nav wrap
 	 * --------------------- */
 	.main-side-nav-wrap {
+		padding-top: 0;
 		position: static;
 		width: 100%
 	}
