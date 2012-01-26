@@ -2019,7 +2019,7 @@ input.short-url:focus {
 	.main-wrap {
 		margin: 0 0;
 		overflow: hidden;
-		padding: 0 0 10px 0;
+		padding: 0;
 	}
 	
 	/* ------------------------
@@ -2070,7 +2070,7 @@ input.short-url:focus {
 	 * Social icons
 	 * --------------------- */
 	.follow-wrap {
-		width: 92%;
+		width: 93%;
 	}
 	
 	/* ------------------------
@@ -2087,7 +2087,7 @@ input.short-url:focus {
 		width: 89%;
 	}
 	#latest-tweet {
-		width: 92%;
+		width: 93%;
 	}
 	
 	/* ------------------------
@@ -2100,7 +2100,7 @@ input.short-url:focus {
 		float: none;
 		margin-bottom: 10px;
 		padding: 5px;
-		width: 92%;
+		width: 93%;
 	}
 	
 	/* ------------------------
@@ -2133,7 +2133,7 @@ input.short-url:focus {
 	}
 	.stream-wrap {
 		height: auto;
-		width: 92%;
+		width: 93%;
 	}
 	.latitude-map-button,
 	.stream-sort-wrap {
@@ -2201,7 +2201,7 @@ input.short-url:focus {
 	.project {
 		clear: both;
 		height: 100%;
-		width: 92%;
+		width: 93%;
 	}
 	.project .image-container {
 		clear: both;
@@ -2231,7 +2231,7 @@ input.short-url:focus {
 	}
 	.contact-form-message {
 		height: 200px;
-		width: 92%;
+		width: 93%;
 	}
 	
 	/* ------------------------
@@ -2244,7 +2244,7 @@ input.short-url:focus {
 		font-size: 20px;
 	}
 	.blog-post-list {
-		width: 92%;
+		width: 93%;
 	}
 	.blog-post-list	.blog-post-item {
 		width: 100%;
@@ -2269,15 +2269,22 @@ input.short-url:focus {
 		display: none;
 	}
 	.pagination {
-		width: 92%;
+		width: 93%;
 	}
 	.dsq-comment-wrap {
-		max-width: 92%;
+		max-width: 93%;
 		overflow: hidden;
 		width: 200px;
 	}
 	#disqus_thread {
-		width: 92%	
+		width: 93%;
 	}
 	
 }
+
+	/* ------------------------
+	 * Blog page
+	 * --------------------- */
+	.main-footer {
+		padding: 25px 10px 10px 10px;
+	}
