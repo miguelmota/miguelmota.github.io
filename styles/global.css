@@ -2059,12 +2059,19 @@ input.short-url:focus {
 		position: static;	
 		width: 100%;
 	}
+	.main-side-nav-ul {
+		width: 100%;
+	}
 	.main-side-nav-ul li {
-		float: left;
+		display: table-cell;
+		float: none;
+		text-align: center;
 	}
 	.main-side-nav-ul a {
+				display: table-cell;
+		float: none;
 		padding-left: 8px;
-		width: 33.3%;
+				text-align: center;
 	}
 	.main-side-nav-ul #about {
 		clear: right;
