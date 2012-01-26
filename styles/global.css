@@ -2017,7 +2017,7 @@ input.short-url:focus {
 	 * Main wrap
 	 * --------------------- */
 	.main-wrap {
-		margin: 0 0;
+		margin: 0;
 		overflow: hidden;
 		padding: 0;
 	}
@@ -2094,13 +2094,13 @@ input.short-url:focus {
 	 * Main content
 	 * --------------------- */
 	 .main-content-wrap {
-		padding-top: 0;
+		padding: 0;
 	}
 	.content-item {
 		float: none;
 		margin-bottom: 10px;
 		padding: 5px;
-		width: 93%;
+		width: 100%;
 	}
 	
 	/* ------------------------
