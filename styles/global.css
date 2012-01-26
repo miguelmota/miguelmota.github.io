@@ -673,7 +673,9 @@ img.loader {
 	color: #fff;
 	font-weight: bold;
 }
-
+.nav-break {
+	display: none;
+}
 
 
 /* ------------------------------------------------
@@ -2073,8 +2075,10 @@ input.short-url:focus {
 		padding-left: 8px;
 		text-align: center;
 	}
-	.main-side-nav-ul .about-li {
-		clear: right;
+	.nav-break {
+		clear: both;
+		display: block;
+		width: 100%;
 	}
 	
 	/* ------------------------
