@@ -2099,7 +2099,7 @@ input.short-url:focus {
 	 * Latest tweet
 	 * --------------------- */
 	#latest-tweet-wrap {
-		margin-bottom: 0;
+		padding-bottom: 0;
 		width: 89%;
 	}
 	#latest-tweet {
