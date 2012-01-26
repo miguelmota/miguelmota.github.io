@@ -733,7 +733,7 @@ input.search-input {
 .latest-tweet-content {
 	background-color: #1d1d1d;
 	float: left;
-	min-height: 20px;
+	min-height: 15px;
 	padding: 10px;
 	width: 100%;
 }
