@@ -2029,6 +2029,7 @@ input.short-url:focus {
 		margin: 0;
 		overflow: hidden;
 		padding: 0;
+		position: relative;
 		width: 100%;
 	}
 	
@@ -2113,12 +2114,14 @@ input.short-url:focus {
 	 * --------------------- */
 	 .main-content-wrap {
 		padding: 0;
+		position: relative;
 		width: 100%;
 	}
 	.content-item {
 		float: none;
 		margin: 0 0 10px 0;
 		padding: 5px 5px 35px 5px;
+		position: relative;
 	}
 	
 	/* ------------------------
