@@ -2064,6 +2064,10 @@ input.short-url:focus {
 	}
 	.main-side-nav-ul a {
 		padding-left: 8px;
+		width: 33.3%;
+	}
+	.main-side-nav-ul #about {
+		clear: right;
 	}
 	
 	/* ------------------------
@@ -2129,11 +2133,11 @@ input.short-url:focus {
 	 * Stream wrap
 	 * --------------------- */
 	 .stream-position-reset-wrap {
-		width: 95%;
+		width: 100%;
 	}
 	.stream-wrap {
 		height: auto;
-		width: 93%;
+		width: 100%;
 	}
 	.latitude-map-button,
 	.stream-sort-wrap {
