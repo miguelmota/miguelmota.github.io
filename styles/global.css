@@ -2019,6 +2019,7 @@ input.short-url:focus {
 	 html,body {
 	 	width: 100%;
 	 }
+
 	/* ------------------------
 	 * Main wrap
 	 * --------------------- */
@@ -2073,10 +2074,11 @@ input.short-url:focus {
 	}
 	.main-side-nav-ul li {
 		display: inline;
-		float: left;
 	}
 	.main-side-nav-ul a {
+		float: left;
 		padding: 10px 10px;
+		width: 150px;
 	}
 	
 	/* ------------------------
