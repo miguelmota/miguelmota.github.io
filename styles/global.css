@@ -2117,6 +2117,7 @@ input.short-url:focus {
 		margin: 0 0 10px 0;
 		padding: 5px;
 		position: relative;
+		width: 100%;
 	}
 	
 	/* ------------------------
@@ -2247,7 +2248,7 @@ input.short-url:focus {
 	}
 	.contact-form-message {
 		height: 200px;
-		width: 100%;
+		width: 89%;
 	}
 	
 	/* ------------------------
