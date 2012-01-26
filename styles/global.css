@@ -1787,6 +1787,7 @@ input.short-url:focus {
 	display: none;
 	position: fixed;
 	right: 20px;
+	z-index: 1000;
 }
 
 
@@ -2296,12 +2297,20 @@ input.short-url:focus {
 	#disqus_thread {
 		width: 93%;
 	}
-	
-}
 
 	/* ------------------------
-	 * Blog page
+	 * Top link
+	 * --------------------- */
+	.top-link {
+		bottom: 10px;
+		right: 10px;
+	}
+
+	/* ------------------------
+	 * Main footer
 	 * --------------------- */
 	.main-footer {
 		padding: 25px 10px 10px 10px;
 	}
+	
+}
