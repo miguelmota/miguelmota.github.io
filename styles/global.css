@@ -2148,6 +2148,7 @@ input.short-url:focus {
 	 * Stream wrap
 	 * --------------------- */
 	 .stream-position-reset-wrap {
+		top: 10px;
 		width: 100%;
 	}
 	.stream-wrap {
@@ -2215,8 +2216,8 @@ input.short-url:focus {
 	 * Portfolio page
 	 * --------------------- */
 	.project-sort-wrap {
-		top: 0;
-		width: 85%;
+		top: 10px;
+		width: 100%;
 	}
 	.project {
 		clear: both;
@@ -2258,7 +2259,7 @@ input.short-url:focus {
 	 * Blog page
 	 * --------------------- */
 	.blog-post-sort-wrap {
-		top: 0;
+		top: 10px;
 		width: 100%;
 	}
 	.blog-post-item h1 a {
