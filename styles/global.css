@@ -2017,6 +2017,12 @@ input.short-url:focus {
  * --------------------------------------------- */
 @media all and (max-width: 640px) {
 	/* ------------------------
+	 * Basic
+	 * --------------------- */
+	 html,body {
+	 	width: 100%;
+	 }
+	/* ------------------------
 	 * Main wrap
 	 * --------------------- */
 	.main-wrap {
@@ -2069,12 +2075,13 @@ input.short-url:focus {
 	.main-side-nav-ul li {
 		display: table-cell;
 		float: left;
-		width: 100%;
+		width: auto;
 	}
 	.main-side-nav-ul a {
 		display: table-cell;
 		float: left;
 		padding-left: 8px;
+		width: auto;
 	}
 	.nav-break {
 		clear: both;
@@ -2115,8 +2122,8 @@ input.short-url:focus {
 	}
 	.content-item {
 		float: none;
-		margin: 0 2px 10px 2px;
-		padding: 5px;
+		margin: 0 0 10px 0;
+		padding: 0;
 		width: 100%;
 	}
 	
