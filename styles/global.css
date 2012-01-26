@@ -2092,6 +2092,9 @@ input.short-url:focus {
 	/* ------------------------
 	 * Main content
 	 * --------------------- */
+	 .main-content-wrap {
+		padding-top: 0;
+	}
 	.content-item {
 		float: none;
 		margin-bottom: 10px;
