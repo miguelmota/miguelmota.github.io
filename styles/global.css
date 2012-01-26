@@ -2116,7 +2116,7 @@ input.short-url:focus {
 	}
 	.content-item {
 		float: none;
-		margin: 0 0 10px 0;
+		margin: 0 0 15px 0;
 		padding: 5px;
 		position: relative;
 		width: 100%;
@@ -2288,7 +2288,7 @@ input.short-url:focus {
 		display: none;
 	}
 	.pagination {
-		width: 100%;
+		width: 89%;
 	}
 	.dsq-comment-wrap {
 		max-width: 93%;
