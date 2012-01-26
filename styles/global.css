@@ -2292,7 +2292,7 @@ input.short-url:focus {
 	}
 	.blog-post-end-wrap {
 		position: relative;
-		width: 89%;
+		width: 100%;
 	}
 	#disqus_thread {
 		width: 100%;
