@@ -2063,7 +2063,9 @@ input.short-url:focus {
 		width: 100%;
 	}
 	.main-side-nav-ul li {
+		display: table-cell;
 		float: none;
+		text-align: center;
 	}
 	.main-side-nav-ul a {
 		display: table-cell;
