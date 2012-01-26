@@ -2076,9 +2076,9 @@ input.short-url:focus {
 		display: inline;
 	}
 	.main-side-nav-ul a {
-		display: inline-block;
+		float: left;
 		padding: 10px 10px;
-		width: 150px;
+		width: 120px;
 	}
 	
 	/* ------------------------
