@@ -2067,27 +2067,21 @@ input.short-url:focus {
 	 * --------------------- */
 	.main-side-nav {
 		position: static;	
-		width: 100%;
+		width: auto;
 	}
 	.main-side-nav-ul {
-		width: 100%;
+		width: auto;
+		overflow: auto;
 	}
 	.main-side-nav-ul li {
 		display: table-cell;
 		float: left;
-		width: auto;
 	}
 	.main-side-nav-ul a {
 		display: table-cell;
-		float: left;
 		padding-left: 8px;
-		width: auto;
-		width: 200%;
 	}
 	.nav-break {
-		clear: both;
-		display: block;
-		width: 100%;
 	}
 	
 	/* ------------------------
@@ -2125,7 +2119,7 @@ input.short-url:focus {
 		float: none;
 		margin: 0 0 10px 0;
 		padding: 5px;
-		width: 100%;
+		width: auto;
 	}
 	
 	/* ------------------------
