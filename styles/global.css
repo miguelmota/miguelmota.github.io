@@ -673,9 +673,6 @@ img.loader {
 	color: #fff;
 	font-weight: bold;
 }
-.nav-break {
-	display: none;
-}
 
 
 /* ------------------------------------------------
@@ -2075,14 +2072,11 @@ input.short-url:focus {
 		overflow: auto;
 	}
 	.main-side-nav-ul li {
-		display: table-cell;
+		display: inline;
 		float: left;
 	}
 	.main-side-nav-ul a {
-		display: table-cell;
-		padding-left: 8px;
-	}
-	.nav-break {
+		padding: 15px 20px;
 	}
 	
 	/* ------------------------
@@ -2096,13 +2090,14 @@ input.short-url:focus {
 	 * Search box
 	 * --------------------- */
 	input.search-input {
-		width: 93%;
+		width: 85%;
 	}
 	
 	/* ------------------------
 	 * Latest tweet
 	 * --------------------- */
 	#latest-tweet-wrap {
+		margin-bottom: 0;
 		width: 89%;
 	}
 	#latest-tweet {
@@ -2119,8 +2114,8 @@ input.short-url:focus {
 	}
 	.content-item {
 		float: none;
-		margin: 0 0 10px 0;
-		padding: 5px 5px 35px 5px;
+		margin: 0 80px 10px 0;
+		padding: 5px 5px 5px 5px;
 		position: relative;
 	}
 	
