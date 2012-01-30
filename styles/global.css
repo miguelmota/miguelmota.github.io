@@ -797,6 +797,7 @@ input.search-input {
 	width: 670px;
 }
 .stream-wrap {
+	display: inline-block;
 	float: left;
 	width: 350px;
 	z-index: 10;
