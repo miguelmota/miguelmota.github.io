@@ -667,10 +667,9 @@ function loadLastfmLoved(){
 				$('.stream-ul-lastfm-loved li:nth-child(odd)').addClass('odd');
 
 				// Initialize timeago
-				$('.stream-ul-lastfm-loved .status-date').timeago();
+				$('.stream-ul-lastfm .status-date').timeago();
 
 				$('.stream-lastfm .loader').css('display','none');
-				//$('.stream-ul-lastfm-loved').css('display','none');
 			}
 	);
 	
