@@ -1089,7 +1089,7 @@ input.search-input {
 	filter: alpha(opacity=70);
 }
 .stream-ul-flickr img {
-	background: #1d1d1d url('/images/ajax-loader-image.gif') no-repeat 50% 50%;
+	background: #1d1d1d url('/images/ajax-loader.gif') no-repeat 50% 50%;
 	box-shadow: 2px 2px 8px rgba(0,0,0,.7);
 	-moz-box-shadow: 2px 2px 8px rgba(0,0,0,.7);
 	-o-box-shadow: 2px 2px 8px rgba(0,0,0,.7);
