@@ -101,7 +101,7 @@
 	<script src='http://static.tumblr.com/r8galzl/Tq0lu4kx9/jquery.masonry.min.js'></script>
 
 	<!-- Infinite, http://codysherman.com/tools/infinite-scrolling -->
-	{block:IfEnableEndlessScroll}<script src='http://static.tumblr.com/r8galzl/zDglzetsk/infinitescrollingbycodysherman.js'></script>{/block:IfEnableEndlessScroll}
+	{block:IfEnableEndlessScroll}<script src='http://codysherman.com/tools/infinite-scrolling/code'></script>{/block:IfEnableEndlessScroll}
 
 	<!-- jQuery timeago, timeago.yarp.com -->
 	<script src='http://static.tumblr.com/r8galzl/yG3lv8yj1/jquery.timeago.min.js'></script>
