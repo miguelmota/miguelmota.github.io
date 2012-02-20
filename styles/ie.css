@@ -1,8 +1,8 @@
 @charset 'utf-8';
 
-.project .image-container {
-	border: 1px solid #252525;
-}
-.project .image-container:hover {
-	border-color: #007299;
+/*
+	STATUS DATE
+*/
+.status-date {
+	display: none !important;
 }
