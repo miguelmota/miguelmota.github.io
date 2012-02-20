@@ -91,11 +91,9 @@ code {
 em {
 	display: inline;
 }
-.title,
-.title a {
+.title {
 	font-family: Klavika, 'Ubuntu Condensed', Helvetica, Arial, sans-serif;
 	font-size: 32px;
-	font-weight: bold;
 	letter-spacing: -2px;
 	margin-bottom: 10px;
 	position: relative;
@@ -109,6 +107,10 @@ em {
 }
 .title a:hover {
 	color: #fff;
+}
+.title .miguel {
+	font-family: Klavika, 'Ubuntu Condensed', Helvetica, Arial, sans-serif;
+	font-weight: bold;
 }
 .title .mota {
 	font-weight: normal;
