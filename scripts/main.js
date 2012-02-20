@@ -610,7 +610,7 @@ function loadLastfmRecent(){
 						var url = item.url;
 						var name = item.name;
 						var artist = item.artist['#text'];
-						var image = '/images/logo-16.png';
+						var image = '/assets/images/logo-16.png';
 						if (item.image[0]['#text']) {
 							image = item.image[0]['#text'];
 						}
@@ -702,7 +702,7 @@ function loadLastfmTop(){
 						var url = item.url;
 						var name = item.name;
 						var artist = item.artist['name'];
-						var image = '/images/logo-16.png';
+						var image = '/assets/images/logo-16.png';
 						var playcount =  item.playcount;
 						var list_item = "<li><a href='"+url+"' rel='external'><span class='rank-number'>"+rank+"</span> <img class='stream-thumb' src='"+image+"' alt='' /> "+artist+" - "+name+" <time class='status-date'>"+playcount+" plays</time><span class='clear'></span></a></li>";
 						$('.stream-ul-lastfm-top').append(list_item);
