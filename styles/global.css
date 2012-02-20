@@ -91,7 +91,8 @@ code {
 em {
 	display: inline;
 }
-.title {
+.title.
+.title a {
 	font-family: Klavika, 'Ubuntu Condensed', Helvetica, Arial, sans-serif;
 	font-size: 32px;
 	font-weight: bold;
