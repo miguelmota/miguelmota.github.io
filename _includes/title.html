@@ -6,6 +6,7 @@
 	var sub2 = '';
 	if (s[3] == 'portfolio') {
 		sub2 = 'sub2';	
+		document.writeln("<span class='sub-mobile'><span class='slash'>/</span><a class='sub' href='/portfolio')'>folio</a></span>");
 	}
 	for (var i=3; i<(s.length-1);i++) {
 		path += "<span class='sub "+sub2+"'><a href='"+href.substring(0,href.indexOf('/'+s[i])+s[i].length+1)+"/'>"+s[i]+"</a><span class='slash'>/</span></span>";
@@ -13,5 +14,4 @@
 	i = s.length-1;
 	path += "<a class='"+sub2+"' href='"+href.substring(0,href.indexOf(s[i])+s[i].length)+"'>"+s[i]+"</a>";
 	document.writeln("<span class='slash'>/</span>" + path);
-	alert(sub2);
 </script>

@@ -126,6 +126,9 @@ em {
 	font-weight: normal;
 	margin-left: -2px;
 }
+.sub-mobile {
+	display: none;
+}
 ::selection {
 	background-color: #000;
 	color: #fff;
@@ -2177,8 +2180,14 @@ input.short-url:focus {
 	.title .slash {
 		display: none;
 	}
+	.title .sub.portfolio {
+		display: none;
+	}
 	.title .sub2 {
 		display: none;
+	}
+	.sub-mobile {
+		display: inline-block;
 	}
 	
 	/* ------------------------
