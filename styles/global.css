@@ -1430,7 +1430,6 @@ h6 {
 	text-align: right;
 	top: 80px;
 	width: 40px;
-	border: 1px solid red;
 }
 /*
 	BLOG POST LIST SORT
@@ -2275,6 +2274,7 @@ input.short-url:focus {
 	 * Portfolio page
 	 * --------------------- */
 	.project-sort-wrap {
+		left: 0;
 		top: 10px;
 		width: 100%;
 	}
@@ -2318,6 +2318,7 @@ input.short-url:focus {
 	 * Blog page
 	 * --------------------- */
 	.blog-post-sort-wrap {
+		left: 0;
 		top: 10px;
 		width: 100%;
 	}
