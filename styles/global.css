@@ -1212,11 +1212,11 @@ h6 {
 	PROJECT SORT
 */
 .project-sort-wrap {
+	left: 500px;
 	position: absolute;
 	top: 80px;
-	left: 500px;
+	text-align: right;
 	width: 120px;
-	border: 1px solid red;
 }
 .project-sort-wrap a {
 	background-color: #252525;
@@ -1425,10 +1425,12 @@ h6 {
 	BLOG POST SORT
 */
 .blog-post-sort-wrap {
+	left: 500px;
 	position: absolute;
 	text-align: right;
 	top: 80px;
-	width: 520px;
+	width: 120px;
+	border: 1px solid red;
 }
 /*
 	BLOG POST LIST SORT
