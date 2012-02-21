@@ -364,14 +364,14 @@ function initializeFancybox() {
 	
 	// Custom Fancybox caption formatting
 	function formatTitle(title, currentArray, currentIndex, currentOpts) {
-	    return '<div class="fancybox-title"><span><a class="button" href="javascript:void(0);" onclick="$.fancybox.close();">close X</a></span>' + (title && title.length ? '<strong>' + title + '</strong>' : '' ) + 'Image ' + (currentIndex + 1) + ' of ' + currentArray.length + '<div class="clear"></div></div>';
+	    return '<div class="fancybox-title"><span><a class="button" href="javascript:void(0)" onclick="$.fancybox.close();">close X</a></span>' + (title && title.length ? '<strong>' + title + '</strong>' : '' ) + 'Image ' + (currentIndex + 1) + ' of ' + currentArray.length + '<div class="clear"></div></div>';
 	}
 	
 	
 	
 	// Custom Fancybox iframe caption formatting
 	function formatIframeTitle(title, currentArray, currentIndex, currentOpts) {
-	    return '<div class="fancybox-title fancybox-title-iframe"><span><a class="button" href="javascript:void(0);" onclick="$.fancybox.close();">close X</a></span><span class="title-wrap">' + (title && title.length ? '<strong>' + title + '</strong>' : '' ) + '</span><div class="clear"></div></div>';
+	    return '<div class="fancybox-title fancybox-title-iframe"><span><a class="button" href="javascript:void(0)" onclick="$.fancybox.close();">close X</a></span><span class="title-wrap">' + (title && title.length ? '<strong>' + title + '</strong>' : '' ) + '</span><div class="clear"></div></div>';
 	}
 	
 	
@@ -1037,7 +1037,7 @@ function streamPage(){
 			user_id: '40464790@N08'
 		},
 		function jsonFlickrFeed(data) {
-			var htmlString = '<div class="stream-carousel-wrap"><a href="javascript:void(0);" class="stream-carousel-nav stream-carousel-nav-prev"><span class="stream-carousel-nav-inner">&#171;</span></a><div class="stream-carousel stream-carousel-flickr"><ul class="stream-ul stream-ul-flickr jcarousel-skin-tango">';
+			var htmlString = '<div class="stream-carousel-wrap"><a href="javascript:void(0)" class="stream-carousel-nav stream-carousel-nav-prev"><span class="stream-carousel-nav-inner">&#171;</span></a><div class="stream-carousel stream-carousel-flickr"><ul class="stream-ul stream-ul-flickr jcarousel-skin-tango">';
 			$.each(data.photos.photo, function(i,item) {	
 				
 				var flickr_id = item.id;
@@ -1058,7 +1058,7 @@ function streamPage(){
 			
 			
 			$('.stream-flickr .loader').css('display','none');
-			$('.stream-flickr').append(htmlString +'</ul></div><a href="javascript:void(0);" class="stream-carousel-nav stream-carousel-nav-next"><span class="stream-carousel-nav-inner">&#187;</span></a></div><div class="clear"></div>');
+			$('.stream-flickr').append(htmlString +'</ul></div><a href="javascript:void(0)" class="stream-carousel-nav stream-carousel-nav-next"><span class="stream-carousel-nav-inner">&#187;</span></a></div><div class="clear"></div>');
 			showMtipTimeout('.stream-logo-flickr',3000);
 			
 			$('.stream-carousel-flickr').jCarouselLite({
