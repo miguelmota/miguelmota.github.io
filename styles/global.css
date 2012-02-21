@@ -800,6 +800,10 @@ input.search-input {
 	position: relative;
 	width: 750px;
 }
+h6 {
+	font-weight: bold;
+	margin-top: 5px;
+}
 
 
 
