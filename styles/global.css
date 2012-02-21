@@ -2198,13 +2198,20 @@ input.short-url:focus {
 		right: 5px;
 		top: 5px;
 	}
+	.stream-delicious .status-date,
+	.stream-wakoopa .status-date {
+		display: none;
+	}
 	
 	/* ------------------------
 	 * Flickr carousel
 	 * --------------------- */
+	 .stream-ul-flickr {
+	 	width: 100%;
+	 }
 	 .stream-ul-flickr li a {
 	 	min-height: 64px;
-	 	width: 64px;
+	 	width: 30%;
 	 }
 
   	/* ------------------------
