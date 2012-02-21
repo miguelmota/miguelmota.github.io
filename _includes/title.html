@@ -4,7 +4,7 @@
 	var href = document.location.href;
 	var s = href.split('/');
 	for (var i=3; i<(s.length-1);i++) {
-		path += "<span class='sub "+s[3]+"'><a href='"+href.substring(0,href.indexOf('/'+s[i])+s[i].length+1)+"/'>"+s[i]+"</a><span class='slash'>/</span></span>";
+		path += "<span class='sub "+s[i]+"'><a href='"+href.substring(0,href.indexOf('/'+s[i])+s[i].length+1)+"/'>"+s[i]+"</a><span class='slash'>/</span></span>";
 	}
 	i = s.length-1;
 	path += "<a href='"+href.substring(0,href.indexOf(s[i])+s[i].length)+"'>"+s[i]+"</a>";
