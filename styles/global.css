@@ -454,7 +454,7 @@ img.loader {
 	background-image: url('/assets/images/icons/pictos/16/envelope.png');
 }
 .icon-envelope-32 {
-	background-image: url('/assets/images/icons/pictos/16/envelope.png');
+	background-image: url('/assets/images/icons/pictos/32/envelope.png');
 }
 .icon-facebook-24 {
 	background-image: url('/assets/images/icons/pictos/24/facebook.png');
@@ -2206,16 +2206,19 @@ input.short-url:focus {
   	/* ------------------------
   	 * About page
   	 * --------------------- */
+  	.about-photo-wrap {
+  	    font-size: 12px;
+  	}
   	.about-photo-wrap .photo {
 		min-height: 50px;
 	}
     .about-photo-desc {
-    	font-size: 12px;
-    	right: 10px;
-		top: 0px;
+    	font-size: 120%;
+    	right: 10%;
+		top: 10%px;
 	}
 	.about-photo-desc p:first-child {
-		font-size: 16px;
+		font-size: 160%;
 	}
 	.about-photo-desc br {
     	display: block;
