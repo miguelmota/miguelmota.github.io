@@ -4,12 +4,9 @@
 	var href = document.location.href;
 	var s = href.split('/');
 	for (var i=3; i<(s.length-1);i++) {
-		path += "<span class='sub'><a href='"+href.substring(0,href.indexOf('/'+s[i])+s[i].length+1)+"/'>"+s[i]+"</a><span class='slash'>/</span></span>";
+		path += "<span class='sub "+s[3]+"'><a href='"+href.substring(0,href.indexOf('/'+s[i])+s[i].length+1)+"/'>"+s[i]+"</a><span class='slash'>/</span></span>";
 	}
 	i = s.length-1;
 	path += "<a href='"+href.substring(0,href.indexOf(s[i])+s[i].length)+"'>"+s[i]+"</a>";
-	if (s[3] == 'portfolio') {
-		path += "<a href='"+href.s[3]+"'>"+folio+"</a>";
-	}
 	document.writeln("<span class='slash'>/</span>" + path);
 </script>
