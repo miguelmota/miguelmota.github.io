@@ -1213,9 +1213,10 @@ h6 {
 */
 .project-sort-wrap {
 	position: absolute;
-	text-align: right;
 	top: 80px;
-	width: 670px;
+	left: 500px;
+	width: 120px;
+	border: 1px solid red;
 }
 .project-sort-wrap a {
 	background-color: #252525;
