@@ -15,8 +15,8 @@
 	STATUS LINK
 */
 .stream-ul li a {
-	background-color: #121212;	
+	background-color: #111 !important;	
 }
 .stream-ul li a:hover {
-	background-color: #000;
+	background-color: #000 !important;
 }
