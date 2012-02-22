@@ -10,3 +10,13 @@
 .status-date {
 	display: none !important;
 }
+
+/*
+	STATUS LINK
+*/
+.stream-ul li a {
+	background-color: #121212;	
+}
+.stream-ul li a:hover {
+	background-color: #000;
+}
