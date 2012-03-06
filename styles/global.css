@@ -1348,7 +1348,7 @@ h6 {
 */
 .project-image {
 	float: left;
-	height: auto;
+	height: 180px;
 	width: 350px;
 }
 .project-image img {
