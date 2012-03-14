@@ -592,7 +592,12 @@ function streamSortWakoopaTop(){
  * --------------------- */
 function loadLastfmRecent(){
 	
-	$('.stream-ul-lastfm').remove();
+	$('#stream-lastfm-recent').html();
+	$('#stream-lastfm-loved').html();
+	$('#stream-lastfm-top').html();
+	$('.stream-ul-lastfm-loved').remove();
+	$('.stream-ul-lastfm-loved').remove();
+	$('.stream-ul-lastfm-top').remove();
 	$('.stream-lastfm .loader').css('display','block');
 	
 	// All parameters in url: http://ws.audioscrobbler.com/2.0/?format=json&method=user.getRecentTracks&user=miguel_mota&api_key=dc0e875b6c0fd8ac4891b0716897e6c1&limit=5&callback=?
@@ -605,6 +610,7 @@ function loadLastfmRecent(){
 				limit: '5'
 			},
 			function(data){   
+				/*
 				$('.stream-lastfm').append('<ul class="stream-ul stream-ul-lastfm stream-ul-lastfm-recent">');    
 				$.each(data.recenttracks.track, function(i, item){ 
 						var url = item.url;
@@ -627,8 +633,52 @@ function loadLastfmRecent(){
 
 				$('.stream-lastfm .loader').css('display','none');
 				showMtipTimeout('.stream-logo-lastfm',3000);
+				*/
+
+				var html = ["<ul class='stream-ul stream-ul-lastfm-recent'>"];
+				var rank = 1;
+
+				for(var i = 0; i < data.length; i++) {
+					var url = recenttracks.track.url;
+					var name = recenttracks.track.name;
+					var artist = recenttracks.track.artist['#text'];
+					var image = '/assets/images/logo-16.png';
+					if (recenttracks.track.image[0]['#text']) {
+						image = recenttracks.track.image[0]['#text'];
+					}
+					var date = recenttracks.track.date['#text'];
+					html.push = "<li><a href='"+url+"' rel='external'><img class='stream-thumb' src='"+image+"' alt='' /> "+artist+" - "+name+" <time class='status-date' datetime='"+date+"'>"+date+"</time><span class='clear'></span></a></li>";
+					rank++;
+				}
 			}
 	);
+
+
+
+	/*$.getJSON('http://api.wakoopa.com/miguelmota/most_used.json?callback=?',
+		{
+			limit: '3'
+		},
+		function wakoopaApi(data){
+			var html = ["<ul class='stream-ul stream-ul-wakoopa-top'>"];
+			var rank = 1;
+			for(var i = 0; i < data.length; i++){
+				var entry = data[i].software;
+				var date = new Date(entry.last_active_at);
+				html.push("<li><a href='"+entry.complete_url+"' rel='external'><span class='rank-number'>"+rank+"</span> <img class='stream-thumb' src='"+entry.complete_thumb_url+"' alt='' /> "+entry.name+" <time class='status-date' datetime='"+ISODateString(date)+"'>"+ISODateString(date)+"</time><span class='clear'></span></a></li>");
+				rank++;
+			}
+			
+			html.push("</ul>");
+			document.getElementById('stream-wakoopa-software-top').innerHTML = html.join("");
+			$('.stream-ul-wakoopa-top li:nth-child(odd)').addClass('odd');
+
+			// Initialize timeago
+			$('.stream-ul-wakoopa-top .status-date').timeago();
+			
+			$('.stream-wakoopa .loader').css('display','none');
+		}
+	);*/
 
 }
 
