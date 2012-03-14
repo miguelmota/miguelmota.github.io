@@ -639,14 +639,14 @@ function loadLastfmRecent(){
 				var rank = 1;
 
 				for(var i = 0; i < data.length; i++) {
-					var url = recenttracks.track.url;
-					var name = recenttracks.track.name;
-					var artist = recenttracks.track.artist['#text'];
+					var url = recenttracks[i].track.url;
+					var name = recenttracks[i].track.name;
+					var artist = recenttracks[i].track.artist['#text'];
 					var image = '/assets/images/logo-16.png';
-					if (recenttracks.track.image[0]['#text']) {
-						image = recenttracks.track.image[0]['#text'];
+					if (recenttracks[i].track.image[0]['#text']) {
+						image = recenttracks[i].track.image[0]['#text'];
 					}
-					var date = recenttracks.track.date['#text'];
+					var date = recenttracks[i].track.date['#text'];
 					html.push = "<li><a href='"+url+"' rel='external'><img class='stream-thumb' src='"+image+"' alt='' /> "+artist+" - "+name+" <time class='status-date' datetime='"+date+"'>"+date+"</time><span class='clear'></span></a></li>";
 					rank++;
 				}
