@@ -592,9 +592,9 @@ function streamSortWakoopaTop(){
  * --------------------- */
 function loadLastfmRecent(){
 	
-	$('#stream-lastfm-recent').html();
-	$('#stream-lastfm-loved').html();
-	$('#stream-lastfm-top').html();
+	$('#stream-lastfm-recent').html('');
+	$('#stream-lastfm-loved').html('');
+	$('#stream-lastfm-top').html('');
 	$('.stream-ul-lastfm-loved').remove();
 	$('.stream-ul-lastfm-loved').remove();
 	$('.stream-ul-lastfm-top').remove();
@@ -639,14 +639,14 @@ function loadLastfmRecent(){
 				var rank = 1;
 
 				for(var i = 0; i < data.length; i++) {
-					var url = data.recenttracks[i].track.url;
-					var name = data.recenttracks.track.name;
-					var artist = data.recenttracks[i].track.artist['#text'];
+					var url = data.recenttracks.track[i].url;
+					var name = data.recenttracks.track[i].name;
+					var artist = data.recenttracks.track[i].artist['#text'];
 					var image = '/assets/images/logo-16.png';
-					if (data.recenttracks[i].track.image[0]['#text']) {
-						image = data.recenttracks[i].track.image[0]['#text'];
+					if (data.recenttracks.track[i].image[0]['#text']) {
+						image = data.recenttracks.track[i].image[0]['#text'];
 					}
-					var date = data.recenttracks[i].track.date['#text'];
+					var date = data.recenttracks.track[i].date['#text'];
 					html.push = "<li><a href='"+url+"' rel='external'><img class='stream-thumb' src='"+image+"' alt='' /> "+artist+" - "+name+" <time class='status-date' datetime='"+date+"'>"+date+"</time><span class='clear'></span></a></li>";
 					rank++;
 				}
