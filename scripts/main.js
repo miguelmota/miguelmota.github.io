@@ -602,7 +602,7 @@ function loadLastfmRecent(){
 				method: 'user.getRecentTracks',
 				user: 'miguel_mota',
 				api_key: 'dc0e875b6c0fd8ac4891b0716897e6c1',
-				limit: '5'
+				limit: '3'
 			},
 			function(data){   
 				$('.stream-lastfm').append('<ul class="stream-ul stream-ul-lastfm stream-ul-lastfm-recent">');    
