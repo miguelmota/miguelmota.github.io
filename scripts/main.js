@@ -650,6 +650,9 @@ function loadLastfmRecent(){
 					html.push = "<li><a href='"+url+"' rel='external'><img class='stream-thumb' src='"+image+"' alt='' /> "+artist+" - "+name+" <time class='status-date' datetime='"+date+"'>"+date+"</time><span class='clear'></span></a></li>";
 					rank++;
 				}
+
+				html.push("</ul>");
+				document.getElementById('stream-lastfm-recent').innerHTML = html.join("");
 			}
 	);
 
