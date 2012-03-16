@@ -1010,8 +1010,6 @@ h6 {
 	STATUS DATE
 */
 .status-date {
-	display: none;
-	
 	color: #999;
 	font-size: 12px;
 	font-weight: normal;
