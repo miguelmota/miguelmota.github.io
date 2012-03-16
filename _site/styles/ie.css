@@ -1,0 +1,22 @@
+@charset 'utf-8';
+
+/* ------------------------------------------------
+ * IE STYLES
+ * --------------------------------------------- */
+
+/*
+	STATUS DATE
+*/
+.status-date {
+	display: none !important;
+}
+
+/*
+	STATUS LINK
+*/
+.stream-ul li a {
+	background-color: #181818 !important;	
+}
+.stream-ul li a:hover {
+	background-color: #141414 !important;
+}
