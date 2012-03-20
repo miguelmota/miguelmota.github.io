@@ -188,7 +188,7 @@ description: A showcase of my work.
 	<div class='clear'></div>
 
 
-	{% for post in site.tags.portfolio %}
+	{% for post in site.posts.tags.portfolio %}
 	{{ post.content }}
 			<h1><a class='content-item blog-post-item' href='{{ post.url }}'><img class='blog-post-thumb-list' src='/assets/blog{{ post.url }}/{{ post.thumbnail }}' alt='' /> {{ post.title }} 
 			{{ post.date | date_to_string }}</time></a></h1>
