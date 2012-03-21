@@ -1317,10 +1317,7 @@ h6 {
 	box-sizing: border-box;
 	clear: both;
 	display: block;
-	padding: 10px 10px 10px 25px;
-}
-.project-view a:first-child {
-	margin: 0;
+	padding: 5px 5px 5px 25px;
 }
 .overlay {
 	display: none !important;
