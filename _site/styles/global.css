@@ -778,8 +778,6 @@ input.search-input {
 	font-style: italic;
 }
 .latest-tweet-date {
-	display: none;
-	
 	font-size: 12px;
 }
 
@@ -1263,17 +1261,19 @@ h6 {
 	width: 100%;
 }
 .overlay-project-description {
+	box-sizing: border-box;
 	display: block;
 	height: 100px;
 	position: relative;
 	width: 100%;
 }
 .project-name-wrap {
+	box-sizing: border-box;
 	display: block;
-	left: 10px;
-	position: absolute;
-	top: 25px;
-	width: 210px;
+	float: left;
+	height: 100px;
+	padding: 25px 0 0 25px;
+	width: 33%;
 }
 .project-name {
 	display: block;
@@ -1288,34 +1288,38 @@ h6 {
 }
 .project-role {
 	border-left: 1px solid #212121;
-	display: block;
-	height: 80px;
-	left: 35%;
-	position: absolute;
-	top: 10px;
-	width: 240px;	
+	box-sizing: border-box;
+	display: inline-block;
+	height: 100px;
+	margin: 0 auto;
+	padding: 0 0 0 10px;
+	position: relative;
+	width: 33%;	
 	vertical-align: middle;
 }
 .project-role-ul {
-	list-style-type: square;
+	box-sizing: border-box;
+	list-style-type: circle;
 	padding: 25px 20px 0 20px;
 }
 .project-view {
 	border-left: 1px solid #212121;
+	box-sizing: border-box;
 	display: block;
-	height: 80px;
-	line-height: 10px;
-	padding-left: 10px;
-	position: absolute;
-	right: 10px;
-	top: 10px;
-	width: 130px;	
+	height: 100px;
+	float: right;
+	line-height: 0;
+	padding: 25px 0 0 0;
+	width: 33%;	
 }
 .project-view a {
+	box-sizing: border-box;
 	clear: both;
+	display: block;
+	padding: 10px 10px 10px 25px;
 }
 .project-view a:first-child {
-	margin-top: 25px;
+	margin: 0;
 }
 .overlay {
 	display: none !important;
