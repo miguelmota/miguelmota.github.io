@@ -1910,6 +1910,33 @@ input.short-url:focus {
 	float: left;
 	width: 500px;
 }
+.logo-miguelmota {
+	background-image: url('/assets/images/logo/miguelmota-sprite-24.png');
+	background-color: transparent;
+	background-position: 0 -12px;
+	background-repeat: no-repeat;
+	border: 0;
+	display: inline-block;
+	height: 12px;
+	margin: 0 3px 0 3px;
+	opacity: .2;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+	filter: alpha(opacity=20);
+	padding: 0;
+	text-indent: -1000px;
+	transition: all linear .5s;
+	-moz-transition: all linear .5s;
+	-o-transition: all linear .5s;
+	-webkit-transition: all linear .5s;
+	width: 88px;
+}
+.logo-miguelmota:hover,
+.logo-miguelmota:active {
+	background-color: transparent;
+	opacity: 1;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	filter: alpha(opacity=100);
+}
 
 
 
