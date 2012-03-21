@@ -1317,7 +1317,7 @@ h6 {
 	box-sizing: border-box;
 	clear: both;
 	display: block;
-	padding: 0 0 0 25px;
+	padding: 5px 5px 5px 25px;
 }
 .overlay {
 	display: none !important;
