@@ -247,8 +247,7 @@ textarea {
 	color: #555;
 	font-family: inherit;
 	font-size: 14px;
-	height: 20px;
-	width: 225px;
+	width: 300px;
 	padding: 4px 4px 4px 8px;
 	transition: border-color .3s linear, color .1s linear;
 	-moz-transition: border-color .3s linear, color .1s linear;
@@ -1216,7 +1215,7 @@ h6 {
 }
 .about-column-left {
 	float: left;
-	width: 520px;
+	width: 500px;
 }
 .about-column-right {
 	float: right;
@@ -1629,8 +1628,8 @@ h6 {
 	border-top: 1px solid #333;
 	box-sizing: border-box;
 	font-size: 12px;
-	margin: 10px 0;
-	padding: 5px 0;
+	margin: 10px 0 0 0;
+	padding: 10px 0 0 0;
 }
 .dsq-comment-count-wrap {
 	box-sizing: border-box;
@@ -1642,6 +1641,7 @@ h6 {
 */
 .blog-share-wrap {
 	box-sizing: border-box;
+	margin-top: 15px;
 	position: relative;
 }
 .addthis_toolbox {
