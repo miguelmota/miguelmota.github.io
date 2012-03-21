@@ -27,7 +27,10 @@ description: A showcase of my work.
 							<li>Back-end development (PHP/MySQL)</li>
 						</ul>
 					</li>
-					<li class='project-view'><a href='/portfolio/foodfail'>view details &#8594;</a><br /><a href='http://www.foodfail.org' rel='external'><span class='icon icon-link-16'></span> go to site &#8594;</a></li>
+					<li class='project-view'>
+						<a href='/portfolio/foodfail'><span class='icon icon-link-16'></span>view details &#8594;</a>
+						<a href='http://www.foodfail.org' rel='external'><span class='icon icon-world-16'></span> go to site &#8594;</a>
+					</li>
 				</ul>
 			</div>
 			<span class='overlay'></span>
@@ -48,7 +51,9 @@ description: A showcase of my work.
 							<li>Web design (XHTML/CSS)</li>
 						</ul>
 					</li>
-					<li class='project-view'><a href='http://obliviontheme.tumblr.com' rel='external'>view theme &#8594;</a></li>
+					<li class='project-view'>
+						<a href='http://obliviontheme.tumblr.com' rel='external'><span class='icon icon-world-16'></span> view theme &#8594;</a>
+					</li>
 				</ul>
 			</div>
 			<span class='overlay'></span>
@@ -69,7 +74,9 @@ description: A showcase of my work.
 							<li>Logo design (Photoshop)</li>
 						</ul>
 					</li>
-					<li class='project-view'><a href='/portfolio/retrofunk'>view details &#8594;</a></li>
+					<li class='project-view'>
+						<a href='/portfolio/retrofunk'><span class='icon icon-link-16'></span> view details &#8594;</a>
+					</li>
 				</ul>
 			</div>
 			<span class='overlay'></span>
@@ -92,7 +99,9 @@ description: A showcase of my work.
 							<li>Plugin development (jQuery)</li>
 						</ul>
 					</li>
-					<li class='project-view'><a href='/assets/plugins/mtip/' rel='external'>go to project &#8594;</a></li>
+					<li class='project-view'>
+						<a href='/assets/plugins/mtip/' rel='external'><span class='icon icon-world-16'></span>go to project &#8594;</a>
+					</li>
 				</ul>
 			</div>
 			<span class='overlay'></span>
@@ -114,7 +123,10 @@ description: A showcase of my work.
 							<li>Web design (XHTML/CSS)</li>
 						</ul>
 					</li>
-					<li class='project-view'><a href='/portfolio/mrgpropertiesinc'>view details &#8594;</a><br /><a href='http://www.mrgpropertiesinc.com' rel='external'>go to site &#8594;</a></li>
+					<li class='project-view'>
+						<a href='/portfolio/mrgpropertiesinc'><span class='icon icon-link-16'></span> view details &#8594;</a>
+						<a href='http://www.mrgpropertiesinc.com' rel='external'><span class='icon icon-world-16'></span> go to site &#8594;</a>
+					</li>
 				</ul>
 			</div>
 			<span class='overlay'></span>
@@ -135,7 +147,9 @@ description: A showcase of my work.
 							<li>Logo design (Photoshop)</li>
 						</ul>
 					</li>
-					<li class='project-view'><a href='/portfolio/dunstar'>view details &#8594;</a></li>
+					<li class='project-view'>
+						<a href='/portfolio/dunstar'><span class='icon icon-link-16'></span> view details &#8594;</a>
+					</li>
 				</ul>
 			</div>
 			<span class='overlay'></span>
@@ -157,7 +171,10 @@ description: A showcase of my work.
 							<li>Back-end development (PHP/MySQL)</li>
 						</ul>
 					</li>
-					<li class='project-view'><a href='/portfolio/miggs'>view details &#8594;</a></li>
+					<li class='project-view'>
+						<a href='/portfolio/miggs'><span class='icon icon-link-16'></span> view details &#8594;</a>
+						<a href='http://mig.gs'><span class='icon icon-world-16'></span> go to site &#8594;</a>
+					</li>
 				</ul>
 			</div>
 			<span class='overlay'></span>
@@ -179,19 +196,15 @@ description: A showcase of my work.
 								<li>Web design (XHTML/CSS)</li>
 							</ul>
 						</li>
-						<li class='project-view'><a href='/portfolio/miguelmota'>view details &#8594;</a><br /><a href='http://www.miguelmota.com'>go to site &#8594;</a></li>
+						<li class='project-view'>
+							<a href='/portfolio/miguelmota'><span class='icon icon-link-16'></span> view details &#8594;</a>
+							<a href='http://www.miguelmota.com'><span class='icon icon-world-16'></span> go to site &#8594;</a>
+						</li>
 					</ul>
 				</div>
 			<span class='overlay'></span>
 		</div>
 	</div>
 	<div class='clear'></div>
-
-
-	{% for post in site.posts.tags.portfolio %}
-	{{ post.content }}
-			<h1><a class='content-item blog-post-item' href='{{ post.url }}'><img class='blog-post-thumb-list' src='/assets/blog{{ post.url }}/{{ post.thumbnail }}' alt='' /> {{ post.title }} 
-			{{ post.date | date_to_string }}</time></a></h1>
-	{% endfor %}
 
 </section>
