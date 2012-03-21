@@ -43,10 +43,11 @@ body {
 	text-shadow: 0 -1px 0 rgba(0,0,0,.8);
 }
 .main-wrap {
+	box-sizing: border-box;
 	height: auto;
 	margin: 0 20px 0 20px;
 	word-wrap: break-word;
-	padding: 0 0 0 250px;
+	padding: 0 0 0 260px;
 	position: relative;
 }
 .clear {
@@ -57,6 +58,7 @@ body {
 	display: none !important;
 }
 a.mobile-bar {
+	box-sizing: border-box;
 	display: block;
 	position: relative;
 	top: -70px;
@@ -79,6 +81,7 @@ code {
 }
 .highlight {
 	background-color: #141414;
+	box-sizing: border-box;
 	margin: 10px 0;
 	overflow-x: auto;
 	padding: 5px;
@@ -149,14 +152,19 @@ label {
 	margin-right: 5px;
 }
 p {
+	box-sizing: border-box;
 	line-height: 125%;
 	padding: 12px 0 4px 0;
 }
 p+p {
+	box-sizing: border-box;
 	padding: 4px 0;
 }
 strong {
 	font-weight: bold;
+}
+ul {
+	box-sizing: border-box;
 }
 ul li {
 	line-height: 125%;
@@ -233,8 +241,9 @@ input[type=text],
 input[type=password],
 textarea {		
 	background-color: #141414;
-	border: 0;
+	border: 1px solid #141414;
 	border-left: 4px solid #2d2d2d;
+	box-sizing: border-box;
 	color: #555;
 	font-family: inherit;
 	font-size: 14px;
@@ -254,6 +263,11 @@ textarea:focus {
 	border-left: 4px solid #007299;
 	color: #999;
 }
+input[type=text]:hover,
+input[type=password]:hover,
+textarea:hover {
+	border-color: #007299;
+}
 textarea {
 	overflow: auto;
 	resize: none;
@@ -261,6 +275,7 @@ textarea {
 .input input, 
 .input textarea {
 	background-color: #141414;
+	box-sizing: border-box;
 	font-size: 16px;
 	font-style: italic;
 	padding: 6px 6px 6px 12px;
@@ -274,6 +289,7 @@ textarea {
 .button {
 	background: #004c66;
 	border-left: none;
+	box-sizing: border-box;
 	color: #fff;
 	font-size: 12px;
 	padding: 5px 10px;
@@ -296,6 +312,7 @@ input.error {
 	border-color: #700;
 }
 label.error {
+	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
 }
@@ -316,6 +333,7 @@ div.loader {
 	width: 16px;
 }
 div.loader-container {
+	box-sizing: border-box;
 	clear: both;
 	display: none;
 	height: 15px;
@@ -346,6 +364,7 @@ img.loader {
 	background-position: 50% 50%;
 	background-repeat: no-repeat;
 	border: 0;
+	box-sizing: border-box;
 	display: inline-block;
 	height: 16px;
 	opacity: .5;
@@ -629,19 +648,21 @@ img.loader {
  * 06 NAVIGATION
  * --------------------------------------------- */
 .main-side-nav-wrap {
+	box-sizing: border-box;
 	left: 0;
 	height: 100%;
 	padding-top: 70px;
 	position: absolute;
-	width: 200px;
+	width: 240px;
 }
 .main-side-nav {
 	position: static;	
 	top: 20px;
-	width: 200px;
+	width: 240px;
 }
 .nav-logo {
 	border-left: none !important;
+	box-sizing: border-box;
 	display: inline-block;
 	height: 64px;
 	margin-bottom: 15px;
@@ -666,12 +687,14 @@ img.loader {
 	color: #999;
 }
 .main-side-nav-ul {
+	box-sizing: border-box;
 	clear: both;
 	padding: 15px 0;
 }
 .main-side-nav-ul a {
 	background-color: #2d2d2d;
 	border-left: 4px solid #444;
+	box-sizing: border-box;
 	color: #999;
 	display: block;
 	font-size: 13px;
@@ -699,15 +722,17 @@ img.loader {
  * 07 SEARCH FORM
  * --------------------------------------------- */
 .search-form {
+	box-sizing: border-box;
 	padding-bottom: 15px;
 	width: 100%;
 }
 input.search-input {
 	background: #1d1d1d url('/assets/images/icons/pictos/16/search-sprite.png') no-repeat 98% 4px;
 	border-left-color: #2d2d2d;
+	box-sizing: border-box;
 	font-style: italic;
 	padding-right: 25px;
-	width: 175px;
+	width: 100%;
 }
 .search-input:focus {
 	background-position: 98% -20px;
@@ -722,6 +747,7 @@ input.search-input {
  * 08 SOCIAL LINKS
  * --------------------------------------------- */
 .follow-wrap {
+	box-sizing: border-box;
 	padding-bottom: 15px;
 	position: relative;
 	width: 100%;
@@ -737,21 +763,23 @@ input.search-input {
  * 09 LATEST TWEET
  * --------------------------------------------- */
 #latest-tweet-wrap {
+	box-sizing: border-box;
 	clear: both;
 	height: auto;
 	padding-bottom: 15px;
 	position: relative;
-	width: 200px;
+	width: 100%;
 }
 .tweet-bird-icon {}
 #latest-tweet {
 	right: -34px;
 	position: relative;
 	top: -18px;
-	width: 166px;
+	width: 206px;
 }
 .latest-tweet-content {
 	background-color: #1d1d1d;
+	box-sizing: border-box;
 	float: left;
 	min-height: 15px;
 	padding: 10px;
@@ -787,6 +815,7 @@ input.search-input {
  * 10 CONTENT
  * --------------------------------------------- */
 .main-content-wrap {
+	box-sizing: border-box;
 	height: auto;
 	padding-top: 70px;
 	position: relative;
@@ -798,6 +827,7 @@ input.search-input {
 }
 .content-item {
 	background-color: #1d1d1d;
+	box-sizing: border-box;
 	margin: 5px;
 	padding: 20px;
 	position: relative;
@@ -889,6 +919,7 @@ h6 {
 	background-position: 0 0;
 	background-repeat: no-repeat;
 	border: 0;
+	box-sizing: border-box;
 	display: block;
 	height: 16px;
 	margin-bottom: 10px;
@@ -985,6 +1016,7 @@ h6 {
 	width: 100%;
 }
 .stream-ul li a {
+	box-sizing: border-box;
 	display: block;
 	margin-bottom: 2px;
 	padding: 5px;
@@ -993,6 +1025,7 @@ h6 {
 	background-color: #000;
 }
 .stream-ul-flickr li {
+	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
 }
@@ -1043,12 +1076,14 @@ h6 {
 }
 .stream-carousel {
 	background-color: #1d1d1d;
+	box-sizing: border-box;
 	float: left;
 	margin: 0 5px;
 	padding: 20px 0;
 }
 .stream-carousel-nav {	
 	background-color: #141414;
+	box-sizing: border-box;
 	display: inline-block;
 	border-left: 0;
 	float: left;
@@ -1081,6 +1116,7 @@ h6 {
 }
 .stream-ul-flickr li a {
 	background-color: #1d1d1d;
+	box-sizing: border-box;
 	display: inline-block;
 	float: left;
 	min-height: 120px;
@@ -1404,6 +1440,7 @@ h6 {
 	width: 97%;
 }
 .contact-form-submit {
+	box-sizing: border-box;
 	float: right;
 	font-size: 20px;
 	padding: 10px 20px;
@@ -1476,21 +1513,25 @@ h6 {
 	font-size: 24px;
 }
 .blog-post-text h3 {
+	box-sizing: border-box;
 	font-size: 28px;
 	font-weight: bold;
 	padding: 15px 0 10px 0;
 }
 .blog-post-text h4 {
+	box-sizing: border-box;
 	font-size: 20px;
 	font-weight: bold;
 	padding: 10px 0 0 0;
 }
 .blog-post-text h5 {
+	box-sizing: border-box;
 	font-size: 18px;
 	font-weight: bold;
 	padding: 10px 0 0 0;
 }
 .blog-post-text h6 {
+	box-sizing: border-box;
 	font-size: 14px;
 	font-weight: bold;
 	padding: 10px 0 0 0;
@@ -1525,13 +1566,16 @@ h6 {
 	display: none;
 }
 .blog-view-post-wrap {
+	box-sizing: border-box;
 	padding: 10px 0;
 	text-align: right;
 }
 .blog-post-text {
+	box-sizing: border-box;
 	padding-bottom: 10px;
 }
 .blog-post-text ul {
+	box-sizing: border-box;
 	padding-left: 35px;
 }
 .blog-post-text ul li {
@@ -1583,11 +1627,13 @@ h6 {
 */
 .blog-post-footer {
 	border-top: 1px solid #333;
+	box-sizing: border-box;
 	font-size: 12px;
 	margin: 10px 0;
 	padding: 5px 0;
 }
 .dsq-comment-count-wrap {
+	box-sizing: border-box;
 	float: right;
 	padding-right: 5px;
 }
@@ -1595,6 +1641,7 @@ h6 {
 	BLOG POST SHARE
 */
 .blog-share-wrap {
+	box-sizing: border-box;
 	position: relative;
 }
 .addthis_toolbox {
@@ -1608,6 +1655,7 @@ input.short-url {
 	background: #141414;
 	border: 1px solid #141414;
 	border-left-width: 1px;
+	box-sizing: border-box;
 	float: right;
 	font-size: 10px;
 	margin: 0;
@@ -1623,6 +1671,7 @@ input.short-url:focus {
 }
 .tumblr-share-button {
 	background: url('/assets/images/buttons/tumblr-share-1.png') top left no-repeat transparent;
+	box-sizing: border-box;
 	display: none;
 	float: right;
 	height: 20px;
@@ -1654,6 +1703,7 @@ input.short-url:focus {
 	margin: 15px 0 35px 0;
 }
 .archive-year {
+	box-sizing: border-box;
 	display: block;
 	font-size: 22px;
 	font-weight: bold;
@@ -1664,6 +1714,7 @@ input.short-url:focus {
 	width: 55px;
 }
 .archive-ul li {
+	box-sizing: border-box;
 	margin-bottom: 2px;
 	padding: 3px;
 }
@@ -1677,6 +1728,7 @@ input.short-url:focus {
  * 17 PAYMENT PAGE
  * --------------------------------------------- */
 .paypal-button-wrap {
+	box-sizing: border-box;
 	padding-top: 20px;
 }
 
@@ -1702,6 +1754,7 @@ input.short-url:focus {
 .gsc-resultsRoot {
 	background-color: #1d1d1d !important;
 	border: 0 !important;
+	box-sizing: border-box !important;
 	padding: 0 !important;
 }
 #cse a,
@@ -1725,6 +1778,7 @@ input.short-url:focus {
 }
 .gsc-result {
 	border: 0 !important;
+	box-sizing: border-box !important;
 	padding: 0 !important;
 }
 .gs-no-results-result .gs-snippet {
@@ -1733,12 +1787,14 @@ input.short-url:focus {
 	color: #870000 !important;
 }
 .gs-visibleUrl  {
+	box-sizing: border-box !important;
 	color: #555 !important;
 	font-size: 10px;
 	padding-bottom: 2px !important;
 }
 .gsc-cursor-box {
 	background-color: #1d1d1d !important;
+	box-sizing: border-box !important;
 	border: 0 !important;
 	padding: 0 !important;
 }
@@ -1774,6 +1830,7 @@ input.short-url:focus {
  * 20 PAGINATION
  * --------------------------------------------- */
 .pagination {
+	box-sizing: border-box;
 	clear: both;
 	font-size: 18px;
 	padding: 25px 5px 5px 5px;
@@ -1785,9 +1842,11 @@ input.short-url:focus {
 	display: inline-block;
 }
 .pagination-jump span {
+	box-sizing: border-box;
 	padding: 10px;
 }
 .pagination-jump a {
+	box-sizing: border-box;
 	padding: 10px;
 }
 .pagination-next {
@@ -1826,6 +1885,7 @@ input.short-url:focus {
  * 22 FOOTER
  * --------------------------------------------- */
 .main-footer {
+	box-sizing: border-box;
 	clear: both;
 	color: #555;
 	font-size: 12px;
@@ -1854,6 +1914,7 @@ input.short-url:focus {
  * --------------------------------------------- */
 .fancybox {
 	border: 0;
+	box-sizing: border-box;
 	display: block;
 	padding: 0;
 	position: relative;
@@ -1863,6 +1924,7 @@ input.short-url:focus {
 }
 .fancybox-title {
 	background-color: #000;
+	box-sizing: border-box;
 	clear: both;
 	color: #555;
 	margin-bottom: -10px;
@@ -1872,6 +1934,7 @@ input.short-url:focus {
 .fancybox-title-iframe,
 .fancybox-title-inside {
 	background-color: transparent;
+	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
 }
@@ -1911,6 +1974,7 @@ input.short-url:focus {
 	z-index: 100;
 }
 .ie-notice {
+	box-sizing: border-box;
 	margin: 0 auto;
 	position: relative;
 	padding: 10px 0;

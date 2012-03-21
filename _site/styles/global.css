@@ -233,7 +233,7 @@ input[type=text],
 input[type=password],
 textarea {		
 	background-color: #141414;
-	border: 0;
+	border: 1px solid #141414;
 	border-left: 4px solid #2d2d2d;
 	color: #555;
 	font-family: inherit;
@@ -253,6 +253,11 @@ textarea:focus {
 	border-color: #007299;
 	border-left: 4px solid #007299;
 	color: #999;
+}
+input[type=text]:hover,
+input[type=password]:hover,
+textarea:hover {
+	border-color: #007299;
 }
 textarea {
 	overflow: auto;
