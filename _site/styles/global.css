@@ -1276,6 +1276,7 @@ h6 {
 	width: 33%;
 }
 .project-name {
+	box-sizing: border-box;
 	display: block;
 	font-size: 20px;
 	font-weight: bold;	
@@ -1342,6 +1343,7 @@ h6 {
 }
 .project-description-footer {
 	border-top: 1px solid #333;
+	box-sizing: border-box;
 	margin-top: 10px;
 	padding-top: 10px;
 }
@@ -1364,6 +1366,7 @@ h6 {
 	width: 100%;
 }
 .project-image-web {
+	box-sizing: border-box;
 	/*background: url('/assets/images/wrappers/chrome-wrap-350.gif') 0 0 no-repeat;
 	padding-top: 14px*/
 }
