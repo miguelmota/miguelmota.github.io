@@ -1270,18 +1270,19 @@ h6 {
 */
 .project {
 	float: left;
-	height: 200px;
-	width: 610px;
+	height: 240px;
+	position: relative;
+	width: 650px;
 }
 .project .image-container {
-	height: auto;
+	height: 200px;
 	transition: box-shadow linear .2s;
 	-moz-transition: -moz-box-shadow linear .2s;
 	-o-transition: -o-box-shadow linear .2s;
 	-webkit-transition: -webkit-box-shadow linear .2s;
 	overflow: hidden;
 	position: absolute;
-	width: 95%;
+	width: 610px;
 	behavior: url('/PIE/PIE.htc');
 }
 .project .image-container a:first-child {
@@ -2037,60 +2038,55 @@ input.short-url:focus {
 		width: 300px;
 	}
 	.stream-latitude {
-		height: 40px;
 	}
 	.stream-blog {
-		height: 100px;
 	}
 	.stream-twitter {
-		height: 200px;
 	}
 	.stream-facebook {
-		height: 40px;
 	}
 	.stream-tumblr {
-		height: 100px;
 	}
 	.stream-delicious {
-		height: 80px;
 	}
 	.stream-lastfm {
-		height: 200px;
 	}
 	.stream-wakoopa {
-		height: 100px;
 	}
 	
 	/* ------------------------
 	 * Flickr carousel
 	 * --------------------- */
+	 .stream-ul-flickr {
+	 	clear: both;
+	 }
 	 .stream-ul-flickr li a {
-	 	min-height: 74px;
-	 	width: 74px;
+	 	min-height: 50px;
+	 	width: 50px;
 	 }
 
-	 /* ------------------------
-	  * About page
-	  * --------------------- */
+ 	/* ------------------------
+  	 * About page
+  	 * --------------------- */
 	.about-photo-desc {
 		right: 40px;
 		top: 20px;
 	}
 	 .about-column-left {
-		width: 480px;
+		width: 440px;
 	}
 	.about-column-right {
-		width: 150px;
+		width: 160px;
 	}
 	#mapabout {
-		height: 150px;
-		width: 150px;
+		height: 160px;
+		width: 160px;
 	}
 	 
-	 /* ------------------------
+	/* ------------------------
 	 * Portfolio page
 	 * --------------------- */
-	 .project-sort-wrap {
+	.project-sort-wrap {
     	top: 40px;
 	}
 	.project-image {
@@ -2105,7 +2101,7 @@ input.short-url:focus {
 		width: 670px;
 	}
 	.blog-post-item {
-		width: 300px;
+		width: 650px;
 	}
 	.blog-post-list	.blog-post-item {
 		width: 650px;
