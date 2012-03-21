@@ -263,8 +263,11 @@ textarea:focus {
 	color: #999;
 }
 input[type=text]:hover,
+input[type=text]:active,
 input[type=password]:hover,
-textarea:hover {
+input[type=password]:active,
+textarea:hover,
+textarea:active {
 	border-color: #007299;
 }
 textarea {
@@ -1436,7 +1439,7 @@ h6 {
 }
 .contact-form-message {
 	height: 300px;
-	width: 97%;
+	width: 100%;
 }
 .contact-form-submit {
 	box-sizing: border-box;
@@ -2197,14 +2200,14 @@ input.short-url:focus {
 	 * Social icons
 	 * --------------------- */
 	.follow-wrap {
-		width: 93%;
+		width: 100%;
 	}
 	
 	/* ------------------------
 	 * Search box
 	 * --------------------- */
 	input.search-input {
-		width: 85%;
+		width: 100%;
 	}
 	
 	/* ------------------------
@@ -2212,10 +2215,10 @@ input.short-url:focus {
 	 * --------------------- */
 	#latest-tweet-wrap {
 		padding-bottom: 0;
-		width: 89%;
+		width: 100%;
 	}
 	#latest-tweet {
-		width: 89%;
+		width: 100%;
 	}
 	
 	/* ------------------------
@@ -2224,7 +2227,7 @@ input.short-url:focus {
 	 .main-content-wrap {
 		padding: 0;
 		position: relative;
-		width: 97%;
+		width: 100%;
 	}
 	.content-item {
 		float: none;
@@ -2381,7 +2384,7 @@ input.short-url:focus {
 	}
 	.contact-form-message {
 		height: 200px;
-		width: 89%;
+		width: 100%;
 	}
 	
 	/* ------------------------
