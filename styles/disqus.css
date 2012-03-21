@@ -104,7 +104,7 @@ button..dsq-comment-footer-reply-tab {
 */
 .dsq-clearfix,
 #dsq-sort-by {
-	display: none !important;;
+	/*display: none !important;*/
 }
 div.dsq-textarea {}
 div.dsq-textarea-wrapper,
@@ -249,10 +249,10 @@ div.dsq-pagination {
 	padding-bottom: 10px !important;
 }
 #dsq-global-toolbar {
-	display: none !important;
+
 }
 .dsq-options {
-	display: none !important;
+
 }
 .dsq-comment-header-meta {
 	background-color: #222 !important;
