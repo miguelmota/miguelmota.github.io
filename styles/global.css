@@ -1805,14 +1805,6 @@ input.short-url:focus {
 /* ------------------------------------------------
  * 16 ARCHIVE PAGE
  * --------------------------------------------- */
-.dsq-comment-wrap {
-	position: relative;
-	width: 750px;
-}
-#disqus_thread {
-	clear: both;
-	margin: 15px 0 35px 0;
-}
 .archive-year {
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
@@ -2261,8 +2253,8 @@ input.short-url:focus {
 	 * Blog page
 	 * --------------------- */
 	.blog-post-sort-wrap {
+		left: 610px;
 		top: 40px;
-		width: 670px;
 	}
 	.blog-post-item {
 		width: 650px;
@@ -2276,7 +2268,7 @@ input.short-url:focus {
 	input.short-url {
 		width: 120px;
 	}
-	.dsq-comment-wrap {
+	.blog-post-end-wrap {
 		width: 650px;
 	}
 	
@@ -2596,7 +2588,6 @@ input.short-url:focus {
 		width: 100%;
 	}
 	.blog-post-end-wrap {
-		position: relative;
 		width: 100%;
 	}
 	#disqus_thread {
