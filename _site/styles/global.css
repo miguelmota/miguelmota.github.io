@@ -2518,6 +2518,7 @@ input.short-url:focus {
 	}
 	.project .image-container {
 		clear: both;
+		height: 100%;
 		position: relative;
 		width: 100%;
 	}
