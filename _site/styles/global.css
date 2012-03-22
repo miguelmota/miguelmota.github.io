@@ -2324,7 +2324,7 @@ input.short-url:focus {
 		margin: 0 10px 0 0;
 		vertical-align: middle;
 	}
-	.site-title {
+	.site-title a {
 		display: block;
 		padding: 10px 0 5px 0;
 	}
