@@ -2314,9 +2314,6 @@ input.short-url:focus {
 		position: static;
 		width: 100%
 	}
-	.top-link {
-		display: none;
-	}
 	
 	/* ------------------------
 	 * Site title
@@ -2341,19 +2338,30 @@ input.short-url:focus {
 	 * --------------------- */
 	.main-side-nav {
 		position: static;	
-		width: auto;
+		width: 100%;
 	}
 	.main-side-nav-ul {
-		width: auto;
+		clear: both;
+		display: block;
 		overflow: auto;
+		width: 100%;
 	}
 	.main-side-nav-ul li {
-		display: inline;
+		display: inline-block;
+		width: 100%;
+	}
+	.main-side-nav-ul-m {
+		clear: both;
+		display: block;
+		width: 100%;
+	}
+	.main-side-nav-ul-m li {
 		float: left;
+		width: 50%;
 	}
 	.main-side-nav-ul a {
 		padding: 10px 10px;
-		width: 120px;
+		width: 100%;
 	}
 	
 	/* ------------------------
