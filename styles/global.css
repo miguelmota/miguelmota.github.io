@@ -436,6 +436,9 @@ img.loader {
 .icon-calendar-16 {
 	background-image: url('/assets/images/icons/pictos/16/calendar.png');
 }
+.icon-calendar-24{
+	background-image: url('/assets/images/icons/pictos/24/calendar.png');
+}
 .icon-calendar-check-16 {
 	background-image: url('/assets/images/icons/pictos/16/calendar-check.png');
 }
@@ -1711,20 +1714,28 @@ input.short-url:focus {
 	display: block;
 	font-size: 22px;
 	font-weight: bold;
-	padding-bottom: 10px;
+	margin: 10px 0;
 }
-.archive-month {
-	display: inline-block;
-	width: 55px;
-}
-.archive-ul li {
-	box-sizing: border-box;
-	margin-bottom: 2px;
-	padding: 3px;
-}
-.archive-ul li:nth-child(odd) {
+.archive-ul li:nth-child(even) {
 	background-color: #141414;
 }
+.archive-post {
+	box-sizing: border-box;
+	display: block;
+	margin-bottom: 1px;
+	padding: 5px;
+}
+.archive-post:hover,
+.archive-post:active {
+	background-color: #000;
+}
+.archive-month {
+	color: #999;
+	display: inline-block;
+	font-weight: normal;
+	width: 55px;
+}
+
 
 
 

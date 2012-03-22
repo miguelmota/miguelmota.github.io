@@ -16,7 +16,7 @@ title: Archive
 	       			<span class='archive-year'>{{ post.date | date: '%Y' }}</span>
 	      		{% endif %}
 	    	{% endunless %}
-	    	<li><a href='{{ post.url }}'><span class='archive-month'>{{ post.date | date:"%B" }}</span> {{ post.title }}</a></li>
+	    	<li><a class='archive-post' href='{{ post.url }}'><span class='archive-month'>{{ post.date | date:"%B" }}</span> {{ post.title }}</a></li>
 		{% endfor %}
 	</ul>
 	
