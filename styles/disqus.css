@@ -75,6 +75,9 @@ div.dsq-trackback-url {
 #disqus_thread h3 {
 	font-size: 14px !important;
 }
+#dsq-footer {
+	display: none !important;
+}
 /*
 DON'T WORK
 div.dsq-popup a {
@@ -103,9 +106,11 @@ button..dsq-comment-footer-reply-tab {
 	text-shadow: 0 !important;
 }
 */
-.dsq-clearfix,
+.dsq-clearfix {
+	
+}
 #dsq-sort-by {
-	/*display: none !important;*/
+	display: none !important;
 }
 div.dsq-textarea {}
 div.dsq-textarea-wrapper,
