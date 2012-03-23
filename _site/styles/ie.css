@@ -14,9 +14,11 @@
 /*
 	STATUS LINK
 */
-.stream-ul li a {
+.stream-ul li a,
+.archive-ul li a {
 	background-color: #181818 !important;	
 }
-.stream-ul li a:hover {
+.stream-ul li a:hover
+.archive-ul li a:hover {
 	background-color: #141414 !important;
 }

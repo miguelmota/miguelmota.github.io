@@ -908,7 +908,7 @@ h6 {
 	z-index: 10;
 }
 .stream-latitude {
-	height: 40px;
+	min-height: 40px;
 	z-index: 11;
 }
 .stream-blog {
@@ -934,7 +934,7 @@ h6 {
 }
 .stream-flickr {
 	min-height: 180px;
-	width: 535px;
+	width: 580px;
 }
 .latitude-map-button {
 	position: absolute;
@@ -1594,6 +1594,9 @@ h6 {
 	font-size: 34px;
 	margin-bottom: 10px;
 }
+.blog-post-item h1 {
+	height: 50px;
+}
 .blog-post-item h1 a {
 	display: block;
 	font-size: 24px;
@@ -1814,7 +1817,7 @@ input.short-url:focus {
 	font-weight: bold;
 	margin: 10px 0;
 }
-.archive-ul li:nth-child(even) {
+.archive-ul li:nth-child(even) a {
 	background-color: #141414;
 }
 .archive-post {
@@ -1856,8 +1859,7 @@ input.short-url:focus {
  * --------------------------------------------- */
 .cse-wrap {
 	clear: both;
-	max-width: 1000px;
-	width: 1000%;
+	width: 750px;
 }
 #cse {
 	background-color: #1d1d1d !important;
@@ -2178,6 +2180,13 @@ input.short-url:focus {
 	}
 
 	/* ------------------------
+	 * Google custom search engine
+	 * --------------------- */
+	.cse-wrap {
+		width: 650px;
+	}
+
+	/* ------------------------
 	 * Main side nav wrap
 	 * --------------------- */
 	.main-side-nav-wrap {
@@ -2213,13 +2222,11 @@ input.short-url:focus {
 	/* ------------------------
 	 * Flickr carousel
 	 * --------------------- */
-	 .stream-ul-flickr {
-	 	clear: both;
-	 }
-	 .stream-ul-flickr li a {
-	 	min-height: 50px;
-	 	width: 50px;
-	 }
+	.stream-flickr {
+		clear: both;
+		width: 580px;
+	}
+	.stream-ul-flickr li a {}
 
  	/* ------------------------
   	 * About page
@@ -2444,7 +2451,6 @@ input.short-url:focus {
 	}
 	.stream-delicious .status-date,
 	.stream-wakoopa .status-date {
-		display: none;
 	}
 	
 	/* ------------------------
