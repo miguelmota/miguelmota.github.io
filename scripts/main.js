@@ -301,12 +301,13 @@ function relative_time(date_str) {
 function recent_tweets(data) {
 	for (i=0; i<1; i++) {
 		var date = new Date(data[i].created_at);
+		var formatted_date = date.toString().substr(0,10);
 		document.getElementById('latest-tweet').innerHTML =
 		'<div class="latest-tweet-content"><a href="http://twitter.com/miguel_mota/status/'+
-		+(data[i].id_str ? data[i].id_str : data[i].id)+'" rel="external">'+data[i].text+'</a> <time class="latest-tweet-date" datetime="'+ISODateString(date)+'">'+ISODateString(date)+'</time></div>';
+		+(data[i].id_str ? data[i].id_str : data[i].id)+'" rel="external">'+data[i].text+'</a> <time class="latest-tweet-date" datetime="">'+formatted_date+'</time></div>';
 		
 		// Initialize timeago
-		$('.latest-tweet-date').timeago();
+		// $('.latest-tweet-date').timeago();
 	}
 	
 	// Show mtip on twitter bird hover
@@ -506,7 +507,8 @@ function loadWakoopaRecent() {
 			for(var i = 0; i < data.length; i++){
 				var entry = data[i].software;
 				var date = new Date(entry.last_active_at);
-				html.push("<li><a href='"+entry.complete_url+"' rel='external'><img class='stream-thumb' src='"+entry.complete_thumb_url+"' alt='' /> "+entry.name+" <time class='status-date' datetime='"+ISODateString(date)+"'>"+ISODateString(date)+"</time><span class='clear'></span></a></li>");
+				var formatted_date = date.toString().substr(0,10);
+				html.push("<li><a href='"+entry.complete_url+"' rel='external'><img class='stream-thumb' src='"+entry.complete_thumb_url+"' alt='' /> "+entry.name+" <time class='status-date' datetime=''>"+formatted_date+"</time><span class='clear'></span></a></li>");
 			}
 			
 			html.push("</ul>");
@@ -515,7 +517,7 @@ function loadWakoopaRecent() {
 			$('.stream-ul-wakoopa-recent li:nth-child(odd)').addClass('odd');
 
 			// Initialize timeago
-			$('.stream-ul-wakoopa-recent .status-date').timeago();
+			// $('.stream-ul-wakoopa-recent .status-date').timeago();
 
 			$('.stream-wakoopa .loader').css('display','none');
 			showMtipTimeout('.stream-logo-wakoopa',3000);
@@ -546,7 +548,8 @@ function loadWakoopaTop() {
 			for(var i = 0; i < data.length; i++){
 				var entry = data[i].software;
 				var date = new Date(entry.last_active_at);
-				html.push("<li><a href='"+entry.complete_url+"' rel='external'><span class='rank-number'>"+rank+"</span> <img class='stream-thumb' src='"+entry.complete_thumb_url+"' alt='' /> "+entry.name+" <time class='status-date' datetime='"+ISODateString(date)+"'>"+ISODateString(date)+"</time><span class='clear'></span></a></li>");
+				var formatted_date = date.toString().substr(0,10);
+				html.push("<li><a href='"+entry.complete_url+"' rel='external'><span class='rank-number'>"+rank+"</span> <img class='stream-thumb' src='"+entry.complete_thumb_url+"' alt='' /> "+entry.name+" <time class='status-date' datetime=''>"+formatted_date+"</time><span class='clear'></span></a></li>");
 				rank++;
 			}
 			
@@ -555,7 +558,7 @@ function loadWakoopaTop() {
 			$('.stream-ul-wakoopa-top li:nth-child(odd)').addClass('odd');
 
 			// Initialize timeago
-			$('.stream-ul-wakoopa-top .status-date').timeago();
+			// $('.stream-ul-wakoopa-top .status-date').timeago();
 			
 			$('.stream-wakoopa .loader').css('display','none');
 		}
@@ -615,7 +618,8 @@ function loadLastfmRecent(){
 							image = item.image[0]['#text'];
 						}
 						var date =  new Date(item.date['#text']);
-						var list_item = "<li><a href='"+url+"' rel='external'><img class='stream-thumb' src='"+image+"' alt='' /> "+artist+" - "+name+" <time class='status-date' datetime='"+ISODateString(date)+"'>"+ISODateString(date)+"</time><span class='clear'></span></a></li>";
+						var formatted_date = date.toString().substr(0,10);
+						var list_item = "<li><a href='"+url+"' rel='external'><img class='stream-thumb' src='"+image+"' alt='' /> "+artist+" - "+name+" <time class='status-date' datetime=''>"+formatted_date+"</time><span class='clear'></span></a></li>";
 						$('.stream-ul-lastfm-recent').append(list_item);
 				}); 
 				
@@ -623,7 +627,7 @@ function loadLastfmRecent(){
 				$('.stream-ul-lastfm-recent li:nth-child(odd)').addClass('odd');
 
 				// Initialize timeago
-				$('.stream-ul-lastfm-recent .status-date').timeago();
+				// $('.stream-ul-lastfm-recent .status-date').timeago();
 
 				$('.stream-lastfm .loader').css('display','none');
 				showMtipTimeout('.stream-logo-lastfm',3000);
@@ -659,7 +663,8 @@ function loadLastfmLoved(){
 						var artist = item.artist['name'];
 						var image = item.image[0]['#text'];
 						var date =  new Date(item.date['#text']);
-						var list_item = "<li><a href='"+url+"' rel='external'><span class='icon icon-heart-red-16 icon-heart-lastfm'></span> <img class='stream-thumb' src='"+image+"' alt='' /> "+artist+" - "+name+" <time class='status-date' datetime='"+ISODateString(date)+"'>"+ISODateString(date)+"</time><span class='clear'></span></a></li>";
+						var formatted_date = date.toString().substr(0,10);
+						var list_item = "<li><a href='"+url+"' rel='external'><span class='icon icon-heart-red-16 icon-heart-lastfm'></span> <img class='stream-thumb' src='"+image+"' alt='' /> "+artist+" - "+name+" <time class='status-date' datetime=''>"+formatted_date+"</time><span class='clear'></span></a></li>";
 						$('.stream-ul-lastfm-loved').append(list_item);
 				}); 
 
@@ -667,7 +672,7 @@ function loadLastfmLoved(){
 				$('.stream-ul-lastfm-loved li:nth-child(odd)').addClass('odd');
 
 				// Initialize timeago
-				$('.stream-ul-lastfm .status-date').timeago();
+				// $('.stream-ul-lastfm .status-date').timeago();
 
 				$('.stream-lastfm .loader').css('display','none');
 			}
@@ -891,7 +896,8 @@ function streamPage(){
 					var post = status.text;
 					var id = status.id_str;
 		    	  	var date = new Date(status.created_at);
-					var list_item = "<li id='"+id+"' class='status'><a href='http://twitter.com/miguel_mota/status/"+id+"' rel='external'><span class='icon icon-twitter-bird-16'></span> "+post+" <time class='status-date' datetime='"+ISODateString(date)+"'>"+ISODateString(date)+"</time><span class='clear'></span></a></li>";
+		    	  	var formatted_date = date.toString().substr(0,10);
+					var list_item = "<li id='"+id+"' class='status'><a href='http://twitter.com/miguel_mota/status/"+id+"' rel='external'><span class='icon icon-twitter-bird-16'></span> "+post+" <time class='status-date' datetime=''>"+formatted_date+"</time><span class='clear'></span></a></li>";
 					$('.stream-ul-twitter').append(list_item);
 					while(pro_img_cnt == 0){
 						$('.stream-twitter').prepend('<a href="http://twitter.com/'+username+'"><img class="stream-profile-image" src="'+profile_image+'" alt="" /></a>');
@@ -903,7 +909,7 @@ function streamPage(){
 				$('.stream-ul-twitter li:nth-child(odd)').addClass('odd');
 
 				// Initialize timeago
-				$('.stream-ul-twitter .status-date').timeago();
+				// $('.stream-ul-twitter .status-date').timeago();
 
 				$('.stream-twitter .loader').css('display','none');
 				showMtipTimeout('.stream-logo-twitter',3000);
@@ -973,13 +979,13 @@ function streamPage(){
 				$('.stream-tumblr').append('<ul class="stream-ul stream-ul-tumblr">');
 				$.each(data.posts, function(i, posts){ 
 						
-			    	  	//var date = new Date(this['date-gmt']);
-			    	  	var date = '';
+			    	  	var date = new Date(this['date-gmt']);
+			    	  	var formatted_date = date.toString().substr(0,10);
 			    	  	var url = this.url;
 			    	  	var type = this.type;
 			    	  	var caption = this['photo-caption'];
 			    	  	var slug = this.slug.replace(/-/g,' ');
-			    	  	var list_item = "<li><a href='"+url+"' rel='external'><span class='icon icon-"+type+"-16'></span> "+slug.substring(0,1).toUpperCase()+slug.substr(1,200)+" <time class='status-date' datetime='"+date+"'>"+date+"</time><span class='clear'></span></a></li>";
+			    	  	var list_item = "<li><a href='"+url+"' rel='external'><span class='icon icon-"+type+"-16'></span> "+slug.substring(0,1).toUpperCase()+slug.substr(1,200)+" <time class='status-date' datetime=''>"+formatted_date+"</time><span class='clear'></span></a></li>";
 			    		$('.stream-ul-tumblr').append(list_item);
 				}); 
 
@@ -987,7 +993,7 @@ function streamPage(){
 				$('.stream-ul-tumblr li:nth-child(odd)').addClass('odd');
 
 				// Initialize timeago
-				//$('.stream-ul-tumblr .status-date').timeago();
+				// $('.stream-ul-tumblr .status-date').timeago();
 
 				$('.stream-tumblr .loader').css('display','none');
 				showMtipTimeout('.stream-logo-tumblr',3000);
@@ -1010,7 +1016,8 @@ function streamPage(){
 					var title = item.d;
 					var url = item.u;
 		    	  	var date = new Date(item.dt);
-		    	  	var list_item = "<li><a href='"+url+"' rel='external'><span class='icon icon-link-16'></span> "+title+" <time class='status-date' datetime='"+ISODateString(date)+"'>"+ISODateString(date)+"</time><span class='clear'></span></a></li>";
+		    	  	var formatted_date = date.toString().substr(0,10);
+		    	  	var list_item = "<li><a href='"+url+"' rel='external'><span class='icon icon-link-16'></span> "+title+" <time class='status-date' datetime=''>"+formatted_date+"</time><span class='clear'></span></a></li>";
 					$('.stream-ul-delicious').append(list_item);
 				});
 					
@@ -1018,7 +1025,7 @@ function streamPage(){
 				$('.stream-ul-delicious li:nth-child(odd)').addClass('odd');
 
 				// Initialize timeago
-				$('.stream-ul-delicious .status-date').timeago();
+				// $('.stream-ul-delicious .status-date').timeago();
 				
 				$('.stream-delicious .loader').css('display','none');
 				showMtipTimeout('.stream-logo-delicious',3000);

@@ -1224,6 +1224,7 @@ h6 {
 	-o-transition: all .2s ease-in-out;
 	-webkit-transition: all .2s ease-in-out;
 	width: 100%;
+	behavior: url('/PIE/PIE.htc');
 }
 .stream-ul-flickr img:hover,
 .stream-ul-flickr img:active {
@@ -1700,6 +1701,7 @@ h6 {
 	min-height: 32px;
 	height: auto;
 	width: 100%;
+	behavior: url('/PIE/PIE.htc');
 }
 .blog-post-photo {
 	margin: 5px;
@@ -2450,8 +2452,7 @@ input.short-url:focus {
 		top: 5px;
 	}
 	.stream-delicious .status-date,
-	.stream-wakoopa .status-date {
-	}
+	.stream-wakoopa .status-date {}
 	
 	/* ------------------------
 	 * Flickr carousel
