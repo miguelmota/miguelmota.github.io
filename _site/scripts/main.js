@@ -845,7 +845,7 @@ function streamPage(){
 
 
 	// Initialize timeago
-	$('.stream-ul-blog .status-date').timeago();
+	// $('.stream-ul-blog .status-date').timeago();
 	
 	
 	

@@ -2452,7 +2452,9 @@ input.short-url:focus {
 		top: 5px;
 	}
 	.stream-delicious .status-date,
-	.stream-wakoopa .status-date {}
+	.stream-wakoopa .status-date {
+		display: none;
+	}
 	
 	/* ------------------------
 	 * Flickr carousel
