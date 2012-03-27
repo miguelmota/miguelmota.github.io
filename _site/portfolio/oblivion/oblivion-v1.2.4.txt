@@ -4,7 +4,7 @@
     <meta charset='utf-8' />
 <!--
  *	Oblivion Theme, obliviontheme.tumblr.com
- *	v1.2.4 | 20120320
+ *	v1.2.4 | 20120326
  *	Author: Miguel Mota, www.miguelmota.com
  *	Contact: hello@miguelmota.com
  *	Update News: twitter.com/obliviontheme
@@ -285,7 +285,7 @@
 			if($(this).scrollTop() >= 150){
 				if(!fixed){
 					fixed = true;
-					$('.main-side-nav-info').hide();
+					$('.site-description,.follow-wrap,.likes-wrap,.following-wrap').hide();
 					$('.main-side-nav').css({
 						position: 'fixed'
 					});
@@ -294,33 +294,13 @@
 			else {
 				if(fixed){
 					fixed = false;
-					$('.main-side-nav-info').show();
+					$('.site-description,.follow-wrap,.likes-wrap,.following-wrap').show();
 					$('.main-side-nav').css({
 						position: 'static'
 					});
 				}
 			}
 
-		}
-		else if(window.innerWidth <= 768 && window.innerWidth >= 641) {
-			if($(this).scrollTop() >= 150){
-				if(!fixed){
-					fixed = true;
-					$('.main-side-nav-info,.follow-wrap,.likes-wrap,.following-wrap').hide();
-					$('.main-side-nav').css({
-						position: 'fixed'
-					});
-				}
-			}
-			else {
-				if(fixed){
-					fixed = false;
-					$('.main-side-nav-info,.follow-wrap,.likes-wrap,.following-wrap').show();
-					$('.main-side-nav').css({
-						position: 'static'
-					});
-				}
-			}
 		}
 		else {
 			if($(this).scrollTop() >= 150){
@@ -1591,13 +1571,12 @@
 						for (i=0; i<1; i++) {
 							var date = new Date(data[i].created_at);
 							document.getElementById('latest-tweet').innerHTML =
-								'<div class="latest-tweet-content"><a href="http://twitter.com/{text:Twitter Username}/status/'+
-								+(data[i].id_str ? data[i].id_str : data[i].id)+'" rel="external">'+data[i].text+'</a> <time class="latest-tweet-date" datetime="'+ date.toISOString()+'">'+data[i].created_at+'</time></div>';
+								'<div class="latest-tweet-content"><a href="http://twitter.com/{text:Twitter Username}/status/'+data[i].id_str+'" rel="external">'+data[i].text+'</a> <time class="latest-tweet-date" datetime="'+ date.toISOString()+'">'+data[i].created_at+'</time></div>';
 						}
 						document.getElementById('tweet-wrap').style.display = 'block';
 					}
 				</script>
-				<script src='https://twitter.com/statuses/user_timeline/{text:Twitter Username}.json?callback=recent_tweets&count=5'></script>
+				<script src='https://twitter.com/statuses/user_timeline/{text:Twitter Username}.json?callback=recent_tweets&count=1'></script>
 			{/block:IfTwitterStatus}
 
 			<!-- Likes -->

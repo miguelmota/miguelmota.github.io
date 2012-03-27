@@ -159,7 +159,7 @@ var fixed = false;
 $(window).scroll(function(){
 	
 	// Main side nav scroll to fixed
-	if(window.innerWidth >= 1025) {
+	if(window.innerWidth >= 769) {
 		
 		if($(this).scrollTop() >= 50){
 			if(!fixed){
@@ -172,30 +172,6 @@ $(window).scroll(function(){
 		else {
 			if(fixed){
 				fixed = false;
-				$('.main-side-nav').css({
-					position: 'static'
-				});
-			}
-		}
-		
-	}
-	
-	// Main side nav scroll to fixed tablet
-	if(window.innerWidth >= 641 && window.innerWidth <= 1024) {
-		
-		if($(this).scrollTop() >= 10){
-			if(!fixed){
-				fixed = true;
-				$('.main-side-nav-info').hide();
-				$('.main-side-nav').css({
-					position: 'fixed'
-				});
-			}
-		}
-		else {
-			if(fixed){
-				fixed = false;
-				$('.main-side-nav-info').show();
 				$('.main-side-nav').css({
 					position: 'static'
 				});
@@ -335,8 +311,7 @@ function recent_tweets(data) {
 	for (i=0; i<1; i++) {
 		var date = data[i].created_at;
 		document.getElementById('latest-tweet').innerHTML =
-		'<div class="latest-tweet-content"><a href="http://twitter.com/miguel_mota/status/'+
-		+(data[i].id_str ? data[i].id_str : data[i].id)+'" rel="external">'+data[i].text+'</a> <time class="latest-tweet-date" datetime="">'+formattedDate(date)+'</time></div>';
+		'<div class="latest-tweet-content"><a href="http://twitter.com/miguel_mota/status/'+data[i].id_str+'" rel="external">'+data[i].text+'</a> <time class="latest-tweet-date" datetime="">'+formattedDate(date)+'</time></div>';
 		
 		// Initialize timeago
 		// $('.latest-tweet-date').timeago();
@@ -354,7 +329,7 @@ function recent_tweets(data) {
 		}
 	});
 }
-$.getScript('http://miguelmota.tumblr.com/tweets.js');
+$.getScript('https://twitter.com/statuses/user_timeline/miguel_mota.json?callback=recent_tweets&count=1');
 
 
 
