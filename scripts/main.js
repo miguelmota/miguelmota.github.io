@@ -297,14 +297,46 @@ function relative_time(date_str) {
 
 
 
+// format date function
+function formattedDate(d) {
+  	var date = new Date(d);
+  	var day_week = date.getDay();
+  	var day_week_array = {1:'Mon', 2:'Tue', 3:'Wed', 4:'Thu', 5:'Fri', 6:'Sat', 7:'Sun'};
+  	day_week = day_week_array[day_week];
+  	if(!day_week) { day_week = ""; }
+  	var day = date.getDate();
+  	if(!day) { day = ""; }
+  	// var month = date.getMonth();
+	var month = date.toString().substr(3,4);
+  	var year = date.getYear();
+  	if (!year) { year = ""; }
+  	var minutes = date.getMinutes();
+  	if (!minutes) { minutes = ""; }
+  	var hour = date.getHours();
+  	var meridiem = (hour < 12) ? "AM" : "PM";
+  	if (hour == 0) {
+	  	hour = 12;
+	}
+	if (hour > 12) {
+    	hour -= 12;
+    }
+    if (!hour) { hour = ""; }
+    if (!meridiem) { meridiem = ""; }
+  	var formatted_date = day_week+' '+month+', '+day+' '+hour+':'+minutes+' '+meridiem;
+
+  	return formatted_date;
+
+}
+
+
+
 // Display latest tweet
 function recent_tweets(data) {
 	for (i=0; i<1; i++) {
-		var date = new Date(data[i].created_at);
-		var formatted_date = date.toString().substr(0,10);
+		var date = data[i].created_at;
 		document.getElementById('latest-tweet').innerHTML =
 		'<div class="latest-tweet-content"><a href="http://twitter.com/miguel_mota/status/'+
-		+(data[i].id_str ? data[i].id_str : data[i].id)+'" rel="external">'+data[i].text+'</a> <time class="latest-tweet-date" datetime="">'+formatted_date+'</time></div>';
+		+(data[i].id_str ? data[i].id_str : data[i].id)+'" rel="external">'+data[i].text+'</a> <time class="latest-tweet-date" datetime="">'+formattedDate(date)+'</time></div>';
 		
 		// Initialize timeago
 		// $('.latest-tweet-date').timeago();
@@ -506,9 +538,8 @@ function loadWakoopaRecent() {
 			var html = ["<ul class='stream-ul stream-ul-wakoopa-recent'>"];
 			for(var i = 0; i < data.length; i++){
 				var entry = data[i].software;
-				var date = new Date(entry.last_active_at);
-				var formatted_date = date.toString().substr(0,10);
-				html.push("<li><a href='"+entry.complete_url+"' rel='external'><img class='stream-thumb' src='"+entry.complete_thumb_url+"' alt='' /> "+entry.name+" <time class='status-date' datetime=''>"+formatted_date+"</time><span class='clear'></span></a></li>");
+				var date = entry.last_active_at;
+				html.push("<li><a href='"+entry.complete_url+"' rel='external'><img class='stream-thumb' src='"+entry.complete_thumb_url+"' alt='' /> "+entry.name+" <time class='status-date' datetime=''>"+formattedDate(date)+"</time><span class='clear'></span></a></li>");
 			}
 			
 			html.push("</ul>");
@@ -547,9 +578,8 @@ function loadWakoopaTop() {
 			var rank = 1;
 			for(var i = 0; i < data.length; i++){
 				var entry = data[i].software;
-				var date = new Date(entry.last_active_at);
-				var formatted_date = date.toString().substr(0,10);
-				html.push("<li><a href='"+entry.complete_url+"' rel='external'><span class='rank-number'>"+rank+"</span> <img class='stream-thumb' src='"+entry.complete_thumb_url+"' alt='' /> "+entry.name+" <time class='status-date' datetime=''>"+formatted_date+"</time><span class='clear'></span></a></li>");
+				var date = entry.last_active_at;
+				html.push("<li><a href='"+entry.complete_url+"' rel='external'><span class='rank-number'>"+rank+"</span> <img class='stream-thumb' src='"+entry.complete_thumb_url+"' alt='' /> "+entry.name+" <time class='status-date' datetime=''>"+formattedDate(date)+"</time><span class='clear'></span></a></li>");
 				rank++;
 			}
 			
@@ -617,9 +647,8 @@ function loadLastfmRecent(){
 						if (item.image[0]['#text']) {
 							image = item.image[0]['#text'];
 						}
-						var date =  new Date(item.date['#text']);
-						var formatted_date = date.toString().substr(0,10);
-						var list_item = "<li><a href='"+url+"' rel='external'><img class='stream-thumb' src='"+image+"' alt='' /> "+artist+" - "+name+" <time class='status-date' datetime=''>"+formatted_date+"</time><span class='clear'></span></a></li>";
+						var date =  item.date['#text'];
+						var list_item = "<li><a href='"+url+"' rel='external'><img class='stream-thumb' src='"+image+"' alt='' /> "+artist+" - "+name+" <time class='status-date' datetime=''>"+formattedDate(date)+"</time><span class='clear'></span></a></li>";
 						$('.stream-ul-lastfm-recent').append(list_item);
 				}); 
 				
@@ -662,9 +691,8 @@ function loadLastfmLoved(){
 						var name = item.name;
 						var artist = item.artist['name'];
 						var image = item.image[0]['#text'];
-						var date =  new Date(item.date['#text']);
-						var formatted_date = date.toString().substr(0,10);
-						var list_item = "<li><a href='"+url+"' rel='external'><span class='icon icon-heart-red-16 icon-heart-lastfm'></span> <img class='stream-thumb' src='"+image+"' alt='' /> "+artist+" - "+name+" <time class='status-date' datetime=''>"+formatted_date+"</time><span class='clear'></span></a></li>";
+						var date =  item.date['#text'];
+						var list_item = "<li><a href='"+url+"' rel='external'><span class='icon icon-heart-red-16 icon-heart-lastfm'></span> <img class='stream-thumb' src='"+image+"' alt='' /> "+artist+" - "+name+" <time class='status-date' datetime=''>"+formattedDate(date)+"</time><span class='clear'></span></a></li>";
 						$('.stream-ul-lastfm-loved').append(list_item);
 				}); 
 
@@ -895,9 +923,8 @@ function streamPage(){
 					var username = status.user.screen_name;
 					var post = status.text;
 					var id = status.id_str;
-		    	  	var date = new Date(status.created_at);
-		    	  	var formatted_date = date.toString().substr(0,10);
-					var list_item = "<li id='"+id+"' class='status'><a href='http://twitter.com/miguel_mota/status/"+id+"' rel='external'><span class='icon icon-twitter-bird-16'></span> "+post+" <time class='status-date' datetime=''>"+formatted_date+"</time><span class='clear'></span></a></li>";
+		    	  	var date = status.created_at;
+					var list_item = "<li id='"+id+"' class='status'><a href='http://twitter.com/miguel_mota/status/"+id+"' rel='external'><span class='icon icon-twitter-bird-16'></span> "+post+" <time class='status-date' datetime=''>"+formattedDate(date)+"</time><span class='clear'></span></a></li>";
 					$('.stream-ul-twitter').append(list_item);
 					while(pro_img_cnt == 0){
 						$('.stream-twitter').prepend('<a href="http://twitter.com/'+username+'"><img class="stream-profile-image" src="'+profile_image+'" alt="" /></a>');
@@ -979,13 +1006,13 @@ function streamPage(){
 				$('.stream-tumblr').append('<ul class="stream-ul stream-ul-tumblr">');
 				$.each(data.posts, function(i, posts){ 
 						
-			    	  	var date = new Date(this['date-gmt']);
-			    	  	var formatted_date = date.toString().substr(0,10);
+						var date = this['date-gmt'];
+
 			    	  	var url = this.url;
 			    	  	var type = this.type;
 			    	  	var caption = this['photo-caption'];
 			    	  	var slug = this.slug.replace(/-/g,' ');
-			    	  	var list_item = "<li><a href='"+url+"' rel='external'><span class='icon icon-"+type+"-16'></span> "+slug.substring(0,1).toUpperCase()+slug.substr(1,200)+" <time class='status-date' datetime=''>"+formatted_date+"</time><span class='clear'></span></a></li>";
+			    	  	var list_item = "<li><a href='"+url+"' rel='external'><span class='icon icon-"+type+"-16'></span> "+slug.substring(0,1).toUpperCase()+slug.substr(1,200)+" <time class='status-date' datetime=''>"+formattedDate(date)+"</time><span class='clear'></span></a></li>";
 			    		$('.stream-ul-tumblr').append(list_item);
 				}); 
 
@@ -1015,9 +1042,8 @@ function streamPage(){
 				$.each(data, function(i, item){
 					var title = item.d;
 					var url = item.u;
-		    	  	var date = new Date(item.dt);
-		    	  	var formatted_date = date.toString().substr(0,10);
-		    	  	var list_item = "<li><a href='"+url+"' rel='external'><span class='icon icon-link-16'></span> "+title+" <time class='status-date' datetime=''>"+formatted_date+"</time><span class='clear'></span></a></li>";
+		    	  	var date = item.dt;
+		    	  	var list_item = "<li><a href='"+url+"' rel='external'><span class='icon icon-link-16'></span> "+title+" <time class='status-date' datetime=''>"+formattedDate(date)+"</time><span class='clear'></span></a></li>";
 					$('.stream-ul-delicious').append(list_item);
 				});
 					
@@ -1412,9 +1438,11 @@ function contactPage(){
 				required: '',
 				email: ''
 			},
-			message: '',
-			minlength: ''
-			},
+			message: {
+				required: '',
+				minlength: ''
+			}
+		},
 		onkeyup: true,
 		success: function(label) {
 			label.addClass('valid');	

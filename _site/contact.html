@@ -119,12 +119,13 @@
 		sub2 = 'sub2';	
 		document.writeln("<span class='sub-mobile'><span class='slash'>/</span><a class='sub' href='/portfolio')'>folio</a></span>");
 	}
-	for (var i=3; i<(s.length-1);i++) {
+	for (var i=3; i<(s.length-1); i++) {
 		path += "<span class='sub "+sub2+"'><a href='"+href.substring(0,href.indexOf('/'+s[i])+s[i].length+1)+"/'>"+s[i]+"</a><span class='slash'>/</span></span>";
 	}
-	i = s.length-1;
-	path += "<a class='"+sub2+"' href='"+href.substring(0,href.indexOf(s[i])+s[i].length)+"'>"+s[i]+"</a>";
-	document.writeln("<span class='slash'>/</span>" + path);
+	//i = s.length-1;
+	//path += "<a class='"+sub2+"' href='"+href.substring(0,href.indexOf(s[i])+s[i].length)+"'>"+s[i]+"</a>";
+	//document.writeln("<span class='slash'>/</span>" + path);
+	document.writeln(path);
 </script></h1>
 <section class='content contact'>
 	<div class='contact-item content-item'>
