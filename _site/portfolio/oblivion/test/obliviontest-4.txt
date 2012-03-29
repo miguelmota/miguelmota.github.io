@@ -569,6 +569,12 @@
 		background: url('http://static.tumblr.com/r8galzl/rxvlu4l2l/comments.png');
 		height: 13px;
 	}
+	.icon-camcorder-16 {
+		background-image: url('http://static.tumblr.com/ctuvo3d/YEMm1khz0/camcorder.png');
+	}
+	.icon-camera-16 {
+		background-image: url('http://static.tumblr.com/ctuvo3d/eJ8m1khzg/camera.png');
+	}
 	.icon-counter-clock-16 {
 		background-image: url('http://static.tumblr.com/r8galzl/dNTlv5l91/counter-clock.png');
 	}
@@ -1532,6 +1538,8 @@
 			{block:IfShowRSS}
 				<li><a id='rss' href='{RSS}'><span class='icon icon-rss-16 icon-nav'></span> Subscribe</a></li>
 			{/block:IfShowRSS}
+				<li><a id='rss' href='/tagged/photos'><span class='icon icon-camera-16 icon-nav'></span> Photos</a></li>
+			 	<li><a id='rss' href='/tagged/videos'><span class='icon icon-camcorder-16 icon-nav'></span> Videos</a></li>
 			 {block:HasPages}
 	    	 	{block:Pages} 
 					<li><a id='{Label}' href='{URL}'><span class='icon icon-page-16 icon-nav'></span> {Label}</a></li>

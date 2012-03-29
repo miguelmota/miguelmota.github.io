@@ -899,7 +899,7 @@ function streamPage(){
 					var post = status.text;
 					var id = status.id_str;
 		    	  	var date = status.created_at;
-					var list_item = "<li id='"+id+"' class='status'><a href='http://twitter.com/miguel_mota/status/"+id+"' rel='external'><span class='icon icon-twitter-bird-16'></span> "+post+" <time class='status-date' datetime=''>"+formattedDate(date)+"</time><span class='clear'></span></a></li>";
+					var list_item = "<li id='"+id+"' class='status'><a href='http://twitter.com/miguel_mota/status/"+id+"' rel='external'><span class='icon icon-twitter-bird-16'></span> "+post+" <time class='status-date' datetime='' style='color:#999;font-size:12px;font-weight: normal;float:right;'>"+formattedDate(date)+"</time><span class='clear'></span></a></li>";
 					$('.stream-ul-twitter').append(list_item);
 					while(pro_img_cnt == 0){
 						$('.stream-twitter').prepend('<a href="http://twitter.com/'+username+'"><img class="stream-profile-image" src="'+profile_image+'" alt="" /></a>');
