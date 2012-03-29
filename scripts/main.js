@@ -298,7 +298,10 @@ function formattedDate(d) {
     }
     if (!hour) { hour = ""; }
     if (!meridiem) { meridiem = ""; }
-  	var formatted_date = day_week+' '+month+', '+day+' '+hour+':'+minutes+' '+meridiem;
+    var formatted_date = "";
+    if(day != "") {
+  		formatted_date = day_week+' '+month+', '+day+' '+hour+':'+minutes+' '+meridiem;
+  	}
 
   	return formatted_date;
 
