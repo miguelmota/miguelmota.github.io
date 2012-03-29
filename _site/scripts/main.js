@@ -626,7 +626,7 @@ function loadLastfmRecent(){
 							image = item.image[0]['#text'];
 						}
 						var date =  item.date['#text'];
-						var list_item = "<li><a href='"+url+"' rel='external'><img class='stream-thumb' src='"+image+"' alt='' /> "+artist+" - "+name+" <time class='status-date' datetime=''>"+formattedDate(date)+"</time><span class='clear'></span></a></li>";
+						var list_item = "<li><a href='"+url+"' rel='external'><img class='stream-thumb' src='"+image+"' alt='' /> "+artist+" - "+name+" <time class='status-date' datetime='' style='color:#999 !important;font-size:12px !important;font-weight:normal !important;float:right !important;'>"+formattedDate(date)+"</time><span class='clear'></span></a></li>";
 						$('.stream-ul-lastfm-recent').append(list_item);
 				}); 
 				
@@ -670,7 +670,7 @@ function loadLastfmLoved(){
 						var artist = item.artist['name'];
 						var image = item.image[0]['#text'];
 						var date =  item.date['#text'];
-						var list_item = "<li><a href='"+url+"' rel='external'><span class='icon icon-heart-red-16 icon-heart-lastfm'></span> <img class='stream-thumb' src='"+image+"' alt='' /> "+artist+" - "+name+" <time class='status-date' datetime=''>"+formattedDate(date)+"</time><span class='clear'></span></a></li>";
+						var list_item = "<li><a href='"+url+"' rel='external'><span class='icon icon-heart-red-16 icon-heart-lastfm'></span> <img class='stream-thumb' src='"+image+"' alt='' /> "+artist+" - "+name+" <time class='status-date' datetime='' style='color:#999 !important;font-size:12px !important;font-weight:normal !important;float:right !important;'>"+formattedDate(date)+"</time><span class='clear'></span></a></li>";
 						$('.stream-ul-lastfm-loved').append(list_item);
 				}); 
 
@@ -715,7 +715,7 @@ function loadLastfmTop(){
 						var artist = item.artist['name'];
 						var image = '/assets/images/logo-16.png';
 						var playcount =  item.playcount;
-						var list_item = "<li><a href='"+url+"' rel='external'><span class='rank-number'>"+rank+"</span> <img class='stream-thumb' src='"+image+"' alt='' /> "+artist+" - "+name+" <time class='status-date'>"+playcount+" plays</time><span class='clear'></span></a></li>";
+						var list_item = "<li><a href='"+url+"' rel='external'><span class='rank-number'>"+rank+"</span> <img class='stream-thumb' src='"+image+"' alt='' /> "+artist+" - "+name+" <time class='status-date' style='color:#999 !important;font-size:12px !important;font-weight:normal !important;float:right !important;'>"+playcount+" plays</time><span class='clear'></span></a></li>";
 						$('.stream-ul-lastfm-top').append(list_item);
 						rank++;
 				}); 
@@ -902,7 +902,7 @@ function streamPage(){
 					var post = status.text;
 					var id = status.id_str;
 		    	  	var date = status.created_at;
-					var list_item = "<li id='"+id+"' class='status'><a href='http://twitter.com/miguel_mota/status/"+id+"' rel='external'><span class='icon icon-twitter-bird-16'></span> "+post+" <time class='status-date' datetime='' style='color:#999;font-size:12px;font-weight: normal;float:right;'>"+formattedDate(date)+"</time><span class='clear'></span></a></li>";
+					var list_item = "<li id='"+id+"' class='status'><a href='http://twitter.com/miguel_mota/status/"+id+"' rel='external'><span class='icon icon-twitter-bird-16'></span> "+post+" <time class='status-date' datetime='' style='color:#999 !important;font-size:12px !important;font-weight:normal !important;float:right !important;'>"+formattedDate(date)+"</time><span class='clear'></span></a></li>";
 					$('.stream-ul-twitter').append(list_item);
 					while(pro_img_cnt == 0){
 						$('.stream-twitter').prepend('<a href="http://twitter.com/'+username+'"><img class="stream-profile-image" src="'+profile_image+'" alt="" /></a>');
