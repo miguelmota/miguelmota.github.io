@@ -904,6 +904,7 @@ h6 {
 .stream-wrap {
 	display: inline-block;
 	float: left;
+	position: relative;
 	width: 350px;
 	z-index: 10;
 }
@@ -934,7 +935,8 @@ h6 {
 }
 .stream-flickr {
 	min-height: 180px;
-	width: 580px;
+	min-width: 350px;
+	width: auto;
 }
 .latitude-map-button {
 	position: absolute;
@@ -1079,13 +1081,6 @@ h6 {
 .stream-ul li a:hover {
 	background-color: #000;
 }
-.stream-ul-flickr li {
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-	margin: 0;
-	padding: 0;
-}
 .stream-ul li:nth-child(odd) a,
 .odd {
 	background-color: #141414;	
@@ -1138,7 +1133,9 @@ h6 {
 	-webkit-box-sizing: border-box;
 	float: left;
 	margin: 0 5px;
-	padding: 20px 0;
+	overflow: hidden;
+	padding: 0;
+	width: 600px;
 }
 .stream-carousel-nav {	
 	background-color: #141414;
@@ -1148,8 +1145,8 @@ h6 {
 	display: inline-block;
 	border-left: 0;
 	float: left;
-	margin-top: 10px;
-	min-height: 120px;
+	margin: 0;
+	min-height: 125px;
 	padding: 0 14px;
 	position: relative;
 	text-align: center;
@@ -1171,9 +1168,28 @@ h6 {
 /*
 	STREAM FLICKR PHOTOS
 */
+.stream-ul-flickr {
+	left: 0;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	top: 0;
+	width: 5125px; /* width of photo li x photo count*/
+}
 .stream-ul-flickr,
 .stream-ul-flickr li {
 	overflow: visible !important;
+}
+.stream-ul-flickr li {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	float: left;
+	height: auto;
+	margin: 0 5px 0 0;
+	max-height: 125px;
+	padding: 0;
+	width: 200px;
 }
 .stream-ul-flickr li a {
 	background-color: #1d1d1d;
@@ -1182,16 +1198,16 @@ h6 {
 	-webkit-box-sizing: border-box;
 	display: inline-block;
 	float: left;
-	min-height: 120px;
+	min-height: 125px;
 	height: auto;
-	margin: 0 1px 0 0;
+	margin: 0;
 	padding: 0;
 	position: relative;
 	transition: all .2s ease-in-out;
 	-moz-transition: all .2s ease-in-out;
 	-o-transition: all .2s ease-in-out;
 	-webkit-transition: all .2s ease-in-out;
-	width: 150px;
+	width: 200px;
 }
 .stream-ul-flickr li a:hover {
 	background: #1d1d1d;
@@ -2224,11 +2240,14 @@ input.short-url:focus {
 	/* ------------------------
 	 * Flickr carousel
 	 * --------------------- */
+	.stream-carousel {
+		width: 400px;
+	}
 	.stream-flickr {
 		clear: both;
-		width: 580px;
+		min-width: 300px;
+		width: auto;
 	}
-	.stream-ul-flickr li a {}
 
  	/* ------------------------
   	 * About page
@@ -2459,13 +2478,13 @@ input.short-url:focus {
 	/* ------------------------
 	 * Flickr carousel
 	 * --------------------- */
-	 .stream-ul-flickr {
-	 	width: 100%;
-	 }
-	 .stream-ul-flickr li a {
-	 	min-height: 64px;
-	 	width: 64px;
-	 }
+	.stream-carousel {
+		width: 200px;
+	}
+	.stream-flickr {
+		clear: both;
+		min-width: 100%;
+	}
 
   	/* ------------------------
   	 * About page
@@ -2500,18 +2519,6 @@ input.short-url:focus {
 		height: 200px;
 	}
 
-	@media all and (min-width: 480px) and (max-width: 640px) {
-		.about-photo-desc {
-	    	font-size: 18px;
-	    	right: 20px;
-			top: 10px;
-		}
-		.about-photo-desc p:first-child {
-			font-size: 24px;
-		}
-	}
-		
-	
 	/* ------------------------
 	 * Portfolio page
 	 * --------------------- */
@@ -2619,3 +2626,35 @@ input.short-url:focus {
 	}
 	
 }
+
+/* ------------------------
+ * Mobile styles (landscape)
+ * --------------------- */
+@media all and (min-width: 480px) and (max-width: 640px) {
+
+	/* ------------------------
+	 * Stream Carousel
+	 * --------------------- */
+	.stream-carousel {
+		width: 400px;
+	}
+
+	/* ------------------------
+	 * About
+	 * --------------------- */
+	.about-photo-desc {
+    	font-size: 18px;
+    	right: 20px;
+		top: 10px;
+	}
+	.about-photo-desc p:first-child {
+		font-size: 24px;
+	}
+	.about-column-left {
+		float: left;
+		width: 70%;
+	}
+	.about-column-right {
+		float: right;
+		width: 28%;
+	}

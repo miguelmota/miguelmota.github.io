@@ -789,36 +789,42 @@ function streamPositionReset(){
 
 	$('.stream-position-reset-wrap').css('display', 'none');
 }
-
+	
+// rotate carousel
+function rotate() {
+	$('.stream-carousel-nav-next').click();
+}
 
 
 function streamPage(){
 
 
-    // Likes carousel
+    /* ------------------------
+	 * Stream Carousel
+	 * --------------------- */
 	var speed = 5000;
 	var run = setInterval('rotate()', speed);
-	var item_width = $('#likes li').outerWidth();
+	var item_width = $('.stream-carousel-ul li').outerWidth();
 	var left_value = item_width * (-1);
-	$('#likes li:first').before($('#likes li:last'));
-	$('#likes').css({'left':left_value});
-	$('.likes-prev').live('click', function(){
-		var left_indent = parseInt($('#likes').css('left')) - item_width;
-		$('#likes').animate({'left':left_indent}, 200, function(){
-			$('#likes li:last').after($('#likes li:first'));
-			$('#likes').css({'left':left_value});
+	$('.stream-carousel-ul li:first').before($('.stream-carousel-ul li:last'));
+	$('.stream-carousel-ul').css({'left':left_value});
+	$('.stream-carousel-nav-next').live('click', function(){
+		var left_indent = parseInt($('.stream-carousel-ul').css('left')) - item_width;
+		$('.stream-carousel-ul').animate({'left':left_indent}, 200, function(){
+			$('.stream-carousel-ul li:last').after($('.stream-carousel-ul li:first'));
+			$('.stream-carousel-ul').css({'left':left_value});
 		});
 		return false;
 	});
-	$('.likes-next').live('click', function(){
-		var left_indent = parseInt($('#likes').css('left')) + item_width;
-		$('#likes').animate({'left':left_indent}, 200, function(){
-			$('#likes li:first').before($('#likes li:last'));
-			$('#likes').css({'left':left_value});
+	$('.stream-carousel-nav-prev').live('click', function(){
+		var left_indent = parseInt($('.stream-carousel-ul').css('left')) + item_width;
+		$('.stream-carousel-ul').animate({'left':left_indent}, 200, function(){
+			$('.stream-carousel-ul li:first').before($('.stream-carousel-ul li:last'));
+			$('.stream-carousel-ul').css({'left':left_value});
 		});
 		return false;
 	});
-	$('#likes').hover(
+	$('.stream-carousel-ul').hover(
 			function(){
 				clearInterval(run);
 				},
@@ -1080,10 +1086,11 @@ function streamPage(){
 		{
 			format: 'json',
 			api_key: '2a3074a0411f6d3649972787fcacea59',
-			user_id: '40464790@N08'
+			user_id: '40464790@N08',
+			per_page: 25
 		},
 		function jsonFlickrFeed(data) {
-			var htmlString = '<div class="stream-carousel-wrap"><a href="javascript:void(0)" class="stream-carousel-nav stream-carousel-nav-prev"><span class="stream-carousel-nav-inner">&#171;</span></a><div class="stream-carousel stream-carousel-flickr"><ul class="stream-ul stream-ul-flickr jcarousel-skin-tango">';
+			var htmlString = '<div class="stream-carousel-wrap"><a href="javascript:void(0)" class="stream-carousel-nav stream-carousel-nav-prev"><span class="stream-carousel-nav-inner">&#171;</span></a><div class="stream-carousel stream-carousel-flickr"><ul class="stream-ul stream-ul-flickr stream-carousel-ul">';
 			$.each(data.photos.photo, function(i,item) {	
 				
 				var flickr_id = item.id;
@@ -1107,12 +1114,7 @@ function streamPage(){
 			$('.stream-flickr').append(htmlString +'</ul></div><a href="javascript:void(0)" class="stream-carousel-nav stream-carousel-nav-next"><span class="stream-carousel-nav-inner">&#187;</span></a></div><div class="clear"></div>');
 			showMtipTimeout('.stream-logo-flickr',3000);
 			
-			$('.stream-carousel-flickr').jCarouselLite({
-				 btnNext: '.stream-carousel-nav-next',
-				 btnPrev: '.stream-carousel-nav-prev'
-			});
 
-		
 
 			// Draggable cursor
 			$('.stream-wrap').draggable({
