@@ -794,6 +794,41 @@ function streamPositionReset(){
 
 function streamPage(){
 
+
+    // Likes carousel
+	var speed = 5000;
+	var run = setInterval('rotate()', speed);
+	var item_width = $('#likes li').outerWidth();
+	var left_value = item_width * (-1);
+	$('#likes li:first').before($('#likes li:last'));
+	$('#likes').css({'left':left_value});
+	$('.likes-prev').live('click', function(){
+		var left_indent = parseInt($('#likes').css('left')) - item_width;
+		$('#likes').animate({'left':left_indent}, 200, function(){
+			$('#likes li:last').after($('#likes li:first'));
+			$('#likes').css({'left':left_value});
+		});
+		return false;
+	});
+	$('.likes-next').live('click', function(){
+		var left_indent = parseInt($('#likes').css('left')) + item_width;
+		$('#likes').animate({'left':left_indent}, 200, function(){
+			$('#likes li:first').before($('#likes li:last'));
+			$('#likes').css({'left':left_value});
+		});
+		return false;
+	});
+	$('#likes').hover(
+			function(){
+				clearInterval(run);
+				},
+			function(){
+				run = setInterval('rotate()', speed);
+			}
+		);
+
+	
+
 	// Set wakoopa stream cookie
 	if($.cookie('streamSortWakoopa') == null) {
 		$.cookie('streamSortWakoopa', 'recent', {
