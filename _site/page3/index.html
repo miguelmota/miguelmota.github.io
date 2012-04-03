@@ -107,7 +107,23 @@
 		<div class='clear'></div>
 	</div>
 	<div class='main-content-wrap'>
-		<h1 class='title'><span class='icon icon-cloud-32 icon-title icon-no-hover'></span><a href='/'><span class='miguel'>Miguel</span><span class='mota'>Mota</span></a><span class='slash'>/</span><span class='sub'><a href='/stream'>stream</a></span></h1>
+		<h1 class='title'><span class='icon icon-cloud-32 icon-title icon-no-hover'></span> <script>
+	var path = '';
+	var href = document.location.href;
+	var s = href.split('/');
+	var sub2 = '';
+	if (s[3] == 'portfolio') {
+		sub2 = 'sub2';	
+		document.write("<span class='sub-mobile'><span class='slash'>/</span><a class='sub' href='/portfolio')'>folio</a></span>");
+	}
+	document.write("<a href='/'><span class='miguel'>Miguel</span><span class='mota'>Mota</span></a>");
+	for (var i=3; i<(s.length-1); i++) {
+		path = "<span class='slash'>/</span><span class='sub "+sub2+"'><a href='"+href.substring(0,href.indexOf('/'+s[i])+s[i].length+1)+"'>"+s[i]+"</a></span>";
+		document.write(path);
+	}
+	path = "<span class='slash'>/</span><span class='sub "+sub2+"'><a href='"+href.substring(0,href.indexOf('/'+s[i])+s[i].length+1)+"'>"+s[s.length-1].substring(0,s[s.length-1].lastIndexOf('.'))+"</a></span>";
+	document.write(path);
+</script></h1>
 
 <div class='stream-position-reset-wrap'><a class='stream-position-reset' href='javascript:void(0)' onclick='streamPositionReset();'><span class='icon icon-revert-16'></span> reset</a></div>
 
@@ -132,11 +148,11 @@
         <a class='stream-logo stream-logo-blog mtip' href='/blog' title='my blog'>Blog</a>
         <ul class='stream-ul stream-ul-blog'>
             
-                <li><a class='status' href='/blog/how-to-survive-a-zombie-outbreak'><span class='icon icon-text-16'></span> How To Survive a Zombie Outbreak <time class='status-date' datetime='22 January 2012'>22 January</time><span class='clear'></span></a></li>
+                <li><a class='status' href='/blog/how-to-survive-a-zombie-outbreak'><span class='icon icon-text-16'></span> How To Survive a Zombie Outbreak <time class='status-date' datetime='22 January 2012'>Jan 22</time><span class='clear'></span></a></li>
             
-                <li><a class='status' href='/portfolio/foodfail'><span class='icon icon-text-16'></span> Food FAIL <time class='status-date' datetime='01 December 2011'>01 December</time><span class='clear'></span></a></li>
+                <li><a class='status' href='/blog/ant-task-to-compress-html-files'><span class='icon icon-text-16'></span> Ant task to compress HTML files <time class='status-date' datetime='14 October 2011'>Oct 14</time><span class='clear'></span></a></li>
             
-                <li><a class='status' href='/blog/ant-task-to-compress-html-files'><span class='icon icon-text-16'></span> Ant task to compress HTML files <time class='status-date' datetime='14 October 2011'>14 October</time><span class='clear'></span></a></li>
+                <li><a class='status' href='/blog/display-latest-delicious-bookmarks-with-jquery'><span class='icon icon-text-16'></span> Display latest delicious bookmarks with jQuery <time class='status-date' datetime='11 October 2011'>Oct 11</time><span class='clear'></span></a></li>
             
         </ul>
     </div>
@@ -181,6 +197,7 @@
         <a class='stream-logo stream-logo-flickr mtip' href='http://www.flickr.com/photos/miguelmota' title='my photos' rel='external'></a>
         <div class='loader'></div>
     </div>
+
     <div class='clear'></div>
 </section>
 		<div class='loader-container'><div class='page-loader'></div></div>

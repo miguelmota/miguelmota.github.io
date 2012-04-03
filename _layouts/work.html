@@ -4,7 +4,7 @@ category: portfolio
 ---
 <section class='content portfolio'>
 	{{ content }}
-	<div class='pagination'>
+	<div class='pagination pagination-work'>
 		{% if page.previous.category == 'portfolio' %} 
 		    {% if page.previous.url  %} 
 				<a class='pagination-previous' href='{{ page.previous.url }}'>&#171; {{ page.previous.title | truncatewords: 15 }}</a>

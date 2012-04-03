@@ -2,7 +2,7 @@
 layout: default
 title:
 ---
-<h1 class='title'><span class='icon icon-cloud-32 icon-title icon-no-hover'></span><a href='/'><span class='miguel'>Miguel</span><span class='mota'>Mota</span></a><span class='slash'>/</span><span class='sub'><a href='/stream'>stream</a></span></h1>
+<h1 class='title'><span class='icon icon-cloud-32 icon-title icon-no-hover'></span> {% include title.html %}</h1>
 
 <div class='stream-position-reset-wrap'><a class='stream-position-reset' href='javascript:void(0)' onclick='streamPositionReset();'><span class='icon icon-revert-16'></span> reset</a></div>
 
@@ -26,8 +26,8 @@ title:
     <div class='stream-wrap stream-blog content-item'>
         <a class='stream-logo stream-logo-blog mtip' href='/blog' title='my blog'>Blog</a>
         <ul class='stream-ul stream-ul-blog'>
-            {% for post in site.posts limit:3 %}
-                <li><a class='status' href='{{ post.url }}'><span class='icon icon-text-16'></span> {{ post.title }} <time class='status-date' datetime='{{ post.date | date:"%d %B %Y"  }}'>{{ post.date | date:"%d %B"  }}</time><span class='clear'></span></a></li>
+            {% for post in site.categories.blog limit:3 %}
+                <li><a class='status' href='{{ post.url }}'><span class='icon icon-text-16'></span> {{ post.title }} <time class='status-date' datetime='{{ post.date | date:"%d %B %Y"  }}'>{{ post.date | date:"%b %d"  }}</time><span class='clear'></span></a></li>
             {% endfor %}
         </ul>
     </div>
@@ -72,5 +72,6 @@ title:
         <a class='stream-logo stream-logo-flickr mtip' href='http://www.flickr.com/photos/miguelmota' title='my photos' rel='external'></a>
         <div class='loader'></div>
     </div>
+
     <div class='clear'></div>
 </section>
