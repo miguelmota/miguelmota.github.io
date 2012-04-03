@@ -1,5 +1,137 @@
 ---
 layout: amanda
-title: Amanda
+title: Manda Panda
 ---
-<canvas id='canvas'></canvas>
+<div class='title'>Draw on Manda Panda</div>
+
+<button id='canvasColorBlackBtn'>black</button>
+<button id='canvasColorPurpleBtn'>purple</button>
+<button id='canvasColorGreenBtn'>green</button>
+<button id='canvasColorYellowBtn'>yellow</button>
+<button id='canvasColorBrownBtn'>brown</button>
+<br />
+<!--
+<button id='canvasRadiusSmallBtn'>small</button>
+<button id='canvasRadiusMediumBtn'>medium</button>
+<button id='canvasRadiusLargeBtn'>large</button> 
+<br />-->
+<button id='canvasClearBtn'>clear</button>
+<br />
+<canvas id='canvas' height=603 width=452></canvas>
+
+
+<script>
+
+    var canvas = document.getElementById("canvas");
+
+    if(typeof G_vmlCanvasManager != 'undefined') {
+        canvas = G_vmlCanvasManager.initElement(canvas);
+    }
+    var context = canvas.getContext("2d");
+    $('#canvas').mousedown(function(e){
+        var mouseX = e.pageX - this.offsetLeft;
+        var mouseY = e.pageY - this.offsetTop;
+        
+        paint = true;
+        addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop);
+        redraw();
+    });
+    $('#canvas').mousemove(function(e){
+        if(paint){
+            addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop,true);
+            redraw();
+        }
+    });
+    $('#canvas').mouseup(function(e){
+        paint = false;
+    });
+    $('#canvas').mouseleave(function(e){
+        paint = false;
+    });
+    var clickX = new Array();
+    var clickY = new Array();
+    var clickDrag = new Array();
+    var paint;
+
+    var colorBlack = "#000";
+    var colorPurple = "#cb3594";
+    var colorGreen = "#659b41";
+    var colorYellow = "#ffcf33";
+    var colorBrown = "#986928";
+
+    $('#canvasColorBlackBtn').click(function(){
+        curColor = colorBlack;
+    });
+    $('#canvasColorPurpleBtn').click(function(){
+        curColor = colorPurple;
+    });
+    $('#canvasColorGreenBtn').click(function(){
+        curColor = colorGreen;
+    });
+    $('#canvasColorYellowBtn').click(function(){
+        curColor = colorYellow;
+    });
+     $('#canvasColorBrownBtn').click(function(){
+        curColor = colorBrown;
+    });
+    var curColor = colorBlack;
+    var clickColor = new Array();
+
+
+
+    var sizeSmall = 10;
+    var sizeMedium = 20;
+    var sizeLarge = 30;
+
+    var clickSize = new Array();
+    var curSize = sizeSmall;
+
+    var radius = curSize;
+
+    /*
+    $('#canvasRadiusSmallBtn').click(function(){
+        radius = sizeSmall;
+    });
+    $('#canvasRadiusMediumBtn').click(function(){
+        radius = sizeMedium;
+    });
+    $('#canvasRadiusLargeBtn').click(function(){
+        radius = sizeLarge;
+    }); */
+
+    function addClick(x, y, dragging)
+    {
+        clickX.push(x);
+        clickY.push(y);
+        clickDrag.push(dragging);
+        clickColor.push(curColor);
+        clickSize.push(curSize);
+    }
+    function redraw(){
+        canvas.width = canvas.width; // clears canvas
+
+        /* context.strokeStyle = "#df4b26"; */
+        context.lineJoin = 'round';
+        context.lineWidth = 5;
+
+        for(var i=0; i < clickX.length; i++)
+        {
+            context.beginPath();
+            if(clickDrag[i] && i){
+                context.moveTo(clickX[i-1], clickY[i-1]);
+            } else {
+                context.moveTo(clickX[i]-1, clickY[i]);
+            }
+
+            context.lineTo(clickX[i], clickY[i]);
+            context.closePath();
+            context.strokeStyle = clickColor[i];
+            context.lineWidth = radius;
+            context.stroke();
+        }
+    }
+
+    $('#canvasClearBtn').click(function(){
+        context.clearRect(0,0,context.canvas.width,context.canvas.height)
+    });
+</script>
