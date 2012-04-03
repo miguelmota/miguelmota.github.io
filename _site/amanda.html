@@ -34,18 +34,19 @@
 <body>
 	<div class='title'>Draw on Manda Panda</div>
 
+<button id='canvasClearBtn'>clear</button>
+
 <button id='canvasColorBlackBtn'>black</button>
 <button id='canvasColorPurpleBtn'>purple</button>
 <button id='canvasColorGreenBtn'>green</button>
 <button id='canvasColorYellowBtn'>yellow</button>
 <button id='canvasColorBrownBtn'>brown</button>
-<br />
 <!--
 <button id='canvasRadiusSmallBtn'>small</button>
 <button id='canvasRadiusMediumBtn'>medium</button>
 <button id='canvasRadiusLargeBtn'>large</button> 
 <br />-->
-<button id='canvasClearBtn'>clear</button>
+
 <br />
 <canvas height=12 width=300>NOTE: BROWSER <!--[if lt IE 9]> (INTERNET EXPLORER) <![endif]--> IS NOT SUPPORTED!</canvas>
 <br />
@@ -165,10 +166,7 @@
 
     $('#canvasClearBtn').click(function(){
         context.clearRect(0,0,context.canvas.width,context.canvas.height);
-        clickX = [];
-        clickY = [];
-        clickDrag = [];
-        redraw();
+        window.location='/amanda';
     });
 </script>
 </body>
