@@ -1,5 +1,6 @@
 ---
 layout: default
+category: blog
 ---
 <h1 class='title'><span class='icon icon-book-32 icon-title icon-no-hover'></span><a href='/'><span class='miguel'>Miguel</span><span class='mota'>Mota</span></a><span class='slash'>/</span><span class='sub'><a href='/blog'>Blog</a></span></h1>
 
@@ -30,12 +31,18 @@ layout: default
 	</div>
 	<div class='blog-post-end-wrap'>
 		<div class='pagination'>
-		    {% if page.previous.url %}
-				<a class='pagination-previous' href='{{ page.previous.url }}'>&#171; {{ page.previous.title | truncatewords: 15 }}</a>
-		    {% endif %}
-		    {% if page.next.url %}
-			    <a class='pagination-next' href='{{ page.next.url }}'>{{ page.next.title | truncatewords: 15 }} &#187;</a>
-		    {% endif %}
+			{% if page.previous.category == 'blog' %} 
+			    {% if page.previous.url  %} 
+					<a class='pagination-previous' href='{{ page.previous.url }}'>&#171; {{ page.previous.title | truncatewords: 15 }}</a>
+			    {% endif %}
+			{% endif %}
+
+			{% if page.next.category == 'blog' %} 
+			    {% if page.next.url %}
+				    <a class='pagination-next' href='{{ page.next.url }}'>{{ page.next.title | truncatewords: 15 }} &#187;</a>
+			    {% endif %}
+			{% endif %}
+		    
 		</div>
 		<div class='clear'></div>
 		<div id='disqus_thread'></div>

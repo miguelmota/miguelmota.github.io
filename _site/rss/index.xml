@@ -8,7 +8,7 @@
 			<item>
 				<title>How To Survive a Zombie Outbreak</title>
 				<description>&lt;div class='blog-post-photo-wrap'&gt;
-&lt;img class='blog-post-photo' src='/assets/blog//how-to-survive-a-zombie-outbreak/how-to-survive-a-zombie-outbreak-tony-moore-illustration.png' alt='' /&gt;
+&lt;img class='blog-post-photo' src='/assets/blog//blog/how-to-survive-a-zombie-outbreak/how-to-survive-a-zombie-outbreak-tony-moore-illustration.png' alt='' /&gt;
 &lt;span class='blog-post-photo-source'&gt;Illustration by &lt;a href='http://tonymooreillustration.com/gallery/main.php?g2_itemId=579' rel='external'&gt;Tony Moore Illustration&lt;/a&gt;&lt;/span&gt;
 &lt;/div&gt;
 &lt;/a&gt;
@@ -64,7 +64,7 @@
 &lt;p&gt;
 	So you have learned how to prepare, how to kill, and where to run in case of the apocalypse. But what now? You can just hide in a remote location for the rest of your life and live as a coward, or you can do the right thing and try to find the antidote to restore all hope in humanity. Whatever you decision, just remember; don't get bitten, and have fun!
 &lt;/p&gt;</description>
-				<link>http://www.miguelmota.com/how-to-survive-a-zombie-outbreak</link>
+				<link>http://www.miguelmota.com/blog/how-to-survive-a-zombie-outbreak</link>
 				<pubDate>22 Jan 2012</pubDate>
 			</item>
 		
@@ -121,7 +121,7 @@ and then output the compressed files in a new directory called &lt;code&gt;compr
 the end fo the command, so we use &lt;code&gt;srcfile&lt;/code&gt; to place it where we want it. &lt;code&gt;targetfile&lt;/code&gt; is used to add the target filenames to the command or else they'll be left out. The &lt;code&gt;mapper&lt;/code&gt; type &lt;code&gt;glob&lt;/code&gt; means that it will substitue the &lt;code&gt;*&lt;/code&gt; in the &lt;code&gt;to&lt;/code&gt; pattern with the text that matches the &lt;code&gt;*&lt;/code&gt; in the &lt;code&gt;from&lt;/code&gt; pattern.&lt;/p&gt;
 
 &lt;p&gt;Now run the &lt;code&gt;build.xml&lt;/code&gt; as an &lt;code&gt;Ant Build&lt;/code&gt; and everything should go as planned. I hope this helped!&lt;/p&gt;</description>
-				<link>http://www.miguelmota.com/ant-task-to-compress-html-files</link>
+				<link>http://www.miguelmota.com/blog/ant-task-to-compress-html-files</link>
 				<pubDate>14 Oct 2011</pubDate>
 			</item>
 		
@@ -220,7 +220,7 @@ Before the &lt;code&gt;$.getJSON()&lt;/code&gt; function, add:&lt;/p&gt;
 &lt;p&gt;Obviously replace my username with yours and that's it!&lt;/p&gt;
 
 &lt;p&gt;I know there might be better ways of doing this, if so let us know in the comments!&lt;/p&gt;</description>
-				<link>http://www.miguelmota.com/display-latest-delicious-bookmarks-with-jquery</link>
+				<link>http://www.miguelmota.com/blog/display-latest-delicious-bookmarks-with-jquery</link>
 				<pubDate>11 Oct 2011</pubDate>
 			</item>
 		
@@ -315,7 +315,7 @@ Before the &lt;code&gt;$.getJSON()&lt;/code&gt; function, add:&lt;/p&gt;
 &lt;p&gt;Download &lt;a href='/styles/reset.css' rel='external'&gt;reset.css&lt;/a&gt; | &lt;a href='/styles/reset.min.css' rel='external'&gt;reset.min.css&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;This stylesheet is released under the &lt;a href='http://creativecommons.org/licenses/by/3.0/' rel='external'&gt;Creative Commons Attribution 3.0 License&lt;/a&gt;, so feel free to use it!&lt;/p&gt;</description>
-				<link>http://www.miguelmota.com/html5-reset-stylesheet</link>
+				<link>http://www.miguelmota.com/blog/html5-reset-stylesheet</link>
 				<pubDate>09 Aug 2011</pubDate>
 			</item>
 		
@@ -493,7 +493,7 @@ it should look like this:&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;p&gt;That's it folks! You should now have a functioning mini tooltip plugin. If I made mistakes or if you would like to add, please comment! any feedback is greatly appreciated.&lt;/p&gt;</description>
-				<link>http://www.miguelmota.com/make-an-awesome-tooltip-with-jquery</link>
+				<link>http://www.miguelmota.com/blog/make-an-awesome-tooltip-with-jquery</link>
 				<pubDate>24 May 2011</pubDate>
 			</item>
 		
@@ -502,7 +502,7 @@ it should look like this:&lt;/p&gt;
 				<description>&lt;p&gt;Why hello there, and welcome to my blog. I am using &lt;a href='https://github.com/mojombo/jekyll' rel='external'&gt;jekyll&lt;/a&gt;, a static site generator, and it's being hosted on &lt;a href='http://pages.github.com/' rel='external'&gt;GitHub Pages&lt;/a&gt;. 
 I will blog about all things web, usually about code and design tips, tricks and techniques.&lt;/p&gt;
 &lt;p&gt;So yep, that's pretty much it!&lt;/p&gt;</description>
-				<link>http://www.miguelmota.com/hello-world</link>
+				<link>http://www.miguelmota.com/blog/hello-world</link>
 				<pubDate>30 Mar 2011</pubDate>
 			</item>
 		
