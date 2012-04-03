@@ -175,5 +175,44 @@
         window.location='/amanda';
     });
 </script>
+
+
+
+
+<script type='text/javascript'>
+function init()
+{
+  var canvas = document.getElementById('MyCanvas');
+  var ctx = canvas.getContext('2d');
+  var x = null;
+  var y;
+  canvas.onmousedown = function(e)
+  {
+    x = e.pageX - canvas.offsetLeft;
+    y = e.pageY - canvas.offsetTop;
+    ctx.beginPath();
+    ctx.moveTo(x,y);
+  }
+  canvas.onmouseup = function(e)
+  {
+    x = null;
+  }  
+  canvas.onmousemove = function(e)
+  {
+    if (x==null) return;
+    x = e.pageX - canvas.offsetLeft;
+    y = e.pageY - canvas.offsetLeft;
+    ctx.lineTo(x,y);
+    ctx.stroke();
+  }  
+
+  canvas.ontouchstart = function(e) {
+  if (e.touches) e = e.touches[0];
+  return false;
+}
+}
+</script></head><body onload='init()'>
+<canvas id='MyCanvas' width='500' height='500' style='border:1px solid #777'>
+</canvas>
 </body>
 </html>
