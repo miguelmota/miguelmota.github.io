@@ -63,6 +63,7 @@ function continuePaint(evt) {
   if(buttonDown)
   {
     context.lineTo(evt.touches[0].pageX,evt.touches[0].pageY);
+    context.lineWidth = 10;
     context.stroke();
   }
 }
