@@ -17,6 +17,8 @@ title: Manda Panda
 <br />-->
 <button id='canvasClearBtn'>clear</button>
 <br />
+<canvas height=12 width=300>NOTE: BROWSER <!--[if lt IE 9]> (INTERNET EXPLORER) <![endif]--> IS NOT SUPPORTED!</canvas>
+<br />
 <canvas id='canvas' height=603 width=452></canvas>
 
 
@@ -132,6 +134,10 @@ title: Manda Panda
     }
 
     $('#canvasClearBtn').click(function(){
-        context.clearRect(0,0,context.canvas.width,context.canvas.height)
+        context.clearRect(0,0,context.canvas.width,context.canvas.height);
+        clickX = [];
+        clickY = [];
+        clickDrag = [];
+        redraw();
     });
 </script>
