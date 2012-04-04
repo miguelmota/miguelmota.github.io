@@ -1,20 +1,121 @@
----
-layout: amanda
-title: Manda Panda
----
-<div class='title'>Draw on Manda Panda</div>
+<!doctype html>
+<html>
+<head>
+  <meta name='description' content='' />
+  <title>Manda Panda</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0;' />
+  <link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light+Two' rel='stylesheet'>
+  <link href='/styles/reset.min.css' rel='stylesheet'>
+  <script src='/scripts/jquery.min.js'></script>
+  <!--[if lt IE 9]>
+    <script src='/scripts/html5.js'></script>
+    <script src='/scripts/excanvas.js'></script>
+  <![endif]-->
+  <style>
+  body {
+    font-family: 'Shadows Into Light Two', Helvetica, sans-serif;
+  }
+  .toolbar {
+    background: #000;
+    width: 100%;
+  }
+  .site-title {
+    margin: 0 auto;
+    text-align: center;
+    width: 600px;
+  }
+  .site-title a {
+    color: #fff;
+    display: block;
+    font-size: 22px;
+    font-weight: bold;
+    padding: 10px;
+  }
+  .main-wrap {
+    border: 1px solid #ddd;
+    height: 600px;
+    margin: 0 auto;
+    width: 600px;
+  }
+  .options {
+    border-bottom: 1px solid #ccc;
+    padding: 5px;
+    text-transform: lowercase;
+  }
+  .options-btn {
+    background: #000;
+    border: 1px solid black;
+    font-weight: bold;
+    height: 30px;
+    padding: 5px;
+    width: 30px;
+  }
+  #canvasColorBlackBtn {
+    color: #000;
+  }
+  #canvasColorRedBtn {
+    background: red;
+    border-color: red;
+    color: red;
+  }
+  #canvasColorGreenBtn {
+    background: green;
+    border-color: green;
+    color: green;
+  }
+  #canvasColorBlueBtn {
+    background: blue;
+    border-color: blue;
+    color: blue;
+  }
+  #canvasColorYellowBtn {
+    background: yellow;
+    border-color: yellow;
+    color: yellow;
+  }
+  #canvasClearBtn {
+    background: transparent;
+    border-color: black;
+    float: right;
+    height: auto;
+    width: auto;
+  }
+  #canvas {
+    background: transparent url('/assets/amanda/amanda.jpg') no-repeat 0 0;
+    border: 1px solid red;
+    clear: both;
+    display: block;
+  }
+  #canvas:hover {
+    cursor: pointer;
+  }
+  #canvas:active {
+    cursor: crosshair;
+  }
+  #paintbox {
+    background: #fff;
+    border: 1px solid red;
+    height: 400px;
+    width: 100%;
+  }
+  </style>
+</head>
+<body>
+  <div class='toolbar'>
+    <h1 class='site-title'><a href='./'>Draw on Manda Panda!</a></h1>
+  </div>
 
-  <p><input type="button" value="clear" id="clearBtn"/>
+  <div class='main-wrap'>
 
+    <div class='options'>
+      <input type='button' id='canvasColorBlackBtn' class='options-btn' value='Black' />
+      <input type='button' id='canvasColorRedBtn' class='options-btn' value='Red' />
+      <input type='button' id='canvasColorGreenBtn' class='options-btn' value='Green' />
+      <input type='button' id='canvasColorBlueBtn' class='options-btn' value='Blue' />
+      <input type='button' id='canvasColorYellowBtn' class='options-btn' value='Yellow' />
+      <input type='button' id='canvasClearBtn' class='options-btn' value='Clear'/>
+    </div>
 
-<button id='canvasColorBlackBtn'>black</button>
-<button id='canvasColorPurpleBtn'>purple</button>
-<button id='canvasColorGreenBtn'>green</button>
-<button id='canvasColorYellowBtn'>yellow</button>
-<button id='canvasColorBrownBtn'>brown</button>
-
-
-  </p>
   <canvas id="paintBox">
     Your browser doesnot support canvas
   </canvas>
@@ -24,28 +125,28 @@ title: Manda Panda
 
 
 
-      var colorBlack = "#000";
-    var colorPurple = "#cb3594";
-    var colorGreen = "#659b41";
-    var colorYellow = "#ffcf33";
-    var colorBrown = "#986928";
+    var colorBlack = "black";
+    var colorRed = "red";
+    var colorGreen = "green";
+    var colorBlue = "blue";
+    var colorYellow = "yellow";
 
     var curColor = colorBlack
 
     $('#canvasColorBlackBtn').click(function(){
         curColor = colorBlack;
     });
-    $('#canvasColorPurpleBtn').click(function(){
-        curColor = colorPurple;
+    $('#canvascolorRedBtn').click(function(){
+        curColor = colorRed;
     });
     $('#canvasColorGreenBtn').click(function(){
         curColor = colorGreen;
     });
-    $('#canvasColorYellowBtn').click(function(){
-        curColor = colorYellow;
+    $('#canvasColorBlueBtn').click(function(){
+        curColor = colorBlue;
     });
-     $('#canvasColorBrownBtn').click(function(){
-        curColor = colorBrown;
+     $('#canvasColorYellowBtn').click(function(){
+        curColor = colorYellow;
     });
 
 
@@ -65,52 +166,55 @@ title: Manda Panda
   function initApp() {
     setTimeout(function() { window.scrollTo(0, 1); }, 10); //hide the address bar of the browser.
     canvas = document.getElementById('paintBox');
-    clearBtn = document.getElementById('clearBtn');
+    clearBtn = document.getElementById('canvasClearBtn');
 
     setCanvasDmiension();
     initializeEvents();
 
     context = canvas.getContext('2d'); //get the 2D drawing context of the canvas
-}
-
-function setCanvasDmiension() {
-  //canvas.width = 300; //window.innerWidth;
-  canvas.height = window.innerHeight; //setting the height of the canvas
-}
-
-function initializeEvents() {
-  canvas.addEventListener('touchstart', startPaint, false);
-  canvas.addEventListener('touchmove', continuePaint, false);
-  canvas.addEventListener('touchend', stopPaint, false);
-
-  clearBtn.addEventListener('touchend', clearCanvas,false);
-}
-
-function clearCanvas() {
-  context.clearRect(0,0,canvas.width,canvas.height);
-}
-
-function startPaint(evt) {
-  if(!buttonDown)
-  {
-    context.beginPath();
-    context.moveTo(evt.touches[0].pageX, evt.touches[0].pageY);
-    buttonDown = true;
   }
-  evt.preventDefault();
-}
 
-function continuePaint(evt) {
-  if(buttonDown)
-  {
-    context.lineTo(evt.touches[0].pageX,evt.touches[0].pageY);
-    context.lineWidth = 10;
-    context.strokeStyle = curColor;
-    context.stroke();
+  function setCanvasDmiension() {
+    //canvas.width = 300; //window.innerWidth;
+    canvas.height = window.innerHeight; //setting the height of the canvas
   }
-}
 
-function stopPaint() {
-  buttonDown = false;
-}
-</script>
+  function initializeEvents() {
+    canvas.addEventListener('touchstart', startPaint, false);
+    canvas.addEventListener('touchmove', continuePaint, false);
+    canvas.addEventListener('touchend', stopPaint, false);
+
+    clearBtn.addEventListener('touchend', clearCanvas,false);
+  }
+
+  function clearCanvas() {
+    context.clearRect(0,0,canvas.width,canvas.height);
+  }
+
+  function startPaint(evt) {
+    if(!buttonDown)
+    {
+      context.beginPath();
+      context.moveTo(evt.touches[0].pageX, evt.touches[0].pageY);
+      buttonDown = true;
+    }
+    evt.preventDefault();
+  }
+
+  function continuePaint(evt) {
+    if(buttonDown)
+    {
+      context.lineTo(evt.touches[0].pageX,evt.touches[0].pageY);
+      context.lineWidth = 10;
+      context.strokeStyle = curColor;
+      context.stroke();
+    }
+  }
+
+  function stopPaint() {
+    buttonDown = false;
+  }
+  </script>
+</div>
+</body>
+</html>

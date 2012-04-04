@@ -1,48 +1,4 @@
-<!doctype html>
-<html>
-<head>
-	<meta name='description' content='' />
-	<title>Manda Panda</title>
-	<meta name='viewport' content='width=450, height=603, initial-scale=1, maximum-scale=1, user-scalable=1;' />
-	<link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light+Two' rel='stylesheet'>
-	<script src='/scripts/jquery.min.js'></script>
-	<!--[if lt IE 9]>
-		<script src='/scripts/html5.js'></script>
-		<script src='/scripts/excanvas.js'></script>
-	<![endif]-->
-	<style>
-	body {
-		background: transparent url('/assets/amanda/amanda.jpg') no-repeat 50% 80px;
-		font-family: 'Shadows Into Light Two', cursive;
-		height: 603px;
-	}
-	.title {
-		font-size: 28px;
-	}
-	#canvas {
-		background: transparent url('/assets/amanda/amanda.jpg') no-repeat 0 0;
-		border: 1px solid #ddd;
-		clear: both;
-		display: block;
-		height: 603px;
-	}
-	#canvas:hover {
-		cursor: pointer;
-	}
-	#canvas:active {
-		cursor: crosshair;
-	}
-	#canvasClearBtn {
-		clear: both;
-	}
-	#paintbox {
-		border: 1px solid #9a9a9a;
-		width: 100%;
-	}
-	</style>
-</head>
-<body>
-	<div class='title'>Draw on Manda Panda</div>
+<div class='title'>Draw on Manda Panda</div>
 
 <button id='canvasClearBtn'>clear</button>
 
@@ -218,5 +174,3 @@ function init()
 </script></head><body onload='init()'>
 <canvas id='MyCanvas' width='500' height='500' style='border:1px solid #777'>
 </canvas>
-</body>
-</html>
