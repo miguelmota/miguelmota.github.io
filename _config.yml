@@ -1,7 +1,6 @@
 destination: ./_site
-#paginate: 10
-#paginate_file: blog.html
+paginate: 10
 permalink: /:categories/:title
-#plugins: ./_plugins
+plugins: ./_plugins
 pygments: true
 source: ./src
