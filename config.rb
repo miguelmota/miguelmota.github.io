@@ -1,0 +1,1 @@
+images_dir = "assets"
