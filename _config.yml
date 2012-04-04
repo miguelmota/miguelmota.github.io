@@ -1,6 +1,6 @@
 destination: ./_site
 paginate: 10
-paginate_file: blog.html
+#paginate_file: blog.html
 permalink: /:categories/:title
 plugins: ./_plugins
 pygments: true
