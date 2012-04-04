@@ -6,6 +6,7 @@
 }
 .about-photo-wrap .photo {
 	min-height: 300px;
+	width: 100%;
 }
 .about-photo-desc {
 	color: #1d1d1d;

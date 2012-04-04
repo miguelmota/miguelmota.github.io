@@ -872,6 +872,7 @@ input.search-input {
 }
 .content {
 	height: auto;
+	position: relative;
 	width: auto;
 }
 .content-item {
