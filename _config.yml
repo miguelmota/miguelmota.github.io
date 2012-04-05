@@ -1,6 +1,5 @@
 destination: ./_site
 paginate: 10
 permalink: /:categories/:title
-plugins: ./_plugins
 pygments: true
 source: ./src
