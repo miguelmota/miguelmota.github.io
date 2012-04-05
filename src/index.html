@@ -27,7 +27,7 @@ style: stream
     <div class='stream-wrap stream-blog content-item'>
         <a class='stream-logo stream-logo-blog mtip' href='/blog' title='my blog'>Blog</a>
         <ul class='stream-ul stream-ul-blog'>
-            {% for post in site.categories.blog limit:3 %}
+            {% for post in site.posts limit:3 %}
                 <li><a class='status' href='{{ post.url }}'><span class='icon icon-text-16'></span> {{ post.title }} <time class='status-date' datetime='{{ post.date | date:"%d %B %Y"  }}'>{{ post.date | date:"%a %b, %d" }}</time><span class='clear'></span></a></li>
             {% endfor %}
         </ul>
