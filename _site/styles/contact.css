@@ -39,3 +39,20 @@
 .thank-you-name {
 	font-size: 20px;
 }
+
+@media all and (max-width: 640px) {
+	.contact-qrcode {
+		display: none;
+	}
+	.contact-info-wrap {
+		line-height: 150%;
+		padding-bottom: 15px;
+		position: static;
+		right: 0;
+		top: 0;
+	}
+	.contact-form-message {
+		height: 200px;
+		width: 100%;
+	}
+}

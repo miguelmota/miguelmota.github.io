@@ -1434,24 +1434,7 @@ h6 {
 	/* ------------------------
 	 * Stream wrap
 	 * --------------------- */
-	 .stream-position-reset-wrap {
-		top: 10px;
-		width: 100%;
-	}
-	.stream-wrap {
-		height: auto;
-		width: 100%;
-	}
-	.latitude-map-button,
-	.stream-sort-wrap {
-		position: absolute;
-		right: 5px;
-		top: 5px;
-	}
-	.stream-delicious .status-date,
-	.stream-wakoopa .status-date {
-		display: none;
-	}
+
 	
 	/* ------------------------
 	 * Flickr carousel
@@ -1467,129 +1450,22 @@ h6 {
   	/* ------------------------
   	 * About page
   	 * --------------------- */
-  	.about-photo-wrap {
-  	    font-size: 12px;
-  	}
-  	.about-photo-wrap .photo {
-		min-height: 50px;
-	}
-    .about-photo-desc {
-    	font-size: 120%;
-    	right: 3%;
-		top: 3%;
-	}
-	.about-photo-desc p:first-child {
-		font-size: 160%;
-	}
-	.about-photo-desc br {
-    	display: block;
-	}
-	.about-column-left {
-		float: none;
-		width: 100%;
-	}
-	.about-column-right {
-		float: none;
-		width: 100%;
-	}
-	#mapabout {
-		width: 100%;
-		height: 200px;
-	}
+
 
 	/* ------------------------
 	 * Portfolio page
 	 * --------------------- */
-	.project-sort-wrap {
-		left: 0;
-		top: 15px;
-		width: 100%;
-	}
-	.project {
-		clear: both;
-		height: 100%;
-		width: 100%;
-	}
-	.project .image-container {
-		clear: both;
-		height: 100%;
-		position: relative;
-		width: 100%;
-	}
-	.project .image-container img {
-		height: auto;
-		width: 100%;
-	}
-	.project-overlay-popup {
-		display: none;
-	}
-	.project-pagination {
-		width: 100%;
-	}
+
 	
 	/* ------------------------
 	 * Contact page
 	 * --------------------- */
-	.contact-qrcode {
-		display: none;
-	}
-	.contact-info-wrap {
-		line-height: 150%;
-		padding-bottom: 15px;
-		position: static;
-		right: 0;
-		top: 0;
-	}
-	.contact-form-message {
-		height: 200px;
-		width: 100%;
-	}
+
 	
 	/* ------------------------
 	 * Blog page
 	 * --------------------- */
-	.blog-post-sort-wrap {
-		left: 0;
-		top: 10px;
-		width: 100%;
-	}
-	.blog-post-item h1 a {
-		font-size: 20px;
-	}
-	.blog-post-list {
-		width: 100%;
-	}
-	.blog-post-list	.blog-post-item {
-		width: 100%;
-	}
-	.blog-post-list h1 {
-		width: 100%;
-	}
-	.blog-post-list h1 a {
-		font-size: 18px;
-		width: 100%;
-	}
-	.blog-post-list-date {
-		font-size: 12px;
-	}
-	.blog-post-list-date .icon {
-		display: none;
-	}
-	.blog-post-single h1 a {
-		font-size: 20px;
-	}
-	input.short-url {
-		display: none;
-	}
-	.pagination {
-		width: 100%;
-	}
-	.blog-post-end-wrap {
-		width: 100%;
-	}
-	#disqus_thread {
-		width: 100%;
-	}
+
 
 	/* ------------------------
 	 * Top link

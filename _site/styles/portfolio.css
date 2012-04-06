@@ -5,7 +5,7 @@
 .project-sort-wrap {
 	left: 500px;
 	position: absolute;
-	top: 80px;
+	top: -40px;
 	text-align: right;
 	width: 130px;
 }
@@ -185,4 +185,37 @@
 .project-pagination {
 	position: relative;
 	width: 750px;
+}
+
+@media all and (max-width: 640px) {
+	.project-sort-wrap {
+		left: 0;
+		top: -35px;
+		width: 100%;
+	}
+	.project {
+		clear: both;
+		height: 100%;
+		width: 100%;
+	}
+	.project .image-container {
+		clear: both;
+		height: 100%;
+		position: relative;
+		width: 100%;
+	}
+	.project .image-container img {
+		height: auto;
+		width: 100%;
+	}
+	.project-overlay-popup {
+		display: none;
+	}
+	.project-image {
+		height: auto;
+		width: 100%;
+	}
+	.project-pagination {
+		width: 100%;
+	}
 }

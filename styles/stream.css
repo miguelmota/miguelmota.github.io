@@ -373,3 +373,24 @@
 	cursor: text; 
 	text-shadow: 0 -1px 0 rgba(0,0,0,.5);
 }
+
+@media all and (max-width: 640px) {
+	.stream-position-reset-wrap {
+		top: 10px;
+		width: 100%;
+	}
+	.stream-wrap {
+		height: auto;
+		width: 100%;
+	}
+	.latitude-map-button,
+	.stream-sort-wrap {
+		position: absolute;
+		right: 5px;
+		top: 5px;
+	}
+	.stream-delicious .status-date,
+	.stream-wakoopa .status-date {
+		display: none;
+	}
+}

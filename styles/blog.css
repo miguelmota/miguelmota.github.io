@@ -15,7 +15,7 @@
 	left: 710px;
 	position: absolute;
 	text-align: right;
-	top: 80px;
+	top: -40px;
 	width: 40px;
 }
 /*
@@ -261,4 +261,49 @@ input.short-url:focus {
 .blog-post-end-wrap {
 	position: relative;
 	width: 750px;
+}
+
+@media all and (max-width: 640px) {
+	.blog-post-sort-wrap {
+		left: 0;
+		top: -40px;
+		width: 100%;
+	}
+	.blog-post-item h1 a {
+		font-size: 20px;
+	}
+	.blog-post-list {
+		width: 100%;
+	}
+	.blog-post-list	.blog-post-item {
+		width: 100%;
+	}
+	.blog-post-list h1 {
+		width: 100%;
+	}
+	.blog-post-list h1 a {
+		font-size: 18px;
+		width: 100%;
+	}
+	.blog-post-list-date {
+		font-size: 12px;
+	}
+	.blog-post-list-date .icon {
+		display: none;
+	}
+	.blog-post-single h1 a {
+		font-size: 20px;
+	}
+	input.short-url {
+		display: none;
+	}
+	.pagination {
+		width: 100%;
+	}
+	.blog-post-end-wrap {
+		width: 100%;
+	}
+	#disqus_thread {
+		width: 100%;
+	}
 }

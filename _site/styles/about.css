@@ -46,3 +46,35 @@
 	position: absolute;
 	top: 45%;
 }
+
+@media all and (max-width: 640px) {
+  	.about-photo-wrap {
+  	    font-size: 12px;
+  	}
+  	.about-photo-wrap .photo {
+		min-height: 50px;
+	}
+    .about-photo-desc {
+    	font-size: 120%;
+    	right: 3%;
+		top: 3%;
+	}
+	.about-photo-desc p:first-child {
+		font-size: 160%;
+	}
+	.about-photo-desc br {
+    	display: block;
+	}
+	.about-column-left {
+		float: none;
+		width: 100%;
+	}
+	.about-column-right {
+		float: none;
+		width: 100%;
+	}
+	#mapabout {
+		width: 100%;
+		height: 200px;
+	}
+}
