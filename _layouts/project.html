@@ -1,0 +1,19 @@
+---
+layout: default
+style: portfolio
+---
+<section class='content portfolio'>
+	{{ content }}
+	<div class='pagination project-pagination'>
+		{% if page.previous.category == 'portfolio' %} 
+		    {% if page.previous.url  %} 
+				<a class='pagination-previous' href='{{ page.previous.url }}'>&#171; {{ page.previous.title | truncatewords: 15 }}</a>
+		    {% endif %}
+		{% endif %}
+		{% if page.next.category == 'portfolio' %} 
+		    {% if page.next.url %}
+			    <a class='pagination-next' href='{{ page.next.url }}'>{{ page.next.title | truncatewords: 15 }} &#187;</a>
+		    {% endif %}
+		{% endif %}
+	</div>
+</section>

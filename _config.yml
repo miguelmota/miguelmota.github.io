@@ -1,5 +1,2 @@
-#destination: ./_site
-#paginate: 10
 permalink: /:categories/:title
 pygments: true
-source: ./src

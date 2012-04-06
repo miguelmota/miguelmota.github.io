@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+	<meta name='description' content='' />
+	<title>{{ page.title }}</title>
+	<script src='/scripts/jquery.min.js'></script>
+	<script src='/plugins/cookie/jquery.cookie.js'></script>
+	<script>
+	$(document).ready(function(){
+		$.cookie('car', 'bmw', {
+				expires: 7,
+				path: '/'
+			}
+		);
+		
+		$('#cookiename').html($.cookie('car'));
+	});
+	</script>
+</head>
+<body>
+	{{ content }}
+</body>
+</html>

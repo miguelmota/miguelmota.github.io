@@ -1,0 +1,17 @@
+<script>
+	var path = '';
+	var href = document.location.href;
+	var s = href.split('/');
+	var sub2 = '';
+	if (s[3] == 'portfolio') {
+		sub2 = 'sub2';	
+		document.write("<span class='sub-mobile'><span class='slash'>/</span><a class='sub' href='/portfolio')'>folio</a></span>");
+	}
+	document.write("<a href='/'><span class='miguel'>Miguel</span><span class='mota'>Mota</span></a>");
+	for (var i=3; i<(s.length-1); i++) {
+		path = "<span class='slash'>/</span><span class='sub "+sub2+"'><a href='"+href.substring(0,href.indexOf('/'+s[i])+s[i].length+1)+"'>"+s[i]+"</a></span>";
+		document.write(path);
+	}
+	path = "<span class='slash'>/</span><span class='sub "+sub2+"'><a href='"+href.substring(0,href.indexOf('/'+s[i])+s[i].length+1)+"'>"+s[s.length-1].substring(0,s[s.length-1].lastIndexOf('.'))+"</a></span>";
+	document.write(path);
+</script>
