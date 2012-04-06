@@ -1492,26 +1492,9 @@ h6 {
 	/* ------------------------
 	 * Stream Carousel
 	 * --------------------- */
-	.stream-carousel {
-		width: 400px;
-	}
 
 	/* ------------------------
 	 * About
 	 * --------------------- */
-	.about-photo-desc {
-    	font-size: 18px;
-    	right: 20px;
-		top: 10px;
-	}
-	.about-photo-desc p:first-child {
-		font-size: 24px;
-	}
-	.about-column-left {
-		float: left;
-		width: 70%;
-	}
-	.about-column-right {
-		float: right;
-		width: 28%;
-	}
+
+}

@@ -73,3 +73,9 @@
 .gsc-search-button,
 .gcsc-branding-text,
 .gcsc-branding-img-noclear  {}
+
+@media all and (max-width: 640px) {
+	.cse-wrap {
+		width: 100%;
+	}
+}

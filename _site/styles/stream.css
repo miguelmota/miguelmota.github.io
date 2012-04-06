@@ -394,3 +394,9 @@
 		display: none;
 	}
 }
+
+@media all and (min-width: 480px) and (max-width: 640px) {
+	.stream-carousel {
+		width: 400px;
+	}
+}
