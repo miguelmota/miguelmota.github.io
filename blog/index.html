@@ -22,7 +22,7 @@ style: blog
 				<div class='blog-post-tags'>
 					<span class='icon icon-tags-16 icon-no-hover'></span>
 					{% for tag in post.tags %}
-						<span name='{{ tags | first }}'>[{{ tag | first }}]</span>
+						<span name='{{ tag | first }}'>[{{ tag | first }}]</span>
 					{% endfor %}
 				</div>
 				<div class='blog-post-footer'>
