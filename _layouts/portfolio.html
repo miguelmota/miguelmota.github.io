@@ -23,7 +23,17 @@ style: portfolio
 					<li class='project-view'>
 						<a href='/portfolio/{{ project.project-name }}'><span class='icon icon-link-16'></span> view details &#8594;</a>
 						{% if project.project-url %}
-							<a href='http://{{ project.project-url }}' rel='external'><span class='icon icon-world-16'></span> go to site &#8594;</a>
+							<a href='http://{{ project.project-url }}' rel='external'><span class='icon icon-world-16'></span> go to 
+							{% if project.project-name == 'oblivion' %}
+								theme
+							{% else %}
+							{% if project.project-name == 'mtip' %}
+								plugin
+							{% else %}
+								site
+							{% endif %}
+							{% endif %}
+							&#8594;</a>
 						{% endif %}
 					</li>
 				</ul>

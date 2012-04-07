@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta name='description' content='' />
-  <title>Amanda!</title>
+  <title>manda! :)</title>
   <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0;' />
   <link href='/assets/manda/favicon.ico' rel='shortcut icon' type='image/ico' />
   <link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light+Two' rel='stylesheet'>
@@ -17,6 +17,12 @@
         $container.masonry({
           itemSelector: '.masonry-photo'
         });
+      });
+
+      // External links
+      $('a[rel*=external]').live('click',function(e){
+        window.open(this.href);
+        return false;
       });
 
     });
@@ -36,44 +42,45 @@
     .masonry-photo {
       height: auto;
       margin: 5px;
-      max-width: 400px;
+      max-width: 350px;
       width: 100%;
     }
   </style>
 </head>
 <body>
   <div id='masonry-wrap'>
-    <img class='masonry-photo' src='/assets/manda/3.jpeg' alt='' />
-    <img class='masonry-photo' src='/assets/manda/12.png' alt='' />
-    <img class='masonry-photo' src='/assets/manda/2.jpg' alt='' />
-    <img class='masonry-photo' src='/assets/manda/4.png' alt='' />
-    <img class='masonry-photo' src='/assets/manda/7.png' alt='' />
-    <img class='masonry-photo' src='/assets/manda/8.jpg' alt='' />
-    <img class='masonry-photo' src='/assets/manda/1.png' alt='' />
-    <img class='masonry-photo' src='/assets/manda/27.jpg' alt='' />
-    <img class='masonry-photo' src='/assets/manda/9.jpg' alt='' />
-    <img class='masonry-photo' src='/assets/manda/10.jpg' alt='' />
-    <img class='masonry-photo' src='/assets/manda/11.jpg' alt='' />
-    <img class='masonry-photo' src='/assets/manda/5.png' alt='' />
-    <img class='masonry-photo' src='/assets/manda/16.jpg' alt='' />
-    <img class='masonry-photo' src='/assets/manda/26.jpg' alt='' />
-    <img class='masonry-photo' src='/assets/manda/30.jpg' alt='' />
-    <img class='masonry-photo' src='/assets/manda/13.jpg' alt='' />
-    <img class='masonry-photo' src='/assets/manda/6.png' alt='' />
-    <img class='masonry-photo' src='/assets/manda/14.jpg' alt='' />
-    <img class='masonry-photo' src='/assets/manda/15.jpg' alt='' />
-    <img class='masonry-photo' src='/assets/manda/17.jpg' alt='' />
-    <img class='masonry-photo' src='/assets/manda/20.jpg' alt='' />
-    <img class='masonry-photo' src='/assets/manda/21.jpg' alt='' />
-    <img class='masonry-photo' src='/assets/manda/22.jpg' alt='' />
-    <img class='masonry-photo' src='/assets/manda/23.jpg' alt='' />
-    <img class='masonry-photo' src='/assets/manda/24.jpg' alt='' />
-    <img class='masonry-photo' src='/assets/manda/28.jpg' alt='' />
-    <img class='masonry-photo' src='/assets/manda/29.jpg' alt='' />
-    <img class='masonry-photo' src='/assets/manda/30.jpg' alt='' />
-    <img class='masonry-photo' src='/assets/manda/31.jpg' alt='' />
-    <img class='masonry-photo' src='/assets/manda/32.jpg' alt='' />
-    <img class='masonry-photo' src='/assets/manda/25.png' alt='' />
+    <a href='/assets/manda/3.jpeg' rel='external'><img class='masonry-photo' src='/assets/manda/3.jpeg' alt='' /></a>
+    <a href='/assets/manda/12.png' rel='external'><img class='masonry-photo' src='/assets/manda/12.png' alt='' /></a>
+    <a href='/assets/manda/2.jpg' rel='external'><img class='masonry-photo' src='/assets/manda/2.jpg' alt='' /></a>
+    <a href='/assets/manda/4.png' rel='external'><img class='masonry-photo' src='/assets/manda/4.png' alt='' /></a>
+    <a href='/assets/manda/7.png' rel='external'><img class='masonry-photo' src='/assets/manda/7.png' alt='' /></a>
+    <a href='/assets/manda/8.jpg' rel='external'><img class='masonry-photo' src='/assets/manda/8.jpg' alt='' /></a>
+    <a href='/assets/manda/1.png' rel='external'><img class='masonry-photo' src='/assets/manda/1.png' alt='' /></a>
+    <a href='/assets/manda/27.jpg' rel='external'><img class='masonry-photo' src='/assets/manda/27.jpg' alt='' /></a>
+    <a href='/assets/manda/9.jpg' rel='external'><img class='masonry-photo' src='/assets/manda/9.jpg' alt='' /></a>
+    <a href='/assets/manda/10.jpg' rel='external'><img class='masonry-photo' src='/assets/manda/10.jpg' alt='' /></a>
+    <a href='/assets/manda/11.jpg' rel='external'><img class='masonry-photo' src='/assets/manda/11.jpg' alt='' /></a>
+    <a href='/assets/manda/5.png' rel='external'><img class='masonry-photo' src='/assets/manda/5.png' alt='' /></a>
+    <a href='/assets/manda/16.jpg' rel='external'><img class='masonry-photo' src='/assets/manda/16.jpg' alt='' /></a>
+    <a href='/assets/manda/26.jpg' rel='external'><img class='masonry-photo' src='/assets/manda/26.jpg' alt='' /></a>
+    <a href='/assets/manda/30.jpg' rel='external'><img class='masonry-photo' src='/assets/manda/30.jpg' alt='' /></a>
+    <a href='/assets/manda/13.jpg' rel='external'><img class='masonry-photo' src='/assets/manda/13.jpg' alt='' /></a>
+    <a href='/assets/manda/6.png' rel='external'><img class='masonry-photo' src='/assets/manda/6.png' alt='' /></a>
+    <a href='/assets/manda/14.jpg' rel='external'><img class='masonry-photo' src='/assets/manda/14.jpg' alt='' /></a>
+    <a href='/assets/manda/15.jpg' rel='external'><img class='masonry-photo' src='/assets/manda/15.jpg' alt='' /></a>
+    <a href='/assets/manda/17.jpg' rel='external'><img class='masonry-photo' src='/assets/manda/17.jpg' alt='' /></a>
+    <a href='/assets/manda/20.jpg' rel='external'><img class='masonry-photo' src='/assets/manda/20.jpg' alt='' /></a>
+    <a href='/assets/manda/21.jpg' rel='external'><img class='masonry-photo' src='/assets/manda/21.jpg' alt='' /></a>
+    <a href='/assets/manda/22.jpg' rel='external'><img class='masonry-photo' src='/assets/manda/22.jpg' alt='' /></a>
+    <a href='/assets/manda/23.jpg' rel='external'><img class='masonry-photo' src='/assets/manda/23.jpg' alt='' /></a>
+    <a href='/assets/manda/24.jpg' rel='external'><img class='masonry-photo' src='/assets/manda/24.jpg' alt='' /></a>
+    <a href='/assets/manda/28.jpg' rel='external'><img class='masonry-photo' src='/assets/manda/28.jpg' alt='' /></a>
+    <a href='/assets/manda/29.jpg' rel='external'><img class='masonry-photo' src='/assets/manda/29.jpg' alt='' /></a>
+    <a href='/assets/manda/30.jpg' rel='external'><img class='masonry-photo' src='/assets/manda/30.jpg' alt='' /></a>
+    <a href='/assets/manda/31.jpg' rel='external'><img class='masonry-photo' src='/assets/manda/31.jpg' alt='' /></a>
+    <a href='/assets/manda/32.jpg' rel='external'><img class='masonry-photo' src='/assets/manda/32.jpg' alt='' /></a>
+    <a href='/assets/manda/25.png' rel='external'><img class='masonry-photo' src='/assets/manda/25.png' alt='' /></a>
+    <a href='/assets/manda/33.jpg' rel='external'><img class='masonry-photo' src='/assets/manda/33.jpg' alt='' /></a>
   </div>
 </body>
 </html>
