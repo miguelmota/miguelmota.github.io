@@ -125,6 +125,9 @@
 		document.write(path);
 	}
 	path = "<span class='slash'>/</span><span class='sub "+sub2+"'><a href='"+href.substring(0,href.indexOf('/'+s[i])+s[i].length+1)+"'>"+s[s.length-1].substring(0,s[s.length-1].lastIndexOf('.'))+"</a></span>";
+	if(s[3] == '') {
+		path = "<span class='slash'>/</span><span class='sub "+sub2+"'><a href='/'>Stream</a></span>";
+	}
 	document.write(path);
 </script><span class='sub'>Paypal</span></h1>
 <section class='content paypal'>
