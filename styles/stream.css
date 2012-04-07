@@ -1,5 +1,9 @@
 @import url('fancybox.css');
 
+/* ------------------------------------------------
+ * STREAM STYLES
+ * --------------------------------------------- */
+
 .stream-position-reset-wrap {
 	display: none;
 	position: absolute;
@@ -374,6 +378,29 @@
 	text-shadow: 0 -1px 0 rgba(0,0,0,.5);
 }
 
+/* ------------------------------------------------
+ * TABLET STYLES
+ * --------------------------------------------- */
+@media all and (min-width: 641px) and (max-width: 1024px) {
+	.stream-position-reset-wrap {
+    	top: 40px;
+    }
+	.stream-wrap {
+		width: 300px;
+	}	
+	.stream-carousel {
+		width: 400px;
+	}
+	.stream-flickr {
+		clear: both;
+		min-width: 300px;
+		width: auto;
+	}
+}
+
+/* ------------------------------------------------
+ * MOBILE STYLES
+ * --------------------------------------------- */
 @media all and (max-width: 640px) {
 	.stream-position-reset-wrap {
 		top: 10px;
@@ -393,8 +420,18 @@
 	.stream-wakoopa .status-date {
 		display: none;
 	}
+	.stream-carousel {
+		width: 200px;
+	}
+	.stream-flickr {
+		clear: both;
+		min-width: 100%;
+	}
 }
 
+/* ------------------------------------------------
+ * MOBILE STYLES (landscape)
+ * --------------------------------------------- */
 @media all and (min-width: 480px) and (max-width: 640px) {
 	.stream-carousel {
 		width: 400px;

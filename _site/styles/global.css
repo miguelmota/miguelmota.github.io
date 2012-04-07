@@ -1176,111 +1176,11 @@ h6 {
 	}
 
 	/* ------------------------
-	 * Google custom search engine
-	 * --------------------- */
-	.cse-wrap {
-		width: 650px;
-	}
-
-	/* ------------------------
 	 * Main side nav wrap
 	 * --------------------- */
 	.main-side-nav-wrap {
 		padding-top: 30px;
 	}
-
-	/* ------------------------
-	 * Stream wrap
-	 * --------------------- */
-	.stream-position-reset-wrap {
-    	top: 40px;
-    }
-	.stream-wrap {
-		width: 300px;
-	}
-	.stream-latitude {
-	}
-	.stream-blog {
-	}
-	.stream-twitter {
-	}
-	.stream-facebook {
-	}
-	.stream-tumblr {
-	}
-	.stream-delicious {
-	}
-	.stream-lastfm {
-	}
-	.stream-wakoopa {
-	}
-	
-	/* ------------------------
-	 * Flickr carousel
-	 * --------------------- */
-	.stream-carousel {
-		width: 400px;
-	}
-	.stream-flickr {
-		clear: both;
-		min-width: 300px;
-		width: auto;
-	}
-
- 	/* ------------------------
-  	 * About page
-  	 * --------------------- */
-	.about-photo-desc {
-		right: 40px;
-		top: 20px;
-	}
-	 .about-column-left {
-		width: 440px;
-	}
-	.about-column-right {
-		width: 160px;
-	}
-	#mapabout {
-		height: 160px;
-		width: 160px;
-	}
-	 
-	/* ------------------------
-	 * Portfolio page
-	 * --------------------- */
-	.project-sort-wrap {
-    	top: 40px;
-	}
-	.project-image {
-		width: 300px;
-	}
-	.project-pagination {
-		width: 650px;
-	}
-	
-	/* ------------------------
-	 * Blog page
-	 * --------------------- */
-	.blog-post-sort-wrap {
-		left: 610px;
-		top: 40px;
-	}
-	.blog-post-item {
-		width: 650px;
-	}
-	.blog-post-list	.blog-post-item {
-		width: 650px;
-	}
-	.blog-post-single {
-		width: 650px;
-	}
-	input.short-url {
-		width: 120px;
-	}
-	.blog-post-end-wrap {
-		width: 650px;
-	}
-	
 }
 
 
@@ -1433,42 +1333,6 @@ h6 {
 	.sub-mobile {
 		display: inline-block;
 	}
-	
-	/* ------------------------
-	 * Stream wrap
-	 * --------------------- */
-
-	
-	/* ------------------------
-	 * Flickr carousel
-	 * --------------------- */
-	.stream-carousel {
-		width: 200px;
-	}
-	.stream-flickr {
-		clear: both;
-		min-width: 100%;
-	}
-
-  	/* ------------------------
-  	 * About page
-  	 * --------------------- */
-
-
-	/* ------------------------
-	 * Portfolio page
-	 * --------------------- */
-
-	
-	/* ------------------------
-	 * Contact page
-	 * --------------------- */
-
-	
-	/* ------------------------
-	 * Blog page
-	 * --------------------- */
-
 
 	/* ------------------------
 	 * Top link
@@ -1485,19 +1349,4 @@ h6 {
 		padding: 25px 10px 10px 10px;
 	}
 	
-}
-
-/* ------------------------
- * Mobile styles (landscape)
- * --------------------- */
-@media all and (min-width: 480px) and (max-width: 640px) {
-
-	/* ------------------------
-	 * Stream Carousel
-	 * --------------------- */
-
-	/* ------------------------
-	 * About
-	 * --------------------- */
-
 }

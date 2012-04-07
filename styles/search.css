@@ -1,3 +1,7 @@
+/* ------------------------------------------------
+ * GOOGLE CSE STYLES
+ * --------------------------------------------- */
+
 .cse-wrap {
 	clear: both;
 	width: 750px;
@@ -74,6 +78,18 @@
 .gcsc-branding-text,
 .gcsc-branding-img-noclear  {}
 
+/* ------------------------------------------------
+ * TABLET STYLES
+ * --------------------------------------------- */
+@media all and (min-width: 641px) and (max-width: 1024px) {
+	.cse-wrap {
+		width: 650px;
+	}
+}
+
+/* ------------------------------------------------
+ * MOBILE STYLES
+ * --------------------------------------------- */
 @media all and (max-width: 640px) {
 	.cse-wrap {
 		width: 100%;

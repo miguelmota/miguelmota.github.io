@@ -1,3 +1,7 @@
+/* ------------------------------------------------
+ * ABOUT PAGE STYLES
+ * --------------------------------------------- */
+
 .about-photo-wrap {
 	height: 100%;
 	margin-bottom: 10px;
@@ -47,6 +51,29 @@
 	top: 45%;
 }
 
+/* ------------------------------------------------
+ * TABLET STYLES
+ * --------------------------------------------- */
+@media all and (min-width: 641px) and (max-width: 1024px) {
+	.about-photo-desc {
+		right: 40px;
+		top: 20px;
+	}
+	 .about-column-left {
+		width: 440px;
+	}
+	.about-column-right {
+		width: 160px;
+	}
+	#mapabout {
+		height: 160px;
+		width: 160px;
+	}
+}
+
+/* ------------------------------------------------
+ * MOBILE STYLES
+ * --------------------------------------------- */
 @media all and (max-width: 640px) {
   	.about-photo-wrap {
   	    font-size: 12px;
@@ -79,6 +106,9 @@
 	}
 }
 
+/* ------------------------------------------------
+ * MOBILE STYLES (landscape)
+ * --------------------------------------------- */
 @media all and (min-width: 480px) and (max-width: 640px) {
 	.about-photo-desc {
     	font-size: 18px;
