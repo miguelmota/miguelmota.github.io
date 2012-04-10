@@ -78,6 +78,14 @@
 	padding: 25px 0 0 25px;
 	width: 33%;
 }
+.project-name-wrap a {
+	color: #999;
+	display: block;
+}
+.project-name-wrap a:hover,
+.project-name-wrap a:active {
+	color: #fff;
+}
 .project-name {
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;

@@ -576,6 +576,9 @@ img.loader {
 .icon-photoset-24 {
 	background-image: url('/assets/site/icons/pictos/24/photoset.png');
 }
+.icon-question-16 {
+	background-image: url('/assets/site/icons/pictos/16/question-2.png');
+}
 .icon-quote-16 {
 	background-image: url('/assets/site/icons/pictos/16/quote.png');
 }
@@ -856,7 +859,9 @@ input.search-input {
 	font-style: italic;
 }
 .latest-tweet-date {
+	color: #999;
 	font-size: 12px;
+	font-weight: normal;
 }
 
 
@@ -890,7 +895,21 @@ input.search-input {
 }
 h6 {
 	font-weight: bold;
-	margin-top: 5px;
+	margin: 20px 0 0 0;
+}
+h6:first-child {
+	margin: 5px 0 0 0;
+}
+.photo {
+	background: #1d1d1d url('/assets/site/bg-checker-dark.png') repeat 0 0;
+	box-shadow: 2px 2px 8px rgba(0,0,0,.7);
+	-moz-box-shadow: 2px 2px 8px rgba(0,0,0,.7);
+	-o-box-shadow: 2px 2px 8px rgba(0,0,0,.7);
+	-webkit-box-shadow: 2px 2px 8px rgba(0,0,0,.7);
+	min-height: 32px;
+	height: auto;
+	width: 100%;
+	behavior: url('/PIE/PIE.htc');
 }
 
 

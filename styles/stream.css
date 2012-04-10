@@ -231,6 +231,7 @@
 	border: 0;
 	height: 16px;
 	min-height: 8px;
+	vertical-align: middle;
 	width: 16px;
 }
 .stream-carousel-wrap {		

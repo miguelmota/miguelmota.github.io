@@ -314,7 +314,7 @@ function recent_tweets(data) {
 	for (i=0; i<1; i++) {
 		var date = data[i].created_at;
 		document.getElementById('latest-tweet').innerHTML =
-		'<div class="latest-tweet-content"><a href="http://twitter.com/miguel_mota/status/'+data[i].id_str+'" rel="external">'+data[i].text+'</a> <time class="latest-tweet-date" datetime="">'+formattedDate(date)+'</time></div>';
+		'<a class="latest-tweet-content" href="http://twitter.com/miguel_mota/status/'+data[i].id_str+'" rel="external">'+data[i].text+' <time class="latest-tweet-date" datetime="">'+formattedDate(date)+'</time></a>';
 		
 		// Initialize timeago
 		// $('.latest-tweet-date').timeago();
@@ -824,14 +824,16 @@ function streamPage(){
 		});
 		return false;
 	});
-	$('.stream-carousel-ul').hover(
-			function(){
-				clearInterval(run);
+	$('.stream-carousel-wrap').live({
+			mouseenter:
+				function(){
+					clearInterval(run);
 				},
-			function(){
-				run = setInterval('rotate()', speed);
-			}
-		);
+			mouseleave:
+				function(){
+					run = setInterval('rotate()', speed);
+				}
+		});
 
 	
 
@@ -1029,6 +1031,9 @@ function streamPage(){
 
 			    	  	var url = this.url;
 			    	  	var type = this.type;
+			    	  	if (type == 'answer') {
+			    	  		type = 'question';
+			    	  	}
 			    	  	var caption = this['photo-caption'];
 			    	  	var slug = this.slug.replace(/-/g,' ');
 			    	  	var list_item = "<li><a href='"+url+"' rel='external'><span class='icon icon-"+type+"-16'></span> "+slug.substring(0,1).toUpperCase()+slug.substr(1,200)+" <time class='status-date' datetime=''>"+formattedDate(date)+"</time><span class='clear'></span></a></li>";
@@ -1111,7 +1116,7 @@ function streamPage(){
 			
 			
 			$('.stream-flickr .loader').css('display','none');
-			$('.stream-flickr').append(htmlString +'</ul></div><a href="javascript:void(0)" class="stream-carousel-nav stream-carousel-nav-next"><span class="stream-carousel-nav-inner">&#187;</span></a></div><div class="clear"></div>');
+			$('.stream-flickr').append(htmlString +'</ul><div class="clear"></div></div><a href="javascript:void(0)" class="stream-carousel-nav stream-carousel-nav-next"><span class="stream-carousel-nav-inner">&#187;</span></a></div><div class="clear"></div>');
 			showMtipTimeout('.stream-logo-flickr',3000);
 			
 
