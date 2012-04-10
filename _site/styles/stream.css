@@ -285,7 +285,7 @@
 	padding: 0;
 	position: relative;
 	top: 0;
-	width: 5125px; /* width of photo li x photo count*/
+	width: 5125px; /* (width of photo li x photo count) + photo li padding */
 }
 .stream-ul-flickr,
 .stream-ul-flickr li {
@@ -296,7 +296,7 @@
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	float: left;
-	height: auto;
+	height: 125px;
 	margin: 0 5px 0 0;
 	max-height: 125px;
 	padding: 0;
@@ -311,7 +311,7 @@
 	display: inline-block;
 	float: left;
 	min-height: 125px;
-	height: auto;
+	height: 125px;
 	margin: 0;
 	padding: 0;
 	position: relative;
