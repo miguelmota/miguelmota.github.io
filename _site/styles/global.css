@@ -1,5 +1,6 @@
 @charset 'utf-8';
 @import url('fonts.css');
+@import url('icons.css');
 
  /* ------------------------------------------------
   * TABLE OF CONTENTS
@@ -509,6 +510,9 @@ img.loader {
 }
 .icon-facebook-24 {
 	background-image: url('/assets/site/icons/pictos/24/facebook.png');
+}
+.icon-file-16 {
+	background-image: url('/assets/site/icons/pictos/16/file.png');
 }
 .icon-flickr-24 {
 	background-image: url('/assets/site/icons/pictos/24/flickr.png');
