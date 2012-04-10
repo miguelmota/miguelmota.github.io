@@ -1086,6 +1086,9 @@ h6:first-child {
 	text-shadow: 0 -1px 0 rgba(0,0,0,.3);
 	width: 100%;
 }
+.main-footer-404 {
+	padding: 25px 0 20px 0;
+}
 .main-footer a {
 	color: #004c66;
 }

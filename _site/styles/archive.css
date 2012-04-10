@@ -1,0 +1,37 @@
+/* ------------------------------------------------
+ * ARCHIVE STYLES
+ * --------------------------------------------- */
+
+/* ------------------------------------------------
+ * TABLET STYLES
+ * --------------------------------------------- */
+@media all and (min-width: 641px) and (max-width: 1024px) {
+	.blog-post-sort-wrap {
+		left: 610px;
+		top: 40px;
+	}
+	.blog-post-item {
+		width: 650px;
+	}
+	.blog-post-list	.blog-post-item {
+		width: 650px;
+	}
+	.blog-post-single {
+		width: 650px;
+	}
+	input.short-url {
+		width: 120px;
+	}
+	.blog-post-end-wrap {
+		width: 650px;
+	}
+}
+
+/* ------------------------------------------------
+ * MOBILE STYLES
+ * --------------------------------------------- */
+@media all and (max-width: 640px) {
+	.title .slash {
+		display: inline-block;
+	}
+}

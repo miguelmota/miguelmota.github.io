@@ -153,8 +153,7 @@
 .blog-post-photo-wrap {
 
 }
-.blog-post-photo,
-.photo {
+.blog-post-photo {
 	background: #1d1d1d url('/assets/site/bg-checker-dark.png') repeat 0 0;
 	box-shadow: 2px 2px 8px rgba(0,0,0,.7);
 	-moz-box-shadow: 2px 2px 8px rgba(0,0,0,.7);
