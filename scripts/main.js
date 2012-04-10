@@ -1034,6 +1034,10 @@ function streamPage(){
 			    	  	if (type == 'answer') {
 			    	  		type = 'question';
 			    	  	}
+			    	  	if (type == null)
+			    	  	{
+			    	  		type = 'tumblr';
+			    	  	}
 			    	  	var caption = this['photo-caption'];
 			    	  	var slug = this.slug.replace(/-/g,' ');
 			    	  	var list_item = "<li><a href='"+url+"' rel='external'><span class='icon icon-"+type+"-16'></span> "+slug.substring(0,1).toUpperCase()+slug.substr(1,200)+" <time class='status-date' datetime=''>"+formattedDate(date)+"</time><span class='clear'></span></a></li>";
