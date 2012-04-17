@@ -838,6 +838,7 @@ input.search-input {
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	float: left;
+	font-weight: normal;
 	min-height: 15px;
 	padding: 10px;
 	width: 100%;
@@ -854,9 +855,6 @@ input.search-input {
 	position: absolute;
 	width: 0;
 	z-index: -10;
-}
-.latest-tweet-content a {
-	font-weight: normal;
 }
 .latest-tweet-loading {
 	color: #555;
