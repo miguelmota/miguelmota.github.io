@@ -478,7 +478,7 @@ $(document).ready(function(){
 		
 
 
-	/* hide white flash on iframe 
+	// Hide white flash on iframe load
 	// Prevent variables from being global
 	(function () {
 
@@ -504,7 +504,7 @@ $(document).ready(function(){
 	    }
 
 	})();
-	*/
+	
 });
 
 // Initialize Masonry plugin, masonry.desandro.com
