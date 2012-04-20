@@ -213,7 +213,7 @@
 				</div>
 				<div class='blog-post-footer'>
 					<a href='/blog/how-to-survive-a-zombie-outbreak'><span class='icon icon-clock-16'></span> 22 Jan 2012</a> 
-					<span class='dsq-comment-count-wrap'><a class='icon icon-comments-16' href='/blog/how-to-survive-a-zombie-outbreak'></a> <a class='dsq-comment-count' href='/blog/how-to-survive-a-zombie-outbreak#disqus_thread' data-disqus-identifier=''></a></span>
+					<span class='dsq-comment-count-wrap'><a class='icon icon-comments-16' href='/blog/how-to-survive-a-zombie-outbreak'></a> <a class='dsq-comment-count' href='/blog/how-to-survive-a-zombie-outbreak#disqus_thread' data-disqus-identifier='/blog/index.html'></a></span>
 					<div class='clear'></div>
 				</div>
 				<div class='blog-share-wrap'>
@@ -231,7 +231,7 @@
 	 				<a href='/blog/ant-task-to-compress-html-files'><img class='blog-post-thumb' src='/assets//blog/ant-task-to-compress-html-files/ant-task-to-compress-html-files-thumb-large.png' alt='' /></a>
 					<p>I will show you how to compress your HTML files using the Java library <a href='http://code.google.com/p/htmlcompressor/' rel='external'>HtmlCompressor</a>. 
 So let's say your html code looks something like this:</p>
-<div class="highlight"><pre><span class="cp">&lt;!doctype html&gt;</span>
+<div class="highlight"><pre><code class="html"><span class="cp">&lt;!doctype html&gt;</span>
 <span class="nt">&lt;html&gt;</span>
 <span class="nt">&lt;head&gt;</span>
 	<span class="nt">&lt;title&gt;</span>htmlcompressor<span class="nt">&lt;/title&gt;</span>
@@ -241,21 +241,23 @@ So let's say your html code looks something like this:</p>
 	<span class="c">&lt;!-- comment --&gt;</span>
 <span class="nt">&lt;/body&gt;</span>
 <span class="nt">&lt;/html&gt;</span>
-</pre>
+</code></pre>
 </div>
+
 
 <p>After we compress it, it'll look like this:</p>
 
-<div class="highlight"><pre><span class="cp">&lt;!doctype html&gt;</span> <span class="nt">&lt;html&gt;</span> <span class="nt">&lt;head&gt;</span> <span class="nt">&lt;title&gt;</span>htmlcompressor<span class="nt">&lt;/title&gt;</span> <span class="nt">&lt;/head&gt;</span> <span class="nt">&lt;body&gt;</span> <span class="nt">&lt;p&gt;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida suscipit lectus.<span class="nt">&lt;/p&gt;</span> <span class="nt">&lt;/body&gt;</span> <span class="nt">&lt;/html&gt;</span>
-</pre>
+<div class="highlight"><pre><code class="html"><span class="cp">&lt;!doctype html&gt;</span> <span class="nt">&lt;html&gt;</span> <span class="nt">&lt;head&gt;</span> <span class="nt">&lt;title&gt;</span>htmlcompressor<span class="nt">&lt;/title&gt;</span> <span class="nt">&lt;/head&gt;</span> <span class="nt">&lt;body&gt;</span> <span class="nt">&lt;p&gt;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida suscipit lectus.<span class="nt">&lt;/p&gt;</span> <span class="nt">&lt;/body&gt;</span> <span class="nt">&lt;/html&gt;</span>
+</code></pre>
 </div>
+
 
 <p>Compressing your html files reduces it's size by ~20% by removing unnecessary white space, comments and stuff that it doesn't need in order to keep the structure of the content. The result is a smaller file size which equals to faster page load.</p>
 
 <p>Ok, so first make sure you have <a href='http://ant.apache.org/' rel='external'>ant</a> installed in <a href='http://www.eclipse.org/' rel='external'>eclipse</a>. After go ahead and download the <code>htmlcompressor</code> <code>.jar</code> from it's <a href='http://code.google.com/p/htmlcompressor/'>Google Project page</a>. 
 Create a directory in the root of your project called <code>lib</code> and drop the <code>.jar</code> in it. Then again in the root directory, create the xml file called <code>build.xml</code>. Include the following code:</p>
 
-<div class="highlight"><pre><span class="cp">&lt;?xml version=&#39;1.0&#39; encoding=&#39;UTF-8&#39;?&gt;</span>
+<div class="highlight"><pre><code class="xml"><span class="cp">&lt;?xml version=&#39;1.0&#39; encoding=&#39;UTF-8&#39;?&gt;</span>
 <span class="nt">&lt;project</span> <span class="na">default=</span><span class="s">&#39;compress-html&#39;</span><span class="nt">&gt;</span>
 	
 	<span class="nt">&lt;target</span> <span class="na">name=</span><span class="s">&#39;compress-html&#39;</span><span class="nt">&gt;</span>
@@ -272,8 +274,9 @@ Create a directory in the root of your project called <code>lib</code> and drop 
 	<span class="nt">&lt;/target&gt;</span>
 	
 <span class="nt">&lt;/project&gt;</span>
-</pre>
+</code></pre>
 </div>
+
 
 <p>What we did is created a project which will execute the <code>compress-html</code> target by default. In the target we are telling it to include all the <code>html</code> files in the root directory 
 and then output the compressed files in a new directory called <code>compressed</code>. the <code>-t</code> flag means <code>type</code> and <code>-o</code> means <code>output</code>. By default the filenames of the source files will be added to 
@@ -292,7 +295,7 @@ the end fo the command, so we use <code>srcfile</code> to place it where we want
 				</div>
 				<div class='blog-post-footer'>
 					<a href='/blog/ant-task-to-compress-html-files'><span class='icon icon-clock-16'></span> 14 Oct 2011</a> 
-					<span class='dsq-comment-count-wrap'><a class='icon icon-comments-16' href='/blog/ant-task-to-compress-html-files'></a> <a class='dsq-comment-count' href='/blog/ant-task-to-compress-html-files#disqus_thread' data-disqus-identifier=''></a></span>
+					<span class='dsq-comment-count-wrap'><a class='icon icon-comments-16' href='/blog/ant-task-to-compress-html-files'></a> <a class='dsq-comment-count' href='/blog/ant-task-to-compress-html-files#disqus_thread' data-disqus-identifier='/blog/index.html'></a></span>
 					<div class='clear'></div>
 				</div>
 				<div class='blog-share-wrap'>
@@ -335,16 +338,17 @@ $.getJSON('http://feeds.delicious.com/v2/json/miguelmota?callback=?',
 <p>First let's create an empty unordered list with a div below it that will serve as a loader (if you want to get fancy, you can use 
 an animated loading gif):</p>
 
-<div class="highlight"><pre><span class="nt">&lt;ul</span> <span class="na">id=</span><span class="s">&#39;delicious-bookmarks&#39;</span><span class="nt">&gt;&lt;/ul&gt;</span>
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;ul</span> <span class="na">id=</span><span class="s">&#39;delicious-bookmarks&#39;</span><span class="nt">&gt;&lt;/ul&gt;</span>
 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&#39;ajax-loader&#39;</span><span class="nt">&gt;</span>fetching bookmarks...<span class="nt">&lt;/div&gt;</span>
-</pre>
+</code></pre>
 </div>
+
 
 <p>We are using the <code>$.getJSON()</code> function. Let's add our json request url and and then loop though the requested data with the <code>$.each()</code> function and get the 
 <code>title</code>, <code>url</code> and <code>date</code>. Then we are appending a list item to our unordered list that we created earlier which will include our variables.
 So now after it complete the jquery, let's remove the loader:</p>
 
-<div class="highlight"><pre><span class="nx">$</span><span class="p">.</span><span class="nx">getJSON</span><span class="p">(</span><span class="s1">&#39;http://feeds.delicious.com/v2/json/miguelmota?callback=?&#39;</span><span class="p">,</span>
+<div class="highlight"><pre><code class="javascript"><span class="nx">$</span><span class="p">.</span><span class="nx">getJSON</span><span class="p">(</span><span class="s1">&#39;http://feeds.delicious.com/v2/json/miguelmota?callback=?&#39;</span><span class="p">,</span>
 	<span class="p">{</span>
 	<span class="nx">count</span><span class="o">:</span> <span class="s1">&#39;3&#39;</span>
 	<span class="p">},</span>
@@ -358,14 +362,15 @@ So now after it complete the jquery, let's remove the loader:</p>
 		<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.ajax-loader&#39;</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s1">&#39;display&#39;</span><span class="p">,</span><span class="s1">&#39;none&#39;</span><span class="p">);</span>
 	<span class="p">}</span>
 <span class="p">);</span>
-</pre>
+</code></pre>
 </div>
+
 
 <p>But hold on, if we leave it like that, the date will show in ISO-8601 standard which will look like <script>var d = new Date().toISOString();</script><code><script>document.write(d);</script></code>.
 We want to display it as <code>time ago</code> so we will use <a href='http://james.padolsey.com/javascript/recursive-pretty-date/' rel='external'>James Padolsey's "pretty-date" function</a>.
 Before the <code>$.getJSON()</code> function, add:</p>
 
-<div class="highlight"><pre><span class="kd">var</span> <span class="nx">niceTime</span> <span class="o">=</span> <span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">niceTime</span> <span class="o">=</span> <span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
 	<span class="kd">var</span> <span class="nx">ints</span> <span class="o">=</span> <span class="p">{</span>
 	<span class="nx">second</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
 	<span class="nx">minute</span><span class="o">:</span> <span class="mi">60</span><span class="p">,</span>
@@ -388,14 +393,16 @@ Before the <code>$.getJSON()</code> function, add:</p>
 	<span class="k">return</span> <span class="nx">amount</span><span class="p">;</span>
 	<span class="p">};</span>
 <span class="p">})();</span>
-</pre>
+</code></pre>
 </div>
+
 
 <p>Now include the <code>date</code> variable as the <code>niceTime()</code> function argument like so:</p>
 
-<div class="highlight"><pre><span class="o">&lt;</span><span class="nx">time</span> <span class="kr">class</span><span class="o">=</span><span class="s1">&#39;date&#39;</span><span class="o">&gt;</span><span class="s2">&quot;+niceTime(date)+&quot;</span><span class="o">&lt;</span><span class="nx">time</span><span class="o">&gt;</span>
-</pre>
+<div class="highlight"><pre><code class="javascript"><span class="o">&lt;</span><span class="nx">time</span> <span class="kr">class</span><span class="o">=</span><span class="s1">&#39;date&#39;</span><span class="o">&gt;</span><span class="s2">&quot;+niceTime(date)+&quot;</span><span class="o">&lt;</span><span class="nx">time</span><span class="o">&gt;</span>
+</code></pre>
 </div>
+
 
 
 <p>Obviously replace my username with yours and that's it!</p>
@@ -413,7 +420,7 @@ Before the <code>$.getJSON()</code> function, add:</p>
 				</div>
 				<div class='blog-post-footer'>
 					<a href='/blog/display-latest-delicious-bookmarks-with-jquery'><span class='icon icon-clock-16'></span> 11 Oct 2011</a> 
-					<span class='dsq-comment-count-wrap'><a class='icon icon-comments-16' href='/blog/display-latest-delicious-bookmarks-with-jquery'></a> <a class='dsq-comment-count' href='/blog/display-latest-delicious-bookmarks-with-jquery#disqus_thread' data-disqus-identifier=''></a></span>
+					<span class='dsq-comment-count-wrap'><a class='icon icon-comments-16' href='/blog/display-latest-delicious-bookmarks-with-jquery'></a> <a class='dsq-comment-count' href='/blog/display-latest-delicious-bookmarks-with-jquery#disqus_thread' data-disqus-identifier='/blog/index.html'></a></span>
 					<div class='clear'></div>
 				</div>
 				<div class='blog-share-wrap'>
@@ -431,7 +438,7 @@ Before the <code>$.getJSON()</code> function, add:</p>
 	 				<a href='/blog/html5-reset-stylesheet'><img class='blog-post-thumb' src='/assets//blog/html5-reset-stylesheet/html5-reset-stylesheet-thumb-large.png' alt='' /></a>
 					<p>I couldn't find an HTML5 reset stylesheet that suited my needs so I decided to modify <a href='http://html5doctor.com/html-5-reset-stylesheet/' rel='external'>HTML5 Doctors'</a> CSS reset a bit. This is what it looks like:</p>
 
-<div class="highlight"><pre><span class="nt">html</span><span class="o">,</span> <span class="nt">body</span><span class="o">,</span> <span class="nt">div</span><span class="o">,</span> <span class="nt">span</span><span class="o">,</span> <span class="nt">object</span><span class="o">,</span> <span class="nt">iframe</span><span class="o">,</span>
+<div class="highlight"><pre><code class="css"><span class="nt">html</span><span class="o">,</span> <span class="nt">body</span><span class="o">,</span> <span class="nt">div</span><span class="o">,</span> <span class="nt">span</span><span class="o">,</span> <span class="nt">object</span><span class="o">,</span> <span class="nt">iframe</span><span class="o">,</span>
 <span class="nt">h1</span><span class="o">,</span> <span class="nt">h2</span><span class="o">,</span> <span class="nt">h3</span><span class="o">,</span> <span class="nt">h4</span><span class="o">,</span> <span class="nt">h5</span><span class="o">,</span> <span class="nt">h6</span><span class="o">,</span> <span class="nt">p</span><span class="o">,</span> <span class="nt">blockquote</span><span class="o">,</span> <span class="nt">pre</span><span class="o">,</span>
 <span class="nt">abbr</span><span class="o">,</span> <span class="nt">address</span><span class="o">,</span> <span class="nt">cite</span><span class="o">,</span> <span class="nt">code</span><span class="o">,</span>
 <span class="nt">del</span><span class="o">,</span> <span class="nt">dfn</span><span class="o">,</span> <span class="nt">em</span><span class="o">,</span> <span class="nt">img</span><span class="o">,</span> <span class="nt">ins</span><span class="o">,</span> <span class="nt">kbd</span><span class="o">,</span> <span class="nt">q</span><span class="o">,</span> <span class="nt">samp</span><span class="o">,</span>
@@ -512,8 +519,9 @@ Before the <code>$.getJSON()</code> function, add:</p>
 <span class="nt">input</span><span class="o">,</span> <span class="nt">select</span> <span class="p">{</span>
     <span class="k">vertical-align</span><span class="o">:</span> <span class="k">middle</span><span class="p">;</span>
 <span class="p">}</span>
-</pre>
+</code></pre>
 </div>
+
 
 <p>Download <a href='/styles/reset.css' rel='external'>reset.css</a> | <a href='/styles/reset.min.css' rel='external'>reset.min.css</a></p>
 
@@ -530,7 +538,7 @@ Before the <code>$.getJSON()</code> function, add:</p>
 				</div>
 				<div class='blog-post-footer'>
 					<a href='/blog/html5-reset-stylesheet'><span class='icon icon-clock-16'></span> 09 Aug 2011</a> 
-					<span class='dsq-comment-count-wrap'><a class='icon icon-comments-16' href='/blog/html5-reset-stylesheet'></a> <a class='dsq-comment-count' href='/blog/html5-reset-stylesheet#disqus_thread' data-disqus-identifier=''></a></span>
+					<span class='dsq-comment-count-wrap'><a class='icon icon-comments-16' href='/blog/html5-reset-stylesheet'></a> <a class='dsq-comment-count' href='/blog/html5-reset-stylesheet#disqus_thread' data-disqus-identifier='/blog/index.html'></a></span>
 					<div class='clear'></div>
 				</div>
 				<div class='blog-share-wrap'>
@@ -550,84 +558,95 @@ Before the <code>$.getJSON()</code> function, add:</p>
 <p><a href='http://www.miguelmota.com/assets/plugins/mtip' rel='external'>View the demo</a></p>
 <p>Ok so first let's set up the HTML:</p>
 
-<div class="highlight"><pre><span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&#39;mtip&#39;</span> <span class="na">href=</span><span class="s">&#39;http://wwww.miguelmota.com&#39;</span> <span class="na">title=</span><span class="s">&#39;Hello, I am a tootip!&#39;</span><span class="nt">&gt;</span>hover over me<span class="nt">&lt;/a&gt;</span>
-</pre>
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&#39;mtip&#39;</span> <span class="na">href=</span><span class="s">&#39;http://wwww.miguelmota.com&#39;</span> <span class="na">title=</span><span class="s">&#39;Hello, I am a tootip!&#39;</span><span class="nt">&gt;</span>hover over me<span class="nt">&lt;/a&gt;</span>
+</code></pre>
 </div>
+
 
 <p>All we did was make a link with the class of <code>mtip</code> (that's what I decided to call this mini plugin) and gave it a <code>title</code> attribute.</p>
 <p>Now let's move on to the fun stuff. We are going to make a self executing function so that the plugin won't collide with other libraries that use the <code>$</code> dollar sign:</p>
 
-<div class="highlight"><pre><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight"><pre><code class="javascript"><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>
 
 <span class="p">})(</span><span class="nx">jQuery</span><span class="p">);</span>
-</pre>
+</code></pre>
 </div>
+
 
 <p>Inside this function we are going to add a new function property to the <code>jQuery.fn</code> object where the name of the property is the name of the plugin:</p>
 
-<div class="highlight"><pre><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight"><pre><code class="javascript"><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>
 	<span class="nx">$</span><span class="p">.</span><span class="nx">fn</span><span class="p">.</span><span class="nx">mtip</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
 		<span class="c1">//plugin code</span>
 	<span class="p">}</span>
 <span class="p">})(</span><span class="nx">jQuery</span><span class="p">);</span>
-</pre>
+</code></pre>
 </div>
+
 
 <p>Ok now we want to rename the <code>title</code> to something else, in this case I renamed it to <code>mtip</code>. How we are going to do this is by making a new attribute and copying the contents of the <code>title</code> 
 attribute and then removing the <code>title</code> attribute. So what's the point in doing this? if we don't, we will have our custom tooltip and the default tooltip pop up at the same time.. which will be a nuisance!</p>
 
-<div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;mtip&#39;</span><span class="p">,</span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">)).</span><span class="nx">removeAttr</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">);</span>
-</pre>
+<div class="highlight"><pre><code class="javascript"><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;mtip&#39;</span><span class="p">,</span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">)).</span><span class="nx">removeAttr</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">);</span>
+</code></pre>
 </div>
+
 
 <p>So now let's assign the <code>mtip</code> attribute to a variable named <code>title</code>:</p>
 
-<div class="highlight"><pre><span class="kd">var</span> <span class="nx">title</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;mtip&#39;</span><span class="p">);</span>
-</pre>
+<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">title</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;mtip&#39;</span><span class="p">);</span>
+</code></pre>
 </div>
+
 
 <p>Next we want to wrap the link in a container:</p>
 
-<div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">wrap</span><span class="p">(</span><span class="s2">&quot;&lt;div class=&#39;tooltip-container&#39; /&gt;&quot;</span><span class="p">);</span>
-</pre>
+<div class="highlight"><pre><code class="javascript"><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">wrap</span><span class="p">(</span><span class="s2">&quot;&lt;div class=&#39;tooltip-container&#39; /&gt;&quot;</span><span class="p">);</span>
+</code></pre>
 </div>
 
+
 <p>We don't want the words in the link to break so we'll keep them in the same line:</p>
-<div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s1">&#39;white-space&#39;</span><span class="p">,</span><span class="s1">&#39;nowrap&#39;</span><span class="p">);</span>
-</pre>
+<div class="highlight"><pre><code class="javascript"><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s1">&#39;white-space&#39;</span><span class="p">,</span><span class="s1">&#39;nowrap&#39;</span><span class="p">);</span>
+</code></pre>
 </div>
+
 
 <p>Let's prepend a new element with a class of <code>tooltip</code> inside the <code>tooltip-container</code> div:</p>
 
-<div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;div.tooltip-container&#39;</span><span class="p">).</span><span class="nx">prepend</span><span class="p">(</span><span class="s2">&quot;&lt;div class=&#39;tooltip&#39; /&gt;&quot;</span><span class="p">);</span>
-</pre>
+<div class="highlight"><pre><code class="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;div.tooltip-container&#39;</span><span class="p">).</span><span class="nx">prepend</span><span class="p">(</span><span class="s2">&quot;&lt;div class=&#39;tooltip&#39; /&gt;&quot;</span><span class="p">);</span>
+</code></pre>
 </div>
+
 
 <p>Let's create the functions for the hover method:</p>
 
-<div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">hover</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<div class="highlight"><pre><code class="javascript"><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">hover</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
 		<span class="c1">//hover over do stuff</span>
 	<span class="p">},</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
 		<span class="c1">//hover out do stuff</span>
 <span class="p">});</span>
-</pre>
+</code></pre>
 </div>
+
 
 <p>Inside the first hover function we are going to insert the content from <code>title</code> variable in to the previous element which is the <code>tooltip</code> div and animate the tooltip:</p>
 
-<div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">prev</span><span class="p">().</span><span class="nx">text</span><span class="p">(</span><span class="nx">title</span><span class="p">).</span><span class="nx">stop</span><span class="p">(</span><span class="kc">true</span><span class="p">,</span><span class="kc">true</span><span class="p">).</span><span class="nx">animate</span><span class="p">({</span><span class="nx">opacity</span><span class="o">:</span> <span class="s1">&#39;show&#39;</span><span class="p">,</span> <span class="nx">top</span><span class="o">:</span> <span class="s1">&#39;-30&#39;</span><span class="p">},</span> <span class="s1">&#39;slow&#39;</span><span class="p">);</span>
-</pre>
+<div class="highlight"><pre><code class="javascript"><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">prev</span><span class="p">().</span><span class="nx">text</span><span class="p">(</span><span class="nx">title</span><span class="p">).</span><span class="nx">stop</span><span class="p">(</span><span class="kc">true</span><span class="p">,</span><span class="kc">true</span><span class="p">).</span><span class="nx">animate</span><span class="p">({</span><span class="nx">opacity</span><span class="o">:</span> <span class="s1">&#39;show&#39;</span><span class="p">,</span> <span class="nx">top</span><span class="o">:</span> <span class="s1">&#39;-30&#39;</span><span class="p">},</span> <span class="s1">&#39;slow&#39;</span><span class="p">);</span>
+</code></pre>
 </div>
+
 
 <p>Now make it fade out on hover out:</p>
 
-<div class="highlight"><pre><span class="nx">jQuery</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">next</span><span class="p">(</span><span class="s1">&#39;div.tooltip&#39;</span><span class="p">).</span><span class="nx">animate</span><span class="p">({</span><span class="nx">opacity</span><span class="o">:</span> <span class="s1">&#39;hide&#39;</span><span class="p">,</span> <span class="nx">top</span><span class="o">:</span> <span class="s1">&#39;-20&#39;</span><span class="p">},</span> <span class="s1">&#39;fast&#39;</span><span class="p">);</span>
-</pre>
+<div class="highlight"><pre><code class="javascript"><span class="nx">jQuery</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">next</span><span class="p">(</span><span class="s1">&#39;div.tooltip&#39;</span><span class="p">).</span><span class="nx">animate</span><span class="p">({</span><span class="nx">opacity</span><span class="o">:</span> <span class="s1">&#39;hide&#39;</span><span class="p">,</span> <span class="nx">top</span><span class="o">:</span> <span class="s1">&#39;-20&#39;</span><span class="p">},</span> <span class="s1">&#39;fast&#39;</span><span class="p">);</span>
+</code></pre>
 </div>
+
 
 <p>So the whole jQuery plugin code should look something like this:</p>
 
-<div class="highlight"><pre><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight"><pre><code class="javascript"><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>
 	<span class="nx">$</span><span class="p">.</span><span class="nx">fn</span><span class="p">.</span><span class="nx">mtip</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
 		<span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
 			<span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;mtip&#39;</span><span class="p">,</span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">)).</span><span class="nx">removeAttr</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">);</span>
@@ -643,12 +662,13 @@ attribute and then removing the <code>title</code> attribute. So what's the poin
 		<span class="p">});</span>
 	<span class="p">}</span>
 <span class="p">})(</span><span class="nx">jQuery</span><span class="p">);</span>
-</pre>
+</code></pre>
 </div>
+
 
 <p>It's time to style the tooltip:</p>
 
-<div class="highlight"><pre><span class="nc">.tooltip-container</span> <span class="p">{</span>
+<div class="highlight"><pre><code class="css"><span class="nc">.tooltip-container</span> <span class="p">{</span>
 	<span class="k">display</span><span class="o">:</span> <span class="k">inline</span><span class="o">-</span><span class="k">block</span><span class="p">;</span>
 	<span class="k">position</span><span class="o">:</span> <span class="k">relative</span><span class="p">;</span>
 	<span class="k">z-index</span><span class="o">:</span> <span class="m">1000</span><span class="p">;</span>
@@ -694,28 +714,31 @@ attribute and then removing the <code>title</code> attribute. So what's the poin
 	<span class="k">width</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
 	<span class="k">z-index</span><span class="o">:</span> <span class="m">1000</span><span class="p">;</span>
 <span class="p">}</span>
-</pre>
+</code></pre>
 </div>
+
 
 <p>The CSS is self-explanatory so I won't go in much detail</p>
 <p>So the last step now is to initialize our tooltip:</p>
 
-<div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+<div class="highlight"><pre><code class="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
 	<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.mtip&#39;</span><span class="p">).</span><span class="nx">mtip</span><span class="p">();</span>
 <span class="p">});</span>
-</pre>
+</code></pre>
 </div>
+
 
 <p>But wait.. since Internet Explorer doesn't support <code>border-raidus</code> we have to use a script to render it. I will use <a href='http://css3pie.com/' rel='external'>CSS3 PIE</a>. Simply add the <code>behavior</code> 
 rule at the end of the <code>tooltip</code> class, but make sure the path is relative to the HTML file being viewed, so for example if you upload the <code>PIE</code> folder to the root of your site; 
 it should look like this:</p>
 
-<div class="highlight"><pre><span class="nc">.tooltip</span>  <span class="p">{</span>
+<div class="highlight"><pre><code class="css"><span class="nc">.tooltip</span>  <span class="p">{</span>
 	<span class="o">...</span>
 	<span class="n">behavior</span><span class="o">:</span> <span class="sx">url(&#39;/PIE/PIE.htc&#39;)</span><span class="p">;</span>
 <span class="p">}</span>
-</pre>
+</code></pre>
 </div>
+
 
 <p>That's it folks! You should now have a functioning mini tooltip plugin. If I made mistakes or if you would like to add, please comment! any feedback is greatly appreciated.</p>
 				</div>
@@ -728,7 +751,7 @@ it should look like this:</p>
 				</div>
 				<div class='blog-post-footer'>
 					<a href='/blog/make-an-awesome-tooltip-with-jquery'><span class='icon icon-clock-16'></span> 24 May 2011</a> 
-					<span class='dsq-comment-count-wrap'><a class='icon icon-comments-16' href='/blog/make-an-awesome-tooltip-with-jquery'></a> <a class='dsq-comment-count' href='/blog/make-an-awesome-tooltip-with-jquery#disqus_thread' data-disqus-identifier=''></a></span>
+					<span class='dsq-comment-count-wrap'><a class='icon icon-comments-16' href='/blog/make-an-awesome-tooltip-with-jquery'></a> <a class='dsq-comment-count' href='/blog/make-an-awesome-tooltip-with-jquery#disqus_thread' data-disqus-identifier='/blog/index.html'></a></span>
 					<div class='clear'></div>
 				</div>
 				<div class='blog-share-wrap'>
@@ -757,7 +780,7 @@ I will blog about all things web, usually about code and design tips, tricks and
 				</div>
 				<div class='blog-post-footer'>
 					<a href='/blog/hello-world'><span class='icon icon-clock-16'></span> 30 Mar 2011</a> 
-					<span class='dsq-comment-count-wrap'><a class='icon icon-comments-16' href='/blog/hello-world'></a> <a class='dsq-comment-count' href='/blog/hello-world#disqus_thread' data-disqus-identifier=''></a></span>
+					<span class='dsq-comment-count-wrap'><a class='icon icon-comments-16' href='/blog/hello-world'></a> <a class='dsq-comment-count' href='/blog/hello-world#disqus_thread' data-disqus-identifier='/blog/index.html'></a></span>
 					<div class='clear'></div>
 				</div>
 				<div class='blog-share-wrap'>

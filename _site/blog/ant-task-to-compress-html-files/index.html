@@ -120,7 +120,7 @@
 	 	<div class='blog-post-text'>
 			<p>I will show you how to compress your HTML files using the Java library <a href='http://code.google.com/p/htmlcompressor/' rel='external'>HtmlCompressor</a>. 
 So let's say your html code looks something like this:</p>
-<div class="highlight"><pre><span class="cp">&lt;!doctype html&gt;</span>
+<div class="highlight"><pre><code class="html"><span class="cp">&lt;!doctype html&gt;</span>
 <span class="nt">&lt;html&gt;</span>
 <span class="nt">&lt;head&gt;</span>
 	<span class="nt">&lt;title&gt;</span>htmlcompressor<span class="nt">&lt;/title&gt;</span>
@@ -130,21 +130,23 @@ So let's say your html code looks something like this:</p>
 	<span class="c">&lt;!-- comment --&gt;</span>
 <span class="nt">&lt;/body&gt;</span>
 <span class="nt">&lt;/html&gt;</span>
-</pre>
+</code></pre>
 </div>
+
 
 <p>After we compress it, it'll look like this:</p>
 
-<div class="highlight"><pre><span class="cp">&lt;!doctype html&gt;</span> <span class="nt">&lt;html&gt;</span> <span class="nt">&lt;head&gt;</span> <span class="nt">&lt;title&gt;</span>htmlcompressor<span class="nt">&lt;/title&gt;</span> <span class="nt">&lt;/head&gt;</span> <span class="nt">&lt;body&gt;</span> <span class="nt">&lt;p&gt;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida suscipit lectus.<span class="nt">&lt;/p&gt;</span> <span class="nt">&lt;/body&gt;</span> <span class="nt">&lt;/html&gt;</span>
-</pre>
+<div class="highlight"><pre><code class="html"><span class="cp">&lt;!doctype html&gt;</span> <span class="nt">&lt;html&gt;</span> <span class="nt">&lt;head&gt;</span> <span class="nt">&lt;title&gt;</span>htmlcompressor<span class="nt">&lt;/title&gt;</span> <span class="nt">&lt;/head&gt;</span> <span class="nt">&lt;body&gt;</span> <span class="nt">&lt;p&gt;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida suscipit lectus.<span class="nt">&lt;/p&gt;</span> <span class="nt">&lt;/body&gt;</span> <span class="nt">&lt;/html&gt;</span>
+</code></pre>
 </div>
+
 
 <p>Compressing your html files reduces it's size by ~20% by removing unnecessary white space, comments and stuff that it doesn't need in order to keep the structure of the content. The result is a smaller file size which equals to faster page load.</p>
 
 <p>Ok, so first make sure you have <a href='http://ant.apache.org/' rel='external'>ant</a> installed in <a href='http://www.eclipse.org/' rel='external'>eclipse</a>. After go ahead and download the <code>htmlcompressor</code> <code>.jar</code> from it's <a href='http://code.google.com/p/htmlcompressor/'>Google Project page</a>. 
 Create a directory in the root of your project called <code>lib</code> and drop the <code>.jar</code> in it. Then again in the root directory, create the xml file called <code>build.xml</code>. Include the following code:</p>
 
-<div class="highlight"><pre><span class="cp">&lt;?xml version=&#39;1.0&#39; encoding=&#39;UTF-8&#39;?&gt;</span>
+<div class="highlight"><pre><code class="xml"><span class="cp">&lt;?xml version=&#39;1.0&#39; encoding=&#39;UTF-8&#39;?&gt;</span>
 <span class="nt">&lt;project</span> <span class="na">default=</span><span class="s">&#39;compress-html&#39;</span><span class="nt">&gt;</span>
 	
 	<span class="nt">&lt;target</span> <span class="na">name=</span><span class="s">&#39;compress-html&#39;</span><span class="nt">&gt;</span>
@@ -161,8 +163,9 @@ Create a directory in the root of your project called <code>lib</code> and drop 
 	<span class="nt">&lt;/target&gt;</span>
 	
 <span class="nt">&lt;/project&gt;</span>
-</pre>
+</code></pre>
 </div>
+
 
 <p>What we did is created a project which will execute the <code>compress-html</code> target by default. In the target we are telling it to include all the <code>html</code> files in the root directory 
 and then output the compressed files in a new directory called <code>compressed</code>. the <code>-t</code> flag means <code>type</code> and <code>-o</code> means <code>output</code>. By default the filenames of the source files will be added to 
