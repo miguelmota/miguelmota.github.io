@@ -16,13 +16,16 @@
 	line-height: 175%;
 	position: absolute;
 	right: 150px;
-	top: 45px;
+	top: 35px;
 }
 .contact-info-wrap a {
 	color: #999;
 	display: block;
+	padding: 5px;
 }
-.contact-info-wrap a:hover {
+.contact-info-wrap a:hover,
+.contact-info-wrap a:active {
+	background: #000;
 	color: #fff;
 }
 .contact-form {

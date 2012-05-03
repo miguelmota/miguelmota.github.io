@@ -33,6 +33,7 @@
 	width: 650px;
 }
 .project .image-container {
+	border: 1px solid transparent;
 	height: 200px;
 	transition: box-shadow linear .2s;
 	-moz-transition: -moz-box-shadow linear .2s;
@@ -42,6 +43,10 @@
 	position: absolute;
 	width: 610px;
 	behavior: url('/PIE/PIE.htc');
+}
+.project .image-container:hover 
+.project .image-container:active, {
+	border-color: #007299;
 }
 .project .image-container a:first-child {
 	display: block;

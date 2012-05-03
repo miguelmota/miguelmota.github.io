@@ -91,7 +91,8 @@
 	padding: 0;
 	width: auto;
 }
-.stream-logo:hover {
+.stream-logo:hover,
+.stream-logo:active {
 	background-color: #1d1d1d;
 }
 .stream-logo-latitude {
@@ -180,7 +181,15 @@
 	height: auto;
 	width: 100%;
 }
+.stream-ul-latitude li {
+	border: 1px solid transparent;
+}
+.stream-ul-latitude li:hover,
+.stream-ul-latitude li:active {
+	border-color: #007299;
+}
 .stream-ul li a {
+	border: 1px solid transparent;
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
@@ -188,16 +197,19 @@
 	margin-bottom: 2px;
 	padding: 5px;
 }
-.stream-ul li a:hover {
-	background-color: #000;
+.stream-ul li a:hover,
+.stream-ul li a:active {
+	border-color: #007299;
 }
 .stream-ul li:nth-child(odd) a,
 .odd {
 	background-color: #141414;	
 }
 .stream-ul li:nth-child(odd) a:hover,
-.odd:hover {
-	background-color: #000;
+.stream-ul li:nth-child(odd) a:active,
+.odd:hover,
+.odd:active {
+	border-color: #007299;
 }
 /*
 	STATUS DATE
@@ -321,10 +333,12 @@
 	-webkit-transition: all .2s ease-in-out;
 	width: 200px;
 }
-.stream-ul-flickr li a:hover {
+.stream-ul-flickr li a:hover,
+.stream-ul-flickr li a:active {
 	background: #1d1d1d;
 }
-.stream-ul-flickr li:nth-child(odd) a:hover {
+.stream-ul-flickr li:nth-child(odd) a:hover,
+.stream-ul-flickr li:nth-child(odd) a:active {
 	background: #1d1d1d;
 }
 .stream-ul-flickr .zoom-wrap {

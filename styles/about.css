@@ -34,6 +34,14 @@
 	float: right;
 	width: 200px;
 }
+.about-column-right a {
+	display: block;
+	padding: 5px;
+}
+.about-column-right a:hover,
+.about-column-right a:active {
+	background: #000;
+}
 .about-google-plus {
 	font-size: 10px;
 }
@@ -42,6 +50,7 @@
 	height: 200px;
 	margin: 10px 0;
 	position: relative;
+	text-shadow: none;
 	width: 200px;
 }
 #mapabout span {
@@ -49,6 +58,13 @@
 	left: 30%;
 	position: absolute;
 	top: 45%;
+}
+.mapabout-location {
+	margin: 0 0 1px 0;
+}
+.mapabout-location span {
+	color: #999;
+	font-weight: normal;
 }
 
 /* ------------------------------------------------
