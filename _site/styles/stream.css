@@ -315,10 +315,8 @@
 	position: relative;
 	width: 200px;
 }
-.stream-ul-flickr li:hover {
-	border-color: #007299;
-}
 .stream-ul-flickr li a {
+	background-color: #1d1d1d;
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
