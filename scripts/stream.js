@@ -134,9 +134,13 @@ $(document).ready(function(){
 		 * Twitter stream
 		 * --------------------- */
 		$('.stream-twitter .loader').css('display','block');
-		$.getJSON('http://twitter.com/status/user_timeline/miguel_mota.json?callback=?', 
+		// old json: https://twitter.com/status/user_timeline/miguel_mota.json?callback=?count=5
+		$.getJSON('http://api.twitter.com/1/statuses/user_timeline.json?callback=?', 
 				{
-					count: '5'
+					include_entities: true,
+					include_rts: true,
+					screen_name: 'miguel_mota',
+					count: 5
 				},
 				function(data){
 					var pro_img_cnt = 0;
