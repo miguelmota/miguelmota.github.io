@@ -848,6 +848,7 @@ input.search-input {
 	border-style: solid;
 	border-width: 8px 15px 8px 0;
 	bottom: auto;
+	color: #1d1d1d;
 	content: "";
 	display: inline-block; 	
 	left: -10px; /* value = - border-left-width - border-right-width */
@@ -855,6 +856,12 @@ input.search-input {
 	position: absolute;
 	width: 0;
 	z-index: -10;
+}
+.latest-tweet-content:hover,
+.latest-tweet-content:active,
+.latest-tweet-content:after:hover,
+.latest-tweet-content:after:active {
+	background-color: #1d1d1d;
 }
 .latest-tweet-loading {
 	color: #555;

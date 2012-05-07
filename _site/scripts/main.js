@@ -309,7 +309,7 @@ function recent_tweets(data) {
 		}
 	});
 }
-$.getScript('https://twitter.com/statuses/user_timeline/miguel_mota.json?callback=recent_tweets&count=5');
+$.getScript('https://api.twitter.com/1/statuses/user_timeline.json?callback=recent_tweets&include_entities=true&include_rts=true&screen_name=miguel_mota&count=5');
 
 
 
