@@ -73,6 +73,19 @@ $(document).ready(function(){
 	// Initialize Fancybox
 	initializeFancybox();
 
+	var $container = $('.project-images-wrap');
+
+	if(window.width <= 640){
+		$container = '';
+	}
+	
+	$container.imagesLoaded(function(){
+	  $container.masonry({
+	  	itemSelector: '.project-image',
+	    isFitWidth: true
+	  });
+	});
+
 	
 });
 

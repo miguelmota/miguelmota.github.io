@@ -456,6 +456,9 @@ $(document).ready(function(){
 				// Initialize Fancybox
 				initializeFancybox();
 
+				// Run Masonry
+				loadMasonry();
+
 			});
 		
 		
@@ -501,20 +504,21 @@ $(document).ready(function(){
 	    }
 
 	})();
-	
+
 });
 
 // Initialize Masonry plugin, masonry.desandro.com
 function loadMasonry(){
 
-	var $tumblelog = $('.content');
+	var $container = $('.content');
 	
 	if(window.width <= 640){
-		$tumblelog = '';
+		$container = '';
 	}
 	
-	$tumblelog.imagesLoaded( function(){
-	  $tumblelog.masonry({
+	$container.imagesLoaded(function(){
+	  $container.masonry({
+	  	itemSelector: '.stream-wrap',
 	    isFitWidth: true
 	  });
 	});
