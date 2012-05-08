@@ -62,7 +62,7 @@
 	border: 0 !important;
 	float: left;
 	height: 26px;
-	overflow: hidden;
+	overflow: hidden !important;
 	width: 100%;
 }
 /*

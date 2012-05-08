@@ -15,7 +15,7 @@ script: stream
         <a class='stream-logo stream-logo-latitude mtip' href='http://www.google.com/latitude/apps/badge/api?user=7812482200199007583&amp;type=iframe&amp;maptype=roadmap' title='my location' rel='external'>latitude</a>
         <a class='fancybox-iframe latitude-map-button' href='http://www.foodfail.org/miguelmota/map.php' rel='internal'><span class='icon icon-world-16 mtip' title='view map'></span></a>
         <ul class='stream-ul stream-ul-latitude'>
-            <li><iframe class='stream-iframe-latitude' src='http://www.foodfail.org/miguelmota/latitude.php' frameborder='0'></iframe><span class='clear'></span></li>
+            <li><iframe class='stream-iframe-latitude' src='http://www.foodfail.org/miguelmota/latitude.php'></iframe<div class='clear'></div></li>
         </ul>
         <div class='clear'></div>
     </div>
@@ -29,7 +29,7 @@ script: stream
         <a class='stream-logo stream-logo-blog mtip' href='/blog' title='my blog'>Blog</a>
         <ul class='stream-ul stream-ul-blog'>
             {% for post in site.categories.blog limit:3 %}
-                <li><a class='status' href='{{ post.url }}'><span class='icon icon-text-16'></span> {{ post.title }} <time class='status-date'>{{ post.date | date:"%a %b, %d" }}</time><span class='clear'></span></a></li>
+                <li><a class='status' href='{{ post.url }}'><span class='icon icon-text-16'></span> {{ post.title }} <span class='status-date'>{{ post.date | date:"%a %b, %d" }}</span><span class='clear'></span></a></li>
             {% endfor %}
         </ul>
     </div>
