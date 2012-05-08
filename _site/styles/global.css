@@ -806,6 +806,7 @@ input.search-input {
 	width: 100%;
 }
 .plus-one-button-wrap {
+	display: inline-block;
 	position: absolute;
 	right: 0;
 }
