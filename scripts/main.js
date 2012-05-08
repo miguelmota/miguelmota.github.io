@@ -97,8 +97,8 @@ $(document).ready(function(){
 		return false;
 	});
 	
-	// Don't open link if rel = internal
-	$('a[rel*=internal]').live('click', function(e){
+	// Don't open link if rel = external-false
+	$('a[rel*=external-false]').live('click', function(e){
 		e.preventDefault();
 		return false;
 	});
