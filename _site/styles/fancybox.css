@@ -10,6 +10,9 @@
 #fancybox-wrap a {
 	border: 0;
 }
+#fancybox-outer {
+	background: #000;
+}
 .fancybox-title {
 	background-color: #000;
 	box-sizing: border-box;
