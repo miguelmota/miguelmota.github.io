@@ -47,14 +47,16 @@ $(document).ready(function(){
 
 
 	// Highlight icon on link hover
-	$('a:not(".selected, .blog-post-list a")').has('.icon').hover(
-		function(){
-			$('.icon', this).addClass('icon-no-opacity');
-		},
-		function(){
-			$('.icon', this).removeClass('icon-no-opacity');
-		}
-	);
+	$('a:not(".selected, .blog-post-list a"):has(".icon")').live({
+			mouseenter:
+				function() {
+					$('.icon', this).addClass('icon-no-opacity');
+				},
+			mouseleave:
+				function() {
+					$('.icon', this).removeClass('icon-no-opacity');
+				}
+	});
 	
 
 
