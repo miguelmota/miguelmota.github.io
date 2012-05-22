@@ -320,7 +320,7 @@ Before the &lt;code&gt;$.getJSON()&lt;/code&gt; function, add:&lt;/p&gt;
 &lt;/div&gt;
 
 
-&lt;p&gt;Download &lt;a href='/styles/reset.css' rel='external'&gt;reset.css&lt;/a&gt; | &lt;a href='/styles/reset.min.css' rel='external'&gt;reset.min.css&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Download &lt;a href='/assets/blog/html5-reset-stylesheet/reset.css' rel='external'&gt;reset.css&lt;/a&gt; | &lt;a href='/assets/blog/html5-reset-stylesheet/reset.min.css' rel='external'&gt;reset.min.css&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;This stylesheet is released under the &lt;a href='http://creativecommons.org/licenses/by/3.0/' rel='external'&gt;Creative Commons Attribution 3.0 License&lt;/a&gt;, so feel free to use it!&lt;/p&gt;</description>
 				<link>http://www.miguelmota.com/blog/html5-reset-stylesheet</link>

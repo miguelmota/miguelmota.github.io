@@ -102,6 +102,9 @@ em {
 	display: inline;
 }
 .title {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
 	font-family: Klavika, 'Ubuntu Condensed', Helvetica, Arial, sans-serif;
 	font-size: 32px;
 	letter-spacing: -2px;
@@ -713,21 +716,29 @@ img.loader {
 	width: 64px;
 }
 .site-title {
-	margin-bottom: 5px;
-}
-.site-title a {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	display: block;
 	color: #ccc;
+}
+.site-title:hover,
+.site-title:active {
+	color: #fff;
+}
+.site-title h1 {
+	display: block;
 	font-size: 24px;
 	font-weight: bold;
+	margin-bottom: 5px;
 	text-shadow: 0 -1px 0 #000;
 	text-transform: uppercase;
 }
-.site-title a:hover,
-.site-title a:active {
-	color: #fff;
-}
 .site-description {
 	color: #999;
+	display: block;
+	font-size: 14px;
+	font-weight: normal;
 }
 .main-side-nav-ul {
 	box-sizing: border-box;
@@ -842,6 +853,7 @@ input.search-input {
 	font-weight: normal;
 	min-height: 15px;
 	padding: 10px;
+	position: relative;
 	width: 100%;
 }
 .latest-tweet-content:after {
@@ -1257,8 +1269,10 @@ h6:first-child {
 		margin: 0 10px 0 0;
 		vertical-align: middle;
 	}
-	.site-title a {
+	.site-title {
+		background-color: #222;
 		display: block;
+		height: 64px;
 		padding: 10px 0 5px 0;
 	}
 	.site-description {
@@ -1316,10 +1330,10 @@ h6:first-child {
 	 * --------------------- */
 	#latest-tweet-wrap {
 		padding-bottom: 0;
-		width: 100%;
+		width: 98%;
 	}
 	#latest-tweet {
-		width: 100%;
+		width: 92%;
 	}
 	
 	/* ------------------------
