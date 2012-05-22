@@ -2,26 +2,36 @@
 <html>
 <head>
   <meta name='description' content='' />
-  <title>manda! :)</title>
+  <title>manda :)</title>
   <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0;' />
-  <link href='/assets/manda/favicon.ico' rel='shortcut icon' type='image/ico' />
+  <link href='http://www.miguelmota.com/assets/manda/favicon.ico' rel='shortcut icon' type='image/ico' />
   <link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light+Two' rel='stylesheet'>
-  <link href='/styles/reset.min.css' rel='stylesheet'>
-  <script src='/scripts/jquery.min.js'></script>
-  <script src='/assets/plugins/masonry/jquery.masonry.min.js'></script>
+  <link href='http://www.miguelmota.com/styles/reset.min.css' rel='stylesheet'>
+  <script src='http://www.miguelmota.com/scripts/jquery.min.js'></script>
+  <script src='http://www.miguelmota.com/assets/plugins/masonry/jquery.masonry.min.js'></script>
   <script>
     $(document).ready(function(){
-      var $container = $('#masonry-wrap');
-
-      $container.imagesLoaded(function(){
-        $container.masonry({
-          itemSelector: '.masonry-photo'
-        });
-      });
 
       // External links
       $('a[rel*=external]').live('click',function(e){
         window.open(this.href);
+        return false;
+      });
+
+      $('.nav-ul a').live('click', function(event) {
+        event.preventDefault();
+        $('.content').hide();
+        $('.content#'+this.hash.substr(1)).show();
+
+        if(this.hash.substr(1) == 'gallery') {
+          var $container = $('#masonry-wrap');
+
+          $container.imagesLoaded(function(){
+            $container.masonry({
+              itemSelector: '.masonry-photo'
+            });
+          });
+        }
         return false;
       });
 
@@ -31,56 +41,283 @@
     <script src='/scripts/html5.js'></script>
   <![endif]-->
   <style>
+    * {
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+    }
     body {
-      background: #000;
-      font-family: 'Shadows Into Light Two', Helvetica, sans-serif;
+      background: #edb0f6 url('http://www.backgrounddiva.com/wallpaper/wp-content/gallery/polkadot/polka-dot-wallpaper5-800-600.gif') repeat 0 0 fixed;
+      color: #26052b;
+      font-family: 'Shadows Into Light Two', Helvetica, Arial, sans-serif;
+      font-size: 14px;
+    }
+    .site-bg {
+      display: none;
+
+      height: 100%;
+      left: 0;
+      top: 0;
+      position: fixed;
+      width: 100%;
+      z-index: -1;
+    }
+    .bg-img {
+      height: 100%;
+      width: 100%;
+    }
+    .nav-ul {
+      display: block;
+      list-style-type: none;
+      margin: 0 auto;
+      width: 100%;
+    }
+    .nav-ul li {
+      display: inline-block;
+      float: left;
+      width: 33.3%;
+    }
+    .nav-ul a {
+      background: #770f87;
+      background: -webkit-gradient(linear, left top, left bottom, from(#a014b5), to(#41084a)); /* Saf4+, Chrome */
+      background: -webkit-linear-gradient(#a014b5, #41084a); /* Chrome 10+, Saf5.1+ */
+      background:    -moz-linear-gradient(#a014b5, #41084a); /* FF3.6 */
+      background:     -ms-linear-gradient(#a014b5, #41084a); /* IE10 */
+      background:      -o-linear-gradient(#a014b5, #41084a); /* Opera 11.10+ */
+      background:         linear-gradient(#a014b5, #41084a);
+      box-shadow: 0 1px 4px rgba(33,33,33,.8);
+      -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2) inset;
+      -webkit-box-shadow: 0 1px 4px rgba(33,33,33,.8);
+      color: #fff;
+      display: block;
+      font-size: 24px;
+      font-weight: bold;
+      padding: .6em;
+      text-align: center;
+      text-decoration: none;
+    }
+    .nav-ul a:hover {
+      background: -webkit-gradient(linear, left top, left bottom, from(#770f87), to(#26052b)); /* Saf4+, Chrome */
+      background: -webkit-linear-gradient(#770f87, #26052b); /* Chrome 10+, Saf5.1+ */
+      background:    -moz-linear-gradient(#770f87, #26052b); /* FF3.6 */
+      background:     -ms-linear-gradient(#770f87, #26052b); /* IE10 */
+      background:      -o-linear-gradient(#770f87, #26052b); /* Opera 11.10+ */
+      background:         linear-gradient(#770f87, #26052b);
+    }
+    .content {
+      background: #fff;
+      font-size: 16px;
+      margin: .9em auto .9em auto;
+      opacity: .95;
+      filter:alpha(opacity=95);
+      padding: .9em;
+      width: 90%;
+    }
+    #home {
+      font-size: 40px;
+    }
+    #faves,
+    #gallery {
+      display: none;
+    }
+
+    .photo {
+      height: auto;
+      width: 100%;
+    }
+
+    .table-ui {
+      display: block;
+      width: 100%;
+    }
+    .table-ui th {
+      background: #e691f3;
+      border: 1px solid #e691f3;
+      font-weight: bold;
+      padding: .8em;
+      text-align: center;
+    }
+    .table-ui td {
+      border: 1px solid #e691f3;
+      padding: .8em;
+      position: relative;
+      vertical-align: middle;
+      width: 2%;
+    }
+    .table-ui td:first-child {
+        width: 10%;
+    }
+    .table-ui td:nth-child(2) {
+        width: 40%;
+    }
+    .table-ui .td-even {
+      background: #f7ddfb;
+    }
+    .table-ui .td-odd {
+      background: #fbedfd;
     }
     #masonry-wrap {
       height: 100%;
       width: 100%;
     }
     .masonry-photo {
+      background: black;
       height: auto;
       margin: 5px;
       max-width: 350px;
       width: 100%;
     }
+    .clear {
+      clear: both;
+      display: block;
+    }
   </style>
 </head>
 <body>
-  <div id='masonry-wrap'>
-    <a href='/assets/manda/3.jpeg' rel='external'><img class='masonry-photo' src='/assets/manda/3.jpeg' alt='' /></a>
-    <a href='/assets/manda/12.png' rel='external'><img class='masonry-photo' src='/assets/manda/12.png' alt='' /></a>
-    <a href='/assets/manda/2.jpg' rel='external'><img class='masonry-photo' src='/assets/manda/2.jpg' alt='' /></a>
-    <a href='/assets/manda/4.png' rel='external'><img class='masonry-photo' src='/assets/manda/4.png' alt='' /></a>
-    <a href='/assets/manda/7.png' rel='external'><img class='masonry-photo' src='/assets/manda/7.png' alt='' /></a>
-    <a href='/assets/manda/8.jpg' rel='external'><img class='masonry-photo' src='/assets/manda/8.jpg' alt='' /></a>
-    <a href='/assets/manda/1.png' rel='external'><img class='masonry-photo' src='/assets/manda/1.png' alt='' /></a>
-    <a href='/assets/manda/27.jpg' rel='external'><img class='masonry-photo' src='/assets/manda/27.jpg' alt='' /></a>
-    <a href='/assets/manda/9.jpg' rel='external'><img class='masonry-photo' src='/assets/manda/9.jpg' alt='' /></a>
-    <a href='/assets/manda/10.jpg' rel='external'><img class='masonry-photo' src='/assets/manda/10.jpg' alt='' /></a>
-    <a href='/assets/manda/11.jpg' rel='external'><img class='masonry-photo' src='/assets/manda/11.jpg' alt='' /></a>
-    <a href='/assets/manda/5.png' rel='external'><img class='masonry-photo' src='/assets/manda/5.png' alt='' /></a>
-    <a href='/assets/manda/16.jpg' rel='external'><img class='masonry-photo' src='/assets/manda/16.jpg' alt='' /></a>
-    <a href='/assets/manda/26.jpg' rel='external'><img class='masonry-photo' src='/assets/manda/26.jpg' alt='' /></a>
-    <a href='/assets/manda/30.jpg' rel='external'><img class='masonry-photo' src='/assets/manda/30.jpg' alt='' /></a>
-    <a href='/assets/manda/13.jpg' rel='external'><img class='masonry-photo' src='/assets/manda/13.jpg' alt='' /></a>
-    <a href='/assets/manda/6.png' rel='external'><img class='masonry-photo' src='/assets/manda/6.png' alt='' /></a>
-    <a href='/assets/manda/14.jpg' rel='external'><img class='masonry-photo' src='/assets/manda/14.jpg' alt='' /></a>
-    <a href='/assets/manda/15.jpg' rel='external'><img class='masonry-photo' src='/assets/manda/15.jpg' alt='' /></a>
-    <a href='/assets/manda/17.jpg' rel='external'><img class='masonry-photo' src='/assets/manda/17.jpg' alt='' /></a>
-    <a href='/assets/manda/20.jpg' rel='external'><img class='masonry-photo' src='/assets/manda/20.jpg' alt='' /></a>
-    <a href='/assets/manda/21.jpg' rel='external'><img class='masonry-photo' src='/assets/manda/21.jpg' alt='' /></a>
-    <a href='/assets/manda/22.jpg' rel='external'><img class='masonry-photo' src='/assets/manda/22.jpg' alt='' /></a>
-    <a href='/assets/manda/23.jpg' rel='external'><img class='masonry-photo' src='/assets/manda/23.jpg' alt='' /></a>
-    <a href='/assets/manda/24.jpg' rel='external'><img class='masonry-photo' src='/assets/manda/24.jpg' alt='' /></a>
-    <a href='/assets/manda/28.jpg' rel='external'><img class='masonry-photo' src='/assets/manda/28.jpg' alt='' /></a>
-    <a href='/assets/manda/29.jpg' rel='external'><img class='masonry-photo' src='/assets/manda/29.jpg' alt='' /></a>
-    <a href='/assets/manda/30.jpg' rel='external'><img class='masonry-photo' src='/assets/manda/30.jpg' alt='' /></a>
-    <a href='/assets/manda/31.jpg' rel='external'><img class='masonry-photo' src='/assets/manda/31.jpg' alt='' /></a>
-    <a href='/assets/manda/32.jpg' rel='external'><img class='masonry-photo' src='/assets/manda/32.jpg' alt='' /></a>
-    <a href='/assets/manda/25.png' rel='external'><img class='masonry-photo' src='/assets/manda/25.png' alt='' /></a>
-    <a href='/assets/manda/33.jpg' rel='external'><img class='masonry-photo' src='/assets/manda/33.jpg' alt='' /></a>
-  </div>
+  <div class='site-bg'><img class='bg-img' src='http://www.backgrounddiva.com/wallpaper/wp-content/gallery/polkadot/polka-dot-wallpaper5-800-600.gif' alt=''></div>
+  <ul class='nav-ul'>
+    <li><a href='#home'>Home</a></li>
+    <li><a href='#faves'>Faves</a></li>
+    <li><a href='#gallery'>Gallery</a></li>
+    <span class='clear'></span>
+  </ul>
+
+  <section id='home' class='content'>
+
+    <p>I love amanda :)<br /></p>
+    <img class='photo' src='http://www.miguelmota.com/assets/manda/34.jpg' alt='' />
+
+  </section>
+
+  <section id='faves' class='content'>
+    <table class='table-ui'>
+      <tr>
+        <th colspan=2>Manda's Favourite Stuffs!</th>
+      </tr>
+      <tr>
+        <td class='td-even'>Favourite Color</td>
+        <td class='td-odd'>Purple</td>
+      </tr>
+      <tr>
+        <td class='td-odd'>Favourite Fruit</td>
+        <td class='td-even'>Watermelon</td>
+      </tr>
+      <tr>
+        <td class='td-even'>Favourite Sandwich</td>
+        <td class='td-odd'>Turkeymelt</td>
+      </tr>
+      <tr>
+        <td class='td-odd'>Favourite Cheese</td>
+        <td class='td-even'>Swiss</td>
+      </tr>
+      <tr>
+        <td class='td-even'>Favourite Starbucks Drink</td>
+        <td class='td-odd'>White Chocolate with soy and java chip</td>
+      </tr>
+      <tr>
+        <td class='td-odd'>Favourite Chocolates</td>
+        <td class='td-even'>Lindor Truffles</td>
+      </tr>
+      <tr>
+        <td class='td-even'>Favourite kind of td</td>
+        <td class='td-odd'>ALL!</td>
+      </tr>
+      <tr>
+        <td class='td-odd'>Favourite Gum</td>
+        <td class='td-even'>Stride "Shawn White"</td>
+      </tr>
+      <tr>
+        <td class='td-even'>Favourite In-N-Out thing</td>
+        <td class='td-odd'>Milkshake wif fries</td>
+      </tr>
+      <tr>
+        <td class='td-odd'>Favourite Movie</td>
+        <td class='td-even'>Titanic</td>
+      </tr>
+      <tr>
+        <td class='td-even'>Favourite Avenger's Superhero</td>
+        <td class='td-odd'>Hawkeye</td>
+      </tr>
+      <tr>
+        <td class='td-odd'>Favourite Song</td>
+        <td class='td-even'>Wouldn't it be Nice by The Beach Boys</td>
+      </tr>
+      <tr>
+        <td class='td-even'>Favourite Flowers</td>
+        <td class='td-odd'>Roses</td>
+      </tr>
+      <tr>
+        <td class='td-odd'>Favourite Ape</td>
+        <td class='td-even'>Orangutan</td>
+      </tr>
+      <tr>
+        <td class='td-even'>Favourite Sport</td>
+        <td class='td-odd'>Basketball</td>
+      </tr>
+      <tr>
+        <td class='td-odd'>Favourite Petname</td>
+        <td class='td-even'>"Wittle Tiggly Wiggly"</td>
+      </tr>
+      <tr>
+        <td class='td-even'>Favourite kind of lips</td>
+        <td class='td-odd'>Big slobbery gorilla lips :p</td>
+      </tr>
+      <tr>
+        <td class='td-odd'>Fave thing about herself</td>
+        <td class='td-even'>How she can cheer me up when I'm in a shitty mood :)</td>
+      </tr>
+    </table>
+  </section>
+
+  <section id='gallery' class='content'>
+    <div id='masonry-wrap'>
+
+      <script>
+        var photos = new Array(
+          '3.jpeg',
+          '12.png',
+          '2.jpg',
+          '4.png',
+          '7.png',
+          '8.jpg',
+          '1.png',
+          '27.jpg',
+          '9.jpg',
+          '10.jpg',
+          '11.jpg',
+          '5.png',
+          '16.jpg',
+          '26.jpg',
+          '30.jpg',
+          '13.jpg',
+          '6.png',
+          '14.jpg',
+          '15.jpg',
+          '17.jpg',
+          '20.jpg',
+          '21.jpg',
+          '22.jpg',
+          '23.jpg',
+          '24.jpg',
+          '28.jpg',
+          '29.jpg',
+          '30.jpg',
+          '31.jpg',
+          '32.jpg',
+          '25.png',
+          '33.jpg',
+          '34.jpg'
+          );
+
+        for (var i = 0; i < photos.length; i++) {
+          $('#masonry-wrap').append("<a href='http://www.miguelmota.com/assets/manda/"+photos[i]+"' rel='external'><img class='masonry-photo' src='http://www.miguelmota.com/assets/manda/"+photos[i]+"' alt='' /></a>");
+        }
+      </script>
+      
+
+
+
+    </div>
+  </section>
 </body>
 </html>
