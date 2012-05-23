@@ -43,6 +43,12 @@
 .stream-wakoopa {
 	min-height: 120px;
 }
+.stream-foursquare {
+	min-height: 120px;
+}
+.stream-github {
+	min-height: 120px;
+}
 .stream-flickr {
 	min-height: 180px;
 	min-width: 350px;
@@ -89,6 +95,7 @@
 	height: 16px;
 	margin-bottom: 10px;
 	padding: 0;
+	text-indent: -10000px;
 	width: auto;
 }
 .stream-logo:hover,
@@ -107,6 +114,7 @@
 	display: block;
 	font-size: 18px;
 	margin-bottom: 5px;
+	text-indent: 0;
 }
 .stream-logo-blog:hover,
 .stream-logo-latitude:hover {
@@ -163,6 +171,24 @@
 .stream-logo-wakoopa:active {
 	background-position: 0 18px;
 }
+.stream-logo-foursquare {
+	background: url('/assets/stream/sprites/foursquare-sprite.png');
+	width: 93px;
+	height: 23px;
+}
+.stream-logo-foursquare:hover,
+.stream-logo-foursquare:active {
+	background-position: 0 23px;
+}
+.stream-logo-github {
+	background: url('/assets/stream/sprites/github-sprite.png');
+	width: 51px;
+	height: 23px;
+}
+.stream-logo-github:hover,
+.stream-logo-github:active {
+	background-position: 0 23px;
+}
 .stream-logo-flickr {
 	background: url('/assets/stream/sprites/flickr-sprite.png');
 	width: 51px;
@@ -189,11 +215,11 @@
 	border-color: #007299;
 }
 .stream-li-sub {
-	color: #003f55;
+	color: #005977;
 }
 .stream-ul li a:hover > .stream-li-sub,
 .stream-ul li a:active > .stream-li-sub {
-	color: #005977;
+	color: #007299;
 }
 .stream-ul li a {
 	border: 1px solid transparent;
