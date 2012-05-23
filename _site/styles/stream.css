@@ -188,6 +188,13 @@
 .stream-ul-latitude li:active {
 	border-color: #007299;
 }
+.stream-li-sub {
+	color: #003f55;
+}
+.stream-ul li a:hover > .stream-li-sub,
+.stream-ul li a:active > .stream-li-sub {
+	color: #005977;
+}
 .stream-ul li a {
 	border: 1px solid transparent;
 	box-sizing: border-box;

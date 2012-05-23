@@ -850,7 +850,7 @@ input.search-input {
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	float: left;
-	font-weight: normal;
+	font-weight: bold;
 	min-height: 15px;
 	padding: 10px;
 	position: relative;

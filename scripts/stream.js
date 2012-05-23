@@ -172,7 +172,82 @@ $(document).ready(function(){
 		);
 		
 		
-		
+
+		/* ------------------------
+		 * Github stream
+		 * --------------------- */
+		$('.stream-github .loader').css('display','block');
+		$.getJSON('https://github.com/miguelmota.json?callback=?',
+				function(data) {
+					$('.stream-github').append('<ul class="stream-ul stream-ul-github">');
+					var limit = 5;
+					$.each(data, function(i, item) {
+						if(i >= limit)
+							return false;
+						var pushed = item.repository["pushed_at"];
+						var message = item.payload["shas"][0][2];
+						var head = item.payload["head"];
+						var name = item.repository["name"];
+						var url = item["url"];
+						var type = item["type"];
+						if(type == "PushEvent") {
+							type = 'pushed';
+						}
+						if(type == "PullEvent") {
+							type = 'pulled';
+						}
+
+						var list_item = "<li><a href='"+url+"' rel='external'><img class='stream-thumb' src='/assets/stream/icons/16/github-2.png' alt='' /> <span class='stream-li-sub'>"+type+"</span> \""+message+"\" <span class='stream-li-sub'>to</span> "+name+" <time class='status-date' datetime=''>"+formattedDate(pushed)+"</time><span class='clear'></span></a></li>";
+						$('.stream-ul-github').append(list_item);
+					});
+					$('.stream-ul-github').append('</ul>');
+					$('.stream-ul-github li:nth-child(odd)').addClass('odd');
+
+					$('.stream-github .loader').css('display','none');
+					showMtipTimeout('.stream-logo-github',3000);
+				}
+		);
+
+
+
+		/* ------------------------
+		 * Foursquare stream
+		 * --------------------- */
+		$('.stream-foursquare .loader').css('display','block');
+		$.getJSON('https://api.foursquare.com/v2/users/4418723/checkins?oauth_token=DATQU0DAPF0JA043XEXPOPH2FPHVQUM4YAEAQ0SRTWGZHQ43&v=20120522&callback=?',
+				function(data) {
+					$('.stream-foursquare').append('<ul class="stream-ul stream-ul-foursquare">');
+					var limit = 5;
+					$.each(data.response.checkins.items, function(i, item) {
+						if(i >= limit)
+							return false;
+						var name = item.venue["name"];
+						var city = item.venue["location"]["city"];
+						var state = item.venue["location"]["state"];
+						var url;
+						if(item.venue["url"])
+							url = item.venue["url"];
+						else 
+							url = 'https://foursquare.com/';
+
+						var time = item.createdAt;
+						var photo = item.venue["categories"][0]["icon"]["prefix"] + 
+								   item.venue["categories"][0]["icon"]["sizes"][0] +
+								   item.venue["categories"][0]["icon"]["name"];
+
+						var list_item = "<li><a href='"+url+"' rel='external'><img class='stream-thumb' src='"+photo+"' alt='' /> "+name+" <span class='stream-li-sub'>in "+city+","+state+"</span> <time class='status-date' datetime=''>"+formattedDate(time)+"</time><span class='clear'></span></a></li>";
+						$('.stream-ul-foursquare').append(list_item);
+					});
+					$('.stream-ul-foursquare').append('</ul>');
+					$('.stream-ul-foursquare li:nth-child(odd)').addClass('odd');
+
+					$('.stream-foursquare .loader').css('display','none');
+					showMtipTimeout('.stream-logo-foursquare',3000);
+				}
+		);
+
+
+
 		/* ------------------------
 		 * Facebook stream
 		 * --------------------- */
