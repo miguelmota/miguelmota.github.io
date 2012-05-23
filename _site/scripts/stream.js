@@ -235,7 +235,7 @@ $(document).ready(function(){
 								   item.venue["categories"][0]["icon"]["sizes"][0] +
 								   item.venue["categories"][0]["icon"]["name"];
 
-						var list_item = "<li><a href='"+url+"' rel='external'><img class='stream-thumb' src='"+photo+"' alt='' /> "+name+" <span class='stream-li-sub'>in "+city+","+state+"</span> <time class='status-date' datetime=''>"+formattedDate(time)+"</time><span class='clear'></span></a></li>";
+						var list_item = "<li><a href='"+url+"' rel='external'><img class='stream-thumb' src='"+photo+"' alt='' /> "+name+" <span class='stream-li-sub'>in "+city+", "+state+"</span> <time class='status-date' datetime=''>"+formattedDate(time)+"</time><span class='clear'></span></a></li>";
 						$('.stream-ul-foursquare').append(list_item);
 					});
 					$('.stream-ul-foursquare').append('</ul>');
