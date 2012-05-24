@@ -29,7 +29,7 @@
 	min-height: 180px;
 }
 .stream-facebook {
-	min-height: 40px;
+	min-height: 120px;
 }
 .stream-tumblr {
 	min-height: 120px;
@@ -123,7 +123,7 @@
 .stream-logo-tumblr {
 	background: url('/assets/stream/sprites/tumblr-sprite.png');
 	height: 16px;
-	width: 73px;
+	width: 75px;
 }
 .stream-logo-tumblr:hover,
 .stream-logo-tumblr:active {

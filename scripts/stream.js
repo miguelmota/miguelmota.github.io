@@ -251,52 +251,68 @@ $(document).ready(function(){
 		/* ------------------------
 		 * Facebook stream
 		 * --------------------- */
-		$('.stream-facebook .loader').css('display','block');
-		/*
-		$.getJSON('https://graph.facebook.com/miguel.mota2/feed?&callback=?', 
-				{
-					limit: '3'
-				},
-				function(json){
-					$.each(json.data, function(i, fb){
-						var post = fb.message;
-						var post_id = fb.id.substr(16);
-						var type = fb.type;
-						var link = fb.link;
-						var name = fb.name;
-						var caption = fb.caption;
-						var description = fb.description;
-			    	  	var date = new Date(fb.created_time).toUTCString();		   
-			    	  	switch(type){
-			    	  	case 'status':
-				    	    $('ul.facebook-status').append("<li class='status'>&#187; <span class='post'>"+post+"</span> <time class='status-date'><a href='http://www.facebook.com/miguel.mota2/posts/"+post_id+"' rel='external'>"+niceTime(date)+"</a></time></li>");
-				    	    break;
-			    	  	case 'link':
-			    	  		if(post){
-					    	    $('ul.facebook-status').append("<li class='status'>&#187; Link: <span class='post'>"+post+" <a href='"+link+"' rel='external'>"+name+"</a></span> <time class='status-date'><a href='http://www.facebook.com/miguel.mota2/posts/"+post_id+"'>"+niceTime(date)+"</a></time><div class='clear'></div></li>");
-			    	  		}
-			    	  		else{
-			    	  			$('ul.facebook-status').append("<li class='status'>&#187; Link: <a href='"+link+"' rel='external'>"+name+"</a></span> <time class='status-date'><a href='http://www.facebook.com/miguel.mota2/posts/"+post_id+"'>"+niceTime(date)+"</a></time></li>");
-			    	  		}
-				    	    break;
-			    	  	case 'video':
-			    	  		if(post){
-			    	  			$('ul.facebook-status').append("<li class='status'>&#187; Video: <span class='post'>"+post+" <a href='"+link+"' rel='external'>"+name+"</a></span> <time class='status-date'><a href='http://www.facebook.com/miguel.mota2/posts/"+post_id+"'>"+niceTime(date)+"</a></time></li>");
-			    	  		}
-			    	  		else{
-					    	    $('ul.facebook-status').append("<li class='status'>&#187; Video: <span class='post'><a href='"+link+"' rel='external'>"+name+"</a></span> <time class='status-date'><a href='http://www.facebook.com/miguel.mota2/posts/"+post_id+"'>"+niceTime(date)+"</a></time></li>");
-			    	  		}
-				    	    break;
-			    	  	default:
-			    	  		break;
-			    	  	}
+		$('.stream-facebook .loader').css('display','block');	
+		$('.stream-facebook').append('<ul class="stream-ul stream-ul-facebook">');
+		$.getJSON('https://graph.facebook.com/miguel.mota2/feed&access_token=136918436443248|h21SkstVPoahrXI4sN5kh2A051k&callback=?',
+				function(data) {
+					var limit =5;
+					$.each(data.data, function(i, item) {
+						if(i >= limit)
+							return false;
+
+						var post_id = item.id.substr(16);
+			    	  	var url = 'http://www.facebook.com/miguel.mota2';
+			    	  	var date = new Date(item.created_time).toUTCString();
+
+						var post;
+						if(item.message) {
+							post = item.message;
+							url = url + '/posts/' + post_id;
+						}
+						if(item.story) {
+							post = item.story;
+							url = url + '/allactivity';
+						}
+						if(item.link) {
+							var link = item.link;
+						}
+						if(item.caption) {
+							var caption = item.caption;
+							post = post + " | " + caption;
+						}
+						if(item.description) {
+							var description = item.description;
+							post = post + " - " + description;
+						}
+						if(item.to) {
+							var from = "<span class='stream-li-sub'>"+item.from.name + ":</span> ";
+							post = from + post;
+						}
+
+			    	  	var type = item.type;
+			    	  	if(type == 'status')
+			    	  		type = 'text';
+			    	  	if(type == 'link')
+			    	  		type = 'link';
+			    	  	if(type == 'photo')
+			    	  		type = 'photo';
+			    	  	if(type == 'video')
+			    	  		type = 'video';
+
+		    	  	  	var list_item = "<li><a href='"+url+"' rel='external'><span class='icon icon-"+type+"-16'></span> "+post+" <time class='status-date' datetime=''>"+formattedDate(date)+"</time><span class='clear'></span></a></li>";
+		    	  		$('.stream-ul-facebook').append(list_item);
 					});
 					
-					$('.stream-facebook .loader').html('<span style="color: #555;>"[fetch failed]</span>');
-					showMtipTimeout('.social.facebook');
+					$('.stream-ul-facebook').append('</ul>');
+					$('.stream-ul-facebook li:nth-child(odd)').addClass('odd');
+
+					// Initialize timeago
+					// $('.stream-ul-facebook .status-date').timeago();
+
+					$('.stream-facebook .loader').css('display','none');
+					showMtipTimeout('.stream-logo-facebook',3000);
 				}
 		);
-		*/
 		
 		
 		
