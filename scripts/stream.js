@@ -258,7 +258,7 @@ $(document).ready(function(){
 		$('.stream-facebook').append('<ul class="stream-ul stream-ul-facebook">');
 		$.getJSON('https://graph.facebook.com/miguel.mota2/feed&access_token=136918436443248|h21SkstVPoahrXI4sN5kh2A051k&callback=?',
 				function(data) {
-					var limit =5;
+					var limit = 3;
 					$.each(data.data, function(i, item) {
 						if(i >= limit)
 							return false;
@@ -273,7 +273,7 @@ $(document).ready(function(){
 							url = url + '/posts/' + post_id;
 						}
 						if(item.story) {
-							post = item.story;
+							post = "<span class='stream-li-sub'>" + item.story + "</span>";
 							url = url + '/allactivity';
 						}
 						if(item.link) {
@@ -281,11 +281,11 @@ $(document).ready(function(){
 						}
 						if(item.caption) {
 							var caption = item.caption;
-							post = post + " | " + caption;
+							post = post + "<span class='stream-li-sub'> | " + caption + "</span>";
 						}
 						if(item.description) {
 							var description = item.description;
-							post = post + " - " + description;
+							post = post + "<span class='stream-li-sub'> - " + description + "</span>";
 						}
 						if(item.to) {
 							var from = "<span class='stream-li-sub'>"+item.from.name + ":</span> ";
