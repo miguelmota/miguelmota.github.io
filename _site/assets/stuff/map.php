@@ -16,8 +16,9 @@ $timestamp=$latitude["features"]["0"]["properties"]["timeStamp"];
 ?>
 <!doctype html>
 <html>
-<title></title>
 <head>
+<title>Latitude | Miguel Mota</title>
+<link rel='shortcut icon' href='http://www.miguelmota.com/favicon.ico' />
 <link href='http://www.miguelmota.com/styles/reset.min.css' rel='stylesheet' />
 <script src='http://www.miguelmota.com/scripts/jquery.min.js'></script>
 <script src='http://maps.google.com/maps/api/js?sensor=false'></script>

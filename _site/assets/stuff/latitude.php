@@ -35,8 +35,9 @@
 ?>
 <!doctype html>
 <html>
-    <title></title>
     <head>
+    <title>Latitude | Miguel Mota</title>
+    <link rel='shortcut icon' href='http://www.miguelmota.com/favicon.ico' />
     <link href='http://www.miguelmota.com/styles/reset.min.css' rel='stylesheet' />
     <link href='http://www.miguelmota.com/styles/global.css' rel='stylesheet' />
     <script src='http://www.miguelmota.com/scripts/jquery.min.js'></script>
@@ -57,6 +58,14 @@
             }
         );
     });
+
+    //$.getJSON("http://www.foodfail.org/miguelmota/latitude.json?callback=?",
+    //$.getJSON("http://www.google.com/latitude/apps/badge/api?user=7812482200199007583&type=json&callback=?",
+        //function(data){
+                //$('#latcoords').append("<span>"++"</span>");
+       // }
+    //);
+
     </script>
     <style>
         body {
@@ -96,17 +105,5 @@
     echo "<a href='http://maps.google.com/?q=$place' rel='external'><span class='icon icon-location-marker-16'></span> $place <time class='status-date'>".getRelativeTime($timestamp)."</time></a>";
 ?>
 <div id='latcoords'></div>
-<script>
-/*
-//$.getJSON(eval("http://www.foodfail.org/miguelmota/latitude.json"),
-$.getJSON(eval("http://www.google.com/latitude/apps/badge/api?user=7812482200199007583&type=json"),
-	function(data){
-		$.each(data, function(i, item){
-			var coords = item.features[0].geometry.coordinates[0];
-	      	$('#latcoords').append("<span>"+coords+"</span>");
-		});
-	}
-);*/
-</script>
 </body>
 </html>
