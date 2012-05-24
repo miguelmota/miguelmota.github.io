@@ -69,6 +69,9 @@
 .icon-audio-24 {
 	background-image: url('/assets/site/icons/pictos/24/audio.png');
 }
+.icon-blogger-24 {
+	background-image: url('/assets/site/icons/medialoot/24/blogger.png');
+}
 .icon-book-16 {
 	background-image: url('/assets/site/icons/pictos/16/book.png');
 }
@@ -117,7 +120,7 @@
 	background-image: url('/assets/site/icons/pictos/32/counter-clock.png');
 }
 .icon-dribbble-24 {
-	background: url('/assets/site/icons/pictos/24/dribbble.png');
+	background-image: url('/assets/site/icons/pictos/24/dribbble.png');
 }
 .icon-envelope-16 {
 	background-image: url('/assets/site/icons/pictos/16/envelope.png');
@@ -125,14 +128,23 @@
 .icon-envelope-32 {
 	background-image: url('/assets/site/icons/pictos/32/envelope.png');
 }
+.icon-deviantart-24 {
+	background-image: url('/assets/site/icons/medialoot/24/deviantart.png');
+}
 .icon-facebook-24 {
 	background-image: url('/assets/site/icons/pictos/24/facebook.png');
+}
+.icon-feed-24 {
+	background-image: url('/assets/site/icons/pictos/24/rss.png');
 }
 .icon-file-16 {
 	background-image: url('/assets/site/icons/pictos/16/file.png');
 }
 .icon-flickr-24 {
 	background-image: url('/assets/site/icons/pictos/24/flickr.png');
+}
+.icon-gplus-24 {
+	background-image: url('/assets/site/icons/medialoot/24/gplus.png');
 }
 .icon-grid-16 {
 	background-image: url('/assets/site/icons/pictos/16/grid.png');
@@ -148,6 +160,9 @@
 }
 .icon-journal-16 {
 	background-image: url('/assets/site/icons/pictos/16/journal.png');
+}
+.icon-lastfm-24 {
+	background-image: url('/assets/site/icons/medialoot/24/lastfm.png');
 }
 .icon-link-16 {
 	background-image: url('/assets/site/icons/pictos/16/link.png');
@@ -200,6 +215,9 @@
 .icon-photoset-24 {
 	background-image: url('/assets/site/icons/pictos/24/photoset.png');
 }
+.icon-pinterest-24 {
+	background-image: url('/assets/site/icons/medialoot/24/pinterest.png');
+}
 .icon-question-16 {
 	background-image: url('/assets/site/icons/pictos/16/question-2.png');
 }
@@ -221,8 +239,11 @@
 .icon-search-32 {
 	background-image: url('/assets/site/icons/pictos/32/search.png');
 }
-.icon-subscribe-24 {
-	background-image: url('/assets/site/icons/pictos/24/rss.png');
+.icon-skype-24 {
+	background-image: url('/assets/site/icons/medialoot/24/skype.png');
+}
+.icon-stumbleupon-24 {
+	background-image: url('/assets/site/icons/medialoot/24/stumbleupon.png');
 }
 .icon-suitcase-16 {
 	background-image: url('/assets/site/icons/pictos/16/suitcase.png');
@@ -260,11 +281,23 @@
 .icon-video-24 {
 	background-image: url('/assets/site/icons/pictos/24/video.png');
 }
+.icon-youtube-24 {
+	background-image: url('/assets/site/icons/medialoot/24/vimeo.png');
+}
+.icon-wordpress-24 {
+	background-image: url('/assets/site/icons/medialoot/24/wordpress.png');
+}
 .icon-world-16 {
 	background-image: url('/assets/site/icons/pictos/16/world.png');
 }
+.icon-world-24 {
+	background-image: url('/assets/site/icons/pictos/24/world.png');
+}
 .icon-x-16 {
 	background-image: url('/assets/site/icons/pictos/16/x.png');
+}
+.icon-youtube-24 {
+	background-image: url('/assets/site/icons/medialoot/24/youtube.png');
 }
 .icon-up-24 {
 	background-image: url('/assets/site/icons/pictos/24/up-4.png');
