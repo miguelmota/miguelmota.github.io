@@ -190,14 +190,17 @@ $(document).ready(function(){
 						var name = item.repository["name"];
 						var url = item["url"];
 						var type = item["type"];
+						var image = 'checkmark-2';
 						if(type == "PushEvent") {
 							type = 'pushed';
+							image = 'up-arrow';
 						}
 						if(type == "PullEvent") {
 							type = 'pulled';
+							image = 'down-arrow';
 						}
 
-						var list_item = "<li><a href='"+url+"' rel='external'><img class='stream-thumb' src='/assets/stream/icons/16/github-2.png' alt='' /> <span class='stream-li-sub'>"+type+"</span> \""+message+"\" <span class='stream-li-sub'>to</span> "+name+" <time class='status-date' datetime=''>"+formattedDate(pushed)+"</time><span class='clear'></span></a></li>";
+						var list_item = "<li><a href='"+url+"' rel='external'><img class='stream-thumb icon' src='/assets/site/icons/pictos/16/"+image+".png' alt='' /> <span class='stream-li-sub'>"+type+"</span> \""+message+"\" <span class='stream-li-sub'>to</span> "+name+" <time class='status-date' datetime=''>"+formattedDate(pushed)+"</time><span class='clear'></span></a></li>";
 						$('.stream-ul-github').append(list_item);
 					});
 					$('.stream-ul-github').append('</ul>');
