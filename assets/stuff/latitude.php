@@ -1,13 +1,13 @@
 <?php 
     $info = file_get_contents("http://www.google.com/latitude/apps/badge/api?user=7812482200199007583&type=json");
 
-    $latitude=json_decode($info,true);
-    $place=$latitude["features"]["0"]["properties"]["reverseGeocode"];
-    $timestamp=$latitude["features"]["0"]["properties"]["timeStamp"];
+    $json = json_decode($info,true);
+    $place = $json["features"][0]["properties"]["reverseGeocode"];
+    $timestamp = $json["features"][0]["properties"]["timeStamp"];
 
-    $lat = $latitude["features"]["0"]["geometry"]["coordinates"][0];
-    $long = $latitude["features"]["0"]["geometry"]["coordinates"][1];
-    $coordinates = $long.", ".$lat;
+    $lat = $json["features"][0]["geometry"]["coordinates"][0];
+    $lng = $json["features"][0]["geometry"]["coordinates"][1];
+    $coordinates = $lng.",".$lat;
 
     function plural($num) {
         if ($num != 1)
@@ -35,37 +35,29 @@
 ?>
 <!doctype html>
 <html>
-    <head>
+<head>
     <title>Latitude | Miguel Mota</title>
     <link rel='shortcut icon' href='http://www.miguelmota.com/favicon.ico' />
     <link href='http://www.miguelmota.com/styles/reset.min.css' rel='stylesheet' />
     <link href='http://www.miguelmota.com/styles/global.css' rel='stylesheet' />
-    <script src='http://www.miguelmota.com/scripts/jquery.min.js'></script>
+    <script src='http://code.jquery.com/jquery.min.js'></script>
     <script>
-    $(document).ready(function(){
-        // Open external links in new tab
-        $('a[rel*=external]').live('click', function(){
-            window.open(this.href);
-            return false;
+        $(document).ready(function(){
+            // Open external links in new tab
+            $('a[rel*=external]').live('click', function(){
+                window.open(this.href);
+                return false;
+            });
+            // Highlight icon on link hover
+            $('a').has('.icon').hover(
+                function(){
+                    $('.icon', this).addClass('icon-no-opacity');
+                },
+                function(){
+                    $('.icon', this).removeClass('icon-no-opacity');
+                }
+            );
         });
-        // Highlight icon on link hover
-        $('a').has('.icon').hover(
-            function(){
-                $('.icon', this).addClass('icon-no-opacity');
-            },
-            function(){
-                $('.icon', this).removeClass('icon-no-opacity');
-            }
-        );
-    });
-
-    //$.getJSON("http://www.foodfail.org/miguelmota/latitude.json?callback=?",
-    //$.getJSON("http://www.google.com/latitude/apps/badge/api?user=7812482200199007583&type=json&callback=?",
-        //function(data){
-                //$('#latcoords').append("<span>"++"</span>");
-       // }
-    //);
-
     </script>
     <style>
         body {
@@ -102,8 +94,7 @@
 </head>
 <body>
 <?php
-    echo "<a href='http://maps.google.com/?q=$place' rel='external'><span class='icon icon-location-marker-16'></span> $place <time class='status-date'>".getRelativeTime($timestamp)."</time></a>";
+    echo "<a href='http://maps.google.com/?q=$coordinates' rel='external'><span class='icon icon-location-marker-16'></span> $place <time class='status-date'>".getRelativeTime($timestamp)."</time></a>";
 ?>
-<div id='latcoords'></div>
 </body>
 </html>

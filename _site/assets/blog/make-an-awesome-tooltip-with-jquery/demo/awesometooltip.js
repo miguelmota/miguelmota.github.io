@@ -1,14 +1,14 @@
 /*----------------------------------------
- *	jQuery tooltip
+ *	jQuery awesome tooltip
  *	Author: Miguel Mota, www.miguelmota.com
  *	License: Creative Commons Attribution 3.0 License
 ----------------------------------------*/
 
 (function($) {
-	$.fn.mtip = function() {
+	$.fn.awesometooltip = function() {
 		$(this).each(function(){
-			$(this).attr('mtip',$(this).attr('title')).removeAttr('title');
-			var title = $(this).attr('mtip');
+			$(this).attr('awesometooltip',$(this).attr('title')).removeAttr('title');
+			var title = $(this).attr('awesometooltip');
 			$(this).wrap("<div class='tooltip-wrap' />");
 			$(this).css('white-space','nowrap');
 			$('div.tooltip-wrap').prepend("<div class='tooltip' />");

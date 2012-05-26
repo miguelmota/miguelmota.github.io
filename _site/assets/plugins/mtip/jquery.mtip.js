@@ -1,6 +1,5 @@
 /*----------------------------------------
- *	mtip - jQuery tooltip plugin
- *	v1.0 | 20100524
+ *	jQuery tooltip
  *	Author: Miguel Mota, www.miguelmota.com
  *	License: Creative Commons Attribution 3.0 License
 ----------------------------------------*/

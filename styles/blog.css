@@ -266,6 +266,31 @@ input.short-url:focus {
 	width: 750px;
 }
 
+/*
+	DEMO/DOWNLOAD BUTTON
+*/
+.demo-btn,
+.download-btn {
+	background: #000;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	display: inline-block;
+	font-size: 18px;
+	margin: .5em 0;
+	padding: .8em 1.2em;
+	text-align: center;
+}
+.download-lbl {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	display: inline-block;
+	font-size: 18px;
+	margin: 0;
+	padding: .8em .5em .8em 0;
+}
+
 /* ------------------------------------------------
  * TABLET STYLES
  * --------------------------------------------- */

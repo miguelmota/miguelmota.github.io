@@ -537,7 +537,7 @@ Before the <code>$.getJSON()</code> function, add:</p>
 </div>
 
 
-<p>Download <a href='/assets/blog/html5-reset-stylesheet/reset.css' rel='external'>reset.css</a> | <a href='/assets/blog/html5-reset-stylesheet/reset.min.css' rel='external'>reset.min.css</a></p>
+<p><span class='download-lbl'>Download</span> <a class='download-btn' href='/assets/blog/html5-reset-stylesheet/reset.css' rel='external'>reset.css</a> <a class='download-btn' href='/assets/blog/html5-reset-stylesheet/reset.min.css' rel='external'>reset.min.css</a></p>
 
 <p>This stylesheet is released under the <a href='http://creativecommons.org/licenses/by/3.0/' rel='external'>Creative Commons Attribution 3.0 License</a>, so feel free to use it!</p>
 				</div>
@@ -569,15 +569,15 @@ Before the <code>$.getJSON()</code> function, add:</p>
 	 			<div class='blog-post-text'>
 	 				<a href='/blog/make-an-awesome-tooltip-with-jquery'><img class='blog-post-thumb' src='/assets//blog/make-an-awesome-tooltip-with-jquery/make-an-awesome-tooltip-with-jquery-thumb-large.png' alt='' /></a>
 					<p>I will attempt to show you how to make a simple yet awesome tooltip using jQuery and CSS3.</p>
-<p><a href='http://www.miguelmota.com/assets/plugins/mtip' rel='external'>View the demo</a></p>
+<p><a class='demo-btn' href='/assets/blog/make-an-awesome-tooltip-with-jquery/demo' rel='external'>View the demo</a></p>
 <p>Ok so first let's set up the HTML:</p>
 
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&#39;mtip&#39;</span> <span class="na">href=</span><span class="s">&#39;http://wwww.miguelmota.com&#39;</span> <span class="na">title=</span><span class="s">&#39;Hello, I am a tootip!&#39;</span><span class="nt">&gt;</span>hover over me<span class="nt">&lt;/a&gt;</span>
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&#39;awesometooltip&#39;</span> <span class="na">href=</span><span class="s">&#39;http://wwww.miguelmota.com&#39;</span> <span class="na">title=</span><span class="s">&#39;Hello, I am a tootip!&#39;</span><span class="nt">&gt;</span>hover over me<span class="nt">&lt;/a&gt;</span>
 </code></pre>
 </div>
 
 
-<p>All we did was make a link with the class of <code>mtip</code> (that's what I decided to call this mini plugin) and gave it a <code>title</code> attribute.</p>
+<p>All we did was make a link with the class of <code>awesometooltip</code> (that's what I decided to call this mini plugin) and gave it a <code>title</code> attribute.</p>
 <p>Now let's move on to the fun stuff. We are going to make a self executing function so that the plugin won't collide with other libraries that use the <code>$</code> dollar sign:</p>
 
 <div class="highlight"><pre><code class="javascript"><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>
@@ -590,7 +590,7 @@ Before the <code>$.getJSON()</code> function, add:</p>
 <p>Inside this function we are going to add a new function property to the <code>jQuery.fn</code> object where the name of the property is the name of the plugin:</p>
 
 <div class="highlight"><pre><code class="javascript"><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>
-	<span class="nx">$</span><span class="p">.</span><span class="nx">fn</span><span class="p">.</span><span class="nx">mtip</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+	<span class="nx">$</span><span class="p">.</span><span class="nx">fn</span><span class="p">.</span><span class="nx">awesometooltip</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
 		<span class="c1">//plugin code</span>
 	<span class="p">}</span>
 <span class="p">})(</span><span class="nx">jQuery</span><span class="p">);</span>
@@ -598,17 +598,17 @@ Before the <code>$.getJSON()</code> function, add:</p>
 </div>
 
 
-<p>Ok now we want to rename the <code>title</code> to something else, in this case I renamed it to <code>mtip</code>. How we are going to do this is by making a new attribute and copying the contents of the <code>title</code> 
+<p>Ok now we want to rename the <code>title</code> to something else, in this case I renamed it to <code>awesometooltip</code>. How we are going to do this is by making a new attribute and copying the contents of the <code>title</code> 
 attribute and then removing the <code>title</code> attribute. So what's the point in doing this? if we don't, we will have our custom tooltip and the default tooltip pop up at the same time.. which will be a nuisance!</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;mtip&#39;</span><span class="p">,</span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">)).</span><span class="nx">removeAttr</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">);</span>
+<div class="highlight"><pre><code class="javascript"><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;awesometooltip&#39;</span><span class="p">,</span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">)).</span><span class="nx">removeAttr</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">);</span>
 </code></pre>
 </div>
 
 
-<p>So now let's assign the <code>mtip</code> attribute to a variable named <code>title</code>:</p>
+<p>So now let's assign the <code>awesometooltip</code> attribute to a variable named <code>title</code>:</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">title</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;mtip&#39;</span><span class="p">);</span>
+<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">title</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;awesometooltip&#39;</span><span class="p">);</span>
 </code></pre>
 </div>
 
@@ -661,10 +661,10 @@ attribute and then removing the <code>title</code> attribute. So what's the poin
 <p>So the whole jQuery plugin code should look something like this:</p>
 
 <div class="highlight"><pre><code class="javascript"><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>
-	<span class="nx">$</span><span class="p">.</span><span class="nx">fn</span><span class="p">.</span><span class="nx">mtip</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+	<span class="nx">$</span><span class="p">.</span><span class="nx">fn</span><span class="p">.</span><span class="nx">awesometooltip</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
 		<span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
-			<span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;mtip&#39;</span><span class="p">,</span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">)).</span><span class="nx">removeAttr</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">);</span>
-			<span class="kd">var</span> <span class="nx">title</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;mtip&#39;</span><span class="p">);</span>
+			<span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;awesometooltip&#39;</span><span class="p">,</span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">)).</span><span class="nx">removeAttr</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">);</span>
+			<span class="kd">var</span> <span class="nx">title</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;awesometooltip&#39;</span><span class="p">);</span>
 			<span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">wrap</span><span class="p">(</span><span class="s2">&quot;&lt;div class=&#39;tooltip-container&#39; /&gt;&quot;</span><span class="p">);</span>
 			<span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s1">&#39;white-space&#39;</span><span class="p">,</span><span class="s1">&#39;nowrap&#39;</span><span class="p">);</span>
 			<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;div.tooltip-container&#39;</span><span class="p">).</span><span class="nx">prepend</span><span class="p">(</span><span class="s2">&quot;&lt;div class=&#39;tooltip&#39; /&gt;&quot;</span><span class="p">);</span>
@@ -736,7 +736,7 @@ attribute and then removing the <code>title</code> attribute. So what's the poin
 <p>So the last step now is to initialize our tooltip:</p>
 
 <div class="highlight"><pre><code class="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
-	<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.mtip&#39;</span><span class="p">).</span><span class="nx">mtip</span><span class="p">();</span>
+	<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.awesometooltip&#39;</span><span class="p">).</span><span class="nx">awesometooltip</span><span class="p">();</span>
 <span class="p">});</span>
 </code></pre>
 </div>

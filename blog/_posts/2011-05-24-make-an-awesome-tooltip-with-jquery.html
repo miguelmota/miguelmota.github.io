@@ -8,14 +8,14 @@ thumbnail: make-an-awesome-tooltip-with-jquery-thumb.png
 thumbnail-large: make-an-awesome-tooltip-with-jquery-thumb-large.png
 ---
 <p>I will attempt to show you how to make a simple yet awesome tooltip using jQuery and CSS3.</p>
-<p><a href='http://www.miguelmota.com/assets/plugins/mtip' rel='external'>View the demo</a></p>
+<p><a class='demo-btn' href='/assets{{ page.url }}/demo' rel='external'>View the demo</a></p>
 <p>Ok so first let's set up the HTML:</p>
 
 {% highlight html %}
-<a class='mtip' href='http://wwww.miguelmota.com' title='Hello, I am a tootip!'>hover over me</a>
+<a class='awesometooltip' href='http://wwww.miguelmota.com' title='Hello, I am a tootip!'>hover over me</a>
 {% endhighlight %}
 
-<p>All we did was make a link with the class of <code>mtip</code> (that's what I decided to call this mini plugin) and gave it a <code>title</code> attribute.</p>
+<p>All we did was make a link with the class of <code>awesometooltip</code> (that's what I decided to call this mini plugin) and gave it a <code>title</code> attribute.</p>
 <p>Now let's move on to the fun stuff. We are going to make a self executing function so that the plugin won't collide with other libraries that use the <code>$</code> dollar sign:</p>
 
 {% highlight javascript %}
@@ -28,23 +28,23 @@ thumbnail-large: make-an-awesome-tooltip-with-jquery-thumb-large.png
 
 {% highlight javascript %}
 (function($) {
-	$.fn.mtip = function() {
+	$.fn.awesometooltip = function() {
 		//plugin code
 	}
 })(jQuery);
 {% endhighlight %}
 
-<p>Ok now we want to rename the <code>title</code> to something else, in this case I renamed it to <code>mtip</code>. How we are going to do this is by making a new attribute and copying the contents of the <code>title</code> 
+<p>Ok now we want to rename the <code>title</code> to something else, in this case I renamed it to <code>awesometooltip</code>. How we are going to do this is by making a new attribute and copying the contents of the <code>title</code> 
 attribute and then removing the <code>title</code> attribute. So what's the point in doing this? if we don't, we will have our custom tooltip and the default tooltip pop up at the same time.. which will be a nuisance!</p>
 
 {% highlight javascript %}
-$(this).attr('mtip',$(this).attr('title')).removeAttr('title');
+$(this).attr('awesometooltip',$(this).attr('title')).removeAttr('title');
 {% endhighlight %}
 
-<p>So now let's assign the <code>mtip</code> attribute to a variable named <code>title</code>:</p>
+<p>So now let's assign the <code>awesometooltip</code> attribute to a variable named <code>title</code>:</p>
 
 {% highlight javascript %}
-var title = $(this).attr('mtip');
+var title = $(this).attr('awesometooltip');
 {% endhighlight %}
 
 <p>Next we want to wrap the link in a container:</p>
@@ -90,10 +90,10 @@ jQuery(this).next('div.tooltip').animate({opacity: 'hide', top: '-20'}, 'fast');
 
 {% highlight javascript %}
 (function($) {
-	$.fn.mtip = function() {
+	$.fn.awesometooltip = function() {
 		$(this).each(function(){
-			$(this).attr('mtip',$(this).attr('title')).removeAttr('title');
-			var title = $(this).attr('mtip');
+			$(this).attr('awesometooltip',$(this).attr('title')).removeAttr('title');
+			var title = $(this).attr('awesometooltip');
 			$(this).wrap("<div class='tooltip-container' />");
 			$(this).css('white-space','nowrap');
 			$('div.tooltip-container').prepend("<div class='tooltip' />");
@@ -163,7 +163,7 @@ jQuery(this).next('div.tooltip').animate({opacity: 'hide', top: '-20'}, 'fast');
 
 {% highlight javascript %}
 $(document).ready(function(){
-	$('.mtip').mtip();
+	$('.awesometooltip').awesometooltip();
 });
 {% endhighlight %}
 
