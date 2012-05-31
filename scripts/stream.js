@@ -85,12 +85,12 @@ $(document).ready(function(){
 		}
 
 
-		// Initialize mtip
-		$('.mtip').mtip();
+		// Initialize mtippy
+		//$('.mtip').mtippy();
 
 
 		// Hide stream logo text
-		$(".stream-logo:not('.stream-logo-blog ,.stream-logo-latitude')").text('');
+		//$(".stream-logo:not('.stream-logo-blog ,.stream-logo-latitude')").text('');
 		showMtipTimeout('.stream-logo-blog',3000);
 		showMtipTimeout('.stream-logo-latitude',3000);
 		setTimeout('mapButtonMtip()', 1500);
@@ -167,6 +167,7 @@ $(document).ready(function(){
 					// $('.stream-ul-twitter .status-date').timeago();
 
 					$('.stream-twitter .loader').css('display','none');
+
 					showMtipTimeout('.stream-logo-twitter',3000);
 				}
 		);

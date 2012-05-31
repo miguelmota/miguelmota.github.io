@@ -130,7 +130,7 @@ $(document).ready(function(){
 	
 
 	// Initialize mtip on social icons
-	$('.icon-social').mtip();
+	$('.icon-social, .mtip').mtippy();
 
 });
 

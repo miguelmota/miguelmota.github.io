@@ -92,10 +92,11 @@
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	display: block;
+	font-size: 0;
 	height: 16px;
 	margin-bottom: 10px;
 	padding: 0;
-	text-indent: -10000px;
+	text-indent: 0;
 	width: auto;
 }
 .stream-logo:hover,
@@ -111,7 +112,7 @@
 .stream-logo-blog,
 .stream-logo-latitude {
 	color: #999;
-	display: block;
+	display: inline-block;
 	font-size: 18px;
 	margin-bottom: 5px;
 	text-indent: 0;
