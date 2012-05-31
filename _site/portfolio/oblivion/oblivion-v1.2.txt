@@ -1,0 +1,1982 @@
+<!doctype html>
+<html lang='en'>
+<head>
+    <meta charset='utf-8' />
+<!--
+ *	Oblivion Theme, obliviontheme.tumblr.com
+ *	v1.2 | 20111208
+ *	Author: Miguel Mota, www.miguelmota.com
+ * 	Contact: hello@miguelmota.com
+ *	License: Creative Commons Attribution 3.0 License
+ _____   __       ___                                        
+/\  __`\/\ \     /\_ \    __           __                    
+\ \ \/\ \ \ \____\//\ \  /\_\  __  __ /\_\    ___     ___    
+ \ \ \ \ \ \ '__`\ \ \ \ \/\ \/\ \/\ \\/\ \  / __`\ /' _ `\  
+  \ \ \_\ \ \ \L\ \ \_\ \_\ \ \ \ \_/ |\ \ \/\ \L\ \/\ \/\ \ 
+   \ \_____\ \_,__/ /\____\\ \_\ \___/  \ \_\ \____/\ \_\ \_\
+    \/_____/\/___/  \/____/ \/_/\/__/    \/_/\/___/  \/_/\/_/
+-->
+    {block:Description}
+		<meta name='description' content='{MetaDescription}' />
+	{/block:Description}
+	<meta name='keywords' content="{Title}" />
+	<meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=1;' />
+	
+	<!-- Custom fields -->
+	<meta name='text:Twitter Username' content='' />
+	<meta name='text:Disqus Shortname' content='' />
+	<meta name='text:Google Analytics ID' content='XXXXXXXX-X' />
+	<meta name='text:Facebook Username' content='' />
+	<meta name='text:Flickr Username' content='' />
+	<meta name='text:Dribbble Username' content='' />
+	<meta name='text:Post Width' content='500px' />
+
+	<!-- Custom options -->
+	<meta name='if:Twitter Status' content='0' />
+	<meta name='if:Disqus Comments' content='0' />
+	<meta name='if:Google Analytics' content='0' />
+	<meta name='if:Twitter Icon' content='0' />
+	<meta name='if:Facebook Icon' content='0' />
+	<meta name='if:Flickr Icon' content='0' />
+	<meta name='if:Dribbble Icon' content='0' />
+	<meta name='if:Tumblr Icon' content='0' />
+	<meta name='if:Show Random' content='1' />
+	<meta name='if:Show RSS' content='1' />
+	<meta name='if:Show Archive' content='1' />
+	<meta name='if:Show People Following' content='0' />
+	<meta name='if:Enable Share' content='1' />
+	<meta name='if:Enable Text Shadow' content='1' />
+		
+	<!-- Custom colors -->
+	<meta name='color:Background' content='#252525' />
+	<meta name='color:Background Post' content='#1d1d1d' />
+	<meta name='color:Text' content='#999' />
+	<meta name='color:Link' content='#007299' />
+	<meta name='color:Link Hover' content='#0098cc' />
+	<meta name='color:Link Background' content='transparent' />
+	<meta name='color:Link Background Hover' content='transparent' />
+	<meta name='color:Title' content='#ccc' />
+	<meta name='color:Title Hover' content='#fff' />
+	<meta name='color:Description' content='#555' />
+	<meta name='color:Tweet Background' content='#1d1d1d' />
+	<meta name='color:Nav Link' content='#999' />
+	<meta name='color:Nav Link Background' content='#2d2d2d' />
+	<meta name='color:Nav Link Border Left' content='#444' />
+	<meta name='color:Nav Link Hover' content='#fff' />
+	<meta name='color:Nav Link Hover Background' content='#1d1d1d' />
+	<meta name='color:Nav Link Hover Border Left' content='#999' />
+	<meta name='color:Nav Link Selected' content='#fff' />
+	<meta name='color:Nav Link Selected Background' content='#323232' />
+	<meta name='color:Nav Link Selected Border Left' content='#007299' />
+	<meta name='color:Pagination Link' content='#007299' />
+	<meta name='color:Pagination Link Hover' content='#0098cc' />
+	<meta name='color:Searchbox Background' content='#1d1d1d' />
+	<meta name='color:Searchbox Border Left' content='#2d2d2d' />
+	<meta name='color:Input Background' content='#141414' />
+	<meta name='color:Input Background Focus' content='#141414' />
+	<meta name='color:Input Text' content='#555' />
+	<meta name='color:Input Text Focus' content='#999' />
+	<meta name='color:Notes Background Odd' content='#1d1d1d' />
+	<meta name='color:Notes Background Even' content='transparent' />
+	<meta name='color:Text Selection' content='#fff' />
+	<meta name='color:Text Selection Background' content='#000' />
+	
+	<title>{block:PostTitle}{PostTitle} &#187; {/block:PostTitle}{block:PostSummary}{PostSummary} &#187; {/block:PostSummary}{block:SearchPage}"{SearchQuery}" search results &#187; {/block:SearchPage}{Title}</title>
+	<link rel='alternate' type='application/rss+xml' href='{RSS}'>
+	<link rel='shortcut icon' href='{Favicon}' />
+	<link rel='apple-touch-icon' href='{PortraitURL-128}' />
+	
+	<!-- Google Ubuntu Web Font, code.google.com/webfonts/specimen/Ubuntu -->
+	<link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Ubuntu+Condensed' />
+	
+	<!-- CSS Reset, www.miguelmota.com/styles/reset.min.css -->
+	<link rel='stylesheet' href='http://static.tumblr.com/r8galzl/uTDlv8yf3/reset.min.css' />
+	
+	<!-- jQuery, jquery.com -->
+	<script src='http://static.tumblr.com/r8galzl/b3jlu4kwi/jquery.min.js'></script>
+	
+	<!-- jQuery Masonry, masonry.desandro.com -->
+	<script src='http://static.tumblr.com/r8galzl/Tq0lu4kx9/jquery.masonry.min.js'></script>
+	
+	<!-- jQuery timeago, timeago.yarp.com -->
+	<script src='http://static.tumblr.com/r8galzl/yG3lv8yj1/jquery.timeago.min.js'></script>
+	<script>
+	$(document).ready(function(){
+
+		// Like button. Send 'like' url to hidden iframe
+		$('.like-button').click(function(){
+			var id = $(this).attr('data-id');
+		    var oath = $(this).attr('data-url').slice(-8);
+		    var like = 'http://www.tumblr.com/like/'+oath+'?id='+id;
+			$('#likedit').css('display','block').attr('src', like).css('display','none');
+			$(this).after('<span class="icon icon-heart-red-16 icon-no-opacity like-button"></span>').remove();
+		})
+
+		// Navigation hover effect
+		$('.main-side-nav-ul a:not(".selected")').hover(
+				function(){
+					$(this).animate({borderLeftWidth: '6px'}, {queue: false, duration: 60});
+				},
+				function(){
+					$(this).animate({borderLeftWidth: '4px'}, {queue: false, duration: 60});
+				}
+			);
+		
+		// Initialize Masonry plugin, http://masonry.desandro.com
+		var $tumblelog = $('.posts');
+
+		$tumblelog.imagesLoaded(function(){
+		  $tumblelog.masonry({
+		    isFitWidth: true
+		  });
+		});
+
+		// Add selected class to nav link based on page name
+		$('.main-side-nav-ul a').each(function(){ 
+			if($(this).attr('id') == $('.main-content-wrap').attr('class').split(' ')[1]){
+				$('#home').removeClass('selected');
+				$(this).addClass('selected');
+				$('.icon', this).addClass('icon-no-opacity');
+			}
+			else if(location.pathname == $(this).attr('href')){
+				$('#home').removeClass('selected');
+				$(this).addClass('selected');
+				$('.icon', this).addClass('icon-no-opacity');
+			}
+		});
+
+		// Highlight icon on link hover
+		$('a:not(".selected")').has('.icon').hover(
+			function(){
+				$('.icon', this).addClass('icon-no-opacity');
+			},
+			function(){
+				$('.icon', this).removeClass('icon-no-opacity');
+			}
+		);
+			
+		// Format Tweet date to timeago
+		$('.latest-tweet-date').timeago();
+		
+		// Show zoom icon on image hover
+		$('.photo-wrap').hover(
+				function(){
+					$('.zoom-button', this).fadeIn('fast');
+				},
+				function(){
+					$('.zoom-button', this).fadeOut('fast');
+				}
+		);
+		
+		// Highlight short url on focus
+		$('.short-url').focus(function(){
+			$(this).select();
+		});
+		$('.short-url').mouseup(function(e){
+	        e.preventDefault();
+		});
+		
+		// Change default text color on input focus
+		$('input:text:not(".short-url"), input:password, textarea').focus(function(){
+			if(this.value === this.defaultValue){
+				this.value = '';
+			}
+			$(this).css({
+				color: '#999',
+				fontStyle: 'normal'
+			});
+		}).blur(function(){
+			if(this.value === ''){
+				this.value = this.defaultValue;
+				$(this).css({
+				color: '#555',
+				fontStyle: 'italic'
+			});
+			}
+		});
+	
+		// Open external links in new tab
+		$('a[rel=external]').live('click', function(){
+			window.open(this.href);
+			return false;
+		});
+
+		// Back to top smooth scroll effect
+		$('a[href*=#]').click(function() {
+			if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
+			&& location.hostname == this.hostname) {
+	            var $target = $(this.hash);
+	            $target = $target.length && $target || $('[name=' + this.hash.slice(1) +']');
+	            if ($target.length) {
+	            	var targetOffset = $target.offset().top;
+	            	$('html,body').animate({scrollTop: targetOffset}, 1000);
+	                return false;
+	            }
+	        }
+	    });
+		$(window).scroll(function () { 
+			var scrollTop = $(document).scrollTop();
+			scrollTop = parseInt(scrollTop);
+			var offset = topYloc+scrollTop+'px';  
+			$('.top-link').animate({top:offset},{duration:500,queue:false});
+		});
+		topYloc = parseInt($('.top-link').css('top').substring(0,$('.top-link').css('top').indexOf('px')));
+
+	});
+
+	var fixed = false;
+	$(window).scroll(function(){
+		
+		// Main side nav scroll to fixed
+		if($(this).scrollTop() >= 150){
+			if(!fixed){
+				fixed = true;
+				$('.main-side-nav-info').hide();
+				$('.main-side-nav').css({
+					position: 'fixed'
+				});
+			}
+		}
+		else {
+			if(fixed){
+				fixed = false;
+				$('.main-side-nav-info').show();
+				$('.main-side-nav').css({
+					position: 'static'
+				});
+			}
+		}
+		
+		// Toggle back to top button on scroll
+		if(window.pageYOffset >= 200){
+			$('a.top-link').fadeIn(600);
+		}
+		if(window.pageYOffset < 200){
+			$('a.top-link').fadeOut(185);
+		}
+		
+	});
+	
+	// Display the year
+	function displayYear(){
+		var date = new Date();
+		var thisYear = date.getFullYear();
+	
+		document.write(thisYear);
+	}
+	</script>
+
+	<style>
+	/* ------------------------------------------------
+	 * TABLE OF CONTENTS
+	 * ------------------------------------------------
+	 * 01 BASIC
+	 * 02 LINKS
+	 * 03 ICONS
+	 * 04 INPUT
+	 * 05 NAVIGATION
+	 * 06 SEARCH FORM
+	 * 07 FOLLOWING
+	 * 08 TOP LINK
+	 * 09 LATEST TWEET
+	 * 10 CONTENT
+	 * 11 LOADER
+	 * 12 POSTS
+	 * 13 POST NOTES
+	 * 14 DISQUS
+	 * 15 PAGINATION
+	 * 16 SHARE
+	 * 17 FOOTER
+	 * --------------------------------------------- */
+	 
+	 
+	 
+	/* ------------------------------------------------
+	 * 01 BASIC
+	 * --------------------------------------------- */
+	body {
+		background-color: {color:Background};
+		color: {color:Text};
+		font-family: 'Ubuntu Condensed', Helvetica, Arial, sans-serif;
+		font-size: 14px;
+		{block:IfEnableTextShadow}text-shadow: 0 -1px 0 rgba(0,0,0,.8);{/block:IfEnableTextShadow}
+	}
+	.main-wrap {
+		height: auto;
+		margin: 0 20px 0 20px;
+		word-wrap: break-word;
+		padding: 70px 0 25px 250px;
+		position: relative;
+	}
+	.clear {
+		clear: both;
+	}
+	.hide {
+		display: none;
+	}
+	ul li {
+		list-style-type: none;
+		line-height: 125%;
+	}
+	code {
+		background-color: #141414;
+	}
+	::selection {
+		background-color: {color:Text Selection Background};
+		color: {color:Text Selection};
+		opacity: .8;
+		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+		filter: alpha(opacity=80);
+		{block:IfEnableTextShadow}text-shadow: 0 1px 0 rgba(0,0,0,.3);{/block:IfEnableTextShadow}
+	}
+	::-moz-selection {
+		background-color: {color:Text Selection Background};
+		color: {color:Text Selection};
+		opacity: .8;
+		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+		filter: alpha(opacity=80);
+		{block:IfEnableTextShadow}text-shadow: 0 1px 0 rgba(0,0,0,.3);{/block:IfEnableTextShadow}
+	}
+	p {
+		line-height: 125%;
+		padding: 12px 0 4px 0;
+	}
+	p+p {
+		padding: 4px 0;
+	}
+	strong {
+		font-weight: bold;
+	}
+
+
+
+	/* ------------------------------------------------
+	 * 02 LINKS
+	 * --------------------------------------------- */
+	a {
+		background-color: {color:Link Background};
+		color: {color:Link};
+		font-weight: bold;
+		{block:IfEnableTextShadow}text-shadow: 0 1px 0 rgba(0,0,0,.5);{/block:IfEnableTextShadow}
+		transition: background-color linear .1s, color linear .1s;
+		-moz-transition: background-color linear .1s, color linear .1s;
+		-o-transition: background-color linear .1s, color linear .1s;
+		-webkit-transition: background-color linear .1s, color linear .1s;
+	}
+	a:hover {
+		background-color: {color:Link Background Hover};
+		color: {color:Link Hover};
+		{block:IfEnableTextShadow}text-shadow: 0 -1px 0 rgba(0,0,0,.5);{/block:IfEnableTextShadow}
+	}
+	a:active {
+		{block:IfEnableTextShadow}text-shadow: 0 -1px 0 rgba(0,0,0,.5);{/block:IfEnableTextShadow}
+	}
+	
+	
+	
+	/* ------------------------------------------------
+	 * 03 ICONS
+	 * --------------------------------------------- */
+	.icon {
+		border: 0;
+		display: inline-block;
+		height: 16px;
+		opacity: .5;
+		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+		filter: alpha(opacity=50);
+		padding: 0;
+		transition: opacity linear .1s;
+		-moz-transition: opacity linear .1s;
+		-o-transition: opacity linear .1s;
+		-webkit-transition: opacity linear .1s;
+		vertical-align: middle;
+		width: 16px;
+	}
+	.icon:hover,
+	.icon:active {
+		opacity: 1;
+		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+		filter: alpha(opacity=100);
+	}
+	.icon-no-hover:hover,
+	.icon-no-hover:active {
+		cursor: default;
+		opacity: .5;
+		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+		filter: alpha(opacity=50);
+	}
+	.icon-no-opacity {
+		opacity: 1;
+		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+		filter: alpha(opacity=100);
+	}
+	.icon-no-opacity:hover,
+	.icon-no-opacity:active {
+		opacity: 1;
+		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+		filter: alpha(opacity=100);
+	}
+	.icon-nav {
+		background-position: 50% 50%;
+		background-repeat: no-repeat;
+		float: left;
+		margin-right: 5px;
+	}
+	.icon-social {
+		height: 24px;
+		margin-right: 2px;
+		width: 24px;
+	}
+	.icon-top {
+		float: right;
+		height: 24px;
+		margin-bottom: 10px;
+		width: 24px;
+	}
+	.icon-audio-24 {
+		background: url('http://static.tumblr.com/r8galzl/0jWlu4l1b/audio.png');
+	}
+	.icon-chat-24 {
+		background: url('http://static.tumblr.com/r8galzl/gNzlu4l1p/chat.png');
+	}
+	.icon-bubble-16 {
+		background: url('http://static.tumblr.com/r8galzl/rxvlu4l2l/comments.png');
+		height: 13px;
+	}
+	.icon-counter-clock-16 {
+		background-image: url('http://static.tumblr.com/r8galzl/dNTlv5l91/counter-clock.png');
+	}
+	.icon-clock-16 {
+		background: url('http://static.tumblr.com/r8galzl/siClu4l2w/date.png');
+	}
+	.icon-dribbble-24 {
+		background: url('http://static.tumblr.com/r8galzl/84llu4l3m/dribbble.png');
+	}
+	.icon-extend-24 {
+		background: url('http://static.tumblr.com/r8galzl/4aflv4zrs/extend.png');
+		height: 24px;
+		width: 24px;
+	}
+	.icon-facebook-24 {
+		background: url('http://static.tumblr.com/r8galzl/14Elu4l3x/facebook.png');
+	}
+	.icon-flickr-24 {
+		background: url('http://static.tumblr.com/r8galzl/g0tlu4l4b/flickr.png');
+	}
+	.icon-heart-16 {
+		background: url('http://static.tumblr.com/r8galzl/nf8lu4l37/heart.png');
+		height: 14px;
+	}
+	.icon-heart-16.icon-nav {
+		background-image: url('http://static.tumblr.com/r8galzl/nf8lu4l37/heart.png');
+		background-position: 50% 50%;
+		background-repeat: no-repeat;
+		height: 16px;
+	}
+	.icon-heart-red-16 {
+		background: url('http://static.tumblr.com/r8galzl/EWflvxgzz/heart-red.png');
+		height: 14px;
+	}
+	.icon-home-16 {
+		background-image: url('http://static.tumblr.com/r8galzl/0ollv3q5t/home.png');
+	}
+	.icon-link-24 {
+		background: url('http://static.tumblr.com/r8galzl/hPxlu4l4s/link.png');
+	}
+	.icon-photo-24 {
+		background: url('http://static.tumblr.com/r8galzl/1Rclu4l5d/photo.png');
+	}
+	.icon-photoset-24 {
+		background: url('http://static.tumblr.com/r8galzl/1Rclu4l5d/photo.png');
+	}
+	.icon-question-16 {
+		background-image: url('http://static.tumblr.com/r8galzl/MWMlv3qtc/question.png');
+	}
+	.icon-quote-24 {
+		background: url('http://static.tumblr.com/r8galzl/PBclu4l5q/quote.png');
+	}
+	.icon-reblog-16 {
+		background: url('http://static.tumblr.com/r8galzl/8Eclv3p4e/reblog.png');
+	}
+	.icon-rss-16 {
+		background: url('http://static.tumblr.com/r8galzl/MrPlv3qtw/rss.png');
+	}
+	.icon-shuffle-16 {
+		background-image: url('http://static.tumblr.com/r8galzl/oYslv3qwh/shuffle.png');
+	}
+	.icon-tags-16 {
+		background: url('http://static.tumblr.com/r8galzl/fgnlu4l7c/tags.png');
+		width: 12px;
+	}
+	.icon-text-24 {
+		background: url('http://static.tumblr.com/r8galzl/NMVlu4l9k/text.png');
+	}
+	.icon-tumblr-24 {
+		background: url('http://static.tumblr.com/r8galzl/obJlu4l9w/tumblr.png');
+	}
+	.icon-twitter-24 {
+		background: url('http://static.tumblr.com/r8galzl/5ehlu4l99/twitter.png');
+	}
+	.icon-twitter-bird-24 {
+		background: url('http://static.tumblr.com/r8galzl/73Ilu4l8u/twitter-bird.png');
+		height: 13px;
+	}
+	.icon-up-24 {
+		background: url('http://static.tumblr.com/r8galzl/9Rnlv3s47/up.png');
+		height: 24px;
+		width: 24px;
+	}
+	.icon-upload-16 {
+		background-image: url('http://static.tumblr.com/r8galzl/RF7lv3qup/upload.png');
+	}
+	.icon-video-24 {
+		background: url('http://static.tumblr.com/r8galzl/B5blu4l8k/video.png');
+	}
+
+
+	
+	/* ------------------------------------------------
+	 * 04 INPUT
+	 * --------------------------------------------- */
+	input[type=text],
+	input[type=password],
+	textarea {		
+		background-color: {color:Input Background};
+		border: 0;
+		border-left: 4px solid {color:Searchbox Border Left};
+		color: {color:Input Text};
+		font-family: inherit;
+		font-size: 14px;
+		width: 100%;
+		padding: 4px 4px 4px 8px;
+		transition: border-color .3s linear, color .1s linear;
+		-moz-transition: border-color .3s linear, color .1s linear;
+		-o-transition: border-color .3s linear, color .1s linear;
+		-webkit-transition: border-color .1s linear, color .1s linear;
+	}
+	input[type=text]:focus,
+	input[type=password]:focus,
+	textarea:focus {
+		background-color: {color:Input Background Focus};
+		border-color: {color:Link};
+		border-left-color: {color:Link};
+		font-style: normal;
+		color: {color:Input Text Focus};
+	}
+	textarea {
+		overflow: auto;
+		resize: none;
+	}
+	.button {
+		background: #004c66;
+		border-left: none;
+		color: #fff;
+		font-size: 12px;
+		padding: 5px 10px;
+		{block:IfEnableTextShadow}text-shadow: none;{/block:IfEnableTextShadow}
+	}
+	.button:hover {
+		background: {color:Link};
+		color: #fff;
+		{block:IfEnableTextShadow}text-shadow: none;{/block:IfEnableTextShadow}
+	}
+	.button:active {
+		color: #fff;
+		{block:IfEnableTextShadow}text-shadow: none;{/block:IfEnableTextShadow}
+	}
+
+
+
+	/* ------------------------------------------------
+	 * 05 NAVIGATION
+	 * --------------------------------------------- */
+	.main-side-nav-wrap {
+		left: 0;
+		height: 100%;
+		position: absolute;
+		width: 200px;
+	}
+	.main-side-nav {
+		position: static;	
+		top: 20px;
+		width: 200px;
+	}
+	.nav-logo {
+		border-left: none !important;
+		display: block;
+		height: 64px;
+		margin-bottom: 15px;
+		padding: 0;
+		width: 64px;
+	}
+	.site-title {
+		margin-bottom: 5px;
+	}
+	.site-title a {
+		color: {color:Title};
+		font-size: 24px;
+		font-weight: bold;
+		{block:IfEnableTextShadow}text-shadow: 0 -1px 0 #000;{/block:IfEnableTextShadow}
+		text-transform: uppercase;
+	}
+	.site-title a:hover,
+	.site-title a:active {
+		color: {color:Title Hover};
+	}
+	.site-description {
+		color: {color:Description};
+	}
+	.main-side-nav-ul {
+		padding: 15px 0;
+	}
+	.main-side-nav-ul a {
+		background-color: {color:Nav Link Background};
+		border-left: 4px solid {color:Nav Link Border Left};
+		color: {color:Nav Link};
+		display: block;
+		font-size: 13px;
+		margin: 1px 0;
+		padding: 6px 6px 6px 12px;
+		position: relative;
+		text-transform: uppercase;
+		width: 100%;
+	}
+	.main-side-nav-ul a:hover,
+	.main-side-nav-ul a:active {
+		background-color: {color:Nav Link Hover Background};
+		border-left: 4px solid {color:Nav Link Hover Border Left};
+		color: {color:Nav Link Hover};
+	}
+	.main-side-nav-ul a.selected {
+		background-color: {color:Nav Link Selected Background};
+		border-left: 6px solid {color:Nav Link Selected Border Left};
+		color: {color:Nav Link Selected};
+		font-weight: bold;
+	}
+
+	
+	
+	/* ------------------------------------------------
+	 * 06 SEARCH FORM
+	 * --------------------------------------------- */
+	.search-form {
+		padding-bottom: 15px;
+		width: 100%;
+	}
+	input.search-input {
+		background: {color:Searchbox Background} url('http://static.tumblr.com/r8galzl/EOvlv5mgs/search.png') no-repeat 98% 4px;
+		border-left-color: {color:Searchbox Border Left};
+		font-style: italic;
+		padding-right: 25px;
+		width: 175px;
+	}
+	.search-button {
+		display: none;
+	}
+
+
+
+	/* ------------------------------------------------
+	 * SOCIAL LINKS
+	 * --------------------------------------------- */
+	.follow-wrap {
+		clear: both;
+		padding-bottom: 15px;
+		width: 100%;
+	}
+
+
+
+	/* ------------------------------------------------
+	 * 08 TOP LINK
+	 * --------------------------------------------- */
+	.plus-one-button-wrap {
+		position: absolute;
+		right: 0;
+	}
+
+	
+
+	/* ------------------------------------------------
+	 * 07 FOLLOWING
+	 * --------------------------------------------- */
+	.following-wrap {
+		clear: both;
+		max-height: 34px;
+		overflow: hidden;
+		margin-bottom: 15px;
+		position: relative;
+		width: 100%;
+	}
+	.following-ul li {
+		display: inline;
+		float: left;
+		line-height: 100%;
+		margin: 0;
+		padding: 0 1px;
+	}
+	.following-ul img {
+		margin: 0;
+		padding: 0;
+	}
+
+	
+	
+	/* ------------------------------------------------
+	 * 08 TOP LINK
+	 * --------------------------------------------- */
+	#top {
+		position: absolute;
+		top: 0top
+	}
+	.;-link {
+		display: none;
+		float: right;
+	}
+
+
+	
+	/* ------------------------------------------------
+	 * 09 LATEST TWEET
+	 * --------------------------------------------- */
+	#latest-tweet-wrap {
+		clear: both;
+		height: auto;
+		position: relative;
+		width: 200px;
+	}
+	.latest-tweet-icon {}
+	#latest-tweet {
+		right: -34px;
+		position: relative;
+		top: -18px;
+		width: 166px;
+	}
+	.latest-tweet-content {
+		background-color: {color:Tweet Background};
+		float: left;
+		min-height: 20px;
+		padding: 10px;
+		width: 100%;
+	}
+	.latest-tweet-content:after {
+		border-color: transparent {color:Tweet Background};
+		border-style: solid;
+		border-width: 8px 15px 8px 0;
+		bottom: auto;
+		content: "";
+		display: inline-block; 	
+		left: -10px; /* value = - border-left-width - border-right-width */
+		top: 3px;
+		position: absolute;
+		width: 0;
+		z-index: -10;
+	}
+	.latest-tweet-content a {
+		font-weight: normal;
+	}
+	.latest-tweet-loading {
+		color: #555;
+		font-style: italic;
+	}
+	.latest-tweet-date {
+		font-size: 12px;
+	}
+
+
+
+	/* ------------------------------------------------
+	 * LIKES
+	 * --------------------------------------------- */
+	.likes-wrap {
+		background-color: {color:Tweet Background};
+		margin-bottom: 15px;
+		padding: 10px;
+		position: relative;
+		width: 100%;
+	}
+	.likes-content img {
+		width: 100%;
+	}
+	.icon-likes {
+		margin-bottom: 5px;
+	}
+
+
+
+	/* ------------------------------------------------
+	 * 10 CONTENT
+	 * --------------------------------------------- */
+	.main-content-wrap {
+		height: auto;
+		position: relative;
+		width: auto;
+	}
+	.search-results {
+		background-color: #1d1d1d;
+		font-size: 14px;
+		max-width: {text:Post Width};
+		padding: 10px;	
+		margin-bottom: 10px;
+		width: {text:Post Width};
+	}
+	.page-title {
+		font-size: 32px;
+		font-weight: bold;
+		margin-bottom: 10px;
+		position: relative;
+		{block:IfEnableTextShadow}text-shadow: 0 -1px 0 #000;{/block:IfEnableTextShadow}
+		text-transform: uppercase;
+	}
+
+
+
+	/* ------------------------------------------------
+	 * 11 LOADER
+	 * --------------------------------------------- */
+	.loader {
+		background: url('http://static.tumblr.com/r8galzl/nx5lu4kz5/ajax-loader.gif') no-repeat 0 0;
+		height: 16px;
+		margin-right: 5px;
+		width: 16px;
+	}
+
+
+
+	/* ------------------------------------------------
+	 * 12 POSTS
+	 * --------------------------------------------- */
+	.post {
+		background-color: {color:Background Post};
+		dipslay: block;  
+		float: left;	
+		margin: 5px;
+		max-width: {text:Post Width};
+		width: {text:Post Width};
+		padding: 20px;
+	  	position: relative;
+	}
+	.post-text {
+		padding-bottom: 10px;
+	}
+	.photo-wrap {
+		height: 100%;
+		position: relative;
+		width: 100%;
+	}
+	.photo img {
+		background: #1d1d1d url('http://static.tumblr.com/r8galzl/dCnlvvqb9/bg-dark-checker.png') repeat 0 0;
+		box-shadow: 2px 2px 8px rgba(0,0,0,.7);
+		-moz-box-shadow: 2px 2px 8px rgba(0,0,0,.7);
+		-o-box-shadow: 2px 2px 8px rgba(0,0,0,.7);
+		-webkit-box-shadow: 2px 2px 8px rgba(0,0,0,.7);
+		min-height: 100px;
+		height: auto;
+		width: 100%;
+	}
+	.zoom-button {
+		bottom: 10px;
+		display: none;
+		position: absolute;
+		right: 10px;
+	}
+	.audio-player {
+		margin-bottom: 10px;
+	}
+	.audio-album-art {
+		float: left;
+		height: 128px;
+		margin-right: 15px;
+		width: 128px;
+	}
+	.audio-track-name {
+		font-size: 18px;
+		margin-bottom: 10px;
+	}
+	.audio-artist-name {
+		font-size: 16px;
+		margin-bottom: 10px;
+	}
+	.audio-album-name {
+		font-size: 14px;
+		margin-bottom: 10px;
+	}
+	.chat-ul li {
+		padding: 5px 0;
+	}
+	.chat-ul li:nth-child(odd) {
+		background-color: #141414;
+	}
+	.post-text-quote {
+		font-size: 24px;
+		font-style: italic;
+		line-height: 125%;
+		padding-bottom: 5px;
+	}
+	.quote-source {
+		font-size: 14px;
+		padding: 10px 0 10px 15px;
+	}
+	h3 {
+		font-size: 18px;
+		line-height: 105%;
+	}
+	.text h3 {
+		font-size: 24px;
+	}
+	.link h3 {
+		font-size: 26px;
+	}
+	.chat h3 {
+		font-size: 20px;
+	}
+	.exif-ul {
+		color: #555;
+		font-size: 10px;
+	}
+	.exif-ul li {
+		display: inline;
+	}
+	.post-source {
+		color: #777;
+		font-size: 10px;
+		padding-top: 5px;
+	}
+	.post-source img {
+		background: none;
+		box-shadow: none;
+		-moz-box-shadow: none;
+		-o-box-shadow: none;
+		-webkit-box-shadow: none;
+		height: 16px;
+		max-height: 16px;
+		min-height: 16px;
+		vertical-align: middle;
+		width: auto;
+	}
+	.post-tags {
+		color: #777;
+		font-size: 10px;
+	}
+	.post-tags a {
+		font-weight: normal;
+	}
+	.dsq-comment-count-wrap {
+		float: right;
+		padding-right: 5px;
+	}
+	.note-count {
+		float: right;
+		margin-right: 10px;
+	}
+	.reblog-button {
+		float: right;
+	}
+	.like-button {
+		float: right;
+		margin-right: 10px;
+	}
+	.post-footer {
+		border-top: 1px solid #333;
+		font-size: 12px;
+		margin: 10px 0;
+		padding: 10px 0;
+	}
+
+	
+	
+	/* ------------------------------------------------
+	 * 13 POST NOTES
+	 * --------------------------------------------- */
+	.notes-wrap {
+		font-size: 12px;
+		padding: 10px 20px;
+		width: {text:Post Width};
+	}
+	.note-count-label {
+		font-size: 14px;
+		padding-bottom: 10px;
+	}
+	.notes {
+		font-size: 12px;
+	}
+	.notes li {
+		padding: 3px;
+	}
+	.notes li:nth-child(odd) {
+		background-color: {color:Notes Background Odd};
+	}
+	.notes li:nth-child(even) {
+		background-color: {color:Notes Background Even};
+	}
+	.avatar {
+	    height: 16px;
+	    margin-right: 5px;
+	    vertical-align: -4px;
+	    width: 16px;
+	}
+	.answer-content {
+	    font-weight: normal;
+	}
+	.note blockquote {
+		border-left: 1px solid {color:Text};
+		margin: 5px 0 5px 35px;
+		padding-left: 5px;
+	}
+
+
+	
+	/* ------------------------------------------------
+	 * 14 DISQUS
+	 * --------------------------------------------- */
+	.dsq-comment-wrap {
+		padding: 20px;
+		position: relative;
+		width: {text:Post Width};
+	}
+	#disqus_thread {
+		font-size: 14px;
+	}
+
+
+	
+	/* ------------------------------------------------
+	 * 15 PAGINATION
+	 * --------------------------------------------- */
+	.pagination {
+		clear: both;
+		font-size: 18px;
+		padding: 25px 20px 10px 20px;
+		text-align: center;
+		width: {text:Post Width};
+	}
+	.pagination a {
+		color: {color:Pagination Link};
+	}
+	.pagination a:hover,
+	.pagination a:active {
+		color: {color:Pagination Link Hover};
+	}
+	.pagination-jump {
+		display: inline-block;
+	}
+	.pagination-jump span {
+		padding: 10px;
+	}
+	.pagination-jump a {
+		padding: 10px;
+	}
+	.pagination-next {
+		float: right;
+		text-align: right;
+	}
+	.pagination-previous {
+		float: left;
+		text-align: left;
+	}
+
+
+	
+	/* ------------------------------------------------
+	 * 16 SHARE
+	 * --------------------------------------------- */
+	.share-wrap {}
+	input.short-url {
+		background: {color:Input Background};
+		border: 1px solid {color:Input Background};
+		float: right;
+		font-size: 10px;
+		margin: 0 0 0 5px;
+		padding: 4px;
+		width: 160px;
+	}
+	.short-url:focus {
+		border: 1px solid {color:Link};
+	}
+	.tumblr-share-button {
+		background: url('http://platform.tumblr.com/v1/share_1.png') top left no-repeat transparent;
+		display: inline-block;
+		float: right;
+		height: 20px;
+		margin: 0;
+		text-indent: -9999px;
+		overflow: hidden;
+		padding: 0;
+		width: 81px; 
+	}
+
+
+	
+	/* ------------------------------------------------
+	 * 17 FOOTER
+	 * --------------------------------------------- */
+	.main-footer {
+		clear: both;
+		color: #555;
+		font-size: 12px;
+		padding: 25px 10px;
+		position: relative;
+		{block:IfEnableTextShadow}text-shadow: 0 -1px 0 rgba(0,0,0,.5);{/block:IfEnableTextShadow}
+		width: 100%;
+	}
+	.main-footer a {
+		color: #004c66;
+	}
+	.main-footer a:hover,
+	.main-footer a:active {
+		color: #005977;
+		{block:IfEnableTextShadow}text-shadow: 0 -1px 0 rgba(0,0,0,.3);{/block:IfEnableTextShadow}
+	}
+	.logo-tumblr {
+		background-color: transparent;
+		background-image: url('http://static.tumblr.com/r8galzl/Lv6lvvoec/tumblr-sprite-24.png');
+		background-position: 0 0;
+		background-repeat: no-repeat;
+		border: 0;
+		display: inline-block;
+		height: 12px;
+		margin: 0 3px 0 3px;
+		padding: 0;
+		width: 56px;
+	}
+	.logo-tumblr:hover,
+	.logo-tumblr:active {
+		background-position: 0 -13px;
+	}
+
+	{CustomCSS}
+	</style>
+	<!--  HTML5 Shiv, code.google.com/p/html5shiv -->
+	<!--[if lt IE 9]>
+		<script src='http://static.tumblr.com/r8galzl/bmWlu4lb7/html5.js'></script>
+	<![endif]-->
+</head>
+<body>
+<div id='top'></div>
+<div class='main-wrap'>
+
+	<!-- Side content -->
+	<div class='main-side-nav-wrap'>
+		<nav class='main-side-nav'>
+			
+			<div class='main-side-nav-info'>
+				<!-- Portrait -->
+				<a class='nav-logo' href='/'><img src='{PortraitURL-64}' alt='' /></a>
+				
+				<!-- Title -->
+				<h1 class='site-title'><a href='/'>{Title}</a></h1>
+				
+				<!-- Description -->
+				{block:Description}
+					<div class='site-description'>{Description}</div>
+				{/block:Description}
+			</div>
+			<!-- Side navigation -->
+			<ul class='main-side-nav-ul'>
+				<li><a class='selected' id='home' href='/'><span class='icon icon-home-16 icon-nav'></span> Home</a></li>
+	         {block:AskEnabled}
+	         	<li><a id='ask' href='/ask'><span class='icon icon-question-16 icon-nav'></span> {AskLabel}</a></li>
+			{/block:AskEnabled}
+			{block:SubmissionsEnabled} 
+				<li><a id='submit' href='/submit'><span class='icon icon-upload-16 icon-nav'></span> {SubmitLabel}</a></li>
+			{/block:SubmissionsEnabled}			
+			{block:IfShowRandom}
+				<li><a id='random' href='/random'><span class='icon icon-shuffle-16 icon-nav'></span> Random</a></li>
+			{/block:IfShowRandom}
+			{block:Likes}
+				<li><a id='likes' href='http://www.tumblr.com/liked/by/{Name}'><span class='icon icon-heart-16 icon-nav'></span> Likes</a></li>
+			{/block:Likes}
+			{block:IfShowArchive}
+				<li><a id='archive' href='/archive'><span class='icon icon-counter-clock-16 icon-nav'></span> Archive</a></li>
+			{/block:IfShowArchive}
+			{block:IfShowRSS}
+				<li><a id='rss' href='{RSS}'><span class='icon icon-rss-16 icon-nav'></span> Subscribe</a></li>
+			{/block:IfShowRSS}
+			 {block:HasPages}
+	    	 	{block:Pages} 
+					<li><a id='{Label}' href='{URL}'>{Label}</a></li>
+				{/block:Pages}
+	         {/block:HasPages}
+			</ul>
+	
+			<!-- Search form -->
+			<form class='search-form' action='/search' method='get'>
+	   			<input type='text' class='search-input' name='q' value='[search]' />
+	    		<input type='submit' class='search-button' value='Search' />
+			</form>
+			
+			<!-- Social links -->
+			<div class='follow-wrap'>
+		
+				{block:IfTwitterIcon}<a class='icon icon-twitter-24 icon-social' href='http://twitter.com/{text:Twitter Username}' rel='external'></a>{/block:IfTwitterIcon}
+				{block:IfFacebookIcon}<a class='icon icon-facebook-24 icon-social' href='http://www.facebook.com/{text:Facebook Username}' rel='external'></a>{/block:IfFacebookIcon}
+				{block:IfFlickrIcon}<a class='icon icon-flickr-24 icon-social' href='http://www.flickr.com/photos/{text:Flickr Username}' rel='external'></a>{/block:IfFlickrIcon}
+				{block:IfDribbbleIcon}<a class='icon icon-dribbble-24 icon-social' href='http://dribbble.com/{text:Dribbble Username}' rel='external'></a>{/block:IfDribbbleIcon}
+				{block:IfTumblrIcon}<a class='icon icon-tumblr-24 icon-social' href='http://{Name}.tumblr.com' rel='external'></a>{/block:IfTumblrIcon}
+				
+				<!-- Google Plus One -->
+				<!-- <span class='plus-one-button-wrap'><g:plusone class='plus-one-button' href='http://{Name}.tumblr.com' count='false' size='medium'></g:plusone></span> -->
+				
+			</div>
+
+			<!-- Twitter status -->
+			{block:IfTwitterStatus}
+				<div id='latest-tweet-wrap'>
+					<a class='icon icon-twitter-bird-24 icon-social latest-tweet-icon' href='http://twitter.com/{text:Twitter Username}' rel='external'></a>
+					<div id='latest-tweet'><div class='latest-tweet-content'><span class='latest-tweet-loading'>loading tweet...</span></div></div>
+					<div class='clear'></div>
+				</div>
+				<script>
+					function recent_tweets(data) {
+						for (i=0; i<1; i++) {
+							var date = new Date(data[i].created_at);
+							document.getElementById('latest-tweet').innerHTML =
+								'<div class="latest-tweet-content"><a href="http://twitter.com/{text:Twitter Username}/status/'+
+								+(data[i].id_str ? data[i].id_str : data[i].id)+'" rel="external">'+data[i].text+'</a> <time class="latest-tweet-date" datetime="'+ date.toISOString()+'">'+data[i].created_at+'</time></div>';
+						}
+						document.getElementById('tweet-wrap').style.display = 'block';
+					}
+				</script>
+				<script src='https://twitter.com/statuses/user_timeline/{text:Twitter Username}.json?callback=recent_tweets&count=5'></script>
+			{/block:IfTwitterStatus}
+
+			<!-- Likes -->
+			{block:Likes}
+	            <div class='likes-wrap'>
+	                <a class='icon icon-heart-red-16 icon-likes' href='http://www.tumblr.com/liked/by/{Name}'></a>
+	                
+	                <div class='likes-content'>
+	                	{Likes limit="1" summarize="50" width="100"}
+	                </div>
+	            </div>
+        	{/block:Likes}
+			
+			<!-- Following on Tumblr -->
+			{block:IfShowPeopleFollowing}
+				{block:Following}
+					<div class='following-wrap'>
+			    		<ul class='following-ul'>
+			        		{block:Followed}
+			            		<li>
+			                		<a href='{FollowedURL}' rel='external'><img src='{FollowedPortraitURL-16}' alt='' /></a>
+			            		</li>
+			        		{/block:Followed}
+			        		<div class='clear'></div>
+			    		</ul>
+		    		</div>
+				{/block:Following}
+			{block:IfShowPeopleFollowing}
+			
+			<!-- Back to top arrow -->
+			<div class='top-link-wrap'><a class='top-link icon icon-up-24' href='#top'></a></div>
+		</nav>
+	</div>
+	
+	
+	<div class='main-content-wrap{block:PostTitle} {PostTitle}{/block:PostTitle}'>
+	
+		<!-- Day pages -->
+	 	{block:DayPage}
+            <h2 class='page-title'>{Month} {DayOfMonth}, {Year}</h2>
+        {/block:DayPage}
+
+        {block:TagPage}
+            <h2 class='page-title'>Posts tagged "{Tag}"</h2>
+        {/block:TagPage}
+	
+		<!-- Search results -->
+		{block:SearchPage}
+			<h2 class='page-title'>Search results for "{SearchQuery}"</h2>
+			<div class='search-results'>
+				returned <strong>{SearchResultCount}</strong> result(s).
+			</div>
+		{/block:SearchPage}
+
+		<iframe id='likedit' src='' style='display:none;'></iframe>
+		
+		<!-- Posts -->
+		 <ul class='posts'>
+            {block:Posts}
+            
+            	<!-- Text post -->
+                {block:Text}
+                    <li class='post text'>
+                    	<a href='{Permalink}' class='icon icon-top icon-text-24'></a>
+                    	<div class='clear'></div>
+                        {block:Title}
+                            <h3><a href='{Permalink}'>{Title}</a></h3>
+                        {/block:Title}
+                        <div class='post-text'>{Body}</div>
+                        
+				    	{block:ContentSource}
+					    	<div class='post-source'>
+					    		{lang:Source} 
+	    						<a href='{SourceURL}' rel='external'>
+			        				{block:SourceLogo}
+			            				<img src='{BlackLogoURL}' alt='{SourceTitle}' />
+			        				{/block:SourceLogo}
+							        {block:NoSourceLogo}
+							            {SourceTitle}
+							        {/block:NoSourceLogo}
+	    						</a>
+	    					</div>
+						{/block:ContentSource}
+
+			            {block:HasTags} 
+			            	<div class='post-tags'>
+			            		<span class='icon icon-tags-16 icon-no-hover'></span>  
+			            		{block:Tags}
+			            			<a href='{TagURL}'>{Tag}</a> 
+			            		{/block:Tags}
+			            	</div>
+			            {/block:HasTags}
+    
+		                <div class='post-footer'>
+			            	{block:Date}
+			            		 <a href='{Permalink}'><span class='icon icon-clock-16'></span> {TimeAgo}</a>
+			            	{/block:Date}
+			            	
+			                <a class='reblog-button' href='{ReblogURL}'><span class='icon icon-reblog-16'></span> reblog</a>
+
+ 							<a class='like-button' href='javascript:void(0);' data-id='{PostId}' data-url='{ReblogURL}'><span class='icon icon-heart-16'></span> like</a>
+
+ 							{block:IfDisqusComments}
+					        	<span class='dsq-comment-count-wrap'><a class='icon icon-bubble-16' href='{Permalink}'></a> <a class='dsq-comment-count' href='{Permalink}#disqus_thread'> </a></span>
+					        {block:IfDisqusComments}
+
+ 							<a class='note-count' href='{Permalink}#notes'>{NoteCountWithLabel}</a>
+					        					        
+					        <div class='clear'></div>
+						</div>
+						
+						{block:IFEnableShare}
+	                        <div class='share-wrap'>
+	                        	<span class='st_twitter' st_url='{Permalink}' st_title='{Title}'></span><span class='st_facebook' st_url='{Permalink}' st_title='{Title}'></span><span class='st_tumblr' st_url='{Permalink}' st_title='{Title}'></span><span class='st_stumbleupon' st_url='{Permalink}' st_title='{Title}'></span><span class='st_delicious' st_url='{Permalink}' st_title='{Title}'></span><span class='st_email' st_url='{Permalink}' st_title='{Title}'></span><span class='st_sharethis' st_url='{Permalink}' st_title='{Title}'></span>
+							
+								<input class='short-url' type='text' value='{ShortURL}' />
+							</div>
+						{/block:IFEnableShare}
+                        
+						<div class='clear'></div>
+                    </li>
+                {/block:Text}
+
+				<!-- Photo post -->
+                {block:Photo}
+                    <li class='post photo'>
+                    	<a href='{Permalink}' class='icon icon-top icon-photo-24'></a>
+                    	<div class='clear'></div>
+	                    <div class='photo-wrap'>
+	                    	{LinkOpenTag}<img id='photo' src='{PhotoURL-HighRes}' alt='{PhotoAlt}' />{LinkCloseTag}
+	                    	<a class='zoom-button icon icon-extend-24 icon-no-opacity' href='{PhotoURL-HighRes}' rel='external'></a>
+	                    </div>
+                        {block:Caption}
+                            <div class='post-text'>{Caption}</div>
+                        {/block:Caption}
+
+					    {block:ContentSource}
+					    	<div class='post-source'>
+					    		{lang:Source} 
+	    						<a href='{SourceURL}' rel='external'>
+			        				{block:SourceLogo}
+			            				<img src='{BlackLogoURL}' alt='{SourceTitle}' />
+			        				{/block:SourceLogo}
+							        {block:NoSourceLogo}
+							            {SourceTitle}
+							        {/block:NoSourceLogo}
+	    						</a>
+	    					</div>
+						{/block:ContentSource}
+						
+			            {block:HasTags} 
+			            	<div class='post-tags'>
+			            		<span class='icon icon-tags-16 icon-no-hover'></span>  
+			            		{block:Tags}
+			            			<a href='{TagURL}'>{Tag}</a> 
+			            		{/block:Tags}
+			            	</div>
+			            {/block:HasTags}
+	
+						<!-- Photo info -->
+                        {block:Exif}
+        					<ul class='exif-ul'>
+				            {block:Camera}
+				                <li>Camera: {Camera}</li>
+				            {/block:Camera}
+				            {block:Aperture}
+				                <li>Aperture: {Aperture}</li>
+				            {/block:Aperture}
+				            {block:Exposure}
+				                <li>Exposure: {Exposure}</li>
+				            {/block:Exposure}
+				            {block:FocalLength}
+				                <li>Focal Length: {FocalLength}</li>
+				            {/block:FocalLength}
+       						</ul>
+    					{/block:Exif}
+
+		                <div class='post-footer'>
+			            	{block:Date}
+			            		 <a href='{Permalink}'><span class='icon icon-clock-16'></span> {TimeAgo}</a>
+			            	{/block:Date}
+			            	
+			                <a class='reblog-button' href='{ReblogURL}'><span class='icon icon-reblog-16'></span> reblog</a>
+
+ 							<a class='like-button' href='javascript:void(0);' data-id='{PostId}' data-url='{ReblogURL}'><span class='icon icon-heart-16'></span> like</a>
+
+ 							{block:IfDisqusComments}
+					        	<span class='dsq-comment-count-wrap'><a class='icon icon-bubble-16' href='{Permalink}'></a> <a class='dsq-comment-count' href='{Permalink}#disqus_thread'> </a></span>
+					        {block:IfDisqusComments}
+
+ 							<a class='note-count' href='{Permalink}#notes'>{NoteCountWithLabel}</a>
+					        					        
+					        <div class='clear'></div>
+						</div>
+ 
+ 						{block:IFEnableShare}
+	                        <div class='share-wrap'>
+	                        	<span class='st_twitter' st_url='{Permalink}' st_title='{PhotoAlt}'></span><span class='st_facebook' st_url='{Permalink}' st_title='{PhotoAlt}'></span><span class='st_tumblr' st_url='{Permalink}' st_title='{PhotoAlt}'></span><span class='st_stumbleupon' st_url='{Permalink}' st_title='{PhotoAlt}'></span><span class='st_delicious' st_url='{Permalink}' st_title='{PhotoAlt}'></span><span class='st_email' st_url='{Permalink}' st_title='{PhotoAlt}'></span><span class='st_sharethis' st_url='{Permalink}' st_title='{PhotoAlt}'></span>
+							
+								<input class='short-url' type='text' value='{ShortURL}' />
+							</div>
+						{block:IFEnableShare}
+                        
+						<div class='clear'></div>
+                    </li>
+                {/block:Photo}
+			
+				<!-- Photoset post -->
+                {block:Photoset}
+                    <li class='post photoset'>
+                    	<a href='{Permalink}' class='icon icon-top icon-photoset-24'></a>
+                    	<div class='clear'></div>
+                        {Photoset-500}
+                        {block:Caption}
+                            <div class='post-text'>{Caption}</div>
+                        {/block:Caption}
+
+				    	{block:ContentSource}
+					    	<div class='post-source'>
+					    		{lang:Source} 
+	    						<a href='{SourceURL}' rel='external'>
+			        				{block:SourceLogo}
+			            				<img src='{BlackLogoURL}' alt='{SourceTitle}' />
+			        				{/block:SourceLogo}
+							        {block:NoSourceLogo}
+							            {SourceTitle}
+							        {/block:NoSourceLogo}
+	    						</a>
+	    					</div>
+						{/block:ContentSource}
+
+			            {block:HasTags} 
+			            	<div class='post-tags'>
+			            		<span class='icon icon-tags-16 icon-no-hover'></span>  
+			            		{block:Tags}
+			            			<a href='{TagURL}'>{Tag}</a> 
+			            		{/block:Tags}
+			            	</div>
+			            {/block:HasTags}
+      
+		                <div class='post-footer'>
+			            	{block:Date}
+			            		 <a href='{Permalink}'><span class='icon icon-clock-16'></span> {TimeAgo}</a>
+			            	{/block:Date}
+			            	
+			                <a class='reblog-button' href='{ReblogURL}'><span class='icon icon-reblog-16'></span> reblog</a>
+
+ 							<a class='like-button' href='javascript:void(0);' data-id='{PostId}' data-url='{ReblogURL}'><span class='icon icon-heart-16'></span> like</a>
+
+ 							{block:IfDisqusComments}
+					        	<span class='dsq-comment-count-wrap'><a class='icon icon-bubble-16' href='{Permalink}'></a> <a class='dsq-comment-count' href='{Permalink}#disqus_thread'> </a></span>
+					        {block:IfDisqusComments}
+
+ 							<a class='note-count' href='{Permalink}#notes'>{NoteCountWithLabel}</a>
+					        					        
+					        <div class='clear'></div>
+						</div>
+ 
+ 						{block:IFEnableShare}
+	                        <div class='share-wrap'>
+								<span class='st_twitter' st_url='{Permalink}' st_title=''></span><span class='st_facebook' st_url='{Permalink}' st_title=''></span><span class='st_tumblr' st_url='{Permalink}' st_title=''></span><span class='st_stumbleupon' st_url='{Permalink}' st_title=''></span><span class='st_delicious' st_url='{Permalink}' st_title=''></span><span class='st_email' st_url='{Permalink}' st_title=''></span><span class='st_sharethis' st_url='{Permalink}' st_title=''></span>
+							
+								<input class='short-url' type='text' value='{ShortURL}' />
+							</div>
+						{/block:IFEnableShare}
+                        
+						<div class='clear'></div>
+                    </li>
+                {/block:Photoset}
+                
+                <!-- Quote post -->
+                {block:Quote}
+                    <li class='post quote'>
+                   		<a href='{Permalink}' class='icon icon-top icon-quote-24'></a>
+                   		<div class='clear'></div>
+                        <div class='post-text post-text-quote'>"{Quote}"</div>
+                        
+                        {block:Source}
+                            <div class='quote-source'>{Source}</div>
+                        {/block:Source}  
+                        
+				    	{block:ContentSource}
+					    	<div class='post-source'>
+					    		{lang:Source} 
+	    						<a href='{SourceURL}' rel='external'>
+			        				{block:SourceLogo}
+			            				<img src='{BlackLogoURL}' alt='{SourceTitle}' />
+			        				{/block:SourceLogo}
+							        {block:NoSourceLogo}
+							            {SourceTitle}
+							        {/block:NoSourceLogo}
+	    						</a>
+	    					</div>
+						{/block:ContentSource}
+
+			            {block:HasTags} 
+			            	<div class='post-tags'>
+			            		<span class='icon icon-tags-16 icon-no-hover'></span>  
+			            		{block:Tags}
+			            			<a href='{TagURL}'>{Tag}</a> 
+			            		{/block:Tags}
+			            	</div>
+			            {/block:HasTags} 
+      
+		                <div class='post-footer'>
+			            	{block:Date}
+			            		 <a href='{Permalink}'><span class='icon icon-clock-16'></span> {TimeAgo}</a>
+			            	{/block:Date}
+			            	
+			                <a class='reblog-button' href='{ReblogURL}'><span class='icon icon-reblog-16'></span> reblog</a>
+
+ 							<a class='like-button' href='javascript:void(0);' data-id='{PostId}' data-url='{ReblogURL}'><span class='icon icon-heart-16'></span> like</a>
+
+ 							{block:IfDisqusComments}
+					        	<span class='dsq-comment-count-wrap'><a class='icon icon-bubble-16' href='{Permalink}'></a> <a class='dsq-comment-count' href='{Permalink}#disqus_thread'> </a></span>
+					        {block:IfDisqusComments}
+
+ 							<a class='note-count' href='{Permalink}#notes'>{NoteCountWithLabel}</a>
+					        					        
+					        <div class='clear'></div>
+						</div>
+ 
+ 						{block:IfEnableShare}
+	                        <div class='share-wrap'>
+								<span class='st_twitter' st_url='{Permalink}' st_title='{Quote}'></span><span class='st_facebook' st_url='{Permalink}' st_title='{Quote}'></span><span class='st_tumblr' st_url='{Permalink}' st_title='{Quote}'></span><span class='st_stumbleupon' st_url='{Permalink}' st_title='{Quote}'></span><span class='st_delicious' st_url='{Permalink}' st_title='{Quote}'></span><span class='st_email' st_url='{Permalink}' st_title='{Quote}'></span><span class='st_sharethis' st_url='{Permalink}' st_title='{Quote}'></span>
+							
+								<input class='short-url' type='text' value='{ShortURL}' />
+							</div>
+                        {/block:IfEnableShare}
+
+						<div class='clear'></div>
+                    </li>
+                {/block:Quote}
+                
+                <!-- Link post -->
+                {block:Link}
+                    <li class='post link'>
+                    	<a href='{Permalink}' class='icon icon-top icon-link-24'></a>
+                    	<div class='clear'></div>
+                        <h3><a href='{URL}' {Target}>{Name} &#8594;</a></h3>
+                        {block:Description}
+                            <div class='post-text'>{Description}</div>
+                        {/block:Description}
+
+				    	{block:ContentSource}
+					    	<div class='post-source'>
+					    		{lang:Source} 
+	    						<a href='{SourceURL}' rel='external'>
+			        				{block:SourceLogo}
+			            				<img src='{BlackLogoURL}' alt='{SourceTitle}' />
+			        				{/block:SourceLogo}
+							        {block:NoSourceLogo}
+							            {SourceTitle}
+							        {/block:NoSourceLogo}
+	    						</a>
+	    					</div>
+						{/block:ContentSource}
+
+			            {block:HasTags} 
+			            	<div class='post-tags'>
+			            		<span class='icon icon-tags-16 icon-no-hover'></span>  
+			            		{block:Tags}
+			            			<a href='{TagURL}'>{Tag}</a> 
+			            		{/block:Tags}
+			            	</div>
+			            {/block:HasTags}
+			            
+		                <div class='post-footer'>
+			            	{block:Date}
+			            		 <a href='{Permalink}'><span class='icon icon-clock-16'></span> {TimeAgo}</a>
+			            	{/block:Date}
+			            	
+			                <a class='reblog-button' href='{ReblogURL}'><span class='icon icon-reblog-16'></span> reblog</a>
+
+			                <a class='like-button' href='javascript:void(0);' data-id='{PostId}' data-url='{ReblogURL}'><span class='icon icon-heart-16'></span> like</a>
+	
+ 							{block:IfDisqusComments}
+					        	<span class='dsq-comment-count-wrap'><a class='icon icon-bubble-16' href='{Permalink}'></a> <a class='dsq-comment-count' href='{Permalink}#disqus_thread'> </a></span>
+					        {block:IfDisqusComments}
+
+ 							<a class='note-count' href='{Permalink}#notes'>{NoteCountWithLabel}</a>
+					        					        
+					        <div class='clear'></div>
+						</div>
+ 
+ 						{block:IfEnableShare}
+	                        <div class='share-wrap'>
+								<span class='st_twitter' st_url='{Permalink}' st_title='{Name}'></span><span class='st_facebook' st_url='{Permalink}' st_title='{Name}'></span><span class='st_tumblr' st_url='{Permalink}' st_title='{Name}'></span><span class='st_stumbleupon' st_url='{Permalink}' st_title='{Name}'></span><span class='st_delicious' st_url='{Permalink}' st_title='{Name}'></span><span class='st_email' st_url='{Permalink}' st_title='{Name}'></span><span class='st_sharethis' st_url='{Permalink}' st_title='{Name}'></span>
+							
+								<input class='short-url' type='text' value='{ShortURL}' />
+							</div>
+						{/block:IfEnableShare}
+                        
+						<div class='clear'></div>
+                    </li>
+                {/block:Link}
+                
+                <!-- Chat post -->
+                {block:Chat}
+                    <li class='post chat'>
+                    	<a href='{Permalink}' class='icon icon-top icon-chat-24'></a>
+                    	<div class='clear'></div>
+                        {block:Title}
+                            <h3><a href='{Permalink}'>{Title}</a></h3>
+                        {/block:Title}
+                        <div class='post-text'>
+	                        <ul class='chat-ul'>
+	                            {block:Lines}
+	                                <li class='{Alt} user_{UserNumber}'>
+	                                    {block:Label}
+	                                        <span class='label'>{Label}</span>
+	                                    {/block:Label}
+	                                    {Line}
+	                                </li>
+	                            {/block:Lines}
+	                        </ul>
+                        </div>
+
+				    	{block:ContentSource}
+					    	<div class='post-source'>
+					    		{lang:Source} 
+	    						<a href='{SourceURL}' rel='external'>
+			        				{block:SourceLogo}
+			            				<img src='{BlackLogoURL}' alt='{SourceTitle}' />
+			        				{/block:SourceLogo}
+							        {block:NoSourceLogo}
+							            {SourceTitle}
+							        {/block:NoSourceLogo}
+	    						</a>
+	    					</div>
+						{/block:ContentSource}
+
+			            {block:HasTags} 
+			            	<div class='post-tags'>
+			            		<span class='icon icon-tags-16 icon-no-hover'></span>  
+			            		{block:Tags}
+			            			<a href='{TagURL}'>{Tag}</a> 
+			            		{/block:Tags}
+			            	</div>
+			            {/block:HasTags}
+
+		                <div class='post-footer'>
+			            	{block:Date}
+			            		 <a href='{Permalink}'><span class='icon icon-clock-16'></span> {TimeAgo}</a>
+			            	{/block:Date}
+			            	
+			                <a class='reblog-button' href='{ReblogURL}'><span class='icon icon-reblog-16'></span> reblog</a>
+
+ 							<a class='like-button' href='javascript:void(0);' data-id='{PostId}' data-url='{ReblogURL}'><span class='icon icon-heart-16'></span> like</a>
+
+ 							{block:IfDisqusComments}
+					        	<span class='dsq-comment-count-wrap'><a class='icon icon-bubble-16' href='{Permalink}'></a> <a class='dsq-comment-count' href='{Permalink}#disqus_thread'> </a></span>
+					        {block:IfDisqusComments}
+
+ 							<a class='note-count' href='{Permalink}#notes'>{NoteCountWithLabel}</a>
+					        
+					        <div class='clear'></div>
+						</div>
+ 
+ 						{block:IfEnableShare}
+	                        <div class='share-wrap'>
+	                        	<span class='st_twitter' st_url='{Permalink}' st_title='{Title}'></span><span class='st_facebook' st_url='{Permalink}' st_title='{Title}'></span><span class='st_tumblr' st_url='{Permalink}' st_title='{Title}'></span><span class='st_stumbleupon' st_url='{Permalink}' st_title='{Title}'></span><span class='st_delicious' st_url='{Permalink}' st_title='{Title}'></span><span class='st_email' st_url='{Permalink}' st_title='{Title}'></span><span class='st_sharethis' st_url='{Permalink}' st_title='{Title}'></span>
+							
+								<input class='short-url' type='text' value='{ShortURL}' />
+							</div>
+						{/block:IfEnableShare}
+                        
+						<div class='clear'></div>
+                    </li>
+                {/block:Chat}
+                
+                <!-- Video post -->
+                {block:Video}
+                    <li class='post video'>
+                        <a href='{Permalink}' class='icon icon-top icon-video-24'></a>
+                        <div class='clear'></div>
+                        {Video-500}
+                        {block:Caption}
+                            <div class='post-text'>{Caption}</div>
+                        {/block:Caption}
+                       
+				    	{block:ContentSource}
+					    	<div class='post-source'>
+					    		{lang:Source} 
+	    						<a href='{SourceURL}' rel='external'>
+			        				{block:SourceLogo}
+			            				<img src='{BlackLogoURL}' alt='{SourceTitle}' />
+			        				{/block:SourceLogo}
+							        {block:NoSourceLogo}
+							            {SourceTitle}
+							        {/block:NoSourceLogo}
+	    						</a>
+	    					</div>
+						{/block:ContentSource}
+
+			            {block:HasTags} 
+			            	<div class='post-tags'>
+			            		<span class='icon icon-tags-16 icon-no-hover'></span>  
+			            		{block:Tags}
+			            			<a href='{TagURL}'>{Tag}</a> 
+			            		{/block:Tags}
+			            	</div>
+			            {/block:HasTags}
+			            
+		                <div class='post-footer'>
+			            	{block:Date}
+			            		 <a href='{Permalink}'><span class='icon icon-clock-16'></span> {TimeAgo}</a>
+			            	{/block:Date}
+			            	
+			                <a class='reblog-button' href='{ReblogURL}'><span class='icon icon-reblog-16'></span> reblog</a>
+
+ 							<a class='like-button' href='javascript:void(0);' data-id='{PostId}' data-url='{ReblogURL}'><span class='icon icon-heart-16'></span> like</a>
+
+ 							{block:IfDisqusComments}
+					        	<span class='dsq-comment-count-wrap'><a class='icon icon-bubble-16' href='{Permalink}'></a> <a class='dsq-comment-count' href='{Permalink}#disqus_thread'> </a></span>
+					        {block:IfDisqusComments}
+
+ 							<a class='note-count' href='{Permalink}#notes'>{NoteCountWithLabel}</a>
+					        
+					        <div class='clear'></div>
+						</div>
+ 
+ 						{block:IfEnableShare}
+	                        <div class='share-wrap'>
+								<span class='st_twitter' st_url='{Permalink}' st_title=''></span><span class='st_facebook' st_url='{Permalink}' st_title=''></span><span class='st_tumblr' st_url='{Permalink}' st_title=''></span><span class='st_stumbleupon' st_url='{Permalink}' st_title=''></span><span class='st_delicious' st_url='{Permalink}' st_title=''></span><span class='st_email' st_url='{Permalink}' st_title=''></span><span class='st_sharethis' st_url='{Permalink}' st_title=''></span>
+							
+								<input class='short-url' type='text' value='{ShortURL}' />
+							</div>
+						{/block:IfEnableShare}
+                        
+						<div class='clear'></div>
+                    </li>
+                {/block:Video}
+                
+                <!-- Audio post -->
+                {block:Audio}
+                    <li class='post audio'>
+                    	<a href='{Permalink}' class='icon icon-top icon-audio-24'></a>
+                    	<div class='clear'></div>
+                    	{block:AlbumArt}
+                    		<img class='audio-album-art' src='{AlbumArtURL}' alt='' />
+						{/block:AlbumArt}
+                        <div class='audio-player'>{AudioPlayerBlack}</div>
+                        {block:TrackName}
+							<h4 class='audio-track-name'>{TrackName}</h4>
+						{/block:TrackName}
+                        {block:Artist}
+							<h5 class='audio-artist-name'>{Artist}</h5>
+						{/block:Artist}
+						{block:Album}
+							<h6 class='audio-album-name'>{Album}</h6>
+						{/block:Album}
+
+                        <div class='clear'></div>
+                        {block:Caption}
+                            <div class='post-text'>{Caption}</div>
+                        {/block:Caption}
+                        
+				    	{block:ContentSource}
+					    	<div class='post-source'>
+					    		{lang:Source} 
+	    						<a href='{SourceURL}' rel='external'>
+			        				{block:SourceLogo}
+			            				<img src='{BlackLogoURL}' alt='{SourceTitle}' />
+			        				{/block:SourceLogo}
+							        {block:NoSourceLogo}
+							            {SourceTitle}
+							        {/block:NoSourceLogo}
+	    						</a>
+	    					</div>
+						{/block:ContentSource}
+
+			            {block:HasTags} 
+			            	<div class='post-tags'>
+			            		<span class='icon icon-tags-16 icon-no-hover'></span>  
+			            		{block:Tags}
+			            			<a href='{TagURL}'>{Tag}</a> 
+			            		{/block:Tags}
+			            	</div>
+			            {/block:HasTags}
+			            
+		                <div class='post-footer'>
+			            	{block:Date}
+			            		 <a href='{Permalink}'><span class='icon icon-clock-16'></span> {TimeAgo}</a>
+			            	{/block:Date}
+			            	
+			                <a class='reblog-button' href='{ReblogURL}'><span class='icon icon-reblog-16'></span> reblog</a>
+
+ 							<a class='like-button' href='javascript:void(0);' data-id='{PostId}' data-url='{ReblogURL}'><span class='icon icon-heart-16'></span> like</a>
+
+ 							{block:IfDisqusComments}
+					        	<span class='dsq-comment-count-wrap'><a class='icon icon-bubble-16' href='{Permalink}'></a> <a class='dsq-comment-count' href='{Permalink}#disqus_thread'> </a></span>
+					        {block:IfDisqusComments}
+
+ 							<a class='note-count' href='{Permalink}#notes'>{NoteCountWithLabel}</a>
+					        
+					        <div class='clear'></div>
+						</div>
+ 
+ 						{block:IfEnableShare}
+	                        <div class='share-wrap'>
+	                        	<span class='st_twitter' st_url='{Permalink}' st_title='{TrackName}'></span><span class='st_facebook' st_url='{Permalink}' st_title='{TrackName}'></span><span class='st_tumblr' st_url='{Permalink}' st_title='{TrackName}'></span><span class='st_stumbleupon' st_url='{Permalink}' st_title='{TrackName}'></span><span class='st_delicious' st_url='{Permalink}' st_title='{TrackName}'></span><span class='st_email' st_url='{Permalink}' st_title='{TrackName}'></span><span class='st_sharethis' st_url='{Permalink}' st_title='{TrackName}'></span>
+							
+								<input class='short-url' type='text' value='{ShortURL}' />
+							</div>
+                        {/block:IfEnableShare}
+
+						<div class='clear'></div>
+                    </li>
+	             {/block:Audio}
+	
+			<div class='clear'></div>
+			{/block:Posts}
+        </ul>
+            
+    	<!-- Notes -->
+		{block:Posts}
+	        {block:PostNotes}
+	        	<div class='notes-wrap'>
+			        {block:NoteCount} 
+			        	<div class='note-count-label'>{NoteCountWithLabel}</div>
+			        {/block:NoteCount}
+			        {PostNotes}
+			  </div>
+			{/block:PostNotes}
+		{/block:Posts}
+    
+    	<!-- Pagination -->
+   		{block:Pagination}
+			<div class='pagination'>
+		        {block:PreviousPage}
+		            <a class='pagination-previous' href='{PreviousPage}'>&#171; Previous</a> 
+		        {/block:PreviousPage}
+		        {block:JumpPagination length="10"}
+		        	<div class='pagination-jump'>
+			        	{block:CurrentPage}
+			        		<span>{PageNumber}</span>
+			        	{/block:CurrentPage}
+			        	{block:JumpPage}
+			        		<a href='{URL}'>{PageNumber}</a>
+			        	{/block:JumpPage}
+		        	</div>
+		        {/block:JumpPagination}
+		        {block:NextPage}
+		            <a class='pagination-next' href='{NextPage}'>Next &#187;</a>
+		        {/block:NextPage}
+		        <div class='clear'></div>
+		    </div>
+		{/block:Pagination}
+		
+		<!-- Permalink pagination -->
+	    {block:PermalinkPagination}
+		    <div class='pagination'>
+		    	{block:PreviousPost}
+		    		<a class='pagination-previous' href='{PreviousPost}'>&#171; Previous</a>
+		    	{/block:PreviousPost}
+		    	{block:NextPost}
+		    		<a class='pagination-next' href='{NextPost}'>Next &#187;</a>
+		    	{/block:NextPost}
+		    	<div class='clear'></div>
+		    </div>
+	  	{/block:PermalinkPagination}
+	  	
+	  	<!-- Day pagination -->
+		{block:DayPagination}
+			<div class='pagination'>
+				{block:PreviousDayPage}
+					<a class='pagination-previous' href='{PreviousDayPage}'>&#171; {ShortMonth} {DayOfMonth}</a>
+				{/block:PreviousDayPage}
+				{block:NextDayPage}
+					<a class='pagination-next' href='{NextDayPage}'>{ShortMonth} {DayOfMonth} &#187;</a>
+				{/block:NextDayPage}
+				<div class='clear'></div>
+		    </div>
+		{/block:DayPagination}
+
+		<!-- Disqus comments -->
+        {block:IfDisqusComments}
+        	<div class='dsq-comment-wrap'>
+				<script>var disqus_url = '{Permalink}'; var disqus_title ="{block:PostTitle}{PostTitle}{/block:PostTitle}";</script>{block:Permalink}<div id='disqus_thread'></div>
+			</div>
+			<script>
+				  /**
+				    * var disqus_identifier; [Optional but recommended: Define a unique identifier (e.g. post id or slug) for this thread] 
+				    */
+				  (function() {
+				   var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+				   dsq.src = 'http://{text:Disqus Shortname}.disqus.com/embed.js';
+				   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+				  })();
+				</script>
+				<noscript>Please enable JavaScript to view the <a href='http://disqus.com/?ref_noscript={text:Disqus Shortname}'>comments powered by Disqus.</a></noscript>
+				<a href='http://disqus.com' class="dsq-brlink">blog comments powered by <span class='logo-disqus'>Disqus</span></a>
+				{/block:Permalink}<script>
+				var disqus_shortname = '{text:Disqus Shortname}';
+				(function () {
+				  var s = document.createElement('script'); s.async = true;
+				  s.src = 'http://{text:Disqus Shortname}.disqus.com/count.js';
+				  (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+				}());
+			</script>
+        {/block:IfDisqusComments}
+	  		
+	  	<!-- Site footer -->
+		<footer class='main-footer'>
+			<strong>&#169; <script>displayYear();</script></strong> &#8226; powered by <a class='logo-tumblr' href='http://www.tumblr.com' rel='external'></a> / 
+			<a href='http://obliviontheme.tumblr.com' rel='external'>Oblivion theme</a> by <a href='http://miguelmota.tumblr.com' rel='external'>Miguel Mota</a> 
+		</footer>
+	</div>
+	<div class='clear'></div>
+</div>
+
+<!-- ShareThis script -->
+<script>var switchTo5x=true;</script><script src='http://w.sharethis.com/button/buttons.js'></script><script>stLight.options({publisher:''});</script>
+
+<!-- Google Plus one script -->
+<script>
+(function() {
+	  var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+	  po.src = 'https://apis.google.com/js/plusone.js';
+	  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+	})();
+</script>
+
+<!-- Google Analytics -->
+{block:IfGoogleAnalytics}
+	<script>
+  		var _gaq = _gaq || [];
+  		_gaq.push(['_setAccount', 'UA-{text:Google Analytics ID}']);
+  		_gaq.push(['_setDomainName', 'WEBSITE_URL_GOES_HERE']);
+  		_gaq.push(['_trackPageview']);
+  		(function() {
+    		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  		})();
+  		var addthis_config = {'data_track_clickback':true};
+	</script>
+{block:IfGoogleAnalytics}
+<noscript><div style='display:none;background-color:#a80f0f;color:#fff;font-size:24px;font-weight:bold;padding:20px;position:fixed;text-align:center;text-transform:uppercase;top:0;width:100%;'>Must enable javascript</div></noscript>
+</body>
+</html>
