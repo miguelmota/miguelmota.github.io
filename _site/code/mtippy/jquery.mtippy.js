@@ -1,8 +1,8 @@
-/*----------------------------------------
+/*
  *	mtippy - a jQuery tooltip plugin
  *	v1.0 - 20120525
- *	Author: Miguel Mota, www.miguelmota.com
- *	License: Creative Commons Attribution 3.0 License
+ *	(c) 2012 Miguel Mota [www.miguelmota.com]
+ *	Released under the MIT license
  */
 
 (function($) {
