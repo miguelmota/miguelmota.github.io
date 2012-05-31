@@ -1,0 +1,19 @@
+---
+layout: default1
+---
+<?xml version='1.0' encoding='UTF-8'?>
+<rss version='2.0'>
+	<channel>
+		<title>Miguel Mota</title>
+		<description>Freelance Web Developer</description>
+		<link>http://www.miguelmota.com</link>
+		{% for post in site.categories.blog %}
+			<item>
+				<title>{{ post.title }}</title>
+				<description>{{ post.content | xml_escape }}</description>
+				<link>http://www.miguelmota.com{{ post.url }}</link>
+				<pubDate>{{ post.date | date_to_string }}</pubDate>
+			</item>
+		{% endfor %}
+	</channel>
+</rss>
