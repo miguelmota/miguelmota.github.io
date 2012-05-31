@@ -270,7 +270,7 @@
 	margin-right: 5px;
 }
 /*
-	STREAM CAROUSEL
+	STREAM THUMB
 */
 .stream-thumb {
 	background: none;
@@ -280,6 +280,12 @@
 	vertical-align: middle;
 	width: 16px;
 }
+.stream-thumb-github-watched {
+	max-height: 9px !important;
+}
+/*
+	STREAM CAROUSEL
+*/
 .stream-carousel-wrap {		
 	position: relative;
 }
