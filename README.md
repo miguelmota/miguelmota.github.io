@@ -1,3 +1,3 @@
-website files
+My website
 
-(c) 2012 [Miguel Mota](http://www.miguelmota.com/)
+() 2012 [Miguel Mota](http://www.miguelmota.com/)
