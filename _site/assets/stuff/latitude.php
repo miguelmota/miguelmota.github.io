@@ -38,7 +38,7 @@
 <head>
     <title>Latitude | Miguel Mota</title>
     <link rel='shortcut icon' href='http://www.miguelmota.com/favicon.ico' />
-    <link href='http://www.miguelmota.com/styles/reset.min.css' rel='stylesheet' />
+    <link href='http://www.miguelmota.com/code/css/reset.min.css' rel='stylesheet' />
     <link href='http://www.miguelmota.com/styles/global.css' rel='stylesheet' />
     <script src='http://code.jquery.com/jquery.min.js'></script>
     <script>
@@ -94,7 +94,7 @@
 </head>
 <body>
 <?php
-    echo "<a href='http://maps.google.com/?q=$coordinates' rel='external'><span class='icon icon-location-marker-16'></span> $place <time class='status-date'>".getRelativeTime($timestamp)."</time></a>";
+    echo "<a href='http://maps.google.com/?q=$coordinates' rel='external'><span class='icon icon-location-marker-16'></span> $place <time class='status-date' datetime=''>".getRelativeTime($timestamp)."</time></a>";
 ?>
 </body>
 </html>

@@ -33,13 +33,13 @@ style: blog
 		<div class='pagination'>
 			{% if page.previous.category == 'blog' %} 
 			    {% if page.previous.url  %} 
-					<a class='pagination-previous' href='{{ page.previous.url }}'>&#171; {{ page.previous.title | truncatewords: 15 }}</a>
+					<a class='pagination-previous pagination-btn' href='{{ page.previous.url }}'>&#171; {{ page.previous.title | truncatewords: 15 }}</a>
 			    {% endif %}
 			{% endif %}
 
 			{% if page.next.category == 'blog' %} 
 			    {% if page.next.url %}
-				    <a class='pagination-next' href='{{ page.next.url }}'>{{ page.next.title | truncatewords: 15 }} &#187;</a>
+				    <a class='pagination-next pagination-btn' href='{{ page.next.url }}'>{{ page.next.title | truncatewords: 15 }} &#187;</a>
 			    {% endif %}
 			{% endif %}
 		    

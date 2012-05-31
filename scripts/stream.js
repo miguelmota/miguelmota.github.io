@@ -257,7 +257,7 @@ $(document).ready(function(){
 		 * --------------------- */
 		$('.stream-facebook .loader').css('display','block');	
 		$('.stream-facebook').append('<ul class="stream-ul stream-ul-facebook">');
-		$.getJSON('000https://graph.facebook.com/miguel.mota2/feed&access_token=136918436443248|h21SkstVPoahrXI4sN5kh2A051k&callback=?',
+		$.getJSON('https://graph.facebook.com/miguel.mota2/feed&access_token=136918436443248|h21SkstVPoahrXI4sN5kh2A051k&callback=?',
 				function(data) {
 					var limit = 3;
 					$.each(data.data, function(i, item) {
