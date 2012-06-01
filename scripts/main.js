@@ -130,7 +130,29 @@ $(document).ready(function(){
 	
 
 	// Initialize mtip on social icons
-	$('.icon-social, .mtip').mtippy();
+	$('.mtip, .icon-social').mtippy();
+
+	setTimeout(function() {
+		$('.icon-social.icon-twitter-24').trigger('mouseenter').trigger('mouseleave');
+	}, 2000);
+	setTimeout(function() {
+		$('.icon-social.icon-facebook-24').trigger('mouseenter').trigger('mouseleave');
+	}, 2500);
+	setTimeout(function() {
+		$('.icon-social.icon-flickr-24').trigger('mouseenter').trigger('mouseleave');
+	}, 3000);
+	setTimeout(function() {
+		$('.icon-social.icon-lastfm-24').trigger('mouseenter').trigger('mouseleave');
+	}, 3400);
+	setTimeout(function() {
+		$('.icon-social.icon-tumblr-24').trigger('mouseenter').trigger('mouseleave');
+	}, 3800);
+	setTimeout(function() {
+		$('.icon-social.icon-gplus-24').trigger('mouseenter').trigger('mouseleave');
+	}, 4200)
+	setTimeout(function() {
+		$('.icon-social.icon-feed-24').trigger('mouseenter').trigger('mouseleave');
+	}, 4500);
 
 });
 
