@@ -22,15 +22,14 @@
 	<meta name='keywords' content='mtippy, jquery tooltip' />
 	<title>mtippy - a jQuery tooltip plugin</title>
 	<link rel='canonical' href='http://www.miguelmota.com/' />
-	<link rel='stylesheet' href='http://www.miguelmota.com/styles/reset.min.css' />
+	<link rel='stylesheet' href='http://www.miguelmota.com/code/css/reset.min.css' />
 	<script src='http://code.jquery.com/jquery.min.js'></script>
-	<script src='jquery.mtippy.js'></script>
+	<script src='https://raw.github.com/miguelmota/mtippy/master/jquery.mtippy.js'></script>
 	<script>
 	$(document).ready(function(){
 		
 		// Initialize mtip
-		$('[title]').mtippy();
-	
+		$('.mtippy-demo').mtippy();
 		
 		/* Demo scripts */
 		$('a[rel*=external]').live('click', function(){
@@ -63,6 +62,7 @@
 			-webkit-transition: all linear .1s;
 			-o-transition: all linear .1s;
 			color: #1f4970;
+			display: inline-block;
 			padding: 2px 4px;
 		}
 		a:hover {
@@ -109,7 +109,6 @@ $(document).ready(function(){
 
 		/* default settings (optional) */
 		backgroundColor: '#000',
-		borderColor: '#000',
 		borderRadius: '.5em',
 		boxShadow: '.1em .1em .5em #000',
 		color: '#fff',
@@ -119,7 +118,9 @@ $(document).ready(function(){
 		fontWeight: 'normal',
 		opacity: 1,
 		textShadow: '0 -1px 0 rgba(0,0,0,.8)',
-		timeout: 200
+		showSpeed: 400,
+		hideSpeed: 200,
+		timeout: 600
 
 	});
 });

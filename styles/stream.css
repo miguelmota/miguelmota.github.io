@@ -433,6 +433,23 @@
 	text-shadow: 0 -1px 0 rgba(0,0,0,.5);
 }
 
+/*
+	STREAM MOVE
+*/
+.stream-move {
+	color: #333;
+	font-family: Arial, sans-serif;
+	font-size: 12px;
+	position: absolute;
+	right: 0;
+	text-shadow: none;
+	top: 0;
+}
+.stream-move:hover,
+.stream-move:active {
+	cursor: move;
+}
+
 /* ------------------------------------------------
  * TABLET STYLES
  * --------------------------------------------- */

@@ -540,11 +540,15 @@ function loadFlickrStream() {
 			
 
 
-			// Draggable cursor
+			// Draggable
+			var i = 20;
 			$('.stream-wrap').draggable({
 				containment: '.content',
-				cursor: 'move'
-			});
+				cursor: 'move',
+				start: function(event, ui) {
+					$(this).css('z-index', i++);
+				}
+			}).append("<span class='stream-move'>&#8756;</span>");
 			
 			
 			
