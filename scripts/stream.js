@@ -650,6 +650,30 @@ function loadFlickrStream() {
 					$('.stream-position-reset-wrap').css('display', 'block');
 				}
 			});
+
+			// Foursquare stream cookie
+			$('.stream-foursquare').css({
+				top: $.cookie('streamFoursquareY')*1,
+				left: $.cookie('streamFoursquareX')*1
+			}).draggable({
+				stop: function(event, ui) {
+					$.cookie('streamFoursquareX',ui.position.left);
+					$.cookie('streamFoursquareY',ui.position.top);
+					$('.stream-position-reset-wrap').css('display', 'block');
+				}
+			});
+
+			// Github stream cookie
+			$('.stream-github').css({
+				top: $.cookie('streamGithubY')*1,
+				left: $.cookie('streamGithubX')*1
+			}).draggable({
+				stop: function(event, ui) {
+					$.cookie('streamGithubX',ui.position.left);
+					$.cookie('streamGithubY',ui.position.top);
+					$('.stream-position-reset-wrap').css('display', 'block');
+				}
+			});
 			
 			// Flickr stream cookie
 			$('.stream-flickr').css({
@@ -977,6 +1001,10 @@ function streamPositionReset(){
 	$.cookie('streamDeliciousY',null);
 	$.cookie('streamLastfmX',null);
 	$.cookie('streamLastfmY',null);
+	$.cookie('streamFoursquareX',null);
+	$.cookie('streamFoursquareY',null);
+	$.cookie('streamGithubX',null);
+	$.cookie('streamGithubY',null);
 	$.cookie('streamWakoopaX',null);
 	$.cookie('streamWakoopaY',null);
 	$.cookie('streamFlickrX',null);

@@ -67,6 +67,28 @@
 	font-weight: normal;
 }
 
+/*
+ * google maps infowindow
+ */
+.gmap-infowindow {
+	overflow: hidden;
+}
+.gmap-infowindow-location {
+	color: #333;
+	display: block;
+	font-size: 16px;
+	font-weight: bold;
+	margin: 0 0 5px 0;
+}
+.gmap-infowindow-coords {
+	color: #999;
+	display: block;
+}
+.gmap-infowindow-time {
+	color: #555;
+	display: block;
+}
+
 /* ------------------------------------------------
  * TABLET STYLES
  * --------------------------------------------- */

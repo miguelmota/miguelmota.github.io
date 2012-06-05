@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="miguelmota.github.com" default="build">
 	<description>
-		Miguel Mota | Freelance Web Developer
+		Miguel Mota
 	</description>
 	<property name="static.dir" value="" />
 	<property name="mobile.dir" value="mobile" />
 	<property name="lib.dir" value="lib" />
-	<target name="build" depends="compile"></target>
-	<target name="compile">
+	<target name="build" depends="compile-js"></target>
+	<!--
+	<target name="compile-css">
 		<property 
 		    name="yui-compressor.jar" 
 		    location="${lib.dir}/yuicompressor.jar" />
@@ -22,7 +23,7 @@
 			<classpath refid="task.classpath" />
 		</taskdef>
 		
-		<!-- GLOBAL CSS -->
+		<!-- GLOBAL CSS ***
 	    <concat destfile="styles/global.con.css" force="no">
 	    	<fileset dir="styles" includes="global.css" />
 	    </concat>
@@ -33,7 +34,7 @@
 		<delete file="styles/global.con.css" />
 		
 		
-		<!-- CSS RESET -->
+		<!-- CSS RESET ***
 		<concat destfile="styles/reset.con.css" force="no">
 	    	<fileset dir="styles" includes="reset.css" />
 	    </concat>
@@ -44,8 +45,7 @@
 		<delete file="styles/reset.con.css" />
 		
 		
-		
-		<!-- PYGMENTS -->
+		<!-- PYGMENTS ***
 		<concat destfile="styles/pygment.friendly.con.css" force="no">
 	    	<fileset dir="styles" includes="pygment.friendly.css" />
 	    </concat>
@@ -54,12 +54,9 @@
 	    </yuicompressor>
 		<move file="styles/pygment.friendly.con.min.css" tofile="${static.dir}styles/pygment.friendly.min.css"/>
 		<delete file="styles/pygment.friendly.con.css" />
+				
 		
-		
-		
-		
-		
-		<!-- FANCYBOX -->
+		<!-- FANCYBOX ***
 		<concat destfile="plugins/fancybox/jquery.fancybox.con.css" force="no">
 	    	<fileset dir="plugins/fancybox" includes="jquery.fancybox.css" />
 	    </concat>
@@ -68,10 +65,9 @@
 	    </yuicompressor>
 		<move file="plugins/fancybox/jquery.fancybox.con.min.css" tofile="${static.dir}plugins/fancybox/jquery.fancybox.min.css"/>
 		<delete file="plugins/fancybox/jquery.fancybox.con.css" />
-	
+
 		
-		
-		<!-- MTIP CSS -->
+		<!-- MTIP CSS ***
 	    <concat destfile="plugins/mtip/jquery.mtip.con.css" force="no">
 	        <fileset dir="plugins/mtip" includes="jquery.mtip.css" />
 	    </concat>
@@ -80,25 +76,27 @@
 	    </yuicompressor>
 		<move file="plugins/mtip/jquery.mtip.con.min.css" tofile="${static.dir}plugins/mtip/jquery.mtip.min.css"/>
 		<delete file="plugins/mtip/jquery.mtip.con.css" />
-		
-		
-		<!-- MTIP JS -->
+	</target>
+		-->
+
+	<target name="compile-js">	
+
+		<!--
+
+		<!-- MTIPPY JS ***
 		<taskdef name="jscomp" classname="com.google.javascript.jscomp.ant.CompileTask"
 	    	classpath="${lib.dir}/compiler.jar" />
 		<jscomp compilationLevel="whitespace" warning="verbose" 
-	    	debug="false" output="${static.dir}plugins/mtip/jquery.mtip.min.js">
+	    	debug="false" output="${static.dir}code/mtippy/jquery.mtippy.min.js">
 			<sources dir="${static.dir}">
 
-				<file name="plugins/mtip/jquery.mtip.js" />
+				<file name="code/mtippy/jquery.mtippy.js" />
 
 			</sources>
 		</jscomp>    
 		
 		
-		
-		
-		
-		<!-- MAIN JS -->
+		<!-- MAIN JS ***
 		<taskdef name="jscomp" classname="com.google.javascript.jscomp.ant.CompileTask"
 	    	classpath="${lib.dir}/compiler.jar" />
 		<jscomp compilationLevel="whitespace" warning="verbose" 
@@ -110,71 +108,20 @@
 			</sources>
 		</jscomp>  
 		
-		
-		
-		
-		
-		<!-- JQUERY COOKIE -->
+	
+		<!-- JQUERY COOKIE ***
 		<taskdef name="jscomp" classname="com.google.javascript.jscomp.ant.CompileTask"
 	    	classpath="${lib.dir}/compiler.jar" />
 		<jscomp compilationLevel="whitespace" warning="verbose" 
-	    	debug="false" output="${static.dir}plugins/cookie/jquery.cookie.min.js">
+	    	debug="false" output="${static.dir}assets/plugins/cookie/jquery.cookie.min.js">
 			<sources dir="${static.dir}">
 
-				<file name="plugins/cookie/jquery.cookie.js" />
+				<file name="assets/plugins/cookie/jquery.cookie.js" />
 
 			</sources>
-		</jscomp>  
+		</jscomp>  -->
 		
 		
 	</target>
-	
-	
-	
-	
-	
-	
-	<!-- MOBILE -->
-	<target name="compile-mobile">
-		<property 
-		    name="yui-compressor.jar" 
-		    location="${lib.dir}/yuicompressor.jar" />
-		<property 
-		    name="yui-compressor-ant-task.jar" 
-		    location="${lib.dir}/yui-compressor-ant-task.jar" />
-		<path id="task.classpath">
-			<pathelement location="${yui-compressor.jar}" />
-			<pathelement location="${yui-compressor-ant-task.jar}" />
-		</path>
-		<taskdef name="yuicompressor" classname="net.noha.tools.ant.yuicompressor.tasks.YuiCompressorTask">
-			<classpath refid="task.classpath" />
-		</taskdef>
-	    <concat destfile="${mobile.dir}/styles/global.con.css" force="no">
-	    	<fileset dir="${mobile.dir}/jqtouch" includes="jqtouch.css" />
-		    <fileset dir="${mobile.dir}/themes/artspot" includes="theme.css" />
-	    	<fileset dir="${mobile.dir}/styles" includes="global.css" />
-	    </concat>
-	    <yuicompressor warn="false" charset="UTF-8" fromdir="${mobile.dir}/styles" todir="${mobile.dir}/styles" csssuffix=".min.css">
-	    	<include name="global.con.css" />
-	    </yuicompressor>
-		<move file="${mobile.dir}/styles/global.con.min.css" tofile="${mobile.dir}/styles/global.min.css"/>
-		<delete file="${mobile.dir}/styles/global.con.css" />
 
-		<taskdef name="jscomp" classname="com.google.javascript.jscomp.ant.CompileTask"
-	    	classpath="${lib.dir}/compiler.jar" />
-		<jscomp compilationLevel="whitespace" warning="verbose" 
-	    	debug="false" output="${mobile.dir}/scripts/main.min.js">
-			<sources dir="${mobile.dir}">
-				<file name="/jqtouch/jquery.js" />
-				<file name="/jqtouch/jqtouch.js" />
-				<file name="/scripts/main.js" />
-			</sources>
-		</jscomp>
-	</target>
-	
-	
-
-	
-	
-	
 </project>
