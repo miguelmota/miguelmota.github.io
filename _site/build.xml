@@ -7,6 +7,7 @@
 	<property name="mobile.dir" value="mobile" />
 	<property name="lib.dir" value="lib" />
 	<target name="build" depends="compile-js"></target>
+	<!--
 	<target name="compile-css">
 		<property 
 		    name="yui-compressor.jar" 
@@ -22,7 +23,7 @@
 			<classpath refid="task.classpath" />
 		</taskdef>
 		
-		<!-- GLOBAL CSS -->
+		<!-- GLOBAL CSS ***
 	    <concat destfile="styles/global.con.css" force="no">
 	    	<fileset dir="styles" includes="global.css" />
 	    </concat>
@@ -33,7 +34,7 @@
 		<delete file="styles/global.con.css" />
 		
 		
-		<!-- CSS RESET -->
+		<!-- CSS RESET ***
 		<concat destfile="styles/reset.con.css" force="no">
 	    	<fileset dir="styles" includes="reset.css" />
 	    </concat>
@@ -44,7 +45,7 @@
 		<delete file="styles/reset.con.css" />
 		
 		
-		<!-- PYGMENTS -->
+		<!-- PYGMENTS ***
 		<concat destfile="styles/pygment.friendly.con.css" force="no">
 	    	<fileset dir="styles" includes="pygment.friendly.css" />
 	    </concat>
@@ -55,7 +56,7 @@
 		<delete file="styles/pygment.friendly.con.css" />
 				
 		
-		<!-- FANCYBOX -->
+		<!-- FANCYBOX ***
 		<concat destfile="plugins/fancybox/jquery.fancybox.con.css" force="no">
 	    	<fileset dir="plugins/fancybox" includes="jquery.fancybox.css" />
 	    </concat>
@@ -66,7 +67,7 @@
 		<delete file="plugins/fancybox/jquery.fancybox.con.css" />
 
 		
-		<!-- MTIP CSS -->
+		<!-- MTIP CSS ***
 	    <concat destfile="plugins/mtip/jquery.mtip.con.css" force="no">
 	        <fileset dir="plugins/mtip" includes="jquery.mtip.css" />
 	    </concat>
@@ -76,7 +77,7 @@
 		<move file="plugins/mtip/jquery.mtip.con.min.css" tofile="${static.dir}plugins/mtip/jquery.mtip.min.css"/>
 		<delete file="plugins/mtip/jquery.mtip.con.css" />
 	</target>
-		
+		-->
 
 	<target name="compile-js">	
 

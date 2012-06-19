@@ -17,14 +17,14 @@
                    /\____/                                                           
                    \_/__/                                                                         
 -->
-	<meta name='description' content="Stream of my social web life." />	
+	<meta name='description' content="Creative freelance web developer from the always sunny Southern California." />	
 	<meta name='keywords' content='miguel mota,creative,freelance,web developer,web design,blog' />
 	<meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0;' />
 	<meta name='apple-mobile-web-app-status-bar-style' content='black' />
 	<meta name='apple-mobile-web-app-capable' content='yes' />
 	<title>
 	
-		Stream &#187; 
+		Resume &#187; 
 	
 	Miguel Mota | Freelance Web Developer</title>
 	<link rel='canonical' href='http://www.miguelmota.com/' />
@@ -38,7 +38,7 @@
 	<link rel='stylesheet' href='/assets/plugins/fancybox/jquery.fancybox.css' />
 	<link rel='stylesheet' href='/styles/global.css' media='all' />
 	
-	<link rel='stylesheet' href='/styles/stream.css' />
+	<link rel='stylesheet' href='/styles/resume.css' />
 
 	<!--[if IE]>
 		<link rel='stylesheet' href='/styles/ie.css' />
@@ -55,8 +55,6 @@
 	<script src='http://maps.google.com/maps/api/js?sensor=false'></script>
 	<script src='/scripts/main.js'></script>
 	
-	<script src='/scripts/stream.js'></script>
-
 	<!--[if lt IE 9]>
 		<script src='/scripts/html5.js'></script>
 	<![endif]-->
@@ -127,7 +125,7 @@
 		<div class='clear'></div>
 	</div>
 	<div class='main-content-wrap'>
-		<h1 class='title'><span class='icon icon-cloud-32 icon-title icon-no-hover'></span> <script>
+		<h1 class='title'><span class='icon icon-file-32 icon-title icon-no-hover'></span> <script>
 	var path = '';
 	var href = document.location.href;
 	var s = href.split('/');
@@ -151,91 +149,57 @@
 	}
 	document.write(path);
 </script></h1>
+<section class='content about'>
 
-<div class='stream-position-reset-wrap'><a class='stream-position-reset' href='javascript:void(0)' onclick='streamPositionReset();'><span class='icon icon-revert-16'></span> reset</a></div>
+	<div class='content-item'>
 
-<div class='clear'></div>
-<section class='content stream'>
+		<div class='resume-wrap'>
+			<div class='resume-title'>Miguel Mota</div>
+			<div class='resume-desc'>Web developer</div>
 
-    <div class='stream-wrap stream-latitude content-item'>
-        <a class='stream-logo stream-logo-latitude mtip' href='http://www.google.com/latitude/apps/badge/api?user=7812482200199007583&amp;type=iframe&amp;maptype=roadmap' title='my location' rel='external'></a>
-        <a class='fancybox-iframe latitude-map-button' href='http://www.foodfail.org/miguelmota/map.php' rel='internal'><span class='icon icon-world-16 mtip' title='view map'></span></a>
-        <ul class='stream-ul stream-ul-latitude'>
-            <li><iframe class='stream-iframe-latitude' src='http://www.foodfail.org/miguelmota/latitude.php'><div class='loader'></div></iframe><div class='clear'></div></li>
-        </ul>
-        <div class='clear'></div>
-    </div>
-    
-    <div class='stream-wrap stream-facebook content-item'>
-        <a class='stream-logo stream-logo-facebook mtip' href='https://www.facebook.com/miguel.mota2' title='my facebook' rel='external'></a>
-        <div class='loader'></div>
-    </div>
-    
-    <div class='stream-wrap stream-blog content-item'>
-        <a class='stream-logo stream-logo-blog mtip' href='/blog' title='my blog'>Blog</a>
-        <ul class='stream-ul stream-ul-blog'>
-            
-                <li><a class='status' href='/blog/how-to-survive-a-zombie-outbreak'><span class='icon icon-text-16'></span> How To Survive a Zombie Outbreak <span class='status-date'>Sun Jan, 22</span><span class='clear'></span></a></li>
-            
-                <li><a class='status' href='/blog/ant-task-to-compress-html-files'><span class='icon icon-text-16'></span> Ant task to compress HTML files <span class='status-date'>Fri Oct, 14</span><span class='clear'></span></a></li>
-            
-                <li><a class='status' href='/blog/display-latest-delicious-bookmarks-with-jquery'><span class='icon icon-text-16'></span> Display latest delicious bookmarks with jQuery <span class='status-date'>Tue Oct, 11</span><span class='clear'></span></a></li>
-            
-        </ul>
-    </div>
+			<div class='resume-item'>
+			<div class='resume-item-title'>Objective:</div>
+			<div class='resume-item-obj'>To obtain a career in a well established environment that offers an opportunity to enhance my skills and abilities.</div>
+			</div>
 
-    <div class='stream-wrap stream-tumblr content-item'>
-        <a class='stream-logo stream-logo-tumblr mtip' href='http://miguelmota.tumblr.com'  title='my tumblog' rel='external'></a>
-        <div class='loader'></div>
-    </div>
-    
-    <div class='stream-wrap stream-delicious content-item'>
-        <a class='stream-logo stream-logo-delicious mtip' href='http://www.delicious.com/miguelmota' title='my bookmarks' rel='external'></a>
-        <div class='loader'></div>
-    </div>
-    
-    <div class='stream-wrap stream-wakoopa content-item'>
-        <a class='stream-logo stream-logo-wakoopa mtip' href='http://social.wakoopa.com/miguelmota' title='my software' rel='external'></a>
-        <div class='stream-sort-wrap stream-sort-wakoopa'>
-            <a class='stream-sort-wakoopa-recent selected' href='javascript:void(0)' onclick='streamSortWakoopaRecent();'>recent</a> /
-            <a class='stream-sort-wakoopa-top' href='javascript:void(0)' onclick='streamSortWakoopaTop();'>top</a>
-        </div>
-        <div id='stream-wakoopa-software-recent'></div>
-        <div id='stream-wakoopa-software-top'></div>
-        <div class='loader'></div>
-    </div>
-    
-    <div class='stream-wrap stream-lastfm content-item'>
-        <a class='stream-logo stream-logo-lastfm mtip' href='http://www.last.fm/user/miguel_mota' title='my music' rel='external'></a>
-        <div class='stream-sort-wrap stream-sort-lastfm'>
-            <a class='stream-sort-lastfm-recent selected' href='javascript:void(0)' onclick='streamSortLastfmRecent();'>recent</a> /
-            <a class='stream-sort-lastfm-loved' href='javascript:void(0)' onclick='streamSortLastfmLoved();'>loved</a> / 
-            <a class='stream-sort-lastfm-top' href='javascript:void(0)' onclick='streamSortLastfmTop();'>top</a>
-        </div>
-        <div class='loader'></div>
-    </div>
-    
-    <div class='stream-wrap stream-twitter content-item'>
-        <a class='stream-logo stream-logo-twitter mtip' href='http://twitter.com/#!/miguel_mota' title='my tweets' rel='external'></a>
-        <div class='loader'></div>
-    </div>
+			<div class='resume-item'>
+			<div class='resume-item-title'>Education:</div>
+			<div class='resume-item-location'><span class='resume-item-date'>2009 - Present</span> • Norco College • Norco, CA</div>
+			<div class='resume-item-achievement'>Transfer Studies/Associate in Math &amp; Science</div>
+			<div class='resume-item-location'><span class='resume-item-date'>2005 - 2009</span> • Duarte High School • Duarte, CA</div>
+			<div class='resume-item-achievement'>High School Diploma</div>
+			</div>
 
-    <div class='stream-wrap stream- content-item'>
-        <a class='stream-logo stream-logo-foursquare mtip' href='https://foursquare.com/miguel_mota' title='my checkins' rel='external'></a>
-        <div class='loader'></div>
-    </div>
+			<div class='resume-item'>
+			<div class='resume-item-title'>Certification:</div>
+			<div class='resume-item-location'><span class='resume-item-date'>2010</span> • DeVry University • Pomona, CA</div>
+			<div class='resume-item-achievement'>CCNA Exploration: Network Fundamentals</div>
+			</div>
 
-    <div class='stream-wrap stream-github content-item'>
-        <a class='stream-logo stream-logo-github mtip' href='https://github.com/miguelmota' title='my code' rel='external'></a>
-        <div class='loader'></div>
-    </div>
-    
-    <div class='stream-wrap stream-flickr content-item'>
-        <a class='stream-logo stream-logo-flickr mtip' href='http://www.flickr.com/photos/miguelmota' title='my photos' rel='external'></a>
-        <div class='loader'></div>
-    </div>
+			<div class='resume-item'>
+			<div class='resume-item-title'>Experience:</div>
+			<div class='resume-item-location'><span class='resume-item-date'>2010 - Present</span> • Freelance Web Developer</div>
+			<div class='resume-item-achievement'>Experienced with HTML5, CSS3, JavaScript (jQuery), PHP &amp; SQL and Git (version control)</div>
+			</div>
 
-    <div class='clear'></div>
+			<div class='resume-item'>
+			<div class='resume-item-title'>Contact:</div>
+			<div class='resume-item-contact'><a href='tel:1-951-215-6682'><span class='icon icon-phone-16'></span> +1 951 215 6682</a></div>
+			<div class='resume-item-contact'><a href='mailto:hello@miguelmota.com'><span class='icon icon-mail-16'></span> hello@miguelmota.com</a></div>
+			<div class='resume-item-contact'><a href='skype:miguelmota?chat'><span class='icon icon-skype-16'></span> miguelmota5</a></div>
+			</div>
+
+			<div class='resume-item'>
+			<div class='resume-item-title'>On the web:</div>
+			<div class='resume-item-link'><a href='http://www.miguelmota.com/portfolio' rel='external'><span class='icon icon-suitcase-16'></span> My Portfolio</a></div>
+			<div class='resume-item-link'><a href='http://twitter.com/#!/miguel_mota' rel='external'><span class='icon icon-twitter-bird-16'></span> @miguel_mota</a></div>
+			</div>
+		</div>
+
+		<a class='resume-download' href='/assets/about/resume/resume-of-miguel-mota.docx'><span class='icon icon-download-16'></span> Download resume [.docx]</a>
+
+		<div class='clear'></div>
+	</div>
 </section>
 		<div class='loader-container'><div class='page-loader'></div></div>
 		<div class='clear'></div>

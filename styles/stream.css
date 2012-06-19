@@ -103,14 +103,10 @@
 .stream-logo:active {
 	background-color: #1d1d1d;
 }
-.stream-logo-latitude {
-	font-weight: normal;
-}
 .stream-logo-blog {
 	font-weight: bold;
 }
-.stream-logo-blog,
-.stream-logo-latitude {
+.stream-logo-blog {
 	color: #999;
 	display: inline-block;
 	font-size: 18px;
@@ -118,8 +114,17 @@
 	text-indent: 0;
 }
 .stream-logo-blog:hover,
-.stream-logo-latitude:hover {
+.stream-logo-blog:active {
 	color: #007799;
+}
+.stream-logo-latitude {
+	background: url('/assets/stream/sprites/latitude-sprite.png');
+	height: 16px;
+	width: 56px;
+}
+.stream-logo-latitude:hover,
+.stream-logo-latitude:active {
+	background-position: 0 16px;
 }
 .stream-logo-tumblr {
 	background: url('/assets/stream/sprites/tumblr-sprite.png');
@@ -148,7 +153,7 @@
 }
 .stream-logo-delicious {
 	background: url('/assets/stream/sprites/delicious-sprite.png');
-	height: 15px;
+	height: 16px;
 	width: 83px;
 }
 .stream-logo-delicious:hover,
