@@ -118,7 +118,8 @@ $(document).ready(function(){
 						var url = 'http://www.google.com/latitude/apps/badge/api?user=7812482200199007583&type=iframe&maptype=roadmap';
 						var location = this.reverseGeocode;
 			    	  	//var date = new Date(item.features[0].properties.timeStamp).toUTCString();
-			    	  	htmlString += "<li><a href='"+url+"' rel='external'><span class='icon icon-link-16'></span> "+location+"</a> <time class='status-date'>"+"1"+"</time></li>";
+			    	  	htmlString += "<li><a href='"+url+"' rel='external'><span class='icon icon-link-16'></span> "+location+
+			    	  	"</a> <time class='status-date'>"+"1"+"</time></li>";
 						$('.stream-latitude2').append(htmlString +'</ul>');
 					});
 					
@@ -219,6 +220,11 @@ $(document).ready(function(){
  * --------------------- */
 function loadTwitterStream() {
 	$('.stream-twitter .loader').css('display','block');
+
+	$('.stream-refresh-twitter').remove();	
+	$('.stream-twitter').prepend("<a class='stream-refresh stream-refresh-twitter' href='javascript:void(0)' "+
+		"onclick='javascript:loadTwitterStream()'></a>");
+
 	$('.stream-ul-twitter').remove();
 	// old json: https://twitter.com/status/user_timeline/miguel_mota.json?callback=?count=5
 	$.getJSON('http://api.twitter.com/1/statuses/user_timeline.json?callback=?', 
@@ -238,10 +244,15 @@ function loadTwitterStream() {
 					var post = status.text;
 					var id = status.id_str;
 		    	  	var date = status.created_at;
-					var list_item = "<li id='"+id+"' class='status'><a href='http://twitter.com/miguel_mota/status/"+id+"' rel='external'><span class='icon icon-twitter-bird-16'></span> "+post+" <time class='status-date' datetime='' style='color:#999 !important;font-size:12px !important;font-weight:normal !important;float:right !important;'>"+formattedDate(date)+"</time><span class='clear'></span></a></li>";
+					var list_item = "<li id='"+id+"' class='status'><a href='http://twitter.com/miguel_mota/status/"+id+
+					"' rel='external'><span class='icon icon-twitter-bird-16'></span> "+post+
+					" <time class='status-date' datetime='' style='color:#999 !important;font-size:12px !important;"+
+					"font-weight:normal !important;float:right !important;'>"+
+					formattedDate(date)+"</time><span class='clear'></span></a></li>";
 					$('.stream-ul-twitter').append(list_item);
 					while(pro_img_cnt == 0){
-						$('.stream-twitter').prepend('<a href="http://twitter.com/'+username+'"><img class="stream-profile-image" src="'+profile_image+'" alt="" /></a>');
+						$('.stream-twitter').prepend('<a href="http://twitter.com/'+username+'"><img class="stream-profile-image" src="'
+							+profile_image+'" alt="" /></a>');
 						pro_img_cnt ++;
 					}
 				});
@@ -266,6 +277,11 @@ function loadTwitterStream() {
  * --------------------- */
 function loadGithubStream() {
 	$('.stream-github .loader').css('display','block');
+
+	$('.stream-refresh-github').remove();	
+	$('.stream-github').prepend("<a class='stream-refresh stream-refresh-github' href='javascript:void(0)' "+
+		"onclick='javascript:loadGithubStream()'></a>");
+
 	$('.stream-ul-github').remove();
 	$.getJSON('https://github.com/miguelmota.json?callback=?',
 			function(data) {
@@ -304,7 +320,10 @@ function loadGithubStream() {
 						message = '';
 					}
 
-					var list_item = "<li><a href='"+url+"' rel='external'><img class='stream-thumb stream-thumb-github-"+type+" icon' src='/assets/site/icons/pictos/16/"+image+".png' alt='' /> <span class='stream-li-sub'>"+type+"</span> "+message+" <span class='stream-li-sub'> "+to+"</span> "+name+" <time class='status-date' datetime=''>"+formattedDate(pushed)+"</time><span class='clear'></span></a></li>";
+					var list_item = "<li><a href='"+url+"' rel='external'><img class='stream-thumb stream-thumb-github-"+type+
+					" icon' src='/assets/site/icons/pictos/16/"+image+".png' alt='' /> <span class='stream-li-sub'>"+type+"</span> "+
+					message+" <span class='stream-li-sub'> "+to+"</span> "+name+" <time class='status-date' datetime=''>"+formattedDate(pushed)+
+					"</time><span class='clear'></span></a></li>";
 					$('.stream-ul-github').append(list_item);
 				});
 				$('.stream-ul-github').append('</ul>');
@@ -323,8 +342,14 @@ function loadGithubStream() {
  * --------------------- */
 function loadFoursquareStream() {
 	$('.stream-foursquare .loader').css('display','block');
+
+	$('.stream-refresh-foursquare').remove();	
+	$('.stream-foursquare').prepend("<a class='stream-refresh stream-refresh-foursquare' href='javascript:void(0)' "+
+		"onclick='javascript:loadFoursquareStream()'></a>");
+
 	$('.stream-ul-foursquare').remove();
-	$.getJSON('https://api.foursquare.com/v2/users/4418723/checkins?oauth_token=DATQU0DAPF0JA043XEXPOPH2FPHVQUM4YAEAQ0SRTWGZHQ43&v=20120522&callback=?',
+	$.getJSON('https://api.foursquare.com/v2/users/4418723/checkins?oauth_token=DATQU0DAPF0JA043XEXPOPH2FPHVQUM4YAEAQ0SRTWGZHQ43'+
+		'&v=20120522&callback=?',
 			function(data) {
 				$('.stream-foursquare').append('<ul class="stream-ul stream-ul-foursquare">');
 				var limit = 5;
@@ -367,6 +392,11 @@ function loadFoursquareStream() {
  * --------------------- */
 function loadFacebookStream() {
 	$('.stream-facebook .loader').css('display','block');
+
+	$('.stream-refresh-facebook').remove();	
+	$('.stream-facebook').prepend("<a class='stream-refresh stream-refresh-facebook' href='javascript:void(0)' "+
+		"onclick='javascript:loadFacebookStream()'></a>");
+
 	$('.stream-ul-facebook').remove();	
 	$('.stream-facebook').append('<ul class="stream-ul stream-ul-facebook">');
 	$.getJSON('https://graph.facebook.com/miguel.mota2/feed&access_token=136918436443248|h21SkstVPoahrXI4sN5kh2A051k&callback=?',
@@ -415,7 +445,8 @@ function loadFacebookStream() {
 		    	  	if(type == 'video')
 		    	  		type = 'video';
 
-	    	  	  	var list_item = "<li><a href='"+url+"' rel='external'><span class='icon icon-"+type+"-16'></span> "+post+" <time class='status-date' datetime=''>"+formattedDate(date)+"</time><span class='clear'></span></a></li>";
+	    	  	  	var list_item = "<li><a href='"+url+"' rel='external'><span class='icon icon-"+type+"-16'></span> "+post+
+	    	  	  	" <time class='status-date' datetime=''>"+formattedDate(date)+"</time><span class='clear'></span></a></li>";
 	    	  		$('.stream-ul-facebook').append(list_item);
 				});
 				
@@ -438,6 +469,11 @@ function loadFacebookStream() {
  * --------------------- */
 function loadTumblrStream() {
 	$('.stream-tumblr .loader').css('display','block');
+
+	$('.stream-refresh-tumblr').remove();	
+	$('.stream-tumblr').prepend("<a class='stream-refresh stream-refresh-tumblr' href='javascript:void(0)' "+
+		"onclick='javascript:loadTumblrStream()'></a>");
+
 	$('.stream-ul-tumblr').remove();
 	$.getJSON('http://miguelmota.tumblr.com/api/read/json?num=3&callback=?',
 			function(data){
@@ -457,7 +493,9 @@ function loadTumblrStream() {
 			    	  	}
 			    	  	var caption = this['photo-caption'];
 			    	  	var slug = this.slug.replace(/-/g,' ');
-			    	  	var list_item = "<li><a href='"+url+"' rel='external'><span class='icon icon-"+type+"-16'></span> "+slug.substring(0,1).toUpperCase()+slug.substr(1,200)+" <time class='status-date' datetime=''>"+formattedDate(date)+"</time><span class='clear'></span></a></li>";
+			    	  	var list_item = "<li><a href='"+url+"' rel='external'><span class='icon icon-"+type+"-16'></span> "+
+			    	  	slug.substring(0,1).toUpperCase()+slug.substr(1,200)+" <time class='status-date' datetime=''>"+formattedDate(date)+
+			    	  	"</time><span class='clear'></span></a></li>";
 			    		$('.stream-ul-tumblr').append(list_item);
 				}); 
 
@@ -479,6 +517,11 @@ function loadTumblrStream() {
  * --------------------- */
 	function loadDeliciousStream() {
 	$('.stream-delicious .loader').css('display','block');
+
+	$('.stream-refresh-delicious').remove();	
+	$('.stream-delicious').prepend("<a class='stream-refresh stream-refresh-delicious' href='javascript:void(0)' "+
+		"onclick='javascript:loadDeliciousStream()'></a>");
+
 	$('.stream-ul-delicious').remove();
 	$.getJSON('http://feeds.delicious.com/v2/json/miguelmota?callback=?', 
 			{
@@ -490,7 +533,8 @@ function loadTumblrStream() {
 					var title = item.d;
 					var url = item.u;
 		    	  	var date = item.dt;
-		    	  	var list_item = "<li><a href='"+url+"' rel='external'><span class='icon icon-link-16'></span> "+title+" <time class='status-date' datetime=''>"+formattedDate(date)+"</time><span class='clear'></span></a></li>";
+		    	  	var list_item = "<li><a href='"+url+"' rel='external'><span class='icon icon-link-16'></span> "+title+
+		    	  	" <time class='status-date' datetime=''>"+formattedDate(date)+"</time><span class='clear'></span></a></li>";
 					$('.stream-ul-delicious').append(list_item);
 				});
 					
@@ -513,8 +557,14 @@ function loadTumblrStream() {
  * --------------------- */
 function loadInstagramStream() {
 	$('.stream-instagram .loader').css('display','block');
+
+	$('.stream-refresh-instagram').remove();	
+	$('.stream-instagram').prepend("<a class='stream-refresh stream-refresh-instagram' href='javascript:void(0)' "+
+		"onclick='javascript:loadInstagramStream()'></a>");
+
 	$('.stream-ul-instagram').remove();
-	$.getJSON('https://api.instagram.com/v1/users/37897377/media/recent?access_token=37897377.b530e2d.d7697e8cc7c74e25973697fe98746715&count=5&callback=?',
+	$.getJSON('https://api.instagram.com/v1/users/37897377/media/recent?access_token=37897377.b530e2d.d7697e8cc7c74e25973697fe98746715'+
+		'&count=5&callback=?',
 			function(data) {
 				$('.stream-instagram').append('<ul class="stream-ul stream-ul-instagram">');
 				$.each(data.data, function(i, item) {
@@ -523,11 +573,21 @@ function loadInstagramStream() {
 					var link = item.link;
 					var thumbnail = item.images["thumbnail"].url;
 					var likes_count = item.likes["count"];
-					var likes = "<span class='stream-instagram-likes'>"+likes_count+" likes</span> ";
 
+					var likes;
 					if(likes_count == 0) {
 						likes = '';
 					}
+					else if (likes_count == 1) {
+						likes = "<span class='stream-instagram-likes'>"+likes_count+" like</span> ";
+					}
+					else if(likes_count > 1) {
+						likes = "<span class='stream-instagram-likes'>"+likes_count+" likes</span> ";
+					}
+					else {
+						likes = '';
+					}
+
 
 					var timestamp = item.created_time;
 
@@ -552,6 +612,11 @@ function loadInstagramStream() {
  * --------------------- */
 function loadFlickrStream() {
 	$('.stream-carousel-wrap').remove();
+
+	$('.stream-refresh-flickr').remove();	
+	$('.stream-flickr').prepend("<a class='stream-refresh stream-refresh-flickr' href='javascript:void(0)' "+
+		"onclick='javascript:loadFlickrStream()'></a>");
+
 	$.getJSON('http://api.flickr.com/services/rest/?method=flickr.people.getPublicPhotos&jsoncallback=?',
 		{
 			format: 'json',
@@ -560,7 +625,10 @@ function loadFlickrStream() {
 			per_page: 25
 		},
 		function jsonFlickrFeed(data) {
-			var htmlString = '<div class="stream-carousel-wrap"><a href="javascript:void(0)" class="stream-carousel-nav stream-carousel-nav-prev"><span class="stream-carousel-nav-inner">&#171;</span></a><div class="stream-carousel stream-carousel-flickr"><ul class="stream-ul stream-ul-flickr stream-carousel-ul">';
+			var htmlString = '<div class="stream-carousel-wrap">'+
+			'<a href="javascript:void(0)" class="stream-carousel-nav stream-carousel-nav-prev">'+
+			'<span class="stream-carousel-nav-inner">&#171;</span></a><div class="stream-carousel stream-carousel-flickr">'+
+			'<ul class="stream-ul stream-ul-flickr stream-carousel-ul">';
 			$.each(data.photos.photo, function(i,item) {	
 				
 				var flickr_id = item.id;
@@ -576,12 +644,16 @@ function loadFlickrStream() {
 				var flickr_photo = "http://farm"+flickr_farm+".static.flickr.com/"+flickr_server+"/"+flickr_id+"_"+flickr_secret+"_b.jpg";
 
 
-				htmlString += "<li><a class='fancybox' rel='flickr' href='"+flickr_photo+"' title='"+flickr_title+" ["+flickr_id+"]'><img src='"+flickr_thumbnail+"' alt='' /><span class='zoom-wrap zoom-wrap-flickr'><span class='icon icon-zoom-24 icon-zoom-flickr'></span></span></a></li>";
+				htmlString += "<li><a class='fancybox' rel='flickr' href='"+flickr_photo+"' title='"+flickr_title+" ["+flickr_id+"]'><img src='"+
+				flickr_thumbnail+"' alt='' /><span class='zoom-wrap zoom-wrap-flickr'><span class='icon icon-zoom-24 icon-zoom-flickr'>"+
+				"</span></span></a></li>";
 			});
 			
 			
 			$('.stream-flickr .loader').css('display','none');
-			$('.stream-flickr').append(htmlString +'</ul><div class="clear"></div></div><a href="javascript:void(0)" class="stream-carousel-nav stream-carousel-nav-next"><span class="stream-carousel-nav-inner">&#187;</span></a></div><div class="clear"></div>');
+			$('.stream-flickr').append(htmlString +'</ul><div class="clear"></div></div>'+
+				'<a href="javascript:void(0)" class="stream-carousel-nav stream-carousel-nav-next">'+
+				'<span class="stream-carousel-nav-inner">&#187;</span></a></div><div class="clear"></div>');
 			showMtipTimeout('.stream-logo-flickr',3000);
 			
 
@@ -786,6 +858,10 @@ function loadWakoopaRecent() {
 	$('.stream-ul-wakoopa-recent').remove();
 	$('.stream-ul-wakoopa-top').remove();
 	$('.stream-wakoopa .loader').css('display','block');
+
+	$('.stream-refresh-wakoopa').remove();	
+	$('.stream-wakoopa').prepend("<a class='stream-refresh stream-refresh-wakoopa' href='javascript:void(0)' "+
+		"onclick='javascript:loadWakoopaRecent()'></a>");
 	
 	$.getJSON('http://api.wakoopa.com/miguelmota/recently_used.json?callback=?',
 		{
@@ -796,7 +872,9 @@ function loadWakoopaRecent() {
 			for(var i = 0; i < data.length; i++){
 				var entry = data[i].software;
 				var date = entry.last_active_at;
-				html.push("<li><a href='"+entry.complete_url+"' rel='external'><img class='stream-thumb' src='"+entry.complete_thumb_url+"' alt='' /> "+entry.name+" <time class='status-date' datetime=''>"+formattedDate(date)+"</time><span class='clear'></span></a></li>");
+				html.push("<li><a href='"+entry.complete_url+"' rel='external'>"+
+					"<img class='stream-thumb' src='"+entry.complete_thumb_url+"' alt='' /> "+
+					entry.name+" <time class='status-date' datetime=''>"+formattedDate(date)+"</time><span class='clear'></span></a></li>");
 			}
 			
 			html.push("</ul>");
@@ -825,6 +903,10 @@ function loadWakoopaTop() {
 	$('.stream-ul-wakoopa-top').remove();
 	$('.stream-ul-wakoopa-recent').remove();
 	$('.stream-wakoopa .loader').css('display','block');
+
+	$('.stream-refresh-wakoopa').remove();	
+	$('.stream-wakoopa').prepend("<a class='stream-refresh stream-refresh-wakoopa' href='javascript:void(0)' "+
+		"onclick='javascript:loadWakoopaTop()'></a>");
 	
 	$.getJSON('http://api.wakoopa.com/miguelmota/most_used.json?callback=?',
 		{
@@ -836,7 +918,10 @@ function loadWakoopaTop() {
 			for(var i = 0; i < data.length; i++){
 				var entry = data[i].software;
 				var date = entry.last_active_at;
-				html.push("<li><a href='"+entry.complete_url+"' rel='external'><span class='rank-number'>"+rank+"</span> <img class='stream-thumb' src='"+entry.complete_thumb_url+"' alt='' /> "+entry.name+" <time class='status-date' datetime=''>"+formattedDate(date)+"</time><span class='clear'></span></a></li>");
+				html.push("<li><a href='"+entry.complete_url+"' rel='external'><span class='rank-number'>"+rank+"</span> "+
+					"<img class='stream-thumb' src='"+
+					entry.complete_thumb_url+"' alt='' /> "+entry.name+" <time class='status-date' datetime=''>"+formattedDate(date)+
+					"</time><span class='clear'></span></a></li>");
 				rank++;
 			}
 			
@@ -884,8 +969,13 @@ function loadLastfmRecent(){
 	
 	$('.stream-ul-lastfm').remove();
 	$('.stream-lastfm .loader').css('display','block');
+
+	$('.stream-refresh-lastfm').remove();	
+	$('.stream-lastfm').prepend("<a class='stream-refresh stream-refresh-lastfm' href='javascript:void(0)' "+
+		"onclick='javascript:loadLastfmRecent()'></a>");
 	
-	// All parameters in url: http://ws.audioscrobbler.com/2.0/?format=json&method=user.getRecentTracks&user=miguel_mota&api_key=dc0e875b6c0fd8ac4891b0716897e6c1&limit=5&callback=?
+	// All parameters in url: http://ws.audioscrobbler.com/2.0/?format=json&method=user.getRecentTracks&user=miguel_mota&
+	// api_key=dc0e875b6c0fd8ac4891b0716897e6c1&limit=5&callback=?
 	$.getJSON('http://ws.audioscrobbler.com/2.0/?callback=?', 
 			{
 				format: 'json',
@@ -905,7 +995,10 @@ function loadLastfmRecent(){
 							image = item.image[0]['#text'];
 						}
 						var date =  item.date['#text'];
-						var list_item = "<li><a href='"+url+"' rel='external'><img class='stream-thumb' src='"+image+"' alt='' /> "+artist+" - "+name+" <time class='status-date' datetime='' style='color:#999 !important;font-size:12px !important;font-weight:normal !important;float:right !important;'>"+formattedDate(date)+"</time><span class='clear'></span></a></li>";
+						var list_item = "<li><a href='"+url+"' rel='external'><img class='stream-thumb' src='"+image+"' alt='' /> "+artist+
+						" - "+name+" <time class='status-date' datetime='' style='color:#999 !important;font-size:12px !important;"+
+						"font-weight:normal !important;float:right !important;'>"+formattedDate(date)+"</time>"+
+						"<span class='clear'></span></a></li>";
 						$('.stream-ul-lastfm-recent').append(list_item);
 				}); 
 				
@@ -931,8 +1024,13 @@ function loadLastfmLoved(){
 	
 	$('.stream-ul-lastfm').remove();
 	$('.stream-lastfm .loader').css('display','block');
+
+	$('.stream-refresh-lastfm').remove();	
+	$('.stream-lastfm').prepend("<a class='stream-refresh stream-refresh-lastfm' href='javascript:void(0)' "+
+		"onclick='javascript:loadLastfmLoved()'></a>");
 	
-	// All parameters in url: http://ws.audioscrobbler.com/2.0/?format=json&method=user.getLovedTracks&user=miguel_mota&api_key=dc0e875b6c0fd8ac4891b0716897e6c1&limit=5&callback=?
+	// All parameters in url: http://ws.audioscrobbler.com/2.0/?format=json&method=user.getLovedTracks&user=miguel_mota&
+	// api_key=dc0e875b6c0fd8ac4891b0716897e6c1&limit=5&callback=?
 	$.getJSON('http://ws.audioscrobbler.com/2.0/?callback=?', 
 			{
 				format: 'json',
@@ -949,7 +1047,11 @@ function loadLastfmLoved(){
 						var artist = item.artist['name'];
 						var image = item.image[0]['#text'];
 						var date =  item.date['#text'];
-						var list_item = "<li><a href='"+url+"' rel='external'><span class='icon icon-heart-red-16 icon-heart-lastfm'></span> <img class='stream-thumb' src='"+image+"' alt='' /> "+artist+" - "+name+" <time class='status-date' datetime='' style='color:#999 !important;font-size:12px !important;font-weight:normal !important;float:right !important;'>"+formattedDate(date)+"</time><span class='clear'></span></a></li>";
+						var list_item = "<li><a href='"+url+"' rel='external'><span class='icon icon-heart-red-16 icon-heart-lastfm'></span> "+
+						"<img class='stream-thumb' src='"+image+"' alt='' /> "+artist+" - "+name+
+						" <time class='status-date' datetime='' style='color:#999 !important;font-size:12px !important;"+
+						"font-weight:normal !important;float:right !important;'>"+formattedDate(date)+"</time>"+
+						"<span class='clear'></span></a></li>";
 						$('.stream-ul-lastfm-loved').append(list_item);
 				}); 
 
@@ -974,8 +1076,13 @@ function loadLastfmTop(){
 	
 	$('.stream-ul-lastfm').remove();
 	$('.stream-lastfm .loader').css('display','block');
+
+	$('.stream-refresh-lastfm').remove();	
+	$('.stream-lastfm').prepend("<a class='stream-refresh stream-refresh-lastfm' href='javascript:void(0)' "+
+		"onclick='javascript:loadLastfmTop()'></a>");
 	
-	// All parameters in url: http://ws.audioscrobbler.com/2.0/?format=json&method=user.getTopTracks&user=miguel_mota&api_key=dc0e875b6c0fd8ac4891b0716897e6c1&limit=5&callback=?
+	// All parameters in url: http://ws.audioscrobbler.com/2.0/?format=json&method=user.getTopTracks&user=miguel_mota&
+	// api_key=dc0e875b6c0fd8ac4891b0716897e6c1&limit=5&callback=?
 	$.getJSON('http://ws.audioscrobbler.com/2.0/?callback=?', 
 			{
 				format: 'json',
@@ -994,7 +1101,10 @@ function loadLastfmTop(){
 						var artist = item.artist['name'];
 						var image = '/assets/site/logo-16.png';
 						var playcount =  item.playcount;
-						var list_item = "<li><a href='"+url+"' rel='external'><span class='rank-number'>"+rank+"</span> <img class='stream-thumb' src='"+image+"' alt='' /> "+artist+" - "+name+" <time class='status-date' style='color:#999 !important;font-size:12px !important;font-weight:normal !important;float:right !important;'>"+playcount+" plays</time><span class='clear'></span></a></li>";
+						var list_item = "<li><a href='"+url+"' rel='external'><span class='rank-number'>"+rank+
+						"</span> <img class='stream-thumb' src='"+image+"' alt='' /> "+artist+" - "+name+
+						" <time class='status-date' style='color:#999 !important;font-size:12px !important;"+
+						"font-weight:normal !important;float:right !important;'>"+playcount+" plays</time><span class='clear'></span></a></li>";
 						$('.stream-ul-lastfm-top').append(list_item);
 						rank++;
 				}); 
@@ -1055,6 +1165,8 @@ function streamPositionReset(){
 	$.cookie('streamFacebookY',null);
 	$.cookie('streamTumblrX',null);
 	$.cookie('streamTumblrY',null);
+	$.cookie('streamInstagramX',null);
+	$.cookie('streamInstagramY',null);
 	$.cookie('streamDeliciousX',null);
 	$.cookie('streamDeliciousY',null);
 	$.cookie('streamLastfmX',null);

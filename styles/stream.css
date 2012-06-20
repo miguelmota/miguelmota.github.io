@@ -475,6 +475,27 @@
 	cursor: move;
 }
 
+/*
+	STREAM REFRESH BUTTON
+*/
+.stream-refresh {
+	background: transparent url('/assets/site/icons/pictos/16/refresh.png') no-repeat 0 0;
+	height: 13px;
+	opacity: .1;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=10)";
+	filter: alpha(opacity=10);
+	position: absolute;
+	right: 16px;
+	top: 5px;
+	width: 16px;
+}
+.stream-refresh:hover,
+.stream-refresh:active {
+	opacity: .3;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+	filter: alpha(opacity=30);
+}
+
 /* ------------------------------------------------
  * TABLET STYLES
  * --------------------------------------------- */
