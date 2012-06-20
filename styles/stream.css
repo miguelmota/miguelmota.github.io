@@ -34,6 +34,9 @@
 .stream-tumblr {
 	min-height: 120px;
 }
+.stream-instagram {
+	min-height: 180px;
+}
 .stream-delicious {
 	min-height: 120px;
 }
@@ -134,6 +137,15 @@
 .stream-logo-tumblr:hover,
 .stream-logo-tumblr:active {
 	background-position: 0 16px;
+}
+.stream-logo-instagram {
+	background: url('/assets/stream/sprites/instagram-sprite.png');
+	height: 26px;
+	width: 84px;
+}
+.stream-logo-instagram:hover,
+.stream-logo-instagram:active {
+	background-position: 0 26px;
 }
 .stream-logo-facebook {
 	background: url('/assets/stream/sprites/facebook-sprite.png');
@@ -250,6 +262,14 @@
 .odd:active {
 	border-color: #007299;
 }
+
+/* Instagram likes */
+.stream-instagram-likes {
+	color: #555;
+	font-size: 12px;
+	font-weight: normal;
+}
+
 /*
 	STATUS DATE
 */

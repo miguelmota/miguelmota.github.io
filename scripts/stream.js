@@ -176,6 +176,7 @@ $(document).ready(function(){
 	loadTwitterStream();
 	loadFacebookStream();
 	loadDeliciousStream();
+	loadInstagramStream();
 	loadTumblrStream();
 	loadFoursquareStream();
 	loadGithubStream();
@@ -194,17 +195,20 @@ $(document).ready(function(){
 		loadGithubStream();
 	}, 10000);
 	setInterval(function() {
-		loadFoursquareStream();
-	}, 105000);
+		loadInstagramStream();
+	}, 150000);
 	setInterval(function() {
-		loadTumblrStream();
+		loadFoursquareStream();
 	}, 120000);
 	setInterval(function() {
-		loadWakoopaRecent();
+		loadTumblrStream();
 	}, 135000);
 	setInterval(function() {
-		loadDeliciousStream();
+		loadWakoopaRecent();
 	}, 150000);
+	setInterval(function() {
+		loadDeliciousStream();
+	}, 180000);
 
 });
 
@@ -341,7 +345,10 @@ function loadFoursquareStream() {
 							   item.venue["categories"][0]["icon"]["sizes"][0] +
 							   item.venue["categories"][0]["icon"]["name"];
 
-					var list_item = "<li><a href='"+url+"' rel='external'><img class='stream-thumb' src='"+photo+"' alt='' /> "+name+" <span class='stream-li-sub'>in "+city+", "+state+"</span> <time class='status-date' datetime=''>"+formattedDate(time)+"</time><span class='clear'></span></a></li>";
+					var list_item = "<li><a href='"+url+"' rel='external'><img class='stream-thumb' src='"+photo+
+					"' alt='' /> "+name+" <span class='stream-li-sub'>in "+city+", "+state+
+					"</span> <time class='status-date' datetime=''>"+formattedDateUnix(time)+
+					"</time><span class='clear'></span></a></li>";
 					$('.stream-ul-foursquare').append(list_item);
 				});
 				$('.stream-ul-foursquare').append('</ul>');
@@ -502,6 +509,45 @@ function loadTumblrStream() {
 
 
 /* ------------------------
+ * Instagram stream
+ * --------------------- */
+function loadInstagramStream() {
+	$('.stream-instagram .loader').css('display','block');
+	$('.stream-ul-instagram').remove();
+	$.getJSON('https://api.instagram.com/v1/users/37897377/media/recent?access_token=37897377.b530e2d.d7697e8cc7c74e25973697fe98746715&count=5&callback=?',
+			function(data) {
+				$('.stream-instagram').append('<ul class="stream-ul stream-ul-instagram">');
+				$.each(data.data, function(i, item) {
+
+					var caption = item.caption["text"];
+					var link = item.link;
+					var thumbnail = item.images["thumbnail"].url;
+					var likes_count = item.likes["count"];
+					var likes = "<span class='stream-instagram-likes'>"+likes_count+" likes</span> ";
+
+					if(likes_count == 0) {
+						likes = '';
+					}
+
+					var timestamp = item.created_time;
+
+					var list_item = "<li><a href='"+link+"' rel='external'><img class='stream-thumb' src='"+thumbnail+"' alt='' /> "+
+					caption+" "+likes+
+					"<time class='status-date' datetime=''>"+formattedDateUnix(timestamp)+"</time><span class='clear'></span></a></li>";
+					$('.stream-ul-instagram').append(list_item);
+				});
+				$('.stream-ul-instagram').append('</ul>');
+				$('.stream-ul-instagram li:nth-child(odd)').addClass('odd');
+
+				$('.stream-instagram .loader').css('display','none');
+				showMtipTimeout('.stream-logo-instagram',3000);
+			}
+	);
+}
+
+
+
+/* ------------------------
  * Flickr stream
  * --------------------- */
 function loadFlickrStream() {
@@ -615,6 +661,18 @@ function loadFlickrStream() {
 				}
 			});
 			
+			// Instagram stream cookie
+			$('.stream-instagram').css({
+				top: $.cookie('streamInstagramY')*1,
+				left: $.cookie('streamInstagramX')*1
+			}).draggable({
+				stop: function(event, ui) {
+					$.cookie('streamInstagramX',ui.position.left);
+					$.cookie('streamInstagramY',ui.position.top);
+					$('.stream-position-reset-wrap').css('display', 'block');
+				}
+			});
+
 			// Delicious stream cookie
 			$('.stream-delicious').css({
 				top: $.cookie('streamDeliciousY')*1,

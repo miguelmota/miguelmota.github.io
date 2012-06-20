@@ -308,6 +308,40 @@ function formattedDate(d) {
 
 }
 
+// format date unix timestamp function
+function formattedDateUnix(d) {
+  	var date = new Date(d*1000);
+  	var day_week = date.getDay();
+  	var day_week_array = {1:'Mon', 2:'Tue', 3:'Wed', 4:'Thu', 5:'Fri', 6:'Sat', 7:'Sun'};
+  	day_week = day_week_array[day_week];
+  	if(!day_week) { day_week = ""; }
+  	var day = date.getDate();
+  	if(!day) { day = ""; }
+  	// var month = date.getMonth();
+	var month = date.toString().substr(3,4);
+  	var year = date.getYear();
+  	if (!year) { year = ""; }
+  	var minutes = date.getMinutes();
+  	if (!minutes) { minutes = ""; }
+  	var hour = date.getHours();
+  	var meridiem = (hour < 12) ? "AM" : "PM";
+  	if (hour == 0) {
+	  	hour = 12;
+	}
+	if (hour > 12) {
+    	hour -= 12;
+    }
+    if (!hour) { hour = ""; }
+    if (!meridiem) { meridiem = ""; }
+    var formatted_date = "";
+    if(day != "") {
+  		formatted_date = day_week+' '+month+', '+day+' '+hour+':'+minutes+' '+meridiem;
+  	}
+
+  	return formatted_date;
+
+}
+
 
 
 // Display latest tweet
