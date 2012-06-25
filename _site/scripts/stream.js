@@ -655,179 +655,191 @@ function loadFlickrStream() {
 				'<a href="javascript:void(0)" class="stream-carousel-nav stream-carousel-nav-next">'+
 				'<span class="stream-carousel-nav-inner">&#187;</span></a></div><div class="clear"></div>');
 			showMtipTimeout('.stream-logo-flickr',3000);
-			
-
-
-			// Draggable
-			var i = 20;
-			$('.stream-wrap').draggable({
-				containment: '.content',
-				cursor: 'move',
-				start: function(event, ui) {
-					$(this).css('z-index', i++);
-				}
-			}).append("<span class='stream-move'>&#8756;</span>");
-			
-			
-			
-			/* ------------------------
-			 *  jQuery Draggable cookies to remember location
-			 * --------------------- */
-			// Latitude stream cookie
-			$('.stream-latitude').css({
-				top: $.cookie('streamLatitudeY')*1,
-				left: $.cookie('streamLatitudeX')*1
-			}).draggable({
-				stop: function(event, ui) {
-					$.cookie('streamLatitudeX',ui.position.left);
-					$.cookie('streamLatitudeY',ui.position.top);
-					$('.stream-position-reset-wrap').css('display', 'block');
-				}
-			});
-			
-			// Blog stream cookie
-			$('.stream-blog').css({
-				top: $.cookie('streamBlogY')*1,
-				left: $.cookie('streamBlogX')*1
-			}).draggable({
-				stop: function(event, ui) {
-					$.cookie('streamBlogX',ui.position.left);
-					$.cookie('streamBlogY',ui.position.top);
-					$('.stream-position-reset-wrap').css('display', 'block');
-				}
-			});
-			
-			// Twitter stream cookie
-			$('.stream-twitter').css({
-				top: $.cookie('streamTwitterY')*1,
-				left: $.cookie('streamTwitterX')*1
-			}).draggable({
-				stop: function(event, ui) {
-					$.cookie('streamTwitterX',ui.position.left);
-					$.cookie('streamTwitterY',ui.position.top);
-					$('.stream-position-reset-wrap').css('display', 'block');
-				}
-			});
-			
-			// Facebook stream cookie
-			$('.stream-facebook').css({
-				top: $.cookie('streamFacebookY')*1,
-				left: $.cookie('streamFacebookX')*1
-			}).draggable({
-				stop: function(event, ui) {
-					$.cookie('streamFacebookX',ui.position.left);
-					$.cookie('streamFacebookY',ui.position.top);
-					$('.stream-position-reset-wrap').css('display', 'block');
-				}
-			});
-			
-			// Tumblr stream cookie
-			$('.stream-tumblr').css({
-				top: $.cookie('streamTumblrY')*1,
-				left: $.cookie('streamTumblrX')*1
-			}).draggable({
-				stop: function(event, ui) {
-					$.cookie('streamTumblrX',ui.position.left);
-					$.cookie('streamTumblrY',ui.position.top);
-					$('.stream-position-reset-wrap').css('display', 'block');
-				}
-			});
-			
-			// Instagram stream cookie
-			$('.stream-instagram').css({
-				top: $.cookie('streamInstagramY')*1,
-				left: $.cookie('streamInstagramX')*1
-			}).draggable({
-				stop: function(event, ui) {
-					$.cookie('streamInstagramX',ui.position.left);
-					$.cookie('streamInstagramY',ui.position.top);
-					$('.stream-position-reset-wrap').css('display', 'block');
-				}
-			});
-
-			// Delicious stream cookie
-			$('.stream-delicious').css({
-				top: $.cookie('streamDeliciousY')*1,
-				left: $.cookie('streamDeliciousX')*1
-			}).draggable({
-				stop: function(event, ui) {
-					$.cookie('streamDeliciousX',ui.position.left);
-					$.cookie('streamDeliciousY',ui.position.top);
-					$('.stream-position-reset-wrap').css('display', 'block');
-				}
-			});
-			
-			// Last.fm stream cookie
-			$('.stream-lastfm').css({
-				top: $.cookie('streamLastfmY')*1,
-				left: $.cookie('streamLastfmX')*1
-			}).draggable({
-				stop: function(event, ui) {
-					$.cookie('streamLastfmX',ui.position.left);
-					$.cookie('streamLastfmY',ui.position.top);
-					$('.stream-position-reset-wrap').css('display', 'block');
-				}
-			});
-			
-			// Wakoopa stream cookie
-			$('.stream-wakoopa').css({
-				top: $.cookie('streamWakoopaY')*1,
-				left: $.cookie('streamWakoopaX')*1
-			}).draggable({
-				stop: function(event, ui) {
-					$.cookie('streamWakoopaX',ui.position.left);
-					$.cookie('streamWakoopaY',ui.position.top);
-					$('.stream-position-reset-wrap').css('display', 'block');
-				}
-			});
-
-			// Foursquare stream cookie
-			$('.stream-foursquare').css({
-				top: $.cookie('streamFoursquareY')*1,
-				left: $.cookie('streamFoursquareX')*1
-			}).draggable({
-				stop: function(event, ui) {
-					$.cookie('streamFoursquareX',ui.position.left);
-					$.cookie('streamFoursquareY',ui.position.top);
-					$('.stream-position-reset-wrap').css('display', 'block');
-				}
-			});
-
-			// Github stream cookie
-			$('.stream-github').css({
-				top: $.cookie('streamGithubY')*1,
-				left: $.cookie('streamGithubX')*1
-			}).draggable({
-				stop: function(event, ui) {
-					$.cookie('streamGithubX',ui.position.left);
-					$.cookie('streamGithubY',ui.position.top);
-					$('.stream-position-reset-wrap').css('display', 'block');
-				}
-			});
-			
-			// Flickr stream cookie
-			$('.stream-flickr').css({
-				top: $.cookie('streamFlickrY')*1,
-				left: $.cookie('streamFlickrX')*1
-			}).draggable({
-				stop: function(event, ui) {
-					$.cookie('streamFlickrX',ui.position.left);
-					$.cookie('streamFlickrY',ui.position.top);
-					$('.stream-position-reset-wrap').css('display', 'block');
-				}
-			});
-			
-
-			
-			// Initialize Fancybox
-			initializeFancybox();
 
 			// Run Masonry
 			loadMasonry();
-
+			
 	});
+
+	// Initialize Cookies
+	//iniStreamCookies();
+
+	// Initialize Draggable
+	iniDraggable();
+
+	// Initialize Fancybox
+	initializeFancybox();
 }
 
+
+
+function iniDraggable() {
+
+	// Draggable
+	var i = 20;
+	$('.stream-wrap').draggable({
+		containment: '.content',
+		cursor: 'move',
+		start: function(event, ui) {
+			$(this).css('z-index', i++);
+		}
+	}).append("<span class='stream-move'>&#8756;</span>");
+
+	iniStreamCookies();
+
+}
+
+function iniStreamCookies() {
+
+
+	/* ------------------------
+	 *  jQuery Draggable cookies to remember location
+	 * --------------------- */
+	// Latitude stream cookie
+	$('.stream-latitude').css({
+		top: $.cookie('streamLatitudeY')*1,
+		left: $.cookie('streamLatitudeX')*1
+	}).draggable({
+		stop: function(event, ui) {
+			$.cookie('streamLatitudeX',ui.position.left);
+			$.cookie('streamLatitudeY',ui.position.top);
+			$('.stream-position-reset-wrap').css('display', 'block');
+		}
+	});
+
+	// Blog stream cookie
+	$('.stream-blog').css({
+		top: $.cookie('streamBlogY')*1,
+		left: $.cookie('streamBlogX')*1
+	}).draggable({
+		stop: function(event, ui) {
+			$.cookie('streamBlogX',ui.position.left);
+			$.cookie('streamBlogY',ui.position.top);
+			$('.stream-position-reset-wrap').css('display', 'block');
+		}
+	});
+
+	// Twitter stream cookie
+	$('.stream-twitter').css({
+		top: $.cookie('streamTwitterY')*1,
+		left: $.cookie('streamTwitterX')*1
+	}).draggable({
+		stop: function(event, ui) {
+			$.cookie('streamTwitterX',ui.position.left);
+			$.cookie('streamTwitterY',ui.position.top);
+			$('.stream-position-reset-wrap').css('display', 'block');
+		}
+	});
+
+	// Facebook stream cookie
+	$('.stream-facebook').css({
+		top: $.cookie('streamFacebookY')*1,
+		left: $.cookie('streamFacebookX')*1
+	}).draggable({
+		stop: function(event, ui) {
+			$.cookie('streamFacebookX',ui.position.left);
+			$.cookie('streamFacebookY',ui.position.top);
+			$('.stream-position-reset-wrap').css('display', 'block');
+		}
+	});
+
+	// Tumblr stream cookie
+	$('.stream-tumblr').css({
+		top: $.cookie('streamTumblrY')*1,
+		left: $.cookie('streamTumblrX')*1
+	}).draggable({
+		stop: function(event, ui) {
+			$.cookie('streamTumblrX',ui.position.left);
+			$.cookie('streamTumblrY',ui.position.top);
+			$('.stream-position-reset-wrap').css('display', 'block');
+		}
+	});
+
+	// Instagram stream cookie
+	$('.stream-instagram').css({
+		top: $.cookie('streamInstagramY')*1,
+		left: $.cookie('streamInstagramX')*1
+	}).draggable({
+		stop: function(event, ui) {
+			$.cookie('streamInstagramX',ui.position.left);
+			$.cookie('streamInstagramY',ui.position.top);
+			$('.stream-position-reset-wrap').css('display', 'block');
+		}
+	});
+
+	// Delicious stream cookie
+	$('.stream-delicious').css({
+		top: $.cookie('streamDeliciousY')*1,
+		left: $.cookie('streamDeliciousX')*1
+	}).draggable({
+		stop: function(event, ui) {
+			$.cookie('streamDeliciousX',ui.position.left);
+			$.cookie('streamDeliciousY',ui.position.top);
+			$('.stream-position-reset-wrap').css('display', 'block');
+		}
+	});
+
+	// Last.fm stream cookie
+	$('.stream-lastfm').css({
+		top: $.cookie('streamLastfmY')*1,
+		left: $.cookie('streamLastfmX')*1
+	}).draggable({
+		stop: function(event, ui) {
+			$.cookie('streamLastfmX',ui.position.left);
+			$.cookie('streamLastfmY',ui.position.top);
+			$('.stream-position-reset-wrap').css('display', 'block');
+		}
+	});
+
+	// Wakoopa stream cookie
+	$('.stream-wakoopa').css({
+		top: $.cookie('streamWakoopaY')*1,
+		left: $.cookie('streamWakoopaX')*1
+	}).draggable({
+		stop: function(event, ui) {
+			$.cookie('streamWakoopaX',ui.position.left);
+			$.cookie('streamWakoopaY',ui.position.top);
+			$('.stream-position-reset-wrap').css('display', 'block');
+		}
+	});
+
+	// Foursquare stream cookie
+	$('.stream-foursquare').css({
+		top: $.cookie('streamFoursquareY')*1,
+		left: $.cookie('streamFoursquareX')*1
+	}).draggable({
+		stop: function(event, ui) {
+			$.cookie('streamFoursquareX',ui.position.left);
+			$.cookie('streamFoursquareY',ui.position.top);
+			$('.stream-position-reset-wrap').css('display', 'block');
+		}
+	});
+
+	// Github stream cookie
+	$('.stream-github').css({
+		top: $.cookie('streamGithubY')*1,
+		left: $.cookie('streamGithubX')*1
+	}).draggable({
+		stop: function(event, ui) {
+			$.cookie('streamGithubX',ui.position.left);
+			$.cookie('streamGithubY',ui.position.top);
+			$('.stream-position-reset-wrap').css('display', 'block');
+		}
+	});
+
+	// Flickr stream cookie
+	$('.stream-flickr').css({
+		top: $.cookie('streamFlickrY')*1,
+		left: $.cookie('streamFlickrX')*1
+	}).draggable({
+		stop: function(event, ui) {
+			$.cookie('streamFlickrX',ui.position.left);
+			$.cookie('streamFlickrY',ui.position.top);
+			$('.stream-position-reset-wrap').css('display', 'block');
+		}
+	});
+
+}
 
 
 // Initialize Masonry plugin, masonry.desandro.com
