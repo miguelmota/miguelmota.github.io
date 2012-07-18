@@ -33,13 +33,18 @@
 	font-size: 14px;
 	margin: 0 0 5px 0;
 }
+.resume-item-location a {
+	border-bottom: 1px dotted #333;
+}
+.resume-item-location a:hover,
+.resume-item-location a:active,
 .resume-item-contact a:hover,
 .resume-item-contact a:active {
 	color: #fff;
 }
 .resume-item-achievement {
 	font-style: italic;
-	margin: 10px 0 10px 0;
+	margin: 10px 0 15px 0;
 }
 
 .resume-download {

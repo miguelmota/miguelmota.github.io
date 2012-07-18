@@ -24,7 +24,15 @@
 	<meta name='apple-mobile-web-app-capable' content='yes' />
 	<title>
 	{% if page.title %}
-		{{ page.title }} &#187; 
+		{% if page.category == 'portfolio' %}
+			{{ page.title }} &#187; Portfolio &#187; 
+		{% else %}
+		{% if page.category == 'blog' %}
+			{{ page.title }} &#187; Blog &#187; 
+		{% else %}
+			{{ page.title }} &#187; 
+		{% endif %}
+		{% endif %}
 	{% endif %}
 	Miguel Mota | Freelance Web Developer</title>
 	<link rel='canonical' href='http://www.miguelmota.com/' />

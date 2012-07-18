@@ -316,7 +316,7 @@ textarea {
 	-webkit-box-sizing: border-box;
 	-webkit-box-shadow: inset 0 -3px 1px rgba(0, 0, 0, 0.45), 0 2px 2px rgba(0, 0, 0, 0.25);
   	-moz-box-shadow: inset 0 -3px 1px rgba(0, 0, 0, 0.45), 0 2px 2px rgba(0, 0, 0, 0.25);
-  	box-shadow: inset 0 -3px 1px rgba(0, 0, 0, 0.45), 0 2 2px rgba(0, 0, 0, 0.25);
+  	box-shadow: inset 0 -3px 1px rgba(0, 0, 0, 0.45), 0 2px 2px rgba(0, 0, 0, 0.25);
 	color: #fff;
 	font-size: 12px;
 	padding: 5px 10px;
@@ -330,7 +330,7 @@ textarea {
 	background: #003f55;
     -webkit-box-shadow: inset 0 -3px 1px transparent, inset 0 0 3px rgba(0, 0, 0, 0.9);
     -moz-box-shadow: inset 0 -3px 1px transparent, inset 0 0 3px rgba(0, 0, 0, 0.9);
-    box-shadow: inset 0 -3px 1px transparent, inset 0 0p3px rgba(0, 0, 0, 0.9);
+    box-shadow: inset 0 -3px 1px transparent, inset 0 3px rgba(0, 0, 0, 0.9);
     color: #fff;
  	position: relative;
     text-shadow: 0 -1px 0 rgba(0,0,0,.7);
@@ -552,11 +552,12 @@ input.search-input {
 #latest-tweet {
 	right: -34px;
 	position: relative;
-	top: -18px;
+	top: -24px;
 	width: 206px;
 }
 .latest-tweet-content {
 	background-color: #1d1d1d;
+	border: 1px solid #1d1d1d;
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
@@ -566,6 +567,10 @@ input.search-input {
 	padding: 10px;
 	position: relative;
 	width: 100%;
+}
+.latest-tweet-content:hover,
+.latest-tweet-content:active {
+	border-color: #007299;
 }
 .latest-tweet-content:after {
 	border-color: transparent #1d1d1d;
