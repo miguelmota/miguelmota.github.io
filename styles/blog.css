@@ -388,6 +388,7 @@ input.short-url:focus {
 		position: relative;
 		width: 100%;
 	}
+	.blog-post-item h1 a,
 	.blog-post-single h1 a {
 		font-size: 20px;
 		margin: -5px -20px 15px -5px;
