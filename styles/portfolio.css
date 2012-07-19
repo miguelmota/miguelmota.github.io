@@ -29,6 +29,7 @@
 .project {
 	float: left;
 	height: 240px;
+	margin: 0 10px 10px 0;
 	position: relative;
 	width: 650px;
 }
@@ -182,6 +183,7 @@
 .project-image {
 	float: left;
 	height: auto;
+	margin: 0 10px 10px 0;
 	width: 370px;
 }
 .project-image-mobile {

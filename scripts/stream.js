@@ -348,8 +348,7 @@ function loadFoursquareStream() {
 		"onclick='javascript:loadFoursquareStream()'></a>");
 
 	$('.stream-ul-foursquare').remove();
-	$.getJSON('https://api.foursquare.com/v2/users/4418723/checkins?oauth_token=DATQU0DAPF0JA043XEXPOPH2FPHVQUM4YAEAQ0SRTWGZHQ43'+
-		'&v=20120522&callback=?',
+	$.getJSON('https://api.foursquare.com/v2/users/4418723/checkins?oauth_token=DATQU0DAPF0JA043XEXPOPH2FPHVQUM4YAEAQ0SRTWGZHQ43&v=20120522&callback=?',
 			function(data) {
 				$('.stream-foursquare').append('<ul class="stream-ul stream-ul-foursquare">');
 				var limit = 5;

@@ -118,7 +118,8 @@ em {
 	color: #999;
 	font-weight: normal;
 }
-.title a:hover {
+.title a:hover,
+.title a:active {
 	color: #fff;
 }
 .title .miguel {
@@ -165,7 +166,7 @@ p {
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
-	line-height: 125%;
+	line-height: 170%;
 	padding: 12px 0 4px 0;
 }
 p+p {
@@ -245,6 +246,7 @@ a:hover {
 	text-shadow: 0 -1px 0 rgba(0,0,0,.5);
 }
 a:active {
+	color: #0098cc;
 	text-shadow: 0 -1px 0 rgba(0,0,0,.5);
 }
 
@@ -455,8 +457,12 @@ img.loader {
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
+	box-shadow: 1px 1px 5px rgba(0, 0, 0, .5);
+	-moz-box-shadow: 1px 1px 5px rgba(0, 0, 0, .5);
+	-webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, .5);
 	clear: both;
-	padding: 15px 0;
+	margin: 15px 0;
+	padding: 0;
 }
 .main-side-nav-ul a {
 	background-color: #2d2d2d;
@@ -503,6 +509,9 @@ input.search-input {
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
+	box-shadow: 1px 1px 5px rgba(0, 0, 0, .5);
+	-moz-box-shadow: 1px 1px 5px rgba(0, 0, 0, .5);
+	-webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, .5);
 	font-style: italic;
 	padding-right: 25px;
 	width: 100%;
@@ -626,7 +635,10 @@ input.search-input {
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
-	margin: 5px;
+	box-shadow: 1px 1px 5px rgba(0, 0, 0, .5);
+	-moz-box-shadow: 1px 1px 5px rgba(0, 0, 0, .5);
+	-webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, .5);
+	margin: 0 0 10px 0;
 	padding: 20px;
 	position: relative;
 	width: 750px;

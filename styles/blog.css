@@ -6,7 +6,11 @@
 	BLOG POST ITEM
 */
 .blog-post-item {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
 	float: left;
+	padding: 0 20px 20px 20px;
 	width: 750px;
 }
 .blog-post-single {
@@ -52,34 +56,58 @@
 	BLOG POST TITLE
 */
 .blog-post-single h1 a {
-	display: block;
 	font-size: 34px;
-	margin-bottom: 10px;
 }
 .blog-post-item h1 {
-	height: 50px;
+	/* height: 50px; */
 }
-.blog-post-item h1 a {
+.blog-post-item h1 a,
+.blog-post-single h1 a {
+	background-color: #191919;
+	border-left: 5px solid #007299;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
 	display: block;
 	font-size: 24px;
+	margin: 0 -20px 15px -20px;
+	padding: 20px 0 20px 15px;
 }
-.blog-post-text h3 {
+.blog-post-item h1 a:hover,
+.blog-post-item h1 a:active,
+.blog-post-single h1 a:hover,
+.blog-post-single h1 a:active {
+	border-color: #0098cc;
+}
+.blog-post-item h1 .arrow {
+	float: right;
+	margin: auto 20px auto auto;
+}
+.blog-post-single h1 a {
+	font-size: 34px;
+	margin: -20px -20px 20px -20px;
+}
+.blog-post-text h2 {
+	border-left: 5px solid #007299;
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	font-size: 28px;
 	font-weight: bold;
-	padding: 15px 0 10px 0;
+	margin: 5px 0 0 -20px;
+	padding: 10px 0 10px 15px;
 }
-.blog-post-text h4 {
+.blog-post-text h3 {
+	border-left: 5px solid #333;
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	font-size: 20px;
 	font-weight: bold;
-	padding: 10px 0 0 0;
+	margin: 5px 0 0 -20px;
+	padding: 10px 0 10px 15px;
 }
-.blog-post-text h5 {
+.blog-post-text h4 {
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
@@ -87,6 +115,7 @@
 	font-weight: bold;
 	padding: 10px 0 0 0;
 }
+.blog-post-text h5,
 .blog-post-text h6 {
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
@@ -137,6 +166,11 @@
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	padding-bottom: 10px;
+}
+.blog-post-text p {
+	padding: 12px 25px 4px 25px;
+	text-align: justify;
+	text-indent: 25px;
 }
 .blog-post-text ul {
 	box-sizing: border-box;
@@ -349,6 +383,18 @@ input.short-url:focus {
 	}
 	.blog-post-single h1 a {
 		font-size: 20px;
+		margin: -5px -20px 15px -5px;
+	}
+	.blog-post-text h2 {
+		margin: 5px 0 0 -5px;
+		padding: 10px 0 10px 15px;
+	}
+	.blog-post-text h3 {
+		margin: 5px 0 0 -5px;
+		padding: 10px 0 10px 15px;
+	}
+	.blog-post-text p {
+		padding: 12px 0 4px 0;
 	}
 	input.short-url {
 		display: none;
