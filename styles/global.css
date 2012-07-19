@@ -1080,8 +1080,7 @@ h6:first-child {
 		position: relative;
 		width: 100%;
 	}
-	.content-item,
-	.blog-post-item {
+	.content-item {
 		float: none;
 		margin: 0 0 15px 0;
 		padding: 5px;

@@ -381,6 +381,13 @@ input.short-url:focus {
 	.blog-post-list-date .icon {
 		display: none;
 	}
+	.blog-post-item {
+		float: none;
+		margin: 0 0 15px 0;
+		padding: 5px;
+		position: relative;
+		width: 100%;
+	}
 	.blog-post-single h1 a {
 		font-size: 20px;
 		margin: -5px -20px 15px -5px;
