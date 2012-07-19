@@ -1029,7 +1029,7 @@ h6:first-child {
 		overflow: auto;
 		width: 100%;
 	}
-	.main-side-nav-ul li {
+	.main-side-nav-ul li a {
 		display: inline-block;
 		width: 100%;
 	}
@@ -1080,7 +1080,8 @@ h6:first-child {
 		position: relative;
 		width: 100%;
 	}
-	.content-item {
+	.content-item,
+	.blog-post-item {
 		float: none;
 		margin: 0 0 15px 0;
 		padding: 5px;
