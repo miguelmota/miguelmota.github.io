@@ -56,9 +56,24 @@
 	margin-right: 5px;
 }
 .icon-social {
+	box-shadow: 1px 1px 5px rgba(0, 0, 0, .5);
+	-moz-box-shadow: 1px 1px 5px rgba(0, 0, 0, .5);
+	-webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, .5);
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
 	height: 24px;
 	margin-right: 2px;
+	-moz-transition: all linear .1s;
+	-o-transition: all linear .1s;
+	-webkit-transition: all linear .1s;
 	width: 24px;
+}
+.icon-social:hover,
+.icon-social:active {
+	box-shadow: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
 }
 .icon-top {
 	float: right;
@@ -283,9 +298,15 @@
 }
 .icon-twitter-bird-16 {
 	background-image: url('/assets/site/icons/pictos/16/twitter-bird.png');
+	box-shadow: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
 }
 .icon-twitter-bird-24 {
 	background-image: url('/assets/site/icons/pictos/24/twitter-bird.png');
+	box-shadow: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
 }
 .icon-video-16 {
 	background-image: url('/assets/site/icons/pictos/16/video.png');

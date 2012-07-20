@@ -91,15 +91,15 @@
 .stream-logo {
 	background-position: 0 0;
 	background-repeat: no-repeat;
-	border: 0;
+	border-left: 5px solid #007299;
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	display: block;
 	font-size: 0;
 	height: 16px;
-	margin-bottom: 10px;
-	padding: 0;
+	margin: 0 0 10px -20px;
+	padding: 0 0 0 20px;
 	text-indent: 0;
 	width: auto;
 }
@@ -122,100 +122,100 @@
 	color: #007799;
 }
 .stream-logo-latitude {
-	background: url('/assets/stream/sprites/latitude-sprite.png');
+	background: url('/assets/stream/sprites/latitude-sprite.png') no-repeat 100% 0;
 	height: 16px;
-	width: 56px;
+	width: 76px;
 }
 .stream-logo-latitude:hover,
 .stream-logo-latitude:active {
-	background-position: 0 16px;
+	background-position: 100% -16px;
 }
 .stream-logo-tumblr {
-	background: url('/assets/stream/sprites/tumblr-sprite.png');
+	background: url('/assets/stream/sprites/tumblr-sprite.png') no-repeat 100% 0;
 	height: 16px;
-	width: 75px;
+	width: 95px;
 }
 .stream-logo-tumblr:hover,
 .stream-logo-tumblr:active {
-	background-position: 0 16px;
+	background-position: 100% -16px;
 }
 .stream-logo-instagram {
-	background: url('/assets/stream/sprites/instagram-sprite.png');
+	background: url('/assets/stream/sprites/instagram-sprite.png') no-repeat 100% 0;
 	height: 26px;
-	width: 84px;
+	width: 104px;
 }
 .stream-logo-instagram:hover,
 .stream-logo-instagram:active {
-	background-position: 0 26px;
+	background-position: 100% -26px;
 }
 .stream-logo-facebook {
-	background: url('/assets/stream/sprites/facebook-sprite.png');
-	width: 73px;
+	background: url('/assets/stream/sprites/facebook-sprite.png') no-repeat 100% 0;
+	width: 93px;
 }
 .stream-logo-facebook:hover,
 .stream-logo-facebook:active {
-	background-position: 0 16px;
+	background-position: 100% -16px;
 }
 .stream-logo-twitter {
-	background: url('/assets/stream/sprites/twitter-sprite.png');
-	width: 78px;
+	background: url('/assets/stream/sprites/twitter-sprite.png') no-repeat 100% 0;
+	width: 98px;
 }
 .stream-logo-twitter:hover,
 .stream-logo-twitter:active {
-	background-position: 0 16px;
+	background-position: 100% -16px;
 }
 .stream-logo-delicious {
-	background: url('/assets/stream/sprites/delicious-sprite.png');
+	background: url('/assets/stream/sprites/delicious-sprite.png') no-repeat 100% 0;
 	height: 16px;
-	width: 83px;
+	width: 103px;
 }
 .stream-logo-delicious:hover,
 .stream-logo-delicious:active {
-	background-position: 0 16px;
+	background-position: 100% -16px;
 }
 .stream-logo-lastfm {
-	background: url('/assets/stream/sprites/lastfm-sprite.png');
-	width: 62px;
+	background: url('/assets/stream/sprites/lastfm-sprite.png') no-repeat 100% 0;
+	width: 82px;
 }
 .stream-logo-lastfm:hover,
 .stream-logo-lastfm:active {
-	background-position: 0 16px;
+	background-position: 100% -16px;
 }
 .stream-logo-wakoopa {
-	background: url('/assets/stream/sprites/wakoopa-sprite.png');
+	background: url('/assets/stream/sprites/wakoopa-sprite.png') no-repeat 100% 0;
 	height: 18px;
-	width: 75px;
+	width: 95px;
 }
 .stream-logo-wakoopa:hover,
 .stream-logo-wakoopa:active {
 	background-position: 0 18px;
 }
 .stream-logo-foursquare {
-	background: url('/assets/stream/sprites/foursquare-sprite.png');
+	background: url('/assets/stream/sprites/foursquare-sprite.png') no-repeat 100% 0;
 	height: 23px;
-	width: 93px;
+	width: 113px;
 }
 .stream-logo-foursquare:hover,
 .stream-logo-foursquare:active {
-	background-position: 0 23px;
+	background-position: 100% -23px;
 }
 .stream-logo-github {
-	background: url('/assets/stream/sprites/github-sprite.png');
+	background: url('/assets/stream/sprites/github-sprite.png') no-repeat 100% 0;
 	height: 23px;
-	width: 51px;
+	width: 71px;
 }
 .stream-logo-github:hover,
 .stream-logo-github:active {
-	background-position: 0 23px;
+	background-position: 100% -23px;
 }
 .stream-logo-flickr {
-	background: url('/assets/stream/sprites/flickr-sprite.png');
+	background: url('/assets/stream/sprites/flickr-sprite.png') no-repeat 100% 0;
 	height: 16px;
-	width: 51px;
+	width: 71px;
 }
 .stream-logo-flickr:hover,
 .stream-logo-flickr:active {
-	background-position: 0 16px;
+	background-position: 100% -16px;
 }
 /*
 	STREAM UNORDERED LIST

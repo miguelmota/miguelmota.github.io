@@ -35,15 +35,17 @@
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
+	font-size: 18px;
 	font-weight: bold;
 	margin: 10px 0 0 -20px;
 	padding: 10px 0 10px 15px;
 }
 .about-column-left h3 {
-	border-left: 5px solid #333;
+	border-left: 5px solid #444;
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
+	font-size: 18px;
 	font-weight: bold;
 	margin: 10px 0 0 -20px;
 	padding: 10px 0 10px 15px;
