@@ -92,44 +92,10 @@ $(document).ready(function(){
 		// Hide stream logo text
 		//$(".stream-logo:not('.stream-logo-blog ,.stream-logo-latitude')").text('');
 		showMtipTimeout('.stream-logo-blog',3000);
-		showMtipTimeout('.stream-logo-latitude',3000);
-		setTimeout('mapButtonMtip()', 1500);
-
 
 		// Initialize timeago
 		// $('.stream-ul-blog .status-date').timeago();
 		
-		
-		
-		/* ------------------------
-		 * Latitude stream
-		 * --------------------- */
-		/*
-		$('.stream-latitude2 .loader').css('display','block');
-		$.getJSON('http://www.google.com/latitude/apps/badge/api?user=7812482200199007583&type=json&callback=?', 
-				//{
-					//count: '3'
-				//},
-				function(data){
-			alert(data.properties);
-					$.each(data.properties, function(i, item){
-						
-						var htmlString = '<ul class="stream-ul stream-ul-latitude2">';
-						var url = 'http://www.google.com/latitude/apps/badge/api?user=7812482200199007583&type=iframe&maptype=roadmap';
-						var location = this.reverseGeocode;
-			    	  	//var date = new Date(item.features[0].properties.timeStamp).toUTCString();
-			    	  	htmlString += "<li><a href='"+url+"' rel='external'><span class='icon icon-link-16'></span> "+location+
-			    	  	"</a> <time class='status-date'>"+"1"+"</time></li>";
-						$('.stream-latitude2').append(htmlString +'</ul>');
-					});
-					
-					$('.stream-latitude2 .loader').css('display','none');
-					showMtipTimeout('.stream-logo-latitude');
-			}
-		);
-		*/
-
-
 		
 		// Show mtip on stream-wrap mouseenter
 		$('.stream-wrap').live({
@@ -173,7 +139,7 @@ $(document).ready(function(){
 
 	})();
 
-
+	loadLatitudeStream();
 	loadTwitterStream();
 	loadFacebookStream();
 	loadDeliciousStream();
@@ -183,6 +149,9 @@ $(document).ready(function(){
 	loadGithubStream();
 	loadFlickrStream();
 
+	setInterval(function() {
+		loadLatitudeStream();
+	}, 55000);
 	setInterval(function() {
 		loadTwitterStream();
 	}, 60000);
@@ -212,6 +181,68 @@ $(document).ready(function(){
 	}, 180000);
 
 });
+
+
+
+/* ------------------------
+ * Latitude stream
+ * --------------------- */
+function loadLatitudeStream() {
+	$('.stream-latitude .loader').css('display','block');
+
+	$('.stream-refresh-latitude').remove();	
+	$('.stream-latitude').prepend("<a class='stream-refresh stream-refresh-latitude' href='javascript:void(0)' "+
+		"onclick='javascript:loadLatitudeStream()'></a>");
+
+	$('.stream-latitude .latitude-map-button').hide();
+	$('.stream-ul-latitude').remove();
+	$.ajax({
+	    url: 'https://www.googleapis.com/latitude/v1/currentLocation?access_token=ya29.AHES6ZS7sr59rx_Bb9MIiFXJReAEJ7ExQpE7bQxESYugBG85oLkRMg&callback=?',
+	    type: 'get',
+	    dataType: 'json',
+	    cache: false,
+	    crossDomain: true,
+	    success: function (data) {
+	        var data = data.data;
+	        var lat = data.latitude;
+	        var lng = data.longitude;
+	        var timestamp = data.timestampMs;
+
+	        var geocoder = new google.maps.Geocoder();
+	        var latlng = new google.maps.LatLng(lat,lng);
+
+	        geocoder.geocode(
+	            {'latLng'  : latlng }, 
+	            function(results, status) {
+	                if (status == google.maps.GeocoderStatus.OK) {
+	                    var current_location = null;
+	                    if (results[1]) {
+	                       current_location = results[1].formatted_address;
+	                    }
+	                    else if (results[6]) {
+	                       current_location = results[6].formatted_address;
+	                    }
+	                    else {
+	                        current_location = "unable to retrieve location";
+	                    }
+
+	        			var htmlString = '<ul class="stream-ul stream-ul-latitude">';
+	        			var map = 'http://www.google.com/latitude/apps/badge/api?user=7812482200199007583&type=iframe&maptype=roadmap';
+	        			var url = 'http://maps.google.com/?q='+lat+','+lng;
+	            	  	htmlString += "<li><a href='"+url+"' rel='external'><span class='icon icon-location-marker-16'></span> "+current_location+
+	            	  	"<time class='status-date'>"+formattedDateUnix(timestamp)+"</time></a></li>";
+	        			$('.stream-latitude').append(htmlString +'</ul>');
+	        			$('.stream-latitude .latitude-map-button').show();
+
+	                    $('.stream-latitude .loader').css('display','none');
+	                    showMtipTimeout('.stream-logo-latitude');
+						setTimeout('mapButtonMtip()', 1500);
+	                }
+	            }
+	         );
+	    }
+	});
+}
 
 
 

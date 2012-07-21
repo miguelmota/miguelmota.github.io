@@ -59,6 +59,7 @@
 	width: auto;
 }
 .latitude-map-button {
+	display: none;
 	position: absolute;
 	right: 20px;
 	top: 20px;
@@ -66,14 +67,6 @@
 .stream-latitude .icon-location-marker-16 {
 	float: left;
 	margin-right: 3px;
-}
-.stream-iframe-latitude {
-	background: #1d1d1d url('/assets/site/ajax-loader.gif') no-repeat 0 0 !important;
-	border: 0 !important;
-	float: left;
-	height: 26px;
-	overflow: hidden !important;
-	width: 100%;
 }
 /*
 	STREAM PROFILE IMAGE
@@ -84,6 +77,17 @@
 	height: 18px;
 	margin-right: 5px;
 	width: 18px;
+}
+/*
+	STREAM Title
+*/
+.stream-title {
+	display: inline;
+	font-size: 1px;
+	position: absolute;
+		top: -10000px;
+		left: -10000px;
+	text-indent: -10000px;
 }
 /*
 	STREAM LOGO
@@ -225,13 +229,6 @@
 	display: block;
 	height: auto;
 	width: 100%;
-}
-.stream-ul-latitude li {
-	border: 1px solid transparent;
-}
-.stream-ul-latitude li:hover,
-.stream-ul-latitude li:active {
-	border-color: #007299;
 }
 .stream-li-sub {
 	color: #005977;
@@ -495,6 +492,9 @@
 	opacity: .3;
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
 	filter: alpha(opacity=30);
+}
+.stream-latitude .stream-refresh {
+	right: 40px;
 }
 
 /* ------------------------------------------------
