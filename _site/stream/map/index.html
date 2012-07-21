@@ -44,7 +44,7 @@
 		        			//var date = formattedDateUnix(timestamp);
 
 		        			//map
-		        			var latlng = new google.maps.LatLng(lat+","+lng);
+		        			var latlng = new google.maps.LatLng(lat,lng);
 		        			var infowindow = new google.maps.InfoWindow({
 		        				content: ""
 		        			});
@@ -56,7 +56,7 @@
 		        				};
 
 		        			var map = new google.maps.Map(document.getElementById('gmap'), myOptions);
-		        			var photo_url = 'http://www.miguelmota.com/assets/stream/map/marker.png';
+		        			var photo_url = 'http://www.miguelmota.com/assets/stream/map/marker-miguelmota.png';
 
 		        			var htmlContent = "<div class='gmap-infowindow'>"+
 		        			"<span class='gmap-infowindow-location'>"+current_location+"</span>"+
