@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+    <title>Latitude | Miguel Mota</title>
+    <link rel='shortcut icon' href='http://www.miguelmota.com/favicon.ico' />
+    <link href='http://www.miguelmota.com/code/css/reset.min.css' rel='stylesheet' />
+    <link href='http://www.miguelmota.com/styles/global.css' rel='stylesheet' />
+    <script src='http://code.jquery.com/jquery.min.js'></script>
+    <script>
+        $(document).ready(function(){
+            // Open external links in new tab
+            $('a[rel*=external]').live('click', function(){
+                window.open(this.href);
+                return false;
+            });
+            // Highlight icon on link hover
+            $('a').has('.icon').hover(
+                function(){
+                    $('.icon', this).addClass('icon-no-opacity');
+                },
+                function(){
+                    $('.icon', this).removeClass('icon-no-opacity');
+                }
+            );
+        });
+    </script>
+    <style>
+        body {
+        	background-color: #141414;
+        	display: block;
+        }
+        a {
+            background: #141414;
+            color: #007299;
+            display: block;
+            padding: 5px;
+        }
+        a:hover {
+            background: #000;
+        }
+        .icon-no-opacity {
+            opacity: 1;
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+            filter: alpha(opacity=100);
+        }
+        .icon-no-opacity:hover,
+        .icon-no-opacity:active {
+            opacity: 1;
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+            filter: alpha(opacity=100);
+        }
+        .status-date {
+            color: #999;
+            font-size: 12px;
+            font-weight: normal;
+            float: right;
+        }
+    </style>
+</head>
+<body>
+
+    <div id='videos'></div>
+    <script src="https://www.googleapis.com/latitude/v1/currentLocation?access_token=ya29.AHES6ZQO0WGvabZebOSFs9Zkoaz_TZrzoIdvtWdM2jmd18g"></script>
+
+</body>
+</html>
