@@ -24,7 +24,7 @@ style: blog
 		<div class='blog-share-wrap'>
 			<span class='st_twitter' st_url='{{ page.url }}' st_title='{{ page.title }}'></span><span class='st_facebook' st_url='{{ page.url }}' st_title='{{ page.title }}'></span><span class='st_tumblr' st_url='{{ page.url }}' st_title='{{ page.title }}'></span><span class='st_stumbleupon' st_url='{{ page.url }}' st_title='{{ page.title }}'></span><span class='st_delicious' st_url='{{ page.url }}' st_title='{{ page.title }}'></span><span class='st_email' st_url='{{ page.url }}' st_title='{{ page.title }}'></span><span class='st_sharethis' st_url='{{ page.url }}' st_title='{{ page.title }}'></span>
 			<script>var switchTo5x=true;</script><script src='http://w.sharethis.com/button/buttons.js'></script><script>stLight.options({publisher:'bf5b1133-3663-44ea-a232-a2c2265b117f'});</script>
-			<input class='short-url' type='text' value='http://www.miguelmota.com{{ page.url }}' />
+			<input class='short-url' type='text' value='{% if page.short-url %}http://{{ page.short-url }}{% else %}http://www.miguelmota.com{{ page.url }}{% endif %}' />
 			<div class='clear'></div>
 		</div>
 		<div class='clear'></div>
