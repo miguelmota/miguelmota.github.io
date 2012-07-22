@@ -29,6 +29,19 @@ $(document).ready(function(){
 	}
 
 
+
+
+	// Fade in projects effect
+	$('.project').hide();
+	var timeout = 100;
+	$('.project').each(function(index) {
+		setTimeout(function() {
+			$('.project:eq('+index+')').fadeIn(1000);
+		}, timeout);
+		timeout += 300;
+	});
+
+
 	
 	// Project hover border glow effect
 	$(".project .image-container").live({

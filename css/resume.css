@@ -106,8 +106,13 @@
 		padding-left: -7px;
 	}
 	.resume-item-obj,
-	.resume-item-achievement {
+	.resume-item-achievement,
+	.resume-item-contact,
+	.resume-item-link {
 		padding-left: 15px;
+	}
+	.last-updated {
+		margin-top: 5px;
 	}
 }
 

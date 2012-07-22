@@ -255,6 +255,13 @@ a:active {
 /* ------------------------------------------------
  * 04 INPUT
  * --------------------------------------------- */
+:-moz-placeholder {
+	color: #555;
+}
+::-webkit-input-placeholder {
+	color: #555;
+}
+
 input[type=text],
 input[type=password],
 textarea {		
@@ -264,7 +271,7 @@ textarea {
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
-	color: #555;
+	color: #999;
 	font-family: inherit;
 	font-size: 14px;
 	width: 300px;
@@ -301,7 +308,6 @@ textarea {
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	font-size: 16px;
-	font-style: italic;
 	padding: 6px 6px 6px 12px;
 }
 .input input:focus, 
@@ -549,7 +555,6 @@ input.search-input {
 	box-shadow: 1px 1px 5px rgba(0, 0, 0, .5);
 	-moz-box-shadow: 1px 1px 5px rgba(0, 0, 0, .5);
 	-webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, .5);
-	font-style: italic;
 	padding-right: 25px;
 	width: 100%;
 }
@@ -656,6 +661,14 @@ input.search-input {
 /* ------------------------------------------------
  * 10 CONTENT
  * --------------------------------------------- */
+.main-wrap,
+.main-content-wrap,
+.main-side-nav-wrap {
+	transition: margin linear .3s, padding linear .3s, width linear .3s;
+	-moz-transition: margin linear .3s, padding linear .3s, width linear .3s;
+	-o-transition: margin linear .3s, padding linear .3s, width linear .3s;
+	-webkit-transition: margin linear .3s, padding linear .3s, width linear .3s;
+}
 .main-content-wrap {
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
@@ -830,7 +843,7 @@ h6:first-child {
 	-webkit-box-sizing: border-box;
 	clear: both;
 	font-size: 18px;
-	padding: 25px 5px 5px 5px;
+	margin: 25px 5px 5px 5px;
 	position: relative;
 	text-align: center;
 	width: 100%;

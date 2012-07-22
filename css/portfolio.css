@@ -265,9 +265,17 @@
 	.project-overlay-popup {
 		display: none;
 	}
+	.content-item {
+		margin: 0 0 15px 0;
+		padding: 0;
+	}
 	.project-image {
-		height: auto;
+		text-align: center;
 		width: 100%;
+		height: auto;
+	}
+	.project-image-mobile img {
+		width: 40%;
 	}
 	.project-pagination {
 		width: 100%;

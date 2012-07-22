@@ -2,6 +2,10 @@
 
 $(document).ready(function(){
 
+	// Focus on the name field
+	$('#contact-form-name').focus();
+
+
 	// Create method to validate name input
 	$('.contact-form-submit').live('click', function(){
 		$.validator.addMethod('nameCheck', function(value, element){

@@ -167,6 +167,7 @@
 	-webkit-box-sizing: border-box;
 	display: block;
 	font-size: 18px;
+	margin: 0 0 10px 0;
 	padding: 10px 0;
 	text-align: center;
 }
@@ -277,13 +278,11 @@ input.short-url {
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
+	color: #555;
 	float: right;
 	font-size: 10px;
 	margin: 0;
 	padding: 4px;
-	position: absolute;
-	right: 0;
-	top: 0;
 	width: 160px;
 }
 input.short-url:focus {
@@ -422,6 +421,11 @@ input.short-url:focus {
 	}
 	.pagination {
 		width: 100%;
+	}
+	.pagination-archive {
+		display: block;
+		float: none;
+		margin-right: 10px;
 	}
 	.blog-post-end-wrap {
 		width: 100%;
