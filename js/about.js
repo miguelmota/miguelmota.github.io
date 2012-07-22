@@ -32,6 +32,18 @@ function initializeAboutMap() {
 			html: htmlContent
 		});
 
+	var oblivionStyles = [
+		{
+			featureType: "all",
+			stylers: [
+				//{ invert_lightness: true },
+				//{ hue: "#0077ff" }
+			]
+		}
+	];
+
+	map.setOptions({styles: oblivionStyles});
+
 	google.maps.event.addListener(marker, 'click', function() {
 		infowindow.setContent(this.html);
 		infowindow.open(map, this);

@@ -68,8 +68,16 @@
 		right: 0;
 		top: 0;
 	}
+	.input input {
+		width: 100%;
+	}
 	.contact-form-message {
 		height: 200px;
+		width: 100%;
+	}
+	.contact-form-submit {
+		display: block;
+		text-align: center;
 		width: 100%;
 	}
 }

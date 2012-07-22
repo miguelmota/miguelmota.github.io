@@ -2,6 +2,9 @@
  * ABOUT PAGE STYLES
  * --------------------------------------------- */
 
+.content-item-about {
+	width: 850px;
+}
 .about-photo-wrap {
 	height: 100%;
 	margin-bottom: 10px;
@@ -9,16 +12,8 @@
 	width: 100%;
 }
 .about-photo-wrap .photo {
-	min-height: 300px;
 	width: 100%;
-}
-.about-photo-desc {
-	color: #1d1d1d;
-	font-size: 22px;
-	position: absolute;
-	right: 60px;
-	text-shadow: 0 1px 0 rgba(255,255,255,.8);
-	top: 40px;
+	height: auto;
 }
 .about-photo-desc p:first-child {
 	font-size: 30px;
@@ -28,66 +23,104 @@
 }
 .about-column-left {
 	float: left;
-	width: 500px;
+	width: 35%;
 }
-.about-column-left h2 {
+.about-column-right {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	float: right;
+	padding: 0 0 0 20px;
+	position: relative;
+	width: 65%;
+}
+.about-column-right h2 {
 	border-left: 5px solid #007299;
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	font-size: 18px;
 	font-weight: bold;
-	margin: 10px 0 0 -20px;
+	margin: 10px 0 0 0;
 	padding: 10px 0 10px 15px;
 }
-.about-column-left h3 {
+.about-column-right h3 {
 	border-left: 5px solid #444;
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	font-size: 18px;
 	font-weight: bold;
-	margin: 10px 0 0 -20px;
+	margin: 10px 0 0 0;
 	padding: 10px 0 10px 15px;
 }
-.about-column-left p {
+.about-column-right p {
 	text-align: justify;
 }
-.about-column-right {
-	float: right;
-	width: 200px;
-}
-.about-column-right a {
-	display: block;
-	padding: 5px;
-}
-.about-column-right a:hover,
-.about-column-right a:active {
-	background: #000;
+.about-column-right p:first-child:first-letter {
+	font-size: 18px;
+	font-weight: bold;
 }
 .about-google-plus {
 	font-size: 10px;
 }
+.about-bottom-wrap {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	clear: both;
+	display: block;
+	padding: 15px 0 0 0;
+}
+.about-links-wrap {
+	float: left;
+	margin: 15px 0 0 0;
+	text-align: right;
+	width: 35%;
+}
+.about-resume-link {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	font-size: 18px;
+	padding: 10px 20px;
+}
+.about-map-location {
+	background-color: #000; 
+	display: block;
+	margin: 40px 0 0 0;
+	padding: 10px;
+}
+.about-map-location:hover,
+.about-map-location:active {
+	background: #000;
+}
+.about-map-location span {
+	color: #999;
+	font-weight: normal;
+}
+.about-map-wrap {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	float: right;
+	padding: 0 0 0 20px;
+	width: 65%;
+}
 #mapabout {
 	background-color: #141414;
+	float: right;
 	height: 200px;
-	margin: 10px 0;
+	margin: 0;
 	position: relative;
 	text-shadow: none;
-	width: 200px;
+	width: 100%;
 }
 #mapabout span {
 	color: #555;
 	left: 30%;
 	position: absolute;
 	top: 45%;
-}
-.mapabout-location {
-	margin: 0 0 1px 0;
-}
-.mapabout-location span {
-	color: #999;
-	font-weight: normal;
 }
 
 /*
@@ -116,19 +149,8 @@
  * TABLET STYLES
  * --------------------------------------------- */
 @media all and (min-width: 641px) and (max-width: 1024px) {
-	.about-photo-desc {
-		right: 40px;
-		top: 20px;
-	}
-	 .about-column-left {
-		width: 440px;
-	}
-	.about-column-right {
-		width: 160px;
-	}
-	#mapabout {
-		height: 160px;
-		width: 160px;
+	.content-item-about {
+		width: 850px;
 	}
 }
 
@@ -136,42 +158,60 @@
  * MOBILE STYLES
  * --------------------------------------------- */
 @media all and (max-width: 640px) {
-  	.about-photo-wrap {
-  	    font-size: 12px;
-  	}
-  	.about-photo-wrap .photo {
-		min-height: 50px;
-	}
-    .about-photo-desc {
-    	font-size: 120%;
-    	right: 3%;
-		top: 3%;
-	}
-	.about-photo-desc p:first-child {
-		font-size: 160%;
-	}
-	.about-photo-desc br {
-    	display: block;
+	.content-item-about {
+		width: 100%;
 	}
 	.about-column-left {
 		float: none;
 		width: 100%;
 	}
-	.about-column-left h2 {
-		margin: 10px 0 0 -5px;
-		padding: 10px 0 10px 15px;
-	}
-	.about-column-left h3 {
-		margin: 10px 0 0 -5px;
-		padding: 10px 0 10px 15px;
+	.about-photo-wrap .photo {
+		width: 100%;
+		height: auto;
 	}
 	.about-column-right {
 		float: none;
+		padding: 0;
+		width: 100%;
+	}
+	.about-column-right h2 {
+		margin: 10px 0 0 -5px;
+		padding: 10px 0 10px 15px;
+	}
+	.about-column-right h3 {
+		margin: 10px 0 0 -5px;
+		padding: 10px 0 10px 15px;
+	}
+	.about-bottom-wrap {
+		padding: 0;
+	}
+	.about-links-wrap {
+		display: block;
+		float: none;
+		text-align: left;
+		width: 100%;
+	}
+	.about-resume-link {
+		display: block;
+	}
+	.about-map-location {
+		margin: 10px 0 10px 0;
+	}
+	.about-map-location .cr {
+		display: none;
+	}
+	.about-map-wrap {
+		display: block;
+		float: none;
+		padding: 0;
 		width: 100%;
 	}
 	#mapabout {
 		width: 100%;
 		height: 200px;
+	}
+	.last-updated {
+		padding-top: 5px;
 	}
 }
 
@@ -179,20 +219,13 @@
  * MOBILE STYLES (landscape)
  * --------------------------------------------- */
 @media all and (min-width: 480px) and (max-width: 640px) {
-	.about-photo-desc {
-    	font-size: 18px;
-    	right: 20px;
-		top: 10px;
-	}
-	.about-photo-desc p:first-child {
-		font-size: 24px;
-	}
-	.about-column-left {
+	.about-links-wrap {
 		float: left;
-		width: 70%;
+		width: 35%;
 	}
-	.about-column-right {
+	.about-map-wrap {
 		float: right;
-		width: 28%;
+		padding: 15px 0 0 20px;
+		width: 65%;
 	}
 }

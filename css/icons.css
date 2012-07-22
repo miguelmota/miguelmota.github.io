@@ -161,6 +161,16 @@
 .icon-file-16 {
 	background-image: url('/assets/site/icons/pictos/16/file.png');
 }
+.icon-file-24 {
+	background-image: url('/assets/site/icons/pictos/24/file.png');
+	width: 17px;
+	height: 24px;
+}
+.icon-file-w-24 {
+	background-image: url('/assets/site/icons/pictos/24/file-w.png');
+	width: 17px;
+	height: 24px;
+}
 .icon-file-32 {
 	background-image: url('/assets/site/icons/pictos/32/file.png');
 }

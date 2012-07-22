@@ -247,6 +247,9 @@
 		top: -35px;
 		width: 100%;
 	}
+	.project-image {
+		padding: 0;
+	}
 	.project {
 		clear: both;
 		height: 100%;
