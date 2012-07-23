@@ -1,0 +1,286 @@
+<!doctype html>
+<html>
+<head lang='en-US'>
+	<meta charset='UTF-8' />
+	<meta http-equiv='UX-A-Compatible' content='IE=Edge,chrome=1' />
+	<meta name='description' content="Spice up your photos with CSS filters" />	
+	<meta name='keywords' content='css filters, css3 filters' />
+	<meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0;' />
+	<title>CSS3 Filters</title>
+	<link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Ubuntu+Condensed' />
+	<link rel='stylesheet' href='http://www.miguelmota.com/css/reset.min.css' />
+	<style>
+	* {
+		box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+	}
+	::selection {
+		background-color: rgba(209,78,219,.3);
+		color: #fff;
+		opacity: .8;
+		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+		filter: alpha(opacity=80);
+		text-shadow: 0 1px 0 rgba(0,0,0,.3);
+	}
+	::-moz-selection {
+		background-color: rgba(209,78,219,.3);
+		color: #fff;
+		opacity: .8;
+		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+		filter: alpha(opacity=80);
+		text-shadow: 0 1px 0 rgba(0,0,0,.3);
+	}
+	body {
+		background-color: #eee;
+		color: #777;
+		font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+		font-size: 16px;
+		font-weight: bold;
+		text-shadow: 0 -1px 0 rgba(255,255,255,1);
+	}
+	.wrap {
+		margin: 2em auto;
+		width: 100%;
+	}
+	a {
+		color: #007299;
+	}
+	h1 {
+		font-size: 32px;
+		font-weight: bold;
+		margin: .5em auto;
+		text-align: center;
+	}
+	.photo-wrap {
+		background-color: #ddd;
+		padding: .5em 0;
+		text-align: center;
+		width: 100%;
+	}
+	.photo {
+		border: .8em solid #fff;
+		box-shadow: 3px 3px 15px rgba(0,0,0,.5);
+		-moz-box-shadow: 3px 3px 15px rgba(0,0,0,.5);
+		-webkit-box-shadow: 3px 3px 15px rgba(0,0,0,.5);
+		margin: 0 auto;
+		max-width: 600px;
+	}
+	.css-code {
+		background-color: #ddd;
+		font-size: 18px;
+		margin: .8em auto;
+		padding: .2em;
+		text-shadow: 0 -1px 0 rgba(255,255,255,.5);
+		max-width: 600px;
+	}
+	.css-code output {
+		color: #555;
+	}
+	.filter-list {
+		list-style: none;
+		margin: 0 auto;
+		width: 100%;
+	}
+	.filter-list li {
+		border-bottom: 1px dotted #aaa;
+		margin: 0 auto;
+		padding: .3em;
+		text-align: right;
+		max-width: 600px;
+	}
+	.filter-list label {
+		display: block;
+		float: left;
+		text-align: left;
+		width: 15em;
+	}
+	input[type="range"]{
+		-webkit-appearance: none !important;
+		background-color: #999;
+		border-radius: 10px;
+		box-shadow: 0 -1px 1px rgba(255,255,255,0.5) inset;
+		width: 20em;
+	 }
+	 input[type="range"]::-webkit-slider-thumb{
+		-webkit-appearance: none !important; 
+	   	background: #999 -webkit-linear-gradient(top, rgb(80, 80, 80), rgb(50, 50, 50));
+	   	border-top: 1px solid #fff;
+	   	box-shadow: 1px 1px 5px rgba(0,0,0,1);
+	   	cursor: pointer;
+		width: 20px;
+		height: 8px;
+	 }
+	 .footer {
+	 	margin: 2em auto;
+	 	max-width: 600px;
+	 	text-align: center;
+	 }
+	 .reset-btn {
+	 	float: left;
+	 }
+	 .footer .note {
+	 	font-size: 12px;
+	 	font-weight: normal;
+	 }
+	 .footer .note a {
+	 	color: #555;
+	 }
+	 .footer .credit {
+	 	float: right;
+	 }
+	 .last-updated {
+	 	color: #bbb;
+	 	font-size: 12px;
+	 	font-weight: normal;
+	 	margin: 10px 0 0 0;
+	 	text-align: right;
+	 	text-shadow: none;
+	 	width: 100%;
+	 }
+	</style>
+	<script src=''></script>
+</head>
+<body>
+<div class='wrap'>
+	<h1>CSS3 Filters</h1>
+	<div class='photo-wrap'><img class='photo' src='img/new-york-city.png' alt='' /></div>
+	<div class='css-code'>-webkit-filter: <output> none;</output></div>
+	<ul class='filter-list'>
+		<li>
+			<label>Blur</label>
+			<input id='blur' class='filter' type='range' min='0' max='20' step='.1' value='0' data-default='0' />
+		</li>
+		<li>
+			<label>Brightness</label>
+			<input id='brightness' class='filter' type='range' min='-100' max='100' step='.1' value='0' data-default='0' />
+		</li>
+		<li>
+			<label>Contrast</label>
+			<input id='contrast' class='filter' type='range' min='0' max='3' step='.1' value='1' data-default='1' />
+		</li>
+		<li>
+			<label>Drop Shadow</label>
+			<input id='drop-shadow' class='filter' type='range' min='0' max='100' step='1' value='3' data-default='3' />
+		</li>
+		<li>
+			<label>Grayscale</label>
+			<input id='grayscale' class='filter' type='range' min='0' max='1' step='.1' value='0' data-default='0' />
+		</li>
+		<li>
+			<label>Hue Rotate</label>
+			<input id='hue-rotate' class='filter' type='range' min='0' max='360' step='1' value='0' data-default='0' />
+		</li>
+		<li>
+			<label>Invert</label>
+			<input id='invert' class='filter' type='range' min='0' max='1' step='.1' value='0'  data-default='0'/>
+		</li>
+		<li>
+			<label>Opacity</label>
+			<input id='opacity' class='filter' type='range' min='0' max='1' step='.1' value='1' data-default='1' />
+		</li>
+		<li>
+			<label>Saturate</label>
+			<input id='saturate' class='filter' type='range' min='0' max='4' step='.1' value='0'  data-default='0'/>
+		</li>
+		<li>
+			<label>Sepia</label>
+			<input id='sepia' class='filter' type='range' min='0' max='1' step='.1' value='0'  data-default='0'/>
+		</li>
+	</ul>
+	<footer class='footer'>
+		<button class='reset-btn'>reset</button><span class='note'>Support: <a href='http:www.google.com/chrome'>Google Chrome v18+</a></span> <span class='credit'>by <a href='http://www.miguelmota.com' rel='external'>Miguel Mota</a></span>
+		<div class='last-updated'>Last updated July 22, 2012</div>
+	</footer>
+</div>
+<script src='http://code.jquery.com/jquery.min.js'></script>
+<script>
+(function() {
+	var photo = $('.photo');
+	var styles = '';
+	filter = function() {
+				var filter_name = this.id;
+				var regex = new RegExp(filter_name, 'i');
+				var search = null;
+				var unit_type = null;
+				var filter_value = this.value;
+				var filter_complete_value = null;
+				switch(filter_name) {
+				case 'blur':
+					unit_type = 'px';
+					break;
+				case 'brightness':
+					unit_type = '%';
+					break;
+				case 'contrast':
+					unit_type = '';
+					break;
+				case 'drop-shadow':
+					unit_type = 'px';
+					break;
+				case 'grayscale':
+					unit_type = '';
+					break;
+				case 'hue-rotate':
+					unit_type = 'deg';
+					break;
+				case 'invert':
+					unit_type = '';
+					break;
+				case 'opacity':
+					unit_type = '';
+					break;
+				case 'saturate':
+					unit_type = '';
+					break;
+				case 'sepia':
+					unit_type = '';
+					break;
+				default:
+					unit_type = '';
+					break;
+				}
+				filter_value = Math.round(filter_value * Math.pow(10, 2)) / Math.pow(10, 2);
+				filter_complete_value = filter_value + unit_type;
+				if (filter_name === 'drop-shadow') {
+					filter_complete_value = filter_value + unit_type + ' ' + filter_value + unit_type + ' ' + 15 + 'px' + ' ' + 'rgba(0,0,0,.5)';
+				}
+				if (regex.test(styles)) {
+					if (filter_name === 'drop-shadow') {
+						search = new RegExp(filter_name + "[^)$]+[^ $]+", 'i');
+					}
+					else {
+						search = new RegExp(filter_name + "[^ $]+", 'i');
+					}
+					styles = styles.replace(search, filter_name + '(' + filter_complete_value + ')');
+				}
+				else {
+					styles += ' ' + filter_name + '(' + filter_complete_value + ')';
+				}
+				photo.css({
+					'-webkit-filter': styles
+				});
+				$('.css-code output').text(styles + ';');
+		};
+	$('.filter').change(filter);
+	$('.reset-btn').live('click', function() {
+		styles = '';
+		$('.filter').each(function(i) {
+			$('.filter:eq('+i+')').attr('value', $('.filter:eq('+i+')').attr('data-default'));
+			$('.css-code output').text('none;');
+			$('.photo').css({
+					'-webkit-filter': 'none'
+				});
+		});
+	});
+})();
+$(document).ready(function() {
+	$('a[rel*=external]').live('click', function(e){
+		e.preventDefault();
+		window.open(this.href);
+		return false;
+	});	
+});
+</script>
+</body>
+</html>

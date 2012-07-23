@@ -6,6 +6,48 @@
 		<link>http://www.miguelmota.com</link>
 		
 			<item>
+				<title>CSS3 Filters</title>
+				<description>&lt;div class='blog-post-photo-wrap'&gt;
+&lt;a href='/demo/css3-filters' rel='external'&gt;&lt;img class='blog-post-photo' src='/assets//blog/css3-filters/css3-filters-thumb-large.png' alt='' /&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;a class='demo-btn' href='/demo/css3-filters' rel='external'&gt;View the demo&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Webkit has implemented CSS filters, which can spice up the way your photos look without the hassle of having to deal with software like Photoshop.&lt;/p&gt;
+
+&lt;p&gt;Currently there are 10 CSS filters available, which are: &lt;code&gt;blur&lt;/code&gt;, &lt;code&gt;brightness&lt;/code&gt;, &lt;code&gt;contrast&lt;/code&gt;, &lt;code&gt;drop-shadow&lt;/code&gt;, &lt;code&gt;grayscale&lt;/code&gt;, &lt;code&gt;hue-rotate&lt;/code&gt;, &lt;code&gt;invert&lt;/code&gt;, &lt;code&gt;opacity&lt;/code&gt;, &lt;code&gt;saturate&lt;/code&gt; and &lt;code&gt;sepia&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;In the meantime you must use the &lt;code&gt;-webkit-&lt;/code&gt; vendor prefix, like so:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;css&quot;&gt;&lt;span class=&quot;nt&quot;&gt;-webkit-filter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;blur&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;.5px&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;-webkit-filter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;	&lt;span class=&quot;nt&quot;&gt;brightness&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%);&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;-webkit-filter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;	&lt;span class=&quot;nt&quot;&gt;contrast&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;.5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;-webkit-filter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;drop-shadow&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;3px&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;3px&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;10px&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;rgba&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;.5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;-webkit-filter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;grayscale&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;.5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;-webkit-filter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;hue-rotate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;5deg&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;-webkit-filter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;invert&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;-webkit-filter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;opacity&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;.8&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;-webkit-filter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;saturate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;.5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;-webkit-filter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;sepia&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;.5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;You can also combine multiple filters in one line seperated by a space:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;css&quot;&gt;&lt;span class=&quot;nt&quot;&gt;-webkit-filter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;blur&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;.5px&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;brightness&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%)&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;contrast&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;.5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;CSS filters can be used in an unimaginable ton of ways. The only downside is that currently only &lt;a href='http://www.google.com/chrome' rel='external'&gt;Google Chrome&lt;/a&gt; version 18 and up supports this feature.&lt;/p&gt;
+
+&lt;p&gt;Check out the demo and perhaps leave some feedback in the comments below :)
+
+&lt;p&gt;&lt;a class='demo-btn' href='/demo/css3-filters' rel='external'&gt;View the demo&lt;/a&gt;&lt;/p&gt;</description>
+				<link>http://www.miguelmota.com/blog/css3-filters</link>
+				<pubDate>22 Jul 2012</pubDate>
+			</item>
+		
+			<item>
 				<title>How To Survive a Zombie Outbreak</title>
 				<description>&lt;div class='blog-post-photo-wrap'&gt;
 &lt;img class='blog-post-photo' src='/assets//blog/how-to-survive-a-zombie-outbreak/how-to-survive-a-zombie-outbreak-tony-moore-illustration.png' alt='' /&gt;
