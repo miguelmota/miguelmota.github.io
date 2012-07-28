@@ -26,9 +26,6 @@
 	width: 35%;
 }
 .about-column-right {
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
 	float: right;
 	padding: 0 0 0 20px;
 	position: relative;
@@ -36,9 +33,6 @@
 }
 .about-column-right h2 {
 	border-left: 5px solid #007299;
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
 	font-size: 18px;
 	font-weight: bold;
 	margin: 10px 0 0 0;
@@ -46,9 +40,6 @@
 }
 .about-column-right h3 {
 	border-left: 5px solid #444;
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
 	font-size: 18px;
 	font-weight: bold;
 	margin: 10px 0 0 0;
@@ -65,9 +56,6 @@
 	font-size: 10px;
 }
 .about-bottom-wrap {
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
 	clear: both;
 	display: block;
 	padding: 15px 0 0 0;
@@ -79,9 +67,6 @@
 	width: 35%;
 }
 .about-resume-link {
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
 	font-size: 18px;
 	padding: 10px 20px;
 }
@@ -100,9 +85,6 @@
 	font-weight: normal;
 }
 .about-map-wrap {
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
 	float: right;
 	padding: 0 0 0 20px;
 	width: 65%;

@@ -18,7 +18,7 @@ project-thumb: miggs-thumb.png
 	<p>Complete front and back-end web development for <strong>mig.gs</strong>, <em>a basic url shortener</em>. Built using PHP and MySQL.</p>
 	<div class='project-description-footer'>
 		<a class='site-link' href='http://{{ page.project-url }}' rel='external'><span class='icon icon-link-16'></span> {{ page.project-url }}</a> 
-		<time class='project-date'><span class='icon icon-calendar-check-16 icon-no-hover'></span> {{ page.date | date:"%B %Y" }}</time>
+		<time class='project-date' datetime="{{ page.date | date: "%Y-%m-%d" }}"><span class='icon icon-calendar-check-16 icon-no-hover'></span> {{ page.date | date:"%B %Y" }}</time>
 		<div class='clear'></div>
 	</div>
 </div>

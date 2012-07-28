@@ -1,8 +1,5 @@
 .fancybox {
 	border: 0;
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
 	display: block;
 	padding: 0;
 	position: relative;
@@ -15,9 +12,6 @@
 }
 .fancybox-title {
 	background-color: #000;
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
 	clear: both;
 	color: #555;
 	margin-bottom: -10px;
@@ -27,9 +21,6 @@
 .fancybox-title-iframe,
 .fancybox-title-inside {
 	background-color: transparent;
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
 	margin: 0;
 	padding: 0;
 }

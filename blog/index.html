@@ -25,11 +25,11 @@ description: A blog on all things web.
 				<div class='blog-post-tags'>
 					<span class='icon icon-tags-16 icon-no-hover'></span>
 					{% for tag in post.tags %}
-						<span name='{{ tag | first }}'>[{{ tag | first }}]</span>
+						<a href='/tag/{{ tag | first }}'>{{ tag | first }}</a>
 					{% endfor %}
 				</div>
 				<div class='blog-post-footer'>
-					<a href='{{ post.url }}'><span class='icon icon-clock-16'></span> {{ post.date | date_to_string }}</a> 
+					<a href='{{ post.url }}'><span class='icon icon-clock-16'></span> <time datetime='{{ post.date | date: "%Y-%m-%d" }}'>{{ post.date | date_to_string }}</time></a> 
 					<span class='dsq-comment-count-wrap'><a class='icon icon-comments-16' href='{{ post.url }}'></a> <a class='dsq-comment-count' href='{{ post.url }}#disqus_thread' data-disqus-identifier='{{ page.url }}'></a></span>
 					<div class='clear'></div>
 				</div>

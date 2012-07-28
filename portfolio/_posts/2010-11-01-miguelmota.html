@@ -19,7 +19,7 @@ project-thumb: miguelmota-thumb.png
 	<p>Logo and website design for myself. Logo is a cube that also represents the letter M. To me, the cube is symbol of wisdom and knowledge. Designed logo on Photoshop and used the <a href='http://processtypefoundry.com/fonts/klavika/'>klavika</a> font family.</p>
 	<div class='project-description-footer'>
 		<a class='site-link' href='http://{{ page.project-url }}'><span class='icon icon-link-16'></span> {{ page.project-url }}</a> 
-		<time class='project-date'><span class='icon icon-calendar-check-16 icon-no-hover'></span> {{ page.date | date:"%B %Y" }}</time>
+		<time class='project-date' datetime="{{ page.date | date: "%Y-%m-%d" }}"><span class='icon icon-calendar-check-16 icon-no-hover'></span> {{ page.date | date:"%B %Y" }}</time>
 		<div class='clear'></div>
 	</div>
 </div>

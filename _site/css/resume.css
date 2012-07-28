@@ -4,9 +4,6 @@
 .resume-wrap {}
 .resume-title {
 	border-left: 5px solid #007299;
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
 	font-size: 36px;
 	font-weight: bold;
 	margin: 0 0 0 -20px;
@@ -14,9 +11,6 @@
 }
 .resume-desc {
 	border-left: 5px solid #007299;
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
 	font-size: 20px;
 	font-style: italic;
 	margin: 0 0 0 -20px;
@@ -31,9 +25,6 @@
 }
 .resume-item-title {
 	border-left: 3px solid #444;
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
 	font-size: 16px;
 	font-weight: bold;
 	margin: 0 0 0 -20px;
@@ -50,9 +41,6 @@
 }
 .resume-item-location {
 	border-left: 3px solid #333;
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
 	margin: 0 0 10px -20px;
 	padding: 0 0 5px 17px;
 }

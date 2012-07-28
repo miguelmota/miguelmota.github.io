@@ -6,9 +6,6 @@
 	BLOG POST ITEM
 */
 .blog-post-item {
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
 	float: left;
 	margin-right: 10px;
 	padding: 0 20px 20px 20px;
@@ -69,9 +66,6 @@
 .blog-post-single h1 a {
 	background-color: #191919;
 	border-left: 5px solid #007299;
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
 	display: block;
 	font-size: 24px;
 	margin: 0 -20px 15px -20px;
@@ -93,9 +87,6 @@
 }
 .blog-post-text h2 {
 	border-left: 5px solid #007299;
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
 	font-size: 28px;
 	font-weight: bold;
 	margin: 5px 0 0 -20px;
@@ -103,27 +94,18 @@
 }
 .blog-post-text h3 {
 	border-left: 5px solid #333;
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
 	font-size: 20px;
 	font-weight: bold;
 	margin: 5px 0 0 -20px;
 	padding: 10px 0 10px 15px;
 }
 .blog-post-text h4 {
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
 	font-size: 18px;
 	font-weight: bold;
 	padding: 10px 0 0 0;
 }
 .blog-post-text h5,
 .blog-post-text h6 {
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
 	font-size: 14px;
 	font-weight: bold;
 	padding: 10px 0 0 0;
@@ -162,9 +144,6 @@
 }
 .blog-view-post-wrap {
 	background-color: #000;
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
 	display: block;
 	font-size: 18px;
 	margin: 0 0 10px 0;
@@ -172,9 +151,6 @@
 	text-align: center;
 }
 .blog-post-text {
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
 	padding-bottom: 10px;
 }
 .blog-post-text p {
@@ -186,9 +162,6 @@
 	text-indent: 25px;
 }
 .blog-post-text ul {
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
 	padding-left: 35px;
 }
 .blog-post-text ul li {
@@ -227,10 +200,15 @@
 */
 .blog-post-tags {
 	color: #777;
-	font-size: 10px;
+	font-size: 12px;
 }
 .blog-post-tags a {
-	font-weight: normal;
+	display: inline-block;
+	padding: 2px;
+}
+.blog-post-tags a:hover,
+.blog-post-tags a:active {
+	background-color: #000;
 }
 .blog-post-tags .icon-tags-16 {
 	margin-right: 2px;
@@ -240,17 +218,11 @@
 */
 .blog-post-footer {
 	border-top: 1px solid #333;
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
 	font-size: 12px;
 	margin: 10px 0 0 0;
 	padding: 10px 0 0 0;
 }
 .dsq-comment-count-wrap {
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
 	float: right;
 	padding-right: 5px;
 }
@@ -258,9 +230,6 @@
 	BLOG POST SHARE
 */
 .blog-share-wrap {
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
 	margin-top: 15px;
 	position: relative;
 }
@@ -275,9 +244,6 @@ input.short-url {
 	background: #141414;
 	border: 1px solid #141414;
 	border-left-width: 1px;
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
 	color: #555;
 	float: right;
 	font-size: 10px;
@@ -291,9 +257,6 @@ input.short-url:focus {
 }
 .tumblr-share-button {
 	background: url('/assets/site/buttons/tumblr-share-1.png') top left no-repeat transparent;
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
 	display: none;
 	float: right;
 	height: 20px;
@@ -318,9 +281,6 @@ input.short-url:focus {
 .download-btn {
 	background: #004c66;
 	border: 0;
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
 	-webkit-box-shadow: inset 0 -3px 1px rgba(0, 0, 0, 0.45), 0 2px 2px rgba(0, 0, 0, 0.25);
   	-moz-box-shadow: inset 0 -3px 1px rgba(0, 0, 0, 0.45), 0 2px 2px rgba(0, 0, 0, 0.25);
   	box-shadow: inset 0 -3px 1px rgba(0, 0, 0, 0.45), 0 2px 2px rgba(0, 0, 0, 0.25);
@@ -347,9 +307,6 @@ input.short-url:focus {
     text-shadow: 0 -1px 0 rgba(0,0,0,.7);
 }
 .download-lbl {
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
 	display: inline-block;
 	font-size: 18px;
 	margin: 0;

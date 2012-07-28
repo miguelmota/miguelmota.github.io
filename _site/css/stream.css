@@ -96,9 +96,6 @@
 	background-position: 0 0;
 	background-repeat: no-repeat;
 	border-left: 5px solid #007299;
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
 	display: block;
 	font-size: 0;
 	height: 16px;
@@ -239,9 +236,6 @@
 }
 .stream-ul li a {
 	border: 1px solid transparent;
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
 	display: block;
 	margin-bottom: 2px;
 	padding: 5px;
@@ -314,9 +308,6 @@
 }
 .stream-carousel {
 	background-color: #1d1d1d;
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
 	float: left;
 	margin: 0 5px;
 	overflow: hidden;
@@ -325,9 +316,6 @@
 }
 .stream-carousel-nav {	
 	background-color: #141414;
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
 	display: inline-block;
 	border-left: 0;
 	float: left;
@@ -367,9 +355,6 @@
 	overflow: visible !important;
 }
 .stream-ul-flickr li {
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
 	float: left;
 	height: 125px;
 	margin: 0 5px 0 0;
@@ -380,9 +365,6 @@
 }
 .stream-ul-flickr li a {
 	background-color: #1d1d1d;
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
 	display: inline-block;
 	float: left;
 	min-height: 125px;
