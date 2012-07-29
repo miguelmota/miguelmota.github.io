@@ -100,14 +100,14 @@
 		text-align: left;
 		width: 15em;
 	}
-	input[type="range"]{
+	input[type='range']{
 		-webkit-appearance: none !important;
 		background-color: #999;
 		border-radius: 10px;
 		box-shadow: 0 -1px 1px rgba(255,255,255,0.5) inset;
 		width: 20em;
 	 }
-	 input[type="range"]::-webkit-slider-thumb{
+	 input[type='range']::-webkit-slider-thumb{
 		-webkit-appearance: none !important; 
 	   	background: #999 -webkit-linear-gradient(top, rgb(80, 80, 80), rgb(50, 50, 50));
 	   	border-top: 1px solid #fff;
@@ -150,11 +150,12 @@
 	 	.filter-list label {
 	 		width: auto;
 	 	}
-	 	input[type="range"]{
+	 	input[type='range']{
 	 		width: auto;
 	 	}
 	 	.note {
-	 		display: block;
+	 		display: inline-block;
+	 		float: right;
 	 	}
 	 	.credit {
 	 		clear: both;
@@ -170,10 +171,24 @@
 	 		width: 100%;
 	 	}
 	 }
+	 .nosupport {
+	 	background-color: #700;
+	 	color: #fff;
+	 	display: block;
+	 	text-align: center;
+	 	padding: .5em;
+	 	text-shadow: none;
+	 	width: 100%;
+	 }
 	</style>
 	<script src="/js/libs/modernizr.min.js"></script>
 </head>
 <body>
+<script>
+	if (!'-webkit-filter' in document.body.style) {
+		document.write("<div class='nosupport'>Browser does not support <code>-webkit-filter</code>.</div>");
+	}
+</script>
 <div class='wrap'>
 	<h1>CSS3 Filters</h1>
 	<div class='photo-wrap'><img class='photo' src='img/new-york-city.png' alt='' /></div>
