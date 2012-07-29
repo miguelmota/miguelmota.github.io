@@ -304,15 +304,30 @@
 	background-image: url('/assets/site/icons/pictos/24/tumblr.png');
 }
 .icon-twitter-24 {
+	background-image: url('/assets/site/icons/24/twitter-round.png');
+}
+.icon-twitter-t-24 {
 	background-image: url('/assets/site/icons/pictos/24/twitter.png');
 }
 .icon-twitter-bird-16 {
+	background-image: url('/assets/site/icons/16/twitter.png');
+	box-shadow: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+}
+.icon-twitter-bird-2-16 {
 	background-image: url('/assets/site/icons/pictos/16/twitter-bird.png');
 	box-shadow: none;
 	-moz-box-shadow: none;
 	-webkit-box-shadow: none;
 }
 .icon-twitter-bird-24 {
+	background-image: url('/assets/site/icons/24/twitter.png');
+	box-shadow: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+}
+.icon-twitter-bird-2-24 {
 	background-image: url('/assets/site/icons/pictos/24/twitter-bird.png');
 	box-shadow: none;
 	-moz-box-shadow: none;

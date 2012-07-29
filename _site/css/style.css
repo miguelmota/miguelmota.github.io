@@ -595,7 +595,9 @@ input.search-input {
 	position: relative;
 	width: 100%;
 }
-.tweet-bird-icon {}
+.tweet-bird-icon {
+	position: relative;
+}
 #latest-tweet {
 	right: -34px;
 	position: relative;
@@ -719,6 +721,7 @@ h6:first-child {
 .last-updated {
 	color: #333;
 	clear: both;
+	display: block;
 	font-size: 12px;
 	text-align: right;
 }
