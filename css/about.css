@@ -67,8 +67,18 @@
 	width: 35%;
 }
 .about-resume-link {
+	display: inline-block;
 	font-size: 18px;
-	padding: 10px 20px;
+	padding: 10px 20px 13px 20px;
+	position: relative;
+}
+.about-resume-link .icon {
+	float: left;
+	margin-right: 5px;
+}
+.about-resume-link .vr {
+	position: relative;
+	bottom: -2px;
 }
 .about-map-location {
 	background-color: #000; 

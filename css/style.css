@@ -9,7 +9,7 @@
   * 02 SCROLLBAR
   * 03 LINKS
   * 04 INPUT
-  * 05 ICONS
+  * 05 ICONSbutt
   * 06 NAVIGATION
   * 07 SEARCH FORM
   * 08 SOCIAL LINKS
@@ -246,8 +246,8 @@ a:active {
 	color: #555;
 }
 
-input[type=text],
-input[type=password],
+input[type='text'],
+input[type='password'],
 textarea {		
 	background-color: #141414;
 	border: 1px solid #141414;
@@ -262,18 +262,18 @@ textarea {
 	-o-transition: border-color .3s linear, color .1s linear;
 	-webkit-transition: border-color .1s linear, color .1s linear;
 }
-input[type=text]:focus,
-input[type=password]:focus,
+input[type='text']:focus,
+input[type='password']:focus,
 textarea:focus {
 	background-color: #141414;
 	border-color: #007299;
 	border-left: 4px solid #007299;
 	color: #999;
 }
-input[type=text]:hover,
-input[type=text]:active,
-input[type=password]:hover,
-input[type=password]:active,
+input[type='text']:hover,
+input[type='text']:active,
+input[type='password']:hover,
+input[type='password']:active,
 textarea:hover,
 textarea:active {
 	border-color: #007299;
@@ -298,7 +298,9 @@ textarea {
 /*
 	BUTTONS
  */
-.button {
+.button,
+input[type='button'],
+input[type='submit'] {
 	background: #004c66;
 	border: 0;
 	-webkit-box-shadow: inset 0 -3px 1px rgba(0, 0, 0, 0.45), 0 2px 2px rgba(0, 0, 0, 0.25);
@@ -306,14 +308,19 @@ textarea {
   	box-shadow: inset 0 -3px 1px rgba(0, 0, 0, 0.45), 0 2px 2px rgba(0, 0, 0, 0.25);
 	color: #fff;
 	font-size: 12px;
-	padding: 5px 10px;
+	font-weight: bold;
+	padding: 5px 10px 8px 10px;
 	text-shadow: 0 1px 0 rgba(0,0,0,.7);
 }
-.button:hover {
+.button:hover,
+input[type='button']:hover,
+input[type='submit']:hover {
 	background: #007299;
 	color: #fff;
 }
-.button:active {
+.button:active,
+input[type='button']:active,
+input[type='submit']:active {
 	background: #003f55;
     -webkit-box-shadow: inset 0 -3px 1px transparent, inset 0 0 3px rgba(0, 0, 0, 0.9);
     -moz-box-shadow: inset 0 -3px 1px transparent, inset 0 0 3px rgba(0, 0, 0, 0.9);

@@ -28,21 +28,47 @@
 	<link rel='apple-touch-icon-precomposed' href='/assets/images/apple-touch-icon.png' />
 	<link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Ubuntu+Condensed' />
 	<link rel='stylesheet' href='/css/reset.min.css' />
-	<link rel='stylesheet' href='/css/global.css' media='all' />
+	<link rel='stylesheet' href='/css/style.css' />
 	<style>
 		.not-found-wrap {
 			margin: 100px auto 10px auto;
-			width: 300px;
+			max-width: 768px;
+			width: 80%;
+		}
+		h1 {
+			font-size: 16px;
+		}
+		#goog-fixurl {
+			margin: 10px 0;
+		}
+		#goog-fixurl h3 {
+			margin-bottom: 5px;
+		}
+		#goog-fixurl #goog-wm-qt {
+			clear: both;
+			display: block;
+			margin: 10px 0;
+			width: 100%;
+		}
+		#goog-fixurl #goog-wm-sb {
+			float: right;
+		}
+		#goog-fixurl #goog-wm-sb:hover {
+			cursor: pointer;
 		}
 	</style>
-	<!--[if lt IE 9]>
-		<script src='/js/libs/html5.js'></script>
-	<![endif]-->
+	<script src='/js/libs/modernizr.min.js'></script>
 </head>
 <body>
 <div class='not-found-wrap'>
-	<p><strong>404.</strong> Not found.</p>
+	<h1><strong>404.</strong> Not found.</h1>
 	<p>The requested URL <span style='font-family:monospace;'><script>document.write(location.pathname);</script></span> was not found.</p>
+	<script>
+		var GOOG_FIXURL_LANG = (window.navigator.language || '').slice(0,2),
+			GOOG_FIXURL_SITE = location.host;
+	</script>
+	<script src='http://linkhelp.clients.google.com/tbproxy/lh/wm/fixurl.js'></script>
+	<div class='clear'></div>
 	<p><a href='/'>&#171; go home</a></p>
 	<footer class='main-footer main-footer-404'>
 		<div class='main-footer-content'><a class='logo-miguelmota' href='/'>miguel mota+</a><strong>&#169; <script>var date = new Date(); document.write(date.getFullYear());</script></strong></div>
