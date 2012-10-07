@@ -14,7 +14,6 @@
 .about-photo-wrap .photo {
 	width: 100%;
 	height: auto;
-	-webkit-filter: blur(50px);
 }
 .about-photo-desc p:first-child {
 	font-size: 30px;
