@@ -81,7 +81,7 @@
 	bottom: -2px;
 }
 .about-map-location {
-	background-color: #000; 
+	background-color: #000;
 	display: block;
 	margin: 40px 0 0 0;
 	padding: 10px;
@@ -160,8 +160,16 @@
 		float: none;
 		width: 100%;
 	}
+	.about-photo-wrap {
+		width: 100%;
+		margin: auto;
+		text-align: center;
+		background-color: #191919;
+	}
 	.about-photo-wrap .photo {
 		width: 100%;
+		max-width: 180px;
+		width: auto;
 		height: auto;
 	}
 	.about-column-right {
