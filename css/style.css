@@ -123,13 +123,13 @@ em {
 	font-weight: normal;
 }
 .title .slash {
-	font-family: klavika-Light, 'Ubuntu Condensed', Helvetica, Arial, sans-serif;	
+	font-family: klavika-Light, 'Ubuntu Condensed', Helvetica, Arial, sans-serif;
 	font-weight: normal;
 	position: relative;
 	top: -2px;
 }
 .title .sub {
-	font-family: klavika-Light, 'Ubuntu Condensed', Helvetica, Arial, sans-serif;	
+	font-family: klavika-Light, 'Ubuntu Condensed', Helvetica, Arial, sans-serif;
 	font-weight: normal;
 	margin-left: -2px;
 }
@@ -248,7 +248,7 @@ a:active {
 
 input[type='text'],
 input[type='password'],
-textarea {		
+textarea {
 	background-color: #141414;
 	border: 1px solid #141414;
 	border-left: 4px solid #2d2d2d;
@@ -282,13 +282,13 @@ textarea {
 	overflow: auto;
 	resize: none;
 }
-.input input, 
+.input input,
 .input textarea {
 	background-color: #202020;
 	font-size: 16px;
 	padding: 6px 6px 6px 12px;
 }
-.input input:focus, 
+.input input:focus,
 .input textarea:focus {
 	background-color: #222;
 }
@@ -370,7 +370,7 @@ div.page-loader {
 	height: 15px;
 	width: 128px;
 }
-img.loader {	
+img.loader {
 	clear: both;
 	display: block;
 	height: 16px;
@@ -411,7 +411,7 @@ img.loader {
 	100% {left: 0px;}
 }
 .main-side-nav {
-	position: static;	
+	position: static;
 	top: 20px;
 	width: 240px;
 }
@@ -635,7 +635,7 @@ input.search-input {
 	bottom: auto;
 	color: #1d1d1d;
 	content: "";
-	display: inline-block; 	
+	display: inline-block;
 	left: -10px; /* value = - border-left-width - border-right-width */
 	top: 3px;
 	position: absolute;
@@ -956,7 +956,7 @@ h6:first-child {
 	background-color: #000;
 	clear: both;
 	color: #fff;
-	display: none; 
+	display: none;
 	font-size: 14px;
 	line-height: 130%;
 	width: 100%;
@@ -993,7 +993,7 @@ h6:first-child {
 		margin: 0 5px 0 5px;
 		padding: 0 0 0 250px;
 	}
-	
+
 	/* ------------------------
 	 * Main content
 	 * --------------------- */
@@ -1036,7 +1036,7 @@ h6:first-child {
 		position: relative;
 		width: 100%;
 	}
-	
+
 	/* ------------------------
 	 * Main side nav wrap
 	 * --------------------- */
@@ -1048,7 +1048,7 @@ h6:first-child {
 		position: static;
 		width: 100%
 	}
-	
+
 	/* ------------------------
 	 * Site title
 	 * --------------------- */
@@ -1074,12 +1074,12 @@ h6:first-child {
 		display: inline-block;
 		padding-bottom: 0;
 	}
-	
+
 	/* ------------------------
 	 * Navigation links
 	 * --------------------- */
 	.main-side-nav {
-		position: static;	
+		position: static;
 		width: 100%;
 	}
 	.main-side-nav-ul {
@@ -1105,21 +1105,21 @@ h6:first-child {
 		padding: 10px 10px;
 		width: 100%;
 	}
-	
+
 	/* ------------------------
 	 * Social icons
 	 * --------------------- */
 	.follow-wrap {
 		width: 100%;
 	}
-	
+
 	/* ------------------------
 	 * Search box
 	 * --------------------- */
 	input.search-input {
 		width: 100%;
 	}
-	
+
 	/* ------------------------
 	 * Latest tweet
 	 * --------------------- */
@@ -1130,7 +1130,7 @@ h6:first-child {
 	#latest-tweet {
 		width: 92%;
 	}
-	
+
 	/* ------------------------
 	 * Main content
 	 * --------------------- */
@@ -1149,7 +1149,7 @@ h6:first-child {
 		position: relative;
 		width: 100%;
 	}
-	
+
 	/* ------------------------
 	 * Page title
 	 * --------------------- */
@@ -1195,5 +1195,5 @@ h6:first-child {
 	.main-footer strong {
 		font-size: 12px !important;
 	}
-	
+
 }
