@@ -1,0 +1,25 @@
+---
+layout: default
+title: Contact
+style: contact
+script: contact
+description: Say hello or whatever's on your mind.
+---
+<h1 class='title'><span class='icon icon-envelope-32 icon-title icon-no-hover'></span> {% include title.html %}</h1>
+<section class='content contact'>
+	<div class='contact-item content-item'>
+		<img class='contact-qrcode' src='/assets/contact/qrcode.png' />
+		<div class='contact-info-wrap'>
+			<div><a href='tel:1-951-215-6682'><span class='icon icon-phone-16'></span> +1 951 215 6682</a></div>
+			<div><a href='mailto:hello@miguelmota.com'><span class='icon icon-mail-16'></span> hello@miguelmota.com</a></div>
+		</div>
+	    <form class='contact-form' name='contact-form' action='http://www.foodfail.org/miguelmota/contact.php' method='get'> 
+	        <div class='input'><input type='text' name='name' id='contact-form-name' placeholder='[name]' /></div>
+	        <div class='input'><input type='text' name='email' placeholder='[email]' /></div>
+	        <div class='input'><textarea class='contact-form-message' name='message' placeholder='[message]'></textarea></div>
+	        <a class='contact-form-submit button' href='javascript:void(0)'>send &#8250;</a>
+	    </form>
+	    <div class='contact-form-thank-you'></div>
+	    <div class='clear'></div>
+    </div>
+</section>

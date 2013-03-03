@@ -1,0 +1,103 @@
+---
+layout: default
+title:
+style: stream
+script: stream
+---
+<h1 class='title'><span class='icon icon-cloud-32 icon-title icon-no-hover'></span> {% include title.html %}</h1>
+
+<div class='stream-position-reset-wrap'><a class='stream-position-reset' href='javascript:void(0)' onclick='streamPositionReset();'><span class='icon icon-revert-16'></span> reset</a></div>
+
+<div class='clear'></div>
+<section class='content stream'>
+
+    <div class='stream-wrap stream-latitude content-item'>
+        <h2 class='stream-title'>Google Latitude</h2>
+        <a class='stream-logo stream-logo-latitude mtip' href='http://www.google.com/latitude/apps/badge/api?user=7812482200199007583&amp;type=iframe&amp;maptype=roadmap' title='my location' rel='external'></a>
+        <a class='fancybox-iframe latitude-map-button' href='/stream/map/index.html' rel='internal'><span class='icon icon-world-16 mtip' title='view map'></span></a>
+        <div class='loader'></div>
+    </div>
+    
+    <div class='stream-wrap stream-facebook content-item'>
+        <h2 class='stream-title'>Facebook</h2>
+        <a class='stream-logo stream-logo-facebook mtip' href='https://www.facebook.com/miguel.mota2' title='my facebook' rel='external'></a>
+        <div class='loader'></div>
+    </div>
+    
+    <div class='stream-wrap stream-blog content-item'>
+        <h2 class='stream-title'>Blog</h2>
+        <a class='stream-logo stream-logo-blog mtip' href='/blog' title='my blog'>Blog</a>
+        <ul class='stream-ul stream-ul-blog'>
+            {% for post in site.categories.blog limit:3 %}
+                <li><a class='status' href='{{ post.url }}'><span class='icon icon-text-16'></span> {{ post.title }} <time class='status-date' datetime="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date:"%a %b, %d" }}</span><span class='clear'></time></a></li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class='stream-wrap stream-tumblr content-item'>
+        <h2 class='stream-title'>Tumblr</h2>
+        <a class='stream-logo stream-logo-tumblr mtip' href='http://miguelmota.tumblr.com'  title='my tumblog' rel='external'></a>
+        <div class='loader'></div>
+    </div>
+    
+    <div class='stream-wrap stream-delicious content-item'>
+        <h2 class='stream-title'>Delicious</h2>
+        <a class='stream-logo stream-logo-delicious mtip' href='http://www.delicious.com/miguelmota' title='my bookmarks' rel='external'></a>
+        <div class='loader'></div>
+    </div>
+    
+    <div class='stream-wrap stream-wakoopa content-item hide'>
+        <h2 class='stream-title'>Wakoopa</h2>
+        <a class='stream-logo stream-logo-wakoopa mtip' href='http://social.wakoopa.com/miguelmota' title='my software' rel='external'></a>
+        <div class='stream-sort-wrap stream-sort-wakoopa'>
+            <a class='stream-sort-wakoopa-recent selected' href='javascript:void(0)' onclick='streamSortWakoopaRecent();'>recent</a> /
+            <a class='stream-sort-wakoopa-top' href='javascript:void(0)' onclick='streamSortWakoopaTop();'>top</a>
+        </div>
+        <div id='stream-wakoopa-software-recent'></div>
+        <div id='stream-wakoopa-software-top'></div>
+        <div class='loader'></div>
+    </div>
+    
+    <div class='stream-wrap stream-lastfm content-item'>
+        <h2 class='stream-title'>Last.fm</h2>
+        <a class='stream-logo stream-logo-lastfm mtip' href='http://www.last.fm/user/miguel_mota' title='my music' rel='external'></a>
+        <div class='stream-sort-wrap stream-sort-lastfm'>
+            <a class='stream-sort-lastfm-recent selected' href='javascript:void(0)' onclick='streamSortLastfmRecent();'>recent</a> /
+            <a class='stream-sort-lastfm-loved' href='javascript:void(0)' onclick='streamSortLastfmLoved();'>loved</a> / 
+            <a class='stream-sort-lastfm-top' href='javascript:void(0)' onclick='streamSortLastfmTop();'>top</a>
+        </div>
+        <div class='loader'></div>
+    </div>
+    
+    <div class='stream-wrap stream-twitter content-item'>
+        <h2 class='stream-title'>Twitter</h2>
+        <a class='stream-logo stream-logo-twitter mtip' href='http://twitter.com/#!/miguel_mota' title='my tweets' rel='external'></a>
+        <div class='loader'></div>
+    </div>
+
+    <div class='stream-wrap stream-instagram content-item'>
+        <h2 class='stream-title'>Instagram</h2>
+        <a class='stream-logo stream-logo-instagram mtip' href='https://api.instagram.com/v1/users/37897377?access_token=37897377.b530e2d.d7697e8cc7c74e25973697fe98746715' title='my instagram' rel='external'></a>
+        <div class='loader'></div>
+    </div>
+
+    <div class='stream-wrap stream-foursquare content-item'>
+        <h2 class='stream-title'>Foursquare</h2>
+        <a class='stream-logo stream-logo-foursquare mtip' href='https://foursquare.com/miguel_mota' title='my checkins' rel='external'></a>
+        <div class='loader'></div>
+    </div>
+
+    <div class='stream-wrap stream-github content-item'>
+        <h2 class='stream-title'>Github</h2>
+        <a class='stream-logo stream-logo-github mtip' href='https://github.com/miguelmota' title='my code' rel='external'></a>
+        <div class='loader'></div>
+    </div>
+    
+    <div class='stream-wrap stream-flickr content-item'>
+        <h2 class='stream-title'>Flickr</h2>
+        <a class='stream-logo stream-logo-flickr mtip' href='http://www.flickr.com/photos/miguelmota' title='my photos' rel='external'></a>
+        <div class='loader'></div>
+    </div>
+
+    <div class='clear'></div>
+</section>

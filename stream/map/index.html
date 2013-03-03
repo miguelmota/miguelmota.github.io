@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang='en-US'>
+<head>
+	<meta charset='utf-8' />
+	<meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=1;' />
+	<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1' />
+	<meta name='description' content="A map of my current location using Google Latitude" />	
+	<meta name='keywords' content='miguel mota, miguel mota map' />
+	<title>Latitude Map &#187; Miguel Mota | Feelance Web Developer</title>
+	<link rel='shortcut icon' href='/favicon.ico' />
+	<link rel='stylesheet' href='/css/reset.min.css' />
+	<script src='/js/libs/modernizr.min.js'></script>
+	<script src='/js/libs/jquery.min.js'></script>
+	<script src='http://maps.google.com/maps/api/js?sensor=false'></script>
+	<script>
+		$(document).ready(function(){
+			$.ajax({
+			    url: 'https://www.googleapis.com/latitude/v1/currentLocation?access_token=ya29.AHES6ZTzQIzsFWeauIRSQdb34bLwD18xA1sWf25lBrOLMcODEEbEAx8&callback=?',
+			    type: 'get',
+			    dataType: 'json',
+			    cache: false,
+			    crossDomain: true,
+			    success: function (data) {
+			        var data = data.data;
+			        var lat = data.latitude;
+			        var lng = data.longitude;
+			        var timestamp = data.timestampMs;
+
+			        var geocoder = new google.maps.Geocoder();
+			        var latlng = new google.maps.LatLng(lat,lng);
+
+			        geocoder.geocode(
+			            {'latLng'  : latlng }, 
+			            function(results, status) {
+			                if (status == google.maps.GeocoderStatus.OK) {
+			                    var current_location = null;
+			                    if (results[1]) {
+			                       current_location = results[1].formatted_address;
+			                    }
+			                    else if (results[6]) {
+			                       current_location = results[6].formatted_address;
+			                    }
+			                    else {
+			                        current_location = "unable to retrieve location";
+			                    }
+
+			        			//var date = formattedDateUnix(timestamp);
+
+			        			//map
+			        			var latlng = new google.maps.LatLng(lat,lng);
+			        			var infowindow = new google.maps.InfoWindow({
+			        				content: ""
+			        			});
+
+			        			var myOptions = {
+			        					zoom: 9,
+			        					center: latlng,
+			        					mapTypeId: google.maps.MapTypeId.ROADMAP
+			        				};
+
+			        			var map = new google.maps.Map(document.getElementById('gmap'), myOptions);
+			        			var photo_url = 'http://www.miguelmota.com/assets/stream/map/marker-miguelmota.png';
+
+			        			var htmlContent = "<div class='gmap-infowindow'>"+
+			        			"<span class='gmap-infowindow-location'>"+current_location+"</span>"+
+			        			"<span class='gmap-infowindow-coords'>"+lat+","+lng+"</span>" +
+			        			"<span class='gmap-infowindow-time'>"+timestamp+"</span></div>";
+
+			        			var image = new google.maps.MarkerImage(photo_url);
+
+			        			var marker = new google.maps.Marker({
+			        					position: latlng,
+			        					map: map,
+			        					icon: image,
+			        					title: current_location,
+			        					html: htmlContent
+			        				});
+
+			        			google.maps.event.addListener(marker, 'click', function() {
+			        				infowindow.setContent(this.html);
+			        				infowindow.open(map, this);
+			        				map.setZoom(16);
+			        				map.panTo(marker.position);
+			        			});
+			        			
+			        			marker.setAnimation(google.maps.Animation.DROP);
+			                }
+			            }
+			        );
+			    }
+			});
+			setTimeout(function() {
+				$('.gmap-loading').html('<span class="gmap-loading-error">Could not retrieve location :(</span>');
+			}, 5000);
+		});
+	</script>
+	<style>
+	html, body {
+		font-family: Helvetica, Arial, sans-serif;
+		height: 100%;
+		width: 100%;
+	}
+	#gmap {
+		background-color: #252525;
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+	.gmap-loading {
+		color: #999;
+		font-size: 16px;
+		font-weight: bold;
+		margin: 0 0 0 -10em;
+		position: absolute;
+			top: 48%;
+			left: 50%;
+		text-align: center;
+		text-shadow: 0 -1px 0 rgba(0,0,0,.8);
+		width: 20em;
+	}
+	.gmap-loading-error {
+		font-style: italic;
+		font-weight: normal;
+	}
+	.gmap-infowindow {
+		overflow: hidden;
+	}
+	.gmap-infowindow-location {
+		color: #333;
+		display: block;
+		font-size: 16px;
+		font-weight: bold;
+		margin: 0 0 5px 0;
+	}
+	.gmap-infowindow-coords {
+		color: #999;
+		display: block;
+	}
+	.gmap-infowindow-time {
+		color: #555;
+		display: block;
+	}
+	</style>
+</head>
+<body>
+	<div id='gmap'><span class='gmap-loading'>Loading...</span></div>
+</body>
+</html>

@@ -1,0 +1,306 @@
+@charset 'utf-8';
+
+/* ==============================================================================
+	DISQUS - HOUDINI THEME
+============================================================================== */
+/*
+#disqus_thread {
+	margin: 20px 0;
+}
+.p_comment_form input[type=text],
+.p_comment_form textarea {
+	background-color: #222;
+	border: 1px solid #999;
+	color: #999;
+}
+.p_comment_form input[type=text]:focus,
+.p_comment_form textarea:focus {
+	border: 1px solid #007799;
+}
+.p_no_responses {
+	display: none;
+}
+div#dsq-content h3 {
+	display: none !important;
+}
+div#dsq-account-dropdown {
+	display: none !important;
+}
+div.dsq-comment-body {
+}
+img.dsq-deferred-avatar {
+}
+div#dsq-subscribe {
+	display: none !important;
+}
+select#dsq-sort-select {
+	display: none !important;
+}
+div.dsq-trackback-url {
+	display: none !important;
+}
+*/
+/* ==============================================================================
+	END DISQUS - HOUDINI THEME
+============================================================================== */
+
+
+
+/* ==============================================================================
+	DISQUS - NARCISSUS THEME
+============================================================================== */
+#disqus_thread {
+	font-family: NeoSans, Klavika-Light, Helvetica, Arial, sans-serif !important;
+}
+#disqus_thread a {
+	border: 0 !important;
+	color: #007299 !important;
+	font-weight: bold !important;
+	padding: 0 !important;
+	text-shadow: 0 1px 0 rgba(0,0,0,.5) !important;
+	transition: color linear .1s !important;
+	-moz-transition: color linear .1s !important;
+	-o-transition: color linear .1s !important;
+	-webkit-transition: color linear .1s !important;
+}
+#disqus_thread a:hover {
+ 	background-color: transparent !important;
+ 	border: 0 !important;
+	color: #0098cc !important;
+	text-shadow: 0 1px 0 rgba(0,0,0,.9) !important;
+}
+#disqus_thread a:active {
+	text-shadow: 0 -1px 0 rgba(0,0,0,.5) !important;
+}
+#disqus_thread h3 {
+	font-size: 14px !important;
+}
+#dsq-footer {
+	display: none !important;
+}
+/*
+DON'T WORK
+div.dsq-popup a {
+	border-left: 0 !important;
+	color: #000 !important;
+	padding: 0 !important;
+	text-shadow: none !important;
+	transition: all linear 0s !important;
+	-moz-transition: all linear 0s !important;
+	-o-transition: all linear 0s !important;
+	-webkit-transition: all linear 0s !important;
+}
+div.dsq-popup a:hover {
+ 	background-color: #fff !important;
+ 	border-left: 0 !important;
+	color: #000 !important;
+	text-shadow: none !important;	
+}
+div.dsq-popup a:active {
+	text-shadow: none !important;
+}
+*/
+/*
+DON'T WORK
+button..dsq-comment-footer-reply-tab {
+	text-shadow: 0 !important;
+}
+*/
+.dsq-clearfix {
+	
+}
+#dsq-sort-by {
+	display: none !important;
+}
+div.dsq-textarea {}
+div.dsq-textarea-wrapper,
+div.dsq-textarea-wrapper iframe {}
+div#disqus_thread iframe {}
+/*
+div.dsq-full-comment {
+	position: relative !important;
+}
+div.dsq-comment-message,
+div.dsq-comment-body,
+div.dsq-comment-text {
+	position: absolute !important;
+	top: 2px !important;
+	width: 580px !important;
+	right: 0 !important;
+}
+div.dsq-comment-footer {
+	position: absolute !important;
+	top: -10px !important;
+	right: 0 !important;
+	width: 200px !important;
+}
+span.dsq-like {
+	display: none !important;
+}
+div.dsq-comment-footer-left {
+	top: 2px !important;
+	position: absolute !important;
+	right: 40px !important;
+}
+a.dsq-post-report {
+	color: #555 !important;
+	font-size: 10px !important;
+}
+div#disqus_thread tr {
+	border: 1px solid #252525 !important;
+	background: #252525 !important;
+	height: 48px !important;
+}
+div#disqus_thread tr img {
+	background: none !important;
+	border: 0 !important;
+	border-radius: 0 !important;
+	-moz-border-radius: 0 !important;
+	-o-border-radius: 0 !important;
+	-webkit-border-radius: 0 !important;
+	padding: 0 !important;
+}
+img.dsq-moderator-star {
+	display: none !important;
+}
+td.dsq-header-avatar,
+a.dsq-avatar,
+a.dsq-avatar:hover,
+a.dsq-avatar img,
+a.dsq-avatar img:hover {
+	border: 0 !important;
+	border-radius: 0 !important;
+	-moz-border-radius: 0 !important;
+	-o-border-radius: 0 !important;
+	-webkit-border-radius: 0 !important;
+	box-shadow: 0 !important;
+	-moz-box-shadow: 0 !important;
+	-o-box-shadow: 0 !important;
+	-webkit-box-shadow: 0 !important;
+	height: 48px !important;
+	padding: 0 !important;
+	position: absolute !important;
+	left: 0 !important;
+	top: 0 !important;
+	width: 48px !important;
+}
+div.dsq-comment-header {
+	border: none !important;
+	padding: 0 !important;
+}
+a.dsq-comment-hide-thread {
+	display: none !important;
+}
+div.dsq-append-post {
+	float: right !important;
+	position: relative !important;
+	top: -9px !important;
+	width: 500px !important;
+}
+div.dsq-append-post div.dsq-post-area {
+	width: 500px !important;
+}
+div.dsq-post-area {
+	float: right !important;
+	width: 580px !important;
+}
+span.dsq-comment-header-time a {
+	border: 0 !important;
+	font-size: 10px !important
+}
+div.dsq-post-area h3 {
+	clear: both !important;
+	padding: 20px 0 10px 0 !important;
+}
+div.dsq-comment-header-meta-wrapper {
+	position: absolute !important;
+	right: 0 !important;
+	width: 580px !important;
+}
+div.dsq-comment-header-meta-wrapper a {
+	font-size: 10px !important;
+}
+a.dsq-request-user-logout {
+	display: none !important;
+}
+div.dsq-request-user-info {
+	clear: none !important;
+	float: left !important;
+	width: 48px !important;
+}
+td.dsq-request-user-name,
+td.dsq-request-user-stats {
+	display: none !important;
+}
+img.dsq-request-user-avatar {
+	border: 0 !important;
+	box-shadow: 0 !important;
+	-moz-box-shadow: 0 !important;
+	-o-box-shadow: 0 !important;
+	-webkit-box-shadow: 0 !important;
+	padding: 0 !important;
+}
+div#dsq-form-area {
+	clear: none !important;
+	float: right !important;
+	width: 580px !important;
+}
+
+
+div.dsq-pagination {
+	display: none !important;
+}
+*/
+#dsq-comments-title {
+	padding-bottom: 10px !important;
+}
+#dsq-global-toolbar {
+
+}
+.dsq-options {
+
+}
+.dsq-comment-header {
+	background: #1d1d1d; !important;
+}
+.dsq-comment-header-meta {
+	background: #1d1d1d; !important;
+}
+.dsq-user-like {
+	color: #555 !important;
+}
+.dsq-button,
+-button-small {
+	background: #004c66 !important;
+	border: none !important;
+	border-radius: 0 !important;
+	-moz-border-radius: 0 !important;
+	-o-border-radius: 0 !important;	
+	-webkit-border-radius: 0 !important;
+	color: #fff !important;
+	font-size: 16px !important;
+	font-weight: bold !important;
+	padding: 8px 16px !important;
+	text-shadow: none !important;
+}
+.dsq-button:hover,
+.dsq-button-small:hover {
+	background: #007299 !important;
+	color: #fff !important;
+	text-shadow: none !important;
+}
+.dsq-button:active,
+.dsq-button-small:active {
+	color: #fff !important;
+	text-shadow: none !important;
+}
+.dsq-trackback-url,
+.dsq-item-trackback {
+	display: none !important;
+}
+img {
+	background-color: none !important;	
+}
+/* ==============================================================================
+	END DISQUS - NARCISSUS THEME
+============================================================================== */

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Countdown!</title>
+	<link rel="shortcut icon" href="http://miguelmota.com/favicon.ico">
+	<link rel="stylesheet" href="css/jbclock.css" />
+	<script src="../js/libs/jquery.min.js"></script>
+	<script src="js/jbclock.js"></script>
+	<script>
+	var now, end, seconds;
+	now = new Date();
+	now = now.getTime() / 1000;
+	console.log('now: ' + now);
+	end = new Date('12/22/2012 23:00:00');
+	end = end.getTime() / 1000;
+	console.log('end: ' + end);
+	seconds = Math.floor(now % 60);
+	console.log('seconds: ' + seconds);
+
+
+	$(document).ready(function(){
+		JBCountDown({
+			secondsColor : "#ffdc50",
+			secondsGlow  : "none",
+			minutesColor : "#9cdb7d",
+			minutesGlow  : "none",
+			hoursColor   : "#378cff",
+			hoursGlow    : "none",
+			daysColor    : "#ff6565",
+			daysGlow     : "none",
+			startDate   : now,
+			endDate     : end,
+			now         : now,
+			seconds     : seconds
+		});
+	});
+	</script>
+</head>
+<body>
+	<div class="wrapper">
+		<h1>Countdown till Amanda and Miguel time!</h1>
+		<h4>We will be eating each other in:</h4>
+		<div class="clock">
+			<div class="clock_days">
+				<div class="bgLayer">
+					<div class="topLayer"></div>
+					<canvas id="canvas_days" width="188" height="188">
+					</canvas>
+					<div class="text">
+						<p class="val">0</p>
+						<p class="type_days">Days</p>
+					</div>
+				</div>
+			</div>
+			<div class="clock_hours">
+				<div class="bgLayer">
+					<div class="topLayer"></div>
+					<canvas id="canvas_hours" width="188" height="188">
+					</canvas>
+					<div class="text">
+						<p class="val">0</p>
+						<p class="type_hours">Hours</p>
+					</div>
+				</div>
+			</div>
+			<div class="clock_minutes">
+				<div class="bgLayer">
+					<div class="topLayer"></div>
+					<canvas id="canvas_minutes" width="188" height="188">
+					</canvas>
+					<div class="text">
+						<p class="val">0</p>
+						<p class="type_minutes">Minutes</p>
+					</div>
+				</div>
+			</div>
+			<div class="clock_seconds">
+				<div class="bgLayer">
+					<div class="topLayer"></div>
+					<canvas id="canvas_seconds" width="188" height="188">
+					</canvas>
+					<div class="text">
+						<p class="val">0</p>
+						<p class="type_seconds">Seconds</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="divider">
+			<p>powered by <a href="http://codecanyon.net/item/jbmarket-circular-countdown/3100472" target="_blank">JBMarket Circular Countdown</a></p>
+		</div>
+	</div>
+</body>
+</html>

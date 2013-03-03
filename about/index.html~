@@ -1,0 +1,61 @@
+---
+layout: default
+title: About
+style: about
+script: about
+description: About me and what I do.
+---
+<h1 class='title'><span class='icon icon-person-32 icon-title icon-no-hover'></span> {% include title.html %}</h1>
+<section class='content about'>
+
+	<div class='content-item content-item-about'>
+
+		<div class='about-column-left'>
+
+			<div class='about-photo-wrap'>
+				<img class='photo' src='/assets/about/miguel-mota-mustache-greyscale.png' alt='' />
+			</div>
+
+		</div>
+
+		<div class='about-column-right'>
+
+			<h2>About me</h2>
+
+			<p>Howdy, I'm <strong>Miguel Mota</strong>.</p>
+
+			<p>I specialize in HTML5/CSS3, Javascript(jQuery) and PHP/SQL. Currently I am a mobile web developer for <a href='http://www.xtopoly.com/' rel='external'>XTOPOLY, Inc.</a> and at the same time attending <a href='http://www.norcocollege.edu/' rel='external'>Norco College</a> getting my transter studies completed, and then transferring to <a href='http://www.fullerton.edu/' rel='external'>CSUF</a> to major in computer science.</p>
+
+			<p>I am a 21 year old from the always sunny Southern California, with 3 years of experience in doing what I do. I love to code as much I love to watch videos of <a href='http://www.youtube.com/watch?v=9Yrt9qkBQ2Q' rel='external'>flying lawnmowers</a>. I live for <a href='http://en.wikipedia.org/wiki/Nutella' rel='external'>nutella</a> sammiches and strawberry milk.</p>
+
+			<p>To say hello reach me at <a href='mailto:hello@miguelmota.com'>hello@miguelmota.com</a>
+
+			<h3>About the site</h3>
+
+			<p>This is my playground where I experiment with new findings. You will find here my <a href='/stream'>lifestream</a> and a showcase of <a href='/portfolio'>my work</a>. Every once in a while I will <a href='/blog'>blog</a> a tutorial related to all things web in which I found interesting.</p>
+
+			<p>The site is powered by <a href='http://jekyllrb.com/' rel='external'>jekyll</a>, a static-site generator, and <a href='http://pages.github.com/' rel='external'>github pages</a>. The icons that you see are from the <a href='http://pictos.drewwilson.com/' rel='external'>Pictos icon set</a> created by the talented <a href='http://drewwilson.com/' rel='external'>Drew Wilson</a>. The font is from the <a href='http://code.google.com/webfonts/specimen/Ubuntu' rel='external'>Ubuntu</a> font family.</p>
+
+			<p><a class='about-google-plus' href='https://plus.google.com/102174577273194387652' rel='me'>Google+</a></p>
+
+		</div>
+
+		<div class='about-bottom-wrap'>
+
+			<div class='about-links-wrap'>
+				<a class='about-resume-link button' href='/about/resume'><span class='icon icon-file-w-24'></span> <span class='vr'>view r&#233;sum&#233;</span></a>
+
+				<a class='about-map-location' href='http://maps.google.com/?q=Norco,%20CA,%20USA' rel='external'><span class='icon icon-location-marker-16 icon-no-hover'></span> <span><span class='cr'>Current</span> location:</span> Norco, CA</a>
+			</div>
+
+			<div class='about-map-wrap'>
+				<div id='mapabout'><span>loading map...</span></div>
+			</div>
+
+		</div>
+
+		<time class='last-updated' datetime='2012-7-21'>Last updated October 6, 2012</time>
+
+		<div class='clear'></div>
+	</div>
+</section>

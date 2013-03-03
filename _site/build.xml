@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="miguelmota.github.com" default="build">
+	<description>
+		Miguel Mota
+	</description>
+	<property name="static.dir" value="" />
+	<property name="mobile.dir" value="mobile" />
+	<property name="lib.dir" value="lib" />
+	<target name="build" depends="compile-js"></target>
+	<!--
+	<target name="compile-css">
+		<property 
+		    name="yui-compressor.jar" 
+		    location="${lib.dir}/yuicompressor.jar" />
+		<property 
+		    name="yui-compressor-ant-task.jar" 
+		    location="${lib.dir}/yui-compressor-ant-task.jar" />
+		<path id="task.classpath">
+			<pathelement location="${yui-compressor.jar}" />
+			<pathelement location="${yui-compressor-ant-task.jar}" />
+		</path>
+		<taskdef name="yuicompressor" classname="net.noha.tools.ant.yuicompressor.tasks.YuiCompressorTask">
+			<classpath refid="task.classpath" />
+		</taskdef>
+		
+		<!-- GLOBAL CSS ***
+	    <concat destfile="styles/global.con.css" force="no">
+	    	<fileset dir="styles" includes="global.css" />
+	    </concat>
+	    <yuicompressor warn="false" charset="UTF-8" fromdir="styles" todir="styles" csssuffix=".min.css">
+	    	<include name="global.con.css" />
+	    </yuicompressor>
+		<move file="styles/global.con.min.css" tofile="${static.dir}styles/global.min.css"/>
+		<delete file="styles/global.con.css" />
+		
+		
+		<!-- CSS RESET ***
+		<concat destfile="styles/reset.con.css" force="no">
+	    	<fileset dir="styles" includes="reset.css" />
+	    </concat>
+	    <yuicompressor warn="false" charset="UTF-8" fromdir="styles" todir="styles" csssuffix=".min.css">
+	    	<include name="reset.con.css" />
+	    </yuicompressor>
+		<move file="styles/reset.con.min.css" tofile="${static.dir}styles/reset.min.css"/>
+		<delete file="styles/reset.con.css" />
+		
+		
+		<!-- PYGMENTS ***
+		<concat destfile="styles/pygment.friendly.con.css" force="no">
+	    	<fileset dir="styles" includes="pygment.friendly.css" />
+	    </concat>
+	    <yuicompressor warn="false" charset="UTF-8" fromdir="styles" todir="styles" csssuffix=".min.css">
+	    	<include name="pygment.friendly.con.css" />
+	    </yuicompressor>
+		<move file="styles/pygment.friendly.con.min.css" tofile="${static.dir}styles/pygment.friendly.min.css"/>
+		<delete file="styles/pygment.friendly.con.css" />
+				
+		
+		<!-- FANCYBOX ***
+		<concat destfile="plugins/fancybox/jquery.fancybox.con.css" force="no">
+	    	<fileset dir="plugins/fancybox" includes="jquery.fancybox.css" />
+	    </concat>
+	    <yuicompressor warn="false" charset="UTF-8" fromdir="plugins/fancybox" todir="plugins/fancybox" csssuffix=".min.css">
+	    	<include name="jquery.fancybox.con.css" />
+	    </yuicompressor>
+		<move file="plugins/fancybox/jquery.fancybox.con.min.css" tofile="${static.dir}plugins/fancybox/jquery.fancybox.min.css"/>
+		<delete file="plugins/fancybox/jquery.fancybox.con.css" />
+
+		
+		<!-- MTIP CSS ***
+	    <concat destfile="plugins/mtip/jquery.mtip.con.css" force="no">
+	        <fileset dir="plugins/mtip" includes="jquery.mtip.css" />
+	    </concat>
+	    <yuicompressor warn="false" charset="UTF-8" fromdir="plugins/mtip" todir="plugins/mtip" csssuffix=".min.css">
+	    	<include name="jquery.mtip.con.css" />
+	    </yuicompressor>
+		<move file="plugins/mtip/jquery.mtip.con.min.css" tofile="${static.dir}plugins/mtip/jquery.mtip.min.css"/>
+		<delete file="plugins/mtip/jquery.mtip.con.css" />
+	</target>
+		-->
+
+	<target name="compile-js">	
+
+		<!--
+
+		<!-- MTIPPY JS ***
+		<taskdef name="jscomp" classname="com.google.javascript.jscomp.ant.CompileTask"
+	    	classpath="${lib.dir}/compiler.jar" />
+		<jscomp compilationLevel="whitespace" warning="verbose" 
+	    	debug="false" output="${static.dir}code/mtippy/jquery.mtippy.min.js">
+			<sources dir="${static.dir}">
+
+				<file name="code/mtippy/jquery.mtippy.js" />
+
+			</sources>
+		</jscomp>    
+		
+		
+		<!-- MAIN JS ***
+		<taskdef name="jscomp" classname="com.google.javascript.jscomp.ant.CompileTask"
+	    	classpath="${lib.dir}/compiler.jar" />
+		<jscomp compilationLevel="whitespace" warning="verbose" 
+	    	debug="false" output="${static.dir}scripts/main.min.js">
+			<sources dir="${static.dir}">
+
+				<file name="scripts/main.js" />
+
+			</sources>
+		</jscomp>  
+		
+	
+		<!-- JQUERY COOKIE ***
+		<taskdef name="jscomp" classname="com.google.javascript.jscomp.ant.CompileTask"
+	    	classpath="${lib.dir}/compiler.jar" />
+		<jscomp compilationLevel="whitespace" warning="verbose" 
+	    	debug="false" output="${static.dir}assets/plugins/cookie/jquery.cookie.min.js">
+			<sources dir="${static.dir}">
+
+				<file name="assets/plugins/cookie/jquery.cookie.js" />
+
+			</sources>
+		</jscomp>  -->
+		
+		
+	</target>
+
+</project>

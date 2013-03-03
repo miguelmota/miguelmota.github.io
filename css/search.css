@@ -1,0 +1,97 @@
+/* ------------------------------------------------
+ * GOOGLE CSE STYLES
+ * --------------------------------------------- */
+
+.cse-wrap {
+	clear: both;
+	width: 750px;
+}
+#cse {
+	background-color: #1d1d1d !important;
+	border: 0 !important;
+}
+.gsc-result-info {
+	border-bottom: 1px solid #555 !important;
+}
+.gsc-control-cse,
+.gsc-results,
+.gsc-resultsRoot {
+	background-color: #1d1d1d !important;
+	border: 0 !important;
+	box-sizing: border-box !important;
+	padding: 0 !important;
+}
+#cse a,
+#cse a b,
+.gs-title {
+	color: #007299 !important;
+	font-size: 14px !important;
+	text-decoration: none !important;
+}
+#cse a:hover,
+#cse a:active,
+#cse a b:hover,
+#cse a b:active,
+.gs-title:hover,
+.gs-title:active {
+	color: #0098cc !important;
+}
+.gs-snippet {
+	color: #999 !important;
+	font-size: 12px !important;
+}
+.gsc-result {
+	border: 0 !important;
+	box-sizing: border-box !important;
+	padding: 0 !important;
+}
+.gs-no-results-result .gs-snippet {
+	background-color: #1d1d1d !important;
+	border: 0 !important;
+	color: #870000 !important;
+}
+.gs-visibleUrl  {
+	box-sizing: border-box !important;
+	color: #555 !important;
+	font-size: 10px;
+	padding-bottom: 2px !important;
+}
+.gsc-cursor-box {
+	background-color: #1d1d1d !important;
+	box-sizing: border-box !important;
+	border: 0 !important;
+	padding: 0 !important;
+}
+.gsc-cursor-page  {
+	background-color: #1d1d1d !important;
+	color: #007299 !important;
+	text-decoration: none !important;
+}
+.gsc-cursor-page:hover,
+.gsc-cursor-page:active  {
+	color: #0098cc !important;
+}
+.gsc-cursor-current-page {
+	color: #555 important;
+}
+.gsc-search-button,
+.gcsc-branding-text,
+.gcsc-branding-img-noclear  {}
+
+/* ------------------------------------------------
+ * TABLET STYLES
+ * --------------------------------------------- */
+@media all and (min-width: 641px) and (max-width: 1024px) {
+	.cse-wrap {
+		width: 650px;
+	}
+}
+
+/* ------------------------------------------------
+ * MOBILE STYLES
+ * --------------------------------------------- */
+@media all and (max-width: 640px) {
+	.cse-wrap {
+		width: 100%;
+	}
+}

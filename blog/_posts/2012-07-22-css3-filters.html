@@ -1,0 +1,46 @@
+---
+layout: blog-post
+title: CSS3 Filters
+category: blog
+tags:
+- CSS3
+thumbnail: css3-filters-thumb.png
+thumbnail-large: css3-filters-thumb-large.png
+short-url: mig.gs/bcf
+description: Spice up the way your photos look with CSS3 filters.
+site-domain: http://www.miguelmota.com/
+---
+<div class='blog-post-photo-wrap'>
+<a href='/demo/css3-filters' rel='external'><img class='blog-post-photo' src='{{ page.site-domain }}assets{{ page.url }}/css3-filters-thumb-large.png' alt='' /></a>
+</div>
+<p><a class='demo-btn' href='/demo/css3-filters' rel='external'>View the demo</a></p>
+
+<p>Webkit has implemented CSS filters, which can spice up the way your photos look without the hassle of having to deal with software like Photoshop.</p>
+
+<p>Currently there are 10 CSS filters available, which are: <code>blur</code>, <code>brightness</code>, <code>contrast</code>, <code>drop-shadow</code>, <code>grayscale</code>, <code>hue-rotate</code>, <code>invert</code>, <code>opacity</code>, <code>saturate</code> and <code>sepia</code>.</p>
+
+<p>In the meantime you must use the <code>-webkit-</code> vendor prefix, like so:</p>
+{% highlight css %}
+-webkit-filter: blur(2.5px);
+-webkit-filter:	brightness(5%);
+-webkit-filter:	contrast(1.5);
+-webkit-filter: drop-shadow(3px 3px 10px rgba(0,0,0,.5)) ;
+-webkit-filter: grayscale(.5);
+-webkit-filter: hue-rotate(5deg);
+-webkit-filter: invert(1);
+-webkit-filter: opacity(.8);
+-webkit-filter: saturate(1.5);
+-webkit-filter: sepia(.5);
+{% endhighlight %}
+
+<p>You can also combine multiple filters in one line seperated by a space:</p>
+
+{% highlight css %}
+-webkit-filter: blur(2.5px) brightness(5%) contrast(1.5);
+{% endhighlight %}
+
+<p>CSS filters can be used in an unimaginable ton of ways. The only downside is that currently only <a href='http://www.google.com/chrome' rel='external'>Google Chrome</a> version 18 and up supports this feature.</p>
+
+<p>Check out the demo and perhaps leave some feedback in the comments below :)
+
+<p><a class='demo-btn' href='/demo/css3-filters' rel='external'>View the demo</a></p>

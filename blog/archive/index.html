@@ -1,0 +1,28 @@
+---
+layout: default
+title: Archive
+category: blog
+style: archive
+---
+<h1 class='title'><span class='icon icon-counter-clock-32 icon-title icon-no-hover'></span> {% include title.html %}</h1>
+<section class='content blog archive'>
+
+	<ul class='content-item archive-ul'>
+		{% for post in site.posts %}
+	    	{% unless post.next %}
+	    		<time class='archive-year'>{{ post.date | date: '%Y' }}</time>
+	    	{% else %}
+	      		{% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
+	     		{% capture nyear %}{{ post.next.date | date: '%Y' }}{% endcapture %}
+	      		{% if year != nyear %}
+	       			<time class='archive-year'>{{ post.date | date: '%Y' }}</time>
+	      		{% endif %}
+	    	{% endunless %}
+	    	{% if post.category == 'blog' %}
+	    		<li><a class='archive-post' href='{{ post.url }}'><time class='archive-month'>{{ post.date | date:"%B" }}</time> {{ post.title }}</a></li>
+	    	{% endif %}
+		{% endfor %}
+	</ul>
+	
+</section>
+

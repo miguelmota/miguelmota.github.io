@@ -1,0 +1,45 @@
+---
+layout: default
+style: portfolio
+---
+{{ content }}
+{% for project in site.categories.portfolio %}
+	<div class='project {% for type in project.project-type %} project-{{ type | first }} {% endfor %} content-item'>
+		<div class='image-container'>
+			<a href='/portfolio/{{ project.project-name }}'><img src='/assets/portfolio/{{ project.project-name }}/{{ project.project-thumb }}' alt='' /></a>
+			<div class='project-overlay-popup'>
+				<ul class='project-overlay-description'>
+					<li class='project-name-wrap'>
+						<a href='/portfolio/{{ project.project-name }}'><span class='project-name'>{{ project.project-title }}</span>
+						<span class='project-description'>{{ project.project-description }}</span></a>
+					</li>
+					<li class='project-role'>
+						<ul class='project-role-ul'>
+						{% for role in project.project-role %}
+							<li>{{ role | first }}</li>
+						{% endfor %}
+						</ul>
+					</li>
+					<li class='project-view'>
+						<a href='/portfolio/{{ project.project-name }}'><span class='icon icon-link-16'></span> view details &#8594;</a>
+						{% if project.project-url %}
+							<a href='http://{{ project.project-url }}' rel='external'><span class='icon icon-world-16'></span> go to 
+							{% if project.project-name == 'oblivion' %}
+								theme
+							{% else %}
+							{% if project.project-name == 'mtippy' %}
+								plugin
+							{% else %}
+								site
+							{% endif %}
+							{% endif %}
+							&#8594;</a>
+						{% endif %}
+					</li>
+				</ul>
+			</div>
+			<span class='project-overlay'></span>
+		</div>
+	</div>
+{% endfor %}
+<time class='last-updated last-updated-portfolio' datetime='2012-6-1'>Last updated June 01, 2012</time>
