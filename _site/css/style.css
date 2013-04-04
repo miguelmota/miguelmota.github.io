@@ -194,6 +194,11 @@ header nav a {
   padding: .45em 0 .45em 1em;
 }
 
+datetime {
+  color: #999;
+  font-size: 12px;
+}
+
 /* =Footer
 -------------------------------------------------------------- */
 
