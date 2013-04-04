@@ -158,7 +158,17 @@ header nav {
   float: right;
 }
 
+.forkme {
+  position:fixed;top:0;right:0; border:0;z-index:100000;
+}
+
 @media (max-width: 480px) {
+  header {
+    position: static;
+  }
+  .forkme {
+    position: absolute;
+  }
   #logo,
   #logo a {
     float: none;
@@ -232,6 +242,17 @@ footer  {
   font-size: 1.2em;
   font-style: italic;
   color: #222;
+}
+
+figure {
+  width: 100%;
+  margin-bottom: 15px;
+}
+figure img {
+  width: 100%;
+}
+figure figcaption {
+  font-size: 12px;
 }
 
 /* =Featured
