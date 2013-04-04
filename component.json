@@ -1,0 +1,13 @@
+{
+	"name": "miguelmota",
+	"version": "0.0.1",
+	"dependencies": {
+		"modernizr": null,
+		"jquery": null,
+		"normalize-css": null,
+		"bootstrap": null,
+		"requirejs": null,
+		"underscore-amd": null,
+		"backbone-amd": null
+	}
+}

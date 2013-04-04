@@ -1,70 +1,36 @@
 ---
 layout: default
-style: blog
 ---
-<h1 class='title'><span class='icon icon-book-32 icon-title icon-no-hover'></span><a href='/'><span class='miguel'>Miguel</span><span class='mota'>Mota</span></a><span class='slash'>/</span><span class='sub'><a href='/blog'>Blog</a></span></h1>
 
-<section class='content blog blog-post'>
-	<div class='blog-post-single content-item'>
-		<h1><a href='{{ page.url }}'>{{ page.title }}</a></h1>
-	 	<div class='blog-post-text'>
-			{{ content }}
-		</div>
-		<div class='blog-post-tags'>
-			<span class='icon icon-tags-16 icon-no-hover'></span>
-			{% for tag in page.tags %}
-				<a href='/tag/{{ tag | first }}'>{{ tag | first }}</a>
-			{% endfor %}
-		</div>
-		<div class='blog-post-footer'>
-			<a href='{{ page.url }}'><span class='icon icon-clock-16'></span> <time datetime='{{ page.date | date: "%Y-%m-%d" }}'>{{ page.date | date_to_string }}</time></a> 
-			<span class='dsq-comment-count-wrap'><a class='icon icon-comments-16' href='{{ page.url }}'></a> <a class='dsq-comment-count' href='{{ page.url }}#disqus_thread' data-disqus-identifier='{{ page.url }}'></a></span>
-			<div class='clear'></div>
-		</div>
-		<div class='blog-share-wrap'>
-			<span class='st_twitter' st_url='{{ page.url }}' st_title='{{ page.title }}'></span><span class='st_facebook' st_url='{{ page.url }}' st_title='{{ page.title }}'></span><span class='st_tumblr' st_url='{{ page.url }}' st_title='{{ page.title }}'></span><span class='st_stumbleupon' st_url='{{ page.url }}' st_title='{{ page.title }}'></span><span class='st_delicious' st_url='{{ page.url }}' st_title='{{ page.title }}'></span><span class='st_email' st_url='{{ page.url }}' st_title='{{ page.title }}'></span><span class='st_sharethis' st_url='{{ page.url }}' st_title='{{ page.title }}'></span>
-			<script>var switchTo5x=true;</script><script src='http://w.sharethis.com/button/buttons.js'></script><script>stLight.options({publisher:'bf5b1133-3663-44ea-a232-a2c2265b117f'});</script>
-			<input class='short-url' type='text' value='{% if page.short-url %}http://{{ page.short-url }}{% else %}http://www.miguelmota.com{{ page.url }}{% endif %}' />
-			<div class='clear'></div>
-		</div>
-		<div class='clear'></div>
-	</div>
-	<div class='blog-post-end-wrap'>
-		<div class='pagination'>
-			{% if page.previous.category == 'blog' %} 
-			    {% if page.previous.url  %} 
-					<a class='pagination-previous pagination-btn' href='{{ page.previous.url }}'>&#171; {{ page.previous.title | truncatewords: 15 }}</a>
-			    {% endif %}
-			{% endif %}
+<div id="post">
+<h2>{{ page.date | date_to_string }}</h2>
+<h1>{{ page.title }}</h1>
+<p class="baseline">{{ page.baseline }}</p>
 
-			{% if page.next.category == 'blog' %} 
-			    {% if page.next.url %}
-				    <a class='pagination-next pagination-btn' href='{{ page.next.url }}'>{{ page.next.title | truncatewords: 15 }} &#187;</a>
-			    {% endif %}
-			{% endif %}
-		    
-		</div>
-		<div class='clear'></div>
-		<div id='disqus_thread'></div>
-		<div class='clear'></div>
-		<script>
-		    var disqus_shortname = 'miguelmota';
-		    var disqus_identifier = '{{ page.url }}';
-		    var disqus_url = 'http://www.miguelmota.com{{ page.url }}';
-		    (function() {
-		        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-		        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-		        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-		    })();
-		</script>
-		<script>
-		    var disqus_shortname = 'miguelmota';
-		    (function () {
-		        var s = document.createElement('script'); s.async = true;
-		        s.type = 'text/javascript';
-		        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
-		        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-		    }());
-		</script>
+{{ content }}
+
+{{ if site.related_posts }}
+	<div id="posts">
+		<h3>See also...</h3>
+
+		{% for post in site.related_posts %}
+			{% include post_summary.html %}
+		{% endfor %}
 	</div>
-</section>
+
+{{ endif }}
+
+</div>
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = '{{ site.theme.disqus_shortname }}';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>

@@ -1,3 +1,10 @@
+//this will affect all the git repos
+git config --global core.excludesfile ~/.gitignore
+
+
+//update files since .ignore won't if already tracked
+git rm --cached <file>
+
 # Compiled source #
 ###################
 *.com
@@ -18,7 +25,7 @@
 *.jar
 *.rar
 *.tar
-#*.zip
+*.zip
 
 # Logs and databases #
 ######################
@@ -28,11 +35,49 @@
 
 # OS generated files #
 ######################
+.DS_Store
 .DS_Store?
-ehthumbs.db
+._*
+.Spotlight-V100
+.Trashes
 Icon?
+ehthumbs.db
 Thumbs.db
+.cache
+.project
+.settings
+.tmproj
+*.esproj
+nbproject
 
-# Graphics directory #
-######################
-.graphics/
+# Numerous always-ignore extensions #
+#####################################
+*.diff
+*.err
+*.orig
+*.rej
+*.swo
+*.swp
+*.vi
+*~
+*.sass-cache
+
+# Dreamweaver added files #
+###########################
+_notes
+dwsync.xml
+
+# Komodo #
+###########################
+*.komodoproject
+.komodotools
+
+# Folders to ignore #
+#####################
+.hg
+.svn
+.CVS
+intermediate
+publish
+.idea
+.graphics

@@ -1,0 +1,7 @@
+<article>
+	<h2>{{ post.date | date_to_string }}</h2>
+  <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
+  <p class="baseline">{{ post.baseline }}</p>
+  <p>{{ post.content | strip_html | truncatewords: site.theme.featured_wordcount }}</p>
+  <p><a href="{{ post.url }}" class="more">Read more »</a></p>
+</article>

@@ -1,0 +1,12 @@
+---
+layout: default
+title: Archive
+---
+
+<h1>Archive</h1>
+
+<dl id="posts">
+  {% for post in site.posts %}
+		{% include post_summary.html %}
+  {% endfor %}
+</dl>
