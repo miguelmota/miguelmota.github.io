@@ -1,40 +1,48 @@
 ---
 layout: default
 ---
+<section id="post">
+	<div class="row">
+		<div class="large-12 column">
+			<datetime>{{ page.date | date_to_string }}</datetime>
+			<h2>{{ page.title }}</h2>
 
-<div id="post">
-<h2>{{ page.date | date_to_string }}</h2>
-<h1>{{ page.title }}</h1>
-<p class="baseline">{{ page.baseline }}</p>
+			{{ content }}
 
-{{ content }}
-
-{{ if site.related_posts }}
-	<div id="posts">
-		<h3>See also...</h3>
-
-		{% for post in site.related_posts %}
-			{% include post_summary.html %}
-		{% endfor %}
+		</div>
 	</div>
 
-{{ endif }}
+	{{ if site.related_posts }}
+		<div id="related-posts" class="row">
+			<div class="large-12 column">
+				<h3>See also...</h3>
 
-</div>
+				{% for post in site.related_posts offset: 0 limit: 5 %}
+					{% include post_summary.html %}
+				{% endfor %}
+			</div>
+		</div>
+	{{ endif }}
 
-<div id='disqus_thread'></div>
+	<div id="comments" class="row">
+		<div class="large-12 column">
+			<div id="disqus_thread"></div>
+		</div>
+	</div>
+</section>
+
 
 <script>
     var disqus_shortname = '{{ site.theme.disqus_shortname }}';
     var disqus_identifier = '{{ page.url }}';
     var disqus_url = 'http://www.miguelmota.com{{ page.url }}';
+
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
         dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
-</script>
-<script>
+
     var disqus_shortname = 'miguelmota';
     (function () {
         var s = document.createElement('script'); s.async = true;

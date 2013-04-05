@@ -1,0 +1,51 @@
+//config.scss
+
+$max-site-width: 860px;
+
+@mixin respond-to($media) {
+  @if $media == mobile-small {
+          @media (max-width:480px) { @content; }
+  }
+  @else if $media == mobile {
+          @media (max-width: 640px) { @content; }
+  }
+  @else if $media == mobile-portrait {
+          @media (max-width: 640px) and (orientation: portrait) { @content; }
+  }
+  @else if $media == mobile-landscape {
+          @media (max-width: 640px) and (orientation: landscape) { @content; }
+  }
+  @else if $media == mobile-tablet {
+          @media (max-width: 979px) { @content; }
+  }
+  @else if $media == tablet {
+          @media (min-width: 768px) and (max-width: 979px) { @content; }
+  }
+  @else if $media == tablet-landscape {
+          @media (min-width: 768px) and (orientation: landscape) { @content; }
+  }
+  @else if $media == desktop {
+          @media (min-width: 979px) { @content; }
+  }
+  @else if $media == desktop-large {
+          @media (min-width: 1200px) { @content; }
+  }
+}
+
+* {
+  @include box-sizing(border-box);
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  padding: 0;
+}
+
+.cf {
+  display: block !important;
+  width: 100% !important;
+  clear: both !important;
+}
+
+
+.font-primary {
+	font-family: 'Open Sans', sans-serif;
+}

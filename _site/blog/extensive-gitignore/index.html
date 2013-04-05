@@ -20,17 +20,18 @@
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-title" content="Miguel Mota">
-	<title>Extensive .gitignore | Miguel Mota - Web Developer</title>
+	<title>Extensive .gitignore &raquo; Miguel Mota | Web Developer</title>
 	<link rel="canonical" href="http://www.miguelmota.com/">
 	<link rel="alternate" type="application/rss+xml" href="http://feeds.feedburner.com/miguelmota">
 	<link rel="shortcut icon" href="/favicon.ico">
 	<link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png">
 	<link rel="apple-touch-startup-image" href="/startup.png">
-	<link rel="stylesheet" href="/css/pygments/murphy.css">
-	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/main.css">
 	<link href="http://fonts.googleapis.com/css?family=Poly:400,400italic" rel="stylesheet" type="text/css">
 	<script src="/vendor/modernizr/modernizr.js"></script>
 	<script src="/vendor/jquery/jquery.js"></script>
+	<script src="/vendor/foundation/js/foundation/foundation.js"></script>
+	<script src="/vendor/foundation/js/foundation/foundation.topbar.js"></script>
 	<script>
 	  	var _gaq = _gaq || [];
 	   	_gaq.push(['_setAccount', 'UA-12642068-1']);
@@ -41,91 +42,116 @@
 	     		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
 	     		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 	   	})();
+	   	$(document).on('click', '[data-ga-label]', function() {
+	   		_gaq.push(['_trackEvent', 'Call To Action', 'Click', $(this).attr('data-ga-label')]);
+	   	});
 	</script>
 </head>
-	<body>
+<body>
 		<div id="top"></div>
-		<header>
-			<div>
-				<p id="logo"><a href="/">Miguel Mota</a></p>
-				<nav>
-					<ul>
-						<li><a href="/about" data-ga-label="Navigation - About">About</a></li>
-						<li><a href="/contact" data-ga-label="Navigation - Contact">Contact</a></li>
-					</ul>
-				</nav>
-			</div>
+		<header id="header" class="contain-to-grid">
+			<nav class="top-bar">
+				<ul class="title-area">
+					<li class="name"><h1><a href="/">Miguel Mota</a></h1></li>
+					<li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+				</ul>
+				<section class="top-bar-section">
+				    <ul class="left">
+				      <li class="divider"></li>
+				      <li><a href="/about" data-ga-label="Navigation - About">About</a></li>
+				      <li class="divider"></li>
+				      <li><a href="/contact" data-ga-label="Navigation - Contact">Contact</a></li>
+				      <li class="divider"></li>
+				    </ul>
+				</section>
+			</nav>
 		</header>
 
-		<div id="content">
-		<div id="post">
-<h2>04 Apr 2013</h2>
-<h1>Extensive .gitignore</h1>
-<p class="baseline"></p>
+		<main id="main" role="main">
+			<section>
+				<div class="row">
+					<div class="large-12 column">
+						<section id="post">
+	<div class="row">
+		<div class="large-12 column">
+			<datetime>04 Apr 2013</datetime>
+			<h2>Extensive .gitignore</h2>
 
-<p>There's <a href="https://github.com/github/gitignore" target="_blank" rel="nofollow">.gitignore templates</a> suited for pretty much any project. I'm going to share the .gitignore that I recently been using for my web projects. It's and extended verison of <a href="https://help.github.com/articles/ignoring-files" target="_blank" rel="nofollow">github's global .gitignore</a>.</p>
+			<p>There are <a href="https://github.com/github/gitignore" target="_blank" rel="nofollow">.gitignore templates</a> suited for pretty much any project. I'm going to share the .gitignore that I recently been using for my web projects. It's and extended verison of <a href="https://help.github.com/articles/ignoring-files" target="_blank" rel="nofollow">github's global .gitignore</a>.</p>
 
 <script src="https://gist.github.com/miguelmota/5299533.js"></script>
 <p></p>
 
-
-	<div id="posts">
-		<h3>See also...</h3>
-
-		
-			<dt>25 Mar 2013</dt>
-<dd><a href="/blog/screaming-goat">screaming-goat.com</a></dd>
-		
-			<dt>22 Jul 2012</dt>
-<dd><a href="/blog/css3-filters">CSS3 Filters</a></dd>
-		
-			<dt>20 Feb 2012</dt>
-<dd><a href="/blog/miggs-url-shortener">mig.gs - url shortener</a></dd>
-		
-			<dt>22 Jan 2012</dt>
-<dd><a href="/blog/how-to-survive-a-zombie-outbreak">How To Survive a Zombie Outbreak</a></dd>
-		
-			<dt>14 Oct 2011</dt>
-<dd><a href="/blog/ant-task-to-compress-html-files">Ant task to compress HTML files</a></dd>
-		
-			<dt>11 Oct 2011</dt>
-<dd><a href="/blog/display-latest-delicious-bookmarks-with-jquery">Display latest delicious bookmarks with jQuery</a></dd>
-		
-			<dt>09 Aug 2011</dt>
-<dd><a href="/blog/html5-reset-stylesheet">HTML5 Reset Stylesheet</a></dd>
-		
-			<dt>24 May 2011</dt>
-<dd><a href="/blog/make-an-awesome-tooltip-with-jquery">Make an Awesome Tooltip with jQuery</a></dd>
-		
-			<dt>30 Mar 2011</dt>
-<dd><a href="/blog/hello-world">Hello World!</a></dd>
-		
+		</div>
 	</div>
 
+	
+		<div id="related-posts" class="row">
+			<div class="large-12 column">
+				<h3>See also...</h3>
+
+				
+					<dt><datetime>25 Mar 2013</datetime></dt>
+<dd><h3><a href="/blog/screaming-goat">Screaming goat</a></h3></dd>
+				
+					<dt><datetime>22 Jul 2012</datetime></dt>
+<dd><h3><a href="/blog/css3-filters">CSS3 Filters</a></h3></dd>
+				
+					<dt><datetime>20 Feb 2012</datetime></dt>
+<dd><h3><a href="/blog/miggs-url-shortener">mig.gs - url shortener</a></h3></dd>
+				
+					<dt><datetime>22 Jan 2012</datetime></dt>
+<dd><h3><a href="/blog/how-to-survive-a-zombie-outbreak">How To Survive a Zombie Outbreak</a></h3></dd>
+				
+					<dt><datetime>14 Oct 2011</datetime></dt>
+<dd><h3><a href="/blog/ant-task-to-compress-html-files">Ant task to compress HTML files</a></h3></dd>
+				
+			</div>
+		</div>
+	
+
+	<div id="comments" class="row">
+		<div class="large-12 column">
+			<div id="disqus_thread"></div>
+		</div>
+	</div>
+</section>
 
 
-</div>
-
-<div id="disqus_thread"></div>
-<script type="text/javascript">
+<script>
     var disqus_shortname = 'miguelmota';
+    var disqus_identifier = '/blog/extensive-gitignore';
+    var disqus_url = 'http://www.miguelmota.com/blog/extensive-gitignore';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
         dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
+
+    var disqus_shortname = 'miguelmota';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
 </script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
 
-		</div>
+					</div>
+				</div>
+			</section>
+		</main>
 
-		<footer>
-			<p>&copy; Miguel Mota <a href="https://plus.google.com/102174577273194387652" rel="author">Google+</a></p>
+		<footer id="footer" class="row">
+			<div class="large-12 column">
+				<p>&copy; Miguel Mota <a class="gplus" href="https://plus.google.com/102174577273194387652" rel="author">Google+</a></p>
+			</div>
 		</footer>
 
-		<div class="forkme"><a href="https://github.com/miguelmota/miguelmota.github.com" target="_blank" data-ga-label="Fork me on Github"><img src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt=""></a>
-		</div>
+		<a id="forkme" href="https://github.com/miguelmota/miguelmota.github.com" target="_blank" data-ga-label="Fork me on Github"><img src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt=""></a>
+
+		<script src="/js/main.js"></script>
+
 	</body>
 </html>

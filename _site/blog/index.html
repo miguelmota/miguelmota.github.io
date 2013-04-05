@@ -20,17 +20,18 @@
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-title" content="Miguel Mota">
-	<title>Blog | Miguel Mota - Web Developer</title>
+	<title>Blog &raquo; Miguel Mota | Web Developer</title>
 	<link rel="canonical" href="http://www.miguelmota.com/">
 	<link rel="alternate" type="application/rss+xml" href="http://feeds.feedburner.com/miguelmota">
 	<link rel="shortcut icon" href="/favicon.ico">
 	<link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png">
 	<link rel="apple-touch-startup-image" href="/startup.png">
-	<link rel="stylesheet" href="/css/pygments/murphy.css">
-	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/main.css">
 	<link href="http://fonts.googleapis.com/css?family=Poly:400,400italic" rel="stylesheet" type="text/css">
 	<script src="/vendor/modernizr/modernizr.js"></script>
 	<script src="/vendor/jquery/jquery.js"></script>
+	<script src="/vendor/foundation/js/foundation/foundation.js"></script>
+	<script src="/vendor/foundation/js/foundation/foundation.topbar.js"></script>
 	<script>
 	  	var _gaq = _gaq || [];
 	   	_gaq.push(['_setAccount', 'UA-12642068-1']);
@@ -41,31 +42,50 @@
 	     		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
 	     		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 	   	})();
+	   	$(document).on('click', '[data-ga-label]', function() {
+	   		_gaq.push(['_trackEvent', 'Call To Action', 'Click', $(this).attr('data-ga-label')]);
+	   	});
 	</script>
 </head>
-	<body>
+<body>
 		<div id="top"></div>
-		<header>
-			<div>
-				<p id="logo"><a href="/">Miguel Mota</a></p>
-				<nav>
-					<ul>
-						<li><a href="/about" data-ga-label="Navigation - About">About</a></li>
-						<li><a href="/contact" data-ga-label="Navigation - Contact">Contact</a></li>
-					</ul>
-				</nav>
-			</div>
+		<header id="header" class="contain-to-grid">
+			<nav class="top-bar">
+				<ul class="title-area">
+					<li class="name"><h1><a href="/">Miguel Mota</a></h1></li>
+					<li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+				</ul>
+				<section class="top-bar-section">
+				    <ul class="left">
+				      <li class="divider"></li>
+				      <li><a href="/about" data-ga-label="Navigation - About">About</a></li>
+				      <li class="divider"></li>
+				      <li><a href="/contact" data-ga-label="Navigation - Contact">Contact</a></li>
+				      <li class="divider"></li>
+				    </ul>
+				</section>
+			</nav>
 		</header>
 
-		<div id="content">
-		blog
-		</div>
+		<main id="main" role="main">
+			<section>
+				<div class="row">
+					<div class="large-12 column">
+						blog
+					</div>
+				</div>
+			</section>
+		</main>
 
-		<footer>
-			<p>&copy; Miguel Mota <a href="https://plus.google.com/102174577273194387652" rel="author">Google+</a></p>
+		<footer id="footer" class="row">
+			<div class="large-12 column">
+				<p>&copy; Miguel Mota <a class="gplus" href="https://plus.google.com/102174577273194387652" rel="author">Google+</a></p>
+			</div>
 		</footer>
 
-		<div class="forkme"><a href="https://github.com/miguelmota/miguelmota.github.com" target="_blank" data-ga-label="Fork me on Github"><img src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt=""></a>
-		</div>
+		<a id="forkme" href="https://github.com/miguelmota/miguelmota.github.com" target="_blank" data-ga-label="Fork me on Github"><img src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt=""></a>
+
+		<script src="/js/main.js"></script>
+
 	</body>
 </html>

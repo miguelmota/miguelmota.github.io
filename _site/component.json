@@ -6,6 +6,7 @@
 		"jquery": null,
 		"normalize-css": null,
 		"bootstrap": null,
+		"foundation": null,
 		"requirejs": null,
 		"underscore-amd": null,
 		"backbone-amd": null

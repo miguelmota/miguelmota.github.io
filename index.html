@@ -3,28 +3,34 @@ layout: default
 title:
 description: Web developer from the always sunny Southern California.
 ---
+<section>
 
-<div id="home">
-
-	<div id="intro">
-		{% include home.html %}
+	<div class="row">
+		<div class="large-12 column">
+			{% include home.html %}
+		</div>
 	</div>
 
-	<div id="featured">
+	<div id="featured" class="row">
+		<div class="large-12 column">
 		<h3>Latest</h3>
-		{% for post in site.categories.blog offset: 0 limit: site.theme.homepage_featured %}
-			{% include post_featured.html %}
-		{% endfor %}
+			{% for post in site.categories.blog offset: 0 limit: site.theme.homepage_featured %}
+				{% include post_featured.html %}
+			{% endfor %}
+		</div>
 	</div>
 
-	<div id="posts">
-		<h3>Older thoughts</h3>
+	<div id="older-thoughts" class="row">
+		<div class="large-12 column">
+			<h3>Older thoughts</h3>
 
-		<dl>
-		  {% for post in site.categories.blog offset: site.theme.homepage_featured limit: site.theme.homepage_posts %}
-				{% include post_summary.html %}
-		  {% endfor %}
-		</dl>
-		<p><a href="/archive" class="more">View all posts »</a></p>
+			<dl>
+			  {% for post in site.categories.blog offset: site.theme.homepage_featured limit: site.theme.homepage_posts %}
+					{% include post_summary.html %}
+			  {% endfor %}
+			</dl>
+			<p><a href="/archive">View all posts »</a></p>
+		</div>
 	</div>
-</div>
+
+</section>

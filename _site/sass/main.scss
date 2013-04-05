@@ -1,0 +1,155 @@
+//main.scss
+
+@import "compass";
+@import "config";
+@import "murphy";
+@import "../vendor/foundation/scss/foundation";
+
+/* =Header
+-------------------------------------------------------------- */
+
+/* =Content
+-------------------------------------------------------------- */
+
+#forkme {
+	position: fixed;
+	top: 0;
+	right: 0;
+	z-index: 10000;
+
+	@include respond-to(mobile) {
+
+		display: none;
+
+	}
+
+}
+
+#main {
+	display: block;
+	margin: 50px 0;
+}
+
+#lead {
+	p:first-child {
+		font-size: 32px;
+		margin-bottom: 15px;
+
+		@include respond-to(mobile) {
+
+			font-size: 18px;
+			margin-bottom: 10px;
+
+		}
+
+	}
+	p:nth-child(2) {
+		font-size: 24px;
+
+		@include respond-to(mobile) {
+
+			font-size: 14px;
+			margin-bottom: 10px;
+
+		}
+
+	}
+}
+
+#featured {
+	margin-bottom: 20px;
+
+	datetime {
+		font-size: 26px;
+		font-weight: bold;
+	}
+
+}
+
+#older-thoughts {
+
+	datetime {
+		font-size: 20px;
+		font-weight: bold;
+	}
+
+}
+
+#post {
+
+	datetime {
+		font-size: 26px;
+		font-weight: bold;
+	}
+
+}
+
+figure {
+	width: 100%;
+	margin-bottom: 15px;
+}
+
+[data-last-update] {
+	color: #aaa;
+}
+
+#comments {
+	margin: 50px 0 0 0;
+}
+
+/* =Footer
+-------------------------------------------------------------- */
+
+#footer {
+	background: #ddd;
+}
+
+.gplus {
+	color: transparent;
+	font: 1px;
+}
+
+/* =Gists
+-------------------------------------------------------------- */
+
+.gist, pre {
+  font: normal normal normal .6em Arial, DejaVuSansMono, Consolas, monospace;
+  margin-bottom: 1em;
+}
+
+.gist  pre {
+  font-size: 1em;
+}
+
+.linenos {
+  background-color: #ECECEC;
+  border-right: 1px solid #DDDDDD;
+  color: #AAAAAA;
+  text-align: right;
+}
+.line-numbers {
+  display: none;
+}
+.linenos pre {
+  color: #AAAAAA;
+  font-family: sans-serif !important;
+  font-size: 20px !important;
+  width: 28px;
+}
+.highlight {
+  background: #F8F8FF;
+  overflow: auto;
+  border: 1px solid #ddd;
+  padding: 5px;
+}
+.gist-file .highlight {
+  border: none;
+}
+.highlighttable {
+  overflow: scroll;
+}
+.highlight code,
+.highlight pre {
+  font-family: 'Poly', serif !important;
+  font-size: 20px !important;
+}
