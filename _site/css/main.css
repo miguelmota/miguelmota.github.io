@@ -5996,7 +5996,7 @@ table tfoot tr td {
 @media (max-width: 640px) {
   /* line 34, ../sass/main.scss */
   #lead p:first-child {
-    font-size: 18px;
+    font-size: 22px;
     margin-bottom: 10px;
   }
 }
@@ -6007,7 +6007,7 @@ table tfoot tr td {
 @media (max-width: 640px) {
   /* line 46, ../sass/main.scss */
   #lead p:nth-child(2) {
-    font-size: 14px;
+    font-size: 16px;
     margin-bottom: 10px;
   }
 }
@@ -6084,20 +6084,18 @@ figure {
   text-align: right;
 }
 
-/* line 130, ../sass/main.scss */
+/* line 131, ../sass/main.scss */
 .line-numbers {
   display: none;
 }
 
-/* line 133, ../sass/main.scss */
+/* line 135, ../sass/main.scss */
 .linenos pre {
   color: #AAAAAA;
-  font-family: sans-serif !important;
-  font-size: 20px !important;
   width: 28px;
 }
 
-/* line 139, ../sass/main.scss */
+/* line 140, ../sass/main.scss */
 .highlight {
   background: #F8F8FF;
   overflow: auto;
@@ -6105,19 +6103,18 @@ figure {
   padding: 5px;
 }
 
-/* line 145, ../sass/main.scss */
+/* line 147, ../sass/main.scss */
 .gist-file .highlight {
   border: none;
 }
 
-/* line 148, ../sass/main.scss */
+/* line 151, ../sass/main.scss */
 .highlighttable {
   overflow: scroll;
 }
 
-/* line 152, ../sass/main.scss */
+/* line 156, ../sass/main.scss */
 .highlight code,
 .highlight pre {
-  font-family: "Poly", serif !important;
-  font-size: 20px !important;
+  font: normal normal normal 0.6em Arial, DejaVuSansMono, Consolas, monospace;
 }

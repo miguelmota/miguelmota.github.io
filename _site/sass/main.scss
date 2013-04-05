@@ -37,7 +37,7 @@
 
 		@include respond-to(mobile) {
 
-			font-size: 18px;
+			font-size: 22px;
 			margin-bottom: 10px;
 
 		}
@@ -48,7 +48,7 @@
 
 		@include respond-to(mobile) {
 
-			font-size: 14px;
+			font-size: 16px;
 			margin-bottom: 10px;
 
 		}
@@ -127,29 +127,32 @@ figure {
   color: #AAAAAA;
   text-align: right;
 }
+
 .line-numbers {
   display: none;
 }
+
 .linenos pre {
   color: #AAAAAA;
-  font-family: sans-serif !important;
-  font-size: 20px !important;
   width: 28px;
 }
+
 .highlight {
   background: #F8F8FF;
   overflow: auto;
   border: 1px solid #ddd;
   padding: 5px;
 }
+
 .gist-file .highlight {
   border: none;
 }
+
 .highlighttable {
   overflow: scroll;
 }
+
 .highlight code,
 .highlight pre {
-  font-family: 'Poly', serif !important;
-  font-size: 20px !important;
+	font: normal normal normal .6em Arial, DejaVuSansMono, Consolas, monospace;
 }
