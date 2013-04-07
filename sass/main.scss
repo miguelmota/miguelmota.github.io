@@ -156,9 +156,9 @@ figcaption {
 .highlight pre,
 .highlight code
 .gist .gist-file .gist-data .line-pre {
-  font: normal normal normal 14px Arial, DejaVuSansMono, Consolas, monospace;
+  font: normal normal normal 14px Arial, DejaVuSansMono, Consolas, monospace !important;
   @include respond-to(mobile) {
-  	font-size: 12px;
+  	font-size: 12px !important;
   }
 }
 

@@ -6424,14 +6424,14 @@ figcaption {
 .highlight pre,
 .highlight code
 .gist .gist-file .gist-data .line-pre {
-  font: normal normal normal 14px Arial, DejaVuSansMono, Consolas, monospace;
+  font: normal normal normal 14px Arial, DejaVuSansMono, Consolas, monospace !important;
 }
 @media only screen and (max-width: 640px) {
   /* line 158, ../sass/main.scss */
   .highlight pre,
   .highlight code
   .gist .gist-file .gist-data .line-pre {
-    font-size: 12px;
+    font-size: 12px !important;
   }
 }
 
