@@ -6409,10 +6409,12 @@ figcaption {
 -------------------------------------------------------------- */
 /* line 144, ../sass/main.scss */
 #footer {
+  padding: 10px 0;
   background: #ddd;
+  color: #777;
 }
 
-/* line 148, ../sass/main.scss */
+/* line 150, ../sass/main.scss */
 .gplus {
   color: transparent;
   font: 1px;
@@ -6420,22 +6422,22 @@ figcaption {
 
 /* =Gists
 -------------------------------------------------------------- */
-/* line 158, ../sass/main.scss */
+/* line 160, ../sass/main.scss */
 .highlight pre,
 .highlight code
 .gist .gist-file .gist-data .line-pre {
-  font: normal normal normal 14px Arial, DejaVuSansMono, Consolas, monospace;
+  font: normal normal normal 14px Arial, DejaVuSansMono, Consolas, monospace !important;
 }
 @media only screen and (max-width: 640px) {
-  /* line 158, ../sass/main.scss */
+  /* line 160, ../sass/main.scss */
   .highlight pre,
   .highlight code
   .gist .gist-file .gist-data .line-pre {
-    font-size: 12px;
+    font-size: 12px !important;
   }
 }
 
-/* line 165, ../sass/main.scss */
+/* line 167, ../sass/main.scss */
 .highlight {
   background: #F8F8FF;
   overflow: auto;
@@ -6444,12 +6446,12 @@ figcaption {
   margin-bottom: 20px;
 }
 
-/* line 173, ../sass/main.scss */
+/* line 175, ../sass/main.scss */
 .gist .highlight {
   border: none;
 }
 
-/* line 177, ../sass/main.scss */
+/* line 179, ../sass/main.scss */
 .gist .line-numbers {
   display: none;
 }
