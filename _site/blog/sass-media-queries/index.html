@@ -143,6 +143,447 @@
     }());
 </script>
 
+<style type="text/css">
+.highlight {
+  background: #F8F8FF;
+  overflow: auto;
+  border: 1px solid #ddd;
+  padding: 5px;
+  margin-bottom: 20px;
+}
+
+.highlight pre,
+.highlight code
+.gist .gist-file .gist-data .line-pre,
+.gist .line,
+.gist .line span {
+  font-size: 10px !important;
+  @include respond-to(mobile) {
+  	font-size: 10px !important;
+  }
+}
+
+.gist .highlight {
+  border: none;
+}
+
+.gist .line-numbers {
+  display: none;
+}
+
+.gist {
+	color:#000;
+}
+
+.gist .gist-file {
+	border:1px solid #dedede;
+	font-family:Consolas,  "Liberation Mono",  Courier,  monospace;
+	margin-bottom:1em;
+}
+
+.gist .gist-file .gist-meta {
+	font-family:Helvetica,  arial,  freesans,  clean,  sans-serif;
+	overflow:hidden;
+	font-size:85%;
+	padding:.5em;
+	color:#666;
+	background-color:#eaeaea;
+}
+
+.gist .gist-file .gist-meta a {
+	color:#369;
+}
+
+.gist .gist-file .gist-meta a:visited {
+	color:#737;
+}
+
+.gist .gist-file .gist-data {
+	overflow:auto;
+	word-wrap:normal;
+	background-color:#f8f8ff;
+	border-bottom:1px solid #ddd;
+	font-size: 10px !important;
+}
+
+.gist .gist-file .gist-data .line-data {
+	padding:.5em !important;
+}
+
+.gist .gist-file .gist-data .line-pre {
+	font-family:Consolas,  "Liberation Mono",  Courier,  monospace;
+	background:transparent !important;
+	border:none !important;
+	margin:0 !important;
+	padding:0 !important;
+	line-height: 1.2 !important;
+}
+
+.gist .gist-file .gist-data .gist-highlight {
+	background:transparent !important;
+}
+
+.gist .gist-file .gist-data .line-numbers {
+	background-color:#ececec;
+	color:#aaa;
+	border-right:1px solid #ddd;
+	text-align:right;
+	padding:.5em;
+}
+
+.gist .gist-file .gist-data .line-numbers .line-number {
+	clear:right;
+	display:block;
+}
+
+.gist-syntax {
+	background:#ffffff;
+	font-size: 10px !important;
+}
+
+.gist-syntax .c {
+	color:#999988;
+	font-size: 10px !important;
+	font-style:italic;
+	font-size: 10px !important;
+}
+
+.gist-syntax .err {
+	color:#a61717;
+	font-size: 10px !important;
+	background-color:#e3d2d2;
+	font-size: 10px !important;
+}
+
+.gist-syntax .k {
+	color:#000000;
+	font-size: 10px !important;
+	font-weight:bold;
+	font-size: 10px !important;
+}
+
+.gist-syntax .o {
+	color:#000000;
+	font-size: 10px !important;
+	font-weight:bold;
+	font-size: 10px !important;
+}
+
+.gist-syntax .cm {
+	color:#999988;
+	font-size: 10px !important;
+	font-style:italic;
+	font-size: 10px !important;
+}
+
+.gist-syntax .cp {
+	color:#999999;
+	font-size: 10px !important;
+	font-weight:bold;
+	font-size: 10px !important;
+}
+
+.gist-syntax .c1 {
+	color:#999988;
+	font-size: 10px !important;
+	font-style:italic;
+	font-size: 10px !important;
+}
+
+.gist-syntax .cs {
+	color:#999999;
+	font-size: 10px !important;
+	font-weight:bold;
+	font-size: 10px !important;
+	font-style:italic;
+	font-size: 10px !important;
+}
+
+.gist-syntax .gd {
+	color:#000000;
+	font-size: 10px !important;
+	background-color:#ffdddd;
+	font-size: 10px !important;
+}
+
+.gist-syntax .gd .x {
+	color:#000000;
+	font-size: 10px !important;
+	background-color:#ffaaaa;
+	font-size: 10px !important;
+}
+
+.gist-syntax .ge {
+	color:#000000;
+	font-size: 10px !important;
+	font-style:italic;
+	font-size: 10px !important;
+}
+
+.gist-syntax .gr {
+	color:#aa0000;
+	font-size: 10px !important;
+}
+
+.gist-syntax .gh {
+	color:#999999;
+	font-size: 10px !important;
+}
+
+.gist-syntax .gi {
+	color:#000000;
+	font-size: 10px !important;
+	background-color:#ddffdd;
+	font-size: 10px !important;
+}
+
+.gist-syntax .gi .x {
+	color:#000000;
+	font-size: 10px !important;
+	background-color:#aaffaa;
+	font-size: 10px !important;
+}
+
+.gist-syntax .go {
+	color:#888888;
+	font-size: 10px !important;
+}
+
+.gist-syntax .gp {
+	color:#555555;
+	font-size: 10px !important;
+}
+
+.gist-syntax .gs {
+	font-weight:bold;
+	font-size: 10px !important;
+}
+
+.gist-syntax .gu {
+	color:#aaaaaa;
+	font-size: 10px !important;
+}
+
+.gist-syntax .gt {
+	color:#aa0000;
+	font-size: 10px !important;
+}
+
+.gist-syntax .kc {
+	color:#000000;
+	font-size: 10px !important;
+	font-weight:bold;
+	font-size: 10px !important;
+}
+
+.gist-syntax .kd {
+	color:#000000;
+	font-size: 10px !important;
+	font-weight:bold;
+	font-size: 10px !important;
+}
+
+.gist-syntax .kp {
+	color:#000000;
+	font-size: 10px !important;
+	font-weight:bold;
+	font-size: 10px !important;
+}
+
+.gist-syntax .kr {
+	color:#000000;
+	font-size: 10px !important;
+	font-weight:bold;
+	font-size: 10px !important;
+}
+
+.gist-syntax .kt {
+	color:#445588;
+	font-size: 10px !important;
+	font-weight:bold;
+	font-size: 10px !important;
+}
+
+.gist-syntax .m {
+	color:#009999;
+	font-size: 10px !important;
+}
+
+.gist-syntax .s {
+	color:#d14;
+	font-size: 10px !important;
+}
+
+.gist-syntax .na {
+	color:#008080;
+	font-size: 10px !important;
+}
+
+.gist-syntax .nb {
+	color:#0086B3;
+	font-size: 10px !important;
+}
+
+.gist-syntax .nc {
+	color:#445588;
+	font-size: 10px !important;
+	font-weight:bold;
+	font-size: 10px !important;
+}
+
+.gist-syntax .no {
+	color:#008080;
+	font-size: 10px !important;
+}
+
+.gist-syntax .ni {
+	color:#800080;
+	font-size: 10px !important;
+}
+
+.gist-syntax .ne {
+	color:#990000;
+	font-size: 10px !important;
+	font-weight:bold;
+	font-size: 10px !important;
+}
+
+.gist-syntax .nf {
+	color:#990000;
+	font-size: 10px !important;
+	font-weight:bold;
+	font-size: 10px !important;
+}
+
+.gist-syntax .nn {
+	color:#555555;
+	font-size: 10px !important;
+}
+
+.gist-syntax .nt {
+	color:#000080;
+	font-size: 10px !important;
+}
+
+.gist-syntax .nv {
+	color:#008080;
+	font-size: 10px !important;
+}
+
+.gist-syntax .ow {
+	color:#000000;
+	font-size: 10px !important;
+	font-weight:bold;
+	font-size: 10px !important;
+}
+
+.gist-syntax .w {
+	color:#bbbbbb;
+	font-size: 10px !important;
+}
+
+.gist-syntax .mf {
+	color:#009999;
+	font-size: 10px !important;
+}
+
+.gist-syntax .mh {
+	color:#009999;
+	font-size: 10px !important;
+}
+
+.gist-syntax .mi {
+	color:#009999;
+	font-size: 10px !important;
+}
+
+.gist-syntax .mo {
+	color:#009999;
+	font-size: 10px !important;
+}
+
+.gist-syntax .sb {
+	color:#d14;
+	font-size: 10px !important;
+}
+
+.gist-syntax .sc {
+	color:#d14;
+	font-size: 10px !important;
+}
+
+.gist-syntax .sd {
+	color:#d14;
+	font-size: 10px !important;
+}
+
+.gist-syntax .s2 {
+	color:#d14;
+	font-size: 10px !important;
+}
+
+.gist-syntax .se {
+	color:#d14;
+	font-size: 10px !important;
+}
+
+.gist-syntax .sh {
+	color:#d14;
+	font-size: 10px !important;
+}
+
+.gist-syntax .si {
+	color:#d14;
+	font-size: 10px !important;
+}
+
+.gist-syntax .sx {
+	color:#d14;
+	font-size: 10px !important;
+}
+
+.gist-syntax .sr {
+	color:#009926;
+	font-size: 10px !important;
+}
+
+.gist-syntax .s1 {
+	color:#d14;
+	font-size: 10px !important;
+}
+
+
+.gist-syntax .ss {
+	color:#990073;
+	font-size: 10px !important;
+}
+
+.gist-syntax .bp {
+	color:#999999;
+	font-size: 10px !important;
+}
+
+.gist-syntax .vc {
+	color:#008080;
+	font-size: 10px !important;
+}
+
+.gist-syntax .vg {
+	color:#008080;
+	font-size: 10px !important;
+}
+
+.gist-syntax .vi {
+	color:#008080;
+	font-size: 10px !important;
+}
+
+.gist-syntax .il {
+	color:#009999;
+	font-size: 10px !important;
+}
+</style>
+
 					</div>
 				</div>
 			</section>
