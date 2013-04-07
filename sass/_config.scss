@@ -33,6 +33,9 @@ $desktop-large-min-size: 1200px !default;
   @else if $media == tablet-landscape {
           @media only screen and (min-width: $tablet-max-size) and (orientation: landscape) { @content; }
   }
+  @else if $media == tablet-desktop {
+          @media only screen and (min-width: $tablet-min-size) { @content; }
+  }
   @else if $media == desktop {
           @media only screen and (min-width: $desktop-min-size) { @content; }
   }

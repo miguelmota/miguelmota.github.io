@@ -1,5 +1,5 @@
 @charset "UTF-8";
-/* line 44, ../sass/_config.scss */
+/* line 47, ../sass/_config.scss */
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -9,14 +9,14 @@
   padding: 0;
 }
 
-/* line 51, ../sass/_config.scss */
+/* line 54, ../sass/_config.scss */
 .cf {
   display: block !important;
   width: 100% !important;
   clear: both !important;
 }
 
-/* line 58, ../sass/_config.scss */
+/* line 61, ../sass/_config.scss */
 .font-primary {
   font-family: "Open Sans", sans-serif;
 }
@@ -6447,4 +6447,12 @@ p > code {
 /* line 184, ../sass/main.scss */
 .gist-syntax .s1 {
   background: none;
+}
+
+@media only screen and (min-width: 768px) {
+  /* line 188, ../sass/main.scss */
+  .gist .gist-file .gist-data .line-pre {
+    font-size: 16px;
+    line-height: 1.2;
+  }
 }

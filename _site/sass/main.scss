@@ -184,3 +184,10 @@ p > code {
 .gist-syntax .s1 {
 	background: none;
 }
+
+.gist .gist-file .gist-data .line-pre {
+	@include respond-to(tablet-desktop) {
+		font-size: 16px;
+		line-height: 1.2;
+	}
+}
