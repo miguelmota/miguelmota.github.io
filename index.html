@@ -20,7 +20,7 @@ description: Web developer from the always sunny Southern California.
 		</div>
 	</div>
 
-	<div id="older-thoughts" class="row">
+	<div id="older-posts" class="row">
 		<div class="large-12 column">
 			<h3>Older thoughts</h3>
 
@@ -34,3 +34,13 @@ description: Web developer from the always sunny Southern California.
 	</div>
 
 </section>
+
+<script>
+		var disqus_shortname = '{{ site.theme.disqus_shortname }}';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>

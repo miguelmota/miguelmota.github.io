@@ -1,34 +1,43 @@
 //config.scss
 
-$max-site-width: 860px;
+$max-site-width: 860px !default;
+$color-body-light: #aaa;
+
+// Set size variables
+$mobile-small-max-size: 320px !default;
+$mobile-max-size: 640px !default;
+$tablet-min-size: 768px !default;
+$tablet-max-size: 979px !default;
+$desktop-min-size: 979px !default;
+$desktop-large-min-size: 1200px !default;
 
 @mixin respond-to($media) {
   @if $media == mobile-small {
-          @media (max-width:480px) { @content; }
+          @media only screen and (max-width: $mobile-small-max-size) { @content; }
   }
   @else if $media == mobile {
-          @media (max-width: 640px) { @content; }
+          @media only screen and (max-width: $mobile-max-size) { @content; }
   }
   @else if $media == mobile-portrait {
-          @media (max-width: 640px) and (orientation: portrait) { @content; }
+          @media only screen and (max-width: $mobile-max-size) and (orientation: portrait) { @content; }
   }
   @else if $media == mobile-landscape {
-          @media (max-width: 640px) and (orientation: landscape) { @content; }
+          @media only screen and (max-width: $mobile-max-size) and (orientation: landscape) { @content; }
   }
   @else if $media == mobile-tablet {
-          @media (max-width: 979px) { @content; }
+          @media only screen and (max-width: $tablet-max-size) { @content; }
   }
   @else if $media == tablet {
-          @media (min-width: 768px) and (max-width: 979px) { @content; }
+          @media only screen and (min-width: $tablet-min-size) and (max-width: $tablet-max-size) { @content; }
   }
   @else if $media == tablet-landscape {
-          @media (min-width: 768px) and (orientation: landscape) { @content; }
+          @media only screen and (min-width: $tablet-max-size) and (orientation: landscape) { @content; }
   }
   @else if $media == desktop {
-          @media (min-width: 979px) { @content; }
+          @media only screen and (min-width: $desktop-min-size) { @content; }
   }
   @else if $media == desktop-large {
-          @media (min-width: 1200px) { @content; }
+          @media only screen and (min-width: $desktop-large-min-size) { @content; }
   }
 }
 

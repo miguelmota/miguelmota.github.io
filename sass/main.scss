@@ -2,8 +2,8 @@
 
 @import "compass";
 @import "config";
-@import "murphy";
 @import "../vendor/foundation/scss/foundation";
+@import "murphy";
 
 /* =Header
 -------------------------------------------------------------- */
@@ -11,16 +11,18 @@
 /* =Content
 -------------------------------------------------------------- */
 
+body {
+	background: #fff url(../img/old-wall.png) repeat 0 0;
+}
+
 #forkme {
 	position: fixed;
-	top: 0;
+	top: 45px;
 	right: 0;
 	z-index: 10000;
 
 	@include respond-to(mobile) {
-
 		display: none;
-
 	}
 
 }
@@ -59,6 +61,10 @@
 #featured {
 	margin-bottom: 20px;
 
+	h2 {
+		font-size: 34px;
+	}
+
 	datetime {
 		font-size: 26px;
 		font-weight: bold;
@@ -66,11 +72,17 @@
 
 }
 
-#older-thoughts {
+#older-posts,
+#related-posts,
+#work-list {
 
 	datetime {
 		font-size: 20px;
 		font-weight: bold;
+	}
+
+	h2 {
+		font-size: 26px;
 	}
 
 }
@@ -82,6 +94,10 @@
 		font-weight: bold;
 	}
 
+	p {
+		text-align: justify;
+	}
+
 }
 
 figure {
@@ -89,12 +105,24 @@ figure {
 	margin-bottom: 15px;
 }
 
+figcaption {
+	padding: 5px 0 0 0;
+	font-size: 12px;
+}
+
 [data-last-update] {
-	color: #aaa;
+	color: $color-body-light;
 }
 
 #comments {
 	margin: 50px 0 0 0;
+}
+
+[data-demo],
+[data-download],
+[data-site] {
+	@extend .button;
+	@extend .button.large;
 }
 
 /* =Footer
@@ -112,29 +140,12 @@ figure {
 /* =Gists
 -------------------------------------------------------------- */
 
-.gist, pre {
-  font: normal normal normal .6em Arial, DejaVuSansMono, Consolas, monospace;
-  margin-bottom: 1em;
-}
-
-.gist  pre {
-  font-size: 1em;
-}
-
-.linenos {
-  background-color: #ECECEC;
-  border-right: 1px solid #DDDDDD;
-  color: #AAAAAA;
-  text-align: right;
+pre {
+  font: normal normal normal 14px Arial, DejaVuSansMono, Consolas, monospace;
 }
 
 .line-numbers {
   display: none;
-}
-
-.linenos pre {
-  color: #AAAAAA;
-  width: 28px;
 }
 
 .highlight {
@@ -142,17 +153,10 @@ figure {
   overflow: auto;
   border: 1px solid #ddd;
   padding: 5px;
+  font-size: 14px;
+  margin-bottom: 20px;
 }
 
 .gist-file .highlight {
   border: none;
-}
-
-.highlighttable {
-  overflow: scroll;
-}
-
-.highlight code,
-.highlight pre {
-	font: normal normal normal .6em Arial, DejaVuSansMono, Consolas, monospace;
 }

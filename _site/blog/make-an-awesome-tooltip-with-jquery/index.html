@@ -32,6 +32,8 @@
 	<script src="/vendor/jquery/jquery.js"></script>
 	<script src="/vendor/foundation/js/foundation/foundation.js"></script>
 	<script src="/vendor/foundation/js/foundation/foundation.topbar.js"></script>
+	<script src="/vendor/picturefill/picturefill.js"></script>
+	<script src="/vendor/picturefill/external/matchmedia.js"></script>
 	<script>
 	  	var _gaq = _gaq || [];
 	   	_gaq.push(['_setAccount', 'UA-12642068-1']);
@@ -49,18 +51,20 @@
 </head>
 <body>
 		<div id="top"></div>
-		<header id="header" class="contain-to-grid">
+		<header id="header" class="contain-to-grid fixed">
 			<nav class="top-bar">
 				<ul class="title-area">
 					<li class="name"><h1><a href="/">Miguel Mota</a></h1></li>
 					<li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
 				</ul>
 				<section class="top-bar-section">
-				    <ul class="left">
+				    <ul class="right">
 				      <li class="divider"></li>
 				      <li><a href="/about" data-ga-label="Navigation - About">About</a></li>
 				      <li class="divider"></li>
-				      <li><a href="/contact" data-ga-label="Navigation - Contact">Contact</a></li>
+				      <li><a href="/work" data-ga-label="Navigation - Work">Work</a></li>
+				      <li class="divider"></li>
+							<li><a href="/contact" data-ga-label="Navigation - Contact">Contact</a></li>
 				      <li class="divider"></li>
 				    </ul>
 				</section>
@@ -79,7 +83,6 @@
 
 			<p>I will attempt to show you how to make a simple yet awesome tooltip using jQuery and CSS3.</p>
 
-<p><a data-demo href="/blog/make-an-awesome-tooltip-with-jquery/demo" target="_blank">View the demo</a></p>
 <p>Ok so first let's set up the HTML:</p>
 
 <div class="highlight"><pre><code class="html"><span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&quot;awesometooltip&quot;</span> <span class="na">href=</span><span class="s">&quot;http://www.miguelmota.com&quot;</span> <span class="na">title=</span><span class="s">&quot;Hello, I am a tootip!&quot;</span><span class="nt">&gt;</span>hover over me<span class="nt">&lt;/a&gt;</span>
@@ -243,6 +246,7 @@ attribute and then removing the <code>title</code> attribute. So what's the poin
 
 
 <p>The CSS is self-explanatory so I won't go in much detail</p>
+
 <p>So the last step now is to initialize our tooltip:</p>
 
 <div class="highlight"><pre><code class="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
@@ -266,9 +270,13 @@ it should look like this:</p>
 
 <p>That's it folks! You should now have a functioning mini tooltip plugin. If I made mistakes or if you would like to add, please comment! any feedback is greatly appreciated.</p>
 
-<h2><strong>Update</strong></h2>
+<p><a data-demo href="/blog/make-an-awesome-tooltip-with-jquery/demo" target="_blank">View the demo</a></p>
 
-<p>I created optional settings for the tooltip. Here is the gist:</p>
+<hr>
+
+<h2><strong>*Update</strong> <small>25 May 2012</small></h2>
+
+<p>I created optional settings for the tooltip. Here is the <a href="https://gist.github.com/miguelmota/5312164" target="_blank" rel="nofollow">gist</a>:</p>
 
 <script src="https://gist.github.com/miguelmota/5312164.js"></script>
 
@@ -324,7 +332,7 @@ it should look like this:</p>
 </div>
 
 
-<a data-demo href="/blog/make-an-awesome-tooltip-with-jquery/mtippy/demo" target="_blank">View Updated Demo</a>
+<p><a data-demo href="/blog/make-an-awesome-tooltip-with-jquery/mtippy/demo" target="_blank">View Updated Demo</a></p>
 
 		</div>
 	</div>
@@ -335,20 +343,20 @@ it should look like this:</p>
 				<h3>See also...</h3>
 
 				
+					<dt><datetime>06 Apr 2013</datetime></dt>
+<dd><h2><a href="/blog/sass-media-queries">SASS Media Queries</a> <a class='small' href='http:://www.miguelmota.com/blog/sass-media-queries#disqus_thread' data-disqus-identifier='http:://www.miguelmota.com/blog/sass-media-queries'></a>/blog/sass-media-queries</h2></dd>
+				
 					<dt><datetime>05 Apr 2013</datetime></dt>
-<dd><h3><a href="/blog/back-to-business">Back to business</a></h3></dd>
+<dd><h2><a href="/blog/back-to-business">Back to business</a> <a class='small' href='http:://www.miguelmota.com/blog/back-to-business#disqus_thread' data-disqus-identifier='http:://www.miguelmota.com/blog/back-to-business'></a>/blog/back-to-business</h2></dd>
 				
 					<dt><datetime>04 Apr 2013</datetime></dt>
-<dd><h3><a href="/blog/extensive-gitignore">Extensive .gitignore</a></h3></dd>
+<dd><h2><a href="/blog/extensive-gitignore">Extensive .gitignore</a> <a class='small' href='http:://www.miguelmota.com/blog/extensive-gitignore#disqus_thread' data-disqus-identifier='http:://www.miguelmota.com/blog/extensive-gitignore'></a>/blog/extensive-gitignore</h2></dd>
 				
 					<dt><datetime>25 Mar 2013</datetime></dt>
-<dd><h3><a href="/blog/screaming-goat">Screaming goat</a></h3></dd>
+<dd><h2><a href="/blog/screaming-goat">Screaming goat</a> <a class='small' href='http:://www.miguelmota.com/blog/screaming-goat#disqus_thread' data-disqus-identifier='http:://www.miguelmota.com/blog/screaming-goat'></a>/blog/screaming-goat</h2></dd>
 				
 					<dt><datetime>22 Jul 2012</datetime></dt>
-<dd><h3><a href="/blog/css3-filters">CSS3 Filters</a></h3></dd>
-				
-					<dt><datetime>20 Feb 2012</datetime></dt>
-<dd><h3><a href="/blog/miggs-url-shortener">mig.gs - url shortener</a></h3></dd>
+<dd><h2><a href="/blog/css3-filters">CSS3 Filters</a> <a class='small' href='http:://www.miguelmota.com/blog/css3-filters#disqus_thread' data-disqus-identifier='http:://www.miguelmota.com/blog/css3-filters'></a>/blog/css3-filters</h2></dd>
 				
 			</div>
 		</div>
@@ -373,7 +381,6 @@ it should look like this:</p>
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
 
-    var disqus_shortname = 'miguelmota';
     (function () {
         var s = document.createElement('script'); s.async = true;
         s.type = 'text/javascript';

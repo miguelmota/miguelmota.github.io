@@ -6,7 +6,13 @@ description: About me and what I do.
 <h1>About</h1>
 
 <figure data-image>
-	<img src="/about/miguel-mota.jpg" alt="">
+	<div data-picture data-alt="Miguel Mota">
+		<div data-src="/about/miguel-mota-small.jpg"></div>
+		<div data-src="/about/miguel-mota.jpg" data-media="(min-width: 640px)"></div>
+	</div>
+	<noscript>
+		<img src="/about/miguel-mota-small.jpg" alt="Miguel Mota">
+	</noscript>
 </figure>
 
 <p>Howdy, I am <strong>Miguel Mota</strong>.</p>
@@ -17,4 +23,4 @@ description: About me and what I do.
 
 <p><a class="about-google-plus" href="https://plus.google.com/102174577273194387652" target="_blank" rel="me">Google+</a></p>
 
-<datetime data-last-update datetime="2012-10-16">Last updated October 6, 2012</datetime>
+<datetime data-last-update>Last updated 6 Oct 2012</datetime>

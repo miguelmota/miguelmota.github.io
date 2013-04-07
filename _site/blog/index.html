@@ -32,6 +32,8 @@
 	<script src="/vendor/jquery/jquery.js"></script>
 	<script src="/vendor/foundation/js/foundation/foundation.js"></script>
 	<script src="/vendor/foundation/js/foundation/foundation.topbar.js"></script>
+	<script src="/vendor/picturefill/picturefill.js"></script>
+	<script src="/vendor/picturefill/external/matchmedia.js"></script>
 	<script>
 	  	var _gaq = _gaq || [];
 	   	_gaq.push(['_setAccount', 'UA-12642068-1']);
@@ -49,18 +51,20 @@
 </head>
 <body>
 		<div id="top"></div>
-		<header id="header" class="contain-to-grid">
+		<header id="header" class="contain-to-grid fixed">
 			<nav class="top-bar">
 				<ul class="title-area">
 					<li class="name"><h1><a href="/">Miguel Mota</a></h1></li>
 					<li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
 				</ul>
 				<section class="top-bar-section">
-				    <ul class="left">
+				    <ul class="right">
 				      <li class="divider"></li>
 				      <li><a href="/about" data-ga-label="Navigation - About">About</a></li>
 				      <li class="divider"></li>
-				      <li><a href="/contact" data-ga-label="Navigation - Contact">Contact</a></li>
+				      <li><a href="/work" data-ga-label="Navigation - Work">Work</a></li>
+				      <li class="divider"></li>
+							<li><a href="/contact" data-ga-label="Navigation - Contact">Contact</a></li>
 				      <li class="divider"></li>
 				    </ul>
 				</section>

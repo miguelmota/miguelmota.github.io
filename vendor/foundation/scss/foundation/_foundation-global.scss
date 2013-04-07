@@ -5,10 +5,10 @@
 
 // The default font-size is set to 100% of the browser style sheet (usually 16px)
 // for compatibility with brower-based text zoom or user-set defaults.
-$base-font-size: 100% !default;
+$base-font-size: 20px !default;
 
 // Set your base font-size in pixels so emCalc can do its magic below
-$em-base: 16px !default;
+$em-base: 20px !default;
 
 // We use these to control various global styles
 $body-bg: #fff !default;

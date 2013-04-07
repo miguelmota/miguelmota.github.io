@@ -32,6 +32,8 @@
 	<script src="/vendor/jquery/jquery.js"></script>
 	<script src="/vendor/foundation/js/foundation/foundation.js"></script>
 	<script src="/vendor/foundation/js/foundation/foundation.topbar.js"></script>
+	<script src="/vendor/picturefill/picturefill.js"></script>
+	<script src="/vendor/picturefill/external/matchmedia.js"></script>
 	<script>
 	  	var _gaq = _gaq || [];
 	   	_gaq.push(['_setAccount', 'UA-12642068-1']);
@@ -49,18 +51,20 @@
 </head>
 <body>
 		<div id="top"></div>
-		<header id="header" class="contain-to-grid">
+		<header id="header" class="contain-to-grid fixed">
 			<nav class="top-bar">
 				<ul class="title-area">
 					<li class="name"><h1><a href="/">Miguel Mota</a></h1></li>
 					<li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
 				</ul>
 				<section class="top-bar-section">
-				    <ul class="left">
+				    <ul class="right">
 				      <li class="divider"></li>
 				      <li><a href="/about" data-ga-label="Navigation - About">About</a></li>
 				      <li class="divider"></li>
-				      <li><a href="/contact" data-ga-label="Navigation - Contact">Contact</a></li>
+				      <li><a href="/work" data-ga-label="Navigation - Work">Work</a></li>
+				      <li class="divider"></li>
+							<li><a href="/contact" data-ga-label="Navigation - Contact">Contact</a></li>
 				      <li class="divider"></li>
 				    </ul>
 				</section>
@@ -94,20 +98,20 @@
 				<h3>See also...</h3>
 
 				
+					<dt><datetime>06 Apr 2013</datetime></dt>
+<dd><h2><a href="/blog/sass-media-queries">SASS Media Queries</a> <a class='small' href='http:://www.miguelmota.com/blog/sass-media-queries#disqus_thread' data-disqus-identifier='http:://www.miguelmota.com/blog/sass-media-queries'></a>/blog/sass-media-queries</h2></dd>
+				
 					<dt><datetime>04 Apr 2013</datetime></dt>
-<dd><h3><a href="/blog/extensive-gitignore">Extensive .gitignore</a></h3></dd>
+<dd><h2><a href="/blog/extensive-gitignore">Extensive .gitignore</a> <a class='small' href='http:://www.miguelmota.com/blog/extensive-gitignore#disqus_thread' data-disqus-identifier='http:://www.miguelmota.com/blog/extensive-gitignore'></a>/blog/extensive-gitignore</h2></dd>
 				
 					<dt><datetime>25 Mar 2013</datetime></dt>
-<dd><h3><a href="/blog/screaming-goat">Screaming goat</a></h3></dd>
+<dd><h2><a href="/blog/screaming-goat">Screaming goat</a> <a class='small' href='http:://www.miguelmota.com/blog/screaming-goat#disqus_thread' data-disqus-identifier='http:://www.miguelmota.com/blog/screaming-goat'></a>/blog/screaming-goat</h2></dd>
 				
 					<dt><datetime>22 Jul 2012</datetime></dt>
-<dd><h3><a href="/blog/css3-filters">CSS3 Filters</a></h3></dd>
+<dd><h2><a href="/blog/css3-filters">CSS3 Filters</a> <a class='small' href='http:://www.miguelmota.com/blog/css3-filters#disqus_thread' data-disqus-identifier='http:://www.miguelmota.com/blog/css3-filters'></a>/blog/css3-filters</h2></dd>
 				
 					<dt><datetime>20 Feb 2012</datetime></dt>
-<dd><h3><a href="/blog/miggs-url-shortener">mig.gs - url shortener</a></h3></dd>
-				
-					<dt><datetime>22 Jan 2012</datetime></dt>
-<dd><h3><a href="/blog/how-to-survive-a-zombie-outbreak">How To Survive a Zombie Outbreak</a></h3></dd>
+<dd><h2><a href="/blog/miggs-url-shortener">mig.gs - url shortener</a> <a class='small' href='http:://www.miguelmota.com/blog/miggs-url-shortener#disqus_thread' data-disqus-identifier='http:://www.miguelmota.com/blog/miggs-url-shortener'></a>/blog/miggs-url-shortener</h2></dd>
 				
 			</div>
 		</div>
@@ -132,7 +136,6 @@
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
 
-    var disqus_shortname = 'miguelmota';
     (function () {
         var s = document.createElement('script'); s.async = true;
         s.type = 'text/javascript';
