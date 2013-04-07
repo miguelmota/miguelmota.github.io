@@ -5,15 +5,22 @@
 @import "../vendor/foundation/scss/foundation";
 @import "murphy";
 
-/* =Header
--------------------------------------------------------------- */
-
-/* =Content
+/* =Global
 -------------------------------------------------------------- */
 
 body {
 	background: #fff url(../img/old-wall.png) repeat 0 0;
 }
+
+/* =Header
+-------------------------------------------------------------- */
+
+.top-bar {
+	margin-bottom: 0;
+}
+
+/* =Content
+-------------------------------------------------------------- */
 
 #forkme {
 	position: fixed;
@@ -38,10 +45,8 @@ body {
 		margin-bottom: 15px;
 
 		@include respond-to(mobile) {
-
 			font-size: 22px;
 			margin-bottom: 10px;
-
 		}
 
 	}
@@ -49,10 +54,8 @@ body {
 		font-size: 24px;
 
 		@include respond-to(mobile) {
-
 			font-size: 16px;
 			margin-bottom: 10px;
-
 		}
 
 	}
@@ -72,9 +75,7 @@ body {
 
 }
 
-#older-posts,
-#related-posts,
-#work-list {
+.posts-list {
 
 	datetime {
 		font-size: 20px;
@@ -83,6 +84,18 @@ body {
 
 	h2 {
 		font-size: 26px;
+	}
+
+}
+
+#related-posts .posts-list {
+
+	datetime {
+		font-size: 16px;
+	}
+
+	h2 {
+		font-size: 20px;
 	}
 
 }
@@ -140,12 +153,13 @@ figcaption {
 /* =Gists
 -------------------------------------------------------------- */
 
-pre {
+.highlight pre,
+.highlight code
+.gist .gist-file .gist-data .line-pre {
   font: normal normal normal 14px Arial, DejaVuSansMono, Consolas, monospace;
-}
-
-.line-numbers {
-  display: none;
+  @include respond-to(mobile) {
+  	font-size: 12px;
+  }
 }
 
 .highlight {
@@ -153,10 +167,13 @@ pre {
   overflow: auto;
   border: 1px solid #ddd;
   padding: 5px;
-  font-size: 14px;
   margin-bottom: 20px;
 }
 
-.gist-file .highlight {
+.gist .highlight {
   border: none;
+}
+
+.gist .line-numbers {
+  display: none;
 }

@@ -24,7 +24,7 @@ description: Web developer from the always sunny Southern California.
 		<div class="large-12 column">
 			<h3>Older thoughts</h3>
 
-			<dl>
+			<dl class="posts-list">
 			  {% for post in site.categories.blog offset: site.theme.homepage_featured limit: site.theme.homepage_posts %}
 					{% include post_summary.html %}
 			  {% endfor %}

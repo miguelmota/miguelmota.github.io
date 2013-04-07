@@ -5,7 +5,7 @@ layout: default
 	<div class="row">
 		<div class="large-12 column">
 			<datetime>{{ page.date | date_to_string }}</datetime>
-			<h2>{{ page.title }}</h2>
+			<h1>{{ page.title }}</h1>
 
 			{{ content }}
 
@@ -17,9 +17,11 @@ layout: default
 			<div class="large-12 column">
 				<h3>See also...</h3>
 
-				{% for post in site.related_posts offset: 0 limit: 5 %}
-					{% include post_summary.html %}
-				{% endfor %}
+				<dl class="posts-list">
+					{% for post in site.related_posts offset: 0 limit: 5 %}
+						{% include post_summary.html %}
+					{% endfor %}
+				</dl>
 			</div>
 		</div>
 	{{ endif }}

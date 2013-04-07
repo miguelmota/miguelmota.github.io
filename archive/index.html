@@ -4,8 +4,22 @@ title: Archive
 ---
 <h1>Archive</h1>
 
-<dl>
-  {% for post in site.posts %}
-		{% include post_summary.html %}
-  {% endfor %}
-</dl>
+<div id="archive-posts" class="row">
+	<div class="large-12 column">
+		<dl class="posts-list">
+		  {% for post in site.posts %}
+				{% include post_summary.html %}
+		  {% endfor %}
+		</dl>
+	</div>
+</div>
+
+<script>
+		var disqus_shortname = '{{ site.theme.disqus_shortname }}';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>

@@ -89,19 +89,17 @@ $topbar-media-query: "only screen and (min-width:"#{$topbar-breakpoint}")" !defa
     height: $topbar-height;
     margin: 0;
     font-size: $em-base;
-
-    h1 {
-      line-height: $topbar-height;
-      font-size: $topbar-title-font-size;
-      margin: 0;
-      a {
-        font-weight: $topbar-title-weight;
-        color: $topbar-link-color;
-        width: 50%;
-        display: block;
-        padding: 0 $topbar-height / 3;
-      }
+    line-height: $topbar-height;
+    font-size: $topbar-title-font-size;
+    margin: 0;
+    a {
+      font-weight: $topbar-title-weight;
+      color: $topbar-link-color;
+      width: auto;
+      display: block;
+      padding: 0 $topbar-height / 3;
     }
+
   }
 
   // Menu toggle button on small devices

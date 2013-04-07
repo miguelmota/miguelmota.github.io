@@ -10,8 +10,6 @@ function JBCountDown(settings) {
     glob.hours   = 24 - Math.floor(((glob.endDate - glob.now) % 86400) / 3600);
     glob.minutes = 60 - Math.floor((((glob.endDate - glob.now) % 86400) % 3600) / 60) ;
 
-   ///alert(glob.now );
-
     if (glob.now >= glob.endDate) {
         return;
     }
