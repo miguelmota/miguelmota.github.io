@@ -8,6 +8,44 @@
 	<title>Countdown!</title>
 	<link rel="shortcut icon" href="/favicon.ico">
 	<link rel="stylesheet" href="css/jbclock.css" />
+	<style>
+	@media (max-width: 640px) {
+		.wrapper {
+			width: auto;
+		}
+		h1 {
+			margin: 20px;
+			font-size: 24px;
+		}
+		.clock {
+			width: auto;
+			margin: 0 auto;
+			text-align: center;
+		}
+		#canvas_days,
+		#canvas_hours,
+		#canvas_minutes,
+		#canvas_seconds {
+			float: left;
+		}
+		.clock_days,
+		.clock_hours,
+		.clock_minutes,
+		.clock_seconds {
+			display: block;
+			clear: both;
+			float: none;
+			margin: 0;
+		}
+		.bgLayer {
+			display: inline-block;
+			margin: 0 auto;
+		}
+		.divider {
+			display: none;
+		}
+	}
+	</style>
 	<script src="/vendor/jquery/jquery.min.js"></script>
 	<script src="js/jbclock.js"></script>
 	<script>

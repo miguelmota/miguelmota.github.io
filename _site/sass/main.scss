@@ -107,10 +107,13 @@ body {
 		font-weight: bold;
 	}
 
+}
+
+#about,
+#post {
 	p {
 		text-align: justify;
 	}
-
 }
 
 figure {
@@ -144,7 +147,7 @@ figcaption {
 #footer {
 	padding: 10px 0;
 	background: #ddd;
-	color: #777;
+	color: #555;
 }
 
 .gplus {
