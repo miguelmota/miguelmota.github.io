@@ -172,3 +172,15 @@ p > code {
   padding: 5px;
   margin-bottom: 20px;
 }
+
+.gist .highlight {
+  border: none;
+}
+
+.gist .line-numbers {
+  display: none;
+}
+
+.gist-syntax .s1 {
+	background: none;
+}
