@@ -5,17 +5,26 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no;">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<link rel="apple-touch-icon-precomposed" href="img/apple-touch-icon.png" />
-	<link rel='apple-touch-startup-image' href='/img/startup.png' />
+	<link href="/img/startup-320x460.png" media="(device-width: 320px)" rel="apple-touch-startup-image">
+	<link href="/img/startup-640x920.png" media="(device-width: 320px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
+	<link href="/img/startup-640x1096.png" rel="apple-touch-startup-image" sizes="640x1096">
 	<title>Countdown!</title>
 	<link rel="shortcut icon" href="/favicon.ico">
 	<link rel="stylesheet" href="css/jbclock.css" />
 	<style>
 	@media (max-width: 640px) {
+		* {
+			-moz-box-sizing: border-box;
+			-o-box-sizing: border-box;
+			-webkit-box-sizing: border-box;
+			box-sizing: border-box;
+		}
 		.wrapper {
 			width: auto;
+			padding: 20px;
 		}
 		h1 {
-			margin: 20px;
+			margin: 0 0 20px 0;
 			font-size: 24px;
 		}
 		.clock {
