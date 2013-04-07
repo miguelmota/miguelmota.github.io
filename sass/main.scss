@@ -158,7 +158,7 @@ figcaption {
 /* =Gists
 -------------------------------------------------------------- */
 
-code {
+p > code {
 	background: #F8F8FF;
 	border: 1px solid #ddd;
 	padding: 2px;
@@ -178,7 +178,7 @@ code {
 .gist .gist-file .gist-data .line-pre,
 .gist .line,
 .gist .line span {
-  font: normal normal normal 14px Arial, DejaVuSansMono, Consolas, monospace !important;
+  font-size: 12px !important;
   @include respond-to(mobile) {
   	font-size: 12px !important;
   }

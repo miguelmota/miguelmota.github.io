@@ -6418,7 +6418,7 @@ figcaption {
 /* =Gists
 -------------------------------------------------------------- */
 /* line 161, ../sass/main.scss */
-code {
+p > code {
   background: #F8F8FF;
   border: 1px solid #dddddd;
   padding: 2px;
@@ -6440,7 +6440,7 @@ code {
 .gist .gist-file .gist-data .line-pre,
 .gist .line,
 .gist .line span {
-  font: normal normal normal 14px Arial, DejaVuSansMono, Consolas, monospace !important;
+  font-size: 12px !important;
 }
 @media only screen and (max-width: 640px) {
   /* line 180, ../sass/main.scss */
