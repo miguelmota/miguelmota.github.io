@@ -158,13 +158,11 @@ figcaption {
 /* =Gists
 -------------------------------------------------------------- */
 
-.highlight pre,
-.highlight code
-.gist .gist-file .gist-data .line-pre {
-  font: normal normal normal 14px Arial, DejaVuSansMono, Consolas, monospace !important;
-  @include respond-to(mobile) {
-  	font-size: 12px !important;
-  }
+code {
+	background: #F8F8FF;
+	border: 1px solid #ddd;
+	padding: 2px;
+	color: #208090;
 }
 
 .highlight {
@@ -173,6 +171,17 @@ figcaption {
   border: 1px solid #ddd;
   padding: 5px;
   margin-bottom: 20px;
+}
+
+.highlight pre,
+.highlight code
+.gist .gist-file .gist-data .line-pre,
+.gist .line,
+.gist .line span {
+  font: normal normal normal 14px Arial, DejaVuSansMono, Consolas, monospace !important;
+  @include respond-to(mobile) {
+  	font-size: 12px !important;
+  }
 }
 
 .gist .highlight {

@@ -1592,13 +1592,6 @@ small {
   line-height: inherit;
 }
 
-/* line 230, ../vendor/foundation/scss/foundation/components/_type.scss */
-code {
-  font-family: Consolas, "Liberation Mono", Courier, monospace;
-  font-weight: bold;
-  color: #7f0a0c;
-}
-
 /* Lists */
 /* line 239, ../vendor/foundation/scss/foundation/components/_type.scss */
 ul,
@@ -6424,22 +6417,15 @@ figcaption {
 
 /* =Gists
 -------------------------------------------------------------- */
-/* line 163, ../sass/main.scss */
-.highlight pre,
-.highlight code
-.gist .gist-file .gist-data .line-pre {
-  font: normal normal normal 14px Arial, DejaVuSansMono, Consolas, monospace !important;
-}
-@media only screen and (max-width: 640px) {
-  /* line 163, ../sass/main.scss */
-  .highlight pre,
-  .highlight code
-  .gist .gist-file .gist-data .line-pre {
-    font-size: 12px !important;
-  }
+/* line 161, ../sass/main.scss */
+code {
+  background: #F8F8FF;
+  border: 1px solid #dddddd;
+  padding: 2px;
+  color: #208090;
 }
 
-/* line 170, ../sass/main.scss */
+/* line 168, ../sass/main.scss */
 .highlight {
   background: #F8F8FF;
   overflow: auto;
@@ -6448,12 +6434,31 @@ figcaption {
   margin-bottom: 20px;
 }
 
-/* line 178, ../sass/main.scss */
+/* line 180, ../sass/main.scss */
+.highlight pre,
+.highlight code
+.gist .gist-file .gist-data .line-pre,
+.gist .line,
+.gist .line span {
+  font: normal normal normal 14px Arial, DejaVuSansMono, Consolas, monospace !important;
+}
+@media only screen and (max-width: 640px) {
+  /* line 180, ../sass/main.scss */
+  .highlight pre,
+  .highlight code
+  .gist .gist-file .gist-data .line-pre,
+  .gist .line,
+  .gist .line span {
+    font-size: 12px !important;
+  }
+}
+
+/* line 187, ../sass/main.scss */
 .gist .highlight {
   border: none;
 }
 
-/* line 182, ../sass/main.scss */
+/* line 191, ../sass/main.scss */
 .gist .line-numbers {
   display: none;
 }
