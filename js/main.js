@@ -13,3 +13,7 @@ var MM = MM || (function() {
 $(document).ready(function() {
 	MM.initialize();
 });
+
+$(document).on('click', '.input-short-url', function() {
+	$(this).select();
+})

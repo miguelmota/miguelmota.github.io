@@ -12,6 +12,16 @@ layout: default
 		</div>
 	</div>
 
+	<div id="share" class="row">
+		<div class="large-12 column">
+
+			<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.miguelmota.com{{ page.url }}" data-text="{{ page.title }}" data-size="large" data-related="_moogs">Tweet</a>
+
+			<input class="input-short-url" type="text" value="{{ page.short_url }}">
+
+		</div>
+	</div>
+
 	{{ if site.related_posts }}
 		<div id="related-posts" class="row">
 			<div class="large-12 column">
@@ -51,3 +61,5 @@ layout: default
         (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
     }());
 </script>
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>

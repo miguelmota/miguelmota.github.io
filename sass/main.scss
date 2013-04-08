@@ -37,6 +37,9 @@ body {
 #main {
 	display: block;
 	margin: 50px 0;
+	@include respond-to(mobile) {
+		margin-top: 25px;
+	}
 }
 
 #lead {
@@ -139,6 +142,19 @@ figcaption {
 [data-site] {
 	@extend .button;
 	@extend .button.large;
+}
+
+.input-short-url {
+	display: inline-block;
+	width: 100px !important;
+	margin: 0 10px 0 0 !important;
+	padding: 2px;
+	float: right;
+}
+
+
+.twitter-share-button {
+	float: right;
 }
 
 /* =Footer

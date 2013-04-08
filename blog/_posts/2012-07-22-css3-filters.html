@@ -10,19 +10,9 @@ description: Spice up the way your photos look with CSS3 filters.
 
 <p>Currently there are <strong>10</strong> CSS filters available, which are: <code>blur</code>, <code>brightness</code>, <code>contrast</code>, <code>drop-shadow</code>, <code>grayscale</code>, <code>hue-rotate</code>, <code>invert</code>, <code>opacity</code>, <code>saturate</code> and <code>sepia</code>.</p>
 
-<p>In the meantime you must use the <code>-webkit-</code> vendor prefix, like so:</p>
-{% highlight css %}
--webkit-filter: blur(2.5px);
--webkit-filter: brightness(5%);
--webkit-filter: contrast(1.5);
--webkit-filter: drop-shadow(3px 3px 10px rgba(0,0,0,.5)) ;
--webkit-filter: grayscale(.5);
--webkit-filter: hue-rotate(5deg);
--webkit-filter: invert(1);
--webkit-filter: opacity(.8);
--webkit-filter: saturate(1.5);
--webkit-filter: sepia(.5);
-{% endhighlight %}
+<p>In the meantime you must use the <code>-webkit-</code> vendor prefix, like so (<a href="https://gist.github.com/miguelmota/5333165" target="_blank">gist</a>):</p>
+
+<script src="https://gist.github.com/miguelmota/5333165.js"></script>
 
 <p>You can also combine multiple filters in one line seperated by a space:</p>
 

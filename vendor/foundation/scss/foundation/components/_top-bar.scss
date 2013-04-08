@@ -93,6 +93,7 @@ $topbar-media-query: "only screen and (min-width:"#{$topbar-breakpoint}")" !defa
     font-size: $topbar-title-font-size;
     margin: 0;
     a {
+      font-size: 18px;
       font-weight: $topbar-title-weight;
       color: $topbar-link-color;
       width: auto;
