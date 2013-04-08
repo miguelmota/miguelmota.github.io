@@ -10,6 +10,7 @@
     "requirejs": null,
     "underscore-amd": null,
     "backbone-amd": null,
-    "picturefill": "git://github.com/scottjehl/picturefill.git"
+    "picturefill": "git://github.com/scottjehl/picturefill.git",
+    "zepto": "~1.0.0rc1"
   }
 }
