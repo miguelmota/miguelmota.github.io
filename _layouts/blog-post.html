@@ -4,7 +4,7 @@ layout: default
 <section id="post">
 	<div class="row">
 		<div class="large-12 column">
-			<datetime>{{ page.date | date_to_string }}</datetime>
+			<datetime>{{ page.date | date_to_string }} <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.miguelmota.com{{ page.url }}" data-text="{{ page.title }}" data-size="large" data-related="_moogs">Tweet</a></datetime>
 			<h1>{{ page.title }}</h1>
 
 			{{ content }}
@@ -12,20 +12,10 @@ layout: default
 		</div>
 	</div>
 
-	<div id="share" class="row">
-		<div class="large-12 column">
-
-			<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.miguelmota.com{{ page.url }}" data-text="{{ page.title }}" data-size="large" data-related="_moogs">Tweet</a>
-
-			<input class="input-short-url" type="text" value="{{ page.short_url }}">
-
-		</div>
-	</div>
-
 	{{ if site.related_posts }}
 		<div id="related-posts" class="row">
 			<div class="large-12 column">
-				<h3>See also...</h3>
+				<h3>See also... <input class="input-short-url" type="text" value="{{ page.short_url }}"></h3>
 
 				<dl class="posts-list">
 					{% for post in site.related_posts offset: 0 limit: 5 %}

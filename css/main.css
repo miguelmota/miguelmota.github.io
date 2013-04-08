@@ -6375,39 +6375,41 @@ body {
 
 /* line 108, ../sass/main.scss */
 #post datetime {
+  display: block;
+  width: 100%;
   font-size: 26px;
   font-weight: bold;
 }
 
-/* line 117, ../sass/main.scss */
+/* line 119, ../sass/main.scss */
 #about p,
 #post p {
   text-align: justify;
 }
 
-/* line 122, ../sass/main.scss */
+/* line 124, ../sass/main.scss */
 figure {
   width: 100%;
   margin-bottom: 15px;
 }
 
-/* line 127, ../sass/main.scss */
+/* line 129, ../sass/main.scss */
 figcaption {
   padding: 5px 0 0 0;
   font-size: 12px;
 }
 
-/* line 132, ../sass/main.scss */
+/* line 134, ../sass/main.scss */
 [data-last-update] {
   color: #aaaaaa;
 }
 
-/* line 136, ../sass/main.scss */
+/* line 138, ../sass/main.scss */
 #comments {
   margin: 50px 0 0 0;
 }
 
-/* line 147, ../sass/main.scss */
+/* line 149, ../sass/main.scss */
 .input-short-url {
   display: inline-block;
   width: 100px !important;
@@ -6416,21 +6418,22 @@ figcaption {
   float: right;
 }
 
-/* line 156, ../sass/main.scss */
+/* line 158, ../sass/main.scss */
 .twitter-share-button {
   float: right;
+  width: 105px !important;
 }
 
 /* =Footer
 -------------------------------------------------------------- */
-/* line 163, ../sass/main.scss */
+/* line 166, ../sass/main.scss */
 #footer {
   padding: 10px 0;
   background: #ddd;
   color: #555;
 }
 
-/* line 169, ../sass/main.scss */
+/* line 172, ../sass/main.scss */
 .gplus {
   color: transparent;
   font: 1px;
@@ -6438,7 +6441,7 @@ figcaption {
 
 /* =Gists
 -------------------------------------------------------------- */
-/* line 177, ../sass/main.scss */
+/* line 180, ../sass/main.scss */
 p > code {
   background: #F8F8FF;
   border: 1px solid #dddddd;
@@ -6446,7 +6449,7 @@ p > code {
   color: #208090;
 }
 
-/* line 184, ../sass/main.scss */
+/* line 187, ../sass/main.scss */
 .highlight {
   background: #F8F8FF;
   overflow: auto;
@@ -6455,23 +6458,23 @@ p > code {
   margin-bottom: 20px;
 }
 
-/* line 192, ../sass/main.scss */
+/* line 195, ../sass/main.scss */
 .gist .highlight {
   border: none;
 }
 
-/* line 196, ../sass/main.scss */
+/* line 199, ../sass/main.scss */
 .gist .line-numbers {
   display: none;
 }
 
-/* line 200, ../sass/main.scss */
+/* line 203, ../sass/main.scss */
 .gist-syntax .s1 {
   background: none;
 }
 
 @media only screen and (min-width: 768px) {
-  /* line 204, ../sass/main.scss */
+  /* line 207, ../sass/main.scss */
   .gist .gist-file .gist-data .line-pre {
     font-size: 16px;
     line-height: 1.2;
