@@ -12,6 +12,15 @@ body {
 	background: #fff url(../img/old-wall.png) repeat 0 0;
 }
 
+.hidden {
+	width: 1px;
+	height: 1px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -10000em;
+}
+
 /* =Header
 -------------------------------------------------------------- */
 
