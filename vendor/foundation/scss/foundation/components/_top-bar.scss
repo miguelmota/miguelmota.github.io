@@ -3,7 +3,7 @@
 //
 
 // Background color for the top bar
-$topbar-bg: #111 !default;
+$topbar-bg: #333 !default;
 
 // Height and margin
 $topbar-height: 45px !default;
@@ -214,7 +214,14 @@ $topbar-media-query: "only screen and (min-width:"#{$topbar-breakpoint}")" !defa
       font-size: $topbar-link-font-size;
       font-weight: $topbar-link-weight;
       background: $topbar-dropdown-bg;
+      border-left: 4px solid $topbar-dropdown-bg;
+      border-top: none;
       height: $topbar-height;
+
+      @media #{$topbar-media-query} {
+        border-left: none;
+        border-top: 4px solid $topbar-bg;
+      }
 
       &:hover { background: darken($topbar-dropdown-bg, 3%); }
 
@@ -248,7 +255,14 @@ $topbar-media-query: "only screen and (min-width:"#{$topbar-breakpoint}")" !defa
     }
 
     // Apply the active link color when it has that class
-    &.active a { background: darken($topbar-dropdown-bg, 3%); }
+    &.active a {
+      background: darken($topbar-dropdown-bg, 3%);
+      border-left-color: $primary-color;
+      @media #{$topbar-media-query} {
+        border-top-color: $primary-color;
+      }
+
+    }
   }
 
   // Add some extra padding for list items contains buttons
@@ -359,9 +373,9 @@ $topbar-media-query: "only screen and (min-width:"#{$topbar-breakpoint}")" !defa
     li {
       a:not(.button) {
         padding: 0 $topbar-height / 3;
-        line-height: $topbar-height;
+        line-height: $topbar-height - 5px;
         background: $topbar-bg;
-        &:hover { background: darken($topbar-dropdown-bg, 30%); }
+        &:hover { background: darken($topbar-dropdown-bg, 3%); }
       }
     }
 

@@ -1,5 +1,6 @@
 ---
 layout: default
+route: blog
 ---
 <section id="post">
 	<div class="row">
@@ -15,7 +16,7 @@ layout: default
 	{{ if site.related_posts }}
 		<div id="related-posts" class="row">
 			<div class="large-12 column">
-				<h3>See also... <input class="input-short-url" type="text" value="{{ page.short_url }}"></h3>
+				<h3>See also... <input class="input-short-url" type="text" value="http://{{ page.short_url }}"></h3>
 
 				<dl class="posts-list">
 					{% for post in site.related_posts offset: 0 limit: 5 %}

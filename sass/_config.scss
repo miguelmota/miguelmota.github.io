@@ -3,7 +3,6 @@
 $max-site-width: 860px !default;
 $color-body-light: #aaa;
 
-// Set size variables
 $mobile-small-max-size: 320px !default;
 $mobile-max-size: 640px !default;
 $tablet-min-size: 768px !default;
@@ -44,6 +43,17 @@ $desktop-large-min-size: 1200px !default;
   }
 }
 
+@font-face {
+  font-family: 'Icaras-Regular';
+  src: url('../fonts/icaras/icaras-webfont.eot');
+  src: url('../fonts/icaras/icaras-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/icaras/icaras-webfont.woff') format('woff'),
+       url('../fonts/icaras/icaras-webfont.ttf') format('truetype'),
+       url('../fonts/icaras/icaras-webfont.svg#icarasregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
   @include box-sizing(border-box);
   -webkit-font-smoothing: antialiased;
@@ -57,7 +67,10 @@ $desktop-large-min-size: 1200px !default;
   clear: both !important;
 }
 
-
-.font-primary {
+@mixin primary-font {
 	font-family: 'Open Sans', sans-serif;
+}
+
+@mixin brand-font {
+  font-family: 'Icaras-Regular', sans-serif;
 }

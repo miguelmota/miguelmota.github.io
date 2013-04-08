@@ -19,6 +19,17 @@ body {
 	margin-bottom: 0;
 }
 
+.top-bar .name a {
+	display: inline-block;
+	width: 45px;
+	height: 45px;
+	margin: 0;
+	padding: 0;
+	background: transparent url('../img/miguel-mota-logo.jpg') no-repeat 0 0;
+	background-size: auto 100%;
+	text-indent: -1000000em;
+}
+
 /* =Content
 -------------------------------------------------------------- */
 
