@@ -246,6 +246,7 @@ dl {
 
 /* Unordered Lists */
 ul {
+  list-style-position: inside;
   li {
     ul,
     ol {
