@@ -10,6 +10,7 @@
 
 body {
 	background: #fff url(../img/old-wall.png) repeat 0 0;
+	min-width: 320px;
 }
 
 .hidden {
@@ -140,6 +141,14 @@ body {
 }
 
 #about,
+#contact,
+#work {
+	h1 {
+		line-height: 1;
+	}
+}
+
+#about,
 #post {
 
 	p {
@@ -196,9 +205,8 @@ figcaption {
 	color: #555;
 }
 
-.gplus {
-	color: transparent;
-	font: 1px;
+.twitter-follow-button {
+	float: right;
 }
 
 /* =Gists
