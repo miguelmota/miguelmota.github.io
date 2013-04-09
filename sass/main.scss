@@ -8,11 +8,6 @@
 /* =Global
 -------------------------------------------------------------- */
 
-body {
-	background: #fff url(../img/old-wall.png) repeat 0 0;
-	min-width: 320px;
-}
-
 .hidden {
 	width: 1px;
 	height: 1px;
@@ -29,21 +24,6 @@ body {
 
 /* =Header
 -------------------------------------------------------------- */
-
-.top-bar {
-	margin-bottom: 0;
-}
-
-.top-bar .name a {
-	display: inline-block;
-	width: 45px;
-	height: 45px;
-	margin: 0;
-	padding: 0;
-	background: transparent url('../img/miguel-mota-logo.jpg') no-repeat 0 0;
-	background-size: auto 100%;
-	text-indent: -1000000em;
-}
 
 /* =Content
 -------------------------------------------------------------- */
@@ -62,15 +42,32 @@ body {
 
 #main {
 	display: block;
-	margin: 50px 0;
+	margin: 0;
+	padding-bottom: 100px;
+}
+
+#content {
+	padding: 25px 0;
+}
+
+#content-header {
+	background: #dfdfdf;
+	padding: 50px 0;
 	@include respond-to(mobile) {
-		margin-top: 25px;
+		padding: 10px;
+	}
+}
+
+#blog #content-header {
+	padding: 100px 0;
+	@include respond-to(mobile) {
+		padding: 20px 10px 10px 10px;
 	}
 }
 
 #lead {
 	p:first-child {
-		font-size: 32px;
+		font-size: 36px;
 		margin-bottom: 15px;
 
 		@include respond-to(mobile) {
@@ -86,6 +83,15 @@ body {
 			font-size: 16px;
 			margin-bottom: 10px;
 		}
+
+	}
+	p:nth-child(3) {
+		padding-bottom: 25px;
+		a {
+			font-weight: bold;
+		}
+	}
+	p:last-child {
 
 	}
 }
@@ -117,19 +123,27 @@ body {
 
 }
 
-#related-posts .posts-list {
+#related-posts {
 
-	datetime {
-		font-size: 16px;
-	}
+	padding-top: 50px;
 
-	h2 {
-		font-size: 20px;
+	.posts-list {
+
+		datetime {
+			font-size: 16px;
+		}
+
+		h2 {
+			font-size: 20px;
+		}
+
 	}
 
 }
 
 #post {
+
+	padding-top: 50px;
 
 	datetime {
 		display: block;
@@ -157,6 +171,10 @@ body {
 
 }
 
+#comments {
+	margin: 50px auto 0 auto;
+}
+
 figure {
 	width: 100%;
 	margin-bottom: 15px;
@@ -171,10 +189,6 @@ figcaption {
 	color: $color-body-light;
 }
 
-#comments {
-	margin: 50px 0 0 0;
-}
-
 [data-demo],
 [data-download],
 [data-site] {
@@ -183,13 +197,20 @@ figcaption {
 }
 
 .input-short-url {
-	display: inline-block;
-	width: 100px !important;
-	margin: 0 10px 0 0 !important;
-	padding: 2px;
-	float: right;
-}
+	padding: 0 10px;
+	text-align: right;
+	color: #999;
+	font-size: 14px;
 
+	input {
+		margin-left: 10px;
+		display: inline-block;
+		width: 100px !important;
+		padding: 2px;
+		font-size: 14px;
+	}
+
+}
 
 .twitter-share-button {
 	float: right;
@@ -202,14 +223,14 @@ figcaption {
 #footer {
 	padding: 10px 0;
 	background: #ddd;
-	color: #555;
+	color: #777;
 }
 
 .twitter-follow-button {
 	float: right;
 }
 
-/* =Gists
+/* =Code
 -------------------------------------------------------------- */
 
 p > code {

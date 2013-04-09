@@ -1,0 +1,29 @@
+{% if page.previous.category == 'blog' %}
+    {% if page.previous.url  %}
+
+    <h3>Previous post</h3>
+
+	    <dl class="posts-list">
+
+				<dt><datetime>{{ page.previous.date | date_to_string }}</datetime></dt>
+				<dd><h2><a href="{{ page.previous.url }}">{{ page.previous.title }}</a> <small><a href='{{ page.previous.url }}#disqus_thread' data-disqus-identifier='{{ page.previous.url }}'></a></small></h2></dd>
+
+			</dl>
+
+    {% endif %}
+{% endif %}
+
+{% if page.next.category == 'blog' %}
+    {% if page.next.url %}
+
+    	<h3>Next post</h3>
+
+    	<dl class="posts-list">
+
+		    <dt><datetime>{{ page.next.date | date_to_string }}</datetime></dt>
+		    <dd><h2><a href="{{ page.next.url }}">{{ page.next.title }}</a> <small><a href='{{ page.next.url }}#disqus_thread' data-disqus-identifier='{{ page.next.url }}'></a></small></h2></dd>
+
+		  </dl>
+
+    {% endif %}
+{% endif %}

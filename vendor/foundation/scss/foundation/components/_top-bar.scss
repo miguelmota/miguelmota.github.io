@@ -7,7 +7,7 @@ $topbar-bg: #333 !default;
 
 // Height and margin
 $topbar-height: 45px !default;
-$topbar-margin-bottom: emCalc(30px) !default;
+$topbar-margin-bottom: 0 !default;
 
 // Control Input height for top bar
 $topbar-input-height: 2.45em !default;
@@ -93,12 +93,17 @@ $topbar-media-query: "only screen and (min-width:"#{$topbar-breakpoint}")" !defa
     font-size: $topbar-title-font-size;
     margin: 0;
     a {
+      display: inline-block;
+      width: 45px;
+      height: 45px;
       font-size: 18px;
       font-weight: $topbar-title-weight;
       color: $topbar-link-color;
-      width: auto;
-      display: block;
-      padding: 0 $topbar-height / 3;
+      margin: 0;
+      padding: 0;
+      background: transparent url('../img/miguel-mota-logo.jpg') no-repeat 0 0;
+      background-size: auto 100%;
+      text-indent: -1000000em;
     }
 
   }

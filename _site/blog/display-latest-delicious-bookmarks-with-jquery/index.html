@@ -69,12 +69,10 @@
 		</header>
 
 		<main id="main" role="main">
-			<section>
-				<div class="row">
-					<div class="large-12 column">
-						<section id="post">
+			<section id="post">
 	<div class="row">
 		<div class="large-12 column">
+
 			<datetime>11 Oct 2011 <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.miguelmota.com/blog/display-latest-delicious-bookmarks-with-jquery" data-text="Display latest delicious bookmarks with jQuery" data-size="large" data-related="_moogs">Tweet</a></datetime>
 			<h1>Display latest delicious bookmarks with jQuery</h1>
 
@@ -204,8 +202,45 @@ Before the <code>$.getJSON()</code> function, add:</p>
 
 	
 		<div id="related-posts" class="row">
-			<div class="large-12 column">
-				<h3>See also... <input class="input-short-url" type="text" value="http://mig.gs/dldbj"></h3>
+			<div class="row">
+				<div class="large-12 column">
+					<div class="input-short-url">share: <input type="text" value="http://mig.gs/dldbj"></div>
+				</div>
+			</div>
+			<div class="large-6 column">
+				
+    
+
+    <h3>Previous post</h3>
+
+	    <dl class="posts-list">
+
+				<dt><datetime>09 Aug 2011</datetime></dt>
+				<dd><h2><a href="/blog/html5-reset-stylesheet">HTML5 Reset Stylesheet</a> <small><a href='/blog/html5-reset-stylesheet#disqus_thread' data-disqus-identifier='/blog/html5-reset-stylesheet'></a></small></h2></dd>
+
+			</dl>
+
+    
+
+
+
+    
+
+    	<h3>Next post</h3>
+
+    	<dl class="posts-list">
+
+		    <dt><datetime>14 Oct 2011</datetime></dt>
+		    <dd><h2><a href="/blog/ant-task-to-compress-html-files">Ant task to compress HTML files</a> <small><a href='/blog/ant-task-to-compress-html-files#disqus_thread' data-disqus-identifier='/blog/ant-task-to-compress-html-files'></a></small></h2></dd>
+
+		  </dl>
+
+    
+
+			</div>
+			<div class="large-6 column">
+
+				<h3>See also...</h3>
 
 				<dl class="posts-list">
 					
@@ -225,6 +260,7 @@ Before the <code>$.getJSON()</code> function, add:</p>
 <dd><h2><a href="/blog/screaming-goat">Screaming goat</a> <small><a href='/blog/screaming-goat#disqus_thread' data-disqus-identifier='/blog/screaming-goat'></a></small></h2></dd>
 					
 				</dl>
+
 			</div>
 		</div>
 	
@@ -234,6 +270,7 @@ Before the <code>$.getJSON()</code> function, add:</p>
 			<div id="disqus_thread"></div>
 		</div>
 	</div>
+
 </section>
 
 <script>
@@ -254,19 +291,18 @@ Before the <code>$.getJSON()</code> function, add:</p>
         (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
     }());
 </script>
-					</div>
-				</div>
-			</section>
 		</main>
 
-		<footer id="footer" class="row">
-			<div class="large-12 column">
-				<p>
-					© 2013 Miguel Mota <a class="hidden" href="https://plus.google.com/102174577273194387652" rel="author">Google+</a>
+		<footer id="footer">
+			<div class="row">
+				<div class="large-12 column">
+					<p>
+						© 2013 Miguel Mota <a class="hidden" href="https://plus.google.com/102174577273194387652" rel="author">Google+</a>
 
-					<a href="https://twitter.com/_moogs" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @_moogs</a>
+						<a href="https://twitter.com/_moogs" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @_moogs</a>
 
-				</p>
+					</p>
+				</div>
 			</div>
 		</footer>
 
