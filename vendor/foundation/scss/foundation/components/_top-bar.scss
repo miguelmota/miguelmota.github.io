@@ -87,11 +87,11 @@ $topbar-media-query: "only screen and (min-width:"#{$topbar-breakpoint}")" !defa
 
   .name {
     height: $topbar-height;
-    margin: 0;
     font-size: $em-base;
     line-height: $topbar-height;
     font-size: $topbar-title-font-size;
     margin: 0;
+    padding-left: 10px;
     a {
       display: inline-block;
       width: 45px;

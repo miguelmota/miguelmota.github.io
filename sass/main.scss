@@ -9,8 +9,8 @@
 -------------------------------------------------------------- */
 
 .hidden {
-	width: 1px;
-	height: 1px;
+	width: 0px;
+	height: 0px;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -92,7 +92,9 @@
 		}
 	}
 	p:last-child {
-
+		@include respond-to(mobile) {
+			font-size: 15px;
+		}
 	}
 }
 
@@ -101,6 +103,11 @@
 
 	h2 {
 		font-size: 34px;
+
+		@include respond-to(mobile) {
+			font-size: 26px
+		}
+
 	}
 
 	datetime {
@@ -119,6 +126,11 @@
 
 	h2 {
 		font-size: 26px;
+
+		@include respond-to(mobile) {
+			font-size: 20px
+		}
+
 	}
 
 }
