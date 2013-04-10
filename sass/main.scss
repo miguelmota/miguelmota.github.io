@@ -128,7 +128,7 @@ h2 {
 	}
 	p:last-child {
 		@include respond-to(mobile) {
-			font-size: 15px;
+			font-size: 14px;
 		}
 	}
 }
@@ -272,6 +272,9 @@ figcaption {
 	border-top: 1px solid #ccc;
 	background: #ddd;
 	color: #777;
+	@include respond-to(mobile) {
+		font-size: 14px;
+	}
 }
 
 .twitter-follow-button {
