@@ -22,6 +22,17 @@
 	text-indent: -100000em;
 }
 
+h2 {
+	> a:first-child {
+		display: inline-block;
+		border: 1px solid #ddd;
+		&:hover {
+			border-color: #ccc;
+		}
+	}
+}
+
+
 /* =Header
 -------------------------------------------------------------- */
 
@@ -53,6 +64,7 @@
 #content-header {
 	background: #dfdfdf;
 	padding: 50px 0;
+	border-bottom: 1px solid #ccc;
 	@include respond-to(mobile) {
 		padding: 10px;
 	}
@@ -62,6 +74,27 @@
 	padding: 100px 0;
 	@include respond-to(mobile) {
 		padding: 20px 10px 10px 10px;
+	}
+}
+
+#about #content-header {
+	height: 600px;
+	background: #dfdfdf url(../about/miguel-mota-instagram.jpg) no-repeat fixed;
+	background-size: cover;
+	background-position: center -300px;
+	@include respond-to(mobile) {
+		background-position: center -230px;
+		height: 250px;
+	}
+	@include respond-to(tablet-small) {
+		height: 350px;
+		background-position: center -250px;
+	}
+	@include respond-to(tablet) {
+		height: 400px;
+	}
+	@include respond-to(desktop-large) {
+		background-position: center -400px;
 	}
 }
 
@@ -234,6 +267,7 @@ figcaption {
 
 #footer {
 	padding: 10px 0;
+	border-top: 1px solid #ccc;
 	background: #ddd;
 	color: #777;
 }

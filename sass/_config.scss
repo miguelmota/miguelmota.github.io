@@ -26,6 +26,9 @@ $desktop-large-min-size: 1200px !default;
   @else if $media == mobile-tablet {
           @media only screen and (max-width: $tablet-max-size) { @content; }
   }
+  @else if $media == tablet-small {
+          @media only screen and (min-width: 600px) and (max-width: 800px) { @content; }
+  }
   @else if $media == tablet {
           @media only screen and (min-width: $tablet-min-size) and (max-width: $tablet-max-size) { @content; }
   }

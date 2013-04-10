@@ -9,13 +9,14 @@ html,
 body { font-size: $base-font-size; }
 
 // Default body styles
+$body-font-color: #444;
 body {
   background: $body-bg url(../img/old-wall.png) repeat 0 0;
   min-width: 320px;
   color: $body-font-color;
   padding: 0;
   margin: 0;
-  font-family: $body-font-family;
+  font-family: "open-sans-1", "open-sans-2",serif;
   font-weight: $body-font-weight;
   font-style: $body-font-style;
   line-height: 1;
