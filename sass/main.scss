@@ -70,10 +70,17 @@ h2 {
 	}
 }
 
+
 #blog #content-header {
-	padding: 100px 0;
+	height: 400px;
+	background: #dfdfdf url(../about/miguel-mota-oceanside-oregon-sky.jpg) no-repeat fixed;
+	background-size: 100% 100%;
+	background-position: center 0;
 	@include respond-to(mobile) {
-		padding: 20px 10px 10px 10px;
+		background: #dfdfdf url(../about/miguel-mota-oceanside-oregon-sky.jpg) no-repeat fixed;
+		background-size: 100% 100%;
+		height: 270px;
+		padding: 25px 10px;
 	}
 }
 
