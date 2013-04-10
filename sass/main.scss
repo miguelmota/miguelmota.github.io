@@ -25,7 +25,7 @@
 h2 {
 	> a:first-child {
 		display: inline-block;
-		border: 1px solid #efefef;
+		border: 1px solid transparent;
 		&:hover {
 			border-color: #ddd;
 		}
@@ -93,6 +93,8 @@ h2 {
 		background-position: center -400px;
 	}
 	@include respond-to(mobile) {
+		background: #dfdfdf url(../about/miguel-mota-instagram-small.jpg) no-repeat fixed;
+		background-size: 100% auto;
 		background-position: center 0;
 		height: 250px;
 	}
