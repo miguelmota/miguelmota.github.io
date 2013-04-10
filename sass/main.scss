@@ -25,9 +25,9 @@
 h2 {
 	> a:first-child {
 		display: inline-block;
-		border: 1px solid #ddd;
+		border: 1px solid #efefef;
 		&:hover {
-			border-color: #ccc;
+			border-color: #ddd;
 		}
 	}
 }
@@ -80,12 +80,8 @@ h2 {
 #about #content-header {
 	height: 600px;
 	background: #dfdfdf url(../about/miguel-mota-instagram.jpg) no-repeat fixed;
-	background-size: cover;
+	background-size: 100% auto;
 	background-position: center -300px;
-	@include respond-to(mobile) {
-		background-position: center -230px;
-		height: 250px;
-	}
 	@include respond-to(tablet-small) {
 		height: 350px;
 		background-position: center -250px;
@@ -95,6 +91,10 @@ h2 {
 	}
 	@include respond-to(desktop-large) {
 		background-position: center -400px;
+	}
+	@include respond-to(mobile) {
+		background-position: center 0;
+		height: 250px;
 	}
 }
 
