@@ -18,7 +18,7 @@ $topbar-title-font-size: emCalc(17px) !default;
 
 // Set the link colors and styles for top-level nav
 $topbar-link-color: #fff !default;
-$topbar-link-weight: bold !default;
+$topbar-link-weight: 600 !default;
 $topbar-link-font-size: emCalc(13px) !default;
 
 // Style the top bar dropdown elements
@@ -101,7 +101,7 @@ $topbar-media-query: "only screen and (min-width:"#{$topbar-breakpoint}")" !defa
       color: $topbar-link-color;
       margin: 0;
       padding: 0;
-      background: transparent url('../img/miguel-mota-logo.jpg') no-repeat 0 0;
+      background: transparent url('../img/miguel-mota-m-logo-100x100.png') no-repeat 0 0;
       background-size: auto 100%;
       text-indent: -1000000em;
     }
@@ -219,13 +219,13 @@ $topbar-media-query: "only screen and (min-width:"#{$topbar-breakpoint}")" !defa
       font-size: $topbar-link-font-size;
       font-weight: $topbar-link-weight;
       background: $topbar-dropdown-bg;
-      border-left: 4px solid $topbar-dropdown-bg;
+      border-left: 4px solid darken($topbar-dropdown-bg, 2%);
       border-top: none;
       height: $topbar-height;
 
       @media #{$topbar-media-query} {
         border-left: none;
-        border-top: 4px solid $topbar-bg;
+        border-top: 4px solid darken($topbar-dropdown-bg, 2%);
       }
 
       &:hover { background: darken($topbar-dropdown-bg, 3%); }

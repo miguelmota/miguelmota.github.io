@@ -30,7 +30,7 @@ route: blog
 
 				<dl class="posts-list">
 					{% for post in site.related_posts offset: 0 limit: 5 %}
-						{% include post_summary.html %}
+						{% include post_related.html %}
 					{% endfor %}
 				</dl>
 
