@@ -3,12 +3,12 @@ layout: blog-post
 title: Understanding Prototype in JavaScript
 category: blog
 tags: [javascript]
-short_url: mig.gs/bhw
-description: An attempt at demonstrating what prototype is.
+short_url: mig.gs/B5bO
+description: An attempt at demonstrating what prototype in JavaScript is.
 ---
 <p><strong>A <code>prototype</code> is an object from where other objects inherit properties from</strong>. All objects in JavaScript are descended from <code>Object</code>, a global object. Why this matters I'll explain later, but for now let's jump in to some code.</p>
 
-<h3>Constructor and methods</h3>
+<h3>Constructor and Methods</h3>
 
 <p>Let's define a functional object constructor called <code>Quadrilateral</code> and have <code>width</code> and <code>height</code> as parameters.</p>
 
@@ -146,6 +146,8 @@ myrectangle instanceof Rectangle; //return true
 mysquare instanceof Quadrilateral; // returns true
 mysquare instanceof Rectangle; //return false
 {% endhighlight %}
+
+<h3>Global Objects</h3>
 
 <p>Alright so going back to what I said in the beginning of this post. Every object has a reference to <code>Object.prototype</code>. We can confirm this by doing:
 
