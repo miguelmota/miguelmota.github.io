@@ -45,9 +45,9 @@ $input-prefix-font-color:            #333 !default;
 $input-prefix-font-color-alt:        #fff !default;
 
 // We use these to style the error states for inputs and labels
-$input-error-message-padding:        emCalc(6px) emCalc(4px) !default;
-$input-error-message-top:            -($form-spacing) - emCalc(5px) !default;
-$input-error-message-font-size:      emCalc(12px) !default;
+$input-error-message-padding:        6px 4px !default;
+$input-error-message-top:            -23px !default;
+$input-error-message-font-size:      12px !default;
 $input-error-message-font-weight:    bold !default;
 $input-error-message-font-color:     #fff !default;
 $input-error-message-font-color-alt: #333 !default;

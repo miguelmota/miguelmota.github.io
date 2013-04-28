@@ -35,7 +35,7 @@
       $(this.scope).on('click.fndtn.alerts', '[data-alert] a.close', function (e) {
         e.preventDefault();
         $(this).closest("[data-alert]").fadeOut(self.speed, function () {
-          $(this).remove();
+          //$(this).remove();
           self.settings.callback();
         });
       });

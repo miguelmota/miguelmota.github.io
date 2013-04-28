@@ -26,7 +26,7 @@ var MM = MM || (function() {
 					center: latlng,
 					mapTypeId: google.maps.MapTypeId.ROADMAP,
 					animation: google.maps.Animation.DROP,
-					scrollWheel: false,
+					scrollwheel: false,
 					disableDefaultUI: true
 				};
 

@@ -10,7 +10,7 @@ $alert-padding-bottom:      $alert-padding-top + emCalc(1px)               !defa
 
 // We use these to control text style.
 $alert-font-weight:         bold                                           !default;
-$alert-font-size:           emCalc(14px)                                   !default;
+$alert-font-size:           14px                                   !default;
 $alert-font-color:          #fff                                           !default;
 $alert-font-color-alt:      darken($secondary-color, 60%)                  !default;
 
@@ -26,7 +26,7 @@ $alert-bottom-margin:       emCalc(20px)                                   !defa
 // We use these to style the close buttons
 $alert-close-color:         #333                                           !default;
 $alert-close-position:      emCalc(5px)                                    !default;
-$alert-close-font-size:     emCalc(22px)                                   !default;
+$alert-close-font-size:     22px                                   !default;
 $alert-close-opacity:       0.3                                            !default;
 $alert-close-opacity-hover: 0.5                                            !default;
 $alert-close-padding:       5px 4px 4px                                    !default;
