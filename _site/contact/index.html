@@ -16,7 +16,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="description" content="Say hello or whatever's on your mind.">
 	<meta name="keywords" content="miguel mota,web developer,creative freelance,html5 css3 web design, miguel mota blog, miguel mota developer">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-title" content="Miguel Mota">
@@ -24,8 +24,13 @@
 	<link rel="canonical" href="http://www.miguelmota.com/">
 	<link rel="alternate" type="application/rss+xml" href="http://feeds.feedburner.com/miguelmota">
 	<link rel="shortcut icon" href="/favicon.ico">
-	<link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
-	<link rel="apple-touch-startup-image" href="/img/startup.png">
+	<link rel="apple-touch-icon-precomposed" sizes="57x57" href="/img/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/img/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon-72x72.png" sizes="72x72">
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-startup-image" media="(device-width: 320px)" href="apple-touch-startup-image-320x460.png">
+	<link rel="apple-touch-startup-image" media="(device-width: 320px) and (-webkit-device-pixel-ratio: 2)" href="apple-touch-startup-image-640x920.png">
+	<link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" href="apple-touch-startup-image-640x1096.png">
 	<link rel="stylesheet" href="/css/main.css">
 	<script type="text/javascript" src="//use.typekit.net/wkl5rpy.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
@@ -72,6 +77,8 @@
 
 		<main id="main" role="main">
 			<header id="content-header">
+	<div id="map"></div>
+
 	<div class="row">
 		<div class="large-12 column">
 
@@ -83,7 +90,7 @@
 
 <section id="content">
 	<div class="row">
-		<div class="large-12 column">
+		<div class="large-6 column">
 
 			<p>For questions, comments, or simply to say hello, reach me at:</p>
 
@@ -92,11 +99,71 @@
 				<i class="icon-mobile-phone"></i> <span>+1 951.215-MOTA</span>
 			</p>
 
-			<p><i class="icon-map-marker"></i> I'm currently located in Los Angeles, CA.</p>
+			<p><i class="icon-map-marker"></i> I'm currently located in <a data-location href="#map">Los Angeles, CA.</a></p>
 
 		</div>
+
+		<div class="large-6 column">
+
+			<form id="contact-form" action="http://miguelmota.pagodabox.com/api/contact/mailer" method="POST">
+			  <fieldset>
+			    <legend>Leave a message</legend>
+
+			    <div class="row">
+			      <div class="large-12 columns">
+			        <div data-alert class="alert-box">
+								<div class="message"></div>
+			          <a href="#" class="close">&times;</a>
+			        </div>
+			      </div>
+			    </div>
+
+			    <div class="row">
+			      <div class="large-12 columns">
+			        <label>Name</label>
+			        <input type="text" name="name" placeholder="John Appleseed">
+			        <small class="error" for="name"></small>
+			      </div>
+			    </div>
+
+			    <div class="row">
+			      <div class="large-12 columns">
+			        <label>Email</label>
+			        <input class="error" type="email" name="email" placeholder="john.appleseed@example.com">
+			        <small class="error" for="email"></small>
+			      </div>
+			    </div>
+
+			    <div class="row">
+			      <div class="large-12 columns">
+			        <label>Message</label>
+			        <textarea rows="3" name="message" placeholder="What's on your mind?"></textarea>
+			        <small class="error" for="message"></small>
+			      </div>
+			    </div>
+
+			    <div class="row">
+			      <div class="large-12 columns">
+			        <input type="submit" value="Send »">
+			      </div>
+			    </div>
+
+			  </fieldset>
+			</form>
+
+		</div>
+
 	</div>
 </section>
+
+<div id="contact-map-content" class="info-window-content">
+	<div class="info-window-inner">
+		Los Angeles, CA, USA
+	</div>
+</div>
+
+<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/infobox/src/infobox.js"></script>
 		</main>
 
 		<footer id="footer">

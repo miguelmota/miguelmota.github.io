@@ -160,11 +160,11 @@ myrectangle instanceof Object; //return true
 
 <p>All objects inherit methods and properties from <code>Object.prototype</code>. Ever wondered where methods such as <code>hasOwnProperty</code>, <code>isPrototypeOf</code>, <code>toString</code> or <code>valueOf</code> came from? Those come from <code>Object</code>.
 
-<p>Also every function in JavaScript is an instance of the global <code>Function</code> Object. This means that every function inherits from it. By inheriting from <code>Function.prototype</code>, we have access to a number of helpful methods and properties such as <code>length</code>, <code>apply</code>, <code>bind</code>, and <code>call</code>. <code>Array.prototype</code> gives us mutator methods such as <code>pop</code>, <code>push</code> and <code>sort</code>, as well as accessor methods such as <code>concat</code>, <code>join</code> and <code>slice</code>.</p>
+<p>Basically every function in JavaScript is an instance of root global objects. This means that every function inherits from it. For example, by inheriting from <code>Function.prototype</code>, we have access to a number of helpful methods and properties such as <code>length</code>, <code>apply</code>, <code>bind</code>, and <code>call</code>. <code>Array.prototype</code> gives us mutator methods such as <code>pop</code>, <code>push</code> and <code>sort</code>, as well as accessor methods such as <code>concat</code>, <code>join</code> and <code>slice</code>.</p>
 
 <p>I strongly recommend you check out the <a href="https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Global_Objects" target="_blank">Mozilla Developer Network</a> documentation on global objects for a better understanding.</p>
 
-<p>We can override a global method, or check if a global method exists and create our own if it does not, for example <code>Array.prototype.forEach</code>:</p>
+<p>We can override a global method, or check if a global method exists and define our own if it does not, for example checking for <code>Array.prototype.forEach</code>:</p>
 
 {% highlight javascript %}
 if (!Array.prototype.forEach) {

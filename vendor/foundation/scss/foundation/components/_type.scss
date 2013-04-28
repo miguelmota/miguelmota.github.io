@@ -154,6 +154,19 @@ a {
   img { border:none; }
 }
 
+/* Alt Link Styles */
+a.alt {
+  color: $body-font-color;
+  text-decoration: none;
+  border-bottom: 1px dotted $body-font-color;
+
+  &:hover,
+  &:focus {
+    color: darken($body-font-color, 20%);
+    border-bottom-color: darken($body-font-color, 20%);
+  }
+}
+
 /* Default paragraph styles */
 p {
   font-family: $paragraph-font-family;

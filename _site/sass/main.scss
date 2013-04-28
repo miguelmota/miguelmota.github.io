@@ -61,6 +61,7 @@ h2 {
 }
 
 #content-header {
+	position: relative;
 	background: #dfdfdf;
 	padding: 50px 0;
 	border-bottom: 1px solid #ccc;
@@ -101,6 +102,13 @@ h2 {
 		background-size: 100% auto;
 		background-position: center 0;
 		height: 250px;
+	}
+}
+
+#contact #content-header {
+	height: 400px;
+	@include respond-to(mobile) {
+		height: 270px;
 	}
 }
 
@@ -233,6 +241,53 @@ h2 {
 	}
 }
 
+#contact #map {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 400px;
+	@include respond-to(mobile) {
+		height: 270px;
+	}
+}
+
+#contact [data-location] {
+	@extend .alt;
+}
+
+#contact [data-alert] {
+	display: none;
+}
+
+#contact small.error {
+	display: none;
+}
+
+#contact [type="submit"] {
+	float: right;
+}
+
+.infoBox {
+	background: transparent url('/img/map-tipbox-bottom.gif') no-repeat center 0 !important;
+}
+
+.info-window-content {
+    display: none;
+}
+
+.info-window-inner {
+		@include primary-font;
+    border: 1px solid #000;
+    margin-bottom: 8px;
+    background: #333;
+    color: #FFF;
+    font-size: 12px;
+    padding: .5em 1em;
+    text-shadow: 0 -1px #000000;
+    @include box-shadow(0 0 8px #000);
+}
+
 #comments {
 	margin: 50px auto 0 auto;
 }
@@ -253,7 +308,8 @@ figcaption {
 
 [data-demo],
 [data-download],
-[data-site] {
+[data-site],
+[type="submit"] {
 	@extend .button;
 	@extend .button.large;
 }

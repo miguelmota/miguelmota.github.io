@@ -3,17 +3,17 @@
 //
 
 // We use this to set the base for lots of form spacing and positioning styles
-$form-spacing:                       emCalc(16px) !default;
+$form-spacing:                       emCalc(32px) !default;
 
 // We use these to style the labels in different ways
 $label-pointer:                      pointer !default;
-$label-font-size:                    emCalc(14px) !default;
+$label-font-size:                    emCalc(18px) !default;
 $label-font-weight:                  500 !default;
 $label-font-color:                   lighten(#000, 30%) !default;
-$label-bottom-margin:                emCalc(3px) !default;
+$label-bottom-margin:                emCalc(10px) !default;
 $input-font-family:                  inherit !default;
 $input-font-color:                   rgba(0,0,0,0.75) !default;
-$input-font-size:                    emCalc(14px) !default;
+$input-font-size:                    emCalc(18px) !default;
 $input-bg-color:                     #fff !default;
 $input-focus-bg-color:               darken(#fff, 2%) !default;
 $input-border-color:                 darken(#fff, 20%) !default;
@@ -28,11 +28,11 @@ $fieldset-border-style:              solid !default;
 $fieldset-border-width:              1px !default;
 $fieldset-border-color:              #ddd !default;
 $fieldset-padding:                   emCalc(20px) !default;
-$fieldset-margin:                    emCalc(18px) 0 !default;
+$fieldset-margin:                    0 !default;
 
 // We use these to style the legends when you use them
-$legend-bg:                          #fff !default;
-$legend-font-weight:                 bold !default;
+$legend-bg:                          none !default;
+$legend-font-weight:                 normal !default;
 $legend-padding:                     0 emCalc(3px) !default;
 
 // We use these to style the prefix and postfix input elements
