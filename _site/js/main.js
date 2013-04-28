@@ -72,19 +72,19 @@ var MM = MM || (function() {
 	  		       content: infoWindowContent,
 	  		       disableAutoPan: false,
 	  		       maxWidth: 200,
-	  		       pixelOffset: new google.maps.Size(-100, -65),
+	  		       pixelOffset: new google.maps.Size(-100, 0),
 	  		       zIndex: null,
 	  		       position: new google.maps.LatLng(34.0452,-118.284),
 	  		       boxStyle: {
-	  		           background: "url('/img/map-tipbox-bottom.gif') no-repeat",
+	  		           background: "url('/img/map-tipbox-top.gif') no-repeat",
 	  		           opacity: 0.75,
 	  		           width: "200px"
 	  		      },
-	  		      closeBoxMargin: "4px 2px 12px 2px",
+	  		      closeBoxMargin: "12px 2px 4px 2px",
 	  		      closeBoxURL: "/img/map-close-icon.png",
 	  		      infoBoxClearance: new google.maps.Size(1, 1),
 	  		      isHidden: false,
-	  		      alignBottom: true,
+	  		      alignBottom: false,
 	  		      pane: "floatPane"
 	  		});
 
@@ -149,6 +149,7 @@ var MM = MM || (function() {
 				        	me.find('[name="'+errorField+'"]').addClass('error');
 				          me.find('small.error[for="'+errorField+'"]').html(errors[errorField]).css({'display':'block'});
 				        }
+				        me.find('input.error, textarea.error').eq(0).focus();
 				      }
 				    }
 

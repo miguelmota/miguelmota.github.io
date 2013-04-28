@@ -272,6 +272,8 @@ h2 {
 
 #contact textarea {
 	height: auto;
+	overflow: hidden;
+	resize: vertical;
 }
 
 #contact [type="submit"] {
@@ -279,7 +281,7 @@ h2 {
 }
 
 .infoBox {
-	background: transparent url('/img/map-tipbox-bottom.gif') no-repeat center 0 !important;
+	background: transparent url('/img/map-tipbox-top.gif') no-repeat center 0 !important;
 }
 
 .info-window-content {
@@ -289,7 +291,7 @@ h2 {
 .info-window-inner {
 		@include primary-font;
     border: 1px solid #000;
-    margin-bottom: 8px;
+    margin-top: 8px;
     background: #333;
     color: #FFF;
     font-size: 12px;
@@ -320,6 +322,7 @@ figcaption {
 [data-download],
 [data-site],
 [type="submit"] {
+	-webkit-appearance: none;
 	@extend .button;
 	@extend .button.large;
 }
