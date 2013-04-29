@@ -173,7 +173,7 @@ var MM = MM || (function() {
 })();
 
 
-$(document).on('click', '.input-short-url', function() {
+$(document).on('click', '.input-short-url input', function() {
 	$(this).select();
 });
 
