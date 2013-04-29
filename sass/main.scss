@@ -105,6 +105,24 @@ h2 {
 	}
 }
 
+#work #content-header {
+	height: 400px;
+	background: #dfdfdf url(../img/work/miguel-mota-sublime-text-solarized-dark-high-res.png) no-repeat fixed;
+	background-size: 100% auto;
+	background-position: center 45px;
+	@include respond-to(tablet) {
+		background: #dfdfdf url(../img/work/miguel-mota-sublime-text-solarized-dark-medium.png) no-repeat fixed;
+		background-size: 100% auto;
+		background-position: center 45px;
+	}
+	@include respond-to(mobile) {
+		background: #dfdfdf url(../img/work/miguel-mota-sublime-text-solarized-dark-small.png) no-repeat fixed;
+		background-size: 100% auto;
+		background-position: center 45px;
+		height: 250px;
+	}
+}
+
 #contact #content-header {
 	height: 400px;
 	@include respond-to(mobile) {
@@ -229,6 +247,13 @@ h2 {
 	}
 
 }
+
+#work {
+	h1 {
+		color: #bbb;
+	}
+}
+
 
 #contact main {
 	[class*="icon-"] {
