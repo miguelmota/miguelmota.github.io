@@ -1,3 +1,6 @@
+# humanstxt.org
+# The humans responsible & technology colophon
+
 /* TEAM */
 	Developer: Miguel Mota
 	Site: http://www.miguelmota.com
@@ -6,9 +9,9 @@
 	Location: Los Angeles, United States
 
 /* SITE */
-	Last update: August 16, 2011
+	Last update: April 16, 2013
 	Language: English
 	Standards: HTML5, CSS3, JavaScript
 	Components: jQuery
-	Tools: Eclipse IDE, Apache Ant, YUI Compressor, Closure Compiler
+	Tools: Sublime Text 2
 	Base: jekyll, GitHub Pages
