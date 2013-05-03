@@ -1,0 +1,1477 @@
+body {
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	background: #eee url(../img/bg-test-2.png) repeat 0 0;
+	font: 14px/17px Helvetica Neue, Helvetica, Arial, Sans-serif;
+}
+
+p {
+	margin: 5px 0 5px 0;
+}
+
+.debug {
+	/*position: fixed;
+	bottom: 0;
+	right: 0;
+	width: 200px;
+	height: 100px;
+	background: #fff;
+	border: 1px solid #000;
+	z-index: 20;
+	display: none;*/
+	
+	padding: 10px 0;
+}
+
+.debug ul {
+	margin: 10px 0 10px 30px;
+	list-style-type: disc;
+}
+
+/* defalut */
+.default-slider-container {
+	position: relative;
+	top: 0;
+	left: 0;
+	width: 942px;
+	height: 200px;
+}
+
+.default-slider-container .goToBlock {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 36px;
+	height: 200px;
+}
+
+.default-slider-container .goToBlock .go {
+	width: 36px;
+	height: 36px;
+	background: #aaa;
+	margin: 0 0 5px 0;
+	cursor: pointer;
+}
+
+.default-slider {
+	position: relative;
+	overflow: hidden;
+	width: 900px;
+	height: 200px;
+}
+
+.default-slider .next {
+	position: absolute;
+	top: 79px;
+	right: 10px;
+	width: 40px;
+	height: 40px;
+	border: 1px dotted #ddd;
+	background: #000;
+}
+
+.default-slider .prev {
+	position: absolute;
+	top: 79px;
+	left: 10px;
+	width: 40px;
+	height: 40px;
+	border: 1px dotted #ddd;
+	background: #000;
+}
+
+.default-slider .slider {
+	width: 100%;
+	height: 100%;
+}
+
+.default-slider .slider .item {
+	float: left;
+	width: 900px;
+	height: 100%;
+}
+
+.default-slider .slider #item1 {
+	background: #666;
+}
+
+.default-slider .slider #item2 {
+	background: #999;
+}
+
+.default-slider .slider #item3 {
+	background: #aaa;
+}
+
+.default-slider .slider #item4 {
+	background: #ddd;
+}
+
+.default-slider .slider #item5 {
+	background: #777;
+}
+
+/* snap */
+.snap-slider {
+	position: relative;
+	overflow: hidden;
+	width: 900px;
+	height: 200px;
+}
+
+.snap-slider .slider {
+	height: 100%;
+}
+
+.snap-slider .slider .item {
+	width: 900px;
+	height: 100%;
+}
+
+.snap-slider .slider #item1 {
+	background: #666;
+}
+
+.snap-slider .slider #item2 {
+	background: #999;
+}
+
+.snap-slider .slider #item3 {
+	background: #aaa;
+}
+
+.snap-slider .slider #item4 {
+	background: #ddd;
+}
+
+.snap-slider .slider #item5 {
+	background: #777;
+}
+
+/* infinite */
+.responsive-container {
+	width: 900px;
+	height: 200px;
+}
+
+.infinite-slider {
+	position: relative;
+	overflow: hidden;
+	width: 1200px;
+	height: 300px;
+}
+
+.infinite-slider .slider {
+	height: 100%;
+}
+
+.infinite-slider .slider .item {
+	width: 900px;
+	height: 100%;
+}
+
+.infinite-slider .slider #item1 {
+	background: #666;
+}
+
+.infinite-slider .slider #item2 {
+	background: #999;
+}
+
+.infinite-slider .slider #item3 {
+	background: #aaa;
+}
+
+.infinite-slider .slider #item4 {
+	background: #ddd;
+}
+
+.infinite-slider .slider #item5 {
+	background: #777;
+}
+
+/* responsive */
+.responsive-slider {
+	position: relative;
+	overflow: hidden;
+	width: 900px;
+	height: 200px;
+}
+
+.responsive-slider .slider {
+	height: 100%;
+}
+
+.responsive-slider .slider .item {
+	width: 900px;
+	height: 100%;
+}
+
+.responsive-slider .slider #item1 {
+	background: #666;
+}
+
+.responsive-slider .slider #item2 {
+	background: #999;
+}
+
+.responsive-slider .slider #item3 {
+	background: #aaa;
+}
+
+.responsive-slider .slider #item4 {
+	background: #ddd;
+}
+
+.responsive-slider .slider #item5 {
+	background: #777;
+}
+
+/* responsive-2 */
+.responsive-slider-2 {
+	position: relative;
+	overflow: hidden;
+	width: 900px;
+	height: 200px;
+}
+
+.responsive-slider-2 .slider {
+	height: 100%;
+}
+
+.responsive-slider-2 .slider .item {
+	width: 1400px;
+	height: 100%;
+}
+
+.responsive-slider-2 .slider #item1 {
+	background: #666;
+}
+
+.responsive-slider-2 .slider #item2 {
+	background: #999;
+}
+
+.responsive-slider-2 .slider #item3 {
+	background: #aaa;
+}
+
+.responsive-slider-2 .slider #item4 {
+	background: #ddd;
+}
+
+.responsive-slider-2 .slider #item5 {
+	background: #777;
+}
+
+/* autoslide */
+.autoslide-slider1,
+.autoslide-slider2,
+.autoslide-slider3,
+.autoslide-slider4 {
+	position: relative;
+	overflow: hidden;
+	width: 900px;
+	height: 200px;
+}
+
+.autoslide-slider1 .slider,
+.autoslide-slider2 .slider,
+.autoslide-slider3 .slider,
+.autoslide-slider4 .slider {
+	height: 100%;
+}
+
+.autoslide-slider1 .slider .item,
+.autoslide-slider2 .slider .item,
+.autoslide-slider3 .slider .item,
+.autoslide-slider4 .slider .item {
+	width: 900px;
+	height: 100%;
+}
+
+.autoslide-slider1 .slider .item .linkBlock,
+.autoslide-slider2 .slider .item .linkBlock {
+	float: left;
+	width: 300px;
+	height: 198px;
+	border: 1px dotted #ddd;
+	background: #000;
+	cursor: pointer;
+}
+
+.autoslide-slider1 .slider #item1,
+.autoslide-slider2 .slider #item1,
+.autoslide-slider3 .slider #item1,
+.autoslide-slider4 .slider #item1 {
+	background: #666;
+}
+
+.autoslide-slider1 .slider #item2,
+.autoslide-slider2 .slider #item2,
+.autoslide-slider3 .slider #item2,
+.autoslide-slider4 .slider #item2 {
+	background: #999;
+}
+
+.autoslide-slider1 .slider #item3,
+.autoslide-slider2 .slider #item3,
+.autoslide-slider3 .slider #item3,
+.autoslide-slider4 .slider #item3 {
+	background: #aaa;
+}
+
+.autoslide-slider1 .slider #item4,
+.autoslide-slider2 .slider #item4,
+.autoslide-slider3 .slider #item4,
+.autoslide-slider4 .slider #item4 {
+	background: #ddd;
+}
+
+.autoslide-slider1 .slider #item5,
+.autoslide-slider2 .slider #item5,
+.autoslide-slider3 .slider #item5,
+.autoslide-slider4 .slider #item5 {
+	background: #777;
+}
+
+.autoslide-slider2-container, 
+.autoslide-slider4-container {
+	position: relative;
+	top: 0;
+	left: 0;
+	width: 942px;
+	height: 200px;
+}
+
+.autoslide-slider2-container .goToBlock,
+.autoslide-slider4-container .goToBlock {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 36px;
+	height: 200px;
+}
+
+.autoslide-slider2-container .goToBlock .go,
+.autoslide-slider4-container .goToBlock .go {
+	width: 36px;
+	height: 36px;
+	background: #aaa;
+	margin: 0 0 5px 0;
+	cursor: pointer;
+}
+
+.autoslide-slider2 .next,
+.autoslide-slider3 .next,
+.autoslide-slider4 .next {
+	position: absolute;
+	top: 79px;
+	right: 10px;
+	width: 40px;
+	height: 40px;
+	border: 1px dotted #ddd;
+	background: #000;
+}
+
+.autoslide-slider2 .prev,
+.autoslide-slider3 .prev,
+.autoslide-slider4 .prev {
+	position: absolute;
+	top: 79px;
+	left: 10px;
+	width: 40px;
+	height: 40px;
+	border: 1px dotted #ddd;
+	background: #000;
+}
+
+/* variable size slides */
+.variable-width-slider {
+	position: relative;
+	overflow: hidden;
+	width: 900px;
+	height: 200px;
+}
+
+.variable-width-slider .slider {
+	height: 100%;
+}
+
+.variable-width-slider .slider .item {
+	height: 100%;
+}
+
+.variable-width-slider .slider #item1 {
+	width: 500px;
+	background: #666;
+}
+
+.variable-width-slider .slider #item2 {
+	width: 400px;
+	background: #999;
+}
+
+.variable-width-slider .slider #item3 {
+	width: 500px;
+	background: #aaa;
+}
+
+.variable-width-slider .slider #item4 {
+	width: 400px;
+	background: #ddd;
+}
+
+.variable-width-slider .slider #item5 {
+	width: 600px;
+	background: #666;
+}
+
+/* short size slides */
+.short-width-slider,
+.short-width-slider-3 {
+	position: relative;
+	overflow: hidden;
+	width: 900px;
+	height: 200px;
+}
+
+.short-width-slider-2 {
+	position: relative;
+	overflow: hidden;
+	width: 900px;
+	height: 200px;
+}
+
+.short-width-slider .slider,
+.short-width-slider-2 .slider,
+.short-width-slider-3 .slider {
+	height: 100%;
+}
+
+.short-width-slider .slider .item {
+	width: 250px;
+	height: 100%;
+}
+
+.short-width-slider-2 .slider .item {
+	width: 300px;
+	height: 100%;
+}
+
+.short-width-slider-3 .slider .item {
+	width: 33.333%;
+	height: 100%;
+}
+
+.short-width-slider .slider #item1,
+.short-width-slider-2 .slider #item1,
+.short-width-slider-3 .slider #item1 {
+	background: #666;
+}
+
+.short-width-slider .slider #item2,
+.short-width-slider-2 .slider #item2,
+.short-width-slider-3 .slider #item2 {
+	background: #999;
+}
+
+.short-width-slider .slider #item3,
+.short-width-slider-2 .slider #item3,
+.short-width-slider-3 .slider #item3 {
+	background: #aaa;
+}
+
+.short-width-slider .slider #item4,
+.short-width-slider-2 .slider #item4,
+.short-width-slider-3 .slider #item4 {
+	background: #ddd;
+}
+
+.short-width-slider .slider #item5,
+.short-width-slider-2 .slider #item5,
+.short-width-slider-3 .slider #item5 {
+	background: #777;
+}
+
+.short-width-slider-2 .next {
+	position: absolute;
+	top: 79px;
+	right: 10px;
+	width: 40px;
+	height: 40px;
+	border: 1px dotted #ddd;
+	background: #000;
+}
+
+.short-width-slider-2 .prev {
+	position: absolute;
+	top: 79px;
+	left: 10px;
+	width: 40px;
+	height: 40px;
+	border: 1px dotted #ddd;
+	background: #000;
+}
+
+/* destroy */
+.destroy-slider {
+	position: relative;
+	overflow: hidden;
+	width: 900px;
+	height: 200px;
+}
+
+.destroy-slider .slider .item .linkBlock {
+	float: left;
+	width: 300px;
+	height: 198px;
+	border: 1px dotted #ddd;
+	background: #000;
+	cursor: pointer;
+}
+
+.destroy-slider .slider {
+	height: 100%;
+}
+
+.destroy-slider .slider .item {
+	width: 900px;
+	height: 100%;
+}
+
+.destroy-slider .slider #item1 {
+	background: #666;
+}
+
+.destroy-slider .slider #item2 {
+	background: #999;
+}
+
+.destroy-slider .slider #item3 {
+	background: #aaa;
+}
+
+.destroy-slider .slider #item4 {
+	background: #ddd;
+}
+
+.destroy-slider .slider #item5 {
+	background: #777;
+}
+
+.destroy-slider-container {
+	position: relative;
+	top: 0;
+	left: 0;
+	width: 984px;
+	height: 200px;
+}
+
+.destroy-slider-container .goToBlock {
+	position: absolute;
+	top: 0;
+	right: 42px;
+	width: 36px;
+	height: 200px;
+}
+
+.destroy-slider-container .goToBlock .go {
+	width: 36px;
+	height: 36px;
+	background: #aaa;
+	margin: 0 0 5px 0;
+	cursor: pointer;
+}
+
+.destroy-slider-container .destInitBlock {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 36px;
+	height: 200px;
+}
+
+.destroy-slider-container .destInitBlock .dest,
+.destroy-slider-container .destInitBlock .init {
+	width: 36px;
+	height: 36px;
+	background: #aaa;
+	margin: 0 0 5px 0;
+	cursor: pointer;
+}
+
+.destroy-slider .next {
+	position: absolute;
+	top: 79px;
+	right: 10px;
+	width: 40px;
+	height: 40px;
+	border: 1px dotted #ddd;
+	background: #000;
+}
+
+.destroy-slider .prev {
+	position: absolute;
+	top: 79px;
+	left: 10px;
+	width: 40px;
+	height: 40px;
+	border: 1px dotted #ddd;
+	background: #000;
+}
+
+/* callback */
+.callback-slider {
+	position: relative;
+	overflow: hidden;
+	width: 900px;
+	height: 200px;
+}
+
+.callback-slider .slider .item .linkBlock {
+	float: left;
+	width: 300px;
+	height: 198px;
+	border: 1px dotted #ddd;
+	background: #000;
+	cursor: pointer;
+}
+
+.callback-slider .slider {
+	height: 100%;
+}
+
+.callback-slider .slider .item {
+	width: 900px;
+	height: 100%;
+}
+
+.callback-slider .slider #item1 {
+	background: #666;
+}
+
+.callback-slider .slider #item2 {
+	background: #999;
+}
+
+.callback-slider .slider #item3 {
+	background: #aaa;
+}
+
+.callback-slider .slider #item4 {
+	background: #ddd;
+}
+
+.callback-slider .slider #item5 {
+	background: #777;
+}
+
+.callback-slider .paging {
+	position: absolute;
+	bottom: 10px;
+	left: 10px;
+	width: 200px;
+	height: 10px;
+}
+
+.callback-slider .paging .box {
+	background: #333;
+	border: 1px solid #000;
+	opacity: 0.5;
+	width: 10px;
+	height: 10px;
+	float: left;
+	margin: 0 10px 0 0;
+}
+
+.callback-slider .paging .selected {
+	opacity: 1;
+}
+
+.callback-slider-container {
+	position: relative;
+	top: 0;
+	left: 0;
+	width: 984px;
+	height: 200px;
+}
+
+.callback-slider-container .goToBlock {
+	position: absolute;
+	top: 0;
+	right: 42px;
+	width: 36px;
+	height: 200px;
+}
+
+.callback-slider-container .goToBlock .go {
+	width: 36px;
+	height: 36px;
+	background: #aaa;
+	margin: 0 0 5px 0;
+	cursor: pointer;
+}
+
+.callback-slider-container .destInitBlock {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 36px;
+	height: 200px;
+}
+
+.callback-slider-container .destInitBlock .dest,
+.callback-slider-container .destInitBlock .init,
+.callback-slider-container .destInitBlock .update {
+	width: 36px;
+	height: 36px;
+	background: #aaa;
+	margin: 0 0 5px 0;
+	cursor: pointer;
+}
+
+/* full width */
+.full-width-slider {
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	height: 200px;
+}
+
+.full-width-slider .slider {
+	height: 100%;
+}
+
+.full-width-slider .slider .item {
+	width: 100%;
+	height: 100%;
+}
+
+.full-width-slider .slider #item1 {
+	background: #666;
+}
+
+.full-width-slider .slider #item2 {
+	background: #999;
+}
+
+.full-width-slider .slider #item3 {
+	background: #aaa;
+}
+
+.full-width-slider .slider #item4 {
+	background: #ddd;
+}
+
+.full-width-slider .slider #item5 {
+	background: #777;
+}
+
+/* form */
+.form-slider {
+	position: relative;
+	overflow: hidden;
+	width: 900px;
+	height: 200px;
+}
+
+.form-slider .slider {
+	height: 100%;
+}
+
+.form-slider .slider .item {
+	width: 100%;
+	height: 100%;
+}
+
+.form-slider .slider #item1 {
+	background: #666;
+}
+
+.form-slider .slider #item2 {
+	background: #999;
+}
+
+.form-slider .slider #item3 {
+	background: #aaa;
+}
+
+.form-slider .slider #item4 {
+	background: #ddd;
+}
+
+.form-slider .slider #item5 {
+	background: #777;
+}
+
+/* media query */
+.media-query-slider {
+	position: relative;
+	overflow: hidden;
+	width: 900px;
+	height: 200px;
+}
+
+@media screen and (max-width: 900px) {
+
+	.media-query-slider {
+		width: 600px;
+	}
+	
+}
+
+.media-query-slider .slider {
+	height: 100%;
+}
+
+.media-query-slider .slider .item {
+	width: 100%;
+	height: 100%;
+}
+
+.media-query-slider .slider #item1 {
+	background: #666;
+}
+
+.media-query-slider .slider #item2 {
+	background: #999;
+}
+
+.media-query-slider .slider #item3 {
+	background: #aaa;
+}
+
+.media-query-slider .slider #item4 {
+	background: #ddd;
+}
+
+.media-query-slider .slider #item5 {
+	background: #777;
+}
+
+/* thirty */
+.thirty-slider {
+	position: relative;
+	overflow: hidden;
+	width: 900px;
+	height: 200px;
+}
+
+.thirty-slider .slider {
+	height: 100%;
+}
+
+.thirty-slider .slider .item {
+	width: 100%;
+	height: 100%;
+}
+
+.thirty-slider .slider .item1 {
+	background: #666;
+}
+
+.thirty-slider .slider .item2 {
+	background: #999;
+}
+
+.thirty-slider .slider .item3 {
+	background: #aaa;
+}
+
+.thirty-slider .slider .item4 {
+	background: #ddd;
+}
+
+.thirty-slider .slider .item5 {
+	background: #999;
+}
+
+/* media query */
+.undefined-height-slider {
+	position: relative;
+	overflow: hidden;
+	width: 900px;
+}
+
+.undefined-height-slider .slider {
+	height: 100%;
+}
+
+.undefined-height-slider .slider .item {
+	padding: 10px 20px;
+}
+
+.undefined-height-slider .slider #item1 {
+	background: #666;
+}
+
+.undefined-height-slider .slider #item2 {
+	background: #999;
+}
+
+.undefined-height-slider .slider #item3 {
+	background: #aaa;
+}
+
+.undefined-height-slider .slider #item4 {
+	background: #ddd;
+}
+
+.undefined-height-slider .slider #item5 {
+	background: #777;
+}
+
+/* bind event slider */
+.bind-event-slider {
+	position: relative;
+	overflow: hidden;
+	width: 900px;
+	height: 200px;
+}
+
+.bind-event-slider .slider .item .linkBlock {
+	float: left;
+	width: 300px;
+	height: 198px;
+	border: 1px dotted #ddd;
+	background: #000;
+	cursor: pointer;
+}
+
+.bind-event-slider .slider {
+	height: 100%;
+}
+
+.bind-event-slider .slider .item {
+	width: 100%;
+	height: 100%;
+}
+
+.bind-event-slider .slider #item1 {
+	background: #666;
+}
+
+.bind-event-slider .slider #item2 {
+	background: #999;
+}
+
+.bind-event-slider .slider #item3 {
+	background: #aaa;
+}
+
+.bind-event-slider .slider #item4 {
+	background: #ddd;
+}
+
+.bind-event-slider .slider #item5 {
+	background: #999;
+}
+
+/* image drag */
+.image-drag-slider {
+	position: relative;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+	width: 900px;
+	height: 200px;
+}
+
+.image-drag-slider .slider {
+	width: 100%;
+	height: 100%;
+}
+
+.image-drag-slider .slider .slide {
+	width: 900px;
+	height: 100%;
+}
+
+.image-drag-slider .slider #item1 {
+	background: #666;
+}
+
+.image-drag-slider .slider #item2 {
+	background: #999;
+}
+
+.image-drag-slider .slider #item3 {
+	background: #aaa;
+}
+
+.image-drag-slider .slider #item4 {
+	background: #ddd;
+}
+
+.image-drag-slider .slider #item5 {
+	background: #999;
+}
+
+/* add/remove slide slider */
+.add-remove-slide-slider {
+	position: relative;
+	overflow: hidden;
+	width: 900px;
+	height: 200px;
+}
+
+.add-remove-slide-slider .slider {
+	height: 100%;
+}
+
+.add-remove-slide-slider .slider .item {
+	width: 900px;
+	height: 100%;
+}
+
+.add-remove-slide-slider .slider .item1 {
+	background: #666;
+}
+
+.add-remove-slide-slider .slider .item2 {
+	background: #999;
+}
+
+.add-remove-slide-slider .slider .item3 {
+	background: #aaa;
+}
+
+.add-remove-slide-slider .slider .item4 {
+	background: #ddd;
+}
+
+.add-remove-slide-slider .slider .item5 {
+	background: #999;
+}
+
+.add-remove-slide-slider .slider .item6 {
+	background: #000;
+}
+
+.add-remove-slide-slider-container {
+	position: relative;
+	top: 0;
+	left: 0;
+	width: 984px;
+	height: 200px;
+}
+
+.add-remove-slide-slider-container .destInitBlock {
+	position: absolute;
+	top: 0;
+	right: 42px;
+	width: 36px;
+	height: 200px;
+}
+
+.add-remove-slide-slider-container .destInitBlock .add,
+.add-remove-slide-slider-container .destInitBlock .rem {
+	width: 36px;
+	height: 36px;
+	background: #aaa;
+	margin: 0 0 5px 0;
+	cursor: pointer;
+}
+
+/* drag scrollbar slider */
+.drag-scrollbar-slider {
+	position: relative;
+	overflow: hidden;
+	width: 900px;
+	height: 200px;
+}
+
+.drag-scrollbar-slider-2 {
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	height: 200px;
+}
+
+.drag-scrollbar-slider .slider,
+.drag-scrollbar-slider-2 .slider {
+	height: 100%;
+}
+
+.drag-scrollbar-slider .slider .item,
+.drag-scrollbar-slider-2 .slider .item {
+	width: 900px;
+	height: 100%;
+}
+
+.drag-scrollbar-slider .slider .item1,
+.drag-scrollbar-slider-2 .slider .item1 {
+	background: #666;
+}
+
+.drag-scrollbar-slider .slider .item2,
+.drag-scrollbar-slider-2 .slider .item2 {
+	background: #999;
+}
+
+.drag-scrollbar-slider .slider .item3,
+.drag-scrollbar-slider-2 .slider .item3 {
+	background: #aaa;
+}
+
+.drag-scrollbar-slider .slider .item4,
+.drag-scrollbar-slider-2 .slider .item4 {
+	background: #ddd;
+}
+
+.drag-scrollbar-slider .slider .item5,
+.drag-scrollbar-slider-2 .slider .item5 {
+	background: #999;
+}
+
+.drag-scrollbar-scroll-container {
+	position: relative;
+	width: 900px;
+	height: 40px;
+}
+
+.drag-scrollbar-scroll-container-2 {
+	position: relative;
+	width: 900px;
+	margin: 0 auto;
+	height: 10px;
+	background: #ddd;
+}
+
+/* lock slider */
+.lock-slider {
+	position: relative;
+	overflow: hidden;
+	width: 900px;
+	height: 200px;
+}
+
+.lock-slider .slider {
+	height: 100%;
+}
+
+.lock-slider .slider .item {
+	width: 1000px;
+	height: 100%;
+}
+
+.lock-slider .slider .item1 {
+	background: #666;
+}
+
+.lock-slider .slider .item2 {
+	background: #999;
+}
+
+.lock-slider .slider .item3 {
+	background: #aaa;
+}
+
+.lock-slider .slider .item4 {
+	background: #ddd;
+}
+
+.lock-slider .slider .item5 {
+	background: #999;
+}
+
+.lock-slider .slider .item6 {
+	background: #000;
+}
+
+.lock-slider-container {
+	position: relative;
+	top: 0;
+	left: 0;
+	width: 984px;
+	height: 200px;
+}
+
+.lock-slider-container .destInitBlock {
+	position: absolute;
+	top: 0;
+	right: 42px;
+	width: 36px;
+	height: 200px;
+}
+
+.lock-slider-container .destInitBlock .lock,
+.lock-slider-container .destInitBlock .unlock {
+	width: 36px;
+	height: 36px;
+	background: #aaa;
+	margin: 0 0 5px 0;
+	cursor: pointer;
+}
+
+/* unselectable slider */
+.unselectable-slider {
+	position: relative;
+	overflow: hidden;
+	width: 900px;
+	height: 200px;
+}
+
+.unselectable-slider .slider {
+	height: 100%;
+}
+
+.unselectable-slider .slider .item {
+	width: 900px;
+	height: 100%;
+}
+
+.unselectable-slider .slider .item1 {
+	background: #666;
+}
+
+.unselectable-slider .slider .item2 {
+	background: #999;
+}
+
+.unselectable-slider .slider .item3 {
+	background: #aaa;
+}
+
+.unselectable-slider .slider .item4 {
+	background: #ddd;
+}
+
+.unselectable-slider .slider .item5 {
+	background: #999;
+}
+
+.unselectable-slider .slider .item6 {
+	background: #000;
+}
+
+.unselectable-slider .slider .item div.unselectable {
+	float: left;
+	width: 300px;
+	height: 198px;
+	border: 1px dotted #ddd;
+	background: #000;
+}
+
+.unselectable-slider .slider .item div.unselectable .child {
+	margin: 20px;
+	height: 158px;
+	background: #aaa;
+}
+
+/* y-scrollbar slider */
+.scrollbar-y-slider {
+	position: relative;
+	overflow: hidden;
+	width: 900px;
+	height: 200px;
+}
+
+.scrollbar-y-slider .slider {
+	width: 100%;
+	height: 100%;
+}
+
+.scrollbar-y-slider .slider .item {
+	width: 900px;
+	height: 200px;
+	overflow-y: scroll;
+}
+
+.scrollbar-y-slider .slider .item .content {
+	margin: 20px;
+	height: 400px;
+	background: #000;
+}
+
+.scrollbar-y-slider .slider .item1 {
+	background: #666;
+}
+
+.scrollbar-y-slider .slider .item2 {
+	background: #999;
+}
+
+.scrollbar-y-slider .slider .item3 {
+	background: #aaa;
+}
+
+.scrollbar-y-slider .slider .item4 {
+	background: #ddd;
+}
+
+.scrollbar-y-slider .slider .item5 {
+	background: #999;
+}
+
+.scrollbar-y-slider .slider .item6 {
+	background: #000;
+}
+
+/* keyboard control slider */
+.keyboard-control-slider {
+	position: relative;
+	overflow: hidden;
+	width: 900px;
+	height: 200px;
+}
+
+.keyboard-control-slider .slider {
+	width: 100%;
+	height: 100%;
+}
+
+.keyboard-control-slider .slider .item {
+	width: 900px;
+	height: 200px;
+}
+
+.keyboard-control-slider .slider .item1 {
+	background: #666;
+}
+
+.keyboard-control-slider .slider .item2 {
+	background: #999;
+}
+
+.keyboard-control-slider .slider .item3 {
+	background: #aaa;
+}
+
+.keyboard-control-slider .slider .item4 {
+	background: #ddd;
+}
+
+.keyboard-control-slider .slider .item5 {
+	background: #999;
+}
+
+.keyboard-control-slider .slider .item6 {
+	background: #000;
+}
+
+/* tab control slider */
+.tab-control-slider {
+	position: relative;
+	overflow: hidden;
+	width: 900px;
+	height: 200px;
+}
+
+.tab-control-slider .slider {
+	width: 100%;
+	height: 100%;
+}
+
+.tab-control-slider .slider .item {
+	width: 900px;
+	height: 200px;
+}
+
+.tab-control-slider .slider .item1 {
+	background: #666;
+}
+
+.tab-control-slider .slider .item2 {
+	background: #999;
+}
+
+.tab-control-slider .slider .item3 {
+	background: #aaa;
+}
+
+.tab-control-slider .slider .item4 {
+	background: #ddd;
+}
+
+.tab-control-slider .slider .item5 {
+	background: #999;
+}
+
+.tab-control-slider .slider .item6 {
+	background: #000;
+}
+
+/* center */
+.snap-center-slider,
+.snap-center-slider-2,
+.snap-center-slider-3 {
+	position: relative;
+	overflow: hidden;
+	width: 900px;
+	height: 200px;
+}
+
+.snap-center-slider .slider,
+.snap-center-slider-2 .slider,
+.snap-center-slider-3 .slider {
+	height: 100%;
+}
+
+.snap-center-slider .slider .item,
+.snap-center-slider-2 .slider .item,
+.snap-center-slider-3 .slider .item {
+	width: 700px;
+	height: 100%;
+}
+
+.snap-center-slider .slider .item1,
+.snap-center-slider-2 .slider .item1,
+.snap-center-slider-3 .slider .item1 {
+	background: #666;
+}
+
+.snap-center-slider .slider .item2,
+.snap-center-slider-2 .slider .item2,
+.snap-center-slider-3 .slider .item2 {
+	background: #999;
+}
+
+.snap-center-slider .slider .item3,
+.snap-center-slider-2 .slider .item3,
+.snap-center-slider-3 .slider .item3 {
+	background: #aaa;
+}
+
+.snap-center-slider .slider .item4,
+.snap-center-slider-2 .slider .item4,
+.snap-center-slider-3 .slider .item4 {
+	background: #ddd;
+}
+
+.snap-center-slider .slider .item5,
+.snap-center-slider-2 .slider .item5,
+.snap-center-slider-3 .slider .item5 {
+	background: #777;
+}
+
+.snap-center-slider-3 .slider .item2,
+.snap-center-slider-3 .slider .item5 {
+	width: 500px;
+}
+
+/* short content slider */
+.short-content-slider {
+	position: relative;
+	overflow: hidden;
+	width: 900px;
+	height: 200px;
+}
+
+.short-content-slider .slider {
+	width: 100%;
+	height: 100%;
+}
+
+.short-content-slider .slider .item {
+	width: 300px;
+	height: 200px;
+}
+
+.short-content-slider .slider .item1 {
+	background: #666;
+}
+
+.short-content-slider .slider .item2 {
+	background: #999;
+}

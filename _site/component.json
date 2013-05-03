@@ -11,6 +11,8 @@
     "underscore-amd": null,
     "backbone-amd": null,
     "picturefill": "git://github.com/scottjehl/picturefill.git",
-    "zepto": "~1.0.0rc1"
+    "zepto": "~1.0.0rc1",
+    "iosSlider": "git://github.com/iosscripts/iosSlider.git#~1.2.0",
+    "jquery.transit": "git://github.com/rstacruz/jquery.transit.git#~0.9.9"
   }
 }

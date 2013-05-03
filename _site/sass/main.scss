@@ -109,16 +109,16 @@ h2 {
 	height: 400px;
 	background: #dfdfdf url(../img/work/miguel-mota-sublime-text-solarized-dark-high-res.png) no-repeat fixed;
 	background-size: 100% auto;
-	background-position: center 45px;
+	background-position: center 0;
 	@include respond-to(tablet) {
 		background: #dfdfdf url(../img/work/miguel-mota-sublime-text-solarized-dark-medium.png) no-repeat fixed;
 		background-size: 100% auto;
-		background-position: center 45px;
+		background-position: center 0;
 	}
 	@include respond-to(mobile) {
 		background: #dfdfdf url(../img/work/miguel-mota-sublime-text-solarized-dark-small.png) no-repeat fixed;
 		background-size: 100% auto;
-		background-position: center 45px;
+		background-position: center 0;
 		height: 250px;
 	}
 }
@@ -379,6 +379,161 @@ figcaption {
 
 .typekit-badge {
 	display: none !important;
+}
+
+/* =Work
+-------------------------------------------------------------- */
+
+#work-slider {
+	width: 100%;
+	height: 540px;
+	position: relative;
+	left: 0;
+	top: 0;
+	overflow: hidden;
+	border: none;
+	background-color: transparent;
+	@include respond-to(tablet) {
+
+	}
+	@include respond-to(mobile) {
+		height: 340px;
+	}
+}
+
+#work-slider .slider {
+	width: 100%;
+	height: 100%;
+}
+
+#work-slider .slide {
+	width: 100%;
+	height: 100%;
+	float: left;
+	position: relative;
+	text-align: center;
+}
+
+#work-slider img {
+	margin: 0 auto;
+}
+
+#work-slider #dots {
+	position: absolute;
+	bottom: 0;
+	border: 0;
+	width: 100%;
+	height: auto;
+	border: none;
+	text-align: center;
+}
+
+#work-slider .dot {
+	display: inline-block;
+	margin: 0 5px;
+	width: 10px;
+	height: 10px;
+	border: none;
+	background: #999;
+}
+
+#work-slider .dot.active {
+	background-color: #0077aa;
+}
+
+#work-slider .slide img{
+	position: absolute;
+	width: 100%;
+}
+
+#work-slider .devices {
+	position: relative;
+	margin: -100px 0 0 0;
+	height: 100%;
+}
+
+#work-slider .desktop {
+	left: -100px;
+	bottom: 0;
+}
+
+#work-slider .laptop {
+	left: -100px;
+	bottom: 0;
+}
+
+#work-slider .tablet {
+	right: -100px;
+	bottom: 0;
+}
+
+#work-slider .mobile {
+	right: -100px;
+	bottom: 0;
+}
+
+@mixin slider-nav($side) {
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	display: inline-block;
+	top: 50%;
+	@if $side == right {
+		right: 0;
+		text-align: right;
+	}
+	@else if $side == left {
+		left: 0;
+		text-align: left;
+	}
+	margin: -50px 0 0 0;
+	font-size: 34px;
+	color: #999;
+	z-index: 1;
+
+	&:hover,
+	&:active {
+		color: $primary-color;
+	}
+
+	&.disabled,
+	&.disabled:hover {
+		color: #ddd;
+		cursor: text;
+	}
+}
+
+#work-slider #slide-next {
+	@include slider-nav(right);
+}
+
+#work-slider #slide-prev {
+	@include slider-nav(left);
+}
+
+#work-slider .caption {
+	width: 100%;
+	position: absolute;
+	top: -10px;
+	left: 0;
+	margin: 0 auto;
+	text-align: center;
+	font-size: 28px;
+	@include respond-to(tablet) {
+		font-size: 22px;
+	}
+	@include respond-to(mobile) {
+		font-size: 18px;
+	}
+}
+
+#work-slider .site {
+	text-align: center;
+}
+
+#work-slider .site a {
+	@extend .button;
+	@extend .button.large;
 }
 
 /* =Footer

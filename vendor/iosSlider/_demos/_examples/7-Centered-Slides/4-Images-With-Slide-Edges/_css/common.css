@@ -1,0 +1,81 @@
+body {
+	width: 100%;
+	overflow: hidden;
+}
+
+.fluidHeight {
+	position: relative;
+	width: 100%;
+	height: 300px;
+}
+
+/* 
+ * below 900px, switch to percentage based responsive height.
+ * padding of 33.333% is calculated by using the 
+ * image ratio 300px/900px = .333 * 100% = 33.333% 
+ */
+@media screen and (max-width: 900px) {
+	
+	.fluidHeight {
+		height: 0;
+		padding: 0 0 33.333% 0;
+	}
+	
+}
+
+.sliderContainer {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+.iosSlider {
+	width: 100%;
+	height: 100%;
+}
+
+.iosSlider .slider {
+	width: 100%;
+	height: 100%;
+}
+
+.iosSlider .slider .item {
+	position: relative;
+	top: 0;
+	left: 0;
+	
+	width: 80%;
+	height: 100%;
+	text-align: center;
+}
+
+.iosSlider .slider .item img {
+	position: relative;
+	top: 0;
+	left: 0;
+	max-width: 90%;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.indicators {
+	position: relative;
+	top: 10px;
+	left: 0;
+	width: 800px;
+	height: 10px;
+	margin: 0 auto;
+	z-index: 10;
+}
+
+.indicators .item {
+	float: left;
+	width: 8px;
+	height: 8px;
+	margin: 0 5px 0 0;
+	border: 1px solid #000;
+}
+
+.indicators .selected {
+	background: #666;
+}

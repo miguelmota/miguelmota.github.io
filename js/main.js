@@ -6,8 +6,171 @@ var MM = MM || (function() {
 		initialize: function() {
 			$(document).foundation();
 		},
-		contact: function() {
+		work: function() {
+			var slider = $('#work-slider'),
+			navPrevSelector = $('#slide-prev'),
+			navNextSelector = $('#slide-next'),
+			navSlideSelector = $('#dots').find('.dot'),
+			autoSlideTimer = 10000,
+			autoSlideTransTimer = 500,
+			transitionDuration = 500,
+			repositionDuration = 800,
+			slideContentChange = function(args) {
+				if (!args.slideChanged) return false;
+				hideDevices(args);
+				transitionDevices(args);
+				updateDots(args);
+				updateNavSelector(args);
+			},
+			slideContentComplete = function(args) {},
+			slideContentLoaded = function(args) {
+				transitionDevices(args);
+				updateDots(args);
+				updateNavSelector(args);
+			},
+			updateDots = function(args) {
+				slider.find('#dots').find('.dot').removeClass('active');
+				slider.find('#dots').find('.dot').eq(args.currentSlideNumber - 1).addClass('active');
+			},
+				updateNavSelector = function(args) {
+					if (args.currentSlideNumber == args.data.numberOfSlides)
+			       navNextSelector.addClass('disabled');
+			    else
+			       navNextSelector.removeClass('disabled');
 
+			    if (args.currentSlideNumber == 1)
+			       navPrevSelector.addClass('disabled');
+			    else
+			      navPrevSelector.removeClass('disabled');
+
+				},
+			transitionDevices = function(args) {
+				transitionDesktop(args);
+			},
+			transitionDesktop = function(args) {
+				slider.find('.slide').eq(args.currentSlideNumber - 1).find('.desktop').transition({
+					opacity: 1,
+					duration: transitionDuration,
+					easing: 'in',
+					translate: [100, +10],
+					complete: function() {
+						transitionLaptop(args);
+					}
+				});
+			},
+			transitionLaptop = function(args) {
+				slider.find('.slide').eq(args.currentSlideNumber - 1).find('.laptop').transition({
+					opacity: 1,
+					duration: transitionDuration,
+					easing: 'in',
+					translate: [100,-10],
+					complete: function() {
+						transitionTablet(args);
+					}
+				});
+			},
+			transitionTablet = function(args) {
+				slider.find('.slide').eq(args.currentSlideNumber - 1).find('.tablet').transition({
+					opacity: 1,
+					duration: transitionDuration,
+					easing: 'in',
+					translate: [-100, 10],
+					complete: function() {
+						transitionMobile(args);
+					}
+				});
+			},
+			transitionMobile = function(args) {
+				slider.find('.slide').eq(args.currentSlideNumber - 1).find('.mobile').transition({
+					opacity: 1,
+					duration: transitionDuration,
+					easing: 'in',
+					translate: [-100,-10],
+					complete: function() {
+						repositionDevices(args);
+					}
+				});
+			},
+			repositionDevices = function (args) {
+				var xDesktop = parseInt(slider.find('.slide').eq(args.currentSlideNumber - 1).find(".desktop").css('translate').split(',')[0]),
+				yDesktop = parseInt(slider.find('.slide').eq(args.currentSlideNumber - 1).find(".desktop").css('translate').split(',')[1]),
+				xLaptop = parseInt(slider.find('.slide').eq(args.currentSlideNumber - 1).find(".laptop").css('translate').split(',')[0]),
+				yLaptop = parseInt(slider.find('.slide').eq(args.currentSlideNumber - 1).find(".laptop").css('translate').split(',')[1]),
+				xTablet = parseInt(slider.find('.slide').eq(args.currentSlideNumber - 1).find(".tablet").css('translate').split(',')[0]),
+				yTablet = parseInt(slider.find('.slide').eq(args.currentSlideNumber - 1).find(".tablet").css('translate').split(',')[1]),
+				xMobile = parseInt(slider.find('.slide').eq(args.currentSlideNumber - 1).find(".mobile").css('translate').split(',')[0]),
+				yMobile = parseInt(slider.find('.slide').eq(args.currentSlideNumber - 1).find(".mobile").css('translate').split(',')[1]);
+
+				slider.find('.slide').eq(args.currentSlideNumber - 1).find('.desktop').transition({
+					translate: [xDesktop, yDesktop - 10],
+					duration: repositionDuration,
+					easing: 'in',
+					complete: function() {}
+				});
+				slider.find('.slide').eq(args.currentSlideNumber - 1).find('.laptop').transition({
+					translate: [xLaptop, yLaptop + 10],
+					duration: repositionDuration,
+					easing: 'in',
+					complete: function() {}
+				});
+				slider.find('.slide').eq(args.currentSlideNumber - 1).find('.tablet').transition({
+					translate: [xTablet, yTablet - 10],
+					duration: repositionDuration,
+					easing: 'in',
+					complete: function() {}
+				});
+				slider.find('.slide').eq(args.currentSlideNumber - 1).find('.mobile').transition({
+					translate: [xMobile, yMobile + 10],
+					duration: repositionDuration,
+					easing: 'in',
+					complete: function() {
+						transitionCaption(args);
+					}
+				});
+			},
+			hideDevices = function(args) {
+				slider.find('img, .caption, .site').css({ opacity: 0, '-moz-transform': '', '-webkit-transform': '', 'transform': '' }).end()
+				.find('.desktop').css({ left: -100, bottom: 0 }).end()
+				.find('.laptop').css({ left: -100, bottom: 0 }).end()
+				.find('.tablet').css({ right: -100, bottom: 0 }).end()
+				.find('.mobile').css({ right: -100, bottom: 0 }).end()
+				.find('.caption').css({ left: 0, top: -10 }).end();
+			},
+			transitionCaption = function(args) {
+				slider.find('.slide').eq(args.currentSlideNumber - 1).find('.caption').transition({
+					opacity: 1,
+					duration: transitionDuration,
+					easing: 'in',
+					translate: [0, 10]
+				});
+				slider.find('.slide').eq(args.currentSlideNumber - 1).find('.site').transition({
+					opacity: 1,
+					duration: transitionDuration,
+					easing: 'in'
+				});
+			}
+
+			hideDevices();
+
+			slider.iosSlider({
+				scrollbar: false,
+				snapToChildren: true,
+				desktopClickDrag: true,
+				responsiveSlideWidth: true,
+				responsiveSlides: true,
+				navPrevSelector: navPrevSelector,
+				navNextSelector: navNextSelector,
+				navSlideSelector: navSlideSelector,
+				infiniteSlider: false,
+				autoSlide: true,
+				autoSlideTimer: autoSlideTimer,
+				autoSlideTransTimer: autoSlideTransTimer,
+				onSlideChange: slideContentChange,
+				onSlideComplete: slideContentComplete,
+				onSliderLoaded: slideContentLoaded
+			});
+		},
+		contact: function() {
 			var initializeMap = function() {
 				var map,
 						marker,
@@ -186,6 +349,9 @@ $(document).ready(function() {
 	switch(page) {
 		case 'contact':
 			MM.contact();
+			break;
+		case 'work':
+			MM.work();
 			break;
 		default:
 			break;
