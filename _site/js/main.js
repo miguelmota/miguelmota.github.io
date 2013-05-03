@@ -15,6 +15,7 @@ var MM = MM || (function() {
 			autoSlideTransTimer = 500,
 			transitionDuration = 500,
 			repositionDuration = 800,
+			animating = false,
 			slideContentChange = function(args) {
 				if (!args.slideChanged) return false;
 				hideDevices(args);
@@ -46,6 +47,7 @@ var MM = MM || (function() {
 				},
 			transitionDevices = function(args) {
 				transitionDesktop(args);
+				animating = false;
 			},
 			transitionDesktop = function(args) {
 				slider.find('.slide').eq(args.currentSlideNumber - 1).find('.desktop').transition({
@@ -92,7 +94,7 @@ var MM = MM || (function() {
 				});
 			},
 			repositionDevices = function (args) {
-				if (!slider.find('.slide').eq(args.currentSlideNumber - 1).find("img").css('translate')) {
+				if (!slider.find('.slide').eq(args.currentSlideNumber - 1).find("img").css('-webkit-transform')) {
 					return false;
 				}
 				var xDesktop = parseInt(slider.find('.slide').eq(args.currentSlideNumber - 1).find(".desktop").css('translate').split(',')[0]),
@@ -149,7 +151,10 @@ var MM = MM || (function() {
 				slider.find('.slide').eq(args.currentSlideNumber - 1).find('.site').transition({
 					opacity: 1,
 					duration: transitionDuration,
-					easing: 'in'
+					easing: 'in',
+					complete: function() {
+						animating = false;
+					}
 				});
 			}
 
