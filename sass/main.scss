@@ -393,11 +393,11 @@ figcaption {
 	overflow: hidden;
 	border: none;
 	background-color: transparent;
-	@include respond-to(tablet) {
-
-	}
 	@include respond-to(mobile) {
 		height: 340px;
+	}
+	@include respond-to(mobile-landscape) {
+		height: 450px;
 	}
 }
 
