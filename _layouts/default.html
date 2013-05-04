@@ -63,13 +63,15 @@
 				<section class="top-bar-section">
 				    <ul class="right">
 				      <li class="divider"></li>
-				      <li {% if page.route %}{% if page.route == "about" %}class="active"{% endif %}{% endif %}><a href="/about" data-ga-label="Navigation - About">About</a></li>
+				      <li {% if page.route %}{% if page.route == "home" %}class="active"{% endif %}{% endif %}><a href="/" data-ga-label="Navigation - Home"><i class="icon-home"></i></a></li>
 				      <li class="divider"></li>
-				      <li {% if page.route %}{% if page.route == "blog" %}class="active"{% endif %}{% endif %}><a href="/" data-ga-label="Navigation - Blog">Thoughts</a></li>
+				      <li {% if page.route %}{% if page.route == "about" %}class="active"{% endif %}{% endif %}><a href="/about" data-ga-label="Navigation - About"><i class="icon-bookmark-empty"></i> About</a></li>
 				      <li class="divider"></li>
-				      <li {% if page.route %}{% if page.route == "work" %}class="active"{% endif %}{% endif %}><a href="/work" data-ga-label="Navigation - Work">Work</a></li>
+				      <li {% if page.route %}{% if page.route == "blog" %}class="active"{% endif %}{% endif %}><a href="/blog" data-ga-label="Navigation - Blog"><i class="icon-lightbulb"></i> Thoughts</a></li>
 				      <li class="divider"></li>
-							<li {% if page.route %}{% if page.route == "contact" %}class="active"{% endif %}{% endif %}><a href="/contact" data-ga-label="Navigation - Contact">Contact</a></li>
+				      <li {% if page.route %}{% if page.route == "work" %}class="active"{% endif %}{% endif %}><a href="/work" data-ga-label="Navigation - Work"><i class="icon-laptop"></i> Work</a></li>
+				      <li class="divider"></li>
+							<li {% if page.route %}{% if page.route == "contact" %}class="active"{% endif %}{% endif %}><a href="/contact" data-ga-label="Navigation - Contact"><i class="icon-envelope"></i> Contact</a></li>
 				      <li class="divider"></li>
 				    </ul>
 				</section>
@@ -84,7 +86,7 @@
 			<div class="row">
 				<div class="large-12 column">
 					<p>
-						© {{ "now" | date: "%Y" }} Miguel Mota <a class="hidden" href="https://plus.google.com/102174577273194387652" rel="author">Google+</a>
+						© {{ "now" | date: "%Y" }} Moogs, LLC. Made with <i class="icon-heart"></i> <a class="hidden" href="https://plus.google.com/102174577273194387652" rel="author">Google+</a>
 
 						<a href="https://twitter.com/_moogs" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @_moogs</a>
 

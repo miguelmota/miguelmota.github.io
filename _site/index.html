@@ -51,7 +51,7 @@
 	   	});
 	</script>
 </head>
-<body id="blog">
+<body id="home">
 		<div id="top"></div>
 		<img class="hidden" src="/img/miguel-mota-m-logo-500x500.png" alt="">
 		<header id="header" class="contain-to-grid fixed">
@@ -63,13 +63,15 @@
 				<section class="top-bar-section">
 				    <ul class="right">
 				      <li class="divider"></li>
-				      <li ><a href="/about" data-ga-label="Navigation - About">About</a></li>
+				      <li class="active"><a href="/" data-ga-label="Navigation - Home"><i class="icon-home"></i></a></li>
 				      <li class="divider"></li>
-				      <li class="active"><a href="/" data-ga-label="Navigation - Blog">Thoughts</a></li>
+				      <li ><a href="/about" data-ga-label="Navigation - About"><i class="icon-bookmark-empty"></i> About</a></li>
 				      <li class="divider"></li>
-				      <li ><a href="/work" data-ga-label="Navigation - Work">Work</a></li>
+				      <li ><a href="/blog" data-ga-label="Navigation - Blog"><i class="icon-lightbulb"></i> Thoughts</a></li>
 				      <li class="divider"></li>
-							<li ><a href="/contact" data-ga-label="Navigation - Contact">Contact</a></li>
+				      <li ><a href="/work" data-ga-label="Navigation - Work"><i class="icon-laptop"></i> Work</a></li>
+				      <li class="divider"></li>
+							<li ><a href="/contact" data-ga-label="Navigation - Contact"><i class="icon-envelope"></i> Contact</a></li>
 				      <li class="divider"></li>
 				    </ul>
 				</section>
@@ -93,6 +95,11 @@
 </div>
 		</div>
 	</div>
+	<div id="content-header-bottom">
+		<div class="left"></div>
+		<div class="triangle"></div>
+		<div class="right"></div>
+	</div>
 </header>
 
 <section id="content">
@@ -101,10 +108,16 @@
 		<h3>Latest</h3>
 			
 				<article>
-	<datetime>28 Apr 2013</datetime>
-  <h2><a href="/blog/new-identity">New Identity</a> <small><i class="icon-comment-alt"></i> <a href="/blog/new-identity#disqus_thread" data-disqus-identifier="/blog/new-identity"></a></small></h2>
-  <div class="baseline"><p>Although I love cubes, my old logo didn't quite say much about me. Old Identity The cube was pretty generic and not all that impressive. New Identity While browsing for inspiration I stumbled the icaras font and very much liked the blocky style it has. I then created my own variation and gave it a 3D blocky feel. This was done in Photoshop by setting grid lines at certain points...</p></div>
-  <div><a href="/blog/new-identity" class="more">Read more »</a></div>
+	<datetime>04 May 2013</datetime>
+  <h2><a href="/blog/sass-triangles">SASS Triangles</a> <small><i class="icon-comment-alt"></i> <a href="/blog/sass-triangles#disqus_thread" data-disqus-identifier="/blog/sass-triangles"></a></small></h2>
+  <div class="baseline"><p>Creating CSS triangles shouldn't be hard.
+
+Here's a handy little mixin for creating triangles in SASS (gist):
+
+
+
+I'm using this mixin to create the transparent downward facing traingle on the bottom of the large header, as seen on the about page.</p></div>
+  <div><a href="/blog/sass-triangles" class="more">Read more »</a></div>
 </article>
 			
 		</div>
@@ -115,6 +128,11 @@
 			<h3>Older thoughts</h3>
 
 			<dl class="posts-list">
+			  
+					<dt><datetime>28 Apr 2013</datetime></dt>
+<dd><h2><a href="/blog/new-identity">New Identity</a> <small><i class="icon-comment-alt"></i> <a href="/blog/new-identity#disqus_thread" data-disqus-identifier="/blog/new-identity"></a></small></h2>
+<p>New company, new identity.</p>
+</dd>
 			  
 					<dt><datetime>25 Apr 2013</datetime></dt>
 <dd><h2><a href="/blog/understanding-prototype-in-javascript">Understanding Prototype in JavaScript</a> <small><i class="icon-comment-alt"></i> <a href="/blog/understanding-prototype-in-javascript#disqus_thread" data-disqus-identifier="/blog/understanding-prototype-in-javascript"></a></small></h2>
@@ -212,7 +230,7 @@
 			<div class="row">
 				<div class="large-12 column">
 					<p>
-						© 2013 Miguel Mota <a class="hidden" href="https://plus.google.com/102174577273194387652" rel="author">Google+</a>
+						© 2013 Moogs, LLC. Made with <i class="icon-heart"></i> <a class="hidden" href="https://plus.google.com/102174577273194387652" rel="author">Google+</a>
 
 						<a href="https://twitter.com/_moogs" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @_moogs</a>
 

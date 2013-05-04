@@ -8,9 +8,11 @@
 html,
 body { font-size: $base-font-size; }
 
+$body-background: $body-bg url(../img/old-wall.png) repeat 0 0;
+
 // Default body styles
 body {
-  background: $body-bg url(../img/old-wall.png) repeat 0 0;
+  background: $body-background;
   min-width: 320px;
   color: $body-font-color;
   padding: 0;

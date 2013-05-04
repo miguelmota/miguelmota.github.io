@@ -6,6 +6,12 @@
 @import "../vendor/fontawesome/sass/font-awesome.scss";
 @import "murphy";
 
+/* =Variables
+-------------------------------------------------------------- */
+
+$content-header-border: 1px solid #ccc !default;
+$content-header-triangle-width: 24px !default;
+
 /* =Global
 -------------------------------------------------------------- */
 
@@ -64,12 +70,46 @@ h2 {
 	position: relative;
 	background: #dfdfdf;
 	padding: 50px 0;
-	border-bottom: 1px solid #ccc;
+	overflow: hidden;
 	@include respond-to(mobile) {
 		padding: 10px;
 	}
 }
 
+#content-header-bottom {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	background: transparent;
+	text-align: center;
+}
+
+#content-header-bottom .left {
+	height: 100%;
+	width: 50%;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	margin: 0 0 0 (-$content-header-triangle-width);
+	background: $body-background;
+	border-top: $content-header-border;
+}
+
+#content-header-bottom .right {
+	height: 100%;
+	width: 50%;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	margin: 0 (-$content-header-triangle-width) 0 0;
+	background: $body-background;
+	border-top: $content-header-border;
+}
+
+#content-header-bottom .triangle {
+	@include triangle($content-header-triangle-width, $body-bg, down, true, true);
+	margin: 0 0 -2px 0;
+}
 
 #blog #content-header {
 	height: 400px;
@@ -242,10 +282,6 @@ h2 {
 #about,
 #post {
 
-	p {
-		text-align: justify;
-	}
-
 }
 
 #work {
@@ -390,6 +426,7 @@ color: $color-body-light;
 	position: relative;
 	left: 0;
 	top: 0;
+	margin: 0 auto 40px auto;
 	overflow: hidden;
 	border: none;
 	background-color: transparent;
@@ -536,6 +573,157 @@ color: $color-body-light;
 	@extend .button.large;
 }
 
+#work-list h2 small,
+#work-list h2 small a {
+	font-weight: normal;
+}
+/* =Loader
+-------------------------------------------------------------- */
+
+#loader {
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 200px;
+	height: 125px;
+	margin: -100px 0 0 -75px;
+}
+
+.bubbling {
+text-align: center;
+width:200px;
+height:125px;
+}
+
+.bubbling span {
+	display: inline-block;
+	vertical-align: middle;
+	width: 25px;
+	height: 25px;
+	margin: 63px auto;
+	background: #0077aa;
+	-moz-border-radius: 125px;
+	-moz-animation: bubbling 1.3s infinite alternate;
+	-webkit-border-radius: 125px;
+	-webkit-animation: bubbling 1.3s infinite alternate;
+	-ms-border-radius: 125px;
+	-ms-animation: bubbling 1.3s infinite alternate;
+	-o-border-radius: 125px;
+	-o-animation: bubbling 1.3s infinite alternate;
+	border-radius: 125px;
+	animation: bubbling 1.3s infinite alternate;
+}
+
+#bubbling-1 {
+	-moz-animation-delay: 0s;
+	-webkit-animation-delay: 0s;
+	-ms-animation-delay: 0s;
+	-o-animation-delay: 0s;
+	animation-delay: 0s;
+}
+
+#bubbling-2 {
+	-moz-animation-delay: 0.39s;
+	-webkit-animation-delay: 0.39s;
+	-ms-animation-delay: 0.39s;
+	-o-animation-delay: 0.39s;
+	animation-delay: 0.39s;
+}
+
+#bubbling-3 {
+	-moz-animation-delay: 0.78s;
+	-webkit-animation-delay: 0.78s;
+	-ms-animation-delay: 0.78s;
+	-o-animation-delay: 0.78s;
+	animation-delay: 0.78s;
+}
+
+@-moz-keyframes bubbling {
+	0% {
+		width: 25px;
+		height: 25px;
+		background-color:#0077aa;
+		-moz-transform: translateY(0);
+	}
+
+	100% {
+		width: 60px;
+		height: 60px;
+		background-color:#FFFFFF;
+		-moz-transform: translateY(-53px);
+	}
+
+}
+
+@-webkit-keyframes bubbling {
+	0% {
+		width: 25px;
+		height: 25px;
+		background-color:#0077aa;
+		-webkit-transform: translateY(0);
+	}
+
+	100% {
+		width: 60px;
+		height: 60px;
+		background-color:#FFFFFF;
+		-webkit-transform: translateY(-53px);
+	}
+
+}
+
+@-ms-keyframes bubbling {
+	0% {
+		width: 25px;
+		height: 25px;
+		background-color:#0077aa;
+		-ms-transform: translateY(0);
+	}
+
+	100% {
+		width: 60px;
+		height: 60px;
+		background-color:#FFFFFF;
+		-ms-transform: translateY(-53px);
+	}
+
+}
+
+@-o-keyframes bubbling {
+	0% {
+		width: 25px;
+		height: 25px;
+		background-color:#0077aa;
+		-o-transform: translateY(0);
+	}
+
+	100% {
+		width: 60px;
+		height: 60px;
+		background-color:#FFFFFF;
+		-o-transform: translateY(-53px);
+	}
+
+}
+
+@keyframes bubbling {
+	0% {
+	width: 25px;
+	height: 25px;
+	background-color:#0077aa;
+	transform: translateY(0);
+	}
+
+	100% {
+	width: 60px;
+	height: 60px;
+	background-color:#FFFFFF;
+	transform: translateY(-53px);
+	}
+
+}
+
 /* =Footer
 -------------------------------------------------------------- */
 
@@ -547,6 +735,10 @@ color: $color-body-light;
 	@include respond-to(mobile) {
 		font-size: 14px;
 	}
+}
+
+#footer .icon-heart {
+	color: #ff0000;
 }
 
 .twitter-follow-button {
