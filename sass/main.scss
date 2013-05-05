@@ -190,7 +190,6 @@ details a + small a {
 /* =Content
 -------------------------------------------------------------- */
 
-
 #main {
 	display: block;
 	margin: 0;
@@ -380,6 +379,13 @@ figcaption {
 	display: none !important;
 }
 
+/* =Home
+-------------------------------------------------------------- */
+
+#home .learn-more-button {
+	@extend .button;
+}
+
 /* =Resume
 -------------------------------------------------------------- */
 
@@ -468,11 +474,21 @@ figcaption {
     border: 1px solid #000;
     margin-top: 8px;
     background: #333;
-    color: #FFF;
+    color: #fff;
     font-size: 12px;
     padding: .5em 1em;
     text-shadow: 0 -1px #000000;
     @include box-shadow(0 0 8px #000);
+}
+
+.info-window-inner a {
+	color: #fff;
+	text-decoration: none;
+}
+
+.info-window-inner a:hover {
+	color: #fff;
+	text-decoration: underline;
 }
 
 /* =Work
