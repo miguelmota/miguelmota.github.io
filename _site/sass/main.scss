@@ -535,13 +535,7 @@ color: $color-body-light;
 	}
 	margin: -50px 0 0 0;
 	font-size: 34px;
-	color: #999;
 	z-index: 1;
-
-	&:hover,
-	&:active {
-		color: $primary-color;
-	}
 
 	&.disabled,
 	&.disabled:hover {
@@ -590,14 +584,16 @@ color: $color-body-light;
 /* =Loader
 -------------------------------------------------------------- */
 
-#loader {
+#loader,
+.loader {
 	display: block;
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	width: 200px;
-	height: 125px;
-	margin: -100px 0 0 -75px;
+	width: 128px;
+	height: 128px;
+	margin: -64px 0 0 -64px;
+	background: transparent url(../img/ajax-loader-128x128.gif) no-repeat 50% 50%;
 }
 
 .bubbling {
@@ -749,6 +745,20 @@ height:125px;
 
 #footer .icon-heart {
 	color: #ff0000;
+}
+
+#footer .break {
+	display: inline-block;
+	@include respond-to(mobile) {
+		width: 50%;
+		float: left;
+	}
+}
+
+#footer .break span {
+	@include respond-to(mobile) {
+		display: block;
+	}
 }
 
 .twitter-follow-button {
