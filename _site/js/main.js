@@ -18,6 +18,10 @@ Moogs.prototype.initializeAbout = function() {
 
 }
 
+Moogs.prototype.initializeResume = function() {
+	Moogs.prototype.initializeParticles();
+}
+
 Moogs.prototype.initializeHome = function() {
 	Moogs.prototype.initializeParticles();
 }
@@ -194,15 +198,17 @@ Moogs.prototype.initializeWork = function() {
 		},
 
 		updateNavSelector: function(args) {
-				if (args.currentSlideNumber == args.data.numberOfSlides)
+				if (args.currentSlideNumber == args.data.numberOfSlides) {
 		       Slider.prototype.navNextSelector.addClass('disabled');
-		    else
+		    } else {
 		       Slider.prototype.navNextSelector.removeClass('disabled');
+		   }
 
-		    if (args.currentSlideNumber == 1)
+		    if (args.currentSlideNumber == 1) {
 		       Slider.prototype.navPrevSelector.addClass('disabled');
-		    else
+		    } else {
 		      Slider.prototype.navPrevSelector.removeClass('disabled');
+		    }
 		},
 
 		transitionDevices: function(args) {
@@ -558,7 +564,11 @@ $(document).ready(function() {
 		case 'about':
 			moogs.initializeAbout();
 			break;
+		case 'resume':
+			moogs.initializeResume();
+			break;
 		case 'blog':
+		case 'archive':
 			moogs.initializeBlog();
 			break;
 		case 'work':

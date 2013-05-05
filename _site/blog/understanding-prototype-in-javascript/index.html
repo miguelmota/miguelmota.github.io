@@ -79,12 +79,24 @@
 		</header>
 
 		<main id="main" role="main">
-			<section id="post">
+			<header id="content-header">
+	<canvas id="canvas"></canvas>
 	<div class="row">
 		<div class="large-12 column">
 
 			<datetime>25 Apr 2013 <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.miguelmota.com/blog/understanding-prototype-in-javascript" data-text="Understanding Prototype in JavaScript" data-size="large" data-related="_moogs">Tweet</a></datetime>
 			<h1>Understanding Prototype in JavaScript</h1>
+
+		</div>
+	</div>
+	<div id="content-header-bottom">
+		<div class="triangle"></div>
+	</div>
+</header>
+
+<section id="post">
+	<div class="row">
+		<div class="large-12 column">
 
 			<p><strong>A <code>prototype</code> is an object from where other objects inherit properties from</strong>. All objects in JavaScript are descended from <code>Object</code>, a global object. Why this matters I'll explain later, but for now let's jump in to some code.</p>
 
