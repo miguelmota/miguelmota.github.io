@@ -138,6 +138,18 @@ details a + small a {
 	}
 }
 
+#home #content-header {
+	@include respond-to(mobile) {
+		height: 400px;
+	}
+}
+
+#home #content-header p:nth-child(2) {
+	@include respond-to(mobile) {
+		margin-bottom: 30px;
+	}
+}
+
 #about #content-header {
 	height: 610px;
 	background: #dfdfdf url(../img/about/miguel-mota-instagram.jpg) no-repeat fixed;
@@ -185,7 +197,6 @@ details a + small a {
 		height: 280px;
 	}
 }
-
 
 /* =Content
 -------------------------------------------------------------- */
