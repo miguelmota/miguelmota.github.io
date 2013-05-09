@@ -7,7 +7,7 @@ route: blog
 	<div class="row">
 		<div class="large-12 column">
 
-			<datetime>{{ page.date | date_to_string }} <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.miguelmota.com{{ page.url }}" data-text="{{ page.title }}" data-size="large" data-related="_moogs">Tweet</a></datetime>
+			<datetime>{{ page.date | date_to_string }} <small><i class="icon-comment-alt"></i> <a href="{{ post.url }}#disqus_thread" data-disqus-identifier="{{ post.url }}"></a></small> <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.miguelmota.com{{ page.url }}" data-text="{{ page.title }}" data-size="large" data-related="_moogs">Tweet</a></datetime>
 			<h1>{{ page.title }}</h1>
 
 		</div>
@@ -22,6 +22,13 @@ route: blog
 		<div class="large-12 column">
 
 			{{ content }}
+
+			<div class="tags">
+				<i class="icon-tag"></i>
+				{% for tag in page.tags %}
+					<a href="/tag/{{ tag | first }}">{{ tag | first }}</a> <span>+</span>
+				{% endfor %}
+			</div>
 
 		</div>
 	</div>

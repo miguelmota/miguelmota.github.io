@@ -246,7 +246,7 @@ details a + small a {
 }
 
 #featured {
-	margin-bottom: 20px;
+	margin-bottom: 50px;
 
 	h2 {
 		font-size: 34px;
@@ -264,7 +264,38 @@ details a + small a {
 
 }
 
+@mixin tags($marginBottom: false) {
+
+	.tags {
+		@if ($marginBottom == true) {
+			margin-bottom: 25px;
+		}
+	}
+
+	.tags a,
+	.tags span,
+	.tags i {
+		font-size: 12px;
+		color: #999;
+	}
+
+	.tags a:hover {
+		color: #777;
+	}
+
+	.tags span:last-child {
+		display: none;
+	}
+
+}
+
+#featured {
+	@include tags(true);
+}
+
 .posts-list {
+
+	margin-bottom: 50px;
 
 	datetime {
 		font-size: 20px;
@@ -278,6 +309,10 @@ details a + small a {
 			font-size: 20px
 		}
 
+	}
+
+	dd p {
+		margin-bottom: 5px;
 	}
 
 }
@@ -397,7 +432,31 @@ figcaption {
 	@extend .button;
 }
 
-/* =Resume
+#home .archive-button {
+	@extend .button;
+}
+
+.posts-list {
+	@include tags(true);
+}
+
+.posts-list .tags span:last-child {
+	display: none;
+}
+
+/* =Blog
+-------------------------------------------------------------- */
+
+#blog datetime small i,
+#blog datetime small a{
+	color: rgba(255,255,255,.5);
+}
+
+#blog {
+	@include tags();
+}
+
+/* =About
 -------------------------------------------------------------- */
 
 #about .resume-button {
@@ -438,10 +497,15 @@ figcaption {
 	left: 0;
 	top: 0;
 	width: 100%;
-	height: 400px;
+	height: 410px;
 	@include respond-to(mobile) {
-		height: 270px;
+		height: 280px;
 	}
+}
+
+#contact #contact-info label {
+	margin: 0;
+	color: #999;
 }
 
 #contact [data-location] {
