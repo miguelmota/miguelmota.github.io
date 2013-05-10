@@ -14,20 +14,30 @@ window.appendLoader = function(obj) {
 	window.loader = $('#loader');
 };
 
-Moogs.prototype.initializeAbout = function() {
+Moogs.prototype.initializeHome = function() {
+	Moogs.prototype.initializeParticles();
+	Moogs.prototype.initializeSocialSlider();
+}
 
+Moogs.prototype.initializeAbout = function() {
+	Moogs.prototype.initializeParticles();
 }
 
 Moogs.prototype.initializeResume = function() {
 	Moogs.prototype.initializeParticles();
 }
 
-Moogs.prototype.initializeHome = function() {
+Moogs.prototype.initializeBlog = function() {
 	Moogs.prototype.initializeParticles();
-	Moogs.prototype.initializeSocialSlider();
 }
 
-Moogs.prototype.initializeBlog = function() {
+Moogs.prototype.initializeWork = function() {
+	Moogs.prototype.initializeWorkSlider();
+	Moogs.prototype.initializeParticles();
+};
+
+Moogs.prototype.initializeContact = function() {
+	Moogs.prototype.initializeContactMap();
 	Moogs.prototype.initializeParticles();
 }
 
@@ -36,7 +46,7 @@ Moogs.prototype.initializeParticles = function() {
 	height,
 	canvas,
 	context,
-	particleCount = 100,
+	particleCount = 75,
 	gradient,
 	particles = new Array(),
 	speed = 60;
@@ -152,8 +162,7 @@ Moogs.prototype.initializeSocialSlider = function() {
 		});
 };
 
-Moogs.prototype.initializeWork = function() {
-
+Moogs.prototype.initializeWorkSlider = function() {
 	var Slider = function() {
 		window.appendLoader(Slider.prototype.slider);
 		Slider.prototype.hideDevices();
@@ -403,7 +412,7 @@ Moogs.prototype.initializeWork = function() {
 	});
 };
 
-Moogs.prototype.initializeContact = function() {
+Moogs.prototype.initializeContactMap = function() {
 	var initializeMap = function() {
 		var map,
 				marker,
