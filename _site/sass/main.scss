@@ -431,6 +431,8 @@ figcaption {
 
 $social-icon-width: 24px;
 $social-icon-height: 24px;
+$social-icon-width-mobile: 36px;
+$social-icon-height-mobile: 36px;
 $social-icon-default-background-color: rgba(0,0,0,.2);
 
 @mixin social-icon($width: 32px, $height: 32px, $background-color: transparent, $background-image:null) {
@@ -438,13 +440,16 @@ $social-icon-default-background-color: rgba(0,0,0,.2);
 	display: inline-block;
 	width: $width;
 	height: $height;
+	@include respond-to(mobile) {
+		width: $social-icon-width-mobile;
+		height: $social-icon-height-mobile;
+	}
 	background: $social-icon-default-background-color url($background-image) no-repeat 0 0;
 	background-size: 100% auto;
 	@include transition(background-color .25s linear);
 
 	&:hover,
-	&:active,
-	&:focus {
+	&:active {
 		background-color: darken($background-color, 10%);
 	}
 }
@@ -456,6 +461,9 @@ $social-icon-default-background-color: rgba(0,0,0,.2);
 #home #social {
 	width: 100%;
 	height: $social-icon-height;
+	@include respond-to(mobile) {
+		height: $social-icon-height-mobile;
+	}
 	list-style: none;
 	display: block;
 	margin: 0;
@@ -469,6 +477,9 @@ $social-icon-default-background-color: rgba(0,0,0,.2);
 	padding: 0;
 	width: auto;
 	height: $social-icon-height;
+	@include respond-to(mobile) {
+		height: $social-icon-height-mobile;
+	}
 }
 
 #home #social li > * {
@@ -545,6 +556,9 @@ $social-icon-default-background-color: rgba(0,0,0,.2);
 
 	width: 100%;
 	height: $social-icon-height;
+	@include respond-to(mobile) {
+		height: $social-icon-height-mobile;
+	}
 }
 
 #swipe .swipe-wrapper {
