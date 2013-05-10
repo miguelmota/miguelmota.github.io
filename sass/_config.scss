@@ -78,6 +78,11 @@ $desktop-large-min-size: 1200px !default;
   font-family: 'Icaras-Regular', sans-serif;
 }
 
+@mixin hide-text {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+}
 
 @mixin triangle($size:24px, $color:#000, $direction:up, $trim:false, $transparent:false) {
   content: "";

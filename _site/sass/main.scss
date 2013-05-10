@@ -201,6 +201,32 @@ details a + small a {
 /* =Content
 -------------------------------------------------------------- */
 
+
+@mixin tags($marginBottom: false) {
+
+	.tags {
+		@if ($marginBottom == true) {
+			margin-bottom: 25px;
+		}
+	}
+
+	.tags a,
+	.tags span,
+	.tags i {
+		font-size: 12px;
+		color: #999;
+	}
+
+	.tags a:hover {
+		color: #777;
+	}
+
+	.tags span:last-child {
+		display: none;
+	}
+
+}
+
 #main {
 	display: block;
 	margin: 0;
@@ -260,31 +286,6 @@ details a + small a {
 	datetime {
 		font-size: 26px;
 		font-weight: bold;
-	}
-
-}
-
-@mixin tags($marginBottom: false) {
-
-	.tags {
-		@if ($marginBottom == true) {
-			margin-bottom: 25px;
-		}
-	}
-
-	.tags a,
-	.tags span,
-	.tags i {
-		font-size: 12px;
-		color: #999;
-	}
-
-	.tags a:hover {
-		color: #777;
-	}
-
-	.tags span:last-child {
-		display: none;
 	}
 
 }
@@ -428,20 +429,164 @@ figcaption {
 /* =Home
 -------------------------------------------------------------- */
 
+$social-icon-width: 24px;
+$social-icon-height: 24px;
+$social-icon-default-background-color: rgba(0,0,0,.2);
+
+@mixin social-icon($width: 32px, $height: 32px, $background-color: transparent, $background-image:null) {
+	@include hide-text;
+	display: inline-block;
+	width: $width;
+	height: $height;
+	background: $social-icon-default-background-color url($background-image) no-repeat 0 0;
+	background-size: 100% auto;
+	@include transition(background-color .25s linear);
+
+	&:hover,
+	&:active,
+	&:focus {
+		background-color: darken($background-color, 10%);
+	}
+}
+
 #home .learn-more-button {
 	@extend .button;
+}
+
+#home #social {
+	width: 100%;
+	height: $social-icon-height;
+	list-style: none;
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+
+#home #social li {
+	display: inline-block;
+	float: left;
+	margin: 0;
+	padding: 0;
+	width: auto;
+	height: $social-icon-height;
+}
+
+#home #social li > * {
+	float: left;
+	margin: 0 5px 0 0;
+}
+
+#home .twitter {
+	@include social-icon($social-icon-width, $social-icon-height, #00ACED, '../img/social/twitter-32.png');
+}
+
+#home .gplus {
+	@include social-icon($social-icon-width, $social-icon-height, #D14836, '../img/social/googleplus-32.png');
+}
+
+#home .github {
+	@include social-icon($social-icon-width, $social-icon-height, #4183C4, '../img/social/github-32.png');
+}
+
+#home .linkedin {
+	@include social-icon($social-icon-width, $social-icon-height, #007FB1, '../img/social/linkedin-32.png');
+}
+
+#home .delicious {
+	@include social-icon($social-icon-width, $social-icon-height, #3274D1, '../img/social/delicious-32.png');
+}
+
+#home .facebook {
+	@include social-icon($social-icon-width, $social-icon-height, #3B5998, '../img/social/facebook-32.png');
+}
+
+#home .instagram {
+	@include social-icon($social-icon-width, $social-icon-height, #3F729B, '../img/social/instagram-32.png');
+}
+
+#home .tumblr {
+	@include social-icon($social-icon-width, $social-icon-height, #2C4762, '../img/social/tumblr-32.png');
+}
+
+#home .foursquare {
+	@include social-icon($social-icon-width, $social-icon-height, #2398C9, '../img/social/foursquare-32.png');
+}
+
+#home .youtube {
+	@include social-icon($social-icon-width, $social-icon-height, #CD332D, '../img/social/youtube-32.png');
+}
+
+#home .yelp {
+	@include social-icon($social-icon-width, $social-icon-height, #C93C27, '../img/social/yelp-32.png');
+}
+
+#home .lastfm {
+	@include social-icon($social-icon-width, $social-icon-height, #D51007, '../img/social/lastfm-32.png');
 }
 
 #home .archive-button {
 	@extend .button;
 }
 
-.posts-list {
+#home .posts-list {
 	@include tags(true);
 }
 
-.posts-list .tags span:last-child {
-	display: none;
+#swipe {
+	margin:0 auto;
+	position:relative;
+	overflow:hidden;
+	-webkit-backface-visibility:hidden;
+	-moz-backface-visibility:hidden;
+	-ms-backface-visibility:hidden;
+	-o-backface-visibility:hidden;
+	backface-visibility:hidden;
+	z-index:1;
+
+	width: 100%;
+	height: $social-icon-height;
+}
+
+#swipe .swipe-wrapper {
+	position:relative;
+	width:100%;
+	-webkit-transition-property:-webkit-transform, left, top;
+	-webkit-transition-duration:0s;
+	-webkit-transform:translate3d(0px,0,0);
+	-webkit-transition-timing-function:ease;
+
+	-moz-transition-property:-moz-transform, left, top;
+	-moz-transition-duration:0s;
+	-moz-transform:translate3d(0px,0,0);
+	-moz-transition-timing-function:ease;
+
+	-o-transition-property:-o-transform, left, top;
+	-o-transition-duration:0s;
+	-o-transform:translate3d(0px,0,0);
+	-o-transition-timing-function:ease;
+	-o-transform:translate(0px,0px);
+
+	-ms-transition-property:-ms-transform, left, top;
+	-ms-transition-duration:0s;
+	-ms-transform:translate3d(0px,0,0);
+	-ms-transition-timing-function:ease;
+
+	transition-property:transform, left, top;
+	transition-duration:0s;
+	transform:translate3d(0px,0,0);
+	transition-timing-function:ease;
+}
+
+#swipe .swiper-slide {
+	float: left;
+}
+
+.swiper-wp8-horizontal {
+	-ms-touch-action: pan-y;
+}
+
+.swiper-wp8-vertical {
+	-ms-touch-action: pan-x;
 }
 
 /* =Blog
@@ -569,6 +714,32 @@ figcaption {
 /* =Work
 -------------------------------------------------------------- */
 
+
+@mixin slider-nav($side) {
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	display: inline-block;
+	top: 50%;
+	@if $side == right {
+		right: 0;
+		text-align: right;
+	}
+	@else if $side == left {
+		left: 0;
+		text-align: left;
+	}
+	margin: -50px 0 0 0;
+	font-size: 34px;
+	z-index: 1;
+
+	&.disabled,
+	&.disabled:hover {
+		color: #ddd;
+		cursor: text;
+	}
+}
+
 #work-slider {
 	width: 100%;
 	height: 540px;
@@ -656,31 +827,6 @@ figcaption {
 #work-slider .mobile {
 	right: -100px;
 	bottom: 0;
-}
-
-@mixin slider-nav($side) {
-	position: absolute;
-	width: 100px;
-	height: 100px;
-	display: inline-block;
-	top: 50%;
-	@if $side == right {
-		right: 0;
-		text-align: right;
-	}
-	@else if $side == left {
-		left: 0;
-		text-align: left;
-	}
-	margin: -50px 0 0 0;
-	font-size: 34px;
-	z-index: 1;
-
-	&.disabled,
-	&.disabled:hover {
-		color: #ddd;
-		cursor: text;
-	}
 }
 
 #work-slider #slide-next {

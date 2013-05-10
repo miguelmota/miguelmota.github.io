@@ -24,6 +24,7 @@ Moogs.prototype.initializeResume = function() {
 
 Moogs.prototype.initializeHome = function() {
 	Moogs.prototype.initializeParticles();
+	Moogs.prototype.initializeSocialSlider();
 }
 
 Moogs.prototype.initializeBlog = function() {
@@ -129,6 +130,26 @@ Moogs.prototype.initializeParticles = function() {
 
 	Particle.prototype.getX = function() { return this.x; }
 	Particle.prototype.getY = function() { return this.y; }
+};
+
+Moogs.prototype.initializeSocialSlider = function() {
+		var swiper = $('#swipe'),
+		swiperSlider = swiper.swiper({
+			slidesPerSlide : 'auto',
+			simulateTouch: false,
+			slideClass : 'swipe-slide',
+			wrapperClass : 'swipe-wrapper',
+		});
+
+		var resetSlider = function() {
+			swiper.find('.swipe-wrapper').css({
+				'transform': 'translate3d(0, 0, 0)'
+			});
+		};
+
+		$(window).on('resize', function() {
+			setTimeout(resetSlider, 10);
+		});
 };
 
 Moogs.prototype.initializeWork = function() {
