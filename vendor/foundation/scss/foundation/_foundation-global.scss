@@ -37,7 +37,7 @@ $alert-color: #c60f13 !default;
 $success-color: #5da423 !default;
 
 // We use these to make sure border radius matches unless we want it different.
-$global-radius: 3px !default;
+$global-radius: 0 !default;
 $global-rounded: 1000px !default;
 
 // We use these to control inset shadow shiny edges and depressions.

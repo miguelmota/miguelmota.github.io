@@ -223,6 +223,7 @@ details a + small a {
 
 	.tags a:hover {
 		color: #777;
+		cursor: text;
 	}
 
 	.tags span:last-child {
@@ -636,6 +637,14 @@ $social-icon-default-background-color: rgba(0,0,0,.2);
 
 #resume .resume-list {
 	margin: 0 0 50px 0;
+}
+
+#resume dl {
+	margin: 0 0 40px 0;
+}
+
+#resume dl dd {
+	margin: 0 0 20px 0;
 }
 
 #resume details ul {

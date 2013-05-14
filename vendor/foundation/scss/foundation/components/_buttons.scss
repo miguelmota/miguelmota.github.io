@@ -56,6 +56,10 @@ $button-disabled-opacity: 0.6 !default;
     position: relative;
     text-decoration: none;
     text-align: $button-font-align;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
   }
   @if $display { display: $display; }
 }

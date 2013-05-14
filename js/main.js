@@ -9,9 +9,10 @@
 	Moogs.prototype.initializeGlobal = function() {
 		$(document).foundation();
 
-		var self = this;
+		var self = this,
+		ajaxed = false
 
-		if (window.history && window.history.pushState) {
+		if (window.history && window.history.pushState && ajaxed === true) {
 
 			var nav = $('#main-nav'),
 			contentHeader = $('#content-header'),
