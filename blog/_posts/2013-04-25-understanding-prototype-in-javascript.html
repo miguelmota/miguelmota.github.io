@@ -2,7 +2,7 @@
 layout: blog-post
 title: Understanding Prototype in JavaScript
 category: blog
-tags: [javascript]
+tags: [javascript, prototype]
 short_url: mig.gs/B5bO
 description: An attempt at demonstrating what prototype in JavaScript is.
 ---
@@ -118,6 +118,12 @@ var Rectangle = function(width, height){
 Rectangle.prototype = new Quadrilateral();
 {% endhighlight %}
 
+But wait, although this just inherits all the goodies, our new object does not know what it acually <em>is</em>. We Have to tell our Rectangle object that it's a Rectangle. Other wise instances of Rectangle would have a constructor of Quadrilateral. We do that by setting the <code>constructor</code> prototype:
+
+{% highlight javascript %}
+Rectangle.prototype.constructor = Rectangle;
+{% endhighlight %}
+
 <p>We then can create an instance of type <code>Rectangle</code>:</p>
 
 {% highlight javascript %}
@@ -137,7 +143,7 @@ Quadrilateral.prototype.hasOwnProperty('getWidth'); // returns true
 Rectangle.prototype.hasOwnProperty('getWidth'); // returns false
 {% endhighlight %}
 
-<p>Interestingly enough, the <code>myrectangle</code> instance is also an instance of <code>Quadrilateral</code>:</p>
+<p>Test our instances:</p>
 
 {% highlight javascript %}
 myrectangle instanceof Quadrilateral; // returns true
@@ -161,6 +167,10 @@ myrectangle instanceof Object; //return true
 <p>All objects inherit methods and properties from <code>Object.prototype</code>. Ever wondered where methods such as <code>hasOwnProperty</code>, <code>isPrototypeOf</code>, <code>toString</code> or <code>valueOf</code> came from? Those come from <code>Object</code>.
 
 <p>Basically every function in JavaScript is an instance of root global objects. This means that every function inherits from it. For example, by inheriting from <code>Function.prototype</code>, we have access to a number of helpful methods and properties such as <code>length</code>, <code>apply</code>, <code>bind</code>, and <code>call</code>. <code>Array.prototype</code> gives us mutator methods such as <code>pop</code>, <code>push</code> and <code>sort</code>, as well as accessor methods such as <code>concat</code>, <code>join</code> and <code>slice</code>.</p>
+
+<p>Our <strong><em>prototype chain</em></strong> looks like this:</p>
+
+<code>myrectangle</code> -> <code>Rectangle.prototype</code> -> <code>Quadrilateral.prototype</code> -> <code>Object.prototype</code>
 
 <p>I strongly recommend you check out the <a href="https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Global_Objects" target="_blank">Mozilla Developer Network</a> documentation on global objects for a better understanding.</p>
 

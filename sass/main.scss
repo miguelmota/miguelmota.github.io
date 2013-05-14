@@ -64,6 +64,10 @@ details a + small a {
 /* =Content Header
 -------------------------------------------------------------- */
 
+#canvas {
+	position: absolute;
+}
+
 #content-header {
 	position: relative;
 	background: #dfdfdf;
@@ -615,6 +619,11 @@ $social-icon-default-background-color: rgba(0,0,0,.2);
 	@include tags();
 }
 
+
+#blog .archive-button {
+	@extend .button;
+}
+
 /* =About
 -------------------------------------------------------------- */
 
@@ -886,13 +895,29 @@ $social-icon-default-background-color: rgba(0,0,0,.2);
 #loader,
 .loader {
 	display: block;
-	position: absolute;
+	position: fixed;
 	top: 50%;
 	left: 50%;
 	width: 128px;
 	height: 128px;
 	margin: -64px 0 0 -64px;
-	background: transparent url(../img/ajax-loader-128x128.gif) no-repeat 50% 50%;
+	padding: 100px;
+	background: #333 url(../img/ajax-loader-128x128-gray.gif) no-repeat 50% 50%;
+}
+
+#work-slider .loader {
+	position: absolute;
+	padding: 0;
+	background: transparent url(../img/ajax-loader-128x128-white.gif) no-repeat 50% 50%;
+}
+
+.loader-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,.2);
 }
 
 .bubbling {

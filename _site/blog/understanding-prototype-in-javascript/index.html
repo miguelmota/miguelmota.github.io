@@ -35,6 +35,7 @@
 	<link rel="stylesheet" href="/css/main.css">
 	<script src="//use.typekit.net/wkl5rpy.js"></script>
 	<script>try{Typekit.load();}catch(e){}</script>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 	<script src="/js/main.min.js"></script>
 	<script>
 	  	var _gaq = _gaq || [];
@@ -61,7 +62,7 @@
 					<li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
 				</ul>
 				<section class="top-bar-section">
-				    <ul class="right">
+				    <ul id="main-nav" class="right">
 				      <li class="divider"></li>
 				      <li ><a href="/" data-ga-label="Navigation - Home"><i class="icon-home"></i></a></li>
 				      <li class="divider"></li>
@@ -220,6 +221,13 @@
 </div>
 
 
+But wait, although this just inherits all the goodies, our new object does not know what it acually <em>is</em>. We Have to tell our Rectangle object that it's a Rectangle. Other wise instances of Rectangle would have a constructor of Quadrilateral. We do that by setting the <code>constructor</code> prototype:
+
+<div class="highlight"><pre><code class="javascript"><span class="nx">Rectangle</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">constructor</span> <span class="o">=</span> <span class="nx">Rectangle</span><span class="p">;</span>
+</code></pre>
+</div>
+
+
 <p>We then can create an instance of type <code>Rectangle</code>:</p>
 
 <div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">myrectangle</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Rectangle</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
@@ -242,7 +250,7 @@
 </div>
 
 
-<p>Interestingly enough, the <code>myrectangle</code> instance is also an instance of <code>Quadrilateral</code>:</p>
+<p>Test our instances:</p>
 
 <div class="highlight"><pre><code class="javascript"><span class="nx">myrectangle</span> <span class="k">instanceof</span> <span class="nx">Quadrilateral</span><span class="p">;</span> <span class="c1">// returns true</span>
 <span class="nx">myrectangle</span> <span class="k">instanceof</span> <span class="nx">Rectangle</span><span class="p">;</span> <span class="c1">//return true</span>
@@ -269,6 +277,10 @@
 
 <p>Basically every function in JavaScript is an instance of root global objects. This means that every function inherits from it. For example, by inheriting from <code>Function.prototype</code>, we have access to a number of helpful methods and properties such as <code>length</code>, <code>apply</code>, <code>bind</code>, and <code>call</code>. <code>Array.prototype</code> gives us mutator methods such as <code>pop</code>, <code>push</code> and <code>sort</code>, as well as accessor methods such as <code>concat</code>, <code>join</code> and <code>slice</code>.</p>
 
+<p>Our <strong><em>prototype chain</em></strong> looks like this:</p>
+
+<code>myrectangle</code> -> <code>Rectangle.prototype</code> -> <code>Quadrilateral.prototype</code> -> <code>Object.prototype</code>
+
 <p>I strongly recommend you check out the <a href="https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Global_Objects" target="_blank">Mozilla Developer Network</a> documentation on global objects for a better understanding.</p>
 
 <p>We can override a global method, or check if a global method exists and define our own if it does not, for example checking for <code>Array.prototype.forEach</code>:</p>
@@ -294,6 +306,8 @@
 				<i class="icon-tag"></i>
 				
 					<a href="/tag/javascript">javascript</a> <span>+</span>
+				
+					<a href="/tag/prototype">prototype</a> <span>+</span>
 				
 			</div>
 
@@ -413,6 +427,7 @@
 
 		<a id="forkme" href="https://github.com/miguelmota/miguelmota.github.com" target="_blank" data-ga-label="Fork me on Github"><img src="/img/forkme_right_darkblue_121621.png" alt=""></a>
 
-		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+		<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+		<script src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/infobox/src/infobox.js"></script>
 	</body>
 </html>
