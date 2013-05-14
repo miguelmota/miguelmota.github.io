@@ -1,8 +1,8 @@
 ## About
 
-My [jekyll](https://github.com/mojombo/jekyll/) powered blog
+This is my [jekyll](https://github.com/mojombo/jekyll/) powered blog.
 
-[miguelmota.github.io](http://miguelmota.github.io/)
+[http://miguelmota.github.io/](http://miguelmota.github.io/)
 
 ## License
 
