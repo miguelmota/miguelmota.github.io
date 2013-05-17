@@ -1,12 +1,14 @@
 //main.js
 
-(function( global ) {
+(function (global) {
+	
+	"use strict";
 
-	var Moogs = function() {
+	var Moogs = function () {
 
 	};
 
-	Moogs.prototype.initializeGlobal = function() {
+	Moogs.prototype.initializeGlobal = function () {
 		$(document).foundation();
 
 		var self = this,
