@@ -611,15 +611,28 @@ $social-icon-default-background-color: rgba(0,0,0,.2);
 /* =Blog
 -------------------------------------------------------------- */
 
+#blog datetime small {
+	@include respond-to(mobile) {
+		display: block;
+	}
+}
+
 #blog datetime small i,
 #blog datetime small a{
 	color: rgba(255,255,255,.5);
 }
 
+#blog .twitter-share-button {
+	@include respond-to(mobile) {
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+}
+
 #blog {
 	@include tags();
 }
-
 
 #blog .archive-button {
 	@extend .button;
@@ -839,6 +852,9 @@ $social-icon-default-background-color: rgba(0,0,0,.2);
 	position: relative;
 	margin: -100px 0 0 0;
 	height: 100%;
+	@include respond-to(mobile) {
+		margin: -120px 0 0 0;
+	}
 }
 
 #work-slider .desktop {
@@ -887,6 +903,9 @@ $social-icon-default-background-color: rgba(0,0,0,.2);
 
 #work-slider .site {
 	text-align: center;
+	@include respond-to(mobile) {
+		padding: 25px 0 0 0;
+	}
 }
 
 #work-slider .site a {

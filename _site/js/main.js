@@ -1,7 +1,7 @@
 //main.js
 
 (function (global) {
-	
+
 	"use strict";
 
 	var Moogs = function () {
@@ -601,7 +601,7 @@
 					mapStyles,
 					markerImage,
 					markerShadow,
-					infoWindodw,
+					infoWindow,
 					infoWindowContent;
 
 			latlng = new google.maps.LatLng(34.0452,-118.284);
