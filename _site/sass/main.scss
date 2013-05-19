@@ -132,10 +132,22 @@ details a + small a {
 	}
 }
 
+#about #content-header,
+#work #content-header,
+#contact #content-header {
+	padding-top: 0;
+	@include respond-to(mobile) {
+		padding: 0 10px 25px 0;
+	}
+}
+
 #home #content-header .row,
 #blog #content-header .row,
 #archive #content-header .row,
-#resume #content-header .row {
+#resume #content-header .row,
+#about #content-header .row,
+#work #content-header .row,
+#contact #content-header .row {
 	padding-top: 25px;
 	@include respond-to(mobile) {
 		padding-top: 25px;
