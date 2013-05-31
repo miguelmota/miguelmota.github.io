@@ -247,7 +247,7 @@ details a + small a {
 #main {
 	display: block;
 	margin: 0;
-	padding-bottom: 100px;
+	padding: $topbar-height 0 100px 0;
 }
 
 #content {

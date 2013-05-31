@@ -63,9 +63,18 @@ $topbar-media-query: "only screen and (min-width:"#{$topbar-breakpoint}")" !defa
   overflow: hidden;
   height: $topbar-height;
   line-height: $topbar-height;
-  position: relative;
   background: $topbar-bg;
   margin-bottom: $topbar-margin-bottom;
+
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+
+  @media #{$topbar-media-query} {
+    position: relative;
+    width: auto;
+  }
 
   // Topbar Global list Styles
   ul {
@@ -181,6 +190,7 @@ $topbar-media-query: "only screen and (min-width:"#{$topbar-breakpoint}")" !defa
         }
       }
     }
+
   }
 
 }
