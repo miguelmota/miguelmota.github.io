@@ -1,22 +1,567 @@
-<a class="twitter" href="https://twitter.com/_moogs" target="_blank" data-ga-label="Home - Social - Twitter">@_moogs</a>
-<a class="gplus" href="https://plus.google.com/u/1/102174577273194387652" target="_blank" data-ga-label="Home - Social - Google+">Google+</a>
-<a class="github" href="https://gist.github.com/miguelmota" target="_blank" data-ga-label="Home - Social - Github">Github</a>
-<a class="linkedin" href="http://www.linkedin.com/in/miguelmota" target="_blank" data-ga-label="Home - Social - LinkedIn">LinkedIn</a>
+---
+layout: default
+title: Social Stream
+description: Stream of my social web life.
+route: social
+---
+<header id="content-header">
+	<canvas id="canvas"></canvas>
+	<div class="row">
+		<div class="large-12 column">
 
-<a class="delicious" href="https://delicious.com/miguelmota" target="_blank" data-ga-label="Home - Social - Delicious">Delicious</a>
+			<h1>Social Stream <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.miguelmota.com{{ page.url }}" data-text="{{ page.title }}" data-size="large" data-related="_moogs">Tweet</a></h1>
 
-<a class="facebook" href="https://www.facebook.com/miguel.mota2" target="_blank" data-ga-label="Home - Social - Facebook">Facebook</a>
+		</div>
+	</div>
+	<div id="content-header-bottom">
+		<div class="triangle"></div>
+	</div>
+</header>
 
-<a class="instagram" href="http://instagram.com/miguelmota_" target="_blank" data-ga-label="Home - Social - Instagram">Instagram</a>
+<section id="content">
+	<div class="row">
+		<div class="large-12 column">
 
-<a class="tumblr" href="http://miguelmota.tumblr.com/" target="_blank" data-ga-label="Home - Social - Tumblr">Tumblr</a>
+			Twitter
+			<div id="twitter-stream">...</div>
 
-<a class="lastfm" href="http://www.last.fm/user/miguel_mota" target="_blank" data-ga-label="Home - Social - Last.fm">Last.fm</a>
+			Delicious
+			<div id="delicious-stream">...</div>
 
-<a class="youtube" href="http://www.youtube.com/user/mooooogs" target="_blank" data-ga-label="Home - Social - YouTube">YouTube</a>
+			Github
+			<div id="github-stream">...</div>
 
-<a class="foursquare" href="https://foursquare.com/miguel_mota" target="_blank" data-ga-label="Home - Social - Foursquare">Foursquare</a>
+			Foursquare
+			<div id="foursquare-stream">...</div>
 
-<a class="yelp" href="http://www.yelp.com/user_details?userid=p2jHlPz-fXoJSLn644iGhg" target="_blank" data-ga-label="Home - Social - Yelp">Yelp</a>
+			<!--
+			Instagram
+			<div id="instagram-stream">...</div>
+			-->
+
+			Tumblr
+			<div id="tumblr-stream">...</div>
+
+			StumbleUpon
+			<div id="stumbleupon-stream">...</div>
+
+			<!--
+			Facebook
+			<div id="facebook-stream">...</div>
+			-->
+
+		</div>
+	</div>
+</section>
+
+<script>
+
+String.prototype.parseURL = function() {
+	return this.replace(/[A-Za-z]+:\/\/[A-Za-z0-9-_]+\.[A-Za-z0-9-_:%&~\?\/.=]+/g, function(url) {
+		return '<a href="'+url+'" target="_blank">'+url+'</a>';
+	});
+};
+
+String.prototype.parseUsername = function() {
+	return this.replace(/[@]+[A-Za-z0-9-_]+/g, function(u) {
+		var username = u.replace("@","")
+		return '<a href="http://twitter.com/'+username+'" target="_blank">'+u+'</a>';
+	});
+};
+
+String.prototype.parseHashtag = function() {
+	return this.replace(/[#]+[A-Za-z0-9-_]+/g, function(t) {
+		var tag = t.replace("#","%23")
+		return '<a href="http://twitter.com/search?q='+tag+'" target="_blank">'+t+'</a>';
+	});
+};
+
+var relativeDate = function (d, unix) {
+	return d;
+};
+
+var streamDefaults = {
+	count: 10,
+	selectors: {
+		delicious: '#delicious-stream',
+		facebook: '#facebook-stream',
+		foursquare: '#foursquare-stream',
+		github: '#github-stream',
+		instagram: '#instagram-stream',
+		stumbleupon: '#stumbleupon-stream',
+		tumblr: '#tumblr-stream',
+		twitter: '#twitter-stream'
+	},
+	listClass: 'stream-list'
+};
+
+var stream = {
+
+	load: {
+
+		delicious: function (username, count, selector) {
+
+			var
+			_this = this,
+			username = username || '',
+			count = count || streamDefaults.count,
+			selector = selector || streamDefaults.selectors.delicious,
+			container = $(selector),
+			list = $('<ul class="'+ streamDefaults.listClass +'"></ul>'),
+			JSONURL = 'http://feeds.delicious.com/v2/json/'+ username +'?callback=?';
+
+			$.getJSON(JSONURL,
+					{
+						count: count
+					},
+					function(data){
+
+						$.each(data, function(i, item) {
+
+							var
+							title = item.d;
+							url = item.u,
+							date = item.dt,
+							listItem = '<li><a href="'+ url +'" target="_blank">'+ title +'</a> <datetime datetime="'+ date +'">'+ relativeDate(date) +'</datetime></li>';
+
+							list.append(listItem);
+
+						});
+
+						container.html(list);
+					}
+			);
+
+		},
+
+		facebook: function (username, count, selector) {
+
+			var
+			_this = this,
+			username = username || '',
+			count = count || streamDefaults.count,
+			selector = selector || streamDefaults.selectors.facebook,
+			container = $(selector),
+			list = $('<ul class="'+ streamDefaults.listClass +'"></ul>'),
+			JSONURL = 'https://graph.facebook.com/'+ username +'/feed&access_token=136918436443248|h21SkstVPoahrXI4sN5kh2A051k&callback=?';
+
+			$.getJSON(JSONURL,
+					function(data) {
+
+						var limit = count;
+
+						$.each(data.data, function(i, item) {
+							if (i >= limit) {
+								return false;
+							}
+
+							var
+							post_id = item.id.substr(16),
+							url = 'http://www.facebook.com/'+username;
+							date = new Date(item.created_time).toUTCString(),
+							post,
+							link,
+							caption,
+							description,
+							from,
+							type,
+							listItem;
+
+							if (item.message) {
+								post = item.message;
+								url = url + '/posts/' + post_id;
+							}
+
+							if (item.story) {
+								post = '<span>' + item.story + '</span>';
+								url = url + '/allactivity';
+							}
+
+							if (item.link) {
+								link = item.link;
+							}
+							if (item.caption) {
+								caption = item.caption;
+								post = post + '<span> | ' + caption + '</span>';
+							}
+
+							if (item.description) {
+								description = item.description;
+								post = post + '<span> - ' + description + '</span>';
+							}
+
+							if (item.to) {
+								from = '<span>'+item.from.name + ':</span> ';
+								post = from + post;
+							}
+
+							type = item.type;
+
+							if (type == 'status') {
+								type = 'text';
+							} else if (type == 'link') {
+								type = 'link';
+							} else if (type == 'photo') {
+								type = 'photo';
+							} else if(type == 'video') {
+								type = 'video';
+							}
+
+							listItem = '<li><a href="'+ url +'"" target="_blank"> '+ post +' <datetime datetime="'+ date +'">'+ relativeDate(date) +'</datetime></a></li>';
+
+							list.append(listItem);
+
+						});
+
+						container.append(list);
+
+					}
+			);
+		},
+
+		foursquare: function (username, count, selector) {
+
+			var
+			_this = this,
+			username = username || '',
+			count = count || streamDefaults.count,
+			selector = selector || streamDefaults.selectors.foursquare,
+			container = $(selector),
+			list = $('<ul class="'+ streamDefaults.listClass +'"></ul>'),
+			JSONURL = 'https://api.foursquare.com/v2/users/'+ username +'/checkins?oauth_token=DATQU0DAPF0JA043XEXPOPH2FPHVQUM4YAEAQ0SRTWGZHQ43&v=20120522&callback=?';
+
+			$.getJSON(JSONURL,
+					function(data) {
+
+						var limit = count;
+
+						$.each(data.response.checkins.items, function(i, item) {
+
+							if (i >= limit) {
+								return false;
+							}
+							var
+							name = item.venue["name"],
+							city = item.venue["location"]["city"],
+							state = item.venue["location"]["state"],
+							url = 'https://foursquare.com/',
+							date = item.createdAt,
+							image,
+							listItem;
+
+							if (item.venue["url"]) {
+								url = item.venue["url"];
+							}
+
+							image = item.venue["categories"][0]["icon"]["prefix"] + item.venue["categories"][0]["icon"]["sizes"][0] + item.venue["categories"][0]["icon"]["name"];
+
+							listItem = '<li><img src="'+ image +
+							'" alt=""> <a href="'+ url +'" target="_blank">'+ name +'</a> in '+ city +', '+ state +' <datetime datetime="'+ date +'">'+ relativeDate(date) + '</datetime></li>';
+
+							list.append(listItem);
+
+						});
+
+						container.html(list);
+					}
+			);
+		},
+
+		github: function (username, count, selector) {
+
+			var
+			_this = this,
+			username = username || '',
+			count = count || streamDefaults.count,
+			selector = selector || streamDefaults.selectors.github,
+			container = $(selector),
+			list = $('<ul class="'+ streamDefaults.listClass +'"></ul>'),
+			JSONURL = 'https://github.com/'+ username +'.json?callback=?';
+
+			$.getJSON(JSONURL,
+					function(data) {
+
+						var limit = count;
+
+						$.each(data, function(i, item) {
+
+							if (i >= limit) {
+								return false;
+							}
+
+							var
+							payloadHead = item.payload["head"],
+							type = item["type"],
+							repositoryName,
+							repositoryURL,
+							date,
+							message,
+							listItem;
+
+							if (type == "PushEvent") {
+								repositoryName = item.repository.name,
+								repositoryURL = item.repository.url;
+								date = item.repository.pushed_at;
+								message = item.payload["shas"][0][2];
+								listItem = '<li>Pushed "'+ message +'" to <a href="'+ repositoryURL +'" target="_blank">'+ repositoryName +'</a> <datetime datetime="'+ date +'">'+ relativeDate(date) +
+								'</datetime></li>';
+							} else if (type == "PullEvent") {
+								repositoryName = item.repository.name,
+								repositoryURL = item.repository.url;
+								listItem = '<li>Pulled <a href="'+ repositoryURL +'" target="_blank">'+ repositoryName +'</a> <datetime datetime="'+ date +'">'+ relativeDate(date) +
+								'</datetime></li>';
+								listItem = 'adfa';
+							} else if (type == "WatchEvent") {
+								repositoryName = item.repository.name,
+								repositoryURL = item.repository.url;
+								date = item.created_at;
+								listItem = '<li>Watched <a href="'+ repositoryURL +'" target="_blank">'+ repositoryName +'</a> <datetime datetime="'+ date +'">'+ relativeDate(date) +'</datetime></li>';
+							} else  {
+								listItem = '';
+							}
+
+							list.append(listItem);
+
+						});
+
+						container.html(list);
+
+					}
+			);
+		},
+
+		instagram: function (username, count, selector) {
+
+			var
+			_this = this,
+			username = username || '',
+			count = count || streamDefaults.count,
+			selector = selector || streamDefaults.selectors.instagram,
+			container = $(selector),
+			list = $('<ul class="'+ streamDefaults.listClass +'"></ul>'),
+			JSONURL = 'https://api.instagram.com/v1/users/37897377/media/recent?access_token=37897377.b530e2d.d7697e8cc7c74e25973697fe98746715';
+
+			$.getJSON(JSONURL,
+					function(data){
+						$.each(data.data, function(i, item) {
+
+							var
+							caption = item.caption["text"],
+							url = item.link,
+							thumbnail = item.images["thumbnail"].url,
+							likes,
+							likesCount = item.likes["count"],
+							date = item.created_time;
+
+							listItem = '<li><a href="'+ url +'" target="_blank"><img src="'+ thumbnail +'" alt=""> '+
+							caption +'</a> '+ likes +' <datetime datetime="'+ date +'">'+ relativeDate(date) +'</datetime></li>';
+
+							list.append(listItem);
+
+						});
+
+						container.html(list);
+					}
+			);
+		},
+
+		stumbleupon: function (username, count, selector) {
+
+			var
+			_this = this,
+			username = username || '',
+			count = count || streamDefaults.count,
+			selector = selector || streamDefaults.selectors.stumbleupon,
+			container = $(selector),
+			list = $('<ul class="'+ streamDefaults.listClass +'"></ul>'),
+			JSONURL = 'http://www.stumbleupon.com/rss/stumbler/miguelmota/likes';
+
+// 			$(document).ready(function () {
+//     $.ajax({
+//         url: 'http://theresidency.libsyn.com/rss',
+//         type: 'GET',
+//         dataType: "xml"
+//     }).done(function(xml) {
+//         $.each($("item", xml), function(i, e) {
+//             $("#results").append($("enclosure").attr("url").text() + "<br />");
+//         });
+//     });
+// });
+
+			$.getJSON(JSONURL,
+					{
+						include_entities: true,
+						include_rts: true,
+						screen_name: username,
+						count: count
+					},
+					function(data){
+						$.each(data, function(i, item) {
+
+							var
+							screenName = item.user.screen_name || '',
+							text = item.text || '',
+							id = item.id_str || '',
+							date = item.created_at || '',
+							listItem = '<li>'+ text.parseURL().parseUsername().parseHashtag() +' <datetime datetime="'+ date +'"><a href="http://twitter.com/'+ screenName +'/status/'+ id +
+							'" target="_blank">'+ relativeDate(date) +"</a></datetime></li>";
+
+							list.append(listItem);
+
+						});
+
+						container.html(list);
+					}
+			);
+		},
+
+		twitter: function (username, count, selector) {
+
+			var
+			_this = this,
+			username = username || '',
+			count = count || streamDefaults.count,
+			selector = selector || streamDefaults.selectors.twitter,
+			container = $(selector),
+			list = $('<ul class="'+ streamDefaults.listClass +'"></ul>'),
+			JSONURL = 'http://api.twitter.com/1/statuses/user_timeline.json?callback=?';
+
+			$.getJSON(JSONURL,
+					{
+						include_entities: true,
+						include_rts: true,
+						screen_name: username,
+						count: count
+					},
+					function(data){
+						$.each(data, function(i, item) {
+
+							var
+							screenName = item.user.screen_name || '',
+							text = item.text || '',
+							id = item.id_str || '',
+							date = item.created_at || '',
+							listItem = '<li>'+ text.parseURL().parseUsername().parseHashtag() +' <datetime datetime="'+ date +'"><a href="http://twitter.com/'+ screenName +'/status/'+ id +
+							'" target="_blank">'+ relativeDate(date) +"</a></datetime></li>";
+
+							list.append(listItem);
+
+						});
+
+						container.html(list);
+					}
+			);
+		},
+
+		tumblr: function (username, count, selector) {
+
+			var
+			_this = this,
+			username = username || '',
+			count = count || streamDefaults.count,
+			selector = selector || streamDefaults.selectors.tumblr,
+			container = $(selector),
+			list = $('<ul class="'+ streamDefaults.listClass +'"></ul>'),
+			JSONURL = 'http://'+ username +'.tumblr.com/api/read/json?num='+ count +'&callback=?';
+
+			$.getJSON(JSONURL,
+					function(data){
+						$.each(data.posts, function(i, item) {
+
+							var
+							date = this['date'],
+							url = this['url-with-slug'],
+							type = this.type;
+							caption = this['photo-caption'],
+							title = this.slug.replace(/-/g,' '),
+							listItem;
+
+							title = title.substring(0,1).toUpperCase() + title.substr(1,200)
+
+							if (type == 'answer') {
+								type = 'question';
+							}
+
+							if (type == null)
+							{
+								type = 'tumblr';
+							}
+
+							listItem = '<li><a href="'+ url +'" target="_blank">'+ title +'</a> <datetime datetime="'+ date +'">'+ relativeDate(date) +"</datetime></li>";
 
 
+							list.append(listItem);
+
+						});
+
+						container.html(list);
+					}
+			);
+		}
+
+	}
+
+};
+
+var usernames = {
+	delicious: 'miguelmota',
+	facebook: 'miguel.mota2',
+	foursquare: '4418723',
+	github: 'miguelmota',
+	instagram: '_miguelmota',
+	tumblr: 'miguelmota',
+	twitter: '_moogs'
+}
+
+stream.load.delicious(usernames.delicious);
+//stream.load.facebook(usernames.facebook);
+stream.load.foursquare(usernames.foursquare);
+stream.load.github(usernames.github);
+//stream.load.instagram(usernames.instagram);
+stream.load.tumblr(usernames.tumblr);
+stream.load.twitter(usernames.twitter);
+
+//YOUTUBE FEED
+//
+//
+//// LASTFM FEED
+
+// $.getJSON('http://ws.audioscrobbler.com/2.0/?callback=?',
+// 		{
+// 			format: 'json',
+// 			method: 'user.getRecentTracks',
+// 			user: 'miguel_mota',
+// 			api_key: 'dc0e875b6c0fd8ac4891b0716897e6c1',
+// 			limit: '5'
+// 		},
+// 		function(data){
+// 			$('.stream-lastfm').append('<ul class="stream-ul stream-ul-lastfm stream-ul-lastfm-recent">');
+// 			$.each(data.recenttracks.track, function(i, item){
+// 					var url = item.url;
+// 					var name = item.name;
+// 					var artist = item.artist['#text'];
+// 					var image = '/assets/site/logo-16.png';
+// 					if (item.image[0]['#text']) {
+// 						image = item.image[0]['#text'];
+// 					}
+// 					var date =  item.date['#text'];
+// 					var list_item = "<li><a href='"+url+"' rel='external'><img class='stream-thumb' src='"+image+"' alt='' /> "+artist+
+// 					" - "+name+" <time class='status-date' datetime='' style='color:#999 !important;font-size:12px !important;"+
+// 					"font-weight:normal !important;float:right !important;'>"+formattedDate(date)+"</time>"+
+// 					"<span class='clear'></span></a></li>";
+// 					$('.stream-ul-lastfm-recent').append(list_item);
+// 			});
+
+// 			$('.stream-ul-lastfm-recent').append('</ul>');
+// 			$('.stream-ul-lastfm-recent li:nth-child(odd)').addClass('odd');
+
+// 			// Initialize timeago
+// 			// $('.stream-ul-lastfm-recent .status-date').timeago();
+
+// 			$('.stream-lastfm .loader').css('display','none');
+// 			showMtipTimeout('.stream-logo-lastfm',3000);
+// 		}
+// );
+
+
+</script>

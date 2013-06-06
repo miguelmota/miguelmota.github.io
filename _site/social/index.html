@@ -1,22 +1,565 @@
-<a class="twitter" href="https://twitter.com/_moogs" target="_blank" data-ga-label="Home - Social - Twitter">@_moogs</a>
-<a class="gplus" href="https://plus.google.com/u/1/102174577273194387652" target="_blank" data-ga-label="Home - Social - Google+">Google+</a>
-<a class="github" href="https://gist.github.com/miguelmota" target="_blank" data-ga-label="Home - Social - Github">Github</a>
-<a class="linkedin" href="http://www.linkedin.com/in/miguelmota" target="_blank" data-ga-label="Home - Social - LinkedIn">LinkedIn</a>
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<!--
+	                                      ___                           __
+	           __                        /\_ \                         /\ \__
+	  ___ ___ /\_\     __   __  __     __\//\ \         ___ ___     ___\ \ ,_\    __
+	/' __` __`\/\ \  /'_ `\/\ \/\ \  /'__`\\ \ \      /' __` __`\  / __`\ \ \/  /'__`\
+	/\ \/\ \/\ \ \ \/\ \L\ \ \ \_\ \/\  __/ \_\ \_    /\ \/\ \/\ \/\ \L\ \ \ \_/\ \L\.\_
+	\ \_\ \_\ \_\ \_\ \____ \ \____/\ \____\/\____\   \ \_\ \_\ \_\ \____/\ \__\ \__/.\_\
+	 \/_/\/_/\/_/\/_/\/___L\ \/___/  \/____/\/____/    \/_/\/_/\/_/\/___/  \/__/\/__/\/_/
+	                   /\____/
+	                   \_/__/
+	-->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="description" content="Stream of my social web life.">
+	<meta name="keywords" content="miguel mota,web developer,html5 css3 javascript">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-title" content="Moogs">
+	<title>Social Stream » Miguel Mota | Web Developer</title>
+	<link rel="canonical" href="http://www.miguelmota.com/social/index.html">
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/miguelmota">
+	<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="apple-touch-icon-precomposed" sizes="57x57" href="/img/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/img/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/img/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-startup-image" media="(device-width: 320px)" href="/img/apple-touch-startup-image-320x460.png">
+	<link rel="apple-touch-startup-image" media="(device-width: 320px) and (-webkit-device-pixel-ratio: 2)" href="/img/apple-touch-startup-image-640x920.png">
+	<link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" href="/img/apple-touch-startup-image-640x1096.png">
+	<link rel="stylesheet" href="/css/main.css">
+	<script src="//use.typekit.net/wkl5rpy.js"></script>
+	<script>try{Typekit.load();}catch(e){}</script>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	<script src="/js/main.min.js"></script>
+	<script>
+	  	var _gaq = _gaq || [];
+	   	_gaq.push(['_setAccount', 'UA-12642068-1']);
+	   	_gaq.push(['_setDomainName', '.miguelmota.com']);
+	  	_gaq.push(['_trackPageview']);
+	   	(function() {
+	     		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	     		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	     		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	   	})();
+	   	$(document).on('click', '[data-ga-label]', function() {
+	   		_gaq.push(['_trackEvent', 'Call To Action', 'Click', $(this).attr('data-ga-label')]);
+	   	});
+	</script>
+</head>
+<body id="social">
+		<div id="top"></div>
+		<img class="hidden" src="/img/miguel-mota-m-logo-500x500.png" alt="">
+		<header id="header" class="contain-to-grid fixed">
+			<nav class="top-bar">
+				<ul class="title-area">
+					<li class="name"><a href="/">Miguel Mota</a></li>
+					<li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+				</ul>
+				<section class="top-bar-section">
+				    <ul id="main-nav" class="right">
+				      <li class="divider"></li>
+				      <li ><a href="/" data-ga-label="Navigation - Home"><i class="icon-home"></i></a></li>
+				      <li class="divider"></li>
+				      <li ><a href="/about" data-ga-label="Navigation - About"><i class="icon-bookmark-empty"></i> About</a></li>
+				      <li class="divider"></li>
+				      <li ><a href="/blog" data-ga-label="Navigation - Blog"><i class="icon-lightbulb"></i> Thoughts</a></li>
+				      <li class="divider"></li>
+				      <li ><a href="/work" data-ga-label="Navigation - Work"><i class="icon-laptop"></i> Work</a></li>
+				      <li class="divider"></li>
+							<li ><a href="/contact" data-ga-label="Navigation - Contact"><i class="icon-envelope"></i> Contact</a></li>
+				      <li class="divider"></li>
+				    </ul>
+				</section>
+			</nav>
+		</header>
 
-<a class="delicious" href="https://delicious.com/miguelmota" target="_blank" data-ga-label="Home - Social - Delicious">Delicious</a>
+		<main id="main" role="main">
+			<header id="content-header">
+	<canvas id="canvas"></canvas>
+	<div class="row">
+		<div class="large-12 column">
 
-<a class="facebook" href="https://www.facebook.com/miguel.mota2" target="_blank" data-ga-label="Home - Social - Facebook">Facebook</a>
+			<h1>Social Stream <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.miguelmota.com/social/index.html" data-text="Social Stream" data-size="large" data-related="_moogs">Tweet</a></h1>
 
-<a class="instagram" href="http://instagram.com/miguelmota_" target="_blank" data-ga-label="Home - Social - Instagram">Instagram</a>
+		</div>
+	</div>
+	<div id="content-header-bottom">
+		<div class="triangle"></div>
+	</div>
+</header>
 
-<a class="tumblr" href="http://miguelmota.tumblr.com/" target="_blank" data-ga-label="Home - Social - Tumblr">Tumblr</a>
+<section id="content">
+	<div class="row">
+		<div class="large-12 column">
 
-<a class="lastfm" href="http://www.last.fm/user/miguel_mota" target="_blank" data-ga-label="Home - Social - Last.fm">Last.fm</a>
+			Twitter
+			<div id="twitter-stream"></div>
 
-<a class="youtube" href="http://www.youtube.com/user/mooooogs" target="_blank" data-ga-label="Home - Social - YouTube">YouTube</a>
+			Delicious
+			<div id="delicious-stream"></div>
 
-<a class="foursquare" href="https://foursquare.com/miguel_mota" target="_blank" data-ga-label="Home - Social - Foursquare">Foursquare</a>
+			Github
+			<div id="github-stream"></div>
 
-<a class="yelp" href="http://www.yelp.com/user_details?userid=p2jHlPz-fXoJSLn644iGhg" target="_blank" data-ga-label="Home - Social - Yelp">Yelp</a>
+			Foursquare
+			<div id="foursquare-stream"></div>
+
+			Instagram
+			<div id="instagram-stream"></div>
+
+			Tumblr
+			<div id="tumblr-stream"></div>
+
+			<!--
+			Facebook
+			<div id="facebook-stream"></div>
+			-->
+
+		</div>
+	</div>
+</section>
+
+<script>
+
+String.prototype.parseURL = function() {
+	return this.replace(/[A-Za-z]+:\/\/[A-Za-z0-9-_]+\.[A-Za-z0-9-_:%&~\?\/.=]+/g, function(url) {
+		return '<a href="'+url+'" target="_blank">'+url+'</a>';
+	});
+};
+
+String.prototype.parseUsername = function() {
+	return this.replace(/[@]+[A-Za-z0-9-_]+/g, function(u) {
+		var username = u.replace("@","")
+		return '<a href="http://twitter.com/'+username+'" target="_blank">'+u+'</a>';
+	});
+};
+
+String.prototype.parseHashtag = function() {
+	return this.replace(/[#]+[A-Za-z0-9-_]+/g, function(t) {
+		var tag = t.replace("#","%23")
+		return '<a href="http://twitter.com/search?q='+tag+'" target="_blank">'+t+'</a>';
+	});
+};
+
+var relativeDate = function (d, unix) {
+	return d;
+};
+
+var streamDefaults = {
+	count: 10,
+	selectors: {
+		delicious: '#delicious-stream',
+		facebook: '#facebook-stream',
+		foursquare: '#foursquare-stream',
+		github: '#github-stream',
+		instagram: '#instagram-stream',
+		tumblr: '#tumblr-stream',
+		twitter: '#twitter-stream'
+	},
+	listClass: 'stream-list'
+};
+
+var stream = {
+
+	load: {
+
+		delicious: function (username, count, selector) {
+
+			var
+			_this = this,
+			username = username || '',
+			count = count || streamDefaults.count,
+			selector = selector || streamDefaults.selectors.delicious,
+			container = $(selector),
+			list = $('<ul class="'+ streamDefaults.listClass +'"></ul>'),
+			JSONURL = 'http://feeds.delicious.com/v2/json/'+ username +'?callback=?';
+
+			$.getJSON(JSONURL,
+					{
+						count: count
+					},
+					function(data){
+
+						$.each(data, function(i, item) {
+
+							var
+							title = item.d;
+							url = item.u,
+							date = item.dt,
+							listItem = '<li><a href="'+ url +'" target="_blank">'+ title +'</a> <datetime datetime="'+ date +'">'+ relativeDate(date) +'</datetime></li>';
+
+							list.append(listItem);
+
+						});
+
+						container.html(list);
+					}
+			);
+
+		},
+
+		facebook: function (username, count, selector) {
+
+			var
+			_this = this,
+			username = username || '',
+			count = count || streamDefaults.count,
+			selector = selector || streamDefaults.selectors.facebook,
+			container = $(selector),
+			list = $('<ul class="'+ streamDefaults.listClass +'"></ul>'),
+			JSONURL = 'https://graph.facebook.com/'+ username +'/feed&access_token=136918436443248|h21SkstVPoahrXI4sN5kh2A051k&callback=?';
+
+			$.getJSON(JSONURL,
+					function(data) {
+
+						var limit = count;
+
+						$.each(data.data, function(i, item) {
+							if (i >= limit) {
+								return false;
+							}
+
+							var
+							post_id = item.id.substr(16),
+							url = 'http://www.facebook.com/'+username;
+							date = new Date(item.created_time).toUTCString(),
+							post,
+							link,
+							caption,
+							description,
+							from,
+							type,
+							listItem;
+
+							if (item.message) {
+								post = item.message;
+								url = url + '/posts/' + post_id;
+							}
+
+							if (item.story) {
+								post = '<span>' + item.story + '</span>';
+								url = url + '/allactivity';
+							}
+
+							if (item.link) {
+								link = item.link;
+							}
+							if (item.caption) {
+								caption = item.caption;
+								post = post + '<span> | ' + caption + '</span>';
+							}
+
+							if (item.description) {
+								description = item.description;
+								post = post + '<span> - ' + description + '</span>';
+							}
+
+							if (item.to) {
+								from = '<span>'+item.from.name + ':</span> ';
+								post = from + post;
+							}
+
+							type = item.type;
+
+							if (type == 'status') {
+								type = 'text';
+							} else if (type == 'link') {
+								type = 'link';
+							} else if (type == 'photo') {
+								type = 'photo';
+							} else if(type == 'video') {
+								type = 'video';
+							}
+
+							listItem = '<li><a href="'+ url +'"" target="_blank"> '+ post +' <datetime datetime="'+ date +'">'+ relativeDate(date) +'</datetime></a></li>';
+
+							list.append(listItem);
+
+						});
+
+						container.append(list);
+
+					}
+			);
+		},
+
+		foursquare: function (username, count, selector) {
+
+			var
+			_this = this,
+			username = username || '',
+			count = count || streamDefaults.count,
+			selector = selector || streamDefaults.selectors.foursquare,
+			container = $(selector),
+			list = $('<ul class="'+ streamDefaults.listClass +'"></ul>'),
+			JSONURL = 'https://api.foursquare.com/v2/users/'+ username +'/checkins?oauth_token=DATQU0DAPF0JA043XEXPOPH2FPHVQUM4YAEAQ0SRTWGZHQ43&v=20120522&callback=?';
+
+			$.getJSON(JSONURL,
+					function(data) {
+
+						var limit = count;
+
+						$.each(data.response.checkins.items, function(i, item) {
+
+							if (i >= limit) {
+								return false;
+							}
+							var
+							name = item.venue["name"],
+							city = item.venue["location"]["city"],
+							state = item.venue["location"]["state"],
+							url = 'https://foursquare.com/',
+							date = item.createdAt,
+							image,
+							listItem;
+
+							if (item.venue["url"]) {
+								url = item.venue["url"];
+							}
+
+							image = item.venue["categories"][0]["icon"]["prefix"] + item.venue["categories"][0]["icon"]["sizes"][0] + item.venue["categories"][0]["icon"]["name"];
+
+							listItem = '<li><img src="'+ image +
+							'" alt=""> <a href="'+ url +'" target="_blank">'+ name +'</a> in '+ city +', '+ state +' <datetime datetime="'+ date +'">'+ relativeDate(date) + '</datetime></li>';
+
+							list.append(listItem);
+
+						});
+
+						container.html(list);
+					}
+			);
+		},
+
+		github: function (username, count, selector) {
+
+			var
+			_this = this,
+			username = username || '',
+			count = count || streamDefaults.count,
+			selector = selector || streamDefaults.selectors.github,
+			container = $(selector),
+			list = $('<ul class="'+ streamDefaults.listClass +'"></ul>'),
+			JSONURL = 'https://github.com/'+ username +'.json?callback=?';
+
+			$.getJSON(JSONURL,
+					function(data) {
+
+						var limit = count;
+
+						$.each(data, function(i, item) {
+
+							if (i >= limit) {
+								return false;
+							}
+
+							var
+							payloadHead = item.payload["head"],
+							type = item["type"],
+							repositoryName,
+							repositoryURL,
+							date,
+							message,
+							listItem;
+
+							if (type == "PushEvent") {
+								repositoryName = item.repository.name,
+								repositoryURL = item.repository.url;
+								date = item.repository.pushed_at;
+								message = item.payload["shas"][0][2];
+								listItem = '<li>Pushed "'+ message +'" to <a href="'+ repositoryURL +'" target="_blank">'+ repositoryName +'</a> <datetime datetime="'+ date +'">'+ relativeDate(date) +
+								'</datetime></li>';
+							} else if (type == "PullEvent") {
+								repositoryName = item.repository.name,
+								repositoryURL = item.repository.url;
+								listItem = '<li>Pulled <a href="'+ repositoryURL +'" target="_blank">'+ repositoryName +'</a> <datetime datetime="'+ date +'">'+ relativeDate(date) +
+								'</datetime></li>';
+								listItem = 'adfa';
+							} else if (type == "WatchEvent") {
+								repositoryName = item.repository.name,
+								repositoryURL = item.repository.url;
+								date = item.created_at;
+								listItem = '<li>Watched <a href="'+ repositoryURL +'" target="_blank">'+ repositoryName +'</a> <datetime datetime="'+ date +'">'+ relativeDate(date) +'</datetime></li>';
+							} else  {
+								listItem = '';
+							}
+
+							list.append(listItem);
+
+						});
+
+						container.html(list);
+
+					}
+			);
+		},
+
+		instagram: function (username, count, selector) {
+
+			var
+			_this = this,
+			username = username || '',
+			count = count || streamDefaults.count,
+			selector = selector || streamDefaults.selectors.instagram,
+			container = $(selector),
+			list = $('<ul class="'+ streamDefaults.listClass +'"></ul>'),
+			JSONURL = 'https://api.instagram.com/v1/users/37897377/media/recent?access_token=37897377.b530e2d.d7697e8cc7c74e25973697fe98746715';
+
+			$.getJSON(JSONURL,
+					function(data){
+						$.each(data.data, function(i, item) {
+
+							var
+							caption = item.caption["text"],
+							url = item.link,
+							thumbnail = item.images["thumbnail"].url,
+							likes,
+							likesCount = item.likes["count"],
+							date = item.created_time;
+
+							listItem = '<li><a href="'+ url +'" target="_blank"><img src="'+ thumbnail +'" alt=""> '+
+							caption +'</a> '+ likes +' <datetime datetime="'+ date +'">'+ relativeDate(date) +'</datetime></li>';
+
+							list.append(listItem);
+
+						});
+
+						container.html(list);
+					}
+			);
+		},
+
+		twitter: function (username, count, selector) {
+
+			var
+			_this = this,
+			username = username || '',
+			count = count || streamDefaults.count,
+			selector = selector || streamDefaults.selectors.twitter,
+			container = $(selector),
+			list = $('<ul class="'+ streamDefaults.listClass +'"></ul>'),
+			JSONURL = 'http://api.twitter.com/1/statuses/user_timeline.json?callback=?';
+
+			$.getJSON(JSONURL,
+					{
+						include_entities: true,
+						include_rts: true,
+						screen_name: username,
+						count: count
+					},
+					function(data){
+						$.each(data, function(i, item) {
+
+							var
+							screenName = item.user.screen_name || '',
+							text = item.text || '',
+							id = item.id_str || '',
+							date = item.created_at || '',
+							listItem = '<li>'+ text.parseURL().parseUsername().parseHashtag() +' <datetime datetime="'+ date +'"><a href="http://twitter.com/'+ screenName +'/status/'+ id +
+							'" target="_blank">'+ relativeDate(date) +"</a></datetime></li>";
+
+							list.append(listItem);
+
+						});
+
+						container.html(list);
+					}
+			);
+		},
+
+		tumblr: function (username, count, selector) {
+
+			var
+			_this = this,
+			username = username || '',
+			count = count || streamDefaults.count,
+			selector = selector || streamDefaults.selectors.tumblr,
+			container = $(selector),
+			list = $('<ul class="'+ streamDefaults.listClass +'"></ul>'),
+			JSONURL = 'http://'+ username +'.tumblr.com/api/read/json?num='+ count +'&callback=?';
+
+			$.getJSON(JSONURL,
+					function(data){
+						$.each(data.posts, function(i, item) {
+
+							var
+							date = this['date'],
+							url = this['url-with-slug'],
+							type = this.type;
+							caption = this['photo-caption'],
+							title = this.slug.replace(/-/g,' '),
+							listItem;
+
+							title = title.substring(0,1).toUpperCase() + title.substr(1,200)
+
+							if (type == 'answer') {
+								type = 'question';
+							}
+
+							if (type == null)
+							{
+								type = 'tumblr';
+							}
+
+							listItem = '<li><a href="'+ url +'" target="_blank">'+ title +'</a> <datetime datetime="'+ date +'">'+ relativeDate(date) +"</datetime></li>";
 
 
+							list.append(listItem);
+
+						});
+
+						container.html(list);
+					}
+			);
+		}
+
+	}
+
+};
+
+var usernames = {
+	delicious: 'miguelmota',
+	facebook: 'miguel.mota2',
+	foursquare: '4418723',
+	github: 'miguelmota',
+	instagram: '_miguelmota',
+	tumblr: 'miguelmota',
+	twitter: '_moogs'
+}
+
+stream.load.delicious(usernames.delicious);
+stream.load.foursquare(usernames.foursquare);
+stream.load.github(usernames.github);
+stream.load.instagram(usernames.instagram);
+stream.load.tumblr(usernames.tumblr);
+stream.load.twitter(usernames.twitter);
+
+</script>
+
+		</main>
+
+		<footer id="footer">
+			<div class="row">
+				<div class="large-12 column">
+					<p>
+						<span class="break"><span>© 2013 Moogs, LLC.</span> <span>Made with <i class="icon-heart"></i></span></span> <a class="hidden" href="https://plus.google.com/102174577273194387652" rel="author">Google+</a>
+
+						<a href="https://twitter.com/_moogs" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @_moogs</a>
+
+					</p>
+				</div>
+			</div>
+		</footer>
+
+		<a id="forkme" href="https://github.com/miguelmota/miguelmota.github.com" target="_blank" data-ga-label="Fork me on Github"><img src="/img/forkme_right_darkblue_121621.png" alt=""></a>
+
+		<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+		<script src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/infobox/src/infobox.js"></script>
+	</body>
+</html>

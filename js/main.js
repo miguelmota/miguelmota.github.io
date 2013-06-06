@@ -11,8 +11,11 @@
 	Moogs.prototype.initializeGlobal = function () {
 		$(document).foundation();
 
-		var self = this,
-		ajaxed = false
+		window.scrollTo(0,1);
+
+		var
+		self = this,
+		ajaxed = false;
 
 		if (window.history && window.history.pushState && ajaxed === true) {
 
@@ -795,4 +798,4 @@
 
 	global.moogs = moogs;
 
-})( this );
+})(this);

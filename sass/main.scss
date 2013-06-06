@@ -552,6 +552,10 @@ $social-icon-default-background-color: rgba(0,0,0,.2);
 	@include social-icon($social-icon-width, $social-icon-height, #D51007, '../img/social/lastfm-32.png');
 }
 
+#home .stumbleupon {
+	@include social-icon($social-icon-width, $social-icon-height, #EB4924, '../img/social/stumbleupon-32.png');
+}
+
 #home .archive-button {
 	@extend .button;
 }
@@ -712,6 +716,13 @@ $social-icon-default-background-color: rgba(0,0,0,.2);
 
 #contact [data-location] {
 	@extend .alt;
+}
+
+#contact .phone,
+#contact .phone:hover {
+	color: $body-font-color;
+	text-decoration: none;
+	cursor: text;
 }
 
 #contact fieldset {
