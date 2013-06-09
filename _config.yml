@@ -1,0 +1,19 @@
+permalink: /:categories/:title
+
+pygments: true
+
+site_url: http://www.miguelmota.com
+
+site_name: Miguel Mota | Web Developer
+
+google_analytics_uid: UA-12642068-1
+
+disqus_shortname: miguelmota
+
+theme:
+
+  homepage_featured: 1
+
+  homepage_posts: 100
+
+  featured_wordcount: 70

@@ -1,0 +1,168 @@
+/* clock.css */
+
+/* ==========================================================================
+   Global
+   ========================================================================== */
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Lucida Sans Typewriter", "Lucida Console", Monaco, "Bitstream Vera Sans Mono", monospace;
+}
+
+h1 {
+	margin: 50px auto 35px auto;
+	font-size: 40px;
+	text-align: center;
+}
+
+h2 {
+	margin: 0 0 50px 0;
+	font-weight: normal;
+	text-align: center;
+}
+
+/* ==========================================================================
+   Header
+   ========================================================================== */
+
+.tagline {
+	text-align: center;
+	margin: 0 auto 30px auto;
+	line-height: 2;
+}
+
+.download {
+	margin: 0 auto 100px auto;
+	font-size: 16px;
+	text-align: center;
+}
+
+/* ==========================================================================
+   Code
+   ========================================================================== */
+
+.code {
+	width: 100%;
+	max-width: 500px;
+	margin: 0 auto 100px auto;
+	padding: 20px;
+	background: #f8f8ff;
+	border: 1px solid #ddd;
+}
+
+/* ==========================================================================
+   Clocks
+   ========================================================================== */
+
+.clocks {
+	margin: 0 auto 50px auto;
+	text-align: center;
+}
+
+.clock {
+	display: inline-block;
+	position: relative;
+	margin: 0 15px;
+	text-align: center;
+}
+
+@media (max-width: 640px) {
+	.clock {
+		display: block;
+		margin: 15px auto;
+	}
+}
+
+label {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 100px;
+	margin: -10px 0 0 -50px;
+	text-align: center;
+}
+
+/* ==========================================================================
+   Count only
+   ========================================================================== */
+
+.count-only label {
+	position: static;
+	margin: 0 20px;
+}
+
+@media (max-width: 640px) {
+	.count-only label {
+		display: block;
+		width: 100%;
+		text-align: center;
+		margin: 10px auto;
+	}
+}
+
+/* ==========================================================================
+   Basic setup
+   ========================================================================== */
+
+.basic-setup {
+	margin: 0 auto 100px auto;
+}
+
+.basic-setup .code {
+	margin: 0 auto;
+}
+
+.basic-setup p {
+	margin: 10px auto;
+	text-align: center;
+}
+
+/* ==========================================================================
+   Classic setup
+   ========================================================================== */
+
+.classic-setup {
+	margin: 0 auto 100px auto;
+}
+
+.classic-setup .code {
+	margin: 0 auto;
+}
+
+.classic-setup p {
+	margin: 10px auto;
+	text-align: center;
+}
+
+/* ==========================================================================
+   All options
+   ========================================================================== */
+
+.options {
+	margin: 0 auto 100px auto;
+}
+
+.options .code {
+	margin: 0 auto;
+}
+
+.options p {
+	margin: 10px auto;
+	text-align: center;
+}
+
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+#footer {
+	margin: 100px auto;
+	max-width: 500px;
+	font-size: 12px;
+}
