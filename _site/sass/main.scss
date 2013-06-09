@@ -940,6 +940,22 @@ $social-icon-default-background-color: rgba(0,0,0,.2);
 #work-list h2 small a {
 	font-weight: normal;
 }
+
+/* =Social
+-------------------------------------------------------------- */
+
+#social dl dt {
+
+}
+
+#social dl dd {
+
+}
+
+#social li img {
+	max-height: 32px;
+}
+
 /* =Loader
 -------------------------------------------------------------- */
 
@@ -960,6 +976,16 @@ $social-icon-default-background-color: rgba(0,0,0,.2);
 	position: absolute;
 	padding: 0;
 	background: transparent url(../img/ajax-loader-128x128-white.gif) no-repeat 50% 50%;
+}
+
+#social .loader {
+	display: inline-block;
+	position: static;
+	width: 32px;
+	height: 32px;
+	margin: 0 auto;
+	padding: 0;
+	background: transparent url(../img/ajax-loader.gif) no-repeat center center;
 }
 
 .loader-overlay {
