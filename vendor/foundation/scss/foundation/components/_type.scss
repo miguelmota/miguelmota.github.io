@@ -99,6 +99,19 @@ $microformat-abbr-padding:             0 emCalc(1px) !default;
 $microformat-abbr-font-weight:         bold !default;
 $microformat-abbr-font-decoration:     none !default;
 
+// Float clear mixin
+@mixin clear() {
+    &:before, &:after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 0;
+        overflow: hidden;
+    }
+    &:after {
+        clear: both;
+    }
+}
 
 //
 // Typography Placeholders
@@ -169,6 +182,7 @@ a.alt {
 
 /* Default paragraph styles */
 p {
+  @include clear();
   font-family: $paragraph-font-family;
   font-weight: $paragraph-font-weight;
   font-size: $paragraph-font-size;

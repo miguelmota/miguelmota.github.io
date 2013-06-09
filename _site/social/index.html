@@ -99,26 +99,31 @@
 		<div class="large-12 column">
 
 			Twitter
-			<div id="twitter-stream"></div>
+			<div id="twitter-stream">...</div>
 
 			Delicious
-			<div id="delicious-stream"></div>
+			<div id="delicious-stream">...</div>
 
 			Github
-			<div id="github-stream"></div>
+			<div id="github-stream">...</div>
 
 			Foursquare
-			<div id="foursquare-stream"></div>
+			<div id="foursquare-stream">...</div>
 
+			<!--
 			Instagram
-			<div id="instagram-stream"></div>
+			<div id="instagram-stream">...</div>
+			-->
 
 			Tumblr
-			<div id="tumblr-stream"></div>
+			<div id="tumblr-stream">...</div>
+
+			StumbleUpon
+			<div id="stumbleupon-stream">...</div>
 
 			<!--
 			Facebook
-			<div id="facebook-stream"></div>
+			<div id="facebook-stream">...</div>
 			-->
 
 		</div>
@@ -159,6 +164,7 @@ var streamDefaults = {
 		foursquare: '#foursquare-stream',
 		github: '#github-stream',
 		instagram: '#instagram-stream',
+		stumbleupon: '#stumbleupon-stream',
 		tumblr: '#tumblr-stream',
 		twitter: '#twitter-stream'
 	},
@@ -435,6 +441,56 @@ var stream = {
 			);
 		},
 
+		stumbleupon: function (username, count, selector) {
+
+			var
+			_this = this,
+			username = username || '',
+			count = count || streamDefaults.count,
+			selector = selector || streamDefaults.selectors.stumbleupon,
+			container = $(selector),
+			list = $('<ul class="'+ streamDefaults.listClass +'"></ul>'),
+			JSONURL = 'http://www.stumbleupon.com/rss/stumbler/miguelmota/likes';
+
+// 			$(document).ready(function () {
+//     $.ajax({
+//         url: 'http://theresidency.libsyn.com/rss',
+//         type: 'GET',
+//         dataType: "xml"
+//     }).done(function(xml) {
+//         $.each($("item", xml), function(i, e) {
+//             $("#results").append($("enclosure").attr("url").text() + "<br />");
+//         });
+//     });
+// });
+
+			$.getJSON(JSONURL,
+					{
+						include_entities: true,
+						include_rts: true,
+						screen_name: username,
+						count: count
+					},
+					function(data){
+						$.each(data, function(i, item) {
+
+							var
+							screenName = item.user.screen_name || '',
+							text = item.text || '',
+							id = item.id_str || '',
+							date = item.created_at || '',
+							listItem = '<li>'+ text.parseURL().parseUsername().parseHashtag() +' <datetime datetime="'+ date +'"><a href="http://twitter.com/'+ screenName +'/status/'+ id +
+							'" target="_blank">'+ relativeDate(date) +"</a></datetime></li>";
+
+							list.append(listItem);
+
+						});
+
+						container.html(list);
+					}
+			);
+		},
+
 		twitter: function (username, count, selector) {
 
 			var
@@ -534,11 +590,55 @@ var usernames = {
 }
 
 stream.load.delicious(usernames.delicious);
+//stream.load.facebook(usernames.facebook);
 stream.load.foursquare(usernames.foursquare);
 stream.load.github(usernames.github);
-stream.load.instagram(usernames.instagram);
+//stream.load.instagram(usernames.instagram);
 stream.load.tumblr(usernames.tumblr);
 stream.load.twitter(usernames.twitter);
+
+//YOUTUBE FEED
+//
+//
+//// LASTFM FEED
+
+// $.getJSON('http://ws.audioscrobbler.com/2.0/?callback=?',
+// 		{
+// 			format: 'json',
+// 			method: 'user.getRecentTracks',
+// 			user: 'miguel_mota',
+// 			api_key: 'dc0e875b6c0fd8ac4891b0716897e6c1',
+// 			limit: '5'
+// 		},
+// 		function(data){
+// 			$('.stream-lastfm').append('<ul class="stream-ul stream-ul-lastfm stream-ul-lastfm-recent">');
+// 			$.each(data.recenttracks.track, function(i, item){
+// 					var url = item.url;
+// 					var name = item.name;
+// 					var artist = item.artist['#text'];
+// 					var image = '/assets/site/logo-16.png';
+// 					if (item.image[0]['#text']) {
+// 						image = item.image[0]['#text'];
+// 					}
+// 					var date =  item.date['#text'];
+// 					var list_item = "<li><a href='"+url+"' rel='external'><img class='stream-thumb' src='"+image+"' alt='' /> "+artist+
+// 					" - "+name+" <time class='status-date' datetime='' style='color:#999 !important;font-size:12px !important;"+
+// 					"font-weight:normal !important;float:right !important;'>"+formattedDate(date)+"</time>"+
+// 					"<span class='clear'></span></a></li>";
+// 					$('.stream-ul-lastfm-recent').append(list_item);
+// 			});
+
+// 			$('.stream-ul-lastfm-recent').append('</ul>');
+// 			$('.stream-ul-lastfm-recent li:nth-child(odd)').addClass('odd');
+
+// 			// Initialize timeago
+// 			// $('.stream-ul-lastfm-recent .status-date').timeago();
+
+// 			$('.stream-lastfm .loader').css('display','none');
+// 			showMtipTimeout('.stream-logo-lastfm',3000);
+// 		}
+// );
+
 
 </script>
 
