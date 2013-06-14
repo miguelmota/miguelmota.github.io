@@ -582,16 +582,18 @@ $social-icon-default-background-color: rgba(0,0,0,.2);
 	}
 }
 
-#swipe:after {
-	content: "";
-	display: block;
-	width: 20px;
-	height: 100%;
-	clear: both;
-	position: absolute;
-	top: 0;
-	right: 0;
-	box-shadow: inset -10px 0 10px 5px #9eb2b3, inset -10px 0 0 10px transparent;
+@include respond-to(mobile) {
+	#swipe:after {
+		content: "";
+		display: block;
+		width: 20px;
+		height: 100%;
+		clear: both;
+		position: absolute;
+		top: 0;
+		right: 0;
+		box-shadow: inset -10px 0 10px 5px #9eb2b3, inset -10px 0 0 10px transparent;
+	}
 }
 
 #swipe .swipe-wrapper {
