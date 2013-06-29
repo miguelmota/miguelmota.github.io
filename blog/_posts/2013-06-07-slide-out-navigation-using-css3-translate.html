@@ -181,7 +181,7 @@ body {
 }
 {% endhighlight %}
 
-<p>Running down through the CSS; at the top we have global styles. We set the height to 100% on the html and body elements, and set <code>overflow</code> to hidden on the body tag.</p>
+<p>Running down through the CSS; at the top we have global styles. We set the height to 100% on the html and body elements, and set <code>overflow</code> to hidden on the body element.</p>
 
 <p>We obviously do not want to display the checkbox so we hide it.</p>
 
@@ -191,7 +191,7 @@ body {
 
 <p>For the <code>main</code> container we must set the z-index to higher number than the nav because it sits on top of it. When the user taps the menu button, the main container will slide over to the right using CSS3 <code>translate3D</code> and <code>transition</code> for the animation. When it slides, over the navigation menu below it will be revealed. So when the checkbox is checked, we set <code>translate3D(80%,0,0)</code> on the main container which will move it over to the right by 80%. This is <em>pretty much</em> the <strong>magic</strong> of this whole tutorial.</p>
 
-<p>You might be wondering what the <code>~</code> (tilde) does. In CSS the <code>~</code> selector is the <em>general sibling combiantor</em>, which means that it will match elements that come <strong><em>after</em></strong> it; <em>not a child</em>. So in our example, <code>#nav-handler:checked ~ #main-container</code> is a selector for the main container when the checkbox is checked.</p>
+<p>You might be wondering what the <code>~</code> (tilde) does. In CSS the <code>~</code> selector is the <em>general sibling combinator</em>, which means that it will match elements that come <strong><em>after</em></strong> it; <em>not a child</em>. So in our example, <code>#nav-handler:checked ~ #main-container</code> is a selector for the main container when the checkbox is checked.</p>
 
 <p><a data-demo href="{{ page.url }}/barebones-demo" target="_blank">View the barebones demo</a></p>
 
