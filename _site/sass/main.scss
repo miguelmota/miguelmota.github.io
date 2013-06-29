@@ -15,6 +15,13 @@ $content-header-triangle-width: 24px !default;
 /* =Global
 -------------------------------------------------------------- */
 
+details.polyfill summary::-webkit-details-marker { display:none; }
+details.polyfill > * { position: absolute; visibility: hidden; }
+details.polyfill > summary, details[open] > * { position: static; visibility: visible; }
+details.polyfill > summary { display: block; }
+details.polyfill > summary:before { content: "►"; padding-right: 5px; font-size: 11px; }
+details.polyfill[open] > summary:before { content:"▼"; }
+
 .hidden {
 	width: 0px;
 	height: 0px;

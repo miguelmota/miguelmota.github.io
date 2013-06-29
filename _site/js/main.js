@@ -199,6 +199,24 @@
 
 	Moogs.prototype.initializeResume = function() {
 		this.initializeParticles();
+
+		if (!('open' in document.createElement('details'))) {
+
+			$('details').addClass('polyfill');
+
+			$(document).on('click', 'summary', function(e) {
+				var $summary = $(this);
+				var $details = $summary.parent();
+
+				if ($details.attr('open')) {
+					$details.removeAttr('open');
+				} else {
+					$details.attr('open', 'open');
+				}
+
+			});
+
+		}
 	}
 
 	Moogs.prototype.initializeBlog = function() {
