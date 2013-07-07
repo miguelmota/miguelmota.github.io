@@ -1,0 +1,20 @@
+body {
+	font-size: 14px;
+	font-family: arial;
+}
+
+#main {
+	padding: 20px;
+}
+
+h1 {
+	font-size: 18px;
+}
+
+#buttons {
+	padding: 40px 0;
+}
+
+#footer {
+	padding: 20px;
+}
