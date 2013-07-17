@@ -200,6 +200,12 @@
 	Moogs.prototype.initializeResume = function() {
 		this.initializeParticles();
 
+		if (window.location.hash.substr(1) === 'xtopoly-work') {
+			var $xtopolyWork = $('#xtopoly-work');
+			$xtopolyWork.attr('open', 'open');
+			$('html,body').scrollTop($xtopolyWork.offset().top - $('#header').outerHeight(true));
+		}
+
 		if (!('open' in document.createElement('details'))) {
 
 			$('details').addClass('polyfill');
