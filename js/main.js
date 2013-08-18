@@ -205,6 +205,10 @@
 			$xtopolyWork.attr('open', 'open');
 			$('html,body').scrollTop($xtopolyWork.offset().top - $('#header').outerHeight(true));
 		}
+		
+		$(document).on('click', '#xtopoly-work', function() {
+			window.location.hash = $(this).attr('id');
+		});
 
 		if (!('open' in document.createElement('details'))) {
 

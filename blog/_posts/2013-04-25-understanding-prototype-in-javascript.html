@@ -118,7 +118,7 @@ var Rectangle = function(width, height){
 Rectangle.prototype = new Quadrilateral();
 {% endhighlight %}
 
-But wait, although this just inherits all the goodies, our new object does not know what it acually <em>is</em>. We Have to tell our Rectangle object that it's a Rectangle. Other wise instances of Rectangle would have a constructor of Quadrilateral. We do that by setting the <code>constructor</code> prototype:
+<p>But wait, although this just inherits all the goodies, our new object does not know what it acually <em>is</em>. We Have to tell our Rectangle object that it's a Rectangle. Other wise instances of Rectangle would have a constructor of Quadrilateral. We do that by setting the <code>constructor</code> prototype:</p>
 
 {% highlight javascript %}
 Rectangle.prototype.constructor = Rectangle;
