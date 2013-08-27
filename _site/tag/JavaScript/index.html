@@ -14,14 +14,14 @@
 	                   \_/__/
 	-->
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta name="description" content="Say hello or whatever's on your mind.">
+	<meta name="description" content="A blog on all things web.">
 	<meta name="keywords" content="miguel mota,web developer,html5 css3 javascript">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-title" content="Moogs">
-	<title>Contact » Miguel Mota | Web Developer</title>
-	<link rel="canonical" href="http://www.miguelmota.com/contact/index.html">
+	<title>Posts tagged &ldquo;JavaScript&rdquo; » Miguel Mota | Web Developer</title>
+	<link rel="canonical" href="http://www.miguelmota.comtag/JavaScript/index.html">
 	<link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/miguelmota">
 	<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
 	<link rel="shortcut icon" href="/favicon.ico">
@@ -52,7 +52,7 @@
 	   	});
 	</script>
 </head>
-<body id="contact">
+<body id="blog">
 		<div id="top"></div>
 		<img class="hidden" src="/img/miguel-mota-m-logo-500x500.png" alt="">
 		<header id="header" class="contain-to-grid fixed">
@@ -68,11 +68,11 @@
 				      <li class="divider"></li>
 				      <li ><a href="/about" data-ga-label="Navigation - About"><i class="icon-bookmark-empty"></i> About</a></li>
 				      <li class="divider"></li>
-				      <li ><a href="/blog" data-ga-label="Navigation - Blog"><i class="icon-lightbulb"></i> Thoughts</a></li>
+				      <li class="active"><a href="/blog" data-ga-label="Navigation - Blog"><i class="icon-lightbulb"></i> Thoughts</a></li>
 				      <li class="divider"></li>
 				      <li ><a href="/work" data-ga-label="Navigation - Work"><i class="icon-laptop"></i> Work</a></li>
 				      <li class="divider"></li>
-							<li class="active"><a href="/contact" data-ga-label="Navigation - Contact"><i class="icon-envelope"></i> Contact</a></li>
+							<li ><a href="/contact" data-ga-label="Navigation - Contact"><i class="icon-envelope"></i> Contact</a></li>
 				      <li class="divider"></li>
 				    </ul>
 				</section>
@@ -81,103 +81,187 @@
 
 		<main id="main" role="main">
 			<header id="content-header">
-	<div id="map"></div>
-	<canvas id="canvas"></canvas>
-	<div class="row">
-		<div class="large-12 column">
-
-				<h1>Contact <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.miguelmota.com/contact/index.html" data-text="Contact" data-size="large" data-related="_moogs">Tweet</a></h1>
-
-		</div>
-	</div>
-	<div id="content-header-bottom">
-		<div class="triangle"></div>
-	</div>
+  <canvas id="canvas"></canvas>
+  <div class="row">
+    <div class="large-12 column">
+      <h1>Thoughts <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.miguelmota.comtag/JavaScript/index.html" data-text="Posts tagged &ldquo;JavaScript&rdquo;" data-size="large" data-related="_moogs">Tweet</a></h1>
+    </div>
+  </div>
+  <div id="content-header-bottom">
+    <div class="triangle"></div>
+  </div>
 </header>
 
-<section id="content">
-	<div class="row">
-		<div id="contact-info" class="large-6 column">
+  <div id="older-posts" class="row">
+    <div class="large-12 column">
+      <h3>Thoughts tagged <em>JavaScript</em></h3>
 
-			<p>For questions, comments, or simply to say hello, reach me at:</p>
-
-			<p>
-				<label>Personal</label>
-				<i class="icon-envelope"></i> <a href="mailto:hello@miguelmota.com" data-ga-label="Contact - Email">hello@miguelmota.com</a><br>
-				<i class="icon-mobile-phone"></i> <a class="phone" href="tel:1-951-215-6682">+1 951 215-MOTA</a>
-			</p>
-
-			<p>
-				<label>Business</label>
-				<i class="icon-envelope"></i> <a href="mailto:m@moogs.io" data-ga-label="Contact - Email">m@moogs.io</a><br>
-				<i class="icon-mobile-phone"></i> <a class="phone" href="tel:1-510-516-6647">+1 510 51-MOOGS</a>
-			</p>
-
-			<p><i class="icon-map-marker"></i> I'm currently located in <a data-location href="#map">Los Angeles, CA.</a></p>
-
-		</div>
-
-		<div class="large-6 column">
-
-			<form id="contact-form" action="http://api.miguelmota.com/contact/mailer" method="POST">
-			  <fieldset>
-			    <legend>Leave a message</legend>
-
-			    <div class="row">
-			      <div class="large-12 columns">
-			        <div data-alert class="alert-box">
-								<div class="message"></div>
-			          <a href="#" class="close">&times;</a>
-			        </div>
-			      </div>
-			    </div>
-
-			    <div class="row">
-			      <div class="large-12 columns">
-			        <label>Name</label>
-			        <input type="text" name="name" placeholder="John Appleseed">
-			        <small class="error" for="name"></small>
-			      </div>
-			    </div>
-
-			    <div class="row">
-			      <div class="large-12 columns">
-			        <label>Email</label>
-			        <input type="email" name="email" placeholder="john.appleseed@example.com">
-			        <small class="error" for="email"></small>
-			      </div>
-			    </div>
-
-			    <div class="row">
-			      <div class="large-12 columns">
-			        <label>Message</label>
-			        <textarea rows="3" name="message" placeholder="What's on your mind?"></textarea>
-			        <small class="error" for="message"></small>
-			      </div>
-			    </div>
-
-			    <div class="row">
-			      <div class="large-12 columns">
-			        <input type="submit" value="Send »">
-			      </div>
-			    </div>
-
-			  </fieldset>
-			</form>
-
-		</div>
-
-	</div>
-
-	<div id="contact-map-content" class="info-window-content">
-		<div class="info-window-inner">
-			<a href="https://maps.google.com/maps?q=Los+Angeles&bav=on.2,or.r_cp.r_qf.&bvm=bv.45960087,d.cGE&biw=1461&bih=876&um=1&ie=UTF-8&hl=en&sa=N&tab=wl&authuser=0" target="_blank">Los Angeles, CA, USA</a>
-		</div>
-	</div>
-
+      <dl class="posts-list">
+        
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+        
+          
+            
+          
+            
+          
+            
+          
+        
+          
+            
+          
+            
+          
+            
+          
+        
+          
+            
+          
+            
+          
+            
+          
+        
+          
+            
+          
+            
+          
+        
+          
+            
+          
+            
+          
+            
+          
+        
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+        
+          
+            
+          
+            
+          
+            
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+            
+          
+        
+          
+            
+          
+            
+          
+        
+          
+            
+          
+            
+          
+        
+          
+            
+          
+            
+          
+            
+          
+        
+          
+            
+          
+            
+          
+            
+          
+        
+          
+            
+          
+            
+          
+        
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+        
+          
+            
+          
+            
+          
+        
+          
+            
+          
+            
+          
+            
+          
+        
+          
+            
+          
+            
+          
+            
+          
+        
+      </dl>
+    </div>
+  </div>
 </section>
 
-
+<script>
+    var disqus_shortname = 'miguelmota';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
 		</main>
 
 		<footer id="footer">
