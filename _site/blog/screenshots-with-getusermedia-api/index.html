@@ -99,7 +99,13 @@
 	<div class="row">
 		<div class="large-12 column">
 
-			<script src="https://gist.github.com/miguelmota/6403122.js"></script>
+			<p>With the <code>getUserMedia</code> API, it is now possible to access the user's webcam and microphone using just JavaScript. What this means is that we can finally get rid of those nasty Flash plugins and use this native approace instead. At writing of this post only Firefox 17+ and Chrome 21+ have <a href="http://caniuse.com/stream" target="_blank">support for getUserMedia</a>.</p>
+
+<p><a data-demo href="/blog/screenshots-with-getusermedia-api/demo" target="_blank">View the demo</a></p>
+
+<p>I tried explaining what the code does in comments, but anyhow let me give a quick rundown of the code. First we create an object to hold everything that deals with the whole process of streaming and capturing. At the top, we grab our DOM elements and have an initialize function that checks for getUserMedia support. If there is support then call the gotStream function to start outputting the live stream into the video element. So that's that. There's a capture button binded to the capture method, which when called, will grab the current frame of the live video and draw that image onto the canvas element. We then turn the canvas image into a base 64 data url so that we can send it to our server, which will ultumately decode the data url and save it as a PNG image. Afterwards we simply return the saved image url. In the demo I am using PHP to decode the data url but any server side language will do I imagine.</p>
+
+<script src="https://gist.github.com/miguelmota/6403122.js"></script>
 
 <p><a data-demo href="/blog/screenshots-with-getusermedia-api/demo" target="_blank">View the demo</a></p>
 
