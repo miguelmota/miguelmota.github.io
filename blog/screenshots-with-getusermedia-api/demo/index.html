@@ -60,7 +60,7 @@
 <div class="row">
 	<!-- Image URL output -->
 	<label>Image URL</label>
-	<input type="text" id="image-url-input">
+	<input type="text" id="image-url-input" disabled>
 </div>
 
 <div class="row">
@@ -186,6 +186,7 @@
 						imageURL = response.data.image_url;
 						// Paste the PNG image url into the input field.
 						that.imageURLInput.value = imageURL;
+						that.imageURLInput.removeAttribute('disabled');
 					}
 				},
 				error: function(xhr, textStatus, errorThrown) {
