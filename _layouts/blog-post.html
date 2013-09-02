@@ -26,7 +26,7 @@ route: blog
 			<div class="tags">
 				<i class="icon-tag"></i>
 				{% for tag in page.tags %}
-					<a href="/tag/{{ tag | first }}">{{ tag | first }}</a> <span>+</span>
+					<a href="/tag/{{ tag }}">{{ tag }}</a> <span>+</span>
 				{% endfor %}
 			</div>
 

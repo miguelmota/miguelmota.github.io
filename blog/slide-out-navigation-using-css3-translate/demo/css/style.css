@@ -178,9 +178,6 @@ a:hover {
 	display: block;
 	position: relative;
 	height: 100%;
-	transform: translate3D(0,0,0);
-	-moz-transform: translate3D(0,0,0);
-	-webkit-transform: translate3D(0,0,0);
 	transition: -moz-transform .25s ease-in-out;
 	-moz-transition: -moz-transform .25s ease-in-out;
 	-webkit-transition: -webkit-transform .25s ease-in-out;
@@ -189,7 +186,8 @@ a:hover {
 
 /* Translate main container when nav handler is checked */
 
-#nav-handler:checked ~ #main-container {
+#nav-handler:checked ~ #main-container,
+.nav-handler-checked {
 	transform: translate3D(80%,0,0); /* X value must be same as Nav width */
 	-moz-transform: translate3D(80%,0,0); /* X value must be same as Nav width */
 	-webkit-transform: translate3D(80%,0,0); /* X value must be same as Nav width */

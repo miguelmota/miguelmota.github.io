@@ -197,4 +197,35 @@ body {
 
 <p>Here's the <a href="https://gist.github.com/miguelmota/5737739" target="_blank">gist</a>.</p>
 
+<h2>Android Support</h2>
+
+<p>Unfortunately, this will not work on some Android browsers because clicking on the <code>label</code> will not trigger the checkbox to become checked, nor does the general sibling combinator selector work. So we have to resort to a bit of JavaScript. First we need to add a class, <code>.nav-handler-checked</code>, in our css:</p>
+
+{% highlight css %}
+#nav-handler:checked ~ #main-container,
+.nav-handler-checked {
+	transform: translate3D(80%,0,0);
+	-moz-transform: translate3D(80%,0,0);
+	-webkit-transform: translate3D(80%,0,0);
+}
+{% endhighlight %}
+
+<p>Then when the nav handler label is clicked we add the <em>nav-handler-checked</em> class to the main container. If the main container already contains the class, we simply remove it. I'll be using jQuery for the sake of simplicity.</p>
+
+{% highlight javascript %}
+if (/Android/i.test(navigator.userAgent)) {
+	$('#nav-handler').on('click', function(e){
+		e.preventDefault();
+		$mainContainer = $('#main-container');
+		if ($mainContainer.hasClass('nav-handler-checked')) {
+			$mainContainer.removeClass('nav-handler-checked');
+		} else {
+			$mainContainer.addClass('nav-handler-checked');
+		}
+	});
+}
+{% endhighlight %}
+
+<h2>Conclusion</h2>
+
 <p>I Hope this was helpful. Nothing is perfect and there is <em>always</em> room for improvement. Perhaps leave some feedback, as all feedback is greatly appreciated.</p>
