@@ -302,7 +302,8 @@
 
 <p>Then when the nav handler label is clicked we add the <em>nav-handler-checked</em> class to the main container. If the main container already contains the class, we simply remove it. I'll be using jQuery for the sake of simplicity.</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="k">if</span> <span class="p">(</span><span class="sr">/Android/i</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">navigator</span><span class="p">.</span><span class="nx">userAgent</span><span class="p">))</span> <span class="p">{</span>
+<div class="highlight"><pre><code class="javascript"><span class="cm">/* Android support */</span>
+<span class="k">if</span> <span class="p">(</span><span class="sr">/Android/i</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">navigator</span><span class="p">.</span><span class="nx">userAgent</span><span class="p">))</span> <span class="p">{</span>
 	<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#nav-handler&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
 		<span class="nx">e</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
 		<span class="nx">$mainContainer</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#main-container&#39;</span><span class="p">);</span>
