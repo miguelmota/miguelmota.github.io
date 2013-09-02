@@ -288,6 +288,35 @@
 
 <p>Here's the <a href="https://gist.github.com/miguelmota/5737739" target="_blank">gist</a>.</p>
 
+<h2>Android Support</h2>
+
+<p>Unfortunately, this will not work on some Android browsers because clicking on the <code>label</code> will not trigger the checkbox to become checked, nor does the general sibling combinator selector work. So we have to resort to a bit of JavaScript. First we need to add a class, <code>.nav-handler-checked</code>, in our css:</p>
+
+<div class="highlight"><pre><code class="css"><span class="nf">#nav-handler</span><span class="nd">:checked</span> <span class="o">~</span> <span class="nf">#main-container</span><span class="o">,</span>
+<span class="nc">.nav-handler-checked</span> <span class="p">{</span>
+	<span class="n">transform</span><span class="o">:</span> <span class="n">translate3D</span><span class="p">(</span><span class="m">80</span><span class="o">%,</span><span class="m">0</span><span class="o">,</span><span class="m">0</span><span class="p">);</span>
+	<span class="o">-</span><span class="n">moz</span><span class="o">-</span><span class="n">transform</span><span class="o">:</span> <span class="n">translate3D</span><span class="p">(</span><span class="m">80</span><span class="o">%,</span><span class="m">0</span><span class="o">,</span><span class="m">0</span><span class="p">);</span>
+	<span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">transform</span><span class="o">:</span> <span class="n">translate3D</span><span class="p">(</span><span class="m">80</span><span class="o">%,</span><span class="m">0</span><span class="o">,</span><span class="m">0</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Then when the nav handler label is clicked we add the <em>nav-handler-checked</em> class to the main container. If the main container already contains the class, we simply remove it. I'll be using jQuery for the sake of simplicity.</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="k">if</span> <span class="p">(</span><span class="sr">/Android/i</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">navigator</span><span class="p">.</span><span class="nx">userAgent</span><span class="p">))</span> <span class="p">{</span>
+	<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#nav-handler&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
+		<span class="nx">e</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+		<span class="nx">$mainContainer</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#main-container&#39;</span><span class="p">);</span>
+		<span class="k">if</span> <span class="p">(</span><span class="nx">$mainContainer</span><span class="p">.</span><span class="nx">hasClass</span><span class="p">(</span><span class="s1">&#39;nav-handler-checked&#39;</span><span class="p">))</span> <span class="p">{</span>
+			<span class="nx">$mainContainer</span><span class="p">.</span><span class="nx">removeClass</span><span class="p">(</span><span class="s1">&#39;nav-handler-checked&#39;</span><span class="p">);</span>
+		<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+			<span class="nx">$mainContainer</span><span class="p">.</span><span class="nx">addClass</span><span class="p">(</span><span class="s1">&#39;nav-handler-checked&#39;</span><span class="p">);</span>
+		<span class="p">}</span>
+	<span class="p">});</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h2>Conclusion</h2>
+
 <p>I Hope this was helpful. Nothing is perfect and there is <em>always</em> room for improvement. Perhaps leave some feedback, as all feedback is greatly appreciated.</p>
 
 

@@ -92,9 +92,6 @@
 		display: block;
 		position: relative;
 		height: 100%;
-		transform: translate3D(0,0,0);
-		-moz-transform: translate3D(0,0,0);
-		-webkit-transform: translate3D(0,0,0);
 		transition: -moz-transform .25s ease-in-out;
 		-moz-transition: -moz-transform .25s ease-in-out;
 		-webkit-transition: -webkit-transform .25s ease-in-out;
@@ -102,7 +99,8 @@
 	}
 
 	/* Translate main container when nav handler is checked */
-	#nav-handler:checked ~ #main-container {
+	#nav-handler:checked ~ #main-container,
+	.nav-handler-checked {
 		transform: translate3D(80%,0,0); /* X value must be same as Nav width */
 		-moz-transform: translate3D(80%,0,0); /* X value must be same as Nav width */
 		-webkit-transform: translate3D(80%,0,0); /* X value must be same as Nav width */
@@ -147,7 +145,22 @@
 
 	</main>
 
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>	
 	<script>
+	/* Android support */
+	if (/Android/i.test(navigator.userAgent)) {
+		$('#nav-handler').on('click', function(e){
+			e.preventDefault();
+			$mainContainer = $('#main-container');
+			if ($mainContainer.hasClass('nav-handler-checked')) {
+				$mainContainer.removeClass('nav-handler-checked');
+			} else {
+				$mainContainer.addClass('nav-handler-checked');
+			}
+		});
+	}
+	<script>
+
 	/* Google Analytics */
 	var _gaq = _gaq || [];
 	_gaq.push(['_setAccount', 'UA-12642068-1']);

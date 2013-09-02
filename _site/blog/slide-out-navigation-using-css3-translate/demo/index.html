@@ -130,6 +130,22 @@
 
 	</main>
 
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>	
+	<script>
+	/* Android support */
+	if (/Android/i.test(navigator.userAgent)) {
+		$('#nav-handler').on('click', function(e){
+			e.preventDefault();
+			$mainContainer = $('#main-container');
+			if ($mainContainer.hasClass('nav-handler-checked')) {
+				$mainContainer.removeClass('nav-handler-checked');
+			} else {
+				$mainContainer.addClass('nav-handler-checked');
+			}
+		});
+	}
+	<script>
+
 	<script>
 	/* Google Analytics */
 	var _gaq = _gaq || [];
