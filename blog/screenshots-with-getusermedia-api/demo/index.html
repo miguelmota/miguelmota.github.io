@@ -2,6 +2,16 @@
 <html>
 <head lang="en">
 	<meta charset="UTF-8">
+<!--
+             _   _    _               __  __          _ _       
+            | | | |  | |             |  \/  |        | (_)      
+   __ _  ___| |_| |  | |___  ___ _ __| \  / | ___  __| |_  __ _ 
+  / _` |/ _ \ __| |  | / __|/ _ \ '__| |\/| |/ _ \/ _` | |/ _` |
+ | (_| |  __/ |_| |__| \__ \  __/ |  | |  | |  __/ (_| | | (_| |
+  \__, |\___|\__|\____/|___/\___|_|  |_|  |_|\___|\__,_|_|\__,_|
+   __/ |                                                        
+  |___/                                                         
+-->
 	<meta http-equiv="UX-A-Compatible" content="IE=Edge,chrome=1">
 	<meta name="description" content="Screenshots with getUserMedia API.">
 	<meta name="keywords" content="getUserMedia, getUserMedia API, html5 geUserMedia, screenshots, webcam">
@@ -73,6 +83,9 @@
 
 <script>
 // Take a screenshot using getUserMedia API.
+// Give credit where credit is due. The code is heavily inspired by
+// HTML5 Rocks' article "Capturing Audio & Video in HTML5" 
+// http://www.html5rocks.com/en/tutorials/getusermedia/intro/
 (function() {
 
 	// Our element ids.
@@ -127,8 +140,9 @@
 		},
 
 		// Stream error.
-		noStream: function (e) {
-			alert('Could not get camera stream: ' + e);
+		noStream: function (err) {
+			alert('Could not get camera stream.');
+			console.log('Error: ', err);
 		},
 
 		// Stream success.
