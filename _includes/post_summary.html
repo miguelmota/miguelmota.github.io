@@ -10,7 +10,7 @@
 <div class="tags">
 	<i class="icon-tag"></i>
 	{% for tag in post.tags %}
-		<a href="/tag/{{ tag | first }}">{{ tag | first }}</a> <span>+</span>
+		<a href="/tag/{{ tag }}">{{ tag }}</a> <span>+</span>
 	{% endfor %}
 </div>
 </dd>
