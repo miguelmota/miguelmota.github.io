@@ -11,7 +11,7 @@
   <div class="tags">
   	<i class="icon-tag"></i>
   	{% for tag in post.tags %}
-  		<a href="/tag/{{ tag | first }}">{{ tag | first }}</a> <span>+</span>
+  		<a href="/tag/{{ tag }}">{{ tag }}</a> <span>+</span>
   	{% endfor %}
   </div>
   <div><a href="{{ post.url }}" class="more">Read more »</a></div>
