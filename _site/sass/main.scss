@@ -163,7 +163,7 @@ details a + small a {
 
 #home #content-header {
 	@include respond-to(mobile) {
-		height: 400px;
+		height: 420px;
 	}
 }
 
@@ -480,6 +480,7 @@ $social-icon-default-background-color: rgba(0,0,0,.2);
 
 #home .learn-more-button {
 	@extend .button;
+  @extend .button.large;
 }
 
 #home #social {
@@ -684,6 +685,7 @@ $social-icon-default-background-color: rgba(0,0,0,.2);
 
 #about .resume-button {
 	@extend .button;
+  @extend .button.large;
 }
 
 #about-moogs-logo {
