@@ -31,6 +31,10 @@ module.exports = function (grunt) {
       }
     },
     watch: {
+      html: {
+        files: ['*.html', '**/*.html'],
+        tasks: ['watch_html']
+      },
       scripts: {
         files: ['js/*'],
         tasks: ['watch_scripts']
@@ -65,5 +69,6 @@ module.exports = function (grunt) {
   grunt.registerTask*('test', ['jshint']);
   grunt.registerTask('watch_scripts', ['concat', 'uglify', 'shell']);
   grunt.registerTask('watch_css', ['compass', 'shell']);
+  grunt.registerTask('watch_html', ['shell']);
   grunt.registerTask('default', ['watch']);
 };

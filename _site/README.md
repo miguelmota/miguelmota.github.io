@@ -10,7 +10,7 @@ Simply run:
 
 `grunt`
 
-[Grunt](https://github.com/gruntjs/grunt) will watch for file changes, concat and uglify JavaScript, run compass build, and build jekyll.
+[Grunt](https://github.com/gruntjs/grunt) will watch for file changes, concat and uglify JavaScript, run [compass](http://compass-style.org/) build, and build jekyll.
 
 ## License
 
