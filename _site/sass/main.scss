@@ -564,6 +564,10 @@ $social-icon-default-background-color: rgba(0,0,0,.2);
 	@include social-icon($social-icon-width, $social-icon-height, #EB4924, '../img/social/stumbleupon-32.png');
 }
 
+#home .dribbble {
+	@include social-icon($social-icon-width, $social-icon-height, #EA4C89, '../img/social/dribbble-32.png');
+}
+
 #home .moogs {
 	@include social-icon($social-icon-width, $social-icon-height, #0088CC, '../img/social/moogs-32.png');
 }
