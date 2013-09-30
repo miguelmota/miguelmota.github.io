@@ -11,7 +11,11 @@
 	Moogs.prototype.initializeGlobal = function () {
 		$(document).foundation();
 
-		window.scrollTo(0,1);
+    if ($(window).scrollTop() <= 0) {
+		  window.scrollTo(0,1);
+    }
+
+    FastClick.attach(document.body);
 
 		var
 		self = this,

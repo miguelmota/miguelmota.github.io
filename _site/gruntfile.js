@@ -6,7 +6,7 @@ module.exports = function (grunt) {
         seperator: ';'
       },
       dist: {
-        src: ['vendor/modernizr/modernizr.js', 'vendor/jquery/jquery.js', 'vendor/foundation/js/foundation/foundation.js', 'vendor/foundation/js/foundation/foundation.topbar.js', 'vendor/foundation/js/foundation/foundation.alerts.js', 'vendor/foundation/js/foundation/foundation.tooltips.js', 'vendor/picturefill/external/matchmedia.js', 'vendor/picturefill/picturefill.js', 'vendor/iosSlider/_src/jquery.iosslider.js', 'vendor/jquery.transit/jquery.transit.js', 'vendor/swiper/idangerous.swiper-1.9.js', 'js/main.js'],
+        src: ['vendor/modernizr/modernizr.js', 'vendor/jquery/jquery.js', 'vendor/foundation/js/foundation/foundation.js', 'vendor/foundation/js/foundation/foundation.topbar.js', 'vendor/foundation/js/foundation/foundation.alerts.js', 'vendor/foundation/js/foundation/foundation.tooltips.js', 'vendor/picturefill/external/matchmedia.js', 'vendor/picturefill/picturefill.js', 'vendor/iosSlider/_src/jquery.iosslider.js', 'vendor/jquery.transit/jquery.transit.js', 'vendor/swiper/idangerous.swiper-1.9.js', 'vendor/fastclick/fastclick.js', 'js/main.js'],
         dest: 'js/main.min.js'
       }
     },
