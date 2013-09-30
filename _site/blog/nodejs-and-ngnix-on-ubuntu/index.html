@@ -287,8 +287,10 @@ upstream helloworld <span class="o">{</span>
   <span class="c"># Set up multiple Node.js webservers for load balancing.</span>
   <span class="c"># max_fails erefers to number of failed attempts</span>
   <span class="c"># before server is considered inactive.</span>
-  server 127.0.0.1:3000 <span class="nv">max_fails</span><span class="o">=</span>0 <span class="nv">fail_timeout</span><span class="o">=</span>10s;
-  <span class="c"># server 127.0.0.1:3001 max_fails=0 fail_timeout=10s;</span>
+  server &lt;your server ip&gt;:3000 <span class="nv">max_fails</span><span class="o">=</span>0 <span class="nv">fail_timeout</span><span class="o">=</span>10s;
+  <span class="c"># server &lt;your server ip&gt;:3001 max_fails=0 fail_timeout=10s;</span>
+  <span class="c"># server &lt;your server ip&gt;:3002 max_fails=0 fail_timeout=10s;</span>
+  <span class="c"># server &lt;your server ip&gt;:3003 max_fails=0 fail_timeout=10s;</span>
 
   <span class="c"># Send visitors back to the same server each time.</span>
   ip_hash;
@@ -423,7 +425,7 @@ server <span class="o">{</span>
 		<div id="related-posts" class="row">
 			<div class="row">
 				<div class="large-12 column">
-					<div class="input-short-url">share: <input type="text" value="http://mig.gs/S9Ti"></div>
+					<div class="input-short-url">share: <input type="text" value="http://mig.gs/TxoG"></div>
 				</div>
 			</div>
 			<div class="large-6 column">
@@ -443,12 +445,29 @@ server <span class="o">{</span>
 
 
 
+    
+
+    	<h3>Next post</h3>
+
+    	<dl class="posts-list">
+
+		    <dt><datetime>30 Sep 2013</datetime></dt>
+		    <dd><h2><a href="/blog/set-up-ssh-keys">Set up SSH keys</a> <small><i class="icon-comment-alt"></i> <a href="/blog/set-up-ssh-keys#disqus_thread" data-disqus-identifier="/blog/set-up-ssh-keys"></a></small></h2></dd>
+
+		  </dl>
+
+    
+
 			</div>
 			<div class="large-6 column">
 
 				<h3>See also...</h3>
 
 				<dl class="posts-list">
+					
+						<dt><datetime>30 Sep 2013</datetime></dt>
+<dd><h2><a href="/blog/set-up-ssh-keys">Set up SSH keys</a> <small><i class="icon-comment-alt"></i> <a href="/blog/set-up-ssh-keys#disqus_thread" data-disqus-identifier="/blog/set-up-ssh-keys"></a></small></h2>
+</dd>
 					
 						<dt><datetime>25 Sep 2013</datetime></dt>
 <dd><h2><a href="/blog/raspberry-pi-camera-board-video-streaming">Raspberry Pi camera board video streaming</a> <small><i class="icon-comment-alt"></i> <a href="/blog/raspberry-pi-camera-board-video-streaming#disqus_thread" data-disqus-identifier="/blog/raspberry-pi-camera-board-video-streaming"></a></small></h2>
@@ -464,10 +483,6 @@ server <span class="o">{</span>
 					
 						<dt><datetime>07 Jun 2013</datetime></dt>
 <dd><h2><a href="/blog/slide-out-navigation-using-css3-translate">Slide Out Navigation using CSS3 Translate</a> <small><i class="icon-comment-alt"></i> <a href="/blog/slide-out-navigation-using-css3-translate#disqus_thread" data-disqus-identifier="/blog/slide-out-navigation-using-css3-translate"></a></small></h2>
-</dd>
-					
-						<dt><datetime>10 May 2013</datetime></dt>
-<dd><h2><a href="/blog/call-and-apply-methods-in-javascript">Call and Apply Methods in JavaScript</a> <small><i class="icon-comment-alt"></i> <a href="/blog/call-and-apply-methods-in-javascript#disqus_thread" data-disqus-identifier="/blog/call-and-apply-methods-in-javascript"></a></small></h2>
 </dd>
 					
 				</dl>

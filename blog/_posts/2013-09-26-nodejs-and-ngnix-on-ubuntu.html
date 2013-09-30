@@ -3,7 +3,7 @@ layout: blog-post
 title: Node.js and Nginx on Ubuntu
 category: blog
 tags: [Node.js, Ngnix, Ubuntu]
-short_url: mig.gs/S9Ti
+short_url: mig.gs/TxoG
 description: Get Node.js and Nginx running on your Ubuntu server.
 ---
 
@@ -205,8 +205,10 @@ upstream helloworld {
   # Set up multiple Node.js webservers for load balancing.
   # max_fails erefers to number of failed attempts
   # before server is considered inactive.
-  server 127.0.0.1:3000 max_fails=0 fail_timeout=10s;
-  # server 127.0.0.1:3001 max_fails=0 fail_timeout=10s;
+  server <your server ip>:3000 max_fails=0 fail_timeout=10s;
+  # server <your server ip>:3001 max_fails=0 fail_timeout=10s;
+  # server <your server ip>:3002 max_fails=0 fail_timeout=10s;
+  # server <your server ip>:3003 max_fails=0 fail_timeout=10s;
 
   # Send visitors back to the same server each time.
   ip_hash;
