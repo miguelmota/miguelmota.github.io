@@ -89,7 +89,7 @@
 	<div class="row">
 		<div class="large-12 column">
 
-			<datetime>25 Sep 2013 <small><i class="icon-comment-alt"></i> <a href="#disqus_thread" data-disqus-identifier=""></a></small> <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.miguelmota.com/blog/raspberry-pi-camera-board-video-streaming" data-text="Raspberry Pi camera board video streaming" data-size="large" data-related="_moogs">Tweet</a></datetime>
+			<datetime>25 Sep 2013 <small><i class="icon-comment-alt"></i> <a href="/blog/raspberry-pi-camera-board-video-streaming#disqus_thread" data-disqus-identifier="/blog/raspberry-pi-camera-board-video-streaming"></a></small> <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.miguelmota.com/blog/raspberry-pi-camera-board-video-streaming" data-text="Raspberry Pi camera board video streaming" data-size="large" data-related="_moogs">Tweet</a></datetime>
 			<h1>Raspberry Pi camera board video streaming</h1>
 
 		</div>
@@ -114,7 +114,7 @@
 
 <h2>Installing Raspbian</h2>
 
-<p>I want to point out that I am using the Debian based <a href="http://www.raspbian.org/" target="_blank">Raspbian</a> operaing system. I followed this <a href="http://elinux.org/RPi_Easy_SD_Card_Setup" target="_blank">article</a> on how to make the bootable SD card. Basically all I did was download the <a href="http://www.raspberrypi.org/downloads" target="_blank">Raspbian img</a>, unmount the SD card, and ran the <code>dd</code> command (on Ubuntu).
+<p>I want to point out that I am using the Debian based <a href="http://www.raspbian.org/" target="_blank">Raspbian</a> operaing system. I followed this <a href="http://elinux.org/RPi_Easy_SD_Card_Setup" target="_blank">article</a> on how to make the bootable SD card. Basically all I did was download the <a href="http://www.raspberrypi.org/downloads" target="_blank">Raspbian img</a>, unmount the SD card, and ran the <code>dd</code> command (on Ubuntu).</p>
 
 <div class="highlight"><pre><code class="bash"><span class="c"># List the mounted media devices.</span>
 df -h
@@ -157,7 +157,7 @@ sudo make
 <div class="highlight"><pre><code class="bash">linux/videodev.h: No such file or directory
 </code></pre></div>
 
-<p>Make sure you have <code>libv4l-dev</code> installed and create a symbolic link for the header file:
+<p>Make sure you have <code>libv4l-dev</code> installed and create a symbolic link for the header file:</p>
 
 <div class="highlight"><pre><code class="bash">sudo apt-get install libv4l-dev
 sudo ln -s /usr/include/libv4l1-videodev.h /usr/include/linux/videodev.h
@@ -197,7 +197,7 @@ raspistill -w 640 -h 480 -q 5 -o /tmp/stream/pic.jpg -tl 100 -t 9999999 -th 0:0:
 
 <h2>Stopping stream</h2>
 
-<p>To stop capturing and turn of the webserver we must kill the <code>raspistill</code> and <code>mjpg</code> processes that are running in the background.
+<p>To stop capturing and turn of the webserver we must kill the <code>raspistill</code> and <code>mjpg</code> processes that are running in the background.</p>
 
 <div class="highlight"><pre><code class="bash"><span class="c"># Find the proccess id of `raspistill` and kill it.</span>
 pgrep raspistill
@@ -255,12 +255,29 @@ pgrep mjpg
 
 
 
+    
+
+    	<h3>Next post</h3>
+
+    	<dl class="posts-list">
+
+		    <dt><datetime>26 Sep 2013</datetime></dt>
+		    <dd><h2><a href="/blog/nodejs-and-ngnix-on-ubuntu">Node.js and Nginx on Ubuntu</a> <small><i class="icon-comment-alt"></i> <a href="/blog/nodejs-and-ngnix-on-ubuntu#disqus_thread" data-disqus-identifier="/blog/nodejs-and-ngnix-on-ubuntu"></a></small></h2></dd>
+
+		  </dl>
+
+    
+
 			</div>
 			<div class="large-6 column">
 
 				<h3>See also...</h3>
 
 				<dl class="posts-list">
+					
+						<dt><datetime>26 Sep 2013</datetime></dt>
+<dd><h2><a href="/blog/nodejs-and-ngnix-on-ubuntu">Node.js and Nginx on Ubuntu</a> <small><i class="icon-comment-alt"></i> <a href="/blog/nodejs-and-ngnix-on-ubuntu#disqus_thread" data-disqus-identifier="/blog/nodejs-and-ngnix-on-ubuntu"></a></small></h2>
+</dd>
 					
 						<dt><datetime>31 Aug 2013</datetime></dt>
 <dd><h2><a href="/blog/screenshots-with-getusermedia-api">Screenshots with getUserMedia API</a> <small><i class="icon-comment-alt"></i> <a href="/blog/screenshots-with-getusermedia-api#disqus_thread" data-disqus-identifier="/blog/screenshots-with-getusermedia-api"></a></small></h2>
@@ -276,10 +293,6 @@ pgrep mjpg
 					
 						<dt><datetime>10 May 2013</datetime></dt>
 <dd><h2><a href="/blog/call-and-apply-methods-in-javascript">Call and Apply Methods in JavaScript</a> <small><i class="icon-comment-alt"></i> <a href="/blog/call-and-apply-methods-in-javascript#disqus_thread" data-disqus-identifier="/blog/call-and-apply-methods-in-javascript"></a></small></h2>
-</dd>
-					
-						<dt><datetime>04 May 2013</datetime></dt>
-<dd><h2><a href="/blog/sass-triangles">Sass Triangles</a> <small><i class="icon-comment-alt"></i> <a href="/blog/sass-triangles#disqus_thread" data-disqus-identifier="/blog/sass-triangles"></a></small></h2>
 </dd>
 					
 				</dl>
@@ -314,6 +327,7 @@ pgrep mjpg
         (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
     }());
 </script>
+
 		</main>
 
 		<footer id="footer">

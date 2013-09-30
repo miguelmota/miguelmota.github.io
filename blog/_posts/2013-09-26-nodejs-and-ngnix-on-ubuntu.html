@@ -1,0 +1,328 @@
+---
+layout: blog-post
+title: Node.js and Nginx on Ubuntu
+category: blog
+tags: [Node.js, Ngnix, Ubuntu]
+short_url: mig.gs/S9Ti
+description: Get Node.js and Nginx running on your Ubuntu server.
+---
+
+<p>In this tutorial I will show how to install and configure <a href="http://nodejs.org/" target="_blank">Node.js</a> and <a href="http://nginx.org/" target="_blank">Nginx</a> on you <a href="http://www.ubuntu.com/" target="_blank">Ubuntu</a> server.</p>
+
+<h2>Installing Dependencies</h2>
+
+<p>The only dependency we really need is the <code>build-essential</code> package in order to be able to compile the Node.js source code.</p>
+
+{% highlight bash %}
+# Make sure to download the latest repos.
+sudo apt-get update
+
+# Required to run `make` command.
+sudo apt-get install build-essential
+
+# If you need to use https.
+sudo apt-get install libssl-dev
+
+# MySQL server if you need it.
+sudo apt-get install mysql-server
+
+# My favorite text editor.
+sudo apt-get install vim
+
+# Git to manage your repos.
+sudo apt-get install git
+
+# cURL tool is a must.
+sudo apt-get install curl
+
+# Proccess viewer if you need it.
+sudo apt-get install htop
+
+# File locator comes in handy.
+# run `sudo updatedb` after installing.
+sudo apt-get install mlocate
+
+# Terminal multiplexer if you are a command line ninja.
+sudo apt-get install tmux
+{% endhighlight %}
+
+<h2>Installing Node.js</h2>
+
+<p>Head over to the <a href="http://nodejs.org/download/" target="_blank">Node.js Downloads</a> page and copy the link to the source code tarball (node-<version>.tar.gz).</p>
+
+{% highlight bash %}
+# Create and change into directory.
+sudo mkdir /opt/node/
+cd /opt/node/
+
+# Download the Node.js tarball.
+sudo wget http://nodejs.org/dist/v0.10.19/node-v0.10.19.tar.gz
+
+# Extract the tarball.
+sudo tar xvzf node-v0.10.19.tar.gz
+
+# Do some cleaning up.
+sudo mv node-v0.10.19/* .
+sudo rm node-v0.10.19.tar.gz
+sudo rm -r node-v0.10.19/
+
+# Run `make` and `make install`.
+# Be patient. Compiling from source takes a few minutes.
+sudo make
+sudo make install
+
+# Running `make test` is a good idea.
+sudo make test
+
+# Check the version to see if it was properly installed.
+node -v
+{% endhighlight %}
+
+<p>If you get a version number then you're good to go.</p>
+
+<h2>Setting up a Node.js webserver</h2>
+
+<p></p>
+
+{% highlight bash %}
+# Create the directory to hold the sites.
+sudo mkdir /var/www/
+cd /var/www/
+
+# Create our Hello World site.
+sudo mkdir helloworld/
+cd helloworld/
+
+# Create a server file.
+vim server.js
+{% endhighlight %}
+
+<p>Paste in the simple code into server.js</p>
+
+{% highlight javascript %}
+var http = require('http');
+http.createServer(function (req, res) {
+  res.writeHead(200, {'Content-Type': 'text/plain'});
+  res.end('Hello World\n');
+}).listen(3000);
+console.log('Server running at http://<your server ip address>:3000/');
+{% endhighlight %}
+
+<p>Hit the <key>ESC</key> key then type in <code>:wq</code> to save and exit. Then run the webserver with:</p>
+
+{% highlight bash %}
+# Run webserver.
+node server.js
+{% endhighlight %}
+
+<p>To always run in the background, check out the <a href="https://github.com/nodejitsu/forever" target="_blank">Forever</a> node module.</p>
+
+{% highlight bash %}
+# Install Forever module globally.
+sudo npm install -g forever
+
+# Start webserver.
+# To view options, run: forever --help
+forever start -l hello-world.log server.js
+
+# View log file.
+tail -f ~/.forever/hello-world.log 
+{% endhighlight %}
+
+<p>Open up a browser window and go to:</p>
+
+{% highlight bash %}
+http://<your server ip address>:3000/
+{% endhighlight %}
+
+</p>You should see the "Hello World" message.</p>
+
+<p>If for whatever reason you don't know your server's IP address, run:</p>
+
+{% highlight bash %}
+# Find server IP address
+ifconfig eth0 | grep inet | awk '{ print $2 }'
+{% endhighlight %}
+
+<h2>Installing Nginx</h2>
+
+<p>Nginx is good for serving static files, as well as a being a <em>load balancer</em>. And you can route multiple domains to your Node.js webserver. Let's install it now.</p>
+
+{% highlight bash %}
+# Installing Nginx is a breeze.
+sudo apt-get install nginx
+{% endhighlight %}
+
+<p>Here are some useful Ngnix commands.</p>
+
+{% highlight bash %}
+# Self explanatory.
+sudo service nginx stop
+sudo service nginx start
+sudo service nginx restart
+sudo service nginx reload
+
+# Alternatively, you also do:
+/etc/init.d/nginx stop
+/etc/init.d/nginx start
+/etc/init.d/nginx restart
+/etc/init.d/nginx reload
+{% endhighlight %}
+
+<p>The default nginx configuation file is located under:</p>
+
+{% highlight bash %}
+/etc/nginx/nginx.conf 
+{% endhighlight %}
+
+<p>Take note of the default log file locations, which you can view by using the <code>tail</code> command.</p>
+
+{% highlight bash %}
+# View access logs.
+tail -f /var/log/nginx/access.log
+
+# View error logs.
+tail -f /var/log/nginx/error.log
+{% endhighlight %}
+
+<h2>Configuring Nginx server</h2>
+
+<p>To proxy the Node.js server to Nginx, a new webserver config needs to be created.</p>
+
+{% highlight bash %}
+# Backup default config.
+mv /etc/nginx/sites-available/default /etc/nginx/sites-available/default.bak
+
+# Create new config.
+vim /etc/nginx/sites-available/default
+{% endhighlight %}
+
+<p>In the empty config file add the following settings:</p>
+
+{% highlight bash %}
+# Upstream module. The link between Node.js and Nginx.
+upstream helloworld {
+  # Set up multiple Node.js webservers for load balancing.
+  # max_fails erefers to number of failed attempts
+  # before server is considered inactive.
+  server 127.0.0.1:3000 max_fails=0 fail_timeout=10s;
+  # server 127.0.0.1:3001 max_fails=0 fail_timeout=10s;
+
+  # Send visitors back to the same server each time.
+  ip_hash;
+
+  # Enable number of keep-alive connections.
+  keepalive 512;
+}
+
+server {
+  listen 80;
+  listen [::]:80 default_server ipv6only=on;
+
+  # Index files.
+  index index.html;
+
+  # Domain names.
+  # Make sure to set the A record on your domain's DNS settings to your server's IP address.
+  server_name yourdomain.com www.domain.com;
+
+  # Timeout for closing keep-alive connections.
+  keepalive_timeout 10;
+  
+  # Enable gzip compression.
+  gzip  on;
+  gzip_http_version 1.1;
+  gzip_vary on;
+  gzip_comp_level 6;
+  gzip_proxied any;
+  gzip_types text/plain text/html text/css application/json application/x-javascript text/xml application/xml application/xml+rss text/javascript application/javascript text/x-js;
+  gzip_buffers 16 8k;
+  gzip_disable "MSIE [1-6]\.(?!.*SV1)";
+  
+  # Max upload size.
+  # client_max_body_size 16M;
+
+  # Change access and error log files.
+  # access_log /var/log/nginx/yourdomain.com/access.log;
+  # error_log /var/log/nginx/yourdomain.com/error.log;
+ 
+  # Custom error page.
+  # error_page 404 maintenance.html;
+  # error_page 500 502 503 504 maintenance.html;
+  
+  # location /maintenance.html {
+  #  root /var/www;
+  # }
+
+  location / {
+    # Set this to your upstream module.
+    proxy_pass http://helloworld;
+    # Proxy headers.
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-Proto $scheme;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header Host $http_host;
+    proxy_set_header X-NginX-Proxy true;
+    proxy_set_header Connection "";
+    proxy_http_version 1.1;
+    proxy_redirect off;
+    # Go to next upstream if error occurs.
+    proxy_next_upstream error timeout http_500 http_502 http_503 http_504;
+    # Gateway timeout.
+    proxy_read_timeout 20;
+    # Buffer settings.
+    proxy_buffers 8 32k;
+    proxy_buffer_size 64k;
+  }
+
+  # Enable caching of static files.
+  location ~* \.(css|js|gif|jpe?g|png)$ {
+    expires 168h;
+    add_header Pragma public;
+    add_header Cache-Control "public, must-revalidate, proxy-revalidate";
+  }
+  
+  # Don't cache html files.
+  location ~* \.html$ {
+    expires -1;
+  }
+}
+{% endhighlight %}
+
+<p>After you have saved the file and exited, reload the Nginx config.</p>
+
+{% highlight bash %}
+sudo service nginx reload
+{% endhighlight %}
+
+<p>Nginx will let you know if you have any errors in your config. Fix them and reload once again.</p>
+
+<p>If you got the following error:</p>
+
+{% highlight bash %}
+Reloading nginx configuration: nginx: [emerg] could not build the server_names_hash, you should increase server_names_hash_bucket_size: 32
+{% endhighlight %}
+
+<p>Uncomment this line in <code>/etc/nginx/nginx.conf</code>.</p>
+
+{% highlight bash %}
+server_names_hash_bucket_size 64; 
+{% endhighlight %}
+
+<p>To test that gzip is working, execute:</p>
+
+{% highlight bash %}
+curl --header "Accept-Encoding: gzip" -I http://yourdomain.com
+{% endhighlight %}
+
+<p>You should see the line:</p>
+
+{% highlight bash %}
+Content-Encoding: gzip
+{% endhighlight %}
+
+<h2>Conclusion</h2>
+
+<p>If everything went smoothly, going to your domain will bring up the "Hello World" message. If not then let us know in the comments where you got stuck and I will try to help you out.</p>
+
+<p>I by no means are a server expert, I'm only sharing what I've learned in the past few weeks, so feel free to add your input and thoughts.</p>
