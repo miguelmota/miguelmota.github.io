@@ -42,13 +42,13 @@ sudo apt-get install htop
 # run `sudo updatedb` after installing.
 sudo apt-get install mlocate
 
-# Terminal multiplexer if you are a command line ninja.
+# Terminal multiplexer if you are a command-line ninja.
 sudo apt-get install tmux
 {% endhighlight %}
 
 <h2>Installing Node.js</h2>
 
-<p>Head over to the <a href="http://nodejs.org/download/" target="_blank">Node.js Downloads</a> page and copy the link to the source code tarball (node-<version>.tar.gz).</p>
+<p>Head over to the <a href="http://nodejs.org/download/" target="_blank">Node.js Downloads</a> page and copy the link to the source code tarball (node-&lt;version&gt;.tar.gz).</p>
 
 {% highlight bash %}
 # Create and change into directory.
@@ -157,21 +157,16 @@ sudo apt-get install nginx
 
 {% highlight bash %}
 # Self explanatory.
-sudo service nginx stop
-sudo service nginx start
-sudo service nginx restart
-sudo service nginx reload
+sudo service nginx <stop|start|restart|reload>
 
 # Alternatively, you also do:
-/etc/init.d/nginx stop
-/etc/init.d/nginx start
-/etc/init.d/nginx restart
-/etc/init.d/nginx reload
+/etc/init.d/nginx <stop|start|restart|reload>
 {% endhighlight %}
 
 <p>The default nginx configuation file is located under:</p>
 
 {% highlight bash %}
+# Default nginx config file.
 /etc/nginx/nginx.conf 
 {% endhighlight %}
 
