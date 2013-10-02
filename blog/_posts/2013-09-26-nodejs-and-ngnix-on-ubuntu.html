@@ -220,8 +220,9 @@ server {
   index index.html;
 
   # Domain names.
-  # Make sure to set the A record on your domain's DNS settings to your server's IP address.
-  server_name yourdomain.com www.domain.com;
+  # Make sure to set the A Record on your domain's DNS settings to your server's IP address.
+  # You can test if was set properly by using the `dig` command: dig yourdomain.com
+  server_name yourdomain.com www.yourdomain.com;
 
   # Timeout for closing keep-alive connections.
   keepalive_timeout 10;
