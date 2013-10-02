@@ -233,7 +233,6 @@ server {
   gzip_vary on;
   gzip_comp_level 6;
   gzip_proxied any;
-  gzip_types text/plain text/html text/css application/json application/x-javascript text/xml application/xml application/xml+rss text/javascript application/javascript text/x-js;
   gzip_buffers 16 8k;
   gzip_disable "MSIE [1-6]\.(?!.*SV1)";
   
@@ -274,11 +273,11 @@ server {
   }
 
   # Enable caching of static files.
-  location ~* \.(css|js|gif|jpe?g|png)$ {
-    expires 168h;
-    add_header Pragma public;
-    add_header Cache-Control "public, must-revalidate, proxy-revalidate";
-  }
+  # location ~* \.(css|js|gif|jpe?g|png)$ {
+  #  expires 168h;
+  #  add_header Pragma public;
+  #  add_header Cache-Control "public, must-revalidate, proxy-revalidate";
+  # }
   
   # Don't cache html files.
   location ~* \.html$ {
