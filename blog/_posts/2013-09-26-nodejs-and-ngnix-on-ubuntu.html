@@ -198,7 +198,7 @@ vim /etc/nginx/sites-available/default
 # Upstream module. The link between Node.js and Nginx.
 upstream helloworld {
   # Set up multiple Node.js webservers for load balancing.
-  # max_fails erefers to number of failed attempts
+  # max_fails refers to number of failed attempts
   # before server is considered inactive.
   server <your server ip>:3000 max_fails=0 fail_timeout=10s;
   # server <your server ip>:3001 max_fails=0 fail_timeout=10s;
@@ -228,7 +228,7 @@ server {
   keepalive_timeout 10;
   
   # Enable gzip compression.
-  gzip  on;
+  gzip on;
   gzip_http_version 1.1;
   gzip_vary on;
   gzip_comp_level 6;
