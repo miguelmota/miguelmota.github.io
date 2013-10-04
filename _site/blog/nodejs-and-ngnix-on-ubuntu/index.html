@@ -62,7 +62,7 @@
 		<header id="header" class="contain-to-grid fixed">
 			<nav class="top-bar">
 				<ul class="title-area">
-					<li class="name"><a href="/">Miguel Mota</a></li>
+					<li class="name"><a href="/" data-ga-label="Navigation - Logo">Miguel Mota</a></li>
 					<li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
 				</ul>
 				<section class="top-bar-section">
@@ -89,7 +89,7 @@
 	<div class="row">
 		<div class="large-12 column">
 
-			<datetime>26 Sep 2013 <small><i class="icon-comment-alt"></i> <a href="/blog/nodejs-and-ngnix-on-ubuntu#disqus_thread" data-disqus-identifier="/blog/nodejs-and-ngnix-on-ubuntu"></a></small> <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.miguelmota.com/blog/nodejs-and-ngnix-on-ubuntu" data-text="Node.js and Nginx on Ubuntu" data-size="large" data-related="_moogs">Tweet</a></datetime>
+			<datetime>26 Sep 2013 <small><i class="icon-comment-alt"></i> <a href="/blog/nodejs-and-ngnix-on-ubuntu#disqus_thread" data-disqus-identifier="/blog/nodejs-and-ngnix-on-ubuntu"></a></small> <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.miguelmota.com/blog/nodejs-and-ngnix-on-ubuntu" data-text="Node.js and Nginx on Ubuntu" data-size="large" data-related="_moogs" data-ga-label="Blog post - Tweet">Tweet</a></datetime>
 			<h1>Node.js and Nginx on Ubuntu</h1>
 
 		</div>
@@ -137,13 +137,13 @@ sudo apt-get install htop
 <span class="c"># run `sudo updatedb` after installing.</span>
 sudo apt-get install mlocate
 
-<span class="c"># Terminal multiplexer if you are a command line ninja.</span>
+<span class="c"># Terminal multiplexer if you are a command-line ninja.</span>
 sudo apt-get install tmux
 </code></pre></div>
 
 <h2>Installing Node.js</h2>
 
-<p>Head over to the <a href="http://nodejs.org/download/" target="_blank">Node.js Downloads</a> page and copy the link to the source code tarball (node-<version>.tar.gz).</p>
+<p>Head over to the <a href="http://nodejs.org/download/" target="_blank">Node.js Downloads</a> page and copy the link to the source code tarball (node-&lt;version&gt;.tar.gz).</p>
 
 <div class="highlight"><pre><code class="bash"><span class="c"># Create and change into directory.</span>
 sudo mkdir /opt/node/
@@ -243,21 +243,16 @@ sudo apt-get install nginx
 <p>Here are some useful Ngnix commands.</p>
 
 <div class="highlight"><pre><code class="bash"><span class="c"># Self explanatory.</span>
-sudo service nginx stop
-sudo service nginx start
-sudo service nginx restart
-sudo service nginx reload
+sudo service nginx &lt;stop|start|restart|reload&gt;
 
 <span class="c"># Alternatively, you also do:</span>
-/etc/init.d/nginx stop
-/etc/init.d/nginx start
-/etc/init.d/nginx restart
-/etc/init.d/nginx reload
+/etc/init.d/nginx &lt;stop|start|restart|reload&gt;
 </code></pre></div>
 
 <p>The default nginx configuation file is located under:</p>
 
-<div class="highlight"><pre><code class="bash">/etc/nginx/nginx.conf 
+<div class="highlight"><pre><code class="bash"><span class="c"># Default nginx config file.</span>
+/etc/nginx/nginx.conf 
 </code></pre></div>
 
 <p>Take note of the default log file locations, which you can view by using the <code>tail</code> command.</p>
@@ -285,7 +280,7 @@ vim /etc/nginx/sites-available/default
 <div class="highlight"><pre><code class="bash"><span class="c"># Upstream module. The link between Node.js and Nginx.</span>
 upstream helloworld <span class="o">{</span>
   <span class="c"># Set up multiple Node.js webservers for load balancing.</span>
-  <span class="c"># max_fails erefers to number of failed attempts</span>
+  <span class="c"># max_fails refers to number of failed attempts</span>
   <span class="c"># before server is considered inactive.</span>
   server &lt;your server ip&gt;:3000 <span class="nv">max_fails</span><span class="o">=</span>0 <span class="nv">fail_timeout</span><span class="o">=</span>10s;
   <span class="c"># server &lt;your server ip&gt;:3001 max_fails=0 fail_timeout=10s;</span>
@@ -307,19 +302,19 @@ server <span class="o">{</span>
   index index.html;
 
   <span class="c"># Domain names.</span>
-  <span class="c"># Make sure to set the A record on your domain&#39;s DNS settings to your server&#39;s IP address.</span>
-  server_name yourdomain.com www.domain.com;
+  <span class="c"># Make sure to set the A Record on your domain&#39;s DNS settings to your server&#39;s IP address.</span>
+  <span class="c"># You can test if was set properly by using the `dig` command: dig yourdomain.com</span>
+  server_name yourdomain.com www.yourdomain.com;
 
   <span class="c"># Timeout for closing keep-alive connections.</span>
   keepalive_timeout 10;
   
   <span class="c"># Enable gzip compression.</span>
-  gzip  on;
+  gzip on;
   gzip_http_version 1.1;
   gzip_vary on;
   gzip_comp_level 6;
   gzip_proxied any;
-  gzip_types text/plain text/html text/css application/json application/x-javascript text/xml application/xml application/xml+rss text/javascript application/javascript text/x-js;
   gzip_buffers 16 8k;
   gzip_disable <span class="s2">&quot;MSIE [1-6]\.(?!.*SV1)&quot;</span>;
   
@@ -360,16 +355,16 @@ server <span class="o">{</span>
   <span class="o">}</span>
 
   <span class="c"># Enable caching of static files.</span>
-  location ~* <span class="se">\.</span><span class="o">(</span>css|js|gif|jpe?g|png<span class="o">)</span><span class="nv">$ </span><span class="o">{</span>
-    expires 168h;
-    add_header Pragma public;
-    add_header Cache-Control <span class="s2">&quot;public, must-revalidate, proxy-revalidate&quot;</span>;
-  <span class="o">}</span>
+  <span class="c"># location ~* \.(css|js|gif|jpe?g|png)$ {</span>
+  <span class="c">#  expires 168h;</span>
+  <span class="c">#  add_header Pragma public;</span>
+  <span class="c">#  add_header Cache-Control &quot;public, must-revalidate, proxy-revalidate&quot;;</span>
+  <span class="c"># }</span>
   
   <span class="c"># Don&#39;t cache html files.</span>
-  location ~* <span class="se">\.</span>html<span class="nv">$ </span><span class="o">{</span>
-    expires -1;
-  <span class="o">}</span>
+  <span class="c"># location ~* \.html$ {</span>
+  <span class="c">#  expires -1;</span>
+  <span class="c"># }</span>
 <span class="o">}</span>
 </code></pre></div>
 
@@ -526,7 +521,7 @@ server <span class="o">{</span>
 					<p>
 						<span class="break"><span>© 2013 Moogs™, LLC.</span> <span>Made with <i class="icon-heart"></i></span></span> <a class="hidden" href="https://plus.google.com/102174577273194387652" rel="author">Google+</a>
 
-						<a href="https://twitter.com/_moogs" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @_moogs</a>
+						<a href="https://twitter.com/_moogs" class="twitter-follow-button" data-show-count="false" data-size="large" data-ga-label="Footer - Follow Twitter">Follow @_moogs</a>
 
 					</p>
 				</div>
