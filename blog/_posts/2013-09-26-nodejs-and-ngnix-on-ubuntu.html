@@ -192,7 +192,7 @@ mv /etc/nginx/sites-available/default /etc/nginx/sites-available/default.bak
 vim /etc/nginx/sites-available/default
 {% endhighlight %}
 
-<p>In the empty config file add the following settings (<a href="https://gist.github.com/miguelmota/6912559" target="_blank">gist</a>):</p>
+<p>In the empty config file add the following settings (<a href="" target="_blank">gist</a>):</p>
 
 <script src="https://gist.github.com/miguelmota/6912559.js"></script>
 
@@ -204,7 +204,7 @@ sudo service nginx reload
 
 <p>Nginx will let you know if you have any errors in your config. Fix them and reload once again.</p>
 
-<p>If you got the following error:</p>
+<p>If you're trying to reference multiple domains and got the following error:</p>
 
 {% highlight bash %}
 Reloading nginx configuration: nginx: [emerg] could not build the server_names_hash, you should increase server_names_hash_bucket_size: 32
