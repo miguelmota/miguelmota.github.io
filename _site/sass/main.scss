@@ -572,6 +572,10 @@ $social-icon-default-background-color: rgba(0,0,0,.2);
 	@include social-icon($social-icon-width, $social-icon-height, #0088CC, '../img/social/moogs-32.png');
 }
 
+#home .zazzle {
+	@include social-icon($social-icon-width, $social-icon-height, #676767, '../img/social/zazzle-32.png');
+}
+
 #home .archive-button {
 	@extend .button;
 }
