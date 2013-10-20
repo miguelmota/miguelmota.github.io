@@ -217,7 +217,7 @@ body {
 if (/Android/i.test(navigator.userAgent)) {
 	$('#nav-handler').on('click', function(e){
 		e.preventDefault();
-		$mainContainer = $('#main-container');
+		var $mainContainer = $('#main-container');
 		if ($mainContainer.hasClass('nav-handler-checked')) {
 			$mainContainer.removeClass('nav-handler-checked');
 		} else {
