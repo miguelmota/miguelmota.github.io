@@ -8,7 +8,9 @@ This is my [jekyll](https://github.com/mojombo/jekyll/) powered blog.
 
 Simply run:
 
-`grunt`
+```
+grunt
+```
 
 [Grunt](https://github.com/gruntjs/grunt) will watch for file changes, concat and uglify JavaScript, run [compass](http://compass-style.org/) build, and build jekyll.
 
