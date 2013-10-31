@@ -1,0 +1,12 @@
+---
+layout: blog-post
+title: Memoization&#58; Caching function results in JavaScript
+category: blog
+tags: [JavaScript, memoization, cache]
+short_url: mig.gs/aAlV
+description: Avoid recalcuation by caching and locally storing function results.
+---
+
+<p> Memoization is technique that caches the result of a function in order to avoid recalculatiion the next time the same function is called. Initially when the function is executed, the result gets added to an object holding the calculated results. When the function is called again, it checks the results object to see if already contains the result and if it does then return it. If it's not cached, then calculate and store it. The code below is a modified version of the memoization example that I came across as I was reading <a href="http://jsninja.com/" target=_blank"><em>Secrets of the JavaScript Ninja</em></a> by <a href="http://ejohn.org/" target="_blank">John Resig</a>. I'm modified to also store the result in <a href="http://www.w3.org/TR/webstorage/" target="_blank">local storage</a> so that we keep a copy of the results even after the page is refreshed.
+
+<script src="https://gist.github.com/miguelmota/7246244.js"></script>

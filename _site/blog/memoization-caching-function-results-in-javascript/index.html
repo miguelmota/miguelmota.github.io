@@ -14,14 +14,14 @@
 	                   \_/__/
 	-->
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta name="description" content="A blog on all things web.">
+	<meta name="description" content="Avoid recalcuation by caching and locally storing function results.">
 	<meta name="keywords" content="miguel mota,web developer,html5 css3 javascript">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-title" content="Moogs">
-	<title>Posts tagged &ldquo;Ant&rdquo; » Miguel Mota | Web Developer</title>
-	<link rel="canonical" href="http://www.miguelmota.com/tag/Ant/index.html">
+	<title>Memoization&#58; Caching function results in JavaScript » Miguel Mota | Web Developer</title>
+	<link rel="canonical" href="http://www.miguelmota.com/blog/memoization-caching-function-results-in-javascript">
 	<link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/miguelmota">
 	<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
 	<link rel="shortcut icon" href="/favicon.ico">
@@ -86,246 +86,119 @@
 
 		<main id="main" role="main">
 			<header id="content-header">
-  <canvas id="canvas"></canvas>
-  <div class="row">
-    <div class="large-12 column">
-      <h1>Thoughts <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.miguelmota.com/tag/Ant/index.html" data-text="Posts tagged &ldquo;Ant&rdquo;" data-size="large" data-related="_moogs">Tweet</a></h1>
-    </div>
-  </div>
-  <div id="content-header-bottom">
-    <div class="triangle"></div>
-  </div>
+	<canvas id="canvas"></canvas>
+	<div class="row">
+		<div class="large-12 column">
+
+			<datetime>30 Oct 2013 <small><i class="icon-comment-alt"></i> <a href="/blog/memoization-caching-function-results-in-javascript#disqus_thread" data-disqus-identifier="/blog/memoization-caching-function-results-in-javascript"></a></small> <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.miguelmota.com/blog/memoization-caching-function-results-in-javascript" data-text="Memoization&#58; Caching function results in JavaScript" data-size="large" data-related="_moogs" data-ga-label="Blog post - Tweet">Tweet</a></datetime>
+			<h1>Memoization&#58; Caching function results in JavaScript</h1>
+
+		</div>
+	</div>
+	<div id="content-header-bottom">
+		<div class="triangle"></div>
+	</div>
 </header>
 
-  <div id="older-posts" class="row">
-    <div class="large-12 column">
-      <h3>Thoughts tagged <em>Ant</em></h3>
+<section id="post">
+	<div class="row">
+		<div class="large-12 column">
 
-      <dl class="posts-list">
-        
-          
-            
-          
-            
-          
-        
-          
-            
-          
-            
-          
-            
-          
-        
-          
-            
-          
-            
-          
-            
-          
-            
-          
-            
-          
-        
-          
-            
-          
-            
-          
-            
-          
-            
-          
-        
-          
-            
-          
-            
-          
-            
-          
-            
-          
-        
-          
-            
-          
-            
-          
-            
-          
-            
-          
-            
-          
-        
-          
-            
-          
-            
-          
-            
-          
-        
-          
-            
-          
-            
-          
-            
-          
-        
-          
-            
-          
-            
-          
-            
-          
-        
-          
-            
-          
-            
-          
-        
-          
-            
-          
-            
-          
-            
-          
-        
-          
-            
-          
-            
-          
-            
-          
-            
-          
-            
-          
-        
-          
-            
-          
-            
-          
-            
-          
-            
-          
-        
-          
-            
-          
-        
-          
-            
-          
-            
-          
-        
-          
-            
-          
-            
-          
-        
-          
-            
-          
-            
-          
-        
-          
-            
-          
-            
-          
-            
-          
-        
-          
-            
-          
-            
-          
-            
-          
-        
-          
-            
-          
-            
-              <dt><datetime>14 Oct 2011</datetime></dt>
-<dd><h2><a href="/blog/ant-task-to-compress-html-files">Ant task to compress HTML files
+			<p> Memoization is technique that caches the result of a function in order to avoid recalculatiion the next time it is called. Initially when the function is executed, the result gets added to a results object. When the function is called again, it checks the results object is to see if already contains the result and return it. If it doesn't then calculate, store, and return. The code below is modified version of the memoization example that I came across as I was reading <a href="http://jsninja.com/" target=_blank"><em>Secrets of the JavaScript Ninja</em></a> by <a href="http://ejohn.org/" target="_blank">John Resig</a>.
+
+<script src="https://gist.github.com/miguelmota/7246244.js"></script>
+
+
+			<div class="tags">
+				<i class="icon-tag"></i>
+				
+					<a href="/tag/JavaScript">JavaScript</a> <span>+</span>
+				
+					<a href="/tag/memoization">memoization</a> <span>+</span>
+				
+					<a href="/tag/cache">cache</a> <span>+</span>
+				
+			</div>
+
+		</div>
+	</div>
+
 	
-	  
-	
-	  
-	
-</a> <small><i class="icon-comment-alt"></i> <a href="http://www.miguelmota.com/blog/ant-task-to-compress-html-files#disqus_thread" data-disqus-identifier="/blog/ant-task-to-compress-html-files"></a></small></h2>
-<p>Tutorial on how to create an ant task to compress html files.</p>
-<div class="tags">
-	<i class="icon-tag"></i>
-	
-		<a href="/tag/HTML">HTML</a> <span>+</span>
-	
-		<a href="/tag/Ant">Ant</a> <span>+</span>
-	
-</div>
+		<div id="related-posts" class="row">
+			<div class="row">
+				<div class="large-12 column">
+					<div class="input-short-url">share: <input type="text" value="http://mig.gs/aAlV"></div>
+				</div>
+			</div>
+			<div class="large-6 column">
+				
+    
+
+    <h3>Previous post</h3>
+
+	    <dl class="posts-list">
+
+				<dt><datetime>30 Sep 2013</datetime></dt>
+				<dd><h2><a href="/blog/set-up-ssh-keys">Set up SSH keys</a> <small><i class="icon-comment-alt"></i> <a href="/blog/set-up-ssh-keys#disqus_thread" data-disqus-identifier="/blog/set-up-ssh-keys"></a></small></h2></dd>
+
+			</dl>
+
+    
+
+
+
+			</div>
+			<div class="large-6 column">
+
+				<h3>See also...</h3>
+
+				<dl class="posts-list">
+					
+						<dt><datetime>30 Sep 2013</datetime></dt>
+<dd><h2><a href="/blog/set-up-ssh-keys">Set up SSH keys</a> <small><i class="icon-comment-alt"></i> <a href="/blog/set-up-ssh-keys#disqus_thread" data-disqus-identifier="/blog/set-up-ssh-keys"></a></small></h2>
 </dd>
+					
+						<dt><datetime>26 Sep 2013</datetime></dt>
+<dd><h2><a href="/blog/nodejs-and-ngnix-on-ubuntu">Node.js and Nginx on Ubuntu</a> <small><i class="icon-comment-alt"></i> <a href="/blog/nodejs-and-ngnix-on-ubuntu#disqus_thread" data-disqus-identifier="/blog/nodejs-and-ngnix-on-ubuntu"></a></small></h2>
+</dd>
+					
+						<dt><datetime>25 Sep 2013</datetime></dt>
+<dd><h2><a href="/blog/raspberry-pi-camera-board-video-streaming">Raspberry Pi camera board video streaming</a> <small><i class="icon-comment-alt"></i> <a href="/blog/raspberry-pi-camera-board-video-streaming#disqus_thread" data-disqus-identifier="/blog/raspberry-pi-camera-board-video-streaming"></a></small></h2>
+</dd>
+					
+						<dt><datetime>31 Aug 2013</datetime></dt>
+<dd><h2><a href="/blog/screenshots-with-getusermedia-api">Screenshots with getUserMedia API</a> <small><i class="icon-comment-alt"></i> <a href="/blog/screenshots-with-getusermedia-api#disqus_thread" data-disqus-identifier="/blog/screenshots-with-getusermedia-api"></a></small></h2>
+</dd>
+					
+						<dt><datetime>07 Jul 2013</datetime></dt>
+<dd><h2><a href="/blog/basic-html5-audio-manipulation">Basic HTML5 Audio Manipulation</a> <small><i class="icon-comment-alt"></i> <a href="/blog/basic-html5-audio-manipulation#disqus_thread" data-disqus-identifier="/blog/basic-html5-audio-manipulation"></a></small></h2>
+</dd>
+					
+				</dl>
 
-            
-          
-        
-          
-            
-          
-            
-          
-            
-          
-            
-          
-            
-          
-        
-          
-            
-          
-            
-          
-        
-          
-            
-          
-            
-          
-            
-          
-        
-          
-            
-          
-            
-          
-            
-          
-        
-      </dl>
-    </div>
-  </div>
+			</div>
+		</div>
+	
+
+	<div id="comments" class="row">
+		<div class="large-12 column">
+			<div id="disqus_thread"></div>
+		</div>
+	</div>
+
 </section>
 
 <script>
     var disqus_shortname = 'miguelmota';
+    var disqus_identifier = '/blog/memoization-caching-function-results-in-javascript';
+    var disqus_url = 'http://www.miguelmota.com/blog/memoization-caching-function-results-in-javascript';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
     (function () {
         var s = document.createElement('script'); s.async = true;
         s.type = 'text/javascript';
@@ -333,6 +206,7 @@
         (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
     }());
 </script>
+
 		</main>
 
 		<footer id="footer">
