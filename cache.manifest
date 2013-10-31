@@ -1,8 +1,7 @@
 CACHE MANIFEST
 # Revision 001
 FALLBACK:
-/ offline.html
-NETWORK:
+/ /offline.html
 CACHE:
 /index.html
 /about/index.html
