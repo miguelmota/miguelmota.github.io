@@ -89,7 +89,7 @@ raspistill -w 640 -h 480 -q 5 -o /tmp/stream/pic.jpg -tl 100 -t 9999999 -th 0:0:
 # See what the mjpg streamer options are.
 ./mjpg_streamer --help
 # Run the following to start up the MJPG Streamer streaming webserver.
-LD_LIBRARY_PATH=./ ./mjpg_streamer -i "input_file.so -f /tmp/stream" -o "output_http.so -p 9000 -w ./www" &
+LD_LIBRARY_PATH=./ ./mjpg_streamer -i "input_file.so -f /tmp/stream -n pic.jpg" -o "output_http.so -p 9000 -w ./www" &
 {% endhighlight %}
 
 <p>If everything went smoothly you can open up a web browser and go to:</p>
