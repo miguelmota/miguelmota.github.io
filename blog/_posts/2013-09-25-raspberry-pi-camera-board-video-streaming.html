@@ -80,13 +80,15 @@ sudo ln -s /usr/include/libv4l1-videodev.h /usr/include/linux/videodev.h
 sudo mkdir /tmp/stream/
 
 # Start capturing.
-# To see what the options are, run: raspistill -h
-# You see the record light turn on after executing this line.
-raspistill -w 640 -h 480 -q 5 -o /tmp/stream/pic.jpg -tl 100 -t 9999999 -th 0:0:0 -n -v &
+# See what the raspistill options are.
+raspistill --help
+# You see the record light turn on after executing the following line.
+raspistill -w 640 -h 480 -q 5 -o /tmp/stream/pic.jpg -tl 100 -t 9999999 -th 0:0:0 -n &
 
-# While still in the /opt/mjpg-streamer/ directory, 
-# run the following to start up the MJPG Streamer streaming webserver.
-# To see what the options are, run: ./mjpg_streamer -h
+# While still in the /opt/mjpg-streamer/ directory.
+# See what the mjpg streamer options are.
+./mjpg_streamer --help
+# Run the following to start up the MJPG Streamer streaming webserver.
 LD_LIBRARY_PATH=./ ./mjpg_streamer -i "input_file.so -f /tmp/stream" -o "output_http.so -p 9000 -w ./www" &
 {% endhighlight %}
 
