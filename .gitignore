@@ -74,6 +74,7 @@ dwsync.xml
 
 # Folders to ignore #
 #####################
+node_modules
 .hg
 .svn
 .CVS
@@ -83,3 +84,6 @@ publish
 .graphics
 _jar
 _test
+_archive
+_test
+serve
