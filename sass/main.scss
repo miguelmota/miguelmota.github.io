@@ -703,6 +703,10 @@ $social-icon-default-background-color: rgba(0,0,0,.2);
 /* =Resume
 -------------------------------------------------------------- */
 
+#resume h3 + p {
+	margin: 0 0 40px 0;
+}
+
 #resume .resume-list {
 	margin: 0 0 50px 0;
 }
@@ -992,7 +996,8 @@ $social-icon-default-background-color: rgba(0,0,0,.2);
 	text-align: center;
 }
 
-#github-button {
+#github-button,
+#resume-work-button {
 	@extend .button;
 	@extend .button.large;
 }

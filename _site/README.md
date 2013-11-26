@@ -1,5 +1,7 @@
 ## About
 
+![Build Status](https://api.travis-ci.org/miguelmota/miguelmota.github.com.png)
+
 This is my [jekyll](https://github.com/mojombo/jekyll/) powered blog.
 
 [http://miguelmota.github.io/](http://miguelmota.github.io/)

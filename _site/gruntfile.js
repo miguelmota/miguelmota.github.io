@@ -71,4 +71,5 @@ module.exports = function (grunt) {
   grunt.registerTask('watch_css', ['compass', 'shell']);
   grunt.registerTask('watch_html', ['shell']);
   grunt.registerTask('default', ['watch']);
+  grunt.registerTask('css', ['compass', 'shell']);
 };

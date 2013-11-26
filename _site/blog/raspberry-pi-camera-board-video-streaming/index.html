@@ -172,14 +172,16 @@ sudo ln -s /usr/include/libv4l1-videodev.h /usr/include/linux/videodev.h
 sudo mkdir /tmp/stream/
 
 <span class="c"># Start capturing.</span>
-<span class="c"># To see what the options are, run: raspistill -h</span>
-<span class="c"># You see the record light turn on after executing this line.</span>
-raspistill -w 640 -h 480 -q 5 -o /tmp/stream/pic.jpg -tl 100 -t 9999999 -th 0:0:0 -n -v &amp;
+<span class="c"># See what the raspistill options are.</span>
+raspistill --help
+<span class="c"># You see the record light turn on after executing the following line.</span>
+raspistill -w 640 -h 480 -q 5 -o /tmp/stream/pic.jpg -tl 100 -t 9999999 -th 0:0:0 -n &amp;
 
-<span class="c"># While still in the /opt/mjpg-streamer/ directory, </span>
-<span class="c"># run the following to start up the MJPG Streamer streaming webserver.</span>
-<span class="c"># To see what the options are, run: ./mjpg_streamer -h</span>
-<span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span>./ ./mjpg_streamer -i <span class="s2">&quot;input_file.so -f /tmp/stream&quot;</span> -o <span class="s2">&quot;output_http.so -p 9000 -w ./www&quot;</span> &amp;
+<span class="c"># While still in the /opt/mjpg-streamer/ directory.</span>
+<span class="c"># See what the MJPG Streamer options are.</span>
+./mjpg_streamer --help
+<span class="c"># Run the following to start up the MJPG Streamer streaming webserver.</span>
+<span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span>./ ./mjpg_streamer -i <span class="s2">&quot;input_file.so -f /tmp/stream -n pic.jpg&quot;</span> -o <span class="s2">&quot;output_http.so -p 9000 -w ./www&quot;</span> &amp;
 </code></pre></div>
 
 <p>If everything went smoothly you can open up a web browser and go to:</p>
