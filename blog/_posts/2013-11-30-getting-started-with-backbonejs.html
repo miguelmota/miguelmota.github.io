@@ -803,7 +803,7 @@ var todoView = new TodoView();
 todoView.render();
 {% endhighlight %}
 
-<p>Generate DOM:</p>
+<p>Generated DOM:</p>
 
 {% highlight html %}
 <body>
@@ -1271,9 +1271,9 @@ $(function() {
 {% highlight javascript %}
 var TodoApp = new (Backbone.Router.extend({
   routes: {
-    "": "index",
-    "todos/:id/edit": "edit",
-    "todos/new": "newTodo"
+    '': 'index',
+    'todos/:id/edit': 'edit',
+    'todos/new': 'newTodo'
   },
   initialize: function() {
     this.todoItems = new TodoItems();
@@ -1331,7 +1331,7 @@ var TodoRouter = new (Backbone.Router.extend({
 
 <h2>Conclusion</h2>
 
-<p>With Backbone.js we keep our application organized and structured which in a sense forces us to avoid writing messy <a href="http://en.wikipedia.org/wiki/Spaghetti_code" target="_blank">Spaghetti code</a>. I hope this tutorial gave you a decent understanding of Backbone principles and are now ready to give it a go.</p>
+<p>With Backbone.js we keep our application organized and structured which in a sense forces us to avoid writing messy <a href="http://en.wikipedia.org/wiki/Spaghetti_code" target="_blank">Spaghetti code</a>. I hope this tutorial gave you a decent understanding of Backbone principles and are now ready to give it a go. If the examples aren't too clear or if I made a mistake, leave your feedback in the comments below.</p>
 
 <p>Helpful Backbone.js resources:</p>
 
