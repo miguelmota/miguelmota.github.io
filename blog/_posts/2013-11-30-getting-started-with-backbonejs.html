@@ -6,7 +6,7 @@ tags: [JavaScript, backbone.js]
 short_url: mig.gs/MDyO
 description: Getting cozy with Backbone.js Models, Collections, Views, and Routes.
 ---
-<p>In this tutorial I will go over <a href="http://backbonejs.org/" target="_blank">Backbone.js</a> main components:  Models, Collections, Views, and Routes. We will not be building an application but instead we will be going over a number of simple examples of each Backbone compoment, that hopefully after we are done you will have a firm understanding of Backbone.js and be able to put it all together. I am making the assumption you are not completely new to JavaScript and understand the <a href="http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller" target="_blank">MVC</a> architecture pattern.</p>
+<p>In this tutorial I will go over <a href="http://backbonejs.org/" target="_blank">Backbone.js</a> main components:  Models, Collections, Views, and Routes. We will not be building an application but instead we will be going over a number of simple examples of each Backbone compoment, that hopefully after we are done you will have a firm understanding of Backbone.js and be able to put it all together.
 
 <h2>Models</h2>
 
@@ -354,7 +354,7 @@ todoItem.set({description: 'Pick up eggs'}, {silent: true});
 
 <h4>Models and local storage</h4>
 
-<p>Instead of syncing our model to the server we can have it save to <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/API/DOM/Storage">local storage</a> To do this we must override the four syn methods: <code>read</code>, <code>create</code>, <code>update</code>, and <code>delete</code>.
+<p>Instead of syncing our model to the server we can have it save to <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/API/DOM/Storage" target="_blank">local storage</a> To do this we must override the four syn methods: <code>read</code>, <code>create</code>, <code>update</code>, and <code>delete</code>.
 
 {% highlight javascript %}
 var TodoItem = Backbone.Model.extend({
@@ -398,7 +398,7 @@ todoItem.fetch({
 ); 
 {% endhighlight %}
 
-<p>Luckily the <a href="https://github.com/jeromegn/Backbone.localStorage" target="_blank">Backbone.localStorage</a> adapter by <a href="https://github.com/jeromegn">Jerome Gravel-Niquest</a> takes care of all the messy work. Simply include the <code>backbone.localStorage.js</code> in your page and set the <code>localStorage</code> property on your Backbone collection:</p>
+<p>Luckily the <a href="https://github.com/jeromegn/Backbone.localStorage" target="_blank">Backbone.localStorage</a> adapter by <a href="https://github.com/jeromegn" target="_blank">Jerome Gravel-Niquest</a> takes care of all the messy work. Simply include the <code>backbone.localStorage.js</code> in your page and set the <code>localStorage</code> property on your Backbone collection:</p>
 
 {% highlight javascript %}
 var TodoItems = Backbone.Collection.extend({
