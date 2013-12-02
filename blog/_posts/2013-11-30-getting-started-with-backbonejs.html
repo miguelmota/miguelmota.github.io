@@ -47,7 +47,7 @@ var todoItem = new TodoItem({
 });
 {% endhighlight %}
 
-<p>Doing something when a model instance get created:</p>
+<p>Doing something when a model instance gets created:</p>
 
 {% highlight javascript %}
 var TodoItem = Backbone.Model.extend({
@@ -245,7 +245,7 @@ todoItem.fetch(); // Fetches _id 1 from server
 var TodoItem = Backbone.Model.extend({
   validate: function(attributes, options) {
     if (attributes.description.length === 0) {
-      return "Description cannot be empty";
+      return 'Description cannot be empty';
     } 
   },
   initialize: function() {
@@ -373,7 +373,7 @@ var TodoItem = Backbone.Model.extend({
           result = JSON.parse(result);
           options.success && options.success(result);
         } else if (options.error) {
-          options.error("Couldn't find TodoItem id=" + model.id);
+          options.error('Could not find TodoItem id=' + model.id);
         } 
       break;
       case 'update':
