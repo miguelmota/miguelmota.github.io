@@ -723,8 +723,13 @@ $social-icon-default-background-color: rgba(0,0,0,.2);
 	margin: 0 0 0 20px;
 }
 
-#resume .download-resume {
+#resume .linkedin-button {
 	@extend .button;
+	@extend .button.large;
+}
+
+#resume .bottom {
+  text-align: center;
 }
 
 /* =Contact
