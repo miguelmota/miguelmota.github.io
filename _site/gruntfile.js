@@ -66,10 +66,10 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-shell');
-  grunt.registerTask*('test', ['jshint']); 
+  grunt.registerTask('test', ['jshint']); 
   grunt.registerTask('watch_scripts', ['concat', 'uglify', 'shell']);
   grunt.registerTask('watch_css', ['compass', 'shell']);
   grunt.registerTask('watch_html', ['shell']);
-  grunt.registerTask('default', ['watch']);
-  grunt.registerTask('css', ['compass', 'shell']);
+  grunt.registerTask('compile_css', ['compass', 'shell']);
+  grunt.registerTask('default', ['watch:css', 'watch:scripts', 'watch:html']);
 };
