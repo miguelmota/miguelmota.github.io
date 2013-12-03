@@ -104,7 +104,7 @@
 	<div class="row">
 		<div class="large-12 column">
 
-			<p>In this tutorial I will go over <a href="http://backbonejs.org/" target="_blank">Backbone.js</a> main components:  Models, Collections, Views, and Routes. We will not be building an application but instead we will be going over a number of simple examples of each Backbone compoment, that hopefully after we are done you will have a firm understanding of Backbone.js and be able to put it all together. I am making the assumption you are not completely new to JavaScript and understand the <a href="http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller" target="_blank">MVC</a> architecture pattern.</p>
+			<p>In this tutorial I will go over <a href="http://backbonejs.org/" target="_blank">Backbone.js</a> main components:  Models, Collections, Views, and Routes. We will not be building an application but instead we will be going over a number of simple examples of each Backbone compoment, that hopefully after we are done you will have a firm understanding of Backbone.js and be able to put it all together.</p>
 
 <h2>Models</h2>
 
@@ -141,7 +141,7 @@
 <span class="p">});</span>
 </code></pre></div>
 
-<p>Doing something when a model instance get created:</p>
+<p>Doing something when a model instance gets created:</p>
 
 <div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">TodoItem</span> <span class="o">=</span> <span class="nx">Backbone</span><span class="p">.</span><span class="nx">Model</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
   <span class="nx">initialize</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
@@ -322,7 +322,7 @@
 <div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">TodoItem</span> <span class="o">=</span> <span class="nx">Backbone</span><span class="p">.</span><span class="nx">Model</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
   <span class="nx">validate</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">attributes</span><span class="p">,</span> <span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="nx">attributes</span><span class="p">.</span><span class="nx">description</span><span class="p">.</span><span class="nx">length</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="s2">&quot;Description cannot be empty&quot;</span><span class="p">;</span>
+      <span class="k">return</span> <span class="s1">&#39;Description cannot be empty&#39;</span><span class="p">;</span>
     <span class="p">}</span> 
   <span class="p">},</span>
   <span class="nx">initialize</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
@@ -421,7 +421,7 @@
 
 <h4>Models and local storage</h4>
 
-<p>Instead of syncing our model to the server we can have it save to <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/API/DOM/Storage">local storage</a> To do this we must override the four syn methods: <code>read</code>, <code>create</code>, <code>update</code>, and <code>delete</code>.
+<p>Instead of syncing our model to the server we can have it save to <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/API/DOM/Storage" target="_blank">local storage</a> To do this we must override the four syn methods: <code>read</code>, <code>create</code>, <code>update</code>, and <code>delete</code>.</p>
 
 <div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">TodoItem</span> <span class="o">=</span> <span class="nx">Backbone</span><span class="p">.</span><span class="nx">Model</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
   <span class="c1">// method = &lt;read|create|update|delete&gt;</span>
@@ -439,7 +439,7 @@
           <span class="nx">result</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
           <span class="nx">options</span><span class="p">.</span><span class="nx">success</span> <span class="o">&amp;&amp;</span> <span class="nx">options</span><span class="p">.</span><span class="nx">success</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
         <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">options</span><span class="p">.</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
-          <span class="nx">options</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s2">&quot;Couldn&#39;t find TodoItem id=&quot;</span> <span class="o">+</span> <span class="nx">model</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span>
+          <span class="nx">options</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s1">&#39;Could not find TodoItem id=&#39;</span> <span class="o">+</span> <span class="nx">model</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span>
         <span class="p">}</span> 
       <span class="k">break</span><span class="p">;</span>
       <span class="k">case</span> <span class="s1">&#39;update&#39;</span><span class="o">:</span>
@@ -464,7 +464,7 @@
 <span class="p">);</span> 
 </code></pre></div>
 
-<p>Luckily the <a href="https://github.com/jeromegn/Backbone.localStorage" target="_blank">Backbone.localStorage</a> adapter by <a href="https://github.com/jeromegn">Jerome Gravel-Niquest</a> takes care of all the messy work. Simply include the <code>backbone.localStorage.js</code> in your page and set the <code>localStorage</code> property on your Backbone collection:</p>
+<p>Luckily the <a href="https://github.com/jeromegn/Backbone.localStorage" target="_blank">Backbone.localStorage</a> adapter by <a href="https://github.com/jeromegn" target="_blank">Jerome Gravel-Niquest</a> takes care of all the messy work. Simply include the <code>backbone.localStorage.js</code> in your page and set the <code>localStorage</code> property on your Backbone collection:</p>
 
 <div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">TodoItems</span> <span class="o">=</span> <span class="nx">Backbone</span><span class="p">.</span><span class="nx">Collection</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
   <span class="nx">model</span><span class="o">:</span> <span class="nx">TodoItem</span><span class="p">,</span>
@@ -832,7 +832,7 @@
 <span class="nx">todoView</span><span class="p">.</span><span class="nx">render</span><span class="p">();</span>
 </code></pre></div>
 
-<p>Generate DOM:</p>
+<p>Generated DOM:</p>
 
 <div class="highlight"><pre><code class="html"><span class="nt">&lt;body&gt;</span>
   <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;todo&quot;</span><span class="nt">&gt;</span>
@@ -1031,7 +1031,7 @@
 
 <h4>Updating view when model deleted</h4>
 
-<p>Listening to the remove event on the collection and updating view:</h4>
+<p>Listening to the remove event on the collection and updating view:</p>
 
 <div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">TodoList</span> <span class="o">=</span> <span class="nx">Backbone</span><span class="p">.</span><span class="nx">Collection</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
   <span class="nx">initialize</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
@@ -1273,9 +1273,9 @@
 
 <div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">TodoApp</span> <span class="o">=</span> <span class="k">new</span> <span class="p">(</span><span class="nx">Backbone</span><span class="p">.</span><span class="nx">Router</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
   <span class="nx">routes</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s2">&quot;&quot;</span><span class="o">:</span> <span class="s2">&quot;index&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;todos/:id/edit&quot;</span><span class="o">:</span> <span class="s2">&quot;edit&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;todos/new&quot;</span><span class="o">:</span> <span class="s2">&quot;newTodo&quot;</span>
+    <span class="s1">&#39;&#39;</span><span class="o">:</span> <span class="s1">&#39;index&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;todos/:id/edit&#39;</span><span class="o">:</span> <span class="s1">&#39;edit&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;todos/new&#39;</span><span class="o">:</span> <span class="s1">&#39;newTodo&#39;</span>
   <span class="p">},</span>
   <span class="nx">initialize</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">todoItems</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TodoItems</span><span class="p">();</span>
@@ -1331,14 +1331,14 @@
 
 <h2>Conclusion</h2>
 
-<p>With Backbone.js we keep our application organized and structured which in a sense forces us to avoid writing messy <a href="http://en.wikipedia.org/wiki/Spaghetti_code" target="_blank">Spaghetti code</a>. I hope this tutorial gave you a decent understanding of Backbone principles and are now ready to give it a go.</p>
+<p>With Backbone.js we keep our application organized and structured which in a sense forces us to avoid writing messy <a href="http://en.wikipedia.org/wiki/Spaghetti_code" target="_blank">Spaghetti code</a>. I hope this tutorial gave you a decent understanding of Backbone principles and are now ready to give it a go. If the examples aren't too clear or if I made a mistake, leave your feedback in the comments below.</p>
 
 <p>Helpful Backbone.js resources:</p>
 
 <ul>
   <li><a href="http://documentcloud.github.io/backbone/examples/todos/index.html" target="_blank">Backbone Todos</a></li>
   <li><a href="http://addyosmani.github.io/backbone-fundamentals/" target="_blank">Developing Backbone.js Applications</a></li>
-  <li><a href="http://ricostacruz.com/backbone-patterns/" target="_blank">Backbone patterns</li>
+  <li><a href="http://ricostacruz.com/backbone-patterns/" target="_blank">Backbone patterns</a></li>
   <li><a href="https://github.com/backbone-boilerplate/backbone-boilerplate" target="_blank">Backbone Boilerplate</a></li>
 </ul>
 
