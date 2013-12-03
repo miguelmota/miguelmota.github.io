@@ -122,7 +122,7 @@ todoItem.priority('high');
 
 {% highlight javascript %}
 var TodoItem = Backbone.Model.extend({
-  urlRoot: '/todo',
+  urlRoot: '/todo'
 });
 {% endhighlight %}
 
@@ -1174,7 +1174,6 @@ var TodoRouter = new (Backbone.Router.extend({
     console.log('/'); 
   },
   todos: function(id) {
-    console.log('/todos/%s', id);
   }
 }));
 {% endhighlight %}
