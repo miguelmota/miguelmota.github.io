@@ -1182,9 +1182,20 @@
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">);</span> 
   <span class="p">},</span>
   <span class="nx">todos</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Todo id:&#39;</span><span class="p">,</span> <span class="nx">id</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;/todos/%s&#39;</span><span class="p">,</span> <span class="nx">id</span><span class="p">);</span>
   <span class="p">}</span>
 <span class="p">}));</span>
+</code></pre></div>
+
+<p>Another way we can define route functions:</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="nx">TodoRouter</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;route:index&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">);</span> 
+<span class="p">});</span>
+
+<span class="nx">TodoRouter</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;route:todos&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;/todos/%s&#39;</span><span class="p">,</span> <span class="nx">id</span><span class="p">);</span>
+<span class="p">});</span>
 </code></pre></div>
 
 <p>To pass a parameter that can match any number of url components, for example a path to a file, we use a <em>splat</em>:</p>
@@ -1222,81 +1233,6 @@
 <div class="highlight"><pre><code class="javascript"><span class="nx">TodoRouter</span><span class="p">.</span><span class="nx">navigate</span><span class="p">(</span><span class="s1">&#39;todo&#39;</span><span class="p">,</span> <span class="p">{</span><span class="nx">trigger</span><span class="o">:</span> <span class="kc">true</span><span class="p">});</span>
 </code></pre></div>
 
-<h3>Backbone.history</h3>
-
-<p>When initializing a Backbone router it's <em>really important</em> to start <code>Backbone.history</code> to begin monitoring <code>hashchange</code> events and dispatching routes. To use HTML5 <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/API/DOM/Manipulating_the_browser_history" target="_blank">pushState</a> we must set the <code>pushState</code> attribute to true within Backbone.history.start():</p>
-
-<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">TodoRouter</span> <span class="o">=</span> <span class="k">new</span> <span class="p">(</span><span class="nx">Backbone</span><span class="p">.</span><span class="nx">Router</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
-  <span class="nx">routes</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s1">&#39;&#39;</span><span class="o">:</span> <span class="s1">&#39;index&#39;</span>
-  <span class="p">},</span>
-  <span class="nx">initialize</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">Backbone</span><span class="p">.</span><span class="nx">history</span><span class="p">.</span><span class="nx">start</span><span class="p">({</span><span class="nx">pushState</span><span class="o">:</span> <span class="kc">true</span><span class="p">});</span>
-  <span class="p">},</span>
-  <span class="nx">index</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">index</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;/ route&#39;</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">}));</span>
-</code></pre></div>
-
-<h3>Tying routes, views, and collections</h3>
-
-<p>On router initialization append the the todoView with todoList collection to the #app element and fetch the todo items on index route:</p>
-
-<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">TodoApp</span> <span class="o">=</span> <span class="k">new</span> <span class="p">(</span><span class="nx">Backbone</span><span class="p">.</span><span class="nx">Router</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
-  <span class="nx">routes</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s1">&#39;&#39;</span><span class="o">:</span> <span class="s1">&#39;index&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;todos/:id&#39;</span><span class="p">,</span> <span class="s1">&#39;show&#39;</span>
-  <span class="p">},</span>
-  <span class="nx">initialize</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">todoList</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TodoList</span><span class="p">();</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">todosView</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TodoListView</span><span class="p">({</span><span class="nx">collection</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">todoList</span><span class="p">});</span>
-    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#app&#39;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">todosView</span><span class="p">.</span><span class="nx">el</span><span class="p">);</span>
-  <span class="p">},</span>
-  <span class="nx">start</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">Backbone</span><span class="p">.</span><span class="nx">history</span><span class="p">.</span><span class="nx">start</span><span class="p">({</span><span class="nx">pushState</span><span class="o">:</span> <span class="kc">true</span><span class="p">});</span>
-  <span class="p">},</span>
-  <span class="nx">index</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">todoList</span><span class="p">.</span><span class="nx">fetch</span><span class="p">();</span>
-  <span class="p">},</span>
-  <span class="nx">show</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">todoList</span><span class="p">.</span><span class="nx">focusOnTodoItem</span><span class="p">(</span><span class="nx">id</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">}));</span>
-
-<span class="nx">$</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-  <span class="nx">TodoApp</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span>
-<span class="p">});</span>
-</code></pre></div>
-
-<p>Another example:</p>
-
-<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">TodoApp</span> <span class="o">=</span> <span class="k">new</span> <span class="p">(</span><span class="nx">Backbone</span><span class="p">.</span><span class="nx">Router</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
-  <span class="nx">routes</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s1">&#39;&#39;</span><span class="o">:</span> <span class="s1">&#39;index&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;todos/:id/edit&#39;</span><span class="o">:</span> <span class="s1">&#39;edit&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;todos/new&#39;</span><span class="o">:</span> <span class="s1">&#39;newTodo&#39;</span>
-  <span class="p">},</span>
-  <span class="nx">initialize</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">todoItems</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TodoItems</span><span class="p">();</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">todosView</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TodosView</span><span class="p">({</span><span class="nx">collection</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">todoItems</span><span class="p">});</span>
-  <span class="p">},</span>
-  <span class="nx">index</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">todoItems</span><span class="p">.</span><span class="nx">fetch</span><span class="p">();</span>
-    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#app&#39;</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">todosView</span><span class="p">.</span><span class="nx">render</span><span class="p">().</span><span class="nx">el</span><span class="p">);</span>
-  <span class="p">},</span>
-  <span class="nx">newTodo</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">todoItem</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TodoItem</span><span class="p">();</span>
-    <span class="kd">var</span> <span class="nx">todoForm</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TodoForm</span><span class="p">({</span><span class="nx">model</span><span class="o">:</span> <span class="nx">todoItem</span><span class="p">});</span>
-    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#app&#39;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="nx">toodForm</span><span class="p">.</span><span class="nx">render</span><span class="p">().</span><span class="nx">el</span><span class="p">);</span>
-  <span class="p">},</span>
-  <span class="nx">edit</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">todoForm</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TodoForm</span><span class="p">({</span><span class="nx">model</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">todoItems</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">id</span><span class="p">)});</span>
-    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#app&#39;</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="nx">todoForm</span><span class="p">.</span><span class="nx">render</span><span class="p">().</span><span class="nx">el</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">}));</span>
-</code></pre></div>
-
 <h4>Search route</h4>
 
 <p>We can create a search route with an optional page parameter:</p>
@@ -1328,6 +1264,127 @@
   <span class="p">}</span>
 <span class="p">})</span><span class="o">:</span>
 </code></pre></div>
+
+<h3>Backbone.history</h3>
+
+<p>When initializing a Backbone router it's <em>really important</em> to start <code>Backbone.history</code> to begin monitoring <code>hashchange</code> events and dispatching routes. To use HTML5 <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/API/DOM/Manipulating_the_browser_history" target="_blank">pushState</a> we must set the <code>pushState</code> attribute to true within Backbone.history.start():</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">TodoRouter</span> <span class="o">=</span> <span class="k">new</span> <span class="p">(</span><span class="nx">Backbone</span><span class="p">.</span><span class="nx">Router</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+  <span class="nx">routes</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s1">&#39;&#39;</span><span class="o">:</span> <span class="s1">&#39;index&#39;</span>
+  <span class="p">},</span>
+  <span class="nx">initialize</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">Backbone</span><span class="p">.</span><span class="nx">history</span><span class="p">.</span><span class="nx">start</span><span class="p">({</span><span class="nx">pushState</span><span class="o">:</span> <span class="kc">true</span><span class="p">});</span>
+  <span class="p">},</span>
+  <span class="nx">index</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">index</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;/ route&#39;</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}));</span>
+</code></pre></div>
+
+<h3>Tying routes, views, and collections</h3>
+
+<h4>Fetching collection on route</h4>
+
+<p>On router initialization append the the todoView with todoList collection to the #app element and fetch the todo items on index route:</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">TodoApp</span> <span class="o">=</span> <span class="k">new</span> <span class="p">(</span><span class="nx">Backbone</span><span class="p">.</span><span class="nx">Router</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+  <span class="nx">routes</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s1">&#39;&#39;</span><span class="o">:</span> <span class="s1">&#39;index&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;todos/:id&#39;</span><span class="p">,</span> <span class="s1">&#39;show&#39;</span>
+  <span class="p">},</span>
+  <span class="nx">initialize</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">todoList</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TodoList</span><span class="p">();</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">todosView</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TodoListView</span><span class="p">({</span><span class="nx">collection</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">todoList</span><span class="p">});</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#app&#39;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">todosView</span><span class="p">.</span><span class="nx">el</span><span class="p">);</span>
+  <span class="p">},</span>
+  <span class="nx">start</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">Backbone</span><span class="p">.</span><span class="nx">history</span><span class="p">.</span><span class="nx">start</span><span class="p">({</span><span class="nx">pushState</span><span class="o">:</span> <span class="kc">true</span><span class="p">});</span>
+  <span class="p">},</span>
+  <span class="nx">index</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">todoList</span><span class="p">.</span><span class="nx">fetch</span><span class="p">();</span>
+  <span class="p">},</span>
+  <span class="nx">show</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">todoList</span><span class="p">.</span><span class="nx">focusOnTodoItem</span><span class="p">(</span><span class="nx">id</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}));</span>
+
+<span class="nx">$</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">TodoApp</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span>
+<span class="p">});</span>
+</code></pre></div>
+
+<p>Another example with routes for creating and editing a todo:</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">TodoApp</span> <span class="o">=</span> <span class="k">new</span> <span class="p">(</span><span class="nx">Backbone</span><span class="p">.</span><span class="nx">Router</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+  <span class="nx">routes</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s1">&#39;&#39;</span><span class="o">:</span> <span class="s1">&#39;index&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;todos/:id/edit&#39;</span><span class="o">:</span> <span class="s1">&#39;edit&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;todos/new&#39;</span><span class="o">:</span> <span class="s1">&#39;newTodo&#39;</span>
+  <span class="p">},</span>
+  <span class="nx">initialize</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">todoItems</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TodoItems</span><span class="p">();</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">todosView</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TodosView</span><span class="p">({</span><span class="nx">collection</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">todoItems</span><span class="p">});</span>
+  <span class="p">},</span>
+  <span class="nx">index</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">todoItems</span><span class="p">.</span><span class="nx">fetch</span><span class="p">();</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#app&#39;</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">todosView</span><span class="p">.</span><span class="nx">render</span><span class="p">().</span><span class="nx">el</span><span class="p">);</span>
+  <span class="p">},</span>
+  <span class="nx">newTodo</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">todoItem</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TodoItem</span><span class="p">();</span>
+    <span class="kd">var</span> <span class="nx">todoForm</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TodoForm</span><span class="p">({</span><span class="nx">model</span><span class="o">:</span> <span class="nx">todoItem</span><span class="p">});</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#app&#39;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="nx">toodForm</span><span class="p">.</span><span class="nx">render</span><span class="p">().</span><span class="nx">el</span><span class="p">);</span>
+  <span class="p">},</span>
+  <span class="nx">edit</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">todoForm</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TodoForm</span><span class="p">({</span><span class="nx">model</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">todoItems</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">id</span><span class="p">)});</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#app&#39;</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="nx">todoForm</span><span class="p">.</span><span class="nx">render</span><span class="p">().</span><span class="nx">el</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}));</span>
+</code></pre></div>
+
+<h4>Starting with initial data</h4>
+
+<p>Starting our application with some initial HTML:</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">App</span> <span class="o">=</span> <span class="k">new</span> <span class="p">(</span><span class="nx">Backbone</span><span class="p">.</span><span class="nx">View</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+  <span class="nx">template</span><span class="o">:</span> <span class="nx">_</span><span class="p">.</span><span class="nx">template</span><span class="p">(</span><span class="s1">&#39;&lt;h1&gt;ToDo List&lt;/h1&gt;&lt;div id=&quot;app&quot;&gt;&lt;/div&gt;&#39;</span><span class="p">);</span>
+  <span class="nx">render</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">$el</span><span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">template</span><span class="p">());</span>
+  <span class="p">},</span>
+  <span class="nx">start</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;App started&#39;</span><span class="p">);</span> 
+  <span class="p">}</span>
+<span class="p">}))({</span><span class="nx">el</span><span class="o">:</span> <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">});</span>
+
+<span class="nx">$</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">App</span><span class="p">.</span><span class="nx">render</span><span class="p">();</span>
+  <span class="nx">App</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span>
+<span class="p">});</span>
+</code></pre></div>
+
+<p>Here we are passing bootstrap data to start our collection with and initializing our objects within a namespace:</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">App</span> <span class="o">=</span> <span class="k">new</span> <span class="p">(</span><span class="nx">Backbone</span><span class="p">.</span><span class="nx">View</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+  <span class="nx">start</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">bootstrap</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">todos</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">App</span><span class="p">.</span><span class="nx">Collections</span><span class="p">.</span><span class="nx">TodoItems</span><span class="p">(</span><span class="nx">bootstrap</span><span class="p">.</span><span class="nx">todos</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">todoView</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">App</span><span class="p">.</span><span class="nx">Views</span><span class="p">.</span><span class="nx">TodoItems</span><span class="p">({</span><span class="nx">collection</span><span class="o">:</span> <span class="nx">todos</span><span class="p">});</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">$el</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="nx">todosView</span><span class="p">.</span><span class="nx">render</span><span class="p">().</span><span class="nx">el</span><span class="p">);</span>
+    <span class="nx">todos</span><span class="p">.</span><span class="nx">fetch</span><span class="p">();</span>
+  <span class="p">}</span>
+<span class="p">}))({</span><span class="nx">el</span><span class="o">:</span> <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">});</span>
+
+<span class="kd">var</span> <span class="nx">bootstrap</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">todos</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span><span class="nx">id</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span> <span class="nx">description</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="nx">done</span><span class="o">:</span> <span class="kc">false</span><span class="p">},</span>
+    <span class="p">{</span><span class="nx">id</span><span class="o">:</span><span class="mi">2</span><span class="p">,</span> <span class="nx">description</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="nx">done</span><span class="o">:</span> <span class="kc">false</span><span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">};</span>
+
+<span class="nx">$</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">App</span><span class="p">.</span><span class="nx">start</span><span class="p">(</span><span class="nx">bootstrap</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div>
+
 
 <h2>Conclusion</h2>
 
