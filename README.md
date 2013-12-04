@@ -21,3 +21,7 @@ grunt
 Articles and images are copyright of Miguel Mota.
 
 Everything else is released under the MIT License.
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/miguelmota/miguelmota.github.com/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
