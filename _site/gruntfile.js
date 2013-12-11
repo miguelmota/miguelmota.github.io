@@ -40,13 +40,22 @@ module.exports = function (grunt) {
         tasks: ['watch_scripts']
       },
       css: {
-        files: ['sass/*'],
+        files: [
+          'sass/*',
+          'vendor/fontawesome/sass/**'
+        ],
         tasks: ['watch_css']
       }
     },
     shell: {
-      jekyll: {
+      jekyll_build: {
         command: 'jekyll build',
+        options: {
+          stdout: true
+        }
+      },
+      compass_compile: {                           
+        command: 'compass compile',
         options: {
           stdout: true
         }
@@ -67,9 +76,10 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-shell');
   grunt.registerTask('test', ['jshint']); 
-  grunt.registerTask('watch_scripts', ['concat', 'uglify', 'shell']);
-  grunt.registerTask('watch_css', ['compass', 'shell']);
-  grunt.registerTask('watch_html', ['shell']);
-  grunt.registerTask('compile_css', ['compass', 'shell']);
+  grunt.registerTask('watch_scripts', ['concat', 'uglify', 'shell:jekyll_build']);
+  grunt.registerTask('watch_css', ['shell:compass_compile', 'shell:jekyll_build']);
+  grunt.registerTask('watch_html', ['shell:jekyll_build']);
+  grunt.registerTask('compile_css', ['compass', 'shell:jekyll_build']);
+  grunt.registerTask('jekyll_build', ['shell:jekyll_build']);
   grunt.registerTask('default', ['watch:css', 'watch:scripts', 'watch:html']);
 };

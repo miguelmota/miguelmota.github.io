@@ -1007,9 +1007,17 @@ $social-icon-default-background-color: rgba(0,0,0,.2);
 }
 
 #github-button,
+#gists-button,
 #resume-work-button {
 	@extend .button;
 	@extend .button.large;
+  i {
+    line-height: 0;
+  }
+}
+
+#gists-button {
+  @include button-style($primary-alt-color);
 }
 
 /* =Social

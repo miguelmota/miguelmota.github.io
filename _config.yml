@@ -17,3 +17,5 @@ theme:
   homepage_posts: 100
 
   featured_wordcount: 70
+
+port: 9999
