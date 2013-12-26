@@ -423,6 +423,19 @@ var TodoItem = Backbone.Model.extend({
 });
 {% endhighlight %}
 
+<h4>Creating a base model</h4>
+
+{% highlight javascript %}
+var BaseModel = Backbone.Model.extend({
+  foo: function() {
+    return 'bar';
+  }
+});
+
+var todoItem = new BaseModel.extend({});
+todoItem.foo();
+{% endhighlight %}
+
 <h2>Collections</h2>
 
 <p>A Backbone collection is simply put: a collection of Backbone models. Collections make it easy to iterate and filter a list models to get what we need.</p>
@@ -986,7 +999,7 @@ var user = todoView.options.user;
 
 <h4>Adding collection models to view</h4>
 
-<p>Append all collection models to view on view initialization and listen to the add event on the collecton to update view accordingly:</p>
+<p>Append all collection models to view on view initialization and listen to the add event on the collection to update view accordingly:</p>
 
 {% highlight javascript %}
 var TodoListView = Backbone.View.extend({
@@ -998,7 +1011,7 @@ var TodoListView = Backbone.View.extend({
     var todoView = new TodoView({model: todoItem});
     this.$el.append(todoView.render().el);
   },
-  this.addAll: function() {
+  addAll: function() {
     this.collection.forEach(this.addOne, this);
   },
   render: function() {

@@ -1,4 +1,4 @@
-## About
+# About
 
 ![Build Status](https://api.travis-ci.org/miguelmota/miguelmota.github.com.png)
 
@@ -6,15 +6,13 @@ This is my [jekyll](https://github.com/mojombo/jekyll/) powered blog.
 
 [http://miguelmota.github.io/](http://miguelmota.github.io/)
 
-#### Building
+## Instructions
 
-Simply run:
+Watch and compile
 
 ```
 grunt
 ```
-
-[Grunt](https://github.com/gruntjs/grunt) will watch for file changes, concat and uglify JavaScript, run [compass](http://compass-style.org/) build, and build jekyll.
 
 ## License
 
