@@ -78,6 +78,9 @@ sudo ln -s /usr/include/libv4l1-videodev.h /usr/include/linux/videodev.h
 {% highlight bash %}
 # Make a directory to store the temporary images.
 sudo mkdir /tmp/stream/
+# Make the directory writable.
+sudo chmod a+rw /tmp/stream/
+
 
 # Start capturing.
 # See what the raspistill options are.
