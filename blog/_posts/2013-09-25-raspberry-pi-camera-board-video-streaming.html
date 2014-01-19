@@ -132,3 +132,33 @@ kill <process id>
 <h2>Conclusion</h2>
 
 <p>The possibilities are endless on the things you can do with a Raspberry Pi. I hope this tutorial helped you get started with simple video streaming on the Raspberry Pi using the awesome camera board module. Leave a comment if this post was useful or not. There is always room for improvement.</p>
+
+<h2>Update: 19 Jan 2014 - Easier way to stream</h2>
+
+<p>I stumbled upon this <a href="https://github.com/jacksonliam/mjpg-streamer" target="_blank">fork of mjpg-streamer on github</a> which comes with the raspicam input plugin. Using this version of mjpg-streamer we can skip dealing with raspistill and let the raspicam plugin take care of creating the images. Here's how to install it.</p>
+
+{% highlight bash %}
+# Install dev version of libjpeg
+sudo apt-get install libjpeg62-dev
+
+# Install cmake
+sudo apt-get install cmake
+
+# Download mjpg-streamer with raspicam plugin
+git clone https://github.com/jacksonliam/mjpg-streamer.git ~/mjpg-streamer
+
+# Change directory
+cd ~/mjpg-streamer/mjpg-streamer-experimental
+
+# Compile
+make clean all
+
+# Replace old mjpg-streamer
+sudo rm -rf /opt/mjpg-streamer
+sudo mv ~/mjpg-streamer/mjpg-streamer-experimental /opt/mjpg-streamer
+
+# Begin streaming
+LD_LIBRARY_PATH=/opt/mjpg-streamer/ /opt/mjpg-streamer/mjpg_streamer -i "input_raspicam.so -fps 15 -q 50 -x 640 -y 480" -o "output_http.so -p 9000 -w /opt/mjpg-streamer/www" &
+{% endhighlight %}
+
+<p>I found this solution to work much more smoother than what I previously posted.</p>
