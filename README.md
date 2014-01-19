@@ -10,7 +10,7 @@ This is my [jekyll](https://github.com/mojombo/jekyll/) powered blog.
 
 Watch and compile
 
-```
+```bash
 grunt
 ```
 

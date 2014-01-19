@@ -170,6 +170,9 @@ sudo ln -s /usr/include/libv4l1-videodev.h /usr/include/linux/videodev.h
 
 <div class="highlight"><pre><code class="bash"><span class="c"># Make a directory to store the temporary images.</span>
 sudo mkdir /tmp/stream/
+<span class="c"># Make the directory writable.</span>
+sudo chmod a+rw /tmp/stream/
+
 
 <span class="c"># Start capturing.</span>
 <span class="c"># See what the raspistill options are.</span>
@@ -177,11 +180,10 @@ raspistill --help
 <span class="c"># You see the record light turn on after executing the following line.</span>
 raspistill -w 640 -h 480 -q 5 -o /tmp/stream/pic.jpg -tl 100 -t 9999999 -th 0:0:0 -n &amp;
 
-<span class="c"># While still in the /opt/mjpg-streamer/ directory.</span>
 <span class="c"># See what the MJPG Streamer options are.</span>
-./mjpg_streamer --help
+/opt/mjpg-streamer/mjpg_streamer --help
 <span class="c"># Run the following to start up the MJPG Streamer streaming webserver.</span>
-<span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span>./ ./mjpg_streamer -i <span class="s2">&quot;input_file.so -f /tmp/stream -n pic.jpg&quot;</span> -o <span class="s2">&quot;output_http.so -p 9000 -w ./www&quot;</span> &amp;
+<span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span>/opt/mjpg-streamer/ /opt/mjpg-streamer/mjpg_streamer -i <span class="s2">&quot;input_file.so -f /tmp/stream -n pic.jpg&quot;</span> -o <span class="s2">&quot;output_http.so -p 9000 -w /opt/mjpg-streamer/www&quot;</span> &amp;
 </code></pre></div>
 
 <p>If everything went smoothly you can open up a web browser and go to:</p>
@@ -211,9 +213,44 @@ pgrep mjpg
 <span class="nb">kill</span> &lt;process id&gt;
 </code></pre></div>
 
+<h2>Bash scripts</h2>
+
+<p>Here's a <code>start_steam.sh</code> and <code>stop_stream.sh</code> bash script to make it a bit easier:</p>
+
+<script src="https://gist.github.com/miguelmota/8203904.js"></script>
+
 <h2>Conclusion</h2>
 
 <p>The possibilities are endless on the things you can do with a Raspberry Pi. I hope this tutorial helped you get started with simple video streaming on the Raspberry Pi using the awesome camera board module. Leave a comment if this post was useful or not. There is always room for improvement.</p>
+
+<h2>Update: 19 Jan 2014 - Easier way to stream</h2>
+
+<p>I stumbled upon this <a href="https://github.com/jacksonliam/mjpg-streamer" target="_blank">fork of mjpg-streamer on github</a> which comes with the raspicam input plugin. Using this version of mjpg-streamer we can skip dealing with raspistill and let the raspicam plugin take care of creating the images. Here's how to install it.</p>
+
+<div class="highlight"><pre><code class="bash"><span class="c"># Install dev version of libjpeg</span>
+sudo apt-get install libjpeg62-dev
+
+<span class="c"># Install cmake</span>
+sudo apt-get install cmake
+
+<span class="c"># Download mjpg-streamer with raspicam plugin</span>
+git clone https://github.com/jacksonliam/mjpg-streamer.git ~/mjpg-streamer
+
+<span class="c"># Change directory</span>
+<span class="nb">cd</span> ~/mjpg-streamer/mjpg-streamer-experimental
+
+<span class="c"># Compile</span>
+make clean all
+
+<span class="c"># Replace old mjpg-streamer</span>
+sudo rm -rf /opt/mjpg-streamer
+sudo mv ~/mjpg-streamer/mjpg-streamer-experimental /opt/mjpg-streamer
+
+<span class="c"># Begin streaming</span>
+<span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span>/opt/mjpg-streamer/ /opt/mjpg-streamer/mjpg_streamer -i <span class="s2">&quot;input_raspicam.so -fps 15 -q 50 -x 640 -y 480&quot;</span> -o <span class="s2">&quot;output_http.so -p 9000 -w /opt/mjpg-streamer/www&quot;</span> &amp;
+</code></pre></div>
+
+<p>I found this solution to work much more smoother than what I previously posted.</p>
 
 
 			<div class="tags">
@@ -337,7 +374,7 @@ pgrep mjpg
 			<div class="row">
 				<div class="large-12 column">
 					<p>
-						<span class="break"><span>© 2013 Moogs™, LLC.</span> <span>Made with <i class="icon-heart"></i></span></span> <a class="hidden" href="https://plus.google.com/102174577273194387652" rel="author">Google+</a>
+						<span class="break"><span>© 2014 Moogs™, LLC.</span> <span>Made with <i class="icon-heart"></i></span></span> <a class="hidden" href="https://plus.google.com/102174577273194387652" rel="author">Google+</a>
 
 						<a href="https://twitter.com/_moogs" class="twitter-follow-button" data-show-count="false" data-size="large" data-ga-label="Footer - Follow Twitter">Follow @_moogs</a>
 
