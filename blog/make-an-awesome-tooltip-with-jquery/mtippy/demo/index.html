@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang='en'>
+<head>
+	<meta charset='utf-8' />
+<!--
+           _   _
+          | | (_)
+ _ __ ___ | |_ _ _ __  _ __  _   _
+| '_ ` _ \| __| | '_ \| '_ \| | | |
+| | | | | | |_| | |_) | |_) | |_| |
+|_| |_| |_|\__|_| .__/| .__/ \__, |
+                | |   | |     __/ |
+                |_|   |_|    |___/
+-->
+	<meta name='description' content='A simple jQuery tooltip plugin' />
+	<meta name='keywords' content='mtippy, jquery tooltip' />
+	<title>mtippy - a jQuery tooltip plugin</title>
+	<link rel='canonical' href='http://www.miguelmota.com/blog/make-an-awesome-tooltip-with-jquery/mtippy/demo' />
+	<link rel='stylesheet' href='reset.min.css' />
+	<script src='jquery.min.js'></script>
+	<script src='../jquery.mtippy.js'></script>
+	<script>
+	$(document).ready(function(){
+
+		// Initialize mtip
+		$('.mtippy-demo').mtippy();
+
+		/* Demo scripts */
+		$('a[rel*=external]').live('click', function(){
+			window.open(this.href);
+			return false;
+		});
+
+	});
+	</script>
+	<style>
+		/* Demo styles */
+		body {
+			font-family: Helvetica, Arial, sans-serif;
+		}
+		.main-wrap {
+			background-color: #f7f7f7;
+			border: 1px solid #ccc;
+			margin: 100px;
+			min-width: 500px;
+			padding: 20px;
+		}
+		.demo-wrap {
+			background-color: #edeaea;
+			padding: 30px;
+		}
+		a {
+			background-color: #ededed;
+			transition: all linear .1s;
+			-moz-transition: all linear .1s;
+			-webkit-transition: all linear .1s;
+			-o-transition: all linear .1s;
+			color: #1f4970;
+			display: inline-block;
+			padding: 2px 4px;
+		}
+		a:hover {
+			background-color: #dbf4ff;
+			color: #0e3b60;
+		}
+		h1 {
+			font-size: 26px;
+			font-weight: normal;
+			padding-bottom: 15px;
+		}
+		p {
+			line-height: 120%;
+			padding: 10px 0;
+		}
+		ul {
+			padding-bottom: 10px;
+		}
+		.note {
+			font-size: 11px;
+		}
+		.credit {
+			font-size: 12px;
+			padding: 15px 0 0 0;
+		}
+	</style>
+</head>
+<body>
+	<div class='main-wrap'>
+		<h1><strong>mtippy</strong> demo</h1>
+
+		<div class='demo-wrap'><a class='mtippy-demo' href='javascript:void(0)' title='Hello, I am a tooltip!'>hover over me</a></div>
+
+		<p><strong>Installation</strong>
+		(include this in the <code>head</code> section):
+		<ul>
+			<li><code>&lt;script src="jquery.js"&gt;&lt;/script&gt;</code></li>
+			<li><code>&lt;script src="jquery.mtippy.js"&gt;&lt;/script&gt;</code></li>
+			<li>
+			<pre>&lt;script&gt;
+$(document).ready(function(){
+
+	$("[title]").mtippy({
+
+		/* default settings (optional) */
+		backgroundColor: "#000",
+		borderRadius: ".5em",
+		boxShadow: ".1em .1em .5em #000",
+		color: "#fff",
+		fontFamily: "Helvetica, Arial, sans-serif",
+		fontSize: "12px",
+		fontStyle: "normal",
+		fontWeight: "normal",
+		opacity: 1,
+		textShadow: "0 -1px 0 rgba(0,0,0,.8)",
+		showSpeed: 400,
+		hideSpeed: 200,
+		timeout: 600
+
+	});
+});
+&lt;/script&gt;</pre>
+			</li>
+		</ul>
+		<em class='note'><strong>Note:</strong> the selector can be anything you want, I just used the <code>title</code> attribute selector for the example</em>
+		</p>
+
+		<p><a href='https://gist.github.com/miguelmota/5312164' rel='external'>fork on github</a></p>
+
+		<p><a href='/blog/make-an-awesome-tooltip-with-jquery' rel='external'>&#171; how-to article</a></p>
+
+		<div class='credit'>created by <a href='http://www.miguelmota.com' rel='external'>Miguel Mota</a></div>
+	</div>
+<script>
+/* Google Analytics */
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-12642068-1']);
+_gaq.push(['_trackPageview']);
+(function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+</body>
+</html>
