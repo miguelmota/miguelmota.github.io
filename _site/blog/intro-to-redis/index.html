@@ -14,14 +14,14 @@
 	                   \_/__/
 	-->
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta name="description" content="How to set up SSH private, public and authorized keys.">
+	<meta name="description" content="Simple explanations of Redis data structures.">
 	<meta name="keywords" content="miguel mota,web developer,html5 css3 javascript">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-title" content="Moogs">
-	<title>Set up SSH keys » Miguel Mota | Web Developer</title>
-	<link rel="canonical" href="http://www.miguelmota.com/blog/set-up-ssh-keys">
+	<title>Intro to Redis » Miguel Mota | Web Developer</title>
+	<link rel="canonical" href="http://www.miguelmota.com/blog/intro-to-redis">
 	<link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/miguelmota">
 	<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
 	<link rel="shortcut icon" href="/favicon.ico">
@@ -90,8 +90,8 @@
 	<div class="row">
 		<div class="large-12 column">
 
-			<datetime>30 Sep 2013 <small><i class="icon-comment-alt"></i> <a href="/blog/set-up-ssh-keys#disqus_thread" data-disqus-identifier="/blog/set-up-ssh-keys"></a></small> <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.miguelmota.com/blog/set-up-ssh-keys" data-text="Set up SSH keys" data-size="large" data-related="_moogs" data-ga-label="Blog post - Tweet">Tweet</a></datetime>
-			<h1>Set up SSH keys</h1>
+			<datetime>23 Jan 2014 <small><i class="icon-comment-alt"></i> <a href="/blog/intro-to-redis#disqus_thread" data-disqus-identifier="/blog/intro-to-redis"></a></small> <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.miguelmota.com/blog/intro-to-redis" data-text="Intro to Redis" data-size="large" data-related="_moogs" data-ga-label="Blog post - Tweet">Tweet</a></datetime>
+			<h1>Intro to Redis</h1>
 
 		</div>
 	</div>
@@ -104,58 +104,202 @@
 	<div class="row">
 		<div class="large-12 column">
 
-			<p>Having to type in a password in order to SSH into your server every single time is tedious and not the way to go. I will show you how to set up SSH keys so that you can elimate an extra step from your workflow.</p>
+			<p><a href="http://redis.io/" target="_blank"><strong>Redis</strong></a> is an in-memory, key-value store that is fast. <em>Really fast</em>. Redis can hold hundreds of millions of keys in memory and handle tens of thousands of requests per second without breaking a sweat. It's useful for caching data, maintaining sessions, keeping counters, queues, publish/subscribe real time notifications, and so on. There are many use cases for Redis due to it's simple dictionary model that maps keys to values, but what one should be aware of is that it's focus is <em>not</em> long-term data persistance. The whole Redis database is loaded into memory so there is a chance of data loss due to the fact that Redis first stores new entries in memory and then writes it to disk in the background after a certain period of time or amount of new keys have been accumulated. For example, if there were to be a power failure you could potentially lose a minute or two worth of data, which can or may not be fatal depending on your application. Of course, you can configure the threshold to something more comfortable which I will go over later.</p>
 
-<h2>Generating keys</h2>
+<p>The majority of this post will be going over some of the data structures that Redis provides, such as <strong>keys</strong>, <strong>hashes</strong>, <strong>lists</strong>, and <strong>sets</strong>. Redis isn't meant to be an <em>all-in-one</em> database replacement. It has it's niche, it's simple and it can do certain <em>really</em> well. If you haven't already, I strongly suggest you read the <a href="http://redis.io/topics/data-types-intro" target="_blank">15 minute intro to Redis data types</a> on the Redis site. I'll also talk about sorting, multi-commands, and monitoring.</p>
 
-<p>On your local maching, generate a new SSH key with the command:</p>
+<p>It would be wrong if I didn't give credit to <a href="http://openmymind.net/2012/1/23/The-Little-Redis-Book/" target="_blank">The Little Redis Book</a> by <a href="http://openmymind.net/" target="_blank">Karl Seguin</a> for helping me gain a lot of the information on Redis. It's definitely a good read and great resource.</p>
 
-<div class="highlight"><pre><code class="bash"><span class="c"># Generate new key.</span>
-ssh-keygen -t rsa
+<h2>Installation</h2>
+
+<p><a href="http://redis.io/topics/quickstart" target="_blank">The Redis quickstart guide</a> is good place to start. Installing Redis is straight forward. <a href="http://redis.io/download" target="_blank">Download</a> the tarball, extract, and run <code>make</code>. If you're on a Mac you can simply do <code>brew install redis</code> with <a href="http://brew.sh/" target="_blank">Homebrew</a>.
+
+<p>After installation, start a redis instance with</p>
+
+<div class="highlight"><pre><code class="bash">redis-server <span class="o">{</span>path to redis.conf<span class="o">}</span>
 </code></pre></div>
 
-<p>When asked for the file to save the key in, enter:</p>
+<p>and then fire up the command line client</p>
 
-<div class="highlight"><pre><code class="bash">ssh-add id_rsa
+<div class="highlight"><pre><code class="bash">redis-cli -p <span class="o">{</span>port<span class="o">}</span>
 </code></pre></div>
 
-<p>Proceed by entering a passphrase. You will know when you are done when you see those funny symbols in a box at the end.</p>
+<p>For the rest of the post we'll be working from the command-line interface.</p>
 
-<h2>Adding authorized key</h2>
+<h2>Keys</h2>
 
-<p>The next step is to add the public key to your server.</p>
+<p>Keys can hold a single value, wether it be a string or numeric value. We create a key with the <code>set</code> command</p>
 
-<div class="highlight"><pre><code class="bash"><span class="c"># Make sure you have a .ssh directory on your server,</span>
-<span class="c"># if not SSH into it and create it: mkdir ~/.ssh/</span>
-
-<span class="c"># Concatenate public key to your server&#39;s authorized keys.</span>
-cat ~/.ssh/id_rsa.pub | ssh &lt;your server username&gt;@&lt;your server ip address&gt; <span class="s2">&quot;cat &gt;&gt; ~/.ssh/authorized_keys&quot;</span>
-
-<span class="c"># Alternatively, you can run: </span>
-ssh-copy-id &lt;your server username&gt;@&lt;your server ip address&gt;
+<div class="highlight"><pre><code class="bash">&gt; <span class="nb">set </span>foo bar 
+OK
 </code></pre></div>
 
-<p>The first time you try to SSH it will ask you for your password, but then exit and try to SSH again. <em>Look Ma! No password!</em></p>
+<p>Retreive a key with the <code>get</code> command</p>
 
-<h2>Pulling from server</h2>
-
-<p>As you can imagine, you can push changes to a private repository, for example on <a href="https://bitbucket.org/" target="_blank">Bitbucket</a>, and then pull the changes straight to your server whenever you're ready. It's pretty simple, just repeat the steps on how to generate an SSH key but this while SSH'd into your server. Afterwards copy your public key and paste into the SSH key settings on your Bitbucket or Github, (or whatever) account. You can view your SSH public key with:</p>
-
-<div class="highlight"><pre><code class="bash"><span class="c"># View public SSH key.</span>
-cat ~/.ssh/id_rsa.pub
+<div class="highlight"><pre><code class="bash">&gt; get foo
+<span class="s2">&quot;bar&quot;</span>
 </code></pre></div>
 
-<p>Assuming you have git already installed on your server, you can clone a repo and perform git pulls as you would on your local machine.</p>
+<p>Delete a key with <code>del</code></p>
 
-<p>Hope this helped.</p>
+<div class="highlight"><pre><code class="bash">&gt; del foo
+<span class="o">(</span>integer<span class="o">)</span> 1
+&gt; get foo
+<span class="o">(</span>nil<span class="o">)</span>
+</code></pre></div>
+
+<p>Store a JSON string</p>
+
+<div class="highlight"><pre><code class="bash">&gt; <span class="nb">set </span>users:foo <span class="s2">&quot;{name: foo, age: 21, hobbies: [baz, qux]}&quot;</span>
+OK
+&gt; get users:foo
+<span class="s2">&quot;{name: foo, age: 21, hobbies: [baz, qux]}&quot;</span>
+</code></pre></div>
+
+<p>Notice the colon in the key. The colon is just part of the key name, it doesn't have any special meaning to Redis. It's purpose is to visually group a set of related keys together.</p>
+
+<p>If the value is a number you can incremented with the <code>incr</code > or <code>incrby</code> command. If the key doesn't exist it will simply create it</p>
+
+<div class="highlight"><pre><code class="bash">&gt; incr stats:views  
+<span class="o">(</span>integer<span class="o">)</span> 1
+&gt; incr stats:views  
+<span class="o">(</span>integer<span class="o">)</span> 2
+&gt; incrby stats:views 5
+<span class="o">(</span>integer<span class="o">)</span> 7
+</code></pre></div>
+
+<h2>Hashes</h2>
+
+<p>Hashes are </p>
+
+hmset users:goku race saiyan age 737
+hmget users:goku race powerlevel
+hgetall users:goku
+hkeys users:goku
+hdel users:goku age
+
+<h2>Lists</h2>
+
+lpush newusers goku
+ltrim newusers 0 49 # get top 50
+
+<h2>Sets</h2>
+
+sadd friends:leto ghanima paul chani jessica
+sadd friends:duncan paul jessica alia
+sismember friends:leto jessica # true
+sismember friends:leto vladimir # false
+sinter friends:leto friends:duncan # return a list of shared friends
+sinterstore friends:leto_duncan friends:leto friends:duncan # store result
+# sorted sets
+zadd friends:duncan 70 ghanima 95 paul 95 chani 75 jessica 1 vladimir # the number is rank
+zcount friends:duncan 90 100 # count of top rank
+zrevrank friends:duncan chani # get list rank. hight to low
+
+# users
+set users:9001 ”{id: 9001, email: leto@dune.gov, ...}”
+hset users:lookup:email leto@dune.gov 9001
+get users:9001
+# ruby - get user by email
+id = redis.hget(’users:lookup:email’, ’leto@dune.gov’)
+user = redis.get(”users:#{id}”)
+
+# sorting
+rpush users:leto:guesses 5 9 10 2 4 10 19 2
+sort users:leto:guesses
+sadd friends:ghanima leto paul chani jessica alia duncan
+sort friends:ghanima limit 0 3 desc alpha
+
+# sort by severity example
+sadd watch:leto 12339 1382 338 9338
+set severity:12339 3
+set severity:1382 2
+set severity:338 5
+set severity:9338 4
+sort watch:leto by severity:* desc
+
+# another example
+hset bug:12339 severity 3
+hset bug:12339 priority 1
+hset bug:12339 details ”{id: 12339, ....}”
+hset bug:1382 severity 2
+hset bug:1382 priority 2
+hset bug:1382 details ”{id: 1382, ....}”
+
+sort watch:leto by bug:*->priority get bug:*->details
+# store result
+sort watch:leto by bug:*->priority get bug:*->details store watch_by_priority:leto
+
+
+# scan
+scan 0 match bugs:* count 2
+> 1) ”3”
+> 2) 1) ”bugs:125”
+scan 3 match bugs:* count 2 # scan 3 because of previous next cursor
+> 1) ”0” # 0 means end
+> 2) 1) ”bugs:124”
+
+
+# pipelining can really speed up a batch import
+redis.pipelined do
+9001.times do
+redis.incr(’powerlevel’)
+end
+
+# queue - multi commands
+multi
+hincrby groups:1percent balance -9000000000
+hincrby groups:99percent balance 9000000000
+exec # or do 'discard'
+
+# multi - in ruby
+redis.watch(’powerlevel’)
+current = redis.get(’powerlevel’)
+redis.multi()
+17
+redis.set(’powerlevel’, current + 1)
+redis.exec()
+
+# don't use keys because it's slow
+keys bug:1233:* # don't do this
+# instead us hashes
+hset bugs:1233 1 ”{id:1, account: 1233, subject: ’...’}”
+hset bugs:1233 2 ”{id:2, account: 1233, subject: ’...’}”
+
+# clear database
+flushdb
+# clear all databases
+flushall
+
+# select database
+select 1
+
+# expiration
+expire pages:about 30 # 30 seconds
+expireat pages:about 1356933600 # 12:00a.m. December 31st, 2012.
+ttl pages:about # view time to live
+persist pages:about # remove expiration
+
+# subscribe
+subscribe warnings # do this in one redis-cli window (can subscribe to multiple channels)
+publish warnings ”it’s over 9000!” # do this in another window
+
+# monitor
+monitor
+# recent logs
+config set slowlog-log-slower-than 0
+slowlog get
+slowlog get 10
+# everything related to loging
+config get *log*
+
+<h2>Conclusion</h2>
 
 
 			<div class="tags">
 				<i class="icon-tag"></i>
 				
-					<a href="/tag/SSH">SSH</a> <span>+</span>
-				
-					<a href="/tag/git">git</a> <span>+</span>
+					<a href="/tag/redis">redis</a> <span>+</span>
 				
 			</div>
 
@@ -166,7 +310,7 @@ cat ~/.ssh/id_rsa.pub
 		<div id="related-posts" class="row">
 			<div class="row">
 				<div class="large-12 column">
-					<div class="input-short-url">share: <input type="text" value="http://mig.gs/aDnl"></div>
+					<div class="input-short-url">share: <input type="text" value="http://mig.gs/6XUE"></div>
 				</div>
 			</div>
 			<div class="large-6 column">
@@ -177,27 +321,14 @@ cat ~/.ssh/id_rsa.pub
 
 	    <dl class="posts-list">
 
-				<dt><datetime>26 Sep 2013</datetime></dt>
-				<dd><h2><a href="/blog/nodejs-and-ngnix-on-ubuntu">Node.js and Nginx on Ubuntu</a> <small><i class="icon-comment-alt"></i> <a href="/blog/nodejs-and-ngnix-on-ubuntu#disqus_thread" data-disqus-identifier="/blog/nodejs-and-ngnix-on-ubuntu"></a></small></h2></dd>
+				<dt><datetime>30 Nov 2013</datetime></dt>
+				<dd><h2><a href="/blog/getting-started-with-backbonejs">Getting Started with Backbone.js</a> <small><i class="icon-comment-alt"></i> <a href="/blog/getting-started-with-backbonejs#disqus_thread" data-disqus-identifier="/blog/getting-started-with-backbonejs"></a></small></h2></dd>
 
 			</dl>
 
     
 
 
-
-    
-
-    	<h3>Next post</h3>
-
-    	<dl class="posts-list">
-
-		    <dt><datetime>30 Oct 2013</datetime></dt>
-		    <dd><h2><a href="/blog/memoization-caching-function-results-in-javascript">Memoization&#58; Caching function results in JavaScript</a> <small><i class="icon-comment-alt"></i> <a href="/blog/memoization-caching-function-results-in-javascript#disqus_thread" data-disqus-identifier="/blog/memoization-caching-function-results-in-javascript"></a></small></h2></dd>
-
-		  </dl>
-
-    
 
 			</div>
 			<div class="large-6 column">
@@ -206,16 +337,16 @@ cat ~/.ssh/id_rsa.pub
 
 				<dl class="posts-list">
 					
-						<dt><datetime>23 Jan 2014</datetime></dt>
-<dd><h2><a href="/blog/intro-to-redis">Intro to Redis</a> <small><i class="icon-comment-alt"></i> <a href="/blog/intro-to-redis#disqus_thread" data-disqus-identifier="/blog/intro-to-redis"></a></small></h2>
-</dd>
-					
 						<dt><datetime>30 Nov 2013</datetime></dt>
 <dd><h2><a href="/blog/getting-started-with-backbonejs">Getting Started with Backbone.js</a> <small><i class="icon-comment-alt"></i> <a href="/blog/getting-started-with-backbonejs#disqus_thread" data-disqus-identifier="/blog/getting-started-with-backbonejs"></a></small></h2>
 </dd>
 					
 						<dt><datetime>30 Oct 2013</datetime></dt>
 <dd><h2><a href="/blog/memoization-caching-function-results-in-javascript">Memoization&#58; Caching function results in JavaScript</a> <small><i class="icon-comment-alt"></i> <a href="/blog/memoization-caching-function-results-in-javascript#disqus_thread" data-disqus-identifier="/blog/memoization-caching-function-results-in-javascript"></a></small></h2>
+</dd>
+					
+						<dt><datetime>30 Sep 2013</datetime></dt>
+<dd><h2><a href="/blog/set-up-ssh-keys">Set up SSH keys</a> <small><i class="icon-comment-alt"></i> <a href="/blog/set-up-ssh-keys#disqus_thread" data-disqus-identifier="/blog/set-up-ssh-keys"></a></small></h2>
 </dd>
 					
 						<dt><datetime>26 Sep 2013</datetime></dt>
@@ -242,8 +373,8 @@ cat ~/.ssh/id_rsa.pub
 
 <script>
     var disqus_shortname = 'miguelmota';
-    var disqus_identifier = '/blog/set-up-ssh-keys';
-    var disqus_url = 'http://www.miguelmota.com/blog/set-up-ssh-keys';
+    var disqus_identifier = '/blog/intro-to-redis';
+    var disqus_url = 'http://www.miguelmota.com/blog/intro-to-redis';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

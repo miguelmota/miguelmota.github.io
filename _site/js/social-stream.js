@@ -555,7 +555,7 @@ var usernames = {
 	facebook: 'miguel.mota2',
 	foursquare: '4418723',
 	github: 'miguelmota',
-	instagram: '_miguelmota',
+	instagram: '__moogs',
 	lastfm: 'miguel_mota',
 	tumblr: 'miguelmota',
 	twitter: '_moogs',

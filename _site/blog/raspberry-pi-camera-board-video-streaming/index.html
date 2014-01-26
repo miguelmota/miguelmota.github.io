@@ -225,7 +225,7 @@ pgrep mjpg
 
 <h2>Update: 19 Jan 2014 - Easier way to stream</h2>
 
-<p>I stumbled upon this <a href="https://github.com/jacksonliam/mjpg-streamer" target="_blank">fork of mjpg-streamer on github</a> which comes with the raspicam input plugin. Using this version of mjpg-streamer we can skip dealing with raspistill and let the raspicam plugin take care of creating the images. Here's how to install it.</p>
+<p>I stumbled upon this <a href="https://github.com/jacksonliam/mjpg-streamer" target="_blank">fork of MJPG Streamer on github</a> which comes with the raspicam input plugin. Using this version of MJPG Streamer we can skip dealing with raspistill and let the raspicam plugin take care of creating the images. Here's how to install it.</p>
 
 <div class="highlight"><pre><code class="bash"><span class="c"># Install dev version of libjpeg</span>
 sudo apt-get install libjpeg62-dev
@@ -245,12 +245,13 @@ make clean all
 <span class="c"># Replace old mjpg-streamer</span>
 sudo rm -rf /opt/mjpg-streamer
 sudo mv ~/mjpg-streamer/mjpg-streamer-experimental /opt/mjpg-streamer
+sudo rm -rf ~/mjpg-streamer
 
 <span class="c"># Begin streaming</span>
 <span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span>/opt/mjpg-streamer/ /opt/mjpg-streamer/mjpg_streamer -i <span class="s2">&quot;input_raspicam.so -fps 15 -q 50 -x 640 -y 480&quot;</span> -o <span class="s2">&quot;output_http.so -p 9000 -w /opt/mjpg-streamer/www&quot;</span> &amp;
 </code></pre></div>
 
-<p>I found this solution to work much more smoother than what I previously posted.</p>
+<p>I found this solution to work much more smoother than what I previously posted. Here's a <a href="https://vine.co/v/MubLqUx3j3A" target="_blank">short Vine video</a> showing it in action.</p>
 
 
 			<div class="tags">
@@ -315,6 +316,10 @@ sudo mv ~/mjpg-streamer/mjpg-streamer-experimental /opt/mjpg-streamer
 
 				<dl class="posts-list">
 					
+						<dt><datetime>23 Jan 2014</datetime></dt>
+<dd><h2><a href="/blog/intro-to-redis">Intro to Redis</a> <small><i class="icon-comment-alt"></i> <a href="/blog/intro-to-redis#disqus_thread" data-disqus-identifier="/blog/intro-to-redis"></a></small></h2>
+</dd>
+					
 						<dt><datetime>30 Nov 2013</datetime></dt>
 <dd><h2><a href="/blog/getting-started-with-backbonejs">Getting Started with Backbone.js</a> <small><i class="icon-comment-alt"></i> <a href="/blog/getting-started-with-backbonejs#disqus_thread" data-disqus-identifier="/blog/getting-started-with-backbonejs"></a></small></h2>
 </dd>
@@ -329,10 +334,6 @@ sudo mv ~/mjpg-streamer/mjpg-streamer-experimental /opt/mjpg-streamer
 					
 						<dt><datetime>26 Sep 2013</datetime></dt>
 <dd><h2><a href="/blog/nodejs-and-ngnix-on-ubuntu">Node.js and Nginx on Ubuntu</a> <small><i class="icon-comment-alt"></i> <a href="/blog/nodejs-and-ngnix-on-ubuntu#disqus_thread" data-disqus-identifier="/blog/nodejs-and-ngnix-on-ubuntu"></a></small></h2>
-</dd>
-					
-						<dt><datetime>31 Aug 2013</datetime></dt>
-<dd><h2><a href="/blog/screenshots-with-getusermedia-api">Screenshots with getUserMedia API</a> <small><i class="icon-comment-alt"></i> <a href="/blog/screenshots-with-getusermedia-api#disqus_thread" data-disqus-identifier="/blog/screenshots-with-getusermedia-api"></a></small></h2>
 </dd>
 					
 				</dl>
