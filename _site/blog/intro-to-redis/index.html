@@ -337,23 +337,6 @@ OK
 3<span class="o">)</span> <span class="s2">&quot;deedee&quot;</span>
 </code></pre></div>
 
-<h2>Multi commands</h2>
-
-<p>The <code>multi</code> command let's us queue commands (transaction block) and then execute with <code>exec</code> or discard the queue with <code>discard</code></p>
-
-<div class="highlight"><pre><code class="bash">&gt; multi
-OK
-&gt; incrby counter 10
-QUEUED
-&gt; incrby counter -10 
-QUEUED
-&gt; <span class="nb">exec</span>
-1<span class="o">)</span> <span class="o">(</span>integer<span class="o">)</span> 10
-2<span class="o">)</span> <span class="o">(</span>integer<span class="o">)</span> 0
-</code></pre></div>
-
-<p>Queued commands will always execute in the order they were set, so a use case for using the multi command would be when a command is dependent on the result of the previous command</p>
-
 <h2>Expiration</h2>
 
 <p>Keys can be set to expire (delete) after a number of seconds. We do this with the <code>expire</code> or <code>expireat</code> commands. <code>ttl</code> returns the Time To Live and <code>persist</code> removes the expiration</p>
@@ -403,6 +386,23 @@ OK
 </code></pre></div>
 
 <p>Anyone subscried to the greetings channel will receive the "Hello, World" message.</p>
+
+<h2>Multi</h2>
+
+<p>The <code>multi</code> command let's us queue commands (transaction block) and then execute with <code>exec</code> or discard the queue with <code>discard</code></p>
+
+<div class="highlight"><pre><code class="bash">&gt; multi
+OK
+&gt; incrby counter 10
+QUEUED
+&gt; incrby counter -10 
+QUEUED
+&gt; <span class="nb">exec</span>
+1<span class="o">)</span> <span class="o">(</span>integer<span class="o">)</span> 10
+2<span class="o">)</span> <span class="o">(</span>integer<span class="o">)</span> 0
+</code></pre></div>
+
+<p>Queued commands will always execute in the order they were set, so a use case for using the multi command would be when a command is dependent on the result of the previous command</p>
 
 <h2>Monitor</h2>
 
