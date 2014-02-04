@@ -32,7 +32,7 @@ module.exports = function (grunt) {
     },
     watch: {
       html: {
-        files: ['*.html', '**/*.html'],
+        files: ['*.html', '**/*.html', '**/**/*.html'],
         tasks: ['watch_html']
       },
       scripts: {
