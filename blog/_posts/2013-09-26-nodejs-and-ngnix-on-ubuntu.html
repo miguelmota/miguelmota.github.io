@@ -179,9 +179,11 @@ vim /etc/nginx/sites-available/default
 
 <script src="https://gist.github.com/miguelmota/6912559.js"></script>
 
-<p>After you have saved the file and exited, reload the Nginx config.</p>
+<p>After you have saved the file and exited, test for any Nginx errors and then reload the config.</p>
 
 {% highlight bash %}
+nginx -t
+
 sudo service nginx reload
 {% endhighlight %}
 
