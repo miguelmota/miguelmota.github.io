@@ -77,6 +77,26 @@ OK
 (integer) 7
 {% endhighlight %}
 
+<p>With the <code>keys</code> command we can get a list of keys that match a wildcard.</p>
+
+{% highlight bash %}
+> set foo:1 bar
+OK
+> set foobar:2 baz
+OK
+> set foooo:3 qux
+OK
+> keys foo*    
+1) "foo:1"
+2) "foobar:2"
+3) "foooo:3"
+> keys foo?ar*
+1) "foobar:2"
+> keys foo*:[13]
+1) "foo:1"
+2) "foooo:3"
+{% endhighlight %}
+
 <h2>Hashes</h2>
 
 <p>You can think of hashes a being a key-value pair, except that the value can be <em>multiple</em> key-value pairs. For example we can have a users hash that has multiple fields about the user</p>

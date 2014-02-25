@@ -168,6 +168,25 @@ OK
 <span class="o">(</span>integer<span class="o">)</span> 7
 </code></pre></div>
 
+<p>With the <code>keys</code> command we can get a list of keys that match a wildcard.</p>
+
+<div class="highlight"><pre><code class="bash">&gt; <span class="nb">set </span>foo:1 bar
+OK
+&gt; <span class="nb">set </span>foobar:2 baz
+OK
+&gt; <span class="nb">set </span>foooo:3 qux
+OK
+&gt; keys foo*    
+1<span class="o">)</span> <span class="s2">&quot;foo:1&quot;</span>
+2<span class="o">)</span> <span class="s2">&quot;foobar:2&quot;</span>
+3<span class="o">)</span> <span class="s2">&quot;foooo:3&quot;</span>
+&gt; keys foo?ar*
+1<span class="o">)</span> <span class="s2">&quot;foobar:2&quot;</span>
+&gt; keys foo*:<span class="o">[</span>13<span class="o">]</span>
+1<span class="o">)</span> <span class="s2">&quot;foo:1&quot;</span>
+2<span class="o">)</span> <span class="s2">&quot;foooo:3&quot;</span>
+</code></pre></div>
+
 <h2>Hashes</h2>
 
 <p>You can think of hashes a being a key-value pair, except that the value can be <em>multiple</em> key-value pairs. For example we can have a users hash that has multiple fields about the user</p>
@@ -552,7 +571,7 @@ scan 3 match bugs:* count 2 <span class="c"># scan 3 because of previous next cu
 </dd>
 					
 						<dt><datetime>26 Sep 2013</datetime></dt>
-<dd><h2><a href="/blog/nodejs-and-ngnix-on-ubuntu">Node.js and Nginx on Ubuntu</a> <small><i class="icon-comment-alt"></i> <a href="/blog/nodejs-and-ngnix-on-ubuntu#disqus_thread" data-disqus-identifier="/blog/nodejs-and-ngnix-on-ubuntu"></a></small></h2>
+<dd><h2><a href="/blog/nodejs-and-nginx-on-ubuntu">Node.js and Nginx on Ubuntu</a> <small><i class="icon-comment-alt"></i> <a href="/blog/nodejs-and-nginx-on-ubuntu#disqus_thread" data-disqus-identifier="/blog/nodejs-and-nginx-on-ubuntu"></a></small></h2>
 </dd>
 					
 						<dt><datetime>25 Sep 2013</datetime></dt>
