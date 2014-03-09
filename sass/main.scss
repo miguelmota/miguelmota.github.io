@@ -4,6 +4,7 @@
 @import "config";
 @import "../vendor/foundation/scss/foundation";
 @import "../vendor/fontawesome/sass/font-awesome.scss";
+@import "../vendor/fontawesome-fa/scss/font-awesome.scss";
 @import "murphy";
 
 /* =Variables
@@ -66,6 +67,10 @@ details a + small a {
 		display: none;
 	}
 
+}
+
+.panel-tiny {
+  padding: 0;
 }
 
 /* =Content Header
