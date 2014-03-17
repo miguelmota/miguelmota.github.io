@@ -13,7 +13,7 @@ In this example we'll be deploying the *production* branch but it can be whateve
 
 ## On the server
 
-Initialize an empty git repo.
+Initialize an empty git repo. This will act as the mediator.
 
 {% highlight bash %}
 mkdir -p /opt/git/foo.git
