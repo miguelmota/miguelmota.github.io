@@ -106,7 +106,7 @@
 
 			<p>A <a href="http://git-scm.com/docs/githooks.html">Git hook</a> allows you to execute custom scripts when an action occurs, such as when a commit or push is performed. Before I discovered git hooks, my deployment process consisted of pushing changes to my remote repository, SSH’ing into the server, navigating to the site directory, pulling the changes, and restarting the webserver. It wasn’t efficient at all and a waste of time doing that several times a day. I’ll explain how to set up a simple git hook making the deployment process a bit more effortless, but first I want to give credit to this <a href="http://toroid.org/ams/git-website-howto">how-to</a> article which got me started.</p>
 
-<p>In this example we’ll be deploying the <code>production</code> branch but it can be whatever branch name you want, and our site name will be called <code>foo</code>.</p>
+<p>In this example we’ll be deploying the <em>production</em> branch but it can be whatever branch name you want, and our site name will be called <em>foo</em>.</p>
 
 <h2 id="on_the_server">On the server</h2>
 
@@ -115,7 +115,7 @@
 <span class='nb'>cd</span> /opt/git/tracfone.git
 git init --bare <span class='c'># no source files, only version control</span>
 </code></pre></div>
-<p>Create a <a href="http://git-scm.com/book/en/Customizing-Git-Git-Hooks"><code>post-receive</code></a> hook which gets called after a <code>push</code> is complete.</p>
+<p>Create a <a href="http://git-scm.com/book/en/Customizing-Git-Git-Hooks"><code>post-receive</code></a> hook which gets called after a <em>push</em> is complete.</p>
 <div class='highlight'><pre><code class='bash'>vim /opt/git/foo.git/hooks/post-receive
 </code></pre></div><script src='https://gist.github.com/miguelmota/9595095.js'><![CDATA[]]></script>
 <p>(<a href="https://gist.github.com/miguelmota/9595095">hook gist</a>)</p>
@@ -125,9 +125,11 @@ git init --bare <span class='c'># no source files, only version control</span>
 </code></pre></div>
 <h2 id="on_the_client">On the client</h2>
 
-<p>Add a remote.</p>
+<p>Add the remote url.</p>
 <div class='highlight'><pre><code class='bash'>git remote add production ssh://&lt;username@&lt;server ip&gt;/opt/git/foo.git
-git push production +production:refs/heads/production
+</code></pre></div>
+<p>Push the <em>production</em> branch.</p>
+<div class='highlight'><pre><code class='bash'>git push production +production:refs/heads/production
 
 <span class='c'># Afterwards you can simply do</span>
 git push production
