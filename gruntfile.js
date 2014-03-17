@@ -54,7 +54,7 @@ module.exports = function (grunt) {
           stdout: true
         }
       },
-      compass_compile: {                           
+      compass_compile: {
         command: 'compass compile',
         options: {
           stdout: true
@@ -67,6 +67,16 @@ module.exports = function (grunt) {
           config: 'config.rb'
         }
       }
+    },
+    jekyll: {
+      serve: {
+        options: {
+          src : '<%= app %>',
+          serve: true,
+          watch: true,
+          config: '_config.yml'
+        }
+      }
     }
   });
   grunt.loadNpmTasks('grunt-contrib-watch');
@@ -75,11 +85,13 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-shell');
-  grunt.registerTask('test', ['jshint']); 
+  grunt.loadNpmTasks('grunt-jekyll');
+  grunt.registerTask('test', ['jshint']);
   grunt.registerTask('watch_scripts', ['concat', 'uglify', 'shell:jekyll_build']);
   grunt.registerTask('watch_css', ['shell:compass_compile', 'shell:jekyll_build']);
   grunt.registerTask('watch_html', ['shell:jekyll_build']);
   grunt.registerTask('compile_css', ['compass', 'shell:jekyll_build']);
   grunt.registerTask('jekyll_build', ['shell:jekyll_build']);
+  grunt.registerTask('jekyll_serve', ['jekyll:serve']);
   grunt.registerTask('default', ['watch:css', 'watch:scripts', 'watch:html']);
 };
