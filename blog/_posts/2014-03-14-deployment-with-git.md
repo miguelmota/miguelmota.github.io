@@ -34,7 +34,7 @@ vim /opt/git/foo.git/hooks/post-receive
 Make sure to make the hook executable.
 
 {% highlight bash %}
-chmod u+rwx /opts/git/foo.git/hooks/post-receive
+chmod u+rwx /opt/git/foo.git/hooks/post-receive
 {% endhighlight %}
 
 ## On the client
