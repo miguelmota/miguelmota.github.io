@@ -5,42 +5,42 @@ description: Web developer from the always sunny Southern California.
 route: home
 ---
 <header id="content-header">
-	<canvas id="canvas"></canvas>
-	<div class="row">
-		<div class="large-12 column">
-			{% include home.html %}
-		</div>
-	</div>
-	<div id="content-header-bottom">
-		<div class="triangle"></div>
-	</div>
+    <canvas id="canvas"></canvas>
+    <div class="row">
+        <div class="large-12 column">
+            {% include home.html %}
+        </div>
+    </div>
+    <div id="content-header-bottom">
+        <div class="triangle"></div>
+    </div>
 </header>
 
 <section id="content">
-	<div id="featured" class="row">
-		<div class="large-12 column">
-		<h3>Latest</h3>
-			{% for post in site.categories.blog offset: 0 limit: site.theme.homepage_featured %}
-				{% include post_featured.html %}
-			{% endfor %}
-		</div>
-	</div>
+    <div id="featured" class="row">
+        <div class="large-12 column">
+            <h3>Latest</h3>
+            {% for post in site.categories.blog offset: 0 limit: site.theme.homepage_featured %}
+            {% include post_featured.html %}
+            {% endfor %}
+        </div>
+    </div>
 
-	<div id="older-posts" class="row">
-		<div class="large-12 column">
-			<h3>Older thoughts</h3>
+    <div id="older-posts" class="row">
+        <div class="large-12 column">
+            <h3>Older thoughts</h3>
 
-			<dl class="posts-list">
-			  {% for post in site.categories.blog offset: site.theme.homepage_featured limit: site.theme.homepage_posts %}
-					{% include post_summary.html %}
-			  {% endfor %}
-			</dl>
-			<p><a class="archive-button" href="/archive">View all posts »</a></p>
-		</div>
-	</div>
-  
-  <script>
-      var disqus_shortname = '{{ site.disqus_shortname }}';
+            <dl class="posts-list">
+                {% for post in site.categories.blog offset: site.theme.homepage_featured limit: site.theme.homepage_posts %}
+                {% include post_summary.html %}
+                {% endfor %}
+            </dl>
+            <p><a class="archive-button" href="/archive">View all posts »</a></p>
+        </div>
+    </div>
+
+    <script>
+        var disqus_shortname = '{{ site.disqus_shortname }}';
 
       (function () {
           var s = document.createElement('script'); s.async = true;
@@ -48,5 +48,5 @@ route: home
           s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
           (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
       }());
-  </script>
+    </script>
 </section>

@@ -14,14 +14,14 @@
 	                   \_/__/
 	-->
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta name="description" content="Spice up the way your photos look with CSS3 filters.">
+	<meta name="description" content="Setting up git hooks for effortless deployment.">
 	<meta name="keywords" content="miguel mota,web developer,html5 css3 javascript">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-title" content="Moogs">
-	<title>CSS3 Filters » Miguel Mota | Web Developer</title>
-	<link rel="canonical" href="http://www.miguelmota.com/blog/css3-filters">
+	<title>Deployment with Git » Miguel Mota | Web Developer</title>
+	<link rel="canonical" href="http://www.miguelmota.com/blog/deployment-with-git+%28Moogs-MacBook-Pro%27s+conflicted+copy+2014-04-10%29">
 	<link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/miguelmota">
 	<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
 	<link rel="shortcut icon" href="/favicon.ico">
@@ -90,8 +90,8 @@
 	<div class="row">
 		<div class="large-12 column">
 
-			<datetime>22 Jul 2012 <small><i class="icon-comment-alt"></i> <a href="/blog/css3-filters#disqus_thread" data-disqus-identifier="/blog/css3-filters"></a></small> <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.miguelmota.com/blog/css3-filters" data-text="CSS3 Filters" data-size="large" data-related="_moogs" data-ga-label="Blog post - Tweet">Tweet</a></datetime>
-			<h1>CSS3 Filters</h1>
+			<datetime>14 Mar 2014 <small><i class="icon-comment-alt"></i> <a href="/blog/deployment-with-git+%28Moogs-MacBook-Pro%27s+conflicted+copy+2014-04-10%29#disqus_thread" data-disqus-identifier="/blog/deployment-with-git+%28Moogs-MacBook-Pro%27s+conflicted+copy+2014-04-10%29"></a></small> <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.miguelmota.com/blog/deployment-with-git+%28Moogs-MacBook-Pro%27s+conflicted+copy+2014-04-10%29" data-text="Deployment with Git" data-size="large" data-related="_moogs" data-ga-label="Blog post - Tweet">Tweet</a></datetime>
+			<h1>Deployment with Git</h1>
 
 		</div>
 	</div>
@@ -104,32 +104,56 @@
 	<div class="row">
 		<div class="large-12 column">
 
-			<p>Webkit has implemented CSS filters, which can spice up the way your photos look without the hassle of having to deal with software like Photoshop.</p>
+			<p>A <a href="http://git-scm.com/docs/githooks.html">Git hook</a> allows you to execute custom scripts when an action occurs, such as when a commit or push is performed. Before I discovered git hooks, my deployment process consisted of pushing changes to my remote repository, SSH’ing into the server, navigating to the site directory, pulling the changes, and restarting the webserver. It wasn’t efficient at all and a waste of time doing that several times a day. I’ll explain how to set up a simple git hook making the deployment process a bit more effortless, but first I want to give credit to this <a href="http://toroid.org/ams/git-website-howto">how-to</a> article which got me started.</p>
 
-<p>Currently there are <strong>10</strong> CSS filters available, which are: <code>blur</code>, <code>brightness</code>, <code>contrast</code>, <code>drop-shadow</code>, <code>grayscale</code>, <code>hue-rotate</code>, <code>invert</code>, <code>opacity</code>, <code>saturate</code> and <code>sepia</code>.</p>
+<p>In this example we’ll be deploying the <em>production</em> branch but it can be whatever branch name you want, and our site name will be called <em>foo</em>.</p>
 
-<p>In the meantime you must use the <code>-webkit-</code> vendor prefix, like so (<a href="https://gist.github.com/miguelmota/5333165" target="_blank">gist</a>):</p>
+<h2 id="on_the_server">On the server</h2>
 
-<script src="https://gist.github.com/miguelmota/5333165.js"></script>
-
-<p>You can also combine multiple filters in one line seperated by a space:</p>
-
-<div class="highlight"><pre><code class="css"><span class="nt">-webkit-filter</span><span class="o">:</span> <span class="nt">blur</span><span class="o">(</span><span class="nt">2</span><span class="nc">.5px</span><span class="o">)</span> <span class="nt">brightness</span><span class="o">(</span><span class="nt">5</span><span class="o">%)</span> <span class="nt">contrast</span><span class="o">(</span><span class="nt">1</span><span class="nc">.5</span><span class="o">);</span>
+<p>Initialize an empty git repo. This will act as the mediator.</p>
+<div class='highlight'><pre><code class='bash'>mkdir -p /opt/git/foo.git
+<span class='nb'>cd</span> /opt/git/tracfone.git
+git init --bare <span class='c'># no source files, only version control</span>
 </code></pre></div>
+<p>Create a <a href="http://git-scm.com/book/en/Customizing-Git-Git-Hooks"><code>post-receive</code></a> hook which gets called after a <em>push</em> is complete.</p>
+<div class='highlight'><pre><code class='bash'>vim /opt/git/foo.git/hooks/post-receive
+</code></pre></div><script src='https://gist.github.com/miguelmota/9595095.js'><![CDATA[]]></script>
+<p>(<a href="https://gist.github.com/miguelmota/9595095">hook gist</a>)</p>
 
-<p>CSS filters can be used in an unimaginable ton of ways. The only downside is that currently only <a href="http://www.google.com/chrome" target="_blank">Google Chrome</a> version 18 and up supports this feature.</p>
+<p>Make sure to make the hook executable.</p>
+<div class='highlight'><pre><code class='bash'>chmod u+rwx /opt/git/foo.git/hooks/post-receive
+</code></pre></div>
+<h2 id="on_the_client">On the client</h2>
 
-<p>Check out the demo and perhaps leave some feedback in the comments below.</p>
+<p>Add the remote url.</p>
+<div class='highlight'><pre><code class='bash'>git remote add production ssh://&lt;username@&lt;server ip&gt;/opt/git/foo.git
+</code></pre></div>
+<p>Push the <em>production</em> branch.</p>
+<div class='highlight'><pre><code class='bash'>git push production +production:refs/heads/production
 
-<p><a data-demo href="/blog/css3-filters/demo" target="_blank">View the demo</a></p>
+<span class='c'># Afterwards you can simply do</span>
+git push production
+</code></pre></div>
+<p>It’s also possible to deploy to multiple servers, just add the remote urls in <code>.git/config</code>.</p>
+<div class='highlight'><pre><code class='bash'><span class='o'>[</span>remote <span class='s2'>&quot;production&quot;</span><span class='o'>]</span>
+  <span class='nv'>url</span> <span class='o'>=</span> ssh://&lt;username&gt;@&lt;server 1 ip&gt;/opt/git/foo.git
+  <span class='nv'>url</span> <span class='o'>=</span> ssh://&lt;username&gt;@&lt;server 2 ip&gt;/opt/git/foo.git
+</code></pre></div>
+<p>By default git will push all branches to the remotes but we can have it push the current branch only.</p>
+<div class='highlight'><pre><code class='bash'>git config --global push.default current
+</code></pre></div>
+<h2 id="conclusion">Conclusion</h2>
 
+<p>Git hooks can help automate your deployment process. Checkout the list of client and server-side <a href="http://git-scm.com/book/en/Customizing-Git-Git-Hooks">Git hooks</a> available.</p>
 
 			<div class="tags">
 				<i class="icon-tag"></i>
 				
-					<a href="/tag/CSS3">CSS3</a> <span>+</span>
+					<a href="/tag/Git">Git</a> <span>+</span>
 				
-					<a href="/tag/demo">demo</a> <span>+</span>
+					<a href="/tag/SSH">SSH</a> <span>+</span>
+				
+					<a href="/tag/deployment">deployment</a> <span>+</span>
 				
 			</div>
 
@@ -140,7 +164,7 @@
 		<div id="related-posts" class="row">
 			<div class="row">
 				<div class="large-12 column">
-					<div class="input-short-url">share: <input type="text" value="http://mig.gs/bcf"></div>
+					<div class="input-short-url">share: <input type="text" value="http://mig.gs/gUva"></div>
 				</div>
 			</div>
 			<div class="large-6 column">
@@ -151,8 +175,8 @@
 
 	    <dl class="posts-list">
 
-				<dt><datetime>20 Feb 2012</datetime></dt>
-				<dd><h2><a href="/blog/miggs-url-shortener">mig.gs™ - url shortener</a> <small><i class="icon-comment-alt"></i> <a href="/blog/miggs-url-shortener#disqus_thread" data-disqus-identifier="/blog/miggs-url-shortener"></a></small></h2></dd>
+				<dt><datetime>14 Mar 2014</datetime></dt>
+				<dd><h2><a href="/blog/deployment-with-git">Deployment with Git</a> <small><i class="icon-comment-alt"></i> <a href="/blog/deployment-with-git#disqus_thread" data-disqus-identifier="/blog/deployment-with-git"></a></small></h2></dd>
 
 			</dl>
 
@@ -160,29 +184,12 @@
 
 
 
-    
-
-    	<h3>Next post</h3>
-
-    	<dl class="posts-list">
-
-		    <dt><datetime>25 Mar 2013</datetime></dt>
-		    <dd><h2><a href="/blog/screaming-goat">Screaming goat</a> <small><i class="icon-comment-alt"></i> <a href="/blog/screaming-goat#disqus_thread" data-disqus-identifier="/blog/screaming-goat"></a></small></h2></dd>
-
-		  </dl>
-
-    
-
 			</div>
 			<div class="large-6 column">
 
 				<h3>See also...</h3>
 
 				<dl class="posts-list">
-					
-						<dt><datetime>14 Mar 2014</datetime></dt>
-<dd><h2><a href="/blog/deployment-with-git+%28Moogs-MacBook-Pro%27s+conflicted+copy+2014-04-10%29">Deployment with Git</a> <small><i class="icon-comment-alt"></i> <a href="/blog/deployment-with-git+%28Moogs-MacBook-Pro%27s+conflicted+copy+2014-04-10%29#disqus_thread" data-disqus-identifier="/blog/deployment-with-git+%28Moogs-MacBook-Pro%27s+conflicted+copy+2014-04-10%29"></a></small></h2>
-</dd>
 					
 						<dt><datetime>14 Mar 2014</datetime></dt>
 <dd><h2><a href="/blog/deployment-with-git">Deployment with Git</a> <small><i class="icon-comment-alt"></i> <a href="/blog/deployment-with-git#disqus_thread" data-disqus-identifier="/blog/deployment-with-git"></a></small></h2>
@@ -198,6 +205,10 @@
 					
 						<dt><datetime>30 Oct 2013</datetime></dt>
 <dd><h2><a href="/blog/memoization-caching-function-results-in-javascript">Memoization&#58; Caching function results in JavaScript</a> <small><i class="icon-comment-alt"></i> <a href="/blog/memoization-caching-function-results-in-javascript#disqus_thread" data-disqus-identifier="/blog/memoization-caching-function-results-in-javascript"></a></small></h2>
+</dd>
+					
+						<dt><datetime>30 Sep 2013</datetime></dt>
+<dd><h2><a href="/blog/set-up-ssh-keys">Set up SSH keys</a> <small><i class="icon-comment-alt"></i> <a href="/blog/set-up-ssh-keys#disqus_thread" data-disqus-identifier="/blog/set-up-ssh-keys"></a></small></h2>
 </dd>
 					
 				</dl>
@@ -216,8 +227,8 @@
 
 <script>
     var disqus_shortname = 'miguelmota';
-    var disqus_identifier = '/blog/css3-filters';
-    var disqus_url = 'http://www.miguelmota.com/blog/css3-filters';
+    var disqus_identifier = '/blog/deployment-with-git+%28Moogs-MacBook-Pro%27s+conflicted+copy+2014-04-10%29';
+    var disqus_url = 'http://www.miguelmota.com/blog/deployment-with-git+%28Moogs-MacBook-Pro%27s+conflicted+copy+2014-04-10%29';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
