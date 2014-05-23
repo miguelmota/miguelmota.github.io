@@ -529,6 +529,10 @@ $social-icon-default-background-color: rgba(0,0,0,.2);
 	@include social-icon($social-icon-width, $social-icon-height, #4183C4, '../img/social/github-32.png');
 }
 
+#home .stackoverflow {
+	@include social-icon($social-icon-width, $social-icon-height, #F47920, '../img/social/stackoverflow-32.png');
+}
+
 #home .linkedin {
 	@include social-icon($social-icon-width, $social-icon-height, #007FB1, '../img/social/linkedin-32.png');
 }
