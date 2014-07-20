@@ -553,6 +553,10 @@ $social-icon-default-background-color: rgba(0,0,0,.2);
 	@include social-icon($social-icon-width, $social-icon-height, #2C4762, '../img/social/tumblr-32.png');
 }
 
+#home .reddit {
+	@include social-icon($social-icon-width, $social-icon-height, #FF4500, '../img/social/reddit-32.png');
+}
+
 #home .foursquare {
 	@include social-icon($social-icon-width, $social-icon-height, #2398C9, '../img/social/foursquare-32.png');
 }
