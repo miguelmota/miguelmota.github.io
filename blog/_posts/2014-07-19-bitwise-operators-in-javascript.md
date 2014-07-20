@@ -644,7 +644,7 @@ charToBinary('A'); // "01000001"
 
 # Conclusion
 
-Bitwise operators can definitely improve performance of your application    since they are much faster than using built in methods. The only downside is it makes the code a little less unreadable. But it's well worth it.
+There are definitely some interesting things you can do with bitwise operators. They are not commonly used due to how hard it can be to wrap your head around them, but bitwise operators can definitely improve performance of your application since they are technically faster than using built in methods. The only downside is it makes the code a little less unreadable. But it might be worth it depending on your needs.
 
 I'd love to see other creative uses of bitwise operators, share if you may.
 
