@@ -114,7 +114,7 @@ The how:
 
 [JSBin example](http://jsbin.com/wokuc/1/edit)
 
-**Strip decimal:**
+**Fast truncation:**
 
 {% highlight javascript %}
 1.4 | 0 // 1
@@ -334,22 +334,21 @@ The how:
 
 # Bitwise double NOT
 
-***Faster substitude for flooring number:***
+**Fast truncation:**
 
 {% highlight javascript %}
-// bitwise floor
+// for positive numbers it can be a faster substitute for Math.floor()
 ~~(5.3) // 5
+
+// negative truncation
 ~~(-5.3) // -5
 
+// If it can't be parsed to a number than result will always be zero
 ~~('foo') // 0
 ~~({}) // 0
-
-// bitwise ceil
-~~(5.3) + 1 // 6
-~~(-5.3) + 1 // -4
 {% endhighlight %}
 
-[JSBin example](http://jsbin.com/wawuzi/1/edit)
+[JSBin example](http://jsbin.com/wawuzi/2/edit) | [jsPerf test](http://jsperf.com/math-floor-vs-bitwise-double-not)
 
 # Shift operators
 
