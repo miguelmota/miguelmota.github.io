@@ -165,8 +165,8 @@
 <span class='o'>--------</span>
 <span class='mi'>00001111</span> <span class='c1'>// 15</span>
 
-<span class='nx'>The</span> <span class='nx'>tilde</span> <span class='err'>`</span><span class='o'>~</span><span class='err'>`</span> <span class='nx'>is</span> <span class='nx'>the</span> <span class='nx'>bitwise</span> <span class='nx'>NOT</span> <span class='nx'>which</span> <span class='nx'>inverts</span> <span class='nx'>the</span> <span class='nx'>bits</span><span class='p'>.</span>
-<span class='err'>`</span><span class='o'>&gt;&gt;&gt;</span><span class='err'>`</span> <span class='nx'>is</span> <span class='nx'>the</span> <span class='nx'>zero</span><span class='o'>-</span><span class='nx'>fill</span> <span class='nx'>right</span> <span class='nx'>shift</span> <span class='nx'>operator</span> <span class='nx'>which</span> <span class='nx'>converts</span> <span class='nx'>to</span> <span class='nx'>a</span> <span class='mi'>32</span> <span class='nx'>bit</span> <span class='nx'>unsigned</span> <span class='nx'>value</span><span class='p'>.</span>
+<span class='nx'>The</span> <span class='nx'>tilde</span> <span class='s2'>&quot;~&quot;</span> <span class='nx'>is</span> <span class='nx'>the</span> <span class='nx'>bitwise</span> <span class='nx'>NOT</span> <span class='nx'>which</span> <span class='nx'>inverts</span> <span class='nx'>the</span> <span class='nx'>bits</span><span class='p'>.</span>
+<span class='s2'>&quot;&gt;&gt;&gt;&quot;</span> <span class='nx'>is</span> <span class='nx'>the</span> <span class='nx'>zero</span><span class='o'>-</span><span class='nx'>fill</span> <span class='nx'>right</span> <span class='nx'>shift</span> <span class='nx'>operator</span> <span class='nx'>which</span> <span class='nx'>converts</span> <span class='nx'>to</span> <span class='nx'>a</span> <span class='mi'>32</span> <span class='nx'>bit</span> <span class='nx'>unsigned</span> <span class='nx'>value</span><span class='p'>.</span>
 
 <span class='nx'>Another</span> <span class='nx'>way</span> <span class='nx'>to</span> <span class='nx'>look</span> <span class='nx'>at</span> <span class='nx'>it</span><span class='o'>:</span>
 
@@ -199,7 +199,7 @@
 </code></pre></div>
 <p><a href="http://jsbin.com/wokuc/1/edit">JSBin example</a></p>
 
-<p><strong>Strip decimal:</strong></p>
+<p><strong>Fast truncation:</strong></p>
 <div class='highlight'><pre><code class='javascript'><span class='mf'>1.4</span> <span class='o'>|</span> <span class='mi'>0</span> <span class='c1'>// 1</span>
 <span class='o'>-</span><span class='mf'>1.4</span> <span class='o'>|</span> <span class='mi'>0</span> <span class='c1'>// -1</span>
 </code></pre></div>
@@ -392,19 +392,18 @@
 
 <h1 id="bitwise_double_not">Bitwise double NOT</h1>
 
-<p><strong><em>Faster substitude for flooring number:</em></strong></p>
-<div class='highlight'><pre><code class='javascript'><span class='c1'>// bitwise floor</span>
+<p><strong>Fast truncation:</strong></p>
+<div class='highlight'><pre><code class='javascript'><span class='c1'>// for positive numbers it can be a faster substitute for Math.floor()</span>
 <span class='o'>~~</span><span class='p'>(</span><span class='mf'>5.3</span><span class='p'>)</span> <span class='c1'>// 5</span>
+
+<span class='c1'>// negative truncation</span>
 <span class='o'>~~</span><span class='p'>(</span><span class='o'>-</span><span class='mf'>5.3</span><span class='p'>)</span> <span class='c1'>// -5</span>
 
+<span class='c1'>// If it can&#39;t be parsed to a number than result will always be zero</span>
 <span class='o'>~~</span><span class='p'>(</span><span class='s1'>&#39;foo&#39;</span><span class='p'>)</span> <span class='c1'>// 0</span>
 <span class='o'>~~</span><span class='p'>({})</span> <span class='c1'>// 0</span>
-
-<span class='c1'>// bitwise ceil</span>
-<span class='o'>~~</span><span class='p'>(</span><span class='mf'>5.3</span><span class='p'>)</span> <span class='o'>+</span> <span class='mi'>1</span> <span class='c1'>// 6</span>
-<span class='o'>~~</span><span class='p'>(</span><span class='o'>-</span><span class='mf'>5.3</span><span class='p'>)</span> <span class='o'>+</span> <span class='mi'>1</span> <span class='c1'>// -4</span>
 </code></pre></div>
-<p><a href="http://jsbin.com/wawuzi/1/edit">JSBin example</a></p>
+<p><a href="http://jsbin.com/wawuzi/2/edit">JSBin example</a> | <a href="http://jsperf.com/math-floor-vs-bitwise-double-not">jsPerf test</a></p>
 
 <h1 id="shift_operators">Shift operators</h1>
 
@@ -646,7 +645,7 @@
 
 <h1 id="conclusion">Conclusion</h1>
 
-<p>Bitwise operators can definitely improve performance of your application since they are much faster than using built in methods. The only downside is it makes the code a little less unreadable. But it’s well worth it.</p>
+<p>There are definitely some interesting things you can do with bitwise operators. They are not commonly used due to how hard it can be to wrap your head around them, but bitwise operators can definitely improve performance of your application since they are technically faster than using built in methods. The only downside is it makes the code a little less unreadable. But it might be worth it depending on your needs.</p>
 
 <p>I’d love to see other creative uses of bitwise operators, share if you may.</p>
 <!--
@@ -697,7 +696,7 @@ if (permissions & READ) // 1 (truthy)
 		<div id="related-posts" class="row">
 			<div class="row">
 				<div class="large-12 column">
-					<div class="input-short-url">share: <input type="text" value="http://mig.gs/t7mK"></div>
+					<div class="input-short-url">share: <input type="text" value="http://mig.gs/nZi7"></div>
 				</div>
 			</div>
 			<div class="large-6 column">
@@ -765,14 +764,14 @@ if (permissions & READ) // 1 (truthy)
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
 
     (function () {
         var s = document.createElement('script'); s.async = true;
         s.type = 'text/javascript';
-        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
         (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
     }());
 </script>
