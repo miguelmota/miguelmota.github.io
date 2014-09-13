@@ -138,7 +138,7 @@
 <span class='o'>--------</span>
 <span class='mi'>00000000</span> <span class='c1'>// 0 (even)</span>
 </code></pre></div>
-<p><a href="http://jsbin.com/vawero/1/edit">JSBin example</a></p>
+<p><a href="http://jsbin.com/vawero/1/edit">JSBin example</a> | <a href="http://jsperf.com/modulus-vs-bitwise-and-operator">JSPerf test</a></p>
 
 <p><strong>Get the difference between two hex values:</strong></p>
 <div class='highlight'><pre><code class='javascript'><span class='kd'>var</span> <span class='nx'>a</span> <span class='o'>=</span> <span class='mh'>0xF0</span><span class='p'>;</span> <span class='c1'>// 240</span>
@@ -203,7 +203,7 @@
 <div class='highlight'><pre><code class='javascript'><span class='mf'>1.4</span> <span class='o'>|</span> <span class='mi'>0</span> <span class='c1'>// 1</span>
 <span class='o'>-</span><span class='mf'>1.4</span> <span class='o'>|</span> <span class='mi'>0</span> <span class='c1'>// -1</span>
 </code></pre></div>
-<p><a href="http://jsbin.com/ranuzo/1/edit">JSBin example</a></p>
+<p><a href="http://jsbin.com/ranuzo/1/edit">JSBin example</a> | <a href="http://jsperf.com/parseint-vs-bitwise-or-2">JSPerf test</a></p>
 
 <p><strong>Mask a flag additively:</strong></p>
 <div class='highlight'><pre><code class='javascript'><span class='kd'>var</span> <span class='nx'>mask</span> <span class='o'>=</span> <span class='mh'>0x0003</span><span class='p'>;</span>
@@ -347,9 +347,28 @@
 
 <p>Determine if two integers have opposite signs:</p>
 <div class='highlight'><pre><code class='javascript'><span class='kd'>var</span> <span class='nx'>x</span> <span class='o'>=</span> <span class='mi'>1</span><span class='p'>,</span>
+    <span class='nx'>y</span> <span class='o'>=</span> <span class='mi'>1</span><span class='p'>;</span>
+
+<span class='p'>(</span><span class='nx'>x</span> <span class='o'>^</span> <span class='nx'>y</span><span class='p'>)</span> <span class='o'>&lt;</span> <span class='mi'>0</span> <span class='c1'>// false</span>
+
+<span class='nx'>The</span> <span class='nx'>how</span><span class='o'>:</span>
+
+<span class='mi'>00000001</span> <span class='c1'>// x</span>
+<span class='mi'>00000001</span> <span class='c1'>// y</span>
+<span class='o'>--------</span>
+<span class='mi'>00000000</span> <span class='c1'>// 0, so 0 &lt; 0 = false</span>
+
+<span class='kd'>var</span> <span class='nx'>x</span> <span class='o'>=</span> <span class='mi'>1</span><span class='p'>,</span>
     <span class='nx'>y</span> <span class='o'>=</span> <span class='o'>-</span><span class='mi'>1</span><span class='p'>;</span>
 
 <span class='p'>((</span><span class='nx'>x</span> <span class='o'>^</span> <span class='nx'>y</span><span class='p'>)</span> <span class='o'>&lt;</span> <span class='mi'>0</span><span class='p'>);</span> <span class='c1'>// true</span>
+
+<span class='nx'>The</span> <span class='nx'>how</span><span class='o'>:</span>
+
+<span class='mi'>0000000000000000000000000000001</span> <span class='c1'>// x = (1).toString(2)</span>
+<span class='mi'>1111111111111111111111111111110</span> <span class='c1'>// y = (~1 &gt;&gt;&gt; 0).toString(2)</span>
+<span class='o'>-------------------------------</span> <span class='c1'>// ^ two&#39;s complement - flips bits and adds one</span>
+<span class='mi'>1111111111111111111111111111111</span> <span class='c1'>// -1, so -1 &lt; 0 = true</span>
 </code></pre></div>
 <p><a href="http://jsbin.com/nucoz/1/edit">JSBin example</a></p>
 
@@ -511,8 +530,8 @@
 <span class='mi'>5</span> <span class='o'>&gt;&gt;&gt;</span> <span class='mi'>0</span>
 <span class='mi'>00000101</span> <span class='c1'>// 5</span>
 
-<span class='o'>-</span><span class='mi'>2</span> <span class='o'>&gt;&gt;&gt;</span> <span class='mi'>0</span>
-<span class='mi'>11111111111111111111111111111110</span> <span class='c1'>// 4294967294</span>
+<span class='p'>(</span><span class='o'>-</span><span class='mi'>2</span> <span class='o'>&gt;&gt;&gt;</span> <span class='mi'>0</span><span class='p'>).</span><span class='nx'>toString</span><span class='p'>(</span><span class='mi'>2</span><span class='p'>)</span>
+<span class='s1'>&#39;11111111111111111111111111111110&#39;</span> <span class='c1'>// 4294967294</span>
 
 <span class='mh'>0xFF</span> <span class='o'>&gt;&gt;&gt;</span> <span class='mi'>1</span>
 <span class='nb'>parseInt</span><span class='p'>(</span><span class='s1'>&#39;0xFF&#39;</span><span class='p'>,</span> <span class='mi'>16</span><span class='p'>).</span><span class='nx'>toString</span><span class='p'>(</span><span class='mi'>2</span><span class='p'>)</span>
@@ -530,8 +549,38 @@
 <span class='kd'>var</span> <span class='nx'>smallest</span> <span class='o'>=</span> <span class='nx'>y</span> <span class='o'>^</span> <span class='p'>((</span><span class='nx'>x</span> <span class='o'>^</span> <span class='nx'>y</span><span class='p'>)</span> <span class='o'>&amp;</span> <span class='o'>-</span><span class='p'>(</span><span class='nx'>x</span> <span class='o'>&lt;</span> <span class='nx'>y</span><span class='p'>));</span>
 
 <span class='nx'>smallest</span> <span class='c1'>// 5</span>
+
+<span class='nx'>The</span> <span class='nx'>how</span><span class='o'>:</span>
+
+<span class='mi'>00001001</span> <span class='c1'>// x = (9 &gt;&gt;&gt; 0).toString(2)</span>
+<span class='mi'>00000101</span> <span class='c1'>// y = (5 &gt;&gt;&gt; 0).toString(2)</span>
+
+<span class='p'>(</span><span class='nx'>x</span> <span class='o'>^</span> <span class='nx'>y</span><span class='p'>)</span>
+<span class='mi'>00001001</span>
+<span class='mi'>00000101</span>
+<span class='o'>--------</span>
+<span class='mi'>00001100</span> <span class='c1'>// parseInt(&#39;00001100&#39;, 2) = 12</span>
+
+<span class='o'>-</span><span class='p'>(</span><span class='nx'>x</span> <span class='o'>&lt;</span> <span class='nx'>y</span><span class='p'>)</span>
+<span class='o'>-</span><span class='p'>(</span><span class='kc'>false</span><span class='p'>)</span>
+<span class='o'>-</span><span class='mi'>0</span>
+<span class='mi'>0</span>
+
+<span class='mi'>5</span> <span class='o'>^</span> <span class='p'>(</span><span class='mi'>12</span> <span class='o'>&amp;</span> <span class='mi'>0</span><span class='p'>)</span>
+
+<span class='p'>(</span><span class='mi'>12</span> <span class='o'>&amp;</span> <span class='mi'>0</span><span class='p'>)</span>
+<span class='mi'>00001100</span> <span class='c1'>// (12 &gt;&gt;&gt; 0).toString(2)</span>
+<span class='mi'>00000000</span> <span class='c1'>// 0</span>
+<span class='o'>--------</span>
+<span class='mi'>00000000</span> <span class='c1'>// 0</span>
+
+<span class='p'>(</span><span class='mi'>5</span> <span class='o'>^</span> <span class='mi'>0</span><span class='p'>)</span>
+<span class='mi'>00000101</span> <span class='c1'>// 5</span>
+<span class='mi'>00000000</span> <span class='c1'>// 0</span>
+<span class='o'>--------</span>
+<span class='mi'>00000101</span> <span class='c1'>// parseInt(&#39;00000101&#39;, 2) = 5</span>
 </code></pre></div>
-<p><a href="http://jsbin.com/leses/1/edit">JSBin example</a></p>
+<p><a href="http://jsbin.com/leses/1/edit">JSBin example</a> | <a href="http://jsperf.com/math-min-vs-bitwise-operators">JSPerf test</a></p>
 
 <p><strong>Finding the largest number:</strong></p>
 <div class='highlight'><pre><code class='javascript'><span class='kd'>var</span> <span class='nx'>x</span> <span class='o'>=</span> <span class='mi'>9</span><span class='p'>;</span>
@@ -540,8 +589,38 @@
 <span class='kd'>var</span> <span class='nx'>largest</span> <span class='o'>=</span> <span class='nx'>x</span> <span class='o'>^</span> <span class='p'>((</span><span class='nx'>x</span> <span class='o'>^</span> <span class='nx'>y</span><span class='p'>)</span> <span class='o'>&amp;</span> <span class='o'>-</span><span class='p'>(</span><span class='nx'>x</span> <span class='o'>&lt;</span> <span class='nx'>y</span><span class='p'>));</span>
 
 <span class='nx'>largest</span> <span class='c1'>// 5</span>
+
+<span class='nx'>The</span> <span class='nx'>how</span><span class='o'>:</span>
+
+<span class='mi'>00001001</span> <span class='c1'>// x = (9 &gt;&gt;&gt; 0).toString(2)</span>
+<span class='mi'>00000101</span> <span class='c1'>// y = (5 &gt;&gt;&gt; 0).toString(2)</span>
+
+<span class='p'>(</span><span class='nx'>x</span> <span class='o'>^</span> <span class='nx'>y</span><span class='p'>)</span>
+<span class='mi'>00001001</span>
+<span class='mi'>00000101</span>
+<span class='o'>--------</span>
+<span class='mi'>00001100</span> <span class='c1'>// parseInt(&#39;00001100&#39;, 2) = 12</span>
+
+<span class='o'>-</span><span class='p'>(</span><span class='nx'>x</span> <span class='o'>&lt;</span> <span class='nx'>y</span><span class='p'>)</span>
+<span class='o'>-</span><span class='p'>(</span><span class='kc'>false</span><span class='p'>)</span>
+<span class='o'>-</span><span class='mi'>0</span>
+<span class='mi'>0</span>
+
+<span class='mi'>9</span> <span class='o'>^</span> <span class='p'>(</span><span class='mi'>12</span> <span class='o'>&amp;</span> <span class='mi'>0</span><span class='p'>)</span>
+
+<span class='p'>(</span><span class='mi'>12</span> <span class='o'>&amp;</span> <span class='mi'>0</span><span class='p'>)</span>
+<span class='mi'>00001100</span> <span class='c1'>// (12 &gt;&gt;&gt; 0).toString(2)</span>
+<span class='mi'>00000000</span> <span class='c1'>// 0</span>
+<span class='o'>--------</span>
+<span class='mi'>00000000</span> <span class='c1'>// 0</span>
+
+<span class='p'>(</span><span class='mi'>9</span> <span class='o'>^</span> <span class='mi'>0</span><span class='p'>)</span>
+<span class='mi'>00001001</span> <span class='c1'>// 9</span>
+<span class='mi'>00000000</span> <span class='c1'>// 0</span>
+<span class='o'>--------</span>
+<span class='mi'>00001001</span> <span class='c1'>// parseInt(&#39;00001001&#39;, 2) = 9</span>
 </code></pre></div>
-<p><a href="http://jsbin.com/tecubo/1/edit">JSBin example</a></p>
+<p><a href="http://jsbin.com/tecubo/1/edit">JSBin example</a> | <a href="http://jsperf.com/math-max-vs-bitwise-operators">JSPerf test</a></p>
 
 <p><strong>If number is power of 2:</strong></p>
 <div class='highlight'><pre><code class='javascript'><span class='kd'>var</span> <span class='nx'>v</span> <span class='o'>=</span> <span class='mi'>8</span><span class='p'>;</span>
@@ -549,6 +628,27 @@
 <span class='kd'>var</span> <span class='nx'>isPowerOf2</span> <span class='o'>=</span> <span class='nx'>v</span> <span class='o'>&amp;&amp;</span> <span class='o'>!</span><span class='p'>(</span><span class='nx'>v</span> <span class='o'>&amp;</span> <span class='p'>(</span><span class='nx'>v</span> <span class='o'>-</span> <span class='mi'>1</span><span class='p'>));</span>
 
 <span class='nx'>isPowerOf2</span> <span class='c1'>// true</span>
+
+<span class='nx'>The</span> <span class='nx'>how</span><span class='o'>:</span>
+
+<span class='p'>(</span><span class='nx'>v</span> <span class='o'>-</span> <span class='mi'>1</span><span class='p'>)</span>
+<span class='p'>(</span><span class='mi'>8</span> <span class='o'>-</span> <span class='mi'>1</span><span class='p'>)</span>
+<span class='mi'>7</span>
+
+<span class='p'>(</span><span class='nx'>v</span> <span class='o'>&amp;</span> <span class='mi'>7</span><span class='p'>)</span>
+<span class='mi'>00001000</span> <span class='c1'>// (8).toString(2)</span>
+<span class='mi'>00000111</span> <span class='c1'>// (7).toString(2)</span>
+<span class='o'>--------</span>
+<span class='mi'>00000000</span>
+
+<span class='o'>!</span><span class='p'>(</span><span class='mi'>0</span><span class='p'>)</span>
+<span class='kc'>true</span>
+
+<span class='nx'>v</span> <span class='o'>&amp;&amp;</span> <span class='mi'>0</span>
+<span class='p'>(</span><span class='mi'>8</span> <span class='o'>&amp;&amp;</span> <span class='kc'>true</span><span class='p'>)</span>
+<span class='p'>(</span><span class='o'>!!</span><span class='mi'>8</span> <span class='o'>&amp;&amp;</span> <span class='kc'>true</span><span class='p'>)</span>
+<span class='p'>(</span><span class='kc'>true</span> <span class='o'>&amp;&amp;</span> <span class='kc'>true</span><span class='p'>)</span>
+<span class='kc'>true</span>
 </code></pre></div>
 <p><a href="http://jsbin.com/miwil/1/edit">JSBin examples</a></p>
 

@@ -47,7 +47,7 @@ The how:
 00000000 // 0 (even)
 {% endhighlight %}
 
-[JSBin example](http://jsbin.com/vawero/1/edit)
+[JSBin example](http://jsbin.com/vawero/1/edit) | [JSPerf test](http://jsperf.com/modulus-vs-bitwise-and-operator)
 
 **Get the difference between two hex values:**
 
@@ -121,7 +121,7 @@ The how:
 -1.4 | 0 // -1
 {% endhighlight %}
 
-[JSBin example](http://jsbin.com/ranuzo/1/edit)
+[JSBin example](http://jsbin.com/ranuzo/1/edit) | [JSPerf test](http://jsperf.com/parseint-vs-bitwise-or-2)
 
 **Mask a flag additively:**
 
@@ -282,9 +282,28 @@ Determine if two integers have opposite signs:
 
 {% highlight javascript %}
 var x = 1,
+    y = 1;
+
+(x ^ y) < 0 // false
+
+The how:
+
+00000001 // x
+00000001 // y
+--------
+00000000 // 0, so 0 < 0 = false
+
+var x = 1,
     y = -1;
 
 ((x ^ y) < 0); // true
+
+The how:
+
+0000000000000000000000000000001 // x = (1).toString(2)
+1111111111111111111111111111110 // y = (~1 >>> 0).toString(2)
+------------------------------- // ^ two's complement - flips bits and adds one
+1111111111111111111111111111111 // -1, so -1 < 0 = true
 {% endhighlight %}
 
 [JSBin example](http://jsbin.com/nucoz/1/edit)
@@ -473,8 +492,8 @@ The how:
 5 >>> 0
 00000101 // 5
 
--2 >>> 0
-11111111111111111111111111111110 // 4294967294
+(-2 >>> 0).toString(2)
+'11111111111111111111111111111110' // 4294967294
 
 0xFF >>> 1
 parseInt('0xFF', 16).toString(2)
@@ -495,9 +514,39 @@ var y = 5;
 var smallest = y ^ ((x ^ y) & -(x < y));
 
 smallest // 5
+
+The how:
+
+00001001 // x = (9 >>> 0).toString(2)
+00000101 // y = (5 >>> 0).toString(2)
+
+(x ^ y)
+00001001
+00000101
+--------
+00001100 // parseInt('00001100', 2) = 12
+
+-(x < y)
+-(false)
+-0
+0
+
+5 ^ (12 & 0)
+
+(12 & 0)
+00001100 // (12 >>> 0).toString(2)
+00000000 // 0
+--------
+00000000 // 0
+
+(5 ^ 0)
+00000101 // 5
+00000000 // 0
+--------
+00000101 // parseInt('00000101', 2) = 5
 {% endhighlight %}
 
-[JSBin example](http://jsbin.com/leses/1/edit)
+[JSBin example](http://jsbin.com/leses/1/edit) | [JSPerf test](http://jsperf.com/math-min-vs-bitwise-operators)
 
 **Finding the largest number:**
 
@@ -508,9 +557,39 @@ var y = 5;
 var largest = x ^ ((x ^ y) & -(x < y));
 
 largest // 5
+
+The how:
+
+00001001 // x = (9 >>> 0).toString(2)
+00000101 // y = (5 >>> 0).toString(2)
+
+(x ^ y)
+00001001
+00000101
+--------
+00001100 // parseInt('00001100', 2) = 12
+
+-(x < y)
+-(false)
+-0
+0
+
+9 ^ (12 & 0)
+
+(12 & 0)
+00001100 // (12 >>> 0).toString(2)
+00000000 // 0
+--------
+00000000 // 0
+
+(9 ^ 0)
+00001001 // 9
+00000000 // 0
+--------
+00001001 // parseInt('00001001', 2) = 9
 {% endhighlight %}
 
-[JSBin example](http://jsbin.com/tecubo/1/edit)
+[JSBin example](http://jsbin.com/tecubo/1/edit) | [JSPerf test](http://jsperf.com/math-max-vs-bitwise-operators)
 
 **If number is power of 2:**
 
@@ -520,6 +599,27 @@ var v = 8;
 var isPowerOf2 = v && !(v & (v - 1));
 
 isPowerOf2 // true
+
+The how:
+
+(v - 1)
+(8 - 1)
+7
+
+(v & 7)
+00001000 // (8).toString(2)
+00000111 // (7).toString(2)
+--------
+00000000
+
+!(0)
+true
+
+v && 0
+(8 && true)
+(!!8 && true)
+(true && true)
+true
 {% endhighlight %}
 
 [JSBin examples](http://jsbin.com/miwil/1/edit)
