@@ -1291,8 +1291,8 @@ p > code {
 
 .gist .gist-file .gist-data .line-pre {
 	@include respond-to(tablet-desktop) {
-		font-size: 16px;
-		line-height: 1.2;
+		font-size: 16px !important;
+		line-height: 1.2 !important;
 	}
 }
 

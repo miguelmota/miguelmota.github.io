@@ -117,7 +117,7 @@
 
 <p>I want to point out that I am using the Debian based <a href="http://www.raspbian.org/" target="_blank">Raspbian</a> operating system. I followed this <a href="http://elinux.org/RPi_Easy_SD_Card_Setup" target="_blank">article</a> on how to make the bootable SD card. Basically all I did was download the <a href="http://www.raspberrypi.org/downloads" target="_blank">Raspbian img</a>, unmount the SD card, and ran the <code>dd</code> command (on Ubuntu).</p>
 
-<div class="highlight"><pre><code class="bash"><span class="c"># List the mounted media devices.</span>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># List the mounted media devices.</span>
 df -h
 
 <span class="c"># Unmount SD card to be able to write the img on to it.</span>
@@ -130,14 +130,13 @@ umount /dev/sdd1
 <span class="c"># If not set correctly it can possibly corrupt your hard drive.</span>
 sudo dd <span class="nv">bs</span><span class="o">=</span>4M <span class="k">if</span><span class="o">=</span>~/Downloads/2013-05-25-wheezy-raspbian.img <span class="nv">of</span><span class="o">=</span>/dev/sdd
 
-<span class="c"># Be patient. It might take a minute or two to copy the Raspbian img on the SD card.</span>
-</code></pre></div>
+<span class="c"># Be patient. It might take a minute or two to copy the Raspbian img on the SD card.</span></code></pre></div>
 
 <h2>Installing MJPG Streamer</h2>
 
 <p>After booting up your Raspberry Pi, install <a href="https://code.google.com/p/mjpg-streamer/" target="_blank">MJPG Streamer</a>.</p>
 
-<div class="highlight"><pre><code class="bash"><span class="c"># Make and change into directory.</span>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># Make and change into directory.</span>
 sudo mkdir /opt/mjpg-streamer
 <span class="nb">cd</span> /opt/mjpg-streamer/
 
@@ -150,25 +149,22 @@ sudo apt-get install subversion
 sudo svn co https://svn.code.sf.net/p/mjpg-streamer/code/mjpg-streamer/ .
 
 <span class="c"># Run make.</span>
-sudo make
-</code></pre></div>
+sudo make</code></pre></div>
 
 <p>If you get the following error:</p>
 
-<div class="highlight"><pre><code class="bash">linux/videodev.h: No such file or directory
-</code></pre></div>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">linux/videodev.h: No such file or directory</code></pre></div>
 
 <p>Make sure you have <code>libv4l-dev</code> installed and create a symbolic link for the header file:</p>
 
-<div class="highlight"><pre><code class="bash">sudo apt-get install libv4l-dev
-sudo ln -s /usr/include/libv4l1-videodev.h /usr/include/linux/videodev.h
-</code></pre></div>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">sudo apt-get install libv4l-dev
+sudo ln -s /usr/include/libv4l1-videodev.h /usr/include/linux/videodev.h</code></pre></div>
 
 <h2>Start capturing</h2>
 
 <p>Alright now for the fun part. Streaming the video.</p>
 
-<div class="highlight"><pre><code class="bash"><span class="c"># Make a directory to store the temporary images.</span>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># Make a directory to store the temporary images.</span>
 sudo mkdir /tmp/stream/
 <span class="c"># Make the directory writable.</span>
 sudo chmod a+rw /tmp/stream/
@@ -178,18 +174,16 @@ sudo chmod a+rw /tmp/stream/
 <span class="c"># See what the raspistill options are.</span>
 raspistill --help
 <span class="c"># You see the record light turn on after executing the following line.</span>
-raspistill -w 640 -h 480 -q 5 -o /tmp/stream/pic.jpg -tl 100 -t 9999999 -th 0:0:0 -n &amp;
+raspistill -w <span class="m">640</span> -h <span class="m">480</span> -q <span class="m">5</span> -o /tmp/stream/pic.jpg -tl <span class="m">100</span> -t <span class="m">9999999</span> -th 0:0:0 -n <span class="p">&amp;</span>
 
 <span class="c"># See what the MJPG Streamer options are.</span>
 /opt/mjpg-streamer/mjpg_streamer --help
 <span class="c"># Run the following to start up the MJPG Streamer streaming webserver.</span>
-<span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span>/opt/mjpg-streamer/ /opt/mjpg-streamer/mjpg_streamer -i <span class="s2">&quot;input_file.so -f /tmp/stream -n pic.jpg&quot;</span> -o <span class="s2">&quot;output_http.so -p 9000 -w /opt/mjpg-streamer/www&quot;</span> &amp;
-</code></pre></div>
+<span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span>/opt/mjpg-streamer/ /opt/mjpg-streamer/mjpg_streamer -i <span class="s2">&quot;input_file.so -f /tmp/stream -n pic.jpg&quot;</span> -o <span class="s2">&quot;output_http.so -p 9000 -w /opt/mjpg-streamer/www&quot;</span> <span class="p">&amp;</span></code></pre></div>
 
 <p>If everything went smoothly you can open up a web browser and go to:</p>
 
-<div class="highlight"><pre><code class="bash">http://&lt;your-raspberry-pi-ip-address&gt;:9000/
-</code></pre></div>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">http://&lt;your-raspberry-pi-ip-address&gt;:9000/</code></pre></div>
 
 <figure>
   <a href="/blog/raspberry-pi-camera-board-video-streaming/mjpg-streamer-demo-pages-high-res.png" target="_blank"><img src="/blog/raspberry-pi-camera-board-video-streaming/mjpg-streamer-demo-pages-640.png" alt=""></a>
@@ -204,14 +198,13 @@ raspistill -w 640 -h 480 -q 5 -o /tmp/stream/pic.jpg -tl 100 -t 9999999 -th 0:0:
 
 <p>To stop capturing and turn of the webserver we must kill the <code>raspistill</code> and <code>mjpg</code> processes that are running in the background.</p>
 
-<div class="highlight"><pre><code class="bash"><span class="c"># Find the proccess id of `raspistill` and kill it.</span>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># Find the proccess id of `raspistill` and kill it.</span>
 pgrep raspistill
 <span class="nb">kill</span> &lt;process id&gt;
 
 <span class="c"># Find the proccess id of `mjpg` and kill it.</span>
 pgrep mjpg
-<span class="nb">kill</span> &lt;process id&gt;
-</code></pre></div>
+<span class="nb">kill</span> &lt;process id&gt;</code></pre></div>
 
 <h2>Bash scripts</h2>
 
@@ -227,7 +220,7 @@ pgrep mjpg
 
 <p>I stumbled upon this <a href="https://github.com/jacksonliam/mjpg-streamer" target="_blank">fork of MJPG Streamer on github</a> which comes with the raspicam input plugin. Using this version of MJPG Streamer we can skip dealing with raspistill and let the raspicam plugin take care of creating the images. Here's how to install it.</p>
 
-<div class="highlight"><pre><code class="bash"><span class="c"># Install dev version of libjpeg</span>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># Install dev version of libjpeg</span>
 sudo apt-get install libjpeg62-dev
 
 <span class="c"># Install cmake</span>
@@ -248,8 +241,7 @@ sudo mv ~/mjpg-streamer/mjpg-streamer-experimental /opt/mjpg-streamer
 sudo rm -rf ~/mjpg-streamer
 
 <span class="c"># Begin streaming</span>
-<span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span>/opt/mjpg-streamer/ /opt/mjpg-streamer/mjpg_streamer -i <span class="s2">&quot;input_raspicam.so -fps 15 -q 50 -x 640 -y 480&quot;</span> -o <span class="s2">&quot;output_http.so -p 9000 -w /opt/mjpg-streamer/www&quot;</span> &amp;
-</code></pre></div>
+<span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span>/opt/mjpg-streamer/ /opt/mjpg-streamer/mjpg_streamer -i <span class="s2">&quot;input_raspicam.so -fps 15 -q 50 -x 640 -y 480&quot;</span> -o <span class="s2">&quot;output_http.so -p 9000 -w /opt/mjpg-streamer/www&quot;</span> <span class="p">&amp;</span></code></pre></div>
 
 <p>Updated start/stop bash scripts (<a href="https://gist.github.com/miguelmota/9201942" target="_blank">gist</a>).</p>
 <script src="https://gist.github.com/miguelmota/9201942.js"></script>

@@ -110,14 +110,12 @@
 
 <p>On your local maching, generate a new SSH key with the command:</p>
 
-<div class="highlight"><pre><code class="bash"><span class="c"># Generate new key.</span>
-ssh-keygen -t rsa
-</code></pre></div>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># Generate new key.</span>
+ssh-keygen -t rsa</code></pre></div>
 
 <p>When asked for the file to save the key in, enter:</p>
 
-<div class="highlight"><pre><code class="bash">ssh-add id_rsa
-</code></pre></div>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">ssh-add id_rsa</code></pre></div>
 
 <p>Proceed by entering a passphrase. You will know when you are done when you see those funny symbols in a box at the end.</p>
 
@@ -125,15 +123,14 @@ ssh-keygen -t rsa
 
 <p>The next step is to add the public key to your server.</p>
 
-<div class="highlight"><pre><code class="bash"><span class="c"># Make sure you have a .ssh directory on your server,</span>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># Make sure you have a .ssh directory on your server,</span>
 <span class="c"># if not SSH into it and create it: mkdir ~/.ssh/</span>
 
 <span class="c"># Concatenate public key to your server&#39;s authorized keys.</span>
-cat ~/.ssh/id_rsa.pub | ssh &lt;your server username&gt;@&lt;your server ip address&gt; <span class="s2">&quot;cat &gt;&gt; ~/.ssh/authorized_keys&quot;</span>
+cat ~/.ssh/id_rsa.pub <span class="p">|</span> ssh &lt;your server username&gt;@&lt;your server ip address&gt; <span class="s2">&quot;cat &gt;&gt; ~/.ssh/authorized_keys&quot;</span>
 
 <span class="c"># Alternatively, you can run: </span>
-ssh-copy-id &lt;your server username&gt;@&lt;your server ip address&gt;
-</code></pre></div>
+ssh-copy-id &lt;your server username&gt;@&lt;your server ip address&gt;</code></pre></div>
 
 <p>The first time you try to SSH it will ask you for your password, but then exit and try to SSH again. <em>Look Ma! No password!</em></p>
 
@@ -141,9 +138,8 @@ ssh-copy-id &lt;your server username&gt;@&lt;your server ip address&gt;
 
 <p>As you can imagine, you can push changes to a private repository, for example on <a href="https://bitbucket.org/" target="_blank">Bitbucket</a>, and then pull the changes straight to your server whenever you're ready. It's pretty simple, just repeat the steps on how to generate an SSH key but this while SSH'd into your server. Afterwards copy your public key and paste into the SSH key settings on your Bitbucket or Github, (or whatever) account. You can view your SSH public key with:</p>
 
-<div class="highlight"><pre><code class="bash"><span class="c"># View public SSH key.</span>
-cat ~/.ssh/id_rsa.pub
-</code></pre></div>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># View public SSH key.</span>
+cat ~/.ssh/id_rsa.pub</code></pre></div>
 
 <p>Assuming you have git already installed on your server, you can clone a repo and perform git pulls as you would on your local machine.</p>
 

@@ -125,7 +125,7 @@
 
 <h2>HTML</h2>
 
-<div class="highlight"><pre><code class="css"><span class="o">&lt;</span><span class="nt">input</span> <span class="nt">type</span><span class="o">=</span><span class="s2">&quot;checkbox&quot;</span> <span class="nt">id</span><span class="o">=</span><span class="s2">&quot;nav-handler&quot;</span><span class="o">&gt;</span>
+<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="o">&lt;</span><span class="nt">input</span> <span class="nt">type</span><span class="o">=</span><span class="s2">&quot;checkbox&quot;</span> <span class="nt">id</span><span class="o">=</span><span class="s2">&quot;nav-handler&quot;</span><span class="o">&gt;</span>
 
 <span class="o">&lt;</span><span class="nt">nav</span> <span class="nt">id</span><span class="o">=</span><span class="s2">&quot;nav&quot;</span><span class="o">&gt;</span>
 	<span class="o">&lt;</span><span class="nt">ul</span><span class="o">&gt;</span>
@@ -147,8 +147,7 @@
 		<span class="o">&lt;/</span><span class="nt">article</span><span class="o">&gt;</span>
 	<span class="o">&lt;/</span><span class="nt">section</span><span class="o">&gt;</span>
 
-<span class="o">&lt;/</span><span class="nt">main</span><span class="o">&gt;</span>
-</code></pre></div>
+<span class="o">&lt;/</span><span class="nt">main</span><span class="o">&gt;</span></code></pre></div>
 
 <p>So we first set a <code>checkbox</code> with an <code>id</code> at the top of the document. I will explain why later. After it we have our <code>nav</code> element. This is the menu that will slide out.</p>
 
@@ -160,7 +159,7 @@
 
 <h2>CSS</h2>
 
-<div class="highlight"><pre><code class="css"><span class="c">/* Global styles */</span>
+<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="c">/* Global styles */</span>
 <span class="o">*</span> <span class="p">{</span>
 	<span class="k">margin</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
 	<span class="k">padding</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
@@ -169,7 +168,7 @@
 	<span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">box</span><span class="o">-</span><span class="n">sizing</span><span class="o">:</span> <span class="k">border</span><span class="o">-</span><span class="n">box</span><span class="p">;</span>
 <span class="p">}</span>
 <span class="nt">html</span><span class="o">,</span> <span class="nt">body</span> <span class="p">{</span>
-	<span class="k">height</span><span class="o">:</span> <span class="m">100</span><span class="o">%</span><span class="p">;</span>
+	<span class="k">height</span><span class="o">:</span> <span class="m">100%</span><span class="p">;</span>
 <span class="p">}</span>
 <span class="nt">body</span> <span class="p">{</span>
 	<span class="k">position</span><span class="o">:</span> <span class="k">relative</span><span class="p">;</span>
@@ -188,7 +187,7 @@
 	<span class="k">position</span><span class="o">:</span> <span class="k">static</span><span class="p">;</span>
 	<span class="k">top</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
 	<span class="k">left</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
-	<span class="k">width</span><span class="o">:</span> <span class="m">100</span><span class="o">%</span><span class="p">;</span>
+	<span class="k">width</span><span class="o">:</span> <span class="m">100%</span><span class="p">;</span>
 	<span class="k">height</span><span class="o">:</span> <span class="m">75px</span><span class="p">;</span>
 	<span class="k">z-index</span><span class="o">:</span> <span class="m">2</span><span class="p">;</span>
 	<span class="k">background</span><span class="o">:</span> <span class="m">#999</span><span class="p">;</span>
@@ -212,8 +211,8 @@
 	<span class="k">position</span><span class="o">:</span> <span class="k">fixed</span><span class="p">;</span>
 	<span class="k">top</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
 	<span class="k">left</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
-	<span class="k">width</span><span class="o">:</span> <span class="m">80</span><span class="o">%</span><span class="p">;</span>
-	<span class="k">height</span><span class="o">:</span> <span class="m">100</span><span class="o">%</span><span class="p">;</span>
+	<span class="k">width</span><span class="o">:</span> <span class="m">80%</span><span class="p">;</span>
+	<span class="k">height</span><span class="o">:</span> <span class="m">100%</span><span class="p">;</span>
 	<span class="k">z-index</span><span class="o">:</span> <span class="m">1</span><span class="p">;</span>
 	<span class="k">overflow</span><span class="o">:</span> <span class="k">auto</span><span class="p">;</span>
 	<span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="k">overflow</span><span class="o">-</span><span class="n">scrolling</span><span class="o">:</span> <span class="n">touch</span><span class="p">;</span>
@@ -239,14 +238,14 @@
 
 <span class="nf">#nav</span> <span class="nt">ul</span> <span class="nt">li</span> <span class="nt">a</span> <span class="p">{</span>
 	<span class="k">display</span><span class="o">:</span> <span class="k">block</span><span class="p">;</span>
-	<span class="k">width</span><span class="o">:</span> <span class="m">100</span><span class="o">%</span><span class="p">;</span>
-	<span class="k">height</span><span class="o">:</span> <span class="m">100</span><span class="o">%</span><span class="p">;</span>
+	<span class="k">width</span><span class="o">:</span> <span class="m">100%</span><span class="p">;</span>
+	<span class="k">height</span><span class="o">:</span> <span class="m">100%</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="nf">#main-container</span> <span class="p">{</span>
 	<span class="k">display</span><span class="o">:</span> <span class="k">block</span><span class="p">;</span>
 	<span class="k">position</span><span class="o">:</span> <span class="k">relative</span><span class="p">;</span>
-	<span class="k">height</span><span class="o">:</span> <span class="m">100</span><span class="o">%</span><span class="p">;</span>
+	<span class="k">height</span><span class="o">:</span> <span class="m">100%</span><span class="p">;</span>
 	<span class="n">transform</span><span class="o">:</span> <span class="n">translate3D</span><span class="p">(</span><span class="m">0</span><span class="o">,</span><span class="m">0</span><span class="o">,</span><span class="m">0</span><span class="p">);</span>
 	<span class="o">-</span><span class="n">moz</span><span class="o">-</span><span class="n">transform</span><span class="o">:</span> <span class="n">translate3D</span><span class="p">(</span><span class="m">0</span><span class="o">,</span><span class="m">0</span><span class="o">,</span><span class="m">0</span><span class="p">);</span>
 	<span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">transform</span><span class="o">:</span> <span class="n">translate3D</span><span class="p">(</span><span class="m">0</span><span class="o">,</span><span class="m">0</span><span class="o">,</span><span class="m">0</span><span class="p">);</span>
@@ -258,24 +257,23 @@
 
 <span class="c">/* Translate main container when nav handler is checked */</span>
 <span class="nf">#nav-handler</span><span class="nd">:checked</span> <span class="o">~</span> <span class="nf">#main-container</span> <span class="p">{</span>
-	<span class="n">transform</span><span class="o">:</span> <span class="n">translate3D</span><span class="p">(</span><span class="m">80</span><span class="o">%,</span><span class="m">0</span><span class="o">,</span><span class="m">0</span><span class="p">);</span> <span class="c">/* X value must be same as Nav width */</span>
-	<span class="o">-</span><span class="n">moz</span><span class="o">-</span><span class="n">transform</span><span class="o">:</span> <span class="n">translate3D</span><span class="p">(</span><span class="m">80</span><span class="o">%,</span><span class="m">0</span><span class="o">,</span><span class="m">0</span><span class="p">);</span> <span class="c">/* X value must be same as Nav width */</span>
-	<span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">transform</span><span class="o">:</span> <span class="n">translate3D</span><span class="p">(</span><span class="m">80</span><span class="o">%,</span><span class="m">0</span><span class="o">,</span><span class="m">0</span><span class="p">);</span> <span class="c">/* X value must be same as Nav width */</span>
+	<span class="n">transform</span><span class="o">:</span> <span class="n">translate3D</span><span class="p">(</span><span class="m">80%</span><span class="o">,</span><span class="m">0</span><span class="o">,</span><span class="m">0</span><span class="p">);</span> <span class="c">/* X value must be same as Nav width */</span>
+	<span class="o">-</span><span class="n">moz</span><span class="o">-</span><span class="n">transform</span><span class="o">:</span> <span class="n">translate3D</span><span class="p">(</span><span class="m">80%</span><span class="o">,</span><span class="m">0</span><span class="o">,</span><span class="m">0</span><span class="p">);</span> <span class="c">/* X value must be same as Nav width */</span>
+	<span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">transform</span><span class="o">:</span> <span class="n">translate3D</span><span class="p">(</span><span class="m">80%</span><span class="o">,</span><span class="m">0</span><span class="o">,</span><span class="m">0</span><span class="p">);</span> <span class="c">/* X value must be same as Nav width */</span>
 <span class="p">}</span>
 
 <span class="nf">#content-container</span> <span class="p">{</span>
 	<span class="k">position</span><span class="o">:</span> <span class="k">absolute</span><span class="p">;</span>
 	<span class="k">top</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
 	<span class="k">left</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
-	<span class="k">width</span><span class="o">:</span> <span class="m">100</span><span class="o">%</span><span class="p">;</span>
-	<span class="k">height</span><span class="o">:</span> <span class="m">100</span><span class="o">%</span><span class="p">;</span>
+	<span class="k">width</span><span class="o">:</span> <span class="m">100%</span><span class="p">;</span>
+	<span class="k">height</span><span class="o">:</span> <span class="m">100%</span><span class="p">;</span>
 	<span class="k">padding</span><span class="o">:</span> <span class="m">75px</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span><span class="p">;</span> <span class="c">/* Top padding must be same as header height */</span>
 	<span class="k">overflow-y</span><span class="o">:</span> <span class="k">scroll</span><span class="p">;</span>
 	<span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="k">overflow</span><span class="o">-</span><span class="n">scrolling</span><span class="o">:</span> <span class="n">touch</span><span class="p">;</span>
 	<span class="k">background</span><span class="o">:</span> <span class="m">#fff</span><span class="p">;</span>
 	<span class="k">z-index</span><span class="o">:</span> <span class="m">-1</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
+<span class="p">}</span></code></pre></div>
 
 <p>Running down through the CSS; at the top we have global styles. We set the height to 100% on the html and body elements, and set <code>overflow</code> to hidden on the body element.</p>
 
@@ -297,17 +295,16 @@
 
 <p>Unfortunately, this will not work on some Android browsers because clicking on the <code>label</code> will not trigger the checkbox to become checked, nor does the general sibling combinator selector work. So we have to resort to a bit of JavaScript. First we need to add a class, <code>.nav-handler-checked</code>, in our css:</p>
 
-<div class="highlight"><pre><code class="css"><span class="nf">#nav-handler</span><span class="nd">:checked</span> <span class="o">~</span> <span class="nf">#main-container</span><span class="o">,</span>
+<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="nf">#nav-handler</span><span class="nd">:checked</span> <span class="o">~</span> <span class="nf">#main-container</span><span class="o">,</span>
 <span class="nc">.nav-handler-checked</span> <span class="p">{</span>
-	<span class="n">transform</span><span class="o">:</span> <span class="n">translate3D</span><span class="p">(</span><span class="m">80</span><span class="o">%,</span><span class="m">0</span><span class="o">,</span><span class="m">0</span><span class="p">);</span>
-	<span class="o">-</span><span class="n">moz</span><span class="o">-</span><span class="n">transform</span><span class="o">:</span> <span class="n">translate3D</span><span class="p">(</span><span class="m">80</span><span class="o">%,</span><span class="m">0</span><span class="o">,</span><span class="m">0</span><span class="p">);</span>
-	<span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">transform</span><span class="o">:</span> <span class="n">translate3D</span><span class="p">(</span><span class="m">80</span><span class="o">%,</span><span class="m">0</span><span class="o">,</span><span class="m">0</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div>
+	<span class="n">transform</span><span class="o">:</span> <span class="n">translate3D</span><span class="p">(</span><span class="m">80%</span><span class="o">,</span><span class="m">0</span><span class="o">,</span><span class="m">0</span><span class="p">);</span>
+	<span class="o">-</span><span class="n">moz</span><span class="o">-</span><span class="n">transform</span><span class="o">:</span> <span class="n">translate3D</span><span class="p">(</span><span class="m">80%</span><span class="o">,</span><span class="m">0</span><span class="o">,</span><span class="m">0</span><span class="p">);</span>
+	<span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">transform</span><span class="o">:</span> <span class="n">translate3D</span><span class="p">(</span><span class="m">80%</span><span class="o">,</span><span class="m">0</span><span class="o">,</span><span class="m">0</span><span class="p">);</span>
+<span class="p">}</span></code></pre></div>
 
 <p>Then when the nav handler label is clicked we add the <em>nav-handler-checked</em> class to the main container. If the main container already contains the class, we simply remove it. I'll be using jQuery for the sake of simplicity.</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="cm">/* Android support */</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="cm">/* Android support */</span>
 <span class="k">if</span> <span class="p">(</span><span class="sr">/Android/i</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">navigator</span><span class="p">.</span><span class="nx">userAgent</span><span class="p">))</span> <span class="p">{</span>
 	<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#nav-handler&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
 		<span class="nx">e</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
@@ -318,8 +315,7 @@
 			<span class="nx">$mainContainer</span><span class="p">.</span><span class="nx">addClass</span><span class="p">(</span><span class="s1">&#39;nav-handler-checked&#39;</span><span class="p">);</span>
 		<span class="p">}</span>
 	<span class="p">});</span>
-<span class="p">}</span>
-</code></pre></div>
+<span class="p">}</span></code></pre></div>
 
 <h2>Conclusion</h2>
 

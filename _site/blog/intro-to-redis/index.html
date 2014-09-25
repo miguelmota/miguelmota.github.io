@@ -116,13 +116,11 @@
 
 <p>After installation, start a redis instance with</p>
 
-<div class="highlight"><pre><code class="bash">redis-server <span class="o">{</span>path to redis.conf<span class="o">}</span>
-</code></pre></div>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">redis-server <span class="o">{</span>path to redis.conf<span class="o">}</span></code></pre></div>
 
 <p>and then fire up the command line client</p>
 
-<div class="highlight"><pre><code class="bash">redis-cli -p <span class="o">{</span>port<span class="o">}</span>
-</code></pre></div>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">redis-cli -p <span class="o">{</span>port<span class="o">}</span></code></pre></div>
 
 <p>For the rest of the post we'll be working from the command-line interface.</p>
 
@@ -130,47 +128,42 @@
 
 <p>Keys can hold a single value, wether it be a string or numeric value. We create a key with the <code>set</code> command.</p>
 
-<div class="highlight"><pre><code class="bash">&gt; <span class="nb">set </span>foo bar 
-OK
-</code></pre></div>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">&gt; <span class="nb">set </span>foo bar 
+OK</code></pre></div>
 
 <p>Retreive a key with the <code>get</code> command</p>
 
-<div class="highlight"><pre><code class="bash">&gt; get foo
-<span class="s2">&quot;bar&quot;</span>
-</code></pre></div>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">&gt; get foo
+<span class="s2">&quot;bar&quot;</span></code></pre></div>
 
 <p>Delete a key with <code>del</code></p>
 
-<div class="highlight"><pre><code class="bash">&gt; del foo
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">&gt; del foo
 <span class="o">(</span>integer<span class="o">)</span> 1
 &gt; get foo
-<span class="o">(</span>nil<span class="o">)</span>
-</code></pre></div>
+<span class="o">(</span>nil<span class="o">)</span></code></pre></div>
 
 <p>Store a JSON string</p>
 
-<div class="highlight"><pre><code class="bash">&gt; <span class="nb">set </span>users:foo <span class="s2">&quot;{name: foo, age: 21, hobbies: [baz, qux]}&quot;</span>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">&gt; <span class="nb">set </span>users:foo <span class="s2">&quot;{name: foo, age: 21, hobbies: [baz, qux]}&quot;</span>
 OK
 &gt; get users:foo
-<span class="s2">&quot;{name: foo, age: 21, hobbies: [baz, qux]}&quot;</span>
-</code></pre></div>
+<span class="s2">&quot;{name: foo, age: 21, hobbies: [baz, qux]}&quot;</span></code></pre></div>
 
 <p>Notice the colon in the key. The colon is just part of the key name, it doesn't have any special meaning to Redis. It's purpose is to visually group a set of related keys together.</p>
 
 <p>If the value is a number you can incremented with the <code>incr</code > or <code>incrby</code> command. If the key doesn't exist it will simply create it.</p>
 
-<div class="highlight"><pre><code class="bash">&gt; incr stats:views  
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">&gt; incr stats:views  
 <span class="o">(</span>integer<span class="o">)</span> 1
 &gt; incr stats:views  
 <span class="o">(</span>integer<span class="o">)</span> 2
 &gt; incrby stats:views 5
-<span class="o">(</span>integer<span class="o">)</span> 7
-</code></pre></div>
+<span class="o">(</span>integer<span class="o">)</span> 7</code></pre></div>
 
 <p>With the <code>keys</code> command we can get a list of keys that match a wildcard.</p>
 
-<div class="highlight"><pre><code class="bash">&gt; <span class="nb">set </span>foo:1 bar
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">&gt; <span class="nb">set </span>foo:1 bar
 OK
 &gt; <span class="nb">set </span>foobar:2 baz
 OK
@@ -184,14 +177,13 @@ OK
 1<span class="o">)</span> <span class="s2">&quot;foobar:2&quot;</span>
 &gt; keys foo*:<span class="o">[</span>13<span class="o">]</span>
 1<span class="o">)</span> <span class="s2">&quot;foo:1&quot;</span>
-2<span class="o">)</span> <span class="s2">&quot;foooo:3&quot;</span>
-</code></pre></div>
+2<span class="o">)</span> <span class="s2">&quot;foooo:3&quot;</span></code></pre></div>
 
 <h2>Hashes</h2>
 
 <p>You can think of hashes a being a key-value pair, except that the value can be <em>multiple</em> key-value pairs. For example we can have a users hash that has multiple fields about the user</p>
 
-<div class="highlight"><pre><code class="bash">&gt; hmset users:foo name <span class="s2">&quot;Foo&quot;</span> email foo@bar.com age 21
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">&gt; hmset users:foo name <span class="s2">&quot;Foo&quot;</span> email foo@bar.com age 21
 OK
 &gt; hmget users:foo email
 1<span class="o">)</span> <span class="s2">&quot;foo@bar.com&quot;</span>
@@ -219,8 +211,7 @@ OK
 3<span class="o">)</span> <span class="s2">&quot;name&quot;</span>
 4<span class="o">)</span> <span class="s2">&quot;Foo&quot;</span>
 5<span class="o">)</span> <span class="s2">&quot;hobies&quot;</span>
-6<span class="o">)</span> <span class="s2">&quot;[bar,qux]&quot;</span>
-</code></pre></div>
+6<span class="o">)</span> <span class="s2">&quot;[bar,qux]&quot;</span></code></pre></div>
 
 <p>Quick overview of hash commands</p>
 
@@ -236,36 +227,33 @@ OK
 
 <p>Here's an example of way to do quick lookups for a user</p>
 
-<div class="highlight"><pre><code class="bash">&gt; <span class="nb">set </span>users:1000 <span class="s2">&quot;{id: 1000, email: foo@bar.com}&quot;</span>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">&gt; <span class="nb">set </span>users:1000 <span class="s2">&quot;{id: 1000, email: foo@bar.com}&quot;</span>
 OK
 &gt; hset users:lookup:email foo@bar.com 1000
 <span class="o">(</span>integer<span class="o">)</span> 1
 &gt; hget users:lookup:email foo@bar.com
 <span class="s2">&quot;1000&quot;</span>
 &gt; get users:1000
-<span class="s2">&quot;{id: 1000, email: foo@bar.com}&quot;</span>
-</code></pre></div>
+<span class="s2">&quot;{id: 1000, email: foo@bar.com}&quot;</span></code></pre></div>
 
 <h2>Lists</h2>
 
 <p>A list is a list of strings. Push items into a list with <code>lpush</code></p>
 
-<div class="highlight"><pre><code class="bash">&gt; lpush newusers foo
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">&gt; lpush newusers foo
 <span class="o">(</span>integer<span class="o">)</span> 1
 &gt; lpush newusers bar
-<span class="o">(</span>integer<span class="o">)</span> 2
-</code></pre></div>
+<span class="o">(</span>integer<span class="o">)</span> 2</code></pre></div>
 
 <p>Use <code>lrange</code> to return a range</p>
 
-<div class="highlight"><pre><code class="bash">&gt; lrange newusers 0 -1
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">&gt; lrange newusers <span class="m">0</span> -1
 1<span class="o">)</span> <span class="s2">&quot;bar&quot;</span>
-2<span class="o">)</span> <span class="s2">&quot;foo&quot;</span>
-</code></pre></div>
+2<span class="o">)</span> <span class="s2">&quot;foo&quot;</span></code></pre></div>
 
 <p>A list can be sorted using the <code>sort</code> command</p>
 
-<div class="highlight"><pre><code class="bash">&gt; rpush users:foo:guesses 5 9 10 2 4 10 19 2
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">&gt; rpush users:foo:guesses <span class="m">5</span> <span class="m">9</span> <span class="m">10</span> <span class="m">2</span> <span class="m">4</span> <span class="m">10</span> <span class="m">19</span> 2
 <span class="o">(</span>integer<span class="o">)</span> 8
 &gt; sort users:foo:guesses
 1<span class="o">)</span> <span class="s2">&quot;2&quot;</span>
@@ -275,140 +263,122 @@ OK
 5<span class="o">)</span> <span class="s2">&quot;9&quot;</span>
 6<span class="o">)</span> <span class="s2">&quot;10&quot;</span>
 7<span class="o">)</span> <span class="s2">&quot;10&quot;</span>
-8<span class="o">)</span> <span class="s2">&quot;19&quot;</span>
-</code></pre></div>
+8<span class="o">)</span> <span class="s2">&quot;19&quot;</span></code></pre></div>
 
 <p>Keep the list trimmed with <code>ltrim</code>. For example, if we wanted to only keep a list of the latest 50 new users</p>
 
-<div class="highlight"><pre><code class="bash">&gt; ltrim newusers 0 49
-OK
-</code></pre></div>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">&gt; ltrim newusers <span class="m">0</span> 49
+OK</code></pre></div>
 
 <h2>Sets</h2>
 
 <p>Sets are undorered collections of strings. A use case for sets would be keeping a collection of a user's friends. To add to a set use <code>sadd</code></p>
 
-<div class="highlight"><pre><code class="bash">&gt; sadd friends:foo bar baz qux 
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">&gt; sadd friends:foo bar baz qux 
 <span class="o">(</span>integer<span class="o">)</span> 3
 &gt; sadd friends:dexter bar qux deedee
-<span class="o">(</span>integer<span class="o">)</span> 3
-</code></pre></div>
+<span class="o">(</span>integer<span class="o">)</span> 3</code></pre></div>
 
 <p>We can check if a member belongs to a set with <code>sismember</code></p>
 
-<div class="highlight"><pre><code class="bash">&gt; sismember friends:foo bob
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">&gt; sismember friends:foo bob
 <span class="o">(</span>integer<span class="o">)</span> 0
 &gt; sismember friends:dexter deedee
-<span class="o">(</span>integer<span class="o">)</span> 1
-</code></pre></div>
+<span class="o">(</span>integer<span class="o">)</span> 1</code></pre></div>
 
 <p>With the <code>sinter</code> command we can return a list of members that <em>intersect</em> between sets. For example, if we wanted a list containing shared friends</p>
 
-<div class="highlight"><pre><code class="bash">&gt; sinter friends:foo friends:dexter
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">&gt; sinter friends:foo friends:dexter
 1<span class="o">)</span> <span class="s2">&quot;bar&quot;</span>
-2<span class="o">)</span> <span class="s2">&quot;qux&quot;</span>
-</code></pre></div>
+2<span class="o">)</span> <span class="s2">&quot;qux&quot;</span></code></pre></div>
 
 <p>We can also store the result into a new set with <code>sinterstore</code></p>
 
-<div class="highlight"><pre><code class="bash">&gt; sinterstore friends:foo_dexter friends:foo friends:dexter
-<span class="o">(</span>integer<span class="o">)</span> 2
-</code></pre></div>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">&gt; sinterstore friends:foo_dexter friends:foo friends:dexter
+<span class="o">(</span>integer<span class="o">)</span> 2</code></pre></div>
 
 <p>We can get members of a set with <code>smembers</code>
 
-<div class="highlight"><pre><code class="bash">&gt; smembers friends:foo_dexter
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">&gt; smembers friends:foo_dexter
 1<span class="o">)</span> <span class="s2">&quot;bar&quot;</span> 
-2<span class="o">)</span> <span class="s2">&quot;qux&quot;</span> 
-</code></pre></div>
+2<span class="o">)</span> <span class="s2">&quot;qux&quot;</span></code></pre></div>
 
 <p>To store sorted sets use <code>zadd</code>. Sorted sets consists of key/member pairs, where the key is used for sorting. For example, having a sorted set containing sets of quiz scores</p>
 
-<div class="highlight"><pre><code class="bash">&gt; zadd students:foo 70 quiz1 95 quiz2 60 quiz3 99 quiz4 20 quiz5
-<span class="o">(</span>integer<span class="o">)</span> 5
-</code></pre></div>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">&gt; zadd students:foo <span class="m">70</span> quiz1 <span class="m">95</span> quiz2 <span class="m">60</span> quiz3 <span class="m">99</span> quiz4 <span class="m">20</span> quiz5
+<span class="o">(</span>integer<span class="o">)</span> 5</code></pre></div>
 
 <p>We then get a count of scores between a range with <code>zcount</code></p>
 
-<div class="highlight"><pre><code class="bash">&gt; zcount students:foo 90 100
-<span class="o">(</span>integer<span class="o">)</span> 2
-</code></pre></div>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">&gt; zcount students:foo <span class="m">90</span> 100
+<span class="o">(</span>integer<span class="o">)</span> 2</code></pre></div>
 
 <p>To determine the rank of a member within the set we can use <code>zrank</code> (low to high) or <code>zrevrank</code> (high to low)</p>
 
-<div class="highlight"><pre><code class="bash">&gt; zrank students:foo quiz3
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">&gt; zrank students:foo quiz3
 <span class="o">(</span>integer<span class="o">)</span> 4
 &gt; zrevrank students:foo quiz3
 <span class="o">(</span>integer<span class="o">)</span> 0
 &gt; zrevrank students:foo quiz1
 <span class="o">(</span>integer<span class="o">)</span> 2
 &gt; zrevrank students:foo quiz2
-<span class="o">(</span>integer<span class="o">)</span> 1
-</code></pre></div>
+<span class="o">(</span>integer<span class="o">)</span> 1</code></pre></div>
 
 <p>Remove a set with <code>zrem</code></p>
 
-<div class="highlight"><pre><code class="bash">&gt; zrem students:foo quiz5
-<span class="o">(</span>integer<span class="o">)</span> 1
-</code></pre></div>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">&gt; zrem students:foo quiz5
+<span class="o">(</span>integer<span class="o">)</span> 1</code></pre></div>
 
 <p>Sort by name descending alphabetically</p>
 
-<div class="highlight"><pre><code class="bash">&gt; sadd friends:foo bar baz qux dexter deedee 
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">&gt; sadd friends:foo bar baz qux dexter deedee 
 <span class="o">(</span>integer<span class="o">)</span> 5
-&gt; sort friends:foo limit 0 3 desc alpha
+&gt; sort friends:foo limit <span class="m">0</span> <span class="m">3</span> desc alpha
 1<span class="o">)</span> <span class="s2">&quot;qux&quot;</span>
 2<span class="o">)</span> <span class="s2">&quot;dexter&quot;</span>
-3<span class="o">)</span> <span class="s2">&quot;deedee&quot;</span>
-</code></pre></div>
+3<span class="o">)</span> <span class="s2">&quot;deedee&quot;</span></code></pre></div>
 
 <h2>Expiration</h2>
 
 <p>Keys can be set to expire (delete) after a number of seconds. We do this with the <code>expire</code> or <code>expireat</code> commands. <code>ttl</code> returns the Time To Live and <code>persist</code> removes the expiration.</p>
 
-<div class="highlight"><pre><code class="bash">&gt; incr views
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">&gt; incr views
 <span class="o">(</span>integer<span class="o">)</span> 1
 &gt; expire views 30
 <span class="o">(</span>integer<span class="o">)</span> 1
 &gt; ttl views
 <span class="o">(</span>integer<span class="o">)</span> 30
-&gt; expireat views 1420005600 <span class="c"># expire on 12:00a.m. December 31st, 2014</span>
+&gt; expireat views <span class="m">1420005600</span> <span class="c"># expire on 12:00a.m. December 31st, 2014</span>
 <span class="o">(</span>integer<span class="o">)</span> 0
 &gt; ttl views
 <span class="o">(</span>integer<span class="o">)</span> 28529193
 &gt; persist views
-<span class="o">(</span>integer<span class="o">)</span> -1
-</code></pre></div>
+<span class="o">(</span>integer<span class="o">)</span> -1</code></pre></div>
 
 <h2>Flush</h2>
 
 <p>Select database to use with <code>select</code> command</p>
 
-<div class="highlight"><pre><code class="bash">&gt; <span class="k">select </span>1
-OK
-</code></pre></div>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">&gt; <span class="k">select</span> 1
+OK</code></pre></div>
 
 <p>Clear current database with <code>flushdb</code></p>
 
-<div class="highlight"><pre><code class="bash">&gt; flushdb
-OK
-</code></pre></div>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">&gt; flushdb
+OK</code></pre></div>
 
 <p>Clear all databases with <code>flushall</code></p>
 
-<div class="highlight"><pre><code class="bash">&gt; flushall
-OK
-</code></pre></div>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">&gt; flushall
+OK</code></pre></div>
 
 <h2>Subscribe / Publish</h2>
 
 <p>With redis you can have subscribers listen to a channel. Publishing a message will be received by all subscribers in the channel. You can subscribe to multiple channels as well.</p>
 
-<div class="highlight"><pre><code class="bash">&gt; subscribe greeetings
-</code></pre></div>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">&gt; subscribe greeetings</code></pre></div>
 
-<div class="highlight"><pre><code class="bash">&gt; publish greetings <span class="s2">&quot;Hello, World&quot;</span>
-</code></pre></div>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">&gt; publish greetings <span class="s2">&quot;Hello, World&quot;</span></code></pre></div>
 
 <p>Anyone subscried to the <em>greetings</em> channel will receive the "Hello, World" message.</p>
 
@@ -416,7 +386,7 @@ OK
 
 <p>The <code>multi</code> command let's us queue commands (transaction block) and then execute with <code>exec</code> or discard the queue with <code>discard</code></p>
 
-<div class="highlight"><pre><code class="bash">&gt; multi
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">&gt; multi
 OK
 &gt; incrby counter 10
 QUEUED
@@ -424,8 +394,7 @@ QUEUED
 QUEUED
 &gt; <span class="nb">exec</span>
 1<span class="o">)</span> <span class="o">(</span>integer<span class="o">)</span> 10
-2<span class="o">)</span> <span class="o">(</span>integer<span class="o">)</span> 0
-</code></pre></div>
+2<span class="o">)</span> <span class="o">(</span>integer<span class="o">)</span> 0</code></pre></div>
 
 <p>Queued commands will always execute in the order they were set, so a use case for using the multi command would be when a command is dependent on the result of the previous command.</p>
 
@@ -433,28 +402,25 @@ QUEUED
 
 <p>Watch incomming redis commands with <code>monitor</code></p>
 
-<div class="highlight"><pre><code class="bash">&gt; monitor
-OK
-</code></pre></div>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">&gt; monitor
+OK</code></pre></div>
 
 <p>Get recent logs</p>
 
-<div class="highlight"><pre><code class="bash">&gt; config <span class="nb">set </span>slowlog-log-slower-than 0
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">&gt; config <span class="nb">set </span>slowlog-log-slower-than 0
 OK
-&gt; slowlog get 2
-</code></pre></div>
+&gt; slowlog get 2</code></pre></div>
 
 <p>Get config related to logging</p>
 
-<div class="highlight"><pre><code class="bash">&gt; config get *log*
-</code></pre></div>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">&gt; config get *log*</code></pre></div>
 
 <!--
 <h2>More examples</h2>
 
 <p>Sort by severity example</p>
 
-<div class="highlight"><pre><code class="bash">&gt; sadd watch:foo 12339 1382 338 9338
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">&gt; sadd watch:foo <span class="m">12339</span> <span class="m">1382</span> <span class="m">338</span> 9338
 <span class="o">(</span>integer<span class="o">)</span> 4
 &gt; <span class="nb">set </span>severity:12339 3
 OK
@@ -467,40 +433,35 @@ sort watch:leto by severity:* desc
 1<span class="o">)</span> <span class="s2">&quot;338&quot;</span>
 2<span class="o">)</span> <span class="s2">&quot;9338&quot;</span>
 3<span class="o">)</span> <span class="s2">&quot;12339&quot;</span>
-4<span class="o">)</span> <span class="s2">&quot;1382&quot;</span>
-</code></pre></div>
+4<span class="o">)</span> <span class="s2">&quot;1382&quot;</span></code></pre></div>
 
 <p>Another example</p>
 
-<div class="highlight"><pre><code class="bash">hset bug:12339 severity 3
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">hset bug:12339 severity 3
 hset bug:12339 priority 1
 hset bug:12339 details ”<span class="o">{</span>id: 12339, ....<span class="o">}</span>”
 hset bug:1382 severity 2
 hset bug:1382 priority 2
-hset bug:1382 details ”<span class="o">{</span>id: 1382, ....<span class="o">}</span>”
-</code></pre></div>
+hset bug:1382 details ”<span class="o">{</span>id: 1382, ....<span class="o">}</span>”</code></pre></div>
 
-<div class="highlight"><pre><code class="bash">sort watch:leto by bug:*-&gt;priority get bug:*-&gt;details
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">sort watch:leto by bug:*-&gt;priority get bug:*-&gt;details
 <span class="c"># store result</span>
-sort watch:leto by bug:*-&gt;priority get bug:*-&gt;details store watch_by_priority:leto
-</code></pre></div>
+sort watch:leto by bug:*-&gt;priority get bug:*-&gt;details store watch_by_priority:leto</code></pre></div>
 
-<div class="highlight"><pre><code class="bash"><span class="c"># don&#39;t use keys because it&#39;s slow</span>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># don&#39;t use keys because it&#39;s slow</span>
 keys bug:1233:* <span class="c"># don&#39;t do this</span>
 <span class="c"># instead us hashes</span>
-hset bugs:1233 1 ”<span class="o">{</span>id:1, account: 1233, subject: ’...’<span class="o">}</span>”
-hset bugs:1233 2 ”<span class="o">{</span>id:2, account: 1233, subject: ’...’<span class="o">}</span>”
-</code></pre></div>
+hset bugs:1233 <span class="m">1</span> ”<span class="o">{</span>id:1, account: 1233, subject: ’...’<span class="o">}</span>”
+hset bugs:1233 <span class="m">2</span> ”<span class="o">{</span>id:2, account: 1233, subject: ’...’<span class="o">}</span>”</code></pre></div>
 
 <h2>Scan</h2>
 
-<div class="highlight"><pre><code class="bash">scan 0 match bugs:* count 2
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">scan <span class="m">0</span> match bugs:* count 2
 &gt; 1<span class="o">)</span> ”3”
 &gt; 2<span class="o">)</span> 1<span class="o">)</span> ”bugs:125”
-scan 3 match bugs:* count 2 <span class="c"># scan 3 because of previous next cursor</span>
+scan <span class="m">3</span> match bugs:* count <span class="m">2</span> <span class="c"># scan 3 because of previous next cursor</span>
 &gt; 1<span class="o">)</span> ”0” <span class="c"># 0 means end</span>
-&gt; 2<span class="o">)</span> 1<span class="o">)</span> ”bugs:124”
-</code></pre></div>
+&gt; 2<span class="o">)</span> 1<span class="o">)</span> ”bugs:124”</code></pre></div>
 -->
 
 <h2>Conclusion</h2>

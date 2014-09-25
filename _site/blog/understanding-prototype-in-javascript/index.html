@@ -110,18 +110,17 @@
 
 <p>Let's define a functional object constructor called <code>Quadrilateral</code> and have <code>width</code> and <code>height</code> as parameters.</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="c1">// Define our constructor</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Define our constructor</span>
 <span class="kd">var</span> <span class="nx">Quadrilateral</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">width</span><span class="p">,</span> <span class="nx">height</span><span class="p">)</span> <span class="p">{</span>
 	<span class="k">this</span><span class="p">.</span><span class="nx">width</span> <span class="o">=</span> <span class="nx">width</span><span class="p">;</span>
 	<span class="k">this</span><span class="p">.</span><span class="nx">height</span> <span class="o">=</span> <span class="nx">height</span><span class="p">;</span>
 
 	<span class="k">return</span> <span class="k">this</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
+<span class="p">}</span></code></pre></div>
 
 <p>Traditionally if we wanted to have a method we would define it something like this:</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="c1">// Define our constructor</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Define our constructor</span>
 <span class="kd">var</span> <span class="nx">Quadrilateral</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">width</span><span class="p">,</span> <span class="nx">height</span><span class="p">)</span> <span class="p">{</span>
 	<span class="k">this</span><span class="p">.</span><span class="nx">width</span> <span class="o">=</span> <span class="nx">width</span><span class="p">;</span>
 	<span class="k">this</span><span class="p">.</span><span class="nx">height</span> <span class="o">=</span> <span class="nx">height</span><span class="p">;</span>
@@ -132,24 +131,21 @@
 	<span class="p">}</span>
 
 	<span class="k">return</span> <span class="k">this</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
+<span class="p">}</span></code></pre></div>
 
 <p>We then can create a <code>new</code> object of type <code>Quadrilateral</code>. For this example it will have a width of <code>4</code> and height of <code>4</code>:<p>
 
-<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">mysquare</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Quadrilateral</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">);</span>
-</code></pre></div>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">mysquare</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Quadrilateral</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">);</span></code></pre></div>
 
 <p>This is how we then call the <code>getWidth</code> method:
 
-<div class="highlight"><pre><code class="javascript"><span class="nx">mysquare</span><span class="p">.</span><span class="nx">getWidth</span><span class="p">());</span>
-</code></pre></div>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">mysquare</span><span class="p">.</span><span class="nx">getWidth</span><span class="p">());</span></code></pre></div>
 
 <p>Which returns the number <code>4</code>.
 
 <p>Now let's do what we just did using <code>prototype</code>:</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="c1">// Define our constructor</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Define our constructor</span>
 <span class="kd">var</span> <span class="nx">Quadrilateral</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">width</span><span class="p">,</span> <span class="nx">height</span><span class="p">)</span> <span class="p">{</span>
 	<span class="k">this</span><span class="p">.</span><span class="nx">width</span> <span class="o">=</span> <span class="nx">width</span><span class="p">;</span>
 	<span class="k">this</span><span class="p">.</span><span class="nx">height</span> <span class="o">=</span> <span class="nx">height</span><span class="p">;</span>
@@ -160,13 +156,11 @@
 <span class="c1">// Define our method</span>
 <span class="nx">Quadrilateral</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">getWidth</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
 	<span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">width</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
+<span class="p">}</span></code></pre></div>
 
 <p>Once again we can call the <code>getWidth</code> method which returns the number <code>4</code>
 
-<div class="highlight"><pre><code class="javascript"><span class="nx">mysquare</span><span class="p">.</span><span class="nx">getWidth</span><span class="p">());</span>
-</code></pre></div>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">mysquare</span><span class="p">.</span><span class="nx">getWidth</span><span class="p">());</span></code></pre></div>
 
 <p>You may be wondering what just happened. Everything should look the same except for the <code>getWidth</code> method. We defined this method as a <code>prototype</code> function rather than defining it inside the <code>Quadrilateral</code> object constructor.</p>
 
@@ -174,18 +168,16 @@
 
 <p>With prototype we can easily add new functions to the object. Let's define a method for setting the dimensions on our <code>Quadrilateral</code> object:
 
-<div class="highlight"><pre><code class="javascript"><span class="nx">Quadrilateral</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">setDimensions</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">width</span><span class="p">,</span> <span class="nx">height</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">Quadrilateral</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">setDimensions</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">width</span><span class="p">,</span> <span class="nx">height</span><span class="p">)</span> <span class="p">{</span>
 	<span class="k">this</span><span class="p">.</span><span class="nx">width</span> <span class="o">=</span> <span class="nx">width</span><span class="p">;</span>
 	<span class="k">this</span><span class="p">.</span><span class="nx">height</span> <span class="o">=</span> <span class="nx">height</span><span class="p">;</span>
 
 	<span class="k">return</span> <span class="k">this</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
+<span class="p">}</span></code></pre></div>
 
 <p>Let's try out our new method:</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="nx">mysquare</span><span class="p">.</span><span class="nx">setDimensions</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">7</span><span class="p">);</span>
-</code></pre></div>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">mysquare</span><span class="p">.</span><span class="nx">setDimensions</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">7</span><span class="p">);</span></code></pre></div>
 
 <p>Now if we call <code>mysquare.getWidth()</code> we get the number <code>7</code>.</p>
 
@@ -193,58 +185,50 @@
 
 <p>One neat advantage to using prototype is <strong>object inheritance</strong>. For example, let's create a new contructor called <code>Rectangle</code> with the same parameters as our <code>Quadrilateral</code> constructor.</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">Rectangle</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">width</span><span class="p">,</span> <span class="nx">height</span><span class="p">){</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">Rectangle</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">width</span><span class="p">,</span> <span class="nx">height</span><span class="p">){</span>
 	<span class="k">this</span><span class="p">.</span><span class="nx">width</span> <span class="o">=</span> <span class="nx">width</span><span class="p">;</span>
 	<span class="k">this</span><span class="p">.</span><span class="nx">height</span> <span class="o">=</span> <span class="nx">height</span><span class="p">;</span>
 
 	<span class="k">return</span> <span class="k">this</span><span class="p">;</span>
-<span class="p">};</span>
-</code></pre></div>
+<span class="p">};</span></code></pre></div>
 
 <p>To inherit methods and properties from the <code>Quadrilateral</code> object, we simply do:</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="nx">Rectangle</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Quadrilateral</span><span class="p">();</span>
-</code></pre></div>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">Rectangle</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Quadrilateral</span><span class="p">();</span></code></pre></div>
 
 <p>But wait, although this just inherits all the goodies, our new object does not know what it acually <em>is</em>. We Have to tell our Rectangle object that it's a Rectangle. Other wise instances of Rectangle would have a constructor of Quadrilateral. We do that by setting the <code>constructor</code> prototype:</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="nx">Rectangle</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">constructor</span> <span class="o">=</span> <span class="nx">Rectangle</span><span class="p">;</span>
-</code></pre></div>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">Rectangle</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">constructor</span> <span class="o">=</span> <span class="nx">Rectangle</span><span class="p">;</span></code></pre></div>
 
 <p>We then can create an instance of type <code>Rectangle</code>:</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">myrectangle</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Rectangle</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
-</code></pre></div>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">myrectangle</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Rectangle</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span></code></pre></div>
 
 <p>Call our <em>getter</em> method as usual, and get result of <code>6</code>:<p>
 
-<div class="highlight"><pre><code class="javascript"><span class="nx">myrectangle</span><span class="p">.</span><span class="nx">getWidth</span><span class="p">());</span>
-</code></pre></div>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">myrectangle</span><span class="p">.</span><span class="nx">getWidth</span><span class="p">());</span></code></pre></div>
 
 <p>We can test inheritance, and that our <code>Rectangle</code> object properties are simply referencing to the <code>Quadrilateral</code> object properties by doing:</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="nx">Quadrilateral</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="s1">&#39;getWidth&#39;</span><span class="p">);</span> <span class="c1">// returns true</span>
-<span class="nx">Rectangle</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="s1">&#39;getWidth&#39;</span><span class="p">);</span> <span class="c1">// returns false</span>
-</code></pre></div>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">Quadrilateral</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="s1">&#39;getWidth&#39;</span><span class="p">);</span> <span class="c1">// returns true</span>
+<span class="nx">Rectangle</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="s1">&#39;getWidth&#39;</span><span class="p">);</span> <span class="c1">// returns false</span></code></pre></div>
 
 <p>Test our instances:</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="nx">myrectangle</span> <span class="k">instanceof</span> <span class="nx">Quadrilateral</span><span class="p">;</span> <span class="c1">// returns true</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">myrectangle</span> <span class="k">instanceof</span> <span class="nx">Quadrilateral</span><span class="p">;</span> <span class="c1">// returns true</span>
 <span class="nx">myrectangle</span> <span class="k">instanceof</span> <span class="nx">Rectangle</span><span class="p">;</span> <span class="c1">//return true</span>
 
 <span class="nx">mysquare</span> <span class="k">instanceof</span> <span class="nx">Quadrilateral</span><span class="p">;</span> <span class="c1">// returns true</span>
-<span class="nx">mysquare</span> <span class="k">instanceof</span> <span class="nx">Rectangle</span><span class="p">;</span> <span class="c1">//return false</span>
-</code></pre></div>
+<span class="nx">mysquare</span> <span class="k">instanceof</span> <span class="nx">Rectangle</span><span class="p">;</span> <span class="c1">//return false</span></code></pre></div>
 
 <h3>Global Objects</h3>
 
 <p>Alright so going back to what I said in the beginning of this post. Every object has a reference to <code>Object.prototype</code>. We can confirm this by doing:
 
-<div class="highlight"><pre><code class="javascript"><span class="nx">Quadrilateral</span> <span class="k">instanceof</span> <span class="nb">Object</span><span class="p">;</span> <span class="c1">// returns true</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">Quadrilateral</span> <span class="k">instanceof</span> <span class="nb">Object</span><span class="p">;</span> <span class="c1">// returns true</span>
 <span class="nx">Rectangle</span> <span class="k">instanceof</span> <span class="nb">Object</span><span class="p">;</span> <span class="c1">//return true</span>
 <span class="nx">mysquare</span> <span class="k">instanceof</span> <span class="nb">Object</span><span class="p">;</span> <span class="c1">// returns true</span>
-<span class="nx">myrectangle</span> <span class="k">instanceof</span> <span class="nb">Object</span><span class="p">;</span> <span class="c1">//return true</span>
-</code></pre></div>
+<span class="nx">myrectangle</span> <span class="k">instanceof</span> <span class="nb">Object</span><span class="p">;</span> <span class="c1">//return true</span></code></pre></div>
 
 <p>All objects inherit methods and properties from <code>Object.prototype</code>. Ever wondered where methods such as <code>hasOwnProperty</code>, <code>isPrototypeOf</code>, <code>toString</code> or <code>valueOf</code> came from? Those come from <code>Object</code>.
 
@@ -258,14 +242,13 @@
 
 <p>We can override a global method, or check if a global method exists and define our own if it does not, for example checking for <code>Array.prototype.forEach</code>:</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">forEach</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">forEach</span><span class="p">)</span> <span class="p">{</span>
   <span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">forEach</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">fn</span><span class="p">,</span> <span class="nx">scope</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">len</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">len</span><span class="p">;</span> <span class="o">++</span><span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
       <span class="nx">fn</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">scope</span><span class="p">,</span> <span class="k">this</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span> <span class="nx">i</span><span class="p">,</span> <span class="k">this</span><span class="p">);</span>
     <span class="p">}</span>
   <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
+<span class="p">}</span></code></pre></div>
 
 <h3>Conclusion</h3>
 

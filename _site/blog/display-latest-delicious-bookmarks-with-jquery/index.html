@@ -154,15 +154,14 @@ $.getJSON("http://feeds.delicious.com/v2/json/miguelmota?callback=?",
 <p>First let's create an empty unordered list with a div below it that will serve as a loader (if you want to get fancy, you can use
 an animated loading gif):</p>
 
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;ul</span> <span class="na">id=</span><span class="s">&quot;delicious-bookmarks&quot;</span><span class="nt">&gt;&lt;/ul&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ajax-loader&quot;</span><span class="nt">&gt;</span>fetching bookmarks...<span class="nt">&lt;/div&gt;</span>
-</code></pre></div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;ul</span> <span class="na">id=</span><span class="s">&quot;delicious-bookmarks&quot;</span><span class="nt">&gt;&lt;/ul&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ajax-loader&quot;</span><span class="nt">&gt;</span>fetching bookmarks...<span class="nt">&lt;/div&gt;</span></code></pre></div>
 
 <p>We are using the <code>$.getJSON()</code> function. Let's add our json request url and and then loop though the requested data with the <code>$.each()</code> function and get the
 <code>title</code>, <code>url</code> and <code>date</code>. Then we are appending a list item to our unordered list that we created earlier which will include our variables.
 So now after it complete the jquery, let's remove the loader:</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="nx">$</span><span class="p">.</span><span class="nx">getJSON</span><span class="p">(</span><span class="s2">&quot;http://feeds.delicious.com/v2/json/miguelmota?callback=?&quot;</span><span class="p">,</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">.</span><span class="nx">getJSON</span><span class="p">(</span><span class="s2">&quot;http://feeds.delicious.com/v2/json/miguelmota?callback=?&quot;</span><span class="p">,</span>
 	<span class="p">{</span>
 	<span class="nx">count</span><span class="o">:</span> <span class="s2">&quot;3&quot;</span>
 	<span class="p">},</span>
@@ -175,14 +174,13 @@ So now after it complete the jquery, let's remove the loader:</p>
 		<span class="p">});</span>
 		<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;.ajax-loader&quot;</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s2">&quot;display&quot;</span><span class="p">,</span><span class="s2">&quot;none&quot;</span><span class="p">);</span>
 	<span class="p">}</span>
-<span class="p">);</span>
-</code></pre></div>
+<span class="p">);</span></code></pre></div>
 
 <p>But hold on, if we leave it like that, the date will show in ISO-8601 standard which will look like <script>var d = new Date().toISOString();</script><code><script>document.write(d);</script></code>.
 We want to display it as <code>time ago</code> so we will use <a href="http://james.padolsey.com/javascript/recursive-pretty-date/" target="_blank">James Padolsey's "pretty-date" function</a>.
 Before the <code>$.getJSON()</code> function, add:</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">niceTime</span> <span class="o">=</span> <span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">niceTime</span> <span class="o">=</span> <span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
 	<span class="kd">var</span> <span class="nx">ints</span> <span class="o">=</span> <span class="p">{</span>
 	<span class="nx">second</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
 	<span class="nx">minute</span><span class="o">:</span> <span class="mi">60</span><span class="p">,</span>
@@ -204,13 +202,11 @@ Before the <code>$.getJSON()</code> function, add:</p>
 	<span class="nx">amount</span> <span class="o">+=</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="nx">measure</span> <span class="o">+</span> <span class="p">(</span><span class="nx">amount</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="o">?</span> <span class="s1">&#39;s&#39;</span> <span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; ago&#39;</span><span class="p">;</span>
 	<span class="k">return</span> <span class="nx">amount</span><span class="p">;</span>
 	<span class="p">};</span>
-<span class="p">})();</span>
-</code></pre></div>
+<span class="p">})();</span></code></pre></div>
 
 <p>Now include the <code>date</code> variable as the <code>niceTime()</code> function argument like so:</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="o">&lt;</span><span class="nx">time</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;date&quot;</span><span class="o">&gt;</span><span class="s1">&#39;+niceTime(date)+&#39;</span><span class="o">&lt;</span><span class="nx">time</span><span class="o">&gt;</span>
-</code></pre></div>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">time</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;date&quot;</span><span class="o">&gt;</span><span class="s1">&#39;+niceTime(date)+&#39;</span><span class="o">&lt;</span><span class="nx">time</span><span class="o">&gt;</span></code></pre></div>
 
 
 <p>Obviously replace my username with yours and that's it!</p>

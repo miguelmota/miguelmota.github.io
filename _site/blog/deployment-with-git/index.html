@@ -108,43 +108,53 @@
 
 <p>In this example we’ll be deploying the <em>production</em> branch but it can be whatever branch name you want, and our site name will be called <em>foo</em>.</p>
 
-<h2 id="on_the_server">On the server</h2>
+<h2 id="on-the-server">On the server</h2>
 
 <p>Initialize an empty git repo. This will act as the mediator.</p>
-<div class='highlight'><pre><code class='bash'>mkdir -p /opt/git/foo.git
-<span class='nb'>cd</span> /opt/git/tracfone.git
-git init --bare <span class='c'># no source files, only version control</span>
-</code></pre></div>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">mkdir -p /opt/git/foo.git
+<span class="nb">cd</span> /opt/git/tracfone.git
+git init --bare <span class="c"># no source files, only version control</span></code></pre></div>
+
 <p>Create a <a href="http://git-scm.com/book/en/Customizing-Git-Git-Hooks"><code>post-receive</code></a> hook which gets called after a <em>push</em> is complete.</p>
-<div class='highlight'><pre><code class='bash'>vim /opt/git/foo.git/hooks/post-receive
-</code></pre></div><script src='https://gist.github.com/miguelmota/9595095.js'><![CDATA[]]></script>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">vim /opt/git/foo.git/hooks/post-receive</code></pre></div>
+
+<script src="https://gist.github.com/miguelmota/9595095.js"></script>
+
 <p>(<a href="https://gist.github.com/miguelmota/9595095">hook gist</a>)</p>
 
 <p>Make sure to make the hook executable.</p>
-<div class='highlight'><pre><code class='bash'>chmod u+rwx /opt/git/foo.git/hooks/post-receive
-</code></pre></div>
-<h2 id="on_the_client">On the client</h2>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">chmod u+rwx /opt/git/foo.git/hooks/post-receive</code></pre></div>
+
+<h2 id="on-the-client">On the client</h2>
 
 <p>Add the remote url.</p>
-<div class='highlight'><pre><code class='bash'>git remote add production ssh://&lt;username@&lt;server ip&gt;/opt/git/foo.git
-</code></pre></div>
-<p>Push the <em>production</em> branch.</p>
-<div class='highlight'><pre><code class='bash'>git push production +production:refs/heads/production
 
-<span class='c'># Afterwards you can simply do</span>
-git push production
-</code></pre></div>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">git remote add production ssh://&lt;username@&lt;server ip&gt;/opt/git/foo.git</code></pre></div>
+
+<p>Push the <em>production</em> branch.</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">git push production +production:refs/heads/production
+
+<span class="c"># Afterwards you can simply do</span>
+git push production</code></pre></div>
+
 <p>It’s also possible to deploy to multiple servers, just add the remote urls in <code>.git/config</code>.</p>
-<div class='highlight'><pre><code class='bash'><span class='o'>[</span>remote <span class='s2'>&quot;production&quot;</span><span class='o'>]</span>
-  <span class='nv'>url</span> <span class='o'>=</span> ssh://&lt;username&gt;@&lt;server 1 ip&gt;/opt/git/foo.git
-  <span class='nv'>url</span> <span class='o'>=</span> ssh://&lt;username&gt;@&lt;server 2 ip&gt;/opt/git/foo.git
-</code></pre></div>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">[</span>remote <span class="s2">&quot;production&quot;</span><span class="o">]</span>
+  <span class="nv">url</span> <span class="o">=</span> ssh://&lt;username&gt;@&lt;server <span class="m">1</span> ip&gt;/opt/git/foo.git
+  <span class="nv">url</span> <span class="o">=</span> ssh://&lt;username&gt;@&lt;server <span class="m">2</span> ip&gt;/opt/git/foo.git</code></pre></div>
+
 <p>By default git will push all branches to the remotes but we can have it push the current branch only.</p>
-<div class='highlight'><pre><code class='bash'>git config --global push.default current
-</code></pre></div>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">git config --global push.default current</code></pre></div>
+
 <h2 id="conclusion">Conclusion</h2>
 
 <p>Git hooks can help automate your deployment process. Checkout the list of client and server-side <a href="http://git-scm.com/book/en/Customizing-Git-Git-Hooks">Git hooks</a> available.</p>
+
 
 			<div class="tags">
 				<i class="icon-tag"></i>

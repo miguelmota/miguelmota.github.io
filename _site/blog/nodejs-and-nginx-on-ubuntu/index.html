@@ -110,7 +110,7 @@
 
 <p>The only dependency we really need is the <code>build-essential</code> package in order to be able to compile the Node.js source code.</p>
 
-<div class="highlight"><pre><code class="bash"><span class="c"># Make sure to download the latest repos.</span>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># Make sure to download the latest repos.</span>
 sudo apt-get update
 
 <span class="c"># Required to run `make` command.</span>
@@ -123,14 +123,13 @@ sudo apt-get install libssl-dev
 sudo apt-get install vim
 
 <span class="c"># Git to manage your repos.</span>
-sudo apt-get install git
-</code></pre></div>
+sudo apt-get install git</code></pre></div>
 
 <h2>Installing Node.js</h2>
 
 <p>Head over to the <a href="http://nodejs.org/download/" target="_blank">Node.js Downloads</a> page and copy the link to the source code tarball (node-&lt;version&gt;.tar.gz).</p>
 
-<div class="highlight"><pre><code class="bash"><span class="c"># Create and change into directory.</span>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># Create and change into directory.</span>
 sudo mkdir /opt/node/
 <span class="nb">cd</span> /opt/node/
 
@@ -154,8 +153,7 @@ sudo make install
 sudo make <span class="nb">test</span>
 
 <span class="c"># Check the version to see if it was properly installed.</span>
-node -v
-</code></pre></div>
+node -v</code></pre></div>
 
 <p>If you get a version number then you're good to go.</p>
 
@@ -163,7 +161,7 @@ node -v
 
 <p></p>
 
-<div class="highlight"><pre><code class="bash"><span class="c"># Create the directory to hold the sites.</span>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># Create the directory to hold the sites.</span>
 sudo mkdir /var/www/
 <span class="nb">cd</span> /var/www/
 
@@ -172,28 +170,25 @@ sudo mkdir helloworld/
 <span class="nb">cd </span>helloworld/
 
 <span class="c"># Create a server file.</span>
-vim server.js
-</code></pre></div>
+vim server.js</code></pre></div>
 
 <p>Paste in the simple code into server.js</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">http</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;http&#39;</span><span class="p">);</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">http</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;http&#39;</span><span class="p">);</span>
 <span class="nx">http</span><span class="p">.</span><span class="nx">createServer</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">res</span><span class="p">.</span><span class="nx">writeHead</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;Content-Type&#39;</span><span class="o">:</span> <span class="s1">&#39;text/plain&#39;</span><span class="p">});</span>
   <span class="nx">res</span><span class="p">.</span><span class="nx">end</span><span class="p">(</span><span class="s1">&#39;Hello World\n&#39;</span><span class="p">);</span>
 <span class="p">}).</span><span class="nx">listen</span><span class="p">(</span><span class="mi">3000</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Server running at http://&lt;your server ip address&gt;:3000/&#39;</span><span class="p">);</span>
-</code></pre></div>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Server running at http://&lt;your server ip address&gt;:3000/&#39;</span><span class="p">);</span></code></pre></div>
 
 <p>Hit the <key>ESC</key> key then type in <code>:wq</code> to save and exit. Then run the webserver with:</p>
 
-<div class="highlight"><pre><code class="bash"><span class="c"># Run webserver.</span>
-node server.js
-</code></pre></div>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># Run webserver.</span>
+node server.js</code></pre></div>
 
 <p>To always run in the background, check out the <a href="https://github.com/nodejitsu/forever" target="_blank">Forever</a> node module.</p>
 
-<div class="highlight"><pre><code class="bash"><span class="c"># Install Forever module globally.</span>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># Install Forever module globally.</span>
 sudo npm install -g forever
 
 <span class="c"># Start webserver.</span>
@@ -201,64 +196,56 @@ sudo npm install -g forever
 forever start -l hello-world.log server.js
 
 <span class="c"># View log file.</span>
-tail -f ~/.forever/hello-world.log 
-</code></pre></div>
+tail -f ~/.forever/hello-world.log</code></pre></div>
 
 <p>Open up a browser window and go to:</p>
 
-<div class="highlight"><pre><code class="bash">http://&lt;your server ip address&gt;:3000/
-</code></pre></div>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">http://&lt;your server ip address&gt;:3000/</code></pre></div>
 
 </p>You should see the "Hello World" message.</p>
 
 <p>If for whatever reason you don't know your server's IP address, run:</p>
 
-<div class="highlight"><pre><code class="bash"><span class="c"># Find server IP address</span>
-ifconfig eth0 | grep inet | awk <span class="s1">&#39;{ print $2 }&#39;</span>
-</code></pre></div>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># Find server IP address</span>
+ifconfig eth0 <span class="p">|</span> grep inet <span class="p">|</span> awk <span class="s1">&#39;{ print $2 }&#39;</span></code></pre></div>
 
 <h2>Installing Nginx</h2>
 
 <p>Nginx is good for serving static files, as well as a being a <em>load balancer</em>. And you can route multiple domains to your Node.js webserver. Let's install it now.</p>
 
-<div class="highlight"><pre><code class="bash"><span class="c"># Installing Nginx is a breeze.</span>
-sudo apt-get install nginx
-</code></pre></div>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># Installing Nginx is a breeze.</span>
+sudo apt-get install nginx</code></pre></div>
 
 <p>Here are some useful Nginx commands.</p>
 
-<div class="highlight"><pre><code class="bash"><span class="c"># Self explanatory.</span>
-sudo service nginx <span class="o">{</span>stop|start|restart|reload<span class="o">}</span>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># Self explanatory.</span>
+sudo service nginx <span class="o">{</span>stop<span class="p">|</span>start<span class="p">|</span>restart<span class="p">|</span>reload<span class="o">}</span>
 
 <span class="c"># Alternatively, you also do:</span>
-/etc/init.d/nginx <span class="o">{</span>stop|start|restart|reload<span class="o">}</span>
-</code></pre></div>
+/etc/init.d/nginx <span class="o">{</span>stop<span class="p">|</span>start<span class="p">|</span>restart<span class="p">|</span>reload<span class="o">}</span></code></pre></div>
 
 <p>The default nginx configuation file is located under:</p>
 
-<div class="highlight"><pre><code class="bash"><span class="c"># Default nginx config file.</span>
-/etc/nginx/nginx.conf 
-</code></pre></div>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># Default nginx config file.</span>
+/etc/nginx/nginx.conf</code></pre></div>
 
 <p>Take note of the default log file locations, which you can view by using the <code>tail</code> command.</p>
 
-<div class="highlight"><pre><code class="bash"><span class="c"># View access logs.</span>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># View access logs.</span>
 tail -f /var/log/nginx/access.log
 
 <span class="c"># View error logs.</span>
-tail -f /var/log/nginx/error.log
-</code></pre></div>
+tail -f /var/log/nginx/error.log</code></pre></div>
 
 <h2>Configuring Nginx server</h2>
 
 <p>To proxy the Node.js server to Nginx, a new webserver config needs to be created.</p>
 
-<div class="highlight"><pre><code class="bash"><span class="c"># Backup default config.</span>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># Backup default config.</span>
 mv /etc/nginx/sites-available/default /etc/nginx/sites-available/default.bak
 
 <span class="c"># Create new config.</span>
-vim /etc/nginx/sites-available/default
-</code></pre></div>
+vim /etc/nginx/sites-available/default</code></pre></div>
 
 <p>In the empty config file add the following settings (<a href="https://gist.github.com/miguelmota/6912559" target="_blank">gist</a>):</p>
 
@@ -266,32 +253,27 @@ vim /etc/nginx/sites-available/default
 
 <p>After you have saved the file and exited, test for any Nginx errors and then reload the config.</p>
 
-<div class="highlight"><pre><code class="bash">nginx -t
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">nginx -t
 
-sudo service nginx reload
-</code></pre></div>
+sudo service nginx reload</code></pre></div>
 
 <p>Nginx will let you know if you have any errors in your config. Fix them and reload once again.</p>
 
 <p>If you're trying to reference multiple domains and got the following error:</p>
 
-<div class="highlight"><pre><code class="bash">Reloading nginx configuration: nginx: <span class="o">[</span>emerg<span class="o">]</span> could not build the server_names_hash, you should increase server_names_hash_bucket_size: 32
-</code></pre></div>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">Reloading nginx configuration: nginx: <span class="o">[</span>emerg<span class="o">]</span> could not build the server_names_hash, you should increase server_names_hash_bucket_size: 32</code></pre></div>
 
 <p>Uncomment this line in <code>/etc/nginx/nginx.conf</code>.</p>
 
-<div class="highlight"><pre><code class="bash">server_names_hash_bucket_size 64; 
-</code></pre></div>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">server_names_hash_bucket_size 64<span class="p">;</span></code></pre></div>
 
 <p>To test that gzip is working, execute:</p>
 
-<div class="highlight"><pre><code class="bash">curl --header <span class="s2">&quot;Accept-Encoding: gzip&quot;</span> -I http://yourdomain.com
-</code></pre></div>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">curl --header <span class="s2">&quot;Accept-Encoding: gzip&quot;</span> -I http://yourdomain.com</code></pre></div>
 
 <p>You should see the line:</p>
 
-<div class="highlight"><pre><code class="bash">Content-Encoding: gzip
-</code></pre></div>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">Content-Encoding: gzip</code></pre></div>
 
 <h2>Conclusion</h2>
 

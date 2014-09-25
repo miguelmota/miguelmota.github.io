@@ -108,7 +108,7 @@
 
 <p>Suppose we have an object called <code>square</code> with a few properties:</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">square</span> <span class="o">=</span> <span class="p">{</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">square</span> <span class="o">=</span> <span class="p">{</span>
 	<span class="nx">color</span><span class="o">:</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span>
 
 	<span class="nx">getColor</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
@@ -119,27 +119,23 @@
 		<span class="k">return</span> <span class="s2">&quot;My area is &quot;</span> <span class="o">+</span> <span class="p">(</span><span class="nx">width</span> <span class="o">*</span> <span class="nx">height</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; feet!&quot;</span><span class="p">;</span>
 	<span class="p">}</span>
 
-<span class="p">};</span>
-</code></pre></div>
+<span class="p">};</span></code></pre></div>
 
 <p>It has a <code>color</code> property, and two method properties; <code>getColor</code> and <code>getArea</code>.</p>
 
 <p>The get color method simply return the color property of the object:</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="nx">square</span><span class="p">.</span><span class="nx">getColor</span><span class="p">();</span> <span class="c1">// I am the color red!</span>
-</code></pre></div>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">square</span><span class="p">.</span><span class="nx">getColor</span><span class="p">();</span> <span class="c1">// I am the color red!</span></code></pre></div>
 
 <p>And the second method return the area of the square after we pass in 2 arguments:</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="nx">square</span><span class="p">.</span><span class="nx">getArea</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="c1">// My area is 16 feet!</span>
-</code></pre></div>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">square</span><span class="p">.</span><span class="nx">getArea</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="c1">// My area is 16 feet!</span></code></pre></div>
 
 <p>Simple enough, let's move on and create a second object:</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">rectangle</span> <span class="o">=</span> <span class="p">{</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">rectangle</span> <span class="o">=</span> <span class="p">{</span>
 	<span class="nx">color</span><span class="o">:</span> <span class="s2">&quot;blue&quot;</span>
-<span class="p">}</span>
-</code></pre></div>
+<span class="p">}</span></code></pre></div>
 
 <p>Note that new <code>rectangle</code> object <em>only</em> has the <code>color</code> property.
 
@@ -149,8 +145,7 @@
 
 <h3>Call Method</h3>
 
-<div class="highlight"><pre><code class="javascript"><span class="nx">square</span><span class="p">.</span><span class="nx">getColor</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">rectangle</span><span class="p">);</span> <span class="c1">// I am the color blue!</span>
-</code></pre></div>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">square</span><span class="p">.</span><span class="nx">getColor</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">rectangle</span><span class="p">);</span> <span class="c1">// I am the color blue!</span></code></pre></div>
 
 <p>What just happend? Basically what <code>call</code> does is swap out the <em>context</em> for <code>this</code>.</p>
 
@@ -160,23 +155,20 @@
 
 <p>If we leave out any arguments while calling <code>call</code>, we get:</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="nx">square</span><span class="p">.</span><span class="nx">getColor</span><span class="p">.</span><span class="nx">call</span><span class="p">();</span> <span class="c1">// I am the color undefined!</span>
-</code></pre></div>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">square</span><span class="p">.</span><span class="nx">getColor</span><span class="p">.</span><span class="nx">call</span><span class="p">();</span> <span class="c1">// I am the color undefined!</span></code></pre></div>
 
 <p>It returns <code>undefined</code> because the <code>call</code> method has no set context so it uses <code>window</code> as it's <em>context</em>, and <code>window</code> does not have the <code>color</code> property.</p>
 
 </p>So if we were to add the property to <code>window</code> then it all works out:</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="nb">window</span><span class="p">.</span><span class="nx">color</span> <span class="o">=</span> <span class="s2">&quot;green&quot;</span><span class="p">;</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nb">window</span><span class="p">.</span><span class="nx">color</span> <span class="o">=</span> <span class="s2">&quot;green&quot;</span><span class="p">;</span>
 
 <span class="nx">square</span><span class="p">.</span><span class="nx">getColor</span><span class="p">.</span><span class="nx">call</span><span class="p">();</span> <span class="c1">// I am the color green!</span>
-<span class="nx">square</span><span class="p">.</span><span class="nx">getColor</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nb">window</span><span class="p">);</span> <span class="c1">// I am the color green!</span>
-</code></pre></div>
+<span class="nx">square</span><span class="p">.</span><span class="nx">getColor</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nb">window</span><span class="p">);</span> <span class="c1">// I am the color green!</span></code></pre></div>
 
 <p>We can also pass in a couple of arguments, for example the <code>getArea</code> function requires <code>width</code> and <code>height</code> to be passed in. To do so just added them <em>after</em> the the first argument:</p>.
 
-<div class="highlight"><pre><code class="javascript"><span class="nx">square</span><span class="p">.</span><span class="nx">getArea</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">rectangle</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="c1">// My area is 24 feet!</span>
-</code></pre></div>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">square</span><span class="p">.</span><span class="nx">getArea</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">rectangle</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="c1">// My area is 24 feet!</span></code></pre></div>
 
 <p>Now that we are familiar with the <code>call</code> method and know how to pass in arguments, let's discuss it's brother, the <code>apply</code> method.</p>
 
@@ -184,19 +176,17 @@
 
 <p>The <code>apply</code> method is almost identitical to the <code>call</code> function, the only difference is that we pass in an <em>array</em> as the argument instead of individual arguments:</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">sides</span> <span class="o">=</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">];</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">sides</span> <span class="o">=</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">];</span>
 
-<span class="nx">square</span><span class="p">.</span><span class="nx">getArea</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">rectangle</span><span class="p">,</span> <span class="nx">sides</span><span class="p">);</span> <span class="c1">// My area is 24 feet!</span>
-</code></pre></div>
+<span class="nx">square</span><span class="p">.</span><span class="nx">getArea</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">rectangle</span><span class="p">,</span> <span class="nx">sides</span><span class="p">);</span> <span class="c1">// My area is 24 feet!</span></code></pre></div>
 
 <p>The apply method is very useful in a situation that involves passing in an <em>unknown</em> number of arguments into a function.</p>
 
 <p>For example, getting the maximun value of a list of numbers:</p>
 
-<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">22</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">354</span><span class="p">,</span> <span class="mi">54</span><span class="p">,</span> <span class="mi">546</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">98</span><span class="p">];</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">22</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">354</span><span class="p">,</span> <span class="mi">54</span><span class="p">,</span> <span class="mi">546</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">98</span><span class="p">];</span>
 
-<span class="nb">Math</span><span class="p">.</span><span class="nx">max</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nb">Math</span><span class="p">,</span> <span class="nx">numbers</span><span class="p">);</span> <span class="c1">// 546</span>
-</code></pre></div>
+<span class="nb">Math</span><span class="p">.</span><span class="nx">max</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nb">Math</span><span class="p">,</span> <span class="nx">numbers</span><span class="p">);</span> <span class="c1">// 546</span></code></pre></div>
 
 <p>Pretty neat huh?</p>
 
