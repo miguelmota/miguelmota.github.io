@@ -640,8 +640,9 @@
 					infoWindowContent;
 
             var losAngeles = '34.0452,-118.284',
-                riverside = '33.7643995,-116.7037845,9';
-			latlng = new google.maps.LatLng(riverside.split(',')[0], riverside.split(',')[1]);
+                riverside = '33.7643995,-116.7037845,9',
+                orangeCounty = '33.6670191,-117.7646826';
+			latlng = new google.maps.LatLng(orangeCounty.split(',')[0], orangeCounty.split(',')[1]);
 
 			mapOptions = {
 				zoom: 5,

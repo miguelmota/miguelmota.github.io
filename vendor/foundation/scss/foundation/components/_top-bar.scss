@@ -6,7 +6,7 @@
 $topbar-bg: #2D3237 !default;
 
 // Height and margin
-$topbar-height: 45px !default;
+$topbar-height: 52px !default;
 $topbar-margin-bottom: 0 !default;
 
 // Control Input height for top bar
@@ -224,7 +224,7 @@ $topbar-media-query: "only screen and (min-width:#{$topbar-breakpoint})" !defaul
       display: block;
       width: 100%;
       color: $topbar-link-color;
-      padding: 12px 0 12px 0;
+      padding: 12px;
       padding-#{$default-float}: $topbar-height / 3;
       font-size: $topbar-link-font-size;
       font-weight: $topbar-link-weight;
