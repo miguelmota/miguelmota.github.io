@@ -14,14 +14,14 @@
                      \_/__/
   -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="description" content="How to set up SSH private, public and authorized keys.">
+  <meta name="description" content="A blog on all things web.">
   <meta name="keywords" content="miguel mota,web developer,html5 css3 javascript">
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="Moogs">
-  <title>Set up SSH keys » Miguel Mota | Web Developer</title>
-  <link rel="canonical" href="http://www.miguelmota.com/blog/set-up-ssh-keys/">
+  <title>Posts tagged &ldquo;ES6&rdquo; » Miguel Mota | Web Developer</title>
+  <link rel="canonical" href="http://www.miguelmota.com/tag/ES6/index.html">
   <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/miguelmota">
   <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
   <link rel="shortcut icon" href="/favicon.ico">
@@ -93,8 +93,7 @@
     <div class="row">
         <div class="large-12 column">
           
-            <datetime>30 Sep 2013 <small><i class="fa fa-comment-o"></i> <a href="/blog/set-up-ssh-keys/#disqus_thread" data-disqus-identifier="/blog/set-up-ssh-keys/"></a></small> <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.miguelmota.com/blog/set-up-ssh-keys/" data-text="Set up SSH keys" data-size="large" data-related="_moogs" data-ga-label="Blog post - Tweet">Tweet</a></datetime>
-<h1 data-text="Set up SSH keys">Set up SSH keys</h1>
+            <h1 data-text="Thoughts">Thoughts <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.miguelmota.com/tag/ES6/index.html" data-text="Posts tagged &ldquo;ES6&rdquo;" data-size="large" data-related="_moogs">Tweet</a></h1>
 
           
         </div>
@@ -105,140 +104,249 @@
 </header>
 
 
-<section id="post">
-  <div class="row">
+  <div id="older-posts" class="row">
     <div class="large-12 column">
+      <h3>Thoughts tagged <em>ES6</em></h3>
 
-      <p>Having to type in a password in order to SSH into your server every single time is tedious and not the way to go. I will show you how to set up SSH keys so that you can elimate an extra step from your workflow.</p>
-
-<h2 id="generating-keys">Generating keys</h2>
-
-<p>On your local maching, generate a new SSH key with the command:</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># Generate new key.</span>
-ssh-keygen -t rsa
-</code></pre></div>
-<p>When asked for the file to save the key in, enter:</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">ssh-add id_rsa
-</code></pre></div>
-<p>Proceed by entering a passphrase. You will know when you are done when you see those funny symbols in a box at the end.</p>
-
-<h2 id="adding-authorized-key">Adding authorized key</h2>
-
-<p>The next step is to add the public key to your server.</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># Make sure you have a .ssh directory on your server,</span>
-<span class="c"># if not SSH into it and create it: mkdir ~/.ssh/</span>
-
-<span class="c"># Concatenate public key to your server&#39;s authorized keys.</span>
-cat ~/.ssh/id_rsa.pub <span class="p">|</span> ssh &lt;your server username&gt;@&lt;your server ip address&gt; <span class="s2">&quot;cat &gt;&gt; ~/.ssh/authorized_keys&quot;</span>
-
-<span class="c"># Alternatively, you can run:</span>
-ssh-copy-id &lt;your server username&gt;@&lt;your server ip address&gt;
-</code></pre></div>
-<p>The first time you try to SSH it will ask you for your password, but then exit and try to SSH again. <em>Look Ma! No password!</em></p>
-
-<h2 id="pulling-from-server">Pulling from server</h2>
-
-<p>As you can imagine, you can push changes to a private repository, for example on <a href="https://bitbucket.org/">Bitbucket</a>, and then pull the changes straight to your server whenever you&#39;re ready. It&#39;s pretty simple, just repeat the steps on how to generate an SSH key but this while SSH&#39;d into your server. Afterwards copy your public key and paste into the SSH key settings on your Bitbucket or Github, (or whatever) account. You can view your SSH public key with:</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># View public SSH key.</span>
-cat ~/.ssh/id_rsa.pub
-</code></pre></div>
-<p>Assuming you have git already installed on your server, you can clone a repo and perform git pulls as you would on your local machine.</p>
-
-<p>Hope this helped.</p>
-
-
-      <div class="tags">
+      <dl class="posts-list">
+        
+          
+            
+              <dt><datetime>20 Jun 2014</datetime></dt>
+<dd><h2><a href="/blog/es6-examples/">ES6 Examples
   
-    <a href="/tag/SSH">#SSH</a>
+    
   
-    <a href="/tag/git">#git</a>
+    
+  
+</a> <small><i class="fa fa-comment-o"></i> <a href="http://www.miguelmota.com/blog/es6-examples/#disqus_thread" data-disqus-identifier="/blog/es6-examples/"></a></small></h2>
+<p>Examples of JavaScript ES6 Features.</p>
+<div class="tags">
+  
+    <a href="/tag/ES6">#ES6</a>
+  
+    <a href="/tag/JavaScript">#JavaScript</a>
   
 </div>
 
+</dd>
 
-    </div>
-  </div>
-
-  
-    <div id="related-posts" class="row">
-      <div class="large-6 column">
+            
+          
+            
+          
         
-    
-
-    <h3>Previous post</h3>
-
-      <dl class="posts-list">
-        <dt><datetime>26 Sep 2013</datetime></dt>
-        <dd><h2><a href="/blog/nodejs-and-nginx-on-ubuntu/">Node.js and Nginx on Ubuntu</a> <small><i class="icon-comment-alt"></i> <a href="/blog/nodejs-and-nginx-on-ubuntu/#disqus_thread" data-disqus-identifier="/blog/nodejs-and-nginx-on-ubuntu/"></a></small></h2></dd>
+          
+            
+          
+            
+          
+            
+          
+        
+          
+            
+          
+            
+          
+        
+          
+            
+          
+            
+          
+        
+          
+            
+          
+            
+          
+            
+          
+        
+          
+            
+          
+            
+          
+        
+          
+            
+          
+            
+          
+            
+          
+        
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+        
+          
+            
+          
+            
+          
+            
+          
+            
+          
+        
+          
+            
+          
+            
+          
+            
+          
+            
+          
+        
+          
+        
+          
+            
+          
+            
+          
+            
+          
+        
+          
+            
+          
+            
+          
+            
+          
+        
+          
+            
+          
+            
+          
+            
+          
+        
+          
+            
+          
+            
+          
+        
+          
+            
+          
+            
+          
+            
+          
+        
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+        
+          
+            
+          
+            
+          
+            
+          
+            
+          
+        
+          
+            
+          
+            
+          
+        
+          
+            
+          
+            
+          
+        
+          
+            
+          
+            
+          
+            
+          
+        
+          
+            
+          
+            
+          
+            
+          
+        
+          
+            
+          
+            
+          
+        
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+        
+          
+            
+          
+            
+          
+        
+          
+            
+          
+            
+          
+            
+          
+        
+          
+            
+          
+            
+          
+            
+          
+        
       </dl>
-
-    
-
-
-
-    
-
-      <h3>Next post</h3>
-
-      <dl class="posts-list">
-        <dt><datetime>30 Oct 2013</datetime></dt>
-        <dd><h2><a href="/blog/memoization-caching-function-results-in-javascript/">Memoization&#58; Caching function results in JavaScript</a> <small><i class="icon-comment-alt"></i> <a href="/blog/memoization-caching-function-results-in-javascript/#disqus_thread" data-disqus-identifier="/blog/memoization-caching-function-results-in-javascript/"></a></small></h2></dd>
-      </dl>
-
-    
-
-      </div>
-      <div class="large-6 column">
-
-        <h3>See also...</h3>
-
-        <dl class="posts-list">
-          
-            <dt><datetime>19 Jul 2014</datetime></dt>
-<dd><h2><a href="/blog/bitwise-operators-in-javascript/">Bitwise operators in JavaScript</a> <small><i class="icon-comment-alt"></i> <a href="/blog/bitwise-operators-in-javascript/#disqus_thread" data-disqus-identifier="/blog/bitwise-operators-in-javascript/"></a></small></h2>
-</dd>
-          
-            <dt><datetime>20 Jun 2014</datetime></dt>
-<dd><h2><a href="/blog/es6-examples/">ES6 Examples</a> <small><i class="icon-comment-alt"></i> <a href="/blog/es6-examples/#disqus_thread" data-disqus-identifier="/blog/es6-examples/"></a></small></h2>
-</dd>
-          
-            <dt><datetime>14 Mar 2014</datetime></dt>
-<dd><h2><a href="/blog/deployment-with-git/">Deployment with Git</a> <small><i class="icon-comment-alt"></i> <a href="/blog/deployment-with-git/#disqus_thread" data-disqus-identifier="/blog/deployment-with-git/"></a></small></h2>
-</dd>
-          
-            <dt><datetime>23 Jan 2014</datetime></dt>
-<dd><h2><a href="/blog/intro-to-redis/">Intro to Redis</a> <small><i class="icon-comment-alt"></i> <a href="/blog/intro-to-redis/#disqus_thread" data-disqus-identifier="/blog/intro-to-redis/"></a></small></h2>
-</dd>
-          
-            <dt><datetime>30 Nov 2013</datetime></dt>
-<dd><h2><a href="/blog/getting-started-with-backbonejs/">Getting Started with Backbone.js</a> <small><i class="icon-comment-alt"></i> <a href="/blog/getting-started-with-backbonejs/#disqus_thread" data-disqus-identifier="/blog/getting-started-with-backbonejs/"></a></small></h2>
-</dd>
-          
-        </dl>
-
-      </div>
-    </div>
-  
-
-  <div id="comments" class="row">
-    <div class="large-12 column">
-      <div id="disqus_thread"></div>
     </div>
   </div>
-
 </section>
 
 <script>
     var disqus_shortname = 'miguelmota';
-    var disqus_identifier = '/blog/set-up-ssh-keys/';
-    var disqus_url = 'http://www.miguelmota.com/blog/set-up-ssh-keys/';
-
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-
     (function () {
         var s = document.createElement('script'); s.async = true;
         s.type = 'text/javascript';
@@ -246,7 +354,6 @@ cat ~/.ssh/id_rsa.pub
         (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
     }());
 </script>
-
     </main>
 
     <footer id="footer">
