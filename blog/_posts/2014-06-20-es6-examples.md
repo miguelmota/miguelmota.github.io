@@ -31,7 +31,7 @@ import 'math' as math;
 console.log(math.square(3));
 ```
 
-## Classes
+# Classes
 
 `Object.assign` example:
 
@@ -159,7 +159,7 @@ class ColorPoint extends Point {
     }
 ```
 
-## Arrow Functions
+# Arrow Functions
 
 Filter example:
 
@@ -211,7 +211,7 @@ function component() {
 }
 ```
 
-## Destructuring
+# Destructuring
 
 Simple example:
 
@@ -322,7 +322,7 @@ var headers = {
 console.log(request['Content-Type']); // 'application/json'
 ```
 
-## Generators
+# Generators
 
 Simple example:
 
@@ -464,7 +464,7 @@ var resB = d.next();
 console.log(resB); // { value: 42, done: true }
 ```
 
-## Promises
+# Promises
 
 Simple example:
 
@@ -544,7 +544,7 @@ readJSON(path.resolve('test.json')).then(function(data) {
     console.log(data);
 ```
 
-## Proxies
+# Proxies
 
 Smart array example:
 
@@ -582,7 +582,7 @@ var lastName = sale.contact.last.name;
 console.log(lastName); // 'nullproxy'
 ```
 
-## Defaults
+# Defaults
 
 Simple example:
 
@@ -799,7 +799,7 @@ let obj = {
 
 ```
 
-## Shorthand objects
+# Shorthand objects
 
 ```javascript
 var name = 'Dexter';
@@ -841,7 +841,7 @@ var nums = [1,2,3];
 g(0, ...nums, 4);
 ```
 
-## Rest operator
+# Rest operator
 
 Arguments example:
 
@@ -854,7 +854,7 @@ let sum = (...numbers) =>
 // Equivalent to Math.max.apply(null, [4,2,6])
 console.log(Math.max(...[4,2,6]));
 
-## Constants
+# Constants
 
 Simple example:
 
@@ -889,7 +889,7 @@ function f() {
 f();
 ```
 
-## Block scoping
+# Block scoping
 
 Simple example:
 
@@ -968,7 +968,7 @@ escape`<span class="name">${name}</span>`;
 
 # Conclusion
 
-You can start using ES6 features today. [Addy Osmani](http://addyosmani.com/) has a [great list of ES6 Tools on Github](https://github.com/addyosmani/es6-tools) for transpiling your ES6 code to ES5 so that you can code in the future, while browsers catch up in implementing the spec. You can find all the code examples and more in my [es6-examples Github repo](https://github.com/miguelmota/es6-examples).
+You can start using ES6 features today. [Addy Osmani](http://addyosmani.com/) has a [great list of ES6 Tools](https://github.com/addyosmani/es6-tools) for transpiling your ES6 code to ES5 so that you can code in the future, while browsers catch up in implementing the spec. You can find all the code examples and more in my [es6-examples repo](https://github.com/miguelmota/es6-examples).
 
 
 What's your favorite ES6 feature?

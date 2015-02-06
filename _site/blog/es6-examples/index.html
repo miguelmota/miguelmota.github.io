@@ -128,7 +128,7 @@
 <span class="kr">import</span> <span class="s1">&#39;math&#39;</span> <span class="nx">as</span> <span class="nx">math</span><span class="p">;</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">math</span><span class="p">.</span><span class="nx">square</span><span class="p">(</span><span class="mi">3</span><span class="p">));</span>
 </code></pre></div>
-<h2 id="classes">Classes</h2>
+<h1 id="classes">Classes</h1>
 
 <p><code>Object.assign</code> example:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kr">class</span> <span class="nx">Person</span> <span class="p">{</span>
@@ -238,7 +238,7 @@
         <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">color</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="kr">super</span><span class="p">();</span>
     <span class="p">}</span>
 </code></pre></div>
-<h2 id="arrow-functions">Arrow Functions</h2>
+<h1 id="arrow-functions">Arrow Functions</h1>
 
 <p>Filter example:</p>
 <div class="highlight"><pre><code class="language-text" data-lang="text">[1,2,3].filter(value =&gt; value % 2); // [1, 3]
@@ -275,7 +275,7 @@
     <span class="p">});</span>
 <span class="p">}</span>
 </code></pre></div>
-<h2 id="destructuring">Destructuring</h2>
+<h1 id="destructuring">Destructuring</h1>
 
 <p>Simple example:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">vals</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">];</span>
@@ -359,7 +359,7 @@ console.log(f,&#39; &#39;, l);
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">request</span><span class="p">[</span><span class="s1">&#39;Content-Type&#39;</span><span class="p">]);</span> <span class="c1">// &#39;application/json&#39;</span>
 </code></pre></div>
-<h2 id="generators">Generators</h2>
+<h1 id="generators">Generators</h1>
 
 <p>Simple example:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span><span class="o">*</span> <span class="nx">zeroOneTwo</span><span class="p">()</span> <span class="p">{</span>
@@ -476,7 +476,7 @@ console.log(f,&#39; &#39;, l);
 <span class="kd">var</span> <span class="nx">resB</span> <span class="o">=</span> <span class="nx">d</span><span class="p">.</span><span class="nx">next</span><span class="p">();</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">resB</span><span class="p">);</span> <span class="c1">// { value: 42, done: true }</span>
 </code></pre></div>
-<h2 id="promises">Promises</h2>
+<h1 id="promises">Promises</h1>
 
 <p>Simple example:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">p</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Promise</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="p">{</span>
@@ -544,7 +544,7 @@ console.log(f,&#39; &#39;, l);
 <span class="nx">readJSON</span><span class="p">(</span><span class="nx">path</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="s1">&#39;test.json&#39;</span><span class="p">)).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
 </code></pre></div>
-<h2 id="proxies">Proxies</h2>
+<h1 id="proxies">Proxies</h1>
 
 <p>Smart array example:</p>
 <div class="highlight"><pre><code class="language-text" data-lang="text">function smartArray(arr) {
@@ -576,7 +576,7 @@ console.log(arr[-1]); // 3
 <span class="kd">var</span> <span class="nx">lastName</span> <span class="o">=</span> <span class="nx">sale</span><span class="p">.</span><span class="nx">contact</span><span class="p">.</span><span class="nx">last</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">lastName</span><span class="p">);</span> <span class="c1">// &#39;nullproxy&#39;</span>
 </code></pre></div>
-<h2 id="defaults">Defaults</h2>
+<h1 id="defaults">Defaults</h1>
 
 <p>Simple example:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">echo</span><span class="p">(</span><span class="nx">a</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
@@ -768,7 +768,7 @@ console.log(arr[-1]); // 3
     <span class="p">}</span>
 <span class="p">};</span>
 </code></pre></div>
-<h2 id="shorthand-objects">Shorthand objects</h2>
+<h1 id="shorthand-objects">Shorthand objects</h1>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">name</span> <span class="o">=</span> <span class="s1">&#39;Dexter&#39;</span><span class="p">;</span>
 <span class="kd">var</span> <span class="nx">occupation</span> <span class="o">=</span> <span class="s1">&#39;Scientist&#39;</span><span class="p">;</span>
 
@@ -801,7 +801,7 @@ console.log(arr[-1]); // 3
 
 <span class="nx">g</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="p">...</span><span class="nx">nums</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
 </code></pre></div>
-<h2 id="rest-operator">Rest operator</h2>
+<h1 id="rest-operator">Rest operator</h1>
 
 <p>Arguments example:</p>
 <div class="highlight"><pre><code class="language-text" data-lang="text">let sum = (...numbers) =&gt;
@@ -810,7 +810,7 @@ console.log(arr[-1]); // 3
 <p>// Equivalent to Math.max.apply(null, [4,2,6])
 console.log(Math.max(...[4,2,6]));</p>
 
-<h2 id="constants">Constants</h2>
+<h1 id="constants">Constants</h1>
 
 <p>Simple example:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kr">const</span> <span class="nx">CANT_TOUCH_THIS</span> <span class="o">=</span> <span class="s1">&#39;foo&#39;</span><span class="p">;</span>
@@ -839,7 +839,7 @@ console.log(Math.max(...[4,2,6]));</p>
 
 f();
 </code></pre></div>
-<h2 id="block-scoping">Block scoping</h2>
+<h1 id="block-scoping">Block scoping</h1>
 
 <p>Simple example:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">{</span>
@@ -903,7 +903,7 @@ f();
 </code></pre></div>
 <h1 id="conclusion">Conclusion</h1>
 
-<p>You can start using ES6 features today. <a href="http://addyosmani.com/">Addy Osmani</a> has a <a href="https://github.com/addyosmani/es6-tools">great list of ES6 Tools on Github</a> for transpiling your ES6 code to ES5 so that you can code in the future, while browsers catch up in implementing the spec. You can find all the code examples and more in my <a href="https://github.com/miguelmota/es6-examples">es6-examples Github repo</a>.</p>
+<p>You can start using ES6 features today. <a href="http://addyosmani.com/">Addy Osmani</a> has a <a href="https://github.com/addyosmani/es6-tools">great list of ES6 Tools</a> for transpiling your ES6 code to ES5 so that you can code in the future, while browsers catch up in implementing the spec. You can find all the code examples and more in my <a href="https://github.com/miguelmota/es6-examples">es6-examples repo</a>.</p>
 
 <p>What&#39;s your favorite ES6 feature?</p>
 
