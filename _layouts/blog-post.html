@@ -2,66 +2,43 @@
 layout: default
 route: blog
 ---
-<header id="content-header">
-	<canvas id="canvas"></canvas>
-	<div class="row">
-		<div class="large-12 column">
-
-			<datetime>{{ page.date | date_to_string }} <small><i class="icon-comment-alt"></i> <a href="{{ page.url }}#disqus_thread" data-disqus-identifier="{{ page.url }}"></a></small> <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.miguelmota.com{{ page.url }}" data-text="{{ page.title }}" data-size="large" data-related="_moogs" data-ga-label="Blog post - Tweet">Tweet</a></datetime>
-			<h1>{{ page.title }}</h1>
-
-		</div>
-	</div>
-	<div id="content-header-bottom">
-		<div class="triangle"></div>
-	</div>
-</header>
+{% include site_header.html route="blog-post" %}
 
 <section id="post">
-	<div class="row">
-		<div class="large-12 column">
+  <div class="row">
+    <div class="large-12 column">
 
-			{{ content }}
+      {{ content }}
 
-			<div class="tags">
-				<i class="icon-tag"></i>
-				{% for tag in page.tags %}
-					<a href="/tag/{{ tag }}">{{ tag }}</a> <span>+</span>
-				{% endfor %}
-			</div>
+      {% include post_tags.html tags=page.tags %}
 
-		</div>
-	</div>
+    </div>
+  </div>
 
-	{{ if site.related_posts }}
-		<div id="related-posts" class="row">
-			<div class="row">
-				<div class="large-12 column">
-					<div class="input-short-url">share: <input type="text" value="http://{{ page.short_url }}"></div>
-				</div>
-			</div>
-			<div class="large-6 column">
-				{% include post_pagination.html %}
-			</div>
-			<div class="large-6 column">
+  {% if site.related_posts %}
+    <div id="related-posts" class="row">
+      <div class="large-6 column">
+        {% include post_pagination.html %}
+      </div>
+      <div class="large-6 column">
 
-				<h3>See also...</h3>
+        <h3>See also...</h3>
 
-				<dl class="posts-list">
-					{% for post in site.related_posts offset: 0 limit: 5 %}
-						{% include post_related.html %}
-					{% endfor %}
-				</dl>
+        <dl class="posts-list">
+          {% for post in site.related_posts offset: 0 limit: 5 %}
+            {% include post_related.html %}
+          {% endfor %}
+        </dl>
 
-			</div>
-		</div>
-	{{ endif }}
+      </div>
+    </div>
+  {% endif %}
 
-	<div id="comments" class="row">
-		<div class="large-12 column">
-			<div id="disqus_thread"></div>
-		</div>
-	</div>
+  <div id="comments" class="row">
+    <div class="large-12 column">
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
 
 </section>
 

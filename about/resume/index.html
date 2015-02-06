@@ -4,105 +4,87 @@ title: Résumé
 description: My education and experience on web development.
 route: resume
 ---
-<header id="content-header">
-    <canvas id="canvas"></canvas>
-    <div class="row">
-        <div class="large-12 column">
-
-            <h1>Résumé <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.miguelmota.com{{ page.url }}" data-text="{{ page.title }}" data-size="large" data-related="_moogs" data-ga-label="Resume - Tweet">Tweet</a></h1>
-
-        </div>
-    </div>
-    <div id="content-header-bottom">
-        <div class="triangle"></div>
-    </div>
-</header>
+{% include site_header.html %}
 
 <section id="content">
-    <div class="row">
-        <div class="large-12 column">
+  <div class="row">
+    <div class="large-12 column">
 
-            <h3>Résumé of Miguel Mota</h3>
-            <p>Web Developer</p>
+      <h3>Résumé of Miguel Mota</h3>
+      <p>Web Developer</p>
 
-            <h4>Education</h4>
+      <h4>Education</h4>
 
-            <dl>
-                <!--
-                <dt>Sep 2009 - Present • <a href="http://www.norcocollege.edu" target="_blank">Norco College</a> • Norco, CA</dt>
-                <dd>Transfer Studies</dd>
-                -->
-                <dt>Sep 2009 - Jun 2013 • <a href="http://www.norcocollege.edu" target="_blank">Norco College</a> • Norco, CA</dt>
-                <dd>Associate in Math & Science / Transfer studies</dd>
-            </dl>
+      <dl>
+        <dt>Sep 2009 - Jun 2013 • <a href="http://www.norcocollege.edu" target="_blank">Norco College</a> • Norco, CA</dt>
+        <dd>Associate in Math & Science / Transfer studies</dd>
+      </dl>
 
-            <h4>Experience</h4>
+      <h4>Experience</h4>
 
-            <dl class="resume-list">
-                <dt>Jul 2014 - Present • <a href="https://www.acorns.com" target="_blank" data-ga-label="Resume - Acorns">Acorns Grow, Inc.</a> • Newport Beach, CA</dt>
-                <dd><p>Develop Web Applications</p></dd>
-                <!--<dt>Apr 2013 - Present (Founder) • <a href="http://moogs.io" target="_blank" data-ga-label="Resume - Moogs">Moogs™, LLC</a> • Los Angeles, CA</dt>
-                <dd>Full-stack web development and consulting</dd>-->
-                <dt>Jul 2012 - Jun 2014 • <a href="http://www.xtopoly.com" target="_blank" data-ga-label="Resume - Xtopoly">Xtopoly, Inc.</a> • Santa Ana, CA</dt>
-                <dd>Developed full-stack mobile and responsive websites, Phonegap applications, rich media ad units, and RESTful API's.<br>
+      <dl class="resume-list">
+        <dt>Jul 2014 - Present • <a href="https://www.acorns.com" target="_blank" data-ga-label="Resume - Acorns">Acorns Grow, Inc.</a> • Newport Beach, CA</dt>
+        <dd><p>Develop Web Applications</p></dd>
+        <!--<dt>Apr 2013 - Present (Founder) • <a href="http://moogs.io" target="_blank" data-ga-label="Resume - Moogs">Moogs™, LLC</a> • Los Angeles, CA</dt>
+        <dd>Full-stack web development and consulting</dd>-->
+        <dt>Jul 2012 - Jun 2014 • <a href="http://www.xtopoly.com" target="_blank" data-ga-label="Resume - Xtopoly">Xtopoly, Inc.</a> • Santa Ana, CA</dt>
+        <dd>Developed full-stack mobile and responsive websites, Phonegap applications, rich media ad units, and RESTful API's.<br>
 
-                <details id="xtopoly-work">
-                    <summary>Some work I contributed to development:</summary>
-                    <div>
-                        <ul>
-                            <li><a href="http://yamahaboats.mobi/" target="_blank" data-ga-label="Resume - Work - Yamaha Boats"><img src="/img/about/resume/work/yamaha.ico" alt=""> Yamaha® Boats/Waverunner Mobie Site</a> <small>[<a href="http://yamahaboats.mobi/humans.txt" target="_blank">humans.txt</a>]</small></li>
+          <details id="xtopoly-work">
+            <summary>Some work I contributed to development:</summary>
+            <div>
+              <ul>
+                <li><a href="http://yamahaboats.mobi/" target="_blank" data-ga-label="Resume - Work - Yamaha Boats"><img src="/assets/images/about/resume/work/yamaha.ico" alt=""> Yamaha® Boats/Waverunner Mobie Site</a> <small>[<a href="http://yamahaboats.mobi/humans.txt" target="_blank">humans.txt</a>]</small></li>
 
-                            <li><a href="http://packinmore3.xtopoly.com/" target="_blank" data-ga-label="Resume - Work - Naked Juice"><img src="/img/about/resume/work/nakedjuice.ico" alt=""> Naked Juice® Pack-In-More Responsive Site</a></li>
+                <li><a href="http://packinmore3.xtopoly.com/" target="_blank" data-ga-label="Resume - Work - Naked Juice"><img src="/assets/images/about/resume/work/nakedjuice.ico" alt=""> Naked Juice® Pack-In-More Responsive Site</a></li>
 
-                            <li><a href="http://bluemoon.xtopoly.com/site/" target="_blank" data-ga-label="Resume - Work - Blue Moon"><img src="/img/about/resume/work/bluemoon.ico" alt=""> Blue Moon® Mobile Micro-Site</a> <small>[<a href="http://bluemoon.xtopoly.com/site/humans.txt" target="_blank">humans.txt</a>]</small></li>
+                <li><a href="http://bluemoon.xtopoly.com/site/" target="_blank" data-ga-label="Resume - Work - Blue Moon"><img src="/assets/images/about/resume/work/bluemoon.ico" alt=""> Blue Moon® Mobile Micro-Site</a> <small>[<a href="http://bluemoon.xtopoly.com/site/humans.txt" target="_blank">humans.txt</a>]</small></li>
 
-                            <li><a href="http://tracfone.xtopoly.com/" target="_blank" data-ga-label="Resume - Work - TracFone Search"><img src="/img/about/resume/work/tracfone.ico" alt=""> TracFone® Services</a> <small>[<a href="http://tracfone.xtopoly.com/humans.txt" target="_blank">humans.txt</a>]</small></li>
+                <li><a href="http://tracfone.xtopoly.com/" target="_blank" data-ga-label="Resume - Work - TracFone Search"><img src="/assets/images/about/resume/work/tracfone.ico" alt=""> TracFone® Services</a> <small>[<a href="http://tracfone.xtopoly.com/humans.txt" target="_blank">humans.txt</a>]</small></li>
 
-                            <li><a href="http://nbff.xtopoly.com/" target="_blank" data-ga-label="Resume - Work - Newport Beach Film Festival"><img src="/img/about/resume/work/newportbeachfilmfestival.ico" alt=""> Newport Beach Film Festival Mobile Site</a> <small>[<a href="http://m.newportbeachfilmfest.com/humans.txt" target="_blank">humans.txt</a>]</small></li>
+                <li><a href="http://nbff.xtopoly.com/" target="_blank" data-ga-label="Resume - Work - Newport Beach Film Festival"><img src="/assets/images/about/resume/work/newportbeachfilmfestival.ico" alt=""> Newport Beach Film Festival Mobile Site</a> <small>[<a href="http://m.newportbeachfilmfest.com/humans.txt" target="_blank">humans.txt</a>]</small></li>
 
-                            <li><a href="https://itunes.apple.com/US/app/id782256151?mt=8" target="_blank" data-ga-label="Resume - Work - Who's Bringing Pie"><img src="/img/about/resume/work/whosbringingpie.ico" alt=""> Who's Bringing Pie™ (Phonegap) iOS app</a></li>
+                <li><a href="https://itunes.apple.com/US/app/id782256151?mt=8" target="_blank" data-ga-label="Resume - Work - Who's Bringing Pie"><img src="/assets/images/about/resume/work/whosbringingpie.ico" alt=""> Who's Bringing Pie™ (Phonegap) iOS app</a></li>
 
-                            <li><a href="https://itunes.apple.com/us/app/beeflexible/id682153489?mt=8" target="_blank" data-ga-label="Resume - Work - Beeflexible iOS"><img src="/img/about/resume/work/beeflexible.ico" alt=""> Beeflexible™ (Phonegap) iOS app</a> and <a href="https://play.google.com/store/apps/details?id=com.xtopoly.beeflexible" target="_blank" data-ga-label="Resume - Work - Beeflexible Android">Android App</a></li>
+                <li><a href="https://itunes.apple.com/us/app/beeflexible/id682153489?mt=8" target="_blank" data-ga-label="Resume - Work - Beeflexible iOS"><img src="/assets/images/about/resume/work/beeflexible.ico" alt=""> Beeflexible™ (Phonegap) iOS app</a> and <a href="https://play.google.com/store/apps/details?id=com.xtopoly.beeflexible" target="_blank" data-ga-label="Resume - Work - Beeflexible Android">Android App</a></li>
 
-                            <li><a href="http://xtopoly.com/" target="_blank" data-ga-label="Resume - Work - Xtopoly"><img src="/img/about/resume/work/xtopoly.ico" alt=""> Xtopoly™ Responsive Site</a> <small>[<a href="http://xtopoly.com/humans.txt" target="_blank">humans.txt</a>]</small></li>
+                <li><a href="http://xtopoly.com/" target="_blank" data-ga-label="Resume - Work - Xtopoly"><img src="/assets/images/about/resume/work/xtopoly.ico" alt=""> Xtopoly™ Responsive Site</a> <small>[<a href="http://xtopoly.com/humans.txt" target="_blank">humans.txt</a>]</small></li>
 
-                            <li><a href="http://aota.xtopoly.com" target="_blank" data-ga-label="Resume - Work - Avenue of The Arts Hotel"><img src="/img/about/resume/work/avenueofthearts.ico" alt=""> Avenue of The Arts™ Hotel Mobile Site</a> <small>[<a href="http://m.avenueoftheartshotel.com/humans.txt" target="_blank">humans.txt</a>]</small></li>
+                <li><a href="http://aota.xtopoly.com" target="_blank" data-ga-label="Resume - Work - Avenue of The Arts Hotel"><img src="/assets/images/about/resume/work/avenueofthearts.ico" alt=""> Avenue of The Arts™ Hotel Mobile Site</a> <small>[<a href="http://m.avenueoftheartshotel.com/humans.txt" target="_blank">humans.txt</a>]</small></li>
 
-                            <li><a href="http://norco.xtopoly.com/" target="_blank" data-ga-label="Resume - Work - Norco College"><img src="/img/about/resume/work/norcocollege.ico" alt=""> Norco College Mobile Site</a> <small>[<a href="http://norco.xtopoly.com/humans.txt" target="_blank">humans.txt</a>]</small></li>
+                <li><a href="http://norco.xtopoly.com/" target="_blank" data-ga-label="Resume - Work - Norco College"><img src="/assets/images/about/resume/work/norcocollege.ico" alt=""> Norco College Mobile Site</a> <small>[<a href="http://norco.xtopoly.com/humans.txt" target="_blank">humans.txt</a>]</small></li>
 
-                            <li><a href="http://gabbiano.xtopoly.com" target="_blank" data-ga-label="Resume - Work - Gabbiano Wines"><img src="/img/about/resume/work/gabbianowines.ico" alt=""> Gabbiano Wines™ Responsive Site</a> <small>[<a href="http://gabbiano.xtopoly.com/humans.txt" target="_blank">humans.txt</a>]</small></li>
+                <li><a href="http://gabbiano.xtopoly.com" target="_blank" data-ga-label="Resume - Work - Gabbiano Wines"><img src="/assets/images/about/resume/work/gabbianowines.ico" alt=""> Gabbiano Wines™ Responsive Site</a> <small>[<a href="http://gabbiano.xtopoly.com/humans.txt" target="_blank">humans.txt</a>]</small></li>
 
-                            <li><a href="http://menswearhouse.xtopoly.com/1/" target="_blank"data-ga-label="Resume - Work - Men's Wearhouse Quinceñera"><img src="/img/about/resume/work/menswearhouse.ico" alt=""> Men's Wearhouse® Quinceñera Tablet/Mobile Site</a> <small>[<a href="http://menswearhouse.xtopoly.com/1/humans.txt" target="_blank">humans.txt</a>]</small></li>
+                <li><a href="http://menswearhouse.xtopoly.com/1/" target="_blank"data-ga-label="Resume - Work - Men's Wearhouse Quinceñera"><img src="/assets/images/about/resume/work/menswearhouse.ico" alt=""> Men's Wearhouse® Quinceñera Tablet/Mobile Site</a> <small>[<a href="http://menswearhouse.xtopoly.com/1/humans.txt" target="_blank">humans.txt</a>]</small></li>
 
-                            <li><a href="http://www.ilikethisgrape.com" target="_blank" data-ga-label="Resume - Work - I Like This Grape"><img src="/img/about/resume/work/ilikethisgrape.ico" alt=""> I Like This Grape™ Responsive Site</a> <small>[<a href="http://www.ilikethisgrape.com/humans.txt" target="_blank">humans.txt</a>]</small></li>
+                <li><a href="http://www.ilikethisgrape.com" target="_blank" data-ga-label="Resume - Work - I Like This Grape"><img src="/assets/images/about/resume/work/ilikethisgrape.ico" alt=""> I Like This Grape™ Responsive Site</a> <small>[<a href="http://www.ilikethisgrape.com/humans.txt" target="_blank">humans.txt</a>]</small></li>
 
-                            <li><a href="http://emirates.xtopoly.com/2/banner-tablet-ny.html" target="_blank" data-ga-label="Resume - Work - Emirates Airlines"><img src="/img/about/resume/work/emiratesairlines.ico" alt=""> Emirates Airlines® Ad Unit</a> <small>[<a href="http://emirates.xtopoly.com/2/humans.txt" target="_blank">humans.txt</a>]</small></li>
+                <li><a href="http://emirates.xtopoly.com/2/banner-tablet-ny.html" target="_blank" data-ga-label="Resume - Work - Emirates Airlines"><img src="/assets/images/about/resume/work/emiratesairlines.ico" alt=""> Emirates Airlines® Ad Unit</a> <small>[<a href="http://emirates.xtopoly.com/2/humans.txt" target="_blank">humans.txt</a>]</small></li>
 
-                            <li><a href="http://kennystoff.com" target="_blank" data-ga-label="Resume - Work - Kenny Stoff"><img src="/img/about/resume/work/kennystoff.ico" alt=""> Kenny Stoff Responsive Site</a> <small>[<a href="http://kennystoff.com/humans.txt" target="_blank">humans.txt</a>]</small></li>
+                <li><a href="http://kennystoff.com" target="_blank" data-ga-label="Resume - Work - Kenny Stoff"><img src="/assets/images/about/resume/work/kennystoff.ico" alt=""> Kenny Stoff Responsive Site</a> <small>[<a href="http://kennystoff.com/humans.txt" target="_blank">humans.txt</a>]</small></li>
 
-                            <li><a href="http://storytellers.xtopoly.com/" target="_blank" data-ga-label="Resume - Work - Storytellers"><img src="/img/about/resume/work/universityofphoenix.ico" alt=""> University of Phoenix® Storytellers Responsive Site</a> <small>[<a href="http://storytellers.xtopoly.com/humans.txt" target="_blank">humans.txt</a>]</small></li>
+                <li><a href="http://storytellers.xtopoly.com/" target="_blank" data-ga-label="Resume - Work - Storytellers"><img src="/assets/images/about/resume/work/universityofphoenix.ico" alt=""> University of Phoenix® Storytellers Responsive Site</a> <small>[<a href="http://storytellers.xtopoly.com/humans.txt" target="_blank">humans.txt</a>]</small></li>
 
-                            <li><a href="http://m.yucatan-holidays.com" target="_blank" data-ga-label="Resume - Work - Yucatan Holidays"><img src="/img/about/resume/work/yucatanholidays.ico" alt=""> Yucatán Holidays™ Mobile Site</a> <small>[<a href="http://m.yucatan-holidays.com/humans.txt" target="_blank">humans.txt</a>]</small></li>
+                <li><a href="http://m.yucatan-holidays.com" target="_blank" data-ga-label="Resume - Work - Yucatan Holidays"><img src="/assets/images/about/resume/work/yucatanholidays.ico" alt=""> Yucatán Holidays™ Mobile Site</a> <small>[<a href="http://m.yucatan-holidays.com/humans.txt" target="_blank">humans.txt</a>]</small></li>
 
-                            </ul>
-                        </div>
-
-                    </details>
-                    </dd>
-
-                    <dt>Jan 2010 - Jun 2012 • Freelance Web Developer</dt>
-                    <dd><p>Wordpress support</p></dd>
-                </dl>
-
-
-                <div class="bottom">
-                    <p><a id="github-button" href="https://github.com/miguelmota?tab=repositories" target="_blank" data-ga-label="Work - Github"><i class="icon-github"></i> Github</a><a id="gists-button" href="https://gist.github.com/miguelmota" target="_blank" data-ga-label="Work - Github gists"> Gists</a></p>
-
-                    <p>Find me on<br> <a class="linkedin-button" href="http://www.linkedin.com/in/miguelmota" target="_blank" data-ga-label="Resume - LinkedIn"><i class="icon-linkedin"></i> LinkedIn</a></p>
-                </div>
-
-                <datetime data-last-update>Last updated 04 Oct 2014</datetime>
-
+              </ul>
             </div>
-        </div>
-    </section>
+
+          </details>
+        </dd>
+
+        <dt>Jan 2010 - Jun 2012 • Freelance Web Developer</dt>
+        <dd><p>Wordpress support</p></dd>
+      </dl>
+
+      <div class="bottom">
+        <p><a id="github-button" href="https://github.com/miguelmota?tab=repositories" target="_blank" data-ga-label="Work - Github"><i class="fa fa-github"></i> Github</a><a id="gists-button" href="https://gist.github.com/miguelmota" target="_blank" data-ga-label="Work - Github gists"> Gists</a></p>
+
+        <p>Find me on<br> <a class="linkedin-button" href="http://www.linkedin.com/in/miguelmota" target="_blank" data-ga-label="Resume - LinkedIn"><i class="fa fa-linkedin"></i> LinkedIn</a></p>
+      </div>
+
+      <datetime data-last-update>Last updated 04 Oct 2014</datetime>
+    </div>
+  </div>
+</section>

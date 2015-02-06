@@ -1,115 +1,180 @@
 <!DOCTYPE html>
 <html lang="en-US" manifest="http://cache.miguelmota.com/cache.appcache">
 <head>
-	<meta charset="UTF-8">
-	<!--
-	                                      ___                           __
-	           __                        /\_ \                         /\ \__
-	  ___ ___ /\_\     __   __  __     __\//\ \         ___ ___     ___\ \ ,_\    __
-	/' __` __`\/\ \  /'_ `\/\ \/\ \  /'__`\\ \ \      /' __` __`\  / __`\ \ \/  /'__`\
-	/\ \/\ \/\ \ \ \/\ \L\ \ \ \_\ \/\  __/ \_\ \_    /\ \/\ \/\ \/\ \L\ \ \ \_/\ \L\.\_
-	\ \_\ \_\ \_\ \_\ \____ \ \____/\ \____\/\____\   \ \_\ \_\ \_\ \____/\ \__\ \__/.\_\
-	 \/_/\/_/\/_/\/_/\/___L\ \/___/  \/____/\/____/    \/_/\/_/\/_/\/___/  \/__/\/__/\/_/
-	                   /\____/
-	                   \_/__/
-	-->
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta name="description" content="Avoid recalcuation by caching and locally storing function results.">
-	<meta name="keywords" content="miguel mota,web developer,html5 css3 javascript">
-	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-	<meta name="apple-mobile-web-app-status-bar-style" content="black">
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-title" content="Moogs">
-	<title>Memoization&#58; Caching function results in JavaScript » Miguel Mota | Web Developer</title>
-	<link rel="canonical" href="http://www.miguelmota.com/blog/memoization-caching-function-results-in-javascript">
-	<link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/miguelmota">
-	<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
-	<link rel="shortcut icon" href="/favicon.ico">
-	<link rel="apple-touch-icon-precomposed" sizes="57x57" href="/img/apple-touch-icon-57x57.png">
-	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/img/apple-touch-icon-114x114.png">
-	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/img/apple-touch-icon-72x72.png">
-	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/apple-touch-icon-144x144.png">
-	<link rel="apple-touch-startup-image" media="(device-width: 320px)" href="/img/apple-touch-startup-image-320x460.png">
-	<link rel="apple-touch-startup-image" media="(device-width: 320px) and (-webkit-device-pixel-ratio: 2)" href="/img/apple-touch-startup-image-640x920.png">
-	<link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" href="/img/apple-touch-startup-image-640x1096.png">
-	<link rel="apple-touch-startup-image" media="(device-width: 768px) and (orientation: portrait)" href="/img/apple-touch-startup-image-768x1004.png">
-	<link rel="apple-touch-startup-image" media="(device-width: 768px) and (orientation: landscape)" href="/img/apple-touch-startup-image-748x1024.png">
-	<link rel="apple-touch-startup-image" media="(device-width: 1536px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" href="/img/apple-touch-startup-image-1536x2008.png">
-	<link rel="apple-touch-startup-image" media="(device-width: 1536px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" href="/img/apple-touch-startup-image-2048x1496.png">
-	<link rel="stylesheet" href="/css/main.css">
-	<script src="//use.typekit.net/wkl5rpy.js"></script>
-	<script>try{Typekit.load();}catch(e){}</script>
-	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-  <script src="/js/main.min.js"></script>
-	<script>
-	  	var _gaq = _gaq || [];
-	   	_gaq.push(['_setAccount', 'UA-12642068-1']);
-	   	_gaq.push(['_setDomainName', '.miguelmota.com']);
-	  	_gaq.push(['_trackPageview']);
-	   	(function() {
-	     		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-	     		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-	     		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-	   	})();
-	   	$(document).on('click', '[data-ga-label]', function() {
-	   		_gaq.push(['_trackEvent', 'Call To Action', 'Click', $(this).attr('data-ga-label')]);
-	   	});
-	</script>
+  <meta charset="UTF-8">
+  <!--
+                                        ___                           __
+             __                        /\_ \                         /\ \__
+    ___ ___ /\_\     __   __  __     __\//\ \         ___ ___     ___\ \ ,_\    __
+  /' __` __`\/\ \  /'_ `\/\ \/\ \  /'__`\\ \ \      /' __` __`\  / __`\ \ \/  /'__`\
+  /\ \/\ \/\ \ \ \/\ \L\ \ \ \_\ \/\  __/ \_\ \_    /\ \/\ \/\ \/\ \L\ \ \ \_/\ \L\.\_
+  \ \_\ \_\ \_\ \_\ \____ \ \____/\ \____\/\____\   \ \_\ \_\ \_\ \____/\ \__\ \__/.\_\
+   \/_/\/_/\/_/\/_/\/___L\ \/___/  \/____/\/____/    \/_/\/_/\/_/\/___/  \/__/\/__/\/_/
+                     /\____/
+                     \_/__/
+  -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="description" content="Avoid recalcuation by caching and locally storing function results.">
+  <meta name="keywords" content="miguel mota,web developer,html5 css3 javascript">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Moogs">
+  <title>Memoization&#58; Caching function results in JavaScript » Miguel Mota | Web Developer</title>
+  <link rel="canonical" href="http://www.miguelmota.com/blog/memoization-caching-function-results-in-javascript/">
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/miguelmota">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/assets/images/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/images/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/images/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/images/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 320px)" href="/assets/images/apple-touch-startup-image-320x460.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 320px) and (-webkit-device-pixel-ratio: 2)" href="/assets/images/apple-touch-startup-image-640x920.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" href="/assets/images/apple-touch-startup-image-640x1096.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 768px) and (orientation: portrait)" href="/assets/images/apple-touch-startup-image-768x1004.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 768px) and (orientation: landscape)" href="/assets/images/apple-touch-startup-image-748x1024.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 1536px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" href="/assets/images/apple-touch-startup-image-1536x2008.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 1536px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" href="/assets/images/apple-touch-startup-image-2048x1496.png">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script src="//use.typekit.net/wkl5rpy.js"></script>
+  <script>try{Typekit.load();}catch(e){}</script>
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+  <script src="/assets/scripts/build/site.js"></script>
+  <script>
+      var _gaq = _gaq || [];
+       _gaq.push(['_setAccount', 'UA-12642068-1']);
+       _gaq.push(['_setDomainName', '.miguelmota.com']);
+      _gaq.push(['_trackPageview']);
+       (function() {
+           var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+           ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+           var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+       })();
+       $(document).on('click', '[data-ga-label]', function() {
+         _gaq.push(['_trackEvent', 'Call To Action', 'Click', $(this).attr('data-ga-label')]);
+       });
+  </script>
 </head>
 <body id="blog">
-		<div id="top"></div>
-		<img class="hidden" src="/img/miguel-mota-m-logo-500x500.png" alt="">
+    <canvas id="bg-canvas"></canvas>
+    <div class="bg-upper"></div>
+    <div class="bg-lower"></div>
+    <div id="top"></div>
+    <img class="hidden" src="/assets/images/miguel-mota-m-logo-500x500.png" alt="">
 
-		<header id="header" class="contain-to-grid fixed">
-			<nav class="top-bar">
-				<ul class="title-area">
-					<li class="name"><a href="/" data-ga-label="Navigation - Logo">Miguel Mota</a></li>
-					<li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-				</ul>
-				<section class="top-bar-section">
-				    <ul id="main-nav" class="right">
-				      <li class="divider"></li>
-				      <li ><a href="/" data-ga-label="Navigation - Home"><i class="icon-home"></i></a></li>
-				      <li class="divider"></li>
-				      <li ><a href="/about" data-ga-label="Navigation - About"><i class="icon-bookmark-empty"></i> About</a></li>
-				      <li class="divider"></li>
-				      <li class="active"><a href="/blog" data-ga-label="Navigation - Blog"><i class="icon-lightbulb"></i> Thoughts</a></li>
-				      <li class="divider"></li>
-				      <li ><a href="/work" data-ga-label="Navigation - Work"><i class="icon-laptop"></i> Work</a></li>
-				      <li class="divider"></li>
-							<li ><a href="/contact" data-ga-label="Navigation - Contact"><i class="icon-envelope"></i> Contact</a></li>
-				      <li class="divider"></li>
-				    </ul>
-				</section>
-			</nav>
-		</header>
+    <header id="header" class="contain-to-grid fixed">
+      <nav class="top-bar">
+        <ul class="title-area">
+          <li class="name"><a href="/" data-ga-label="Navigation - Logo">Miguel Mota</a></li>
+          <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+        </ul>
+        <section class="top-bar-section">
+            <ul id="main-nav" class="right">
+              <li class="divider"></li>
+              <li ><a href="/" data-ga-label="Navigation - Home"><i class="fa fa-home"></i></a></li>
+              <li class="divider"></li>
+              <li ><a href="/about" data-ga-label="Navigation - About"><i class="fa fa-bookmark-o"></i> About</a></li>
+              <li class="divider"></li>
+              <li class="active"><a href="/blog" data-ga-label="Navigation - Blog"><i class="fa fa-lightbulb-o"></i> Thoughts</a></li>
+              <li class="divider"></li>
+              <li ><a href="/work" data-ga-label="Navigation - Work"><i class="fa fa-laptop"></i> Work</a></li>
+              <li class="divider"></li>
+              <li ><a href="/contact" data-ga-label="Navigation - Contact"><i class="fa fa-envelope-o"></i> Contact</a></li>
+              <li class="divider"></li>
+            </ul>
+        </section>
+      </nav>
+    </header>
 
-		<main id="main" role="main">
-			<header id="content-header">
-	<canvas id="canvas"></canvas>
-	<div class="row">
-		<div class="large-12 column">
+    <main id="main" role="main">
+      <header id="content-header">
+    
+    <div class="row">
+        <div class="large-12 column">
+          
+            <datetime>30 Oct 2013 <small><i class="fa fa-comment-o"></i> <a href="/blog/memoization-caching-function-results-in-javascript/#disqus_thread" data-disqus-identifier="/blog/memoization-caching-function-results-in-javascript/"></a></small> <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.miguelmota.com/blog/memoization-caching-function-results-in-javascript/" data-text="Memoization&#58; Caching function results in JavaScript" data-size="large" data-related="_moogs" data-ga-label="Blog post - Tweet">Tweet</a></datetime>
+<h1 data-text="Memoization&#58; Caching function results in JavaScript">Memoization&#58; Caching function results in JavaScript</h1>
 
-			<datetime>30 Oct 2013 <small><i class="icon-comment-alt"></i> <a href="/blog/memoization-caching-function-results-in-javascript#disqus_thread" data-disqus-identifier="/blog/memoization-caching-function-results-in-javascript"></a></small> <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.miguelmota.com/blog/memoization-caching-function-results-in-javascript" data-text="Memoization&#58; Caching function results in JavaScript" data-size="large" data-related="_moogs" data-ga-label="Blog post - Tweet">Tweet</a></datetime>
-			<h1>Memoization&#58; Caching function results in JavaScript</h1>
-
-		</div>
-	</div>
-	<div id="content-header-bottom">
-		<div class="triangle"></div>
-	</div>
+          
+        </div>
+    </div>
+    <div id="content-header-bottom">
+        <div class="triangle"></div>
+    </div>
 </header>
 
+
 <section id="post">
-	<div class="row">
-		<div class="large-12 column">
+  <div class="row">
+    <div class="large-12 column">
 
-			<p><a href="http://en.wikipedia.org/wiki/Memoization" target="_blank">Memoization</a> (based on the word memorable) is technique that caches the result of a function in order to avoid recalculation the next time the same function is called. Initially when the function is executed, the result gets added to an object holding the calculated results. When the function is called again, it checks the results object to see if already contains the result and if it does then return it. If it's not cached, then calculate and store it. The code below is a modified version of the memoization example that I came across as I was reading <a href="http://jsninja.com/" target=_blank"><em>Secrets of the JavaScript Ninja</em></a> by <a href="http://ejohn.org/" target="_blank">John Resig</a>. I also added bit of code to store the result in <a href="http://www.w3.org/TR/webstorage/" target="_blank">local storage</a> so that we keep a copy of the results even after the page is refreshed.
-
-<script src="https://gist.github.com/miguelmota/7246244.js"></script>
+      <p><a href="http://en.wikipedia.org/wiki/Memoization">Memoization</a> (based on the word memorable) is technique that caches the result of a function in order to avoid recalculation the next time the same function is called. Initially when the function is executed, the result gets added to an object holding the calculated results. When the function is called again, it checks the results object to see if already contains the result and if it does then return it. If it&#39;s not cached, then calculate and store it. The code below is a modified version of the memoization example that I came across as I was reading <a href="http://jsninja.com/"><em>Secrets of the JavaScript Ninja</em></a> by <a href="http://ejohn.org/">John Resig</a>. I also added bit of code to store the result in <a href="http://www.w3.org/TR/webstorage/">local storage</a> so that we keep a copy of the results even after the page is refreshed.</p>
 
 <p>Finding prime numbers is just a simple example. Where memoization shines is where complex algorithmic function take time to retun a value. It would be time expensive, for example if you were running an HTML5 game where the canvas needs to get redrawn 30 times a second, to execute the same time consuming function over and over again. With memoization the function only runs once (assuming the same parameters were passed in) and the result is cached for future use.</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Check for Local Storage Support</span>
+<span class="kd">function</span> <span class="nx">supportLocalStorage</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">try</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="s1">&#39;localStorage&#39;</span> <span class="k">in</span> <span class="nb">window</span> <span class="o">&amp;&amp;</span> <span class="nb">window</span><span class="p">[</span><span class="s1">&#39;localStorage&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 
+<span class="c1">// Memoization function.</span>
+<span class="nb">Function</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">memoized</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// Values object for caching results.</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">_values</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">_values</span> <span class="o">||</span> <span class="p">{};</span>
+  <span class="c1">// Stringify function arguments to make key.</span>
+  <span class="kd">var</span> <span class="nx">key</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">slice</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">arguments</span><span class="p">));</span>
+
+  <span class="c1">// Check if result is cached</span>
+  <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">_values</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span> <span class="o">!==</span> <span class="kc">undefined</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Loaded from cache: %s =&gt; %s&#39;</span><span class="p">,</span> <span class="nx">key</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">_values</span><span class="p">[</span><span class="nx">key</span><span class="p">]);</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">_values</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span>
+
+  <span class="c1">// Check if result is in local storage.</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">supportLocalStorage</span> <span class="o">&amp;&amp;</span> <span class="nx">localStorage</span><span class="p">[</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="o">+</span><span class="s1">&#39;:&#39;</span><span class="o">+</span><span class="nx">key</span><span class="p">])</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Loaded from local storage: %s =&gt; %s&#39;</span><span class="p">,</span> <span class="nx">key</span><span class="p">,</span> <span class="nx">localStorage</span><span class="p">[</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="o">+</span><span class="s1">&#39;:&#39;</span><span class="o">+</span><span class="nx">key</span><span class="p">]);</span>
+    <span class="k">return</span> <span class="nx">localStorage</span><span class="p">[</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="o">+</span><span class="s1">&#39;:&#39;</span><span class="o">+</span><span class="nx">key</span><span class="p">];</span>
+
+    <span class="c1">// Call the original function if result not found and store result.</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">value</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">arguments</span><span class="p">));</span>
+    <span class="c1">// Store in local storage.</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">supportLocalStorage</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">localStorage</span><span class="p">[</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="o">+</span><span class="s1">&#39;:&#39;</span><span class="o">+</span><span class="nx">key</span><span class="p">]</span> <span class="o">=</span> <span class="nx">value</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;New result: %s =&gt; %s&#39;</span><span class="p">,</span> <span class="nx">key</span><span class="p">,</span> <span class="nx">value</span><span class="p">);</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">_values</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span> <span class="o">=</span> <span class="nx">value</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="c1">// Call the memoization function with the original function arguments.</span>
+<span class="nb">Function</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">memoize</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">fn</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+  <span class="k">return</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">fn</span><span class="p">.</span><span class="nx">memoized</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">fn</span><span class="p">,</span> <span class="nx">arguments</span><span class="p">);</span>
+  <span class="p">};</span>
+<span class="p">};</span>
+
+<span class="c1">// Check if number is prime function.</span>
+<span class="kd">var</span> <span class="nx">isPrime</span> <span class="o">=</span> <span class="p">(</span><span class="kd">function</span> <span class="nx">isPrime</span><span class="p">(</span><span class="nx">num</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">prime</span> <span class="o">=</span> <span class="nx">num</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">num</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">num</span> <span class="o">%</span> <span class="nx">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">prime</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+      <span class="k">break</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">prime</span><span class="p">;</span>
+<span class="p">}).</span><span class="nx">memoize</span><span class="p">();</span> <span class="c1">// Make function memoizable.</span>
+
+<span class="c1">// Some function that accepts arguments and returns an object.</span>
+<span class="kd">var</span> <span class="nx">someFunc</span> <span class="o">=</span> <span class="p">(</span><span class="kd">function</span> <span class="nx">obj</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">,</span><span class="nx">c</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">{</span><span class="nx">foo</span><span class="o">:</span> <span class="p">(</span><span class="k">new</span> <span class="nb">Date</span><span class="p">()).</span><span class="nx">getTime</span><span class="p">()};</span>
+<span class="p">}).</span><span class="nx">memoize</span><span class="p">();</span>
+</code></pre></div>
 <script>
 // Memoization technique.
 // Try it. Open up the console on your browser and run:
@@ -120,7 +185,7 @@
 // the function's cache. The result is also stored in local storage
 // so that it doesn't have to recalculate if you refresh the page.
 // It'll retrieve the stored result from local storage.
- 
+
 // Check for Local Storage Support
 function supportLocalStorage() {
   try {
@@ -129,24 +194,24 @@ function supportLocalStorage() {
     return false;
   }
 }
- 
+
 // Memoization function.
 Function.prototype.memoized = function() {
-  // Values object for caching results. 
+  // Values object for caching results.
   this._values = this._values || {};
   // Stringify function arguments to make key.
   var key = JSON.stringify(Array.prototype.slice.call(arguments));
- 
+
   // Check if result is cached
   if (this._values[key] !== undefined) {
     console.log('Loaded from cache: %s => %s', key, this._values[key]);
     return this._values[key]
- 
+
   // Check if result is in local storage.
   } else if (supportLocalStorage && localStorage[this.name+':'+key]) {
     console.log('Loaded from local storage: %s => %s', key, localStorage[this.name+':'+key]);
     return localStorage[this.name+':'+key];
- 
+
     // Call the original function if result not found and store result.
   } else {
     var value = JSON.stringify(this.apply(this, arguments));
@@ -158,7 +223,7 @@ Function.prototype.memoized = function() {
     return this._values[key] = value;
   }
 };
- 
+
 // Call the memoization function with the original function arguments.
 Function.prototype.memoize = function() {
   var fn = this;
@@ -166,7 +231,7 @@ Function.prototype.memoize = function() {
     return fn.memoized.apply(fn, arguments);
   };
 };
- 
+
 // Check if number is prime function.
 var isPrime = (function isPrime(num) {
   var prime = num != 1;
@@ -178,7 +243,7 @@ var isPrime = (function isPrime(num) {
   }
   return prime;
 }).memoize(); // Make function memoizable.
- 
+
 // Some function that accepts arguments and returns an object.
 var someFunc = (function obj(a,b,c) {
   return {foo: (new Date()).getTime()};
@@ -186,39 +251,32 @@ var someFunc = (function obj(a,b,c) {
 </script>
 
 
-			<div class="tags">
-				<i class="icon-tag"></i>
-				
-					<a href="/tag/JavaScript">JavaScript</a> <span>+</span>
-				
-					<a href="/tag/memoization">memoization</a> <span>+</span>
-				
-					<a href="/tag/cache">cache</a> <span>+</span>
-				
-			</div>
+      <div class="tags">
+  
+    <a href="/tag/JavaScript">#JavaScript</a>
+  
+    <a href="/tag/memoization">#memoization</a>
+  
+    <a href="/tag/cache">#cache</a>
+  
+</div>
 
-		</div>
-	</div>
 
-	
-		<div id="related-posts" class="row">
-			<div class="row">
-				<div class="large-12 column">
-					<div class="input-short-url">share: <input type="text" value="http://mig.gs/aAlV"></div>
-				</div>
-			</div>
-			<div class="large-6 column">
-				
+    </div>
+  </div>
+
+  
+    <div id="related-posts" class="row">
+      <div class="large-6 column">
+        
     
 
     <h3>Previous post</h3>
 
-	    <dl class="posts-list">
-
-				<dt><datetime>30 Sep 2013</datetime></dt>
-				<dd><h2><a href="/blog/set-up-ssh-keys">Set up SSH keys</a> <small><i class="icon-comment-alt"></i> <a href="/blog/set-up-ssh-keys#disqus_thread" data-disqus-identifier="/blog/set-up-ssh-keys"></a></small></h2></dd>
-
-			</dl>
+      <dl class="posts-list">
+        <dt><datetime>30 Sep 2013</datetime></dt>
+        <dd><h2><a href="/blog/set-up-ssh-keys/">Set up SSH keys</a> <small><i class="icon-comment-alt"></i> <a href="/blog/set-up-ssh-keys/#disqus_thread" data-disqus-identifier="/blog/set-up-ssh-keys/"></a></small></h2></dd>
+      </dl>
 
     
 
@@ -226,62 +284,60 @@ var someFunc = (function obj(a,b,c) {
 
     
 
-    	<h3>Next post</h3>
+      <h3>Next post</h3>
 
-    	<dl class="posts-list">
-
-		    <dt><datetime>30 Nov 2013</datetime></dt>
-		    <dd><h2><a href="/blog/getting-started-with-backbonejs">Getting Started with Backbone.js</a> <small><i class="icon-comment-alt"></i> <a href="/blog/getting-started-with-backbonejs#disqus_thread" data-disqus-identifier="/blog/getting-started-with-backbonejs"></a></small></h2></dd>
-
-		  </dl>
+      <dl class="posts-list">
+        <dt><datetime>30 Nov 2013</datetime></dt>
+        <dd><h2><a href="/blog/getting-started-with-backbonejs/">Getting Started with Backbone.js</a> <small><i class="icon-comment-alt"></i> <a href="/blog/getting-started-with-backbonejs/#disqus_thread" data-disqus-identifier="/blog/getting-started-with-backbonejs/"></a></small></h2></dd>
+      </dl>
 
     
 
-			</div>
-			<div class="large-6 column">
+      </div>
+      <div class="large-6 column">
 
-				<h3>See also...</h3>
+        <h3>See also...</h3>
 
-				<dl class="posts-list">
-					
-						<dt><datetime>19 Jul 2014</datetime></dt>
-<dd><h2><a href="/blog/bitwise-operators-in-javascript">Bitwise operators in JavaScript</a> <small><i class="icon-comment-alt"></i> <a href="/blog/bitwise-operators-in-javascript#disqus_thread" data-disqus-identifier="/blog/bitwise-operators-in-javascript"></a></small></h2>
+        <dl class="posts-list">
+          
+            <dt><datetime>19 Jul 2014</datetime></dt>
+<dd><h2><a href="/blog/bitwise-operators-in-javascript/">Bitwise operators in JavaScript</a> <small><i class="icon-comment-alt"></i> <a href="/blog/bitwise-operators-in-javascript/#disqus_thread" data-disqus-identifier="/blog/bitwise-operators-in-javascript/"></a></small></h2>
 </dd>
-					
-						<dt><datetime>14 Mar 2014</datetime></dt>
-<dd><h2><a href="/blog/deployment-with-git">Deployment with Git</a> <small><i class="icon-comment-alt"></i> <a href="/blog/deployment-with-git#disqus_thread" data-disqus-identifier="/blog/deployment-with-git"></a></small></h2>
+          
+            <dt><datetime>14 Mar 2014</datetime></dt>
+<dd><h2><a href="/blog/deployment-with-git/">Deployment with Git</a> <small><i class="icon-comment-alt"></i> <a href="/blog/deployment-with-git/#disqus_thread" data-disqus-identifier="/blog/deployment-with-git/"></a></small></h2>
 </dd>
-					
-						<dt><datetime>23 Jan 2014</datetime></dt>
-<dd><h2><a href="/blog/intro-to-redis">Intro to Redis</a> <small><i class="icon-comment-alt"></i> <a href="/blog/intro-to-redis#disqus_thread" data-disqus-identifier="/blog/intro-to-redis"></a></small></h2>
+          
+            <dt><datetime>23 Jan 2014</datetime></dt>
+<dd><h2><a href="/blog/intro-to-redis/">Intro to Redis</a> <small><i class="icon-comment-alt"></i> <a href="/blog/intro-to-redis/#disqus_thread" data-disqus-identifier="/blog/intro-to-redis/"></a></small></h2>
 </dd>
-					
-						<dt><datetime>30 Nov 2013</datetime></dt>
-<dd><h2><a href="/blog/getting-started-with-backbonejs">Getting Started with Backbone.js</a> <small><i class="icon-comment-alt"></i> <a href="/blog/getting-started-with-backbonejs#disqus_thread" data-disqus-identifier="/blog/getting-started-with-backbonejs"></a></small></h2>
+          
+            <dt><datetime>30 Nov 2013</datetime></dt>
+<dd><h2><a href="/blog/getting-started-with-backbonejs/">Getting Started with Backbone.js</a> <small><i class="icon-comment-alt"></i> <a href="/blog/getting-started-with-backbonejs/#disqus_thread" data-disqus-identifier="/blog/getting-started-with-backbonejs/"></a></small></h2>
 </dd>
-					
-						<dt><datetime>30 Sep 2013</datetime></dt>
-<dd><h2><a href="/blog/set-up-ssh-keys">Set up SSH keys</a> <small><i class="icon-comment-alt"></i> <a href="/blog/set-up-ssh-keys#disqus_thread" data-disqus-identifier="/blog/set-up-ssh-keys"></a></small></h2>
+          
+            <dt><datetime>30 Sep 2013</datetime></dt>
+<dd><h2><a href="/blog/set-up-ssh-keys/">Set up SSH keys</a> <small><i class="icon-comment-alt"></i> <a href="/blog/set-up-ssh-keys/#disqus_thread" data-disqus-identifier="/blog/set-up-ssh-keys/"></a></small></h2>
 </dd>
-					
-				</dl>
+          
+        </dl>
 
-			</div>
-		</div>
-	
+      </div>
+    </div>
+  
 
-	<div id="comments" class="row">
-		<div class="large-12 column">
-			<div id="disqus_thread"></div>
-		</div>
-	</div>
+  <div id="comments" class="row">
+    <div class="large-12 column">
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
 
 </section>
 
 <script>
     var disqus_shortname = 'miguelmota';
-    var disqus_identifier = '/blog/memoization-caching-function-results-in-javascript';
-    var disqus_url = 'http://www.miguelmota.com/blog/memoization-caching-function-results-in-javascript';
+    var disqus_identifier = '/blog/memoization-caching-function-results-in-javascript/';
+    var disqus_url = 'http://www.miguelmota.com/blog/memoization-caching-function-results-in-javascript/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -297,24 +353,24 @@ var someFunc = (function obj(a,b,c) {
     }());
 </script>
 
-		</main>
+    </main>
 
-		<footer id="footer">
-			<div class="row">
-				<div class="large-12 column">
-					<p>
-						<span class="break"><span>© 2014 Moogs™, LLC.</span> <span>Made with <i class="icon-heart"></i></span></span> <a class="hidden" href="https://plus.google.com/102174577273194387652" rel="author">Google+</a>
+    <footer id="footer">
+      <div class="row">
+        <div class="large-12 column">
+          <p>
+            <span class="break"><span>© 2015 Moogs™.</span> <span>Made with <i class="fa fa-heart"></i></span></span> <a class="hidden" href="https://plus.google.com/102174577273194387652" rel="author">Google+</a>
 
-						<a href="https://twitter.com/_moogs" class="twitter-follow-button" data-show-count="false" data-size="large" data-ga-label="Footer - Follow Twitter">Follow @_moogs</a>
+            <a href="https://twitter.com/_moogs" class="twitter-follow-button" data-show-count="false" data-size="large" data-ga-label="Footer - Follow Twitter">Follow @_moogs</a>
 
-					</p>
-				</div>
-			</div>
-		</footer>
+          </p>
+        </div>
+      </div>
+    </footer>
 
-		<a id="forkme" href="https://github.com/miguelmota/miguelmota.github.com" target="_blank" data-ga-label="Fork me on Github"><img src="/img/forkme_right_darkblue_121621.png" alt=""></a>
+    <a id="forkme" href="https://github.com/miguelmota/miguelmota.github.com" target="_blank" data-ga-label="Fork me on Github"><img src="/assets/images/forkme_right_darkblue_121621.png" alt=""></a>
 
-		<script src="//maps.google.com/maps/api/js?sensor=false"></script>
-		<script src="//google-maps-utility-library-v3.googlecode.com/svn/trunk/infobox/src/infobox.js"></script>
-	</body>
+    <script src="//maps.google.com/maps/api/js?sensor=false"></script>
+    <script src="//google-maps-utility-library-v3.googlecode.com/svn/trunk/infobox/src/infobox.js"></script>
+  </body>
 </html>

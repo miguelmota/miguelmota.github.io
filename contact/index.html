@@ -4,99 +4,83 @@ title: Contact
 description: Say hello or whatever's on your mind.
 route: contact
 ---
-<header id="content-header">
-	<div id="map"></div>
-	<canvas id="canvas"></canvas>
-	<div class="row">
-		<div class="large-12 column">
-
-				<h1>Contact <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.miguelmota.com{{ page.url }}" data-text="{{ page.title }}" data-size="large" data-related="_moogs" data-ga-label="Contact - Tweet">Tweet</a></h1>
-
-		</div>
-	</div>
-	<div id="content-header-bottom">
-		<div class="triangle"></div>
-	</div>
-</header>
+{% include site_header.html %}
 
 <section id="content">
-	<div class="row">
-		<div id="contact-info" class="large-6 column">
+  <div class="row">
+    <div id="contact-info" class="large-6 column">
+      <p>For questions, comments, or simply to say hello, reach me at:</p>
 
-			<p>For questions, comments, or simply to say hello, reach me at:</p>
+      <p>
+        <label>Personal</label>
+        <i class="icon-envelope"></i> <a href="mailto:hello@miguelmota.com" data-ga-label="Contact - Email">hello@miguelmota.com</a><br>
+        <i class="icon-mobile-phone"></i> <a class="phone" href="tel:1-951-215-6682" data-ga-label="Contact - Phone">+1 951 215-MOTA</a>
+      </p>
 
-			<p>
-				<label>Personal</label>
-				<i class="icon-envelope"></i> <a href="mailto:hello@miguelmota.com" data-ga-label="Contact - Email">hello@miguelmota.com</a><br>
-				<i class="icon-mobile-phone"></i> <a class="phone" href="tel:1-951-215-6682" data-ga-label="Contact - Phone">+1 951 215-MOTA</a>
-			</p>
+      <p>
+        <label>Business</label>
+        <i class="icon-envelope"></i> <a href="mailto:m@moogs.io" data-ga-label="Contact - Email">m@moogs.io</a><br>
+        <i class="icon-mobile-phone"></i> <a class="phone" href="tel:1-510-516-6647" data-ga-label="Contact - Phone">+1 510 51-MOOGS</a>
+      </p>
 
-			<p>
-				<label>Business</label>
-				<i class="icon-envelope"></i> <a href="mailto:m@moogs.io" data-ga-label="Contact - Email">m@moogs.io</a><br>
-				<i class="icon-mobile-phone"></i> <a class="phone" href="tel:1-510-516-6647" data-ga-label="Contact - Phone">+1 510 51-MOOGS</a>
-			</p>
+      <p><i class="fa fa-map-marker"></i> I'm currently located in <a data-location href="#map" data-ga-label="Contact - Orange County, CA">Orange County, CA.</a></p>
 
-			<p><i class="icon-map-marker"></i> I'm currently located in <a data-location href="#map" data-ga-label="Contact - Orange County, CA">Orange County, CA.</a></p>
+    </div>
 
-		</div>
+    <div class="large-6 column">
 
-		<div class="large-6 column">
+      <form id="contact-form" action="http://api.miguelmota.com/contact/mailer" method="POST">
+        <fieldset>
+          <legend>Leave a message</legend>
 
-			<form id="contact-form" action="http://api.miguelmota.com/contact/mailer" method="POST">
-			  <fieldset>
-			    <legend>Leave a message</legend>
+          <div class="row">
+            <div class="large-12 columns">
+              <div data-alert class="alert-box">
+                <div class="message"></div>
+                <a href="#" class="close">&times;</a>
+              </div>
+            </div>
+          </div>
 
-			    <div class="row">
-			      <div class="large-12 columns">
-			        <div data-alert class="alert-box">
-								<div class="message"></div>
-			          <a href="#" class="close">&times;</a>
-			        </div>
-			      </div>
-			    </div>
+          <div class="row">
+            <div class="large-12 columns">
+              <label>Name</label>
+              <input type="text" name="name" placeholder="Dexter McPherson">
+              <small class="error" for="name"></small>
+            </div>
+          </div>
 
-			    <div class="row">
-			      <div class="large-12 columns">
-			        <label>Name</label>
-			        <input type="text" name="name" placeholder="Dexter McPherson">
-			        <small class="error" for="name"></small>
-			      </div>
-			    </div>
+          <div class="row">
+            <div class="large-12 columns">
+              <label>Email</label>
+              <input type="email" name="email" placeholder="come@me.bro">
+              <small class="error" for="email"></small>
+            </div>
+          </div>
 
-			    <div class="row">
-			      <div class="large-12 columns">
-			        <label>Email</label>
-			        <input type="email" name="email" placeholder="come@me.bro">
-			        <small class="error" for="email"></small>
-			      </div>
-			    </div>
+          <div class="row">
+            <div class="large-12 columns">
+              <label>Message</label>
+              <textarea rows="3" name="message" placeholder="What's on your mind?"></textarea>
+              <small class="error" for="message"></small>
+            </div>
+          </div>
 
-			    <div class="row">
-			      <div class="large-12 columns">
-			        <label>Message</label>
-			        <textarea rows="3" name="message" placeholder="What's on your mind?"></textarea>
-			        <small class="error" for="message"></small>
-			      </div>
-			    </div>
+          <div class="row">
+            <div class="large-12 columns">
+              <input type="submit" value="Send »" data-ga-label="Contact - Form - Send">
+            </div>
+          </div>
 
-			    <div class="row">
-			      <div class="large-12 columns">
-			        <input type="submit" value="Send »" data-ga-label="Contact - Form - Send">
-			      </div>
-			    </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
 
-			  </fieldset>
-			</form>
-
-		</div>
-
-	</div>
-
-	<div id="contact-map-content" class="info-window-content">
-		<div class="info-window-inner">
-			<a href="https://www.google.com/maps/place/Orange+County,+CA/@33.6670191,-117.7646826,10z" target="_blank" data-ga-label="Contact - Orange County">Orange County, CA, USA</a>
-		</div>
-	</div>
+  <div id="contact-map-content" class="info-window-content">
+    <div class="info-window-inner">
+      <a href="https://www.google.com/maps/place/Orange+County,+CA/@33.6670191,-117.7646826,10z" target="_blank" data-ga-label="Contact - Orange County">Orange County, CA, USA</a>
+    </div>
+  </div>
 
 </section>

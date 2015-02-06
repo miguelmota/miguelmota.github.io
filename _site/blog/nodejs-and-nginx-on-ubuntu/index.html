@@ -1,115 +1,119 @@
 <!DOCTYPE html>
 <html lang="en-US" manifest="http://cache.miguelmota.com/cache.appcache">
 <head>
-	<meta charset="UTF-8">
-	<!--
-	                                      ___                           __
-	           __                        /\_ \                         /\ \__
-	  ___ ___ /\_\     __   __  __     __\//\ \         ___ ___     ___\ \ ,_\    __
-	/' __` __`\/\ \  /'_ `\/\ \/\ \  /'__`\\ \ \      /' __` __`\  / __`\ \ \/  /'__`\
-	/\ \/\ \/\ \ \ \/\ \L\ \ \ \_\ \/\  __/ \_\ \_    /\ \/\ \/\ \/\ \L\ \ \ \_/\ \L\.\_
-	\ \_\ \_\ \_\ \_\ \____ \ \____/\ \____\/\____\   \ \_\ \_\ \_\ \____/\ \__\ \__/.\_\
-	 \/_/\/_/\/_/\/_/\/___L\ \/___/  \/____/\/____/    \/_/\/_/\/_/\/___/  \/__/\/__/\/_/
-	                   /\____/
-	                   \_/__/
-	-->
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta name="description" content="Get Node.js and Nginx running on your Ubuntu server.">
-	<meta name="keywords" content="miguel mota,web developer,html5 css3 javascript">
-	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-	<meta name="apple-mobile-web-app-status-bar-style" content="black">
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-title" content="Moogs">
-	<title>Node.js and Nginx on Ubuntu » Miguel Mota | Web Developer</title>
-	<link rel="canonical" href="http://www.miguelmota.com/blog/nodejs-and-nginx-on-ubuntu">
-	<link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/miguelmota">
-	<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
-	<link rel="shortcut icon" href="/favicon.ico">
-	<link rel="apple-touch-icon-precomposed" sizes="57x57" href="/img/apple-touch-icon-57x57.png">
-	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/img/apple-touch-icon-114x114.png">
-	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/img/apple-touch-icon-72x72.png">
-	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/apple-touch-icon-144x144.png">
-	<link rel="apple-touch-startup-image" media="(device-width: 320px)" href="/img/apple-touch-startup-image-320x460.png">
-	<link rel="apple-touch-startup-image" media="(device-width: 320px) and (-webkit-device-pixel-ratio: 2)" href="/img/apple-touch-startup-image-640x920.png">
-	<link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" href="/img/apple-touch-startup-image-640x1096.png">
-	<link rel="apple-touch-startup-image" media="(device-width: 768px) and (orientation: portrait)" href="/img/apple-touch-startup-image-768x1004.png">
-	<link rel="apple-touch-startup-image" media="(device-width: 768px) and (orientation: landscape)" href="/img/apple-touch-startup-image-748x1024.png">
-	<link rel="apple-touch-startup-image" media="(device-width: 1536px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" href="/img/apple-touch-startup-image-1536x2008.png">
-	<link rel="apple-touch-startup-image" media="(device-width: 1536px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" href="/img/apple-touch-startup-image-2048x1496.png">
-	<link rel="stylesheet" href="/css/main.css">
-	<script src="//use.typekit.net/wkl5rpy.js"></script>
-	<script>try{Typekit.load();}catch(e){}</script>
-	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-  <script src="/js/main.min.js"></script>
-	<script>
-	  	var _gaq = _gaq || [];
-	   	_gaq.push(['_setAccount', 'UA-12642068-1']);
-	   	_gaq.push(['_setDomainName', '.miguelmota.com']);
-	  	_gaq.push(['_trackPageview']);
-	   	(function() {
-	     		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-	     		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-	     		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-	   	})();
-	   	$(document).on('click', '[data-ga-label]', function() {
-	   		_gaq.push(['_trackEvent', 'Call To Action', 'Click', $(this).attr('data-ga-label')]);
-	   	});
-	</script>
+  <meta charset="UTF-8">
+  <!--
+                                        ___                           __
+             __                        /\_ \                         /\ \__
+    ___ ___ /\_\     __   __  __     __\//\ \         ___ ___     ___\ \ ,_\    __
+  /' __` __`\/\ \  /'_ `\/\ \/\ \  /'__`\\ \ \      /' __` __`\  / __`\ \ \/  /'__`\
+  /\ \/\ \/\ \ \ \/\ \L\ \ \ \_\ \/\  __/ \_\ \_    /\ \/\ \/\ \/\ \L\ \ \ \_/\ \L\.\_
+  \ \_\ \_\ \_\ \_\ \____ \ \____/\ \____\/\____\   \ \_\ \_\ \_\ \____/\ \__\ \__/.\_\
+   \/_/\/_/\/_/\/_/\/___L\ \/___/  \/____/\/____/    \/_/\/_/\/_/\/___/  \/__/\/__/\/_/
+                     /\____/
+                     \_/__/
+  -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="description" content="Get Node.js and Nginx running on your Ubuntu server.">
+  <meta name="keywords" content="miguel mota,web developer,html5 css3 javascript">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Moogs">
+  <title>Node.js and Nginx on Ubuntu » Miguel Mota | Web Developer</title>
+  <link rel="canonical" href="http://www.miguelmota.com/blog/nodejs-and-nginx-on-ubuntu/">
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/miguelmota">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/assets/images/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/images/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/images/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/images/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 320px)" href="/assets/images/apple-touch-startup-image-320x460.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 320px) and (-webkit-device-pixel-ratio: 2)" href="/assets/images/apple-touch-startup-image-640x920.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" href="/assets/images/apple-touch-startup-image-640x1096.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 768px) and (orientation: portrait)" href="/assets/images/apple-touch-startup-image-768x1004.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 768px) and (orientation: landscape)" href="/assets/images/apple-touch-startup-image-748x1024.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 1536px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" href="/assets/images/apple-touch-startup-image-1536x2008.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 1536px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" href="/assets/images/apple-touch-startup-image-2048x1496.png">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script src="//use.typekit.net/wkl5rpy.js"></script>
+  <script>try{Typekit.load();}catch(e){}</script>
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+  <script src="/assets/scripts/build/site.js"></script>
+  <script>
+      var _gaq = _gaq || [];
+       _gaq.push(['_setAccount', 'UA-12642068-1']);
+       _gaq.push(['_setDomainName', '.miguelmota.com']);
+      _gaq.push(['_trackPageview']);
+       (function() {
+           var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+           ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+           var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+       })();
+       $(document).on('click', '[data-ga-label]', function() {
+         _gaq.push(['_trackEvent', 'Call To Action', 'Click', $(this).attr('data-ga-label')]);
+       });
+  </script>
 </head>
 <body id="blog">
-		<div id="top"></div>
-		<img class="hidden" src="/img/miguel-mota-m-logo-500x500.png" alt="">
+    <canvas id="bg-canvas"></canvas>
+    <div class="bg-upper"></div>
+    <div class="bg-lower"></div>
+    <div id="top"></div>
+    <img class="hidden" src="/assets/images/miguel-mota-m-logo-500x500.png" alt="">
 
-		<header id="header" class="contain-to-grid fixed">
-			<nav class="top-bar">
-				<ul class="title-area">
-					<li class="name"><a href="/" data-ga-label="Navigation - Logo">Miguel Mota</a></li>
-					<li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-				</ul>
-				<section class="top-bar-section">
-				    <ul id="main-nav" class="right">
-				      <li class="divider"></li>
-				      <li ><a href="/" data-ga-label="Navigation - Home"><i class="icon-home"></i></a></li>
-				      <li class="divider"></li>
-				      <li ><a href="/about" data-ga-label="Navigation - About"><i class="icon-bookmark-empty"></i> About</a></li>
-				      <li class="divider"></li>
-				      <li class="active"><a href="/blog" data-ga-label="Navigation - Blog"><i class="icon-lightbulb"></i> Thoughts</a></li>
-				      <li class="divider"></li>
-				      <li ><a href="/work" data-ga-label="Navigation - Work"><i class="icon-laptop"></i> Work</a></li>
-				      <li class="divider"></li>
-							<li ><a href="/contact" data-ga-label="Navigation - Contact"><i class="icon-envelope"></i> Contact</a></li>
-				      <li class="divider"></li>
-				    </ul>
-				</section>
-			</nav>
-		</header>
+    <header id="header" class="contain-to-grid fixed">
+      <nav class="top-bar">
+        <ul class="title-area">
+          <li class="name"><a href="/" data-ga-label="Navigation - Logo">Miguel Mota</a></li>
+          <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+        </ul>
+        <section class="top-bar-section">
+            <ul id="main-nav" class="right">
+              <li class="divider"></li>
+              <li ><a href="/" data-ga-label="Navigation - Home"><i class="fa fa-home"></i></a></li>
+              <li class="divider"></li>
+              <li ><a href="/about" data-ga-label="Navigation - About"><i class="fa fa-bookmark-o"></i> About</a></li>
+              <li class="divider"></li>
+              <li class="active"><a href="/blog" data-ga-label="Navigation - Blog"><i class="fa fa-lightbulb-o"></i> Thoughts</a></li>
+              <li class="divider"></li>
+              <li ><a href="/work" data-ga-label="Navigation - Work"><i class="fa fa-laptop"></i> Work</a></li>
+              <li class="divider"></li>
+              <li ><a href="/contact" data-ga-label="Navigation - Contact"><i class="fa fa-envelope-o"></i> Contact</a></li>
+              <li class="divider"></li>
+            </ul>
+        </section>
+      </nav>
+    </header>
 
-		<main id="main" role="main">
-			<header id="content-header">
-	<canvas id="canvas"></canvas>
-	<div class="row">
-		<div class="large-12 column">
+    <main id="main" role="main">
+      <header id="content-header">
+    
+    <div class="row">
+        <div class="large-12 column">
+          
+            <datetime>26 Sep 2013 <small><i class="fa fa-comment-o"></i> <a href="/blog/nodejs-and-nginx-on-ubuntu/#disqus_thread" data-disqus-identifier="/blog/nodejs-and-nginx-on-ubuntu/"></a></small> <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.miguelmota.com/blog/nodejs-and-nginx-on-ubuntu/" data-text="Node.js and Nginx on Ubuntu" data-size="large" data-related="_moogs" data-ga-label="Blog post - Tweet">Tweet</a></datetime>
+<h1 data-text="Node.js and Nginx on Ubuntu">Node.js and Nginx on Ubuntu</h1>
 
-			<datetime>26 Sep 2013 <small><i class="icon-comment-alt"></i> <a href="/blog/nodejs-and-nginx-on-ubuntu#disqus_thread" data-disqus-identifier="/blog/nodejs-and-nginx-on-ubuntu"></a></small> <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.miguelmota.com/blog/nodejs-and-nginx-on-ubuntu" data-text="Node.js and Nginx on Ubuntu" data-size="large" data-related="_moogs" data-ga-label="Blog post - Tweet">Tweet</a></datetime>
-			<h1>Node.js and Nginx on Ubuntu</h1>
-
-		</div>
-	</div>
-	<div id="content-header-bottom">
-		<div class="triangle"></div>
-	</div>
+          
+        </div>
+    </div>
+    <div id="content-header-bottom">
+        <div class="triangle"></div>
+    </div>
 </header>
 
+
 <section id="post">
-	<div class="row">
-		<div class="large-12 column">
+  <div class="row">
+    <div class="large-12 column">
 
-			<p>In this tutorial I will show how to install and configure <a href="http://nodejs.org/" target="_blank">Node.js</a> and <a href="http://nginx.org/" target="_blank">Nginx</a> on you <a href="http://www.ubuntu.com/" target="_blank">Ubuntu</a> server.</p>
+      <p>In this tutorial I will show how to install and configure <a href="http://nodejs.org/">Node.js</a> and <a href="http://nginx.org/">Nginx</a> on you <a href="http://www.ubuntu.com/">Ubuntu</a> server.</p>
 
-<h2>Installing Dependencies</h2>
+<h2 id="installing-dependencies">Installing Dependencies</h2>
 
 <p>The only dependency we really need is the <code>build-essential</code> package in order to be able to compile the Node.js source code.</p>
-
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># Make sure to download the latest repos.</span>
 sudo apt-get update
 
@@ -123,12 +127,11 @@ sudo apt-get install libssl-dev
 sudo apt-get install vim
 
 <span class="c"># Git to manage your repos.</span>
-sudo apt-get install git</code></pre></div>
+sudo apt-get install git
+</code></pre></div>
+<h2 id="installing-node.js">Installing Node.js</h2>
 
-<h2>Installing Node.js</h2>
-
-<p>Head over to the <a href="http://nodejs.org/download/" target="_blank">Node.js Downloads</a> page and copy the link to the source code tarball (node-&lt;version&gt;.tar.gz).</p>
-
+<p>Head over to the <a href="http://nodejs.org/download/">Node.js Downloads</a> page and copy the link to the source code tarball (node-&lt;version&gt;.tar.gz).</p>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># Create and change into directory.</span>
 sudo mkdir /opt/node/
 <span class="nb">cd</span> /opt/node/
@@ -153,14 +156,11 @@ sudo make install
 sudo make <span class="nb">test</span>
 
 <span class="c"># Check the version to see if it was properly installed.</span>
-node -v</code></pre></div>
+node -v
+</code></pre></div>
+<p>If you get a version number then you&#39;re good to go.</p>
 
-<p>If you get a version number then you're good to go.</p>
-
-<h2>Setting up a Node.js webserver</h2>
-
-<p></p>
-
+<h2 id="setting-up-a-node.js-webserver">Setting up a Node.js webserver</h2>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># Create the directory to hold the sites.</span>
 sudo mkdir /var/www/
 <span class="nb">cd</span> /var/www/
@@ -170,24 +170,21 @@ sudo mkdir helloworld/
 <span class="nb">cd </span>helloworld/
 
 <span class="c"># Create a server file.</span>
-vim server.js</code></pre></div>
-
+vim server.js
+</code></pre></div>
 <p>Paste in the simple code into server.js</p>
-
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">http</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;http&#39;</span><span class="p">);</span>
 <span class="nx">http</span><span class="p">.</span><span class="nx">createServer</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">res</span><span class="p">.</span><span class="nx">writeHead</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;Content-Type&#39;</span><span class="o">:</span> <span class="s1">&#39;text/plain&#39;</span><span class="p">});</span>
   <span class="nx">res</span><span class="p">.</span><span class="nx">end</span><span class="p">(</span><span class="s1">&#39;Hello World\n&#39;</span><span class="p">);</span>
 <span class="p">}).</span><span class="nx">listen</span><span class="p">(</span><span class="mi">3000</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Server running at http://&lt;your server ip address&gt;:3000/&#39;</span><span class="p">);</span></code></pre></div>
-
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Server running at http://&lt;your server ip address&gt;:3000/&#39;</span><span class="p">);</span>
+</code></pre></div>
 <p>Hit the <key>ESC</key> key then type in <code>:wq</code> to save and exit. Then run the webserver with:</p>
-
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># Run webserver.</span>
-node server.js</code></pre></div>
-
-<p>To always run in the background, check out the <a href="https://github.com/nodejitsu/forever" target="_blank">Forever</a> node module.</p>
-
+node server.js
+</code></pre></div>
+<p>To always run in the background, check out the <a href="https://github.com/nodejitsu/forever">Forever</a> node module.</p>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># Install Forever module globally.</span>
 sudo npm install -g forever
 
@@ -196,125 +193,210 @@ sudo npm install -g forever
 forever start -l hello-world.log server.js
 
 <span class="c"># View log file.</span>
-tail -f ~/.forever/hello-world.log</code></pre></div>
-
+tail -f ~/.forever/hello-world.log
+</code></pre></div>
 <p>Open up a browser window and go to:</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">http://&lt;your server ip address&gt;:3000/
+</code></pre></div>
+<p>You should see the &quot;Hello World&quot; message.</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">http://&lt;your server ip address&gt;:3000/</code></pre></div>
-
-</p>You should see the "Hello World" message.</p>
-
-<p>If for whatever reason you don't know your server's IP address, run:</p>
-
+<p>If for whatever reason you don&#39;t know your server&#39;s IP address, run:</p>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># Find server IP address</span>
-ifconfig eth0 <span class="p">|</span> grep inet <span class="p">|</span> awk <span class="s1">&#39;{ print $2 }&#39;</span></code></pre></div>
+ifconfig eth0 <span class="p">|</span> grep inet <span class="p">|</span> awk <span class="s1">&#39;{ print $2 }&#39;</span>
+</code></pre></div>
+<h2 id="installing-nginx">Installing Nginx</h2>
 
-<h2>Installing Nginx</h2>
-
-<p>Nginx is good for serving static files, as well as a being a <em>load balancer</em>. And you can route multiple domains to your Node.js webserver. Let's install it now.</p>
-
+<p>Nginx is good for serving static files, as well as a being a <em>load balancer</em>. And you can route multiple domains to your Node.js webserver. Let&#39;s install it now.</p>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># Installing Nginx is a breeze.</span>
-sudo apt-get install nginx</code></pre></div>
-
+sudo apt-get install nginx
+</code></pre></div>
 <p>Here are some useful Nginx commands.</p>
-
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># Self explanatory.</span>
 sudo service nginx <span class="o">{</span>stop<span class="p">|</span>start<span class="p">|</span>restart<span class="p">|</span>reload<span class="o">}</span>
 
 <span class="c"># Alternatively, you also do:</span>
-/etc/init.d/nginx <span class="o">{</span>stop<span class="p">|</span>start<span class="p">|</span>restart<span class="p">|</span>reload<span class="o">}</span></code></pre></div>
-
+/etc/init.d/nginx <span class="o">{</span>stop<span class="p">|</span>start<span class="p">|</span>restart<span class="p">|</span>reload<span class="o">}</span>
+</code></pre></div>
 <p>The default nginx configuation file is located under:</p>
-
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># Default nginx config file.</span>
-/etc/nginx/nginx.conf</code></pre></div>
-
+/etc/nginx/nginx.conf
+</code></pre></div>
 <p>Take note of the default log file locations, which you can view by using the <code>tail</code> command.</p>
-
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># View access logs.</span>
 tail -f /var/log/nginx/access.log
 
 <span class="c"># View error logs.</span>
-tail -f /var/log/nginx/error.log</code></pre></div>
-
-<h2>Configuring Nginx server</h2>
+tail -f /var/log/nginx/error.log
+</code></pre></div>
+<h2 id="configuring-nginx-server">Configuring Nginx server</h2>
 
 <p>To proxy the Node.js server to Nginx, a new webserver config needs to be created.</p>
-
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># Backup default config.</span>
 mv /etc/nginx/sites-available/default /etc/nginx/sites-available/default.bak
 
 <span class="c"># Create new config.</span>
-vim /etc/nginx/sites-available/default</code></pre></div>
+vim /etc/nginx/sites-available/default
+</code></pre></div>
+<p>In the empty config file add the following settings (<a href="https://gist.github.com/miguelmota/6912559">gist</a>):</p>
+<div class="highlight"><pre><code class="language-nginx" data-lang="nginx"><span class="c1"># The upstream module is the link between Node.js and Nginx.</span>
+<span class="c1"># Upstream is used for proxying requests to other servers.</span>
+<span class="c1"># All requests for / get distributed between any of the servers listed.</span>
+<span class="k">upstream</span> <span class="s">helloworld</span> <span class="p">{</span>
+  <span class="c1"># Set up multiple Node.js webservers for load balancing.</span>
+  <span class="c1"># max_fails refers to number of failed attempts</span>
+  <span class="c1"># before server is considered inactive.</span>
+  <span class="c1"># weight priorities traffic to server. Ex. weight=2 will recieve</span>
+  <span class="c1"># twice as much traffic as server with weight=1</span>
+  <span class="kn">server</span> <span class="s">&lt;your</span> <span class="s">server</span> <span class="s">ip&gt;:3000</span> <span class="s">max_fails=0</span> <span class="s">fail_timeout=10s</span> <span class="s">weight=1</span><span class="p">;</span>
+  <span class="c1"># server &lt;your server ip&gt;:3001 max_fails=0 fail_timeout=10s weight=1;</span>
+  <span class="c1"># server &lt;your server ip&gt;:3002 max_fails=0 fail_timeout=10s weight=1;</span>
+  <span class="c1"># server &lt;your server ip&gt;:3003 max_fails=0 fail_timeout=10s weight=1;</span>
 
-<p>In the empty config file add the following settings (<a href="https://gist.github.com/miguelmota/6912559" target="_blank">gist</a>):</p>
+  <span class="c1"># Send visitors back to the same server each time.</span>
+  <span class="kn">ip_hash</span><span class="p">;</span>
 
-<script src="https://gist.github.com/miguelmota/6912559.js"></script>
+  <span class="c1"># Enable number of keep-alive connections.</span>
+  <span class="kn">keepalive</span> <span class="mi">512</span><span class="p">;</span>
+<span class="p">}</span>
 
+<span class="k">server</span> <span class="p">{</span>
+  <span class="kn">listen</span> <span class="mi">80</span><span class="p">;</span>
+  <span class="kn">listen</span> <span class="s">[::]:80</span> <span class="s">default_server</span> <span class="s">ipv6only=on</span><span class="p">;</span>
+
+  <span class="c1"># Index files.</span>
+  <span class="kn">index</span> <span class="s">index.html</span><span class="p">;</span>
+
+  <span class="c1"># Domain names.</span>
+  <span class="c1"># Make sure to set the A Record on your domain&#39;s DNS settings to your server&#39;s IP address.</span>
+  <span class="c1"># You can test if was set properly by using the `dig` command: dig yourdomain.com</span>
+  <span class="kn">server_name</span> <span class="s">yourdomain.com</span> <span class="s">www.yourdomain.com</span><span class="p">;</span>
+
+  <span class="c1"># Timeout for closing keep-alive connections.</span>
+  <span class="kn">keepalive_timeout</span> <span class="mi">10</span><span class="p">;</span>
+
+  <span class="c1"># Enable gzip compression.</span>
+  <span class="kn">gzip</span> <span class="no">on</span><span class="p">;</span>
+  <span class="kn">gzip_http_version</span> <span class="mi">1</span><span class="s">.1</span><span class="p">;</span>
+  <span class="kn">gzip_vary</span> <span class="no">on</span><span class="p">;</span>
+  <span class="kn">gzip_comp_level</span> <span class="mi">6</span><span class="p">;</span>
+  <span class="kn">gzip_proxied</span> <span class="s">any</span><span class="p">;</span>
+  <span class="kn">gzip_buffers</span> <span class="mi">16</span> <span class="mi">8k</span><span class="p">;</span>
+  <span class="kn">gzip_disable</span> <span class="s">&quot;MSIE</span> <span class="s">[1-6]\.(?!.*SV1)&quot;</span><span class="p">;</span>
+
+  <span class="c1"># Max upload size.</span>
+  <span class="c1"># client_max_body_size 16M;</span>
+
+  <span class="c1"># Change access and error log files.</span>
+  <span class="c1"># access_log /var/log/nginx/yourdomain.com/access.log;</span>
+  <span class="c1"># error_log /var/log/nginx/yourdomain.com/error.log;</span>
+
+  <span class="c1"># Custom error page.</span>
+  <span class="c1"># error_page 404 maintenance.html;</span>
+  <span class="c1"># error_page 500 502 503 504 maintenance.html;</span>
+
+  <span class="c1"># location /maintenance.html {</span>
+  <span class="c1">#  root /var/www;</span>
+  <span class="c1"># }</span>
+
+  <span class="kn">location</span> <span class="s">/</span> <span class="p">{</span>
+    <span class="c1"># Set this to your upstream module.</span>
+    <span class="kn">proxy_pass</span> <span class="s">http://helloworld</span><span class="p">;</span>
+    <span class="c1"># Headers to pass to proxy server.</span>
+    <span class="kn">proxy_set_header</span> <span class="s">X-Real-IP</span> <span class="nv">$remote_addr</span><span class="p">;</span>
+    <span class="kn">proxy_set_header</span> <span class="s">X-Forwarded-Proto</span> <span class="nv">$scheme</span><span class="p">;</span>
+    <span class="kn">proxy_set_header</span> <span class="s">X-Forwarded-For</span> <span class="nv">$proxy_add_x_forwarded_for</span><span class="p">;</span>
+    <span class="kn">proxy_set_header</span> <span class="s">Host</span> <span class="nv">$host</span><span class="p">;</span>
+    <span class="kn">proxy_set_header</span> <span class="s">X-NginX-Proxy</span> <span class="s">true</span><span class="p">;</span>
+    <span class="kn">proxy_set_header</span> <span class="s">Upgrade</span> <span class="nv">$http_upgrade</span><span class="p">;</span>
+    <span class="kn">proxy_set_header</span> <span class="s">Connection</span> <span class="s">&quot;upgrade&quot;</span><span class="p">;</span>
+    <span class="kn">proxy_cache_bypass</span> <span class="nv">$http_upgrade</span><span class="p">;</span>
+    <span class="kn">proxy_http_version</span> <span class="mi">1</span><span class="s">.1</span><span class="p">;</span>
+    <span class="kn">proxy_redirect</span> <span class="no">off</span><span class="p">;</span>
+    <span class="c1"># Go to next upstream after if server down.</span>
+    <span class="kn">proxy_next_upstream</span> <span class="s">error</span> <span class="s">timeout</span> <span class="s">http_500</span> <span class="s">http_502</span> <span class="s">http_503</span> <span class="s">http_504</span><span class="p">;</span>
+    <span class="kn">proxy_connect_timeout</span> <span class="s">5s</span><span class="p">;</span>
+    <span class="c1"># Gateway timeout.</span>
+    <span class="kn">proxy_read_timeout</span> <span class="s">20s</span><span class="p">;</span>
+    <span class="kn">proxy_send_timeout</span> <span class="s">20s</span><span class="p">;</span>
+    <span class="c1"># Buffer settings.</span>
+    <span class="kn">proxy_buffers</span> <span class="mi">8</span> <span class="mi">32k</span><span class="p">;</span>
+    <span class="kn">proxy_buffer_size</span> <span class="mi">64k</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="c1"># Enable caching of static files.</span>
+  <span class="c1"># location ~* \.(css|js|ico|gif|jpe?g|png|svg)$ {</span>
+  <span class="c1">#  expires 168h;</span>
+  <span class="c1">#  add_header Pragma public;</span>
+  <span class="c1">#  add_header Cache-Control &quot;public, must-revalidate, proxy-revalidate&quot;;</span>
+  <span class="c1"># }</span>
+
+  <span class="c1"># Don&#39;t cache html files.</span>
+  <span class="c1"># location ~* \.html$ {</span>
+  <span class="c1">#  expires -1;</span>
+  <span class="c1"># }</span>
+
+  <span class="c1"># Serve static files without going through upstreams</span>
+  <span class="kn">location</span> <span class="p">~</span> <span class="sr">^/(images/|img/|javascript/|js/|css/|stylesheets/|flash/|media/|static/|robots.txt|humans.txt|favicon.ico)</span> <span class="p">{</span>
+    <span class="kn">root</span> <span class="s">/var/www/helloworld</span><span class="p">;</span>
+    <span class="kn">access_log</span> <span class="no">off</span><span class="p">;</span>
+    <span class="kn">expires</span> <span class="s">1h</span><span class="p">;</span>
+  <span class="p">}</span>
+
+
+<span class="p">}</span>
+</code></pre></div>
 <p>After you have saved the file and exited, test for any Nginx errors and then reload the config.</p>
-
 <div class="highlight"><pre><code class="language-bash" data-lang="bash">nginx -t
 
-sudo service nginx reload</code></pre></div>
-
+sudo service nginx reload
+</code></pre></div>
 <p>Nginx will let you know if you have any errors in your config. Fix them and reload once again.</p>
 
-<p>If you're trying to reference multiple domains and got the following error:</p>
-
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">Reloading nginx configuration: nginx: <span class="o">[</span>emerg<span class="o">]</span> could not build the server_names_hash, you should increase server_names_hash_bucket_size: 32</code></pre></div>
-
+<p>If you&#39;re trying to reference multiple domains and got the following error:</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">Reloading nginx configuration: nginx: <span class="o">[</span>emerg<span class="o">]</span> could not build the server_names_hash, you should increase server_names_hash_bucket_size: 32
+</code></pre></div>
 <p>Uncomment this line in <code>/etc/nginx/nginx.conf</code>.</p>
-
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">server_names_hash_bucket_size 64<span class="p">;</span></code></pre></div>
-
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">server_names_hash_bucket_size 64<span class="p">;</span>
+</code></pre></div>
 <p>To test that gzip is working, execute:</p>
-
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">curl --header <span class="s2">&quot;Accept-Encoding: gzip&quot;</span> -I http://yourdomain.com</code></pre></div>
-
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">curl --header <span class="s2">&quot;Accept-Encoding: gzip&quot;</span> -I http://yourdomain.com
+</code></pre></div>
 <p>You should see the line:</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">Content-Encoding: gzip
+</code></pre></div>
+<h2 id="conclusion">Conclusion</h2>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">Content-Encoding: gzip</code></pre></div>
+<p>If everything went smoothly, going to your domain will bring up the &quot;Hello World&quot; message. If not then let us know in the comments where you got stuck and I will try to help you out.</p>
 
-<h2>Conclusion</h2>
-
-<p>If everything went smoothly, going to your domain will bring up the "Hello World" message. If not then let us know in the comments where you got stuck and I will try to help you out.</p>
-
-<p>I by no means are a server expert, I'm only sharing what I've learned in the past few weeks, so feel free to add your input and thoughts.</p>
+<p>I by no means are a server expert, I&#39;m only sharing what I&#39;ve learned in the past few weeks, so feel free to add your input and thoughts.</p>
 
 
-			<div class="tags">
-				<i class="icon-tag"></i>
-				
-					<a href="/tag/Node.js">Node.js</a> <span>+</span>
-				
-					<a href="/tag/Nginx">Nginx</a> <span>+</span>
-				
-					<a href="/tag/Ubuntu">Ubuntu</a> <span>+</span>
-				
-			</div>
+      <div class="tags">
+  
+    <a href="/tag/Node.js">#Node.js</a>
+  
+    <a href="/tag/Nginx">#Nginx</a>
+  
+    <a href="/tag/Ubuntu">#Ubuntu</a>
+  
+</div>
 
-		</div>
-	</div>
 
-	
-		<div id="related-posts" class="row">
-			<div class="row">
-				<div class="large-12 column">
-					<div class="input-short-url">share: <input type="text" value="http://mig.g/p2Ms"></div>
-				</div>
-			</div>
-			<div class="large-6 column">
-				
+    </div>
+  </div>
+
+  
+    <div id="related-posts" class="row">
+      <div class="large-6 column">
+        
     
 
     <h3>Previous post</h3>
 
-	    <dl class="posts-list">
-
-				<dt><datetime>25 Sep 2013</datetime></dt>
-				<dd><h2><a href="/blog/raspberry-pi-camera-board-video-streaming">Raspberry Pi camera board video streaming</a> <small><i class="icon-comment-alt"></i> <a href="/blog/raspberry-pi-camera-board-video-streaming#disqus_thread" data-disqus-identifier="/blog/raspberry-pi-camera-board-video-streaming"></a></small></h2></dd>
-
-			</dl>
+      <dl class="posts-list">
+        <dt><datetime>25 Sep 2013</datetime></dt>
+        <dd><h2><a href="/blog/raspberry-pi-camera-board-video-streaming/">Raspberry Pi camera board video streaming</a> <small><i class="icon-comment-alt"></i> <a href="/blog/raspberry-pi-camera-board-video-streaming/#disqus_thread" data-disqus-identifier="/blog/raspberry-pi-camera-board-video-streaming/"></a></small></h2></dd>
+      </dl>
 
     
 
@@ -322,62 +404,60 @@ sudo service nginx reload</code></pre></div>
 
     
 
-    	<h3>Next post</h3>
+      <h3>Next post</h3>
 
-    	<dl class="posts-list">
-
-		    <dt><datetime>30 Sep 2013</datetime></dt>
-		    <dd><h2><a href="/blog/set-up-ssh-keys">Set up SSH keys</a> <small><i class="icon-comment-alt"></i> <a href="/blog/set-up-ssh-keys#disqus_thread" data-disqus-identifier="/blog/set-up-ssh-keys"></a></small></h2></dd>
-
-		  </dl>
+      <dl class="posts-list">
+        <dt><datetime>30 Sep 2013</datetime></dt>
+        <dd><h2><a href="/blog/set-up-ssh-keys/">Set up SSH keys</a> <small><i class="icon-comment-alt"></i> <a href="/blog/set-up-ssh-keys/#disqus_thread" data-disqus-identifier="/blog/set-up-ssh-keys/"></a></small></h2></dd>
+      </dl>
 
     
 
-			</div>
-			<div class="large-6 column">
+      </div>
+      <div class="large-6 column">
 
-				<h3>See also...</h3>
+        <h3>See also...</h3>
 
-				<dl class="posts-list">
-					
-						<dt><datetime>19 Jul 2014</datetime></dt>
-<dd><h2><a href="/blog/bitwise-operators-in-javascript">Bitwise operators in JavaScript</a> <small><i class="icon-comment-alt"></i> <a href="/blog/bitwise-operators-in-javascript#disqus_thread" data-disqus-identifier="/blog/bitwise-operators-in-javascript"></a></small></h2>
+        <dl class="posts-list">
+          
+            <dt><datetime>19 Jul 2014</datetime></dt>
+<dd><h2><a href="/blog/bitwise-operators-in-javascript/">Bitwise operators in JavaScript</a> <small><i class="icon-comment-alt"></i> <a href="/blog/bitwise-operators-in-javascript/#disqus_thread" data-disqus-identifier="/blog/bitwise-operators-in-javascript/"></a></small></h2>
 </dd>
-					
-						<dt><datetime>14 Mar 2014</datetime></dt>
-<dd><h2><a href="/blog/deployment-with-git">Deployment with Git</a> <small><i class="icon-comment-alt"></i> <a href="/blog/deployment-with-git#disqus_thread" data-disqus-identifier="/blog/deployment-with-git"></a></small></h2>
+          
+            <dt><datetime>14 Mar 2014</datetime></dt>
+<dd><h2><a href="/blog/deployment-with-git/">Deployment with Git</a> <small><i class="icon-comment-alt"></i> <a href="/blog/deployment-with-git/#disqus_thread" data-disqus-identifier="/blog/deployment-with-git/"></a></small></h2>
 </dd>
-					
-						<dt><datetime>23 Jan 2014</datetime></dt>
-<dd><h2><a href="/blog/intro-to-redis">Intro to Redis</a> <small><i class="icon-comment-alt"></i> <a href="/blog/intro-to-redis#disqus_thread" data-disqus-identifier="/blog/intro-to-redis"></a></small></h2>
+          
+            <dt><datetime>23 Jan 2014</datetime></dt>
+<dd><h2><a href="/blog/intro-to-redis/">Intro to Redis</a> <small><i class="icon-comment-alt"></i> <a href="/blog/intro-to-redis/#disqus_thread" data-disqus-identifier="/blog/intro-to-redis/"></a></small></h2>
 </dd>
-					
-						<dt><datetime>30 Nov 2013</datetime></dt>
-<dd><h2><a href="/blog/getting-started-with-backbonejs">Getting Started with Backbone.js</a> <small><i class="icon-comment-alt"></i> <a href="/blog/getting-started-with-backbonejs#disqus_thread" data-disqus-identifier="/blog/getting-started-with-backbonejs"></a></small></h2>
+          
+            <dt><datetime>30 Nov 2013</datetime></dt>
+<dd><h2><a href="/blog/getting-started-with-backbonejs/">Getting Started with Backbone.js</a> <small><i class="icon-comment-alt"></i> <a href="/blog/getting-started-with-backbonejs/#disqus_thread" data-disqus-identifier="/blog/getting-started-with-backbonejs/"></a></small></h2>
 </dd>
-					
-						<dt><datetime>30 Oct 2013</datetime></dt>
-<dd><h2><a href="/blog/memoization-caching-function-results-in-javascript">Memoization&#58; Caching function results in JavaScript</a> <small><i class="icon-comment-alt"></i> <a href="/blog/memoization-caching-function-results-in-javascript#disqus_thread" data-disqus-identifier="/blog/memoization-caching-function-results-in-javascript"></a></small></h2>
+          
+            <dt><datetime>30 Oct 2013</datetime></dt>
+<dd><h2><a href="/blog/memoization-caching-function-results-in-javascript/">Memoization&#58; Caching function results in JavaScript</a> <small><i class="icon-comment-alt"></i> <a href="/blog/memoization-caching-function-results-in-javascript/#disqus_thread" data-disqus-identifier="/blog/memoization-caching-function-results-in-javascript/"></a></small></h2>
 </dd>
-					
-				</dl>
+          
+        </dl>
 
-			</div>
-		</div>
-	
+      </div>
+    </div>
+  
 
-	<div id="comments" class="row">
-		<div class="large-12 column">
-			<div id="disqus_thread"></div>
-		</div>
-	</div>
+  <div id="comments" class="row">
+    <div class="large-12 column">
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
 
 </section>
 
 <script>
     var disqus_shortname = 'miguelmota';
-    var disqus_identifier = '/blog/nodejs-and-nginx-on-ubuntu';
-    var disqus_url = 'http://www.miguelmota.com/blog/nodejs-and-nginx-on-ubuntu';
+    var disqus_identifier = '/blog/nodejs-and-nginx-on-ubuntu/';
+    var disqus_url = 'http://www.miguelmota.com/blog/nodejs-and-nginx-on-ubuntu/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -393,24 +473,24 @@ sudo service nginx reload</code></pre></div>
     }());
 </script>
 
-		</main>
+    </main>
 
-		<footer id="footer">
-			<div class="row">
-				<div class="large-12 column">
-					<p>
-						<span class="break"><span>© 2014 Moogs™, LLC.</span> <span>Made with <i class="icon-heart"></i></span></span> <a class="hidden" href="https://plus.google.com/102174577273194387652" rel="author">Google+</a>
+    <footer id="footer">
+      <div class="row">
+        <div class="large-12 column">
+          <p>
+            <span class="break"><span>© 2015 Moogs™.</span> <span>Made with <i class="fa fa-heart"></i></span></span> <a class="hidden" href="https://plus.google.com/102174577273194387652" rel="author">Google+</a>
 
-						<a href="https://twitter.com/_moogs" class="twitter-follow-button" data-show-count="false" data-size="large" data-ga-label="Footer - Follow Twitter">Follow @_moogs</a>
+            <a href="https://twitter.com/_moogs" class="twitter-follow-button" data-show-count="false" data-size="large" data-ga-label="Footer - Follow Twitter">Follow @_moogs</a>
 
-					</p>
-				</div>
-			</div>
-		</footer>
+          </p>
+        </div>
+      </div>
+    </footer>
 
-		<a id="forkme" href="https://github.com/miguelmota/miguelmota.github.com" target="_blank" data-ga-label="Fork me on Github"><img src="/img/forkme_right_darkblue_121621.png" alt=""></a>
+    <a id="forkme" href="https://github.com/miguelmota/miguelmota.github.com" target="_blank" data-ga-label="Fork me on Github"><img src="/assets/images/forkme_right_darkblue_121621.png" alt=""></a>
 
-		<script src="//maps.google.com/maps/api/js?sensor=false"></script>
-		<script src="//google-maps-utility-library-v3.googlecode.com/svn/trunk/infobox/src/infobox.js"></script>
-	</body>
+    <script src="//maps.google.com/maps/api/js?sensor=false"></script>
+    <script src="//google-maps-utility-library-v3.googlecode.com/svn/trunk/infobox/src/infobox.js"></script>
+  </body>
 </html>

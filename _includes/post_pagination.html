@@ -3,12 +3,10 @@
 
     <h3>Previous post</h3>
 
-	    <dl class="posts-list">
-
-				<dt><datetime>{{ page.previous.date | date_to_string }}</datetime></dt>
-				<dd><h2><a href="{{ page.previous.url }}">{{ page.previous.title }}</a> <small><i class="icon-comment-alt"></i> <a href="{{ page.previous.url }}#disqus_thread" data-disqus-identifier="{{ page.previous.url }}"></a></small></h2></dd>
-
-			</dl>
+      <dl class="posts-list">
+        <dt><datetime>{{ page.previous.date | date_to_string }}</datetime></dt>
+        <dd><h2><a href="{{ page.previous.url }}">{{ page.previous.title }}</a> <small><i class="icon-comment-alt"></i> <a href="{{ page.previous.url }}#disqus_thread" data-disqus-identifier="{{ page.previous.url }}"></a></small></h2></dd>
+      </dl>
 
     {% endif %}
 {% endif %}
@@ -16,14 +14,12 @@
 {% if page.next.category == "blog" %}
     {% if page.next.url %}
 
-    	<h3>Next post</h3>
+      <h3>Next post</h3>
 
-    	<dl class="posts-list">
-
-		    <dt><datetime>{{ page.next.date | date_to_string }}</datetime></dt>
-		    <dd><h2><a href="{{ page.next.url }}">{{ page.next.title }}</a> <small><i class="icon-comment-alt"></i> <a href="{{ page.next.url }}#disqus_thread" data-disqus-identifier="{{ page.next.url }}"></a></small></h2></dd>
-
-		  </dl>
+      <dl class="posts-list">
+        <dt><datetime>{{ page.next.date | date_to_string }}</datetime></dt>
+        <dd><h2><a href="{{ page.next.url }}">{{ page.next.title }}</a> <small><i class="icon-comment-alt"></i> <a href="{{ page.next.url }}#disqus_thread" data-disqus-identifier="{{ page.next.url }}"></a></small></h2></dd>
+      </dl>
 
     {% endif %}
 {% endif %}

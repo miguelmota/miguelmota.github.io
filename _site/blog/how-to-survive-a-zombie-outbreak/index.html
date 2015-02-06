@@ -1,204 +1,203 @@
 <!DOCTYPE html>
 <html lang="en-US" manifest="http://cache.miguelmota.com/cache.appcache">
 <head>
-	<meta charset="UTF-8">
-	<!--
-	                                      ___                           __
-	           __                        /\_ \                         /\ \__
-	  ___ ___ /\_\     __   __  __     __\//\ \         ___ ___     ___\ \ ,_\    __
-	/' __` __`\/\ \  /'_ `\/\ \/\ \  /'__`\\ \ \      /' __` __`\  / __`\ \ \/  /'__`\
-	/\ \/\ \/\ \ \ \/\ \L\ \ \ \_\ \/\  __/ \_\ \_    /\ \/\ \/\ \/\ \L\ \ \ \_/\ \L\.\_
-	\ \_\ \_\ \_\ \_\ \____ \ \____/\ \____\/\____\   \ \_\ \_\ \_\ \____/\ \__\ \__/.\_\
-	 \/_/\/_/\/_/\/_/\/___L\ \/___/  \/____/\/____/    \/_/\/_/\/_/\/___/  \/__/\/__/\/_/
-	                   /\____/
-	                   \_/__/
-	-->
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta name="description" content="Learn how to survive and kill the walking dead during an outbreak with this helpful guide.">
-	<meta name="keywords" content="miguel mota,web developer,html5 css3 javascript">
-	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-	<meta name="apple-mobile-web-app-status-bar-style" content="black">
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-title" content="Moogs">
-	<title>How To Survive a Zombie Outbreak » Miguel Mota | Web Developer</title>
-	<link rel="canonical" href="http://www.miguelmota.com/blog/how-to-survive-a-zombie-outbreak">
-	<link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/miguelmota">
-	<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
-	<link rel="shortcut icon" href="/favicon.ico">
-	<link rel="apple-touch-icon-precomposed" sizes="57x57" href="/img/apple-touch-icon-57x57.png">
-	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/img/apple-touch-icon-114x114.png">
-	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/img/apple-touch-icon-72x72.png">
-	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/apple-touch-icon-144x144.png">
-	<link rel="apple-touch-startup-image" media="(device-width: 320px)" href="/img/apple-touch-startup-image-320x460.png">
-	<link rel="apple-touch-startup-image" media="(device-width: 320px) and (-webkit-device-pixel-ratio: 2)" href="/img/apple-touch-startup-image-640x920.png">
-	<link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" href="/img/apple-touch-startup-image-640x1096.png">
-	<link rel="apple-touch-startup-image" media="(device-width: 768px) and (orientation: portrait)" href="/img/apple-touch-startup-image-768x1004.png">
-	<link rel="apple-touch-startup-image" media="(device-width: 768px) and (orientation: landscape)" href="/img/apple-touch-startup-image-748x1024.png">
-	<link rel="apple-touch-startup-image" media="(device-width: 1536px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" href="/img/apple-touch-startup-image-1536x2008.png">
-	<link rel="apple-touch-startup-image" media="(device-width: 1536px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" href="/img/apple-touch-startup-image-2048x1496.png">
-	<link rel="stylesheet" href="/css/main.css">
-	<script src="//use.typekit.net/wkl5rpy.js"></script>
-	<script>try{Typekit.load();}catch(e){}</script>
-	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-  <script src="/js/main.min.js"></script>
-	<script>
-	  	var _gaq = _gaq || [];
-	   	_gaq.push(['_setAccount', 'UA-12642068-1']);
-	   	_gaq.push(['_setDomainName', '.miguelmota.com']);
-	  	_gaq.push(['_trackPageview']);
-	   	(function() {
-	     		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-	     		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-	     		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-	   	})();
-	   	$(document).on('click', '[data-ga-label]', function() {
-	   		_gaq.push(['_trackEvent', 'Call To Action', 'Click', $(this).attr('data-ga-label')]);
-	   	});
-	</script>
+  <meta charset="UTF-8">
+  <!--
+                                        ___                           __
+             __                        /\_ \                         /\ \__
+    ___ ___ /\_\     __   __  __     __\//\ \         ___ ___     ___\ \ ,_\    __
+  /' __` __`\/\ \  /'_ `\/\ \/\ \  /'__`\\ \ \      /' __` __`\  / __`\ \ \/  /'__`\
+  /\ \/\ \/\ \ \ \/\ \L\ \ \ \_\ \/\  __/ \_\ \_    /\ \/\ \/\ \/\ \L\ \ \ \_/\ \L\.\_
+  \ \_\ \_\ \_\ \_\ \____ \ \____/\ \____\/\____\   \ \_\ \_\ \_\ \____/\ \__\ \__/.\_\
+   \/_/\/_/\/_/\/_/\/___L\ \/___/  \/____/\/____/    \/_/\/_/\/_/\/___/  \/__/\/__/\/_/
+                     /\____/
+                     \_/__/
+  -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="description" content="Learn how to survive and kill the walking dead during an outbreak with this helpful guide.">
+  <meta name="keywords" content="miguel mota,web developer,html5 css3 javascript">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Moogs">
+  <title>How To Survive a Zombie Outbreak » Miguel Mota | Web Developer</title>
+  <link rel="canonical" href="http://www.miguelmota.com/blog/how-to-survive-a-zombie-outbreak/">
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/miguelmota">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/assets/images/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/images/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/images/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/images/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 320px)" href="/assets/images/apple-touch-startup-image-320x460.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 320px) and (-webkit-device-pixel-ratio: 2)" href="/assets/images/apple-touch-startup-image-640x920.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" href="/assets/images/apple-touch-startup-image-640x1096.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 768px) and (orientation: portrait)" href="/assets/images/apple-touch-startup-image-768x1004.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 768px) and (orientation: landscape)" href="/assets/images/apple-touch-startup-image-748x1024.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 1536px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" href="/assets/images/apple-touch-startup-image-1536x2008.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 1536px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" href="/assets/images/apple-touch-startup-image-2048x1496.png">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script src="//use.typekit.net/wkl5rpy.js"></script>
+  <script>try{Typekit.load();}catch(e){}</script>
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+  <script src="/assets/scripts/build/site.js"></script>
+  <script>
+      var _gaq = _gaq || [];
+       _gaq.push(['_setAccount', 'UA-12642068-1']);
+       _gaq.push(['_setDomainName', '.miguelmota.com']);
+      _gaq.push(['_trackPageview']);
+       (function() {
+           var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+           ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+           var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+       })();
+       $(document).on('click', '[data-ga-label]', function() {
+         _gaq.push(['_trackEvent', 'Call To Action', 'Click', $(this).attr('data-ga-label')]);
+       });
+  </script>
 </head>
 <body id="blog">
-		<div id="top"></div>
-		<img class="hidden" src="/img/miguel-mota-m-logo-500x500.png" alt="">
+    <canvas id="bg-canvas"></canvas>
+    <div class="bg-upper"></div>
+    <div class="bg-lower"></div>
+    <div id="top"></div>
+    <img class="hidden" src="/assets/images/miguel-mota-m-logo-500x500.png" alt="">
 
-		<header id="header" class="contain-to-grid fixed">
-			<nav class="top-bar">
-				<ul class="title-area">
-					<li class="name"><a href="/" data-ga-label="Navigation - Logo">Miguel Mota</a></li>
-					<li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-				</ul>
-				<section class="top-bar-section">
-				    <ul id="main-nav" class="right">
-				      <li class="divider"></li>
-				      <li ><a href="/" data-ga-label="Navigation - Home"><i class="icon-home"></i></a></li>
-				      <li class="divider"></li>
-				      <li ><a href="/about" data-ga-label="Navigation - About"><i class="icon-bookmark-empty"></i> About</a></li>
-				      <li class="divider"></li>
-				      <li class="active"><a href="/blog" data-ga-label="Navigation - Blog"><i class="icon-lightbulb"></i> Thoughts</a></li>
-				      <li class="divider"></li>
-				      <li ><a href="/work" data-ga-label="Navigation - Work"><i class="icon-laptop"></i> Work</a></li>
-				      <li class="divider"></li>
-							<li ><a href="/contact" data-ga-label="Navigation - Contact"><i class="icon-envelope"></i> Contact</a></li>
-				      <li class="divider"></li>
-				    </ul>
-				</section>
-			</nav>
-		</header>
+    <header id="header" class="contain-to-grid fixed">
+      <nav class="top-bar">
+        <ul class="title-area">
+          <li class="name"><a href="/" data-ga-label="Navigation - Logo">Miguel Mota</a></li>
+          <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+        </ul>
+        <section class="top-bar-section">
+            <ul id="main-nav" class="right">
+              <li class="divider"></li>
+              <li ><a href="/" data-ga-label="Navigation - Home"><i class="fa fa-home"></i></a></li>
+              <li class="divider"></li>
+              <li ><a href="/about" data-ga-label="Navigation - About"><i class="fa fa-bookmark-o"></i> About</a></li>
+              <li class="divider"></li>
+              <li class="active"><a href="/blog" data-ga-label="Navigation - Blog"><i class="fa fa-lightbulb-o"></i> Thoughts</a></li>
+              <li class="divider"></li>
+              <li ><a href="/work" data-ga-label="Navigation - Work"><i class="fa fa-laptop"></i> Work</a></li>
+              <li class="divider"></li>
+              <li ><a href="/contact" data-ga-label="Navigation - Contact"><i class="fa fa-envelope-o"></i> Contact</a></li>
+              <li class="divider"></li>
+            </ul>
+        </section>
+      </nav>
+    </header>
 
-		<main id="main" role="main">
-			<header id="content-header">
-	<canvas id="canvas"></canvas>
-	<div class="row">
-		<div class="large-12 column">
+    <main id="main" role="main">
+      <header id="content-header">
+    
+    <div class="row">
+        <div class="large-12 column">
+          
+            <datetime>22 Jan 2012 <small><i class="fa fa-comment-o"></i> <a href="/blog/how-to-survive-a-zombie-outbreak/#disqus_thread" data-disqus-identifier="/blog/how-to-survive-a-zombie-outbreak/"></a></small> <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.miguelmota.com/blog/how-to-survive-a-zombie-outbreak/" data-text="How To Survive a Zombie Outbreak" data-size="large" data-related="_moogs" data-ga-label="Blog post - Tweet">Tweet</a></datetime>
+<h1 data-text="How To Survive a Zombie Outbreak">How To Survive a Zombie Outbreak</h1>
 
-			<datetime>22 Jan 2012 <small><i class="icon-comment-alt"></i> <a href="/blog/how-to-survive-a-zombie-outbreak#disqus_thread" data-disqus-identifier="/blog/how-to-survive-a-zombie-outbreak"></a></small> <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.miguelmota.com/blog/how-to-survive-a-zombie-outbreak" data-text="How To Survive a Zombie Outbreak" data-size="large" data-related="_moogs" data-ga-label="Blog post - Tweet">Tweet</a></datetime>
-			<h1>How To Survive a Zombie Outbreak</h1>
-
-		</div>
-	</div>
-	<div id="content-header-bottom">
-		<div class="triangle"></div>
-	</div>
+          
+        </div>
+    </div>
+    <div id="content-header-bottom">
+        <div class="triangle"></div>
+    </div>
 </header>
 
-<section id="post">
-	<div class="row">
-		<div class="large-12 column">
 
-			<figure>
-	<img src="/blog/how-to-survive-a-zombie-outbreak/how-to-survive-a-zombie-outbreak-tony-moore-illustration.png" alt="">
-	<figcaption>
-		Illustration by <a href="http://tonymooreillustration.com/gallery/main.php?g2_itemId=579" target="_blank" rel="nofollow">Tony Moore Illustration</a>
-	</figcaption>
+<section id="post">
+  <div class="row">
+    <div class="large-12 column">
+
+      <figure>
+    <img src="/blog/how-to-survive-a-zombie-outbreak//how-to-survive-a-zombie-outbreak-tony-moore-illustration.png" alt="">
+    <figcaption>
+        Illustration by <a href="http://tonymooreillustration.com/gallery/main.php?g2_itemId=579" target="_blank" rel="nofollow">Tony Moore Illustration</a>
+    </figcaption>
 </figure>
 
 <article>
-<p>
-	Ever wondered what to do if a zombie outbreak actually occurred one day? I bet you have, and you should be worried. The zombie apocalypse is near as we know it, but the question is, are you ready for it? You wake up on a gloomy Monday morning, only to find your deceased yet viable emotionless little sister munching savagely on your mother's juicy, bloody human flesh. What do you do?
-</p>
-<h2>What's a zombie?</h2>
-<p>
-	First let me go over what a zombie actually is. A zombie is nothing more than simply just a dead person, a corpse, who is hungry for brains. Yeah that's right, <em>BRAAAAAAAAINS!!!!</em> The brain is the most nutritional item on the menu to them, full of vitamins and minerals. Not only is it exquisitely delicious, but it makes them feel smarter again, it's like an intellectual rejuvenation. But fear not! Zombies are completely half-witted and sluggish. A zombie cannot think like a regular person, what's on their minds is just how amazingly tasty brains are. Another thing to take note is that a zombie's bodily fluids contains a virus that is contagious. This virus is the Solanum Virus. Coming in contact with this virus will gradually turn you into a one of them, so you need to avoid them at all cost. The most common way zombie infects a person is by taking a bite out of their appetizing neck, just how zombies like it; extra-rare. Zombies also have a distinct smell; they smell like rotting carcasses. They have the stench of  decaying human flesh, like my grandmother's perfume. Zombies don't usually have eyes, so they rely on the sense of smell. Zombies can tell each other apart by whether or not they smell like fresh meat. Zombies have lost their sense of touch as well, as their nerves were destroyed by deterioration. But what they can do is listen, so it's always  important to not go running around town screaming “HOLY MOTHER OF GAWWWD!! ZOMBIES!!!”.  What makes zombies unique is that they have a sixth sense; the ability to detect a living organism. So no matter where you run to, zombies will be after you. It might take them a while since they are slower than a Walmart's electric scooter, but eventually they will meet up with you. Although you might start to panic and lose your calm, there are ways to survive such a thing, but first you must prepare for the outbreak, need to know what is the proper way to kill a zombie, and nevertheless where to run to outlive.
-</p>
-<h2>1. Preparation</h2>
-<p>
-	Preparation is important! The zombie apocalypse could happen today, next week or in a few years but preparation is key to withstand the attack. First and foremost, you need to be in peak physical shape. This means you should be fit to be able to outrun zombies when you least expect them. It's all in the legs, so building up cardio is crucial. You want to run as fastest you can in a short amount of time so sprints are more mattering than long distance running. Remember, zombies are persistent marathon runners, not speedy drag racers. You just need to take off quick to hide and get your head together before they reach you. The fatty humans are always the first ones to go. If you have an obese friend, You can use him as a shield against the zombies. Your overweight friends are basically an all-you-can-eat buffet for the zombies and will save you time while you plan an assailment.
-	Next, you need have basic ninja skills; like being to able to jump over fences, climb over walls and hop from roof top to roof top. You don't have to be like Bruce Lee performing parkour (running freely overcoming obstacles and surrounding by vaulting over buildings and such), you just have to not let small obstacles get in my way while running since zombies aren't Olympic gymnasts.
-</p>
-<h3>Food Supply</h3>
-<p>
-	An essential element in being prepared is having a food supply. Chances are you won't be able to head down to the McDonald's Drive-Thru and order a few McDouble's and a Frappe. Most likely you will be greeted by a not so friendly gut hungry monster at the window. Instead it's always best to keep a stash of non-perishable goods, preferably in a small duffle bag for easy take off. If for whatever reason you forget, you can always take a quick trip to the grocery store and fill up a couple of grocery bags with Twinkies and Ho Hos since they are literally the best things on earth and seem to last just about forever, but it's always better to take food with nutritional value, like protein bars and canned beans; You don't want to have a heart attack when you least expect it. A gallon of water is vital! You will be running all day long, so it's good to keep hydrated and replenish your body.
-</p>
-<h3>First Aid Kit</h3>
-<p>
-	A first aid kit with bandages, stitches, rubbing alcohol, hydrogen peroxide and pain killers (like Tylenol) should be a priority as well. You will be running through bushes, climbing on trees, jumping over barbed wire, etc. which would be impossible to remain injury free during the outbreak, so a first aid kit might come in handy.
-</p>
-<h3>Radios</h3>
-<p>
-	Also, carrying a radio will be a precious idea. Listening to the news and getting notified about where the latest outbreaks have occurred is a good thing to be aware of, in case you need to get out of town ASAP. Aside from a radio, walkie talkies and flash lights are necessary for survival. You never want to lose contact with who you are with because it's near impossible to make it out alive being a lone wolf.
-</p>
-<h3>Body Armor</h3>
-<p>
-	Fighting zombies means it will get up close and personal. You need to be geared up like a warrior ready for the battle of his life. This means you need to have some sort of body armor. Wearing heavy layers of clothing are a good place to start. Remember, you can get infected by the zombie's bodily fluids touching your skin, so being fully covered is prominent. A hockey helmet, army boots, gloves, and a metal trash can lid tied to your chest can definitely save your existence. But what good does it make being a well suited soldier without his weapons?
-</p>
-<h2>2. Tools</h2>
-<p>
-	To kill a zombie means destroying its brain. Decapitation works as well since they can't move without a head. A zombie is a dead person, that means it's heart doesn't beat. The way they “stay alive” is by electrical charges in the brain that don't dissipate. These electrical charges allow them to move their muscles, therefore being able to walk.
-</p>
-<h3>Weapons</h3>
-<p>
-	To get the job done you can use household items such as a screwdriver (preferably a Phillips) that you can jam right into the zombie's ear or through the squishy eyeball, a hammer, an aluminum bat, molotov cocktails (makeshift bombs) which are made by sticking a rag inside a bottle of alcohol, taping the neck with duct tape so gas won't escape, setting the rag on fire and launching the homemade firebomb at approaching zombies. A samurai sword which is good to slice the head off in one quick swift motion like it was butter, a crow bar and an axe all work perfectly well too to obliterate the brain from the zombie's head. For a bloody show, a chainsaw is your friend, but just a warning; it will be messy and you don't want any of the zombie's body juices splattering all over you since it will infect you, so you need to use it with extreme caution. Next is finding a gun shop or police station and picking out a variety of different weapons. A shotgun is absolutely essential since it will take them out with one round, dismembering the zombie into countless pieces. Shotgun slugs work like a charm. A hand gun is useful to carry around all the time for when you need to pop a zombie in the head for a quick and dirty kill. But always remember that shooting a zombie in the torso will not stop them whatsoever. Always aim for the head and conserve the ammo, although shooting zombies in the knees can be quite fun. Lastly, always make sure they are dead! Imagine walking aways from a zombie that you thought you had killed only to turn around and see it grab your ankle and begin to chew on it, tearing your fleshy leg apart like Twizzlers.  Shooting it multiple times in the head is the best option to avoid this.
-</p>
-<h3>Vehicle</h3>
-<p>
-	Having a vehicle is good, but having a big vehicle is even better. When you are running away for your life, most likely you will come across a roadblock of brain starving zombies. It is too risky to stop and fight them to move them out. Driving a big heavy Hummer is the best way to go because you can just smash right through them. For bonus points, you can place a machine gun on top of the sun roof and massacre the zombies that way. If traveling solo it's best to ride a motorcycle for quick getaways,  since you can travel far on a single tank of gas, compared to a truck which you are going to have to stop at a gas station every two seconds. Just as a warning, try to avoid  SUVs because they are most likely to roll over in sharp turns.  Alright, so now that you know how to prepare and kill a zombie, where do you go?
-</p>
-<h2>3. Surroundings</h2>
-<p>
-	The best places to avoid are heavily populated areas such as major cities. Instead you want to go to a rural area where there are barely any people (dead or alive) to be found. You absolutely want to avoid cemeteries, morgues and medical schools. Getting to a safe location will be the challenge. You will have to make frequent stops for food and rest. When entering a building always make sure it's clear of the hungry flesh eating creatures. Zombies can be hiding anywhere; that includes in closets, under the bed, in the fridge, in bathroom showers, under desks, basements, attics, elevators, in cars, etc. so check every nook and cranny in the room and always be in the lookout! Being aware of your surroundings is critical, unless you want to be lunch meat for the zombie right behind you tapping your shoulder. Another thing is you do not want to get trapped. Analyze the building for exits routes and paths just in case you get mobbed out of nowhere. A smart idea would be to set up a homemade alarm system, such as putting pots and cans on a wire near entrances. Stay away from doors and windows since those are easily breakable and always have someone watch your back, which means work as a team.
-</p>
-<h2>4. Team</h2>
-<p>
-	Working as a team means higher chance of survival. You can have someone act as a lookout while you go inspect a building or even while you sleep. People that travel alone usually don't make it through the outbreak because they will eventually go mad. It is necessary to go out and search for other people. The bigger the team, the better. Seek for military and police personnel. They are the ones with the big guns and can help; that is, if the virus hasn't gotten to them already. When in a team, it is considerable to be aware of the people around you. If you see your friend hiding something from everyone, like their hand; chances are they got bit. Or if your friend is acting kind of weird, like being mysteriously quiet and sits down on the corner shivering; it would be best to kill them. Killing your infected friend might be a little tricky since you don't want the other people to think you are the one with psychological issues. One method you could use is to tell your friend friend to step out with you for a talk, and then shoot them point blank in the face. If your other friends ask where he is, tell them he didn't like being with the team and decided to leave. Loved ones will have to be killed for the sake of you living, so don't take it personal. Your “zombiefied” little sister won't feel a thing when the machete rips right through her skull. It's hard to kill a loved one and you might be tempted to keep them as a “pet” until a cure has been found, but don't do it. It is going to be either you get eaten by your friend or you kill your friend, the choice is up to you. Some women will freak out whenever you shoot somebody, if that's the case just slap them but not terribly hard.
-</p>
-<h2>5. Save Humanity</h2>
-<p>
-	So you have learned how to prepare, how to kill, and where to run in case of the apocalypse. But what now? You can just hide in a remote location for the rest of your life and live as a coward, or you can do the right thing and try to find the antidote to restore all hope in humanity. Whatever you decision, just remember; don't get bitten, and have fun!
-</p>
+
+Ever wondered what to do if a zombie outbreak actually occurred one day? I bet you have, and you should be worried. The zombie apocalypse is near as we know it, but the question is, are you ready for it? You wake up on a gloomy Monday morning, only to find your deceased yet viable emotionless little sister munching savagely on your mother's juicy, bloody human flesh. What do you do?
+
+## What's a zombie?
+
+    First let me go over what a zombie actually is. A zombie is nothing more than simply just a dead person, a corpse, who is hungry for brains. Yeah that's right, <em>BRAAAAAAAAINS!!!!</em> The brain is the most nutritional item on the menu to them, full of vitamins and minerals. Not only is it exquisitely delicious, but it makes them feel smarter again, it's like an intellectual rejuvenation. But fear not! Zombies are completely half-witted and sluggish. A zombie cannot think like a regular person, what's on their minds is just how amazingly tasty brains are. Another thing to take note is that a zombie's bodily fluids contains a virus that is contagious. This virus is the Solanum Virus. Coming in contact with this virus will gradually turn you into a one of them, so you need to avoid them at all cost. The most common way zombie infects a person is by taking a bite out of their appetizing neck, just how zombies like it; extra-rare. Zombies also have a distinct smell; they smell like rotting carcasses. They have the stench of  decaying human flesh, like my grandmother's perfume. Zombies don't usually have eyes, so they rely on the sense of smell. Zombies can tell each other apart by whether or not they smell like fresh meat. Zombies have lost their sense of touch as well, as their nerves were destroyed by deterioration. But what they can do is listen, so it's always  important to not go running around town screaming “HOLY MOTHER OF GAWWWD!! ZOMBIES!!!”.  What makes zombies unique is that they have a sixth sense; the ability to detect a living organism. So no matter where you run to, zombies will be after you. It might take them a while since they are slower than a Walmart's electric scooter, but eventually they will meet up with you. Although you might start to panic and lose your calm, there are ways to survive such a thing, but first you must prepare for the outbreak, need to know what is the proper way to kill a zombie, and nevertheless where to run to outlive.
+
+## 1. Preparation
+
+Preparation is important! The zombie apocalypse could happen today, next week or in a few years but preparation is key to withstand the attack. First and foremost, you need to be in peak physical shape. This means you should be fit to be able to outrun zombies when you least expect them. It's all in the legs, so building up cardio is crucial. You want to run as fastest you can in a short amount of time so sprints are more mattering than long distance running. Remember, zombies are persistent marathon runners, not speedy drag racers. You just need to take off quick to hide and get your head together before they reach you. The fatty humans are always the first ones to go. If you have an obese friend, You can use him as a shield against the zombies. Your overweight friends are basically an all-you-can-eat buffet for the zombies and will save you time while you plan an assailment.
+    Next, you need have basic ninja skills; like being to able to jump over fences, climb over walls and hop from roof top to roof top. You don't have to be like Bruce Lee performing parkour (running freely overcoming obstacles and surrounding by vaulting over buildings and such), you just have to not let small obstacles get in my way while running since zombies aren't Olympic gymnasts.
+
+### Food Supply
+
+An essential element in being prepared is having a food supply. Chances are you won't be able to head down to the McDonald's Drive-Thru and order a few McDouble's and a Frappe. Most likely you will be greeted by a not so friendly gut hungry monster at the window. Instead it's always best to keep a stash of non-perishable goods, preferably in a small duffle bag for easy take off. If for whatever reason you forget, you can always take a quick trip to the grocery store and fill up a couple of grocery bags with Twinkies and Ho Hos since they are literally the best things on earth and seem to last just about forever, but it's always better to take food with nutritional value, like protein bars and canned beans; You don't want to have a heart attack when you least expect it. A gallon of water is vital! You will be running all day long, so it's good to keep hydrated and replenish your body.
+
+### First Aid Kit
+
+A first aid kit with bandages, stitches, rubbing alcohol, hydrogen peroxide and pain killers (like Tylenol) should be a priority as well. You will be running through bushes, climbing on trees, jumping over barbed wire, etc. which would be impossible to remain injury free during the outbreak, so a first aid kit might come in handy.
+
+### Radios
+
+Also, carrying a radio will be a precious idea. Listening to the news and getting notified about where the latest outbreaks have occurred is a good thing to be aware of, in case you need to get out of town ASAP. Aside from a radio, walkie talkies and flash lights are necessary for survival. You never want to lose contact with who you are with because it's near impossible to make it out alive being a lone wolf.
+
+### Body Armor
+
+Fighting zombies means it will get up close and personal. You need to be geared up like a warrior ready for the battle of his life. This means you need to have some sort of body armor. Wearing heavy layers of clothing are a good place to start. Remember, you can get infected by the zombie's bodily fluids touching your skin, so being fully covered is prominent. A hockey helmet, army boots, gloves, and a metal trash can lid tied to your chest can definitely save your existence. But what good does it make being a well suited soldier without his weapons?
+
+## 2. Tools
+
+To kill a zombie means destroying its brain. Decapitation works as well since they can't move without a head. A zombie is a dead person, that means it's heart doesn't beat. The way they “stay alive” is by electrical charges in the brain that don't dissipate. These electrical charges allow them to move their muscles, therefore being able to walk.
+
+### Weapons
+
+To get the job done you can use household items such as a screwdriver (preferably a Phillips) that you can jam right into the zombie's ear or through the squishy eyeball, a hammer, an aluminum bat, molotov cocktails (makeshift bombs) which are made by sticking a rag inside a bottle of alcohol, taping the neck with duct tape so gas won't escape, setting the rag on fire and launching the homemade firebomb at approaching zombies. A samurai sword which is good to slice the head off in one quick swift motion like it was butter, a crow bar and an axe all work perfectly well too to obliterate the brain from the zombie's head. For a bloody show, a chainsaw is your friend, but just a warning; it will be messy and you don't want any of the zombie's body juices splattering all over you since it will infect you, so you need to use it with extreme caution. Next is finding a gun shop or police station and picking out a variety of different weapons. A shotgun is absolutely essential since it will take them out with one round, dismembering the zombie into countless pieces. Shotgun slugs work like a charm. A hand gun is useful to carry around all the time for when you need to pop a zombie in the head for a quick and dirty kill. But always remember that shooting a zombie in the torso will not stop them whatsoever. Always aim for the head and conserve the ammo, although shooting zombies in the knees can be quite fun. Lastly, always make sure they are dead! Imagine walking aways from a zombie that you thought you had killed only to turn around and see it grab your ankle and begin to chew on it, tearing your fleshy leg apart like Twizzlers.  Shooting it multiple times in the head is the best option to avoid this.
+
+### Vehicle
+
+Having a vehicle is good, but having a big vehicle is even better. When you are running away for your life, most likely you will come across a roadblock of brain starving zombies. It is too risky to stop and fight them to move them out. Driving a big heavy Hummer is the best way to go because you can just smash right through them. For bonus points, you can place a machine gun on top of the sun roof and massacre the zombies that way. If traveling solo it's best to ride a motorcycle for quick getaways,  since you can travel far on a single tank of gas, compared to a truck which you are going to have to stop at a gas station every two seconds. Just as a warning, try to avoid  SUVs because they are most likely to roll over in sharp turns.  Alright, so now that you know how to prepare and kill a zombie, where do you go?
+
+### 3. Surroundings
+
+The best places to avoid are heavily populated areas such as major cities. Instead you want to go to a rural area where there are barely any people (dead or alive) to be found. You absolutely want to avoid cemeteries, morgues and medical schools. Getting to a safe location will be the challenge. You will have to make frequent stops for food and rest. When entering a building always make sure it's clear of the hungry flesh eating creatures. Zombies can be hiding anywhere; that includes in closets, under the bed, in the fridge, in bathroom showers, under desks, basements, attics, elevators, in cars, etc. so check every nook and cranny in the room and always be in the lookout! Being aware of your surroundings is critical, unless you want to be lunch meat for the zombie right behind you tapping your shoulder. Another thing is you do not want to get trapped. Analyze the building for exits routes and paths just in case you get mobbed out of nowhere. A smart idea would be to set up a homemade alarm system, such as putting pots and cans on a wire near entrances. Stay away from doors and windows since those are easily breakable and always have someone watch your back, which means work as a team.
+
+## 4. Team
+
+Working as a team means higher chance of survival. You can have someone act as a lookout while you go inspect a building or even while you sleep. People that travel alone usually don't make it through the outbreak because they will eventually go mad. It is necessary to go out and search for other people. The bigger the team, the better. Seek for military and police personnel. They are the ones with the big guns and can help; that is, if the virus hasn't gotten to them already. When in a team, it is considerable to be aware of the people around you. If you see your friend hiding something from everyone, like their hand; chances are they got bit. Or if your friend is acting kind of weird, like being mysteriously quiet and sits down on the corner shivering; it would be best to kill them. Killing your infected friend might be a little tricky since you don't want the other people to think you are the one with psychological issues. One method you could use is to tell your friend friend to step out with you for a talk, and then shoot them point blank in the face. If your other friends ask where he is, tell them he didn't like being with the team and decided to leave. Loved ones will have to be killed for the sake of you living, so don't take it personal. Your “zombiefied” little sister won't feel a thing when the machete rips right through her skull. It's hard to kill a loved one and you might be tempted to keep them as a “pet” until a cure has been found, but don't do it. It is going to be either you get eaten by your friend or you kill your friend, the choice is up to you. Some women will freak out whenever you shoot somebody, if that's the case just slap them but not terribly hard.
+
+## 5. Save Humanity
+
+So you have learned how to prepare, how to kill, and where to run in case of the apocalypse. But what now? You can just hide in a remote location for the rest of your life and live as a coward, or you can do the right thing and try to find the antidote to restore all hope in humanity. Whatever you decision, just remember; don't get bitten, and have fun!
+
 </article>
 
-			<div class="tags">
-				<i class="icon-tag"></i>
-				
-					<a href="/tag/apocalypse">apocalypse</a> <span>+</span>
-				
-					<a href="/tag/zombies">zombies</a> <span>+</span>
-				
-					<a href="/tag/thoughts">thoughts</a> <span>+</span>
-				
-			</div>
 
-		</div>
-	</div>
+      <div class="tags">
+  
+    <a href="/tag/apocalypse">#apocalypse</a>
+  
+    <a href="/tag/zombies">#zombies</a>
+  
+    <a href="/tag/thoughts">#thoughts</a>
+  
+</div>
 
-	
-		<div id="related-posts" class="row">
-			<div class="row">
-				<div class="large-12 column">
-					<div class="input-short-url">share: <input type="text" value="http://mig.gs/szo"></div>
-				</div>
-			</div>
-			<div class="large-6 column">
-				
+
+    </div>
+  </div>
+
+  
+    <div id="related-posts" class="row">
+      <div class="large-6 column">
+        
     
 
     <h3>Previous post</h3>
 
-	    <dl class="posts-list">
-
-				<dt><datetime>14 Oct 2011</datetime></dt>
-				<dd><h2><a href="/blog/ant-task-to-compress-html-files">Ant task to compress HTML files</a> <small><i class="icon-comment-alt"></i> <a href="/blog/ant-task-to-compress-html-files#disqus_thread" data-disqus-identifier="/blog/ant-task-to-compress-html-files"></a></small></h2></dd>
-
-			</dl>
+      <dl class="posts-list">
+        <dt><datetime>14 Oct 2011</datetime></dt>
+        <dd><h2><a href="/blog/ant-task-to-compress-html-files/">Ant task to compress HTML files</a> <small><i class="icon-comment-alt"></i> <a href="/blog/ant-task-to-compress-html-files/#disqus_thread" data-disqus-identifier="/blog/ant-task-to-compress-html-files/"></a></small></h2></dd>
+      </dl>
 
     
 
@@ -206,62 +205,60 @@
 
     
 
-    	<h3>Next post</h3>
+      <h3>Next post</h3>
 
-    	<dl class="posts-list">
-
-		    <dt><datetime>20 Feb 2012</datetime></dt>
-		    <dd><h2><a href="/blog/miggs-url-shortener">mig.gs™ - url shortener</a> <small><i class="icon-comment-alt"></i> <a href="/blog/miggs-url-shortener#disqus_thread" data-disqus-identifier="/blog/miggs-url-shortener"></a></small></h2></dd>
-
-		  </dl>
+      <dl class="posts-list">
+        <dt><datetime>20 Feb 2012</datetime></dt>
+        <dd><h2><a href="/blog/miggs-url-shortener/">mig.gs™ - url shortener</a> <small><i class="icon-comment-alt"></i> <a href="/blog/miggs-url-shortener/#disqus_thread" data-disqus-identifier="/blog/miggs-url-shortener/"></a></small></h2></dd>
+      </dl>
 
     
 
-			</div>
-			<div class="large-6 column">
+      </div>
+      <div class="large-6 column">
 
-				<h3>See also...</h3>
+        <h3>See also...</h3>
 
-				<dl class="posts-list">
-					
-						<dt><datetime>19 Jul 2014</datetime></dt>
-<dd><h2><a href="/blog/bitwise-operators-in-javascript">Bitwise operators in JavaScript</a> <small><i class="icon-comment-alt"></i> <a href="/blog/bitwise-operators-in-javascript#disqus_thread" data-disqus-identifier="/blog/bitwise-operators-in-javascript"></a></small></h2>
+        <dl class="posts-list">
+          
+            <dt><datetime>19 Jul 2014</datetime></dt>
+<dd><h2><a href="/blog/bitwise-operators-in-javascript/">Bitwise operators in JavaScript</a> <small><i class="icon-comment-alt"></i> <a href="/blog/bitwise-operators-in-javascript/#disqus_thread" data-disqus-identifier="/blog/bitwise-operators-in-javascript/"></a></small></h2>
 </dd>
-					
-						<dt><datetime>14 Mar 2014</datetime></dt>
-<dd><h2><a href="/blog/deployment-with-git">Deployment with Git</a> <small><i class="icon-comment-alt"></i> <a href="/blog/deployment-with-git#disqus_thread" data-disqus-identifier="/blog/deployment-with-git"></a></small></h2>
+          
+            <dt><datetime>14 Mar 2014</datetime></dt>
+<dd><h2><a href="/blog/deployment-with-git/">Deployment with Git</a> <small><i class="icon-comment-alt"></i> <a href="/blog/deployment-with-git/#disqus_thread" data-disqus-identifier="/blog/deployment-with-git/"></a></small></h2>
 </dd>
-					
-						<dt><datetime>23 Jan 2014</datetime></dt>
-<dd><h2><a href="/blog/intro-to-redis">Intro to Redis</a> <small><i class="icon-comment-alt"></i> <a href="/blog/intro-to-redis#disqus_thread" data-disqus-identifier="/blog/intro-to-redis"></a></small></h2>
+          
+            <dt><datetime>23 Jan 2014</datetime></dt>
+<dd><h2><a href="/blog/intro-to-redis/">Intro to Redis</a> <small><i class="icon-comment-alt"></i> <a href="/blog/intro-to-redis/#disqus_thread" data-disqus-identifier="/blog/intro-to-redis/"></a></small></h2>
 </dd>
-					
-						<dt><datetime>30 Nov 2013</datetime></dt>
-<dd><h2><a href="/blog/getting-started-with-backbonejs">Getting Started with Backbone.js</a> <small><i class="icon-comment-alt"></i> <a href="/blog/getting-started-with-backbonejs#disqus_thread" data-disqus-identifier="/blog/getting-started-with-backbonejs"></a></small></h2>
+          
+            <dt><datetime>30 Nov 2013</datetime></dt>
+<dd><h2><a href="/blog/getting-started-with-backbonejs/">Getting Started with Backbone.js</a> <small><i class="icon-comment-alt"></i> <a href="/blog/getting-started-with-backbonejs/#disqus_thread" data-disqus-identifier="/blog/getting-started-with-backbonejs/"></a></small></h2>
 </dd>
-					
-						<dt><datetime>30 Oct 2013</datetime></dt>
-<dd><h2><a href="/blog/memoization-caching-function-results-in-javascript">Memoization&#58; Caching function results in JavaScript</a> <small><i class="icon-comment-alt"></i> <a href="/blog/memoization-caching-function-results-in-javascript#disqus_thread" data-disqus-identifier="/blog/memoization-caching-function-results-in-javascript"></a></small></h2>
+          
+            <dt><datetime>30 Oct 2013</datetime></dt>
+<dd><h2><a href="/blog/memoization-caching-function-results-in-javascript/">Memoization&#58; Caching function results in JavaScript</a> <small><i class="icon-comment-alt"></i> <a href="/blog/memoization-caching-function-results-in-javascript/#disqus_thread" data-disqus-identifier="/blog/memoization-caching-function-results-in-javascript/"></a></small></h2>
 </dd>
-					
-				</dl>
+          
+        </dl>
 
-			</div>
-		</div>
-	
+      </div>
+    </div>
+  
 
-	<div id="comments" class="row">
-		<div class="large-12 column">
-			<div id="disqus_thread"></div>
-		</div>
-	</div>
+  <div id="comments" class="row">
+    <div class="large-12 column">
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
 
 </section>
 
 <script>
     var disqus_shortname = 'miguelmota';
-    var disqus_identifier = '/blog/how-to-survive-a-zombie-outbreak';
-    var disqus_url = 'http://www.miguelmota.com/blog/how-to-survive-a-zombie-outbreak';
+    var disqus_identifier = '/blog/how-to-survive-a-zombie-outbreak/';
+    var disqus_url = 'http://www.miguelmota.com/blog/how-to-survive-a-zombie-outbreak/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -277,24 +274,24 @@
     }());
 </script>
 
-		</main>
+    </main>
 
-		<footer id="footer">
-			<div class="row">
-				<div class="large-12 column">
-					<p>
-						<span class="break"><span>© 2014 Moogs™, LLC.</span> <span>Made with <i class="icon-heart"></i></span></span> <a class="hidden" href="https://plus.google.com/102174577273194387652" rel="author">Google+</a>
+    <footer id="footer">
+      <div class="row">
+        <div class="large-12 column">
+          <p>
+            <span class="break"><span>© 2015 Moogs™.</span> <span>Made with <i class="fa fa-heart"></i></span></span> <a class="hidden" href="https://plus.google.com/102174577273194387652" rel="author">Google+</a>
 
-						<a href="https://twitter.com/_moogs" class="twitter-follow-button" data-show-count="false" data-size="large" data-ga-label="Footer - Follow Twitter">Follow @_moogs</a>
+            <a href="https://twitter.com/_moogs" class="twitter-follow-button" data-show-count="false" data-size="large" data-ga-label="Footer - Follow Twitter">Follow @_moogs</a>
 
-					</p>
-				</div>
-			</div>
-		</footer>
+          </p>
+        </div>
+      </div>
+    </footer>
 
-		<a id="forkme" href="https://github.com/miguelmota/miguelmota.github.com" target="_blank" data-ga-label="Fork me on Github"><img src="/img/forkme_right_darkblue_121621.png" alt=""></a>
+    <a id="forkme" href="https://github.com/miguelmota/miguelmota.github.com" target="_blank" data-ga-label="Fork me on Github"><img src="/assets/images/forkme_right_darkblue_121621.png" alt=""></a>
 
-		<script src="//maps.google.com/maps/api/js?sensor=false"></script>
-		<script src="//google-maps-utility-library-v3.googlecode.com/svn/trunk/infobox/src/infobox.js"></script>
-	</body>
+    <script src="//maps.google.com/maps/api/js?sensor=false"></script>
+    <script src="//google-maps-utility-library-v3.googlecode.com/svn/trunk/infobox/src/infobox.js"></script>
+  </body>
 </html>

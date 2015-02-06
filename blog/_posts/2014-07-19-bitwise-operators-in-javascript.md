@@ -3,30 +3,28 @@ layout: blog-post
 title: Bitwise operators in JavaScript
 category: blog
 tags: [JavaScript, operators, bitwise]
-short_url: mig.gs/nZi7
 description: Interesting things you can do with bitwise operators.
 ---
-
 [Bitwise operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators) act on the level of individual bits which allows for fast comparisons and calculations. I'll be going over a couple of ways to use bitwise opeartors in JavaScript since it's not entirely clear at first. Some of the examples shown are from various sources which I've accumlated over time in which I'm going to elaborate on them.
 
 # Bitwise AND
 
 ***Return a one if the two bits are both one.***
 
-{% highlight javascript %}
+```javascript
 5 & 7 // 5
 
 00000101 // 5
 00000111 // 7
 --------
 00000101 // 5
-{% endhighlight%}
+```
 
 [JSBin example](http://jsbin.com/fedim/1/edit)
 
 **Check if number is even or odd:**
 
-{% highlight javascript %}
+```javascript
 ((n & 1) === 0) // true if even
 
 ((1 & 1) === 0) // false
@@ -45,13 +43,13 @@ The how:
 00000001 // 1
 --------
 00000000 // 0 (even)
-{% endhighlight %}
+```
 
-[JSBin example](http://jsbin.com/vawero/1/edit) | [JSPerf test](http://jsperf.com/modulus-vs-bitwise-and-operator)
+[JSBin example](http://jsbin.com/vawero/1/edit) / [JSPerf test](http://jsperf.com/modulus-vs-bitwise-and-operator)
 
 **Get the difference between two hex values:**
 
-{% highlight javascript %}
+```javascript
 var a = 0xF0; // 240
 var b = 0xFF; // 255
 
@@ -93,7 +91,7 @@ FFFFFF0F // -241
 000000FF // 255
 --------
 0000000F // 15
-{% endhighlight%}
+```
 
 [JSBin example](http://jsbin.com/cewiqi/1/edit)
 
@@ -101,7 +99,7 @@ FFFFFF0F // -241
 
 ***Return a one if one of the two bits is a one.***
 
-{% highlight javascript %}
+```javascript
 5 | 7 // 7
 
 The how:
@@ -110,22 +108,22 @@ The how:
 00000111 // 7
 --------
 00000111 // 7
-{% endhighlight %}
+```
 
 [JSBin example](http://jsbin.com/wokuc/1/edit)
 
 **Fast truncation:**
 
-{% highlight javascript %}
+```javascript
 1.4 | 0 // 1
 -1.4 | 0 // -1
-{% endhighlight %}
+```
 
-[JSBin example](http://jsbin.com/ranuzo/1/edit) | [JSPerf test](http://jsperf.com/parseint-vs-bitwise-or-2)
+[JSBin example](http://jsbin.com/ranuzo/1/edit) / [JSPerf test](http://jsperf.com/parseint-vs-bitwise-or-2)
 
 **Mask a flag additively:**
 
-{% highlight javascript %}
+```javascript
 var mask = 0x0003;
 var flag = 0xFFF0;
 var result = flag | mask; // 65523
@@ -139,13 +137,13 @@ The how:
 1111111111110011 // 65523
 
 (65523).toString(16); // "fff3"
-{% endhighlight %}
+```
 
 [JSBin example](http://jsbin.com/boyuni/1/edit)
 
 **Mask a flag subtractively:**
 
-{% highlight javascript %}
+```javascript
 var mask = 0x0003;
 var flag = 0xFFFF;
 var result = flag & ~mask;
@@ -169,7 +167,7 @@ The how:
 parseInt('1111111111110011', 2); // 65523
 
 (65523).toString(16); // "fffc"
-{% endhighlight %}
+```
 
 [JSBin example](http://jsbin.com/muzilo/1/edit)
 
@@ -177,7 +175,7 @@ parseInt('1111111111110011', 2); // 65523
 
 ***Return a one if either bit is a one or zero but not both.***
 
-{% highlight javascript %}
+```javascript
 5 ^ 7 // 2
 
 The how:
@@ -186,13 +184,13 @@ The how:
 00000111 // 7
 --------
 00000010 // 2
-{% endhighlight %}
+```
 
 [JSBin example](http://jsbin.com/fokeda/1/edit)
 
 **Variable swap:**
 
-{% highlight javascript %}
+```javascript
 var a = 1,
     b = 2;
 
@@ -236,13 +234,13 @@ The how:
 
 String.fromCharCode(97); // b = 'a'
 String.fromCharCode(98); // a = 'b'
-{% endhighlight %}
+```
 
 [JSBin example](http://jsbin.com/mexowu/1/edit)
 
 **Toggle switch:**
 
-{% highlight javascript %}
+```javascript
 var a = 1;
 
 a = a ^ 1; // 0
@@ -274,13 +272,13 @@ a ^= 1;
 00000001 // 1
 --------
 00000000 // 0 (a)
-{% endhighlight %}
+```
 
 [JSBin example](http://jsbin.com/duliza/1/edit)
 
 Determine if two integers have opposite signs:
 
-{% highlight javascript %}
+```javascript
 var x = 1,
     y = 1;
 
@@ -304,7 +302,7 @@ The how:
 1111111111111111111111111111110 // y = (~1 >>> 0).toString(2)
 ------------------------------- // ^ two's complement - flips bits and adds one
 1111111111111111111111111111111 // -1, so -1 < 0 = true
-{% endhighlight %}
+```
 
 [JSBin example](http://jsbin.com/nucoz/1/edit)
 
@@ -312,7 +310,7 @@ The how:
 
 ***Inverts the bits.***
 
-{% highlight javascript %}
+```javascript
 [x = -(x + 1)]
 
 ~5 // -6
@@ -327,13 +325,13 @@ The how:
 // two's complement
 (~5 >>> 0).toString(2)
 11111111111111111111111111111010
-{% endhighlight %}
+```
 
 [JSBin example](http://jsbin.com/nagigi/1/edit)
 
 **Shorthand `indexOf`:**
 
-{% highlight javascript %}
+```javascript
 !!~[1].indexOf(2) // false
 !!~[1].indexOf(1) // true
 
@@ -347,7 +345,7 @@ The how:
 
 !!0 // false
 !!-1 // true
-{% endhighlight %}
+```
 
 [JSBin example](http://jsbin.com/bogeq/1/edit)
 
@@ -355,7 +353,7 @@ The how:
 
 **Fast truncation:**
 
-{% highlight javascript %}
+```javascript
 // for positive numbers it can be a faster substitute for Math.floor()
 ~~(5.3) // 5
 
@@ -365,15 +363,15 @@ The how:
 // If it can't be parsed to a number than result will always be zero
 ~~('foo') // 0
 ~~({}) // 0
-{% endhighlight %}
+```
 
-[JSBin example](http://jsbin.com/wawuzi/2/edit) | [jsPerf test](http://jsperf.com/math-floor-vs-bitwise-double-not)
+[JSBin example](http://jsbin.com/wawuzi/2/edit) / [jsPerf test](http://jsperf.com/math-floor-vs-bitwise-double-not)
 
 # Shift operators
 
 ***Shift bits a specified number of bit positions.***
 
-{% highlight javascript %}
+```javascript
 8 >> 1 // 4
 8 >> 2 // 2
 
@@ -397,37 +395,45 @@ The how:
 // 8 << 2
 00001000 // 8
 00100000 // 32
-{% endhighlight %}
+```
 
 [JSBin example](http://jsbin.com/nutoc/1/edit)
 
+Bitwise left shift operator can be a replacement for `Math.pow()` when dealing with bases of 2:
+
+```javascript
+Math.pow(2,24) === 1<<24 // true
+```
+
+[JSPerf test](http://jsperf.com/math-pow-vs-bitwise-left-shift-operator)
+
 **Decimal to Integer:**
 
-{% highlight javascript %}
+```javascript
 4.12 >> 0 // 4
 4.12 << 0 // 4
 
 -4.12 >> 0 // -4
 -4.12 << 0 // -4
-{% endhighlight %}
+```
 
 [JSBin example](http://jsbin.com/tunenu/1/edit)
 
 **Integer multiplication and division:**
 
-{% highlight javascript %}
+```javascript
 // 20 * 2
 20.5 << 1 // 40
 
 // 20 / 2
 20.5 >> 1 // 10
-{% endhighlight %}
+```
 
 [JSBin example](http://jsbin.com/jimaqu/1/edit)
 
 **Hex to RGB:**
 
-{% highlight javascript %}
+```javascript
 var hex = '00FF99';
 var dec = parseInt(hex, 16); // 65433
 
@@ -451,13 +457,13 @@ parseInt('ff', 16) // 255
 0000000010011001
 
 parseInt('10011001', 2) // 153
-{% endhighlight %}
+```
 
 [JSBin example](http://jsbin.com/volayo/1/edit)
 
 **RGB to Hex:**
 
-{% highlight javascript %}
+```javascript
 var r = 0, g = 255, b = 153;
 
 var hex = '#' +
@@ -470,7 +476,7 @@ var hex = '#' +
           .substr(1);
 
 hex // "#00ff99"
-{% endhighlight %}
+```
 
 [JSBin example](http://jsbin.com/sijapi/1/edit)
 
@@ -478,7 +484,7 @@ hex // "#00ff99"
 
 ***Shifts the operand a specified number of bits to the right and zero bits are shifted in from the left. Sign bit is zero so result is always a 32-bit unsigned integer.***
 
-{% highlight javascript %}
+```javascript
 5 >>> 0 // 5
 "5" >>> 0 // 5
 "hello" >>> 0 // 0
@@ -499,7 +505,7 @@ The how:
 parseInt('0xFF', 16).toString(2)
 111111111 // 255
 011111111 // 127
-{% endhighlight %}
+```
 
 [JSBin example](http://jsbin.com/nalev/1/edit)
 
@@ -507,7 +513,7 @@ parseInt('0xFF', 16).toString(2)
 
 **Finding the smallest number:**
 
-{% highlight javascript %}
+```javascript
 var x = 9;
 var y = 5;
 
@@ -544,13 +550,13 @@ The how:
 00000000 // 0
 --------
 00000101 // parseInt('00000101', 2) = 5
-{% endhighlight %}
+```
 
-[JSBin example](http://jsbin.com/leses/1/edit) | [JSPerf test](http://jsperf.com/math-min-vs-bitwise-operators)
+[JSBin example](http://jsbin.com/leses/1/edit) / [JSPerf test](http://jsperf.com/math-min-vs-bitwise-operators)
 
 **Finding the largest number:**
 
-{% highlight javascript %}
+```javascript
 var x = 9;
 var y = 5;
 
@@ -587,13 +593,13 @@ The how:
 00000000 // 0
 --------
 00001001 // parseInt('00001001', 2) = 9
-{% endhighlight %}
+```
 
-[JSBin example](http://jsbin.com/tecubo/1/edit) | [JSPerf test](http://jsperf.com/math-max-vs-bitwise-operators)
+[JSBin example](http://jsbin.com/tecubo/1/edit) / [JSPerf test](http://jsperf.com/math-max-vs-bitwise-operators)
 
 **If number is power of 2:**
 
-{% highlight javascript %}
+```javascript
 var v = 8;
 
 var isPowerOf2 = v && !(v & (v - 1));
@@ -620,7 +626,7 @@ v && 0
 (!!8 && true)
 (true && true)
 true
-{% endhighlight %}
+```
 
 [JSBin examples](http://jsbin.com/miwil/1/edit)
 
@@ -628,7 +634,7 @@ Examples stolen from [Bit Twiddling Hacks](http://graphics.stanford.edu/~seander
 
 **Create array of bits of a number:**
 
-{% highlight javascript %}
+```javascript
 var index, bitMask;
 var num = 5;
 
@@ -638,7 +644,7 @@ for (bitMask = 128, index = 0; bitMask > 0; bitMask >>= 1, index++) {
 }
 
 array // [0, 0, 0, 0, 0, 1, 0, 1]
-{% endhighlight %}
+```
 
 [JSBin example](http://jsbin.com/fuwop/1/edit)
 
@@ -648,97 +654,97 @@ Stolen from [Getting Bitwise with JavaScript](http://bocoup.com/weblog/getting-b
 
 **Binary to Decimal:**
 
-{% highlight javascript %}
+```javascript
 function binaryToDecimal(binaryString) {
     return parseInt(binaryString, 2);
 }
 
 binaryToDecimal('11111111'); // 255
-{% endhighlight %}
+```
 
 [JSBin example](http://jsbin.com/guwas/1/edit)
 
 **Decimal to Binary:**
 
-{% highlight javascript %}
+```javascript
 function decimalToBinary(decimal) {
     return (decimal >>> 0).toString(2);
 }
 
 decimalToBinary(255); // "11111111"
-{% endhighlight %}
+```
 
 [JSBin example](http://jsbin.com/hogoxi/1/edit)
 
 **Decimal to Hexadecimal:**
 
-{% highlight javascript %}
+```javascript
 function decimalToHex(decimal) {
     return (decimal).toString(16);
 }
 
 decimalToHex(255); // "FF"
-{% endhighlight %}
+```
 
 [JSBin example](http://jsbin.com/jixaca/1/edit)
 
 **Hexadecimal to Decimal:**
 
-{% highlight javascript %}
+```javascript
 function hexToDecimal(hex) {
     return parseInt(hex, 16);
 }
 
 hexToDecimal('FF'); // 255
-{% endhighlight %}
+```
 
 [JSBin example](http://jsbin.com/waqixi/1/edit)
 
 **Binary to Hexadecimal:**
 
-{% highlight javascript %}
+```javascript
 function binaryToHex(binaryString) {
     return parseInt(binaryString, 2).toString(16);
 }
 
 binaryToHex('11111111'); // "ff"
-{% endhighlight %}
+```
 
 [JSBin example](http://jsbin.com/hiyox/1/edit)
 
 **Hexadecimal to Binary:**
 
-{% highlight javascript %}
+```javascript
 function hexToBinary(hex) {
     return (parseInt(hex, 16)).toString(2);
 }
 
 hexToBinary('FF'); // "11111111"
-{% endhighlight %}
+```
 
 [JSBin example](http://jsbin.com/qijul/1/edit)
 
 **Binary to Character:**
 
-{% highlight javascript %}
+```javascript
 function binaryToChar(binaryString) {
     return String.fromCharCode(parseInt(binaryString, 2));
 }
 
 binaryToChar('01000001'); // "A"
-{% endhighlight %}
+```
 
 [JSBin example](http://jsbin.com/qufisi/1/edit)
 
 **Character to Binary:**
 
-{% highlight javascript %}
+```javascript
 function charToBinary(char) {
     return (char.charCodeAt(0)).toString(2);
 }
 
 charToBinary('A'); // "01000001"
-{% endhighlight %}
+```
 
 [JSBin example](http://jsbin.com/qavun/1/edit)
 

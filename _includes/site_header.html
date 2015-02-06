@@ -1,0 +1,34 @@
+<header id="content-header">
+    {% if page.route == "contact" %}
+      <div id="map"></div>
+    {% endif %}
+    <div class="row">
+        <div class="large-12 column">
+          {% if include.route == "blog-post" %}
+            {% include site_header/blog-post.html %}
+          {% elsif page.route == "home" %}
+            {% include site_header/home.html %}
+          {% elsif page.route == "about" %}
+            {% include site_header/about.html %}
+          {% elsif page.route == "resume" %}
+            {% include site_header/resume.html %}
+          {% elsif page.route == "blog" %}
+            {% include site_header/blog.html %}
+          {% elsif page.route == "archive" %}
+            {% include site_header/archive.html %}
+          {% elsif page.route == "contact" %}
+            {% include site_header/contact.html %}
+          {% elsif page.route == "social" %}
+            {% include site_header/social.html %}
+          {% elsif page.route == "work" %}
+            {% include site_header/work.html %}
+          {% elsif page.route == "archive" %}
+            {% include site_header/archive.html %}
+          {% else %}
+          {% endif %}
+        </div>
+    </div>
+    <div id="content-header-bottom">
+        <div class="triangle"></div>
+    </div>
+</header>

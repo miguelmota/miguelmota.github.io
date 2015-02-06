@@ -1,294 +1,269 @@
 <!DOCTYPE html>
 <html lang="en-US" manifest="http://cache.miguelmota.com/cache.appcache">
 <head>
-	<meta charset="UTF-8">
-	<!--
-	                                      ___                           __
-	           __                        /\_ \                         /\ \__
-	  ___ ___ /\_\     __   __  __     __\//\ \         ___ ___     ___\ \ ,_\    __
-	/' __` __`\/\ \  /'_ `\/\ \/\ \  /'__`\\ \ \      /' __` __`\  / __`\ \ \/  /'__`\
-	/\ \/\ \/\ \ \ \/\ \L\ \ \ \_\ \/\  __/ \_\ \_    /\ \/\ \/\ \/\ \L\ \ \ \_/\ \L\.\_
-	\ \_\ \_\ \_\ \_\ \____ \ \____/\ \____\/\____\   \ \_\ \_\ \_\ \____/\ \__\ \__/.\_\
-	 \/_/\/_/\/_/\/_/\/___L\ \/___/  \/____/\/____/    \/_/\/_/\/_/\/___/  \/__/\/__/\/_/
-	                   /\____/
-	                   \_/__/
-	-->
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta name="description" content="Simple explanation of call and apply methods.">
-	<meta name="keywords" content="miguel mota,web developer,html5 css3 javascript">
-	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-	<meta name="apple-mobile-web-app-status-bar-style" content="black">
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-title" content="Moogs">
-	<title>Call and Apply Methods in JavaScript » Miguel Mota | Web Developer</title>
-	<link rel="canonical" href="http://www.miguelmota.com/blog/call-and-apply-methods-in-javascript">
-	<link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/miguelmota">
-	<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
-	<link rel="shortcut icon" href="/favicon.ico">
-	<link rel="apple-touch-icon-precomposed" sizes="57x57" href="/img/apple-touch-icon-57x57.png">
-	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/img/apple-touch-icon-114x114.png">
-	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/img/apple-touch-icon-72x72.png">
-	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/apple-touch-icon-144x144.png">
-	<link rel="apple-touch-startup-image" media="(device-width: 320px)" href="/img/apple-touch-startup-image-320x460.png">
-	<link rel="apple-touch-startup-image" media="(device-width: 320px) and (-webkit-device-pixel-ratio: 2)" href="/img/apple-touch-startup-image-640x920.png">
-	<link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" href="/img/apple-touch-startup-image-640x1096.png">
-	<link rel="apple-touch-startup-image" media="(device-width: 768px) and (orientation: portrait)" href="/img/apple-touch-startup-image-768x1004.png">
-	<link rel="apple-touch-startup-image" media="(device-width: 768px) and (orientation: landscape)" href="/img/apple-touch-startup-image-748x1024.png">
-	<link rel="apple-touch-startup-image" media="(device-width: 1536px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" href="/img/apple-touch-startup-image-1536x2008.png">
-	<link rel="apple-touch-startup-image" media="(device-width: 1536px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" href="/img/apple-touch-startup-image-2048x1496.png">
-	<link rel="stylesheet" href="/css/main.css">
-	<script src="//use.typekit.net/wkl5rpy.js"></script>
-	<script>try{Typekit.load();}catch(e){}</script>
-	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-  <script src="/js/main.min.js"></script>
-	<script>
-	  	var _gaq = _gaq || [];
-	   	_gaq.push(['_setAccount', 'UA-12642068-1']);
-	   	_gaq.push(['_setDomainName', '.miguelmota.com']);
-	  	_gaq.push(['_trackPageview']);
-	   	(function() {
-	     		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-	     		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-	     		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-	   	})();
-	   	$(document).on('click', '[data-ga-label]', function() {
-	   		_gaq.push(['_trackEvent', 'Call To Action', 'Click', $(this).attr('data-ga-label')]);
-	   	});
-	</script>
+  <meta charset="UTF-8">
+  <!--
+                                        ___                           __
+             __                        /\_ \                         /\ \__
+    ___ ___ /\_\     __   __  __     __\//\ \         ___ ___     ___\ \ ,_\    __
+  /' __` __`\/\ \  /'_ `\/\ \/\ \  /'__`\\ \ \      /' __` __`\  / __`\ \ \/  /'__`\
+  /\ \/\ \/\ \ \ \/\ \L\ \ \ \_\ \/\  __/ \_\ \_    /\ \/\ \/\ \/\ \L\ \ \ \_/\ \L\.\_
+  \ \_\ \_\ \_\ \_\ \____ \ \____/\ \____\/\____\   \ \_\ \_\ \_\ \____/\ \__\ \__/.\_\
+   \/_/\/_/\/_/\/_/\/___L\ \/___/  \/____/\/____/    \/_/\/_/\/_/\/___/  \/__/\/__/\/_/
+                     /\____/
+                     \_/__/
+  -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="description" content="Simple explanation of call and apply methods.">
+  <meta name="keywords" content="miguel mota,web developer,html5 css3 javascript">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Moogs">
+  <title>Call and Apply Methods in JavaScript » Miguel Mota | Web Developer</title>
+  <link rel="canonical" href="http://www.miguelmota.com/blog/call-and-apply-methods-in-javascript/">
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/miguelmota">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/assets/images/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/images/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/images/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/images/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 320px)" href="/assets/images/apple-touch-startup-image-320x460.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 320px) and (-webkit-device-pixel-ratio: 2)" href="/assets/images/apple-touch-startup-image-640x920.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" href="/assets/images/apple-touch-startup-image-640x1096.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 768px) and (orientation: portrait)" href="/assets/images/apple-touch-startup-image-768x1004.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 768px) and (orientation: landscape)" href="/assets/images/apple-touch-startup-image-748x1024.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 1536px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" href="/assets/images/apple-touch-startup-image-1536x2008.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 1536px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" href="/assets/images/apple-touch-startup-image-2048x1496.png">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script src="//use.typekit.net/wkl5rpy.js"></script>
+  <script>try{Typekit.load();}catch(e){}</script>
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+  <script src="/assets/scripts/build/site.js"></script>
+  <script>
+      var _gaq = _gaq || [];
+       _gaq.push(['_setAccount', 'UA-12642068-1']);
+       _gaq.push(['_setDomainName', '.miguelmota.com']);
+      _gaq.push(['_trackPageview']);
+       (function() {
+           var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+           ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+           var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+       })();
+       $(document).on('click', '[data-ga-label]', function() {
+         _gaq.push(['_trackEvent', 'Call To Action', 'Click', $(this).attr('data-ga-label')]);
+       });
+  </script>
 </head>
 <body id="blog">
-		<div id="top"></div>
-		<img class="hidden" src="/img/miguel-mota-m-logo-500x500.png" alt="">
+    <canvas id="bg-canvas"></canvas>
+    <div class="bg-upper"></div>
+    <div class="bg-lower"></div>
+    <div id="top"></div>
+    <img class="hidden" src="/assets/images/miguel-mota-m-logo-500x500.png" alt="">
 
-		<header id="header" class="contain-to-grid fixed">
-			<nav class="top-bar">
-				<ul class="title-area">
-					<li class="name"><a href="/" data-ga-label="Navigation - Logo">Miguel Mota</a></li>
-					<li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-				</ul>
-				<section class="top-bar-section">
-				    <ul id="main-nav" class="right">
-				      <li class="divider"></li>
-				      <li ><a href="/" data-ga-label="Navigation - Home"><i class="icon-home"></i></a></li>
-				      <li class="divider"></li>
-				      <li ><a href="/about" data-ga-label="Navigation - About"><i class="icon-bookmark-empty"></i> About</a></li>
-				      <li class="divider"></li>
-				      <li class="active"><a href="/blog" data-ga-label="Navigation - Blog"><i class="icon-lightbulb"></i> Thoughts</a></li>
-				      <li class="divider"></li>
-				      <li ><a href="/work" data-ga-label="Navigation - Work"><i class="icon-laptop"></i> Work</a></li>
-				      <li class="divider"></li>
-							<li ><a href="/contact" data-ga-label="Navigation - Contact"><i class="icon-envelope"></i> Contact</a></li>
-				      <li class="divider"></li>
-				    </ul>
-				</section>
-			</nav>
-		</header>
+    <header id="header" class="contain-to-grid fixed">
+      <nav class="top-bar">
+        <ul class="title-area">
+          <li class="name"><a href="/" data-ga-label="Navigation - Logo">Miguel Mota</a></li>
+          <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+        </ul>
+        <section class="top-bar-section">
+            <ul id="main-nav" class="right">
+              <li class="divider"></li>
+              <li ><a href="/" data-ga-label="Navigation - Home"><i class="fa fa-home"></i></a></li>
+              <li class="divider"></li>
+              <li ><a href="/about" data-ga-label="Navigation - About"><i class="fa fa-bookmark-o"></i> About</a></li>
+              <li class="divider"></li>
+              <li class="active"><a href="/blog" data-ga-label="Navigation - Blog"><i class="fa fa-lightbulb-o"></i> Thoughts</a></li>
+              <li class="divider"></li>
+              <li ><a href="/work" data-ga-label="Navigation - Work"><i class="fa fa-laptop"></i> Work</a></li>
+              <li class="divider"></li>
+              <li ><a href="/contact" data-ga-label="Navigation - Contact"><i class="fa fa-envelope-o"></i> Contact</a></li>
+              <li class="divider"></li>
+            </ul>
+        </section>
+      </nav>
+    </header>
 
-		<main id="main" role="main">
-			<header id="content-header">
-	<canvas id="canvas"></canvas>
-	<div class="row">
-		<div class="large-12 column">
+    <main id="main" role="main">
+      <header id="content-header">
+    
+    <div class="row">
+        <div class="large-12 column">
+          
+            <datetime>10 May 2013 <small><i class="fa fa-comment-o"></i> <a href="/blog/call-and-apply-methods-in-javascript/#disqus_thread" data-disqus-identifier="/blog/call-and-apply-methods-in-javascript/"></a></small> <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.miguelmota.com/blog/call-and-apply-methods-in-javascript/" data-text="Call and Apply Methods in JavaScript" data-size="large" data-related="_moogs" data-ga-label="Blog post - Tweet">Tweet</a></datetime>
+<h1 data-text="Call and Apply Methods in JavaScript">Call and Apply Methods in JavaScript</h1>
 
-			<datetime>10 May 2013 <small><i class="icon-comment-alt"></i> <a href="/blog/call-and-apply-methods-in-javascript#disqus_thread" data-disqus-identifier="/blog/call-and-apply-methods-in-javascript"></a></small> <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.miguelmota.com/blog/call-and-apply-methods-in-javascript" data-text="Call and Apply Methods in JavaScript" data-size="large" data-related="_moogs" data-ga-label="Blog post - Tweet">Tweet</a></datetime>
-			<h1>Call and Apply Methods in JavaScript</h1>
-
-		</div>
-	</div>
-	<div id="content-header-bottom">
-		<div class="triangle"></div>
-	</div>
+          
+        </div>
+    </div>
+    <div id="content-header-bottom">
+        <div class="triangle"></div>
+    </div>
 </header>
 
-<section id="post">
-	<div class="row">
-		<div class="large-12 column">
 
-			<p>The <code>call</code> and <code>apply</code> methods in JavaScript might look complicated at first glance, but they are actually easy to wrap your head around.</p>
+<section id="post">
+  <div class="row">
+    <div class="large-12 column">
+
+      <p>The <code>call</code> and <code>apply</code> methods in JavaScript might look complicated at first glance, but they are actually easy to wrap your head around.</p>
 
 <p>Suppose we have an object called <code>square</code> with a few properties:</p>
-
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">square</span> <span class="o">=</span> <span class="p">{</span>
-	<span class="nx">color</span><span class="o">:</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span>
+    <span class="nx">color</span><span class="o">:</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span>
 
-	<span class="nx">getColor</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-		<span class="k">return</span> <span class="s2">&quot;I am the color &quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">color</span> <span class="o">+</span> <span class="s2">&quot;!&quot;</span><span class="p">;</span>
-	<span class="p">},</span>
+    <span class="nx">getColor</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="s2">&quot;I am the color &quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">color</span> <span class="o">+</span> <span class="s2">&quot;!&quot;</span><span class="p">;</span>
+    <span class="p">},</span>
 
-	<span class="nx">getArea</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">width</span><span class="p">,</span> <span class="nx">height</span><span class="p">)</span> <span class="p">{</span>
-		<span class="k">return</span> <span class="s2">&quot;My area is &quot;</span> <span class="o">+</span> <span class="p">(</span><span class="nx">width</span> <span class="o">*</span> <span class="nx">height</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; feet!&quot;</span><span class="p">;</span>
-	<span class="p">}</span>
+    <span class="nx">getArea</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">width</span><span class="p">,</span> <span class="nx">height</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="s2">&quot;My area is &quot;</span> <span class="o">+</span> <span class="p">(</span><span class="nx">width</span> <span class="o">*</span> <span class="nx">height</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; feet!&quot;</span><span class="p">;</span>
+    <span class="p">}</span>
 
-<span class="p">};</span></code></pre></div>
-
+<span class="p">};</span>
+</code></pre></div>
 <p>It has a <code>color</code> property, and two method properties; <code>getColor</code> and <code>getArea</code>.</p>
 
 <p>The get color method simply return the color property of the object:</p>
-
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">square</span><span class="p">.</span><span class="nx">getColor</span><span class="p">();</span> <span class="c1">// I am the color red!</span></code></pre></div>
-
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">square</span><span class="p">.</span><span class="nx">getColor</span><span class="p">();</span> <span class="c1">// I am the color red!</span>
+</code></pre></div>
 <p>And the second method return the area of the square after we pass in 2 arguments:</p>
-
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">square</span><span class="p">.</span><span class="nx">getArea</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="c1">// My area is 16 feet!</span></code></pre></div>
-
-<p>Simple enough, let's move on and create a second object:</p>
-
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">square</span><span class="p">.</span><span class="nx">getArea</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="c1">// My area is 16 feet!</span>
+</code></pre></div>
+<p>Simple enough, let&#39;s move on and create a second object:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">rectangle</span> <span class="o">=</span> <span class="p">{</span>
-	<span class="nx">color</span><span class="o">:</span> <span class="s2">&quot;blue&quot;</span>
-<span class="p">}</span></code></pre></div>
-
-<p>Note that new <code>rectangle</code> object <em>only</em> has the <code>color</code> property.
+    <span class="nx">color</span><span class="o">:</span> <span class="s2">&quot;blue&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Note that new <code>rectangle</code> object <em>only</em> has the <code>color</code> property.</p>
 
 <p>Now if we wanted to return the <code>getColor</code> or the <code>getArea</code> methods we would not be able to because the <code>rectangle</code> object does not have such methods. Only the <code>square</code> object does.</p>
 
 <p>This is where <code>call</code> and <code>apply</code> come to play. Let me show you.</p>
 
-<h3>Call Method</h3>
-
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">square</span><span class="p">.</span><span class="nx">getColor</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">rectangle</span><span class="p">);</span> <span class="c1">// I am the color blue!</span></code></pre></div>
-
+<h3 id="call-method">Call Method</h3>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">square</span><span class="p">.</span><span class="nx">getColor</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">rectangle</span><span class="p">);</span> <span class="c1">// I am the color blue!</span>
+</code></pre></div>
 <p>What just happend? Basically what <code>call</code> does is swap out the <em>context</em> for <code>this</code>.</p>
 
-<p>In our first example where the <code>square</code> object called the <code>getColor</code> method, the <code>this</code> context is <em>itself</em> because the method is within it's <em>scope</em>.</p>
+<p>In our first example where the <code>square</code> object called the <code>getColor</code> method, the <code>this</code> context is <em>itself</em> because the method is within it&#39;s <em>scope</em>.</p>
 
-<p>So if we want use a different object to call a method of a different object we must explicitly tell the method to use a different <em>context</em>. We passed in <code>rectangle</code> as the first argument of the <code>call</code> method to tell the <code>getColor</code> function to use the <code>rectangle</code> object as it's <em>context</em>, instead of <code>square</code>.</p>
+<p>So if we want use a different object to call a method of a different object we must explicitly tell the method to use a different <em>context</em>. We passed in <code>rectangle</code> as the first argument of the <code>call</code> method to tell the <code>getColor</code> function to use the <code>rectangle</code> object as it&#39;s <em>context</em>, instead of <code>square</code>.</p>
 
 <p>If we leave out any arguments while calling <code>call</code>, we get:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">square</span><span class="p">.</span><span class="nx">getColor</span><span class="p">.</span><span class="nx">call</span><span class="p">();</span> <span class="c1">// I am the color undefined!</span>
+</code></pre></div>
+<p>It returns <code>undefined</code> because the <code>call</code> method has no set context so it uses <code>window</code> as it&#39;s <em>context</em>, and <code>window</code> does not have the <code>color</code> property.</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">square</span><span class="p">.</span><span class="nx">getColor</span><span class="p">.</span><span class="nx">call</span><span class="p">();</span> <span class="c1">// I am the color undefined!</span></code></pre></div>
-
-<p>It returns <code>undefined</code> because the <code>call</code> method has no set context so it uses <code>window</code> as it's <em>context</em>, and <code>window</code> does not have the <code>color</code> property.</p>
-
-</p>So if we were to add the property to <code>window</code> then it all works out:</p>
-
+<p>So if we were to add the property to <code>window</code> then it all works out:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nb">window</span><span class="p">.</span><span class="nx">color</span> <span class="o">=</span> <span class="s2">&quot;green&quot;</span><span class="p">;</span>
 
 <span class="nx">square</span><span class="p">.</span><span class="nx">getColor</span><span class="p">.</span><span class="nx">call</span><span class="p">();</span> <span class="c1">// I am the color green!</span>
-<span class="nx">square</span><span class="p">.</span><span class="nx">getColor</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nb">window</span><span class="p">);</span> <span class="c1">// I am the color green!</span></code></pre></div>
+<span class="nx">square</span><span class="p">.</span><span class="nx">getColor</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nb">window</span><span class="p">);</span> <span class="c1">// I am the color green!</span>
+</code></pre></div>
+<p>We can also pass in a couple of arguments, for example the <code>getArea</code> function requires <code>width</code> and <code>height</code> to be passed in. To do so just added them <em>after</em> the the first argument:.</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">square</span><span class="p">.</span><span class="nx">getArea</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">rectangle</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="c1">// My area is 24 feet!</span>
+</code></pre></div>
+<p>Now that we are familiar with the <code>call</code> method and know how to pass in arguments, let&#39;s discuss it&#39;s brother, the <code>apply</code> method.</p>
 
-<p>We can also pass in a couple of arguments, for example the <code>getArea</code> function requires <code>width</code> and <code>height</code> to be passed in. To do so just added them <em>after</em> the the first argument:</p>.
-
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">square</span><span class="p">.</span><span class="nx">getArea</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">rectangle</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="c1">// My area is 24 feet!</span></code></pre></div>
-
-<p>Now that we are familiar with the <code>call</code> method and know how to pass in arguments, let's discuss it's brother, the <code>apply</code> method.</p>
-
-<h3>Apply Method</h3>
+<h3 id="apply-method">Apply Method</h3>
 
 <p>The <code>apply</code> method is almost identitical to the <code>call</code> function, the only difference is that we pass in an <em>array</em> as the argument instead of individual arguments:</p>
-
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">sides</span> <span class="o">=</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">];</span>
 
-<span class="nx">square</span><span class="p">.</span><span class="nx">getArea</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">rectangle</span><span class="p">,</span> <span class="nx">sides</span><span class="p">);</span> <span class="c1">// My area is 24 feet!</span></code></pre></div>
-
+<span class="nx">square</span><span class="p">.</span><span class="nx">getArea</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">rectangle</span><span class="p">,</span> <span class="nx">sides</span><span class="p">);</span> <span class="c1">// My area is 24 feet!</span>
+</code></pre></div>
 <p>The apply method is very useful in a situation that involves passing in an <em>unknown</em> number of arguments into a function.</p>
 
 <p>For example, getting the maximun value of a list of numbers:</p>
-
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">22</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">354</span><span class="p">,</span> <span class="mi">54</span><span class="p">,</span> <span class="mi">546</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">98</span><span class="p">];</span>
 
-<span class="nb">Math</span><span class="p">.</span><span class="nx">max</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nb">Math</span><span class="p">,</span> <span class="nx">numbers</span><span class="p">);</span> <span class="c1">// 546</span></code></pre></div>
-
+<span class="nb">Math</span><span class="p">.</span><span class="nx">max</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nb">Math</span><span class="p">,</span> <span class="nx">numbers</span><span class="p">);</span> <span class="c1">// 546</span>
+</code></pre></div>
 <p>Pretty neat huh?</p>
 
-<p>Please comment if you found this helpful or not, and as always you can find all this code as a <a href="https://gist.github.com/miguelmota/5598264" target="_blank">gist</a>.</p>
+<p>Please comment if you found this helpful or not, and as always you can find all this code as a <a href="https://gist.github.com/miguelmota/5598264">gist</a>.</p>
 
 
-			<div class="tags">
-				<i class="icon-tag"></i>
-				
-					<a href="/tag/JavaScript">JavaScript</a> <span>+</span>
-				
-					<a href="/tag/call">call</a> <span>+</span>
-				
-					<a href="/tag/apply">apply</a> <span>+</span>
-				
-			</div>
+      <div class="tags">
+  
+    <a href="/tag/JavaScript">#JavaScript</a>
+  
+    <a href="/tag/call">#call</a>
+  
+    <a href="/tag/apply">#apply</a>
+  
+</div>
 
-		</div>
-	</div>
 
-	
-		<div id="related-posts" class="row">
-			<div class="row">
-				<div class="large-12 column">
-					<div class="input-short-url">share: <input type="text" value="http://mig.gs/Tkdu"></div>
-				</div>
-			</div>
-			<div class="large-6 column">
-				
+    </div>
+  </div>
+
+  
+    <div id="related-posts" class="row">
+      <div class="large-6 column">
+        
     
 
     <h3>Previous post</h3>
 
-	    <dl class="posts-list">
-
-				<dt><datetime>04 May 2013</datetime></dt>
-				<dd><h2><a href="/blog/sass-triangles">Sass Triangles</a> <small><i class="icon-comment-alt"></i> <a href="/blog/sass-triangles#disqus_thread" data-disqus-identifier="/blog/sass-triangles"></a></small></h2></dd>
-
-			</dl>
+      <dl class="posts-list">
+        <dt><datetime>04 May 2013</datetime></dt>
+        <dd><h2><a href="/blog/sass-triangles/">Sass Triangles</a> <small><i class="icon-comment-alt"></i> <a href="/blog/sass-triangles/#disqus_thread" data-disqus-identifier="/blog/sass-triangles/"></a></small></h2></dd>
+      </dl>
 
     
 
 
 
-    
+      </div>
+      <div class="large-6 column">
 
-    	<h3>Next post</h3>
+        <h3>See also...</h3>
 
-    	<dl class="posts-list">
-
-		    <dt><datetime>07 Jun 2013</datetime></dt>
-		    <dd><h2><a href="/blog/slide-out-navigation-using-css3-translate">Slide Out Navigation using CSS3 Translate</a> <small><i class="icon-comment-alt"></i> <a href="/blog/slide-out-navigation-using-css3-translate#disqus_thread" data-disqus-identifier="/blog/slide-out-navigation-using-css3-translate"></a></small></h2></dd>
-
-		  </dl>
-
-    
-
-			</div>
-			<div class="large-6 column">
-
-				<h3>See also...</h3>
-
-				<dl class="posts-list">
-					
-						<dt><datetime>19 Jul 2014</datetime></dt>
-<dd><h2><a href="/blog/bitwise-operators-in-javascript">Bitwise operators in JavaScript</a> <small><i class="icon-comment-alt"></i> <a href="/blog/bitwise-operators-in-javascript#disqus_thread" data-disqus-identifier="/blog/bitwise-operators-in-javascript"></a></small></h2>
+        <dl class="posts-list">
+          
+            <dt><datetime>19 Jul 2014</datetime></dt>
+<dd><h2><a href="/blog/bitwise-operators-in-javascript/">Bitwise operators in JavaScript</a> <small><i class="icon-comment-alt"></i> <a href="/blog/bitwise-operators-in-javascript/#disqus_thread" data-disqus-identifier="/blog/bitwise-operators-in-javascript/"></a></small></h2>
 </dd>
-					
-						<dt><datetime>14 Mar 2014</datetime></dt>
-<dd><h2><a href="/blog/deployment-with-git">Deployment with Git</a> <small><i class="icon-comment-alt"></i> <a href="/blog/deployment-with-git#disqus_thread" data-disqus-identifier="/blog/deployment-with-git"></a></small></h2>
+          
+            <dt><datetime>14 Mar 2014</datetime></dt>
+<dd><h2><a href="/blog/deployment-with-git/">Deployment with Git</a> <small><i class="icon-comment-alt"></i> <a href="/blog/deployment-with-git/#disqus_thread" data-disqus-identifier="/blog/deployment-with-git/"></a></small></h2>
 </dd>
-					
-						<dt><datetime>23 Jan 2014</datetime></dt>
-<dd><h2><a href="/blog/intro-to-redis">Intro to Redis</a> <small><i class="icon-comment-alt"></i> <a href="/blog/intro-to-redis#disqus_thread" data-disqus-identifier="/blog/intro-to-redis"></a></small></h2>
+          
+            <dt><datetime>23 Jan 2014</datetime></dt>
+<dd><h2><a href="/blog/intro-to-redis/">Intro to Redis</a> <small><i class="icon-comment-alt"></i> <a href="/blog/intro-to-redis/#disqus_thread" data-disqus-identifier="/blog/intro-to-redis/"></a></small></h2>
 </dd>
-					
-						<dt><datetime>30 Nov 2013</datetime></dt>
-<dd><h2><a href="/blog/getting-started-with-backbonejs">Getting Started with Backbone.js</a> <small><i class="icon-comment-alt"></i> <a href="/blog/getting-started-with-backbonejs#disqus_thread" data-disqus-identifier="/blog/getting-started-with-backbonejs"></a></small></h2>
+          
+            <dt><datetime>30 Nov 2013</datetime></dt>
+<dd><h2><a href="/blog/getting-started-with-backbonejs/">Getting Started with Backbone.js</a> <small><i class="icon-comment-alt"></i> <a href="/blog/getting-started-with-backbonejs/#disqus_thread" data-disqus-identifier="/blog/getting-started-with-backbonejs/"></a></small></h2>
 </dd>
-					
-						<dt><datetime>30 Oct 2013</datetime></dt>
-<dd><h2><a href="/blog/memoization-caching-function-results-in-javascript">Memoization&#58; Caching function results in JavaScript</a> <small><i class="icon-comment-alt"></i> <a href="/blog/memoization-caching-function-results-in-javascript#disqus_thread" data-disqus-identifier="/blog/memoization-caching-function-results-in-javascript"></a></small></h2>
+          
+            <dt><datetime>30 Oct 2013</datetime></dt>
+<dd><h2><a href="/blog/memoization-caching-function-results-in-javascript/">Memoization&#58; Caching function results in JavaScript</a> <small><i class="icon-comment-alt"></i> <a href="/blog/memoization-caching-function-results-in-javascript/#disqus_thread" data-disqus-identifier="/blog/memoization-caching-function-results-in-javascript/"></a></small></h2>
 </dd>
-					
-				</dl>
+          
+        </dl>
 
-			</div>
-		</div>
-	
+      </div>
+    </div>
+  
 
-	<div id="comments" class="row">
-		<div class="large-12 column">
-			<div id="disqus_thread"></div>
-		</div>
-	</div>
+  <div id="comments" class="row">
+    <div class="large-12 column">
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
 
 </section>
 
 <script>
     var disqus_shortname = 'miguelmota';
-    var disqus_identifier = '/blog/call-and-apply-methods-in-javascript';
-    var disqus_url = 'http://www.miguelmota.com/blog/call-and-apply-methods-in-javascript';
+    var disqus_identifier = '/blog/call-and-apply-methods-in-javascript/';
+    var disqus_url = 'http://www.miguelmota.com/blog/call-and-apply-methods-in-javascript/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -304,24 +279,24 @@
     }());
 </script>
 
-		</main>
+    </main>
 
-		<footer id="footer">
-			<div class="row">
-				<div class="large-12 column">
-					<p>
-						<span class="break"><span>© 2014 Moogs™, LLC.</span> <span>Made with <i class="icon-heart"></i></span></span> <a class="hidden" href="https://plus.google.com/102174577273194387652" rel="author">Google+</a>
+    <footer id="footer">
+      <div class="row">
+        <div class="large-12 column">
+          <p>
+            <span class="break"><span>© 2015 Moogs™.</span> <span>Made with <i class="fa fa-heart"></i></span></span> <a class="hidden" href="https://plus.google.com/102174577273194387652" rel="author">Google+</a>
 
-						<a href="https://twitter.com/_moogs" class="twitter-follow-button" data-show-count="false" data-size="large" data-ga-label="Footer - Follow Twitter">Follow @_moogs</a>
+            <a href="https://twitter.com/_moogs" class="twitter-follow-button" data-show-count="false" data-size="large" data-ga-label="Footer - Follow Twitter">Follow @_moogs</a>
 
-					</p>
-				</div>
-			</div>
-		</footer>
+          </p>
+        </div>
+      </div>
+    </footer>
 
-		<a id="forkme" href="https://github.com/miguelmota/miguelmota.github.com" target="_blank" data-ga-label="Fork me on Github"><img src="/img/forkme_right_darkblue_121621.png" alt=""></a>
+    <a id="forkme" href="https://github.com/miguelmota/miguelmota.github.com" target="_blank" data-ga-label="Fork me on Github"><img src="/assets/images/forkme_right_darkblue_121621.png" alt=""></a>
 
-		<script src="//maps.google.com/maps/api/js?sensor=false"></script>
-		<script src="//google-maps-utility-library-v3.googlecode.com/svn/trunk/infobox/src/infobox.js"></script>
-	</body>
+    <script src="//maps.google.com/maps/api/js?sensor=false"></script>
+    <script src="//google-maps-utility-library-v3.googlecode.com/svn/trunk/infobox/src/infobox.js"></script>
+  </body>
 </html>

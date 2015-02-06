@@ -6,8 +6,20 @@ module.exports = function (grunt) {
         seperator: ';'
       },
       dist: {
-        src: ['vendor/modernizr/modernizr.js', 'vendor/jquery/jquery.js', 'vendor/foundation/js/foundation/foundation.js', 'vendor/foundation/js/foundation/foundation.topbar.js', 'vendor/foundation/js/foundation/foundation.alerts.js', 'vendor/foundation/js/foundation/foundation.tooltips.js', 'vendor/picturefill/external/matchmedia.js', 'vendor/picturefill/picturefill.js', 'vendor/iosSlider/_src/jquery.iosslider.js', 'vendor/jquery.transit/jquery.transit.js', 'vendor/swiper/idangerous.swiper-1.9.js', 'vendor/fastclick/fastclick.js', 'js/main.js'],
-        dest: 'js/main.min.js'
+        src: [
+         'vendor/jquery/dist/jquery.js',
+         'vendor/foundation/js/foundation/foundation.js',
+         'vendor/foundation/js/foundation/foundation.topbar.js',
+         'vendor/foundation/js/foundation/foundation.alerts.js',
+         'vendor/foundation/js/foundation/foundation.tooltips.js',
+         'vendor/picturefill/external/matchmedia.js',
+         'vendor/picturefill/picturefill.js',
+         'vendor/iosSlider/_src/jquery.iosslider.js',
+         'vendor/jquery.transit/jquery.transit.js',
+         'vendor/fastclick/lib/fastclick.js',
+         'assets/scripts/main.js',
+        ],
+        dest: 'assets/scripts/build/site.js'
       }
     },
     uglify: {
@@ -16,7 +28,7 @@ module.exports = function (grunt) {
       },
       dist: {
         files: {
-          'js/main.min.js': ['<%= concat.dist.dest %>']
+          'assets/scripts/build/site.js': ['<%= concat.dist.dest %>']
         }
       }
     },
@@ -33,18 +45,17 @@ module.exports = function (grunt) {
     watch: {
       html: {
         files: ['*.html', '**/*.html', '**/**/*.html'],
-        tasks: ['watch_html']
+        tasks: ['watch-html']
       },
       scripts: {
-        files: ['*.js', '**/*.js'],
-        tasks: ['watch_scripts']
+        files: ['assets/scripts/*.js'],
+        tasks: ['watch-scripts']
       },
       css: {
         files: [
-          'sass/*',
-          'vendor/fontawesome/sass/**'
+          'assets/sass/*',
         ],
-        tasks: ['watch_css']
+        tasks: ['watch-css']
       }
     },
     shell: {
@@ -87,11 +98,12 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-shell');
   grunt.loadNpmTasks('grunt-jekyll');
   grunt.registerTask('test', ['jshint']);
-  grunt.registerTask('watch_scripts', ['concat', 'uglify', 'shell:jekyll_build']);
-  grunt.registerTask('watch_css', ['shell:compass_compile', 'shell:jekyll_build']);
-  grunt.registerTask('watch_html', ['shell:jekyll_build']);
-  grunt.registerTask('compile_css', ['compass', 'shell:jekyll_build']);
-  grunt.registerTask('jekyll_build', ['shell:jekyll_build']);
-  grunt.registerTask('jekyll_serve', ['jekyll:serve']);
-  grunt.registerTask('default', ['watch:css', 'watch:scripts', 'watch:html']);
+  grunt.registerTask('watch-scripts', ['concat', 'uglify', 'shell:jekyll_build']);
+  grunt.registerTask('watch-css', ['shell:compass_compile', 'shell:jekyll_build']);
+  grunt.registerTask('watch-html', ['shell:jekyll_build']);
+  grunt.registerTask('compile-css', ['compass', 'shell:jekyll_build']);
+  grunt.registerTask('compile-scripts', ['concat', 'uglify', 'shell:jekyll_build']);
+  grunt.registerTask('jekyll-build', ['shell:jekyll_build']);
+  grunt.registerTask('jekyll-serve', ['jekyll:serve']);
+  grunt.registerTask('default', ['watch:css', 'watch:scripts']);
 };

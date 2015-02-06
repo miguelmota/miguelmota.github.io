@@ -1,292 +1,274 @@
 <!DOCTYPE html>
 <html lang="en-US" manifest="http://cache.miguelmota.com/cache.appcache">
 <head>
-	<meta charset="UTF-8">
-	<!--
-	                                      ___                           __
-	           __                        /\_ \                         /\ \__
-	  ___ ___ /\_\     __   __  __     __\//\ \         ___ ___     ___\ \ ,_\    __
-	/' __` __`\/\ \  /'_ `\/\ \/\ \  /'__`\\ \ \      /' __` __`\  / __`\ \ \/  /'__`\
-	/\ \/\ \/\ \ \ \/\ \L\ \ \ \_\ \/\  __/ \_\ \_    /\ \/\ \/\ \/\ \L\ \ \ \_/\ \L\.\_
-	\ \_\ \_\ \_\ \_\ \____ \ \____/\ \____\/\____\   \ \_\ \_\ \_\ \____/\ \__\ \__/.\_\
-	 \/_/\/_/\/_/\/_/\/___L\ \/___/  \/____/\/____/    \/_/\/_/\/_/\/___/  \/__/\/__/\/_/
-	                   /\____/
-	                   \_/__/
-	-->
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta name="description" content="An attempt at demonstrating what prototype in JavaScript is.">
-	<meta name="keywords" content="miguel mota,web developer,html5 css3 javascript">
-	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-	<meta name="apple-mobile-web-app-status-bar-style" content="black">
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-title" content="Moogs">
-	<title>Understanding Prototype in JavaScript » Miguel Mota | Web Developer</title>
-	<link rel="canonical" href="http://www.miguelmota.com/blog/understanding-prototype-in-javascript">
-	<link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/miguelmota">
-	<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
-	<link rel="shortcut icon" href="/favicon.ico">
-	<link rel="apple-touch-icon-precomposed" sizes="57x57" href="/img/apple-touch-icon-57x57.png">
-	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/img/apple-touch-icon-114x114.png">
-	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/img/apple-touch-icon-72x72.png">
-	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/apple-touch-icon-144x144.png">
-	<link rel="apple-touch-startup-image" media="(device-width: 320px)" href="/img/apple-touch-startup-image-320x460.png">
-	<link rel="apple-touch-startup-image" media="(device-width: 320px) and (-webkit-device-pixel-ratio: 2)" href="/img/apple-touch-startup-image-640x920.png">
-	<link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" href="/img/apple-touch-startup-image-640x1096.png">
-	<link rel="apple-touch-startup-image" media="(device-width: 768px) and (orientation: portrait)" href="/img/apple-touch-startup-image-768x1004.png">
-	<link rel="apple-touch-startup-image" media="(device-width: 768px) and (orientation: landscape)" href="/img/apple-touch-startup-image-748x1024.png">
-	<link rel="apple-touch-startup-image" media="(device-width: 1536px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" href="/img/apple-touch-startup-image-1536x2008.png">
-	<link rel="apple-touch-startup-image" media="(device-width: 1536px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" href="/img/apple-touch-startup-image-2048x1496.png">
-	<link rel="stylesheet" href="/css/main.css">
-	<script src="//use.typekit.net/wkl5rpy.js"></script>
-	<script>try{Typekit.load();}catch(e){}</script>
-	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-  <script src="/js/main.min.js"></script>
-	<script>
-	  	var _gaq = _gaq || [];
-	   	_gaq.push(['_setAccount', 'UA-12642068-1']);
-	   	_gaq.push(['_setDomainName', '.miguelmota.com']);
-	  	_gaq.push(['_trackPageview']);
-	   	(function() {
-	     		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-	     		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-	     		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-	   	})();
-	   	$(document).on('click', '[data-ga-label]', function() {
-	   		_gaq.push(['_trackEvent', 'Call To Action', 'Click', $(this).attr('data-ga-label')]);
-	   	});
-	</script>
+  <meta charset="UTF-8">
+  <!--
+                                        ___                           __
+             __                        /\_ \                         /\ \__
+    ___ ___ /\_\     __   __  __     __\//\ \         ___ ___     ___\ \ ,_\    __
+  /' __` __`\/\ \  /'_ `\/\ \/\ \  /'__`\\ \ \      /' __` __`\  / __`\ \ \/  /'__`\
+  /\ \/\ \/\ \ \ \/\ \L\ \ \ \_\ \/\  __/ \_\ \_    /\ \/\ \/\ \/\ \L\ \ \ \_/\ \L\.\_
+  \ \_\ \_\ \_\ \_\ \____ \ \____/\ \____\/\____\   \ \_\ \_\ \_\ \____/\ \__\ \__/.\_\
+   \/_/\/_/\/_/\/_/\/___L\ \/___/  \/____/\/____/    \/_/\/_/\/_/\/___/  \/__/\/__/\/_/
+                     /\____/
+                     \_/__/
+  -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="description" content="An attempt at demonstrating what prototype in JavaScript is.">
+  <meta name="keywords" content="miguel mota,web developer,html5 css3 javascript">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Moogs">
+  <title>Understanding Prototype in JavaScript » Miguel Mota | Web Developer</title>
+  <link rel="canonical" href="http://www.miguelmota.com/blog/understanding-prototype-in-javascript/">
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/miguelmota">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/assets/images/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/images/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/images/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/images/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 320px)" href="/assets/images/apple-touch-startup-image-320x460.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 320px) and (-webkit-device-pixel-ratio: 2)" href="/assets/images/apple-touch-startup-image-640x920.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" href="/assets/images/apple-touch-startup-image-640x1096.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 768px) and (orientation: portrait)" href="/assets/images/apple-touch-startup-image-768x1004.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 768px) and (orientation: landscape)" href="/assets/images/apple-touch-startup-image-748x1024.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 1536px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" href="/assets/images/apple-touch-startup-image-1536x2008.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 1536px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" href="/assets/images/apple-touch-startup-image-2048x1496.png">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script src="//use.typekit.net/wkl5rpy.js"></script>
+  <script>try{Typekit.load();}catch(e){}</script>
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+  <script src="/assets/scripts/build/site.js"></script>
+  <script>
+      var _gaq = _gaq || [];
+       _gaq.push(['_setAccount', 'UA-12642068-1']);
+       _gaq.push(['_setDomainName', '.miguelmota.com']);
+      _gaq.push(['_trackPageview']);
+       (function() {
+           var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+           ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+           var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+       })();
+       $(document).on('click', '[data-ga-label]', function() {
+         _gaq.push(['_trackEvent', 'Call To Action', 'Click', $(this).attr('data-ga-label')]);
+       });
+  </script>
 </head>
 <body id="blog">
-		<div id="top"></div>
-		<img class="hidden" src="/img/miguel-mota-m-logo-500x500.png" alt="">
+    <canvas id="bg-canvas"></canvas>
+    <div class="bg-upper"></div>
+    <div class="bg-lower"></div>
+    <div id="top"></div>
+    <img class="hidden" src="/assets/images/miguel-mota-m-logo-500x500.png" alt="">
 
-		<header id="header" class="contain-to-grid fixed">
-			<nav class="top-bar">
-				<ul class="title-area">
-					<li class="name"><a href="/" data-ga-label="Navigation - Logo">Miguel Mota</a></li>
-					<li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-				</ul>
-				<section class="top-bar-section">
-				    <ul id="main-nav" class="right">
-				      <li class="divider"></li>
-				      <li ><a href="/" data-ga-label="Navigation - Home"><i class="icon-home"></i></a></li>
-				      <li class="divider"></li>
-				      <li ><a href="/about" data-ga-label="Navigation - About"><i class="icon-bookmark-empty"></i> About</a></li>
-				      <li class="divider"></li>
-				      <li class="active"><a href="/blog" data-ga-label="Navigation - Blog"><i class="icon-lightbulb"></i> Thoughts</a></li>
-				      <li class="divider"></li>
-				      <li ><a href="/work" data-ga-label="Navigation - Work"><i class="icon-laptop"></i> Work</a></li>
-				      <li class="divider"></li>
-							<li ><a href="/contact" data-ga-label="Navigation - Contact"><i class="icon-envelope"></i> Contact</a></li>
-				      <li class="divider"></li>
-				    </ul>
-				</section>
-			</nav>
-		</header>
+    <header id="header" class="contain-to-grid fixed">
+      <nav class="top-bar">
+        <ul class="title-area">
+          <li class="name"><a href="/" data-ga-label="Navigation - Logo">Miguel Mota</a></li>
+          <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+        </ul>
+        <section class="top-bar-section">
+            <ul id="main-nav" class="right">
+              <li class="divider"></li>
+              <li ><a href="/" data-ga-label="Navigation - Home"><i class="fa fa-home"></i></a></li>
+              <li class="divider"></li>
+              <li ><a href="/about" data-ga-label="Navigation - About"><i class="fa fa-bookmark-o"></i> About</a></li>
+              <li class="divider"></li>
+              <li class="active"><a href="/blog" data-ga-label="Navigation - Blog"><i class="fa fa-lightbulb-o"></i> Thoughts</a></li>
+              <li class="divider"></li>
+              <li ><a href="/work" data-ga-label="Navigation - Work"><i class="fa fa-laptop"></i> Work</a></li>
+              <li class="divider"></li>
+              <li ><a href="/contact" data-ga-label="Navigation - Contact"><i class="fa fa-envelope-o"></i> Contact</a></li>
+              <li class="divider"></li>
+            </ul>
+        </section>
+      </nav>
+    </header>
 
-		<main id="main" role="main">
-			<header id="content-header">
-	<canvas id="canvas"></canvas>
-	<div class="row">
-		<div class="large-12 column">
+    <main id="main" role="main">
+      <header id="content-header">
+    
+    <div class="row">
+        <div class="large-12 column">
+          
+            <datetime>25 Apr 2013 <small><i class="fa fa-comment-o"></i> <a href="/blog/understanding-prototype-in-javascript/#disqus_thread" data-disqus-identifier="/blog/understanding-prototype-in-javascript/"></a></small> <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.miguelmota.com/blog/understanding-prototype-in-javascript/" data-text="Understanding Prototype in JavaScript" data-size="large" data-related="_moogs" data-ga-label="Blog post - Tweet">Tweet</a></datetime>
+<h1 data-text="Understanding Prototype in JavaScript">Understanding Prototype in JavaScript</h1>
 
-			<datetime>25 Apr 2013 <small><i class="icon-comment-alt"></i> <a href="/blog/understanding-prototype-in-javascript#disqus_thread" data-disqus-identifier="/blog/understanding-prototype-in-javascript"></a></small> <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.miguelmota.com/blog/understanding-prototype-in-javascript" data-text="Understanding Prototype in JavaScript" data-size="large" data-related="_moogs" data-ga-label="Blog post - Tweet">Tweet</a></datetime>
-			<h1>Understanding Prototype in JavaScript</h1>
-
-		</div>
-	</div>
-	<div id="content-header-bottom">
-		<div class="triangle"></div>
-	</div>
+          
+        </div>
+    </div>
+    <div id="content-header-bottom">
+        <div class="triangle"></div>
+    </div>
 </header>
 
+
 <section id="post">
-	<div class="row">
-		<div class="large-12 column">
+  <div class="row">
+    <div class="large-12 column">
 
-			<p><strong>A <code>prototype</code> is an object from where other objects inherit properties from</strong>. All objects in JavaScript are descended from <code>Object</code>, a global object. Why this matters I'll explain later, but for now let's jump in to some code.</p>
+      <p><strong>A <code>prototype</code> is an object from where other objects inherit properties from</strong>. All objects in JavaScript are descended from <code>Object</code>, a global object. Why this matters I&#39;ll explain later, but for now let&#39;s jump in to some code.</p>
 
-<h3>Constructor and Methods</h3>
+<h3 id="constructor-and-methods">Constructor and Methods</h3>
 
-<p>Let's define a functional object constructor called <code>Quadrilateral</code> and have <code>width</code> and <code>height</code> as parameters.</p>
-
+<p>Let&#39;s define a functional object constructor called <code>Quadrilateral</code> and have <code>width</code> and <code>height</code> as parameters.</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Define our constructor</span>
 <span class="kd">var</span> <span class="nx">Quadrilateral</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">width</span><span class="p">,</span> <span class="nx">height</span><span class="p">)</span> <span class="p">{</span>
-	<span class="k">this</span><span class="p">.</span><span class="nx">width</span> <span class="o">=</span> <span class="nx">width</span><span class="p">;</span>
-	<span class="k">this</span><span class="p">.</span><span class="nx">height</span> <span class="o">=</span> <span class="nx">height</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">width</span> <span class="o">=</span> <span class="nx">width</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">height</span> <span class="o">=</span> <span class="nx">height</span><span class="p">;</span>
 
-	<span class="k">return</span> <span class="k">this</span><span class="p">;</span>
-<span class="p">}</span></code></pre></div>
-
+    <span class="k">return</span> <span class="k">this</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>Traditionally if we wanted to have a method we would define it something like this:</p>
-
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Define our constructor</span>
 <span class="kd">var</span> <span class="nx">Quadrilateral</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">width</span><span class="p">,</span> <span class="nx">height</span><span class="p">)</span> <span class="p">{</span>
-	<span class="k">this</span><span class="p">.</span><span class="nx">width</span> <span class="o">=</span> <span class="nx">width</span><span class="p">;</span>
-	<span class="k">this</span><span class="p">.</span><span class="nx">height</span> <span class="o">=</span> <span class="nx">height</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">width</span> <span class="o">=</span> <span class="nx">width</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">height</span> <span class="o">=</span> <span class="nx">height</span><span class="p">;</span>
 
-	<span class="c1">// Define our method</span>
-	<span class="k">this</span><span class="p">.</span><span class="nx">getWidth</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-		<span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">width</span><span class="p">;</span>
-	<span class="p">}</span>
+    <span class="c1">// Define our method</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">getWidth</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">width</span><span class="p">;</span>
+    <span class="p">}</span>
 
-	<span class="k">return</span> <span class="k">this</span><span class="p">;</span>
-<span class="p">}</span></code></pre></div>
+    <span class="k">return</span> <span class="k">this</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>We then can create a <code>new</code> object of type <code>Quadrilateral</code>. For this example it will have a width of <code>4</code> and height of <code>4</code>:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">mysquare</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Quadrilateral</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">);</span>
+</code></pre></div>
+<p>This is how we then call the <code>getWidth</code> method:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">mysquare</span><span class="p">.</span><span class="nx">getWidth</span><span class="p">());</span>
+</code></pre></div>
+<p>Which returns the number <code>4</code>.</p>
 
-<p>We then can create a <code>new</code> object of type <code>Quadrilateral</code>. For this example it will have a width of <code>4</code> and height of <code>4</code>:<p>
-
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">mysquare</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Quadrilateral</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">);</span></code></pre></div>
-
-<p>This is how we then call the <code>getWidth</code> method:
-
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">mysquare</span><span class="p">.</span><span class="nx">getWidth</span><span class="p">());</span></code></pre></div>
-
-<p>Which returns the number <code>4</code>.
-
-<p>Now let's do what we just did using <code>prototype</code>:</p>
-
+<p>Now let&#39;s do what we just did using <code>prototype</code>:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Define our constructor</span>
 <span class="kd">var</span> <span class="nx">Quadrilateral</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">width</span><span class="p">,</span> <span class="nx">height</span><span class="p">)</span> <span class="p">{</span>
-	<span class="k">this</span><span class="p">.</span><span class="nx">width</span> <span class="o">=</span> <span class="nx">width</span><span class="p">;</span>
-	<span class="k">this</span><span class="p">.</span><span class="nx">height</span> <span class="o">=</span> <span class="nx">height</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">width</span> <span class="o">=</span> <span class="nx">width</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">height</span> <span class="o">=</span> <span class="nx">height</span><span class="p">;</span>
 
-	<span class="k">return</span> <span class="k">this</span><span class="p">;</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="c1">// Define our method</span>
 <span class="nx">Quadrilateral</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">getWidth</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-	<span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">width</span><span class="p">;</span>
-<span class="p">}</span></code></pre></div>
-
-<p>Once again we can call the <code>getWidth</code> method which returns the number <code>4</code>
-
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">mysquare</span><span class="p">.</span><span class="nx">getWidth</span><span class="p">());</span></code></pre></div>
-
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">width</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Once again we can call the <code>getWidth</code> method which returns the number <code>4</code></p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">mysquare</span><span class="p">.</span><span class="nx">getWidth</span><span class="p">());</span>
+</code></pre></div>
 <p>You may be wondering what just happened. Everything should look the same except for the <code>getWidth</code> method. We defined this method as a <code>prototype</code> function rather than defining it inside the <code>Quadrilateral</code> object constructor.</p>
 
 <p>The benefit of doing it this way is that since prototypes are static objects, each instance of the <code>Quadrilateral</code> object will reference the <code>prototype</code> functions. If we defined the method function inside the constructor, a new anonymous function would be created for it every time the constructor is called. This can <strong>save unnecessary memory from being used</strong>.</p>
 
-<p>With prototype we can easily add new functions to the object. Let's define a method for setting the dimensions on our <code>Quadrilateral</code> object:
-
+<p>With prototype we can easily add new functions to the object. Let&#39;s define a method for setting the dimensions on our <code>Quadrilateral</code> object:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">Quadrilateral</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">setDimensions</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">width</span><span class="p">,</span> <span class="nx">height</span><span class="p">)</span> <span class="p">{</span>
-	<span class="k">this</span><span class="p">.</span><span class="nx">width</span> <span class="o">=</span> <span class="nx">width</span><span class="p">;</span>
-	<span class="k">this</span><span class="p">.</span><span class="nx">height</span> <span class="o">=</span> <span class="nx">height</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">width</span> <span class="o">=</span> <span class="nx">width</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">height</span> <span class="o">=</span> <span class="nx">height</span><span class="p">;</span>
 
-	<span class="k">return</span> <span class="k">this</span><span class="p">;</span>
-<span class="p">}</span></code></pre></div>
-
-<p>Let's try out our new method:</p>
-
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">mysquare</span><span class="p">.</span><span class="nx">setDimensions</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">7</span><span class="p">);</span></code></pre></div>
-
+    <span class="k">return</span> <span class="k">this</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Let&#39;s try out our new method:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">mysquare</span><span class="p">.</span><span class="nx">setDimensions</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">7</span><span class="p">);</span>
+</code></pre></div>
 <p>Now if we call <code>mysquare.getWidth()</code> we get the number <code>7</code>.</p>
 
-<h3>Inheritence</h3>
+<h3 id="inheritence">Inheritence</h3>
 
-<p>One neat advantage to using prototype is <strong>object inheritance</strong>. For example, let's create a new contructor called <code>Rectangle</code> with the same parameters as our <code>Quadrilateral</code> constructor.</p>
-
+<p>One neat advantage to using prototype is <strong>object inheritance</strong>. For example, let&#39;s create a new contructor called <code>Rectangle</code> with the same parameters as our <code>Quadrilateral</code> constructor.</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">Rectangle</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">width</span><span class="p">,</span> <span class="nx">height</span><span class="p">){</span>
-	<span class="k">this</span><span class="p">.</span><span class="nx">width</span> <span class="o">=</span> <span class="nx">width</span><span class="p">;</span>
-	<span class="k">this</span><span class="p">.</span><span class="nx">height</span> <span class="o">=</span> <span class="nx">height</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">width</span> <span class="o">=</span> <span class="nx">width</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">height</span> <span class="o">=</span> <span class="nx">height</span><span class="p">;</span>
 
-	<span class="k">return</span> <span class="k">this</span><span class="p">;</span>
-<span class="p">};</span></code></pre></div>
-
+    <span class="k">return</span> <span class="k">this</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div>
 <p>To inherit methods and properties from the <code>Quadrilateral</code> object, we simply do:</p>
-
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">Rectangle</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Quadrilateral</span><span class="p">();</span></code></pre></div>
-
-<p>But wait, although this just inherits all the goodies, our new object does not know what it acually <em>is</em>. We Have to tell our Rectangle object that it's a Rectangle. Other wise instances of Rectangle would have a constructor of Quadrilateral. We do that by setting the <code>constructor</code> prototype:</p>
-
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">Rectangle</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">constructor</span> <span class="o">=</span> <span class="nx">Rectangle</span><span class="p">;</span></code></pre></div>
-
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">Rectangle</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Quadrilateral</span><span class="p">();</span>
+</code></pre></div>
+<p>But wait, although this just inherits all the goodies, our new object does not know what it acually <em>is</em>. We Have to tell our Rectangle object that it&#39;s a Rectangle. Other wise instances of Rectangle would have a constructor of Quadrilateral. We do that by setting the <code>constructor</code> prototype:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">Rectangle</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">constructor</span> <span class="o">=</span> <span class="nx">Rectangle</span><span class="p">;</span>
+</code></pre></div>
 <p>We then can create an instance of type <code>Rectangle</code>:</p>
-
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">myrectangle</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Rectangle</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span></code></pre></div>
-
-<p>Call our <em>getter</em> method as usual, and get result of <code>6</code>:<p>
-
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">myrectangle</span><span class="p">.</span><span class="nx">getWidth</span><span class="p">());</span></code></pre></div>
-
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">myrectangle</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Rectangle</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
+</code></pre></div>
+<p>Call our <em>getter</em> method as usual, and get result of <code>6</code>:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">myrectangle</span><span class="p">.</span><span class="nx">getWidth</span><span class="p">());</span>
+</code></pre></div>
 <p>We can test inheritance, and that our <code>Rectangle</code> object properties are simply referencing to the <code>Quadrilateral</code> object properties by doing:</p>
-
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">Quadrilateral</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="s1">&#39;getWidth&#39;</span><span class="p">);</span> <span class="c1">// returns true</span>
-<span class="nx">Rectangle</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="s1">&#39;getWidth&#39;</span><span class="p">);</span> <span class="c1">// returns false</span></code></pre></div>
-
+<span class="nx">Rectangle</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="s1">&#39;getWidth&#39;</span><span class="p">);</span> <span class="c1">// returns false</span>
+</code></pre></div>
 <p>Test our instances:</p>
-
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">myrectangle</span> <span class="k">instanceof</span> <span class="nx">Quadrilateral</span><span class="p">;</span> <span class="c1">// returns true</span>
 <span class="nx">myrectangle</span> <span class="k">instanceof</span> <span class="nx">Rectangle</span><span class="p">;</span> <span class="c1">//return true</span>
 
 <span class="nx">mysquare</span> <span class="k">instanceof</span> <span class="nx">Quadrilateral</span><span class="p">;</span> <span class="c1">// returns true</span>
-<span class="nx">mysquare</span> <span class="k">instanceof</span> <span class="nx">Rectangle</span><span class="p">;</span> <span class="c1">//return false</span></code></pre></div>
+<span class="nx">mysquare</span> <span class="k">instanceof</span> <span class="nx">Rectangle</span><span class="p">;</span> <span class="c1">//return false</span>
+</code></pre></div>
+<h3 id="global-objects">Global Objects</h3>
 
-<h3>Global Objects</h3>
-
-<p>Alright so going back to what I said in the beginning of this post. Every object has a reference to <code>Object.prototype</code>. We can confirm this by doing:
-
+<p>Alright so going back to what I said in the beginning of this post. Every object has a reference to <code>Object.prototype</code>. We can confirm this by doing:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">Quadrilateral</span> <span class="k">instanceof</span> <span class="nb">Object</span><span class="p">;</span> <span class="c1">// returns true</span>
 <span class="nx">Rectangle</span> <span class="k">instanceof</span> <span class="nb">Object</span><span class="p">;</span> <span class="c1">//return true</span>
 <span class="nx">mysquare</span> <span class="k">instanceof</span> <span class="nb">Object</span><span class="p">;</span> <span class="c1">// returns true</span>
-<span class="nx">myrectangle</span> <span class="k">instanceof</span> <span class="nb">Object</span><span class="p">;</span> <span class="c1">//return true</span></code></pre></div>
-
-<p>All objects inherit methods and properties from <code>Object.prototype</code>. Ever wondered where methods such as <code>hasOwnProperty</code>, <code>isPrototypeOf</code>, <code>toString</code> or <code>valueOf</code> came from? Those come from <code>Object</code>.
+<span class="nx">myrectangle</span> <span class="k">instanceof</span> <span class="nb">Object</span><span class="p">;</span> <span class="c1">//return true</span>
+</code></pre></div>
+<p>All objects inherit methods and properties from <code>Object.prototype</code>. Ever wondered where methods such as <code>hasOwnProperty</code>, <code>isPrototypeOf</code>, <code>toString</code> or <code>valueOf</code> came from? Those come from <code>Object</code>.</p>
 
 <p>Basically every function in JavaScript is an instance of root global objects. This means that every function inherits from it. For example, by inheriting from <code>Function.prototype</code>, we have access to a number of helpful methods and properties such as <code>length</code>, <code>apply</code>, <code>bind</code>, and <code>call</code>. <code>Array.prototype</code> gives us mutator methods such as <code>pop</code>, <code>push</code> and <code>sort</code>, as well as accessor methods such as <code>concat</code>, <code>join</code> and <code>slice</code>.</p>
 
 <p>Our <strong><em>prototype chain</em></strong> looks like this:</p>
 
-<code>myrectangle</code> -> <code>Rectangle.prototype</code> -> <code>Quadrilateral.prototype</code> -> <code>Object.prototype</code>
+<p><code>myrectangle</code> -&gt; <code>Rectangle.prototype</code> -&gt; <code>Quadrilateral.prototype</code> -&gt; <code>Object.prototype</code></p>
 
-<p>I strongly recommend you check out the <a href="https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Global_Objects" target="_blank">Mozilla Developer Network</a> documentation on global objects for a better understanding.</p>
+<p>I strongly recommend you check out the <a href="https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Global_Objects">Mozilla Developer Network</a> documentation on global objects for a better understanding.</p>
 
 <p>We can override a global method, or check if a global method exists and define our own if it does not, for example checking for <code>Array.prototype.forEach</code>:</p>
-
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">forEach</span><span class="p">)</span> <span class="p">{</span>
   <span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">forEach</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">fn</span><span class="p">,</span> <span class="nx">scope</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">len</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">len</span><span class="p">;</span> <span class="o">++</span><span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
       <span class="nx">fn</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">scope</span><span class="p">,</span> <span class="k">this</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span> <span class="nx">i</span><span class="p">,</span> <span class="k">this</span><span class="p">);</span>
     <span class="p">}</span>
   <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="conclusion">Conclusion</h3>
 
-<h3>Conclusion</h3>
-
-<p>There is so much more to <code>prototype</code> in JavaScript. I will update this post with a part two in the near future once I gain more knowledge on the <em>awesomesauce</em> of prototype. All the article code is up as a <a href="https://gist.github.com/miguelmota/5466003" target="_blank">gist</a>. If anything I said does not make sense or if I made mistakes, please correct me by leaving a comment.</p>
+<p>There is so much more to <code>prototype</code> in JavaScript. I will update this post with a part two in the near future once I gain more knowledge on the <em>awesomesauce</em> of prototype. All the article code is up as a <a href="https://gist.github.com/miguelmota/5466003">gist</a>. If anything I said does not make sense or if I made mistakes, please correct me by leaving a comment.</p>
 
 <p>All feedback is appreciated.</p>
 
-			<div class="tags">
-				<i class="icon-tag"></i>
-				
-					<a href="/tag/javascript">javascript</a> <span>+</span>
-				
-					<a href="/tag/prototype">prototype</a> <span>+</span>
-				
-			</div>
 
-		</div>
-	</div>
+      <div class="tags">
+  
+    <a href="/tag/javascript">#javascript</a>
+  
+    <a href="/tag/prototype">#prototype</a>
+  
+</div>
 
-	
-		<div id="related-posts" class="row">
-			<div class="row">
-				<div class="large-12 column">
-					<div class="input-short-url">share: <input type="text" value="http://mig.gs/B5bO"></div>
-				</div>
-			</div>
-			<div class="large-6 column">
-				
+
+    </div>
+  </div>
+
+  
+    <div id="related-posts" class="row">
+      <div class="large-6 column">
+        
     
 
     <h3>Previous post</h3>
 
-	    <dl class="posts-list">
-
-				<dt><datetime>19 Apr 2013</datetime></dt>
-				<dd><h2><a href="/blog/responsive-video">Responsive Video</a> <small><i class="icon-comment-alt"></i> <a href="/blog/responsive-video#disqus_thread" data-disqus-identifier="/blog/responsive-video"></a></small></h2></dd>
-
-			</dl>
+      <dl class="posts-list">
+        <dt><datetime>19 Apr 2013</datetime></dt>
+        <dd><h2><a href="/blog/responsive-video/">Responsive Video</a> <small><i class="icon-comment-alt"></i> <a href="/blog/responsive-video/#disqus_thread" data-disqus-identifier="/blog/responsive-video/"></a></small></h2></dd>
+      </dl>
 
     
 
@@ -294,62 +276,60 @@
 
     
 
-    	<h3>Next post</h3>
+      <h3>Next post</h3>
 
-    	<dl class="posts-list">
-
-		    <dt><datetime>28 Apr 2013</datetime></dt>
-		    <dd><h2><a href="/blog/new-identity">New Identity</a> <small><i class="icon-comment-alt"></i> <a href="/blog/new-identity#disqus_thread" data-disqus-identifier="/blog/new-identity"></a></small></h2></dd>
-
-		  </dl>
+      <dl class="posts-list">
+        <dt><datetime>28 Apr 2013</datetime></dt>
+        <dd><h2><a href="/blog/new-identity/">New Identity</a> <small><i class="icon-comment-alt"></i> <a href="/blog/new-identity/#disqus_thread" data-disqus-identifier="/blog/new-identity/"></a></small></h2></dd>
+      </dl>
 
     
 
-			</div>
-			<div class="large-6 column">
+      </div>
+      <div class="large-6 column">
 
-				<h3>See also...</h3>
+        <h3>See also...</h3>
 
-				<dl class="posts-list">
-					
-						<dt><datetime>19 Jul 2014</datetime></dt>
-<dd><h2><a href="/blog/bitwise-operators-in-javascript">Bitwise operators in JavaScript</a> <small><i class="icon-comment-alt"></i> <a href="/blog/bitwise-operators-in-javascript#disqus_thread" data-disqus-identifier="/blog/bitwise-operators-in-javascript"></a></small></h2>
+        <dl class="posts-list">
+          
+            <dt><datetime>19 Jul 2014</datetime></dt>
+<dd><h2><a href="/blog/bitwise-operators-in-javascript/">Bitwise operators in JavaScript</a> <small><i class="icon-comment-alt"></i> <a href="/blog/bitwise-operators-in-javascript/#disqus_thread" data-disqus-identifier="/blog/bitwise-operators-in-javascript/"></a></small></h2>
 </dd>
-					
-						<dt><datetime>14 Mar 2014</datetime></dt>
-<dd><h2><a href="/blog/deployment-with-git">Deployment with Git</a> <small><i class="icon-comment-alt"></i> <a href="/blog/deployment-with-git#disqus_thread" data-disqus-identifier="/blog/deployment-with-git"></a></small></h2>
+          
+            <dt><datetime>14 Mar 2014</datetime></dt>
+<dd><h2><a href="/blog/deployment-with-git/">Deployment with Git</a> <small><i class="icon-comment-alt"></i> <a href="/blog/deployment-with-git/#disqus_thread" data-disqus-identifier="/blog/deployment-with-git/"></a></small></h2>
 </dd>
-					
-						<dt><datetime>23 Jan 2014</datetime></dt>
-<dd><h2><a href="/blog/intro-to-redis">Intro to Redis</a> <small><i class="icon-comment-alt"></i> <a href="/blog/intro-to-redis#disqus_thread" data-disqus-identifier="/blog/intro-to-redis"></a></small></h2>
+          
+            <dt><datetime>23 Jan 2014</datetime></dt>
+<dd><h2><a href="/blog/intro-to-redis/">Intro to Redis</a> <small><i class="icon-comment-alt"></i> <a href="/blog/intro-to-redis/#disqus_thread" data-disqus-identifier="/blog/intro-to-redis/"></a></small></h2>
 </dd>
-					
-						<dt><datetime>30 Nov 2013</datetime></dt>
-<dd><h2><a href="/blog/getting-started-with-backbonejs">Getting Started with Backbone.js</a> <small><i class="icon-comment-alt"></i> <a href="/blog/getting-started-with-backbonejs#disqus_thread" data-disqus-identifier="/blog/getting-started-with-backbonejs"></a></small></h2>
+          
+            <dt><datetime>30 Nov 2013</datetime></dt>
+<dd><h2><a href="/blog/getting-started-with-backbonejs/">Getting Started with Backbone.js</a> <small><i class="icon-comment-alt"></i> <a href="/blog/getting-started-with-backbonejs/#disqus_thread" data-disqus-identifier="/blog/getting-started-with-backbonejs/"></a></small></h2>
 </dd>
-					
-						<dt><datetime>30 Oct 2013</datetime></dt>
-<dd><h2><a href="/blog/memoization-caching-function-results-in-javascript">Memoization&#58; Caching function results in JavaScript</a> <small><i class="icon-comment-alt"></i> <a href="/blog/memoization-caching-function-results-in-javascript#disqus_thread" data-disqus-identifier="/blog/memoization-caching-function-results-in-javascript"></a></small></h2>
+          
+            <dt><datetime>30 Oct 2013</datetime></dt>
+<dd><h2><a href="/blog/memoization-caching-function-results-in-javascript/">Memoization&#58; Caching function results in JavaScript</a> <small><i class="icon-comment-alt"></i> <a href="/blog/memoization-caching-function-results-in-javascript/#disqus_thread" data-disqus-identifier="/blog/memoization-caching-function-results-in-javascript/"></a></small></h2>
 </dd>
-					
-				</dl>
+          
+        </dl>
 
-			</div>
-		</div>
-	
+      </div>
+    </div>
+  
 
-	<div id="comments" class="row">
-		<div class="large-12 column">
-			<div id="disqus_thread"></div>
-		</div>
-	</div>
+  <div id="comments" class="row">
+    <div class="large-12 column">
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
 
 </section>
 
 <script>
     var disqus_shortname = 'miguelmota';
-    var disqus_identifier = '/blog/understanding-prototype-in-javascript';
-    var disqus_url = 'http://www.miguelmota.com/blog/understanding-prototype-in-javascript';
+    var disqus_identifier = '/blog/understanding-prototype-in-javascript/';
+    var disqus_url = 'http://www.miguelmota.com/blog/understanding-prototype-in-javascript/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -365,24 +345,24 @@
     }());
 </script>
 
-		</main>
+    </main>
 
-		<footer id="footer">
-			<div class="row">
-				<div class="large-12 column">
-					<p>
-						<span class="break"><span>© 2014 Moogs™, LLC.</span> <span>Made with <i class="icon-heart"></i></span></span> <a class="hidden" href="https://plus.google.com/102174577273194387652" rel="author">Google+</a>
+    <footer id="footer">
+      <div class="row">
+        <div class="large-12 column">
+          <p>
+            <span class="break"><span>© 2015 Moogs™.</span> <span>Made with <i class="fa fa-heart"></i></span></span> <a class="hidden" href="https://plus.google.com/102174577273194387652" rel="author">Google+</a>
 
-						<a href="https://twitter.com/_moogs" class="twitter-follow-button" data-show-count="false" data-size="large" data-ga-label="Footer - Follow Twitter">Follow @_moogs</a>
+            <a href="https://twitter.com/_moogs" class="twitter-follow-button" data-show-count="false" data-size="large" data-ga-label="Footer - Follow Twitter">Follow @_moogs</a>
 
-					</p>
-				</div>
-			</div>
-		</footer>
+          </p>
+        </div>
+      </div>
+    </footer>
 
-		<a id="forkme" href="https://github.com/miguelmota/miguelmota.github.com" target="_blank" data-ga-label="Fork me on Github"><img src="/img/forkme_right_darkblue_121621.png" alt=""></a>
+    <a id="forkme" href="https://github.com/miguelmota/miguelmota.github.com" target="_blank" data-ga-label="Fork me on Github"><img src="/assets/images/forkme_right_darkblue_121621.png" alt=""></a>
 
-		<script src="//maps.google.com/maps/api/js?sensor=false"></script>
-		<script src="//google-maps-utility-library-v3.googlecode.com/svn/trunk/infobox/src/infobox.js"></script>
-	</body>
+    <script src="//maps.google.com/maps/api/js?sensor=false"></script>
+    <script src="//google-maps-utility-library-v3.googlecode.com/svn/trunk/infobox/src/infobox.js"></script>
+  </body>
 </html>

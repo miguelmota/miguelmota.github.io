@@ -1,6 +1,11 @@
-permalink: /:categories/:title
+permalink: /:categories/:title/
 
-pygments: true
+markdown: redcarpet
+
+redcarpet:
+  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "strikethrough", "superscript", "with_toc_data"]
+
+highlighter: pygments
 
 site_url: http://www.miguelmota.com
 
@@ -19,3 +24,5 @@ theme:
   featured_wordcount: 70
 
 port: 9999
+
+exclude: [README.md, Rakefile, package.json, LICENSE.md, gruntfile.js, Gemfile, Gemfile.lock, config.rb, component.json, node_modules, vendor, .travis.yml, .project, .gitignore, .gitattributes, .editorconfig]

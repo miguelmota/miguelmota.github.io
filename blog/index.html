@@ -4,40 +4,30 @@ title: Thoughts
 description: A blog on all things web.
 route: blog
 ---
-<header id="content-header">
-	<canvas id="canvas"></canvas>
-	<div class="row">
-		<div class="large-12 column">
-			<h1>Thoughts <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.miguelmota.com{{ page.url }}" data-text="{{ page.title }}" data-size="large" data-related="_moogs">Tweet</a></h1>
-		</div>
-	</div>
-	<div id="content-header-bottom">
-		<div class="triangle"></div>
-	</div>
-</header>
+{% include site_header.html %}
 
 <section id="content">
-	<div id="featured" class="row">
-		<div class="large-12 column">
-		<h3>Latest</h3>
-			{% for post in site.categories.blog offset: 0 limit: site.theme.homepage_featured %}
-				{% include post_featured.html %}
-			{% endfor %}
-		</div>
-	</div>
+  <div id="featured" class="row">
+    <div class="large-12 column">
+    <h3>Latest</h3>
+      {% for post in site.categories.blog offset: 0 limit: site.theme.homepage_featured %}
+        {% include post_featured.html %}
+      {% endfor %}
+    </div>
+  </div>
 
-	<div id="older-posts" class="row">
-		<div class="large-12 column">
-			<h3>Older thoughts</h3>
+  <div id="older-posts" class="row">
+    <div class="large-12 column">
+      <h3>Older thoughts</h3>
 
-			<dl class="posts-list">
-			  {% for post in site.categories.blog offset: site.theme.homepage_featured limit: site.theme.homepage_posts %}
-					{% include post_summary.html %}
-			  {% endfor %}
-			</dl>
-			<p><a class="archive-button" href="/archive">View all posts »</a></p>
-		</div>
-	</div>
+      <dl class="posts-list">
+        {% for post in site.categories.blog offset: site.theme.homepage_featured limit: site.theme.homepage_posts %}
+          {% include post_summary.html %}
+        {% endfor %}
+      </dl>
+      <p><a class="archive-button" href="/archive">View all posts »</a></p>
+    </div>
+  </div>
 
   <script>
       var disqus_shortname = '{{ site.disqus_shortname }}';
@@ -50,4 +40,4 @@ route: blog
       }());
   </script>
 
-</section
+</section>

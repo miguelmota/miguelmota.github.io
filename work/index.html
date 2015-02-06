@@ -4,104 +4,21 @@ title: Work
 description: Just some of my work.
 route: work
 ---
-<header id="content-header">
-	<canvas id="canvas"></canvas>
-	<div class="row">
-		<div class="large-12 column">
-
-			<h1>Work <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.miguelmota.com{{ page.url }}" data-text="{{ page.title }}" data-size="large" data-related="_moogs" data-ga-label="Work - Tweet">Tweet</a></h1>
-
-		</div>
-	</div>
-	<div id="content-header-bottom">
-		<div class="triangle"></div>
-	</div>
-</header>
+{% include site_header.html %}
 
 <section id="content">
-	<div class="row">
-		<div class="large-12 column">
+  <div class="row">
+    <div class="large-12 column">
 
-			<!--
-			<div class="row">
-				<div class="large-12 column">
+      <p id="work-desc">A lot of my work can be found on <a href="https://github.com/miguelmota?tab=repositories">Github</a>. I <i class="fa fa-heart"></i> Open Source.</p>
 
-					<div id="work-slider">
-						<div class="slider">
-							<div class="slide" data-title="Moogio">
-								<div class="caption"><p><strong>Moogio™</strong> — (A work in progress)</p></div>
-								<div class="devices">
-									<img class="desktop" src="/img/work/miguel-mota-work-desktop-moogio.png" alt="">
-									<img class="laptop" src="/img/work/miguel-mota-work-laptop-moogio.png" alt="">
-									<img class="tablet" src="/img/work/miguel-mota-work-tablet-moogio.png" alt="">
-									<img class="mobile" src="/img/work/miguel-mota-work-mobile-moogio.png" alt="">
-								</div>
-								<div class="site"><p><a href="http://moog.io" target="_blank" data-ga-label="Work - Visit Site - Moogio">Visit Site</a><datetime>2014</datetime><p></div>
-							</div>
-							<div class="slide" data-title="Foodfail">
-								<div class="caption"><p><strong>Foodfail™</strong> — A place to share photos of <em>skanky</em> food</p></div>
-								<div class="devices">
-									<img class="desktop" src="/img/work/miguel-mota-work-desktop-foodfail.png" alt="">
-									<img class="laptop" src="/img/work/miguel-mota-work-laptop-foodfail.png" alt="">
-									<img class="tablet" src="/img/work/miguel-mota-work-tablet-foodfail.png" alt="">
-									<img class="mobile" src="/img/work/miguel-mota-work-mobile-foodfail.png" alt="">
-								</div>
-								<div class="site"><p><a href="http://www.foodfail.org" target="_blank" data-ga-label="Work - Visit Site - Foodfail">Visit Site</a><datetime>01 Jan 2012</datetime><p></div>
-							</div>
-							<div class="slide" data-title="mig.gs">
-								<div class="caption"><p><strong>mig.gs™</strong> — URL shortening service with stats</p></div>
-								<div class="devices">
-									<img class="desktop" src="/img/work/miguel-mota-work-desktop-miggs.png" alt="">
-									<img class="laptop" src="/img/work/miguel-mota-work-laptop-miggs.png" alt="">
-									<img class="tablet" src="/img/work/miguel-mota-work-tablet-miggs.png" alt="">
-									<img class="mobile" src="/img/work/miguel-mota-work-mobile-miggs.png" alt="">
-								</div>
-								<div class="site"><p><a href="http://mig.gs" target="_blank" data-ga-label="Work - Visit Site - mig.gs">Visit Site</a><datetime>02 Feb 2012</datetime></p></div>
-							</div>
-							<div class="slide" data-title="Screaming Goat">
-								<div class="caption"><p><strong>Screaming Goat</strong> — AHHHHHHHHHHH!!!!!!!</p></div>
-								<div class="devices">
-									<img class="desktop" src="/img/work/miguel-mota-work-desktop-screaming-goat.png" alt="">
-									<img class="laptop" src="/img/work/miguel-mota-work-laptop-screaming-goat.png" alt="">
-									<img class="tablet" src="/img/work/miguel-mota-work-tablet-screaming-goat.png" alt="">
-									<img class="mobile" src="/img/work/miguel-mota-work-mobile-screaming-goat.png" alt="">
-								</div>
-								<div class="site"><p><a href="http://www.screaming-goat.com" target="_blank" data-ga-label="Work - Visit Site - Screaming Goat">Visit Site</a><datetime>22 Mar 2013</datetime></p></div>
-							</div>
-						</div>
-						<div id="dots">
-							<span class="dot"></span>
-							<span class="dot"></span>
-							<span class="dot"></span>
-							<span class="dot"></span>
-							<div class="cf"></div>
-						</div>
-						<a id="slide-prev" title=""><i class="icon-chevron-left"></i></a>
-						<a id="slide-next" title=""><i class="icon-chevron-right"></i></a>
-					</div>
+      <div id="work-bottom-section" class="row">
+        <div class="large-12 column">
+          <p><a id="github-button" href="https://github.com/miguelmota?tab=repositories" target="_blank" data-ga-label="Work - Github"><i class="fa fa-github"></i> Github</a><a id="gists-button" href="https://gist.github.com/miguelmota" target="_blank" data-ga-label="Work - Github gists"> Gists</a></p>
+          <p><a href="/about/resume" data-ga-label="Work - Resume Work">Résumé work »</a></p>
+        </div>
+      </div>
 
-				</div>
-			</div>
-			-->
-
-			<div id="work-bottom-section" class="row">
-				<div class="large-12 column">
-					<p><a id="github-button" href="https://github.com/miguelmota?tab=repositories" target="_blank" data-ga-label="Work - Github"><i class="icon-github"></i> Github</a><a id="gists-button" href="https://gist.github.com/miguelmota" target="_blank" data-ga-label="Work - Github gists"> Gists</a></p>
-					<p><a href="/about/resume/#xtopoly-work" data-ga-label="Work - Resume Work">Résumé work »</a></p>
-				</div>
-			</div>
-
-      <!--
-			<p id="work-desc">Abandoned work:</p>
-
-			<dl style="text-align:center">
-                <dt><p><img src="//www.google.com/s2/favicons?domain=www.findmeburritos.com" alt=""> <a href="http://www.findmeburritos.com" target="_blank">Find Me Burritos</a> <small>May 2014</small></p></dt>
-                <dt><p><img src="//www.google.com/s2/favicons?domain=mig.gs" alt=""> <a href="http://mig.gs" target="_blank">mig.gs™</a> <small>Feb 2012</small></p></dt>
-                <dt><p><img src="//www.google.com/s2/favicons?domain=www.foodfail.org" alt=""> <a href="http://www.foodfail.org" target="_blank">Foodfail™</a> <small>Jan 2012</small></p></dt>
-			</dl>
-      -->
-
-
-		</div>
-	</div>
+    </div>
+  </div>
 </section>

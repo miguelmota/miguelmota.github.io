@@ -1,4 +1,4 @@
 {
-	"directory": "vendor",
-	"json": "component.json"
+  "directory": "vendor",
+  "json": "component.json"
 }
