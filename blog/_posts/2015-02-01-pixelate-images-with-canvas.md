@@ -1,6 +1,6 @@
 ---
 layout: blog-post
-title: Pixelate images with canvas
+title: Pixelate images with Canvas
 category: blog
 tags: [JavaScript, canvas]
 description: Learn how to pixelate an image with canvas.
