@@ -7,7 +7,7 @@ description: Learn how to pixelate an image with canvas.
 ---
 There may be cases in which you want to pixelate an image, such as creating 8-bit style pixel art themed games or you simply want to give a hint of what an image is about without exposing too much. Turns out that it's not complicated at all to do pixelation with canvas.
 
-![]({{ page.url }}/pixelation-comparison-screenshot.png)
+[![]({{ page.url }}/pixelation-comparison-screenshot.png)]({{ page.url }}/demo)
 
 [View demo »]({{ page.url }}/demo)
 
