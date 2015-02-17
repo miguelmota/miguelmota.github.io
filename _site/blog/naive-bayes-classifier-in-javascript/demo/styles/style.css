@@ -4,10 +4,6 @@
   box-sizing: border-box;
 }
 
-body {
-  padding: 20px;
-}
-
 body,
 body * {
   font-size: 16px;
@@ -20,12 +16,18 @@ main {
 
 .container {
   margin: 0 auto;
+  padding: 20px;
   max-width: 400px;
 }
 
 h1 {
   margin: 0 0 20px 0;
   font-size: 24px;
+}
+
+p {
+  font-size: 12px;
+  margin: 0 0 20px 0;
 }
 
 form {
@@ -65,7 +67,7 @@ button {
 
 output {
   display: block;
-  margin: 10px 0;
+  margin: 10px auto 20px auto;
   background: rgb(248, 248, 248);
   padding: 0;
 }
