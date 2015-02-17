@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en-US" manifest="http://cache.miguelmota.com/cache.appcache">
+<head>
+  <meta charset="UTF-8">
+  <!--
+                                        ___                           __
+             __                        /\_ \                         /\ \__
+    ___ ___ /\_\     __   __  __     __\//\ \         ___ ___     ___\ \ ,_\    __
+  /' __` __`\/\ \  /'_ `\/\ \/\ \  /'__`\\ \ \      /' __` __`\  / __`\ \ \/  /'__`\
+  /\ \/\ \/\ \ \ \/\ \L\ \ \ \_\ \/\  __/ \_\ \_    /\ \/\ \/\ \/\ \L\ \ \ \_/\ \L\.\_
+  \ \_\ \_\ \_\ \_\ \____ \ \____/\ \____\/\____\   \ \_\ \_\ \_\ \____/\ \__\ \__/.\_\
+   \/_/\/_/\/_/\/_/\/___L\ \/___/  \/____/\/____/    \/_/\/_/\/_/\/___/  \/__/\/__/\/_/
+                     /\____/
+                     \_/__/
+  -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="description" content="Naive Bayes classifier implementation in JavaScript.">
+  <meta name="keywords" content="miguel mota,web developer,html5 css3 javascript">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Moogs">
+  <title>Naive Bayes Classifier in JavaScript » Miguel Mota | Web Developer</title>
+  <link rel="canonical" href="http://www.miguelmota.com/blog/naive-bayes-classifier-in-javascript/">
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/miguelmota">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/assets/images/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/images/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/images/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/images/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 320px)" href="/assets/images/apple-touch-startup-image-320x460.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 320px) and (-webkit-device-pixel-ratio: 2)" href="/assets/images/apple-touch-startup-image-640x920.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" href="/assets/images/apple-touch-startup-image-640x1096.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 768px) and (orientation: portrait)" href="/assets/images/apple-touch-startup-image-768x1004.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 768px) and (orientation: landscape)" href="/assets/images/apple-touch-startup-image-748x1024.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 1536px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" href="/assets/images/apple-touch-startup-image-1536x2008.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 1536px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" href="/assets/images/apple-touch-startup-image-2048x1496.png">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script src="//use.typekit.net/wkl5rpy.js"></script>
+  <script>try{Typekit.load();}catch(e){}</script>
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+  <script src="/assets/scripts/build/site.js"></script>
+  <script>
+      var _gaq = _gaq || [];
+       _gaq.push(['_setAccount', 'UA-12642068-1']);
+       _gaq.push(['_setDomainName', '.miguelmota.com']);
+      _gaq.push(['_trackPageview']);
+       (function() {
+           var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+           ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+           var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+       })();
+       $(document).on('click', '[data-ga-label]', function() {
+         _gaq.push(['_trackEvent', 'Call To Action', 'Click', $(this).attr('data-ga-label')]);
+       });
+  </script>
+</head>
+<body id="blog">
+    <canvas id="bg-canvas"></canvas>
+    <div class="bg-upper"></div>
+    <div class="bg-lower"></div>
+    <div id="top"></div>
+    <img class="hidden" src="/assets/images/miguel-mota-m-logo-500x500.png" alt="">
+
+    <header id="header" class="contain-to-grid fixed">
+      <nav class="top-bar">
+        <ul class="title-area">
+          <li class="name"><a href="/" data-ga-label="Navigation - Logo">Miguel Mota</a></li>
+          <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+        </ul>
+        <section class="top-bar-section">
+            <ul id="main-nav" class="right">
+              <li class="divider"></li>
+              <li ><a href="/" data-ga-label="Navigation - Home"><i class="fa fa-home"></i></a></li>
+              <li class="divider"></li>
+              <li ><a href="/about" data-ga-label="Navigation - About"><i class="fa fa-bookmark-o"></i> About</a></li>
+              <li class="divider"></li>
+              <li class="active"><a href="/blog" data-ga-label="Navigation - Blog"><i class="fa fa-lightbulb-o"></i> Thoughts</a></li>
+              <li class="divider"></li>
+              <li ><a href="/work" data-ga-label="Navigation - Work"><i class="fa fa-laptop"></i> Work</a></li>
+              <li class="divider"></li>
+              <li ><a href="/contact" data-ga-label="Navigation - Contact"><i class="fa fa-envelope-o"></i> Contact</a></li>
+              <li class="divider"></li>
+            </ul>
+        </section>
+      </nav>
+    </header>
+
+    <main id="main" role="main">
+      <header id="content-header">
+    
+    <div class="row">
+        <div class="large-12 column">
+          
+            <datetime>16 Feb 2015 <small><i class="fa fa-comment-o"></i> <a href="/blog/naive-bayes-classifier-in-javascript/#disqus_thread" data-disqus-identifier="/blog/naive-bayes-classifier-in-javascript/"></a></small> <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.miguelmota.com/blog/naive-bayes-classifier-in-javascript/" data-text="Naive Bayes Classifier in JavaScript" data-size="large" data-related="_moogs" data-ga-label="Blog post - Tweet">Tweet</a></datetime>
+<h1 data-text="Naive Bayes Classifier in JavaScript">Naive Bayes Classifier in JavaScript</h1>
+
+          
+        </div>
+    </div>
+    <div id="content-header-bottom">
+        <div class="triangle"></div>
+    </div>
+</header>
+
+
+<section id="post">
+  <div class="row">
+    <div class="large-12 column">
+
+      <p>The <a href="http://en.wikipedia.org/wiki/Naive_Bayes_classifier">Naive Bayes classifier</a> is a pretty popular text classification algorithm because of it&#39;s simplicity. You&#39;ll often see this classifier used for spam detection, authorship attribution, gender authentication, determing whether a review is positive or negative, and even sentiment analysis. The Naive Bayes classifier takes in a corpus (body of text) known as a document, which then a stemmer runs through the document and returns a &quot;<a href="http://en.wikipedia.org/wiki/Bag-of-words_model">bag or words</a>&quot; so to speak. <a href="http://en.wikipedia.org/wiki/Stemming">Stemming</a> is the process of reducing an inflected word to it&#39;s word stem (root). For example, the stem of the words &quot;dreaming&quot;, &quot;dreamer&quot;, and &quot;dreamed&quot;, is just &quot;dream&quot;. In the example below I am using the Porter Stemming algorithm, and the Bayes classifier algorithm from the excellent general natural language facility library for node, <a href="https://github.com/NaturalNode/natural/">natural</a>.</p>
+
+<p>The way Naive Bayes classifier works is it counts the frequencies of the stemmed words. These are called <em>features</em>. A class can contain many features. A document can contain many features of a class. Initial we must <em>train</em> the classifier to <em>learn</em> what class features belong to. Once the classifier has enough knowledge of classed features, we can asked it to classify a new document based on prior classifications. The algorithm is considered <em>naive</em> because it does not take account of where in the document the words are positioned. But it turns out that that algorithm does a <em>pretty</em> good job of classification even though it is not aware of context.</p>
+
+<h1 id="algorithm">Algorithm</h1>
+
+<p>What is the probability of the class given the document?</p>
+
+<p><a href="http://en.wikipedia.org/wiki/Naive_Bayes_classifier"><img src="/blog/naive-bayes-classifier-in-javascript//naive-bayes-model.png" alt=""></a></p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">P(c|d) = P(c)P(d|c)
+</code></pre></div>
+<p><strong>Probability of the class given the document is equal to the probability of the class times the probability of the document given the class</strong></p>
+
+<p>The denominator can be dropped because it is a constant. For example, if we have one document and 10 classes and only one class can classify document, the probability of the document is the same.</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">stemmer</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./porter-stemmer&#39;</span><span class="p">);</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * Terminology</span>
+<span class="cm"> *</span>
+<span class="cm"> * label: refers to class as in classification, since `class` is a reserved word.</span>
+<span class="cm"> * doc: refers to document, since `document` is a reserved word.</span>
+<span class="cm"> * feature: a token (word) in the bag of words (document).</span>
+<span class="cm"> */</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * BayesClassifier</span>
+<span class="cm"> * @desc Bayes classifier constructor</span>
+<span class="cm"> * @constructor</span>
+<span class="cm"> * @return Bayes classifier instance</span>
+<span class="cm"> */</span>
+<span class="kd">function</span> <span class="nx">BayesClassifier</span><span class="p">()</span> <span class="p">{</span>
+  <span class="cm">/*</span>
+<span class="cm">   * Create a new instance when not using the `new` keyword.</span>
+<span class="cm">   */</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="k">this</span> <span class="k">instanceof</span> <span class="nx">BayesClassifier</span><span class="p">))</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="nx">BayesClassifier</span><span class="p">();</span>
+  <span class="p">}</span>
+
+  <span class="cm">/*</span>
+<span class="cm">   * The stemmer provides tokenization methods.</span>
+<span class="cm">   * It breaks the doc into words (tokens) and takes the</span>
+<span class="cm">   * stem of each word. A stem is a form to which affixes</span>
+<span class="cm">   * can be attached, aka root word.</span>
+<span class="cm">   */</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">stemmer</span> <span class="o">=</span> <span class="nx">stemmer</span><span class="p">;</span>
+
+  <span class="cm">/*</span>
+<span class="cm">   * A collection of added documents</span>
+<span class="cm">   * Each document is an object containing the class, and array of stemmed words.</span>
+<span class="cm">   */</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">docs</span> <span class="o">=</span> <span class="p">[];</span>
+
+  <span class="cm">/*</span>
+<span class="cm">   * Index of last added document.</span>
+<span class="cm">   */</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">lastAdded</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+  <span class="cm">/*</span>
+<span class="cm">   * A map of all class features.</span>
+<span class="cm">   */</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">features</span> <span class="o">=</span> <span class="p">{};</span>
+
+  <span class="cm">/*</span>
+<span class="cm">   * A map containing each class and associated features.</span>
+<span class="cm">   * Each class has a map containing a feature index and the count of feature appearances for that class.</span>
+<span class="cm">   */</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">classFeatures</span> <span class="o">=</span> <span class="p">{};</span>
+
+  <span class="cm">/*</span>
+<span class="cm">   * Keep track of how many features in each class.</span>
+<span class="cm">   */</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">classTotals</span> <span class="o">=</span> <span class="p">{};</span>
+
+  <span class="cm">/*</span>
+<span class="cm">   * Number of examples trained</span>
+<span class="cm">   */</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">totalExamples</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+
+  <span class="cm">/* Additive smoothing to eliminate zeros when summing features,</span>
+<span class="cm">   * in cases where no features are found in the document.</span>
+<span class="cm">   * Used as a fail-safe to always return a class.</span>
+<span class="cm">   * http://en.wikipedia.org/wiki/Additive_smoothing</span>
+<span class="cm">   */</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">smoothing</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * AddDocument</span>
+<span class="cm"> * @param {array|string} doc - document</span>
+<span class="cm"> * @param {string} label - class</span>
+<span class="cm"> * @return {object} - Bayes classifier instance</span>
+<span class="cm"> */</span>
+<span class="nx">BayesClassifier</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">addDocument</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">doc</span><span class="p">,</span> <span class="nx">label</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">_size</span><span class="p">(</span><span class="nx">doc</span><span class="p">))</span> <span class="p">{</span>
+    <span class="k">return</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">_isString</span><span class="p">(</span><span class="nx">doc</span><span class="p">))</span> <span class="p">{</span>
+    <span class="c1">// Return array of stemmed words</span>
+    <span class="nx">doc</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">stemmer</span><span class="p">.</span><span class="nx">tokenizeAndStem</span><span class="p">(</span><span class="nx">doc</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="kd">var</span> <span class="nx">docObj</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">label</span><span class="o">:</span> <span class="nx">label</span><span class="p">,</span>
+    <span class="nx">value</span><span class="o">:</span> <span class="nx">doc</span>
+  <span class="p">};</span>
+
+  <span class="k">this</span><span class="p">.</span><span class="nx">docs</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">docObj</span><span class="p">);</span>
+
+  <span class="c1">// Add token (feature) to features map</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">doc</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">features</span><span class="p">[</span><span class="nx">doc</span><span class="p">[</span><span class="nx">i</span><span class="p">]]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * AddDocuments</span>
+<span class="cm"> * @param {array} docs - documents</span>
+<span class="cm"> * @param {string} label - class</span>
+<span class="cm"> * @return {object} - Bayes classifier instance</span>
+<span class="cm"> */</span>
+<span class="nx">BayesClassifier</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">addDocuments</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">docs</span><span class="p">,</span> <span class="nx">label</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">docs</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">addDocument</span><span class="p">(</span><span class="nx">docs</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span> <span class="nx">label</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * docToFeatures</span>
+<span class="cm"> *</span>
+<span class="cm"> * @desc</span>
+<span class="cm"> * Returns an array with 1&#39;s or 0 for each feature in document</span>
+<span class="cm"> * A 1 if feature is in document</span>
+<span class="cm"> * A 0 if feature is not in document</span>
+<span class="cm"> *</span>
+<span class="cm"> * @param {string|array} doc - document</span>
+<span class="cm"> * @return {array} features</span>
+<span class="cm"> */</span>
+<span class="nx">BayesClassifier</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">docToFeatures</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">doc</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">features</span> <span class="o">=</span> <span class="p">[];</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">_isString</span><span class="p">(</span><span class="nx">doc</span><span class="p">))</span> <span class="p">{</span>
+    <span class="nx">doc</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">stemmer</span><span class="p">.</span><span class="nx">tokenizeAndStem</span><span class="p">(</span><span class="nx">doc</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">feature</span> <span class="k">in</span> <span class="k">this</span><span class="p">.</span><span class="nx">features</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">features</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nb">Number</span><span class="p">(</span><span class="o">!!~</span><span class="nx">doc</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="nx">feature</span><span class="p">)));</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="nx">features</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * classify</span>
+<span class="cm"> * @desc Returns class with highest probability for document.</span>
+<span class="cm"> * @param {string} doc - document</span>
+<span class="cm"> * @return {string} class</span>
+<span class="cm"> */</span>
+<span class="nx">BayesClassifier</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">classify</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">doc</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">classifications</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">getClassifications</span><span class="p">(</span><span class="nx">doc</span><span class="p">);</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">_size</span><span class="p">(</span><span class="nx">classifications</span><span class="p">))</span> <span class="p">{</span>
+    <span class="k">throw</span> <span class="s1">&#39;Not trained&#39;</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">classifications</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">label</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * train</span>
+<span class="cm"> * @desc train the classifier on the added documents.</span>
+<span class="cm"> * @return {object} - Bayes classifier instance</span>
+<span class="cm"> */</span>
+<span class="nx">BayesClassifier</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">train</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">totalDocs</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">docs</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">lastAdded</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">totalDocs</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">features</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">docToFeatures</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">docs</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">value</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">addExample</span><span class="p">(</span><span class="nx">features</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">docs</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">label</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">lastAdded</span><span class="o">++</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * addExample</span>
+<span class="cm"> * @desc Increment the counter of each feature for each class.</span>
+<span class="cm"> * @param {array} docFeatures</span>
+<span class="cm"> * @param {string} label - class</span>
+<span class="cm"> * @return {object} - Bayes classifier instance</span>
+<span class="cm"> */</span>
+<span class="nx">BayesClassifier</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">addExample</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">docFeatures</span><span class="p">,</span> <span class="nx">label</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">classFeatures</span><span class="p">[</span><span class="nx">label</span><span class="p">])</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">classFeatures</span><span class="p">[</span><span class="nx">label</span><span class="p">]</span> <span class="o">=</span> <span class="p">{};</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">classTotals</span><span class="p">[</span><span class="nx">label</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">this</span><span class="p">.</span><span class="nx">totalExamples</span><span class="o">++</span><span class="p">;</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">_isArray</span><span class="p">(</span><span class="nx">docFeatures</span><span class="p">))</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="nx">docFeatures</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">classTotals</span><span class="p">[</span><span class="nx">label</span><span class="p">]</span><span class="o">++</span><span class="p">;</span>
+
+    <span class="k">while</span><span class="p">(</span><span class="nx">i</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">docFeatures</span><span class="p">[</span><span class="nx">i</span><span class="p">])</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">classFeatures</span><span class="p">[</span><span class="nx">label</span><span class="p">][</span><span class="nx">i</span><span class="p">])</span> <span class="p">{</span>
+          <span class="k">this</span><span class="p">.</span><span class="nx">classFeatures</span><span class="p">[</span><span class="nx">label</span><span class="p">][</span><span class="nx">i</span><span class="p">]</span><span class="o">++</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+          <span class="k">this</span><span class="p">.</span><span class="nx">classFeatures</span><span class="p">[</span><span class="nx">label</span><span class="p">][</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">smoothing</span><span class="p">;</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">key</span> <span class="k">in</span> <span class="nx">docFeatures</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">value</span> <span class="o">=</span> <span class="nx">docFeatures</span><span class="p">[</span><span class="nx">key</span><span class="p">];</span>
+
+      <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">classFeatures</span><span class="p">[</span><span class="nx">label</span><span class="p">][</span><span class="nx">value</span><span class="p">])</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">classFeatures</span><span class="p">[</span><span class="nx">label</span><span class="p">][</span><span class="nx">value</span><span class="p">]</span><span class="o">++</span><span class="p">;</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">classFeatures</span><span class="p">[</span><span class="nx">label</span><span class="p">][</span><span class="nx">value</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">smoothing</span><span class="p">;</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * probabilityOfClass</span>
+<span class="cm"> * @param {array|string} docFeatures - document features</span>
+<span class="cm"> * @param {string} label - class</span>
+<span class="cm"> * @return probability;</span>
+<span class="cm"> * @desc</span>
+<span class="cm"> * calculate the probability of class for the document.</span>
+<span class="cm"> *</span>
+<span class="cm"> * Algorithm source</span>
+<span class="cm"> * http://en.wikipedia.org/wiki/Naive_Bayes_classifier</span>
+<span class="cm"> *</span>
+<span class="cm"> * P(c|d) = P(c)P(d|c)</span>
+<span class="cm"> *          ---------</span>
+<span class="cm"> *             P(d)</span>
+<span class="cm"> *</span>
+<span class="cm"> * P = probability</span>
+<span class="cm"> * c = class</span>
+<span class="cm"> * d = document</span>
+<span class="cm"> *</span>
+<span class="cm"> * P(c|d) = Likelyhood(class given the document)</span>
+<span class="cm"> * P(d|c) = Likelyhood(document given the classes).</span>
+<span class="cm"> *     same as P(x1,x2,...,xn|c) - document `d` represented as features `x1,x2,...xn`</span>
+<span class="cm"> * P(c) = Likelyhood(class)</span>
+<span class="cm"> * P(d) = Likelyhood(document)</span>
+<span class="cm"> *</span>
+<span class="cm"> * rewritten in plain english:</span>
+<span class="cm"> *</span>
+<span class="cm"> * posterior = prior x likelyhood</span>
+<span class="cm"> *             ------------------</span>
+<span class="cm"> *                evidence</span>
+<span class="cm"> *</span>
+<span class="cm"> * The denominator can be dropped because it is a constant. For example,</span>
+<span class="cm"> * if we have one document and 10 classes and only one class can classify</span>
+<span class="cm"> * document, the probability of the document is the same.</span>
+<span class="cm"> *</span>
+<span class="cm"> * The final equation looks like this:</span>
+<span class="cm"> * P(c|d) = P(c)P(d|c)</span>
+<span class="cm"> */</span>
+<span class="nx">BayesClassifier</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">probabilityOfClass</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">docFeatures</span><span class="p">,</span> <span class="nx">label</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">probClasses</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">probDocClasses</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">prob</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">_isArray</span><span class="p">(</span><span class="nx">docFeatures</span><span class="p">))</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="nx">docFeatures</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+
+    <span class="c1">// Iterate though each feature in document.</span>
+    <span class="k">while</span><span class="p">(</span><span class="nx">i</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">// Proceed if feature collection.</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">docFeatures</span><span class="p">[</span><span class="nx">i</span><span class="p">])</span> <span class="p">{</span>
+        <span class="cm">/*</span>
+<span class="cm">         * The number of occurances of the document feature in class.</span>
+<span class="cm">         */</span>
+        <span class="nx">count</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">classFeatures</span><span class="p">[</span><span class="nx">label</span><span class="p">][</span><span class="nx">i</span><span class="p">]</span> <span class="o">||</span> <span class="k">this</span><span class="p">.</span><span class="nx">smoothing</span><span class="p">;</span>
+
+        <span class="cm">/* This is the `P(d|c)` part of the model.</span>
+<span class="cm">         * How often the class occurs. We simply count the relative</span>
+<span class="cm">         * feature frequencies in the corpus (document body).</span>
+<span class="cm">         *</span>
+<span class="cm">         * We divide the count by the total number of features for the class,</span>
+<span class="cm">         * and add it to the probability total.</span>
+<span class="cm">         * We&#39;re using Natural Logarithm here to prevent Arithmetic Underflow</span>
+<span class="cm">         * http://en.wikipedia.org/wiki/Arithmetic_underflow</span>
+<span class="cm">         */</span>
+        <span class="nx">probDocClasses</span> <span class="o">+=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">count</span> <span class="o">/</span> <span class="k">this</span><span class="p">.</span><span class="nx">classTotals</span><span class="p">[</span><span class="nx">label</span><span class="p">]);</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">key</span> <span class="k">in</span> <span class="nx">docFeatures</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">count</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">classFeatures</span><span class="p">[</span><span class="nx">label</span><span class="p">][</span><span class="nx">docFeatures</span><span class="p">[</span><span class="nx">key</span><span class="p">]]</span> <span class="o">||</span> <span class="k">this</span><span class="p">.</span><span class="nx">smoothing</span><span class="p">;</span>
+      <span class="nx">probDocClasses</span> <span class="o">+=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">count</span> <span class="o">/</span> <span class="k">this</span><span class="p">.</span><span class="nx">classTotals</span><span class="p">[</span><span class="nx">label</span><span class="p">]);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="cm">/*</span>
+<span class="cm">   * This is the `P(c)` part of the model.</span>
+<span class="cm">   *</span>
+<span class="cm">   * Divide the the total number of features in class by total number of all features.</span>
+<span class="cm">   */</span>
+  <span class="nx">probClasses</span> <span class="o">=</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">classTotals</span><span class="p">[</span><span class="nx">label</span><span class="p">]</span> <span class="o">/</span> <span class="k">this</span><span class="p">.</span><span class="nx">totalExamples</span><span class="p">);</span>
+
+  <span class="cm">/**</span>
+<span class="cm">   * probability of class given document = P(d|c)P(c)</span>
+<span class="cm">   */</span>
+  <span class="nx">prob</span> <span class="o">=</span> <span class="nx">probClasses</span> <span class="o">*</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">exp</span><span class="p">(</span><span class="nx">probDocClasses</span><span class="p">);</span>
+
+  <span class="k">return</span> <span class="nx">prob</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * getClassifications</span>
+<span class="cm"> * @desc Return array of document classes their probability values.</span>
+<span class="cm"> * @param {string} doc - document</span>
+<span class="cm"> * @return classification ordered by highest probability.</span>
+<span class="cm"> */</span>
+<span class="nx">BayesClassifier</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">getClassifications</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">doc</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">classifier</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">labels</span> <span class="o">=</span> <span class="p">[];</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">className</span> <span class="k">in</span> <span class="k">this</span><span class="p">.</span><span class="nx">classFeatures</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">labels</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span>
+      <span class="nx">label</span><span class="o">:</span> <span class="nx">className</span><span class="p">,</span>
+      <span class="nx">value</span><span class="o">:</span> <span class="nx">classifier</span><span class="p">.</span><span class="nx">probabilityOfClass</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">docToFeatures</span><span class="p">(</span><span class="nx">doc</span><span class="p">),</span> <span class="nx">className</span><span class="p">)</span>
+    <span class="p">});</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="nx">labels</span><span class="p">.</span><span class="nx">sort</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">y</span><span class="p">.</span><span class="nx">value</span> <span class="o">-</span> <span class="nx">x</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+  <span class="p">});</span>
+<span class="p">};</span>
+
+<span class="cm">/*</span>
+<span class="cm"> * Helper utils</span>
+<span class="cm"> */</span>
+<span class="nx">BayesClassifier</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">_isString</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="k">typeof</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span> <span class="o">===</span> <span class="s1">&#39;string&#39;</span> <span class="o">||</span> <span class="nx">s</span> <span class="k">instanceof</span> <span class="nb">String</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="nx">BayesClassifier</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">_isArray</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nb">Array</span><span class="p">.</span><span class="nx">isArray</span><span class="p">(</span><span class="nx">s</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="nx">BayesClassifier</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">_isObject</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="k">typeof</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span> <span class="o">===</span> <span class="s1">&#39;object&#39;</span> <span class="o">||</span> <span class="nx">s</span> <span class="k">instanceof</span> <span class="nb">Object</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="nx">BayesClassifier</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">_size</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">_isArray</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span> <span class="o">||</span> <span class="k">this</span><span class="p">.</span><span class="nx">_isString</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span> <span class="o">||</span> <span class="k">this</span><span class="p">.</span><span class="nx">_isObject</span><span class="p">(</span><span class="nx">s</span><span class="p">))</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">s</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="cm">/*</span>
+<span class="cm"> * Export constructor</span>
+<span class="cm"> */</span>
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">BayesClassifier</span><span class="p">;</span>
+</code></pre></div>
+<h2 id="usage">Usage</h2>
+
+<p>Now we get to use the Bayes classifier. Here&#39;s an example to classify a statement as either <em>positive</em> or <em>negative</em>.</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">BayesClassifier</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;../bayes-classifier&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">classifier</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">BayesClassifier</span><span class="p">();</span>
+
+<span class="kd">var</span> <span class="nx">positiveDocuments</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="s1">&#39;I love tacos.&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;Dude, that burrito was epic!&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;Holy cow, these nachos are so good and tasty.&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;I am drooling over the awesome bean and cheese quesadillas.&#39;</span>
+<span class="p">];</span>
+
+<span class="kd">var</span> <span class="nx">negativeDocuments</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="s1">&#39;Gross, worst taco ever.&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;The buritos gave me horrible diarrhea.&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;I\&#39;m going to puke if I eat another bad nacho.&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;I\&#39;d rather die than poop after that nasty eating food.&#39;</span>
+<span class="p">];</span>
+
+<span class="nx">classifier</span><span class="p">.</span><span class="nx">addDocuments</span><span class="p">(</span><span class="nx">positiveDocuments</span><span class="p">,</span> <span class="s1">&#39;positive&#39;</span><span class="p">);</span>
+<span class="nx">classifier</span><span class="p">.</span><span class="nx">addDocuments</span><span class="p">(</span><span class="nx">negativeDocuments</span><span class="p">,</span> <span class="s1">&#39;negative&#39;</span><span class="p">);</span>
+
+<span class="nx">classifier</span><span class="p">.</span><span class="nx">train</span><span class="p">();</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">classifier</span><span class="p">.</span><span class="nx">classify</span><span class="p">(</span><span class="s1">&#39;I heard the mexican restaurant is great!&#39;</span><span class="p">));</span> <span class="c1">// &quot;positive&quot;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">classifier</span><span class="p">.</span><span class="nx">classify</span><span class="p">(</span><span class="s1">&#39;I don\&#39;t want to eat there again.&#39;</span><span class="p">));</span> <span class="c1">// &quot;negative&quot;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">classifier</span><span class="p">.</span><span class="nx">classify</span><span class="p">(</span><span class="s1">&#39;The torta is epicly bad.&#39;</span><span class="p">));</span> <span class="c1">// &quot;negative&quot;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">classifier</span><span class="p">.</span><span class="nx">classify</span><span class="p">(</span><span class="s1">&#39;The torta is horribly awesome.&#39;</span><span class="p">));</span> <span class="c1">// &quot;positive&quot;</span>
+</code></pre></div>
+<h1 id="conclusion">Conclusion</h1>
+
+<p>Hopefully the code was easy to follow. The full code is available on <a href="https://github.com/miguelmota/bayes-classifier">github</a> as a node module. Definitely checkout the <a href="https://github.com/NaturalNode/natural">natural</a> library for more text classification algorithms. The library contains many general natural language processing utilities, such as <em>tokenization</em>, <em>stemming</em>, <em>classification</em>, <em>phonetics</em>, <em><a href="http://en.wikipedia.org/wiki/Tf%E2%80%93idf">tf-idf</a></em>, <em>WordNet</em>, and string similarity.</p>
+
+<h1 id="resources">Resources</h1>
+
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Naive_Bayes_classifier">Naive Bayes classifier</a></li>
+<li><a href="http://tartarus.org/martin/PorterStemmer/">Porter Stemming algorithm in many languages</a></li>
+<li><a href="https://github.com/NaturalNode/natural">natural - general language facilities for node</a></li>
+</ul>
+
+
+      <div class="tags">
+  
+    <a href="/tag/Naive Bayes">#Naive Bayes</a>
+  
+    <a href="/tag/classifier">#classifier</a>
+  
+    <a href="/tag/algorithm">#algorithm</a>
+  
+    <a href="/tag/JavaScript">#JavaScript</a>
+  
+</div>
+
+
+    </div>
+  </div>
+
+  
+    <div id="related-posts" class="row">
+      <div class="large-6 column">
+        
+    
+
+    <h3>Previous post</h3>
+
+      <dl class="posts-list">
+        <dt><datetime>01 Feb 2015</datetime></dt>
+        <dd><h2><a href="/blog/pixelate-images-with-canvas/">Pixelate images with Canvas</a> <small><i class="icon-comment-alt"></i> <a href="/blog/pixelate-images-with-canvas/#disqus_thread" data-disqus-identifier="/blog/pixelate-images-with-canvas/"></a></small></h2></dd>
+      </dl>
+
+    
+
+
+
+      </div>
+      <div class="large-6 column">
+
+        <h3>See also...</h3>
+
+        <dl class="posts-list">
+          
+            <dt><datetime>01 Feb 2015</datetime></dt>
+<dd><h2><a href="/blog/pixelate-images-with-canvas/">Pixelate images with Canvas</a> <small><i class="icon-comment-alt"></i> <a href="/blog/pixelate-images-with-canvas/#disqus_thread" data-disqus-identifier="/blog/pixelate-images-with-canvas/"></a></small></h2>
+</dd>
+          
+            <dt><datetime>19 Jul 2014</datetime></dt>
+<dd><h2><a href="/blog/bitwise-operators-in-javascript/">Bitwise operators in JavaScript</a> <small><i class="icon-comment-alt"></i> <a href="/blog/bitwise-operators-in-javascript/#disqus_thread" data-disqus-identifier="/blog/bitwise-operators-in-javascript/"></a></small></h2>
+</dd>
+          
+            <dt><datetime>20 Jun 2014</datetime></dt>
+<dd><h2><a href="/blog/es6-examples/">ES6 Examples</a> <small><i class="icon-comment-alt"></i> <a href="/blog/es6-examples/#disqus_thread" data-disqus-identifier="/blog/es6-examples/"></a></small></h2>
+</dd>
+          
+            <dt><datetime>14 Mar 2014</datetime></dt>
+<dd><h2><a href="/blog/deployment-with-git/">Deployment with Git</a> <small><i class="icon-comment-alt"></i> <a href="/blog/deployment-with-git/#disqus_thread" data-disqus-identifier="/blog/deployment-with-git/"></a></small></h2>
+</dd>
+          
+            <dt><datetime>23 Jan 2014</datetime></dt>
+<dd><h2><a href="/blog/intro-to-redis/">Intro to Redis</a> <small><i class="icon-comment-alt"></i> <a href="/blog/intro-to-redis/#disqus_thread" data-disqus-identifier="/blog/intro-to-redis/"></a></small></h2>
+</dd>
+          
+        </dl>
+
+      </div>
+    </div>
+  
+
+  <div id="comments" class="row">
+    <div class="large-12 column">
+      <div id="disqus_thread"></div>
+    </div>
+  </div>
+
+</section>
+
+<script>
+    var disqus_shortname = 'miguelmota';
+    var disqus_identifier = '/blog/naive-bayes-classifier-in-javascript/';
+    var disqus_url = 'http://www.miguelmota.com/blog/naive-bayes-classifier-in-javascript/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+
+    </main>
+
+    <footer id="footer">
+      <div class="row">
+        <div class="large-12 column">
+          <p>
+            <span class="break"><span>© 2015 Moogs™.</span> <span>Made with <i class="fa fa-heart"></i></span></span> <a class="hidden" href="https://plus.google.com/102174577273194387652" rel="author">Google+</a>
+
+            <a href="https://twitter.com/_moogs" class="twitter-follow-button" data-show-count="true" data-size="large" data-ga-label="Footer - Follow Twitter">Follow @_moogs</a>
+
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <a id="forkme" href="https://github.com/miguelmota/miguelmota.github.com" target="_blank" data-ga-label="Fork me on Github"><img src="/assets/images/forkme_right_darkblue_121621.png" alt=""></a>
+
+    <script src="//maps.google.com/maps/api/js?sensor=false"></script>
+    <script src="//google-maps-utility-library-v3.googlecode.com/svn/trunk/infobox/src/infobox.js"></script>
+  </body>
+</html>

@@ -2,7 +2,7 @@
 layout: blog-post
 title: Pixelate images with Canvas
 category: blog
-tags: [JavaScript, canvas]
+tags: [JavaScript, canvas, demo]
 description: Learn how to pixelate an image with canvas.
 ---
 There may be cases in which you want to pixelate an image, such as creating 8-bit style pixel art themed games or you simply want to give a hint of what an image is about without exposing too much. Turns out that it's not complicated at all to do pixelation with canvas.
@@ -14,6 +14,8 @@ There may be cases in which you want to pixelate an image, such as creating 8-bi
 The main methods needed from the [`canvas context`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D) are [`imageSmoothingEnabled`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D.imageSmoothingEnabled) for rendering crisp pixels and [`drawImage`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D.drawImage) for drawing those pixels on to the canvas context.
 
 Essentially how it works is we scale down the image and stretch it to a larger size.
+
+Here is the [gist](https://gist.github.com/miguelmota/c64d8ef769df7faf5fc9):
 
 ```javascript
 // Create new image element.
