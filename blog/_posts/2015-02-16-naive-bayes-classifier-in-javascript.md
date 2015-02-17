@@ -397,7 +397,7 @@ var negativeDocuments = [
   'Gross, worst taco ever.',
   'The buritos gave me horrible diarrhea.',
   'I\'m going to puke if I eat another bad nacho.',
-  'I\'d rather die than poop after that nasty eating food.'
+  'I\'d rather die than eat those nasty enchiladas.'
 ];
 
 classifier.addDocuments(positiveDocuments, 'positive');
