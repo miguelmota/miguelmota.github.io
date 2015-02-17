@@ -6,7 +6,9 @@ tags: [Naive Bayes, classifier, algorithm, JavaScript]
 description: Naive Bayes classifier implementation in JavaScript.
 ---
 
-The [Naive Bayes classifier](http://en.wikipedia.org/wiki/Naive_Bayes_classifier) is a pretty popular text classification algorithm because of it's simplicity. You'll often see this classifier used for spam detection, authorship attribution, gender authentication, determing whether a review is positive or negative, and even sentiment analysis. The Naive Bayes classifier takes in a corpus (body of text) known as a document, which then a stemmer runs through the document and returns a "[bag or words](http://en.wikipedia.org/wiki/Bag-of-words_model)" so to speak. [Stemming](http://en.wikipedia.org/wiki/Stemming) is the process of reducing an inflected word to it's word stem (root). For example, the stem of the words "dreaming", "dreamer", and "dreamed", is just "dream". In the example below I am using the Porter Stemming algorithm, and the Bayes classifier algorithm from the excellent general natural language facility library for node, [natural](https://github.com/NaturalNode/natural/).
+The [Naive Bayes classifier](http://en.wikipedia.org/wiki/Naive_Bayes_classifier) is a pretty popular text classification algorithm because of it's simplicity. You'll often see this classifier used for spam detection, authorship attribution, gender authentication, determing whether a review is positive or negative, and even sentiment analysis. The Naive Bayes classifier takes in a corpus (body of text) known as a document, which then a stemmer runs through the document and returns a "[bag or words](http://en.wikipedia.org/wiki/Bag-of-words_model)" so to speak. [Stemming](http://en.wikipedia.org/wiki/Stemming) is the process of reducing an inflected word to it's word stem (root). For example, the stem of the words "dreaming", "dreamer", and "dreamed", is just "dream".
+
+  In the example below, I am using the Porter Stemming algorithm, and the Bayes classifier algorithm from the excellent general natural language facility library for node, [natural](https://github.com/NaturalNode/natural/) by [Chris Umbel](http://www.chrisumbel.com/).
 
   The way Naive Bayes classifier works is it counts the frequencies of the stemmed words. These are called *features*. A class can contain many features. A document can contain many features of a class. Initial we must *train* the classifier to *learn* what class features belong to. Once the classifier has enough knowledge of classed features, we can asked it to classify a new document based on prior classifications. The algorithm is considered *naive* because it does not take account of where in the document the words are positioned. But it turns out that that algorithm does a *pretty* good job of classification even though it is not aware of context.
 
@@ -25,8 +27,6 @@ P(c|d) = P(c)P(d|c)
 The denominator can be dropped because it is a constant. For example, if we have one document and 10 classes and only one class can classify document, the probability of the document is the same.
 
 ```javascript
-var stemmer = require('./porter-stemmer');
-
 /**
  * Terminology
  *
@@ -34,6 +34,12 @@ var stemmer = require('./porter-stemmer');
  * doc: refers to document, since `document` is a reserved word.
  * feature: a token (word) in the bag of words (document).
  */
+
+/**
+ * Include Porter Stemmer algorithm
+ * https://github.com/miguelmota/bayes-classifier/blob/master/lib/stemmers/porter.js
+ */
+var stemmer = require('./porter-stemmer');
 
 /**
  * BayesClassifier

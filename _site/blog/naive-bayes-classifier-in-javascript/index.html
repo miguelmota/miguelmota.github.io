@@ -109,7 +109,9 @@
   <div class="row">
     <div class="large-12 column">
 
-      <p>The <a href="http://en.wikipedia.org/wiki/Naive_Bayes_classifier">Naive Bayes classifier</a> is a pretty popular text classification algorithm because of it&#39;s simplicity. You&#39;ll often see this classifier used for spam detection, authorship attribution, gender authentication, determing whether a review is positive or negative, and even sentiment analysis. The Naive Bayes classifier takes in a corpus (body of text) known as a document, which then a stemmer runs through the document and returns a &quot;<a href="http://en.wikipedia.org/wiki/Bag-of-words_model">bag or words</a>&quot; so to speak. <a href="http://en.wikipedia.org/wiki/Stemming">Stemming</a> is the process of reducing an inflected word to it&#39;s word stem (root). For example, the stem of the words &quot;dreaming&quot;, &quot;dreamer&quot;, and &quot;dreamed&quot;, is just &quot;dream&quot;. In the example below I am using the Porter Stemming algorithm, and the Bayes classifier algorithm from the excellent general natural language facility library for node, <a href="https://github.com/NaturalNode/natural/">natural</a>.</p>
+      <p>The <a href="http://en.wikipedia.org/wiki/Naive_Bayes_classifier">Naive Bayes classifier</a> is a pretty popular text classification algorithm because of it&#39;s simplicity. You&#39;ll often see this classifier used for spam detection, authorship attribution, gender authentication, determing whether a review is positive or negative, and even sentiment analysis. The Naive Bayes classifier takes in a corpus (body of text) known as a document, which then a stemmer runs through the document and returns a &quot;<a href="http://en.wikipedia.org/wiki/Bag-of-words_model">bag or words</a>&quot; so to speak. <a href="http://en.wikipedia.org/wiki/Stemming">Stemming</a> is the process of reducing an inflected word to it&#39;s word stem (root). For example, the stem of the words &quot;dreaming&quot;, &quot;dreamer&quot;, and &quot;dreamed&quot;, is just &quot;dream&quot;.</p>
+
+<p>In the example below, I am using the Porter Stemming algorithm, and the Bayes classifier algorithm from the excellent general natural language facility library for node, <a href="https://github.com/NaturalNode/natural/">natural</a> by <a href="http://www.chrisumbel.com/">Chris Umbel</a>.</p>
 
 <p>The way Naive Bayes classifier works is it counts the frequencies of the stemmed words. These are called <em>features</em>. A class can contain many features. A document can contain many features of a class. Initial we must <em>train</em> the classifier to <em>learn</em> what class features belong to. Once the classifier has enough knowledge of classed features, we can asked it to classify a new document based on prior classifications. The algorithm is considered <em>naive</em> because it does not take account of where in the document the words are positioned. But it turns out that that algorithm does a <em>pretty</em> good job of classification even though it is not aware of context.</p>
 
@@ -123,15 +125,19 @@
 <p><strong>Probability of the class given the document is equal to the probability of the class times the probability of the document given the class</strong></p>
 
 <p>The denominator can be dropped because it is a constant. For example, if we have one document and 10 classes and only one class can classify document, the probability of the document is the same.</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">stemmer</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./porter-stemmer&#39;</span><span class="p">);</span>
-
-<span class="cm">/**</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="cm">/**</span>
 <span class="cm"> * Terminology</span>
 <span class="cm"> *</span>
 <span class="cm"> * label: refers to class as in classification, since `class` is a reserved word.</span>
 <span class="cm"> * doc: refers to document, since `document` is a reserved word.</span>
 <span class="cm"> * feature: a token (word) in the bag of words (document).</span>
 <span class="cm"> */</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * Include Porter Stemmer algorithm</span>
+<span class="cm"> * https://github.com/miguelmota/bayes-classifier/blob/master/lib/stemmers/porter.js</span>
+<span class="cm"> */</span>
+<span class="kd">var</span> <span class="nx">stemmer</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./porter-stemmer&#39;</span><span class="p">);</span>
 
 <span class="cm">/**</span>
 <span class="cm"> * BayesClassifier</span>
