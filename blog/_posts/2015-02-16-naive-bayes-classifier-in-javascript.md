@@ -407,7 +407,7 @@ console.log(classifier.classify('The torta is horribly awesome.')); // "positive
 
 # Conclusion
 
-Hopefully the code was easy to follow. The full code is available on [github](https://github.com/miguelmota/bayes-classifier) as a node module. Definitely checkout the [natural](https://github.com/NaturalNode/natural) library for more text classification algorithms. The library contains many general natural language processing utilities, such as *tokenization*, *stemming*, *classification*, *phonetics*, *[tf-idf](http://en.wikipedia.org/wiki/Tf%E2%80%93idf)*, *WordNet*, and string similarity.
+Hopefully the code was easy to follow. The full code is available on [github](https://github.com/miguelmota/bayes-classifier) as a node module. Definitely checkout the [natural](https://github.com/NaturalNode/natural) library for more text classification algorithms. The library contains many general natural language facilities, such as *tokenization*, *stemming*, *classification*, *phonetics*, *[tf-idf](http://en.wikipedia.org/wiki/Tf%E2%80%93idf)*, *WordNet*, and string similarity.
 
 # Resources
 
