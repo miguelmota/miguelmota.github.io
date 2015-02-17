@@ -2,7 +2,7 @@
 layout: blog-post
 title: Naive Bayes Classifier in JavaScript
 category: blog
-tags: [Naive Bayes, classifier, algorithm, JavaScript]
+tags: [Naive Bayes, classifier, algorithm, JavaScript, demo]
 description: Naive Bayes classifier implementation in JavaScript.
 ---
 
@@ -278,8 +278,6 @@ BayesClassifier.prototype.addExample = function(docFeatures, label) {
  */
 BayesClassifier.prototype.probabilityOfClass = function(docFeatures, label) {
   var count = 0;
-  var probClasses = 0;
-  var probDocClasses = 0;
   var prob = 0;
 
   if (this._isArray(docFeatures)) {
@@ -303,13 +301,13 @@ BayesClassifier.prototype.probabilityOfClass = function(docFeatures, label) {
          * We're using Natural Logarithm here to prevent Arithmetic Underflow
          * http://en.wikipedia.org/wiki/Arithmetic_underflow
          */
-        probDocClasses += Math.log(count / this.classTotals[label]);
+        prob += Math.log(count / this.classTotals[label]);
       }
     }
   } else {
     for (var key in docFeatures) {
       count = this.classFeatures[label][docFeatures[key]] || this.smoothing;
-      probDocClasses += Math.log(count / this.classTotals[label]);
+      prob += Math.log(count / this.classTotals[label]);
     }
   }
 
@@ -318,12 +316,12 @@ BayesClassifier.prototype.probabilityOfClass = function(docFeatures, label) {
    *
    * Divide the the total number of features in class by total number of all features.
    */
-  probClasses = (this.classTotals[label] / this.totalExamples);
+  var featureRatio = (this.classTotals[label] / this.totalExamples);
 
   /**
    * probability of class given document = P(d|c)P(c)
    */
-  prob = probClasses * Math.exp(probDocClasses);
+  prob = featureRatio * Math.exp(prob);
 
   return prob;
 };
@@ -380,7 +378,7 @@ module.exports = BayesClassifier;
 
 ## Usage
 
-Now we get to use the Bayes classifier. Here's an example to classify a statement as either *positive* or *negative*.
+Now we get to use the Bayes classifier. Here's an example to classify a statement as either *positive* or *negative*. The algorithm must first learn from a *training set* of data.
 
 ```javascript
 var BayesClassifier = require('../bayes-classifier');
@@ -411,6 +409,8 @@ console.log(classifier.classify('The torta is epicly bad.')); // "negative"
 console.log(classifier.classify('The torta is horribly awesome.')); // "positive"
 ```
 
+[View the demo »]({{ page.url }}/demo)
+
 # Conclusion
 
 Hopefully the code was easy to follow. The full code is available on [github](https://github.com/miguelmota/bayes-classifier) as a node module. Definitely checkout the [natural](https://github.com/NaturalNode/natural) library for more text classification algorithms. The library contains many general natural language facilities, such as *tokenization*, *stemming*, *classification*, *phonetics*, *[tf-idf](http://en.wikipedia.org/wiki/Tf%E2%80%93idf)*, *WordNet*, and string similarity.
@@ -419,4 +419,5 @@ Hopefully the code was easy to follow. The full code is available on [github](ht
 
 - [Naive Bayes classifier](http://en.wikipedia.org/wiki/Naive_Bayes_classifier)
 - [Porter Stemming algorithm in many languages](http://tartarus.org/martin/PorterStemmer/)
+- [Naive Bayes classification explained on StackOverflow](http://stackoverflow.com/a/20556654/1439168)https://www.coursera.org/learn/communication/lecture/xPXve/introduction
 - [natural - general language facilities for node](https://github.com/NaturalNode/natural)

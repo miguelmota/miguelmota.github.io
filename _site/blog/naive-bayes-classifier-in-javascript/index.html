@@ -376,8 +376,6 @@
 <span class="cm"> */</span>
 <span class="nx">BayesClassifier</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">probabilityOfClass</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">docFeatures</span><span class="p">,</span> <span class="nx">label</span><span class="p">)</span> <span class="p">{</span>
   <span class="kd">var</span> <span class="nx">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-  <span class="kd">var</span> <span class="nx">probClasses</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-  <span class="kd">var</span> <span class="nx">probDocClasses</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
   <span class="kd">var</span> <span class="nx">prob</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 
   <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">_isArray</span><span class="p">(</span><span class="nx">docFeatures</span><span class="p">))</span> <span class="p">{</span>
@@ -401,13 +399,13 @@
 <span class="cm">         * We&#39;re using Natural Logarithm here to prevent Arithmetic Underflow</span>
 <span class="cm">         * http://en.wikipedia.org/wiki/Arithmetic_underflow</span>
 <span class="cm">         */</span>
-        <span class="nx">probDocClasses</span> <span class="o">+=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">count</span> <span class="o">/</span> <span class="k">this</span><span class="p">.</span><span class="nx">classTotals</span><span class="p">[</span><span class="nx">label</span><span class="p">]);</span>
+        <span class="nx">prob</span> <span class="o">+=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">count</span> <span class="o">/</span> <span class="k">this</span><span class="p">.</span><span class="nx">classTotals</span><span class="p">[</span><span class="nx">label</span><span class="p">]);</span>
       <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
     <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">key</span> <span class="k">in</span> <span class="nx">docFeatures</span><span class="p">)</span> <span class="p">{</span>
       <span class="nx">count</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">classFeatures</span><span class="p">[</span><span class="nx">label</span><span class="p">][</span><span class="nx">docFeatures</span><span class="p">[</span><span class="nx">key</span><span class="p">]]</span> <span class="o">||</span> <span class="k">this</span><span class="p">.</span><span class="nx">smoothing</span><span class="p">;</span>
-      <span class="nx">probDocClasses</span> <span class="o">+=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">count</span> <span class="o">/</span> <span class="k">this</span><span class="p">.</span><span class="nx">classTotals</span><span class="p">[</span><span class="nx">label</span><span class="p">]);</span>
+      <span class="nx">prob</span> <span class="o">+=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">count</span> <span class="o">/</span> <span class="k">this</span><span class="p">.</span><span class="nx">classTotals</span><span class="p">[</span><span class="nx">label</span><span class="p">]);</span>
     <span class="p">}</span>
   <span class="p">}</span>
 
@@ -416,12 +414,12 @@
 <span class="cm">   *</span>
 <span class="cm">   * Divide the the total number of features in class by total number of all features.</span>
 <span class="cm">   */</span>
-  <span class="nx">probClasses</span> <span class="o">=</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">classTotals</span><span class="p">[</span><span class="nx">label</span><span class="p">]</span> <span class="o">/</span> <span class="k">this</span><span class="p">.</span><span class="nx">totalExamples</span><span class="p">);</span>
+  <span class="kd">var</span> <span class="nx">featureRatio</span> <span class="o">=</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">classTotals</span><span class="p">[</span><span class="nx">label</span><span class="p">]</span> <span class="o">/</span> <span class="k">this</span><span class="p">.</span><span class="nx">totalExamples</span><span class="p">);</span>
 
   <span class="cm">/**</span>
 <span class="cm">   * probability of class given document = P(d|c)P(c)</span>
 <span class="cm">   */</span>
-  <span class="nx">prob</span> <span class="o">=</span> <span class="nx">probClasses</span> <span class="o">*</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">exp</span><span class="p">(</span><span class="nx">probDocClasses</span><span class="p">);</span>
+  <span class="nx">prob</span> <span class="o">=</span> <span class="nx">featureRatio</span> <span class="o">*</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">exp</span><span class="p">(</span><span class="nx">prob</span><span class="p">);</span>
 
   <span class="k">return</span> <span class="nx">prob</span><span class="p">;</span>
 <span class="p">};</span>
@@ -477,7 +475,7 @@
 </code></pre></div>
 <h2 id="usage">Usage</h2>
 
-<p>Now we get to use the Bayes classifier. Here&#39;s an example to classify a statement as either <em>positive</em> or <em>negative</em>.</p>
+<p>Now we get to use the Bayes classifier. Here&#39;s an example to classify a statement as either <em>positive</em> or <em>negative</em>. The algorithm must first learn from a <em>training set</em> of data.</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">BayesClassifier</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;../bayes-classifier&#39;</span><span class="p">);</span>
 <span class="kd">var</span> <span class="nx">classifier</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">BayesClassifier</span><span class="p">();</span>
 
@@ -505,6 +503,8 @@
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">classifier</span><span class="p">.</span><span class="nx">classify</span><span class="p">(</span><span class="s1">&#39;The torta is epicly bad.&#39;</span><span class="p">));</span> <span class="c1">// &quot;negative&quot;</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">classifier</span><span class="p">.</span><span class="nx">classify</span><span class="p">(</span><span class="s1">&#39;The torta is horribly awesome.&#39;</span><span class="p">));</span> <span class="c1">// &quot;positive&quot;</span>
 </code></pre></div>
+<p><a href="/blog/naive-bayes-classifier-in-javascript//demo">View the demo »</a></p>
+
 <h1 id="conclusion">Conclusion</h1>
 
 <p>Hopefully the code was easy to follow. The full code is available on <a href="https://github.com/miguelmota/bayes-classifier">github</a> as a node module. Definitely checkout the <a href="https://github.com/NaturalNode/natural">natural</a> library for more text classification algorithms. The library contains many general natural language facilities, such as <em>tokenization</em>, <em>stemming</em>, <em>classification</em>, <em>phonetics</em>, <em><a href="http://en.wikipedia.org/wiki/Tf%E2%80%93idf">tf-idf</a></em>, <em>WordNet</em>, and string similarity.</p>
@@ -514,6 +514,7 @@
 <ul>
 <li><a href="http://en.wikipedia.org/wiki/Naive_Bayes_classifier">Naive Bayes classifier</a></li>
 <li><a href="http://tartarus.org/martin/PorterStemmer/">Porter Stemming algorithm in many languages</a></li>
+<li><a href="http://stackoverflow.com/a/20556654/1439168">Naive Bayes classification explained on StackOverflow</a><a href="https://www.coursera.org/learn/communication/lecture/xPXve/introduction">https://www.coursera.org/learn/communication/lecture/xPXve/introduction</a></li>
 <li><a href="https://github.com/NaturalNode/natural">natural - general language facilities for node</a></li>
 </ul>
 
@@ -527,6 +528,8 @@
     <a href="/tag/algorithm">#algorithm</a>
   
     <a href="/tag/JavaScript">#JavaScript</a>
+  
+    <a href="/tag/demo">#demo</a>
   
 </div>
 
