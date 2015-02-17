@@ -15,7 +15,7 @@ var classifyOutput = $.querySelector('.classify-output');
 
 form.onsubmit = function(e) {
   e.preventDefault();
-  classifier.addDocuments(doc.value, label.value);
+  classifier.addDocument(doc.value, label.value);
   var text = $.createTextNode(doc.value + ' => ' + label.value);
   var div = $.createElement('div');
   div.appendChild(text);
