@@ -109,7 +109,28 @@
   <div class="row">
     <div class="large-12 column">
 
-      <p>If you&#39;ve been up-to-date with what&#39;s going on in the JavaScript world then you know that <a href="http://wiki.ecmascript.org/doku.php?id=harmony:specification_drafts">ES6</a> is currently the new hotness in town. Below I&#39;m going to be showing examples of some of the nicest features in ES6.</p>
+      <p>If you&#39;ve been up-to-date with what&#39;s going on in the JavaScript world then you know that <a href="http://wiki.ecmascript.org/doku.php?id=harmony:specification_drafts">ES6</a> is currently the new hotness in town. I&#39;m going to be showing examples of some of the nicest features in ES6, which include:</p>
+
+<ul>
+<li><a href="#modules">Modules</a></li>
+<li><a href="#classes">Classes</a></li>
+<li><a href="#arrow-functions">Arrow Functions</a></li>
+<li><a href="#destructuring">Destructuring</a></li>
+<li><a href="#generators">Generators</a></li>
+<li><a href="#promises">Promises</a></li>
+<li><a href="#proxies">Proxies</a></li>
+<li><a href="#defaults">Defaults</a></li>
+<li><a href="#maps">Maps</a></li>
+<li><a href="#weak-maps">Weak Maps</a></li>
+<li><a href="#sets">Sets</a></li>
+<li><a href="#symbols">Symbols</a></li>
+<li><a href="#shorthand-objects">Shorthand Objects</a></li>
+<li><a href="#spread-operator">Spread Operator</a></li>
+<li><a href="#rest-operator">Rest operator</a></li>
+<li><a href="#constants">Constants</a></li>
+<li><a href="#block-scoping">Block Scoping</a></li>
+<li><a href="#template-strings">Template Strings</a></li>
+</ul>
 
 <h1 id="modules">Modules</h1>
 
@@ -292,11 +313,11 @@
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">stringify</span><span class="p">);</span> <span class="c1">// Function</span>
 </code></pre></div>
 <p>Extract example:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">let obj = {first: &#39;Dexter&#39;, last: &#39;McPherson&#39;};
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">let</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span><span class="nx">first</span><span class="o">:</span> <span class="s1">&#39;Dexter&#39;</span><span class="p">,</span> <span class="nx">last</span><span class="o">:</span> <span class="s1">&#39;McPherson&#39;</span><span class="p">};</span>
 
-let {first: f, last: l} = obj;
+<span class="kd">let</span> <span class="p">{</span><span class="nx">first</span><span class="o">:</span> <span class="nx">f</span><span class="p">,</span> <span class="nx">last</span><span class="o">:</span> <span class="nx">l</span><span class="p">}</span> <span class="o">=</span> <span class="nx">obj</span><span class="p">;</span>
 
-console.log(f,&#39; &#39;, l);
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">f</span><span class="p">,</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="nx">l</span><span class="p">);</span>
 </code></pre></div>
 <p>Name parameters example:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">fun</span><span class="p">(</span><span class="nx">arg0</span><span class="p">,</span> <span class="p">{</span><span class="nx">opt1</span><span class="p">,</span> <span class="nx">opts2</span><span class="p">})</span> <span class="p">{</span>
@@ -547,22 +568,22 @@ console.log(f,&#39; &#39;, l);
 <h1 id="proxies">Proxies</h1>
 
 <p>Smart array example:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">function smartArray(arr) {
-    return Proxy(
-        arr,
-        {get: function(p,x) {
-            if (Number(x) &lt; 0) {
-                return p[p.length + Number(x)];
-            }
-            return p[x];
-        }}
-    );
-}
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">smartArray</span><span class="p">(</span><span class="nx">arr</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">Proxy</span><span class="p">(</span>
+        <span class="nx">arr</span><span class="p">,</span>
+        <span class="p">{</span><span class="nx">get</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">p</span><span class="p">,</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nb">Number</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">return</span> <span class="nx">p</span><span class="p">[</span><span class="nx">p</span><span class="p">.</span><span class="nx">length</span> <span class="o">+</span> <span class="nb">Number</span><span class="p">(</span><span class="nx">x</span><span class="p">)];</span>
+            <span class="p">}</span>
+            <span class="k">return</span> <span class="nx">p</span><span class="p">[</span><span class="nx">x</span><span class="p">];</span>
+        <span class="p">}}</span>
+    <span class="p">);</span>
+<span class="p">}</span>
 
-var arr = smartArray([1,2,3]);
+<span class="kd">var</span> <span class="nx">arr</span> <span class="o">=</span> <span class="nx">smartArray</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]);</span>
 
-console.log(arr[0]); // 1
-console.log(arr[-1]); // 3
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span> <span class="c1">// 1</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]);</span> <span class="c1">// 3</span>
 </code></pre></div>
 <p>Null safe example:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">Obj</span> <span class="o">=</span> <span class="nb">Function</span><span class="p">();</span>
@@ -768,7 +789,7 @@ console.log(arr[-1]); // 3
     <span class="p">}</span>
 <span class="p">};</span>
 </code></pre></div>
-<h1 id="shorthand-objects">Shorthand objects</h1>
+<h1 id="shorthand-objects">Shorthand Objects</h1>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">name</span> <span class="o">=</span> <span class="s1">&#39;Dexter&#39;</span><span class="p">;</span>
 <span class="kd">var</span> <span class="nx">occupation</span> <span class="o">=</span> <span class="s1">&#39;Scientist&#39;</span><span class="p">;</span>
 
@@ -776,7 +797,7 @@ console.log(arr[-1]); // 3
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span> <span class="c1">// {name: &#39;Dexter&#39;, occupation: &#39;Scientist}</span>
 </code></pre></div>
-<h1 id="spread-operator">Spread operator</h1>
+<h1 id="spread-operator">Spread Operator</h1>
 
 <p>Simple example:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nb">Math</span><span class="p">.</span><span class="nx">max</span><span class="p">(...[</span><span class="mi">7</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">4</span><span class="p">]);</span> <span class="c1">// 11</span>
@@ -801,7 +822,7 @@ console.log(arr[-1]); // 3
 
 <span class="nx">g</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="p">...</span><span class="nx">nums</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
 </code></pre></div>
-<h1 id="rest-operator">Rest operator</h1>
+<h1 id="rest-operator">Rest Operator</h1>
 
 <p>Arguments example:</p>
 <div class="highlight"><pre><code class="language-text" data-lang="text">let sum = (...numbers) =&gt;
@@ -820,26 +841,26 @@ console.log(Math.max(...[4,2,6]));</p>
 <span class="nx">CANT_TOUCH_THIS</span> <span class="o">=</span> <span class="s1">&#39;bar&#39;</span><span class="p">;</span> <span class="c1">// SyntaxError: Assignment to constant variable.</span>
 </code></pre></div>
 <p>Invalid example:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">function f() {
-    // with this in place..
-    const g = false;
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">f</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// with this in place..</span>
+    <span class="kr">const</span> <span class="nx">g</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
 
-    // you can&#39;t do this
-    const g = true; // SyntaxError: Variable &#39;g&#39; has already been declared
+    <span class="c1">// you can&#39;t do this</span>
+    <span class="kr">const</span> <span class="nx">g</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span> <span class="c1">// SyntaxError: Variable &#39;g&#39; has already been declared</span>
 
-    // or this
-    g = true; // SyntaxError: Assignment to constant variable.
+    <span class="c1">// or this</span>
+    <span class="nx">g</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span> <span class="c1">// SyntaxError: Assignment to constant variable.</span>
 
-    // or this
-    var g = false; // SyntaxError: Variable &#39;g&#39; has already been declared
+    <span class="c1">// or this</span>
+    <span class="kd">var</span> <span class="nx">g</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span> <span class="c1">// SyntaxError: Variable &#39;g&#39; has already been declared</span>
 
-    // or this
-    let g = false; // SyntaxError: Variable &#39;g&#39; has already been declared
-}
+    <span class="c1">// or this</span>
+    <span class="kd">let</span> <span class="nx">g</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span> <span class="c1">// SyntaxError: Variable &#39;g&#39; has already been declared</span>
+<span class="p">}</span>
 
-f();
+<span class="nx">f</span><span class="p">();</span>
 </code></pre></div>
-<h1 id="block-scoping">Block scoping</h1>
+<h1 id="block-scoping">Block Scoping</h1>
 
 <p>Simple example:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">{</span>

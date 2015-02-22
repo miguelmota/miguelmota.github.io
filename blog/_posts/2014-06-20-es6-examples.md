@@ -6,7 +6,26 @@ tags: [ES6, JavaScript]
 description: Examples of JavaScript ES6 Features.
 ---
 
-If you've been up-to-date with what's going on in the JavaScript world then you know that [ES6](http://wiki.ecmascript.org/doku.php?id=harmony:specification_drafts) is currently the new hotness in town. Below I'm going to be showing examples of some of the nicest features in ES6.
+If you've been up-to-date with what's going on in the JavaScript world then you know that [ES6](http://wiki.ecmascript.org/doku.php?id=harmony:specification_drafts) is currently the new hotness in town. I'm going to be showing examples of some of the nicest features in ES6, which include:
+
+- [Modules](#modules)
+- [Classes](#classes)
+- [Arrow Functions](#arrow-functions)
+- [Destructuring](#destructuring)
+- [Generators](#generators)
+- [Promises](#promises)
+- [Proxies](#proxies)
+- [Defaults](#defaults)
+- [Maps](#maps)
+- [Weak Maps](#weak-maps)
+- [Sets](#sets)
+- [Symbols](#symbols)
+- [Shorthand Objects](#shorthand-objects)
+- [Spread Operator](#spread-operator)
+- [Rest operator](#rest-operator)
+- [Constants](#constants)
+- [Block Scoping](#block-scoping)
+- [Template Strings](#template-strings)
 
 # Modules
 
@@ -235,7 +254,7 @@ console.log(stringify); // Function
 
 Extract example:
 
-```
+```javascript
 let obj = {first: 'Dexter', last: 'McPherson'};
 
 let {first: f, last: l} = obj;
@@ -548,7 +567,7 @@ readJSON(path.resolve('test.json')).then(function(data) {
 
 Smart array example:
 
-```
+```javascript
 function smartArray(arr) {
     return Proxy(
         arr,
@@ -799,7 +818,7 @@ let obj = {
 
 ```
 
-# Shorthand objects
+# Shorthand Objects
 
 ```javascript
 var name = 'Dexter';
@@ -810,7 +829,7 @@ var result = {name, occupation};
 console.log(result); // {name: 'Dexter', occupation: 'Scientist}
 ```
 
-# Spread operator
+# Spread Operator
 
 Simple example:
 
@@ -841,7 +860,7 @@ var nums = [1,2,3];
 g(0, ...nums, 4);
 ```
 
-# Rest operator
+# Rest Operator
 
 Arguments example:
 
@@ -868,7 +887,7 @@ CANT_TOUCH_THIS = 'bar'; // SyntaxError: Assignment to constant variable.
 
 Invalid example:
 
-```
+```javascript
 function f() {
     // with this in place..
     const g = false;
@@ -889,7 +908,7 @@ function f() {
 f();
 ```
 
-# Block scoping
+# Block Scoping
 
 Simple example:
 
