@@ -27,7 +27,9 @@ How the K-Means algorithm works is relatively straight forward. We just follow t
 
 > Given a set of observations `(x1, x2, …, xn)`, where each observation is a d-dimensional real vector, k-means clustering aims to partition the n observations into `k (≤ n)` sets `S = {S1, S2, …, Sk}` so as to minimize the within-cluster sum of squares (WCSS) where `μi` is the mean of points in `Si`. ([wikipedia](http://en.wikipedia.org/wiki/K-means_clustering))
 
-**Credit:** Most of my knowledge of the K-Means algorithm and implementation came from [this article](http://burakkanber.com/blog/machine-learning-k-means-clustering-in-javascript-part-1/) so credit goes to [Burak Kanber](https://twitter.com/bkanber).
+### Credit
+
+Most of my understanding and knowledge of the K-Means algorithm and implementation came from [this article](http://burakkanber.com/blog/machine-learning-k-means-clustering-in-javascript-part-1/) by [Burak Kanber](https://twitter.com/bkanber).
 
 ```javascript
 /**
