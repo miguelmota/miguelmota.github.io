@@ -2,7 +2,7 @@
 layout: blog-post
 title: Naive Bayes Classifier in JavaScript
 category: blog
-tags: [Naive Bayes, classifier, algorithm, JavaScript, demo]
+tags: [Naive Bayes, classifier, machine learning, algorithm, JavaScript, demo]
 description: Naive Bayes classifier implementation in JavaScript.
 ---
 

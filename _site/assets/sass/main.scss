@@ -456,6 +456,18 @@ body {
     }
   }
 
+  blockquote {
+    @include div-max-width();
+    font-family: "Courier New", Courier, monospace;
+    border: none;
+    background: none;
+    p {
+      padding-left: 10px;
+      border-left: 1px solid rgba(255, 255, 255, 0.25);
+      line-height: 1.4;
+    }
+  }
+
   hr {
     width: 80%;
     margin: 0 auto;
