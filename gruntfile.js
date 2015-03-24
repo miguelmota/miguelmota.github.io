@@ -1,3 +1,5 @@
+var deploy = require('./config/deploy');
+
 module.exports = function (grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
@@ -59,6 +61,9 @@ module.exports = function (grunt) {
       }
     },
     shell: {
+      options: {
+        stderr: true
+      },
       jekyll_build: {
         command: 'jekyll build',
         options: {
@@ -70,6 +75,9 @@ module.exports = function (grunt) {
         options: {
           stdout: true
         }
+      },
+      deploy: {
+        command: deploy
       }
     },
     compass: {
@@ -106,4 +114,5 @@ module.exports = function (grunt) {
   grunt.registerTask('jekyll-build', ['shell:jekyll_build']);
   grunt.registerTask('jekyll-serve', ['jekyll:serve']);
   grunt.registerTask('default', ['watch:css', 'watch:scripts']);
+  grunt.registerTask('deploy', 'shell:deploy');
 };
