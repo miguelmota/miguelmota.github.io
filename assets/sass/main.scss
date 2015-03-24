@@ -454,6 +454,11 @@ body {
     ul {
       @include div-max-width();
     }
+
+  }
+
+  figure {
+    @include div-max-width();
   }
 
   blockquote {
