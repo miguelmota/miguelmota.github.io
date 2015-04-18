@@ -723,6 +723,18 @@ $social-icon-default-background-color: rgba(0,0,0,.2);
   @include social-icon($social-icon-width, $social-icon-height, #676767, '../images/social/zazzle-32.png');
 }
 
+#home .pandora {
+  @include social-icon($social-icon-width, $social-icon-height, #336699, '../images/social/pandora-32.png');
+}
+
+#home .vine {
+  @include social-icon($social-icon-width, $social-icon-height, #00A47A, '../images/social/vine-32.png');
+}
+
+#home .goodreads {
+  @include social-icon($social-icon-width, $social-icon-height, #5A471B, '../images/social/goodreads-32.png');
+}
+
 #home .archive-button {
   @extend .button;
 }
