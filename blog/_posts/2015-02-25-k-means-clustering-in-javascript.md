@@ -5,7 +5,7 @@ category: blog
 tags: [k-means, machine learning, data mining, algorithm, JavaScript, demo]
 description: An example of the k-means algorithm in JavaScript.
 ---
-Clustering is grouping of data or dividing a large data set into smaller data sets of some similarity. A well known clusetering algorithm in unsupervised machine learning is [K-Means clustering](http://en.wikipedia.org/wiki/K-means_clustering). The K-Means algorithm takes in `n` observations (data points), and groups them into `k` clusters, where each observation belongs to a cluster based on the nearest mean (cluster centroid). The distance between a data point and cluster centroid is calculated using the [Euclidean distance](http://en.wikipedia.org/wiki/Euclidean_distance).
+Clustering is grouping of data or dividing a large data set into smaller data sets of some similarity. A well known clustering algorithm in unsupervised machine learning is [K-Means clustering](http://en.wikipedia.org/wiki/K-means_clustering). The K-Means algorithm takes in `n` observations (data points), and groups them into `k` clusters, where each observation belongs to a cluster based on the nearest mean (cluster centroid). The distance between a data point and cluster centroid is calculated using the [Euclidean distance](http://en.wikipedia.org/wiki/Euclidean_distance).
 
 [![]({{ page.url }}/euclidean-distance-model.png)](http://en.wikipedia.org/wiki/Euclidean_distance)
 
