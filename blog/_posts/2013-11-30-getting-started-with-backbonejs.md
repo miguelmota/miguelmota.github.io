@@ -349,11 +349,11 @@ If you don't want any events triggered on a model when you do something:
 todoItem.set({description: 'Pick up eggs'}, {silent: true});
 ```
 
-### Overrding sync method
+### Overriding sync method
 
 ### Models and local storage
 
-Instead of syncing our model to the server we can have it save to [local storage](https://developer.mozilla.org/en-US/docs/Web/Guide/API/DOM/Storage) To do this we must override the four syn methods: `read`, `create`, `update`, and `delete`.
+Instead of syncing our model to the server we can have it save to [local storage](https://developer.mozilla.org/en-US/docs/Web/Guide/API/DOM/Storage) To do this we must override the four sync methods: `read`, `create`, `update`, and `delete`.
 
 ```javascript
 var TodoItem = Backbone.Model.extend({
@@ -453,7 +453,7 @@ var TodoList = Backbone.Collection.extend({
 var todoList = new TodoList();
 ```
 
-### Adding to collection
+### Adding to a Collection
 
 Adding a todo item model to the todo list collection:
 
@@ -467,33 +467,33 @@ Append model to end collection:
 todoList.push(todoItem);
 ```
 
-Prepend model to beginning of collection:
+Prepend model to the beginning of a Collection:
 
 ```javascript
 todoList.unshift(todoItem);
 ```
 
-### Retrieving model from collection
+### Retrieving model from Collection
 
-Getting a model from collection based on the model id:
+Getting model from Collection based on the model id:
 
 ```javascript
 var todoItemOne = todoList.get(1);
 ```
 
-Getting a model from collection by index:
+Getting model from Collection by index:
 
 ```javascript
 var thirdTodoItem = todoList.at(2);
 ```
 
-Getting array of collection models:
+Getting array of Collection models:
 
 ```javascript
 var models = todoList.models;
 ```
 
-### Removing model from collection
+### Removing model from Collection
 
 Removing model from collection:
 
@@ -501,7 +501,7 @@ Removing model from collection:
 todoList.remove(todoItem);
 ```
 
-Remove and return the last model from collection:
+Remove and return the last model from Collection:
 
 ```javascript
 var lastTodo = todoList.pop();
@@ -557,11 +557,11 @@ Listening for collection reset:
 
 ```javascript
 todoList.on('reset', function() {
-  console.log('todoList reseted with data');
+  console.log('todoList reset with data');
 });
 ```
 
-Listening for when collection is fetch:
+Listening for when collection is fetched:
 
 ```javascript
 todoList.on('fetch', function() {
@@ -668,14 +668,14 @@ var TodoITems =  Backbone.Collection.extend({
   url: '/todos',
   parse: function(response) {
     this.perPage = response.per_page;
-    this.page = resposne.page;
+    this.page = response.page;
     this.total = response.total;
     return response.todos;
   }
 });
 ```
 
-When we do a fetch we can use that addional meta data to get specified results:
+When we do a fetch we can use that additional meta data to get specified results:
 
 ```javascript
 todoItems.fetch({data: {page: todoItems.page + 1}}); // GET /todos?page=3
@@ -704,7 +704,7 @@ var TodoListView = Backbone.View.extend({
 
 ### Collection iteration
 
-Iterarte over collection:
+Iterate over Collection:
 
 ```javascript
 todoList.forEach(function(index, todoItem) {
@@ -732,11 +732,11 @@ These are just a few but the Underscore library provides many more [collection i
 
 ## Views
 
-A view is an ouput representation of data. Views allows us to display dynamic model data to the user.
+A view is an output representation of data. Views allows us to display dynamic model data to the user.
 
 ### Generating a view
 
-Here we are creating a simple view. We are an [Underscore template](http://underscorejs.org/#template) and once the view render function gets called we will set the compiled template html to `el` property of the view. By default the `el` property is a div element. After we render the view we append the view html to our body.
+Here we are creating a simple view. We are using an [Underscore template](http://underscorejs.org/#template) and once the view render function gets called we will set the compiled template html to `el` property of the view. By default the `el` property is a div element. After we render the view we append the view html to our body.
 
 ```javascript
 var TodoView = Backbone.View.extend({
@@ -864,10 +864,10 @@ Generated DOM:
 
 ### Keeping templates seperate
 
-It is good practice to keep to templates seperate from our application logic. One way we can do this is by placing the template html into a script tag. By setting the `src` attribute to something other than `text/javascript` the document will ignore it and not try to execute the code.
+It is good practice to keep to templates seperate from our application logic. One way we can do this is by placing the template html into a script tag. By setting the `type` attribute to something other than `text/javascript` the document will ignore it and not try to execute the code.
 
 ```html
-<script src="text/template" id="todo-template">
+<script type="text/template" id="todo-template">
   <%= description %>
 </script>
 ```
@@ -969,7 +969,7 @@ $('#app').html(editTodoForm.render().el);
 
 View options is extra data we can pass along to our view object.
 
-For example we can a todo item model and user model on our view:
+For example we can pass a todo item model and user model on our view:
 
 ```javascript
 var todoView = new TodoView({
@@ -1025,7 +1025,7 @@ var newTodoItem = new TodoItem({
 todoList.add(newTodoItem);
 ```
 
-### Updating view when model deleted
+### Updating view when model is deleted
 
 Listening to the remove event on the collection and updating view:
 
@@ -1141,7 +1141,7 @@ Backbone automatically calls `stopListening` when the `remove` method is execute
 
 ### Preventing XSS attacks
 
-[Cross-site scripting](http://en.wikipedia.org/wiki/Cross-site_scripting) (XSS) attacks is when an end user inject malicious scripts into our application. One way to prevent this from happening to to escape script tags so that the script does not execute:
+[Cross-site scripting](http://en.wikipedia.org/wiki/Cross-site_scripting) (XSS) attacks is when an end user injects malicious scripts into our application. One way to prevent this is to escape script tags so that the script does not execute:
 
 ```javascript
 var TodoView = Backbone.View.extend({
@@ -1151,7 +1151,7 @@ var TodoView = Backbone.View.extend({
 
 ## Routes
 
-Routes allows us to create pages and map them to actions and events. It makes bookmarkable urls possible.
+Routes allows us to create pages and map them to actions and events. It makes bookmarkable URLs possible.
 
 ### Router basics
 
@@ -1202,7 +1202,7 @@ TodoRouter.on('route:todos', function(id) {
 });
 ```
 
-To pass a parameter that can match any number of url components, for example a path to a file, we use a *splat*:
+To pass a parameter that can match any number of URL components, for example a path to a file, we use a *splat*:
 
 ```javascript
 var TodoRouter = new (Backbone.Router.extend({
@@ -1218,7 +1218,7 @@ var TodoRouter = new (Backbone.Router.extend({
 
 ### Default route
 
-Having the last route match any url can serve as the default route:
+Having the last route match any URL can serve as the default route:
 
 ```javascript
 var TodoRouter = new (Backbone.Router.extend({
@@ -1234,7 +1234,7 @@ var TodoRouter = new (Backbone.Router.extend({
 
 ### Trigger a route
 
-Calling the router's `navigate` method will update the current url to the specified route, but to call the corresponding route function we must set `trigger` to true:
+Calling the router's `navigate` method will update the current URL to the specified route, but to call the corresponding route function we must set `trigger` to true:
 
 ```javascript
 TodoRouter.navigate('todo', {trigger: true});
@@ -1332,7 +1332,7 @@ this.listenTo(this, 'route', function (name, args) {
 
 ### Fetching collection on route
 
-On router initialization append the the todoView with todoList collection to the #app element and fetch the todo items on index route:
+On router initialization append the todoView with todoList collection to the #app element and fetch the todo items on index route:
 
 ```javascript
 var TodoApp = new (Backbone.Router.extend({
