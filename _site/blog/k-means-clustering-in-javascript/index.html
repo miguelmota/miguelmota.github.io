@@ -143,8 +143,8 @@
 <span class="cm">* @constructor</span>
 <span class="cm">* @desc KMeans constructor</span>
 <span class="cm">* @param {object} options - options object</span>
-<span class="cm">* @param {HTMLElement} options.canvas - canvas element</span>
-<span class="cm">* @param {data} options.data - data array with points</span>
+<span class="cm">* @param {object} options.canvas - canvas element</span>
+<span class="cm">* @param {array} options.data - data array with points</span>
 <span class="cm">* @param {number} options.k - number of cluster centroids</span>
 <span class="cm">* @return array with arrays of points</span>
 <span class="cm">*/</span>
@@ -172,7 +172,7 @@
   <span class="c1">// Get the extents (min,max) for the dimensions.</span>
   <span class="k">this</span><span class="p">.</span><span class="nx">extents</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">dataDimensionExtents</span><span class="p">();</span>
 
-  <span class="c1">// Get the range of the dimentions.</span>
+  <span class="c1">// Get the range of the dimensions.</span>
   <span class="k">this</span><span class="p">.</span><span class="nx">ranges</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">dataExtentRanges</span><span class="p">();</span>
 
   <span class="c1">// Generate random cluster centroid points.</span>
@@ -394,7 +394,7 @@
       <span class="k">for</span> <span class="p">(</span><span class="nx">dim</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">dim</span> <span class="o">&lt;</span> <span class="nx">sums</span><span class="p">[</span><span class="nx">meanIndex</span><span class="p">].</span><span class="nx">length</span><span class="p">;</span> <span class="nx">dim</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">diff</span> <span class="o">=</span> <span class="p">(</span><span class="nx">sums</span><span class="p">[</span><span class="nx">meanIndex</span><span class="p">][</span><span class="nx">dim</span><span class="p">]</span> <span class="o">-</span> <span class="k">this</span><span class="p">.</span><span class="nx">means</span><span class="p">[</span><span class="nx">meanIndex</span><span class="p">][</span><span class="nx">dim</span><span class="p">]);</span>
         <span class="k">if</span> <span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">abs</span><span class="p">(</span><span class="nx">diff</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mf">0.1</span><span class="p">)</span> <span class="p">{</span>
-          <span class="nx">stepsPerIteration</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+          <span class="kd">var</span> <span class="nx">stepsPerIteration</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
           <span class="k">this</span><span class="p">.</span><span class="nx">means</span><span class="p">[</span><span class="nx">meanIndex</span><span class="p">][</span><span class="nx">dim</span><span class="p">]</span> <span class="o">+=</span> <span class="nx">diff</span> <span class="o">/</span> <span class="nx">stepsPerIteration</span><span class="p">;</span>
           <span class="k">this</span><span class="p">.</span><span class="nx">means</span><span class="p">[</span><span class="nx">meanIndex</span><span class="p">][</span><span class="nx">dim</span><span class="p">]</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="k">this</span><span class="p">.</span><span class="nx">means</span><span class="p">[</span><span class="nx">meanIndex</span><span class="p">][</span><span class="nx">dim</span><span class="p">])</span><span class="o">/</span><span class="mi">100</span><span class="p">;</span>
         <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>

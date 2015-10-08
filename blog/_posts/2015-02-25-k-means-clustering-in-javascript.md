@@ -37,8 +37,8 @@ Most of my understanding and knowledge of the K-Means algorithm and implementati
 * @constructor
 * @desc KMeans constructor
 * @param {object} options - options object
-* @param {HTMLElement} options.canvas - canvas element
-* @param {data} options.data - data array with points
+* @param {object} options.canvas - canvas element
+* @param {array} options.data - data array with points
 * @param {number} options.k - number of cluster centroids
 * @return array with arrays of points
 */
@@ -66,7 +66,7 @@ function KMeans(opts) {
   // Get the extents (min,max) for the dimensions.
   this.extents = this.dataDimensionExtents();
 
-  // Get the range of the dimentions.
+  // Get the range of the dimensions.
   this.ranges = this.dataExtentRanges();
 
   // Generate random cluster centroid points.
@@ -288,7 +288,7 @@ KMeans.prototype.moveMeans = function() {
       for (dim = 0; dim < sums[meanIndex].length; dim++) {
         diff = (sums[meanIndex][dim] - this.means[meanIndex][dim]);
         if (Math.abs(diff) > 0.1) {
-          stepsPerIteration = 10;
+          var stepsPerIteration = 10;
           this.means[meanIndex][dim] += diff / stepsPerIteration;
           this.means[meanIndex][dim] = Math.round(100*this.means[meanIndex][dim])/100;
         } else {
