@@ -361,11 +361,11 @@
 <p>If you don&#39;t want any events triggered on a model when you do something:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">todoItem</span><span class="p">.</span><span class="nx">set</span><span class="p">({</span><span class="nx">description</span><span class="o">:</span> <span class="s1">&#39;Pick up eggs&#39;</span><span class="p">},</span> <span class="p">{</span><span class="nx">silent</span><span class="o">:</span> <span class="kc">true</span><span class="p">});</span>
 </code></pre></div>
-<h3 id="overrding-sync-method">Overrding sync method</h3>
+<h3 id="overriding-sync-method">Overriding sync method</h3>
 
 <h3 id="models-and-local-storage">Models and local storage</h3>
 
-<p>Instead of syncing our model to the server we can have it save to <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/API/DOM/Storage">local storage</a> To do this we must override the four syn methods: <code>read</code>, <code>create</code>, <code>update</code>, and <code>delete</code>.</p>
+<p>Instead of syncing our model to the server we can have it save to <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/API/DOM/Storage">local storage</a> To do this we must override the four sync methods: <code>read</code>, <code>create</code>, <code>update</code>, and <code>delete</code>.</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">TodoItem</span> <span class="o">=</span> <span class="nx">Backbone</span><span class="p">.</span><span class="nx">Model</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
   <span class="c1">// method = &lt;read|create|update|delete&gt;</span>
   <span class="nx">sync</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">method</span><span class="p">,</span> <span class="nx">model</span><span class="p">,</span> <span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
@@ -450,7 +450,7 @@
 
 <span class="kd">var</span> <span class="nx">todoList</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TodoList</span><span class="p">();</span>
 </code></pre></div>
-<h3 id="adding-to-collection">Adding to collection</h3>
+<h3 id="adding-to-a-collection">Adding to a Collection</h3>
 
 <p>Adding a todo item model to the todo list collection:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">todoList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">todoItem</span><span class="p">);</span>
@@ -458,26 +458,26 @@
 <p>Append model to end collection:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">todoList</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">todoItem</span><span class="p">);</span>
 </code></pre></div>
-<p>Prepend model to beginning of collection:</p>
+<p>Prepend model to the beginning of a Collection:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">todoList</span><span class="p">.</span><span class="nx">unshift</span><span class="p">(</span><span class="nx">todoItem</span><span class="p">);</span>
 </code></pre></div>
-<h3 id="retrieving-model-from-collection">Retrieving model from collection</h3>
+<h3 id="retrieving-model-from-collection">Retrieving model from Collection</h3>
 
-<p>Getting a model from collection based on the model id:</p>
+<p>Getting model from Collection based on the model id:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">todoItemOne</span> <span class="o">=</span> <span class="nx">todoList</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
 </code></pre></div>
-<p>Getting a model from collection by index:</p>
+<p>Getting model from Collection by index:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">thirdTodoItem</span> <span class="o">=</span> <span class="nx">todoList</span><span class="p">.</span><span class="nx">at</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
 </code></pre></div>
-<p>Getting array of collection models:</p>
+<p>Getting array of Collection models:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">models</span> <span class="o">=</span> <span class="nx">todoList</span><span class="p">.</span><span class="nx">models</span><span class="p">;</span>
 </code></pre></div>
-<h3 id="removing-model-from-collection">Removing model from collection</h3>
+<h3 id="removing-model-from-collection">Removing model from Collection</h3>
 
 <p>Removing model from collection:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">todoList</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="nx">todoItem</span><span class="p">);</span>
 </code></pre></div>
-<p>Remove and return the last model from collection:</p>
+<p>Remove and return the last model from Collection:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">lastTodo</span> <span class="o">=</span> <span class="nx">todoList</span><span class="p">.</span><span class="nx">pop</span><span class="p">();</span>
 </code></pre></div>
 <h3 id="collection-length">Collection length</h3>
@@ -516,10 +516,10 @@
 
 <p>Listening for collection reset:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">todoList</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;reset&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;todoList reseted with data&#39;</span><span class="p">);</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;todoList reset with data&#39;</span><span class="p">);</span>
 <span class="p">});</span>
 </code></pre></div>
-<p>Listening for when collection is fetch:</p>
+<p>Listening for when collection is fetched:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">todoList</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;fetch&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;todoList fetched from server&#39;</span><span class="p">);</span>
 <span class="p">});</span>
@@ -597,13 +597,13 @@
   <span class="nx">url</span><span class="o">:</span> <span class="s1">&#39;/todos&#39;</span><span class="p">,</span>
   <span class="nx">parse</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">perPage</span> <span class="o">=</span> <span class="nx">response</span><span class="p">.</span><span class="nx">per_page</span><span class="p">;</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">page</span> <span class="o">=</span> <span class="nx">resposne</span><span class="p">.</span><span class="nx">page</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">page</span> <span class="o">=</span> <span class="nx">response</span><span class="p">.</span><span class="nx">page</span><span class="p">;</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">total</span> <span class="o">=</span> <span class="nx">response</span><span class="p">.</span><span class="nx">total</span><span class="p">;</span>
     <span class="k">return</span> <span class="nx">response</span><span class="p">.</span><span class="nx">todos</span><span class="p">;</span>
   <span class="p">}</span>
 <span class="p">});</span>
 </code></pre></div>
-<p>When we do a fetch we can use that addional meta data to get specified results:</p>
+<p>When we do a fetch we can use that additional meta data to get specified results:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">todoItems</span><span class="p">.</span><span class="nx">fetch</span><span class="p">({</span><span class="nx">data</span><span class="o">:</span> <span class="p">{</span><span class="nx">page</span><span class="o">:</span> <span class="nx">todoItems</span><span class="p">.</span><span class="nx">page</span> <span class="o">+</span> <span class="mi">1</span><span class="p">}});</span> <span class="c1">// GET /todos?page=3</span>
 </code></pre></div>
 <p>We can then incorporate simple pagination into our view:</p>
@@ -626,7 +626,7 @@
 </code></pre></div>
 <h3 id="collection-iteration">Collection iteration</h3>
 
-<p>Iterarte over collection:</p>
+<p>Iterate over Collection:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">todoList</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">index</span><span class="p">,</span> <span class="nx">todoItem</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">todoItem</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;description&#39;</span><span class="p">));</span>
 <span class="p">});</span>
@@ -645,11 +645,11 @@
 
 <h2 id="views">Views</h2>
 
-<p>A view is an ouput representation of data. Views allows us to display dynamic model data to the user.</p>
+<p>A view is an output representation of data. Views allows us to display dynamic model data to the user.</p>
 
 <h3 id="generating-a-view">Generating a view</h3>
 
-<p>Here we are creating a simple view. We are an <a href="http://underscorejs.org/#template">Underscore template</a> and once the view render function gets called we will set the compiled template html to <code>el</code> property of the view. By default the <code>el</code> property is a div element. After we render the view we append the view html to our body.</p>
+<p>Here we are creating a simple view. We are using an <a href="http://underscorejs.org/#template">Underscore template</a> and once the view render function gets called we will set the compiled template html to <code>el</code> property of the view. By default the <code>el</code> property is a div element. After we render the view we append the view html to our body.</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">TodoView</span> <span class="o">=</span> <span class="nx">Backbone</span><span class="p">.</span><span class="nx">View</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
   <span class="nx">template</span><span class="o">:</span> <span class="nx">_</span><span class="p">.</span><span class="nx">template</span><span class="p">(</span><span class="s1">&#39;Pick up milk&#39;</span><span class="p">),</span>
   <span class="nx">render</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
@@ -747,8 +747,8 @@
 </code></pre></div>
 <h3 id="keeping-templates-seperate">Keeping templates seperate</h3>
 
-<p>It is good practice to keep to templates seperate from our application logic. One way we can do this is by placing the template html into a script tag. By setting the <code>src</code> attribute to something other than <code>text/javascript</code> the document will ignore it and not try to execute the code.</p>
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;text/template&quot;</span> <span class="na">id=</span><span class="s">&quot;todo-template&quot;</span><span class="nt">&gt;</span>
+<p>It is good practice to keep to templates seperate from our application logic. One way we can do this is by placing the template html into a script tag. By setting the <code>type</code> attribute to something other than <code>text/javascript</code> the document will ignore it and not try to execute the code.</p>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/template&quot;</span> <span class="na">id=</span><span class="s">&quot;todo-template&quot;</span><span class="nt">&gt;</span>
   <span class="o">&lt;%=</span> <span class="nx">description</span> <span class="o">%&gt;</span>
 <span class="nt">&lt;/script&gt;</span>
 </code></pre></div><div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">TodoView</span> <span class="o">=</span> <span class="nx">Backbone</span><span class="p">.</span><span class="nx">View</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
@@ -834,7 +834,7 @@
 
 <p>View options is extra data we can pass along to our view object.</p>
 
-<p>For example we can a todo item model and user model on our view:</p>
+<p>For example we can pass a todo item model and user model on our view:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">todoView</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TodoView</span><span class="p">({</span>
   <span class="nx">model</span><span class="o">:</span> <span class="nx">todoItem</span><span class="p">,</span>
   <span class="nx">user</span><span class="o">:</span> <span class="nx">currentUser</span>
@@ -881,7 +881,7 @@
 
 <span class="nx">todoList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">newTodoItem</span><span class="p">);</span>
 </code></pre></div>
-<h3 id="updating-view-when-model-deleted">Updating view when model deleted</h3>
+<h3 id="updating-view-when-model-is-deleted">Updating view when model is deleted</h3>
 
 <p>Listening to the remove event on the collection and updating view:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">TodoList</span> <span class="o">=</span> <span class="nx">Backbone</span><span class="p">.</span><span class="nx">Collection</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
@@ -980,14 +980,14 @@
 
 <h3 id="preventing-xss-attacks">Preventing XSS attacks</h3>
 
-<p><a href="http://en.wikipedia.org/wiki/Cross-site_scripting">Cross-site scripting</a> (XSS) attacks is when an end user inject malicious scripts into our application. One way to prevent this from happening to to escape script tags so that the script does not execute:</p>
+<p><a href="http://en.wikipedia.org/wiki/Cross-site_scripting">Cross-site scripting</a> (XSS) attacks is when an end user injects malicious scripts into our application. One way to prevent this is to escape script tags so that the script does not execute:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">TodoView</span> <span class="o">=</span> <span class="nx">Backbone</span><span class="p">.</span><span class="nx">View</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
   <span class="nx">template</span><span class="o">:</span> <span class="nx">_</span><span class="p">.</span><span class="nx">template</span><span class="p">(</span><span class="s1">&#39;&lt;%= model.escape(&quot;description&quot;) %&gt;&#39;</span><span class="p">)</span>
 <span class="p">});</span>
 </code></pre></div>
 <h2 id="routes">Routes</h2>
 
-<p>Routes allows us to create pages and map them to actions and events. It makes bookmarkable urls possible.</p>
+<p>Routes allows us to create pages and map them to actions and events. It makes bookmarkable URLs possible.</p>
 
 <h3 id="router-basics">Router basics</h3>
 
@@ -1029,7 +1029,7 @@
   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;/todos/%s&#39;</span><span class="p">,</span> <span class="nx">id</span><span class="p">);</span>
 <span class="p">});</span>
 </code></pre></div>
-<p>To pass a parameter that can match any number of url components, for example a path to a file, we use a <em>splat</em>:</p>
+<p>To pass a parameter that can match any number of URL components, for example a path to a file, we use a <em>splat</em>:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">TodoRouter</span> <span class="o">=</span> <span class="k">new</span> <span class="p">(</span><span class="nx">Backbone</span><span class="p">.</span><span class="nx">Router</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
   <span class="nx">routes</span><span class="o">:</span> <span class="p">{</span>
     <span class="s1">&#39;&#39;</span><span class="o">:</span> <span class="s1">&#39;home&#39;</span><span class="p">,</span>
@@ -1042,7 +1042,7 @@
 </code></pre></div>
 <h3 id="default-route">Default route</h3>
 
-<p>Having the last route match any url can serve as the default route:</p>
+<p>Having the last route match any URL can serve as the default route:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">TodoRouter</span> <span class="o">=</span> <span class="k">new</span> <span class="p">(</span><span class="nx">Backbone</span><span class="p">.</span><span class="nx">Router</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
   <span class="nx">routes</span><span class="o">:</span> <span class="p">{</span>
     <span class="c1">// other routes here</span>
@@ -1055,7 +1055,7 @@
 </code></pre></div>
 <h3 id="trigger-a-route">Trigger a route</h3>
 
-<p>Calling the router&#39;s <code>navigate</code> method will update the current url to the specified route, but to call the corresponding route function we must set <code>trigger</code> to true:</p>
+<p>Calling the router&#39;s <code>navigate</code> method will update the current URL to the specified route, but to call the corresponding route function we must set <code>trigger</code> to true:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">TodoRouter</span><span class="p">.</span><span class="nx">navigate</span><span class="p">(</span><span class="s1">&#39;todo&#39;</span><span class="p">,</span> <span class="p">{</span><span class="nx">trigger</span><span class="o">:</span> <span class="kc">true</span><span class="p">});</span>
 </code></pre></div>
 <h3 id="search-route">Search route</h3>
@@ -1135,7 +1135,7 @@
 
 <h3 id="fetching-collection-on-route">Fetching collection on route</h3>
 
-<p>On router initialization append the the todoView with todoList collection to the #app element and fetch the todo items on index route:</p>
+<p>On router initialization append the todoView with todoList collection to the #app element and fetch the todo items on index route:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">TodoApp</span> <span class="o">=</span> <span class="k">new</span> <span class="p">(</span><span class="nx">Backbone</span><span class="p">.</span><span class="nx">Router</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
   <span class="nx">routes</span><span class="o">:</span> <span class="p">{</span>
     <span class="s1">&#39;&#39;</span><span class="o">:</span> <span class="s1">&#39;index&#39;</span><span class="p">,</span>
