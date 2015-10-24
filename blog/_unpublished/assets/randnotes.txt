@@ -1,0 +1,92 @@
+sox original.wav mono.wav channels 1
+sox foo.wav -r 16000 foonew.wav
+
+
+centerY + sin(angle) * A
+
+G(x) - g in terms of x
+
+
+22050
+______ = 0.5sec
+44100 
+
+
+
+    // aka convolution matrix,convultuion mask¬            
+   /// hori¬                                               
+    var kernelX = [¬                                       
+      [-1,0,1],¬                                           
+      [-2,0,2],¬                                           
+      [-1,0,1]¬                                            
+    ];¬                                                    
+¬                                                          
+    //vertical¬                                            
+    var kernelY = [¬                                       
+      [-1,-2,-1],¬                                         
+      [0,0,0],¬                                            
+      [1,2,1]¬                                             
+    ];¬                                                    
+
+ for (var y = 0; y < imageData.height; y++) {¬                                               
+   for (var x = 0; x < imageData.width; x++) {¬                                              
+                                                                                             
+     /*¬                                                                                     
+     function px(i) {¬                                                                       
+       var data = grayScale;¬                                                                
+       var sp = [¬                                                                           
+         [data[(((w * y-1) + x-1) * 4) + i], data[(((w * y-1) + x) * 4) + i], data[(((w * y- 
+\1) + x+1) * 4) + i]],¬                                                                      
+         [data[(((w * y) + x-1) * 4) + i], data[(((w * y) + x) * 4) + i], data[(((w * y) + x+
+\1) * 4) + i]],¬                                                                             
+         [data[(((w * y+1) + x-1) * 4) + i], data[(((w * y+1) + x) * 4) + i], data[(((w * y+ 
+\1) + x+1) * 4) + i]],¬                                                                      
+       ];¬                                                                                   
+       return sp;¬                                                                           
+     }¬                                                                                      
+                                                                                             
+     var pixel = [px(0),px(1),px(2),px(3)];¬                                                 
+                                                                                             
+     var mul = [[],[],[],[]];¬                                                               
+                                                                                             
+     for (var i = 0; i < kernelX.length; i++) {¬                                             
+       var kx = kernelX[i];¬                                                                 
+       var ky = kernelY[i];¬                                                                 
+       for (var j = 0; j < kx.length; j++) {¬                                                
+         //if (typeof pixel[0][i][j] !== 'undefined') {¬                                     
+           var m_r = kx[j] * (pixel[0][i][j]>>0);¬                                           
+           var m_g = kx[j] * (pixel[1][i][j]>>0);¬                                           
+           var m_b = kx[j] * (pixel[2][i][j]>>0);¬                                           
+                                                                                             
+           var m_r_2 = ky[j] * (pixel[0][i][j]>>0);¬                                         
+           var m_g_2 = ky[j] * (pixel[1][i][j]>>0);¬                                         
+           var m_b_2 = ky[j] * (pixel[2][i][j]>>0);¬                                         
+           //var m_a = k[j] * (pixel[3][i][j]>>0);¬                                          
+           var m_a = 255;¬                                                                   
+           mul[0].push([m_r, m_r_2]);¬                                                       
+           mul[1].push([m_g, m_g_2]);¬                                                       
+           mul[2].push([m_b, m_b_2]);¬                                                       
+           mul[3].push([m_a, m_a]);¬                                                         
+         //}¬                                                                                
+       }¬                                                                                    
+     }¬                                                                                      
+                                                                                             
+                                                                                             
+     var p = ((w * y) + x) * 4;¬                                                             
+     for (var q = 0; q < mul.length; q++) {¬                                                 
+       var magnitude = 0;¬                                                                   
+       var sum = [0, 0];¬                                                                    
+       for (l = 0; l < mul[q].length; l++) {¬                                                
+         var m = mul[q][l];¬                                                                 
+         for (o = 0; o < m.length; o++) {¬                                                   
+           sum[o] += m[o];¬                                                                  
+         }¬                                                                                  
+       }¬                                                                                    
+       magnitude = Math.round(Math.sqrt(Math.pow(sum[0], 2) + Math.pow(sum[1], 2)));¬        
+       newData.push(magnitude);¬                                                             
+     }¬                                                                                      
+    */¬                                                                                      
+                               //var gr = 0.2126*r + 0.7152*g + 0.0722*b;¬              
+
+
+                                                                                             }}
