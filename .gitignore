@@ -90,6 +90,7 @@ serve
 _cache
 _unpublished
 config
+_site
 
 # Files to ignore #
 #####################

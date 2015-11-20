@@ -242,6 +242,10 @@ body {
   background: transparent url(../images/site/upper-nebula.png) no-repeat fixed left top;
   z-index: -1;
   @include animation(translateUpperBG 400s infinite alternate);
+
+  @include respond-to(mobile) {
+    @include animation(none);
+  }
 }
 
 .bg-lower {
@@ -254,6 +258,10 @@ body {
   background: transparent url(../images/site/lower-nebula.png) no-repeat fixed right bottom;
   z-index: -1;
   @include animation(translateLowerBG 400s infinite alternate);
+
+  @include respond-to(mobile) {
+    @include animation(none);
+  }
 }
 
 /* =Top bar
