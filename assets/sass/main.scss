@@ -219,6 +219,7 @@ textarea {
 $body-background: $body-bg url(../images/site/stars.gif) repeat 0 0;
 
 body {
+  position: relative;
   background: $body-background;
   min-width: 280px;
   color: $body-font-color;
@@ -229,7 +230,25 @@ body {
   font-style: $body-font-style;
   font-size: $body-font-size;
   line-height: 1;
-  position: relative;
+  overflow: auto;
+
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.8);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(112,164,177,0.2);
+    border: 1px solid $body-font-color;
+    @include transition(all .2s ease-out);
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: $body-font-color;
+  }
 }
 
 .bg-upper {
