@@ -1,1 +1,0 @@
-Inductive inference. Inductive inference. This idea on how to find programs that do certain things without having a human write them I believe is the key to the future of AI and simulating and understanding the human mind.

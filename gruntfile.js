@@ -10,14 +10,6 @@ module.exports = function (grunt) {
       dist: {
         src: [
          'vendor/jquery/dist/jquery.js',
-         'vendor/foundation/js/foundation/foundation.js',
-         'vendor/foundation/js/foundation/foundation.topbar.js',
-         'vendor/foundation/js/foundation/foundation.alerts.js',
-         'vendor/foundation/js/foundation/foundation.tooltips.js',
-         'vendor/picturefill/external/matchmedia.js',
-         'vendor/picturefill/picturefill.js',
-         'vendor/iosSlider/_src/jquery.iosslider.js',
-         'vendor/jquery.transit/jquery.transit.js',
          'vendor/fastclick/lib/fastclick.js',
          'assets/scripts/main.js',
         ],
@@ -107,10 +99,10 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-jekyll');
   grunt.registerTask('test', ['jshint']);
   grunt.registerTask('watch-scripts', ['concat', 'uglify', 'shell:jekyll_build']);
-  grunt.registerTask('watch-css', ['shell:compass_compile', 'shell:jekyll_build']);
+  grunt.registerTask('watch-styles', ['shell:compass_compile', 'shell:jekyll_build']);
   grunt.registerTask('watch-html', ['shell:jekyll_build']);
-  grunt.registerTask('compile-css', ['compass', 'shell:jekyll_build']);
-  grunt.registerTask('compile-scripts', ['concat', 'uglify', 'shell:jekyll_build']);
+  grunt.registerTask('compile-styles', ['compass']);
+  grunt.registerTask('compile-scripts', ['concat', 'uglify']);
   grunt.registerTask('jekyll-build', ['shell:jekyll_build']);
   grunt.registerTask('jekyll-serve', ['jekyll:serve']);
   grunt.registerTask('default', ['watch:css', 'watch:scripts']);

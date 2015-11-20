@@ -1,0 +1,165 @@
+//config.scss
+
+$max-site-width: 860px !default;
+$color-body-light: #aaa;
+
+$mobile-small-max-size: 320px !default;
+$mobile-max-size: 640px !default;
+$tablet-min-size: 768px !default;
+$tablet-max-size: 979px !default;
+$desktop-min-size: 979px !default;
+$desktop-large-min-size: 1200px !default;
+
+@mixin respond-to($media) {
+  @if $media == mobile-small {
+          @media only screen and (max-width: $mobile-small-max-size) { @content; }
+  }
+  @else if $media == mobile {
+          @media only screen and (max-width: $mobile-max-size) { @content; }
+  }
+  @else if $media == mobile-portrait {
+          @media only screen and (max-width: $mobile-max-size) and (orientation: portrait) { @content; }
+  }
+  @else if $media == mobile-landscape {
+          @media only screen and (max-width: $mobile-max-size) and (orientation: landscape) { @content; }
+  }
+  @else if $media == mobile-tablet {
+          @media only screen and (max-width: $tablet-max-size) { @content; }
+  }
+  @else if $media == tablet-small {
+          @media only screen and (min-width: 600px) and (max-width: 800px) { @content; }
+  }
+  @else if $media == tablet {
+          @media only screen and (min-width: $tablet-min-size) and (max-width: $tablet-max-size) { @content; }
+  }
+  @else if $media == tablet-landscape {
+          @media only screen and (min-width: $tablet-max-size) and (orientation: landscape) { @content; }
+  }
+  @else if $media == tablet-desktop {
+          @media only screen and (min-width: $tablet-min-size) { @content; }
+  }
+  @else if $media == desktop {
+          @media only screen and (min-width: $desktop-min-size) { @content; }
+  }
+  @else if $media == desktop-large {
+          @media only screen and (min-width: $desktop-large-min-size) { @content; }
+  }
+}
+
+@font-face {
+  font-family: 'Icaras-Regular';
+  src: url('../fonts/icaras/icaras-webfont.eot');
+  src: url('../fonts/icaras/icaras-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/icaras/icaras-webfont.woff') format('woff'),
+       url('../fonts/icaras/icaras-webfont.ttf') format('truetype'),
+       url('../fonts/icaras/icaras-webfont.svg#icarasregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  @include box-sizing(border-box);
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  padding: 0;
+}
+
+@mixin clearfix() {
+  &:after {
+    content: "";
+    display: block;
+    clear: both;
+    width: 100%;
+  }
+}
+
+.cf {
+  display: block !important;
+  width: 100% !important;
+  clear: both !important;
+}
+
+@mixin primary-font {
+	font-family: 'Open Sans', sans-serif;
+}
+
+@mixin brand-font {
+  font-family: 'Icaras-Regular', sans-serif;
+}
+
+@mixin hide-text {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+}
+
+@mixin triangle($size:24px, $color:#000, $direction:up, $trim:false, $transparent:false) {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border: solid $size;
+  @if $direction == down {
+    border-color: $color transparent transparent transparent;
+    @if $transparent {
+      border-color: transparent $color $color $color;
+    }
+    @if $trim {
+      border-bottom-width: 0;
+    }
+  }
+  @if $direction == left {
+    border-color: transparent $color transparent transparent;
+    @if $transparent {
+      border-color: $color transparent $color $color;
+    }
+    @if $trim {
+      border-left-width: 0;
+    }
+  }
+  @if $direction == up {
+    border-color: transparent transparent $color transparent;
+    @if $transparent {
+      border-color: $color $color transparent $color;
+    }
+    @if $trim {
+      border-top-width: 0;
+    }
+  }
+  @if $direction == right {
+    border-color: transparent transparent transparent $color;
+    @if $transparent {
+      border-color: $color $color $color transparent ;
+    }
+    @if $trim {
+      border-right-width: 0;
+    }
+  }
+}
+
+@mixin button-style($color: transparent) {
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: bold;
+  line-height: 1;
+  margin: 0 0 1em;
+  position: relative;
+  text-decoration: none;
+  text-align: center;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  display: inline-block;
+  padding-top: 0.6em;
+  padding-right: 1.2em;
+  padding-bottom: 0.65em;
+  padding-left: 1.2em;
+  font-size: 0.8em;
+  background-color: rgba(65,125,157,0.2);
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(50,96,121,0.2);
+  color: rgba(255,255,255,0.7);
+  border-bottom: 1px solid $primary-color;
+}

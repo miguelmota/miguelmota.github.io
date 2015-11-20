@@ -6,9 +6,9 @@ route: contact
 ---
 {% include site_header.html %}
 
-<section id="content">
+<section class="content">
   <div class="row">
-    <div id="contact-info" class="large-6 column">
+    <div class="contact-info column">
       <p>For questions, comments, or simply to say hello, reach me at:</p>
 
       <p>
@@ -16,26 +16,19 @@ route: contact
         <i class="icon-envelope"></i> <a href="mailto:hello@miguelmota.com" data-ga-label="Contact - Email">hello@miguelmota.com</a><br>
         <i class="icon-mobile-phone"></i> Voicemail @ <a class="phone" href="tel:1-951-215-6682" data-ga-label="Contact - Phone">+1 951 215-MOTA</a>
       </p>
-      <!--
-      <p>
-        <label>Business</label>
-        <i class="icon-envelope"></i> <a href="mailto:m@moogs.io" data-ga-label="Contact - Email">m@moogs.io</a><br>
-        <i class="icon-mobile-phone"></i> <a class="phone" href="tel:1-510-516-6647" data-ga-label="Contact - Phone">+1 510 51-MOOGS</a>
-      </p>
-      -->
 
-      <p><i class="fa fa-map-marker"></i> I'm currently located in <a data-location href="#map" data-ga-label="Contact - Orange County, CA">Orange County, CA.</a></p>
+      <p><i class="fa fa-map-marker"></i> I'm currently located in <a data-location href="#map" data-ga-label="Contact - Venice, CA">Venice, CA.</a></p>
 
     </div>
 
-    <div class="large-6 column">
+    <div class="column">
 
-      <form id="contact-form" action="https://miguelmota.com/api/contact/mailer" method="POST">
+      <form class="contact-form" action="https://miguelmota.com/api/contact/mailer" method="POST">
         <fieldset>
           <legend>Leave a message</legend>
 
           <div class="row">
-            <div class="large-12 columns">
+            <div class="columns">
               <div data-alert class="alert-box">
                 <div class="message"></div>
                 <a href="#" class="close">&times;</a>
@@ -44,7 +37,7 @@ route: contact
           </div>
 
           <div class="row">
-            <div class="large-12 columns">
+            <div class="columns">
               <label>Name</label>
               <input type="text" name="name" placeholder="Dexter McPherson">
               <small class="error" for="name"></small>
@@ -52,7 +45,7 @@ route: contact
           </div>
 
           <div class="row">
-            <div class="large-12 columns">
+            <div class="columns">
               <label>Email</label>
               <input type="email" name="email" placeholder="come@me.bro">
               <small class="error" for="email"></small>
@@ -60,7 +53,7 @@ route: contact
           </div>
 
           <div class="row">
-            <div class="large-12 columns">
+            <div class="columns">
               <label>Message</label>
               <textarea rows="3" name="message" placeholder="What's on your mind?"></textarea>
               <small class="error" for="message"></small>
@@ -68,7 +61,7 @@ route: contact
           </div>
 
           <div class="row">
-            <div class="large-12 columns">
+            <div class="columns">
               <input type="submit" value="Send »" data-ga-label="Contact - Form - Send">
             </div>
           </div>
@@ -78,9 +71,9 @@ route: contact
     </div>
   </div>
 
-  <div id="contact-map-content" class="info-window-content">
+  <div class="contact-map-content info-window-content">
     <div class="info-window-inner">
-      <a href="https://www.google.com/maps/place/Orange+County,+CA/@33.6670191,-117.7646826,10z" target="_blank" data-ga-label="Contact - Orange County">Orange County, CA, USA</a>
+      <a href="https://www.google.com/maps/place/Venice,+CA/@33.988973,-118.462617,10z" target="_blank" data-ga-label="Contact - Venice">Venice, CA, USA</a>
     </div>
   </div>
 

@@ -4,9 +4,9 @@ route: blog
 ---
 {% include site_header.html route="blog-post" %}
 
-<section id="post">
+<section class="post">
   <div class="row">
-    <div class="large-12 column">
+    <div class="column">
 
       {{ content }}
 
@@ -16,11 +16,11 @@ route: blog
   </div>
 
   {% if site.related_posts %}
-    <div id="related-posts" class="row">
-      <div class="large-6 column">
+    <div class="related-posts row">
+      <div class="column">
         {% include post_pagination.html %}
       </div>
-      <div class="large-6 column">
+      <div class="column">
 
         <h3>See also...</h3>
 
@@ -34,8 +34,8 @@ route: blog
     </div>
   {% endif %}
 
-  <div id="comments" class="row">
-    <div class="large-12 column">
+  <div class="comments row">
+    <div class="column">
       <div id="disqus_thread"></div>
     </div>
   </div>

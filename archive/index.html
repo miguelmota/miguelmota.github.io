@@ -6,12 +6,12 @@ route: archive
 ---
 {% include site_header.html %}
 
-<section id="content">
+<section class="content">
   <div class="row">
-    <div class="large-12 column">
+    <div class="column">
 
-      <div id="archive-posts" class="row">
-        <div class="large-12 column">
+      <div class="archive-posts" class="row">
+        <div class="column">
           <dl class="posts-list">
             {% for post in site.posts %}
               {% include post_summary.html %}

@@ -3,14 +3,11 @@
   "version": "0.0.1",
   "dependencies": {
     "jquery": null,
-    "picturefill": "git://github.com/scottjehl/picturefill.git",
-    "iosSlider": "git://github.com/iosscripts/iosSlider.git#~1.2.0",
-    "jquery.transit": "git://github.com/rstacruz/jquery.transit.git#~0.9.9",
     "fastclick": "~1.0.6"
   },
   "homepage": "https://github.com/miguelmota/miguelmota.github.com",
   "authors": [
-    "Miguel Mota <miguelmota2@gmail.com>"
+    "Miguel Mota <hello@miguelmota.com>"
   ],
   "license": "MIT",
   "ignore": [

@@ -88,7 +88,7 @@ _archive
 _test
 serve
 _cache
-#_unpublished
+_unpublished
 config
 
 # Files to ignore #

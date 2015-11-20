@@ -1,166 +1,24 @@
-<!DOCTYPE html>
-<html lang="en-US" manifest="http://cache.miguelmota.com/cache.appcache">
-<head>
-  <meta charset="UTF-8">
-  <!--
-                                        ___                           __
-             __                        /\_ \                         /\ \__
-    ___ ___ /\_\     __   __  __     __\//\ \         ___ ___     ___\ \ ,_\    __
-  /' __` __`\/\ \  /'_ `\/\ \/\ \  /'__`\\ \ \      /' __` __`\  / __`\ \ \/  /'__`\
-  /\ \/\ \/\ \ \ \/\ \L\ \ \ \_\ \/\  __/ \_\ \_    /\ \/\ \/\ \/\ \L\ \ \ \_/\ \L\.\_
-  \ \_\ \_\ \_\ \_\ \____ \ \____/\ \____\/\____\   \ \_\ \_\ \_\ \____/\ \__\ \__/.\_\
-   \/_/\/_/\/_/\/_/\/___L\ \/___/  \/____/\/____/    \/_/\/_/\/_/\/___/  \/__/\/__/\/_/
-                     /\____/
-                     \_/__/
-  -->
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="description" content="Tutorial on how to make an simple yet awesome animated tooltip using jQuery.">
-  <meta name="keywords" content="miguel mota,web developer,html5 css3 javascript">
-  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-title" content="Moogs">
-  <title>Make an Awesome Tooltip with jQuery » Miguel Mota | Web Developer</title>
-  <link rel="canonical" href="http://www.miguelmota.com/blog/make-an-awesome-tooltip-with-jquery/">
-  <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/miguelmota">
-  <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
-  <link rel="shortcut icon" href="/favicon.ico">
-  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/assets/images/apple-touch-icon-57x57.png">
-  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/images/apple-touch-icon-114x114.png">
-  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/images/apple-touch-icon-72x72.png">
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/images/apple-touch-icon-144x144.png">
-  <link rel="apple-touch-startup-image" media="(device-width: 320px)" href="/assets/images/apple-touch-startup-image-320x460.png">
-  <link rel="apple-touch-startup-image" media="(device-width: 320px) and (-webkit-device-pixel-ratio: 2)" href="/assets/images/apple-touch-startup-image-640x920.png">
-  <link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" href="/assets/images/apple-touch-startup-image-640x1096.png">
-  <link rel="apple-touch-startup-image" media="(device-width: 768px) and (orientation: portrait)" href="/assets/images/apple-touch-startup-image-768x1004.png">
-  <link rel="apple-touch-startup-image" media="(device-width: 768px) and (orientation: landscape)" href="/assets/images/apple-touch-startup-image-748x1024.png">
-  <link rel="apple-touch-startup-image" media="(device-width: 1536px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" href="/assets/images/apple-touch-startup-image-1536x2008.png">
-  <link rel="apple-touch-startup-image" media="(device-width: 1536px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" href="/assets/images/apple-touch-startup-image-2048x1496.png">
-  <link rel="stylesheet" href="/assets/css/main.css">
-  <script src="//use.typekit.net/wkl5rpy.js"></script>
-  <script>try{Typekit.load();}catch(e){}</script>
-  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-  <script src="/assets/scripts/build/site.js"></script>
-  <script>
-      var _gaq = _gaq || [];
-       _gaq.push(['_setAccount', 'UA-12642068-1']);
-       _gaq.push(['_setDomainName', '.miguelmota.com']);
-      _gaq.push(['_trackPageview']);
-       (function() {
-           var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-           ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-           var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-       })();
-       $(document).on('click', '[data-ga-label]', function() {
-         _gaq.push(['_trackEvent', 'Call To Action', 'Click', $(this).attr('data-ga-label')]);
-       });
-  </script>
-</head>
-<body id="blog">
-    <canvas id="bg-canvas"></canvas>
-    <div class="bg-upper"></div>
-    <div class="bg-lower"></div>
-    <div id="top"></div>
-    <img class="hidden" src="/assets/images/miguel-mota-m-logo-500x500.png" alt="">
-
-    <header id="header" class="contain-to-grid fixed">
-      <nav class="top-bar">
-        <ul class="title-area">
-          <li class="name"><a href="/" data-ga-label="Navigation - Logo">Miguel Mota</a></li>
-          <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-        </ul>
-        <section class="top-bar-section">
-            <ul id="main-nav" class="right">
-              <li class="divider"></li>
-              <li ><a href="/" data-ga-label="Navigation - Home"><i class="fa fa-home"></i></a></li>
-              <li class="divider"></li>
-              <li ><a href="/about" data-ga-label="Navigation - About"><i class="fa fa-bookmark-o"></i> About</a></li>
-              <li class="divider"></li>
-              <li class="active"><a href="/blog" data-ga-label="Navigation - Blog"><i class="fa fa-lightbulb-o"></i> Thoughts</a></li>
-              <li class="divider"></li>
-              <li ><a href="/work" data-ga-label="Navigation - Work"><i class="fa fa-laptop"></i> Work</a></li>
-              <li class="divider"></li>
-              <li ><a href="/contact" data-ga-label="Navigation - Contact"><i class="fa fa-envelope-o"></i> Contact</a></li>
-              <li class="divider"></li>
-            </ul>
-        </section>
-      </nav>
-    </header>
-
-    <main id="main" role="main">
-      <header id="content-header">
-    
-    <div class="row">
-        <div class="large-12 column">
-          
-            <datetime>24 May 2011 <small><i class="fa fa-comment-o"></i> <a href="/blog/make-an-awesome-tooltip-with-jquery/#disqus_thread" data-disqus-identifier="/blog/make-an-awesome-tooltip-with-jquery/"></a></small> <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.miguelmota.com/blog/make-an-awesome-tooltip-with-jquery/" data-text="Make an Awesome Tooltip with jQuery" data-size="large" data-related="_moogs" data-ga-label="Blog post - Tweet">Tweet</a></datetime>
-<h1 data-text="Make an Awesome Tooltip with jQuery">Make an Awesome Tooltip with jQuery</h1>
-
-          
-        </div>
-    </div>
-    <div id="content-header-bottom">
-        <div class="triangle"></div>
-    </div>
-</header>
-
-
-<section id="post">
-  <div class="row">
-    <div class="large-12 column">
-
-      <p>I will attempt to show you how to make a simple yet awesome tooltip using jQuery and CSS3.</p>
-
-<p>Ok so first let&#39;s set up the HTML:</p>
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&quot;awesometooltip&quot;</span> <span class="na">href=</span><span class="s">&quot;http://www.miguelmota.com&quot;</span> <span class="na">title=</span><span class="s">&quot;Hello, I am a tootip!&quot;</span><span class="nt">&gt;</span>hover over me<span class="nt">&lt;/a&gt;</span>
-</code></pre></div>
-<p>All we did was make a link with the class of <code>awesometooltip</code> (that&#39;s what I decided to call this mini plugin) and gave it a <code>title</code> attribute.</p>
-
-<p>Now let&#39;s move on to the fun stuff. We are going to make a self executing function so that the plugin won&#39;t collide with other libraries that use the <code>$</code> dollar sign:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>
+<!DOCTYPE html> <html lang="en-US" manifest="http://cache.miguelmota.com/cache.appcache"> <head> <meta charset="UTF-8">  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> <meta name="description" content="Tutorial on how to make an simple yet awesome animated tooltip using jQuery."> <meta name="keywords" content="miguel mota,web developer,html5 css3 javascript"> <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width"> <meta name="apple-mobile-web-app-status-bar-style" content="black"> <meta name="apple-mobile-web-app-capable" content="yes"> <meta name="apple-mobile-web-app-title" content="Moogs"> <title>Make an Awesome Tooltip with jQuery » Miguel Mota | Web Developer</title> <link rel="canonical" href="http://www.miguelmota.com/blog/make-an-awesome-tooltip-with-jquery/"> <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/miguelmota"> <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml"> <link rel="shortcut icon" href="/favicon.ico"> <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/assets/images/apple-touch-icon-57x57.png"> <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/images/apple-touch-icon-114x114.png"> <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/images/apple-touch-icon-72x72.png"> <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/images/apple-touch-icon-144x144.png"> <link rel="apple-touch-startup-image" media="(device-width: 320px)" href="/assets/images/apple-touch-startup-image-320x460.png"> <link rel="apple-touch-startup-image" media="(device-width: 320px) and (-webkit-device-pixel-ratio: 2)" href="/assets/images/apple-touch-startup-image-640x920.png"> <link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" href="/assets/images/apple-touch-startup-image-640x1096.png"> <link rel="apple-touch-startup-image" media="(device-width: 768px) and (orientation: portrait)" href="/assets/images/apple-touch-startup-image-768x1004.png"> <link rel="apple-touch-startup-image" media="(device-width: 768px) and (orientation: landscape)" href="/assets/images/apple-touch-startup-image-748x1024.png"> <link rel="apple-touch-startup-image" media="(device-width: 1536px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" href="/assets/images/apple-touch-startup-image-1536x2008.png"> <link rel="apple-touch-startup-image" media="(device-width: 1536px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" href="/assets/images/apple-touch-startup-image-2048x1496.png"> <link rel="stylesheet" href="/assets/styles/main.css"> <script> var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-12642068-1']); _gaq.push(['_setDomainName', '.miguelmota.com']); _gaq.push(['_trackPageview']); (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })(); </script> </head> <body class="blog"> <div class="bg-upper"></div> <div class="bg-lower"></div> <div class="top"></div> <img class="hidden" src="/assets/images/miguel-mota-m-logo-500x500.png" alt=""> <header class="header"> <nav class="top-bar"> <section class="top-bar-section"> <ul class="main-nav"> <li class="name"><a href="/" data-ga-label="Navigation - Logo">Miguel Mota</a></li> <li ><a href="/about" data-ga-label="Navigation - About"><i class="fa fa-bookmark-o"></i> About</a></li> <li class="active"><a href="/blog" data-ga-label="Navigation - Blog"><i class="fa fa-lightbulb-o"></i> Thoughts</a></li> <li ><a href="/work" data-ga-label="Navigation - Work"><i class="fa fa-laptop"></i> Work</a></li> <li ><a href="/contact" data-ga-label="Navigation - Contact"><i class="fa fa-envelope-o"></i> Contact</a></li> </ul> </section> </nav> </header> <main class="main" role="main"> <header class="content-header"> <div class="row"> <div class="column"> <datetime>24 May 2011 <small><i class="fa fa-comment-o"></i> <a href="/blog/make-an-awesome-tooltip-with-jquery/#disqus_thread" data-disqus-identifier="/blog/make-an-awesome-tooltip-with-jquery/"></a></small></datetime> <h1>Make an Awesome Tooltip with jQuery</h1> </div> </div> </header> <section class="post"> <div class="row"> <div class="column"> <p>I will attempt to show you how to make a simple yet awesome tooltip using jQuery and CSS3.</p> <p>Ok so first let&#39;s set up the HTML:</p> <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&quot;awesometooltip&quot;</span> <span class="na">href=</span><span class="s">&quot;http://www.miguelmota.com&quot;</span> <span class="na">title=</span><span class="s">&quot;Hello, I am a tootip!&quot;</span><span class="nt">&gt;</span>hover over me<span class="nt">&lt;/a&gt;</span>
+</code></pre></div> <p>All we did was make a link with the class of <code>awesometooltip</code> (that&#39;s what I decided to call this mini plugin) and gave it a <code>title</code> attribute.</p> <p>Now let&#39;s move on to the fun stuff. We are going to make a self executing function so that the plugin won&#39;t collide with other libraries that use the <code>$</code> dollar sign:</p> <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>
 
 <span class="p">})(</span><span class="nx">jQuery</span><span class="p">);</span>
-</code></pre></div>
-<p>Inside this function we are going to add a new function property to the <code>jQuery.fn</code> object where the name of the property is the name of the plugin:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>
+</code></pre></div> <p>Inside this function we are going to add a new function property to the <code>jQuery.fn</code> object where the name of the property is the name of the plugin:</p> <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">$</span><span class="p">.</span><span class="nx">fn</span><span class="p">.</span><span class="nx">awesometooltip</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="c1">//plugin code</span>
   <span class="p">}</span>
 <span class="p">})(</span><span class="nx">jQuery</span><span class="p">);</span>
-</code></pre></div>
-<p>Ok now we want to rename the <code>title</code> to something else, in this case I renamed it to <code>awesometooltip</code>. How we are going to do this is by making a new attribute and copying the contents of the <code>title</code>
-attribute and then removing the <code>title</code> attribute. So what&#39;s the point in doing this? if we don&#39;t, we will have our custom tooltip and the default tooltip pop up at the same time.. which will be a nuisance!</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;awesometooltip&quot;</span><span class="p">,</span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;title&quot;</span><span class="p">)).</span><span class="nx">removeAttr</span><span class="p">(</span><span class="s2">&quot;title&quot;</span><span class="p">);</span>
-</code></pre></div>
-<p>So now let&#39;s assign the <code>awesometooltip</code> attribute to a variable named <code>title</code>:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">title</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;awesometooltip&quot;</span><span class="p">);</span>
-</code></pre></div>
-<p>Next we want to wrap the link in a container:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">wrap</span><span class="p">(</span><span class="s1">&#39;&lt;div class=&quot;tooltip-container&quot; /&gt;&#39;</span><span class="p">);</span>
-</code></pre></div>
-<p>We don&#39;t want the words in the link to break so we&#39;ll keep them in the same line:
-<code>javascript
-$(this).css(&quot;white-space&quot;,&quot;nowrap&quot;);
-</code></p>
-
-<p>Let&#39;s prepend a new element with a class of <code>tooltip</code> inside the <code>tooltip-container</code> div:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;div.tooltip-container&quot;</span><span class="p">).</span><span class="nx">prepend</span><span class="p">(</span><span class="s1">&#39;&lt;div class=&quot;tooltip&quot; /&gt;&#39;</span><span class="p">);</span>
-</code></pre></div>
-<p>Let&#39;s create the functions for the hover method:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">hover</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+</code></pre></div> <p>Ok now we want to rename the <code>title</code> to something else, in this case I renamed it to <code>awesometooltip</code>. How we are going to do this is by making a new attribute and copying the contents of the <code>title</code> attribute and then removing the <code>title</code> attribute. So what&#39;s the point in doing this? if we don&#39;t, we will have our custom tooltip and the default tooltip pop up at the same time.. which will be a nuisance!</p> <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;awesometooltip&quot;</span><span class="p">,</span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;title&quot;</span><span class="p">)).</span><span class="nx">removeAttr</span><span class="p">(</span><span class="s2">&quot;title&quot;</span><span class="p">);</span>
+</code></pre></div> <p>So now let&#39;s assign the <code>awesometooltip</code> attribute to a variable named <code>title</code>:</p> <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">title</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;awesometooltip&quot;</span><span class="p">);</span>
+</code></pre></div> <p>Next we want to wrap the link in a container:</p> <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">wrap</span><span class="p">(</span><span class="s1">&#39;&lt;div class=&quot;tooltip-container&quot; /&gt;&#39;</span><span class="p">);</span>
+</code></pre></div> <p>We don&#39;t want the words in the link to break so we&#39;ll keep them in the same line: <code>javascript $(this).css(&quot;white-space&quot;,&quot;nowrap&quot;); </code></p> <p>Let&#39;s prepend a new element with a class of <code>tooltip</code> inside the <code>tooltip-container</code> div:</p> <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;div.tooltip-container&quot;</span><span class="p">).</span><span class="nx">prepend</span><span class="p">(</span><span class="s1">&#39;&lt;div class=&quot;tooltip&quot; /&gt;&#39;</span><span class="p">);</span>
+</code></pre></div> <p>Let&#39;s create the functions for the hover method:</p> <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">hover</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="c1">//hover over do stuff</span>
   <span class="p">},</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="c1">//hover out do stuff</span>
 <span class="p">});</span>
-</code></pre></div>
-<p>Inside the first hover function we are going to insert the content from <code>title</code> variable in to the previous element which is the <code>tooltip</code> div and animate the tooltip:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">prev</span><span class="p">().</span><span class="nx">text</span><span class="p">(</span><span class="nx">title</span><span class="p">).</span><span class="nx">stop</span><span class="p">(</span><span class="kc">true</span><span class="p">,</span><span class="kc">true</span><span class="p">).</span><span class="nx">animate</span><span class="p">({</span><span class="nx">opacity</span><span class="o">:</span> <span class="s2">&quot;show&quot;</span><span class="p">,</span> <span class="nx">top</span><span class="o">:</span> <span class="s2">&quot;-30&quot;</span><span class="p">},</span> <span class="s2">&quot;slow&quot;</span><span class="p">);</span>
-</code></pre></div>
-<p>Now make it fade out on hover out:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">jQuery</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">next</span><span class="p">(</span><span class="s1">&#39;div.tooltip&#39;</span><span class="p">).</span><span class="nx">animate</span><span class="p">({</span><span class="nx">opacity</span><span class="o">:</span> <span class="s2">&quot;hide&quot;</span><span class="p">,</span> <span class="nx">top</span><span class="o">:</span> <span class="s2">&quot;-20&quot;</span><span class="p">},</span> <span class="s2">&quot;fast&quot;</span><span class="p">);</span>
-</code></pre></div>
-<p>So the whole jQuery plugin code should look something like this:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>
+</code></pre></div> <p>Inside the first hover function we are going to insert the content from <code>title</code> variable in to the previous element which is the <code>tooltip</code> div and animate the tooltip:</p> <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">prev</span><span class="p">().</span><span class="nx">text</span><span class="p">(</span><span class="nx">title</span><span class="p">).</span><span class="nx">stop</span><span class="p">(</span><span class="kc">true</span><span class="p">,</span><span class="kc">true</span><span class="p">).</span><span class="nx">animate</span><span class="p">({</span><span class="nx">opacity</span><span class="o">:</span> <span class="s2">&quot;show&quot;</span><span class="p">,</span> <span class="nx">top</span><span class="o">:</span> <span class="s2">&quot;-30&quot;</span><span class="p">},</span> <span class="s2">&quot;slow&quot;</span><span class="p">);</span>
+</code></pre></div> <p>Now make it fade out on hover out:</p> <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">jQuery</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">next</span><span class="p">(</span><span class="s1">&#39;div.tooltip&#39;</span><span class="p">).</span><span class="nx">animate</span><span class="p">({</span><span class="nx">opacity</span><span class="o">:</span> <span class="s2">&quot;hide&quot;</span><span class="p">,</span> <span class="nx">top</span><span class="o">:</span> <span class="s2">&quot;-20&quot;</span><span class="p">},</span> <span class="s2">&quot;fast&quot;</span><span class="p">);</span>
+</code></pre></div> <p>So the whole jQuery plugin code should look something like this:</p> <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">$</span><span class="p">.</span><span class="nx">fn</span><span class="p">.</span><span class="nx">awesometooltip</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
       <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;awesometooltip&quot;</span><span class="p">,</span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;title&quot;</span><span class="p">)).</span><span class="nx">removeAttr</span><span class="p">(</span><span class="s2">&quot;title&quot;</span><span class="p">);</span>
@@ -176,9 +34,7 @@ $(this).css(&quot;white-space&quot;,&quot;nowrap&quot;);
     <span class="p">});</span>
   <span class="p">}</span>
 <span class="p">})(</span><span class="nx">jQuery</span><span class="p">);</span>
-</code></pre></div>
-<p>It&#39;s time to style the tooltip:</p>
-<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.tooltip-container</span> <span class="p">{</span>
+</code></pre></div> <p>It&#39;s time to style the tooltip:</p> <div class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.tooltip-container</span> <span class="p">{</span>
   <span class="k">display</span><span class="o">:</span> <span class="k">inline</span><span class="o">-</span><span class="k">block</span><span class="p">;</span>
   <span class="k">position</span><span class="o">:</span> <span class="k">relative</span><span class="p">;</span>
   <span class="k">z-index</span><span class="o">:</span> <span class="m">1000</span><span class="p">;</span>
@@ -224,32 +80,14 @@ $(this).css(&quot;white-space&quot;,&quot;nowrap&quot;);
   <span class="k">width</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
   <span class="k">z-index</span><span class="o">:</span> <span class="m">1000</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre></div>
-<p>The CSS is self-explanatory so I won&#39;t go in much detail</p>
-
-<p>So the last step now is to initialize our tooltip:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+</code></pre></div> <p>The CSS is self-explanatory so I won&#39;t go in much detail</p> <p>So the last step now is to initialize our tooltip:</p> <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
   <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.awesometooltip&#39;</span><span class="p">).</span><span class="nx">awesometooltip</span><span class="p">();</span>
 <span class="p">});</span>
-</code></pre></div>
-<p>But wait.. since Internet Explorer doesn&#39;t support <code>border-raidus</code> we have to use a script to render it. I will use <a href="http://css3pie.com/">CSS3 PIE</a>. Simply add the <code>behavior</code>
-rule at the end of the <code>tooltip</code> class, but make sure the path is relative to the HTML file being viewed, so for example if you upload the <code>PIE</code> folder to the root of your site;
-it should look like this:</p>
-<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.tooltip</span>  <span class="p">{</span>
+</code></pre></div> <p>But wait.. since Internet Explorer doesn&#39;t support <code>border-raidus</code> we have to use a script to render it. I will use <a href="http://css3pie.com/">CSS3 PIE</a>. Simply add the <code>behavior</code> rule at the end of the <code>tooltip</code> class, but make sure the path is relative to the HTML file being viewed, so for example if you upload the <code>PIE</code> folder to the root of your site; it should look like this:</p> <div class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.tooltip</span>  <span class="p">{</span>
   <span class="o">...</span>
   <span class="n">behavior</span><span class="o">:</span> <span class="sx">url(&#39;/PIE/PIE.htc&#39;)</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre></div>
-<p>That&#39;s it folks! You should now have a functioning mini tooltip plugin. If I made mistakes or if you would like to add, please comment! any feedback is greatly appreciated.</p>
-
-<p><a href="/blog/make-an-awesome-tooltip-with-jquery//demo">View the demo »</a></p>
-
-<hr>
-
-<h2 id="*update-25-may-2012"><strong>*Update</strong> <small>25 May 2012</small></h2>
-
-<p>I created optional settings for the tooltip. Here is the <a href="https://gist.github.com/miguelmota/5312164" target="_blank">gist</a>:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>
+</code></pre></div> <p>That&#39;s it folks! You should now have a functioning mini tooltip plugin. If I made mistakes or if you would like to add, please comment! any feedback is greatly appreciated.</p> <p><a href="/blog/make-an-awesome-tooltip-with-jquery//demo">View the demo »</a></p> <hr> <h2 id="*update-25-may-2012"><strong>*Update</strong> <small>25 May 2012</small></h2> <p>I created optional settings for the tooltip. Here is the <a href="https://gist.github.com/miguelmota/5312164" target="_blank">gist</a>:</p> <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>
 
   <span class="kd">var</span> <span class="nx">methods</span> <span class="o">=</span> <span class="p">{</span>
     <span class="nx">init</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
@@ -383,24 +221,12 @@ it should look like this:</p>
   <span class="p">}</span>
 
 <span class="p">})(</span><span class="nx">jQuery</span><span class="p">);</span>
-</code></pre></div>
-<p>Usage:</p>
-
-<p>In the head section:</p>
-
-<p>Include jQuery:</p>
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://code.jquery.com/jquery.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
-</code></pre></div>
-<p>Include mtippy:</p>
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;/js/jquery.mtippy.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
-</code></pre></div>
-<p>Initialize mtippy:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+</code></pre></div> <p>Usage:</p> <p>In the head section:</p> <p>Include jQuery:</p> <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://code.jquery.com/jquery.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</code></pre></div> <p>Include mtippy:</p> <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;/js/jquery.mtippy.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</code></pre></div> <p>Initialize mtippy:</p> <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;[title]&#39;</span><span class="p">).</span><span class="nx">mtippy</span><span class="p">();</span>
 <span class="p">});</span>
-</code></pre></div>
-<p>Customize settings (optional):</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;[title]&#39;</span><span class="p">).</span><span class="nx">mtippy</span><span class="p">({</span>
+</code></pre></div> <p>Customize settings (optional):</p> <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;[title]&#39;</span><span class="p">).</span><span class="nx">mtippy</span><span class="p">({</span>
 
     <span class="cm">/* default settings */</span>
 
@@ -419,130 +245,4 @@ it should look like this:</p>
     <span class="nx">timeout</span><span class="o">:</span> <span class="mi">600</span>
 
 <span class="p">});</span>
-</code></pre></div>
-<p><a data-demo href="/blog/make-an-awesome-tooltip-with-jquery//mtippy/demo" target="_blank">View Updated Demo</a></p>
-
-
-      <div class="tags">
-  
-    <a href="/tag/JavaScript">#JavaScript</a>
-  
-    <a href="/tag/jQuery">#jQuery</a>
-  
-    <a href="/tag/demo">#demo</a>
-  
-</div>
-
-
-    </div>
-  </div>
-
-  
-    <div id="related-posts" class="row">
-      <div class="large-6 column">
-        
-    
-
-    <h3>Previous post</h3>
-
-      <dl class="posts-list">
-        <dt><datetime>30 Mar 2011</datetime></dt>
-        <dd><h2><a href="/blog/hello-world/">Hello World</a> <small><i class="icon-comment-alt"></i> <a href="/blog/hello-world/#disqus_thread" data-disqus-identifier="/blog/hello-world/"></a></small></h2></dd>
-      </dl>
-
-    
-
-
-
-    
-
-      <h3>Next post</h3>
-
-      <dl class="posts-list">
-        <dt><datetime>09 Aug 2011</datetime></dt>
-        <dd><h2><a href="/blog/html5-reset-stylesheet/">HTML5 Reset Stylesheet</a> <small><i class="icon-comment-alt"></i> <a href="/blog/html5-reset-stylesheet/#disqus_thread" data-disqus-identifier="/blog/html5-reset-stylesheet/"></a></small></h2></dd>
-      </dl>
-
-    
-
-      </div>
-      <div class="large-6 column">
-
-        <h3>See also...</h3>
-
-        <dl class="posts-list">
-          
-            <dt><datetime>25 Feb 2015</datetime></dt>
-<dd><h2><a href="/blog/k-means-clustering-in-javascript/">K-Means Clustering in JavaScript</a> <small><i class="icon-comment-alt"></i> <a href="/blog/k-means-clustering-in-javascript/#disqus_thread" data-disqus-identifier="/blog/k-means-clustering-in-javascript/"></a></small></h2>
-</dd>
-          
-            <dt><datetime>16 Feb 2015</datetime></dt>
-<dd><h2><a href="/blog/naive-bayes-classifier-in-javascript/">Naive Bayes Classifier in JavaScript</a> <small><i class="icon-comment-alt"></i> <a href="/blog/naive-bayes-classifier-in-javascript/#disqus_thread" data-disqus-identifier="/blog/naive-bayes-classifier-in-javascript/"></a></small></h2>
-</dd>
-          
-            <dt><datetime>01 Feb 2015</datetime></dt>
-<dd><h2><a href="/blog/pixelate-images-with-canvas/">Pixelate images with Canvas</a> <small><i class="icon-comment-alt"></i> <a href="/blog/pixelate-images-with-canvas/#disqus_thread" data-disqus-identifier="/blog/pixelate-images-with-canvas/"></a></small></h2>
-</dd>
-          
-            <dt><datetime>19 Jul 2014</datetime></dt>
-<dd><h2><a href="/blog/bitwise-operators-in-javascript/">Bitwise operators in JavaScript</a> <small><i class="icon-comment-alt"></i> <a href="/blog/bitwise-operators-in-javascript/#disqus_thread" data-disqus-identifier="/blog/bitwise-operators-in-javascript/"></a></small></h2>
-</dd>
-          
-            <dt><datetime>20 Jun 2014</datetime></dt>
-<dd><h2><a href="/blog/es6-examples/">ES6 Examples</a> <small><i class="icon-comment-alt"></i> <a href="/blog/es6-examples/#disqus_thread" data-disqus-identifier="/blog/es6-examples/"></a></small></h2>
-</dd>
-          
-        </dl>
-
-      </div>
-    </div>
-  
-
-  <div id="comments" class="row">
-    <div class="large-12 column">
-      <div id="disqus_thread"></div>
-    </div>
-  </div>
-
-</section>
-
-<script>
-    var disqus_shortname = 'miguelmota';
-    var disqus_identifier = '/blog/make-an-awesome-tooltip-with-jquery/';
-    var disqus_url = 'http://www.miguelmota.com/blog/make-an-awesome-tooltip-with-jquery/';
-
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-
-    (function () {
-        var s = document.createElement('script'); s.async = true;
-        s.type = 'text/javascript';
-        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
-        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-    }());
-</script>
-
-    </main>
-
-    <footer id="footer">
-      <div class="row">
-        <div class="large-12 column">
-          <p>
-            <span class="break"><span>© 2015 Moogs™.</span> <span>Made with <i class="fa fa-heart"></i></span></span> <a class="hidden" href="https://plus.google.com/102174577273194387652" rel="author">Google+</a>
-
-            <a href="https://twitter.com/_moogs" class="twitter-follow-button" data-show-count="true" data-size="large" data-ga-label="Footer - Follow Twitter">Follow @_moogs</a>
-
-          </p>
-        </div>
-      </div>
-    </footer>
-
-    <a id="forkme" href="https://github.com/miguelmota/miguelmota.github.com" target="_blank" data-ga-label="Fork me on Github"><img src="/assets/images/forkme_right_darkblue_121621.png" alt=""></a>
-
-    <script src="//maps.google.com/maps/api/js?sensor=false"></script>
-    <script src="//google-maps-utility-library-v3.googlecode.com/svn/trunk/infobox/src/infobox.js"></script>
-  </body>
-</html>
+</code></pre></div> <p><a data-demo href="/blog/make-an-awesome-tooltip-with-jquery//mtippy/demo" target="_blank">View Updated Demo</a></p> <div class="tags"> <a href="/tag/JavaScript">#JavaScript</a> <a href="/tag/jQuery">#jQuery</a> <a href="/tag/demo">#demo</a> </div> </div> </div> <div class="related-posts row"> <div class="column"> <h3>Previous post</h3> <dl class="posts-list"> <dt><datetime>30 Mar 2011</datetime></dt> <dd><h2><a href="/blog/hello-world/">Hello World</a> <small><i class="icon-comment-alt"></i> <a href="/blog/hello-world/#disqus_thread" data-disqus-identifier="/blog/hello-world/"></a></small></h2></dd> </dl> <h3>Next post</h3> <dl class="posts-list"> <dt><datetime>09 Aug 2011</datetime></dt> <dd><h2><a href="/blog/html5-reset-stylesheet/">HTML5 Reset Stylesheet</a> <small><i class="icon-comment-alt"></i> <a href="/blog/html5-reset-stylesheet/#disqus_thread" data-disqus-identifier="/blog/html5-reset-stylesheet/"></a></small></h2></dd> </dl> </div> <div class="column"> <h3>See also...</h3> <dl class="posts-list"> <dt><datetime>25 Feb 2015</datetime></dt> <dd><h2><a href="/blog/k-means-clustering-in-javascript/">K-Means Clustering in JavaScript</a> <small><i class="icon-comment-alt"></i> <a href="/blog/k-means-clustering-in-javascript/#disqus_thread" data-disqus-identifier="/blog/k-means-clustering-in-javascript/"></a></small></h2> </dd> <dt><datetime>16 Feb 2015</datetime></dt> <dd><h2><a href="/blog/naive-bayes-classifier-in-javascript/">Naive Bayes Classifier in JavaScript</a> <small><i class="icon-comment-alt"></i> <a href="/blog/naive-bayes-classifier-in-javascript/#disqus_thread" data-disqus-identifier="/blog/naive-bayes-classifier-in-javascript/"></a></small></h2> </dd> <dt><datetime>01 Feb 2015</datetime></dt> <dd><h2><a href="/blog/pixelate-images-with-canvas/">Pixelate images with Canvas</a> <small><i class="icon-comment-alt"></i> <a href="/blog/pixelate-images-with-canvas/#disqus_thread" data-disqus-identifier="/blog/pixelate-images-with-canvas/"></a></small></h2> </dd> <dt><datetime>19 Jul 2014</datetime></dt> <dd><h2><a href="/blog/bitwise-operators-in-javascript/">Bitwise operators in JavaScript</a> <small><i class="icon-comment-alt"></i> <a href="/blog/bitwise-operators-in-javascript/#disqus_thread" data-disqus-identifier="/blog/bitwise-operators-in-javascript/"></a></small></h2> </dd> <dt><datetime>20 Jun 2014</datetime></dt> <dd><h2><a href="/blog/es6-examples/">ES6 Examples</a> <small><i class="icon-comment-alt"></i> <a href="/blog/es6-examples/#disqus_thread" data-disqus-identifier="/blog/es6-examples/"></a></small></h2> </dd> </dl> </div> </div> <div class="comments row"> <div class="column"> <div id="disqus_thread"></div> </div> </div> </section> <script> var disqus_shortname = 'miguelmota'; var disqus_identifier = '/blog/make-an-awesome-tooltip-with-jquery/'; var disqus_url = 'http://www.miguelmota.com/blog/make-an-awesome-tooltip-with-jquery/'; (function() { var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true; dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js'; (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq); })(); (function () { var s = document.createElement('script'); s.async = true; s.type = 'text/javascript'; s.src = '//' + disqus_shortname + '.disqus.com/count.js'; (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s); }()); </script> </main> <footer class="footer"> <div class="row"> <div class="column"> <p> <span class="break"><span>© 2015 Moogs™.</span> <span>Made with <i class="fa fa-heart"></i></span></span> <a class="hidden" href="https://plus.google.com/102174577273194387652" rel="author">Google+</a> <a href="https://twitter.com/_moogs" class="twitter-follow-button" data-show-count="true" data-size="large" data-ga-label="Footer - Follow Twitter">Follow @_moogs</a> </p> </div> </div> </footer> <a class="forkme" href="https://github.com/miguelmota/miguelmota.github.com" target="_blank" data-ga-label="Fork me on Github"><img src="/assets/images/forkme_right_darkblue_121621.png" alt=""></a> <script src="/assets/scripts/build/site.js"></script> </body> </html>

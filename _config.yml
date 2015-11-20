@@ -26,3 +26,11 @@ theme:
 port: 9999
 
 exclude: [README.md, Rakefile, package.json, LICENSE.md, gruntfile.js, Gemfile, Gemfile.lock, config.rb, component.json, node_modules, vendor, .travis.yml, .project, .gitignore, .gitattributes, .editorconfig]
+
+compress_html:
+  clippings: []
+  comments: ["<!-- ", " -->"]
+  endings: []
+  profile: false
+  ignore:
+    envs: []

@@ -1,130 +1,10 @@
-<!DOCTYPE html>
-<html lang="en-US" manifest="http://cache.miguelmota.com/cache.appcache">
-<head>
-  <meta charset="UTF-8">
-  <!--
-                                        ___                           __
-             __                        /\_ \                         /\ \__
-    ___ ___ /\_\     __   __  __     __\//\ \         ___ ___     ___\ \ ,_\    __
-  /' __` __`\/\ \  /'_ `\/\ \/\ \  /'__`\\ \ \      /' __` __`\  / __`\ \ \/  /'__`\
-  /\ \/\ \/\ \ \ \/\ \L\ \ \ \_\ \/\  __/ \_\ \_    /\ \/\ \/\ \/\ \L\ \ \ \_/\ \L\.\_
-  \ \_\ \_\ \_\ \_\ \____ \ \____/\ \____\/\____\   \ \_\ \_\ \_\ \____/\ \__\ \__/.\_\
-   \/_/\/_/\/_/\/_/\/___L\ \/___/  \/____/\/____/    \/_/\/_/\/_/\/___/  \/__/\/__/\/_/
-                     /\____/
-                     \_/__/
-  -->
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="description" content="Interesting things you can do with bitwise operators.">
-  <meta name="keywords" content="miguel mota,web developer,html5 css3 javascript">
-  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-title" content="Moogs">
-  <title>Bitwise operators in JavaScript » Miguel Mota | Web Developer</title>
-  <link rel="canonical" href="http://www.miguelmota.com/blog/bitwise-operators-in-javascript/">
-  <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/miguelmota">
-  <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
-  <link rel="shortcut icon" href="/favicon.ico">
-  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/assets/images/apple-touch-icon-57x57.png">
-  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/images/apple-touch-icon-114x114.png">
-  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/images/apple-touch-icon-72x72.png">
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/images/apple-touch-icon-144x144.png">
-  <link rel="apple-touch-startup-image" media="(device-width: 320px)" href="/assets/images/apple-touch-startup-image-320x460.png">
-  <link rel="apple-touch-startup-image" media="(device-width: 320px) and (-webkit-device-pixel-ratio: 2)" href="/assets/images/apple-touch-startup-image-640x920.png">
-  <link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" href="/assets/images/apple-touch-startup-image-640x1096.png">
-  <link rel="apple-touch-startup-image" media="(device-width: 768px) and (orientation: portrait)" href="/assets/images/apple-touch-startup-image-768x1004.png">
-  <link rel="apple-touch-startup-image" media="(device-width: 768px) and (orientation: landscape)" href="/assets/images/apple-touch-startup-image-748x1024.png">
-  <link rel="apple-touch-startup-image" media="(device-width: 1536px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" href="/assets/images/apple-touch-startup-image-1536x2008.png">
-  <link rel="apple-touch-startup-image" media="(device-width: 1536px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" href="/assets/images/apple-touch-startup-image-2048x1496.png">
-  <link rel="stylesheet" href="/assets/css/main.css">
-  <script src="//use.typekit.net/wkl5rpy.js"></script>
-  <script>try{Typekit.load();}catch(e){}</script>
-  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-  <script src="/assets/scripts/build/site.js"></script>
-  <script>
-      var _gaq = _gaq || [];
-       _gaq.push(['_setAccount', 'UA-12642068-1']);
-       _gaq.push(['_setDomainName', '.miguelmota.com']);
-      _gaq.push(['_trackPageview']);
-       (function() {
-           var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-           ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-           var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-       })();
-       $(document).on('click', '[data-ga-label]', function() {
-         _gaq.push(['_trackEvent', 'Call To Action', 'Click', $(this).attr('data-ga-label')]);
-       });
-  </script>
-</head>
-<body id="blog">
-    <canvas id="bg-canvas"></canvas>
-    <div class="bg-upper"></div>
-    <div class="bg-lower"></div>
-    <div id="top"></div>
-    <img class="hidden" src="/assets/images/miguel-mota-m-logo-500x500.png" alt="">
-
-    <header id="header" class="contain-to-grid fixed">
-      <nav class="top-bar">
-        <ul class="title-area">
-          <li class="name"><a href="/" data-ga-label="Navigation - Logo">Miguel Mota</a></li>
-          <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-        </ul>
-        <section class="top-bar-section">
-            <ul id="main-nav" class="right">
-              <li class="divider"></li>
-              <li ><a href="/" data-ga-label="Navigation - Home"><i class="fa fa-home"></i></a></li>
-              <li class="divider"></li>
-              <li ><a href="/about" data-ga-label="Navigation - About"><i class="fa fa-bookmark-o"></i> About</a></li>
-              <li class="divider"></li>
-              <li class="active"><a href="/blog" data-ga-label="Navigation - Blog"><i class="fa fa-lightbulb-o"></i> Thoughts</a></li>
-              <li class="divider"></li>
-              <li ><a href="/work" data-ga-label="Navigation - Work"><i class="fa fa-laptop"></i> Work</a></li>
-              <li class="divider"></li>
-              <li ><a href="/contact" data-ga-label="Navigation - Contact"><i class="fa fa-envelope-o"></i> Contact</a></li>
-              <li class="divider"></li>
-            </ul>
-        </section>
-      </nav>
-    </header>
-
-    <main id="main" role="main">
-      <header id="content-header">
-    
-    <div class="row">
-        <div class="large-12 column">
-          
-            <datetime>19 Jul 2014 <small><i class="fa fa-comment-o"></i> <a href="/blog/bitwise-operators-in-javascript/#disqus_thread" data-disqus-identifier="/blog/bitwise-operators-in-javascript/"></a></small> <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.miguelmota.com/blog/bitwise-operators-in-javascript/" data-text="Bitwise operators in JavaScript" data-size="large" data-related="_moogs" data-ga-label="Blog post - Tweet">Tweet</a></datetime>
-<h1 data-text="Bitwise operators in JavaScript">Bitwise operators in JavaScript</h1>
-
-          
-        </div>
-    </div>
-    <div id="content-header-bottom">
-        <div class="triangle"></div>
-    </div>
-</header>
-
-
-<section id="post">
-  <div class="row">
-    <div class="large-12 column">
-
-      <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators">Bitwise operators</a> act on the level of individual bits which allows for fast comparisons and calculations. I&#39;ll be going over a couple of ways to use bitwise opeartors in JavaScript since it&#39;s not entirely clear at first. Some of the examples shown are from various sources which I&#39;ve accumlated over time in which I&#39;m going to elaborate on them.</p>
-
-<h1 id="bitwise-and">Bitwise AND</h1>
-
-<p><strong><em>Return a one if the two bits are both one.</em></strong></p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="mi">5</span> <span class="o">&amp;</span> <span class="mi">7</span> <span class="c1">// 5</span>
+<!DOCTYPE html> <html lang="en-US" manifest="http://cache.miguelmota.com/cache.appcache"> <head> <meta charset="UTF-8">  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> <meta name="description" content="Interesting things you can do with bitwise operators."> <meta name="keywords" content="miguel mota,web developer,html5 css3 javascript"> <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width"> <meta name="apple-mobile-web-app-status-bar-style" content="black"> <meta name="apple-mobile-web-app-capable" content="yes"> <meta name="apple-mobile-web-app-title" content="Moogs"> <title>Bitwise operators in JavaScript » Miguel Mota | Web Developer</title> <link rel="canonical" href="http://www.miguelmota.com/blog/bitwise-operators-in-javascript/"> <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/miguelmota"> <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml"> <link rel="shortcut icon" href="/favicon.ico"> <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/assets/images/apple-touch-icon-57x57.png"> <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/images/apple-touch-icon-114x114.png"> <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/images/apple-touch-icon-72x72.png"> <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/images/apple-touch-icon-144x144.png"> <link rel="apple-touch-startup-image" media="(device-width: 320px)" href="/assets/images/apple-touch-startup-image-320x460.png"> <link rel="apple-touch-startup-image" media="(device-width: 320px) and (-webkit-device-pixel-ratio: 2)" href="/assets/images/apple-touch-startup-image-640x920.png"> <link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" href="/assets/images/apple-touch-startup-image-640x1096.png"> <link rel="apple-touch-startup-image" media="(device-width: 768px) and (orientation: portrait)" href="/assets/images/apple-touch-startup-image-768x1004.png"> <link rel="apple-touch-startup-image" media="(device-width: 768px) and (orientation: landscape)" href="/assets/images/apple-touch-startup-image-748x1024.png"> <link rel="apple-touch-startup-image" media="(device-width: 1536px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" href="/assets/images/apple-touch-startup-image-1536x2008.png"> <link rel="apple-touch-startup-image" media="(device-width: 1536px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" href="/assets/images/apple-touch-startup-image-2048x1496.png"> <link rel="stylesheet" href="/assets/styles/main.css"> <script> var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-12642068-1']); _gaq.push(['_setDomainName', '.miguelmota.com']); _gaq.push(['_trackPageview']); (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })(); </script> </head> <body class="blog"> <div class="bg-upper"></div> <div class="bg-lower"></div> <div class="top"></div> <img class="hidden" src="/assets/images/miguel-mota-m-logo-500x500.png" alt=""> <header class="header"> <nav class="top-bar"> <section class="top-bar-section"> <ul class="main-nav"> <li class="name"><a href="/" data-ga-label="Navigation - Logo">Miguel Mota</a></li> <li ><a href="/about" data-ga-label="Navigation - About"><i class="fa fa-bookmark-o"></i> About</a></li> <li class="active"><a href="/blog" data-ga-label="Navigation - Blog"><i class="fa fa-lightbulb-o"></i> Thoughts</a></li> <li ><a href="/work" data-ga-label="Navigation - Work"><i class="fa fa-laptop"></i> Work</a></li> <li ><a href="/contact" data-ga-label="Navigation - Contact"><i class="fa fa-envelope-o"></i> Contact</a></li> </ul> </section> </nav> </header> <main class="main" role="main"> <header class="content-header"> <div class="row"> <div class="column"> <datetime>19 Jul 2014 <small><i class="fa fa-comment-o"></i> <a href="/blog/bitwise-operators-in-javascript/#disqus_thread" data-disqus-identifier="/blog/bitwise-operators-in-javascript/"></a></small></datetime> <h1>Bitwise operators in JavaScript</h1> </div> </div> </header> <section class="post"> <div class="row"> <div class="column"> <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators">Bitwise operators</a> act on the level of individual bits which allows for fast comparisons and calculations. I&#39;ll be going over a couple of ways to use bitwise opeartors in JavaScript since it&#39;s not entirely clear at first. Some of the examples shown are from various sources which I&#39;ve accumlated over time in which I&#39;m going to elaborate on them.</p> <h1 id="bitwise-and">Bitwise AND</h1> <p><strong><em>Return a one if the two bits are both one.</em></strong></p> <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="mi">5</span> <span class="o">&amp;</span> <span class="mi">7</span> <span class="c1">// 5</span>
 
 <span class="mi">00000101</span> <span class="c1">// 5</span>
 <span class="mi">00000111</span> <span class="c1">// 7</span>
 <span class="o">--------</span>
 <span class="mi">00000101</span> <span class="c1">// 5</span>
-</code></pre></div>
-<p><a href="http://jsbin.com/fedim/1/edit">JSBin example</a></p>
-
-<p><strong>Check if number is even or odd:</strong></p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">((</span><span class="nx">n</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">)</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="c1">// true if even</span>
+</code></pre></div> <p><a href="http://jsbin.com/fedim/1/edit">JSBin example</a></p> <p><strong>Check if number is even or odd:</strong></p> <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">((</span><span class="nx">n</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">)</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="c1">// true if even</span>
 
 <span class="p">((</span><span class="mi">1</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">)</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="c1">// false</span>
 <span class="p">((</span><span class="mi">2</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">)</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="c1">// true</span>
@@ -142,11 +22,7 @@
 <span class="mi">00000001</span> <span class="c1">// 1</span>
 <span class="o">--------</span>
 <span class="mi">00000000</span> <span class="c1">// 0 (even)</span>
-</code></pre></div>
-<p><a href="http://jsbin.com/vawero/1/edit">JSBin example</a> / <a href="http://jsperf.com/modulus-vs-bitwise-and-operator">JSPerf test</a></p>
-
-<p><strong>Get the difference between two hex values:</strong></p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mh">0xF0</span><span class="p">;</span> <span class="c1">// 240</span>
+</code></pre></div> <p><a href="http://jsbin.com/vawero/1/edit">JSBin example</a> / <a href="http://jsperf.com/modulus-vs-bitwise-and-operator">JSPerf test</a></p> <p><strong>Get the difference between two hex values:</strong></p> <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mh">0xF0</span><span class="p">;</span> <span class="c1">// 240</span>
 <span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="mh">0xFF</span><span class="p">;</span> <span class="c1">// 255</span>
 
 <span class="nx">a</span> <span class="o">&amp;</span> <span class="nx">b</span> <span class="c1">// 240</span>
@@ -187,13 +63,7 @@
 <span class="mi">000000</span><span class="nx">FF</span> <span class="c1">// 255</span>
 <span class="o">--------</span>
 <span class="mi">0000000</span><span class="nx">F</span> <span class="c1">// 15</span>
-</code></pre></div>
-<p><a href="http://jsbin.com/cewiqi/1/edit">JSBin example</a></p>
-
-<h1 id="bitwise-or">Bitwise OR</h1>
-
-<p><strong><em>Return a one if one of the two bits is a one.</em></strong></p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="mi">5</span> <span class="o">|</span> <span class="mi">7</span> <span class="c1">// 7</span>
+</code></pre></div> <p><a href="http://jsbin.com/cewiqi/1/edit">JSBin example</a></p> <h1 id="bitwise-or">Bitwise OR</h1> <p><strong><em>Return a one if one of the two bits is a one.</em></strong></p> <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="mi">5</span> <span class="o">|</span> <span class="mi">7</span> <span class="c1">// 7</span>
 
 <span class="nx">The</span> <span class="nx">how</span><span class="o">:</span>
 
@@ -201,17 +71,9 @@
 <span class="mi">00000111</span> <span class="c1">// 7</span>
 <span class="o">--------</span>
 <span class="mi">00000111</span> <span class="c1">// 7</span>
-</code></pre></div>
-<p><a href="http://jsbin.com/wokuc/1/edit">JSBin example</a></p>
-
-<p><strong>Fast truncation:</strong></p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="mf">1.4</span> <span class="o">|</span> <span class="mi">0</span> <span class="c1">// 1</span>
+</code></pre></div> <p><a href="http://jsbin.com/wokuc/1/edit">JSBin example</a></p> <p><strong>Fast truncation:</strong></p> <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="mf">1.4</span> <span class="o">|</span> <span class="mi">0</span> <span class="c1">// 1</span>
 <span class="o">-</span><span class="mf">1.4</span> <span class="o">|</span> <span class="mi">0</span> <span class="c1">// -1</span>
-</code></pre></div>
-<p><a href="http://jsbin.com/ranuzo/1/edit">JSBin example</a> / <a href="http://jsperf.com/parseint-vs-bitwise-or-2">JSPerf test</a></p>
-
-<p><strong>Mask a flag additively:</strong></p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">mask</span> <span class="o">=</span> <span class="mh">0x0003</span><span class="p">;</span>
+</code></pre></div> <p><a href="http://jsbin.com/ranuzo/1/edit">JSBin example</a> / <a href="http://jsperf.com/parseint-vs-bitwise-or-2">JSPerf test</a></p> <p><strong>Mask a flag additively:</strong></p> <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">mask</span> <span class="o">=</span> <span class="mh">0x0003</span><span class="p">;</span>
 <span class="kd">var</span> <span class="nx">flag</span> <span class="o">=</span> <span class="mh">0xFFF0</span><span class="p">;</span>
 <span class="kd">var</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">flag</span> <span class="o">|</span> <span class="nx">mask</span><span class="p">;</span> <span class="c1">// 65523</span>
 <span class="nx">result</span><span class="p">.</span><span class="nx">toString</span><span class="p">(</span><span class="mi">16</span><span class="p">);</span> <span class="c1">// &quot;fff3&quot;</span>
@@ -224,11 +86,7 @@
 <span class="mi">1111111111110011</span> <span class="c1">// 65523</span>
 
 <span class="p">(</span><span class="mi">65523</span><span class="p">).</span><span class="nx">toString</span><span class="p">(</span><span class="mi">16</span><span class="p">);</span> <span class="c1">// &quot;fff3&quot;</span>
-</code></pre></div>
-<p><a href="http://jsbin.com/boyuni/1/edit">JSBin example</a></p>
-
-<p><strong>Mask a flag subtractively:</strong></p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">mask</span> <span class="o">=</span> <span class="mh">0x0003</span><span class="p">;</span>
+</code></pre></div> <p><a href="http://jsbin.com/boyuni/1/edit">JSBin example</a></p> <p><strong>Mask a flag subtractively:</strong></p> <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">mask</span> <span class="o">=</span> <span class="mh">0x0003</span><span class="p">;</span>
 <span class="kd">var</span> <span class="nx">flag</span> <span class="o">=</span> <span class="mh">0xFFFF</span><span class="p">;</span>
 <span class="kd">var</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">flag</span> <span class="o">&amp;</span> <span class="o">~</span><span class="nx">mask</span><span class="p">;</span>
 <span class="nx">result</span><span class="p">.</span><span class="nx">toString</span><span class="p">(</span><span class="mi">16</span><span class="p">);</span> <span class="c1">// &quot;fffc&quot;</span>
@@ -251,13 +109,7 @@
 <span class="nb">parseInt</span><span class="p">(</span><span class="s1">&#39;1111111111110011&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span> <span class="c1">// 65523</span>
 
 <span class="p">(</span><span class="mi">65523</span><span class="p">).</span><span class="nx">toString</span><span class="p">(</span><span class="mi">16</span><span class="p">);</span> <span class="c1">// &quot;fffc&quot;</span>
-</code></pre></div>
-<p><a href="http://jsbin.com/muzilo/1/edit">JSBin example</a></p>
-
-<h1 id="bitwise-xor">Bitwise XOR</h1>
-
-<p><strong><em>Return a one if either bit is a one or zero but not both.</em></strong></p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="mi">5</span> <span class="o">^</span> <span class="mi">7</span> <span class="c1">// 2</span>
+</code></pre></div> <p><a href="http://jsbin.com/muzilo/1/edit">JSBin example</a></p> <h1 id="bitwise-xor">Bitwise XOR</h1> <p><strong><em>Return a one if either bit is a one or zero but not both.</em></strong></p> <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="mi">5</span> <span class="o">^</span> <span class="mi">7</span> <span class="c1">// 2</span>
 
 <span class="nx">The</span> <span class="nx">how</span><span class="o">:</span>
 
@@ -265,11 +117,7 @@
 <span class="mi">00000111</span> <span class="c1">// 7</span>
 <span class="o">--------</span>
 <span class="mi">00000010</span> <span class="c1">// 2</span>
-</code></pre></div>
-<p><a href="http://jsbin.com/fokeda/1/edit">JSBin example</a></p>
-
-<p><strong>Variable swap:</strong></p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+</code></pre></div> <p><a href="http://jsbin.com/fokeda/1/edit">JSBin example</a></p> <p><strong>Variable swap:</strong></p> <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
     <span class="nx">b</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
 
 <span class="nx">a</span> <span class="o">=</span> <span class="nx">a</span> <span class="o">^</span> <span class="nx">b</span><span class="p">;</span>
@@ -312,11 +160,7 @@
 
 <span class="nb">String</span><span class="p">.</span><span class="nx">fromCharCode</span><span class="p">(</span><span class="mi">97</span><span class="p">);</span> <span class="c1">// b = &#39;a&#39;</span>
 <span class="nb">String</span><span class="p">.</span><span class="nx">fromCharCode</span><span class="p">(</span><span class="mi">98</span><span class="p">);</span> <span class="c1">// a = &#39;b&#39;</span>
-</code></pre></div>
-<p><a href="http://jsbin.com/mexowu/1/edit">JSBin example</a></p>
-
-<p><strong>Toggle switch:</strong></p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</code></pre></div> <p><a href="http://jsbin.com/mexowu/1/edit">JSBin example</a></p> <p><strong>Toggle switch:</strong></p> <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
 
 <span class="nx">a</span> <span class="o">=</span> <span class="nx">a</span> <span class="o">^</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// 0</span>
 <span class="nx">a</span> <span class="o">=</span> <span class="nx">a</span> <span class="o">^</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// 1</span>
@@ -347,11 +191,7 @@
 <span class="mi">00000001</span> <span class="c1">// 1</span>
 <span class="o">--------</span>
 <span class="mi">00000000</span> <span class="c1">// 0 (a)</span>
-</code></pre></div>
-<p><a href="http://jsbin.com/duliza/1/edit">JSBin example</a></p>
-
-<p>Determine if two integers have opposite signs:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+</code></pre></div> <p><a href="http://jsbin.com/duliza/1/edit">JSBin example</a></p> <p>Determine if two integers have opposite signs:</p> <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
     <span class="nx">y</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
 
 <span class="p">(</span><span class="nx">x</span> <span class="o">^</span> <span class="nx">y</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="c1">// false</span>
@@ -374,13 +214,7 @@
 <span class="mi">1111111111111111111111111111110</span> <span class="c1">// y = (~1 &gt;&gt;&gt; 0).toString(2)</span>
 <span class="o">-------------------------------</span> <span class="c1">// ^ two&#39;s complement - flips bits and adds one</span>
 <span class="mi">1111111111111111111111111111111</span> <span class="c1">// -1, so -1 &lt; 0 = true</span>
-</code></pre></div>
-<p><a href="http://jsbin.com/nucoz/1/edit">JSBin example</a></p>
-
-<h1 id="bitwise-not">Bitwise NOT</h1>
-
-<p><strong><em>Inverts the bits.</em></strong></p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">[</span><span class="nx">x</span> <span class="o">=</span> <span class="o">-</span><span class="p">(</span><span class="nx">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)]</span>
+</code></pre></div> <p><a href="http://jsbin.com/nucoz/1/edit">JSBin example</a></p> <h1 id="bitwise-not">Bitwise NOT</h1> <p><strong><em>Inverts the bits.</em></strong></p> <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">[</span><span class="nx">x</span> <span class="o">=</span> <span class="o">-</span><span class="p">(</span><span class="nx">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)]</span>
 
 <span class="o">~</span><span class="mi">5</span> <span class="c1">// -6</span>
 
@@ -394,11 +228,7 @@
 <span class="c1">// two&#39;s complement</span>
 <span class="p">(</span><span class="o">~</span><span class="mi">5</span> <span class="o">&gt;&gt;&gt;</span> <span class="mi">0</span><span class="p">).</span><span class="nx">toString</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <span class="mi">11111111111111111111111111111010</span>
-</code></pre></div>
-<p><a href="http://jsbin.com/nagigi/1/edit">JSBin example</a></p>
-
-<p><strong>Shorthand <code>indexOf</code>:</strong></p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">!!~</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nx">indexOf</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="c1">// false</span>
+</code></pre></div> <p><a href="http://jsbin.com/nagigi/1/edit">JSBin example</a></p> <p><strong>Shorthand <code>indexOf</code>:</strong></p> <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">!!~</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nx">indexOf</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="c1">// false</span>
 <span class="o">!!~</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nx">indexOf</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1">// true</span>
 
 <span class="nx">The</span> <span class="nx">how</span><span class="o">:</span>
@@ -411,13 +241,7 @@
 
 <span class="o">!!</span><span class="mi">0</span> <span class="c1">// false</span>
 <span class="o">!!-</span><span class="mi">1</span> <span class="c1">// true</span>
-</code></pre></div>
-<p><a href="http://jsbin.com/bogeq/1/edit">JSBin example</a></p>
-
-<h1 id="bitwise-double-not">Bitwise double NOT</h1>
-
-<p><strong>Fast truncation:</strong></p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// for positive numbers it can be a faster substitute for Math.floor()</span>
+</code></pre></div> <p><a href="http://jsbin.com/bogeq/1/edit">JSBin example</a></p> <h1 id="bitwise-double-not">Bitwise double NOT</h1> <p><strong>Fast truncation:</strong></p> <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// for positive numbers it can be a faster substitute for Math.floor()</span>
 <span class="o">~~</span><span class="p">(</span><span class="mf">5.3</span><span class="p">)</span> <span class="c1">// 5</span>
 
 <span class="c1">// negative truncation</span>
@@ -426,13 +250,7 @@
 <span class="c1">// If it can&#39;t be parsed to a number than result will always be zero</span>
 <span class="o">~~</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">)</span> <span class="c1">// 0</span>
 <span class="o">~~</span><span class="p">({})</span> <span class="c1">// 0</span>
-</code></pre></div>
-<p><a href="http://jsbin.com/wawuzi/2/edit">JSBin example</a> / <a href="http://jsperf.com/math-floor-vs-bitwise-double-not">jsPerf test</a></p>
-
-<h1 id="shift-operators">Shift operators</h1>
-
-<p><strong><em>Shift bits a specified number of bit positions.</em></strong></p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="mi">8</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span> <span class="c1">// 4</span>
+</code></pre></div> <p><a href="http://jsbin.com/wawuzi/2/edit">JSBin example</a> / <a href="http://jsperf.com/math-floor-vs-bitwise-double-not">jsPerf test</a></p> <h1 id="shift-operators">Shift operators</h1> <p><strong><em>Shift bits a specified number of bit positions.</em></strong></p> <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="mi">8</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span> <span class="c1">// 4</span>
 <span class="mi">8</span> <span class="o">&gt;&gt;</span> <span class="mi">2</span> <span class="c1">// 2</span>
 
 <span class="mi">8</span> <span class="o">&lt;&lt;</span> <span class="mi">1</span> <span class="c1">// 16</span>
@@ -455,34 +273,18 @@
 <span class="c1">// 8 &lt;&lt; 2</span>
 <span class="mi">00001000</span> <span class="c1">// 8</span>
 <span class="mi">00100000</span> <span class="c1">// 32</span>
-</code></pre></div>
-<p><a href="http://jsbin.com/nutoc/1/edit">JSBin example</a></p>
-
-<p>Bitwise left shift operator can be a replacement for <code>Math.pow()</code> when dealing with bases of 2:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nb">Math</span><span class="p">.</span><span class="nx">pow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">24</span><span class="p">)</span> <span class="o">===</span> <span class="mi">1</span><span class="o">&lt;&lt;</span><span class="mi">24</span> <span class="c1">// true</span>
-</code></pre></div>
-<p><a href="http://jsperf.com/math-pow-vs-bitwise-left-shift-operator">JSPerf test</a></p>
-
-<p><strong>Decimal to Integer:</strong></p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="mf">4.12</span> <span class="o">&gt;&gt;</span> <span class="mi">0</span> <span class="c1">// 4</span>
+</code></pre></div> <p><a href="http://jsbin.com/nutoc/1/edit">JSBin example</a></p> <p>Bitwise left shift operator can be a replacement for <code>Math.pow()</code> when dealing with bases of 2:</p> <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nb">Math</span><span class="p">.</span><span class="nx">pow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">24</span><span class="p">)</span> <span class="o">===</span> <span class="mi">1</span><span class="o">&lt;&lt;</span><span class="mi">24</span> <span class="c1">// true</span>
+</code></pre></div> <p><a href="http://jsperf.com/math-pow-vs-bitwise-left-shift-operator">JSPerf test</a></p> <p><strong>Decimal to Integer:</strong></p> <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="mf">4.12</span> <span class="o">&gt;&gt;</span> <span class="mi">0</span> <span class="c1">// 4</span>
 <span class="mf">4.12</span> <span class="o">&lt;&lt;</span> <span class="mi">0</span> <span class="c1">// 4</span>
 
 <span class="o">-</span><span class="mf">4.12</span> <span class="o">&gt;&gt;</span> <span class="mi">0</span> <span class="c1">// -4</span>
 <span class="o">-</span><span class="mf">4.12</span> <span class="o">&lt;&lt;</span> <span class="mi">0</span> <span class="c1">// -4</span>
-</code></pre></div>
-<p><a href="http://jsbin.com/tunenu/1/edit">JSBin example</a></p>
-
-<p><strong>Integer multiplication and division:</strong></p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// 20 * 2</span>
+</code></pre></div> <p><a href="http://jsbin.com/tunenu/1/edit">JSBin example</a></p> <p><strong>Integer multiplication and division:</strong></p> <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// 20 * 2</span>
 <span class="mf">20.5</span> <span class="o">&lt;&lt;</span> <span class="mi">1</span> <span class="c1">// 40</span>
 
 <span class="c1">// 20 / 2</span>
 <span class="mf">20.5</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span> <span class="c1">// 10</span>
-</code></pre></div>
-<p><a href="http://jsbin.com/jimaqu/1/edit">JSBin example</a></p>
-
-<p><strong>Hex to RGB:</strong></p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">hex</span> <span class="o">=</span> <span class="s1">&#39;00FF99&#39;</span><span class="p">;</span>
+</code></pre></div> <p><a href="http://jsbin.com/jimaqu/1/edit">JSBin example</a></p> <p><strong>Hex to RGB:</strong></p> <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">hex</span> <span class="o">=</span> <span class="s1">&#39;00FF99&#39;</span><span class="p">;</span>
 <span class="kd">var</span> <span class="nx">dec</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">hex</span><span class="p">,</span> <span class="mi">16</span><span class="p">);</span> <span class="c1">// 65433</span>
 
 <span class="kd">var</span> <span class="nx">rgb</span> <span class="o">=</span> <span class="p">{};</span>
@@ -505,11 +307,7 @@
 <span class="mi">0000000010011001</span>
 
 <span class="nb">parseInt</span><span class="p">(</span><span class="s1">&#39;10011001&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="c1">// 153</span>
-</code></pre></div>
-<p><a href="http://jsbin.com/volayo/1/edit">JSBin example</a></p>
-
-<p><strong>RGB to Hex:</strong></p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">r</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">g</span> <span class="o">=</span> <span class="mi">255</span><span class="p">,</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">153</span><span class="p">;</span>
+</code></pre></div> <p><a href="http://jsbin.com/volayo/1/edit">JSBin example</a></p> <p><strong>RGB to Hex:</strong></p> <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">r</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">g</span> <span class="o">=</span> <span class="mi">255</span><span class="p">,</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">153</span><span class="p">;</span>
 
 <span class="kd">var</span> <span class="nx">hex</span> <span class="o">=</span> <span class="s1">&#39;#&#39;</span> <span class="o">+</span>
           <span class="p">(</span>
@@ -521,13 +319,7 @@
           <span class="p">.</span><span class="nx">substr</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
 
 <span class="nx">hex</span> <span class="c1">// &quot;#00ff99&quot;</span>
-</code></pre></div>
-<p><a href="http://jsbin.com/sijapi/1/edit">JSBin example</a></p>
-
-<h1 id="zero-fill-right-bit-shifting">Zero-fill Right Bit Shifting</h1>
-
-<p><strong><em>Shifts the operand a specified number of bits to the right and zero bits are shifted in from the left. Sign bit is zero so result is always a 32-bit unsigned integer.</em></strong></p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="mi">5</span> <span class="o">&gt;&gt;&gt;</span> <span class="mi">0</span> <span class="c1">// 5</span>
+</code></pre></div> <p><a href="http://jsbin.com/sijapi/1/edit">JSBin example</a></p> <h1 id="zero-fill-right-bit-shifting">Zero-fill Right Bit Shifting</h1> <p><strong><em>Shifts the operand a specified number of bits to the right and zero bits are shifted in from the left. Sign bit is zero so result is always a 32-bit unsigned integer.</em></strong></p> <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="mi">5</span> <span class="o">&gt;&gt;&gt;</span> <span class="mi">0</span> <span class="c1">// 5</span>
 <span class="s2">&quot;5&quot;</span> <span class="o">&gt;&gt;&gt;</span> <span class="mi">0</span> <span class="c1">// 5</span>
 <span class="s2">&quot;hello&quot;</span> <span class="o">&gt;&gt;&gt;</span> <span class="mi">0</span> <span class="c1">// 0</span>
 <span class="o">-</span><span class="mi">2</span> <span class="o">&gt;&gt;&gt;</span> <span class="mi">0</span> <span class="c1">// 4294967294</span>
@@ -547,13 +339,7 @@
 <span class="nb">parseInt</span><span class="p">(</span><span class="s1">&#39;0xFF&#39;</span><span class="p">,</span> <span class="mi">16</span><span class="p">).</span><span class="nx">toString</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <span class="mi">111111111</span> <span class="c1">// 255</span>
 <span class="mi">011111111</span> <span class="c1">// 127</span>
-</code></pre></div>
-<p><a href="http://jsbin.com/nalev/1/edit">JSBin example</a></p>
-
-<h1 id="getting-creative">Getting creative</h1>
-
-<p><strong>Finding the smallest number:</strong></p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">9</span><span class="p">;</span>
+</code></pre></div> <p><a href="http://jsbin.com/nalev/1/edit">JSBin example</a></p> <h1 id="getting-creative">Getting creative</h1> <p><strong>Finding the smallest number:</strong></p> <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">9</span><span class="p">;</span>
 <span class="kd">var</span> <span class="nx">y</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
 
 <span class="kd">var</span> <span class="nx">smallest</span> <span class="o">=</span> <span class="nx">y</span> <span class="o">^</span> <span class="p">((</span><span class="nx">x</span> <span class="o">^</span> <span class="nx">y</span><span class="p">)</span> <span class="o">&amp;</span> <span class="o">-</span><span class="p">(</span><span class="nx">x</span> <span class="o">&lt;</span> <span class="nx">y</span><span class="p">));</span>
@@ -589,11 +375,7 @@
 <span class="mi">00000000</span> <span class="c1">// 0</span>
 <span class="o">--------</span>
 <span class="mi">00000101</span> <span class="c1">// parseInt(&#39;00000101&#39;, 2) = 5</span>
-</code></pre></div>
-<p><a href="http://jsbin.com/leses/1/edit">JSBin example</a> / <a href="http://jsperf.com/math-min-vs-bitwise-operators">JSPerf test</a></p>
-
-<p><strong>Finding the largest number:</strong></p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">9</span><span class="p">;</span>
+</code></pre></div> <p><a href="http://jsbin.com/leses/1/edit">JSBin example</a> / <a href="http://jsperf.com/math-min-vs-bitwise-operators">JSPerf test</a></p> <p><strong>Finding the largest number:</strong></p> <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">9</span><span class="p">;</span>
 <span class="kd">var</span> <span class="nx">y</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
 
 <span class="kd">var</span> <span class="nx">largest</span> <span class="o">=</span> <span class="nx">x</span> <span class="o">^</span> <span class="p">((</span><span class="nx">x</span> <span class="o">^</span> <span class="nx">y</span><span class="p">)</span> <span class="o">&amp;</span> <span class="o">-</span><span class="p">(</span><span class="nx">x</span> <span class="o">&lt;</span> <span class="nx">y</span><span class="p">));</span>
@@ -629,11 +411,7 @@
 <span class="mi">00000000</span> <span class="c1">// 0</span>
 <span class="o">--------</span>
 <span class="mi">00001001</span> <span class="c1">// parseInt(&#39;00001001&#39;, 2) = 9</span>
-</code></pre></div>
-<p><a href="http://jsbin.com/tecubo/1/edit">JSBin example</a> / <a href="http://jsperf.com/math-max-vs-bitwise-operators">JSPerf test</a></p>
-
-<p><strong>If number is power of 2:</strong></p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">v</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>
+</code></pre></div> <p><a href="http://jsbin.com/tecubo/1/edit">JSBin example</a> / <a href="http://jsperf.com/math-max-vs-bitwise-operators">JSPerf test</a></p> <p><strong>If number is power of 2:</strong></p> <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">v</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>
 
 <span class="kd">var</span> <span class="nx">isPowerOf2</span> <span class="o">=</span> <span class="nx">v</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="p">(</span><span class="nx">v</span> <span class="o">&amp;</span> <span class="p">(</span><span class="nx">v</span> <span class="o">-</span> <span class="mi">1</span><span class="p">));</span>
 
@@ -659,13 +437,7 @@
 <span class="p">(</span><span class="o">!!</span><span class="mi">8</span> <span class="o">&amp;&amp;</span> <span class="kc">true</span><span class="p">)</span>
 <span class="p">(</span><span class="kc">true</span> <span class="o">&amp;&amp;</span> <span class="kc">true</span><span class="p">)</span>
 <span class="kc">true</span>
-</code></pre></div>
-<p><a href="http://jsbin.com/miwil/1/edit">JSBin examples</a></p>
-
-<p>Examples stolen from <a href="http://graphics.stanford.edu/%7Eseander/bithacks.html">Bit Twiddling Hacks</a> by Sean Eron Anderson.</p>
-
-<p><strong>Create array of bits of a number:</strong></p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">index</span><span class="p">,</span> <span class="nx">bitMask</span><span class="p">;</span>
+</code></pre></div> <p><a href="http://jsbin.com/miwil/1/edit">JSBin examples</a></p> <p>Examples stolen from <a href="http://graphics.stanford.edu/%7Eseander/bithacks.html">Bit Twiddling Hacks</a> by Sean Eron Anderson.</p> <p><strong>Create array of bits of a number:</strong></p> <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">index</span><span class="p">,</span> <span class="nx">bitMask</span><span class="p">;</span>
 <span class="kd">var</span> <span class="nx">num</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
 
 <span class="kd">var</span> <span class="nx">array</span> <span class="o">=</span> <span class="p">[];</span>
@@ -674,242 +446,44 @@
 <span class="p">}</span>
 
 <span class="nx">array</span> <span class="c1">// [0, 0, 0, 0, 0, 1, 0, 1]</span>
-</code></pre></div>
-<p><a href="http://jsbin.com/fuwop/1/edit">JSBin example</a></p>
-
-<p>Stolen from <a href="http://bocoup.com/weblog/getting-bitwise-with-javascript/">Getting Bitwise with JavaScript</a> by Rebecca Murphey.</p>
-
-<h1 id="conversions">Conversions</h1>
-
-<p><strong>Binary to Decimal:</strong></p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">binaryToDecimal</span><span class="p">(</span><span class="nx">binaryString</span><span class="p">)</span> <span class="p">{</span>
+</code></pre></div> <p><a href="http://jsbin.com/fuwop/1/edit">JSBin example</a></p> <p>Stolen from <a href="http://bocoup.com/weblog/getting-bitwise-with-javascript/">Getting Bitwise with JavaScript</a> by Rebecca Murphey.</p> <h1 id="conversions">Conversions</h1> <p><strong>Binary to Decimal:</strong></p> <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">binaryToDecimal</span><span class="p">(</span><span class="nx">binaryString</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">binaryString</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="nx">binaryToDecimal</span><span class="p">(</span><span class="s1">&#39;11111111&#39;</span><span class="p">);</span> <span class="c1">// 255</span>
-</code></pre></div>
-<p><a href="http://jsbin.com/guwas/1/edit">JSBin example</a></p>
-
-<p><strong>Decimal to Binary:</strong></p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">decimalToBinary</span><span class="p">(</span><span class="nx">decimal</span><span class="p">)</span> <span class="p">{</span>
+</code></pre></div> <p><a href="http://jsbin.com/guwas/1/edit">JSBin example</a></p> <p><strong>Decimal to Binary:</strong></p> <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">decimalToBinary</span><span class="p">(</span><span class="nx">decimal</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="p">(</span><span class="nx">decimal</span> <span class="o">&gt;&gt;&gt;</span> <span class="mi">0</span><span class="p">).</span><span class="nx">toString</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="nx">decimalToBinary</span><span class="p">(</span><span class="mi">255</span><span class="p">);</span> <span class="c1">// &quot;11111111&quot;</span>
-</code></pre></div>
-<p><a href="http://jsbin.com/hogoxi/1/edit">JSBin example</a></p>
-
-<p><strong>Decimal to Hexadecimal:</strong></p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">decimalToHex</span><span class="p">(</span><span class="nx">decimal</span><span class="p">)</span> <span class="p">{</span>
+</code></pre></div> <p><a href="http://jsbin.com/hogoxi/1/edit">JSBin example</a></p> <p><strong>Decimal to Hexadecimal:</strong></p> <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">decimalToHex</span><span class="p">(</span><span class="nx">decimal</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="p">(</span><span class="nx">decimal</span><span class="p">).</span><span class="nx">toString</span><span class="p">(</span><span class="mi">16</span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="nx">decimalToHex</span><span class="p">(</span><span class="mi">255</span><span class="p">);</span> <span class="c1">// &quot;FF&quot;</span>
-</code></pre></div>
-<p><a href="http://jsbin.com/jixaca/1/edit">JSBin example</a></p>
-
-<p><strong>Hexadecimal to Decimal:</strong></p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">hexToDecimal</span><span class="p">(</span><span class="nx">hex</span><span class="p">)</span> <span class="p">{</span>
+</code></pre></div> <p><a href="http://jsbin.com/jixaca/1/edit">JSBin example</a></p> <p><strong>Hexadecimal to Decimal:</strong></p> <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">hexToDecimal</span><span class="p">(</span><span class="nx">hex</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">hex</span><span class="p">,</span> <span class="mi">16</span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="nx">hexToDecimal</span><span class="p">(</span><span class="s1">&#39;FF&#39;</span><span class="p">);</span> <span class="c1">// 255</span>
-</code></pre></div>
-<p><a href="http://jsbin.com/waqixi/1/edit">JSBin example</a></p>
-
-<p><strong>Binary to Hexadecimal:</strong></p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">binaryToHex</span><span class="p">(</span><span class="nx">binaryString</span><span class="p">)</span> <span class="p">{</span>
+</code></pre></div> <p><a href="http://jsbin.com/waqixi/1/edit">JSBin example</a></p> <p><strong>Binary to Hexadecimal:</strong></p> <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">binaryToHex</span><span class="p">(</span><span class="nx">binaryString</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">binaryString</span><span class="p">,</span> <span class="mi">2</span><span class="p">).</span><span class="nx">toString</span><span class="p">(</span><span class="mi">16</span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="nx">binaryToHex</span><span class="p">(</span><span class="s1">&#39;11111111&#39;</span><span class="p">);</span> <span class="c1">// &quot;ff&quot;</span>
-</code></pre></div>
-<p><a href="http://jsbin.com/hiyox/1/edit">JSBin example</a></p>
-
-<p><strong>Hexadecimal to Binary:</strong></p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">hexToBinary</span><span class="p">(</span><span class="nx">hex</span><span class="p">)</span> <span class="p">{</span>
+</code></pre></div> <p><a href="http://jsbin.com/hiyox/1/edit">JSBin example</a></p> <p><strong>Hexadecimal to Binary:</strong></p> <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">hexToBinary</span><span class="p">(</span><span class="nx">hex</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="p">(</span><span class="nb">parseInt</span><span class="p">(</span><span class="nx">hex</span><span class="p">,</span> <span class="mi">16</span><span class="p">)).</span><span class="nx">toString</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="nx">hexToBinary</span><span class="p">(</span><span class="s1">&#39;FF&#39;</span><span class="p">);</span> <span class="c1">// &quot;11111111&quot;</span>
-</code></pre></div>
-<p><a href="http://jsbin.com/qijul/1/edit">JSBin example</a></p>
-
-<p><strong>Binary to Character:</strong></p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">binaryToChar</span><span class="p">(</span><span class="nx">binaryString</span><span class="p">)</span> <span class="p">{</span>
+</code></pre></div> <p><a href="http://jsbin.com/qijul/1/edit">JSBin example</a></p> <p><strong>Binary to Character:</strong></p> <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">binaryToChar</span><span class="p">(</span><span class="nx">binaryString</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="nb">String</span><span class="p">.</span><span class="nx">fromCharCode</span><span class="p">(</span><span class="nb">parseInt</span><span class="p">(</span><span class="nx">binaryString</span><span class="p">,</span> <span class="mi">2</span><span class="p">));</span>
 <span class="p">}</span>
 
 <span class="nx">binaryToChar</span><span class="p">(</span><span class="s1">&#39;01000001&#39;</span><span class="p">);</span> <span class="c1">// &quot;A&quot;</span>
-</code></pre></div>
-<p><a href="http://jsbin.com/qufisi/1/edit">JSBin example</a></p>
-
-<p><strong>Character to Binary:</strong></p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">charToBinary</span><span class="p">(</span><span class="kr">char</span><span class="p">)</span> <span class="p">{</span>
+</code></pre></div> <p><a href="http://jsbin.com/qufisi/1/edit">JSBin example</a></p> <p><strong>Character to Binary:</strong></p> <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">charToBinary</span><span class="p">(</span><span class="kr">char</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="p">(</span><span class="kr">char</span><span class="p">.</span><span class="nx">charCodeAt</span><span class="p">(</span><span class="mi">0</span><span class="p">)).</span><span class="nx">toString</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="nx">charToBinary</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">);</span> <span class="c1">// &quot;01000001&quot;</span>
-</code></pre></div>
-<p><a href="http://jsbin.com/qavun/1/edit">JSBin example</a></p>
-
-<h1 id="conclusion">Conclusion</h1>
-
-<p>There are definitely some interesting things you can do with bitwise operators. They are not commonly used due to how hard it can be to wrap your head around them, but bitwise operators can definitely improve performance of your application since they are technically faster than using built in methods. The only downside is it makes the code a little less unreadable. But it might be worth it depending on your needs.</p>
-
-<p>I&#39;d love to see other creative uses of bitwise operators, share if you may.</p>
-
-<!--
-var permissions,
-    CREATE = 1 << 0,  // 0001
-    READ = 1 << 1,    // 0010
-    UPDATE = 1 << 2,  // 0100
-    DELETE = 1 << 3,  // 1000
-    CRUD = CREATE ^ READ ^ UPDATE ^ DELETE; // 1111
-
-// Set permissions to full CRUD
-permissions |= CRUD;
-alert(permissions.toString(2)); // 1111
-
-// Remove DELETE permission
-permissions &= ~DELETE;
-alert(permissions.toString(2)); // 0111
-
-// Toggle CREATE permissions
-permissions ^= CREATE;
-alert(permissions.toString(2)); // 0110
-
-permissions ^= CREATE;
-alert(permissions.toString(2)); // 0111
-
-// Check READ permissions
-if (permissions & READ) // 1 (truthy)
-{
-    alert('Read all the things...');
-}
--->
-
-
-      <div class="tags">
-  
-    <a href="/tag/JavaScript">#JavaScript</a>
-  
-    <a href="/tag/operators">#operators</a>
-  
-    <a href="/tag/bitwise">#bitwise</a>
-  
-</div>
-
-
-    </div>
-  </div>
-
-  
-    <div id="related-posts" class="row">
-      <div class="large-6 column">
-        
-    
-
-    <h3>Previous post</h3>
-
-      <dl class="posts-list">
-        <dt><datetime>20 Jun 2014</datetime></dt>
-        <dd><h2><a href="/blog/es6-examples/">ES6 Examples</a> <small><i class="icon-comment-alt"></i> <a href="/blog/es6-examples/#disqus_thread" data-disqus-identifier="/blog/es6-examples/"></a></small></h2></dd>
-      </dl>
-
-    
-
-
-
-    
-
-      <h3>Next post</h3>
-
-      <dl class="posts-list">
-        <dt><datetime>01 Feb 2015</datetime></dt>
-        <dd><h2><a href="/blog/pixelate-images-with-canvas/">Pixelate images with Canvas</a> <small><i class="icon-comment-alt"></i> <a href="/blog/pixelate-images-with-canvas/#disqus_thread" data-disqus-identifier="/blog/pixelate-images-with-canvas/"></a></small></h2></dd>
-      </dl>
-
-    
-
-      </div>
-      <div class="large-6 column">
-
-        <h3>See also...</h3>
-
-        <dl class="posts-list">
-          
-            <dt><datetime>25 Feb 2015</datetime></dt>
-<dd><h2><a href="/blog/k-means-clustering-in-javascript/">K-Means Clustering in JavaScript</a> <small><i class="icon-comment-alt"></i> <a href="/blog/k-means-clustering-in-javascript/#disqus_thread" data-disqus-identifier="/blog/k-means-clustering-in-javascript/"></a></small></h2>
-</dd>
-          
-            <dt><datetime>16 Feb 2015</datetime></dt>
-<dd><h2><a href="/blog/naive-bayes-classifier-in-javascript/">Naive Bayes Classifier in JavaScript</a> <small><i class="icon-comment-alt"></i> <a href="/blog/naive-bayes-classifier-in-javascript/#disqus_thread" data-disqus-identifier="/blog/naive-bayes-classifier-in-javascript/"></a></small></h2>
-</dd>
-          
-            <dt><datetime>01 Feb 2015</datetime></dt>
-<dd><h2><a href="/blog/pixelate-images-with-canvas/">Pixelate images with Canvas</a> <small><i class="icon-comment-alt"></i> <a href="/blog/pixelate-images-with-canvas/#disqus_thread" data-disqus-identifier="/blog/pixelate-images-with-canvas/"></a></small></h2>
-</dd>
-          
-            <dt><datetime>20 Jun 2014</datetime></dt>
-<dd><h2><a href="/blog/es6-examples/">ES6 Examples</a> <small><i class="icon-comment-alt"></i> <a href="/blog/es6-examples/#disqus_thread" data-disqus-identifier="/blog/es6-examples/"></a></small></h2>
-</dd>
-          
-            <dt><datetime>14 Mar 2014</datetime></dt>
-<dd><h2><a href="/blog/deployment-with-git/">Deployment with Git</a> <small><i class="icon-comment-alt"></i> <a href="/blog/deployment-with-git/#disqus_thread" data-disqus-identifier="/blog/deployment-with-git/"></a></small></h2>
-</dd>
-          
-        </dl>
-
-      </div>
-    </div>
-  
-
-  <div id="comments" class="row">
-    <div class="large-12 column">
-      <div id="disqus_thread"></div>
-    </div>
-  </div>
-
-</section>
-
-<script>
-    var disqus_shortname = 'miguelmota';
-    var disqus_identifier = '/blog/bitwise-operators-in-javascript/';
-    var disqus_url = 'http://www.miguelmota.com/blog/bitwise-operators-in-javascript/';
-
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-
-    (function () {
-        var s = document.createElement('script'); s.async = true;
-        s.type = 'text/javascript';
-        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
-        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-    }());
-</script>
-
-    </main>
-
-    <footer id="footer">
-      <div class="row">
-        <div class="large-12 column">
-          <p>
-            <span class="break"><span>© 2015 Moogs™.</span> <span>Made with <i class="fa fa-heart"></i></span></span> <a class="hidden" href="https://plus.google.com/102174577273194387652" rel="author">Google+</a>
-
-            <a href="https://twitter.com/_moogs" class="twitter-follow-button" data-show-count="true" data-size="large" data-ga-label="Footer - Follow Twitter">Follow @_moogs</a>
-
-          </p>
-        </div>
-      </div>
-    </footer>
-
-    <a id="forkme" href="https://github.com/miguelmota/miguelmota.github.com" target="_blank" data-ga-label="Fork me on Github"><img src="/assets/images/forkme_right_darkblue_121621.png" alt=""></a>
-
-    <script src="//maps.google.com/maps/api/js?sensor=false"></script>
-    <script src="//google-maps-utility-library-v3.googlecode.com/svn/trunk/infobox/src/infobox.js"></script>
-  </body>
-</html>
+</code></pre></div> <p><a href="http://jsbin.com/qavun/1/edit">JSBin example</a></p> <h1 id="conclusion">Conclusion</h1> <p>There are definitely some interesting things you can do with bitwise operators. They are not commonly used due to how hard it can be to wrap your head around them, but bitwise operators can definitely improve performance of your application since they are technically faster than using built in methods. The only downside is it makes the code a little less unreadable. But it might be worth it depending on your needs.</p> <p>I&#39;d love to see other creative uses of bitwise operators, share if you may.</p>  <div class="tags"> <a href="/tag/JavaScript">#JavaScript</a> <a href="/tag/operators">#operators</a> <a href="/tag/bitwise">#bitwise</a> </div> </div> </div> <div class="related-posts row"> <div class="column"> <h3>Previous post</h3> <dl class="posts-list"> <dt><datetime>20 Jun 2014</datetime></dt> <dd><h2><a href="/blog/es6-examples/">ES6 Examples</a> <small><i class="icon-comment-alt"></i> <a href="/blog/es6-examples/#disqus_thread" data-disqus-identifier="/blog/es6-examples/"></a></small></h2></dd> </dl> <h3>Next post</h3> <dl class="posts-list"> <dt><datetime>01 Feb 2015</datetime></dt> <dd><h2><a href="/blog/pixelate-images-with-canvas/">Pixelate images with Canvas</a> <small><i class="icon-comment-alt"></i> <a href="/blog/pixelate-images-with-canvas/#disqus_thread" data-disqus-identifier="/blog/pixelate-images-with-canvas/"></a></small></h2></dd> </dl> </div> <div class="column"> <h3>See also...</h3> <dl class="posts-list"> <dt><datetime>25 Feb 2015</datetime></dt> <dd><h2><a href="/blog/k-means-clustering-in-javascript/">K-Means Clustering in JavaScript</a> <small><i class="icon-comment-alt"></i> <a href="/blog/k-means-clustering-in-javascript/#disqus_thread" data-disqus-identifier="/blog/k-means-clustering-in-javascript/"></a></small></h2> </dd> <dt><datetime>16 Feb 2015</datetime></dt> <dd><h2><a href="/blog/naive-bayes-classifier-in-javascript/">Naive Bayes Classifier in JavaScript</a> <small><i class="icon-comment-alt"></i> <a href="/blog/naive-bayes-classifier-in-javascript/#disqus_thread" data-disqus-identifier="/blog/naive-bayes-classifier-in-javascript/"></a></small></h2> </dd> <dt><datetime>01 Feb 2015</datetime></dt> <dd><h2><a href="/blog/pixelate-images-with-canvas/">Pixelate images with Canvas</a> <small><i class="icon-comment-alt"></i> <a href="/blog/pixelate-images-with-canvas/#disqus_thread" data-disqus-identifier="/blog/pixelate-images-with-canvas/"></a></small></h2> </dd> <dt><datetime>20 Jun 2014</datetime></dt> <dd><h2><a href="/blog/es6-examples/">ES6 Examples</a> <small><i class="icon-comment-alt"></i> <a href="/blog/es6-examples/#disqus_thread" data-disqus-identifier="/blog/es6-examples/"></a></small></h2> </dd> <dt><datetime>14 Mar 2014</datetime></dt> <dd><h2><a href="/blog/deployment-with-git/">Deployment with Git</a> <small><i class="icon-comment-alt"></i> <a href="/blog/deployment-with-git/#disqus_thread" data-disqus-identifier="/blog/deployment-with-git/"></a></small></h2> </dd> </dl> </div> </div> <div class="comments row"> <div class="column"> <div id="disqus_thread"></div> </div> </div> </section> <script> var disqus_shortname = 'miguelmota'; var disqus_identifier = '/blog/bitwise-operators-in-javascript/'; var disqus_url = 'http://www.miguelmota.com/blog/bitwise-operators-in-javascript/'; (function() { var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true; dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js'; (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq); })(); (function () { var s = document.createElement('script'); s.async = true; s.type = 'text/javascript'; s.src = '//' + disqus_shortname + '.disqus.com/count.js'; (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s); }()); </script> </main> <footer class="footer"> <div class="row"> <div class="column"> <p> <span class="break"><span>© 2015 Moogs™.</span> <span>Made with <i class="fa fa-heart"></i></span></span> <a class="hidden" href="https://plus.google.com/102174577273194387652" rel="author">Google+</a> <a href="https://twitter.com/_moogs" class="twitter-follow-button" data-show-count="true" data-size="large" data-ga-label="Footer - Follow Twitter">Follow @_moogs</a> </p> </div> </div> </footer> <a class="forkme" href="https://github.com/miguelmota/miguelmota.github.com" target="_blank" data-ga-label="Fork me on Github"><img src="/assets/images/forkme_right_darkblue_121621.png" alt=""></a> <script src="/assets/scripts/build/site.js"></script> </body> </html>

@@ -6,9 +6,9 @@ route: home
 ---
 {% include site_header.html %}
 
-<section id="content">
-    <div id="featured" class="row">
-        <div class="large-12 column">
+<section class="content">
+    <div class="featured row">
+        <div class="column">
             <h3>Latest</h3>
             {% for post in site.categories.blog offset: 0 limit: site.theme.homepage_featured %}
             {% include post_featured.html %}
@@ -16,8 +16,8 @@ route: home
         </div>
     </div>
 
-    <div id="older-posts" class="row">
-        <div class="large-12 column">
+    <div class="older-posts row">
+        <div class="column">
             <h3>Older thoughts</h3>
 
             <dl class="posts-list">

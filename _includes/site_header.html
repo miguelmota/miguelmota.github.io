@@ -1,9 +1,9 @@
-<header id="content-header">
+<header class="content-header">
     {% if page.route == "contact" %}
       <div id="map"></div>
     {% endif %}
     <div class="row">
-        <div class="large-12 column">
+        <div class="column">
           {% if include.route == "blog-post" %}
             {% include site_header/blog-post.html %}
           {% elsif page.route == "home" %}
@@ -27,8 +27,5 @@
           {% else %}
           {% endif %}
         </div>
-    </div>
-    <div id="content-header-bottom">
-        <div class="triangle"></div>
     </div>
 </header>
