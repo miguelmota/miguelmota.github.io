@@ -166,10 +166,7 @@ h3 {
 
 .row {
   width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 0;
-  margin-bottom: 0;
+  margin: 0 auto;
   max-width: $row-width;
   @include clearfix();
 }
@@ -193,6 +190,7 @@ input[type="search"],
 input[type="tel"],
 input[type="number"],
 textarea {
+  @include appearance(none);
   padding: 10px;
   height: 100%;
   display: inline-block;
@@ -200,6 +198,7 @@ textarea {
   font-size: 14px;
   background: rgba(63, 110, 154, 0.2);
   border: 1px solid rgba(0, 0, 0, 0.8);
+  border-radius: 2px;
   color: $body-font-color;
   @include transition(all .2s ease-out);
 
@@ -434,8 +433,13 @@ body {
   }
 }
 
+.archive .content-header,
 .work .content-header {
   height: 150px;
+
+  @include respond-to(mobile) {
+    height: 100px;
+  }
 }
 
 .contact .content-header {
@@ -513,11 +517,15 @@ body {
 }
 
 .content {
-  padding: 25px 10px;
+  padding: 50px 0 25px 0;
   position: relative;
 
   .baseline {
     margin: 0 0 10px 0;
+  }
+
+  .row {
+    @include div-max-width();
   }
 }
 
@@ -562,8 +570,9 @@ body {
 }
 
 .featured {
-  margin-bottom: 50px;
+  @include div-max-width();
   @include tags(true);
+  margin-bottom: 50px;
 
   h2 {
     margin: 0 0 10px 0;
@@ -598,6 +607,10 @@ body {
     margin-bottom: 5px;
   }
 
+}
+
+.older-posts {
+  @include div-max-width();
 }
 
 .related-posts {
@@ -896,7 +909,8 @@ $social-icon-default-background-color: rgba(0,0,0,.2);
 }
 
 .home .posts-list,
-.blog .posts-list {
+.blog .posts-list,
+.archive .posts-list {
   @include tags(true);
 }
 
@@ -1022,6 +1036,8 @@ $social-icon-default-background-color: rgba(0,0,0,.2);
 }
 
 .contact fieldset {
+  border-radius: 2px;
+
   @include respond-to(mobile) {
     margin: 20px 0 0 0;
   }
