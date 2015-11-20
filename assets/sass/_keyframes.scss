@@ -1,0 +1,38 @@
+@include keyframes(bubbling) {
+  0% {
+    width: 25px;
+    height: 25px;
+    background-color:#0077aa;
+    @include transform(translateY(0));
+  }
+
+  100% {
+    width: 60px;
+    height: 60px;
+    background-color:#FFFFFF;
+    @include transform(translateY(-53px));
+  }
+
+}
+
+@include keyframes(translateUpperBG) {
+  0% {
+    @include transform(translate(0));
+  }
+
+  100% {
+    @include transform(translate(700px, 0))
+  }
+
+}
+
+@include keyframes(translateLowerBG) {
+  0% {
+    @include transform(translate(0));
+  }
+
+  100% {
+    @include transform(translate(-400px, 0))
+  }
+
+}

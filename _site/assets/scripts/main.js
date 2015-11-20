@@ -178,7 +178,7 @@
       e.preventDefault();
 
       var $this = $(this),
-          str = me.serialize();
+          str = $this.serialize();
 
       $this.find('input.error, textarea.error').removeClass('error');
       $this.find('small.error').css({'display':'none'});
