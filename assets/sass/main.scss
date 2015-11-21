@@ -37,7 +37,8 @@ $footer-color: rgba(119, 119, 119, 0.5);
 
 $last-updated-color: rgba(255, 255, 255, 0.3);
 
-/* =Mixins
+
+/* =Row mixin
 -------------------------------------------------------------- */
 
 @mixin div-max-width() {
@@ -94,30 +95,6 @@ details a + small a {
   border-bottom: 1px dotted #777;
 }
 
-.forkme {
-  position: fixed;
-  top: 0px;
-  right: 0;
-  z-index: 10000;
-
-  @include respond-to(mobile-tablet) {
-    display: none;
-  }
-
-}
-
-.panel {
-  padding: .4em;
-  font-size: 12px;
-  background: $code-highlight-background;
-  border: 1px solid $code-highlight-border;
-}
-
-.panel-tiny {
-  padding: 0;
-}
-
-
 a {
   text-decoration: none;
   color: $primary-color;
@@ -164,11 +141,13 @@ h3 {
   }
 }
 
-.row {
-  width: 100%;
-  margin: 0 auto;
-  max-width: $row-width;
-  @include clearfix();
+h4 {
+  line-height: 1.4;
+  font-size: 20px;
+
+  @include respond-to(mobile) {
+    font-size: 14px
+  }
 }
 
 h2 small {
@@ -213,6 +192,35 @@ textarea {
   }
 }
 
+.row {
+  width: 100%;
+  margin: 0 auto;
+  max-width: $row-width;
+  @include clearfix();
+}
+
+.panel {
+  padding: .4em;
+  font-size: 12px;
+  background: $code-highlight-background;
+  border: 1px solid $code-highlight-border;
+}
+
+.panel-tiny {
+  padding: 0;
+}
+
+.forkme {
+  position: fixed;
+  top: 0px;
+  right: 0;
+  z-index: 10000;
+
+  @include respond-to(mobile-tablet) {
+    display: none;
+  }
+}
+
 /* =Body
 -------------------------------------------------------------- */
 
@@ -233,11 +241,11 @@ body {
   overflow: auto;
 
   &::-webkit-scrollbar {
-    width: 10px;
+    width: 5px;
   }
 
   &::-webkit-scrollbar-track {
-    background: rgba(0, 0, 0, 0.8);
+    background: #000;
   }
 
   &::-webkit-scrollbar-thumb {
@@ -260,10 +268,10 @@ body {
   left: 0;
   background: transparent url(../images/site/upper-nebula.png) no-repeat fixed left top;
   z-index: -1;
-  @include animation(translateUpperBG 400s infinite alternate);
+  //@include animation(translateUpperBG 400s infinite alternate);
 
   @include respond-to(mobile) {
-    @include animation(none);
+    //@include animation(none);
   }
 }
 
@@ -276,10 +284,10 @@ body {
   left: 0;
   background: transparent url(../images/site/lower-nebula.png) no-repeat fixed right bottom;
   z-index: -1;
-  @include animation(translateLowerBG 400s infinite alternate);
+  //@include animation(translateLowerBG 400s infinite alternate);
 
   @include respond-to(mobile) {
-    @include animation(none);
+    //@include animation(none);
   }
 }
 
@@ -429,11 +437,11 @@ body {
   @include respond-to(mobile) {
     height: 320px;
   }
-}
 
-.home .content-header p:nth-child(2) {
-  @include respond-to(mobile) {
-    margin-bottom: 30px;
+  p:nth-child(2) {
+    @include respond-to(mobile) {
+      margin-bottom: 30px;
+    }
   }
 }
 
@@ -461,7 +469,8 @@ body {
 }
 
 .archive .content-header,
-.work .content-header {
+.work .content-header,
+.resume .content-header {
   height: 150px;
 
   @include respond-to(mobile) {
@@ -479,9 +488,7 @@ body {
 /* =Content
 -------------------------------------------------------------- */
 
-
 @mixin tags($marginBottom: false) {
-
   .tags {
     @if ($marginBottom == true) {
       margin-bottom: 25px;
@@ -704,16 +711,14 @@ body {
   .comments {
     max-width: 600px;
   }
-}
 
-
-.post > .column {
-  padding: 0;
+  > .column {
+    padding: 0;
+  }
 }
 
 .post,
 .content-header {
-
   padding-top: 50px;
 
   datetime {
@@ -731,11 +736,6 @@ body {
   h1 {
     line-height: 1;
   }
-}
-
-.about,
-.post {
-
 }
 
 .about {
@@ -810,129 +810,131 @@ $social-icon-default-background-color: rgba(0,0,0,.2);
   }
 }
 
-.home .learn-more-button {
-  @include button-style();
-}
-
-.home .social-list {
-  height: $social-icon-height;
-  list-style: none;
-  display: block;
-  margin: 0;
-  padding: 0;
-
-  @include respond-to(mobile) {
-    height: $social-icon-height-mobile;
+.home {
+  .learn-more-button {
+    @include button-style();
   }
 
-  li {
-    display: inline-block;
-    float: left;
+  .social-list {
+    height: $social-icon-height;
+    list-style: none;
+    display: block;
     margin: 0;
     padding: 0;
-    width: auto;
-    height: $social-icon-height;
+
     @include respond-to(mobile) {
       height: $social-icon-height-mobile;
     }
 
-    a {
-      border: none;
+    li {
+      display: inline-block;
+      float: left;
+      margin: 0;
+      padding: 0;
+      width: auto;
+      height: $social-icon-height;
+      @include respond-to(mobile) {
+        height: $social-icon-height-mobile;
+      }
+
+      a {
+        border: none;
+      }
+    }
+
+    li > * {
+      float: left;
+      margin: 0 5px 0 0;
     }
   }
 
-  li > * {
-    float: left;
-    margin: 0 5px 0 0;
+  .twitter {
+    @include social-icon($social-icon-width, $social-icon-height, #00ACED, "../images/social/twitter-32.png");
   }
-}
 
-.home .twitter {
-  @include social-icon($social-icon-width, $social-icon-height, #00ACED, "../images/social/twitter-32.png");
-}
+  .gplus {
+    @include social-icon($social-icon-width, $social-icon-height, #D14836, "../images/social/googleplus-32.png");
+  }
 
-.home .gplus {
-  @include social-icon($social-icon-width, $social-icon-height, #D14836, "../images/social/googleplus-32.png");
-}
+  .github {
+    @include social-icon($social-icon-width, $social-icon-height, #4183C4, "../images/social/github-32.png");
+  }
 
-.home .github {
-  @include social-icon($social-icon-width, $social-icon-height, #4183C4, "../images/social/github-32.png");
-}
+  .stackoverflow {
+    @include social-icon($social-icon-width, $social-icon-height, #F47920, "../images/social/stackoverflow-32.png");
+  }
 
-.home .stackoverflow {
-  @include social-icon($social-icon-width, $social-icon-height, #F47920, "../images/social/stackoverflow-32.png");
-}
+  .linkedin {
+    @include social-icon($social-icon-width, $social-icon-height, #007FB1, "../images/social/linkedin-32.png");
+  }
 
-.home .linkedin {
-  @include social-icon($social-icon-width, $social-icon-height, #007FB1, "../images/social/linkedin-32.png");
-}
+  .delicious {
+    @include social-icon($social-icon-width, $social-icon-height, #3274D1, "../images/social/delicious-32.png");
+  }
 
-.home .delicious {
-  @include social-icon($social-icon-width, $social-icon-height, #3274D1, "../images/social/delicious-32.png");
-}
+  .facebook {
+    @include social-icon($social-icon-width, $social-icon-height, #3B5998, "../images/social/facebook-32.png");
+  }
 
-.home .facebook {
-  @include social-icon($social-icon-width, $social-icon-height, #3B5998, "../images/social/facebook-32.png");
-}
+  .instagram {
+    @include social-icon($social-icon-width, $social-icon-height, #3F729B, "../images/social/instagram-32.png");
+  }
 
-.home .instagram {
-  @include social-icon($social-icon-width, $social-icon-height, #3F729B, "../images/social/instagram-32.png");
-}
+  .tumblr {
+    @include social-icon($social-icon-width, $social-icon-height, #2C4762, "../images/social/tumblr-32.png");
+  }
 
-.home .tumblr {
-  @include social-icon($social-icon-width, $social-icon-height, #2C4762, "../images/social/tumblr-32.png");
-}
+  .reddit {
+    @include social-icon($social-icon-width, $social-icon-height, #FF4500, "../images/social/reddit-32.png");
+  }
 
-.home .reddit {
-  @include social-icon($social-icon-width, $social-icon-height, #FF4500, "../images/social/reddit-32.png");
-}
+  .foursquare {
+    @include social-icon($social-icon-width, $social-icon-height, #2398C9, "../images/social/foursquare-32.png");
+  }
 
-.home .foursquare {
-  @include social-icon($social-icon-width, $social-icon-height, #2398C9, "../images/social/foursquare-32.png");
-}
+  .youtube {
+    @include social-icon($social-icon-width, $social-icon-height, #CD332D, "../images/social/youtube-32.png");
+  }
 
-.home .youtube {
-  @include social-icon($social-icon-width, $social-icon-height, #CD332D, "../images/social/youtube-32.png");
-}
+  .yelp {
+    @include social-icon($social-icon-width, $social-icon-height, #C93C27, "../images/social/yelp-32.png");
+  }
 
-.home .yelp {
-  @include social-icon($social-icon-width, $social-icon-height, #C93C27, "../images/social/yelp-32.png");
-}
+  .lastfm {
+    @include social-icon($social-icon-width, $social-icon-height, #D51007, "../images/social/lastfm-32.png");
+  }
 
-.home .lastfm {
-  @include social-icon($social-icon-width, $social-icon-height, #D51007, "../images/social/lastfm-32.png");
-}
+  .stumbleupon {
+    @include social-icon($social-icon-width, $social-icon-height, #EB4924, "../images/social/stumbleupon-32.png");
+  }
 
-.home .stumbleupon {
-  @include social-icon($social-icon-width, $social-icon-height, #EB4924, "../images/social/stumbleupon-32.png");
-}
+  .dribbble {
+    @include social-icon($social-icon-width, $social-icon-height, #EA4C89, "../images/social/dribbble-32.png");
+  }
 
-.home .dribbble {
-  @include social-icon($social-icon-width, $social-icon-height, #EA4C89, "../images/social/dribbble-32.png");
-}
+  .moogs {
+    @include social-icon($social-icon-width, $social-icon-height, #0088CC, "../images/social/moogs-32.png");
+  }
 
-.home .moogs {
-  @include social-icon($social-icon-width, $social-icon-height, #0088CC, "../images/social/moogs-32.png");
-}
+  .zazzle {
+    @include social-icon($social-icon-width, $social-icon-height, #676767, "../images/social/zazzle-32.png");
+  }
 
-.home .zazzle {
-  @include social-icon($social-icon-width, $social-icon-height, #676767, "../images/social/zazzle-32.png");
-}
+  .pandora {
+    @include social-icon($social-icon-width, $social-icon-height, #336699, "../images/social/pandora-32.png");
+  }
 
-.home .pandora {
-  @include social-icon($social-icon-width, $social-icon-height, #336699, "../images/social/pandora-32.png");
-}
+  .vine {
+    @include social-icon($social-icon-width, $social-icon-height, #00A47A, "../images/social/vine-32.png");
+  }
 
-.home .vine {
-  @include social-icon($social-icon-width, $social-icon-height, #00A47A, "../images/social/vine-32.png");
-}
+  .goodreads {
+    @include social-icon($social-icon-width, $social-icon-height, #5A471B, "../images/social/goodreads-32.png");
+  }
 
-.home .goodreads {
-  @include social-icon($social-icon-width, $social-icon-height, #5A471B, "../images/social/goodreads-32.png");
-}
-
-.home .archive-button {
-  @include button-style();
+  .archive-button {
+    @include button-style();
+  }
 }
 
 .home .posts-list,
@@ -944,156 +946,186 @@ $social-icon-default-background-color: rgba(0,0,0,.2);
 /* =Blog
 -------------------------------------------------------------- */
 
-.blog datetime small {
-  @include respond-to(mobile) {
-    display: block;
-  }
-}
-
-.blog .twitter-share-button {
-  @include respond-to(mobile) {
-    position: absolute;
-    top: 0;
-    right: 0;
-  }
-}
-
 .blog {
   @include tags();
-}
 
-.blog .archive-button {
-  @include button-style();
+  datetime small {
+    @include respond-to(mobile) {
+      display: block;
+    }
+  }
+
+  .twitter-share-button {
+    @include respond-to(mobile) {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+
+  .archive-button {
+    @include button-style();
+  }
 }
 
 /* =About
 -------------------------------------------------------------- */
 
-.about .resume-button {
-  @include button-style();
-}
+.about {
+  .resume-button {
+    @include button-style();
+  }
 
-.about-moogs-logo {
-  vertical-align: middle;
+  .about-moogs-logo {
+    vertical-align: middle;
+  }
 }
 
 /* =Resume
 -------------------------------------------------------------- */
 
-.resume h3 + p {
-  margin: 0 0 40px 0;
-}
+.resume {
+  h3 + p {
+    margin: 0 0 40px 0;
+  }
 
-.resume .resume-list {
-  margin: 0 0 50px 0;
-}
+  .resume-list {
+    margin: 0 0 50px 0;
+  }
 
-.resume dl {
-  margin: 0 0 40px 0;
-}
+  dl {
+    display: block;
+    margin: 0 0 40px 0;
 
-.resume dl dd {
-  margin: 0 0 20px 0;
-}
+    dt {
+      display: block;
+      margin: 0 0 10px 0;
+      line-height: 1.4;
+      font-weight: bold;
+    }
 
-.resume details ul {
-  margin: 0 0 0 20px;
-}
+    dd {
+      display: block;
+      margin: 0 0 20px 0;
+      line-height: 1.4;
+    }
+  }
 
-.resume details ul li {
-  color: rgba(255, 255, 255, 0.25);
-}
+  details {
+    margin: 10px 0 0 0;
 
-.resume .linkedin-button {
-  @include button-style();
-}
+    summary {
+      display: inline-block;
+      padding: 2px;
+      border: 1px solid transparent;
+      @include transition(all .2s ease-out);
 
-.resume .bottom {
-  text-align: center;
+      &:hover {
+        border-color: rgba(112,164,177,0.2);
+      }
+    }
+
+    ul {
+      margin: 0 0 0 20px;
+
+      li {
+        color: rgba(255, 255, 255, 0.25);
+      }
+    }
+  }
+
+  .linkedin-button {
+    @include button-style();
+  }
+
+  .bottom {
+    text-align: center;
+  }
+
+  h4 {
+    padding: 0 0 5px 0;
+    border-bottom: 1px solid rgba(112,164,177,0.2);
+  }
 }
 
 /* =Contact
 -------------------------------------------------------------- */
 
-.contact main {
-  [class*="icon-"] {
-    display: inline-block;
-    width: 24px;
-    vertical-align: middle;
-  }
-  .icon-mobile-phone {
-    font-size: 25px;
-  }
-}
-
-.contact .map {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 600px;
-  @include respond-to(mobile) {
-    height: 400px;
-  }
-}
-
-.contact .row > .column {
-  width: 50%;
-  float: left;
-
-  @include respond-to(mobile) {
-    width: 100%;
-    float: none;
-  }
-}
-
-.contact .contact-info label {
-  margin: 0;
-  color: #999;
-}
-
-.contact [data-location] {
-  //@extend .alt;
-}
-
-.contact .phone,
-.contact .phone:hover {
-  text-decoration: none;
-  cursor: text;
-}
-
-.contact fieldset {
-  border-radius: 2px;
-
-  @include respond-to(mobile) {
-    margin: 20px 0 0 0;
-  }
-}
-
-.contact [data-alert] {
-  display: none;
-  position: relative;
-  margin: 0 0 10px 0;
-  padding: 5px;
-  border-radius: 2px;
-  background: rgba(255, 0, 0, 0.7);
-  color: white;
-
-  .close {
-    position: absolute;
-    top: 2px;
-    right: 5px;
-    border: none;
-    font-size: 14px;
-    color: #fff;
-  }
-}
-
 .contact {
+  main {
+    [class*="icon-"] {
+      display: inline-block;
+      width: 24px;
+      vertical-align: middle;
+    }
+    .icon-mobile-phone {
+      font-size: 25px;
+    }
+  }
+
+  .map {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 600px;
+    @include respond-to(mobile) {
+      height: 400px;
+    }
+  }
+
+  .row > .column {
+    width: 50%;
+    float: left;
+
+    @include respond-to(mobile) {
+      width: 100%;
+      float: none;
+    }
+  }
+
+  .contact-info {
+    label {
+      margin: 0;
+      color: #999;
+    }
+  }
+
+  .phone {
+    &:hover {
+      text-decoration: none;
+      cursor: text;
+    }
+  }
+
   fieldset {
     padding: 15px;
-    background: rgba(0, 0, 0, 0.2);
     border: 1px solid rgba(0, 0, 0, 0.8);
+    border-radius: 2px;
+    background: rgba(0, 0, 0, 0.2);
+
+    @include respond-to(mobile) {
+      margin: 20px 0 0 0;
+    }
+  }
+
+  [data-alert] {
+    display: none;
+    position: relative;
+    margin: 0 0 10px 0;
+    padding: 5px;
+    border-radius: 2px;
+    background: rgba(255, 0, 0, 0.7);
+    color: white;
+
+    .close {
+      position: absolute;
+      top: 2px;
+      right: 5px;
+      border: none;
+      font-size: 14px;
+      color: #fff;
+    }
   }
 
   .contact-form {
@@ -1107,25 +1139,24 @@ $social-icon-default-background-color: rgba(0,0,0,.2);
       margin: 0 0 10px 0;
     }
   }
-}
 
+  small.error {
+    display: none;
+  }
 
-.contact small.error {
-  display: none;
-}
+  textarea {
+    height: auto;
+    overflow: hidden;
+    resize: vertical;
+  }
 
-.contact textarea {
-  height: auto;
-  overflow: hidden;
-  resize: vertical;
-}
-
-.contact [type="submit"] {
-  float: right;
+  [type="submit"] {
+    float: right;
+  }
 }
 
 .infoBox {
-  background: transparent url("/assets/images/map-tipbox-top.gif") no-repeat center 0 !important;
+  background: transparent url("/assets/images/map/map-tipbox-top.gif") no-repeat center 0 !important;
 }
 
 .info-window-content {
@@ -1159,9 +1190,13 @@ $social-icon-default-background-color: rgba(0,0,0,.2);
 /* =Work
 -------------------------------------------------------------- */
 
-.work-list h2 small,
-.work-list h2 small a {
-  font-weight: normal;
+.work-list {
+  h2 small {
+    font-weight: normal;
+    a {
+      font-weight: normal;
+    }
+  }
 }
 
 .github-button,
@@ -1180,16 +1215,10 @@ $social-icon-default-background-color: rgba(0,0,0,.2);
 /* =Social
 -------------------------------------------------------------- */
 
-.social dl dt {
-
-}
-
-.social dl dd {
-
-}
-
-.social li img {
-  max-height: 32px;
+.social {
+  li img {
+    max-height: 32px;
+  }
 }
 
 /* =Loader
@@ -1269,23 +1298,23 @@ $social-icon-default-background-color: rgba(0,0,0,.2);
   @include respond-to(mobile) {
     font-size: 14px;
   }
-}
 
-.footer .icon-heart {
-  color: #ff0000;
-}
-
-.footer .break {
-  display: inline-block;
-  @include respond-to(mobile) {
-    width: 50%;
-    float: left;
+  .icon-heart {
+    color: #ff0000;
   }
-}
 
-.footer .break span {
-  @include respond-to(mobile) {
-    display: block;
+  .break {
+    display: inline-block;
+    @include respond-to(mobile) {
+      width: 50%;
+      float: left;
+    }
+  }
+
+  .break span {
+    @include respond-to(mobile) {
+      display: block;
+    }
   }
 }
 

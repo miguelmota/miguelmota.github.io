@@ -4,27 +4,20 @@
     {% endif %}
     <div class="row">
         <div class="column">
-          {% if include.route == "blog-post" %}
-            {% include site_header/blog-post.html %}
-          {% elsif page.route == "home" %}
-            {% include site_header/home.html %}
-          {% elsif page.route == "about" %}
-            {% include site_header/about.html %}
-          {% elsif page.route == "resume" %}
-            {% include site_header/resume.html %}
-          {% elsif page.route == "blog" %}
-            {% include site_header/blog.html %}
-          {% elsif page.route == "archive" %}
-            {% include site_header/archive.html %}
-          {% elsif page.route == "contact" %}
-            {% include site_header/contact.html %}
-          {% elsif page.route == "social" %}
-            {% include site_header/social.html %}
-          {% elsif page.route == "work" %}
-            {% include site_header/work.html %}
-          {% elsif page.route == "archive" %}
-            {% include site_header/archive.html %}
+          {% if page.route == "home" %}
+            {% include home.html %}
           {% else %}
+            {% if include.route == "blog-post" %}
+              <datetime>{{ page.date | date_to_string }} <small><i class="fa
+                fa-comment-o"></i> <a href="{{ page.url }}#disqus_thread"
+                data-disqus-identifier="{{ page.url }}"></a></small></datetime>
+            {% endif %}
+          {% endif %}
+
+          <h1>{{ page.title }}
+
+          {% if page.route == "contact" %}
+            <div class="map"></div>
           {% endif %}
         </div>
     </div>

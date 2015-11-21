@@ -74,7 +74,8 @@ dwsync.xml
 
 # Folders to ignore #
 #####################
-#node_modules
+node_modules
+vendor
 .hg
 .svn
 .CVS

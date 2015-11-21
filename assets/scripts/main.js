@@ -147,12 +147,12 @@
              zIndex: null,
              position: new google.maps.LatLng(34.0452,-118.284),
              boxStyle: {
-                 background: 'url("/assets/images/map-tipbox-top.gif") no-repeat',
+                 background: 'url("/assets/images/map/map-tipbox-top.gif") no-repeat',
                  opacity: 0.75,
                  width: '200px'
             },
             closeBoxMargin: '12px 2px 4px 2px',
-            closeBoxURL: '/assets/images/map-close-icon.png',
+            closeBoxURL: '/assets/images/map/map-close-icon.png',
             infoBoxClearance: new google.maps.Size(1, 1),
             isHidden: false,
             alignBottom: false,
