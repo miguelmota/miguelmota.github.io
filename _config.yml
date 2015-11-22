@@ -25,7 +25,7 @@ theme:
 
 port: 9999
 
-exclude: [README.md, Rakefile, package.json, LICENSE.md, gruntfile.js, Gemfile, Gemfile.lock, config.rb, component.json, node_modules, vendor, .travis.yml, .project, .gitignore, .gitattributes, .editorconfig]
+exclude: [config, README.md, Rakefile, package.json, LICENSE.md, gruntfile.js, Gemfile, Gemfile.lock, sass_config.rb, component.json, node_modules, vendor, .travis.yml, .project, .gitignore, .gitattributes, .editorconfig, CNAME]
 
 compress_html:
   clippings: []

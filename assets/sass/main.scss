@@ -303,8 +303,6 @@ body {
   padding: 0 0 0 10px;
   background-color: rgba(0,0,0,0.75);
   z-index: 10000;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
 
   ul {
     width: 100%;
@@ -353,21 +351,26 @@ body {
     }
   }
 
-  .top-bar .name a {
-    display: inline-block;
-    width: $header-logo-size;
-    height: $header-logo-size;
-    font-size: 18px;
-    font-weight: bold;
-    margin: 0;
-    padding: 0;
-    background: transparent url("../images/miguel-mota-m-logo-blue-100x100.png") no-repeat 0 0;
-    background-size: auto 100%;
-    text-indent: -1000000em;
-    position: absolute;
-    left: 0;
-    top: 50%;
-    @include transform(translate(0, -50%));
+  .top-bar {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+
+    .name a {
+      display: inline-block;
+      width: $header-logo-size;
+      height: $header-logo-size;
+      font-size: 18px;
+      font-weight: bold;
+      margin: 0;
+      padding: 0;
+      background: transparent url("../images/miguel-mota-m-logo-blue-100x100.png") no-repeat 0 0;
+      background-size: auto 100%;
+      text-indent: -1000000em;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      @include transform(translate(0, -50%));
+    }
   }
 }
 
@@ -1068,9 +1071,11 @@ $social-icon-default-background-color: rgba(0,0,0,.2);
     left: 0;
     top: 0;
     width: 100%;
-    height: 600px;
+
+    // A little taller to hide bottom labels
+    height: 430px;
     @include respond-to(mobile) {
-      height: 400px;
+      height: 330px;
     }
   }
 

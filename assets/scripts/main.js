@@ -105,6 +105,7 @@
         mapTypeId: google.maps.MapTypeId.ROADMAP,
         animation: google.maps.Animation.DROP,
         scrollwheel: false,
+        draggable: true,
         disableDefaultUI: true
       };
 
@@ -116,7 +117,7 @@
         styles: mapStyles
       });
 
-      markerImage = new google.maps.MarkerImage('/assets/images/map-marker.png');
+      markerImage = new google.maps.MarkerImage('/assets/images/map/map-marker.png');
 
       markerShadow = new google.maps.MarkerImage(
         '/assets/images/map-marker-shadow.png',
