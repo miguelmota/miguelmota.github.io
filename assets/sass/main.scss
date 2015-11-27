@@ -22,12 +22,11 @@ $primary-hover-color: rgba(78, 149, 187, 0.8);
 $primary-alt-color: rgba(116,129,135,0.2);
 
 $row-width: 768px;
-$topbar-height: 56px;
+$topbar-height: 54px;
 
 $header-logo-size: 45px;
 
 $content-header-border: 1px solid rgba(0,0,0,0.5) !default;
-$content-header-triangle-width: 24px !default;
 
 $code-highlight-background: rgba(0, 0, 0, 0.25);
 $code-highlight-border: 1px solid rgba(0, 0, 0, 0.5);
@@ -319,12 +318,21 @@ body {
 
       &:hover {
         border-top: 2px dotted rgba(112,164,177,0.8);
+        background-color: rgba(50,96,113,0.07);
       }
 
       &.active {
         border-top: 2px solid rgba(112,164,177,0.8);
+        background-color: rgba(50,96,113,0.15);
+
         &:hover {
           border-top-color: 2px solid rgba(112,164,177,0.8);
+          background-color: rgba(50,96,113,0.15);
+
+          a {
+            color: $body-font-color;
+            cursor: default;
+          }
         }
       }
     }
@@ -788,11 +796,12 @@ figcaption {
 /* =Home
 -------------------------------------------------------------- */
 
-$social-icon-width: 24px;
-$social-icon-height: 24px;
+$social-icon-width: 36px;
+$social-icon-height: 36px;
 $social-icon-width-mobile: 36px;
 $social-icon-height-mobile: 36px;
-$social-icon-default-background-color: rgba(0,0,0,.2);
+$social-icon-background-width: 26px;
+$social-icon-default-background-color: rgba(0,0,0,.6);
 
 @mixin social-icon($width: 32px, $height: 32px, $background-color: transparent, $background-image:null) {
   @include hide-text;
@@ -803,13 +812,16 @@ $social-icon-default-background-color: rgba(0,0,0,.2);
     width: $social-icon-width-mobile;
     height: $social-icon-height-mobile;
   }
-  background: $social-icon-default-background-color url($background-image) no-repeat 0 0;
-  background-size: 100% auto;
+  background: $social-icon-default-background-color url($background-image) no-repeat center center;
+  background-size: $social-icon-background-width auto;
   @include transition(background-color .25s ease-out);
+  opacity: 0.5;
+  border-radius: 2px;
 
   &:hover,
   &:active {
     background-color: lighten($background-color, 10%);
+    opacity: 1;
   }
 }
 
@@ -842,33 +854,30 @@ $social-icon-default-background-color: rgba(0,0,0,.2);
 
       a {
         border: none;
+        float: left;
+        margin: 0 5px 0 0;
       }
-    }
-
-    li > * {
-      float: left;
-      margin: 0 5px 0 0;
     }
   }
 
   .twitter {
-    @include social-icon($social-icon-width, $social-icon-height, #00ACED, "../images/social/twitter-32.png");
+    @include social-icon($social-icon-width, $social-icon-height, #00ACED, "../images/social/twitter.svg");
   }
 
   .gplus {
-    @include social-icon($social-icon-width, $social-icon-height, #D14836, "../images/social/googleplus-32.png");
+    @include social-icon($social-icon-width, $social-icon-height, #D14836, "../images/social/googleplus.svg");
   }
 
   .github {
-    @include social-icon($social-icon-width, $social-icon-height, #4183C4, "../images/social/github-32.png");
+    @include social-icon($social-icon-width, $social-icon-height, #4183C4, "../images/social/github.svg");
   }
 
   .stackoverflow {
-    @include social-icon($social-icon-width, $social-icon-height, #F47920, "../images/social/stackoverflow-32.png");
+    @include social-icon($social-icon-width, $social-icon-height, #F47920, "../images/social/stackoverflow.svg");
   }
 
   .linkedin {
-    @include social-icon($social-icon-width, $social-icon-height, #007FB1, "../images/social/linkedin-32.png");
+    @include social-icon($social-icon-width, $social-icon-height, #007FB1, "../images/social/linkedin.svg");
   }
 
   .delicious {
@@ -1097,6 +1106,15 @@ $social-icon-default-background-color: rgba(0,0,0,.2);
   }
 
   .phone {
+    @include respond-to(gt-mobile) {
+      color: $body-font-color;
+      border: none;
+    }
+
+    @include respond-to(mobile) {
+      cursor: pointer;
+    }
+
     &:hover {
       text-decoration: none;
       cursor: text;
@@ -1213,8 +1231,15 @@ $social-icon-default-background-color: rgba(0,0,0,.2);
   }
 }
 
+.github-button {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
 .gists-button {
   @include button-style($primary-alt-color);
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
 
 /* =Social
@@ -1258,35 +1283,6 @@ $social-icon-default-background-color: rgba(0,0,0,.2);
   width: 100%;
   height: 100%;
   background: rgba(0,0,0,.2);
-}
-
-.bubbling {
-  text-align: center;
-  width:200px;
-  height:125px;
-}
-
-.bubbling span {
-  display: inline-block;
-  vertical-align: middle;
-  width: 25px;
-  height: 25px;
-  margin: 63px auto;
-  background: #0077aa;
-  border-radius: 125px;
-  @include animation(bubbling 1.3s infinite alternate);
-}
-
-.bubbling-1 {
-  @include animation-delay(0s);
-}
-
-.bubbling-2 {
-  @include animation-delay(0.39s);
-}
-
-.bubbling-3 {
-  @include animation-delay(0.78s);
 }
 
 /* =Footer

@@ -23,6 +23,9 @@ $desktop-large-min-size: 1200px !default;
   @else if $media == mobile-landscape {
           @media only screen and (max-width: $mobile-max-size) and (orientation: landscape) { @content; }
   }
+  @else if $media == gt-mobile {
+          @media only screen and (min-width: $mobile-max-size) { @content; }
+  }
   @else if $media == mobile-tablet {
           @media only screen and (max-width: $tablet-max-size) { @content; }
   }
@@ -160,6 +163,11 @@ $desktop-large-min-size: 1200px !default;
   color: rgba(255,255,255,0.7);
   border-bottom: 1px solid $primary-color;
   border-radius: 2px;
+
+  &:hover {
+    background-color: rgba(113, 173, 205, 0.2);
+    color: rgba(255,255,255,0.7);
+  }
 }
 
 @mixin keyframes($name) {
