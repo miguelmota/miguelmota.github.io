@@ -135,7 +135,7 @@ You should get a browser warning like this one saying that the certificate could
 This is normal since we're using this for development purposes, so you can hit *Proceed to localhost*.
 
 
-# Trusting The Certficate
+# Trusting The Certificate
 
 You probably noticed the ugly red x over the https lock since the certificate could not be validated by a CA.
 
