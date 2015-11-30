@@ -113,7 +113,7 @@ const options = {
   // Passphrase for Private Key, if you used one.
   passphrase: 's0m3P4sZw0rD',
 
-  // If the server certificate is verified against the list of supplied CAs. An 'error' event is emitted if verification fails. Verification happens at the connection level, before the HTTP request is sent.
+  // Make sure an error is not emitted when the server certificate verification against the list of supplied CAs fails on connection.
   rejectUnauthorized: false
 };
 
