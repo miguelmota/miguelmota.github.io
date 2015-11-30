@@ -2,7 +2,7 @@
 layout: blog-post
 title: Generate Self-signed SSL Certificate
 category: blog
-tags: [ssl, tls, http, security, node.js]
+tags: [SSL, TLS, RSA, HTTP, encryption, security, Node.js]
 description:
 ---
 Using HTTPS for your web application is a no-brainer, but sometimes it's not intuitively clear on how to get started on using SSL for your website.
