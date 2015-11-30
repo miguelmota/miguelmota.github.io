@@ -5,12 +5,12 @@ category: blog
 tags: [SSL, TLS, RSA, HTTP, encryption, security, Node.js]
 description:
 ---
-Using HTTPS for your web application is a no-brainer, but sometimes it's not intuitively clear on how to get started on using SSL for your website.
+Using HTTPS for your web application is a no-brainer, but sometimes it is not intuitively clear on how to get started on using SSL for your website.
 I'm going to be going over step-by-step on generating a [self-signed certficate](https://en.wikipedia.org/wiki/Self-signed_certificate) and testing it out on a Node.js web server.
 
 ## Generating Private Key
 
-First let's generate a private key. The private key is used to decrypted the data encrypted by the public key.
+First let's generate a private key. The private key is used to decrypt the data encrypted by the public key.
 Only your server should have access to the private key.
 The generated [RSA](https://en.wikipedia.org/wiki/RSA_(cryptosystem)) key is 1024-bit [triple DES](https://en.wikipedia.org/wiki/Triple_DES) encrypted.
 It will ask you for a passphrase so make sure you remember it.
@@ -32,7 +32,7 @@ Verifying - Enter pass phrase for server.key:
 
 This will create a `server.key` file.
 
-Note that if you do not want to use a passphrase for your key, you can remove it from the encrypted key.
+Note that if you do not want to use a passphrase for your key, you can remove it from the private key.
 
 ```bash
 openssl rsa -in server.key -out server.key
@@ -41,7 +41,7 @@ openssl rsa -in server.key -out server.key
 ## Generating a Certificate Signing Request
 
 Next we need to issue a [Certificate Signing Request (CSR)](https://en.wikipedia.org/wiki/Certificate_signing_request), which is responsible for sending a message to a [Certificate Authority (CA)](https://en.wikipedia.org/wiki/Certificate_authority) in order to apply for a [digital certificate](https://en.wikipedia.org/wiki/Public_key_certificate) which certifies the ownership of the public key.
-It will ask you information for the certificate regarding your company and location. See the output after the command as an example.
+It will ask you for information for the certificate regarding your company and location. See the output after the command as an example.
 
 ```bash
 openssl req -new -key server.key -out server.csr
@@ -91,13 +91,13 @@ Getting Private key
 Enter pass phrase for server.key:
 ```
 
-Sweet, we just created a new `server.crt` file.
+This will create the actual certificate `server.crt` file.
 
 ## Using SSL Certificate with Node.js
 
 Incorporating the Self-signed Certificate in Node.js in relatively straightfowward.
 We map the file contents for the Private Key and the SSL Certificate in the `options` object for the node https server,
-Try running the the example below.
+Try running the example below.
 
 ```javascript
 const https = require('https');
@@ -113,7 +113,7 @@ const options = {
   // Passphrase for Private Key, if you used one.
   passphrase: 's0m3P4sZw0rD',
 
-  // Make sure an error is not emitted when the server certificate verification against the list of supplied CAs fails on connection.
+  // Make sure an error is not emitted on connection when the server certificate verification against the list of supplied CAs fails.
   rejectUnauthorized: false
 };
 
@@ -132,12 +132,12 @@ You should get a browser warning like this one saying that the certificate could
 
 [![]({{ page.url }}/connection-not-private-proceed.png)]({{ page.url }}/connection-not-private-proceed.png)
 
-This is normal since we're using this for development purposes, so you can hit *Proceed to localhost*.
+This is normal since we're using this for development purposes. Go ahead and hit *Proceed to localhost*.
 
 
 # Trusting The Certificate
 
-You probably noticed the ugly red x over the https lock since the certificate could not be validated by a CA.
+You probably noticed the ugly red x over the https lock icon since the certificate could not be validated by a CA.
 
 [![]({{ page.url }}/ssl-lock-x.png)]({{ page.url }}/ssl-lock-x.png)
 
