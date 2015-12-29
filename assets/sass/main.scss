@@ -10,7 +10,7 @@
 
 $body-bg: #000;
 $body-overlay-bg: rgba(96, 122, 158, 0.15);
-$body-font-color: rgba(112,164,177,0.8);
+$body-font-color: rgba(177, 201, 208, 0.8);
 $body-font-family: "Play","Helvetica Neue","Helvetica",Helvetica,Arial,sans-serif;
 $body-font-size: 15px;
 $body-font-weight: normal;
@@ -30,6 +30,7 @@ $content-header-border: 1px solid rgba(0,0,0,0.5) !default;
 
 $code-highlight-background: rgba(0, 0, 0, 0.25);
 $code-highlight-border: 1px solid rgba(0, 0, 0, 0.5);
+$code-highlight-color: $body-font-color;
 $code-highlight-font-size: 14px;
 
 $footer-color: rgba(119, 119, 119, 0.5);
@@ -213,11 +214,25 @@ textarea {
   position: fixed;
   top: 0px;
   right: 0;
+  width: 149px;
+  height: 149px;
+  background: transparent url(/assets/images/site/forkme-right-darkblue.png) no-repeat 0 0;
+  background-size: contain;
   z-index: 10000;
 
   @include respond-to(mobile-tablet) {
     display: none;
   }
+}
+
+// span used for alt text
+.fa > * {
+  position: absolute;
+  left: -100000em;
+  bottom: -100000em;
+  color: transparent;
+  font-size: 0;
+  line-height: 0;
 }
 
 /* =Body
@@ -330,7 +345,7 @@ body {
           background-color: rgba(50,96,113,0.15);
 
           a {
-            color: $body-font-color;
+            color: $primary-color;
             cursor: default;
           }
         }
@@ -1332,7 +1347,7 @@ p > code {
   background: $code-highlight-background;
   border: $code-highlight-border;
   padding: 2px;
-  color: #208090;
+  color: $code-highlight-color;
 }
 
 .highlight {
