@@ -168,6 +168,26 @@ ul li {
   line-height: 1.8;
 }
 
+
+noscript {
+  text-align: center;
+  width: 100%;
+  display: block;
+  color: #ff0000 !important;
+
+  a {
+    border: none !important;
+    text-decoration: underline !important;
+    color: #ff0000 !important;
+
+    &:hover {
+      border: none !important;
+      text-decoration: underline !important;
+      color: #ff0000 !important;
+    }
+  }
+}
+
 input[type="text"],
 input[type="email"],
 input[type="search"],
@@ -755,8 +775,16 @@ body {
   datetime {
     display: block;
     width: 100%;
-    font-size: 26px;
+    font-size: 24px;
     font-weight: bold;
+
+    @include respond-to(mobile) {
+      font-size: 18px;
+
+      small {
+        display: inline-block;
+      }
+    }
   }
 
 }
@@ -981,12 +1009,6 @@ $social-icon-default-background-color: rgba(0,0,0,.6);
 .blog {
   @include tags();
 
-  datetime small {
-    @include respond-to(mobile) {
-      display: block;
-    }
-  }
-
   .twitter-share-button {
     @include respond-to(mobile) {
       position: absolute;
@@ -1095,16 +1117,28 @@ $social-icon-default-background-color: rgba(0,0,0,.6);
     }
   }
 
+  h1 {
+    position: absolute;
+    z-index: 1;
+  }
+
   .map {
     position: absolute;
     left: 0;
     top: 0;
     width: 100%;
-
     // A little taller to hide bottom labels
     height: 430px;
+    background: rgba(0,0,0,0.3);
+
     @include respond-to(mobile) {
       height: 330px;
+    }
+
+    noscript {
+      position: absolute;
+      top: 50%;
+      @include transform(translate(0, -50%));
     }
   }
 
