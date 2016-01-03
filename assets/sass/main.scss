@@ -159,6 +159,11 @@ dl dd {
   margin-bottom: 0.6em;
 }
 
+ol, ul {
+  list-style-position: inside;
+  margin-bottom: 25px;
+}
+
 ul li {
   line-height: 1.8;
 }
