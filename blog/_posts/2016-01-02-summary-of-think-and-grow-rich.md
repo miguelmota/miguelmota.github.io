@@ -2,10 +2,10 @@
 layout: blog-post
 title: Summary of "Think and Grow Rich"
 category: blog
-tags: [summary, inspiration]
+tags: [book, summary, inspiration]
 description: A summary outlining key points in Napoleon Hill's "Think and Grow Rich" book.
 ---
-This past weekend I decided to read the book [*Think and Grow Rich*](https://en.wikipedia.org/wiki/Think_and_Grow_Rich) by [Napolean Hill](https://en.wikipedia.org/wiki/Napoleon_Hill). If you are not familiar with Hill as I was, he interviewed hundreds of men with tremendous amounts of wealth, over the span of many years to figure out what it takes to bring in riches and fortunes. The findings of his research is what became the book. After reading it I must say that it is one of best books I have ever read in the sense that the wealth of valuable information presented in absolutely pricless. Hill tells many stories of successful individuals and the challenges they overcame. It was an inspiring read.
+This past weekend I decided to read the book [*Think and Grow Rich*](https://en.wikipedia.org/wiki/Think_and_Grow_Rich) by [Napolean Hill](https://en.wikipedia.org/wiki/Napoleon_Hill). If you are not familiar with Hill, he interviewed hundreds of men with tremendous amounts of wealth, over the span of many years in the early 20th century, to figure out what it takes to bring in riches and fortunes. The findings of his research is what became the book. After reading it I must say that it is one of best books I have ever read in the sense that the value of the information presented is absolutely pricless. Hill tells many stories of successful individuals and the challenges they overcame. It was an inspiring read unlike no other.
 
 Here I outline some of the key points I took away from each chapter of the book.
 

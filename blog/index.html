@@ -7,25 +7,13 @@ route: blog
 {% include site_header.html %}
 
 <section class="content">
-  <div class="featured row">
+  <div class="archive-posts row">
     <div class="column">
-    <h3>Latest</h3>
-      {% for post in site.categories.blog offset: 0 limit: site.theme.homepage_featured %}
-        {% include post_featured.html %}
-      {% endfor %}
-    </div>
-  </div>
-
-  <div class="older-posts row">
-    <div class="column">
-      <h3>Older thoughts</h3>
-
       <dl class="posts-list">
-        {% for post in site.categories.blog offset: site.theme.homepage_featured limit: site.theme.homepage_posts %}
+        {% for post in site.posts %}
           {% include post_summary.html %}
         {% endfor %}
       </dl>
-      <p><a class="archive-button" href="/archive">View all posts »</a></p>
     </div>
   </div>
 
