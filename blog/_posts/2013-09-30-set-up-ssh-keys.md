@@ -54,3 +54,7 @@ cat ~/.ssh/id_rsa.pub
 Assuming you have git already installed on your server, you can clone a repo and perform git pulls as you would on your local machine.
 
 Hope this helped.
+
+## Resources
+
+- [ssh-copy-id for OS X](https://github.com/beautifulcode/ssh-copy-id-for-OSX)
