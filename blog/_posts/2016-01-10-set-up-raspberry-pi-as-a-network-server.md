@@ -545,12 +545,12 @@ Now you're connected to the shared network.
 
 The [Google Chromecast](https://www.google.com/chromecast) is a must for easily streaming content to your TV.
 
-[Videostream for Google Chromecast](https://chrome.google.com/webstore/detail/videostream-for-google-ch/cnciopoikihiagdjbjpnocolokfelagl?hl=en) is a great Chrome app for streaming all sorts of video formats from your computer.
+[Videostream for Google Chromecast](https://chrome.google.com/webstore/detail/videostream-for-google-ch/cnciopoikihiagdjbjpnocolokfelagl?hl=en) is a great Chrome app for streaming a large number video formats from your computer.
 
-[FileBrowser](https://itunes.apple.com/us/app/filebrowser-access-files-on/id364738545?mt=8) for iOS is a fantastic app connecting to SMB and opening all sorts of file types in your phone.
+[FileBrowser](https://itunes.apple.com/us/app/filebrowser-access-files-on/id364738545?mt=8) for iOS is a fantastic app for connecting to SMB and opening different file types in your phone.
 
 [VLC for Mobile](https://itunes.apple.com/us/app/vlc-for-mobile/id650377962?mt=8) is the best video player for iOS I've come across.
 
 ## Conclusion
 
-A Raspberry Pi running Samba makes a great network server on a budget.
+A Raspberry Pi running Samba makes a great network server on a budget. Easy to set up and cheap.
