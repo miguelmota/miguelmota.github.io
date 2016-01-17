@@ -39,7 +39,7 @@ layout: compress
   <link rel="apple-touch-startup-image" media="(device-width: 768px) and (orientation: landscape)" href="/assets/images/apple-touch-startup-image-748x1024.png">
   <link rel="apple-touch-startup-image" media="(device-width: 1536px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" href="/assets/images/apple-touch-startup-image-1536x2008.png">
   <link rel="apple-touch-startup-image" media="(device-width: 1536px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" href="/assets/images/apple-touch-startup-image-2048x1496.png">
-  <link rel="stylesheet" href="/assets/styles/main.css">
+  <link id="stylesheet" rel="stylesheet" href="/assets/styles/main.css">
   <script>
       var _gaq = _gaq || [];
        _gaq.push(['_setAccount', '{{ site.google_analytics_uid }}']);
@@ -62,11 +62,12 @@ layout: compress
       <nav class="top-bar">
         <section class="top-bar-section">
             <ul class="main-nav">
-              <li class="name"><a href="/" data-ga-label="Navigation - Logo">Miguel Mota</a></li>
-              <li {% if page.route %}{% if page.route == "about" %}class="active"{% endif %}{% endif %}><a href="/about" data-ga-label="Navigation - About"><i class="fa fa-bookmark-o"></i> About</a></li>
-              <li {% if page.route %}{% if page.route == "blog" %}class="active"{% endif %}{% endif %}><a href="/blog" data-ga-label="Navigation - Blog"><i class="fa fa-lightbulb-o"></i> Thoughts</a></li>
-              <li {% if page.route %}{% if page.route == "work" %}class="active"{% endif %}{% endif %}><a href="/work" data-ga-label="Navigation - Work"><i class="fa fa-laptop"></i> Work</a></li>
-              <li {% if page.route %}{% if page.route == "contact" %}class="active"{% endif %}{% endif %}><a href="/contact" data-ga-label="Navigation - Contact"><i class="fa fa-envelope-o"></i> Contact</a></li>
+              <li class="name"><a href="/" title="Home" data-ga-label="Navigation - Logo">Miguel Mota</a></li>
+              <li {% if page.route %}{% if page.route == "about" %}class="active"{% endif %}{% endif %}><a href="/about" title="About" data-ga-label="Navigation - About"><i class="fa fa-bookmark-o"></i> About</a></li>
+              <li {% if page.route %}{% if page.route == "blog" %}class="active"{% endif %}{% endif %}><a href="/blog" title="Thoughts" data-ga-label="Navigation - Blog"><i class="fa fa-b"></i> Thoughts</a></li>
+              <li {% if page.route %}{% if page.route == "work" %}class="active"{% endif %}{% endif %}><a href="/work" title="Work" data-ga-label="Navigation - Work"><i class="fa fa-laptop"></i> Work</a></li>
+              <li {% if page.route %}{% if page.route == "contact" %}class="active"{% endif %}{% endif %}><a href="/contact" title="Contact" data-ga-label="Navigation - Contact"><i class="fa fa-envelope-o"></i> Contact</a></li>
+              <li><a class="theme-toggle" href title="Toggle Dark/Light Theme" data-ga-label="Navigation - About"><i class="fa fa-sun-o theme-toggle-icon" aria-label="Toggle Dark/Light Theme"></i></a></li>
             </ul>
         </section>
       </nav>
@@ -80,7 +81,7 @@ layout: compress
       <div class="row">
         <div class="column">
           <p>
-            <span class="break"><span>© {{ site.time | date: "%Y" }} Moogs™.</span> <span>Made with <span class="fa fa-heart"><i>love</i></span></span></span> <a class="hidden" href="https://plus.google.com/102174577273194387652" rel="author">Google+</a>
+            <span class="break"><span>© {{ site.time | date: "%Y" }} Moogs™.</span> <span>Made with <span class="fa fa-heart icon-heart"><i>love</i></span></span></span> <a class="hidden" href="https://plus.google.com/102174577273194387652" rel="author">Google+</a>
 
             <a href="https://twitter.com/_moogs" class="twitter-follow-button" data-show-count="true" data-size="large" data-ga-label="Footer - Follow Twitter">Follow @_moogs</a>
 

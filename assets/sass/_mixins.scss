@@ -1,7 +1,6 @@
 //config.scss
 
 $max-site-width: 860px !default;
-$color-body-light: #aaa;
 
 $mobile-small-max-size: 320px !default;
 $mobile-max-size: 640px !default;
@@ -140,7 +139,7 @@ $desktop-large-min-size: 1200px !default;
   }
 }
 
-@mixin button-style($color: transparent) {
+@mixin button-style() {
   cursor: pointer;
   font-family: inherit;
   font-weight: bold;
@@ -156,17 +155,30 @@ $desktop-large-min-size: 1200px !default;
   padding-bottom: 0.65em;
   padding-left: 1.2em;
   font-size: 1em;
-  background-color: rgba(65,125,157,0.2);
+  background-color: $button-background-color;
   border-style: solid;
   border-width: 1px;
-  border-color: rgba(50,96,121,0.2);
-  color: rgba(255,255,255,0.7);
+  border-color: $button-border-color;
+  color: $button-color;
   border-bottom: 1px solid $primary-color;
   border-radius: 2px;
 
   &:hover {
-    background-color: rgba(113, 173, 205, 0.2);
-    color: rgba(255,255,255,0.7);
+    background-color: $button-hover-background-color;
+    color: $button-hover-color;
+  }
+}
+
+@mixin button-alt-style() {
+  @include button-style();
+  background-color: $button-alt-background-color;
+  border-color: $button-alt-border-color;
+  color: $button-alt-color;
+  border-bottom: 1px solid $primary-color;
+
+  &:hover {
+    background-color: $button-alt-hover-background-color;
+    color: $button-alt-hover-color;
   }
 }
 

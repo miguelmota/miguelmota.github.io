@@ -13,6 +13,65 @@
     });
   };
 
+  Moogs.prototype.theme = {
+    stylesheet: document.getElementById('stylesheet'),
+    stylesheets: ['main.css', 'main-invert.css'],
+
+    toggle: function(theme) {
+      var uri = this.stylesheet.getAttribute('href').split('/');
+      var previous = uri.splice(uri.length - 1, 1)[0];
+      var index = this.stylesheets.indexOf(previous);
+      var style = this.stylesheets[(!index) >>> 0];
+
+      if (theme) {
+        index = this.stylesheets.indexOf(theme);
+        if (index > -1) {
+          style = theme;
+          index = !index;
+        }
+      }
+
+      uri.push(style);
+      uri = uri.join('/');
+      stylesheet.href = uri;
+
+      this.setIcon(index);
+      this.save(style);
+
+      return style;
+    },
+
+    load: function() {
+      try {
+        var theme = localStorage.getItem('theme');
+
+        if (theme) {
+          this.toggle(theme);
+        }
+      } catch(error) {
+        console.error(error);
+        return false;
+      }
+    },
+
+    save: function(theme) {
+      try {
+        return localStorage.setItem('theme', theme);
+      } catch(error) {
+        console.error(error);
+        return false;
+      }
+    },
+
+    setIcon: function(index) {
+      var icons = ['fa-sun-o', 'fa-moon-o'];
+      var themeToggleIcon = document.querySelector('.theme-toggle-icon');
+
+      themeToggleIcon.classList.remove(icons[index >>> 0]);
+      themeToggleIcon.classList.add(icons[(!index) >>> 0]);
+    }
+  };
+
   Moogs.prototype.initializeHome = function() {
     $(document).ready(function() {
       var disqus_shortname = 'miguelmota';
@@ -246,14 +305,12 @@
 
   var moogs = new Moogs();
 
-  $(document).on('click', '.input-short-url input', function() {
-    $(this).select();
-  });
-
   $(document).ready(function() {
     moogs.initializeGlobal();
 
     var page = $('body').attr('class');
+
+    moogs.theme.load();
 
     if (page === 'home') {
       moogs.initializeHome();
@@ -268,6 +325,15 @@
     } else if (page === 'contact') {
       moogs.initializeContact();
     }
+
+    $(document).on('click', '.input-short-url input', function() {
+      $(this).select();
+    });
+
+    $(document).on('click', '.theme-toggle', function(event) {
+      event.preventDefault();
+      moogs.theme.toggle();
+    });
   });
 
   global.moogs = moogs;
