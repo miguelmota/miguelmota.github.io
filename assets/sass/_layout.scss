@@ -294,7 +294,7 @@ body {
   ul {
     width: 100%;
     @include clearfix();
-    min-width: 470px;
+    min-width: $header-list-min-width;
 
     li {
       position: relative;
