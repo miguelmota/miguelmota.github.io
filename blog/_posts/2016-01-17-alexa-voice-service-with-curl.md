@@ -13,6 +13,8 @@ But before we jump to it cURL we have to generate our test audio first.
 
 The audio **MUST** be ***mono channel***, ***sampled at 16k Hz***, and ***signed 16 bit PCM encoding***. Otherwise AVS will send back a blank response.
 
+### Using Audacity
+
 We can use the program [Audacity](http://audacityteam.org/) to create sample audio to test with. Here I have highlighted the properties we need to configure.
 
 [![]({{ page.url }}/audacity-mono-16khz.png)]({{ page.url }}/audacity-mono-16khz.png)
@@ -21,9 +23,31 @@ We can use the program [Audacity](http://audacityteam.org/) to create sample aud
 
 Save the audio with extension `.wav`.
 
-### Testing WAV audio
+### Using SoX
 
-On Mac OSX there is a command line player available through the `play` command. You can simply pipe the audio data to it.
+There is a fantastic command line tool available called [SoX](http://sox.sourceforge.net/sox.html) for recording as well as converting audio to specified formats.
+
+#### Recording audio
+
+We can record audio right from our terminal like in this example:
+
+```bash
+$ sox -d -c 1 -r 16000 -e signed -b 16 hello.wav
+
+Input File     : 'default' (coreaudio)
+Channels       : 2
+Sample Rate    : 44100
+Precision      : 32-bit
+Sample Encoding: 32-bit Signed Integer PCM
+
+In:0.00% 00:00:01.72 [00:00:00.00] Out:25.8k [      |      ]        Clip:0
+```
+
+Alternatively, we can use the `rec` command instead of `sox -d`.
+
+#### Playing audio
+
+SoX comes with a `play` command for doing exactly what it says. Here an example where we pipe the audio contents:
 
 ```bash
 $ cat hello.wav | play -
@@ -40,13 +64,17 @@ play WARN rate: rate clipped 1 samples; decrease volume?
 Done.
 ```
 
-You can see that the audio sample rate and encoding are exactly what we need.
+We can see that the audio sample rate and encoding are exactly what we need.
 
-There is a fantastic tool available called [sox](http://sox.sourceforge.net/sox.html) for transforming audio. You can use sox to downsample and change to mono like in this example:
+#### Converting audio
+
+We can use SoX to change the sample rate, encoding, and number of channels. Here is an example where we transform the audio into the format required by AVS:
 
 ```bash
-cat hello_stero.wav | sox - -c 1 -r 16000 -e signed -b 16 hello.wav
+$ cat hello_stero.wav | sox - -c 1 -r 16000 -e signed -b 16 hello.wav
 ```
+
+The `-` means to use standard input (stdin) as the audio source.
 
 ## Creating cURL request
 
@@ -98,28 +126,28 @@ Content-Type: audio/L16; rate=16000; channels=1
 --boundary_term--
 ```
 
-Here I have created this is a basic bash script that composes the cURL command. I walk us through the steps in the comments to hopefully make more sense:
+Here I have created this is a basic bash script that composes the cURL command. I walk us through the steps in the comments to clarify what is going on. Also if you have not already, you will need an authentication token which you can get by following this [Getting Started with Alexa Voice Service](https://developer.amazon.com/public/solutions/alexa/alexa-voice-service/getting-started-with-the-alexa-voice-service) guide.
 
 ```bash
 ############################################################
 # First we creat a bunch of variables to hold data.
 ############################################################
 
-# Auth token (replace with yours)
+# Auth token (replace with yours).
 TOKEN="Atza|IQEBLjAsAhR..."
 
-# Boundary
+# Boundary name, must be unique so it does not conflict with any data.
 BOUNDARY="BOUNDARY1234"
 BOUNDARY_DASHES="--"
 
-# Newline characters
+# Newline characters.
 NEWLINE='\r\n';
 
-# Metadata headers
+# Metadata headers.
 METADATA_CONTENT_DISPOSITION="Content-Disposition: form-data; name=\"metadata\"";
 METADATA_CONTENT_TYPE="Content-Type: application/json; charset=UTF-8";
 
-# Metadata JSON body
+# Metadata JSON body.
 METADATA="{\
 \"messageHeader\": {},\
 \"messageBody\": {\
@@ -129,36 +157,43 @@ METADATA="{\
 }\
 }"
 
-# Audio headers
+# Audio headers.
 AUDIO_CONTENT_TYPE="Content-Type: audio/L16; rate=16000; channels=1";
 AUDIO_CONTENT_DISPOSITION="Content-Disposition: form-data; name=\"audio\"";
 
-# Audio filename (replace with yours)
+# Audio filename (replace with yours).
 AUDIO_FILENAME="hello.wav"
 
 ############################################################
 # Then we start composing the body using the variables.
 ############################################################
 
-# Compose the start of the request body
+# Compose the start of the request body, which contains the metadata headers and
+# metadata JSON body as the first part of the multipart body.
+# Then it starts of the second part with the audio headers. The binary audio
+# will come later as you will see.
 POST_DATA_START="
 ${BOUNDARY_DASHES}${BOUNDARY}${NEWLINE}${METADATA_CONTENT_DISPOSITION}${NEWLINE}\
 ${METADATA_CONTENT_TYPE}\
 ${NEWLINE}${NEWLINE}${METADATA}${NEWLINE}${NEWLINE}${BOUNDARY_DASHES}${BOUNDARY}${NEWLINE}\
 ${AUDIO_CONTENT_DISPOSITION}${NEWLINE}${AUDIO_CONTENT_TYPE}${NEWLINE}"
 
-# Compose the end of the request body
+# Compose the end of the request body, basically just adding the end boundary.
 POST_DATA_END="${NEWLINE}${NEWLINE}${BOUNDARY_DASHES}${BOUNDARY}${BOUNDARY_DASHES}${NEWLINE}"
 
+############################################################
 # Now we create a request body file to hold everything including the binary audio data.
+############################################################
 
-# Write metadata to body file
+# Write metadata to a file which will contain the multipart request body content.
 echo -e $POST_DATA_START > multipart_body.txt
 
-# Append binary audio data to body file
+# Here we append the binary audio data to request body file
+# by spitting out the contents. We do it this way so that
+# the encoding do not get messed with.
 cat $AUDIO_FILENAME >> multipart_body.txt
 
-# Append closing boundary to body file
+# Then we append closing boundary to request body file.
 echo -e $POST_DATA_END >> multipart_body.txt
 
 ############################################################
@@ -166,12 +201,12 @@ echo -e $POST_DATA_END >> multipart_body.txt
 # passing it the generated request body file as the multipart body.
 ############################################################
 
-# Compose cURL command and write to output file
+# Compose cURL command and write to output file.
 curl -X POST \
-  -H "Authorization: Bearer ${TOKEN}"\
-  -H "Content-Type: multipart/form-data; boundary=${BOUNDARY}"\
-  --data-binary @foo.txt\
-  https://access-alexa-na.amazon.com/v1/avs/speechrecognizer/recognize\
+  -H "Authorization: Bearer ${TOKEN}" \
+  -H "Content-Type: multipart/form-data; boundary=${BOUNDARY}" \
+  --data-binary @multipart_body.txt \
+  https://access-alexa-na.amazon.com/v1/avs/speechrecognizer/recognize \
   > response.txt
 ```
 
@@ -197,3 +232,38 @@ Content-Type: audio/mpeg
 ...encoded_audio_data...
 --a7ed2d26-a20f-474a-b4be-a589e1130d1e--
 ```
+
+As you can definitely tell, I am no bash expert but this does get the job done.
+
+## Update Jan 18 2016
+
+I recently stumbled across a much cleaner way of initiating the request. Here it is:
+
+`metadata.json`
+
+```json
+{
+  "messageHeader": {},
+  "messageBody": {
+    "profile": "alexa-close-talk",
+    "locale": "en-us",
+    "format": "audio/L16; rate=16000; channels=1"
+  }
+}
+```
+
+`request.sh`
+
+```bash
+TOKEN="Atza|IQEBLjAsAhR..."
+
+curl -i \
+  -H "Authorization: Bearer ${TOKEN}" \
+  -F "metadata=<metadata.json;type=application/json; charset=UTF-8" \
+  -F "audio=<hello.wav;type=audio/L16; rate=16000; channels=1" \
+  -o response.txt \
+  https://access-alexa-na.amazon.com/v1/avs/speechrecognizer/recognize \
+```
+
+The `-i` flag means to output the response headers. The `-H` flag specifies headers. The `-F` flag causes cURL to send a POST `multipart/form-data` request and `<` indicates that we want the contents of the file to sent instead of the actual file. Finally, `-o` specifies the output file.
+

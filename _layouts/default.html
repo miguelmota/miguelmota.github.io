@@ -41,15 +41,17 @@ layout: compress
   <link rel="apple-touch-startup-image" media="(device-width: 1536px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" href="/assets/images/apple-touch-startup-image-2048x1496.png">
   <link id="stylesheet" rel="stylesheet" href="/assets/styles/main.css">
   <script>
-      var _gaq = _gaq || [];
-       _gaq.push(['_setAccount', '{{ site.google_analytics_uid }}']);
-       _gaq.push(['_setDomainName', '.miguelmota.com']);
-      _gaq.push(['_trackPageview']);
-       (function() {
-           var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-           ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-           var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-       })();
+    !function(){var a=document.getElementById("stylesheet"),b=["main.css","main-invert.css"],c=function(c){var d=a.getAttribute("href").split("/");d.splice(d.length-1,1)[0];var e=b.indexOf(c);return-1===e?!1:(d.push(c),d=d.join("/"),void(a.href=d))},d=function(){try{var a=localStorage.getItem("theme");a&&c(a)}catch(b){}};d()}();
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', '{{ site.google_analytics_uid }}']);
+    _gaq.push(['_setDomainName', '.miguelmota.com']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
   </script>
 </head>
 <body {% if page.route %}class="{{ page.route }}"{% endif %}>
