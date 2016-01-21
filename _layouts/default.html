@@ -24,7 +24,7 @@ layout: compress
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="Moogs">
   <title>{% if page.title %}{{ page.title }} » {% endif %}{{ site.site_name }}</title>
-  <link rel="canonical" href="http://www.miguelmota.com{{ page.url }}">
+  <link rel="canonical" href="https://miguelmota.com/{{ page.url }}">
   <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/miguelmota">
   <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
   <link rel="shortcut icon" href="/favicon.ico">
@@ -66,7 +66,8 @@ layout: compress
             <ul class="main-nav">
               <li class="name"><a href="/" title="Home" data-ga-label="Navigation - Logo">Miguel Mota</a></li>
               <li {% if page.route %}{% if page.route == "about" %}class="active"{% endif %}{% endif %}><a href="/about" title="About" data-ga-label="Navigation - About"><i class="fa fa-bookmark-o"></i> About</a></li>
-              <li {% if page.route %}{% if page.route == "blog" %}class="active"{% endif %}{% endif %}><a href="/blog" title="Thoughts" data-ga-label="Navigation - Blog"><i class="fa fa-b"></i> Thoughts</a></li>
+              <li {% if page.route %}{% if page.route == "blog" %}class="active"{% endif %}{% endif %}><a href="/blog" title="Blog" data-ga-label="Navigation - Blog"><i class="fa fa-lightbulb-o"></i> Blog</a></li>
+              <li {% if page.route %}{% if page.route == "bytes" %}class="active"{% endif %}{% endif %}><a href="/bytes" title="Bytes" data-ga-label="Navigation - Bytes"><i class="fa fa-code"></i> Bytes</a></li>
               <li {% if page.route %}{% if page.route == "work" %}class="active"{% endif %}{% endif %}><a href="/work" title="Work" data-ga-label="Navigation - Work"><i class="fa fa-laptop"></i> Work</a></li>
               <li {% if page.route %}{% if page.route == "contact" %}class="active"{% endif %}{% endif %}><a href="/contact" title="Contact" data-ga-label="Navigation - Contact"><i class="fa fa-envelope-o"></i> Contact</a></li>
               <li><a class="theme-toggle" href title="Toggle Dark/Light Theme" data-ga-label="Navigation - About"><i class="fa fa-sun-o theme-toggle-icon" aria-label="Toggle Dark/Light Theme"></i></a></li>

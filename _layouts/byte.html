@@ -1,6 +1,6 @@
 ---
 layout: default
-route: blog
+route: bytes
 ---
 {% include site_header.html route="blog-post" %}
 
@@ -18,15 +18,12 @@ route: blog
   {% if site.related_posts %}
     <div class="related-posts row">
       <div class="column">
-        {% include post_pagination.html %}
-      </div>
-      <div class="column">
 
         <h3>See also...</h3>
 
         <dl class="posts-list">
           {% for post in site.related_posts offset: 0 limit: 5 %}
-            {% if post.category == "blog" %}
+            {% if post.category == "bytes" %}
               {% include post_related.html %}
             {% endif %}
           {% endfor %}

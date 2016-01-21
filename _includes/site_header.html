@@ -11,7 +11,12 @@
             {% endif %}
           {% endif %}
 
-          <h1 title="{{ page.title }}">{{ page.title }}</h1>
+          <hgroup class="content-header__hgroup">
+            <h1 class="content-header__title" title="{{ page.title }}">{{ page.title }}</h1>
+            {% if page.title == "Blog" or page.title == "Bytes" %}
+              <p class="content-header__description">{{ page.description }}</p>
+            {% endif %}
+          </hgroup>
 
           {% if page.route == "contact" %}
             <div class="map">

@@ -1,7 +1,8 @@
 ---
 layout: default
-title: Thoughts
+title: Blog
 description: A blog on all things web.
+category: blog
 route: blog
 ---
 {% include site_header.html %}
@@ -10,7 +11,7 @@ route: blog
   <div class="archive-posts row">
     <div class="column">
       <dl class="posts-list">
-        {% for post in site.posts %}
+        {% for post in site.categories.blog %}
           {% include post_summary.html %}
         {% endfor %}
       </dl>
