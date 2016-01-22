@@ -13,16 +13,6 @@ But before we jump to it cURL we have to generate our test audio first.
 
 The audio **MUST** be ***mono channel***, ***sampled at 16k Hz***, and ***signed 16 bit PCM encoding***. Otherwise AVS will send back a blank response.
 
-### Using Audacity
-
-We can use the program [Audacity](http://audacityteam.org/) to create sample audio to test with. Here I have highlighted the properties we need to configure.
-
-[![]({{ page.url }}/audacity-mono-16khz.png)]({{ page.url }}/audacity-mono-16khz.png)
-
-[![]({{ page.url }}/audacity-export-16bit-pcm.png)]({{ page.url }}/audacity-export-16bit-pcm.png)
-
-Save the audio with extension `.wav`.
-
 ### Using SoX
 
 There is a fantastic command line tool available called [SoX](http://sox.sourceforge.net/sox.html) for recording as well as converting audio to specified formats.
@@ -75,6 +65,16 @@ $ cat hello_stero.wav | sox - -c 1 -r 16000 -e signed -b 16 hello.wav
 ```
 
 The `-` means to use standard input (stdin) as the audio source.
+
+### Using Audacity
+
+We can use the program [Audacity](http://audacityteam.org/) to create sample audio to test with. Here I have highlighted the properties we need to configure.
+
+[![]({{ page.url }}/audacity-mono-16khz.png)]({{ page.url }}/audacity-mono-16khz.png)
+
+[![]({{ page.url }}/audacity-export-16bit-pcm.png)]({{ page.url }}/audacity-export-16bit-pcm.png)
+
+Save the audio with extension `.wav`.
 
 ## Creating cURL request
 
