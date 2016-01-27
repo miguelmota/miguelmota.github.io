@@ -235,6 +235,10 @@ Content-Type: audio/mpeg
 
 As you can definitely tell, I am no bash expert but this does get the job done.
 
+## Playing MP3 audio
+
+[mpg123](http://www.mpg123.de/)
+
 ## Update Jan 18 2016
 
 I recently stumbled across a much cleaner way of initiating the request. Here it is:
