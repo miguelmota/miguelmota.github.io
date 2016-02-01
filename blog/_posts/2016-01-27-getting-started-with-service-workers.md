@@ -53,7 +53,7 @@ Service Workers come with a storage API called [cache](https://developer.mozilla
 In `service-worker.js`:
 
 ```javascript
-this.addEventListener('install', (event) => {
+self.addEventListener('install', (event) => {
   event.waitUntil(
 
     // Open a cache store called `v1`
@@ -92,7 +92,7 @@ To make use of the cache we need to serve the cached files when there is a reque
 In `service-worker.js`:
 
 ```javascript
-this.addEventListener('fetch', (event) => {
+self.addEventListener('fetch', (event) => {
   event.respondWith(
 
     // Return cached file if it exists
@@ -116,7 +116,7 @@ The [`catches.match()`](https://developer.mozilla.org/en-US/docs/Web/API/Cache/m
 After we fetch a file that is not in the cache we can store it in the cache so future requests can avoid making the round-trip to the network.
 
 ```javascript
-this.addEventListener('fetch', (event) => {
+self.addEventListener('fetch', (event) => {
   event.respondWith(
 
     // Return cached file if it exists
@@ -138,8 +138,10 @@ this.addEventListener('fetch', (event) => {
       return Promise.reject();
     }).catch(() => {
 
-      // Serve default file
-      return caches.match('/images/not-found.png');
+      // Serve default file if it has an image extension
+      if (/(\.png|\.jpg)$/.test(event.request.url)) {
+        return caches.match('/images/not-found.png');
+      }
     })
   );
 });
@@ -152,6 +154,34 @@ If the fetch was successful then We open the cache and store the new file using 
 Response objects can only be read once so we need to clone it with [response.clone()](https://developer.mozilla.org/en-US/docs/Web/API/Response/clone) and use the original response for the cache.
 
 If fetch failed then we serve the user a default image.
+
+## Updating Service Worker
+
+The client will keep using the same version of the service worker until there are no more pages keeping a reference to it. New versions of service workers are downloaded in the background on page refreshes but not activated. When the service worker is freed up then the latest version will be activated. Make sure to use a different cache key and update the cache install file list per your requirements.
+
+## Deleting Old Caches
+
+The place to delete previous versions of the cache in the `activate` handler.
+
+In `service-worker.js`;
+
+```javascript
+self.addEventListener('activate', function(event) {
+  var cacheWhitelist = ['v2'];
+
+  event.waitUntil(
+    caches.keys().then(function(keyList) {
+      return Promise.all(keyList.map(function(key) {
+        if (cacheWhitelist.indexOf(key) === -1) {
+          return caches.delete(key);
+        }
+      }));
+    })
+  )
+});
+```
+
+We get all the keys of the cache and iterate over them, deleting the caches the do not match the versions in the whitelist.
 
 ## Sending and Receiving Messages
 
@@ -240,4 +270,4 @@ To debug in Google Chrome head to `chrome://inspect/#service-workers` in the bro
 
 ## Conclusion
 
-Service workers give you granular control over caching, the ability to hijack requests, and notify clients with messages. Hope you found this guide useful. Check out the example code on github at [miguelmota/service-worker-example](https://github.com/miguelmota/service-worker-example).
+Service workers give you granular control over caching, the ability to hijack requests, and notify clients with messages. Hope you found this guide useful. Check out the full example code on github at [miguelmota/service-worker-example](https://github.com/miguelmota/service-worker-example).
