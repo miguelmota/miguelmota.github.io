@@ -16,10 +16,10 @@ With an offline first approach, the browser can serve up a cached version of you
 
 ## Service Worker Lifecycle
 
-- First the service worker must be registered. The application must be served under `HTTPS` otherwise it will not register, unless it is on localhost.
-- When registered successfully the service worker is executed in it's own [context](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerGlobalScope). It is similar to the main thread context except there is no DOM access.
-- The browser will proceed to install assets to the cache specified by the service worker.
-- If install is successful then the service worker is activated and can control pages.
+1. First the service worker must be registered. The application must be served under `HTTPS` otherwise it will not register, unless it is on localhost.
+1. When registered successfully the service worker is executed in it's own [context](https://developer.mozilla.org/en1.US/docs/Web/API/ServiceWorkerGlobalScope). It is similar to the main thread context except there is no DOM access.
+1. The browser will proceed to install assets to the cache specified by the service worker.
+1. If install is successful then the service worker is activated and can control pages.
 
 ## Registering Service Worker
 

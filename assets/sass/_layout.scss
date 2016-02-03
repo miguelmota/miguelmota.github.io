@@ -46,6 +46,10 @@ ul {
   list-style-type: square;
 }
 
+ol {
+  list-style-type: decimal;
+}
+
 details summary {
   cursor: pointer;
 }
@@ -120,13 +124,14 @@ dl dd {
   margin-bottom: 0.6em;
 }
 
-ol, ul {
+ul,
+ol {
   list-style-position: inside;
   margin-bottom: 25px;
-}
 
-ul li {
-  line-height: 1.8;
+  li {
+    line-height: 1.8;
+  }
 }
 
 noscript {
@@ -718,7 +723,8 @@ body {
     p,
     pre,
     table,
-    ul {
+    ul,
+    ol {
       @include div-max-width();
     }
 
@@ -1072,7 +1078,8 @@ figcaption {
       }
     }
 
-    ul {
+    ul,
+    ol {
       margin: 0 0 0 20px;
 
       li {
