@@ -6,14 +6,16 @@ route: blog
 ---
 {% include site_header.html %}
 
+<section>
   <div class="older-posts row">
     <div class="column">
-      <h3>Thoughts tagged <em>{{ page.tag }}</em></h3>
 
       <dl class="posts-list">
-        {% for post in site.categories.blog offset: site.theme.homepage_featured limit: site.theme.homepage_posts %}
+        {% for post in site.posts %}
           {% for tag in post.tags %}
-            {% if tag == page.tag %}
+            {% assign tagDowncased = tag | downcase %}
+            {% assign pageTagDowncased = page.tag | downcase %}
+            {% if tagDowncased == pageTagDowncased %}
               {% include post_summary.html %}
             {% endif %}
           {% endfor %}

@@ -525,7 +525,7 @@ body {
 
   .tags a:hover {
     color: $tag-hover-color;
-    cursor: text;
+    cursor: pointer;
   }
 
   .tags span:last-child {
@@ -1005,7 +1005,8 @@ figcaption {
 /* =Blog
 -------------------------------------------------------------- */
 
-.blog {
+.blog,
+.bytes {
   @include tags();
 
   .twitter-share-button {
@@ -1019,6 +1020,13 @@ figcaption {
   .archive-button {
     @include button-style();
   }
+}
+
+/* =Bytes
+-------------------------------------------------------------- */
+
+.bytes {
+
 }
 
 /* =About

@@ -12,6 +12,18 @@ Watch and compile
 grunt
 ```
 
+Compile Sass
+
+```bash
+grunt compile-styles
+```
+
+Compile scripts
+
+```bash
+grunt compile-scripts
+```
+
 ## License
 
 Articles and images are copyright of Miguel Mota.
