@@ -8,8 +8,8 @@ module Jekyll
       self.process(@name)
       self.read_yaml(File.join(base, '_layouts'), 'tag_index.html')
       self.data['tag'] = tag
-      tag_title_prefix = site.config['tag_title_prefix'] || 'Posts tagged "<em>;'
-      tag_title_suffix = site.config['tag_title_suffix'] || '</em>"'
+      tag_title_prefix = site.config['tag_title_prefix'] || 'Posts tagged &ldquo;'
+      tag_title_suffix = site.config['tag_title_suffix'] || '&rdquo;'
       self.data['title'] = "#{tag_title_prefix}#{tag}#{tag_title_suffix}"
     end
   end
