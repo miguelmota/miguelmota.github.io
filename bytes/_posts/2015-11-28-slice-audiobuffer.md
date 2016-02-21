@@ -66,7 +66,7 @@ function AudioBufferSlice(buffer, begin, end, callback) {
 
 Usage:
 
-```
+```javascript
 var audioContext = new AudioContext();
 var analyser = audioContext.createAnalyser();
 var source = audioContext.createBufferSource();

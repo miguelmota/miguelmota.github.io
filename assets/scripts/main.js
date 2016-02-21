@@ -11,6 +11,22 @@
       _gaq.push(['_trackEvent', 'Call To Action', 'Click', $(this).attr('data-ga-label')]);
      }
     });
+
+    $(document).ready(function() {
+      this.initializeDisqusCommentCount();
+    }.bind(this));
+
+    var scrollEventKey = 'scroll.disqusCommentThread';
+    var initializeComments = function(event) {
+      var $thread = $('#disqus_thread');
+      if ($thread.length && ($(window).scrollTop() + $(window).height()) >= $thread.offset().top) {
+        this.initializeDisqusCommentThread();
+        $(window).off(scrollEventKey);
+      }
+    }.bind(this);
+
+    $(window).on(scrollEventKey, initializeComments);
+    initializeComments();
   };
 
   Moogs.prototype.theme = {
@@ -72,16 +88,27 @@
     }
   };
 
+  Moogs.prototype.initializeDisqusCommentCount = function() {
+    if (typeof disqus_shortname === 'string') {
+      var s = document.createElement('script');
+      s.async = true;
+      s.type = 'text/javascript';
+      s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+      document.getElementsByTagName('head')[0].appendChild(s);
+    }
+  };
+
+  Moogs.prototype.initializeDisqusCommentThread = function() {
+    if (typeof disqus_shortname === 'string') {
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      document.getElementsByTagName('head')[0].appendChild(dsq);
+    }
+  };
+
   Moogs.prototype.initializeHome = function() {
-    $(document).ready(function() {
-      var disqus_shortname = 'miguelmota';
-      (function () {
-          var s = document.createElement('script'); s.async = true;
-          s.type = 'text/javascript';
-          s.src = '//' + disqus_shortname + '.disqus.com/count.js';
-          (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-      }());
-    });
+
   };
 
   Moogs.prototype.initializeAbout = function() {
@@ -119,15 +146,11 @@
   };
 
   Moogs.prototype.initializeBlog = function() {
-    $(document).ready(function() {
-      var disqus_shortname = 'miguelmota';
-      (function () {
-          var s = document.createElement('script'); s.async = true;
-          s.type = 'text/javascript';
-          s.src = '//' + disqus_shortname + '.disqus.com/count.js';
-          (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-      }());
-    });
+
+  };
+
+  Moogs.prototype.initializeBytes = function() {
+
   };
 
   Moogs.prototype.initializeWork = function() {
@@ -320,6 +343,8 @@
       moogs.initializeResume();
     } else if (page === 'blog' || page === 'archive') {
       moogs.initializeBlog();
+    } else if (page === 'bytes') {
+      moogs.initializeBytes();
     } else if (page === 'work') {
       moogs.initializeWork();
     } else if (page === 'contact') {

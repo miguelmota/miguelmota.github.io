@@ -25,18 +25,11 @@ route: home
                 {% include post_summary.html %}
                 {% endfor %}
             </dl>
-            <p><a class="archive-button" href="/archive">View all posts »</a></p>
+            <p><a class="archive-button" href="/blog">View all posts »</a></p>
         </div>
     </div>
-
-    <script>
-        var disqus_shortname = '{{ site.disqus_shortname }}';
-
-      (function () {
-          var s = document.createElement('script'); s.async = true;
-          s.type = 'text/javascript';
-          s.src = '//' + disqus_shortname + '.disqus.com/count.js';
-          (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-      }());
-    </script>
 </section>
+
+<script>
+  var disqus_shortname = '{{ site.disqus_shortname }}';
+</script>
