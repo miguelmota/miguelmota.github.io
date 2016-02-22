@@ -27,6 +27,8 @@
 
     $(window).on(scrollEventKey, initializeComments);
     initializeComments();
+
+    this.initializeDetailsElement();
   };
 
   Moogs.prototype.theme = {
@@ -116,14 +118,27 @@
   };
 
   Moogs.prototype.initializeResume = function() {
-    if (window.location.hash.substr(1) === 'xtopoly-work') {
-      var $xtopolyWork = $('#xtopoly-work');
-      $xtopolyWork.attr('open', 'open');
-      $('html,body').scrollTop($xtopolyWork.offset().top - $('.header').outerHeight(true));
+
+  };
+
+  Moogs.prototype.initializeDetailsElement = function() {
+    var hashValue = window.location.hash.substr(1);
+
+    if (hashValue) {
+      var $element = $('details' + '#' + hashValue);
+      if ($element.length) {
+        $element.attr('open', 'open');
+        $('html,body').scrollTop($element.offset().top - $('.header').outerHeight(true));
+      }
     }
 
-    $(document).on('click', '#xtopoly-work', function() {
-      window.location.hash = $(this).attr('id');
+    $(document).on('click', 'details[id]', function() {
+      var id = $(this).attr('id');
+      if (window.location.hash.substr(1) === id) {
+        history.pushState('', document.title, window.location.pathname + window.location.search);
+      } else {
+        window.location.hash = id;
+      }
     });
 
     if (!('open' in document.createElement('details'))) {

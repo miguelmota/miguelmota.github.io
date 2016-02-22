@@ -1161,6 +1161,8 @@ figcaption {
   }
 
   .contact-info {
+    padding: 0 15px 0 0;
+
     label {
       margin: 0;
       color: $contact-info-label-color;
@@ -1237,6 +1239,12 @@ figcaption {
 
   [type="submit"] {
     float: right;
+  }
+
+  summary {
+    + div {
+      margin: 10px 0 0 0;
+    }
   }
 }
 
