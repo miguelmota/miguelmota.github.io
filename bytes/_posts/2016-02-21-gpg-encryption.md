@@ -224,7 +224,7 @@ my secret message
 ```
 
 ```bash
-$ gpg --encrypt --sign --armor -u "foobar@example" -r bazqux@example.com -r foobar@example.com mysecretmessage.txt
+$ gpg --encrypt --sign --armor -u foobar@example -r bazqux@example.com -r foobar@example.com mysecretmessage.txt
 
 You need a passphrase to unlock the secret key for
 user: "Foo Bar <foobar@example.com>"

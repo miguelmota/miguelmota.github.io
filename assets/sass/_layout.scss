@@ -834,6 +834,11 @@ figcaption {
 [type="submit"] {
   @include appearance(none);
   @include button-style();
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
 }
 
 .twitter-share-button {
@@ -1196,7 +1201,7 @@ figcaption {
     }
   }
 
-  [data-alert] {
+  .alert-box {
     display: none;
     position: relative;
     margin: 0 0 10px 0;
@@ -1204,6 +1209,10 @@ figcaption {
     border-radius: 2px;
     background: $contact-alert-background-color;
     color: white;
+
+    &.success {
+      background: $contact-alert-success-background-color;
+    }
 
     .close {
       position: absolute;
@@ -1229,6 +1238,8 @@ figcaption {
 
   small.error {
     display: none;
+    margin-bottom: 10px;
+    color: $contact-error-color;
   }
 
   textarea {

@@ -272,15 +272,21 @@
 
     initializeMap();
 
+    $(document).on('click', '[data-alert] .close', function(e) {
+      e.preventDefault();
+      $(this).parent().css({display: 'none'});
+    });
+
     $(document).on('submit', '.contact-form', function(e) {
       e.preventDefault();
 
-      var $this = $(this),
-          str = $this.serialize();
+      var $this = $(this);
+      var str = $this.serialize();
 
+      $this.find('[type="submit"]').attr('disabled', 'disabled');
       $this.find('input.error, textarea.error').removeClass('error');
-      $this.find('small.error').css({'display':'none'});
-      $this.find('[data-alert]').css({'display':'none'});
+      $this.find('small.error').css('display', 'none');
+      $this.find('[data-alert]').css('display', 'none').removeClass('success');
 
       $.ajax({
         url: $this.attr('action'),
@@ -288,14 +294,14 @@
         dataType: 'json',
         data: str,
         complete: function(xhr, textStatus) {
-
+          $this.find('[type="submit"]').removeAttr('disabled');
         },
         success: function(data, textStatus, xhr) {
-          var statusCode = null,
-              successMessage = null,
-              errorMessage = null,
-              errors = null,
-              errorField = null;
+          var statusCode = null;
+          var successMessage = null;
+          var errorMessage = null;
+          var errors = null;
+          var errorField = null;
 
           if (window._gaq) {
             _gaq.push(['_trackEvent', 'Forms', 'Submission', 'Contact']);
@@ -309,7 +315,7 @@
             if (data.error) {
               errorMessage = data.error;
               $this.find('[data-alert] .message').html(errorMessage);
-              $this.find('[data-alert]').addClass('alert').css({'display':'block'});
+              $this.find('[data-alert]').addClass('alert').css('display', 'block');
             }
           }
 
@@ -318,7 +324,7 @@
               errors = data.errors;
               for (errorField in errors) {
                 $this.find('[name="'+errorField+'"]').addClass('error');
-                $this.find('small.error[for="' + errorField + '"]').html(errors[errorField]).css({'display':'block'});
+                $this.find('small.error[for="' + errorField + '"]').html(errors[errorField]).css('display', 'block');
               }
               $this.find('input.error, textarea.error').eq(0).focus();
             }
@@ -329,13 +335,13 @@
               successMessage = data.message;
              }
             $this.find('[data-alert] .message').html(successMessage);
-            $this.find('[data-alert]').removeClass('alert').addClass('success').css({'display':'block'});
+            $this.find('[data-alert]').removeClass('alert').addClass('success').css('display', 'block');
             $this.find('input[type="text"], input[type="email"], textarea').val('');
           }
         },
         error: function(xhr, textStatus, errorThrown) {
           $this.find('[data-alert] .message').html('Sorry, an error occured.');
-          $this.find('[data-alert]').addClass('alert').css({'display':'block'});
+          $this.find('[data-alert]').addClass('alert').css('display', 'block');
         }
       });
     });
