@@ -237,9 +237,25 @@ As you can definitely tell, I am no bash expert but this does get the job done.
 
 ## Playing MP3 audio
 
-[mpg123](http://www.mpg123.de/)
+The tool [mpg123](http://www.mpg123.de/) lets you play MP3 audio from the terminal. In order to extract the MP3 audio data from the response we need to use an HTTP message parser. Here is one that I wrote, [http-message-parser](https://github.com/miguelmota/http-message-parser), which lets you pipe the response and pipe out the parts that we want.
 
-## Update Jan 18 2016
+Pipe MP3 data to mpg123 player:
+
+```bash
+$ ./request.sh | http-message-parser --pick=multipart[1].body | mpg123 -
+
+High Performance MPEG 1.0/2.0/2.5 Audio Player for Layers 1, 2 and 3
+        version 1.22.4; written and copyright by Michael Hipp and others
+        free software (LGPL) without any warranty but with best wishes
+
+Playing MPEG stream 1 of 1: - ...
+
+MPEG 2.0 layer III, 48 kbit/s, 24000 Hz mono
+
+[0:02] Decoding of - finished.
+```
+
+## Update Jan 18 2016 - Easier way
 
 I recently stumbled across a much cleaner way of initiating the request. Here it is:
 

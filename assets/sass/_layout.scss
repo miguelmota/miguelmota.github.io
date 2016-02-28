@@ -372,7 +372,7 @@ body {
       font-weight: bold;
       margin: 0;
       padding: 0;
-      background: transparent url("../images/miguel-mota-m-logo-blue-100x100.png") no-repeat 0 0;
+      background: transparent url(../images/miguel-mota-m-logo-blue-100x100.png) no-repeat 0 0;
       background-size: auto 100%;
       text-indent: -1000000em;
       position: absolute;
@@ -621,6 +621,16 @@ body {
     @include respond-to(mobile) {
       font-size: 14px;
     }
+  }
+
+  .avatar {
+    display: inline-block;
+    width: 44px;
+    height: 44px;
+    margin: 0 10px 0 0;
+    vertical-align: middle;
+    background: transparent url(../images/about/miguel-mota-headshot-small.png) no-repeat center center;
+    background-size: contain;
   }
 }
 
