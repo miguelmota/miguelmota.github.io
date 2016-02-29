@@ -126,7 +126,7 @@ Content-Type: audio/L16; rate=16000; channels=1
 --boundary_term--
 ```
 
-Here I have created this is a basic bash script that composes the cURL command. I walk us through the steps in the comments to clarify what is going on. Also if you have not already, you will need an authentication token which you can get by following this [Getting Started with Alexa Voice Service](https://developer.amazon.com/public/solutions/alexa/alexa-voice-service/getting-started-with-the-alexa-voice-service) guide.
+Here I have created this is a basic bash script that composes the cURL command. I walk us through the steps in the comments to clarify what is going on. Also if you have not already, you will need an authentication token which you can get by following this [Authorizing Your Alexa-enabled Product from a Website](https://developer.amazon.com/public/solutions/alexa/alexa-voice-service/docs/authorizing-your-alexa-enabled-product-from-a-website) guide.
 
 ```bash
 ############################################################
@@ -242,7 +242,7 @@ The tool [mpg123](http://www.mpg123.de/) lets you play MP3 audio from the termin
 Pipe MP3 data to mpg123 player:
 
 ```bash
-$ ./request.sh | http-message-parser --pick=multipart[1].body | mpg123 -
+$ cat response.txt | http-message-parser --pick=multipart[1].body | mpg123 -
 
 High Performance MPEG 1.0/2.0/2.5 Audio Player for Layers 1, 2 and 3
         version 1.22.4; written and copyright by Michael Hipp and others
@@ -255,7 +255,7 @@ MPEG 2.0 layer III, 48 kbit/s, 24000 Hz mono
 [0:02] Decoding of - finished.
 ```
 
-## Update Jan 18 2016 - Easier way
+## Update Jan 18 2016 - Easier way to make request
 
 I recently stumbled across a much cleaner way of initiating the request. Here it is:
 
@@ -287,3 +287,7 @@ curl -i \
 
 The `-i` flag means to output the response headers. The `-H` flag specifies headers. The `-F` flag causes cURL to send a POST `multipart/form-data` request and `<` indicates that we want the contents of the file to sent instead of the actual file. Finally, `-o` specifies the output file.
 
+
+## Update Feb 28 2016 - Blog post on authentication
+
+I created an [Alexa Voice Service Authencation](/blog/alexa-voice-service-authentication) blog post since I have been getting a lot of requests on how to do the authentication step.
