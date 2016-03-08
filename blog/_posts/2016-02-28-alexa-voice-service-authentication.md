@@ -5,15 +5,15 @@ category: blog
 tags: [AVS, Alexa, Amazon, authentication, cURL]
 description: Tutorial on how to authenticate with Alexa Voice Service.
 ---
-Here I am going to explain how to generate an access token to use with [Alexa Voice Service](https://developer.amazon.com/appsandservices/solutions/alexa/alexa-voice-service). I have been getting a lot of requests on how to do this step from people reading the [Alexa Voice Service with cURL](/blog/alexa-voice-service-with-curl/) blog post.
+Here I am going to walk you through on how to retrieve an access token in order to be able to interact with the [Alexa Voice Service](https://developer.amazon.com/appsandservices/solutions/alexa/alexa-voice-service) by using cURL. I have been getting a lot of requests on how to do this step from people reading the [Alexa Voice Service with cURL](/blog/alexa-voice-service-with-curl/) blog post.
 
 ## Set up AVS Device Type
 
-If you haven't already, go into the [Alexa dev portal](https://developer.amazon.com/edw/home.html#/avs/list) and register a new Device Product Type:
+If you haven't already, go into the [Alexa Developer Console](https://developer.amazon.com/edw/home.html#/avs/list) and register a new *Device* as *Product Type*:
 
 [![]({{ page.url }}/register-product-type.jpg)]({{ page.url }}/register-product-type.jpg)
 
-Next give your device a unique Device Type ID. I am using `test_device` in this example:
+Next give your device a unique *Device Type ID*. I am using `test_device` in this example:
 
 [![]({{ page.url }}/device-type-info.jpg)]({{ page.url }}/device-type-info.jpg)
 
@@ -21,34 +21,34 @@ Select the *Alexa Voice Service Sample App Security Profile* as the Security Pro
 
 [![]({{ page.url }}/security-profile.jpg)]({{ page.url }}/security-profile.jpg)
 
-In *Web Settings* you can configuer the *Allowed Return URLs*. For this example the default is fine. Take note of it since we will be using it later.
+In *Web Settings* we can configure the *Allowed Return URLs*. For this example the default `https://localhost:9745/authresponse` URL is fine. Take note of it since we will be using it later.
 
 [![]({{ page.url }}/web-settings.jpg)]({{ page.url }}/web-settings.jpg)
 
-Fill out the info required in Device Details page:
+Fill out the info required in *Device Details* page:
 
 [![]({{ page.url }}/device-details.jpg)]({{ page.url }}/device-details.jpg)
 
-Do not need Amazon Music for this example:
+We do not need *Amazon Music* for this example:
 
 [![]({{ page.url }}/amazon-music.jpg)]({{ page.url }}/amazon-music.jpg)
 
 ## Retrieve Auth Code
 
-Here we are going to generate the authentication URL which should be opened in a browser and the user be prompted to login with Amazon. The user will be redirected to the redirect URI we have configured after logging in. The redirect URI will contain the authentication `code` as a URL parameter which we will be using later to retrieve our access token.
+Here we are going to generate the authentication URL which should be opened in a browser and then be prompted to login with Amazon. The user will then be redirected to the redirect URI we have configured after logging in. The redirect URI will contain the authentication `code` as a URL parameter which we will be using later to retrieve our access token.
 
-Here is a bash script to generate the authentication URL. Configure the setting variables to your own:
+Here is a bash script to generate the authentication URL. Configure the setting variables to your own. The device serial number can be anything we want.
 
 `auth_code.sh`:
 
 ```bash
 CLIENT_ID="amzn1.application-oa2-client.796ab90fc5844fdbb8efc1739..."
-DEVICE_ID="test_device"
+DEVICE_TYPE_ID="test_device"
 DEVICE_SERIAL_NUMBER=123
 REDIRECT_URI="https://localhost:9745/authresponse"
 RESPONSE_TYPE="code"
 SCOPE="alexa:all"
-SCOPE_DATA="{\"alexa:all\": {\"productID\": \"$DEVICE_ID\", \"productInstanceAttributes\": {\"deviceSerialNumber\": \"${DEVICE_SERIAL_NUMBER}\"}}}"
+SCOPE_DATA="{\"alexa:all\": {\"productID\": \"$DEVICE_TYPE_ID\", \"productInstanceAttributes\": {\"deviceSerialNumber\": \"${DEVICE_SERIAL_NUMBER}\"}}}"
 
 function urlencode() {
   perl -MURI::Escape -ne 'chomp;print uri_escape($_),"\n"'
@@ -71,11 +71,11 @@ Run the script:
 $ ./auth_code.sh
 ```
 
-You will be asked to log in with Amazon:
+We will be asked to log in with Amazon:
 
-[![]({{ page.url }}/amazon-music.jpg)]({{ page.url }}/amazon-music.jpg)
+[![]({{ page.url }}/login.jpg)]({{ page.url }}/login.jpg)
 
-Once logged in you will be redirected to the redirect URI you have set.
+Once logged in, we will be redirected to the redirect URI we have set earlier.
 
 Browser url should look like this:
 
@@ -83,13 +83,13 @@ Browser url should look like this:
 https://localhost:9745/authresponse?code=ANcUMLaDrkMtCwUSrIqc&scope=alexa%3Aall
 ```
 
-You won't actually see a webpage since we don't have anything running on that port. That's fine since we're just testing and all we need is to get the `code` parameter value from the url. In a real world application you will need a web server with SSL enabled. My [Generate Self-Signed SSL Certificate/](/blog/generate-self-signed-ssl-certificate/) blog post walks you through on how to generate an SSL certificate for testing purposes.
+We will not actually see a webpage since we don't have anything running on that port. That's fine since we're just testing and all we need is to get the `code` parameter value from the url. In a real world application we will need a web server with SSL enabled. My [Generate Self-Signed SSL Certificate](/blog/generate-self-signed-ssl-certificate/) blog post walks you through on how to generate an SSL certificate for testing purposes.
 
 # Retrieve Access Token
 
 Now we trade in that `code` token we got earlier for an access token in order to make requests to the Alexa Voice Service API.
 
-Here is a bash script to do that. Configure the setting variables to your own.
+Here is a bash script to do that. Configure the setting variables to your own. Remember to update the code to the `code` we got from the previous step.
 
 `auth_token.sh`:
 
@@ -103,7 +103,7 @@ curl -X POST --data "grant_type=${GRANT_TYPE}&code=${CODE}&client_id=${CLIENT_ID
 
 ```
 
-Make the script executable and run it. You should now have an access token and refresh token returned in a JSON response.
+Make the script executable and run it. We should now have an access token and refresh token returned in a JSON response.
 
 ```bash
 {"access_token":"Atza|IQEBLjAsAhRN1wbDKtAXQ3OyvBspG_jUfn_EtQIUDGVeSG4qNMd9cFD8GOTKCYfQGF82Vd3sbhduBM8Y0_7YfLMmsrWEa5-QX_YvAqDXKszGmunesOPCLFdSlwmfRI6x5RhFRtraVlE6iIjWWus5qm8So4R2WpAls5fVJVpLrEvDt_fn4jpbNG1TTJizHOrpZRuAMd72HDGSYVarzI48BiyjMFZfxRj1TnlGz2rHiKEXTFuTYVkuUNjYseVpMhyzdhw6e_KCZUm-H7Ux9XJ5t0grYlkAjAgb2cpFP8_2NTtJ35kOmV5xKar3J2bfL894CqgTSqAMhidCVlcrAR4TBB52LG4jV29bUwzaht9uN3Mu982qjHpzhlS7ZE6ecfseGM4vbTMYyGlGn3zX7cwg6FVS8w","refresh_token":"Atzr|IQEBLjAsAhQIShi_1Jd-lnnoqHG_vZCoO307PgIUNyEfeDoAFuLIhyBVLAvZBSqexSUiPqEwBYVHRhOwaTbrHEAOcdGuTwW2U_f-BghCMzsbaLadcdFqTPaKeVEoUyCN5Msf3P44lKGZsbteRKteFD4fhAiUGtajvVG_OnDyl3Bcokuv-ApmVgLFwBE5ZpEXhD6f5An-9_ATLy4goMrZAyQoXRiCQseEmytL3B2RWt2NmNKTgAv3pSCXqbX3xbLHeP1vXnMKI8CjVUqSF910J9pIOYT_cD4hJf80WqHCCXPLqpi2BreUOcwvSwNdM4SVc1tnzzN1LCbDLAyCOTXf8CO-3BwtOcOE9MJ2wiiW9EMD9jp051pC1MgRadGRZ42X43fhIozLhXf4J-DVeSZapOa6Cw","token_type":"bearer","expires_in":3600}
@@ -111,4 +111,4 @@ Make the script executable and run it. You should now have an access token and r
 
 The refresh token is used to retrieve another fresh acess token after it has expired.
 
-You can now use your access token to make call to the Alexa Voice Service API.
+We can now use our access token to make call to the Alexa Voice Service API.
