@@ -163,7 +163,113 @@ console.log(robot.destroyHumans());
 // Humans destroyed.
 ```
 
-As we can see, it will take approximately 7 seconds for the robots destroy the world's human population.
+As we can see, it will take approximately 7 seconds for the robots to destroy the world's human population.
+
+### Decorate decorator
+
+Decorators can of course be used to wrap a function with another function. Here is a simple *decorate* decorator.
+
+```javascript
+function decorate(fn) {
+  return (target, name, descriptor) => {
+    return {
+      configurable: true,
+      enumerable: false,
+      value: () => {
+        return fn(descriptor.value);
+      }
+    }
+  };
+}
+```
+
+In this example we wrap our method in a [memoize](https://en.wikipedia.org/wiki/Memoization) function which returns the cached value if it exists, otherwise the value is cached:
+
+```javascript
+function memoize(fn) {
+  const cached = memoize.cache[fn];
+
+  if (cached) {
+    console.log('Cache hit!');
+    return cached;
+  }
+
+  const value = fn();
+  memoize.cache[fn] = value;
+
+  console.log('Cache miss.');
+  return value;
+}
+
+memoize.cache = {};
+
+class Robot {
+  @decorate(memoize)
+  destroyHumans() {
+    return 'Humans destroyed.';
+  }
+}
+
+const robot = new Robot();
+console.log(robot.destroyHumans());
+// Cache miss.
+// Humans destroyed.
+console.log(robot.destroyHumans());
+// Cache hit!
+// Humans destroyed.
+```
+
+Memoization is useful for when you have expensive computations.
+
+### Mixin decorator
+
+With [mixins](https://en.wikipedia.org/wiki/Mixin) we can add or mix in additional behavior to a class. We do this by passing in mixin objects and have the decorator extend the prototype of the class to include them:
+
+```javascript
+function mixin(...mixins) {
+  return (target, name, descriptor) => {
+    mixins.forEach((obj) => {
+      for (const key in obj) {
+        const desc = Object.getOwnPropertyDescriptor(obj, key);
+
+        Object.defineProperty(target.prototype, key, desc);
+      }
+    });
+
+    return descriptor;
+  };
+}
+```
+
+Mixin decorator usage:
+
+```javascript
+const BrainMixin = {
+  think() {
+    return 'Today is sunny.';
+  }
+};
+
+const PhilosophyMixin = {
+  ponder() {
+    return 'What is the meaning of life?';
+  }
+};
+
+@mixin(BrainMixin, PhilosophyMixin)
+class Robot {
+  destroyHumans() {
+    return 'Humans destroyed.';
+  }
+}
+
+const robot = new Robot();
+console.log(robot.destroyHumans()); // "Humans destroyed."
+console.log(robot.think()); // "Today is sunny."
+console.log(robot.ponder()); // "What is the meaning of life?"
+```
+
+The robots are now instant philosophers.
 
 ## Using decorators today
 
