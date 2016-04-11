@@ -58,3 +58,5 @@ const payload = uint8Array.buffer;
 xhr.setRequestHeader('Content-Type', 'multipart/form-data; boundary=' + BOUNDARY);
 xhr.send(payload);
 ```
+
+[Source](http://stackoverflow.com/questions/8262266/xmlhttprequest-multipart-related-post-with-xml-and-image-as-payload/10073841#10073841)
