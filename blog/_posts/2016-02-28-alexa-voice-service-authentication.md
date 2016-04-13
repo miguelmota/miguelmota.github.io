@@ -85,7 +85,7 @@ https://localhost:9745/authresponse?code=ANcUMLaDrkMtCwUSrIqc&scope=alexa%3Aall
 
 We will not actually see a webpage since we don't have anything running on that port. That's fine since we're just testing and all we need is to get the `code` parameter value from the url. In a real world application we will need a web server with SSL enabled. My [Generate Self-Signed SSL Certificate](/blog/generate-self-signed-ssl-certificate/) blog post walks you through on how to generate an SSL certificate for testing purposes.
 
-# Retrieve Access Token
+## Retrieve Access Token
 
 Now we trade in that `code` token we got earlier for an access token in order to make requests to the Alexa Voice Service API.
 
@@ -109,6 +109,24 @@ Make the script executable and run it. We should now have an access token and re
 {"access_token":"Atza|IQEBLjAsAhRN1wbDKtAXQ3OyvBspG_jUfn_EtQIUDGVeSG4qNMd9cFD8GOTKCYfQGF82Vd3sbhduBM8Y0_7YfLMmsrWEa5-QX_YvAqDXKszGmunesOPCLFdSlwmfRI6x5RhFRtraVlE6iIjWWus5qm8So4R2WpAls5fVJVpLrEvDt_fn4jpbNG1TTJizHOrpZRuAMd72HDGSYVarzI48BiyjMFZfxRj1TnlGz2rHiKEXTFuTYVkuUNjYseVpMhyzdhw6e_KCZUm-H7Ux9XJ5t0grYlkAjAgb2cpFP8_2NTtJ35kOmV5xKar3J2bfL894CqgTSqAMhidCVlcrAR4TBB52LG4jV29bUwzaht9uN3Mu982qjHpzhlS7ZE6ecfseGM4vbTMYyGlGn3zX7cwg6FVS8w","refresh_token":"Atzr|IQEBLjAsAhQIShi_1Jd-lnnoqHG_vZCoO307PgIUNyEfeDoAFuLIhyBVLAvZBSqexSUiPqEwBYVHRhOwaTbrHEAOcdGuTwW2U_f-BghCMzsbaLadcdFqTPaKeVEoUyCN5Msf3P44lKGZsbteRKteFD4fhAiUGtajvVG_OnDyl3Bcokuv-ApmVgLFwBE5ZpEXhD6f5An-9_ATLy4goMrZAyQoXRiCQseEmytL3B2RWt2NmNKTgAv3pSCXqbX3xbLHeP1vXnMKI8CjVUqSF910J9pIOYT_cD4hJf80WqHCCXPLqpi2BreUOcwvSwNdM4SVc1tnzzN1LCbDLAyCOTXf8CO-3BwtOcOE9MJ2wiiW9EMD9jp051pC1MgRadGRZ42X43fhIozLhXf4J-DVeSZapOa6Cw","token_type":"bearer","expires_in":3600}
 ```
 
-The refresh token is used to retrieve another fresh acess token after it has expired.
+## Retrieve Access Token from Refresh Token
 
-We can now use our access token to make call to the Alexa Voice Service API.
+The refresh token is used to retrieve another fresh access token after it has expired.
+
+`refresh_token.sh`:
+
+```
+REFRESH="Atzr|IQEBLjAsAhQIShi_1Jd-lnnoqHG_vZCoO307P..."
+CLIENT_ID="amzn1.application-oa2-client.796ab90fc5844fdbb8efc1739..."
+CLIENT_SECRET="1e3a306483c78510d4cdeb05e0a522f7ec3c1629ae1d53c325bfc..."
+GRANT_TYPE="refresh_token"
+REDIRECT_URI="https://localhost:9745/authresponse"
+
+curl -X POST --data "grant_type=${GRANT_TYPE}&refresh_token=${REFRESH}&client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}&redirect_uri=${REDIRECT_URI}" https://api.amazon.com/auth/o2/token
+```
+
+The JSON response will contain the new access token and refresh token.
+
+## Conclusion
+
+Now we can use our access token to make call to the Alexa Voice Service API.
