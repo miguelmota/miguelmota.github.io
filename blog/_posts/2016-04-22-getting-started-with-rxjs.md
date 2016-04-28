@@ -1011,6 +1011,35 @@ Outputs:
 done
 ```
 
+### bufferTime
+
+Sometimes we need to handle data in batches. This is where [`bufferTime`](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-bufferTime) comes in. `bufferTime` takes a buffer time span parameter for when to release the buffer (batch) as an array. Here's an example:
+
+```javascript
+Rx.Observable.interval(100)
+.bufferTime(300)
+.subscribe(result => console.log(result),
+           error => console.error(error),
+           () => console.log('done'));
+```
+
+Outputs:
+
+```javascript
+[ 0, 1 ]
+[ 2, 3, 4, 5 ]
+[ 6, 7, 8 ]
+[ 9, 10, 11 ]
+[ 12, 13 ]
+[ 14, 15, 16 ]
+[ 17, 18, 19 ]
+[ 20, 21, 22 ]
+[ 23, 24, 25 ]
+[ 26, 27, 28 ]
+[ 29, 30, 31 ]
+[ 32, 33, 34 ]
+```
+
 ## Subjects
 
 Subjects are the equivalent to an EventEmitter, and the only way of multicasting a value to multiple Observers.
@@ -1266,41 +1295,137 @@ Outputs:
 done
 ```
 
+## Hot and Cold Observables
+
+*Hot Observables* emit values regardless if there are Observers subscribed.
+
+*Cold Observables* emit the entire sequence of values from the start to each Observer when subscribed.
+
+`range` is an example of a cold Observable because it returns the entire range on each subscription. `interval` is also a cold Observable. Take a look at this example and notice how Observer B starts from 0 instead of where the interval currently is at:
+
+```javascript
+const source = Rx.Observable.interval(100);
+const observerA = source.subscribe(x => console.log(`ObserverA: ${x}`));
+
+setTimeout(() => {
+  const observerB = source.subscribe(x => console.log(`ObserverB: ${x}`));
+}, 1000);
+```
+
+Outputs:
+
+```javascript
+ObserverA: 0
+ObserverA: 1
+ObserverA: 2
+ObserverA: 3
+ObserverA: 4
+ObserverA: 5
+ObserverA: 6
+ObserverA: 7
+ObserverA: 8
+ObserverA: 9
+ObserverB: 0
+ObserverA: 10
+ObserverB: 1
+ObserverA: 11
+ObserverB: 2
+ObserverA: 12
+ObserverB: 3
+ObserverA: 13
+ObserverB: 4
+ObserverA: 14
+ObserverB: 5
+...
+```
+
+One way to turn a *Cold* Observable to a *Hot* Observable is to call [`publish`](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-publish) on the source Observable which returns a [`ConnectableObservable`](http://reactivex.io/rxjs/class/es6/observable/ConnectableObservable.js~ConnectableObservable.html) that once connected will start publishing values and act like a proxy to the original so that any Observer that subscribes to it will receive the continuing values instead of a new sequence. Here's the same example as above but turned into a Hot Observable:
+
+```javascript
+const source = Rx.Observable.interval(100);
+const publisher = source.publish();
+
+var observerA = publisher.subscribe(x => console.log(`Observer A: ${x}`))
+
+publisher.connect();
+
+setTimeout(() => {
+  const observerB = publisher.subscribe(x => console.log(`Observer B: ${x}`));
+}, 1000);
+```
+
+Outputs:
+
+```javascript
+Observer A: 0
+Observer A: 1
+Observer A: 2
+Observer A: 3
+Observer A: 4
+Observer A: 5
+Observer A: 6
+Observer A: 7
+Observer A: 8
+Observer A: 9
+Observer B: 9
+Observer A: 10
+Observer B: 10
+Observer A: 11
+Observer B: 11
+Observer A: 12
+Observer B: 12
+Observer A: 13
+Observer B: 13
+Observer A: 14
+Observer B: 14
+Observer A: 15
+Observer B: 15
+```
+
+A `ConnectableObservable` acts like a proxy by by subscribing itself to the original and pushing the values it receives to it's subscribers.
+
+### share
+
+RxJS provides the [`share`](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-share) method which returns a new Observable that multicasts (shares) the original Observable. It's an easier way to tun a Cold Observable to a Hot Observable because we don't have to manually connect like in the previous example.
+
+```javascript
+const source = Rx.Observable.interval(100).share();
+const observerA = source.subscribe(x => console.log(`Observer A: ${x}`));
+
+setTimeout(() => {
+  const observerB = source.subscribe(x => console.log(`Observer B: ${x}`));
+}, 1000);
+```
+
+Outputs:
+
+```javascript
+Observer A: 0
+Observer A: 1
+Observer A: 2
+Observer A: 3
+Observer A: 4
+Observer A: 5
+Observer A: 6
+Observer A: 7
+Observer A: 8
+Observer A: 9
+Observer B: 9
+Observer A: 10
+Observer B: 10
+Observer A: 11
+Observer B: 11
+Observer A: 12
+Observer B: 12
+Observer A: 13
+Observer B: 13
+Observer A: 14
+Observer B: 14
+Observer A: 15
+Observer B: 15
+```
+
 <!--
-other stuff to talk about
-
-# Hot and Cold Observables
-
-Hot observables emit values regardless if there are observers subscribed.
-Cold observables emit the entire sequence of values from the start to each observer.
-
-Rx.Observable.range is a cold observable because it returns the entire range on each subscribopiton
-Rx.interval is a cold observable
-
-cold.js
-
-use share to turn it into a hot observable
-
-manual below
-
-Connectable Observable
-We can told a cold observable to hot using publish.
-Calling publish creates a new observable that acts as a proxy to the original one.
-it does that by subscribing itself to the original and pushing the values it receives to it's subscribers.
-
-hotcold.js
-
-with share we don't have to worry about connecting
-
-we can use bufferWithTime to process everything in a batch. It takes a time parameter for when to release the batch as an array
-
-bufferWithTime.js
-
-pairwise.js
-
-forkJoin
-
-
 # Schedulers
 schedulers allow us to control time and concurrency with more precision and helps with testing code
 
