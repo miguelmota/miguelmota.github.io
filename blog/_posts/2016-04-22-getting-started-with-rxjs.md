@@ -33,6 +33,8 @@ C = A + B
 
 Whenever A or B changes, then C automatically gets updated since it's dependents changed. That is Reactive Programming. You declare *what* should happen, instead of *how* it should happen. RP is declarative, rather than imperative.
 
+Functional Reactive Programming is taking a functional approach to Reactive Programming by using stateless pure functions for operations on the data.
+
 ## Getting Started
 
 To run the examples you can use Node.js and the [rxjs](https://www.npmjs.com/package/rxjs) module:
@@ -1425,81 +1427,196 @@ Observer A: 15
 Observer B: 15
 ```
 
+## Schedulers
+
+[Schedulers](http://reactivex.io/rxjs/typedef/index.html#static-typedef-Rx.Scheduler) allow us to control time and concurrency with more precision. A Scheduler controls when a subscription starts and when notifications are emitted. Schedulers schedule an action to happened in the future. You can use schedulers to execute code synchronously or asynchronously depending on the context.
+
+### queue
+
+The [queue Scheduler](http://reactivex.io/rxjs/class/es6/MiscJSDoc.js~SchedulerDoc.html) schedules on a a queue in the current event frame to be executed immediately after the current work executes. Use for iterative operations. If the current work running schedules more work to run, then the additional work will be placed on a queue to run after the current work rather than running recursively to avoid stack overflows or infinite recursion.
+
+```javascript
+const timeStart = Date.now();
+const source = Rx.Observable.range(1, 5)
+.do(value => console.log(`processing value ${value}`))
+.observeOn(Rx.Scheduler.queue)
+
+console.log('before subscribe');
+source.subscribe(x => console.log(`next ${x}`),
+                 error => console.error(error),
+                 () => console.log(`Total time: ${Date.now() - timeStart}ms`));
+console.log(`after subscribe`);
+```
+
+Outputs:
+
+```javascript
+before subscribe
+processing value 1
+next 1
+processing value 2
+next 2
+processing value 3
+next 3
+processing value 4
+next 4
+processing value 5
+next 5
+Total time: 16ms
+after subscribe
+```
+
+### asap
+
+The [asap Scheduler](http://reactivex.io/rxjs/class/es6/MiscJSDoc.js~SchedulerDoc.html) schedules on the micro task queue. It uses [`process.nextTick`](https://nodejs.org/api/process.html#process_process_nexttick_callback_arg) in Node, `setTimeout`, [`requestAnimationFrame`](https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame), or [`MessageChannel`](https://developer.mozilla.org/en-US/docs/Web/API/MessageChannel) if using Web Workers.
+
+```javascript
+const timeStart = Date.now();
+const source = Rx.Observable.range(1, 5)
+.do(value => console.log(`processing value ${value}`))
+.observeOn(Rx.Scheduler.asap)
+
+console.log('before subscribe');
+source.subscribe(x => console.log(`next ${x}`),
+                 error => console.error(error),
+                 () => console.log(`Total time: ${Date.now() - timeStart}ms`));
+console.log(`after subscribe`);
+```
+
+Outputs:
+
+```javascript
+before subscribe
+processing value 1
+processing value 2
+processing value 3
+processing value 4
+processing value 5
+after subscribe
+next 1
+next 2
+next 3
+next 4
+next 5
+Total time: 17ms
+```
+
+### async
+
+The [async Scheduler](http://reactivex.io/rxjs/class/es6/MiscJSDoc.js~SchedulerDoc.html) schedules work with `setInterval`. Typically used for for time-based operations.
+
+```javascript
+const timeStart = Date.now();
+const source = Rx.Observable.range(1, 5)
+.do(value => console.log(`processing value ${value}`))
+.observeOn(Rx.Scheduler.async)
+
+console.log('before subscribe');
+source.subscribe(x => console.log(`next ${x}`),
+                 error => console.error(error),
+                 () => console.log(`Total time: ${Date.now() - timeStart}ms`));
+console.log(`after subscribe`);
+```
+
+Outputs:
+
+```javascript
+before subscribe
+processing value 1
+processing value 2
+processing value 3
+processing value 4
+processing value 5
+after subscribe
+next 1
+next 2
+next 3
+next 4
+next 5
+Total time: 17ms
+```
+
+By default, if the data returned by operators is small then no Scheduler is used. If the data set is large or infinite then the `queue` Scheduler is used. If the the operator is time-based then the `async` Scheduler is used.
+
+Use [`subscribeOn`](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-subscribeOn) to schedule in what context will the subscribe call happen. You can delay or schedule the actual subscription to occur on a a Scheduler. `subscribeOn` makes the subscription and un-subscription work of an Observable to run on that Scheduler.
+
+Use [`observeOn`](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-observeOn) to schedule in what context will notifications be delivered. The mediator between the Observable and the Observer will use the Scheduler to schedules notifications. `observeOn` returns an observable that uses the passed scheduler, which will make that call on every `next` call.
+
+You can switch to use an async scheduler on the fly for expensive operations by using `observeOn`. For example:
+
+```javascript
+let array = [];
+for (var i = 0; i < 1e5; i++) {
+  array.push(i);
+}
+
+const expensiveOperation = (x) => {
+    let k = 1e7;
+    while(k--);
+    return x;
+};
+
+const source = Rx.Observable.from(array)
+.groupBy(value => value % 2 === 0)
+.map(value => value.observeOn(Rx.Scheduler.asap))
+.map(groupedObservable => expensiveOperation(groupedObservable))
+
+console.log(`before subscribe`);
+source.subscribe(
+  obs => obs.count().subscribe(x => console.log(x)),
+  error => console.error(error),
+  () => console.log(`done`)
+);
+console.log(`after subscribe`);
+```
+
+Outputs:
+
+```javascript
+before subscribe
+done
+after subscribe
+50000
+50000
+```
+
+Without the scheduler you'd get a synchronous output such as:
+
+```javascript
+before subscribe
+50000
+50000
+done
+after subscribe
+```
+
 <!--
-# Schedulers
-schedulers allow us to control time and concurrency with more precision and helps with testing code
+## Testing with scheudlers
 
-Schedulers schedule an action to happened in the future.
-You can use schedulers to execute code synchronously or asynchronously
+The [`TestScheduler`](https://github.com/Reactive-Extensions/RxJS/blob/master/doc/api/testing/testscheduler.md) is designed to help with testing. `TestScheduler` is a specialization of [`VirtualTimeScheduler`](https://github.com/Reactive-Extensions/RxJS/blob/master/doc/api/schedulers/virtualtimescheduler.md) which executes actions in "virutal" time instead of real time. I'll show you what I mean:
 
-scheduler-sync.js
-scheduler-async.js
+```javascript
+```
 
-you can switch to use async scheduler on the fly for expensive operations
+Outputs:
 
-currentThread is default scheduler.
+```javascript
+```
+We specify the "time" at which the value should be emitted. It runs immediately since the time is "virtual". It just respects the order that we specify.
 
-scheduler-switch.js
-
-observeOn returns an observable that uses the passed scheduler, which will make that call on every `next` call.
-
-subscribeOn makes the subscription and un-subscription work of an Observable to run on that Scheduler.
-
-Immediate Scheduler, it's synchronous, blocks thread
-
-scheduler-immediate.js
-
-Default scheduler, is like setTimeout(0) in browser and process.nextTick in NOde.js> it's async, non blocking.
-scheduler-immediate-real.js
-
-current thread scheduler is syncronous like the immediate scheduler but in recursive operations it enqueues the operations to execute.
-
-current-thread-scheudler.js
-
-useful for when using recursive operations such as repeat
-
-Testing with scheudlers
-
-The TestScheduler is designed to help with testing. TestScheduler is a specialization of VirtualTimeScheduler which executes actions in "virutal" time instead of real time.
-
-test-scheduler.js
-
-we specify the "time" at which the value should be emitted.
-it runs immediately since the time is "virtual". It just respects the order that we specify.
-
-with a normal scheduler it would take 300ms
-
-pipelines are efficient unlike chaining es5 collection methods. They are are composed and traversed only once.
-
-efficient.js
-
-when we use take, then we only iterate those items, not the whole array. This is called lazy evaluation
-
-json-merge.js
-
-thinking in stream the complexity of the program goes down.
-
-intervalmerge.js
-
-marble diagrams are visual representation of for visualizing sequences.
-
-# Helpers
-
-Rx.helpers.identity
-
-Rx.DOM.ready for when dom is ready
+With a normal scheduler it would take 300ms.
+-->
 
 ## Recap
 
-The essential concepts in RxJS which solve async event management are:
+The essential concepts of RxJS are:
 
-Observable: represents the idea of an invokable collection of future values or events.
-Observer: is a collection of callbacks that knows how to listen to values delivered by the Observable.
-Subscription: represents the execution of an Observable, is primarily useful for cancelling the execution.
-Operators: are pure functions that enable a functional programming style of dealing with collections with operations like map, filter, concat, flatMap, etc.
-Subject: is the equivalent to an EventEmitter, and the only way of multicasting a value or event to multiple Observers.
-Schedulers: are centralized dispatchers to control concurrency, allowing us to coordinate when computation happens on e.g. setTimeout or requestAnimationFrame or others.
--->
+- **Observable**: represents the an invokable sequence of future values or events.
+- **Observer**: is a set of callbacks that knows how to listen to values emitted by the Observable.
+- **Subscription**: represents the execution of an Observable, and is also used for cancelling the execution.
+- **Operators**: are pure functions that enable a functional programming style of dealing with sequences.
+- **Subject**: is the equivalent to an `EventEmitter`, and the way of multicasting a value or event to multiple Observers.
+- **Schedulers**: are dispatchers to control concurrency, allowing for coordination when computation happens.
 
 ## Conclusion
 
