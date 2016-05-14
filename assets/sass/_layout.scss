@@ -469,29 +469,7 @@ body {
   height: 200px;
 }
 
-.about .content-header {
-  height: 610px;
-  background: transparent url(../images/about/miguel-mota-instagram.jpg) no-repeat fixed;
-  background-size: 100% auto;
-  background-position: center -300px;
-  @include respond-to(tablet-small) {
-    height: 360px;
-    background-position: center -250px;
-  }
-  @include respond-to(tablet) {
-    height: 410px;
-  }
-  @include respond-to(desktop-large) {
-    background-position: center -400px;
-  }
-  @include respond-to(mobile) {
-    background: $about-content-header-background-color url(../images/about/miguel-mota-instagram-small.jpg) no-repeat fixed;
-    background-size: 100% auto;
-    background-position: center 0;
-    height: 260px;
-  }
-}
-
+.about .content-header,
 .archive .content-header,
 .work .content-header,
 .resume .content-header {
@@ -836,6 +814,22 @@ body {
       color: $about-title-color;
     }
   }
+
+  .avatar {
+    display: inline-block;
+    float: left;
+    width: 24px;
+    height: 24px;
+    position: relative;
+    bottom: -5px;
+    margin: 0 10px 0 0;
+    background: transparent url(../images/about/miguel-mota-headshot-small.png) no-repeat center center;
+    background-size: contain;
+
+    @include respond-to(mobile) {
+      bottom: 0;
+    }
+  }
 }
 
 .comments {
@@ -1073,6 +1067,7 @@ figcaption {
 
   .about-moogs-logo {
     vertical-align: middle;
+    max-width: 24px;
   }
 }
 
