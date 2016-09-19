@@ -586,7 +586,7 @@ body {
 
   }
   p:nth-child(2) {
-    font-size: 24px;
+    font-size: 22px;
 
     @include respond-to(mobile) {
       font-size: $body-font-size;
