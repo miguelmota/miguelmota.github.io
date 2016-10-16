@@ -5,9 +5,9 @@
             {% include home.html %}
           {% else %}
             {% if include.route == "blog-post" %}
-              <datetime>{{ page.date | date_to_string }} <small><i class="fa
+              <datetime>{{ page.date | date_to_string }} <!--<small><i class="fa
                 fa-comment-o"></i> <a href="{{ page.url }}#disqus_thread"
-                data-disqus-identifier="{{ page.url }}" title="Comments"></a></small></datetime>
+                data-disqus-identifier="{{ page.url }}" title="Comments"></a></small>--></datetime>
             {% endif %}
           {% endif %}
 

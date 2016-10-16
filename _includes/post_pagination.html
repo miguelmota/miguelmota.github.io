@@ -5,7 +5,7 @@
 
       <dl class="posts-list">
         <dt><datetime>{{ page.previous.date | date_to_string }}</datetime></dt>
-        <dd><h2><a href="{{ page.previous.url }}" title="{{ page.previous.title }}">{{ page.previous.title }}</a> <small><i class="icon-comment-alt"></i> <a href="{{ page.previous.url }}#disqus_thread" data-disqus-identifier="{{ page.previous.url }}" title="Comments"></a></small></h2></dd>
+        <dd><h2><a href="{{ page.previous.url }}" title="{{ page.previous.title }}">{{ page.previous.title }}</a> <!--<small><i class="icon-comment-alt"></i> <a href="{{ page.previous.url }}#disqus_thread" data-disqus-identifier="{{ page.previous.url }}" title="Comments"></a></small>--></h2></dd>
       </dl>
 
     {% endif %}
@@ -18,7 +18,7 @@
 
       <dl class="posts-list">
         <dt><datetime>{{ page.next.date | date_to_string }}</datetime></dt>
-        <dd><h2><a href="{{ page.next.url }}" title="{{ page.next.title }}">{{ page.next.title }}</a> <small><i class="icon-comment-alt"></i> <a href="{{ page.next.url }}#disqus_thread" data-disqus-identifier="{{ page.next.url }}" title="Comments"></a></small></h2></dd>
+        <dd><h2><a href="{{ page.next.url }}" title="{{ page.next.title }}">{{ page.next.title }}</a> <!--<small><i class="icon-comment-alt"></i> <a href="{{ page.next.url }}#disqus_thread" data-disqus-identifier="{{ page.next.url }}" title="Comments"></a></small>--></h2></dd>
       </dl>
 
     {% endif %}

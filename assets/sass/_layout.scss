@@ -1180,9 +1180,6 @@ figcaption {
   }
 
   .row > .column {
-    width: 50%;
-    float: left;
-
     @include respond-to(mobile) {
       width: 100%;
       float: none;
