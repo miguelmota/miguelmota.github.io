@@ -6,6 +6,13 @@ This is my [jekyll](https://github.com/mojombo/jekyll/) powered blog.
 
 ## Instructions
 
+Install deps
+
+```bash
+npm install
+bundle install
+```
+
 Watch and compile
 
 ```bash

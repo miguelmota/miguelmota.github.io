@@ -1,3 +1,5 @@
 source 'https://rubygems.org'
-gem 'jekyll', '2.5.3'
+gem 'jekyll', '3.4.1'
 gem 'compass', '1.0.0'
+gem 'redcarpet', '3.4.0'
+gem 'rouge', '1.11.1'
