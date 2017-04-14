@@ -2,7 +2,7 @@
 layout: byte
 title: How to extract the MIME type from a base64 string.
 category: bytes
-tags: [JavaScript, Math]
+tags: [JavaScript]
 description: Extract the MIME type from a base64 string using a regular expression.
 ---
 Extract the MIME type from a base64 string using a regular expression.
