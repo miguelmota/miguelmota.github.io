@@ -57,6 +57,9 @@ function urlencode() {
 AUTH_URL="https://www.amazon.com/ap/oa?client_id=${CLIENT_ID}&scope=$(echo $SCOPE | urlencode)&scope_data=$(echo $SCOPE_DATA | urlencode)&response_type=${RESPONSE_TYPE}&redirect_uri=$(echo $REDIRECT_URI | urlencode)"
 
 open ${AUTH_URL}
+
+# If using Linux, use this command:
+# xdg-open ${AUTH_URL}
 ```
 
 Make the script executable:
