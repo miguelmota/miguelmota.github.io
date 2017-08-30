@@ -1000,8 +1000,8 @@ figcaption {
     @include social-icon($social-icon-width, $social-icon-height, #EA4C89, "../images/social/dribbble-32.png");
   }
 
-  .moogs {
-    @include social-icon($social-icon-width, $social-icon-height, #0088CC, "../images/social/moogs-32.png");
+  .mm {
+    @include social-icon($social-icon-width, $social-icon-height, #0088CC, "../images/social/mm-32.png");
   }
 
   .zazzle {
@@ -1066,7 +1066,7 @@ figcaption {
     @include button-style();
   }
 
-  .about-moogs-logo {
+  .about-m-logo {
     vertical-align: middle;
     max-width: 24px;
   }

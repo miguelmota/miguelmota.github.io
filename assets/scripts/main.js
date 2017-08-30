@@ -1,9 +1,9 @@
 (function (global) {
   'use strict';
 
-  var Moogs = function () {};
+  var Site = function () {};
 
-  Moogs.prototype.initializeGlobal = function () {
+  Site.prototype.initializeGlobal = function () {
     FastClick.attach(document.body);
 
    $(document).on('click', '[data-ga-label]', function() {
@@ -31,7 +31,7 @@
     this.initializeDetailsElement();
   };
 
-  Moogs.prototype.theme = {
+  Site.prototype.theme = {
     stylesheet: document.getElementById('stylesheet'),
     stylesheets: ['main.css', 'main-invert.css'],
 
@@ -90,7 +90,7 @@
     }
   };
 
-  Moogs.prototype.initializeDisqusCommentCount = function() {
+  Site.prototype.initializeDisqusCommentCount = function() {
     if (typeof disqus_shortname === 'string') {
       var s = document.createElement('script');
       s.async = true;
@@ -100,7 +100,7 @@
     }
   };
 
-  Moogs.prototype.initializeDisqusCommentThread = function() {
+  Site.prototype.initializeDisqusCommentThread = function() {
     if (typeof disqus_shortname === 'string') {
       var dsq = document.createElement('script');
       dsq.type = 'text/javascript'; dsq.async = true;
@@ -109,19 +109,19 @@
     }
   };
 
-  Moogs.prototype.initializeHome = function() {
+  Site.prototype.initializeHome = function() {
 
   };
 
-  Moogs.prototype.initializeAbout = function() {
+  Site.prototype.initializeAbout = function() {
 
   };
 
-  Moogs.prototype.initializeResume = function() {
+  Site.prototype.initializeResume = function() {
 
   };
 
-  Moogs.prototype.initializeDetailsElement = function() {
+  Site.prototype.initializeDetailsElement = function() {
     var hashValue = window.location.hash.substr(1);
 
     if (hashValue) {
@@ -160,23 +160,23 @@
     }
   };
 
-  Moogs.prototype.initializeBlog = function() {
+  Site.prototype.initializeBlog = function() {
 
   };
 
-  Moogs.prototype.initializeBytes = function() {
+  Site.prototype.initializeBytes = function() {
 
   };
 
-  Moogs.prototype.initializeWork = function() {
+  Site.prototype.initializeWork = function() {
 
   };
 
-  Moogs.prototype.initializeContact = function() {
+  Site.prototype.initializeContact = function() {
     this.initializeContactMap();
   };
 
-  Moogs.prototype.initializeContactMap = function() {
+  Site.prototype.initializeContactMap = function() {
     function initializeMap() {
       var map,
           marker,
@@ -347,29 +347,29 @@
     });
   };
 
-  var moogs = new Moogs();
+  var site = new Site();
 
   $(document).ready(function() {
-    moogs.initializeGlobal();
+    site.initializeGlobal();
 
     var page = $('body').attr('class');
 
-    moogs.theme.load();
+    site.theme.load();
 
     if (page === 'home') {
-      moogs.initializeHome();
+      site.initializeHome();
     } else if (page === 'about') {
-      moogs.initializeAbout();
+      site.initializeAbout();
     } else if (page === 'resume') {
-      moogs.initializeResume();
+      site.initializeResume();
     } else if (page === 'blog' || page === 'archive') {
-      moogs.initializeBlog();
+      site.initializeBlog();
     } else if (page === 'bytes') {
-      moogs.initializeBytes();
+      site.initializeBytes();
     } else if (page === 'work') {
-      moogs.initializeWork();
+      site.initializeWork();
     } else if (page === 'contact') {
-      moogs.initializeContact();
+      site.initializeContact();
     }
 
     $(document).on('click', '.input-short-url input', function() {
@@ -378,9 +378,9 @@
 
     $(document).on('click', '.theme-toggle', function(event) {
       event.preventDefault();
-      moogs.theme.toggle();
+      site.theme.toggle();
     });
   });
 
-  global.moogs = moogs;
+  global.site = site;
 })(this);
