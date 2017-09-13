@@ -37,7 +37,7 @@ The next step is to add the public key to your server.
 cat ~/.ssh/id_rsa.pub | ssh <your server username>@<your server ip address> "cat >> ~/.ssh/authorized_keys"
 
 # Alternatively, you can run:
-ssh-copy-id <your server username>@<your server ip address>
+ssh-copy-id -i ~/.ssh/id_rsa.pub <your server username>@<your server ip address>
 ```
 
 The first time you try to SSH it will ask you for your password, but then exit and try to SSH again. *Look Ma! No password!*
