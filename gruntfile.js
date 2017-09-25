@@ -9,9 +9,9 @@ module.exports = function (grunt) {
       },
       dist: {
         src: [
-         'vendor/jquery/dist/jquery.js',
-         'vendor/fastclick/lib/fastclick.js',
-         'assets/scripts/main.js',
+          'assets/vendor/jquery-3.2.1.slim.min.js',
+          'assets/vendor/fastclick.js',
+          'assets/scripts/main.js'
         ],
         dest: 'assets/scripts/build/site.js'
       }
