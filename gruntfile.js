@@ -49,7 +49,7 @@ module.exports = function (grunt) {
         files: [
           'assets/sass/*',
         ],
-        tasks: ['watch-css']
+        tasks: ['watch-styles']
       }
     },
     shell: {
@@ -63,7 +63,7 @@ module.exports = function (grunt) {
         }
       },
       compass_compile: {
-        command: 'compass compile',
+        command: 'compass compile -c sass_config.rb',
         options: {
           stdout: true
         }
@@ -105,6 +105,6 @@ module.exports = function (grunt) {
   grunt.registerTask('compile-scripts', ['concat', 'uglify']);
   grunt.registerTask('jekyll-build', ['shell:jekyll_build']);
   grunt.registerTask('jekyll-serve', ['jekyll:serve']);
-  grunt.registerTask('default', ['watch:css', 'watch:scripts']);
+  grunt.registerTask('default', ['watch-styles', 'watch:scripts']);
   grunt.registerTask('deploy', 'shell:deploy');
 };
