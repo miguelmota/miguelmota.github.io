@@ -4,7 +4,7 @@ This is my [jekyll](https://github.com/mojombo/jekyll/) powered blog.
 
 [http://miguelmota.github.io/](http://miguelmota.github.io/)
 
-## Instructions
+## Development
 
 Install deps
 
@@ -29,6 +29,12 @@ Compile scripts
 
 ```bash
 grunt compile-scripts
+```
+
+Run jekyll server
+
+```bash
+jekyll serve
 ```
 
 ## License
