@@ -4,6 +4,7 @@
   "description": "This is my [jekyll](https://github.com/mojombo/jekyll/) powered blog.",
   "main": "Gruntfile.js",
   "dependencies": {
+    "grunt-cli": "^1.2.0"
   },
   "devDependencies": {
     "grunt": "~0.4.1",

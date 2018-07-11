@@ -188,13 +188,14 @@
           infoWindow,
           infoWindowContent,
           coords = {
+            // coords of center of cities
             losAngeles: [34.0452, -118.284],
             riverside: [33.7643995, -116.7037845,9],
             orangeCounty: [33.6670191, -117.7646826],
             veniceBeach: [33.988973, -118.462617]
            };
 
-      latlng = new google.maps.LatLng(coords.veniceBeach[0], coords.veniceBeach[1]);
+      latlng = new google.maps.LatLng(coords.veniceBeach[0], coords.losAngeles[1]);
 
       mapOptions = {
         zoom: 5,

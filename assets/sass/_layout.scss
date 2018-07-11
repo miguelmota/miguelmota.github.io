@@ -369,7 +369,7 @@ body {
       display: inline-block;
       width: $header-logo-size;
       height: $header-logo-size;
-      font-size: 18px;
+      font-size: 14px;
       font-weight: bold;
       margin: 0;
       padding: 0;
@@ -893,6 +893,8 @@ figcaption {
   @include transition(background-color .25s ease-out);
   opacity: 0.5;
   border-radius: 2px;
+  color: $body-font-color;
+  font-size: 10px;
 
   &:hover,
   &:active {

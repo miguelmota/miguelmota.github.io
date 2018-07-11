@@ -1,4 +1,4 @@
-e--
+---
 layout: blog-post
 title: Slide Out Navigation using CSS3 Translate
 category: blog
