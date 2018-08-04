@@ -15,17 +15,15 @@ google_analytics_uid: UA-12642068-1
 
 disqus_shortname: miguelmota
 
-theme:
+homepage_featured: 1
 
-  homepage_featured: 1
+homepage_posts: 10
 
-  homepage_posts: 10
-
-  featured_wordcount: 70
+featured_wordcount: 70
 
 port: 9999
 
-exclude: [config, README.md, Rakefile, package.json, LICENSE.md, gruntfile.js, Gemfile, Gemfile.lock, sass_config.rb, component.json, node_modules, vendor, .travis.yml, .project, .gitignore, .gitattributes, .editorconfig, CNAME]
+exclude: [.git, config, README.md, Rakefile, package.json, LICENSE.md, gruntfile.js, Gemfile, Gemfile.lock, sass_config.rb, component.json, node_modules, vendor, .travis.yml, .project, .gitignore, .gitattributes, .editorconfig, CNAME]
 
 compress_html:
   clippings: []

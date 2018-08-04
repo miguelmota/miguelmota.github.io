@@ -8,7 +8,7 @@
     {% endfor %}
 </a> <!--<small><i class="fa fa-comment-o"></i> <a href="{{ post.url }}#disqus_thread" data-disqus-identifier="{{ post.url }}" title="Comments"></a></small>--></h2>
   <div class="baseline">
-    <p>{{ post.content | strip_html | truncatewords: site.theme.featured_wordcount }}</p>
+    <p>{{ post.content | strip_html | truncatewords: site.featured_wordcount }}</p>
   </div>
   {% include post_tags.html tags=post.tags %}
   <div><a href="{{ post.url }}" class="more" title="Read more">Read more »</a></div>

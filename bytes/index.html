@@ -13,7 +13,7 @@ The following part extracts all the tags from your posts and sort tags, so that 
 =======================
 {% endcomment %}
 {% assign rawtags = "" %}
-{% for post in site.categories.[page.category] %}
+{% for post in site.categories[page.category] %}
     {% assign ttags = post.tags | join:'|' | append:'|' %}
     {% assign rawtags = rawtags | append:ttags %}
 {% endfor %}
@@ -55,7 +55,7 @@ The purpose of this snippet is to list all your posts posted with a certain tag.
           <dd>
             <dt><h2 id="{{ tag | slugify }}">{{ tag }}</h2></dt>
               <dl class="posts-list">
-              {% for post in site.categories.[page.category] %}
+              {% for post in site.categories[page.category] %}
                   {% if post.tags contains tag %}
                     {% include byte_summary.html %}
                   {% endif %}

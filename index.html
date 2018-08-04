@@ -10,7 +10,7 @@ route: home
     <div class="featured row">
         <div class="column">
             <h3>Latest</h3>
-            {% for post in site.categories.blog offset: 0 limit: site.theme.homepage_featured %}
+            {% for post in site.categories.blog offset: 0 limit: site.homepage_featured %}
             {% include post_featured.html %}
             {% endfor %}
         </div>
@@ -21,7 +21,7 @@ route: home
             <h3>Older posts</h3>
 
             <dl class="posts-list">
-                {% for post in site.categories.blog offset: site.theme.homepage_featured limit: site.theme.homepage_posts %}
+                {% for post in site.categories.blog offset: site.homepage_featured limit: site.homepage_posts %}
                 {% include post_summary.html %}
                 {% endfor %}
             </dl>
