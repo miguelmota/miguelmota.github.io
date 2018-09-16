@@ -1,0 +1,2 @@
+Contact: hello@miguelmota.com
+Encryption: https://miguelmota.com/pgp-key.txt
