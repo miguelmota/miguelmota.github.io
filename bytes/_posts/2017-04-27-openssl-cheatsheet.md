@@ -53,7 +53,7 @@ Generate a CA CSR using CA key and config file
 
 config `openssl.cnf`
 
-```
+```text
 [ req ]
 prompt = no
 distinguished_name = req_distinguished_name
@@ -106,7 +106,7 @@ Generate new CSR with multiple domains using config
 
 config `openssl.cnf`
 
-```
+```text
 [ req ]
 prompt = no
 distinguished_name = req_distinguished_name

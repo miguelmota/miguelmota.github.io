@@ -291,3 +291,7 @@ The `-i` flag means to output the response headers. The `-H` flag specifies head
 ## Update Feb 28 2016 - Blog post on authentication
 
 I created an [Alexa Voice Service Authencation](/blog/alexa-voice-service-authentication) blog post since I have been getting a lot of requests on how to do the authentication step.
+
+## Update May 8 2018 - API Changes
+
+There have been major updates made to the Alexa AVS API so this article is now out-of-date. The best place to ask for help would be in the [Alexa Developer Forums](https://forums.developer.amazon.com/spaces/165/alexa.html).
