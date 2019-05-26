@@ -15,7 +15,7 @@ route: about
 <p>Some other tidbits about me are:</p>
 
 <ul>
-  <li>Self-taught developer and <em>love to learn</em> — learning new things and systemizing.</li>
+  <li><em>Love to learn</em> — my hobby is learning new things and systemizing.</li>
   <li><em>"Make it run, make it right, make it fast"</em> is the general programming process I follow.</li>
   <li>When there's time to spare you can find me on on <a href="https://stackoverflow.com/users/1439168/miguel-mota" target="_blank" rel="noreferrer noopener" data-ga-label="About - StackOverflow">StackOverflow</a> answering questions.</li>
   <li><a href="https://en.wikipedia.org/wiki/Stoicism" target="_blank" rel="noreferrer noopener" data-ga-label="About - Stoicism">Stoicism</a> is a philosophy I live by on a daily basis (<a href="https://en.wikipedia.org/wiki/Marcus_Aurelius" target="_blank" rel="noreferrer noopener" data-ga-label="About - Marcus Aurelius">Marcus Aurelius</a> is my favorite stoic).</li>
