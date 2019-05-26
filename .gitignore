@@ -93,6 +93,8 @@ _unpublished
 config
 _site
 about/resume
+public/
+resources/
 
 # Files to ignore #
 #####################
