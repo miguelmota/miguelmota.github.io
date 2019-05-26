@@ -26,6 +26,8 @@ p {
 
 main {
   padding: 1em;
+  max-width: 728px;
+  margin: 0 auto;
 }
 
 h1 {
@@ -103,6 +105,8 @@ main header {
 
 .site-header {
   padding: 1em 1em 0 1em;
+  max-width: 728px;
+  margin: 0 auto;
 }
 
 .site-header nav {
@@ -155,5 +159,7 @@ main header {
 }
 
 .site-footer {
+  max-width: 728px;
+  margin: 0 auto;
   padding: 1em;
 }
