@@ -8,13 +8,13 @@ date: 2019-05-25T00:00:00-00:00
 draft: false
 ---
 
-This post will go over how I migrated my [Jekyll](https://jekyllrb.com/) blog over to [Hugo](https://gohugo.io/). Some reason for moving to Hugo are:
+This post will go over how I migrated my [Jekyll](https://jekyllrb.com/) blog over to [Hugo](https://gohugo.io/). Top reasons for moving to Hugo are:
 
 - Faster compile time (it's the fastest static site generator)
-- Awesome documentation
-- Easier templating language
-- No dealing with ruby versions and gems
-- Write your own plugins in Go
+- Awesome documentation and [community](https://discourse.gohugo.io/)
+- Go based templating (biased here)
+- Dependency free (no dealing with ruby versions and gems)
+- Robust theming support and content model
 
 ### Getting started
 
@@ -262,6 +262,24 @@ Now add the add the partial to `themes/blank/layouts/_default/single.html`:
   </main>
 {{ partial "footer.html" . }}
 ```
+
+### 404 page
+
+Create the file `404.html` under the `layouts/` directory to be your 404 page.
+
+```html
+<main>
+<h1 id="title"><a href="{{ "/" | relURL }}">Go Home</a></h1>
+</main>
+```
+
+If using Nginx, here's how serve the 404 page:
+
+```nginx
+error_page 404 /404.html
+```
+
+Check out the [documentation](https://gohugo.io/templates/404/) for more examples.
 
 ### Compression
 
