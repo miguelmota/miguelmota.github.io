@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Demo on My New Hugo Site</title>
+    <link>http://example.org/tags/demo/</link>
+    <description>Recent content in Demo on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 25 Feb 2015 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://example.org/tags/demo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>K-Means Clustering in JavaScript</title>
+      <link>http://example.org/blog/k-means-clustering-in-javascript/</link>
+      <pubDate>Wed, 25 Feb 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/k-means-clustering-in-javascript/</guid>
+      <description>Clustering is grouping of data or dividing a large data set into smaller data sets of some similarity. A well known clustering algorithm in unsupervised machine learning is K-Means clustering. The K-Means algorithm takes in n observations (data points), and groups them into k clusters, where each observation belongs to a cluster based on the nearest mean (cluster centroid). The distance between a data point and cluster centroid is calculated using the Euclidean distance.</description>
+    </item>
+    
+    <item>
+      <title>Pixelate images with Canvas</title>
+      <link>http://example.org/blog/pixelate-images-with-canvas/</link>
+      <pubDate>Sun, 01 Feb 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/pixelate-images-with-canvas/</guid>
+      <description>There may be cases in which you want to pixelate an image, such as creating 8-bit style pixel art themed games or you simply want to give a hint of what an image is about without exposing too much. Turns out that it&amp;rsquo;s not complicated at all to do pixelation with canvas.
+
+View demo »
+The main methods needed from the canvas context are imageSmoothingEnabled for rendering crisp pixels and drawImage for drawing those pixels on to the canvas context.</description>
+    </item>
+    
+    <item>
+      <title>Screenshots with getUserMedia API</title>
+      <link>http://example.org/blog/screenshots-with-getusermedia-api/</link>
+      <pubDate>Sat, 31 Aug 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/screenshots-with-getusermedia-api/</guid>
+      <description>With the getUserMedia API, it is now possible to access the user&amp;rsquo;s webcam and microphone using just JavaScript. What this means is that we can finally get rid of those nasty Flash plugins and use this native approace instead. At the writing of this post, only Firefox 17+ and Chrome 21+ have support for getUserMedia.
+Give credit where credit is due. The code is heavily inspired by HTML5 Rocks&amp;rsquo; article Capturing Audio &amp;amp; Video in HTML5.</description>
+    </item>
+    
+    <item>
+      <title>Basic HTML5 Audio Manipulation</title>
+      <link>http://example.org/blog/basic-html5-audio-manipulation/</link>
+      <pubDate>Sun, 07 Jul 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/basic-html5-audio-manipulation/</guid>
+      <description>Using JavaScript, we can create an audio object and manipulate it very easily. Below is some code (gist) to help you get started. You can play, stop, pause, and loop the audio.
+&amp;lt;!-- Audio Control Buttons --&amp;gt; &amp;lt;button id=&amp;quot;play-button&amp;quot;&amp;gt;Play&amp;lt;/button&amp;gt; &amp;lt;button id=&amp;quot;stop-button&amp;quot;&amp;gt;Stop&amp;lt;/button&amp;gt; &amp;lt;button id=&amp;quot;pause-button&amp;quot;&amp;gt;Pause&amp;lt;/button&amp;gt; &amp;lt;button id=&amp;quot;loop-button&amp;quot;&amp;gt;Loop&amp;lt;/button&amp;gt;  // Basic HTML5 audio manipulation (function () { &#39;use strict&#39;; // Set namespace. var NS = {}; // Control buttons. NS.playButton = document.getElementById(&#39;play-button&#39;); NS.stopButton = document.</description>
+    </item>
+    
+    <item>
+      <title>Slide Out Navigation using CSS3 Translate</title>
+      <link>http://example.org/blog/slide-out-navigation-using-css3-translate/</link>
+      <pubDate>Fri, 07 Jun 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/slide-out-navigation-using-css3-translate/</guid>
+      <description>There are many ways to create a navigation menu for a mobile site, but the kind that seems to be most popular at the time is a slide out menu, such as the one you see on the Facebook app. The advantages of using this type of menu is that it is easily accessible and there is a lot of room for list items since the user can scroll within the menu.</description>
+    </item>
+    
+    <item>
+      <title>CSS3 Filters</title>
+      <link>http://example.org/blog/css3-filters/</link>
+      <pubDate>Sun, 22 Jul 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/css3-filters/</guid>
+      <description>Webkit has implemented CSS filters, which can spice up the way your photos look without the hassle of having to deal with software like Photoshop.
+Currently there are 10 CSS filters available, which are: blur, brightness, contrast, drop-shadow, grayscale, hue-rotate, invert, opacity, saturate and sepia.
+In the meantime you must use the -webkit- vendor prefix, like so (gist):
+img { -webkit-filter: blur(2.5px); /* values: 0px - 25px */ -webkit-filter: brightness(5%); /* values: -100% - 100% */ -webkit-filter: contrast(1.</description>
+    </item>
+    
+    <item>
+      <title>Display latest delicious bookmarks with jQuery</title>
+      <link>http://example.org/blog/display-latest-delicious-bookmarks-with-jquery/</link>
+      <pubDate>Tue, 11 Oct 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/display-latest-delicious-bookmarks-with-jquery/</guid>
+      <description>If you look below you see my three most recently saved bookmarks from (delicious)[http://delicious.com/miguelmota]:
+ fetching bookmarks...   var niceTime = (function(){ var ints = { second: 1, minute: 60, hour: 3600, day: 86400, week: 604800, month: 2592000, year: 31536000 }; return function(time){ time = +new Date(time); var gap = ((+new Date()) - time) / 1000, amount, measure; for (var i in ints){ if (gap  ints[i]){ measure = i; } } amount = gap / ints[measure]; amount = gap  ints.</description>
+    </item>
+    
+    <item>
+      <title>Make an Awesome Tooltip with jQuery</title>
+      <link>http://example.org/blog/make-an-awesome-tooltip-with-jquery/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/make-an-awesome-tooltip-with-jquery/</guid>
+      <description>I will attempt to show you how to make a simple yet awesome tooltip using jQuery and CSS3.
+Ok so first let&amp;rsquo;s set up the HTML:
+&amp;lt;a class=&amp;quot;awesometooltip&amp;quot; href=&amp;quot;http://www.miguelmota.com&amp;quot; title=&amp;quot;Hello, I am a tootip!&amp;quot;&amp;gt;hover over me&amp;lt;/a&amp;gt;  All we did was make a link with the class of awesometooltip (that&amp;rsquo;s what I decided to call this mini plugin) and gave it a title attribute.
+Now let&amp;rsquo;s move on to the fun stuff.</description>
+    </item>
+    
+    <item>
+      <title>Naive Bayes Classifier in JavaScript</title>
+      <link>http://example.org/blog/naive-bayes-classifier-in-javascript/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/naive-bayes-classifier-in-javascript/</guid>
+      <description>The Naive Bayes classifier is a pretty popular text classification algorithm because of it&amp;rsquo;s simplicity. You&amp;rsquo;ll often see this classifier used for spam detection, authorship attribution, gender authentication, determing whether a review is positive or negative, and even sentiment analysis. The Naive Bayes classifier takes in a corpus (body of text) known as a document, which then a stemmer runs through the document and returns a &amp;ldquo;bag or words&amp;rdquo; so to speak.</description>
+    </item>
+    
+  </channel>
+</rss>

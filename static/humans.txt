@@ -1,0 +1,16 @@
+# humanstxt.org
+# The humans responsible & technology colophon
+
+/* TEAM */
+	Developer: Miguel Mota
+	Site: http://www.miguelmota.com
+	Contact: hello [at] miguelmota.com
+	Twitter: @miguelmotah
+	Location: Los Angeles, United States
+
+/* SITE */
+	Last update: May 25, 2019
+	Language: English
+	Standards: HTML5
+	Tools: Vim
+	Base: Hugo, GitHub Pages

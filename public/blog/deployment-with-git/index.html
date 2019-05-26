@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>My New Hugo Site  | Deployment with Git</title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.52" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.d98f2eb6bcd1eaedb7edf166bd16af26.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+
+    <meta property="og:title" content="Deployment with Git" />
+<meta property="og:description" content="Setting up git hooks for effortless deployment." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/blog/deployment-with-git/" /><meta property="article:published_time" content="2014-03-14T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2014-03-14T00:00:00&#43;00:00"/>
+
+<meta itemprop="name" content="Deployment with Git">
+<meta itemprop="description" content="Setting up git hooks for effortless deployment.">
+
+
+<meta itemprop="datePublished" content="2014-03-14T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2014-03-14T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="415">
+
+
+
+<meta itemprop="keywords" content="Git,SSH,deployment," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Deployment with Git"/>
+<meta name="twitter:description" content="Setting up git hooks for effortless deployment."/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="http://example.org/" class="f3 fw2 hover-white no-underline white-90 dib">
+      My New Hugo Site
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+
+    <header class="mt4 w-100">
+      <p class="f6 b helvetica tracked">
+          
+        BLOGS
+      </p>
+      <h1 class="f1 athelas mb1">Deployment with Git</h1>
+      
+      <time class="f6 mv4 dib tracked" datetime="2014-03-14T00:00:00Z">March 14, 2014</time>
+      
+      
+    </header>
+
+    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
+
+<p>A <a href="http://git-scm.com/docs/githooks.html">Git hook</a> allows you to execute custom scripts when an action occurs, such as when a commit or push is performed. Before I discovered git hooks, my deployment process consisted of pushing changes to my remote repository, SSH&rsquo;ing into the server, navigating to the site directory, pulling the changes, and restarting the webserver. It wasn&rsquo;t efficient at all and a waste of time doing that several times a day. I&rsquo;ll explain how to set up a simple git hook making the deployment process a bit more effortless, but first I want to give credit to this <a href="http://toroid.org/ams/git-website-howto">how-to</a> article which got me started.</p>
+
+<p>In this example we&rsquo;ll be deploying the <em>production</em> branch but it can be whatever branch name you want, and our site name will be called <em>foo</em>.</p>
+
+<h2 id="on-the-server">On the server</h2>
+
+<p>Initialize an empty git repo. This will act as the mediator.</p>
+
+<pre><code class="language-bash">mkdir -p /opt/git/foo.git
+cd /opt/git/tracfone.git
+git init --bare # no source files, only version control
+</code></pre>
+
+<p>Create a <a href="http://git-scm.com/book/en/Customizing-Git-Git-Hooks"><code>post-receive</code></a> hook which gets called after a <em>push</em> is complete.</p>
+
+<pre><code class="language-bash">vim /opt/git/foo.git/hooks/post-receive
+</code></pre>
+
+<pre><code class="language-bash">#!/bin/bash
+
+SITE_NAME=&quot;Foo&quot;
+SITE_PATH=&quot;/var/www/foo.com&quot;
+BRANCH=&quot;production&quot;
+
+echo &quot;**** $SITE_NAME [post-receive] hook received.&quot;
+
+while read oldrev newrev ref
+do
+  branch_received=`echo $ref | cut -d/ -f3`
+
+  echo &quot;**** Received [$branch_received] branch.&quot;
+
+  # Making sure we received the branch we want.
+  if [ $branch_received = $BRANCH ]; then
+    cd $SITE_PATH
+
+    # Unset to use current working directory.
+    unset GIT_DIR
+
+    echo &quot;**** Pulling changes.&quot;
+    git pull origin $BRANCH
+
+    # Instead of pulling we can also do a checkout.
+    : '
+    echo &quot;**** Checking out branch.&quot;
+    GIT_WORK_TREE=$SITE_PATH git checkout -f $BRANCH
+    '
+
+    # Or we can also do a fetch and reset.
+    : '
+    echo &quot;**** Fetching and reseting.&quot;
+    git fetch --all
+    git reset --hard origin/$BRANCH
+    '
+
+  else
+    echo &quot;**** Invalid branch, aborting.&quot;
+    exit 0
+
+  fi
+done
+
+# [Restart/reload webserver stuff here]
+
+echo &quot;**** Done.&quot;
+
+exec git-update-server-info
+</code></pre>
+
+<p>(<a href="https://gist.github.com/miguelmota/9595095">hook gist</a>)</p>
+
+<p>Make sure to make the hook executable.</p>
+
+<pre><code class="language-bash">chmod u+rwx /opt/git/foo.git/hooks/post-receive
+</code></pre>
+
+<h2 id="on-the-client">On the client</h2>
+
+<p>Add the remote url.</p>
+
+<pre><code class="language-bash">git remote add production ssh://&lt;username@&lt;server ip&gt;/opt/git/foo.git
+</code></pre>
+
+<p>Push the <em>production</em> branch.</p>
+
+<pre><code class="language-bash">git push production +production:refs/heads/production
+
+# Afterwards you can simply do
+git push production
+</code></pre>
+
+<p>It&rsquo;s also possible to deploy to multiple servers, just add the remote urls in <code>.git/config</code>.</p>
+
+<pre><code class="language-bash">[remote &quot;production&quot;]
+  url = ssh://&lt;username&gt;@&lt;server 1 ip&gt;/opt/git/foo.git
+  url = ssh://&lt;username&gt;@&lt;server 2 ip&gt;/opt/git/foo.git
+</code></pre>
+
+<p>By default git will push all branches to the remotes but we can have it push the current branch only.</p>
+
+<pre><code class="language-bash">git config --global push.default current
+</code></pre>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Git hooks can help automate your deployment process. Checkout the list of client and server-side <a href="http://git-scm.com/book/en/Customizing-Git-Git-Hooks">Git hooks</a> available.</p>
+<ul class="pa0">
+  
+   <li class="list">
+     <a href="/tags/git" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Git</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/ssh" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">SSH</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/deployment" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">deployment</a>
+   </li>
+  
+</ul>
+<div class="mt6">
+        
+      </div>
+    </section>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/blog/set-up-ssh-keys/">Set up SSH keys</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://example.org/" >
+    &copy; 2019 My New Hugo Site
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>

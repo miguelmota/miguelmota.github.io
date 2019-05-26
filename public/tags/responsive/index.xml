@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Responsive on My New Hugo Site</title>
+    <link>http://example.org/tags/responsive/</link>
+    <description>Recent content in Responsive on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 19 Apr 2013 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://example.org/tags/responsive/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Responsive Video</title>
+      <link>http://example.org/blog/responsive-video/</link>
+      <pubDate>Fri, 19 Apr 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/responsive-video/</guid>
+      <description>Dealing with responsive video can be quite troublesome.
+Here is a simple script you might find useful:
+(function() { // Responsive Video function responsiveVideo(selector) { // Get videos var videos = document.querySelectorAll(selector); // Loop through videos for (var i = 0; i &amp;lt; videos.length; i++) { var video = videos[i]; // Get aspect ratio var videoRatio = (video.height / video.width) * 100; // Stretch video video.style.position = &amp;quot;absolute&amp;quot;; video.style.top = 0; video.</description>
+    </item>
+    
+  </channel>
+</rss>

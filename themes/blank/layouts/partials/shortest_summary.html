@@ -1,0 +1,13 @@
+<article>
+  <header>
+    <h1><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
+    <div class="subheader">
+      <time>{{ .Date.Format "02 Jan 2006" }}</time>
+      <div class="tags">
+      {{ range .Params.tags }}
+        <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
+      {{ end }}
+      </div>
+    </div>
+  </header>
+</article>

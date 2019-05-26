@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Git on My New Hugo Site</title>
+    <link>http://example.org/tags/git/</link>
+    <description>Recent content in Git on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 20 Jan 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://example.org/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How to blame in git</title>
+      <link>http://example.org/bytes/git-blame/</link>
+      <pubDate>Wed, 20 Jan 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/bytes/git-blame/</guid>
+      <description>Git blame from the command line.
+Command format:
+git blame -L&amp;lt;LINE_NUMBER&amp;gt;,+&amp;lt;NUMBER_OF_LINES&amp;gt; [&amp;lt;COMMIT&amp;gt;] -- &amp;lt;FILE&amp;gt;  Git blame a file:
+git blame -L100,+10 -- file.txt  Git blame on a specific commit:
+git blame -L100,+10 fe25b6d^ -- file.txt  </description>
+    </item>
+    
+    <item>
+      <title>Deployment with Git</title>
+      <link>http://example.org/blog/deployment-with-git/</link>
+      <pubDate>Fri, 14 Mar 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/deployment-with-git/</guid>
+      <description>A Git hook allows you to execute custom scripts when an action occurs, such as when a commit or push is performed. Before I discovered git hooks, my deployment process consisted of pushing changes to my remote repository, SSH&amp;rsquo;ing into the server, navigating to the site directory, pulling the changes, and restarting the webserver. It wasn&amp;rsquo;t efficient at all and a waste of time doing that several times a day.</description>
+    </item>
+    
+    <item>
+      <title>Set up SSH keys</title>
+      <link>http://example.org/blog/set-up-ssh-keys/</link>
+      <pubDate>Mon, 30 Sep 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/set-up-ssh-keys/</guid>
+      <description>Having to type in a password in order to SSH into your server every single time is tedious and not the way to go. I will show you how to set up SSH keys so that you can elimate an extra step from your workflow.
+Generating keys On your local maching, generate a new SSH key with the command:
+# Generate new key. ssh-keygen -t rsa  When asked for the file to save the key in, enter:</description>
+    </item>
+    
+    <item>
+      <title>Extensive .gitignore</title>
+      <link>http://example.org/blog/extensive-gitignore/</link>
+      <pubDate>Thu, 04 Apr 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/extensive-gitignore/</guid>
+      <description>There are .gitignore templates&amp;gt; suited for pretty much any project. I&amp;rsquo;m going to share the .gitignore that I recently been using for my web projects. It&amp;rsquo;s and extended verison of github&amp;rsquo;s global .gitignore&amp;gt;.
+Here is the gist&amp;gt;:
+//this will affect all the git repos git config --global core.excludesfile ~/.gitignore //update files since .ignore won&#39;t if already tracked git rm --cached &amp;lt;file&amp;gt; # Compiled source # ################### *.com *.class *.dll *.exe *.</description>
+    </item>
+    
+    <item>
+      <title>How to use Ansible to deploy with git</title>
+      <link>http://example.org/bytes/ansible-git-example/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/bytes/ansible-git-example/</guid>
+      <description>Basic Ansible example on deploying with git.
+vars.yml
+--- # Update this to your own settings project_name: test project_root: /var/www/test project_repo: git@github.com:miguelmota/test-repo.git  handlers.yml:
+--- - name: restart web server action: command echo &amp;quot;do something&amp;quot; sudo_user: root  deploy.yml:
+date: 2014-06-13T00:00:00-00:00 draft: false --- - hosts: servers vars_files: - vars.yml gather_facts: false sudo: true sudo_user: root user: root tasks: - name: Pull sources from the repository. git: repo={{project_repo}} dest={{project_root}} version={{branch}} notify: - restart web server handlers: - include : handlers.</description>
+    </item>
+    
+  </channel>
+</rss>

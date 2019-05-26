@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Backbone.js on My New Hugo Site</title>
+    <link>http://example.org/tags/backbone.js/</link>
+    <description>Recent content in Backbone.js on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 30 Nov 2013 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://example.org/tags/backbone.js/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Getting Started with Backbone.js</title>
+      <link>http://example.org/blog/getting-started-with-backbonejs/</link>
+      <pubDate>Sat, 30 Nov 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/getting-started-with-backbonejs/</guid>
+      <description>In this tutorial I will go over Backbone.js main components: Models, Collections, Views, and Routes. We will not be building an application but instead we will be going over a number of simple examples of each Backbone compoment, that hopefully after we are done you will have a firm understanding of Backbone.js and be able to put it all together.
+Models Models are a key component of Backbone applications. With model objects you can easily keep track of your data and update as needed.</description>
+    </item>
+    
+  </channel>
+</rss>

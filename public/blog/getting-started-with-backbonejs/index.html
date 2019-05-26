@@ -1,0 +1,1542 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>My New Hugo Site  | Getting Started with Backbone.js</title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.52" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.d98f2eb6bcd1eaedb7edf166bd16af26.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+
+    <meta property="og:title" content="Getting Started with Backbone.js" />
+<meta property="og:description" content="Getting cozy with Backbone.js Models, Collections, Views, and Routes." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/blog/getting-started-with-backbonejs/" /><meta property="article:published_time" content="2013-11-30T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2013-11-30T00:00:00&#43;00:00"/>
+
+<meta itemprop="name" content="Getting Started with Backbone.js">
+<meta itemprop="description" content="Getting cozy with Backbone.js Models, Collections, Views, and Routes.">
+
+
+<meta itemprop="datePublished" content="2013-11-30T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2013-11-30T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="3815">
+
+
+
+<meta itemprop="keywords" content="JavaScript,backbone.js," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Getting Started with Backbone.js"/>
+<meta name="twitter:description" content="Getting cozy with Backbone.js Models, Collections, Views, and Routes."/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="http://example.org/" class="f3 fw2 hover-white no-underline white-90 dib">
+      My New Hugo Site
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+
+    <header class="mt4 w-100">
+      <p class="f6 b helvetica tracked">
+          
+        BLOGS
+      </p>
+      <h1 class="f1 athelas mb1">Getting Started with Backbone.js</h1>
+      
+      <time class="f6 mv4 dib tracked" datetime="2013-11-30T00:00:00Z">November 30, 2013</time>
+      
+      
+    </header>
+
+    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
+
+<p>In this tutorial I will go over <a href="http://backbonejs.org/">Backbone.js</a> main components:  Models, Collections, Views, and Routes. We will not be building an application but instead we will be going over a number of simple examples of each Backbone compoment, that hopefully after we are done you will have a firm understanding of Backbone.js and be able to put it all together.</p>
+
+<h2 id="models">Models</h2>
+
+<p>Models are a key component of Backbone applications. With model objects you can easily keep track of your data and update as needed. A strength of Backbone models is that you can synchronize your model data to the server which we will go over later.</p>
+
+<h3 id="model-basics">Model basics</h3>
+
+<h3 id="creating-models">Creating models</h3>
+
+<p>Creating a Backbone model:</p>
+
+<pre><code class="language-javascript">var TodoItem = Backbone.Model.extend({});
+</code></pre>
+
+<p>Creating a Backbone model with default attributes (properties):</p>
+
+<pre><code class="language-javascript">var TodoItem = Backbone.Model.extend({
+  defaults: {
+    description: 'Empty todo...',
+    done: false
+  }
+});
+</code></pre>
+
+<p>Creating an instance of a Backbone model:</p>
+
+<pre><code class="language-javascript">var todoItem = new TodoItem({});
+</code></pre>
+
+<p>Creating an instance of a Backbone model with attributes:</p>
+
+<pre><code class="language-javascript">var todoItem = new TodoItem({
+  description: 'Pick up milk'
+});
+</code></pre>
+
+<p>Doing something when a model instance gets created:</p>
+
+<pre><code class="language-javascript">var TodoItem = Backbone.Model.extend({
+  initialize: function() {
+    console.log('Welcome, new model.');
+  }
+});
+
+var todoItem = new TodoItem();
+</code></pre>
+
+<h3 id="setting-model-data">Setting model data</h3>
+
+<p>Setting attributes on a model:</p>
+
+<pre><code class="language-javascript">todoItem.set({description: 'Pick up eggs'});
+</code></pre>
+
+<h3 id="getting-model-data">Getting model data</h3>
+
+<p>Retrieving an attribute:</p>
+
+<pre><code class="language-javascript">var description = todoItem.get('description');
+</code></pre>
+
+<p>Retrieving all attributes in JSON format:</p>
+
+<pre><code class="language-javascript">var attributes = todoItem.attributes;
+</code></pre>
+
+<h3 id="destroying-model">Destroying model</h3>
+
+<p>Destroying a model:</p>
+
+<pre><code class="language-javascript">todoItem.destroy({
+  success: function() {
+    console.log('Todo item destroyed');
+  },
+  error: function(model, xhr, options) {
+    console.log('Destroy error');
+  }
+});
+</code></pre>
+
+<h3 id="model-methods">Model methods</h3>
+
+<p>Adding custom model methods:</p>
+
+<pre><code class="language-javascript">var TodoItem = Backbone.Model.extend({
+  priority: function(level) {
+    this.set({priority: level});
+  }
+});
+
+var todoItem = new TodoItem();
+todoItem.priority('high');
+</code></pre>
+
+<h3 id="synchronizing-model-with-server">Synchronizing model with server</h3>
+
+<p>Backbone gives us the ability maintain the same state of the model on the server and vice versa.</p>
+
+<h3 id="setting-sync-url">Setting sync url</h3>
+
+<p>To get sync going we need to tell our model what url to fetch from.</p>
+
+<pre><code class="language-javascript">var TodoItem = Backbone.Model.extend({
+  urlRoot: '/todo'
+});
+</code></pre>
+
+<p>In this example, the RESTful <code>/todo</code> url will return a todo item in JSON format. For the server to know which todo item to fetch from the database an <code>id</code> parameter is required when doing the request. Let&rsquo;s just say that the server responds with the following JSON:</p>
+
+<pre><code class="language-javascript">{
+  id: 1,
+  description: 'Pick up milk',
+  done: false
+}
+</code></pre>
+
+<h3 id="fetching-from-server">Fetching from server</h3>
+
+<p>To pull the server data into a Backbone model, we call the <code>fetch</code> method:</p>
+
+<pre><code class="language-javascript">var todoItem = new TodoItem({id: 1});
+
+todoItem.fetch({
+  success: function(model) {
+    model.get('description'); // Pick up milk
+  },
+  error: function(model, xhr, options) {
+    console.log('Fetch error');
+  }
+});
+
+</code></pre>
+
+<h3 id="parsing-response-from-server">Parsing response from server</h3>
+
+<p>If the response from the server is formatted differently than our model, for example it looks like:</p>
+
+<pre><code class="language-javascript">{
+  todo: {
+    id: 1,
+    desc: 'Pick up milk',
+    done: false
+  }
+};
+</code></pre>
+
+<p>We can easily parse the response from the server:</p>
+
+<pre><code class="language-javascript">var TodoItem = Backbone.Model.extend({
+  parse: function(response) {
+    response = response.todo;
+    response.description = response.desc;
+    delete response.desc;
+    return response;
+  }
+});
+
+var todoItem = new TodoItem(data, {parse: true});
+</code></pre>
+
+<h3 id="posting-to-server">Posting to server</h3>
+
+<p>After we have done some change to the model we can do a PUT request to the server to persist the changes:</p>
+
+<pre><code class="language-javascript">todoItem.save({description: 'Pick up eggs'}, {
+  success: function(model) {
+   console.log('Todo item saved');
+  },
+  error: function(model, xhr, options) {
+   console.log('Save error');
+  }
+});
+</code></pre>
+
+<h3 id="parsing-request-to-server">Parsing request to server</h3>
+
+<p>Once again we can format the data before we send it if the server is expecting it in a different format:</p>
+
+<pre><code class="language-javascript">var TodoItem = Backbone.Model.extend({
+  toJSON: function() {
+    var attrs = _.clone(this.attributes);
+    attrs.desc = attrs.description;
+    attrs = _.pick(attrs, 'desc', 'status'); // Pick out only object properties we want
+    return { todo: attrs };
+  }
+});
+
+...
+
+todoItem.save();
+</code></pre>
+
+<p>Retrieving model formatted JSON:</p>
+
+<pre><code class="language-javascript">var json = todoItem.toJSON();
+</code></pre>
+
+<h3 id="model-unique-identifier">Model unique identifier</h3>
+
+<p>By default Backbone models use <code>id</code> as a unique identifier. If your server is expecting a different id we can easily change it:</p>
+
+<pre><code class="language-javascript">var TodoItem = Backbone.Model.extend({
+  idAttribute: '_id'
+});
+
+var todoItem = new TodoItem({id: 1});
+
+todoItem.fetch(); // Fetches _id 1 from server
+</code></pre>
+
+<h3 id="model-validation">Model validation</h3>
+
+<p>Performing validation before data is stored on the model:</p>
+
+<pre><code class="language-javascript">var TodoItem = Backbone.Model.extend({
+  validate: function(attributes, options) {
+    if (attributes.description.length === 0) {
+      return 'Description cannot be empty';
+    }
+  },
+  initialize: function() {
+    this.on('invalid', function(model, error) {
+      console.log('Validation error:', error);
+    });
+  }
+});
+
+var todoItem = new TodoItem({description: ''});
+todoItem.save(); // Triggers an error
+</code></pre>
+
+<h3 id="model-events">Model events</h3>
+
+<p>Backbone models can listen to events and fire a callback. For example when a todoItem model gets destroyed you might want to remove the todo list item from the view with having to think about it. We&rsquo;ll go over views shortly.</p>
+
+<h3 id="common-events">Common events</h3>
+
+<p>Listen to the destory event:</p>
+
+<pre><code class="language-javascript">todoItem.on('destroy', function(model, collection, options) {
+  console.log('todoItem destroyed');
+});
+</code></pre>
+
+<p>Listening to attribute changes:</p>
+
+<pre><code class="language-javascript">todoItem.on('change', function(model, options) {
+  console.log('todoItem was changed');
+});
+</code></pre>
+
+<p>Listening to changes on a specific attribute:</p>
+
+<pre><code class="language-javascript">todoItem.on('change:description', function(model, options) {
+  console.log('todoItem description changed to %s', model.get('description'));
+});
+</code></pre>
+
+<p>Listening to the error event (when the model <code>save</code> call fails):</p>
+
+<pre><code class="language-javascript">todoItem.on('error', function(model, error, options) {
+  console.error('Error:', error);
+});
+</code></pre>
+
+<p>Listening to validation errors:</p>
+
+<pre><code class="language-javascript">todoItem.on('invalid', function(model, error) {
+  console.error('Validation error:', error);
+});
+</code></pre>
+
+<p>Listening to sync event:</p>
+
+<pre><code class="language-javascript">todoItem.on('sync', function(model, resp, options) {
+  console.log('Successfully synced to server');
+});
+todoItem.trigger('hello');
+</code></pre>
+
+<p>Listening to all events:</p>
+
+<pre><code class="language-javascript">todoItem.on('all', function(event) {
+  console.log('The %s event got triggered', event);
+});
+</code></pre>
+
+<h3 id="custom-events">Custom events</h3>
+
+<p>Custom event:</p>
+
+<pre><code class="language-javascript">todoItem.on('foo', function(model) {
+  console.log('foo event triggered');
+});
+
+todoItem.trigger('foo');
+</code></pre>
+
+<h3 id="unbinding-from-an-event">Unbinding from an event</h3>
+
+<p>Stop listening to an event</p>
+
+<pre><code class="language-javascript">todoItem.off('change', function() {
+  console.log('No longer listening to changes');
+});
+</code></pre>
+
+<p>If you don&rsquo;t want any events triggered on a model when you do something:</p>
+
+<pre><code class="language-javascript">todoItem.set({description: 'Pick up eggs'}, {silent: true});
+</code></pre>
+
+<h3 id="overriding-sync-method">Overriding sync method</h3>
+
+<h3 id="models-and-local-storage">Models and local storage</h3>
+
+<p>Instead of syncing our model to the server we can have it save to <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/API/DOM/Storage">local storage</a> To do this we must override the four sync methods: <code>read</code>, <code>create</code>, <code>update</code>, and <code>delete</code>.</p>
+
+<pre><code class="language-javascript">var TodoItem = Backbone.Model.extend({
+  // method = &lt;read|create|update|delete&gt;
+  sync: function(method, model, options) {
+    options || (options = {});
+    switch(method) {
+      case 'create':
+        var key = 'TodoItem-' + model.id;
+        localStorage.setItem(key, JSON.stringify(model));
+      break;
+      case 'read':
+        var key = 'TodoItem-' + model.id;
+        var result = localStorage.getItem(key);
+        if (result) {
+          result = JSON.parse(result);
+          options.success &amp;&amp; options.success(result);
+        } else if (options.error) {
+          options.error('Could not find TodoItem id=' + model.id);
+        }
+      break;
+      case 'update':
+        var key = 'TodoItem-' + model.id;
+        localStorage.setItem(key, JSON.stringify(model));
+      break;
+      case 'delete':
+        var key = 'TodoItem-' + model.id;
+        localStorage.removeItem(key);
+      break;
+    }
+  }
+});
+
+(new TodoItem({id: 1, description: 'Pick up milk'})).save(); // will store in local storage
+
+var todoItem = new TodoItem({id: 1}); // will read from local storage
+todoItem.fetch({
+  error: function(msg) {
+    console.log(msg};
+  }
+);
+</code></pre>
+
+<p>Luckily the <a href="https://github.com/jeromegn/Backbone.localStorage">Backbone.localStorage</a> adapter by <a href="https://github.com/jeromegn">Jerome Gravel-Niquest</a> takes care of all the messy work. Simply include the <code>backbone.localStorage.js</code> in your page and set the <code>localStorage</code> property on your Backbone collection:</p>
+
+<pre><code class="language-javascript">var TodoItems = Backbone.Collection.extend({
+  model: TodoItem,
+  localStorage: new Backbone.LocalStorage('TodoItems')
+});
+</code></pre>
+
+<h3 id="read-only-model">Read-only model</h3>
+
+<p>Overriding the sync method to make model <em>read-only</em>:</p>
+
+<pre><code class="language-javascript">var TodoItem = Backbone.Model.extend({
+  sync: function(method, model, options) {
+    if (method === 'read') {
+      Backbone.sync(method, model, options);
+    } else {
+      console.error('You can not ' + method + ' the TodoItem model');
+    }
+  }
+});
+</code></pre>
+
+<h3 id="creating-a-base-model">Creating a base model</h3>
+
+<pre><code class="language-javascript">var BaseModel = Backbone.Model.extend({
+  foo: function() {
+    return 'bar';
+  }
+});
+
+var todoItem = new BaseModel.extend({});
+todoItem.foo();
+</code></pre>
+
+<h2 id="collections">Collections</h2>
+
+<p>A Backbone collection is simply put: a collection of Backbone models. Collections make it easy to iterate and filter a list models to get what we need.</p>
+
+<h3 id="collection-basics">Collection basics</h3>
+
+<h3 id="creating-a-collection">Creating a Collection</h3>
+
+<p>Creating a Backbone TodoList collection that will hold TodoItem models.</p>
+
+<pre><code class="language-javascript">var TodoList = Backbone.Collection.extend({
+  model: TodoItem
+});
+
+var todoList = new TodoList();
+</code></pre>
+
+<h3 id="adding-to-a-collection">Adding to a Collection</h3>
+
+<p>Adding a todo item model to the todo list collection:</p>
+
+<pre><code class="language-javascript">todoList.add(todoItem);
+</code></pre>
+
+<p>Append model to end collection:</p>
+
+<pre><code class="language-javascript">todoList.push(todoItem);
+</code></pre>
+
+<p>Prepend model to the beginning of a Collection:</p>
+
+<pre><code class="language-javascript">todoList.unshift(todoItem);
+</code></pre>
+
+<h3 id="retrieving-model-from-collection">Retrieving model from Collection</h3>
+
+<p>Getting model from Collection based on the model id:</p>
+
+<pre><code class="language-javascript">var todoItemOne = todoList.get(1);
+</code></pre>
+
+<p>Getting model from Collection by index:</p>
+
+<pre><code class="language-javascript">var thirdTodoItem = todoList.at(2);
+</code></pre>
+
+<p>Getting array of Collection models:</p>
+
+<pre><code class="language-javascript">var models = todoList.models;
+</code></pre>
+
+<h3 id="removing-model-from-collection">Removing model from Collection</h3>
+
+<p>Removing model from collection:</p>
+
+<pre><code class="language-javascript">todoList.remove(todoItem);
+</code></pre>
+
+<p>Remove and return the last model from Collection:</p>
+
+<pre><code class="language-javascript">var lastTodo = todoList.pop();
+</code></pre>
+
+<h3 id="collection-length">Collection length</h3>
+
+<p>Number of models in a collection:</p>
+
+<pre><code class="language-javascript">todoList.length;
+</code></pre>
+
+<h3 id="collection-sorting">Collection sorting</h3>
+
+<p>Backbone gives us a <a href="http://backbonejs.org/#Collection-comparator"><code>comparator</code></a> which we can utilize to sort the collection:</p>
+
+<pre><code class="language-javascript">var TodoItems = Backbone.Collection.extend({
+  comparator: 'description' // sort by &quot;description&quot; attribute
+});
+</code></pre>
+
+<p>We can define our own custom comparator method:</p>
+
+<pre><code class="language-javascript">var TodoItems = Backbone.Collection.extend({
+  comparator: function(todo1, todo2) {
+    return todo1.get('done') &lt; todo2.get('done') // sort by &quot;done&quot; attribute in reverse order
+  }
+});
+</code></pre>
+
+<h3 id="collection-methods">Collection methods</h3>
+
+<p>Like with models we can add custom methods to our Backbone collection. Here we will create a method that returns the number fo completed todos:</p>
+
+<pre><code class="language-javascript">var TodoItems = Backbone.Collection.extend({
+  completedCount: function() {
+    return this.where({done: true}).length
+  }
+});
+
+var completed = todoItems.completedCount();
+</code></pre>
+
+<h3 id="collection-events">Collection events</h3>
+
+<p>Just like models, collection can have event listeners attached.</p>
+
+<p>Listening for collection reset:</p>
+
+<pre><code class="language-javascript">todoList.on('reset', function() {
+  console.log('todoList reset with data');
+});
+</code></pre>
+
+<p>Listening for when collection is fetched:</p>
+
+<pre><code class="language-javascript">todoList.on('fetch', function() {
+  console.log('todoList fetched from server');
+});
+</code></pre>
+
+<p>Listening for new models added to list:</p>
+
+<pre><code class="language-javascript">todoList.on('add', function(todoItem) {
+  console.log('New todo item added to list');
+});
+</code></pre>
+
+<p>Listening for model removal from list:</p>
+
+<pre><code class="language-javascript">todoList.on('remove', function() {
+  console.log('Todo item removed from list');
+});
+</code></pre>
+
+<p>Unbinding a listener:</p>
+
+<pre><code class="language-javascript">todoList.off('reset', function() {
+  console.log('No longer listening to reset event');
+});
+</code></pre>
+
+<h3 id="collection-bulk-population">Collection bulk population</h3>
+
+<p>Bulk populating a collection:</p>
+
+<pre><code class="language-javascript">var TodoItem = Backbone.Model.extend({});
+
+var TodoList = Backbone.Collection.extend({
+  model: TodoItem
+});
+
+var todoItem1 = new TodoItem({description: 'Pick up milk'});
+var todoItem2 = new TodoItem({description: 'Pick up eggs'});
+
+var todoList = new TodoList([todoItem1, todoItem1]);
+</code></pre>
+
+<p>Bulk populating a collection using reset:</p>
+
+<pre><code class="language-javascript">var TodoList = Backbone.Collection.extend({
+  model: TodoItem
+});
+
+var todoList = new TodoList();
+
+var todos = [
+  {description: 'Pick up milk'},
+  {description: 'Pick up eggs'}
+];
+
+todoList.reset(todos);
+</code></pre>
+
+<h3 id="fetching-collection-from-server">Fetching collection from server</h3>
+
+<p>Just like with models we can fetch a collection from the server into our collection instance. To do so the server should respond with an array of objects that our Backbone model can parse. For example:</p>
+
+<pre><code class="language-javascript">[
+  {id: 1, description: 'Pick up milk', done: false},
+  {id: 2, description: 'Pick up eggs', done: false}
+]
+</code></pre>
+
+<p>We need to set the url property on our collection and do a fetch:</p>
+
+<pre><code class="language-javascript">var TodoList = Backbone.Collection.extend({
+  url: '/todos'
+});
+
+todoList.fetch();
+</code></pre>
+
+<p>After fetch the todoList collection will contain an array of TodoItem instances loaded with attribute data from the server.</p>
+
+<h3 id="collection-parsing">Collection parsing</h3>
+
+<p>Like with our models we can parse the response from the server if it differs than from what our collection is expecting. Let&rsquo;s say that the response from the server looks like this:</p>
+
+<pre><code class="language-javascript">{
+  &quot;total&quot;: 25, &quot;per_page&quot;: 10, &quot;page&quot;: 2,
+  &quot;todos&quot;: [{&quot;id&quot;: 1}, {&quot;id&quot;: 2}]
+}
+</code></pre>
+
+<p>We can parse the response, as well keep additional meta data:</p>
+
+<pre><code class="language-javascript">var TodoITems =  Backbone.Collection.extend({
+  url: '/todos',
+  parse: function(response) {
+    this.perPage = response.per_page;
+    this.page = response.page;
+    this.total = response.total;
+    return response.todos;
+  }
+});
+</code></pre>
+
+<p>When we do a fetch we can use that additional meta data to get specified results:</p>
+
+<pre><code class="language-javascript">todoItems.fetch({data: {page: todoItems.page + 1}}); // GET /todos?page=3
+</code></pre>
+
+<p>We can then incorporate simple pagination into our view:</p>
+
+<pre><code class="language-javascript">var TodoListView = Backbone.View.extend({
+  template: _.template('&lt;a href=&quot;#/todos/p&lt;%= page %&gt;/pp&lt;%= per_page %&gt;&quot;&gt;View Next&lt;/a&gt;'),
+  initialize: function(){
+    this.collection.on('reset', this.render, this);
+  },
+  render: function(){
+    this.$el.empty();
+    this.collection.forEach(this.addOne, this);
+    this.$el.append(this.template({page: this.collection.page + 1, per_page: this.collection.per_page}));
+  },
+  addOne: function(model){
+    var todoListView = new TodoListView({model: model});
+    todoListView.render();
+    this.$el.append(todoListView.el);
+  }
+});
+</code></pre>
+
+<h3 id="collection-iteration">Collection iteration</h3>
+
+<p>Iterate over Collection:</p>
+
+<pre><code class="language-javascript">todoList.forEach(function(index, todoItem) {
+  console.log(todoItem.get('description'));
+});
+</code></pre>
+
+<p>Build array of values mapped by iterator function:</p>
+
+<pre><code class="language-javascript">var descriptions = todoList.map(function(todoItem, index) {
+  return todoItem.get('description');
+});
+</code></pre>
+
+<p>Filter by some criteria and return an array with those models:</p>
+
+<pre><code class="language-javascript">var doneTodoItems = todoList.filter(function(todoItem, index) {
+  return todoItem.get('done') === true;
+});
+</code></pre>
+
+<p>These are just a few but the Underscore library provides many more <a href="http://documentcloud.github.io/backbone/#Collection-Underscore-Methods">collection iteration methods</a>.</p>
+
+<h2 id="views">Views</h2>
+
+<p>A view is an output representation of data. Views allows us to display dynamic model data to the user.</p>
+
+<h3 id="generating-a-view">Generating a view</h3>
+
+<p>Here we are creating a simple view. We are using an <a href="http://underscorejs.org/#template">Underscore template</a> and once the view render function gets called we will set the compiled template html to <code>el</code> property of the view. By default the <code>el</code> property is a div element. After we render the view we append the view html to our body.</p>
+
+<pre><code class="language-javascript">var TodoView = Backbone.View.extend({
+  template: _.template('Pick up milk'),
+  render: function() {
+    this.$el.html(this.template());
+  }
+});
+
+var todoView = new TodoView();
+
+todoView.render();
+
+$('body').append(todoView.el);
+</code></pre>
+
+<p>Now the DOM will look like this:</p>
+
+<pre><code class="language-html">&lt;body&gt;
+  &lt;div&gt;
+    Pick up milk
+  &lt;/div&gt;
+&lt;/body&gt;
+</code></pre>
+
+<p>Like I mentioned earlier the default view element is a <code>div</code> but we can easily change that:</p>
+
+<pre><code class="language-javascript">var TodoView = Backbone.View.extend({
+  tagName: 'section',
+  id: 'todo-view',
+  className: 'todo',
+  template: _.template('Pick up milk'),
+  render: function() {
+    this.$el.html(this.template());
+  }
+});
+
+var todoView = new TodoView();
+
+todoView.render();
+
+$('body').append(todoView.el);
+</code></pre>
+
+<p>Generated DOM:</p>
+
+<pre><code class="language-html">&lt;body&gt;
+  &lt;section id=&quot;todo-view&quot; class=&quot;todo&quot;&gt;
+  Pick up milk
+  &lt;/section&gt;
+&lt;/body&gt;
+</code></pre>
+
+<p>We can also use an existing element on the page to insert our view rather than append it everytime:</p>
+
+<pre><code class="language-html">&lt;body&gt;
+  &lt;div id=&quot;todo&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;
+</code></pre>
+
+<pre><code class="language-javascript">var TodoView = Backbone.View.extend({
+  el: '#todo',
+  template: _.template('Pick up milk'),
+  render: function() {
+    this.$el.html(this.template());
+  }
+});
+
+var todoView = new TodoView();
+
+todoView.render();
+</code></pre>
+
+<p>Generated DOM:</p>
+
+<pre><code class="language-html">&lt;body&gt;
+  &lt;div id=&quot;todo&quot;&gt;
+    Pick up milk
+  &lt;/div&gt;
+&lt;/body&gt;
+</code></pre>
+
+<p>Note that we can also specify the <code>el</code> element during view instantiation.</p>
+
+<pre><code class="language-javascript">var todoView = new TodoView({el: $('#todo'});
+</code></pre>
+
+<h3 id="models-and-views">Models and views</h3>
+
+<p>With Underscore templates we can use variables, that once the view is compiled, will be replaced with our model data.</p>
+
+<pre><code class="language-javascript">var TodoView = Backbone.View.extend({
+  template: _.template('&lt;%= description %&gt;'),
+  render: function() {
+    this.$el.html(this.template(this.model.attributes));
+  }
+});
+
+var todoView = new TodoView({
+  model: todoItem
+});
+
+todoView.render();
+
+$('body').append(todoView.el);
+</code></pre>
+
+<p>Generated DOM:</p>
+
+<pre><code class="language-html">&lt;body&gt;
+  &lt;div&gt;
+    Pick up milk
+  &lt;/div&gt;
+&lt;/body&gt;
+</code></pre>
+
+<h3 id="keeping-templates-seperate">Keeping templates seperate</h3>
+
+<p>It is good practice to keep to templates seperate from our application logic. One way we can do this is by placing the template html into a script tag. By setting the <code>type</code> attribute to something other than <code>text/javascript</code> the document will ignore it and not try to execute the code.</p>
+
+<pre><code class="language-html">&lt;script type=&quot;text/template&quot; id=&quot;todo-template&quot;&gt;
+  &lt;%= description %&gt;
+&lt;/script&gt;
+</code></pre>
+
+<pre><code class="language-javascript">var TodoView = Backbone.View.extend({
+  template: _.template($('#todo-template').html()),
+  render: function() {
+    this.$el.html(this.template(this.model.attributess));
+  }
+});
+</code></pre>
+
+<h3 id="using-alternative-templating-libaries">Using alternative templating libaries</h3>
+
+<p>There are plenty of alternative templating libraries that you can use if you&rsquo;re not diggin&rsquo; Underscore&rsquo;s ERB-style delimeters, such as <a href="http://handlebarsjs.com/">Handlebars.js</a>, <a href="http://mustache.github.io/">Mustache.js</a>, and <a href="http://twitter.github.io/hogan.js/">Hogan.js</a>.</p>
+
+<p>Example using Mustache.js templates:</p>
+
+<pre><code class="language-javascript">var TodoItemView = BackboneView.extend({
+  template: Mustache.compile('{{ description }}&lt;/span&gt;'),
+  render: function() {
+    this.$el.html(this.template(this.model.attributes));
+  }
+});
+</code></pre>
+
+<h3 id="view-events">View events</h3>
+
+<p>The neat thing about Backbone views is that we can bind events that attach to only the view&rsquo;s <code>el</code> and children elements. We first specify the event, then the optional selector, and lastly the method:</p>
+
+<pre><code class="language-javascript">var TodoView = Backbone.View.extend({
+  events: {
+    'dblclick': 'open',
+    'click .icon': 'select',
+    'mouseover .title': 'showtooltip',
+    'keypress input': 'autocomplete'
+  },
+  open: function(event) {
+    console.log('You double clicked somewhere in the view');
+  },
+  select: function(event) {
+    console.log('You click on .icon');
+  },
+  showtooltip: function(event) {
+    console.log('You hovered over .title');
+  },
+  autocomplete: function(event) {
+    console.log('You did a keypress in the input field');
+  }
+});
+</code></pre>
+
+<h3 id="form-submission">Form submission</h3>
+
+<p>Here we are displaying a todo form which has an input field and a save button. When the form is submitted we are capturing the submit event and creating a new todo model with the description inputed:</p>
+
+<pre><code class="language-javascript">var TodoForm = Backbone.View.extend({
+  template: _.template('&lt;form&gt;&lt;input name=&quot;description&quot; value=&quot;&lt;%= description %&gt;&quot;&gt;&lt;button&gt;Save&lt;/button&gt;&lt;/form&gt;'),
+  events: {
+    submit: 'save'
+  },
+  save: function(e) {
+    e.preventDefault();
+    var description = this.$('input[name=&quot;description&quot;]').val();
+    this.model.save({description: description}, {
+      success: function(model, response, options) {
+        console.log('Save successful');
+      },
+      error: function(model, xhr, options) {
+        var errors = JSON.parse(xhr.response.text).errors;
+        console.log('Save error:',  errors);
+      }
+    });
+  },
+  render: function() {
+    this.$el.html(this.template(this.model.attributes));
+    return this;
+  }
+});
+
+var todoItem = new TodoItem();
+var todoForm = new TodoForm({model: todoItem});
+$('#app').html(todoForm.render().el);
+</code></pre>
+
+<p>We can easily turn the form into an edit form:</p>
+
+<pre><code class="language-javascript">var todoItem = todoItems.get(1);
+var editTodoFrom = new TodoForm({model: todoItem});
+$('#app').html(editTodoForm.render().el);
+</code></pre>
+
+<h3 id="view-options">View options</h3>
+
+<p>View options is extra data we can pass along to our view object.</p>
+
+<p>For example we can pass a todo item model and user model on our view:</p>
+
+<pre><code class="language-javascript">var todoView = new TodoView({
+  model: todoItem,
+  user: currentUser
+});
+
+var user = todoView.options.user;
+</code></pre>
+
+<p>Another example:</p>
+
+<pre><code class="language-javascript">var TodoView = Backbone.View.extend({
+  initialize: function(options) {
+    this.user = options.user;
+  }
+});
+
+var todoView = new TodoView({user: currentUser});
+
+var user = todoView.options.user;
+</code></pre>
+
+<h3 id="collections-and-views">Collections and views</h3>
+
+<h3 id="adding-collection-models-to-view">Adding collection models to view</h3>
+
+<p>Append all collection models to view on view initialization and listen to the add event on the collection to update view accordingly:</p>
+
+<pre><code class="language-javascript">var TodoListView = Backbone.View.extend({
+  initialize: function() {
+    this.collection.on('add', this.addOne, this); // bind context to view
+    this.collection.on('reset', this.addAll, this);
+  },
+  addOne: function(todoItem) {
+    var todoView = new TodoView({model: todoItem});
+    this.$el.append(todoView.render().el);
+  },
+  addAll: function() {
+    this.collection.forEach(this.addOne, this);
+  },
+  render: function() {
+    this.addAll();
+  }
+});
+
+var newTodoItem = new TodoItem({
+  description: 'Pick up milk'
+});
+
+todoList.add(newTodoItem);
+</code></pre>
+
+<h3 id="updating-view-when-model-is-deleted">Updating view when model is deleted</h3>
+
+<p>Listening to the remove event on the collection and updating view:</p>
+
+<pre><code class="language-javascript">var TodoList = Backbone.Collection.extend({
+  initialize: function() {
+    this.on('remove', this.hideModel);
+  },
+  hideModel: function(model) {
+    model.trigger('hide');
+  }
+});
+
+var TodoItemView = Backbone.View.extend({
+  initialize: function() {
+    this.model.on('hide', this.remove, this);
+  }
+});
+
+todoList.remove(todoItem);
+</code></pre>
+
+<h3 id="tying-view-events-to-models">Tying view events to models</h3>
+
+<h3 id="updating-views-on-model-change">Updating views on model change</h3>
+
+<p>Update view when model changes and highlight corresponding view item.</p>
+
+<pre><code class="language-javascript">var TodoView = Backbone.View.extend({
+  template: _.template('&lt;%= model.(&quot;description&quot;) %&gt;'),
+  initialize: function(options) {
+    this.model.on('change:description', this.change, this);
+  },
+  render: function() {
+    this.$el.html(this.template(this.model.attributes));
+  },
+  change: function(model, value, options) {
+    this.$('span').html(value);
+    if (options.highlight) {
+      this.$el.effect('highlight', {}, 1000);
+    }
+  }
+});
+
+todoItem.set({description: 'Pick up eggs'}, {highlight: false});
+</code></pre>
+
+<h3 id="checkbox-toggle-example">Checkbox toggle example</h3>
+
+<p>Update model when view checkbox changes and update view as well:</p>
+
+<pre><code class="language-javascript">var TodoView = Backbone.View.extend({
+  template: _.template(),
+  events: {
+    'change input': 'toggleStatus'
+  },
+  initialize: function() {
+    this.model.on('change', this.render, this); // bind context to view
+  },
+  toggleStatus: function() {
+    this.model.toggleStatus();
+  },
+  render: function() {
+    this.$el.html(this.template(this.model.attributes));
+  }
+});
+
+// Keeping checkbox model logic in model
+var TodoItem = Backbone.Model.extend({
+  toggleStatus: function() {
+    if (this.get('status') === 'incomplete') {
+      this.set({'status': 'complete'});
+    } else {
+      this.set({'status': 'incomplete'});
+    }
+  }
+});
+</code></pre>
+
+<h3 id="removing-view-when-model-is-destroyed">Removing view when model is destroyed</h3>
+
+<p>Remove view on model destroy:</p>
+
+<pre><code class="language-javascript">var TodoView = Backbone.View.extend({
+  initialize: function() {
+    this.model.on('change', this.render, this); // bind context to view
+    this.model.on('destroy', this.remove, this);
+  },
+  render: function() {
+    this.$el.html(this.template(this.model.attributes));
+  },
+  remove: function() {
+    this.$el.remove();
+  }
+});
+</code></pre>
+
+<h3 id="removing-view-reference-on-model-when-view-gets-deleted">Removing view reference on model when view gets deleted</h3>
+
+<p>Before a view gets removed we want to unbind all listeners:</p>
+
+<pre><code class="language-javascript">todoView.stopListening();
+todoView.remove();
+</code></pre>
+
+<p>Backbone automatically calls <code>stopListening</code> when the <code>remove</code> method is executed.</p>
+
+<h3 id="preventing-xss-attacks">Preventing XSS attacks</h3>
+
+<p><a href="http://en.wikipedia.org/wiki/Cross-site_scripting">Cross-site scripting</a> (XSS) attacks is when an end user injects malicious scripts into our application. One way to prevent this is to escape script tags so that the script does not execute:</p>
+
+<pre><code class="language-javascript">var TodoView = Backbone.View.extend({
+  template: _.template('&lt;%= model.escape(&quot;description&quot;) %&gt;')
+});
+</code></pre>
+
+<h2 id="routes">Routes</h2>
+
+<p>Routes allows us to create pages and map them to actions and events. It makes bookmarkable URLs possible.</p>
+
+<h3 id="router-basics">Router basics</h3>
+
+<p>In Backbone we specify our routes in a Router object and map a function to each route. When a particular route is triggered the routes function will execute:</p>
+
+<pre><code class="language-javascript">var TodoRouter = new (Backbone.Router.extend({
+  routes: {
+    '': 'index',
+    'about': 'about'
+  },
+  index: function() {
+    console.log('/ route');
+  },
+  about: function() {
+    console.log('/about route');
+  }
+}));
+</code></pre>
+
+<h3 id="route-paramaters">Route paramaters</h3>
+
+<p>We can set our router to have parameter parts in order to have dynamic routing. To do this we set a colon followed by the parameter name on the route and then pass the parameter name in the function to get the value:</p>
+
+<pre><code class="language-javascript">var TodoRouter = new (Backbone.Router.extend({
+  routes: {
+    '': 'index',
+    'todos/:id': 'todos'
+  },
+  index: function() {
+    console.log('/');
+  },
+  todos: function(id) {
+  }
+}));
+</code></pre>
+
+<p>Another way we can define route functions:</p>
+
+<pre><code class="language-javascript">TodoRouter.on('route:index', function(id) {
+  console.log('/');
+});
+
+TodoRouter.on('route:todos', function(id) {
+  console.log('/todos/%s', id);
+});
+</code></pre>
+
+<p>To pass a parameter that can match any number of URL components, for example a path to a file, we use a <em>splat</em>:</p>
+
+<pre><code class="language-javascript">var TodoRouter = new (Backbone.Router.extend({
+  routes: {
+    '': 'home',
+    'download/*file': 'file' // GET /download/http://example.com/path/file.png
+  },
+  download: function(file) {
+    console.log('File:', file); // File: http://example.com/path/file.png
+  }
+}));
+</code></pre>
+
+<h3 id="default-route">Default route</h3>
+
+<p>Having the last route match any URL can serve as the default route:</p>
+
+<pre><code class="language-javascript">var TodoRouter = new (Backbone.Router.extend({
+  routes: {
+    // other routes here
+    '*path': 'notFound'
+  },
+  notFound: function(path) {
+    console.log('The %s was not found', path);
+  }
+}));
+</code></pre>
+
+<h3 id="trigger-a-route">Trigger a route</h3>
+
+<p>Calling the router&rsquo;s <code>navigate</code> method will update the current URL to the specified route, but to call the corresponding route function we must set <code>trigger</code> to true:</p>
+
+<pre><code class="language-javascript">TodoRouter.navigate('todo', {trigger: true});
+</code></pre>
+
+<h3 id="search-route">Search route</h3>
+
+<p>We can create a search route with an optional page parameter:</p>
+
+<pre><code class="language-javascript">var TodoRouter = new (Backbone.Router.extend({
+  routes: {
+    'search/:query(/p:page)(/)': 'search' // page and last slash is optional
+  },
+  search: function(query, page) {
+    page = page || 0;
+    query = decodeURIComponent(query);
+  }
+});
+
+TodoRouter.navigate('search/milk', {trigger: true});
+TodoRouter.navigate('search/milk/p2', {trigger: true});
+</code></pre>
+
+<h3 id="regular-expression-routes">Regular expression routes</h3>
+
+<p>Regular expression can be used to define routes. Note that we have to use the route method instead. In this example we are matching the route <code>/todos/&amp;lt;id&amp;gt;</code> where id must be a digit:</p>
+
+<pre><code class="language-javascript">var TodoRouter = new (Backbone.Router.extend({
+  initialize: function() {
+    this.route(/^todos\/(\d+)$/, 'show');
+  },
+  show: function(id) {
+   console.log('/todo/%d', id);
+  }
+}):
+</code></pre>
+
+<h3 id="handle-links-outside-of-views">Handle links outside of views</h3>
+
+<pre><code class="language-javascript">var App = new (Backbone.View.extend({
+  events: {
+    'click a[data-internal]': function(e) {
+      e.preventDefault();
+      Backbone.history.navigate(e.target.pathname, {trigger: true});
+    }
+  },
+  start: function() {
+    Backbone.history.start({pushState: true});
+  }
+})({el: document.body});
+
+$(function() {
+	App.start();
+});
+</code></pre>
+
+<h3 id="backbone-history">Backbone.history</h3>
+
+<p>When initializing a Backbone router it&rsquo;s <em>really important</em> to start <code>Backbone.history</code> to begin monitoring <code>hashchange</code> events and dispatching routes. To use HTML5 <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/API/DOM/Manipulating_the_browser_history">pushState</a> we must set the <code>pushState</code> attribute to true within Backbone.history.start():</p>
+
+<pre><code class="language-javascript">var TodoRouter = new (Backbone.Router.extend({
+  routes: {
+    '': 'index'
+  },
+  initialize: function() {
+    Backbone.history.start({pushState: true});
+  },
+  index: function(index) {
+    console.log('/ route');
+  }
+}));
+</code></pre>
+
+<h3 id="route-history">Route history</h3>
+
+<p>Store an array of route navigated:</p>
+
+<pre><code class="language-javascript">var history = [];
+this.listenTo(this, 'route', function (name, args) {
+  history.push({
+      name : name,
+      args : args,
+      fragment : Backbone.history.fragment
+    });
+  console.log(history);
+});
+</code></pre>
+
+<h3 id="tying-routes-views-and-collections">Tying routes, views, and collections</h3>
+
+<h3 id="fetching-collection-on-route">Fetching collection on route</h3>
+
+<p>On router initialization append the todoView with todoList collection to the #app element and fetch the todo items on index route:</p>
+
+<pre><code class="language-javascript">var TodoApp = new (Backbone.Router.extend({
+  routes: {
+    '': 'index',
+    'todos/:id', 'show'
+  },
+  initialize: function() {
+    this.todoList = new TodoList();
+    this.todosView = new TodoListView({collection: this.todoList});
+    $('#app').append(this.todosView.el);
+  },
+  start: function() {
+    Backbone.history.start({pushState: true});
+  },
+  index: function() {
+    this.todoList.fetch();
+  },
+  show: function(id) {
+    this.todoList.focusOnTodoItem(id);
+  }
+}));
+
+$(function() {
+  TodoApp.start();
+});
+</code></pre>
+
+<p>Another example with routes for creating and editing a todo:</p>
+
+<pre><code class="language-javascript">var TodoApp = new (Backbone.Router.extend({
+  routes: {
+    '': 'index',
+    'todos/:id/edit': 'edit',
+    'todos/new': 'newTodo'
+  },
+  initialize: function() {
+    this.todoItems = new TodoItems();
+    this.todosView = new TodosView({collection: this.todoItems});
+  },
+  index: function() {
+    this.todoItems.fetch();
+    $('#app').html(this.todosView.render().el);
+  },
+  newTodo: function() {
+    var todoItem = new TodoItem();
+    var todoForm = new TodoForm({model: todoItem});
+    $('#app').append(toodForm.render().el);
+  },
+  edit: function(id) {
+    var todoForm = new TodoForm({model: this.todoItems.get(id)});
+    $('#app').html(todoForm.render().el);
+  }
+}));
+</code></pre>
+
+<h3 id="starting-with-initial-data">Starting with initial data</h3>
+
+<p>Starting our application with some initial HTML:</p>
+
+<pre><code class="language-javascript">var App = new (Backbone.View.extend({
+  template: _.template('&lt;h1&gt;ToDo List&lt;/h1&gt;&lt;div id=&quot;app&quot;&gt;&lt;/div&gt;');
+  render: function() {
+    this.$el.html(this.template());
+  },
+  start: function() {
+    console.log('App started');
+  }
+}))({el: document.body});
+
+$(function() {
+  App.render();
+  App.start();
+});
+</code></pre>
+
+<p>Here we are passing bootstrap data to start our collection with and initializing our objects within a namespace:</p>
+
+<pre><code class="language-javascript">var App = new (Backbone.View.extend({
+  start: function(bootstrap) {
+    var todos = new App.Collections.TodoItems(bootstrap.todos);
+    var todoView = new App.Views.TodoItems({collection: todos});
+    this.$el.append(todosView.render().el);
+    todos.fetch();
+  }
+}))({el: document.body});
+
+var bootstrap = {
+  todos: [
+    {id:1, description: &quot;&quot;, done: false},
+    {id:2, description: &quot;&quot;, done: false}
+  ]
+};
+
+$(function() {
+  App.start(bootstrap);
+});
+</code></pre>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>With Backbone.js we keep our application organized and structured which in a sense forces us to avoid writing messy <a href="http://en.wikipedia.org/wiki/Spaghetti_code">Spaghetti code</a>. I hope this tutorial gave you a decent understanding of Backbone principles and are now ready to give it a go. If the examples aren&rsquo;t too clear or if I made a mistake, leave your feedback in the comments below.</p>
+
+<p>Helpful Backbone.js resources:</p>
+
+<ul>
+<li><a href="http://documentcloud.github.io/backbone/examples/todos/index.html">Backbone Todos</a></li>
+<li><a href="http://addyosmani.github.io/backbone-fundamentals/">Developing Backbone.js Applications</a></li>
+<li><a href="http://ricostacruz.com/backbone-patterns/">Backbone patterns</a></li>
+<li><a href="https://github.com/backbone-boilerplate/backbone-boilerplate">Backbone Boilerplate</a></li>
+</ul>
+<ul class="pa0">
+  
+   <li class="list">
+     <a href="/tags/javascript" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">JavaScript</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/backbone.js" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">backbone.js</a>
+   </li>
+  
+</ul>
+<div class="mt6">
+        
+      </div>
+    </section>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/blog/memoization-caching-function-results-in-javascript/">Memoization&amp;#58; Caching function results in JavaScript</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/screenshots-with-getusermedia-api/">Screenshots with getUserMedia API</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/basic-html5-audio-manipulation/">Basic HTML5 Audio Manipulation</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/call-and-apply-methods-in-javascript/">Call and Apply Methods in JavaScript</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/responsive-video/">Responsive Video</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/display-latest-delicious-bookmarks-with-jquery/">Display latest delicious bookmarks with jQuery</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/naive-bayes-classifier-in-javascript/">Naive Bayes Classifier in JavaScript</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/bitwise-operators-in-javascript/">Bitwise operators in JavaScript</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/make-an-awesome-tooltip-with-jquery/">Make an Awesome Tooltip with jQuery</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://example.org/" >
+    &copy; 2019 My New Hugo Site
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>

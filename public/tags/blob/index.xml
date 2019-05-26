@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blob on My New Hugo Site</title>
+    <link>http://example.org/tags/blob/</link>
+    <description>Recent content in Blob on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 02 May 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://example.org/tags/blob/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Download Blob</title>
+      <link>http://example.org/bytes/download-blob/</link>
+      <pubDate>Mon, 02 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/bytes/download-blob/</guid>
+      <description>An example of example of how to download a blob object in JavaScript.
+var a = document.createElement(&#39;a&#39;); document.body.appendChild(a); a.style.display = &#39;none&#39;; var blob = new Blob([audio], {type: &#39;audio/mpeg&#39;}); var url = window.URL.createObjectURL(blob); a.href = url; a.download = &#39;file.mp3&#39;; a.click(); window.URL.revokeObjectURL(url);  </description>
+    </item>
+    
+  </channel>
+</rss>

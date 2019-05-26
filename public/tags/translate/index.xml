@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Translate on My New Hugo Site</title>
+    <link>http://example.org/tags/translate/</link>
+    <description>Recent content in Translate on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 07 Jun 2013 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://example.org/tags/translate/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Slide Out Navigation using CSS3 Translate</title>
+      <link>http://example.org/blog/slide-out-navigation-using-css3-translate/</link>
+      <pubDate>Fri, 07 Jun 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/slide-out-navigation-using-css3-translate/</guid>
+      <description>There are many ways to create a navigation menu for a mobile site, but the kind that seems to be most popular at the time is a slide out menu, such as the one you see on the Facebook app. The advantages of using this type of menu is that it is easily accessible and there is a lot of room for list items since the user can scroll within the menu.</description>
+    </item>
+    
+  </channel>
+</rss>

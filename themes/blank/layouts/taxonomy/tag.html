@@ -1,0 +1,11 @@
+{{ partial "header.html" . }}
+<h1>Posts tagged "{{ lower .Title }}"</h1>
+
+<ul>
+  {{ range .Data.Pages }}
+    <li>
+      <a href="{{.RelPermalink}}">{{ .Title }}</a>
+    </li>
+  {{ end }}
+</ul>
+{{ partial "footer.html" . }}

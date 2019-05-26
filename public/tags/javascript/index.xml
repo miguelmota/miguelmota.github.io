@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Javascript on My New Hugo Site</title>
+    <link>http://example.org/tags/javascript/</link>
+    <description>Recent content in Javascript on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 02 May 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://example.org/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Download Blob</title>
+      <link>http://example.org/bytes/download-blob/</link>
+      <pubDate>Mon, 02 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/bytes/download-blob/</guid>
+      <description>An example of example of how to download a blob object in JavaScript.
+var a = document.createElement(&#39;a&#39;); document.body.appendChild(a); a.style.display = &#39;none&#39;; var blob = new Blob([audio], {type: &#39;audio/mpeg&#39;}); var url = window.URL.createObjectURL(blob); a.href = url; a.download = &#39;file.mp3&#39;; a.click(); window.URL.revokeObjectURL(url);  </description>
+    </item>
+    
+    <item>
+      <title>Getting Started with RxJS</title>
+      <link>http://example.org/blog/getting-started-with-rxjs/</link>
+      <pubDate>Fri, 22 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/getting-started-with-rxjs/</guid>
+      <description>RxJS is a JavaScript implementation of the Reactive Extensions (Rx), a model originally developed at Microsoft. RxJS is library that allows you to compose asynchronous and event-based programs using Observables. An Observable is similar to the Observer pattern where there is a Publisher and Subscriber. The Publisher emits values, and whoever is subscribed to it will receive them. In RX, the publisher is called the Observerable and the subscriber is called the Observer.</description>
+    </item>
+    
+    <item>
+      <title>How to send a Mulitpart POST using XMLHTTPRequest</title>
+      <link>http://example.org/bytes/xmlhttprequest-multipart-post/</link>
+      <pubDate>Sun, 10 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/bytes/xmlhttprequest-multipart-post/</guid>
+      <description>Here&amp;rsquo;s an example of how to send a multipart POST containing binary data using XMLHTTPRequest:
+const xhr = new XMLHttpRequest(); const url = &#39;https://example.com&#39;; // (assume dataView contains binary audio data) const dataView = new DataView(buffer); xhr.open(&#39;POST&#39;, url, true); xhr.responseType = &#39;arraybuffer&#39;; xhr.onload = (event) =&amp;gt; { console.log(xhr.response); }; xhr.onerror = (error) =&amp;gt; { console.error(error); }; const BOUNDARY = &#39;BOUNDARY1234&#39;; const BOUNDARY_DASHES = &#39;--&#39;; const NEWLINE = &#39;\r\n&#39;; const AUDIO_CONTENT_TYPE = &#39;Content-Type: audio/L16; rate=16000; channels=1&#39;; const AUDIO_CONTENT_DISPOSITION = &#39;Content-Disposition: form-data; name=&amp;quot;audio&amp;quot;&#39;; const postDataStart = [ NEWLINE, BOUNDARY_DASHES, BOUNDARY, NEWLINE, AUDIO_CONTENT_DISPOSITION, NEWLINE, AUDIO_CONTENT_TYPE, NEWLINE, NEWLINE ].</description>
+    </item>
+    
+    <item>
+      <title>Exploring Decorators in JavaScript</title>
+      <link>http://example.org/blog/exploring-decorators-in-javascript/</link>
+      <pubDate>Mon, 07 Mar 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/exploring-decorators-in-javascript/</guid>
+      <description>In Object Oriented Programming, The Decorator Pattern is a popular design pattern that allows behavior to be added, removed, or modified from an object dynamically at runtime. In the latest iteration of the ES2016/ES7 specification, there is a proposal for JavaScript Decorators which lets us annotate and modify classes and properties at design time. I will be going over examples of decorators and how we can start using decorators in our code today.</description>
+    </item>
+    
+    <item>
+      <title>Getting started with Service Workers</title>
+      <link>http://example.org/blog/getting-started-with-service-workers/</link>
+      <pubDate>Wed, 27 Jan 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/getting-started-with-service-workers/</guid>
+      <description>Service Workers enables the ability to cache files for offline use, serve as a network proxy, enable the ability for push notification, and even background data sync. AppCache was an attempt to solve this problem but it made many assumptions about intended uses and in the end just caused more fustration than anything, so it became deprecated. Service Workers is AppCache&amp;rsquo;s successor, which greatly superceeds it by giving the developer a lot more granular control.</description>
+    </item>
+    
+    <item>
+      <title>How to create glowing particles in canvas</title>
+      <link>http://example.org/bytes/canvas-glowing-particles/</link>
+      <pubDate>Fri, 15 Jan 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/bytes/canvas-glowing-particles/</guid>
+      <description>Create glowing particles in canvas.
+Particle.js:
+(function(root) { &#39;use strict&#39;; function Particle(options) { var defaults = { ttl: 8000, maxXSpeed: 5, maxYSpeed: 2, maxRadius: 20, xVelocity: 4, yVelocity: 4, random: false, blink: true, speed: 30, containerWidth: window.innerWidth, containerHeight: window.innerHeight, context: null }; var settings = merge(defaults, options); for (var name in settings) { this[name] = settings[name]; } this.xStart = this.containerWidth / 2; this.yStart = this.containerHeight / 2; if (!(this.context instanceof Object)) { throw new Error(&#39;Canvas `context` is required.</description>
+    </item>
+    
+    <item>
+      <title>How to convert a Buffer to ArrayBuffer</title>
+      <link>http://example.org/bytes/buffer-to-arraybuffer/</link>
+      <pubDate>Tue, 29 Dec 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/bytes/buffer-to-arraybuffer/</guid>
+      <description>Convert a Buffer to ArrayBuffer.
+var isArrayBufferSupported = (new Buffer(0)).buffer instanceof ArrayBuffer; var bufferToArrayBuffer = isArrayBufferSupported ? bufferToArrayBufferSlice : bufferToArrayBufferCycle; function bufferToArrayBufferSlice(buffer) { return buffer.buffer.slice(buffer.byteOffset, buffer.byteOffset + buffer.byteLength); } function bufferToArrayBufferCycle(buffer) { var ab = new ArrayBuffer(buffer.length); var view = new Uint8Array(ab); for (var i = 0; i &amp;lt; buffer.length; ++i) { view[i] = buffer[i]; } return ab; }  Usage
+var b = new Buffer(12); b.write(&#39;abc&#39;, 0); var ab = bufferToArrayBuffer(b); String.</description>
+    </item>
+    
+    <item>
+      <title>How to convert an ArrayBuffer to Buffer</title>
+      <link>http://example.org/bytes/arraybuffer-to-buffer/</link>
+      <pubDate>Tue, 29 Dec 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/bytes/arraybuffer-to-buffer/</guid>
+      <description>Convert an ArrayBuffer to Buffer.
+var isArrayBufferSupported = (new Buffer(new Uint8Array([1]).buffer)[0] === 1); var arrayBufferToBuffer = isArrayBufferSupported ? arrayBufferToBufferAsArgument : arrayBufferToBufferCycle; function arrayBufferToBufferAsArgument(ab) { return new Buffer(ab); } function arrayBufferToBufferCycle(ab) { var buffer = new Buffer(ab.byteLength); var view = new Uint8Array(ab); for (var i = 0; i &amp;lt; buffer.length; ++i) { buffer[i] = view[i]; } return buffer; }  Usage
+var ab = new ArrayBuffer(12); var v = new DataView(ab); [].</description>
+    </item>
+    
+    <item>
+      <title>How to slice an AudioBuffer</title>
+      <link>http://example.org/bytes/slice-audiobuffer/</link>
+      <pubDate>Sat, 28 Nov 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/bytes/slice-audiobuffer/</guid>
+      <description>Slice out a portion of an AudioBuffer.
+var audioContext = new (window.AudioContext || window.webkitAudioContext); function AudioBufferSlice(buffer, begin, end, callback) { if (!(this instanceof AudioBufferSlice)) { return new AudioBufferSlice(buffer, begin, end, callback); } var error = null; var duration = buffer.duration; var channels = buffer.numberOfChannels; var rate = buffer.sampleRate; if (typeof end === &#39;function&#39;) { callback = end; end = duration; } // milliseconds to seconds begin = begin/1000; end = end/1000; if (begin &amp;lt; 0) { error = new RangeError(&#39;begin time must be greater than 0&#39;); } if (end &amp;gt; duration) { error = new RangeError(&#39;end time must be less than or equal to &#39; + duration); } if (typeof callback !</description>
+    </item>
+    
+    <item>
+      <title>How to calculate the square root using Babylonian method.</title>
+      <link>http://example.org/bytes/babylonian-method/</link>
+      <pubDate>Sun, 25 Oct 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/bytes/babylonian-method/</guid>
+      <description>Babylonian method for calculating square root of a number.
+function sqrt(n) { if (!(typeof n === &#39;number&#39; &amp;amp;&amp;amp; n &amp;gt;= 0 &amp;amp;&amp;amp; !isNaN(n))) { return NaN; } else if (n === 0) { return 0; } else if (n === Infinity) { return Infinity; } var val = n; while(true) { var last = val; val = (val + n / val) * 0.5; if (Math.abs(val - last) &amp;lt; 1e-9) { break; } } return val; }  Usage:</description>
+    </item>
+    
+    <item>
+      <title>How to find the balance points of an array</title>
+      <link>http://example.org/bytes/array-balance-points/</link>
+      <pubDate>Fri, 23 Oct 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/bytes/array-balance-points/</guid>
+      <description>A balance point is where the left side of the index is equal to the right side of the index. This function returns an array of indices of balance points.
+function balancePoints(array) { if (!Array.isArray(array)) { return []; } var totalSum = array.reduce(sum, 0); var leftSum = 0; return array.reduce(function(points, current, i) { if (i &amp;gt; 0) { leftSum += array[i-1]; } var rightSum = totalSum - leftSum - current; if (leftSum === rightSum) { points.</description>
+    </item>
+    
+    <item>
+      <title>How to find the difference between arrays</title>
+      <link>http://example.org/bytes/array-difference/</link>
+      <pubDate>Fri, 23 Oct 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/bytes/array-difference/</guid>
+      <description>Returns an array of unique values that is the symmetric difference of the provided arrays.
+function arrayDifference(/* arrays */) { var arrays = [].slice.call(arguments); var complement = []; for (var i = 0; i &amp;lt; arrays.length; i++) { var array = arrays[i]; if (Array.isArray(array)) { for (var j = 0; j &amp;lt; array.length; j++) { var value = array[j]; var atIndex = complement.indexOf(value); if (atIndex === -1) { complement.push(value); } else { complement.</description>
+    </item>
+    
+    <item>
+      <title>How to find the logarithm of a number with specified base</title>
+      <link>http://example.org/bytes/base-log/</link>
+      <pubDate>Fri, 23 Oct 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/bytes/base-log/</guid>
+      <description>Find the logarithm of a number (y) with specified base (x). logxY
+function baseLog(x, y) { return Math.log(y) / Math.log(x); }  Usage:
+console.log(baseLog(5, 25)); // 2 console.log(baseLog(7, 49)); // 2 console.log(baseLog(2, 8)); // 3 console.log(baseLog(4, 64)); // 3 console.log(baseLog(2, 16)); // 4  </description>
+    </item>
+    
+    <item>
+      <title>How to sum the digits of a number</title>
+      <link>http://example.org/bytes/digit-sum/</link>
+      <pubDate>Fri, 09 Oct 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/bytes/digit-sum/</guid>
+      <description>Algorithm to sum the digits of a number.
+function digitSum(n) { if (!(typeof n === &#39;number&#39; || n instanceof Number)) { return 0; } if (n &amp;lt;= 0) { return 0; } else if (n &amp;lt; 10) { return n; } else if (n === Infinity) { return Infinity; } return (n % 10) + digitSum((n / 10)&amp;gt;&amp;gt;0); }  Usage:
+console.log(digitSum(1234)); // 10 console.log(digitSum(3890)); 20 console.log(digitSum(Infinity)); // Infinity console.log(digitSum(-1234)); // 0 console.</description>
+    </item>
+    
+    <item>
+      <title>How to create an array excluding provided values</title>
+      <link>http://example.org/bytes/array-without/</link>
+      <pubDate>Fri, 14 Aug 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/bytes/array-without/</guid>
+      <description>Create an array excluding provided value.
+/** * arrayWithout * @param {array} array - original array * @param {array} without - collection to omit * @example * arrayWithout([&#39;a&#39;,&#39;b&#39;,&#39;c&#39;], [&#39;a&#39;,&#39;b&#39;,&#39;c&#39;]); // [&#39;a&#39;] */ function arrayWithout(a, w) { /* * Allows extension of prototype. * @example * Array.prototype.without = arrayWithout; * [&#39;a&#39;,&#39;b&#39;,&#39;c&#39;].without([&#39;a&#39;,&#39;b&#39;,&#39;c&#39;]); // [&#39;a&#39;] */ if (Array.isArray(this)) { return arrayWithout.apply(null, [this].concat([].slice.call(arguments))); } a = Array.isArray(a) ? a.slice(0) : []; w = flatten([].slice.call(arguments, 1)); for (var i = 0; i &amp;lt; w.</description>
+    </item>
+    
+    <item>
+      <title>.jshintrc boilerplate example</title>
+      <link>http://example.org/bytes/jshintrc/</link>
+      <pubDate>Tue, 02 Jun 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/bytes/jshintrc/</guid>
+      <description>A .jshintrc boilerplate example.
+.jshintrc
+{ &amp;quot;node&amp;quot;: true, &amp;quot;browser&amp;quot;: true, &amp;quot;esnext&amp;quot;: true, &amp;quot;bitwise&amp;quot;: true, &amp;quot;camelcase&amp;quot;: true, &amp;quot;curly&amp;quot;: true, &amp;quot;eqeqeq&amp;quot;: true, &amp;quot;immed&amp;quot;: true, &amp;quot;indent&amp;quot;: 4, &amp;quot;latedef&amp;quot;: true, &amp;quot;newcap&amp;quot;: true, &amp;quot;noarg&amp;quot;: true, &amp;quot;quotmark&amp;quot;: &amp;quot;single&amp;quot;, &amp;quot;regexp&amp;quot;: true, &amp;quot;undef&amp;quot;: true, &amp;quot;unused&amp;quot;: true, &amp;quot;strict&amp;quot;: true, &amp;quot;trailing&amp;quot;: true, &amp;quot;smarttabs&amp;quot;: true, &amp;quot;jquery&amp;quot;: true, &amp;quot;globals&amp;quot;: { &amp;quot;define&amp;quot;: true, &amp;quot;require&amp;quot;: true, &amp;quot;module&amp;quot;: true, &amp;quot;export&amp;quot;: true, &amp;quot;$&amp;quot;: true, &amp;quot;_&amp;quot;: true } }  </description>
+    </item>
+    
+    <item>
+      <title>How to detect WebGL support</title>
+      <link>http://example.org/bytes/webgl-detect/</link>
+      <pubDate>Mon, 25 May 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/bytes/webgl-detect/</guid>
+      <description>Detect if browser supports WebGL.
+function webglDetect() { var canvas = document.createElement(&#39;canvas&#39;); var contextNames = [&#39;webgl&#39;,&#39;experimental-webgl&#39;,&#39;moz-webgl&#39;,&#39;webkit-3d&#39;]; var context; if (navigator.userAgent.indexOf(&#39;MSIE&#39;) &amp;gt; -1) { try { context = WebGLHelper.CreateGLContext(canvas, &#39;canvas&#39;); } catch(e) {} } else { for (var i = 0; i &amp;lt; contextNames.length; i++) { try { context = canvas.getContext(contextNames[i]); if (context) { break; } } catch(e) {} } } return !!context; }  Usage:
+if (webglDetect()) { // WebGL is supported }  On github at miguelmota/webgl-detect.</description>
+    </item>
+    
+    <item>
+      <title>How to find the maximum value in an array</title>
+      <link>http://example.org/bytes/array-max/</link>
+      <pubDate>Fri, 22 May 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/bytes/array-max/</guid>
+      <description>Find the maximum value in an array.
+function max(col, fn) { var top = -Infinity; var index; if (Array.isArray(col)) { for (var i = 0; i &amp;lt; col.length; i++) { var result = col[i]; if (typeof fn === &#39;function&#39;) { result = fn(col[i]); } else if (typeof fn === &#39;string&#39;) { result = col[i][fn]; } if (result &amp;gt;= top) { top = result; index = i; } } } return typeof index !</description>
+    </item>
+    
+    <item>
+      <title>How to find the minimum value in an array</title>
+      <link>http://example.org/bytes/array-min/</link>
+      <pubDate>Fri, 22 May 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/bytes/array-min/</guid>
+      <description>Find the minimum value in an array.
+function min(col, fn) { var bottom = Infinity; var index; if (Array.isArray(col)) { for (var i = 0; i &amp;lt; col.length; i++) { var result = col[i]; if (typeof fn === &#39;function&#39;) { result = fn(col[i]); } else if (typeof fn === &#39;string&#39;) { result = col[i][fn]; } if (result &amp;lt;= bottom) { bottom = result; index = i; } } } return typeof index !</description>
+    </item>
+    
+    <item>
+      <title>K-Means Clustering in JavaScript</title>
+      <link>http://example.org/blog/k-means-clustering-in-javascript/</link>
+      <pubDate>Wed, 25 Feb 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/k-means-clustering-in-javascript/</guid>
+      <description>Clustering is grouping of data or dividing a large data set into smaller data sets of some similarity. A well known clustering algorithm in unsupervised machine learning is K-Means clustering. The K-Means algorithm takes in n observations (data points), and groups them into k clusters, where each observation belongs to a cluster based on the nearest mean (cluster centroid). The distance between a data point and cluster centroid is calculated using the Euclidean distance.</description>
+    </item>
+    
+    <item>
+      <title>Pixelate images with Canvas</title>
+      <link>http://example.org/blog/pixelate-images-with-canvas/</link>
+      <pubDate>Sun, 01 Feb 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/pixelate-images-with-canvas/</guid>
+      <description>There may be cases in which you want to pixelate an image, such as creating 8-bit style pixel art themed games or you simply want to give a hint of what an image is about without exposing too much. Turns out that it&amp;rsquo;s not complicated at all to do pixelation with canvas.
+
+View demo »
+The main methods needed from the canvas context are imageSmoothingEnabled for rendering crisp pixels and drawImage for drawing those pixels on to the canvas context.</description>
+    </item>
+    
+    <item>
+      <title>How to use Battery Status API</title>
+      <link>http://example.org/bytes/battery-status/</link>
+      <pubDate>Thu, 08 Jan 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/bytes/battery-status/</guid>
+      <description>Battery Status API wrapper:
+function Battery() { observable(this); if (typeof navigator.getBattery !== &#39;function&#39;) { navigator.getBattery = function () { return new Promise(function (resolve, reject) { if (navigator.battery) { resolve(navigator.battery); } else { reject(new Error(&#39;Battery Status API not implemented.&#39;)); } }); }; } navigator.getBattery().then(function(batteryManager) { this._battery = batteryManager; this.trigger(&#39;ready&#39;, this); this._battery.addEventListener(&#39;chargingchange&#39;, function() { this.trigger(&#39;chargingChange&#39;, this.isCharging()); }.bind(this)); this._battery.addEventListener(&#39;chargingtimechange&#39;, function() { this.trigger(&#39;chargingTimeChange&#39;, this.getChargingTime()); }.bind(this)); this._battery.addEventListener(&#39;dischargingtimechange&#39;, function() { this.trigger(&#39;dischargingTimeChange&#39;, this.getDischargingTime()); }.bind(this)); this._battery.addEventListener(&#39;levelchange&#39;, function() { this.</description>
+    </item>
+    
+    <item>
+      <title>Regex to validate domain name</title>
+      <link>http://example.org/bytes/validate-domain-regex/</link>
+      <pubDate>Sun, 04 Jan 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/bytes/validate-domain-regex/</guid>
+      <description>Using a regular expression to check if it is a valid domain.
+function isValidDomain(v) { if (!v) return false; var re = /^(?!:\/\/)([a-zA-Z0-9-]+\.){0,5}[a-zA-Z0-9-][a-zA-Z0-9-]+\.[a-zA-Z]{2,64}?$/gi; return re.test(v); }  Usage
+isValidDomain(&#39;example.com&#39;) // true isValidDomain(&#39;foo.example.com&#39;) // true isValidDomain(&#39;bar.foo.example.com&#39;) // true isValidDomain(&#39;exa-mple.co.uk&#39;) // true isValidDomain(&#39;exa_mple.com&#39;) // false isValidDomain(&#39;example&#39;) // false isValidDomain(&#39;ex*mple.com&#39;) // false isValidDomain(3434) // false  On github at miguelmota/is-valid-domain</description>
+    </item>
+    
+    <item>
+      <title>How to extract the MIME type from a base64 string.</title>
+      <link>http://example.org/bytes/base64-mime-regex/</link>
+      <pubDate>Thu, 04 Dec 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/bytes/base64-mime-regex/</guid>
+      <description>Extract the MIME type from a base64 string using a regular expression.
+function base64MimeType(encoded) { var result = null; if (typeof encoded !== &#39;string&#39;) { return result; } var mime = encoded.match(/data:([a-zA-Z0-9]+\/[a-zA-Z0-9-.+]+).*,.*/); if (mime &amp;amp;&amp;amp; mime.length) { result = mime[1]; } return result; }  Usage:
+var encoded = &#39;data:image/png;base64,iVBORw0KGgoAA...5CYII=&#39;; console.log(base64Mime(encoded)); // &amp;quot;image/png&amp;quot; console.log(base64Mime(&#39;garbage&#39;)); // null  On github at miguelmota/base64mime</description>
+    </item>
+    
+    <item>
+      <title>ES6 Examples</title>
+      <link>http://example.org/blog/es6-examples/</link>
+      <pubDate>Fri, 20 Jun 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/es6-examples/</guid>
+      <description>If you&amp;rsquo;ve been up-to-date with what&amp;rsquo;s going on in the JavaScript world then you know that ES6 is currently the new hotness in town. I&amp;rsquo;m going to be showing examples of some of the nicest features in ES6, which include:
+ Modules Classes Arrow Functions Destructuring Generators Promises Proxies Defaults Maps Weak Maps Sets Symbols Shorthand Objects Spread Operator Rest operator Constants Block Scoping Template Strings  Modules Export example (math.</description>
+    </item>
+    
+    <item>
+      <title>How to serialize an object in JavaScript</title>
+      <link>http://example.org/bytes/object-serialization/</link>
+      <pubDate>Tue, 10 Dec 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/bytes/object-serialization/</guid>
+      <description>Serialize an object in JavaScript.
+function serialize(obj, prefix) { var s = function(obj, prefix) { var str = []; for(var p in obj) { var k = prefix ? prefix + &#39;[&#39; + p + &#39;]&#39; : p, v = obj[p]; if (v !== undefined &amp;amp;&amp;amp; v !== null) { var set; if (v instanceof Object) { set = s(v, k); str.push(set); } else if (Array.isArray(v)) { v.forEach(function(n) { set = encodeURIComponent(k) + &#39;=&#39; + encodeURIComponent(n); str.</description>
+    </item>
+    
+    <item>
+      <title>Getting Started with Backbone.js</title>
+      <link>http://example.org/blog/getting-started-with-backbonejs/</link>
+      <pubDate>Sat, 30 Nov 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/getting-started-with-backbonejs/</guid>
+      <description>In this tutorial I will go over Backbone.js main components: Models, Collections, Views, and Routes. We will not be building an application but instead we will be going over a number of simple examples of each Backbone compoment, that hopefully after we are done you will have a firm understanding of Backbone.js and be able to put it all together.
+Models Models are a key component of Backbone applications. With model objects you can easily keep track of your data and update as needed.</description>
+    </item>
+    
+    <item>
+      <title>Memoization&amp;#58; Caching function results in JavaScript</title>
+      <link>http://example.org/blog/memoization-caching-function-results-in-javascript/</link>
+      <pubDate>Wed, 30 Oct 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/memoization-caching-function-results-in-javascript/</guid>
+      <description>Memoization (based on the word memorable) is technique that caches the result of a function in order to avoid recalculation the next time the same function is called. Initially when the function is executed, the result gets added to an object holding the calculated results. When the function is called again, it checks the results object to see if already contains the result and if it does then return it. If it&amp;rsquo;s not cached, then calculate and store it.</description>
+    </item>
+    
+    <item>
+      <title>Screenshots with getUserMedia API</title>
+      <link>http://example.org/blog/screenshots-with-getusermedia-api/</link>
+      <pubDate>Sat, 31 Aug 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/screenshots-with-getusermedia-api/</guid>
+      <description>With the getUserMedia API, it is now possible to access the user&amp;rsquo;s webcam and microphone using just JavaScript. What this means is that we can finally get rid of those nasty Flash plugins and use this native approace instead. At the writing of this post, only Firefox 17+ and Chrome 21+ have support for getUserMedia.
+Give credit where credit is due. The code is heavily inspired by HTML5 Rocks&amp;rsquo; article Capturing Audio &amp;amp; Video in HTML5.</description>
+    </item>
+    
+    <item>
+      <title>Basic HTML5 Audio Manipulation</title>
+      <link>http://example.org/blog/basic-html5-audio-manipulation/</link>
+      <pubDate>Sun, 07 Jul 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/basic-html5-audio-manipulation/</guid>
+      <description>Using JavaScript, we can create an audio object and manipulate it very easily. Below is some code (gist) to help you get started. You can play, stop, pause, and loop the audio.
+&amp;lt;!-- Audio Control Buttons --&amp;gt; &amp;lt;button id=&amp;quot;play-button&amp;quot;&amp;gt;Play&amp;lt;/button&amp;gt; &amp;lt;button id=&amp;quot;stop-button&amp;quot;&amp;gt;Stop&amp;lt;/button&amp;gt; &amp;lt;button id=&amp;quot;pause-button&amp;quot;&amp;gt;Pause&amp;lt;/button&amp;gt; &amp;lt;button id=&amp;quot;loop-button&amp;quot;&amp;gt;Loop&amp;lt;/button&amp;gt;  // Basic HTML5 audio manipulation (function () { &#39;use strict&#39;; // Set namespace. var NS = {}; // Control buttons. NS.playButton = document.getElementById(&#39;play-button&#39;); NS.stopButton = document.</description>
+    </item>
+    
+    <item>
+      <title>Call and Apply Methods in JavaScript</title>
+      <link>http://example.org/blog/call-and-apply-methods-in-javascript/</link>
+      <pubDate>Fri, 10 May 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/call-and-apply-methods-in-javascript/</guid>
+      <description>The call and apply methods in JavaScript might look complicated at first glance, but they are actually easy to wrap your head around.
+Suppose we have an object called square with a few properties:
+var square = { color: &amp;quot;red&amp;quot;, getColor: function () { return &amp;quot;I am the color &amp;quot; + this.color + &amp;quot;!&amp;quot;; }, getArea: function (width, height) { return &amp;quot;My area is &amp;quot; + (width * height) + &amp;quot; feet!</description>
+    </item>
+    
+    <item>
+      <title>Understanding Prototype in JavaScript</title>
+      <link>http://example.org/blog/understanding-prototype-in-javascript/</link>
+      <pubDate>Thu, 25 Apr 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/understanding-prototype-in-javascript/</guid>
+      <description>A prototype is an object from where other objects inherit properties from. All objects in JavaScript are descended from Object, a global object. Why this matters I&amp;rsquo;ll explain later, but for now let&amp;rsquo;s jump in to some code.
+Constructor and Methods Let&amp;rsquo;s define a functional object constructor called Quadrilateral and have width and height as parameters.
+// Define our constructor var Quadrilateral = function(width, height) { this.width = width; this.</description>
+    </item>
+    
+    <item>
+      <title>Responsive Video</title>
+      <link>http://example.org/blog/responsive-video/</link>
+      <pubDate>Fri, 19 Apr 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/responsive-video/</guid>
+      <description>Dealing with responsive video can be quite troublesome.
+Here is a simple script you might find useful:
+(function() { // Responsive Video function responsiveVideo(selector) { // Get videos var videos = document.querySelectorAll(selector); // Loop through videos for (var i = 0; i &amp;lt; videos.length; i++) { var video = videos[i]; // Get aspect ratio var videoRatio = (video.height / video.width) * 100; // Stretch video video.style.position = &amp;quot;absolute&amp;quot;; video.style.top = 0; video.</description>
+    </item>
+    
+    <item>
+      <title>Display latest delicious bookmarks with jQuery</title>
+      <link>http://example.org/blog/display-latest-delicious-bookmarks-with-jquery/</link>
+      <pubDate>Tue, 11 Oct 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/display-latest-delicious-bookmarks-with-jquery/</guid>
+      <description>If you look below you see my three most recently saved bookmarks from (delicious)[http://delicious.com/miguelmota]:
+ fetching bookmarks...   var niceTime = (function(){ var ints = { second: 1, minute: 60, hour: 3600, day: 86400, week: 604800, month: 2592000, year: 31536000 }; return function(time){ time = +new Date(time); var gap = ((+new Date()) - time) / 1000, amount, measure; for (var i in ints){ if (gap  ints[i]){ measure = i; } } amount = gap / ints[measure]; amount = gap  ints.</description>
+    </item>
+    
+    <item>
+      <title>Bitwise operators in JavaScript</title>
+      <link>http://example.org/blog/bitwise-operators-in-javascript/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/bitwise-operators-in-javascript/</guid>
+      <description>Bitwise operators act on the level of individual bits which allows for fast comparisons and calculations. I&amp;rsquo;ll be going over a couple of ways to use bitwise opeartors in JavaScript since it&amp;rsquo;s not entirely clear at first. Some of the examples shown are from various sources which I&amp;rsquo;ve accumlated over time in which I&amp;rsquo;m going to elaborate on them.
+Bitwise AND Return a one if the two bits are both one.</description>
+    </item>
+    
+    <item>
+      <title>Make an Awesome Tooltip with jQuery</title>
+      <link>http://example.org/blog/make-an-awesome-tooltip-with-jquery/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/make-an-awesome-tooltip-with-jquery/</guid>
+      <description>I will attempt to show you how to make a simple yet awesome tooltip using jQuery and CSS3.
+Ok so first let&amp;rsquo;s set up the HTML:
+&amp;lt;a class=&amp;quot;awesometooltip&amp;quot; href=&amp;quot;http://www.miguelmota.com&amp;quot; title=&amp;quot;Hello, I am a tootip!&amp;quot;&amp;gt;hover over me&amp;lt;/a&amp;gt;  All we did was make a link with the class of awesometooltip (that&amp;rsquo;s what I decided to call this mini plugin) and gave it a title attribute.
+Now let&amp;rsquo;s move on to the fun stuff.</description>
+    </item>
+    
+    <item>
+      <title>Naive Bayes Classifier in JavaScript</title>
+      <link>http://example.org/blog/naive-bayes-classifier-in-javascript/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/naive-bayes-classifier-in-javascript/</guid>
+      <description>The Naive Bayes classifier is a pretty popular text classification algorithm because of it&amp;rsquo;s simplicity. You&amp;rsquo;ll often see this classifier used for spam detection, authorship attribution, gender authentication, determing whether a review is positive or negative, and even sentiment analysis. The Naive Bayes classifier takes in a corpus (body of text) known as a document, which then a stemmer runs through the document and returns a &amp;ldquo;bag or words&amp;rdquo; so to speak.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,81 @@
+baseURL = "https://miguelmota.com/"
+languageCode = "en-us"
+title = "Miguel Mota | Software Developer"
+theme = "blank"
+enableEmoji = true pygmentsUseClassic = false
+pygmentsCodeFences = true
+pygmentsCodeFencesGuessSyntax = true
+# https://help.farbox.com/pygments.html
+# https://github.com/alecthomas/chroma
+# hugo gen chromastyles --style=autumn        >  syntax.autumn.css
+# ...
+pygmentsUseClasses = false
+# => static/css/syntax/syntax/syntax.*.css
+# copy one of them to
+# static/css/syntax/syntax.css
+# alternative (if shortcodes/csc*.html are not used):
+# set pygmentsUseClassic to false on choose one of the following:
+#pygmentsStyle = "autumn"
+#pygmentsStyle = "borland"
+#pygmentsStyle = "bw"
+#pygmentsStyle = "colorful"
+#pygmentsStyle = "default"
+#pygmentsStyle = "emacs"
+pygmentsStyle = "friendly"
+#pygmentsStyle = "fruity"
+#pygmentsStyle = "manni"
+#pygmentsStyle = "monokai"
+#pygmentsStyle = "murphy"
+#pygmentsStyle = "native"
+#pygmentsStyle = "pastie"
+#pygmentsStyle = "perldoc"
+#pygmentsStyle = "rrt"
+#pygmentsStyle = "tango"
+#pygmentsStyle = "trac"
+#pygmentsStyle = "vim"
+#pygmentsStyle = "vs"
+
+[params]
+	author = "Miguel Mota"
+	description = "Software developer from sunny Southern California."
+	keywords = "miguel mota,web developer,software developer, html5 developer, javascript developer, blockchain developer"
+	googleAnalyticsUID = "UA-12642068-1"
+	homepageFeatured = 1
+	homepagePosts = 10
+
+[menu]
+
+[[menu.main]]
+  weight = 1
+  name   = "About"
+  url    = "/about"
+
+[[menu.main]]
+  weight = 2
+  name   = "Work"
+  url    = "/work"
+
+[[menu.main]]
+  weight = 3
+  name   = "Bytes"
+  url    = "/bytes"
+
+[[menu.main]]
+  weight = 4
+  name   = "Github"
+  url    = "https://github.com/miguelmota"
+
+[[menu.main]]
+  weight = 5
+  name   = "LinkedIn"
+  url    = "https://www.linkedin.com/in/miguelmota/"
+
+[[menu.main]]
+  weight = 6
+  name   = "Twitter"
+  url    = "https://twitter.com/miguelmotah"
+
+[[menu.main]]
+  weight = 7
+  name   = "Contact"
+  url    = "/contact"

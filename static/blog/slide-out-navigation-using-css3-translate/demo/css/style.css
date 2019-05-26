@@ -1,0 +1,247 @@
+/*
+ * Slide Out Navigation Stylesheet
+ */
+
+/* Global styles */
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+
+html, body {
+	height: 100%;
+}
+
+body {
+	position: relative;
+	overflow: hidden;
+	font-size: 16px;
+	font-family: "Lucida Grande", Tahoma, Verdana, Arial, sans-serif;
+	color: #555;
+}
+
+p {
+	line-height: 1.6;
+	margin: 10px 0;
+}
+
+p:first-child {
+	margin-top: 0;
+}
+
+a {
+	font-weight: normal;
+	text-decoration: none;
+	color: #555;
+}
+
+a:hover {
+	color: #08c;
+}
+
+/* Hide nav-handler checkbox */
+
+#nav-handler {
+	display: none;
+}
+
+/* Header */
+
+#header {
+	position: static;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 75px;
+	padding: 20px;
+	text-align: center;
+	z-index: 2;
+	border-bottom: 1px solid #bbb;
+	background: #eee;
+}
+
+/* Header menu button */
+
+#menu-button {
+	display: inline-block;
+	position: absolute;
+	left: 20px;
+	width: 62px;
+	height: 36px;
+	text-align: center;
+	border: 1px solid #555;
+	line-height: 2;
+}
+
+#menu-button:hover {
+	color: #08c;
+	border: 1px solid #08c;
+	cursor: pointer;
+}
+
+/* Header active menu button */
+
+#nav-handler:checked ~ #menu-button {
+	color: #08c;
+	border: 1px solid #08c;
+}
+
+/* Slide out navigation */
+
+#nav {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 80%;
+	height: 100%;
+	z-index: 1;
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
+	transition: opacity 0s .25s;
+	-moz-transition: opacity 0s .25s;
+	-webkit-transition: opacity 0s .25s;
+	border-right: 1px solid #bbb;
+	background: #eee;
+	color: #555;
+}
+
+/* Active slide out navigation */
+
+#nav-handler:checked ~ #nav {
+	opacity: 1;
+	transition: opacity 0s 0s;
+	-moz-transition: opacity 0s 0s;
+	-webkit-transition: opacity 0s 0s;
+}
+
+/* Slide out navigation list items */
+
+#nav ul li {
+	display: block;
+	clear: both;
+	border-bottom: 1px solid #bbb;
+}
+
+#nav ul li.search-section {
+	padding: 10px;
+	background: #ddd;
+}
+
+#nav ul li.section-title {
+	padding: 5px 10px;
+	box-shadow: inset 0 0 1px #aaa;
+	-moz-box-shadow: inset 0 0 1px #aaa;
+	-webkit-box-shadow: inset 0 0 1px #aaa;
+	background: #e6e6e6;
+	color: #777;
+}
+
+#nav ul li a {
+	display: block;
+	width: 100%;
+	height: 100%;
+	padding: 10px;
+}
+
+#nav ul li a:hover {
+	background: #ddd;
+}
+
+#nav input[type="text"],
+#nav input[type="search"] {
+	width: 100%;
+	height: 100%;
+	padding: 10px;
+	appearance: none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	border: 1px solid #aaa;
+	box-shadow: inset 1px 1px 1px #aaa;
+	-moz-box-shadow: inset 1px 1px 1px #aaa;
+	-webkit-box-shadow: inset 1px 1px 1px #aaa;
+	background: #fff;
+	color: #555;
+}
+
+#nav input[type="text"]:focus,
+#nav input[type="search"]:focus {
+	border: 1px solid #08c;
+}
+
+/* Main container */
+
+#main-container {
+	display: block;
+	position: relative;
+	height: 100%;
+	transition: -moz-transform .25s ease-in-out;
+	-moz-transition: -moz-transform .25s ease-in-out;
+	-webkit-transition: -webkit-transform .25s ease-in-out;
+	z-index: 5;
+}
+
+/* Translate main container when nav handler is checked */
+
+#nav-handler:checked ~ #main-container,
+.nav-handler-checked {
+	transform: translate3D(80%,0,0); /* X value must be same as Nav width */
+	-moz-transform: translate3D(80%,0,0); /* X value must be same as Nav width */
+	-webkit-transform: translate3D(80%,0,0); /* X value must be same as Nav width */
+}
+
+/* Content container */
+
+#content-container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	padding: 75px 0 0 0; /* Top padding must be same as header height */
+	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;
+	background: #ddd;
+	z-index: -1;
+}
+
+/* Content */
+
+#content {
+	margin: 0 0 25px 0;
+	padding: 25px;
+}
+
+#content h2 {
+	margin: 0 0 20px 0;
+	font-size: 32px;
+	line-height: 1.6;
+	color: #555;
+}
+
+#content a {
+	color: #08c;
+}
+
+#content a:hover {
+	color: #09d;
+}
+
+/* Footer */
+
+#footer {
+	padding: 20px 20px 95px 20px;
+	color: #999;
+	background: #ddd;
+}
+
+#footer a {
+	color: #08c;
+}
+
+#footer a:hover {
+	color: #09d;
+}

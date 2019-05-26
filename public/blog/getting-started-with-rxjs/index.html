@@ -1,0 +1,1767 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>My New Hugo Site  | Getting Started with RxJS</title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.52" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.d98f2eb6bcd1eaedb7edf166bd16af26.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+
+    <meta property="og:title" content="Getting Started with RxJS" />
+<meta property="og:description" content="A guide in to the world of Functional Reactive Programming with RxJS." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/blog/getting-started-with-rxjs/" /><meta property="article:published_time" content="2016-04-22T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2016-04-22T00:00:00&#43;00:00"/>
+
+<meta itemprop="name" content="Getting Started with RxJS">
+<meta itemprop="description" content="A guide in to the world of Functional Reactive Programming with RxJS.">
+
+
+<meta itemprop="datePublished" content="2016-04-22T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2016-04-22T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="5477">
+
+
+
+<meta itemprop="keywords" content="JavaScript,RxJS,Observables,FRP,Functional Reactive Programming," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Getting Started with RxJS"/>
+<meta name="twitter:description" content="A guide in to the world of Functional Reactive Programming with RxJS."/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="http://example.org/" class="f3 fw2 hover-white no-underline white-90 dib">
+      My New Hugo Site
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+
+    <header class="mt4 w-100">
+      <p class="f6 b helvetica tracked">
+          
+        BLOGS
+      </p>
+      <h1 class="f1 athelas mb1">Getting Started with RxJS</h1>
+      
+      <time class="f6 mv4 dib tracked" datetime="2016-04-22T00:00:00Z">April 22, 2016</time>
+      
+      
+    </header>
+
+    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
+
+<p><a href="https://github.com/ReactiveX/rxjs">RxJS</a> is a JavaScript implementation of the <em>Reactive Extensions (Rx)</em>, a model originally developed at Microsoft. RxJS is library that allows you to compose asynchronous and event-based programs using <em>Observables</em>. An Observable is similar to the <a href="https://en.wikipedia.org/wiki/Observer_pattern">Observer pattern</a> where there is a <em>Publisher</em> and <em>Subscriber</em>. The Publisher emits values, and whoever is subscribed to it will receive them. In RX, the publisher is called the Observerable and the subscriber is called the Observer. But an Observable is much more, it also behaves like the <a href="https://en.wikipedia.org/wiki/Iterator_pattern">Iterator pattern</a> where it provides fine control over how to traverse over the data. The Iterator pattern decouples traversal algorithms from it&rsquo;s container. In the Publisher/Subscriber pattern, the publishes <em>pushes</em> values to it&rsquo;s subscriber and the subscriber is forced to take in all the data as it comes it. In the Iterator pattern, you can <em>pull</em> the values from the collection of data but there isn&rsquo;t a way to push new data to it, otherwise you&rsquo;d have to poll and that&rsquo;s very inefficient. The Observable is a combination of the Observer pattern and the Iterator pattern. Streams of events are called Observables and subscribers to those events are called Observers. Values in an Observable stream are separated by time instead of by memory.</p>
+
+<p>Observables are also like <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promises</a>, but on steriods. Promises can only return a single value, and they can&rsquo;t be cancelled once in flight. An Observable can return multiple values and can also be cancelled when needed.</p>
+
+<p>In JavaScript you&rsquo;re familiar with the event emitter pattern which is practically the same as the Publisher/Subscribe pattern. The downside of the event emitter pattern is that there are usually always side effects and there is no way to return a value from the callback. Event emitters are not treated like first-class citizens which means an event emitter can&rsquo;t be passed as an argument, so a series of events such as clicks can&rsquo;t be passed around. The other downside is that you will miss emitted events if the listeners are registered too late. There is no way to <em>replay</em> historical events. We will cover how Observables handle all this as we go through the examples.</p>
+
+<p>RxJS is sometimes referred to <em>&ldquo;the <a href="https://lodash.com/">lodash</a> for events&rdquo;</em>.</p>
+
+<h2 id="an-observable-is-like-a-water-hose">An Observable is like a water hose</h2>
+
+<p>You can think of an Observable as a variable that constantly emits values similarily like a waterhose spilling out water, and someone is controlling the facuet knob determing precisely when to emit water. However the person emitting water knows that California is in a drought and doesn&rsquo;t want to get a hefty fine by the city for wasting water so he only emits water when someone has connected the receiving end of he water hose to their water jug. The person connected to the water hose can connect filters, and maybe even merge a hose outputting Kool-Aid to transform the stream, so that it the end he has a jug full of filtered Kool-Aid water. You can merge, filter, and transform Observable streams the same way.</p>
+
+<h2 id="reactive-programming">Reactive Programming</h2>
+
+<p>Reactive programming is a paradigm that uses streams as the core. Mouse events, networks requests, arrays, etc. all these are represented as streams. We <em>react</em> when new values are published. Reactive Programming focuses on propagating changes without having to explicitly specify how the propagation happens. It is the <em>what</em>, instead of the <em>how</em>. By nature, it results in more maintainable code. If you&rsquo;ve used a spreadsheet program such as Excel, then you&rsquo;ve experienced Reactive Programming. As an example in Excel, you can specify that cell C1 should be the sum of A1 and B1.</p>
+
+<pre><code>C1=SUM(A1:B1)
+</code></pre>
+
+<p>or simply put:</p>
+
+<pre><code>C = A + B
+</code></pre>
+
+<p>Whenever A or B changes, then C automatically gets updated since it&rsquo;s dependents changed. That is Reactive Programming. You declare <em>what</em> should happen, instead of <em>how</em> it should happen. RP is declarative, rather than imperative.</p>
+
+<p>Functional Reactive Programming is taking a functional approach to Reactive Programming by using stateless pure functions for operations on the data.</p>
+
+<h2 id="getting-started">Getting Started</h2>
+
+<p>To run the examples you can use Node.js and the <a href="https://www.npmjs.com/package/rxjs">rxjs</a> module:</p>
+
+<pre><code class="language-bash">npm install rxjs
+</code></pre>
+
+<p>At the time of this writing, RxJS was on version 5.0.0 (beta).</p>
+
+<p>For the examples requiring the DOM, use <a href="https://github.com/substack/node-browserify">browserify</a> to spit out a bundle that you include in your HTML file.</p>
+
+<pre><code class="language-bash">$ browserify file.js -o bundle.js
+</code></pre>
+
+<p>Ok let&rsquo;s get to it.</p>
+
+<h2 id="creating-observables">Creating Observables</h2>
+
+<p>There are multiple ways of creating Observables dependending on the data structure type.</p>
+
+<h3 id="of">of</h3>
+
+<p>In RxJS you can use <a href="http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#static-method-of"><code>of</code></a> to use a single value as an Observable. With Observables, nothing gets ran until there a subscriber listening to the Observable. The Observer on the subscribe method will contain the final result as the parameter.</p>
+
+<pre><code class="language-javascript">Rx.Observable.of(`Hello World`)
+.subscribe(result =&gt; console.log(result));
+</code></pre>
+
+<p>Outputs:</p>
+
+<pre><code class="language-bash">Hello World
+</code></pre>
+
+<h3 id="from">from</h3>
+
+<p>The <a href="http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html"><code>from</code></a> method creates an Observable sequence from arrays, array-like objects, or iterables such as Map, Set, or String.</p>
+
+<pre><code class="language-javascript">const set = new Set([1, 2, 3])
+Rx.Observable.from(set)
+.map(x =&gt; x * 2)
+.subscribe(x =&gt; console.log(x),
+           error =&gt; console.error(error),
+           () =&gt; console.log('done'));
+</code></pre>
+
+<p>Outputs:</p>
+
+<pre><code class="language-javascript">2
+4
+6
+done
+</code></pre>
+
+<h3 id="fromevent">fromEvent</h3>
+
+<p>Use <a href="http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#static-method-fromEvent"><code>fromEvent</code></a> to create an Observable from an event listener. In this example we log the coordinates of the mouse position.</p>
+
+<pre><code class="language-javascript">Rx.Observable.fromEvent(document, 'mousemove')
+.subscribe(event =&gt; console.log(event.clientX, event.clientY));
+</code></pre>
+
+<p>Outputs:</p>
+
+<pre><code class="language-javascript">95 292
+107 292
+141 297
+173 305
+...
+</code></pre>
+
+<p>The great thing about Observables is that you can create new observables based on original ones. For example, if we wanted to log whether the user was on the left side or right side of the screen as he moves the mouse.</p>
+
+<pre><code class="language-javascript">const mouseMoves = Rx.Observable.fromEvent(document, `mousemove`)
+
+const movesOnRight = mouseMoves.filter(event =&gt; event.clientX &gt; window.innerWidth / 2);
+const movesOnLeft = mouseMoves.filter(event =&gt; event.clientX &gt; window.innerWidth / 2);
+
+movesOnRight.subscribe(event =&gt; console.log(`Right side`, event.clientX, event.clientY));
+movesOnLeft.subscribe(event =&gt; console.log(`Left side`, event.clientX, event.clientY));
+</code></pre>
+
+<pre><code class="language-text">Left side 196 3
+Left side 230 4
+Left side 303 4
+Right side 1128 25
+Right side 1233 65
+Right side 1304 97
+...
+</code></pre>
+
+<p>In RX, methods that transform or query sequences are called <em>operators</em>. In the previous example, <em>filter</em> is an operator.</p>
+
+<p>Now imagine if we want to take the coordinates of 10 clicks that occur on the right side of the screen. Think of it as a relational database query where you describe what you want. For example, you&rsquo;d use a declarative statement in SQL.</p>
+
+<pre><code class="language-sql">SELECT x,y FROM clicks LIMIT 10
+</code></pre>
+
+<p>Almost just as declaratively as SQL we achieve the same using RxJS:</p>
+
+<pre><code class="language-javascript">Rx.Observable.fromEvent(document, 'click')
+.filter(event =&gt; event.clientX &gt; window.innerWidth / 2)
+.take(10)
+.subscribe(data =&gt; console.log(data.clientX, data.clientY))
+</code></pre>
+
+<p>Compared to the traditional imperative, non-declaritive way:</p>
+
+<pre><code class="language-javascript">let clicks = 0;
+
+document.addEventListener('click', function clickHandler(event) {
+  if (clicks &lt; 10) {
+    if (event.clientX &gt; window.innerWidth / 2) {
+      console.log(event.clientX, event.clientY);
+      clicks += 1;
+    }
+  } else {
+    document.removeEventListener('click', clickHandler);
+  }
+});
+</code></pre>
+
+<h3 id="bindcallback">bindCallback</h3>
+
+<p>Using <a href="http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#static-method-bindCallback"><code>bindCallback</code></a> is useful when you want to create an Observable from a function that invokes a callback with the value. For example:</p>
+
+<pre><code class="language-javascript">const hello = (message, callback) =&gt; callback(`Hello ${message}`);
+const sayHello = Rx.Observable.bindCallback(hello);
+const source = sayHello(`World`);
+
+source.subscribe(result =&gt; console.log(result));
+</code></pre>
+
+<p>Outputs:</p>
+
+<pre><code class="language-javascript">Hello World
+</code></pre>
+
+<h3 id="bindnodecallback">bindNodeCallback</h3>
+
+<p>RxJS also provides a nice way of creating Observables from callbacks where the the first parameter is the error message the result if there is one as the second parameter. We use <a href="http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#static-method-bindNodeCallback"><code>bindNodeCallback</code></a> for this since it&rsquo;s a pattern typically found in Node.js programs.</p>
+
+<pre><code class="language-javascript">const Rx = require('rx');
+const fs = require('fs');
+
+const readdir = Rx.Observable.bindNodeCallback(fs.readdir);
+const source = readdir('./');
+
+source.subscribe(result =&gt; console.log(result),
+                error =&gt; console.error(error),
+                () =&gt; console.log('done'));
+</code></pre>
+
+<p>In <em>all</em> subscribe methods the first argument is the result handler, the second argument is the error handler, and the third argument is the complete handler which gets emitted when there are no more events to be be emitted.</p>
+
+<h3 id="frompromise">fromPromise</h3>
+
+<p>We use <a href="http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#static-method-fromPromise"><code>fromPromise</code></a> to create an Observable from a Promise.</p>
+
+<pre><code class="language-javascript">const promise = new Promise((resolve, reject) =&gt; resolve('Hello World'));
+
+const subscription = Rx.Observable.fromPromise(promise)
+.subscribe(x =&gt; console.log(x),
+           error =&gt; console.error(error),
+           () =&gt; console.log('done'));
+</code></pre>
+
+<p>Outputs:</p>
+
+<pre><code class="language-javascript">Hello World
+done
+</code></pre>
+
+<p>Before we go into depth about the Rx pattern and Observables, let&rsquo;s first take a look at the Observer pattern and Iterator pattern to understand better how these patterns are found in Observables.</p>
+
+<h2 id="the-observer-pattern">The Observer pattern</h2>
+
+<p>In the Observer pattern, AKA Publisher/Subscriber pattern, there is an object called Producer (AKA Subject) that keeps references of all Listeners (AKA Subscribers) subscribed to it. Changes are pushed to Listeners when there is an update from the Producer.</p>
+
+<p>Example of a Producer emitting updates to Subscribers.</p>
+
+<pre><code class="language-javascript">class Producer {
+  constructor() {
+    this.listeners = [];
+  }
+
+  add(listener) {
+    this.listeners.push(listener);
+  }
+
+  remove(listener) {
+    var index = this.listeners.indexOf(listener);
+    this.listeners.splice(index, 1);
+  }
+
+  notify(message) {
+    this.listeners.forEach(listener =&gt; listener(message))
+  }
+}
+
+const notifier = new Producer();
+const listener = (message) =&gt; console.log(`Listener received message: ${message}`);
+
+notifier.add(listener);
+notifier.notify('Hello');
+</code></pre>
+
+<p>Outputs</p>
+
+<pre><code class="language-javascript">Listener received message: Hello
+</code></pre>
+
+<h2 id="the-iterator-pattern">The Iterator pattern</h2>
+
+<p>An Iterator provides an easy way to traverse it&rsquo;s contents, abstracting away the implementation. The Iterator requires at least the two methods, <code>next</code> and <code>hasNext</code>, which are used for traversing the collection.</p>
+
+<p>Here is an example of an Iterator:</p>
+
+<pre><code class="language-javascript">class Iterator {
+  constructor(items) {
+    this.index = 0;
+    this.items = items;
+  }
+
+  first() {
+    this.reset();
+    return this.next();
+  }
+
+  next() {
+    return this.items[this.index++];
+  }
+
+  hasNext() {
+    return this.index &lt;= this.items.length;
+  }
+
+  reset() {
+    this.index = 0;
+  }
+
+  each(callback) {
+    for (let item = this.first(); this.hasNext(); item = this.next()) {
+      callback(item);
+    }
+  }
+}
+
+const items = ['foo', 'bar', 'baz', 'qux'];
+const iterator = new Iterator(items);
+
+iterator.each(value =&gt; console.log(value));
+</code></pre>
+
+<p>Outputs:</p>
+
+<pre><code class="language-javascript">foo
+bar
+baz
+qux
+</code></pre>
+
+<h2 id="rx-pattern-and-the-observable">Rx pattern and the Observable</h2>
+
+<p>An Observable emits it&rsquo;s values in order like an iterator and pushes values to consumers like the Observer pattern. Observable is <em>pushed</em> based instead of <em>pull</em> based where the consumer has to request the next value. In this context, the consumers of observables are <em>Observers</em>. Equivalent of listeners (subscribers) in the Observer pattern. An observable doesn&rsquo;t start streaming values until it has at least one Observer subscribed to it. The Observable can emit a signal when the sequence is completed, like an Iterator. The Observable can also signal when an error occurs, like in the example where we used <code>fromNodeCallback</code>.</p>
+
+<h2 id="observable-create">Observable.create</h2>
+
+<p>We use <a href="https://github.com/Reactive-Extensions/RxJS/blob/master/doc/api/core/operators/create.md"><code>Observable.create</code></a> to create an Observable sequence from a subscribe method implementation.</p>
+
+<pre><code class="language-javascript">const source = Rx.Observable.create(observer =&gt; {
+  observer.next(`Hello`);
+  observer.next(`World`);
+  observer.complete();
+
+  return () =&gt; console.log(`disposed`);
+});
+
+const subscription = source.subscribe(
+                        x =&gt; console.log(x),
+                        error =&gt; console.error(error),
+                        () =&gt; console.log(`done`));
+
+subscription.unsubscribe();
+</code></pre>
+
+<p>Outputs:</p>
+
+<pre><code class="language-javascript">Hello
+World
+done
+disposed
+</code></pre>
+
+<p>The Observerable takes a subscribe function as it&rsquo;s argument which defines the data to be emitted.</p>
+
+<p>The Observer has 3 methods:</p>
+
+<ul>
+<li><code>next</code></li>
+<li><code>error</code></li>
+<li><code>complete</code></li>
+</ul>
+
+<p><code>next</code> is the equalivant of calling an update function in the Observer pattern where the data is pushed to it&rsquo;s subscribers. If <code>complete</code> or <code>error</code> are called then <code>next</code> won&rsquo;t have any effect anymore.</p>
+
+<p>The Observable can return an optional function that can handle any clean-up work that you&rsquo;d have to do after the Observable is unsubscribed.</p>
+
+<h2 id="creating-observers">Creating Observers</h2>
+
+<p>Creating an <a href="http://reactivex.io/rxjs/class/es6/MiscJSDoc.js~ObserverDoc.html"><code>Observer</code></a> is really simple is all it is an object with <code>next</code>, <code>error</code>, and <code>complete</code> methods:</p>
+
+<pre><code class="language-javascript">const observer = {
+  next: x =&gt; console.log(x),
+  error: error =&gt; console.error(error),
+  complete: () =&gt; console.log(`done`)
+};
+</code></pre>
+
+<p>All 3 methods are optional. To use the Observer you pass it as the argument to the subscribe method of an Observable.</p>
+
+<pre><code>source.subscribe(observer);
+</code></pre>
+
+<p>You can also pass in each function as a seperate argument as we&rsquo;ve been doing in the examples.</p>
+
+<h2 id="ajax-with-observables">AJAX with Observables</h2>
+
+<p>Wrapping an Ajax request as an Observable is easier than you think. Take a look at this example:</p>
+
+<pre><code class="language-javascript">function get(url) {
+  return Rx.Observable.create(observer =&gt; {
+    const req = new XMLHttpRequest();
+    req.open('GET', url);
+    req.onload = () =&gt; {
+      if (req.status === 200) {
+        observer.next(req.response);
+        observer.complete();
+      } else {
+        observer.error(new Error(req.statusText));
+      }
+    }
+
+    req.onerror = () =&gt; {
+      observer.error(new Error('An error occured'));
+    };
+
+    req.send();
+  });
+}
+
+const source = get('https://example.com/');
+
+source.subscribe(response =&gt; console.log(response),
+                 error =&gt; console.error(error),
+                  () =&gt; console.log('done'));
+</code></pre>
+
+<h3 id="rx-dom">Rx.DOM</h3>
+
+<p>However, there an even easier way by utilizing the <code>Rx.DOM</code> library. Rx DOM provides you with multiple ways to create an Observable for Ajax requests, such as providing <code>ajax</code>, <code>get</code>, <code>post</code>, and <code>getJSON</code> Observables.</p>
+
+<pre><code class="language-javascript">const Rx = require('rxjs/Rx');
+const RxDOM = require('rxjs/Rx.DOM');
+
+const source = RxDOM.Observable.ajax({
+  url: window.location.href,
+  responseType: 'text/html'
+});
+
+source.subscribe(xhr =&gt; console.log(xhr),
+                 error =&gt; console.error(error),
+                 () =&gt; console.log('done'));
+</code></pre>
+
+<p>The default <code>responseType</code> is <code>json</code>.</p>
+
+<h2 id="operators">Operators</h2>
+
+<p>Operators are methods on Observables that transform the sequence.</p>
+
+<p>The methods <code>map</code>, <code>filter</code>, <code>reduce</code> are basic operators that you&rsquo;re already used to. They work as you&rsquo;d expect in RxJS.</p>
+
+<pre><code class="language-javascript">Rx.Observable.from([1,2,3,4,5])
+.map(x =&gt; x * 2)
+.filter(x =&gt; x % 2 === 0)
+.reduce((a, b) =&gt; a + b)
+.subscribe(x =&gt; console.log(x),
+           error =&gt; console.error(error),
+           () =&gt; console.log('done'));
+</code></pre>
+
+<p>Outputs:</p>
+
+<pre><code class="language-javascript">30
+done
+</code></pre>
+
+<p>We&rsquo;ll be going over some commonly used operators in no particular order. There are <a href="https://github.com/ReactiveX/rxjs/tree/master/src/operator">100+ operators</a> in RxJS.</p>
+
+<h2 id="flatmap">flatMap</h2>
+
+<p>When your sequence consists of asyncronous operations, such as Promises or Observables, you need a way to get the final resolved values in order to do operations on them. In the following example we use <a href="http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#static-method-interval"><code>interval</code></a> to emit a value every 100ms and <a href="http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-take"><code>take</code></a> the first 10. We return a promise that resolves immediately to simulate an asynchronous operation and then we filter the items. However the example won&rsquo;t work because it&rsquo;s filtering a Promise rather than the value.</p>
+
+<pre><code class="language-javascript">Rx.Observable.interval(100).take(10)
+.map(x =&gt; Promise.resolve(x))
+.filter(x =&gt; x % 2 === 0)
+.subscribe(x =&gt; console.log(x),
+           error =&gt; console.error(error),
+           () =&gt; console.log('done'));
+</code></pre>
+
+<p>This is where <a href="https://github.com/Reactive-Extensions/RxJS/blob/master/doc/api/core/operators/selectmany.md"><code>flatMap</code></a> comes in:</p>
+
+<pre><code class="language-javascript">Rx.Observable.interval(100).take(10)
+.flatMap(x =&gt; Promise.resolve(x))
+.filter(x =&gt; x % 2 === 0)
+.subscribe(x =&gt; console.log(x),
+           error =&gt; console.error(error),
+           () =&gt; console.log('done'));
+</code></pre>
+
+<p>Outputs:</p>
+
+<pre><code class="language-javascript">0
+2
+4
+6
+8
+done
+</code></pre>
+
+<p>It works now because <code>flatMap</code> <em>subscribes</em> to each item in the sequence and returns that value. <code>flatMap</code> flattens Observables to a single Observable.</p>
+
+<h2 id="aggregate-operators">Aggregate operators</h2>
+
+<p><a href="https://github.com/Reactive-Extensions/RxJS/blob/master/doc/libraries/main/rx.aggregates.md">Aggregate operators</a> process a sequence and return a final result.</p>
+
+<h3 id="reduce">reduce</h3>
+
+<p>An aggregate operator you&rsquo;re already familiar with is <a href="http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-reduce"><code>reduce</code></a>. Here we multiply all the numbers in the sequence:</p>
+
+<pre><code class="language-javascript">Rx.Observable.from([1,2,3,4,5])
+.reduce((acc, x) =&gt; acc * x)
+.subscribe(x =&gt; console.log(x),
+           error =&gt; console.error(error),
+           () =&gt; console.log('done'));
+</code></pre>
+
+<pre><code class="language-javascript">120
+done
+</code></pre>
+
+<h3 id="first">first</h3>
+
+<p>Here&rsquo;s an example of using <a href="http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-first"><code>first</code></a>, which takes an optional predicate and returns the first item that statifies condition.</p>
+
+<pre><code class="language-javascript">Rx.Observable.range(0, 10)
+.filter(x =&gt; x % 2 === 0)
+.first((x, index, observable) =&gt; x &gt; 5)
+.subscribe(x =&gt; console.log(x),
+           error =&gt; console.error(error),
+           () =&gt; console.log('done'));
+</code></pre>
+
+<p>Outputs:</p>
+
+<pre><code class="language-javascript">6
+done
+</code></pre>
+
+<p>Similarly, there&rsquo;s <a href="http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-last"><code>last</code></a>.</p>
+
+<h2 id="scan">scan</h2>
+
+<p>Imagine if we had a sequence that is never ending and we wanted get the average of all the numbers by aggregating infinite Observables. In this case, we use <a href="http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-scan"><code>scan</code></a>, which is like <code>reduce</code> but emits each intermediate result.</p>
+
+<p>scan.js</p>
+
+<pre><code class="language-javascript">Rx.Observable.interval(500)
+.scan((previous, current) =&gt; {
+  return {
+    sum: previous.sum + current,
+    count: previous.count + 1
+  }
+}, {sum: 0, count: 0})
+.map(o =&gt; o.sum / o.count)
+.subscribe(x =&gt; console.log(x),
+           error =&gt; console.error(error),
+           () =&gt; console.log('done'));
+</code></pre>
+
+<p>Outputs a never ending sequence of averages every 500ms:</p>
+
+<pre><code class="language-javascript">0
+0.5
+1
+1.5
+2
+2.5
+3
+3.5
+4
+4.5
+5
+5.5
+6
+6.5
+...
+</code></pre>
+
+<p>The scan operator is useful for when ever you want avoid state. For example here we increment a counter only if the current iteration number is even. Notice how we don&rsquo;t need to specify any variables outside of the scope.</p>
+
+<pre><code class="language-javascript">const updateCount = (acc, i) =&gt; i % 2 === 0 ? acc + 1 : acc;
+const ticksObservable = Rx.Observable.interval(100)
+.scan(updateCount)
+
+ticksObservable.subscribe(eventTicks =&gt; console.log(`SubscriberA: ${eventTicks}`))
+ticksObservable.subscribe(eventTicks =&gt; console.log(`SubscriberB: ${eventTicks}`))
+</code></pre>
+
+<pre><code class="language-javascript">SubscriberA: 0
+SubscriberB: 0
+SubscriberA: 0
+SubscriberB: 0
+SubscriberA: 1
+SubscriberB: 1
+SubscriberA: 1
+SubscriberB: 1
+SubscriberA: 2
+SubscriberB: 2
+SubscriberA: 2
+SubscriberB: 2
+SubscriberA: 3
+SubscriberB: 3
+SubscriberA: 3
+...
+</code></pre>
+
+<h2 id="concatall">concatAll</h2>
+
+<p>We use <a href="http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-concatAll"><code>concatAll</code></a> to concatenate a sequence of Observables or promises into a single Observable.</p>
+
+<p>In this example <a href="http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#static-method-range"><code>range</code></a>, which accepts a start value and a count value, returns an observable for each value so we start out with 3 observables. We then <code>map</code> over the sequence and each observable now returns a range of 3 more observables. Essentially it&rsquo;s like having an array of arrays. <code>concatAll</code> allows us to flatten the sequences to be able to treat it as a single Observable sequence.</p>
+
+<pre><code class="language-javascript">Rx.Observable.range(0, 3)
+.map(x =&gt; Rx.Observable.range(x, 3))
+.concatAll()
+.subscribe(x =&gt; console.log(x),
+           error =&gt; console.error(error),
+           () =&gt; console.log('done'));
+</code></pre>
+
+<p>Outputs:</p>
+
+<pre><code class="language-javascript">0
+1
+2
+1
+2
+3
+2
+3
+4
+done
+</code></pre>
+
+<p>We basically did this:</p>
+
+<pre><code class="language-javascript">[1,2,3] =&gt; [[0,1,2],[1,2,3],[2,3,4]] =&gt; [0,1,2,1,2,3,2,3,4]
+</code></pre>
+
+<h2 id="cancelling-sequences">Cancelling sequences</h2>
+
+<p>To explicity cancel a sequence you call the <code>unsubscribe</code> method returned from the subcription.</p>
+
+<p>In this example we have two subscriptions that receive values from the interval every 100ms. After 500ms we cancel the second subscription, and the first subscription still continues.</p>
+
+<pre><code class="language-javascript">const counter = Rx.Observable.interval(100);
+const subscriptionA = counter.subscribe(i =&gt; console.log(`A ${i}`));
+const subscriptionB = counter.subscribe(i =&gt; console.log(`B ${i}`));
+
+setTimeout(() =&gt; {
+  console.log(`Cancelling subscriptionB`);
+  subscriptionB.unsubscribe();
+}, 500);
+</code></pre>
+
+<p>Outputs:</p>
+
+<pre><code class="language-javascript">B 0
+A 1
+B 1
+A 2
+B 2
+A 3
+B 3
+Cancelling subscriptionB
+A 4
+A 5
+A 6
+A 7
+A 8
+A 9
+A 10
+A 11
+A 12
+A 13
+...
+</code></pre>
+
+<p>Most of the time operators implicity cancel subscriptions. Such as <code>range</code>, <code>take</code>, <code>withLatestFrom</code> and <code>flatMapLatest</code> just to name a few.</p>
+
+<h3 id="potential-errors">Potential errors</h3>
+
+<p>Remember that promises can&rsquo;t be cancelled, so when wrapping APIs it&rsquo;s importating to be aware of that.</p>
+
+<p>For example here we create an Observable from a promise that resolves after 2 seconds. If the promise is resolved we log a message. As you can see we immediately unsubscribe from the Observable but the promise isn&rsquo;t cancelled.</p>
+
+<pre><code class="language-javascript">const promise = new Promise((resolve, reject) =&gt; setTimeout(resolve, 2000));
+
+promise.then(() =&gt; console.log('Potential side effect'));
+
+const subscription = Rx.Observable.fromPromise(promise)
+.subscribe(x =&gt; console.log('Observable resolved'));
+
+subscription.unsubscribe();
+</code></pre>
+
+<p>Outputs after 2 seconds:</p>
+
+<pre><code class="language-javascript">Potential side effect
+</code></pre>
+
+<h2 id="error-handling">Error handling</h2>
+
+<p>Observable are able to catch thrown exceptions and those errors are passed to the <code>error</code> handler.</p>
+
+<p>In this example we try to parse a JSON string. <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse"><code>JSON.parse</code></a> throws an error if the string is unparsable.</p>
+
+<pre><code class="language-javascript">const invalidJsonString = '{foo&quot;:&quot;bar&quot;}';
+
+Rx.Observable.of(invalidJsonString)
+.map(string =&gt; JSON.parse(string))
+.subscribe(result =&gt; console.log(result),
+           error =&gt; console.error(`Error! ${error}`),
+           () =&gt; console.log('done'))
+</code></pre>
+
+<p>Outputs:</p>
+
+<pre><code class="language-javascript">Error! SyntaxError: Unexpected token f
+</code></pre>
+
+<p>If the JSON string is valid, then it outputs:</p>
+
+<pre><code class="language-javascript">{ foo: 'bar' }
+done
+</code></pre>
+
+<h3 id="catch">catch</h3>
+
+<p>You can use the <a href="https://github.com/Reactive-Extensions/RxJS/blob/master/doc/api/core/operators/catch.md"><code>catch</code></a> operator to catch errors and continue on with the sequence.</p>
+
+<pre><code class="language-javascript">const invalidJsonString = '{foo&quot;:&quot;bar&quot;}';
+
+Rx.Observable.of(invalidJsonString)
+.map(string =&gt; JSON.parse(string))
+.catch((error) =&gt; Rx.Observable.of({
+  error: `There was an error parsing JSON`
+}))
+.subscribe(result =&gt; console.log(result),
+           error =&gt; console.error(`Error! ${error}`),
+           () =&gt; console.log(`done`))
+</code></pre>
+
+<p>Outputs:</p>
+
+<pre><code class="language-javascript">{ error: 'There was an error parsing JSON' }
+done
+</code></pre>
+
+<h1 id="more-operators">More operators</h1>
+
+<p>Here are some more operators that are very useful.</p>
+
+<h3 id="retry">retry</h3>
+
+<p>The <a href="http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-retry"><code>retry</code></a> operator resubscribes to a sequence when <code>error</code> is invoked. This can come in handy when the internet goes down and you would like to retry operations.</p>
+
+<pre><code class="language-javascript">const Rx = require('rxjs/Rx');
+const RxDOM = require('rxjs/Rx.DOM');
+
+RxDOM.Observable.ajax({
+  method: 'GET',
+  url: 'http://example.com',
+  responseType: 'text/html'
+})
+.retry(5)
+.subscribe(xhr =&gt; console.log(xhr.response),
+           error =&gt; console.error(error),
+           () =&gt; console.log('done'));
+</code></pre>
+
+<p>The operator takes a count of times to retry, otherwise it will retry indefinitely.</p>
+
+<p>The observable pipeline should should only contain pure fucntions, meaning that given the same input always produces the same output. There shouldn&rsquo;t be any external state or side effects so keep in mind that <code>retry</code> always retries the whole sequence so just be aware of any potential side effects if you do have any state.</p>
+
+<h3 id="distinct">distinct</h3>
+
+<p>Use <a href="http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-distinct"><code>distinct</code></a> to filter out items that have already been emitted.</p>
+
+<pre><code class="language-javascript">const Rx = require('rxjs/Rx.KitchenSink');
+
+Rx.Observable.from([1,2,2,3])
+.distinct()
+.subscribe(x =&gt; console.log(x),
+           error =&gt; console.error(error),
+           () =&gt; console.log('done'));
+</code></pre>
+
+<p>Outputs:</p>
+
+<pre><code class="language-javascript">1
+2
+3
+done
+</code></pre>
+
+<h3 id="startwith">startWith</h3>
+
+<p><a href="http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-startWith"><code>starWith</code></a> sets the first value(s) of the Observable by prepending them to the sequence.</p>
+
+<pre><code class="language-javascript">Rx.Observable.from([1,2,3])
+.startWith('a','b','c')
+.subscribe(x =&gt; console.log(x),
+           error =&gt; console.error(error),
+           () =&gt; console.log('done'));
+</code></pre>
+
+<p>Outputs:</p>
+
+<pre><code class="language-javascript">a
+b
+c
+1
+2
+3
+done
+</code></pre>
+
+<h3 id="combinelatest">combineLatest</h3>
+
+<p>The operator <a href="http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#static-method-combineLatest"><code>combineLatest</code></a> takes two or more Observables and emits the last result of each observable whenever any of them emits a new value.</p>
+
+<p>Here&rsquo;s an example where we combine staggered intervals:</p>
+
+<pre><code class="language-javascript">const sourceA = Rx.Observable.interval(100)
+.map(x =&gt; `First: ${x}`)
+
+const sourceB = Rx.Observable.interval(150)
+.map(x =&gt; `Second: ${x}`)
+
+const sourceC = Rx.Observable.combineLatest(sourceA, sourceB).take(8);
+
+sourceC.subscribe(x =&gt; console.log(x),
+                  error =&gt; console.error(error),
+                  () =&gt; console.log('done'));
+</code></pre>
+
+<p>Outputs:</p>
+
+<pre><code class="language-javascript">[ 'First: 0', 'Second: 0' ]
+[ 'First: 1', 'Second: 0' ]
+[ 'First: 2', 'Second: 0' ]
+[ 'First: 2', 'Second: 1' ]
+[ 'First: 3', 'Second: 1' ]
+[ 'First: 3', 'Second: 2' ]
+[ 'First: 4', 'Second: 2' ]
+[ 'First: 5', 'Second: 2' ]
+done
+</code></pre>
+
+<h3 id="sampletime">sampleTime</h3>
+
+<p>The <a href="http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-sampleTime"><code>sampleTime</code></a> operator returns the latest value emitted at each interval. The argument it takes is the interval time at which to sample the sequence.</p>
+
+<pre><code class="language-javascript">Rx.Observable.interval(100)
+.sampleTime(200)
+.take(10)
+.subscribe(x =&gt; console.log(x),
+           error =&gt; console.error(error),
+           () =&gt; console.log('done'));
+</code></pre>
+
+<p>Outputs:</p>
+
+<pre><code class="language-javascript">0
+3
+5
+7
+9
+11
+12
+14
+16
+18
+done
+</code></pre>
+
+<h3 id="timestamp">timestamp</h3>
+
+<p>Use <a href="http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-timestamp"><code>timestamp</code></a> when you need a timestamp returned for when each Observable is emitted.</p>
+
+<pre><code class="language-javascript">const Rx = require('rxjs/Rx');
+
+Rx.Observable.interval(100)
+.timestamp()
+.take(10)
+.subscribe(x =&gt; console.log(`${x.value} ${x.timestamp}`),
+           error =&gt; console.error(error),
+           () =&gt; console.log('done'))
+</code></pre>
+
+<p>Outputs:</p>
+
+<pre><code class="language-javascript">0 1461539653190
+1 1461539653322
+2 1461539653424
+3 1461539653526
+4 1461539653628
+5 1461539653731
+6 1461539653834
+7 1461539653935
+8 1461539654038
+9 1461539654138
+done
+</code></pre>
+
+<h3 id="timeinterval">timeInterval</h3>
+
+<p>To records the time interval between consecutive values in an observable sequence use the <a href="http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-timeInterval"><code>timeInterval</code></a> operator.</p>
+
+<pre><code class="language-javascript">const Rx = require('rxjs/Rx.KitchenSink');
+
+Rx.Observable.interval(100)
+.timeInterval()
+.take(10)
+.subscribe(x =&gt; console.log(`${x.value} ${x.interval}`),
+           error =&gt; console.error(error),
+           () =&gt; console.log('done'))
+</code></pre>
+
+<p>Outputs:</p>
+
+<pre><code class="language-javascript">0 105
+1 136
+2 105
+3 101
+4 105
+5 100
+6 104
+7 101
+8 103
+9 101
+done
+</code></pre>
+
+<h3 id="distinctuntilchanged">distinctUntilChanged</h3>
+
+<p>The <a href="http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-distinctUntilChanged"><code>distinctUntilChanged</code></a> operator is similar to <code>distinct</code> except that it filters out values that have already been emitted that are identical until a different value is emitted.</p>
+
+<pre><code class="language-javascript">Rx.Observable.from([1,2,2,3,2,4])
+.distinctUntilChanged()
+.subscribe(x =&gt; console.log(x),
+           error =&gt; console.error(error),
+           () =&gt; console.log('done'));
+</code></pre>
+
+<p>Outputs:</p>
+
+<pre><code class="language-javascript">1
+2
+3
+2
+4
+done
+</code></pre>
+
+<h3 id="takewhile">takeWhile</h3>
+
+<p><a href="https://github.com/Reactive-Extensions/RxJS/blob/master/doc/api/core/operators/takewhile.md"><code>takeWhile</code></a> will keep emitting values until the predicate condition returns false.</p>
+
+<pre><code class="language-javascript">Rx.Observable.range(0, 100)
+.takeWhile(x =&gt; x &lt; 5)
+.subscribe(x =&gt; console.log(x),
+           error =&gt; console.error(error),
+           () =&gt; console.log('done'));
+</code></pre>
+
+<p>Outputs:</p>
+
+<pre><code class="language-javascript">0
+1
+2
+3
+4
+done
+</code></pre>
+
+<h3 id="buffertime">bufferTime</h3>
+
+<p>Sometimes we need to handle data in batches. This is where <a href="http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-bufferTime"><code>bufferTime</code></a> comes in. <code>bufferTime</code> takes a buffer time span parameter for when to release the buffer (batch) as an array. Here&rsquo;s an example:</p>
+
+<pre><code class="language-javascript">Rx.Observable.interval(100)
+.bufferTime(300)
+.subscribe(result =&gt; console.log(result),
+           error =&gt; console.error(error),
+           () =&gt; console.log('done'));
+</code></pre>
+
+<p>Outputs:</p>
+
+<pre><code class="language-javascript">[ 0, 1 ]
+[ 2, 3, 4, 5 ]
+[ 6, 7, 8 ]
+[ 9, 10, 11 ]
+[ 12, 13 ]
+[ 14, 15, 16 ]
+[ 17, 18, 19 ]
+[ 20, 21, 22 ]
+[ 23, 24, 25 ]
+[ 26, 27, 28 ]
+[ 29, 30, 31 ]
+[ 32, 33, 34 ]
+</code></pre>
+
+<h2 id="subjects">Subjects</h2>
+
+<p>Subjects are the equivalent to an EventEmitter, and the only way of multicasting a value to multiple Observers.</p>
+
+<h3 id="subject">Subject</h3>
+
+<p>A Subject implements both an Observable and Observer. An Observer subscribes to an Observable. An Observerable produces sequences that Observers receive.</p>
+
+<pre><code class="language-javascript">const subject = new Rx.Subject();
+
+subject.subscribe(x =&gt; console.log(x),
+                  error =&gt; console.error(error),
+                  () =&gt; console.log('done'))
+
+subject.next('a');
+subject.next('b');
+subject.complete();
+</code></pre>
+
+<p>Output:</p>
+
+<pre><code class="language-javascript">a
+b
+c
+done
+</code></pre>
+
+<p>After <code>complete</code> subscribers are no longer actively subscribed.</p>
+
+<p>Here&rsquo;s another example of using <code>Subject</code>. The sequences won&rsquo;t start until there is a subscription on the Subject.</p>
+
+<pre><code class="language-javascript">const subject = new Rx.Subject();
+
+const source = Rx.Observable.interval(100)
+.map(x =&gt; `interval message ${x}`)
+.take(5);
+
+source.subscribe(subject);
+
+subject.subscribe(x =&gt; console.log(x),
+                  error =&gt; console.error(error),
+                  () =&gt; console.log('done'));
+
+subject.next(`message #1`)
+subject.next(`message #2`)
+
+setTimeout(() =&gt; subject.complete(), 300);
+</code></pre>
+
+<p>Outputs:</p>
+
+<pre><code class="language-javascript">message #1
+message #2
+interval message 0
+interval message 1
+interval message 2
+done
+</code></pre>
+
+<h3 id="asyncsubject">AsyncSubject</h3>
+
+<p><a href="http://reactivex.io/rxjs/class/es6/AsyncSubject.js~AsyncSubject.html"><code>AsyncSubject</code></a> emits the last value of a sequence if the sequence completes, the value is then cached.</p>
+
+<p>In this example we have a range that is delayed to demonstrate it&rsquo;s asyncronous. When the sequence finally runs the Observer will always receive the last number in the range sequence.</p>
+
+<pre><code class="language-javascript">const delayedRange = Rx.Observable.range(0, 5).delay(100);
+const subject = new Rx.AsyncSubject();
+
+delayedRange.subscribe(subject);
+subject.subscribe(x =&gt; console.log(x),
+                  error =&gt; console.error(error),
+                  () =&gt; console.log('done'))
+</code></pre>
+
+<p>Outputs:</p>
+
+<pre><code class="language-javascript">4
+done
+</code></pre>
+
+<p>AsyncSubject acts like a promise because it caches the value. If there is an error then the it will cache the error and always return it.</p>
+
+<p>Here&rsquo;s an example of using <code>AsyncSubject</code> to cache AJAX requests:</p>
+
+<pre><code class="language-javascript">const Rx = require('rxjs/Rx');
+const RxDOM = require('rxjs/Rx.DOM');
+
+const getData = (url) =&gt; {
+  let subject;
+
+  return Rx.Observable.create(observer =&gt; {
+    if (!subject) {
+      subject = new Rx.AsyncSubject();
+
+      RxDOM.Observable.ajax({
+        url,
+        responseType: 'text/html'
+      })
+      .subscribe(subject);
+
+      return subject
+      .map((xhr, b, c) =&gt; {
+        console.log(xhr, b,c)
+          return xhr.response
+    })
+      .subscribe(observer);
+    }
+
+    return subject
+    .map(xhr =&gt; `cached ${xhr.response}`)
+    .subscribe(observer);
+  });
+};
+
+const source = getData(window.location.href);
+
+source.subscribe(x =&gt; console.log(x),
+                 error =&gt; console.error(error),
+                 () =&gt; console.log('done'));
+
+setTimeout(() =&gt; {
+  source.subscribe(x =&gt; console.log(x),
+                   error =&gt; console.error(error),
+                   () =&gt; console.log('done'))
+}, 100);
+</code></pre>
+
+<p>Outputs:</p>
+
+<pre><code class="language-javascript">&lt;html&gt;...&lt;/html&gt;
+done
+cached &lt;html&gt;...&lt;/html&gt;
+done
+</code></pre>
+
+<h3 id="behaviorsubject">BehaviorSubject</h3>
+
+<p><a href="http://reactivex.io/rxjs/class/es6/BehaviorSubject.js~BehaviorSubject.html">BehaviorSubject</a> represents a value that changes over time. Observers will receive last emitted value and then all subsequent values. Once <code>BehaviouSubject</code> is complete it won&rsquo;t emit any more values. <code>BehaviourSubject</code> guarantees that there will always be at least one value emitted.</p>
+
+<pre><code class="language-javascript">const subject = new Rx.BehaviorSubject('foo');
+
+subject.subscribe(x =&gt; console.log(x),
+           error =&gt; console.error(error),
+           () =&gt; console.log('done'));
+
+subject.next('bar');
+subject.complete();
+</code></pre>
+
+<p>Outputs:</p>
+
+<pre><code class="language-javascript">foo
+bar
+done
+</code></pre>
+
+<h3 id="replaysubject">ReplaySubject</h3>
+
+<p><a href="http://reactivex.io/rxjs/class/es6/ReplaySubject.js~ReplaySubject.html"><code>ReplaySubject</code></a> re-emits any values that have been previously emitted before an Observer has subscribed to it. <code>ReplaySubject</code> takes an buffer size limit as the first argument so that it only stores a maximum of <em>n</em> number of previous emitted values. The second argument is the window size based on time, so you can retrieve values emitted up to a maximum of <em>n</em> milliseconds ago.</p>
+
+<p>First here&rsquo;s an example using a regular <code>Subject</code>:</p>
+
+<pre><code class="language-javascript">const subject = new Rx.Subject();
+
+subject.next(-2);
+subject.next(-1);
+subject.next(1);
+subject.subscribe(x =&gt; console.log(x),
+                  error =&gt; console.error(error),
+                  () =&gt; console.log('done'))
+
+subject.next(2);
+subject.next(3);
+subject.complete();
+</code></pre>
+
+<p>Outputs:</p>
+
+<pre><code class="language-javascript">2
+3
+done
+</code></pre>
+
+<p>Notice how it didn&rsquo;t subscribe to any previously emitted values.</p>
+
+<p>Now here&rsquo;s the same example but using a <code>ReplaySubject</code> with a buffer size of <em>2</em>:</p>
+
+<pre><code class="language-javascript">const subject = new Rx.ReplaySubject(2);
+
+subject.next(-2);
+subject.next(-1);
+subject.next(0);
+
+subject.subscribe(x =&gt; console.log(x),
+                  error =&gt; console.error(error),
+                  () =&gt; console.log('done'))
+
+subject.next(1);
+subject.next(2);
+subject.complete();
+</code></pre>
+
+<p>Outputs:</p>
+
+<pre><code class="language-javascript">-1
+0
+1
+2
+done
+</code></pre>
+
+<p>See there how easily we were able to get historical values.</p>
+
+<p>Here&rsquo;s an example of using <code>ReplaySubject</code> but with a window size of <em>200ms</em>:</p>
+
+<pre><code class="language-javascript">const subject = new Rx.ReplaySubject(10, 200);
+
+setTimeout(() =&gt; subject.next(1), 100)
+setTimeout(() =&gt; subject.next(2), 200)
+setTimeout(() =&gt; subject.next(3), 300)
+
+setTimeout(() =&gt; {
+  subject.subscribe(x =&gt; console.log(x),
+                    error =&gt; console.error(error),
+                    () =&gt; console.log('done'))
+
+  subject.next(4);
+  subject.complete();
+}, 350);
+</code></pre>
+
+<p>Outputs:</p>
+
+<pre><code class="language-javascript">2
+3
+4
+done
+</code></pre>
+
+<h2 id="hot-and-cold-observables">Hot and Cold Observables</h2>
+
+<p><em>Hot Observables</em> emit values regardless if there are Observers subscribed.</p>
+
+<p><em>Cold Observables</em> emit the entire sequence of values from the start to each Observer when subscribed.</p>
+
+<p><code>range</code> is an example of a cold Observable because it returns the entire range on each subscription. <code>interval</code> is also a cold Observable. Take a look at this example and notice how Observer B starts from 0 instead of where the interval currently is at:</p>
+
+<pre><code class="language-javascript">const source = Rx.Observable.interval(100);
+const observerA = source.subscribe(x =&gt; console.log(`ObserverA: ${x}`));
+
+setTimeout(() =&gt; {
+  const observerB = source.subscribe(x =&gt; console.log(`ObserverB: ${x}`));
+}, 1000);
+</code></pre>
+
+<p>Outputs:</p>
+
+<pre><code class="language-javascript">ObserverA: 0
+ObserverA: 1
+ObserverA: 2
+ObserverA: 3
+ObserverA: 4
+ObserverA: 5
+ObserverA: 6
+ObserverA: 7
+ObserverA: 8
+ObserverA: 9
+ObserverB: 0
+ObserverA: 10
+ObserverB: 1
+ObserverA: 11
+ObserverB: 2
+ObserverA: 12
+ObserverB: 3
+ObserverA: 13
+ObserverB: 4
+ObserverA: 14
+ObserverB: 5
+...
+</code></pre>
+
+<p>One way to turn a <em>Cold</em> Observable to a <em>Hot</em> Observable is to call <a href="http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-publish"><code>publish</code></a> on the source Observable which returns a <a href="http://reactivex.io/rxjs/class/es6/observable/ConnectableObservable.js~ConnectableObservable.html"><code>ConnectableObservable</code></a> that once connected will start publishing values and act like a proxy to the original so that any Observer that subscribes to it will receive the continuing values instead of a new sequence. Here&rsquo;s the same example as above but turned into a Hot Observable:</p>
+
+<pre><code class="language-javascript">const source = Rx.Observable.interval(100);
+const publisher = source.publish();
+
+var observerA = publisher.subscribe(x =&gt; console.log(`Observer A: ${x}`))
+
+publisher.connect();
+
+setTimeout(() =&gt; {
+  const observerB = publisher.subscribe(x =&gt; console.log(`Observer B: ${x}`));
+}, 1000);
+</code></pre>
+
+<p>Outputs:</p>
+
+<pre><code class="language-javascript">Observer A: 0
+Observer A: 1
+Observer A: 2
+Observer A: 3
+Observer A: 4
+Observer A: 5
+Observer A: 6
+Observer A: 7
+Observer A: 8
+Observer A: 9
+Observer B: 9
+Observer A: 10
+Observer B: 10
+Observer A: 11
+Observer B: 11
+Observer A: 12
+Observer B: 12
+Observer A: 13
+Observer B: 13
+Observer A: 14
+Observer B: 14
+Observer A: 15
+Observer B: 15
+</code></pre>
+
+<p>A <code>ConnectableObservable</code> acts like a proxy by by subscribing itself to the original and pushing the values it receives to it&rsquo;s subscribers.</p>
+
+<h3 id="share">share</h3>
+
+<p>RxJS provides the <a href="http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-share"><code>share</code></a> method which returns a new Observable that multicasts (shares) the original Observable. It&rsquo;s an easier way to tun a Cold Observable to a Hot Observable because we don&rsquo;t have to manually connect like in the previous example.</p>
+
+<pre><code class="language-javascript">const source = Rx.Observable.interval(100).share();
+const observerA = source.subscribe(x =&gt; console.log(`Observer A: ${x}`));
+
+setTimeout(() =&gt; {
+  const observerB = source.subscribe(x =&gt; console.log(`Observer B: ${x}`));
+}, 1000);
+</code></pre>
+
+<p>Outputs:</p>
+
+<pre><code class="language-javascript">Observer A: 0
+Observer A: 1
+Observer A: 2
+Observer A: 3
+Observer A: 4
+Observer A: 5
+Observer A: 6
+Observer A: 7
+Observer A: 8
+Observer A: 9
+Observer B: 9
+Observer A: 10
+Observer B: 10
+Observer A: 11
+Observer B: 11
+Observer A: 12
+Observer B: 12
+Observer A: 13
+Observer B: 13
+Observer A: 14
+Observer B: 14
+Observer A: 15
+Observer B: 15
+</code></pre>
+
+<h2 id="schedulers">Schedulers</h2>
+
+<p><a href="http://reactivex.io/rxjs/typedef/index.html#static-typedef-Rx.Scheduler">Schedulers</a> allow us to control time and concurrency with more precision. A Scheduler controls when a subscription starts and when notifications are emitted. Schedulers schedule an action to happened in the future. You can use schedulers to execute code synchronously or asynchronously depending on the context.</p>
+
+<h3 id="queue">queue</h3>
+
+<p>The <a href="http://reactivex.io/rxjs/class/es6/MiscJSDoc.js~SchedulerDoc.html">queue Scheduler</a> schedules on a a queue in the current event frame to be executed immediately after the current work executes. Use for iterative operations. If the current work running schedules more work to run, then the additional work will be placed on a queue to run after the current work rather than running recursively to avoid stack overflows or infinite recursion.</p>
+
+<pre><code class="language-javascript">const timeStart = Date.now();
+const source = Rx.Observable.range(1, 5)
+.do(value =&gt; console.log(`processing value ${value}`))
+.observeOn(Rx.Scheduler.queue)
+
+console.log('before subscribe');
+source.subscribe(x =&gt; console.log(`next ${x}`),
+                 error =&gt; console.error(error),
+                 () =&gt; console.log(`Total time: ${Date.now() - timeStart}ms`));
+console.log(`after subscribe`);
+</code></pre>
+
+<p>Outputs:</p>
+
+<pre><code class="language-javascript">before subscribe
+processing value 1
+next 1
+processing value 2
+next 2
+processing value 3
+next 3
+processing value 4
+next 4
+processing value 5
+next 5
+Total time: 16ms
+after subscribe
+</code></pre>
+
+<h3 id="asap">asap</h3>
+
+<p>The <a href="http://reactivex.io/rxjs/class/es6/MiscJSDoc.js~SchedulerDoc.html">asap Scheduler</a> schedules on the micro task queue. It uses <a href="https://nodejs.org/api/process.html#process_process_nexttick_callback_arg"><code>process.nextTick</code></a> in Node, <code>setTimeout</code>, <a href="https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame"><code>requestAnimationFrame</code></a>, or <a href="https://developer.mozilla.org/en-US/docs/Web/API/MessageChannel"><code>MessageChannel</code></a> if using Web Workers.</p>
+
+<pre><code class="language-javascript">const timeStart = Date.now();
+const source = Rx.Observable.range(1, 5)
+.do(value =&gt; console.log(`processing value ${value}`))
+.observeOn(Rx.Scheduler.asap)
+
+console.log('before subscribe');
+source.subscribe(x =&gt; console.log(`next ${x}`),
+                 error =&gt; console.error(error),
+                 () =&gt; console.log(`Total time: ${Date.now() - timeStart}ms`));
+console.log(`after subscribe`);
+</code></pre>
+
+<p>Outputs:</p>
+
+<pre><code class="language-javascript">before subscribe
+processing value 1
+processing value 2
+processing value 3
+processing value 4
+processing value 5
+after subscribe
+next 1
+next 2
+next 3
+next 4
+next 5
+Total time: 17ms
+</code></pre>
+
+<h3 id="async">async</h3>
+
+<p>The <a href="http://reactivex.io/rxjs/class/es6/MiscJSDoc.js~SchedulerDoc.html">async Scheduler</a> schedules work with <code>setInterval</code>. Typically used for for time-based operations.</p>
+
+<pre><code class="language-javascript">const timeStart = Date.now();
+const source = Rx.Observable.range(1, 5)
+.do(value =&gt; console.log(`processing value ${value}`))
+.observeOn(Rx.Scheduler.async)
+
+console.log('before subscribe');
+source.subscribe(x =&gt; console.log(`next ${x}`),
+                 error =&gt; console.error(error),
+                 () =&gt; console.log(`Total time: ${Date.now() - timeStart}ms`));
+console.log(`after subscribe`);
+</code></pre>
+
+<p>Outputs:</p>
+
+<pre><code class="language-javascript">before subscribe
+processing value 1
+processing value 2
+processing value 3
+processing value 4
+processing value 5
+after subscribe
+next 1
+next 2
+next 3
+next 4
+next 5
+Total time: 17ms
+</code></pre>
+
+<p>By default, if the data returned by operators is small then no Scheduler is used. If the data set is large or infinite then the <code>queue</code> Scheduler is used. If the the operator is time-based then the <code>async</code> Scheduler is used.</p>
+
+<p>Use <a href="http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-subscribeOn"><code>subscribeOn</code></a> to schedule in what context will the subscribe call happen. You can delay or schedule the actual subscription to occur on a a Scheduler. <code>subscribeOn</code> makes the subscription and un-subscription work of an Observable to run on that Scheduler.</p>
+
+<p>Use <a href="http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-observeOn"><code>observeOn</code></a> to schedule in what context will notifications be delivered. The mediator between the Observable and the Observer will use the Scheduler to schedules notifications. <code>observeOn</code> returns an observable that uses the passed scheduler, which will make that call on every <code>next</code> call.</p>
+
+<p>You can switch to use an async scheduler on the fly for expensive operations by using <code>observeOn</code>. For example:</p>
+
+<pre><code class="language-javascript">let array = [];
+for (var i = 0; i &lt; 1e5; i++) {
+  array.push(i);
+}
+
+const expensiveOperation = (x) =&gt; {
+    let k = 1e7;
+    while(k--);
+    return x;
+};
+
+const source = Rx.Observable.from(array)
+.groupBy(value =&gt; value % 2 === 0)
+.map(value =&gt; value.observeOn(Rx.Scheduler.asap))
+.map(groupedObservable =&gt; expensiveOperation(groupedObservable))
+
+console.log(`before subscribe`);
+source.subscribe(
+  obs =&gt; obs.count().subscribe(x =&gt; console.log(x)),
+  error =&gt; console.error(error),
+  () =&gt; console.log(`done`)
+);
+console.log(`after subscribe`);
+</code></pre>
+
+<p>Outputs:</p>
+
+<pre><code class="language-javascript">before subscribe
+done
+after subscribe
+50000
+50000
+</code></pre>
+
+<p>Without the scheduler you&rsquo;d get a synchronous output such as:</p>
+
+<pre><code class="language-javascript">before subscribe
+50000
+50000
+done
+after subscribe
+</code></pre>
+
+<!--
+## Testing with scheudlers
+
+The [`TestScheduler`](https://github.com/Reactive-Extensions/RxJS/blob/master/doc/api/testing/testscheduler.md) is designed to help with testing. `TestScheduler` is a specialization of [`VirtualTimeScheduler`](https://github.com/Reactive-Extensions/RxJS/blob/master/doc/api/schedulers/virtualtimescheduler.md) which executes actions in "virutal" time instead of real time. I'll show you what I mean:
+
+```javascript
+```
+
+Outputs:
+
+```javascript
+```
+We specify the "time" at which the value should be emitted. It runs immediately since the time is "virtual". It just respects the order that we specify.
+
+With a normal scheduler it would take 300ms.
+-->
+
+<h2 id="recap">Recap</h2>
+
+<p>The essential concepts of RxJS are:</p>
+
+<ul>
+<li><strong>Observable</strong>: represents the an invokable sequence of future values or events.</li>
+<li><strong>Observer</strong>: is a set of callbacks that knows how to listen to values emitted by the Observable.</li>
+<li><strong>Subscription</strong>: represents the execution of an Observable, and is also used for cancelling the execution.</li>
+<li><strong>Operators</strong>: are pure functions that enable a functional programming style of dealing with sequences.</li>
+<li><strong>Subject</strong>: is the equivalent to an <code>EventEmitter</code>, and the way of multicasting a value or event to multiple Observers.</li>
+<li><strong>Schedulers</strong>: are dispatchers to control concurrency, allowing for coordination when computation happens.</li>
+</ul>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Once you get into the thought process of always thinking in streams, RxJS does wonders.</p>
+
+<p>Examples in this article were tested with RxJS <em>v5.0.0</em>, and the code examples can be found in this <a href="https://github.com/miguelmota/rxjs-examples">github repo</a>.</p>
+
+<h2 id="resources-and-credits">Resources and Credits</h2>
+
+<ul>
+<li><a href="http://reactivex.io/rxjs/">RxJS 5 documentation</a></li>
+<li><a href="https://github.com/Reactive-Extensions/RxJS/tree/master/doc">RxJS 4 documentation</a></li>
+<li><a href="http://xgrommx.github.io/rx-book/">Online book for RxJS 4 documentation</a></li>
+<li><a href="http://sergimansilla.com/">Reactive Programming with RxJS 4</a></li>
+</ul>
+<ul class="pa0">
+  
+   <li class="list">
+     <a href="/tags/javascript" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">JavaScript</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/rxjs" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">RxJS</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/observables" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Observables</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/frp" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">FRP</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/functional-reactive-programming" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Functional Reactive Programming</a>
+   </li>
+  
+</ul>
+<div class="mt6">
+        
+      </div>
+    </section>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/bytes/xmlhttprequest-multipart-post/">How to send a Mulitpart POST using XMLHTTPRequest</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/exploring-decorators-in-javascript/">Exploring Decorators in JavaScript</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/getting-started-with-service-workers/">Getting started with Service Workers</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/bytes/canvas-glowing-particles/">How to create glowing particles in canvas</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/bytes/buffer-to-arraybuffer/">How to convert a Buffer to ArrayBuffer</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/bytes/arraybuffer-to-buffer/">How to convert an ArrayBuffer to Buffer</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/bytes/slice-audiobuffer/">How to slice an AudioBuffer</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/bytes/babylonian-method/">How to calculate the square root using Babylonian method.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/bytes/array-difference/">How to find the difference between arrays</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/bytes/array-balance-points/">How to find the balance points of an array</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/bytes/base-log/">How to find the logarithm of a number with specified base</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/bytes/digit-sum/">How to sum the digits of a number</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/bytes/array-without/">How to create an array excluding provided values</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/bytes/jshintrc/">.jshintrc boilerplate example</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/bytes/webgl-detect/">How to detect WebGL support</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://example.org/" >
+    &copy; 2019 My New Hugo Site
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>

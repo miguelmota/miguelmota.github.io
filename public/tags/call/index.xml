@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Call on My New Hugo Site</title>
+    <link>http://example.org/tags/call/</link>
+    <description>Recent content in Call on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 10 May 2013 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://example.org/tags/call/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Call and Apply Methods in JavaScript</title>
+      <link>http://example.org/blog/call-and-apply-methods-in-javascript/</link>
+      <pubDate>Fri, 10 May 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/call-and-apply-methods-in-javascript/</guid>
+      <description>The call and apply methods in JavaScript might look complicated at first glance, but they are actually easy to wrap your head around.
+Suppose we have an object called square with a few properties:
+var square = { color: &amp;quot;red&amp;quot;, getColor: function () { return &amp;quot;I am the color &amp;quot; + this.color + &amp;quot;!&amp;quot;; }, getArea: function (width, height) { return &amp;quot;My area is &amp;quot; + (width * height) + &amp;quot; feet!</description>
+    </item>
+    
+  </channel>
+</rss>

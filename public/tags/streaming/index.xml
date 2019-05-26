@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Streaming on My New Hugo Site</title>
+    <link>http://example.org/tags/streaming/</link>
+    <description>Recent content in Streaming on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 25 Sep 2013 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://example.org/tags/streaming/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Raspberry Pi camera board video streaming</title>
+      <link>http://example.org/blog/raspberry-pi-camera-board-video-streaming/</link>
+      <pubDate>Wed, 25 Sep 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/raspberry-pi-camera-board-video-streaming/</guid>
+      <description>Raspberry Pi camera board   So you got your Raspberry Pi and decided to get a Camera Board to do something awesome with it. Why not turn it a simple video streamer? That&amp;rsquo;s what I thought too. I wanted to set up a simple security camera for my home so that I can see spy on whoever is lurking around from wherever I am through a web browser.</description>
+    </item>
+    
+    <item>
+      <title>Set up Raspberry Pi as a Network Server</title>
+      <link>http://example.org/blog/set-up-raspberry-pi-as-a-network-server/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/set-up-raspberry-pi-as-a-network-server/</guid>
+      <description>The Raspberry Pi has an infinite amount of uses and one of them is using it as a network server. This is handy because people in your home network can connect to this network server and access shared files, such as movies and music, which can be streamed to your TV. I will be going over how to set this up on a fresh RPi.
+Install Raspbian Raspbian is a light-weight Debian based Linux distro tailored for the RPi.</description>
+    </item>
+    
+  </channel>
+</rss>

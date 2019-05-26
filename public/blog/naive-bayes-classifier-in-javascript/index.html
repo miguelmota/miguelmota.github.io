@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>My New Hugo Site  | Naive Bayes Classifier in JavaScript</title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.52" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.d98f2eb6bcd1eaedb7edf166bd16af26.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+
+    <meta property="og:title" content="Naive Bayes Classifier in JavaScript" />
+<meta property="og:description" content="Naive Bayes classifier implementation in JavaScript." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/blog/naive-bayes-classifier-in-javascript/" />
+
+<meta itemprop="name" content="Naive Bayes Classifier in JavaScript">
+<meta itemprop="description" content="Naive Bayes classifier implementation in JavaScript.">
+
+
+
+<meta itemprop="wordCount" content="1690">
+
+
+
+<meta itemprop="keywords" content="Naive Bayes,classifier,machine learning,algorithm,JavaScript,demo," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Naive Bayes Classifier in JavaScript"/>
+<meta name="twitter:description" content="Naive Bayes classifier implementation in JavaScript."/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="http://example.org/" class="f3 fw2 hover-white no-underline white-90 dib">
+      My New Hugo Site
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+
+    <header class="mt4 w-100">
+      <p class="f6 b helvetica tracked">
+          
+        BLOGS
+      </p>
+      <h1 class="f1 athelas mb1">Naive Bayes Classifier in JavaScript</h1>
+      
+      <time class="f6 mv4 dib tracked" datetime="0001-01-01T00:00:00Z">January 1, 0001</time>
+      
+      
+    </header>
+
+    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
+
+<p>The <a href="http://en.wikipedia.org/wiki/Naive_Bayes_classifier">Naive Bayes classifier</a> is a pretty popular text classification algorithm because of it&rsquo;s simplicity. You&rsquo;ll often see this classifier used for spam detection, authorship attribution, gender authentication, determing whether a review is positive or negative, and even sentiment analysis. The Naive Bayes classifier takes in a corpus (body of text) known as a document, which then a stemmer runs through the document and returns a &ldquo;<a href="http://en.wikipedia.org/wiki/Bag-of-words_model">bag or words</a>&rdquo; so to speak. <a href="http://en.wikipedia.org/wiki/Stemming">Stemming</a> is the process of reducing an inflected word to it&rsquo;s word stem (root). For example, the stem of the words &ldquo;dreaming&rdquo;, &ldquo;dreamer&rdquo;, and &ldquo;dreamed&rdquo;, is just &ldquo;dream&rdquo;.</p>
+
+<p>In the code example below, I am using the Porter Stemming algorithm and the Bayes classifier algorithm implementations from the excellent general natural language facility library for node, <a href="https://github.com/NaturalNode/natural/">natural</a> by <a href="http://www.chrisumbel.com/">Chris Umbel</a>.</p>
+
+<p>The way Naive Bayes classifier works is it counts the frequencies of the stemmed words. These are called <em>features</em>. A class can contain many features. A document can contain many features of a class. Initial we must <em>train</em> the classifier to <em>learn</em> what class features belong to. Once the classifier has enough knowledge of classed features, we can asked it to classify a new document based on prior classifications. The algorithm is considered <em>naive</em> because it does not take account of where in the document the words are positioned. But it turns out that that algorithm does a <em>pretty</em> good job of classification even though it is not aware of context.</p>
+
+<h1 id="algorithm">Algorithm</h1>
+
+<p>What is the probability of the class given the document?</p>
+
+<p><a href="http://en.wikipedia.org/wiki/Naive_Bayes_classifier"><img src="{{ .Site.BaseURL }}/naive-bayes-model.png" alt="" /></a></p>
+
+<pre><code>P(c|d) = P(c)P(d|c)
+</code></pre>
+
+<p><strong>Probability of the class given the document is equal to the probability of the class times the probability of the document given the class</strong></p>
+
+<p>The denominator can be dropped because it is a constant. For example, if we have one document and 10 classes and only one class can classify document, the probability of the document is the same.</p>
+
+<pre><code class="language-javascript">/**
+ * Terminology
+ *
+ * label: refers to class as in classification, since `class` is a reserved word.
+ * doc: refers to document, since `document` is a reserved word.
+ * feature: a token (word) in the bag of words (document).
+ */
+
+/**
+ * Include Porter Stemmer algorithm
+ * https://github.com/miguelmota/bayes-classifier/blob/master/lib/stemmers/porter.js
+ */
+var stemmer = require('./porter-stemmer');
+
+/**
+ * BayesClassifier
+ * @desc Bayes classifier constructor
+ * @constructor
+ * @return Bayes classifier instance
+ */
+function BayesClassifier() {
+  /*
+   * Create a new instance when not using the `new` keyword.
+   */
+  if (!(this instanceof BayesClassifier)) {
+    return new BayesClassifier();
+  }
+
+  /*
+   * The stemmer provides tokenization methods.
+   * It breaks the doc into words (tokens) and takes the
+   * stem of each word. A stem is a form to which affixes
+   * can be attached, aka root word.
+   */
+  this.stemmer = stemmer;
+
+  /*
+   * A collection of added documents
+   * Each document is an object containing the class, and array of stemmed words.
+   */
+  this.docs = [];
+
+  /*
+   * Index of last added document.
+   */
+  this.lastAdded = 0;
+
+  /*
+   * A map of all class features.
+   */
+  this.features = {};
+
+  /*
+   * A map containing each class and associated features.
+   * Each class has a map containing a feature index and the count of feature appearances for that class.
+   */
+  this.classFeatures = {};
+
+  /*
+   * Keep track of how many features in each class.
+   */
+  this.classTotals = {};
+
+  /*
+   * Number of examples trained
+   */
+  this.totalExamples = 1;
+
+  /* Additive smoothing to eliminate zeros when summing features,
+   * in cases where no features are found in the document.
+   * Used as a fail-safe to always return a class.
+   * http://en.wikipedia.org/wiki/Additive_smoothing
+   */
+  this.smoothing = 1;
+}
+
+/**
+ * AddDocument
+ * @param {array|string} doc - document
+ * @param {string} label - class
+ * @return {object} - Bayes classifier instance
+ */
+BayesClassifier.prototype.addDocument = function(doc, label) {
+  if (!this._size(doc)) {
+    return;
+  }
+
+  if (this._isString(doc)) {
+    // Return array of stemmed words
+    doc = this.stemmer.tokenizeAndStem(doc);
+  }
+
+  var docObj = {
+    label: label,
+    value: doc
+  };
+
+  this.docs.push(docObj);
+
+  // Add token (feature) to features map
+  for (var i = 0; i &lt; doc.length; i++) {
+    this.features[doc[i]] = 1;
+  }
+};
+
+/**
+ * AddDocuments
+ * @param {array} docs - documents
+ * @param {string} label - class
+ * @return {object} - Bayes classifier instance
+ */
+BayesClassifier.prototype.addDocuments = function(docs, label) {
+  for (var i = 0; i &lt; docs.length; i++) {
+    this.addDocument(docs[i], label);
+  }
+};
+
+/**
+ * docToFeatures
+ *
+ * @desc
+ * Returns an array with 1's or 0 for each feature in document
+ * A 1 if feature is in document
+ * A 0 if feature is not in document
+ *
+ * @param {string|array} doc - document
+ * @return {array} features
+ */
+BayesClassifier.prototype.docToFeatures = function(doc) {
+  var features = [];
+
+  if (this._isString(doc)) {
+    doc = this.stemmer.tokenizeAndStem(doc);
+  }
+
+  for (var feature in this.features) {
+    features.push(Number(!!~doc.indexOf(feature)));
+  }
+
+  return features;
+};
+
+/**
+ * classify
+ * @desc Returns class with highest probability for document.
+ * @param {string} doc - document
+ * @return {string} class
+ */
+BayesClassifier.prototype.classify = function(doc) {
+  var classifications = this.getClassifications(doc);
+  if (!this._size(classifications)) {
+    throw 'Not trained';
+  }
+  return classifications[0].label;
+};
+
+/**
+ * train
+ * @desc train the classifier on the added documents.
+ * @return {object} - Bayes classifier instance
+ */
+BayesClassifier.prototype.train = function() {
+  var totalDocs = this.docs.length;
+  for (var i = this.lastAdded; i &lt; totalDocs; i++) {
+    var features = this.docToFeatures(this.docs[i].value);
+    this.addExample(features, this.docs[i].label);
+    this.lastAdded++;
+  }
+};
+
+/**
+ * addExample
+ * @desc Increment the counter of each feature for each class.
+ * @param {array} docFeatures
+ * @param {string} label - class
+ * @return {object} - Bayes classifier instance
+ */
+BayesClassifier.prototype.addExample = function(docFeatures, label) {
+  if (!this.classFeatures[label]) {
+    this.classFeatures[label] = {};
+    this.classTotals[label] = 1;
+  }
+
+  this.totalExamples++;
+
+  if (this._isArray(docFeatures)) {
+    var i = docFeatures.length;
+    this.classTotals[label]++;
+
+    while(i--) {
+      if (docFeatures[i]) {
+        if (this.classFeatures[label][i]) {
+          this.classFeatures[label][i]++;
+        } else {
+          this.classFeatures[label][i] = 1 + this.smoothing;
+        }
+      }
+    }
+  } else {
+    for (var key in docFeatures) {
+      value = docFeatures[key];
+
+      if (this.classFeatures[label][value]) {
+        this.classFeatures[label][value]++;
+      } else {
+        this.classFeatures[label][value] = 1 + this.smoothing;
+      }
+    }
+  }
+};
+
+/**
+ * probabilityOfClass
+ * @param {array|string} docFeatures - document features
+ * @param {string} label - class
+ * @return probability;
+ * @desc
+ * calculate the probability of class for the document.
+ *
+ * Algorithm source
+ * http://en.wikipedia.org/wiki/Naive_Bayes_classifier
+ *
+ * P(c|d) = P(c)P(d|c)
+ *          ---------
+ *             P(d)
+ *
+ * P = probability
+ * c = class
+ * d = document
+ *
+ * P(c|d) = Likelyhood(class given the document)
+ * P(d|c) = Likelyhood(document given the classes).
+ *     same as P(x1,x2,...,xn|c) - document `d` represented as features `x1,x2,...xn`
+ * P(c) = Likelyhood(class)
+ * P(d) = Likelyhood(document)
+ *
+ * rewritten in plain english:
+ *
+ * posterior = prior x likelyhood
+ *             ---------------date: 2015-02-16T00:00:00-00:00
+draft: false
+---
+ *                evidence
+ *
+ * The denominator can be dropped because it is a constant. For example,
+ * if we have one document and 10 classes and only one class can classify
+ * document, the probability of the document is the same.
+ *
+ * The final equation looks like this:
+ * P(c|d) = P(c)P(d|c)
+ */
+BayesClassifier.prototype.probabilityOfClass = function(docFeatures, label) {
+  var count = 0;
+  var prob = 0;
+
+  if (this._isArray(docFeatures)) {
+    var i = docFeatures.length;
+
+    // Iterate though each feature in document.
+    while(i--) {
+      // Proceed if feature collection.
+      if (docFeatures[i]) {
+        /*
+         * The number of occurances of the document feature in class.
+         */
+        count = this.classFeatures[label][i] || this.smoothing;
+
+        /* This is the `P(d|c)` part of the model.
+         * How often the class occurs. We simply count the relative
+         * feature frequencies in the corpus (document body).
+         *
+         * We divide the count by the total number of features for the class,
+         * and add it to the probability total.
+         * We're using Natural Logarithm here to prevent Arithmetic Underflow
+         * http://en.wikipedia.org/wiki/Arithmetic_underflow
+         */
+        prob += Math.log(count / this.classTotals[label]);
+      }
+    }
+  } else {
+    for (var key in docFeatures) {
+      count = this.classFeatures[label][docFeatures[key]] || this.smoothing;
+      prob += Math.log(count / this.classTotals[label]);
+    }
+  }
+
+  /*
+   * This is the `P(c)` part of the model.
+   *
+   * Divide the the total number of features in class by total number of all features.
+   */
+  var featureRatio = (this.classTotals[label] / this.totalExamples);
+
+  /**
+   * probability of class given document = P(d|c)P(c)
+   */
+  prob = featureRatio * Math.exp(prob);
+
+  return prob;
+};
+
+/**
+ * getClassifications
+ * @desc Return array of document classes their probability values.
+ * @param {string} doc - document
+ * @return classification ordered by highest probability.
+ */
+BayesClassifier.prototype.getClassifications = function(doc) {
+  var classifier = this;
+  var labels = [];
+
+  for (var className in this.classFeatures) {
+    labels.push({
+      label: className,
+      value: classifier.probabilityOfClass(this.docToFeatures(doc), className)
+    });
+  }
+
+  return labels.sort(function(x, y) {
+    return y.value - x.value;
+  });
+};
+
+/*
+ * Helper utils
+ */
+BayesClassifier.prototype._isString = function(s) {
+  return typeof(s) === 'string' || s instanceof String;
+};
+
+BayesClassifier.prototype._isArray = function(s) {
+  return Array.isArray(s);
+};
+
+BayesClassifier.prototype._isObject = function(s) {
+  return typeof(s) === 'object' || s instanceof Object;
+};
+
+BayesClassifier.prototype._size = function(s) {
+  if (this._isArray(s) || this._isString(s) || this._isObject(s)) {
+    return s.length;
+  }
+  return 0;
+};
+
+/*
+ * Export constructor
+ */
+module.exports = BayesClassifier;
+</code></pre>
+
+<h2 id="usage">Usage</h2>
+
+<p>Now we get to use the Bayes classifier. Here&rsquo;s an example to classify a statement as either <em>positive</em> or <em>negative</em>. The algorithm must first learn from a <em>training set</em> of data.</p>
+
+<pre><code class="language-javascript">var BayesClassifier = require('../bayes-classifier');
+var classifier = new BayesClassifier();
+
+var positiveDocuments = [
+  'I love tacos.',
+  'Dude, that burrito was epic!',
+  'Holy cow, these nachos are so good and tasty.',
+  'I am drooling over the awesome bean and cheese quesadillas.'
+];
+
+var negativeDocuments = [
+  'Gross, worst taco ever.',
+  'The buritos gave me horrible diarrhea.',
+  'I\'m going to puke if I eat another bad nacho.',
+  'I\'d rather die than eat those nasty enchiladas.'
+];
+
+classifier.addDocuments(positiveDocuments, 'positive');
+classifier.addDocuments(negativeDocuments, 'negative');
+
+classifier.train();
+
+console.log(classifier.classify('I heard the mexican restaurant is great!')); // &quot;positive&quot;
+console.log(classifier.classify('I don\'t want to eat there again.')); // &quot;negative&quot;
+console.log(classifier.classify('The torta is epicly bad.')); // &quot;negative&quot;
+console.log(classifier.classify('The torta is horribly awesome.')); // &quot;positive&quot;
+</code></pre>
+
+<p><a href="{{ .Site.BaseURL }}/demo">View the demo »</a></p>
+
+<h1 id="conclusion">Conclusion</h1>
+
+<p>Hopefully the code was easy to follow. The full code is available on <a href="https://github.com/miguelmota/bayes-classifier">github</a> as a node module. Definitely checkout the <a href="https://github.com/NaturalNode/natural">natural</a> library for more text classification algorithms. The library contains many general natural language facilities, such as <em>tokenization</em>, <em>stemming</em>, <em>classification</em>, <em>phonetics</em>, <em><a href="http://en.wikipedia.org/wiki/Tf%E2%80%93idf">tf-idf</a></em>, <em>WordNet</em>, and string similarity.</p>
+
+<h1 id="resources">Resources</h1>
+
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Naive_Bayes_classifier">Naive Bayes classifier</a></li>
+<li><a href="http://tartarus.org/martin/PorterStemmer/">Porter Stemming algorithm in many languages</a></li>
+<li><a href="http://stackoverflow.com/a/20556654/1439168">Naive Bayes classification explained on StackOverflow</a><a href="https://www.coursera.org/learn/communication/lecture/xPXve/introduction">https://www.coursera.org/learn/communication/lecture/xPXve/introduction</a></li>
+<li><a href="https://github.com/NaturalNode/natural">natural - general language facilities for node</a></li>
+</ul>
+<ul class="pa0">
+  
+   <li class="list">
+     <a href="/tags/naive-bayes" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Naive Bayes</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/classifier" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">classifier</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/machine-learning" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">machine learning</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/algorithm" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">algorithm</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/javascript" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">JavaScript</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/demo" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">demo</a>
+   </li>
+  
+</ul>
+<div class="mt6">
+        
+      </div>
+    </section>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/blog/k-means-clustering-in-javascript/">K-Means Clustering in JavaScript</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/bytes/babylonian-method/">How to calculate the square root using Babylonian method.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/bytes/array-difference/">How to find the difference between arrays</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/bytes/array-balance-points/">How to find the balance points of an array</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/bytes/digit-sum/">How to sum the digits of a number</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/bytes/array-max/">How to find the maximum value in an array</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/bytes/array-min/">How to find the minimum value in an array</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/pixelate-images-with-canvas/">Pixelate images with Canvas</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/screenshots-with-getusermedia-api/">Screenshots with getUserMedia API</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/basic-html5-audio-manipulation/">Basic HTML5 Audio Manipulation</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/display-latest-delicious-bookmarks-with-jquery/">Display latest delicious bookmarks with jQuery</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/make-an-awesome-tooltip-with-jquery/">Make an Awesome Tooltip with jQuery</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/bytes/download-blob/">Download Blob</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/getting-started-with-rxjs/">Getting Started with RxJS</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/bytes/xmlhttprequest-multipart-post/">How to send a Mulitpart POST using XMLHTTPRequest</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://example.org/" >
+    &copy; 2019 My New Hugo Site
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>

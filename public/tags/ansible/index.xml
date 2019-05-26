@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ansible on My New Hugo Site</title>
+    <link>http://example.org/tags/ansible/</link>
+    <description>Recent content in Ansible on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="http://example.org/tags/ansible/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How to use Ansible to deploy with git</title>
+      <link>http://example.org/bytes/ansible-git-example/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/bytes/ansible-git-example/</guid>
+      <description>Basic Ansible example on deploying with git.
+vars.yml
+--- # Update this to your own settings project_name: test project_root: /var/www/test project_repo: git@github.com:miguelmota/test-repo.git  handlers.yml:
+--- - name: restart web server action: command echo &amp;quot;do something&amp;quot; sudo_user: root  deploy.yml:
+date: 2014-06-13T00:00:00-00:00 draft: false --- - hosts: servers vars_files: - vars.yml gather_facts: false sudo: true sudo_user: root user: root tasks: - name: Pull sources from the repository. git: repo={{project_repo}} dest={{project_root}} version={{branch}} notify: - restart web server handlers: - include : handlers.</description>
+    </item>
+    
+  </channel>
+</rss>

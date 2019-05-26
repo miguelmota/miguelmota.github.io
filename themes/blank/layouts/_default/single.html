@@ -1,0 +1,22 @@
+{{ partial "header.html" . }}
+  <main>
+    <article>
+      <header>
+        <h1>{{ .Title }}</h1>
+        <div>
+          <time>{{ .Date.Format "02 Jan 2006" }}</time>
+        </div>
+      </header>
+      <div>
+        {{ .Content }}
+      </div>
+      <div>
+        <ul id="tags">
+          {{ range .Params.tags }}
+          <li><a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a> </li>
+          {{ end }}
+        </ul>
+      </div>
+    </article>
+  </main>
+{{ partial "footer.html" . }}

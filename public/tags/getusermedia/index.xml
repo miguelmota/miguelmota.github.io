@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Getusermedia on My New Hugo Site</title>
+    <link>http://example.org/tags/getusermedia/</link>
+    <description>Recent content in Getusermedia on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 31 Aug 2013 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://example.org/tags/getusermedia/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Screenshots with getUserMedia API</title>
+      <link>http://example.org/blog/screenshots-with-getusermedia-api/</link>
+      <pubDate>Sat, 31 Aug 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/screenshots-with-getusermedia-api/</guid>
+      <description>With the getUserMedia API, it is now possible to access the user&amp;rsquo;s webcam and microphone using just JavaScript. What this means is that we can finally get rid of those nasty Flash plugins and use this native approace instead. At the writing of this post, only Firefox 17+ and Chrome 21+ have support for getUserMedia.
+Give credit where credit is due. The code is heavily inspired by HTML5 Rocks&amp;rsquo; article Capturing Audio &amp;amp; Video in HTML5.</description>
+    </item>
+    
+  </channel>
+</rss>

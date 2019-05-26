@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Service Workers on My New Hugo Site</title>
+    <link>http://example.org/tags/service-workers/</link>
+    <description>Recent content in Service Workers on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 27 Jan 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://example.org/tags/service-workers/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Getting started with Service Workers</title>
+      <link>http://example.org/blog/getting-started-with-service-workers/</link>
+      <pubDate>Wed, 27 Jan 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/getting-started-with-service-workers/</guid>
+      <description>Service Workers enables the ability to cache files for offline use, serve as a network proxy, enable the ability for push notification, and even background data sync. AppCache was an attempt to solve this problem but it made many assumptions about intended uses and in the end just caused more fustration than anything, so it became deprecated. Service Workers is AppCache&amp;rsquo;s successor, which greatly superceeds it by giving the developer a lot more granular control.</description>
+    </item>
+    
+  </channel>
+</rss>

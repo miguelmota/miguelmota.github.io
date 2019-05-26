@@ -1,44 +1,31 @@
 # About
 
-This is my [jekyll](https://github.com/mojombo/jekyll/) powered blog.
+> This is my [Hugo](https://gohugo.io/) powered blog.
 
-[http://miguelmota.github.io/](http://miguelmota.github.io/)
+[https://miguelmota.github.io/](https://miguelmota.github.io/)
 
 ## Development
 
-Install deps
+Install Hugo:
 
 ```bash
-npm install
-bundle install
+brew install hugo
 ```
 
-Watch and compile
+Run server:
 
 ```bash
-grunt
+make server
 ```
 
-Compile Sass
+Build site:
 
 ```bash
-grunt compile-styles
-```
-
-Compile scripts
-
-```bash
-grunt compile-scripts
-```
-
-Run jekyll server
-
-```bash
-jekyll serve
+make build
 ```
 
 ## License
 
 Articles and images are copyright of Miguel Mota.
 
-Everything else is released under the MIT License.
+Everything else is released under the [MIT](LICENSE) License.

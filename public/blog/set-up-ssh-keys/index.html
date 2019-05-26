@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>My New Hugo Site  | Set up SSH keys</title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.52" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.d98f2eb6bcd1eaedb7edf166bd16af26.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+
+    <meta property="og:title" content="Set up SSH keys" />
+<meta property="og:description" content="How to set up SSH private, public and authorized keys." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/blog/set-up-ssh-keys/" /><meta property="article:published_time" content="2013-09-30T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2013-09-30T00:00:00&#43;00:00"/>
+
+<meta itemprop="name" content="Set up SSH keys">
+<meta itemprop="description" content="How to set up SSH private, public and authorized keys.">
+
+
+<meta itemprop="datePublished" content="2013-09-30T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2013-09-30T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="322">
+
+
+
+<meta itemprop="keywords" content="SSH,git," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Set up SSH keys"/>
+<meta name="twitter:description" content="How to set up SSH private, public and authorized keys."/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="http://example.org/" class="f3 fw2 hover-white no-underline white-90 dib">
+      My New Hugo Site
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+
+    <header class="mt4 w-100">
+      <p class="f6 b helvetica tracked">
+          
+        BLOGS
+      </p>
+      <h1 class="f1 athelas mb1">Set up SSH keys</h1>
+      
+      <time class="f6 mv4 dib tracked" datetime="2013-09-30T00:00:00Z">September 30, 2013</time>
+      
+      
+    </header>
+
+    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
+
+<p>Having to type in a password in order to SSH into your server every single time is tedious and not the way to go. I will show you how to set up SSH keys so that you can elimate an extra step from your workflow.</p>
+
+<h2 id="generating-keys">Generating keys</h2>
+
+<p>On your local maching, generate a new SSH key with the command:</p>
+
+<pre><code class="language-bash"># Generate new key.
+ssh-keygen -t rsa
+</code></pre>
+
+<p>When asked for the file to save the key in, enter:</p>
+
+<pre><code class="language-bash">ssh-add id_rsa
+</code></pre>
+
+<p>Proceed by entering a passphrase. You will know when you are done when you see those funny symbols in a box at the end.</p>
+
+<h2 id="adding-authorized-key">Adding authorized key</h2>
+
+<p>The next step is to add the public key to your server.</p>
+
+<pre><code class="language-bash"># Make sure you have a .ssh directory on your server,
+# if not SSH into it and create it: mkdir ~/.ssh/
+
+# Concatenate public key to your server's authorized keys.
+cat ~/.ssh/id_rsa.pub | ssh &lt;your server username&gt;@&lt;your server ip address&gt; &quot;cat &gt;&gt; ~/.ssh/authorized_keys&quot;
+
+# Alternatively, you can run:
+ssh-copy-id -i ~/.ssh/id_rsa.pub &lt;your server username&gt;@&lt;your server ip address&gt;
+</code></pre>
+
+<p>The first time you try to SSH it will ask you for your password, but then exit and try to SSH again. <em>Look Ma! No password!</em></p>
+
+<h2 id="pulling-from-server">Pulling from server</h2>
+
+<p>As you can imagine, you can push changes to a private repository, for example on <a href="https://bitbucket.org/">Bitbucket</a>, and then pull the changes straight to your server whenever you&rsquo;re ready. It&rsquo;s pretty simple, just repeat the steps on how to generate an SSH key but this while SSH&rsquo;d into your server. Afterwards copy your public key and paste into the SSH key settings on your Bitbucket or Github, (or whatever) account. You can view your SSH public key with:</p>
+
+<pre><code class="language-bash"># View public SSH key.
+cat ~/.ssh/id_rsa.pub
+</code></pre>
+
+<p>Assuming you have git already installed on your server, you can clone a repo and perform git pulls as you would on your local machine.</p>
+
+<p>Hope this helped.</p>
+
+<h2 id="resources">Resources</h2>
+
+<ul>
+<li><a href="https://github.com/beautifulcode/ssh-copy-id-for-OSX">ssh-copy-id for OS X</a></li>
+</ul>
+<ul class="pa0">
+  
+   <li class="list">
+     <a href="/tags/ssh" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">SSH</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/git" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">git</a>
+   </li>
+  
+</ul>
+<div class="mt6">
+        
+      </div>
+    </section>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/blog/extensive-gitignore/">Extensive .gitignore</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/bytes/ansible-git-example/">How to use Ansible to deploy with git</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://example.org/" >
+    &copy; 2019 My New Hugo Site
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>

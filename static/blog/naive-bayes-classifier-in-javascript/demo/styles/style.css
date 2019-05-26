@@ -1,0 +1,73 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+body * {
+  font-size: 16px;
+  font-family:"Courier New",Courier,monospace;
+}
+
+main {
+  display: block;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 20px;
+  max-width: 400px;
+}
+
+h1 {
+  margin: 0 0 20px 0;
+  font-size: 24px;
+}
+
+p {
+  font-size: 12px;
+  margin: 0 0 20px 0;
+}
+
+form {
+  display: block;
+  margin: 0 0 20px;
+}
+
+input {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin: 0 0 10px 0;
+}
+
+button {
+  padding: 10px;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+}
+
+.classify-document-form {
+  display: none;
+}
+
+.train {
+  display: none;
+}
+
+.trained-documents {
+  display: none;
+}
+
+.classify-output {
+  display: none;
+}
+
+output {
+  display: block;
+  margin: 10px auto 20px auto;
+  background: rgb(248, 248, 248);
+  padding: 0;
+}

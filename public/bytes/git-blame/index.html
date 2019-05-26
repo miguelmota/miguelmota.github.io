@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>My New Hugo Site  | How to blame in git</title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.52" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.d98f2eb6bcd1eaedb7edf166bd16af26.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+
+    <meta property="og:title" content="How to blame in git" />
+<meta property="og:description" content="How to blame in git from command line." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/bytes/git-blame/" /><meta property="article:published_time" content="2016-01-20T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2016-01-20T00:00:00&#43;00:00"/>
+
+<meta itemprop="name" content="How to blame in git">
+<meta itemprop="description" content="How to blame in git from command line.">
+
+
+<meta itemprop="datePublished" content="2016-01-20T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2016-01-20T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="35">
+
+
+
+<meta itemprop="keywords" content="git," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="How to blame in git"/>
+<meta name="twitter:description" content="How to blame in git from command line."/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="http://example.org/" class="f3 fw2 hover-white no-underline white-90 dib">
+      My New Hugo Site
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+
+    <header class="mt4 w-100">
+      <p class="f6 b helvetica tracked">
+          
+        BYTES
+      </p>
+      <h1 class="f1 athelas mb1">How to blame in git</h1>
+      
+      <time class="f6 mv4 dib tracked" datetime="2016-01-20T00:00:00Z">January 20, 2016</time>
+      
+      
+    </header>
+
+    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>Git blame from the command line.</p>
+
+<p>Command format:</p>
+
+<pre><code class="language-bash">git blame -L&lt;LINE_NUMBER&gt;,+&lt;NUMBER_OF_LINES&gt; [&lt;COMMIT&gt;] -- &lt;FILE&gt;
+</code></pre>
+
+<p>Git blame a file:</p>
+
+<pre><code class="language-bash">git blame -L100,+10 -- file.txt
+</code></pre>
+
+<p>Git blame on a specific commit:</p>
+
+<pre><code class="language-bash">git blame -L100,+10 fe25b6d^ -- file.txt
+</code></pre>
+<ul class="pa0">
+  
+   <li class="list">
+     <a href="/tags/git" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">git</a>
+   </li>
+  
+</ul>
+<div class="mt6">
+        
+      </div>
+    </section>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/blog/set-up-ssh-keys/">Set up SSH keys</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/extensive-gitignore/">Extensive .gitignore</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/bytes/ansible-git-example/">How to use Ansible to deploy with git</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://example.org/" >
+    &copy; 2019 My New Hugo Site
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>

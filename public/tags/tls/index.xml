@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tls on My New Hugo Site</title>
+    <link>http://example.org/tags/tls/</link>
+    <description>Recent content in Tls on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 27 Apr 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://example.org/tags/tls/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>OpenSSL Cheatsheet</title>
+      <link>http://example.org/bytes/openssl-cheatsheet/</link>
+      <pubDate>Thu, 27 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/bytes/openssl-cheatsheet/</guid>
+      <description>A cheatsheet of common OpenSSL commands.
+Generate 512 bit RSA private key
+openssl genrsa  Generate 1024 bit RSA private key
+openssl genrsa 1024  Generate 1024 bit RSA private key and save to file
+openssl genrsa -out private.key 1024  Check private key
+openssl rsa -in private.key -check  Generate 1024 bit RSA private key with passphrase
+openssl genrsa -des3 -out private.key 1024  Generate certificate authority (CA) key</description>
+    </item>
+    
+    <item>
+      <title>Generate Self-signed SSL Certificate</title>
+      <link>http://example.org/blog/generate-self-signed-ssl-certificate/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/generate-self-signed-ssl-certificate/</guid>
+      <description>Using HTTPS for your web application is a no-brainer, but sometimes it is not intuitively clear on how to get started on using SSL for your website. I&amp;rsquo;m going to be going over step-by-step on generating a self-signed certficate and testing it out on a Node.js web server.
+Generating Private Key First let&amp;rsquo;s generate a private key. The private key is used to decrypt the data encrypted by the public key.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>My New Hugo Site  | Sass Cheatsheet</title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.52" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.d98f2eb6bcd1eaedb7edf166bd16af26.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+
+    <meta property="og:title" content="Sass Cheatsheet" />
+<meta property="og:description" content="A cheatsheet for Sass." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/bytes/sass-cheatsheet/" /><meta property="article:published_time" content="2014-10-01T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2014-10-01T00:00:00&#43;00:00"/>
+
+<meta itemprop="name" content="Sass Cheatsheet">
+<meta itemprop="description" content="A cheatsheet for Sass.">
+
+
+<meta itemprop="datePublished" content="2014-10-01T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2014-10-01T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="646">
+
+
+
+<meta itemprop="keywords" content="Sass,CSS," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Sass Cheatsheet"/>
+<meta name="twitter:description" content="A cheatsheet for Sass."/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="http://example.org/" class="f3 fw2 hover-white no-underline white-90 dib">
+      My New Hugo Site
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+
+    <header class="mt4 w-100">
+      <p class="f6 b helvetica tracked">
+          
+        BYTES
+      </p>
+      <h1 class="f1 athelas mb1">Sass Cheatsheet</h1>
+      
+      <time class="f6 mv4 dib tracked" datetime="2014-10-01T00:00:00Z">October 1, 2014</time>
+      
+      
+    </header>
+
+    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
+
+<p>A <a href="http://sass-lang.com/">Sass</a> cheatsheet.</p>
+
+<h3 id="watching">Watching</h3>
+
+<pre><code class="language-bash">sass --watch sass:css
+</code></pre>
+
+<p><a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#using_sass">source</a></p>
+
+<h3 id="comments">Comments</h3>
+
+<pre><code class="language-css">// I will not show when compiled
+
+/* I will be shown when compiled */
+</code></pre>
+
+<p><a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#comments">source</a></p>
+
+<h3 id="imports">Imports</h3>
+
+<pre><code class="language-css">@import 'foo';
+</code></pre>
+
+<p><a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#import">source</a></p>
+
+<h3 id="variables">Variables</h3>
+
+<pre><code class="language-css">$foo: #000 !default;
+$bar: baz qux quux corge;
+</code></pre>
+
+<p><a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#variables_">source</a></p>
+
+<h3 id="nesting">Nesting</h3>
+
+<p>Selector nesting</p>
+
+<pre><code class="language-css">.foo  {
+  .bar {
+    // .foo .bar { }
+  }
+}
+</code></pre>
+
+<p><a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#nested_rules">source</a></p>
+
+<p>Property nesting</p>
+
+<pre><code class="language-css">.foo {
+  text: {
+    align: center; // .foo { text-align: center; }
+  }
+}
+</code></pre>
+
+<p><a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#nested_properties">source</a></p>
+
+<h3 id="parent-selectors">Parent Selectors</h3>
+
+<pre><code class="language-css">a {
+  &amp;:hover {
+    // a:hover { }
+  }
+}
+</code></pre>
+
+<pre><code class="language-css">.bar {
+ .foo &amp; {
+   // .foo .bar { }
+  }
+}
+</code></pre>
+
+<p><a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#referencing_parent_selectors_">source</a></p>
+
+<h3 id="interpolation">Interpolation</h3>
+
+<pre><code class="language-css">$foo: bar;
+
+.baz-#{$foo} {
+  // .baz-bar { }
+}
+</code></pre>
+
+<p><a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#interpolation_">source</a></p>
+
+<h3 id="concatenation">Concatenation</h3>
+
+<pre><code class="language-css">$foo: 'serif';
+
+.bar {
+	$font: 'sans-' + $foo; // 'sans-serif'
+}
+</code></pre>
+
+<h3 id="mixins">Mixins</h3>
+
+<pre><code class="language-css">@mixin foo($bar, $baz: false) {
+  color: $bar;
+  @if baz {
+    border-radius: $baz;
+  }
+}
+
+.qux {
+  @include foo(#000, 10px);
+}
+</code></pre>
+
+<p>Variable arguments</p>
+
+<pre><code class="language-css">@mixin bar($baz...) {
+  box-shadow: $baz
+}
+
+.qux {
+  $baz: 0px 4px 5px #666, 2px 6px 10px #999;
+  @include bar($baz);
+}
+</code></pre>
+
+<p><a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#defining_a_mixin">source</a></p>
+
+<h3 id="extend">Extend</h3>
+
+<pre><code class="language-css">%foo {
+ color: #000;
+}
+
+.bar {
+  background: #fff;
+}
+
+.baz {
+  @extend %foo; // color: #000
+  @extend %qux !optional; // fail silenty if not found
+  @extend .bar; // background: #fff
+}
+</code></pre>
+
+<p><a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#extend">source</a></p>
+
+<h3 id="control-directives">Control directives</h3>
+
+<h4 id="if-if-else-else">if, if else, else</h4>
+
+<pre><code class="language-css">$foo: bar;
+
+.qux {
+  @if $foo == bar {
+     color: #000;
+  } @else if $foo == baz {
+    color: #fff;
+   } @else {
+     color: #999;
+   }
+}
+
+.qux {
+	color: if($foo == bar, #000, #999); // if([condition], [if true], [else])
+}
+</code></pre>
+
+<pre><code>$foo: &quot;foo&quot;;
+$bar: &quot;bar&quot;;
+$qux: &quot;qux&quot;;
+
+@if ($foo == &quot;foo&quot; and not ($bar == &quot;bar&quot;)) or ($qux == &quot;qux&quot;) {
+  // second condition is true
+}
+</code></pre>
+
+<h4 id="each">each</h4>
+
+<pre><code class="language-css">$foo: bar baz qux;
+
+@each $f in $foo {
+	.quux-#{$f} {
+		background: url(quux-#{$f}.png); // .quux-bar { background: url(quux-bar.png) }
+	}
+}
+</code></pre>
+
+<h4 id="for">for</h4>
+
+<pre><code class="language-css">.qux {
+	@for $i from 1 through 5 {
+		&amp;.qux-#{$i} {
+			// .qux.qux-1 { }
+		}
+	}
+}
+</code></pre>
+
+<h4 id="while">while</h4>
+
+<pre><code class="language-css">$i: 1;
+
+.qux {
+	@while $i &lt;= 5 {
+		&amp;.qux-#{$i} {
+			// .qux.qux-1 { }
+		}
+
+		$i: $i + 1;
+	}
+}
+</code></pre>
+
+<p><a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#control_directives">source</a></p>
+
+<h3 id="function-directives">Function directives</h3>
+
+<pre><code class="language-css">@function foo($bar, $baz) {
+	@return ($bar / $baz);
+}
+
+.qux {
+	width: foo(10px, 2px); // 5px
+}
+</code></pre>
+
+<p><a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#functions">source</a></p>
+
+<h3 id="list-functions">List functions</h3>
+
+<pre><code class="language-css">$foo: bar baz qux quux;
+$grault: garphly, waldo, fred, plugh;
+
+length($foo); // 4 (index starts at 1)
+append($foo, corge); // bar baz qux quux corge (does not alter original)
+join($foo, $grault); // bar baz qux quux garphly, waldo, fred, plugh
+index($foo, baz); // 2
+nth($foo, 2); // baz
+zip($foo, $grault); // [bar garphly] [baz waldo] [qux fred] [quux plugh]
+</code></pre>
+
+<p><code>zip()</code> example</p>
+
+<pre><code class="language-css">$users: foo bar;
+$colors: blue green;
+$style: zip($names, $colors); // [foo blue] [bar green]
+@each $u in $style {
+  .users-#{nth($u, 1)} {      // .users-foo { }
+    background: nth($u, 2);   // background: blue;
+  }
+ }
+</code></pre>
+
+<h3 id="color-functions">Color functions</h3>
+
+<pre><code class="language-css">$foo: #ff0000;
+
+rgba($foo, 0.8); // rgba(0, 255, 0, 0.8)
+lighten($foo, 20%); // #66ff66
+darken($foo, 20%); // #009900
+saturate($foo, 20%); // lime
+desaturate($foo, 20%); // #19e619
+mix(#ff0000, #0000ff); // #7f007f
+mix(#ffff00, #0000ff, 20%); // #3300cc (3rd parameter is percentage of first color)
+grayscale($foo); // grey
+invert($foo); // magenta
+complement($foo); // magenta
+scale_color($foo, $lightness: 20%); // #33ff33
+scale_color($foo, [$red], [$green], [$blue], [$saturation], [$lightness], [$alpha]); // changes color aspect(s) relative, rather than linearly, to the start value
+</code></pre>
+
+<p><a href="http://sass-lang.com/documentation/Sass/Script/Functions.html#rgb_functions">source</a></p>
+
+<h3 id="number-functions">Number functions</h3>
+
+<pre><code class="language-css">$foo: 1.4;
+$bar: 1.3 4.5 -2.8;
+
+round($foo;) // 1
+ceil($foo); // 2
+floor($foo); // 1
+abs($foo); // 1.4
+percentage($foo) // 140%
+min($bar...) // -2.8
+max($bar...) // 4.5
+</code></pre>
+
+<p><a href="http://sass-lang.com/documentation/Sass/Script/Functions.html#number_functions">source</a></p>
+
+<h3 id="media-queries">Media queries</h3>
+
+<pre><code class="language-css">.foo {
+	@media (min-width: 768px) {
+	  // @media (min-width: 768px) { .foo { } }
+	}
+}
+</code></pre>
+
+<p>Using a mixin</p>
+
+<pre><code class="language-css">@mixin respond-to($media) {
+	@if $media == desktop {
+		@media (min-width: 960px) {
+			@content;
+    	}
+    } @else if $media == tablet {
+    	@media (min-width: 768px) {
+      		@content;
+    	}
+  	}
+}
+
+.foo {
+	@inclue respond-to(tablet) {
+		// @media (min-width: 768px) { .foo { } }
+	}
+}
+</code></pre>
+
+<p><a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#media">source</a></p>
+
+<h4 id="some-helpful-resources">Some helpful resources</h4>
+
+<ul>
+<li><a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html">Sass reference</a></li>
+<li><a href="http://thesassway.com/">The Sass Way</a></li>
+<li><a href="http://sassmeister.com/">Sasmeister</a></li>
+<li><a href="http://smacss.com/">Scalable and Modular Architecture for CSS</a></li>
+</ul>
+
+<p>On github at <a href="https://github.com/miguelmota/sass-cheatsheet">miguelmota/sass-cheatsheet</a>.</p>
+<ul class="pa0">
+  
+   <li class="list">
+     <a href="/tags/sass" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Sass</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/css" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">CSS</a>
+   </li>
+  
+</ul>
+<div class="mt6">
+        
+      </div>
+    </section>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/blog/sass-triangles/">Sass Triangles</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/sass-media-queries/">Sass Media Queries</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/bytes/sass-px-to-em/">How to convert pixels to em in Sass</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/html5-reset-stylesheet/">HTML5 Reset Stylesheet</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://example.org/" >
+    &copy; 2019 My New Hugo Site
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>

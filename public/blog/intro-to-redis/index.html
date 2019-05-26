@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>My New Hugo Site  | Intro to Redis</title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.52" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.d98f2eb6bcd1eaedb7edf166bd16af26.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+
+    <meta property="og:title" content="Intro to Redis" />
+<meta property="og:description" content="Simple explanations of Redis data structures." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/blog/intro-to-redis/" /><meta property="article:published_time" content="2014-01-23T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2014-01-23T00:00:00&#43;00:00"/>
+
+<meta itemprop="name" content="Intro to Redis">
+<meta itemprop="description" content="Simple explanations of Redis data structures.">
+
+
+<meta itemprop="datePublished" content="2014-01-23T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2014-01-23T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1631">
+
+
+
+<meta itemprop="keywords" content="Redis,CLI," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Intro to Redis"/>
+<meta name="twitter:description" content="Simple explanations of Redis data structures."/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="http://example.org/" class="f3 fw2 hover-white no-underline white-90 dib">
+      My New Hugo Site
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+
+    <header class="mt4 w-100">
+      <p class="f6 b helvetica tracked">
+          
+        BLOGS
+      </p>
+      <h1 class="f1 athelas mb1">Intro to Redis</h1>
+      
+      <time class="f6 mv4 dib tracked" datetime="2014-01-23T00:00:00Z">January 23, 2014</time>
+      
+      
+    </header>
+
+    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
+
+<p><a href="http://redis.io/"><strong>Redis</strong></a>&gt; is an in-memory, key-value store that is fast. <em>Really fast</em>. Redis can hold hundreds of millions of keys in memory and handle tens of thousands of requests per second without breaking a sweat. It&rsquo;s useful for caching data, maintaining sessions, keeping counters, queues, publish/subscribe real time notifications, and so on. There are many use cases for Redis due to it&rsquo;s simple dictionary model that maps keys to values, but what one should be aware of is that it&rsquo;s focus is <em>not</em> long-term data persistance. The whole Redis database is loaded into memory so there is a chance of data loss due to the fact that Redis first stores new entries in memory and then writes it to disk in the background after a certain period of time or amount of new keys have been accumulated. For example, if there were to be a power failure you could potentially lose a minute or two worth of data, which can or may not be fatal depending on your application. Of course, you can configure the threshold to something more comfortable which I will go over later.</p>
+
+<p>The majority of this post will be going over some of the data structures that Redis provides, such as <strong>keys</strong>, <strong>hashes</strong>, <strong>lists</strong>, and <strong>sets</strong>. Redis isn&rsquo;t meant to be an <em>all-in-one</em> database replacement. It has it&rsquo;s niche, it&rsquo;s simple and it can do certain <em>really</em> well. If you haven&rsquo;t already, I strongly suggest you read the <a href="http://redis.io/topics/data-types-intro">15 minute intro to Redis data types</a>&gt; on the Redis site. I&rsquo;ll also talk about sorting, multi-commands, and monitoring.</p>
+
+<p>I would like to give credit to <a href="http://openmymind.net/2012/1/23/The-Little-Redis-Book/">The Little Redis Book</a>&gt; by <a href="http://openmymind.net/">Karl Seguin</a>&gt; for helping me gain a lot of the information on Redis and some of the examples I show below. It&rsquo;s definitely a good read and great resource.</p>
+
+<h2 id="installation">Installation</h2>
+
+<p><a href="http://redis.io/topics/quickstart">The Redis quickstart guide</a>&gt; is good place to start. Installing Redis is straight forward. <a href="http://redis.io/download">Download</a> the tarball, extract, and run <code>make</code>. If you&rsquo;re on a Mac you can simply do <code>brew install redis</code> with <a href="http://brew.sh/">Homebrew</a>.</p>
+
+<p>After installation, start a redis instance with</p>
+
+<pre><code class="language-bash">redis-server {path to redis.conf}
+</code></pre>
+
+<p>and then fire up the command line client</p>
+
+<pre><code class="language-bash">redis-cli -p {port}
+</code></pre>
+
+<p>For the rest of the post we&rsquo;ll be working from the command-line interface.</p>
+
+<h2 id="keys">Keys</h2>
+
+<p>Keys can hold a single value, wether it be a string or numeric value. We create a key with the <code>set</code> command.</p>
+
+<pre><code class="language-bash">&gt; set foo bar
+OK
+</code></pre>
+
+<p>Retreive a key with the <code>get</code> command</p>
+
+<pre><code class="language-bash">&gt; get foo
+&quot;bar&quot;
+</code></pre>
+
+<p>Delete a key with <code>del</code></p>
+
+<pre><code class="language-bash">&gt; del foo
+(integer) 1
+&gt; get foo
+(nil)
+</code></pre>
+
+<p>Store a JSON string</p>
+
+<pre><code class="language-bash">&gt; set users:foo &quot;{name: foo, age: 21, hobbies: [baz, qux]}&quot;
+OK
+&gt; get users:foo
+&quot;{name: foo, age: 21, hobbies: [baz, qux]}&quot;
+</code></pre>
+
+<p>Notice the colon in the key. The colon is just part of the key name, it doesn&rsquo;t have any special meaning to Redis. It&rsquo;s purpose is to visually group a set of related keys together.</p>
+
+<p>If the value is a number you can incremented with the <code>incr&lt;/code &gt; or</code>incrby` command. If the key doesn&rsquo;t exist it will simply create it.</p>
+
+<pre><code class="language-bash">&gt; incr stats:views
+(integer) 1
+&gt; incr stats:views
+(integer) 2
+&gt; incrby stats:views 5
+(integer) 7
+</code></pre>
+
+<p>With the <code>keys</code> command we can get a list of keys that match a wildcard.</p>
+
+<pre><code class="language-bash">&gt; set foo:1 bar
+OK
+&gt; set foobar:2 baz
+OK
+&gt; set foooo:3 qux
+OK
+&gt; keys foo*
+1) &quot;foo:1&quot;
+2) &quot;foobar:2&quot;
+3) &quot;foooo:3&quot;
+&gt; keys foo?ar*
+1) &quot;foobar:2&quot;
+&gt; keys foo*:[13]
+1) &quot;foo:1&quot;
+2) &quot;foooo:3&quot;
+</code></pre>
+
+<h2 id="hashes">Hashes</h2>
+
+<p>You can think of hashes a being a key-value pair, except that the value can be <em>multiple</em> key-value pairs. For example we can have a users hash that has multiple fields about the user</p>
+
+<pre><code class="language-bash">&gt; hmset users:foo name &quot;Foo&quot; email foo@bar.com age 21
+OK
+&gt; hmget users:foo email
+1) &quot;foo@bar.com&quot;
+&gt; hmget users:foo email name
+1) &quot;foo@bar.com&quot;
+2) &quot;Foo&quot;
+&gt; hgetall users:foo
+1) &quot;email&quot;
+2) &quot;foo@bar.com&quot;
+3) &quot;age&quot;
+4) &quot;21&quot;
+5) &quot;name&quot;
+6) &quot;Foo&quot;
+&gt; hkeys users:foo
+1) &quot;email&quot;
+2) &quot;age&quot;
+3) &quot;name&quot;
+&gt; hdel users:foo age
+(integer) 1
+&gt; hset users:foo hobies [bar,qux]
+(integer) 1
+&gt; hgetall users:foo
+1) &quot;email&quot;
+2) &quot;foo@bar.com&quot;
+3) &quot;name&quot;
+4) &quot;Foo&quot;
+5) &quot;hobies&quot;
+6) &quot;[bar,qux]&quot;
+</code></pre>
+
+<p>Quick overview of hash commands</p>
+
+<p><code>hmset</code>: set a hash<br>
+<code>hmget</code>: get a value from key<br>
+<code>hmgetall</code>: get all keys and values<br>
+<code>hkeys</code>: get all keys<br>
+<code>hdel</code>: delete a key<br>
+<code>hset</code>: set a key and value<br>
+<code>hmset</code>: set multiple key and value pairs<br></p>
+
+<p>Here&rsquo;s an example of way to do quick lookups for a user</p>
+
+<pre><code class="language-bash">&gt; set users:1000 &quot;{id: 1000, email: foo@bar.com}&quot;
+OK
+&gt; hset users:lookup:email foo@bar.com 1000
+(integer) 1
+&gt; hget users:lookup:email foo@bar.com
+&quot;1000&quot;
+&gt; get users:1000
+&quot;{id: 1000, email: foo@bar.com}&quot;
+</code></pre>
+
+<h2 id="lists">Lists</h2>
+
+<p>A list is a list of strings. Push items into a list with <code>lpush</code></p>
+
+<pre><code class="language-bash">&gt; lpush newusers foo
+(integer) 1
+&gt; lpush newusers bar
+(integer) 2
+</code></pre>
+
+<p>Use <code>lrange</code> to return a range</p>
+
+<pre><code class="language-bash">&gt; lrange newusers 0 -1
+1) &quot;bar&quot;
+2) &quot;foo&quot;
+</code></pre>
+
+<p>A list can be sorted using the <code>sort</code> command</p>
+
+<pre><code class="language-bash">&gt; rpush users:foo:guesses 5 9 10 2 4 10 19 2
+(integer) 8
+&gt; sort users:foo:guesses
+1) &quot;2&quot;
+2) &quot;2&quot;
+3) &quot;4&quot;
+4) &quot;5&quot;
+5) &quot;9&quot;
+6) &quot;10&quot;
+7) &quot;10&quot;
+8) &quot;19&quot;
+</code></pre>
+
+<p>Keep the list trimmed with <code>ltrim</code>. For example, if we wanted to only keep a list of the latest 50 new users</p>
+
+<pre><code class="language-bash">&gt; ltrim newusers 0 49
+OK
+</code></pre>
+
+<h2 id="sets">Sets</h2>
+
+<p>Sets are undorered collections of strings. A use case for sets would be keeping a collection of a user&rsquo;s friends. To add to a set use <code>sadd</code></p>
+
+<pre><code class="language-bash">&gt; sadd friends:foo bar baz qux
+(integer) 3
+&gt; sadd friends:dexter bar qux deedee
+(integer) 3
+</code></pre>
+
+<p>We can check if a member belongs to a set with <code>sismember</code></p>
+
+<pre><code class="language-bash">&gt; sismember friends:foo bob
+(integer) 0
+&gt; sismember friends:dexter deedee
+(integer) 1
+</code></pre>
+
+<p>With the <code>sinter</code> command we can return a list of members that <em>intersect</em> between sets. For example, if we wanted a list containing shared friends</p>
+
+<pre><code class="language-bash">&gt; sinter friends:foo friends:dexter
+1) &quot;bar&quot;
+2) &quot;qux&quot;
+</code></pre>
+
+<p>We can also store the result into a new set with <code>sinterstore</code></p>
+
+<pre><code class="language-bash">&gt; sinterstore friends:foo_dexter friends:foo friends:dexter
+(integer) 2
+</code></pre>
+
+<p>We can get members of a set with <code>smembers</code></p>
+
+<pre><code class="language-bash">&gt; smembers friends:foo_dexter
+1) &quot;bar&quot;
+2) &quot;qux&quot;
+</code></pre>
+
+<p>To store sorted sets use <code>zadd</code>. Sorted sets consists of key/member pairs, where the key is used for sorting. For example, having a sorted set containing sets of quiz scores</p>
+
+<pre><code class="language-bash">&gt; zadd students:foo 70 quiz1 95 quiz2 60 quiz3 99 quiz4 20 quiz5
+(integer) 5
+</code></pre>
+
+<p>We then get a count of scores between a range with <code>zcount</code></p>
+
+<pre><code class="language-bash">&gt; zcount students:foo 90 100
+(integer) 2
+</code></pre>
+
+<p>To determine the rank of a member within the set we can use <code>zrank</code> (low to high) or <code>zrevrank</code> (high to low)</p>
+
+<pre><code class="language-bash">&gt; zrank students:foo quiz3
+(integer) 4
+&gt; zrevrank students:foo quiz3
+(integer) 0
+&gt; zrevrank students:foo quiz1
+(integer) 2
+&gt; zrevrank students:foo quiz2
+(integer) 1
+</code></pre>
+
+<p>Remove a set with <code>zrem</code></p>
+
+<pre><code class="language-bash">&gt; zrem students:foo quiz5
+(integer) 1
+</code></pre>
+
+<p>Sort by name descending alphabetically</p>
+
+<pre><code class="language-bash">&gt; sadd friends:foo bar baz qux dexter deedee
+(integer) 5
+&gt; sort friends:foo limit 0 3 desc alpha
+1) &quot;qux&quot;
+2) &quot;dexter&quot;
+3) &quot;deedee&quot;
+</code></pre>
+
+<h2 id="expiration">Expiration</h2>
+
+<p>Keys can be set to expire (delete) after a number of seconds. We do this with the <code>expire</code> or <code>expireat</code> commands. <code>ttl</code> returns the Time To Live and <code>persist</code> removes the expiration.</p>
+
+<pre><code class="language-bash">&gt; incr views
+(integer) 1
+&gt; expire views 30
+(integer) 1
+&gt; ttl views
+(integer) 30
+&gt; expireat views 1420005600 # expire on 12:00a.m. December 31st, 2014
+(integer) 0
+&gt; ttl views
+(integer) 28529193
+&gt; persist views
+(integer) -1
+</code></pre>
+
+<h2 id="flush">Flush</h2>
+
+<p>Select database to use with <code>select</code> command</p>
+
+<pre><code class="language-bash">&gt; select 1
+OK
+</code></pre>
+
+<p>Clear current database with <code>flushdb</code></p>
+
+<pre><code class="language-bash">&gt; flushdb
+OK
+</code></pre>
+
+<p>Clear all databases with <code>flushall</code></p>
+
+<pre><code class="language-bash">&gt; flushall
+OK
+</code></pre>
+
+<h2 id="subscribe-publish">Subscribe / Publish</h2>
+
+<p>With redis you can have subscribers listen to a channel. Publishing a message will be received by all subscribers in the channel. You can subscribe to multiple channels as well.</p>
+
+<pre><code class="language-bash">&gt; subscribe greeetings
+</code></pre>
+
+<pre><code class="language-bash">&gt; publish greetings &quot;Hello, World&quot;
+</code></pre>
+
+<p>Anyone subscried to the <em>greetings</em> channel will receive the &ldquo;Hello, World&rdquo; message.</p>
+
+<h2 id="multi">Multi</h2>
+
+<p>The <code>multi</code> command let&rsquo;s us queue commands (transaction block) and then execute with <code>exec</code> or discard the queue with <code>discard</code></p>
+
+<pre><code class="language-bash">&gt; multi
+OK
+&gt; incrby counter 10
+QUEUED
+&gt; incrby counter -10
+QUEUED
+&gt; exec
+1) (integer) 10
+2) (integer) 0
+</code></pre>
+
+<p>Queued commands will always execute in the order they were set, so a use case for using the multi command would be when a command is dependent on the result of the previous command.</p>
+
+<h2 id="monitor">Monitor</h2>
+
+<p>Watch incomming redis commands with <code>monitor</code></p>
+
+<pre><code class="language-bash">&gt; monitor
+OK
+</code></pre>
+
+<p>Get recent logs</p>
+
+<pre><code class="language-bash">&gt; config set slowlog-log-slower-than 0
+OK
+&gt; slowlog get 2
+</code></pre>
+
+<p>Get config related to logging</p>
+
+<pre><code class="language-bash">&gt; config get *log*
+</code></pre>
+
+<!--
+## More examples
+
+Sort by severity example
+
+```bash
+> sadd watch:foo 12339 1382 338 9338
+(integer) 4
+> set severity:12339 3
+OK
+> set severity:1382 2
+OK
+> set severity:338 5
+OK
+> set severity:9338 4
+sort watch:leto by severity:* desc
+1) "338"
+2) "9338"
+3) "12339"
+4) "1382"
+```
+
+Another example
+
+```bash
+hset bug:12339 severity 3
+hset bug:12339 priority 1
+hset bug:12339 details ”{id: 12339, ....}”
+hset bug:1382 severity 2
+hset bug:1382 priority 2
+hset bug:1382 details ”{id: 1382, ....}”
+```
+
+```bash
+sort watch:leto by bug:*->priority get bug:*->details
+# store result
+sort watch:leto by bug:*->priority get bug:*->details store watch_by_priority:leto
+```
+
+```bash
+# don't use keys because it's slow
+keys bug:1233:* # don't do this
+# instead us hashes
+hset bugs:1233 1 ”{id:1, account: 1233, subject: ’...’}”
+hset bugs:1233 2 ”{id:2, account: 1233, subject: ’...’}”
+```
+
+## Scan
+
+```bash
+scan 0 match bugs:* count 2
+> 1) ”3”
+> 2) 1) ”bugs:125”
+scan 3 match bugs:* count 2 # scan 3 because of previous next cursor
+> 1) ”0” # 0 means end
+> 2) 1) ”bugs:124”
+```
+-->
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Redis is an incredibly fast data store that does a few things <em>very</em> well. Definitely worth checking out and incorporating it in your next project for an easy caching solution.</p>
+
+<p>Resources</p>
+
+<ul>
+<li><a href="http://openmymind.net/2012/1/23/The-Little-Redis-Book/">The Little Redis Book</a>&gt; by <a href="http://openmymind.net/">Karl Seguin</a>&gt;</li>
+<li><a href="http://try.redis.io/">Try Redis</a>&gt;</li>
+</ul>
+<ul class="pa0">
+  
+   <li class="list">
+     <a href="/tags/redis" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Redis</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/cli" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">CLI</a>
+   </li>
+  
+</ul>
+<div class="mt6">
+        
+      </div>
+    </section>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://example.org/" >
+    &copy; 2019 My New Hugo Site
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>

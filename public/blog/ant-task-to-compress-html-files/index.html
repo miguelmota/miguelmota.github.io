@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>My New Hugo Site  | Ant task to compress HTML files</title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.52" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.d98f2eb6bcd1eaedb7edf166bd16af26.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+
+    <meta property="og:title" content="Ant task to compress HTML files" />
+<meta property="og:description" content="Tutorial on how to create an ant task to compress html files." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/blog/ant-task-to-compress-html-files/" /><meta property="article:published_time" content="2011-10-14T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2011-10-14T00:00:00&#43;00:00"/>
+
+<meta itemprop="name" content="Ant task to compress HTML files">
+<meta itemprop="description" content="Tutorial on how to create an ant task to compress html files.">
+
+
+<meta itemprop="datePublished" content="2011-10-14T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2011-10-14T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="336">
+
+
+
+<meta itemprop="keywords" content="HTML,Ant," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Ant task to compress HTML files"/>
+<meta name="twitter:description" content="Tutorial on how to create an ant task to compress html files."/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="http://example.org/" class="f3 fw2 hover-white no-underline white-90 dib">
+      My New Hugo Site
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+
+    <header class="mt4 w-100">
+      <p class="f6 b helvetica tracked">
+          
+        BLOGS
+      </p>
+      <h1 class="f1 athelas mb1">Ant task to compress HTML files</h1>
+      
+      <time class="f6 mv4 dib tracked" datetime="2011-10-14T00:00:00Z">October 14, 2011</time>
+      
+      
+    </header>
+
+    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>I will show you how to compress your HTML files using the Java library <a href="http://code.google.com/p/htmlcompressor/">HtmlCompressor</a>.
+So let&rsquo;s say your html code looks something like this:</p>
+
+<pre><code class="language-html">&lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;htmlcompressor&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida suscipit lectus.
+  &lt;!-- comment --&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>After we compress it, it&rsquo;ll look like this:</p>
+
+<pre><code class="language-html">&lt;!doctype html&gt; &lt;html&gt; &lt;head&gt; &lt;title&gt;htmlcompressor&lt;/title&gt; &lt;/head&gt; &lt;body&gt; Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida suscipit lectus. &lt;/body&gt; &lt;/html&gt;
+</code></pre>
+
+<p>Compressing your html files reduces it&rsquo;s size by ~20% by removing unnecessary white space, comments and stuff that it doesn&rsquo;t need in order to keep the structure of the content. The result is a smaller file size which equals to faster page load.</p>
+
+<p>Ok, so first make sure you have <a href="http://code.google.com/p/htmlcompressor/">Google Project page</a>.
+Create a directory in the root of your project called <code>lib</code> and drop the <code>.jar</code> in it. Then again in the root directory, create the xml file called <code>build.xml</code>. Include the following <a href="https://gist.github.com/miguelmota/4750373">gist</a>:</p>
+
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;project default=&quot;compress-html&quot;&gt;
+
+  &lt;target name=&quot;compress-html&quot;&gt;
+    &lt;apply executable=&quot;java&quot;&gt;
+      &lt;fileset dir=&quot;src&quot; includes=&quot;**/*.html&quot;/&gt;
+      &lt;arg value=&quot;-jar&quot;/&gt;
+      &lt;arg path=&quot;lib/htmlcompressor-1.5.3.jar&quot;/&gt;
+      &lt;arg line=&quot;-t html&quot;/&gt;
+      &lt;srcfile/&gt;
+      &lt;arg value=&quot;-o&quot;/&gt;
+      &lt;mapper type=&quot;glob&quot; from=&quot;*&quot; to=&quot;compressed/*&quot;/&gt;
+      &lt;targetfile/&gt;
+    &lt;/apply&gt;
+  &lt;/target&gt;
+
+&lt;/project&gt;
+</code></pre>
+
+<p>What we did is created a project which will execute the <code>compress-html</code> target by default. In the target we are telling it to include all the <code>html</code> files in the root directory
+and then output the compressed files in a new directory called <code>compressed</code>. the <code>-t</code> flag means <code>type</code> and <code>-o</code> means <code>output</code>. By default the filenames of the source files will be added to
+the end fo the command, so we use <code>srcfile</code> to place it where we want it. <code>targetfile</code> is used to add the target filenames to the command or else they&rsquo;ll be left out. The <code>mapper</code> type <code>glob</code> means that it will substitue the <code>*</code> in the <code>to</code> pattern with the text that matches the <code>*</code> in the <code>from</code> pattern.</p>
+
+<p>Now run the <code>build.xml</code> as an <code>Ant Build</code> and everything should go as planned. I hope this helped!</p>
+<ul class="pa0">
+  
+   <li class="list">
+     <a href="/tags/html" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">HTML</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/ant" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Ant</a>
+   </li>
+  
+</ul>
+<div class="mt6">
+        
+      </div>
+    </section>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://example.org/" >
+    &copy; 2019 My New Hugo Site
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>

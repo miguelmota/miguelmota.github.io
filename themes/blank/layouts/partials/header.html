@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode | default "en-us" }}">
+<head>
+  <meta charset="UTF-8">
+  <!--
+                                        ___                           __
+             __                        /\_ \                         /\ \__
+    ___ ___ /\_\     __   __  __     __\//\ \         ___ ___     ___\ \ ,_\    __
+  /' __` __`\/\ \  /'_ `\/\ \/\ \  /'__`\\ \ \      /' __` __`\  / __`\ \ \/  /'__`\
+  /\ \/\ \/\ \ \ \/\ \L\ \ \ \_\ \/\  __/ \_\ \_    /\ \/\ \/\ \/\ \L\ \ \ \_/\ \L\.\_
+  \ \_\ \_\ \_\ \_\ \____ \ \____/\ \____\/\____\   \ \_\ \_\ \_\ \____/\ \__\ \__/.\_\
+   \/_/\/_/\/_/\/_/\/___L\ \/___/  \/____/\/____/    \/_/\/_/\/_/\/___/  \/__/\/__/\/_/
+                     /\____/
+                     \_/__/
+  -->
+  <meta name="viewport" content="initial-scale=1, user-scalable=yes, width=device-width">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Miguel Mota">
+  <title>{{ .Title }}</title>
+  {{ with .Site.Params.description }}<meta name="description" content="{{ . }}">{{ end }}
+  {{ with .Site.Params.keywords }}<meta name="keywords" content="{{ . }}">{{ end }}
+  {{ with .Site.Params.author }}<meta name="author" content="{{ . }}">{{ end }}
+  {{ $css := resources.Get "css/style.css" }}
+  {{ $style := $css | resources.Minify }}
+  <link rel="stylesheet" href="{{ $style.Permalink }}">
+  {{ if .RSSLink -}}<link href="{{ .RSSLink }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}">{{- end }}
+  <link rel="canonical" href="https://miguelmota.com/">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-12642068-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', '{{ .Site.Params.GoogleAnalyticsUID }}');
+  </script>
+</head>
+<body>
+  <img src="/images/miguel_mota_avatar_500.png" alt="" style="display:none;"/>
+  <header class="site-header">
+    <hgroup>
+      <a class="index" href="{{ .Site.BaseURL }}">{{ .Site.Params.author }}</a>
+      <nav>
+        <ul>
+          {{ range .Site.Menus.main }}
+          <li><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
+          {{ end }}
+        </ul>
+      </nav>
+    </hgroup>
+  </header>

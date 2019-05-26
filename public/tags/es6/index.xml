@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Es6 on My New Hugo Site</title>
+    <link>http://example.org/tags/es6/</link>
+    <description>Recent content in Es6 on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 20 Jun 2014 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://example.org/tags/es6/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ES6 Examples</title>
+      <link>http://example.org/blog/es6-examples/</link>
+      <pubDate>Fri, 20 Jun 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/es6-examples/</guid>
+      <description>If you&amp;rsquo;ve been up-to-date with what&amp;rsquo;s going on in the JavaScript world then you know that ES6 is currently the new hotness in town. I&amp;rsquo;m going to be showing examples of some of the nicest features in ES6, which include:
+ Modules Classes Arrow Functions Destructuring Generators Promises Proxies Defaults Maps Weak Maps Sets Symbols Shorthand Objects Spread Operator Rest operator Constants Block Scoping Template Strings  Modules Export example (math.</description>
+    </item>
+    
+  </channel>
+</rss>

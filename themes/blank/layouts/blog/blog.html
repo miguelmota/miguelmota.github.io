@@ -1,0 +1,9 @@
+{{ partial "header.html" . }}
+  <main>
+    <p>All things web</p>
+    {{ range .Paginator.Pages }}
+      {{ partial "summary.html" . }}
+    {{ end }}
+    {{ partial "pagination.html" . }}
+  </main>
+{{ partial "footer.html" . }}

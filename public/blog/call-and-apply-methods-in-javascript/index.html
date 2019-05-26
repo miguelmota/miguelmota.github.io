@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>My New Hugo Site  | Call and Apply Methods in JavaScript</title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.52" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.d98f2eb6bcd1eaedb7edf166bd16af26.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+
+    <meta property="og:title" content="Call and Apply Methods in JavaScript" />
+<meta property="og:description" content="Simple explanation of call and apply methods." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/blog/call-and-apply-methods-in-javascript/" /><meta property="article:published_time" content="2013-05-10T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2013-05-10T00:00:00&#43;00:00"/>
+
+<meta itemprop="name" content="Call and Apply Methods in JavaScript">
+<meta itemprop="description" content="Simple explanation of call and apply methods.">
+
+
+<meta itemprop="datePublished" content="2013-05-10T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2013-05-10T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="557">
+
+
+
+<meta itemprop="keywords" content="JavaScript,call,apply," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Call and Apply Methods in JavaScript"/>
+<meta name="twitter:description" content="Simple explanation of call and apply methods."/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="http://example.org/" class="f3 fw2 hover-white no-underline white-90 dib">
+      My New Hugo Site
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+
+    <header class="mt4 w-100">
+      <p class="f6 b helvetica tracked">
+          
+        BLOGS
+      </p>
+      <h1 class="f1 athelas mb1">Call and Apply Methods in JavaScript</h1>
+      
+      <time class="f6 mv4 dib tracked" datetime="2013-05-10T00:00:00Z">May 10, 2013</time>
+      
+      
+    </header>
+
+    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
+
+<p>The <code>call</code> and <code>apply</code> methods in JavaScript might look complicated at first glance, but they are actually easy to wrap your head around.</p>
+
+<p>Suppose we have an object called <code>square</code> with a few properties:</p>
+
+<pre><code class="language-javascript">var square = {
+	color: &quot;red&quot;,
+
+	getColor: function () {
+		return &quot;I am the color &quot; + this.color + &quot;!&quot;;
+	},
+
+	getArea: function (width, height) {
+		return &quot;My area is &quot; + (width * height) + &quot; feet!&quot;;
+	}
+
+};
+</code></pre>
+
+<p>It has a <code>color</code> property, and two method properties; <code>getColor</code> and <code>getArea</code>.</p>
+
+<p>The get color method simply return the color property of the object:</p>
+
+<pre><code class="language-javascript">square.getColor(); // I am the color red!
+</code></pre>
+
+<p>And the second method return the area of the square after we pass in 2 arguments:</p>
+
+<pre><code class="language-javascript">square.getArea(4, 4); // My area is 16 feet!
+</code></pre>
+
+<p>Simple enough, let&rsquo;s move on and create a second object:</p>
+
+<pre><code class="language-javascript">var rectangle = {
+	color: &quot;blue&quot;
+}
+</code></pre>
+
+<p>Note that new <code>rectangle</code> object <em>only</em> has the <code>color</code> property.</p>
+
+<p>Now if we wanted to return the <code>getColor</code> or the <code>getArea</code> methods we would not be able to because the <code>rectangle</code> object does not have such methods. Only the <code>square</code> object does.</p>
+
+<p>This is where <code>call</code> and <code>apply</code> come to play. Let me show you.</p>
+
+<h3 id="call-method">Call Method</h3>
+
+<pre><code class="language-javascript">square.getColor.call(rectangle); // I am the color blue!
+</code></pre>
+
+<p>What just happend? Basically what <code>call</code> does is swap out the <em>context</em> for <code>this</code>.</p>
+
+<p>In our first example where the <code>square</code> object called the <code>getColor</code> method, the <code>this</code> context is <em>itself</em> because the method is within it&rsquo;s <em>scope</em>.</p>
+
+<p>So if we want use a different object to call a method of a different object we must explicitly tell the method to use a different <em>context</em>. We passed in <code>rectangle</code> as the first argument of the <code>call</code> method to tell the <code>getColor</code> function to use the <code>rectangle</code> object as it&rsquo;s <em>context</em>, instead of <code>square</code>.</p>
+
+<p>If we leave out any arguments while calling <code>call</code>, we get:</p>
+
+<pre><code class="language-javascript">square.getColor.call(); // I am the color undefined!
+</code></pre>
+
+<p>It returns <code>undefined</code> because the <code>call</code> method has no set context so it uses <code>window</code> as it&rsquo;s <em>context</em>, and <code>window</code> does not have the <code>color</code> property.</p>
+
+<p>So if we were to add the property to <code>window</code> then it all works out:</p>
+
+<pre><code class="language-javascript">window.color = &quot;green&quot;;
+
+square.getColor.call(); // I am the color green!
+square.getColor.call(window); // I am the color green!
+</code></pre>
+
+<p>We can also pass in a couple of arguments, for example the <code>getArea</code> function requires <code>width</code> and <code>height</code> to be passed in. To do so just added them <em>after</em> the the first argument:.</p>
+
+<pre><code class="language-javascript">square.getArea.call(rectangle, 6, 4); // My area is 24 feet!
+</code></pre>
+
+<p>Now that we are familiar with the <code>call</code> method and know how to pass in arguments, let&rsquo;s discuss it&rsquo;s brother, the <code>apply</code> method.</p>
+
+<h3 id="apply-method">Apply Method</h3>
+
+<p>The <code>apply</code> method is almost identitical to the <code>call</code> function, the only difference is that we pass in an <em>array</em> as the argument instead of individual arguments:</p>
+
+<pre><code class="language-javascript">var sides = [6, 4];
+
+square.getArea.apply(rectangle, sides); // My area is 24 feet!
+</code></pre>
+
+<p>The apply method is very useful in a situation that involves passing in an <em>unknown</em> number of arguments into a function.</p>
+
+<p>For example, getting the maximun value of a list of numbers:</p>
+
+<pre><code class="language-javascript">var numbers = [22, 4, 354, 54, 546, 85, 12, 98];
+
+Math.max.apply(Math, numbers); // 546
+</code></pre>
+
+<p>Pretty neat huh?</p>
+
+<p>Please comment if you found this helpful or not, and as always you can find all this code as a <a href="https://gist.github.com/miguelmota/5598264">gist</a>.</p>
+<ul class="pa0">
+  
+   <li class="list">
+     <a href="/tags/javascript" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">JavaScript</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/call" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">call</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/apply" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">apply</a>
+   </li>
+  
+</ul>
+<div class="mt6">
+        
+      </div>
+    </section>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/blog/responsive-video/">Responsive Video</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/display-latest-delicious-bookmarks-with-jquery/">Display latest delicious bookmarks with jQuery</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/naive-bayes-classifier-in-javascript/">Naive Bayes Classifier in JavaScript</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/bitwise-operators-in-javascript/">Bitwise operators in JavaScript</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/make-an-awesome-tooltip-with-jquery/">Make an Awesome Tooltip with jQuery</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://example.org/" >
+    &copy; 2019 My New Hugo Site
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>

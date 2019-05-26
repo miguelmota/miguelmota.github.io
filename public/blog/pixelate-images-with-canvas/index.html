@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>My New Hugo Site  | Pixelate images with Canvas</title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.52" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.d98f2eb6bcd1eaedb7edf166bd16af26.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+
+    <meta property="og:title" content="Pixelate images with Canvas" />
+<meta property="og:description" content="Learn how to pixelate an image with canvas." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/blog/pixelate-images-with-canvas/" /><meta property="article:published_time" content="2015-02-01T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2015-02-01T00:00:00&#43;00:00"/>
+
+<meta itemprop="name" content="Pixelate images with Canvas">
+<meta itemprop="description" content="Learn how to pixelate an image with canvas.">
+
+
+<meta itemprop="datePublished" content="2015-02-01T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2015-02-01T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="394">
+
+
+
+<meta itemprop="keywords" content="JavaScript,canvas,demo," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Pixelate images with Canvas"/>
+<meta name="twitter:description" content="Learn how to pixelate an image with canvas."/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="http://example.org/" class="f3 fw2 hover-white no-underline white-90 dib">
+      My New Hugo Site
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+
+    <header class="mt4 w-100">
+      <p class="f6 b helvetica tracked">
+          
+        BLOGS
+      </p>
+      <h1 class="f1 athelas mb1">Pixelate images with Canvas</h1>
+      
+      <time class="f6 mv4 dib tracked" datetime="2015-02-01T00:00:00Z">February 1, 2015</time>
+      
+      
+    </header>
+
+    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>There may be cases in which you want to pixelate an image, such as creating 8-bit style pixel art themed games or you simply want to give a hint of what an image is about without exposing too much. Turns out that it&rsquo;s not complicated at all to do pixelation with canvas.</p>
+
+<p><a href="{{ .Site.BaseURL }}/demo"><img src="{{ .Site.BaseURL }}/pixelation-comparison-screenshot.png" alt="" /></a></p>
+
+<p><a href="{{ .Site.BaseURL }}/demo">View demo »</a></p>
+
+<p>The main methods needed from the <a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D"><code>canvas context</code></a> are <a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D.imageSmoothingEnabled"><code>imageSmoothingEnabled</code></a> for rendering crisp pixels and <a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D.drawImage"><code>drawImage</code></a> for drawing those pixels on to the canvas context.</p>
+
+<p>Essentially how it works is we scale down the image and stretch it to a larger size.</p>
+
+<p>Here is the <a href="https://gist.github.com/miguelmota/c64d8ef769df7faf5fc9">gist</a>:</p>
+
+<pre><code class="language-javascript">// Create new image element.
+var image = new Image();
+
+// Set an image.
+image.src = 'photo.png';
+
+// Append image to body.
+document.body.appendChild(image);
+
+// After image has been loaded in memory invoke a callback.
+image.onload = imageLoaded;
+
+// Image loaded callback.
+function imageLoaded() {
+
+  // Get the dimensions of loaded image.
+  var width = image.clientWidth;
+  var height = image.clientHeight;
+
+  // Create canvas element.
+  var canvas = document.createElement('canvas');
+  canvas.width = width;
+  canvas.height = height;
+
+  // This is what gives us that blocky pixel styling, rather than a blend between pixels.
+  canvas.style.cssText = 'image-rendering: optimizeSpeed;' + // FireFox &lt; 6.0
+                         'image-rendering: -moz-crisp-edges;' + // FireFox
+                         'image-rendering: -o-crisp-edges;' +  // Opera
+                         'image-rendering: -webkit-crisp-edges;' + // Chrome
+                         'image-rendering: crisp-edges;' + // Chrome
+                         'image-rendering: -webkit-optimize-contrast;' + // Safari
+                         'image-rendering: pixelated; ' + // Future browsers
+                         '-ms-interpolation-mode: nearest-neighbor;'; // IE
+
+  // Grab the drawing context object. It's what lets us draw on the canvas.
+  var context = canvas.getContext('2d');
+
+  // Use nearest-neighbor scaling when images are resized instead of the resizing algorithm to create blur.
+  context.webkitImageSmoothingEnabled = false;
+  context.mozImageSmoothingEnabled = false;
+  context.msImageSmoothingEnabled = false;
+  context.imageSmoothingEnabled = false;
+
+  // We'll be pixelating the image by 80% (20% of original size).
+  var percent = 0.2;
+
+  // Calculate the scaled dimensions.
+  var scaledWidth = width * percent;
+  var scaledHeight = height * percent;
+
+  // Render image smaller.
+  context.drawImage(image, 0, 0, scaledWidth, scaledHeight);
+
+  // Stretch the smaller image onto larger context.
+  context.drawImage(canvas, 0, 0, scaledWidth, scaledHeight, 0, 0, width, height);
+
+  // Here are what the above parameters mean:
+  // canvasElement, canvasXOffsetForImage, canvasYOffsetForImage, imageWidth, imageHeight, imageXOffset, imageYOffset, destinationImageWidth, destinationImageHeight
+
+  // Append canvas to body.
+  document.body.appendChild(canvas);
+}
+</code></pre>
+
+<p><a href="{{ .Site.BaseURL }}/demo">View demo »</a></p>
+
+<p>For your convenience I abstracted it into a tiny library, <a href="https://github.com/miguelmota/pixelate">pixelate.js</a>, which lets you replace image <code>src</code> attributes with a generated <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement.toDataURL"><code>dataURL</code></a> of the pixelated image.</p>
+<ul class="pa0">
+  
+   <li class="list">
+     <a href="/tags/javascript" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">JavaScript</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/canvas" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">canvas</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/demo" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">demo</a>
+   </li>
+  
+</ul>
+<div class="mt6">
+        
+      </div>
+    </section>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/blog/screenshots-with-getusermedia-api/">Screenshots with getUserMedia API</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/basic-html5-audio-manipulation/">Basic HTML5 Audio Manipulation</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/display-latest-delicious-bookmarks-with-jquery/">Display latest delicious bookmarks with jQuery</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/naive-bayes-classifier-in-javascript/">Naive Bayes Classifier in JavaScript</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/make-an-awesome-tooltip-with-jquery/">Make an Awesome Tooltip with jQuery</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/bytes/battery-status/">How to use Battery Status API</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/bytes/validate-domain-regex/">Regex to validate domain name</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/bytes/base64-mime-regex/">How to extract the MIME type from a base64 string.</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/es6-examples/">ES6 Examples</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/bytes/object-serialization/">How to serialize an object in JavaScript</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/getting-started-with-backbonejs/">Getting Started with Backbone.js</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/memoization-caching-function-results-in-javascript/">Memoization&amp;#58; Caching function results in JavaScript</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/slide-out-navigation-using-css3-translate/">Slide Out Navigation using CSS3 Translate</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/call-and-apply-methods-in-javascript/">Call and Apply Methods in JavaScript</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/blog/responsive-video/">Responsive Video</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://example.org/" >
+    &copy; 2019 My New Hugo Site
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ubuntu on My New Hugo Site</title>
+    <link>http://example.org/tags/ubuntu/</link>
+    <description>Recent content in Ubuntu on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 26 Sep 2013 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://example.org/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Node.js and Nginx on Ubuntu</title>
+      <link>http://example.org/blog/nodejs-and-nginx-on-ubuntu/</link>
+      <pubDate>Thu, 26 Sep 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/nodejs-and-nginx-on-ubuntu/</guid>
+      <description>In this tutorial I will show how to install and configure Node.js and Nginx on you Ubuntu server.
+Installing Dependencies The only dependency we really need is the build-essential package in order to be able to compile the Node.js source code.
+# Make sure to download the latest repos. sudo apt-get update # Required to run `make` command. sudo apt-get install build-essential # If you need to use https. sudo apt-get install libssl-dev # My favorite text editor.</description>
+    </item>
+    
+  </channel>
+</rss>

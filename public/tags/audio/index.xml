@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Audio on My New Hugo Site</title>
+    <link>http://example.org/tags/audio/</link>
+    <description>Recent content in Audio on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 28 Nov 2015 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://example.org/tags/audio/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How to slice an AudioBuffer</title>
+      <link>http://example.org/bytes/slice-audiobuffer/</link>
+      <pubDate>Sat, 28 Nov 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/bytes/slice-audiobuffer/</guid>
+      <description>Slice out a portion of an AudioBuffer.
+var audioContext = new (window.AudioContext || window.webkitAudioContext); function AudioBufferSlice(buffer, begin, end, callback) { if (!(this instanceof AudioBufferSlice)) { return new AudioBufferSlice(buffer, begin, end, callback); } var error = null; var duration = buffer.duration; var channels = buffer.numberOfChannels; var rate = buffer.sampleRate; if (typeof end === &#39;function&#39;) { callback = end; end = duration; } // milliseconds to seconds begin = begin/1000; end = end/1000; if (begin &amp;lt; 0) { error = new RangeError(&#39;begin time must be greater than 0&#39;); } if (end &amp;gt; duration) { error = new RangeError(&#39;end time must be less than or equal to &#39; + duration); } if (typeof callback !</description>
+    </item>
+    
+    <item>
+      <title>Basic HTML5 Audio Manipulation</title>
+      <link>http://example.org/blog/basic-html5-audio-manipulation/</link>
+      <pubDate>Sun, 07 Jul 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/basic-html5-audio-manipulation/</guid>
+      <description>Using JavaScript, we can create an audio object and manipulate it very easily. Below is some code (gist) to help you get started. You can play, stop, pause, and loop the audio.
+&amp;lt;!-- Audio Control Buttons --&amp;gt; &amp;lt;button id=&amp;quot;play-button&amp;quot;&amp;gt;Play&amp;lt;/button&amp;gt; &amp;lt;button id=&amp;quot;stop-button&amp;quot;&amp;gt;Stop&amp;lt;/button&amp;gt; &amp;lt;button id=&amp;quot;pause-button&amp;quot;&amp;gt;Pause&amp;lt;/button&amp;gt; &amp;lt;button id=&amp;quot;loop-button&amp;quot;&amp;gt;Loop&amp;lt;/button&amp;gt;  // Basic HTML5 audio manipulation (function () { &#39;use strict&#39;; // Set namespace. var NS = {}; // Control buttons. NS.playButton = document.getElementById(&#39;play-button&#39;); NS.stopButton = document.</description>
+    </item>
+    
+  </channel>
+</rss>

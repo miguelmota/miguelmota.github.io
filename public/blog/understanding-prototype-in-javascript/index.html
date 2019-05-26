@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>My New Hugo Site  | Understanding Prototype in JavaScript</title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.52" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.d98f2eb6bcd1eaedb7edf166bd16af26.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+
+    <meta property="og:title" content="Understanding Prototype in JavaScript" />
+<meta property="og:description" content="An attempt at demonstrating what prototype in JavaScript is." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/blog/understanding-prototype-in-javascript/" /><meta property="article:published_time" content="2013-04-25T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2013-04-25T00:00:00&#43;00:00"/>
+
+<meta itemprop="name" content="Understanding Prototype in JavaScript">
+<meta itemprop="description" content="An attempt at demonstrating what prototype in JavaScript is.">
+
+
+<meta itemprop="datePublished" content="2013-04-25T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2013-04-25T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="842">
+
+
+
+<meta itemprop="keywords" content="javascript,prototype," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Understanding Prototype in JavaScript"/>
+<meta name="twitter:description" content="An attempt at demonstrating what prototype in JavaScript is."/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="http://example.org/" class="f3 fw2 hover-white no-underline white-90 dib">
+      My New Hugo Site
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+
+    <header class="mt4 w-100">
+      <p class="f6 b helvetica tracked">
+          
+        BLOGS
+      </p>
+      <h1 class="f1 athelas mb1">Understanding Prototype in JavaScript</h1>
+      
+      <time class="f6 mv4 dib tracked" datetime="2013-04-25T00:00:00Z">April 25, 2013</time>
+      
+      
+    </header>
+
+    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
+
+<p><strong>A <code>prototype</code> is an object from where other objects inherit properties from</strong>. All objects in JavaScript are descended from <code>Object</code>, a global object. Why this matters I&rsquo;ll explain later, but for now let&rsquo;s jump in to some code.</p>
+
+<h3 id="constructor-and-methods">Constructor and Methods</h3>
+
+<p>Let&rsquo;s define a functional object constructor called <code>Quadrilateral</code> and have <code>width</code> and <code>height</code> as parameters.</p>
+
+<pre><code class="language-javascript">// Define our constructor
+var Quadrilateral = function(width, height) {
+	this.width = width;
+	this.height = height;
+
+	return this;
+}
+</code></pre>
+
+<p>Traditionally if we wanted to have a method we would define it something like this:</p>
+
+<pre><code class="language-javascript">// Define our constructor
+var Quadrilateral = function(width, height) {
+	this.width = width;
+	this.height = height;
+
+	// Define our method
+	this.getWidth = function() {
+		return this.width;
+	}
+
+	return this;
+}
+</code></pre>
+
+<p>We then can create a <code>new</code> object of type <code>Quadrilateral</code>. For this example it will have a width of <code>4</code> and height of <code>4</code>:</p>
+
+<pre><code class="language-javascript">var mysquare = new Quadrilateral(4,4);
+</code></pre>
+
+<p>This is how we then call the <code>getWidth</code> method:</p>
+
+<pre><code class="language-javascript">mysquare.getWidth());
+</code></pre>
+
+<p>Which returns the number <code>4</code>.</p>
+
+<p>Now let&rsquo;s do what we just did using <code>prototype</code>:</p>
+
+<pre><code class="language-javascript">// Define our constructor
+var Quadrilateral = function(width, height) {
+	this.width = width;
+	this.height = height;
+
+	return this;
+}
+
+// Define our method
+Quadrilateral.prototype.getWidth = function() {
+	return this.width;
+}
+</code></pre>
+
+<p>Once again we can call the <code>getWidth</code> method which returns the number <code>4</code></p>
+
+<pre><code class="language-javascript">mysquare.getWidth());
+</code></pre>
+
+<p>You may be wondering what just happened. Everything should look the same except for the <code>getWidth</code> method. We defined this method as a <code>prototype</code> function rather than defining it inside the <code>Quadrilateral</code> object constructor.</p>
+
+<p>The benefit of doing it this way is that since prototypes are static objects, each instance of the <code>Quadrilateral</code> object will reference the <code>prototype</code> functions. If we defined the method function inside the constructor, a new anonymous function would be created for it every time the constructor is called. This can <strong>save unnecessary memory from being used</strong>.</p>
+
+<p>With prototype we can easily add new functions to the object. Let&rsquo;s define a method for setting the dimensions on our <code>Quadrilateral</code> object:</p>
+
+<pre><code class="language-javascript">Quadrilateral.prototype.setDimensions = function(width, height) {
+	this.width = width;
+	this.height = height;
+
+	return this;
+}
+</code></pre>
+
+<p>Let&rsquo;s try out our new method:</p>
+
+<pre><code class="language-javascript">mysquare.setDimensions(7,7);
+</code></pre>
+
+<p>Now if we call <code>mysquare.getWidth()</code> we get the number <code>7</code>.</p>
+
+<h3 id="inheritence">Inheritence</h3>
+
+<p>One neat advantage to using prototype is <strong>object inheritance</strong>. For example, let&rsquo;s create a new contructor called <code>Rectangle</code> with the same parameters as our <code>Quadrilateral</code> constructor.</p>
+
+<pre><code class="language-javascript">var Rectangle = function(width, height){
+	this.width = width;
+	this.height = height;
+
+	return this;
+};
+</code></pre>
+
+<p>To inherit methods and properties from the <code>Quadrilateral</code> object, we simply do:</p>
+
+<pre><code class="language-javascript">Rectangle.prototype = new Quadrilateral();
+</code></pre>
+
+<p>But wait, although this just inherits all the goodies, our new object does not know what it acually <em>is</em>. We Have to tell our Rectangle object that it&rsquo;s a Rectangle. Other wise instances of Rectangle would have a constructor of Quadrilateral. We do that by setting the <code>constructor</code> prototype:</p>
+
+<pre><code class="language-javascript">Rectangle.prototype.constructor = Rectangle;
+</code></pre>
+
+<p>We then can create an instance of type <code>Rectangle</code>:</p>
+
+<pre><code class="language-javascript">var myrectangle = new Rectangle(6,2);
+</code></pre>
+
+<p>Call our <em>getter</em> method as usual, and get result of <code>6</code>:</p>
+
+<pre><code class="language-javascript">myrectangle.getWidth());
+</code></pre>
+
+<p>We can test inheritance, and that our <code>Rectangle</code> object properties are simply referencing to the <code>Quadrilateral</code> object properties by doing:</p>
+
+<pre><code class="language-javascript">Quadrilateral.prototype.hasOwnProperty('getWidth'); // returns true
+Rectangle.prototype.hasOwnProperty('getWidth'); // returns false
+</code></pre>
+
+<p>Test our instances:</p>
+
+<pre><code class="language-javascript">myrectangle instanceof Quadrilateral; // returns true
+myrectangle instanceof Rectangle; //return true
+
+mysquare instanceof Quadrilateral; // returns true
+mysquare instanceof Rectangle; //return false
+</code></pre>
+
+<h3 id="global-objects">Global Objects</h3>
+
+<p>Alright so going back to what I said in the beginning of this post. Every object has a reference to <code>Object.prototype</code>. We can confirm this by doing:</p>
+
+<pre><code class="language-javascript">Quadrilateral instanceof Object; // returns true
+Rectangle instanceof Object; //return true
+mysquare instanceof Object; // returns true
+myrectangle instanceof Object; //return true
+</code></pre>
+
+<p>All objects inherit methods and properties from <code>Object.prototype</code>. Ever wondered where methods such as <code>hasOwnProperty</code>, <code>isPrototypeOf</code>, <code>toString</code> or <code>valueOf</code> came from? Those come from <code>Object</code>.</p>
+
+<p>Basically every function in JavaScript is an instance of root global objects. This means that every function inherits from it. For example, by inheriting from <code>Function.prototype</code>, we have access to a number of helpful methods and properties such as <code>length</code>, <code>apply</code>, <code>bind</code>, and <code>call</code>. <code>Array.prototype</code> gives us mutator methods such as <code>pop</code>, <code>push</code> and <code>sort</code>, as well as accessor methods such as <code>concat</code>, <code>join</code> and <code>slice</code>.</p>
+
+<p>Our <strong><em>prototype chain</em></strong> looks like this:</p>
+
+<p><code>myrectangle</code> -&gt; <code>Rectangle.prototype</code> -&gt; <code>Quadrilateral.prototype</code> -&gt; <code>Object.prototype</code></p>
+
+<p>I strongly recommend you check out the <a href="https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Global_Objects">Mozilla Developer Network</a> documentation on global objects for a better understanding.</p>
+
+<p>We can override a global method, or check if a global method exists and define our own if it does not, for example checking for <code>Array.prototype.forEach</code>:</p>
+
+<pre><code class="language-javascript">if (!Array.prototype.forEach) {
+  Array.prototype.forEach = function(fn, scope) {
+    for(var i = 0, len = this.length; i &lt; len; ++i) {
+      fn.call(scope, this[i], i, this);
+    }
+  }
+}
+</code></pre>
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p>There is so much more to <code>prototype</code> in JavaScript. I will update this post with a part two in the near future once I gain more knowledge on the <em>awesomesauce</em> of prototype. All the article code is up as a <a href="https://gist.github.com/miguelmota/5466003">gist</a>. If anything I said does not make sense or if I made mistakes, please correct me by leaving a comment.</p>
+
+<p>All feedback is appreciated.</p>
+<ul class="pa0">
+  
+   <li class="list">
+     <a href="/tags/javascript" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">javascript</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/prototype" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">prototype</a>
+   </li>
+  
+</ul>
+<div class="mt6">
+        
+      </div>
+    </section>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://example.org/" >
+    &copy; 2019 My New Hugo Site
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>

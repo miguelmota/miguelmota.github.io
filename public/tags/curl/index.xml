@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Curl on My New Hugo Site</title>
+    <link>http://example.org/tags/curl/</link>
+    <description>Recent content in Curl on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 28 Feb 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://example.org/tags/curl/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Alexa Voice Service (AVS) Authentication</title>
+      <link>http://example.org/blog/alexa-voice-service-authentication/</link>
+      <pubDate>Sun, 28 Feb 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/alexa-voice-service-authentication/</guid>
+      <description>Here I am going to walk you through on how to retrieve an access token in order to be able to interact with the Alexa Voice Service by using cURL. I have been getting a lot of requests on how to do this step from people reading the Alexa Voice Service with cURL blog post.
+Set up AVS Device Type If you haven&amp;rsquo;t already, go into the Alexa Developer Console and register a new Device as Product Type:</description>
+    </item>
+    
+    <item>
+      <title>Alexa Voice Service (AVS) with cURL</title>
+      <link>http://example.org/blog/alexa-voice-service-with-curl/</link>
+      <pubDate>Sun, 17 Jan 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/alexa-voice-service-with-curl/</guid>
+      <description>The Alexa Voice Service (AVS) is an Amazon service which lets you interact with Alexa by sending requests in audio format. This means that we can create our own Amazon Echo by just having a microphone and a speaker available. The easiest way to get started is with a hello world example using cURL.
+But before we jump to it cURL we have to generate our test audio first.</description>
+    </item>
+    
+  </channel>
+</rss>

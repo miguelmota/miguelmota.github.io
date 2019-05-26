@@ -1,0 +1,13 @@
+{{ partial "header.html" . }}
+<main>
+  <p><em>A software developer from sunny Southern California. <a href="/about">Learn more »</a></em></p>
+
+  {{ partial "stackoverflow.html" . }}
+
+  {{ $paginator := .Paginate (where .Site.Pages "Type" "blog") }}
+  {{ range $paginator.Pages }}
+    {{ partial "summary.html" . }}
+  {{ end }}
+  {{ partial "pagination.html" . }}
+</main>
+{{ partial "footer.html" . }}

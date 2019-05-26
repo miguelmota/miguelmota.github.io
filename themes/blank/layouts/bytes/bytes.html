@@ -1,0 +1,9 @@
+{{ partial "header.html" . }}
+  <main>
+    <p>Byte size snippets</p>
+    {{ range .Paginator.Pages }}
+      {{ partial "shortest_summary.html" . }}
+    {{ end }}
+    {{ partial "pagination.html" . }}
+  </main>
+{{ partial "footer.html" . }}

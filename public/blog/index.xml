@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blogs on My New Hugo Site</title>
+    <link>http://example.org/blog/</link>
+    <description>Recent content in Blogs on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 22 Apr 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://example.org/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Getting Started with RxJS</title>
+      <link>http://example.org/blog/getting-started-with-rxjs/</link>
+      <pubDate>Fri, 22 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/getting-started-with-rxjs/</guid>
+      <description>RxJS is a JavaScript implementation of the Reactive Extensions (Rx), a model originally developed at Microsoft. RxJS is library that allows you to compose asynchronous and event-based programs using Observables. An Observable is similar to the Observer pattern where there is a Publisher and Subscriber. The Publisher emits values, and whoever is subscribed to it will receive them. In RX, the publisher is called the Observerable and the subscriber is called the Observer.</description>
+    </item>
+    
+    <item>
+      <title>Exploring Decorators in JavaScript</title>
+      <link>http://example.org/blog/exploring-decorators-in-javascript/</link>
+      <pubDate>Mon, 07 Mar 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/exploring-decorators-in-javascript/</guid>
+      <description>In Object Oriented Programming, The Decorator Pattern is a popular design pattern that allows behavior to be added, removed, or modified from an object dynamically at runtime. In the latest iteration of the ES2016/ES7 specification, there is a proposal for JavaScript Decorators which lets us annotate and modify classes and properties at design time. I will be going over examples of decorators and how we can start using decorators in our code today.</description>
+    </item>
+    
+    <item>
+      <title>Alexa Voice Service (AVS) Authentication</title>
+      <link>http://example.org/blog/alexa-voice-service-authentication/</link>
+      <pubDate>Sun, 28 Feb 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/alexa-voice-service-authentication/</guid>
+      <description>Here I am going to walk you through on how to retrieve an access token in order to be able to interact with the Alexa Voice Service by using cURL. I have been getting a lot of requests on how to do this step from people reading the Alexa Voice Service with cURL blog post.
+Set up AVS Device Type If you haven&amp;rsquo;t already, go into the Alexa Developer Console and register a new Device as Product Type:</description>
+    </item>
+    
+    <item>
+      <title>Getting started with Service Workers</title>
+      <link>http://example.org/blog/getting-started-with-service-workers/</link>
+      <pubDate>Wed, 27 Jan 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/getting-started-with-service-workers/</guid>
+      <description>Service Workers enables the ability to cache files for offline use, serve as a network proxy, enable the ability for push notification, and even background data sync. AppCache was an attempt to solve this problem but it made many assumptions about intended uses and in the end just caused more fustration than anything, so it became deprecated. Service Workers is AppCache&amp;rsquo;s successor, which greatly superceeds it by giving the developer a lot more granular control.</description>
+    </item>
+    
+    <item>
+      <title>Alexa Voice Service (AVS) with cURL</title>
+      <link>http://example.org/blog/alexa-voice-service-with-curl/</link>
+      <pubDate>Sun, 17 Jan 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/alexa-voice-service-with-curl/</guid>
+      <description>The Alexa Voice Service (AVS) is an Amazon service which lets you interact with Alexa by sending requests in audio format. This means that we can create our own Amazon Echo by just having a microphone and a speaker available. The easiest way to get started is with a hello world example using cURL.
+But before we jump to it cURL we have to generate our test audio first.</description>
+    </item>
+    
+    <item>
+      <title>Summary of &#34;Think and Grow Rich&#34;</title>
+      <link>http://example.org/blog/summary-of-think-and-grow-rich/</link>
+      <pubDate>Sat, 02 Jan 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/summary-of-think-and-grow-rich/</guid>
+      <description>This past weekend I decided to read the book Think and Grow Rich by Napolean Hill. If you are not familiar with Hill, he interviewed hundreds of men with tremendous amounts of wealth, over the span of many years in the early 20th century, to figure out what it takes to bring in riches and fortunes. The findings of his research is what became the book. After reading it I must say that it is one of best books I have ever read in the sense that the value of the information presented is absolutely pricless.</description>
+    </item>
+    
+    <item>
+      <title>K-Means Clustering in JavaScript</title>
+      <link>http://example.org/blog/k-means-clustering-in-javascript/</link>
+      <pubDate>Wed, 25 Feb 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/k-means-clustering-in-javascript/</guid>
+      <description>Clustering is grouping of data or dividing a large data set into smaller data sets of some similarity. A well known clustering algorithm in unsupervised machine learning is K-Means clustering. The K-Means algorithm takes in n observations (data points), and groups them into k clusters, where each observation belongs to a cluster based on the nearest mean (cluster centroid). The distance between a data point and cluster centroid is calculated using the Euclidean distance.</description>
+    </item>
+    
+    <item>
+      <title>Pixelate images with Canvas</title>
+      <link>http://example.org/blog/pixelate-images-with-canvas/</link>
+      <pubDate>Sun, 01 Feb 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/pixelate-images-with-canvas/</guid>
+      <description>There may be cases in which you want to pixelate an image, such as creating 8-bit style pixel art themed games or you simply want to give a hint of what an image is about without exposing too much. Turns out that it&amp;rsquo;s not complicated at all to do pixelation with canvas.
+
+View demo »
+The main methods needed from the canvas context are imageSmoothingEnabled for rendering crisp pixels and drawImage for drawing those pixels on to the canvas context.</description>
+    </item>
+    
+    <item>
+      <title>ES6 Examples</title>
+      <link>http://example.org/blog/es6-examples/</link>
+      <pubDate>Fri, 20 Jun 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/es6-examples/</guid>
+      <description>If you&amp;rsquo;ve been up-to-date with what&amp;rsquo;s going on in the JavaScript world then you know that ES6 is currently the new hotness in town. I&amp;rsquo;m going to be showing examples of some of the nicest features in ES6, which include:
+ Modules Classes Arrow Functions Destructuring Generators Promises Proxies Defaults Maps Weak Maps Sets Symbols Shorthand Objects Spread Operator Rest operator Constants Block Scoping Template Strings  Modules Export example (math.</description>
+    </item>
+    
+    <item>
+      <title>Deployment with Git</title>
+      <link>http://example.org/blog/deployment-with-git/</link>
+      <pubDate>Fri, 14 Mar 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/deployment-with-git/</guid>
+      <description>A Git hook allows you to execute custom scripts when an action occurs, such as when a commit or push is performed. Before I discovered git hooks, my deployment process consisted of pushing changes to my remote repository, SSH&amp;rsquo;ing into the server, navigating to the site directory, pulling the changes, and restarting the webserver. It wasn&amp;rsquo;t efficient at all and a waste of time doing that several times a day.</description>
+    </item>
+    
+    <item>
+      <title>Intro to Redis</title>
+      <link>http://example.org/blog/intro-to-redis/</link>
+      <pubDate>Thu, 23 Jan 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/intro-to-redis/</guid>
+      <description>Redis&amp;gt; is an in-memory, key-value store that is fast. Really fast. Redis can hold hundreds of millions of keys in memory and handle tens of thousands of requests per second without breaking a sweat. It&amp;rsquo;s useful for caching data, maintaining sessions, keeping counters, queues, publish/subscribe real time notifications, and so on. There are many use cases for Redis due to it&amp;rsquo;s simple dictionary model that maps keys to values, but what one should be aware of is that it&amp;rsquo;s focus is not long-term data persistance.</description>
+    </item>
+    
+    <item>
+      <title>Getting Started with Backbone.js</title>
+      <link>http://example.org/blog/getting-started-with-backbonejs/</link>
+      <pubDate>Sat, 30 Nov 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/getting-started-with-backbonejs/</guid>
+      <description>In this tutorial I will go over Backbone.js main components: Models, Collections, Views, and Routes. We will not be building an application but instead we will be going over a number of simple examples of each Backbone compoment, that hopefully after we are done you will have a firm understanding of Backbone.js and be able to put it all together.
+Models Models are a key component of Backbone applications. With model objects you can easily keep track of your data and update as needed.</description>
+    </item>
+    
+    <item>
+      <title>Memoization&amp;#58; Caching function results in JavaScript</title>
+      <link>http://example.org/blog/memoization-caching-function-results-in-javascript/</link>
+      <pubDate>Wed, 30 Oct 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/memoization-caching-function-results-in-javascript/</guid>
+      <description>Memoization (based on the word memorable) is technique that caches the result of a function in order to avoid recalculation the next time the same function is called. Initially when the function is executed, the result gets added to an object holding the calculated results. When the function is called again, it checks the results object to see if already contains the result and if it does then return it. If it&amp;rsquo;s not cached, then calculate and store it.</description>
+    </item>
+    
+    <item>
+      <title>Set up SSH keys</title>
+      <link>http://example.org/blog/set-up-ssh-keys/</link>
+      <pubDate>Mon, 30 Sep 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/set-up-ssh-keys/</guid>
+      <description>Having to type in a password in order to SSH into your server every single time is tedious and not the way to go. I will show you how to set up SSH keys so that you can elimate an extra step from your workflow.
+Generating keys On your local maching, generate a new SSH key with the command:
+# Generate new key. ssh-keygen -t rsa  When asked for the file to save the key in, enter:</description>
+    </item>
+    
+    <item>
+      <title>Node.js and Nginx on Ubuntu</title>
+      <link>http://example.org/blog/nodejs-and-nginx-on-ubuntu/</link>
+      <pubDate>Thu, 26 Sep 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/nodejs-and-nginx-on-ubuntu/</guid>
+      <description>In this tutorial I will show how to install and configure Node.js and Nginx on you Ubuntu server.
+Installing Dependencies The only dependency we really need is the build-essential package in order to be able to compile the Node.js source code.
+# Make sure to download the latest repos. sudo apt-get update # Required to run `make` command. sudo apt-get install build-essential # If you need to use https. sudo apt-get install libssl-dev # My favorite text editor.</description>
+    </item>
+    
+    <item>
+      <title>Raspberry Pi camera board video streaming</title>
+      <link>http://example.org/blog/raspberry-pi-camera-board-video-streaming/</link>
+      <pubDate>Wed, 25 Sep 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/raspberry-pi-camera-board-video-streaming/</guid>
+      <description>Raspberry Pi camera board   So you got your Raspberry Pi and decided to get a Camera Board to do something awesome with it. Why not turn it a simple video streamer? That&amp;rsquo;s what I thought too. I wanted to set up a simple security camera for my home so that I can see spy on whoever is lurking around from wherever I am through a web browser.</description>
+    </item>
+    
+    <item>
+      <title>Screenshots with getUserMedia API</title>
+      <link>http://example.org/blog/screenshots-with-getusermedia-api/</link>
+      <pubDate>Sat, 31 Aug 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/screenshots-with-getusermedia-api/</guid>
+      <description>With the getUserMedia API, it is now possible to access the user&amp;rsquo;s webcam and microphone using just JavaScript. What this means is that we can finally get rid of those nasty Flash plugins and use this native approace instead. At the writing of this post, only Firefox 17+ and Chrome 21+ have support for getUserMedia.
+Give credit where credit is due. The code is heavily inspired by HTML5 Rocks&amp;rsquo; article Capturing Audio &amp;amp; Video in HTML5.</description>
+    </item>
+    
+    <item>
+      <title>Basic HTML5 Audio Manipulation</title>
+      <link>http://example.org/blog/basic-html5-audio-manipulation/</link>
+      <pubDate>Sun, 07 Jul 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/basic-html5-audio-manipulation/</guid>
+      <description>Using JavaScript, we can create an audio object and manipulate it very easily. Below is some code (gist) to help you get started. You can play, stop, pause, and loop the audio.
+&amp;lt;!-- Audio Control Buttons --&amp;gt; &amp;lt;button id=&amp;quot;play-button&amp;quot;&amp;gt;Play&amp;lt;/button&amp;gt; &amp;lt;button id=&amp;quot;stop-button&amp;quot;&amp;gt;Stop&amp;lt;/button&amp;gt; &amp;lt;button id=&amp;quot;pause-button&amp;quot;&amp;gt;Pause&amp;lt;/button&amp;gt; &amp;lt;button id=&amp;quot;loop-button&amp;quot;&amp;gt;Loop&amp;lt;/button&amp;gt;  // Basic HTML5 audio manipulation (function () { &#39;use strict&#39;; // Set namespace. var NS = {}; // Control buttons. NS.playButton = document.getElementById(&#39;play-button&#39;); NS.stopButton = document.</description>
+    </item>
+    
+    <item>
+      <title>Slide Out Navigation using CSS3 Translate</title>
+      <link>http://example.org/blog/slide-out-navigation-using-css3-translate/</link>
+      <pubDate>Fri, 07 Jun 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/slide-out-navigation-using-css3-translate/</guid>
+      <description>There are many ways to create a navigation menu for a mobile site, but the kind that seems to be most popular at the time is a slide out menu, such as the one you see on the Facebook app. The advantages of using this type of menu is that it is easily accessible and there is a lot of room for list items since the user can scroll within the menu.</description>
+    </item>
+    
+    <item>
+      <title>Call and Apply Methods in JavaScript</title>
+      <link>http://example.org/blog/call-and-apply-methods-in-javascript/</link>
+      <pubDate>Fri, 10 May 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/call-and-apply-methods-in-javascript/</guid>
+      <description>The call and apply methods in JavaScript might look complicated at first glance, but they are actually easy to wrap your head around.
+Suppose we have an object called square with a few properties:
+var square = { color: &amp;quot;red&amp;quot;, getColor: function () { return &amp;quot;I am the color &amp;quot; + this.color + &amp;quot;!&amp;quot;; }, getArea: function (width, height) { return &amp;quot;My area is &amp;quot; + (width * height) + &amp;quot; feet!</description>
+    </item>
+    
+    <item>
+      <title>Sass Triangles</title>
+      <link>http://example.org/blog/sass-triangles/</link>
+      <pubDate>Sat, 04 May 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/sass-triangles/</guid>
+      <description>Creating CSS triangles shouldn&amp;rsquo;t be hard.
+Here&amp;rsquo;s a handy little mixin for creating triangles in Sass (gist):
+@mixin triangle($size:24px, $color:#000, $direction:up, $trim:false, $transparent:false) { content: &amp;quot;&amp;quot;; display: inline-block; width: 0; height: 0; border: solid $size; @if $direction == up { border-color: transparent transparent $color transparent; @if $transparent { border-color: $color $color transparent $color; } @if $trim { border-top-width: 0; } } @if $direction == right { border-color: transparent transparent transparent $color; @if $transparent { border-color: $color $color $color transparent ; } @if $trim { border-right-width: 0; } } @if $direction == down { border-color: $color transparent transparent transparent; @if $transparent { border-color: transparent $color $color $color; } @if $trim { border-bottom-width: 0; } } @if $direction == left { border-color: transparent $color transparent transparent; @if $transparent { border-color: $color transparent $color $color; } @if $trim { border-left-width: 0; } } }  </description>
+    </item>
+    
+    <item>
+      <title>Understanding Prototype in JavaScript</title>
+      <link>http://example.org/blog/understanding-prototype-in-javascript/</link>
+      <pubDate>Thu, 25 Apr 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/understanding-prototype-in-javascript/</guid>
+      <description>A prototype is an object from where other objects inherit properties from. All objects in JavaScript are descended from Object, a global object. Why this matters I&amp;rsquo;ll explain later, but for now let&amp;rsquo;s jump in to some code.
+Constructor and Methods Let&amp;rsquo;s define a functional object constructor called Quadrilateral and have width and height as parameters.
+// Define our constructor var Quadrilateral = function(width, height) { this.width = width; this.</description>
+    </item>
+    
+    <item>
+      <title>Responsive Video</title>
+      <link>http://example.org/blog/responsive-video/</link>
+      <pubDate>Fri, 19 Apr 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/responsive-video/</guid>
+      <description>Dealing with responsive video can be quite troublesome.
+Here is a simple script you might find useful:
+(function() { // Responsive Video function responsiveVideo(selector) { // Get videos var videos = document.querySelectorAll(selector); // Loop through videos for (var i = 0; i &amp;lt; videos.length; i++) { var video = videos[i]; // Get aspect ratio var videoRatio = (video.height / video.width) * 100; // Stretch video video.style.position = &amp;quot;absolute&amp;quot;; video.style.top = 0; video.</description>
+    </item>
+    
+    <item>
+      <title>iPhone and iPad Web App Startup Images</title>
+      <link>http://example.org/blog/iphone-and-ipad-web-app-startup-images/</link>
+      <pubDate>Sun, 07 Apr 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/iphone-and-ipad-web-app-startup-images/</guid>
+      <description>In order to avoid having a blank white screen when launching a web app, you can use a apple-touch-startup-image. This is displayed momentarily while the web app is loading.
+There are a number of link tags to target all iPhone and iPad devices which you must use. But there&amp;rsquo;s also a very important thing to not do, and that is to not use width=device-width on the viewport meta tag because this will letterbox the viewport and it will not work.</description>
+    </item>
+    
+    <item>
+      <title>Sass Media Queries</title>
+      <link>http://example.org/blog/sass-media-queries/</link>
+      <pubDate>Sat, 06 Apr 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/sass-media-queries/</guid>
+      <description>There are various methods of setting breakpoints in Sass. The first method, which I use, is heavility inspired by Chris Eppstein&amp;rsquo;s selector hacks. The second method is how ZURB&amp;rsquo;s Foundation 4 breakpoints are set.
+Here is the gist:
+// Sass Media Query Breakpoints // // METHOD 1 // // Inspired by http://thesassway.com/intermediate/responsive-web-design-in-sass-using-media-queries-in-sass-32 // // Usage: // // div { // color: blue; // // @include respond-to(mobile) { // color: red; // } // // } // $break-mobile: 640px; $break-desktop: 1024px; @mixin respond-to($media) { @if $media == mobile { @media only screen and (max-width: $break-mobile) { @content; } } @else if $media == tablet { @media only screen and (min-width: $break-mobile + 1) and (max-width: $break-desktop - 1) { @content; } } @else if $media == desktop { @media only screen and (min-width: $break-desktop) { @content; } } } // // METHOD 1 (extended) // // Inspired by https://gist.</description>
+    </item>
+    
+    <item>
+      <title>Extensive .gitignore</title>
+      <link>http://example.org/blog/extensive-gitignore/</link>
+      <pubDate>Thu, 04 Apr 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/extensive-gitignore/</guid>
+      <description>There are .gitignore templates&amp;gt; suited for pretty much any project. I&amp;rsquo;m going to share the .gitignore that I recently been using for my web projects. It&amp;rsquo;s and extended verison of github&amp;rsquo;s global .gitignore&amp;gt;.
+Here is the gist&amp;gt;:
+//this will affect all the git repos git config --global core.excludesfile ~/.gitignore //update files since .ignore won&#39;t if already tracked git rm --cached &amp;lt;file&amp;gt; # Compiled source # ################### *.com *.class *.dll *.exe *.</description>
+    </item>
+    
+    <item>
+      <title>CSS3 Filters</title>
+      <link>http://example.org/blog/css3-filters/</link>
+      <pubDate>Sun, 22 Jul 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/css3-filters/</guid>
+      <description>Webkit has implemented CSS filters, which can spice up the way your photos look without the hassle of having to deal with software like Photoshop.
+Currently there are 10 CSS filters available, which are: blur, brightness, contrast, drop-shadow, grayscale, hue-rotate, invert, opacity, saturate and sepia.
+In the meantime you must use the -webkit- vendor prefix, like so (gist):
+img { -webkit-filter: blur(2.5px); /* values: 0px - 25px */ -webkit-filter: brightness(5%); /* values: -100% - 100% */ -webkit-filter: contrast(1.</description>
+    </item>
+    
+    <item>
+      <title>mig.gs™ - url shortener</title>
+      <link>http://example.org/blog/miggs-url-shortener/</link>
+      <pubDate>Mon, 20 Feb 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/miggs-url-shortener/</guid>
+      <description>Everyone now-a-days seems to have their own url shortening service, such as goo.gl, t.co, youtu.be, fb.me, git.io, and so on.
+So I thought I&amp;rsquo;d have my own as well, and therefore mig.gs™ was born.
+mig.gs™&amp;gt; offers basic analytics using Google Charts API&amp;gt; to display daily clicks and generate a QR code. It also displays a Google map of your link visitors by using their IP Address. You can make an account to save your links or use a custom word instead of a random code if you&amp;rsquo;d like, kind of like bit.</description>
+    </item>
+    
+    <item>
+      <title>How To Survive a Zombie Outbreak</title>
+      <link>http://example.org/blog/how-to-survive-a-zombie-outbreak/</link>
+      <pubDate>Sun, 22 Jan 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/how-to-survive-a-zombie-outbreak/</guid>
+      <description>Illustration by Tony Moore Illustration   Ever wondered what to do if a zombie outbreak actually occurred one day? I bet you have, and you should be worried. The zombie apocalypse is near as we know it, but the question is, are you ready for it? You wake up on a gloomy Monday morning, only to find your deceased yet viable emotionless little sister munching savagely on your mother&amp;rsquo;s juicy, bloody human flesh.</description>
+    </item>
+    
+    <item>
+      <title>Ant task to compress HTML files</title>
+      <link>http://example.org/blog/ant-task-to-compress-html-files/</link>
+      <pubDate>Fri, 14 Oct 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/ant-task-to-compress-html-files/</guid>
+      <description>I will show you how to compress your HTML files using the Java library HtmlCompressor. So let&amp;rsquo;s say your html code looks something like this:
+&amp;lt;!doctype html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;title&amp;gt;htmlcompressor&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida suscipit lectus. &amp;lt;!-- comment --&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt;  After we compress it, it&amp;rsquo;ll look like this:
+&amp;lt;!doctype html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;title&amp;gt;htmlcompressor&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; Lorem ipsum dolor sit amet, consectetur adipiscing elit.</description>
+    </item>
+    
+    <item>
+      <title>Display latest delicious bookmarks with jQuery</title>
+      <link>http://example.org/blog/display-latest-delicious-bookmarks-with-jquery/</link>
+      <pubDate>Tue, 11 Oct 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/display-latest-delicious-bookmarks-with-jquery/</guid>
+      <description>If you look below you see my three most recently saved bookmarks from (delicious)[http://delicious.com/miguelmota]:
+ fetching bookmarks...   var niceTime = (function(){ var ints = { second: 1, minute: 60, hour: 3600, day: 86400, week: 604800, month: 2592000, year: 31536000 }; return function(time){ time = +new Date(time); var gap = ((+new Date()) - time) / 1000, amount, measure; for (var i in ints){ if (gap  ints[i]){ measure = i; } } amount = gap / ints[measure]; amount = gap  ints.</description>
+    </item>
+    
+    <item>
+      <title>HTML5 Reset Stylesheet</title>
+      <link>http://example.org/blog/html5-reset-stylesheet/</link>
+      <pubDate>Tue, 09 Aug 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/html5-reset-stylesheet/</guid>
+      <description>I couldn&amp;rsquo;t find an HTML5 reset stylesheet that suited my needs so I decided to modify HTML5 Doctors&amp;rsquo; CSS reset a bit.
+Here is the gist:
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video { background: transparent; border: 0; font-size: 100%; margin: 0; outline: 0; padding: 0; vertical-align: baseline; } body { line-height: 1; } article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; } ol, ul { list-style: none; } h1, h2, h3, h4, h5, h6 { font-size: 100%; font-weight: normal; } blockquote, q { quotes: none; } blockquote:before, blockquote:after, q:before, q:after { content: &#39;&#39;; content: none; } :focus { outline: 0; } a { text-decoration: none; } ins { text-decoration: none; } mark { font-style: italic; font-weight: bold; } del { text-decoration: line-through; } abbr[title], dfn[title] { border-bottom: 1px dotted; cursor: help; } table { border-collapse: collapse; border-spacing: 0; } caption, th, td { font-weight: normal; text-align: left; } hr { border: 0; border-top: 1px solid #ccc; display: block; height: 1px; margin: 1em 0; padding: 0; } input, select { vertical-align: middle; }  What CSS reset do you use?</description>
+    </item>
+    
+    <item>
+      <title>Hello World</title>
+      <link>http://example.org/blog/hello-world/</link>
+      <pubDate>Wed, 30 Mar 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/hello-world/</guid>
+      <description>Why hello there, and welcome to my blog. I am using jekyll, a static site generator, and it is being hosted on GitHub Pages. I will blog about all things web, usually about code and design tips, tricks and techniques.
+So yep, that&amp;rsquo;s pretty much it!</description>
+    </item>
+    
+    <item>
+      <title>Bitwise operators in JavaScript</title>
+      <link>http://example.org/blog/bitwise-operators-in-javascript/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/bitwise-operators-in-javascript/</guid>
+      <description>Bitwise operators act on the level of individual bits which allows for fast comparisons and calculations. I&amp;rsquo;ll be going over a couple of ways to use bitwise opeartors in JavaScript since it&amp;rsquo;s not entirely clear at first. Some of the examples shown are from various sources which I&amp;rsquo;ve accumlated over time in which I&amp;rsquo;m going to elaborate on them.
+Bitwise AND Return a one if the two bits are both one.</description>
+    </item>
+    
+    <item>
+      <title>Generate Self-signed SSL Certificate</title>
+      <link>http://example.org/blog/generate-self-signed-ssl-certificate/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/generate-self-signed-ssl-certificate/</guid>
+      <description>Using HTTPS for your web application is a no-brainer, but sometimes it is not intuitively clear on how to get started on using SSL for your website. I&amp;rsquo;m going to be going over step-by-step on generating a self-signed certficate and testing it out on a Node.js web server.
+Generating Private Key First let&amp;rsquo;s generate a private key. The private key is used to decrypt the data encrypted by the public key.</description>
+    </item>
+    
+    <item>
+      <title>Make an Awesome Tooltip with jQuery</title>
+      <link>http://example.org/blog/make-an-awesome-tooltip-with-jquery/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/make-an-awesome-tooltip-with-jquery/</guid>
+      <description>I will attempt to show you how to make a simple yet awesome tooltip using jQuery and CSS3.
+Ok so first let&amp;rsquo;s set up the HTML:
+&amp;lt;a class=&amp;quot;awesometooltip&amp;quot; href=&amp;quot;http://www.miguelmota.com&amp;quot; title=&amp;quot;Hello, I am a tootip!&amp;quot;&amp;gt;hover over me&amp;lt;/a&amp;gt;  All we did was make a link with the class of awesometooltip (that&amp;rsquo;s what I decided to call this mini plugin) and gave it a title attribute.
+Now let&amp;rsquo;s move on to the fun stuff.</description>
+    </item>
+    
+    <item>
+      <title>Naive Bayes Classifier in JavaScript</title>
+      <link>http://example.org/blog/naive-bayes-classifier-in-javascript/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/naive-bayes-classifier-in-javascript/</guid>
+      <description>The Naive Bayes classifier is a pretty popular text classification algorithm because of it&amp;rsquo;s simplicity. You&amp;rsquo;ll often see this classifier used for spam detection, authorship attribution, gender authentication, determing whether a review is positive or negative, and even sentiment analysis. The Naive Bayes classifier takes in a corpus (body of text) known as a document, which then a stemmer runs through the document and returns a &amp;ldquo;bag or words&amp;rdquo; so to speak.</description>
+    </item>
+    
+    <item>
+      <title>Set up Raspberry Pi as a Network Server</title>
+      <link>http://example.org/blog/set-up-raspberry-pi-as-a-network-server/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/set-up-raspberry-pi-as-a-network-server/</guid>
+      <description>The Raspberry Pi has an infinite amount of uses and one of them is using it as a network server. This is handy because people in your home network can connect to this network server and access shared files, such as movies and music, which can be streamed to your TV. I will be going over how to set this up on a fresh RPi.
+Install Raspbian Raspbian is a light-weight Debian based Linux distro tailored for the RPi.</description>
+    </item>
+    
+  </channel>
+</rss>

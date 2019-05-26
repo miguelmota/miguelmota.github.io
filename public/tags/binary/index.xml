@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Binary on My New Hugo Site</title>
+    <link>http://example.org/tags/binary/</link>
+    <description>Recent content in Binary on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 10 Apr 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://example.org/tags/binary/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How to send a Mulitpart POST using XMLHTTPRequest</title>
+      <link>http://example.org/bytes/xmlhttprequest-multipart-post/</link>
+      <pubDate>Sun, 10 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/bytes/xmlhttprequest-multipart-post/</guid>
+      <description>Here&amp;rsquo;s an example of how to send a multipart POST containing binary data using XMLHTTPRequest:
+const xhr = new XMLHttpRequest(); const url = &#39;https://example.com&#39;; // (assume dataView contains binary audio data) const dataView = new DataView(buffer); xhr.open(&#39;POST&#39;, url, true); xhr.responseType = &#39;arraybuffer&#39;; xhr.onload = (event) =&amp;gt; { console.log(xhr.response); }; xhr.onerror = (error) =&amp;gt; { console.error(error); }; const BOUNDARY = &#39;BOUNDARY1234&#39;; const BOUNDARY_DASHES = &#39;--&#39;; const NEWLINE = &#39;\r\n&#39;; const AUDIO_CONTENT_TYPE = &#39;Content-Type: audio/L16; rate=16000; channels=1&#39;; const AUDIO_CONTENT_DISPOSITION = &#39;Content-Disposition: form-data; name=&amp;quot;audio&amp;quot;&#39;; const postDataStart = [ NEWLINE, BOUNDARY_DASHES, BOUNDARY, NEWLINE, AUDIO_CONTENT_DISPOSITION, NEWLINE, AUDIO_CONTENT_TYPE, NEWLINE, NEWLINE ].</description>
+    </item>
+    
+  </channel>
+</rss>

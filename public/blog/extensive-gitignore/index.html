@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>My New Hugo Site  | Extensive .gitignore</title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.52" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.d98f2eb6bcd1eaedb7edf166bd16af26.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+
+    <meta property="og:title" content="Extensive .gitignore" />
+<meta property="og:description" content="An extensive and useful .gitignore." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/blog/extensive-gitignore/" /><meta property="article:published_time" content="2013-04-04T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2013-04-04T00:00:00&#43;00:00"/>
+
+<meta itemprop="name" content="Extensive .gitignore">
+<meta itemprop="description" content="An extensive and useful .gitignore.">
+
+
+<meta itemprop="datePublished" content="2013-04-04T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2013-04-04T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="203">
+
+
+
+<meta itemprop="keywords" content="git,gitignore," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Extensive .gitignore"/>
+<meta name="twitter:description" content="An extensive and useful .gitignore."/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="http://example.org/" class="f3 fw2 hover-white no-underline white-90 dib">
+      My New Hugo Site
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+
+    <header class="mt4 w-100">
+      <p class="f6 b helvetica tracked">
+          
+        BLOGS
+      </p>
+      <h1 class="f1 athelas mb1">Extensive .gitignore</h1>
+      
+      <time class="f6 mv4 dib tracked" datetime="2013-04-04T00:00:00Z">April 4, 2013</time>
+      
+      
+    </header>
+
+    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>There are <a href="https://github.com/github/gitignore">.gitignore templates</a>&gt; suited for pretty much any project. I&rsquo;m going to share the .gitignore that I recently been using for my web projects. It&rsquo;s and extended verison of <a href="https://help.github.com/articles/ignoring-files">github&rsquo;s global .gitignore</a>&gt;.</p>
+
+<p>Here is the <a href="https://gist.github.com/miguelmota/5299533">gist</a>&gt;:</p>
+
+<pre><code>//this will affect all the git repos
+git config --global core.excludesfile ~/.gitignore
+
+
+//update files since .ignore won't if already tracked
+git rm --cached &lt;file&gt;
+
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Packages #
+############
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+# Icon?
+ehthumbs.db
+Thumbs.db
+.cache
+.project
+.settings
+.tmproj
+*.esproj
+nbproject
+
+# Numerous always-ignore extensions #
+#####################################
+*.diff
+*.err
+*.orig
+*.rej
+*.swn
+*.swo
+*.swp
+*.vi
+*~
+*.sass-cache
+*.grunt
+*.tmp
+
+# Dreamweaver added files #
+###########################
+_notes
+dwsync.xml
+
+# Komodo #
+###########################
+*.komodoproject
+.komodotools
+
+# Node #
+#####################
+node_modules
+
+# Bower #
+#####################
+bower_components
+
+# Folders to ignore #
+#####################
+.hg
+.svn
+.CVS
+intermediate
+publish
+.idea
+.graphics
+_test
+_archive
+uploads
+tmp
+
+# Vim files to ignore #
+#####################
+.VimballRecord
+.netrwhist
+</code></pre>
+<ul class="pa0">
+  
+   <li class="list">
+     <a href="/tags/git" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">git</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/gitignore" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">gitignore</a>
+   </li>
+  
+</ul>
+<div class="mt6">
+        
+      </div>
+    </section>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/bytes/ansible-git-example/">How to use Ansible to deploy with git</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://example.org/" >
+    &copy; 2019 My New Hugo Site
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>

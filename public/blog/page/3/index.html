@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>My New Hugo Site </title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.52" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.d98f2eb6bcd1eaedb7edf166bd16af26.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+      <link href="http://example.org/blog/index.xml" rel="alternate" type="application/rss+xml" title="My New Hugo Site" />
+      <link href="http://example.org/blog/index.xml" rel="feed" type="application/rss+xml" title="My New Hugo Site" />
+    
+
+    <meta property="og:title" content="Blogs" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://example.org/blog/" />
+<meta property="og:updated_time" content="2013-05-04T00:00:00&#43;00:00"/>
+
+<meta itemprop="name" content="Blogs">
+<meta itemprop="description" content="">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Blogs"/>
+<meta name="twitter:description" content=""/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+
+  <header>
+    <div class="pb3-m pb6-l bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="http://example.org/" class="f3 fw2 hover-white no-underline white-90 dib">
+      My New Hugo Site
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+      <div class="tc-l pv3 ph3 ph4-ns">
+        <h1 class="f2 f-subheadline-l fw2 light-silver mb0 lh-title">
+          Blogs
+        </h1>
+        
+      </div>
+    </div>
+  </header>
+
+
+    <main class="pb7" role="main">
+      
+  <article class="pa3 pa4-ns nested-copy-line-height nested-img">
+    <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray"></section>
+    <section class="flex-ns flex-wrap justify-around mt5">
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Blog</span>
+    <h1 class="f3 near-black">
+      <a href="/blog/sass-triangles/" class="link black dim">
+        Sass Triangles
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Creating CSS triangles shouldn&rsquo;t be hard.
+Here&rsquo;s a handy little mixin for creating triangles in Sass (gist):
+@mixin triangle($size:24px, $color:#000, $direction:up, $trim:false, $transparent:false) { content: &quot;&quot;; display: inline-block; width: 0; height: 0; border: solid $size; @if $direction == up { border-color: transparent transparent $color transparent; @if $transparent { border-color: $color $color transparent $color; } @if $trim { border-top-width: 0; } } @if $direction == right { border-color: transparent transparent transparent $color; @if $transparent { border-color: $color $color $color transparent ; } @if $trim { border-right-width: 0; } } @if $direction == down { border-color: $color transparent transparent transparent; @if $transparent { border-color: transparent $color $color $color; } @if $trim { border-bottom-width: 0; } } @if $direction == left { border-color: transparent $color transparent transparent; @if $transparent { border-color: $color transparent $color $color; } @if $trim { border-left-width: 0; } } }  
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Blog</span>
+    <h1 class="f3 near-black">
+      <a href="/blog/understanding-prototype-in-javascript/" class="link black dim">
+        Understanding Prototype in JavaScript
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      A prototype is an object from where other objects inherit properties from. All objects in JavaScript are descended from Object, a global object. Why this matters I&rsquo;ll explain later, but for now let&rsquo;s jump in to some code.
+Constructor and Methods Let&rsquo;s define a functional object constructor called Quadrilateral and have width and height as parameters.
+// Define our constructor var Quadrilateral = function(width, height) { this.width = width; this.
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Blog</span>
+    <h1 class="f3 near-black">
+      <a href="/blog/responsive-video/" class="link black dim">
+        Responsive Video
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Dealing with responsive video can be quite troublesome.
+Here is a simple script you might find useful:
+(function() { // Responsive Video function responsiveVideo(selector) { // Get videos var videos = document.querySelectorAll(selector); // Loop through videos for (var i = 0; i &lt; videos.length; i++) { var video = videos[i]; // Get aspect ratio var videoRatio = (video.height / video.width) * 100; // Stretch video video.style.position = &quot;absolute&quot;; video.style.top = 0; video.
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Blog</span>
+    <h1 class="f3 near-black">
+      <a href="/blog/iphone-and-ipad-web-app-startup-images/" class="link black dim">
+        iPhone and iPad Web App Startup Images
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      In order to avoid having a blank white screen when launching a web app, you can use a apple-touch-startup-image. This is displayed momentarily while the web app is loading.
+There are a number of link tags to target all iPhone and iPad devices which you must use. But there&rsquo;s also a very important thing to not do, and that is to not use width=device-width on the viewport meta tag because this will letterbox the viewport and it will not work.
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Blog</span>
+    <h1 class="f3 near-black">
+      <a href="/blog/sass-media-queries/" class="link black dim">
+        Sass Media Queries
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      There are various methods of setting breakpoints in Sass. The first method, which I use, is heavility inspired by Chris Eppstein&rsquo;s selector hacks. The second method is how ZURB&rsquo;s Foundation 4 breakpoints are set.
+Here is the gist:
+// Sass Media Query Breakpoints // // METHOD 1 // // Inspired by http://thesassway.com/intermediate/responsive-web-design-in-sass-using-media-queries-in-sass-32 // // Usage: // // div { // color: blue; // // @include respond-to(mobile) { // color: red; // } // // } // $break-mobile: 640px; $break-desktop: 1024px; @mixin respond-to($media) { @if $media == mobile { @media only screen and (max-width: $break-mobile) { @content; } } @else if $media == tablet { @media only screen and (min-width: $break-mobile + 1) and (max-width: $break-desktop - 1) { @content; } } @else if $media == desktop { @media only screen and (min-width: $break-desktop) { @content; } } } // // METHOD 1 (extended) // // Inspired by https://gist.
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Blog</span>
+    <h1 class="f3 near-black">
+      <a href="/blog/extensive-gitignore/" class="link black dim">
+        Extensive .gitignore
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      There are .gitignore templates&gt; suited for pretty much any project. I&rsquo;m going to share the .gitignore that I recently been using for my web projects. It&rsquo;s and extended verison of github&rsquo;s global .gitignore&gt;.
+Here is the gist&gt;:
+//this will affect all the git repos git config --global core.excludesfile ~/.gitignore //update files since .ignore won't if already tracked git rm --cached &lt;file&gt; # Compiled source # ################### *.com *.class *.dll *.exe *.
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Blog</span>
+    <h1 class="f3 near-black">
+      <a href="/blog/css3-filters/" class="link black dim">
+        CSS3 Filters
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Webkit has implemented CSS filters, which can spice up the way your photos look without the hassle of having to deal with software like Photoshop.
+Currently there are 10 CSS filters available, which are: blur, brightness, contrast, drop-shadow, grayscale, hue-rotate, invert, opacity, saturate and sepia.
+In the meantime you must use the -webkit- vendor prefix, like so (gist):
+img { -webkit-filter: blur(2.5px); /* values: 0px - 25px */ -webkit-filter: brightness(5%); /* values: -100% - 100% */ -webkit-filter: contrast(1.
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Blog</span>
+    <h1 class="f3 near-black">
+      <a href="/blog/miggs-url-shortener/" class="link black dim">
+        mig.gs™ - url shortener
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Everyone now-a-days seems to have their own url shortening service, such as goo.gl, t.co, youtu.be, fb.me, git.io, and so on.
+So I thought I&rsquo;d have my own as well, and therefore mig.gs™ was born.
+mig.gs™&gt; offers basic analytics using Google Charts API&gt; to display daily clicks and generate a QR code. It also displays a Google map of your link visitors by using their IP Address. You can make an account to save your links or use a custom word instead of a random code if you&rsquo;d like, kind of like bit.
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Blog</span>
+    <h1 class="f3 near-black">
+      <a href="/blog/how-to-survive-a-zombie-outbreak/" class="link black dim">
+        How To Survive a Zombie Outbreak
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Illustration by Tony Moore Illustration   Ever wondered what to do if a zombie outbreak actually occurred one day? I bet you have, and you should be worried. The zombie apocalypse is near as we know it, but the question is, are you ready for it? You wake up on a gloomy Monday morning, only to find your deceased yet viable emotionless little sister munching savagely on your mother&rsquo;s juicy, bloody human flesh.
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Blog</span>
+    <h1 class="f3 near-black">
+      <a href="/blog/ant-task-to-compress-html-files/" class="link black dim">
+        Ant task to compress HTML files
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      I will show you how to compress your HTML files using the Java library HtmlCompressor. So let&rsquo;s say your html code looks something like this:
+&lt;!doctype html&gt; &lt;html&gt; &lt;head&gt; &lt;title&gt;htmlcompressor&lt;/title&gt; &lt;/head&gt; &lt;body&gt; Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida suscipit lectus. &lt;!-- comment --&gt; &lt;/body&gt; &lt;/html&gt;  After we compress it, it&rsquo;ll look like this:
+&lt;!doctype html&gt; &lt;html&gt; &lt;head&gt; &lt;title&gt;htmlcompressor&lt;/title&gt; &lt;/head&gt; &lt;body&gt; Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    </div>
+  </div>
+</div>
+</div>
+      
+    </section>
+
+<ul class="pagination">
+    
+    <li class="page-item">
+        <a href="/blog/" class="page-link" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
+    </li>
+    
+    <li class="page-item">
+    <a href="/blog/page/2/" class="page-link" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+    </li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/blog/">1</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/blog/page/2/">2</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item active"><a class="page-link" href="/blog/page/3/">3</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/blog/page/4/">4</a></li>
+    
+    
+    <li class="page-item">
+    <a href="/blog/page/4/" class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+    </li>
+    
+    <li class="page-item">
+        <a href="/blog/page/4/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+    </li>
+    
+</ul>
+</article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://example.org/" >
+    &copy; 2019 My New Hugo Site
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>
