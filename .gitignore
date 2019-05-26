@@ -95,6 +95,7 @@ _site
 about/resume
 public/
 resources/
+scripts/deploy.sh
 
 # Files to ignore #
 #####################

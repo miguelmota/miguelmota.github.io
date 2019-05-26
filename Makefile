@@ -5,3 +5,7 @@ build:
 .PHONY: server
 server:
 	hugo server
+
+.PHONY: deploy
+deploy:
+	./scripts/deploy.sh

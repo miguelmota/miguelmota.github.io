@@ -3,14 +3,10 @@
     <article>
       <header>
         <h1>{{ .Title }}</h1>
-        <div>
-          <time>{{ .Date.Format "02 Jan 2006" }}</time>
-        </div>
       </header>
       <div>
         {{ .Content }}
       </div>
-      {{ partial "tags.html" . }}
     </article>
   </main>
 {{ partial "footer.html" . }}

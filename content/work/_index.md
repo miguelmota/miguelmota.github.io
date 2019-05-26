@@ -4,7 +4,6 @@ title: Work
 description: Who I am and what I do.
 route: work
 ---
-
 <p>A lot of my work can be found on <a href="https://github.com/miguelmota?tab=repositories" target="_blank" rel="noopener noreferrer" data-ga-label="Work - Github">Github</a>.</p>
 
 <p>I <span style="color:red;">❤</span> Open Source</p>

@@ -30,10 +30,6 @@ h1 a {
 
 }
 
-main header div {
-  margin-bottom: 0.5em;
-}
-
 main header {
   margin-bottom: 1em;
 }
@@ -67,8 +63,9 @@ nav ul {
   display: inline-block;
 }
 
-nav ul li {
+.site-header ul li {
   display: inline-block;
+  margin-bottom: 0.5em;
 }
 
 nav ul li a {
@@ -84,8 +81,22 @@ nav ul li a {
   font-size: 0.8em;
 }
 
+.tags ul {
+  list-style: none;
+  margin-bottom: 0;
+}
+
+.tags ul li {
+  display: inline-block;
+  text-transform: lowercase;
+}
+
 .pagination {
 
+}
+
+.summary {
+  margin-bottom: 0.5em;
 }
 
 footer {

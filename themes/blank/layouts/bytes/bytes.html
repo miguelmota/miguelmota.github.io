@@ -1,6 +1,6 @@
 {{ partial "header.html" . }}
   <main>
-    <p>Byte size snippets</p>
+    <p><em>Byte size snippets</em></p>
     {{ range .Paginator.Pages }}
       {{ partial "shortest_summary.html" . }}
     {{ end }}
