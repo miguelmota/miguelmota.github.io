@@ -72,6 +72,10 @@ nav ul li a {
   margin-right: 1em;
 }
 
+article img {
+  max-width: 100%;
+}
+
 .highlight {
   margin-bottom: 1em;
 }
@@ -109,4 +113,18 @@ details {
 
 details summary:hover {
   cursor: pointer;
+}
+
+figure {
+  margin-bottom: 1em;
+}
+
+figcaption {
+  text-align: center;
+  font-style: italic;
+  font-size: 0.8em;
+}
+
+code {
+  background: #f0f0f0;
 }
