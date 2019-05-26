@@ -6,7 +6,7 @@
 
   {{ partial "stackoverflow.html" . }}
 
-  {{ $paginator := .Paginate (where .Site.Pages "Type" "blog") }}
+  {{ $paginator := .Paginate (where .Site.Pages "Type" "blog") 20 }}
   {{ range $paginator.Pages }}
     {{ partial "summary.html" . }}
   {{ end }}

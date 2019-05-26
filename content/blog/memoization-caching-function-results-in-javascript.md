@@ -1,6 +1,6 @@
 ---
 layout: blog-post
-title: Memoization&#58; Caching function results in JavaScript
+title: Memoization – Caching function results in JavaScript
 type: blog
 tags: [JavaScript, memoization, cache]
 description: Avoid recalcuation by caching and locally storing function results.

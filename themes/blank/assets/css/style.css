@@ -41,10 +41,6 @@ h1 a {
 
 }
 
-main header {
-  margin-bottom: 1em;
-}
-
 article {
   margin-bottom: 2em;
 }
@@ -56,78 +52,6 @@ pre {
 ul {
   list-style-position: inside;
   margin-bottom: 1em;
-}
-
-.site-header {
-  padding: 1em 1em 0 1em;
-}
-
-.site-header .index {
-  margin-right: 1em;
-}
-
-nav {
-  display: inline-block;
-}
-
-nav ul {
-  display: inline-block;
-}
-
-.site-header ul li {
-  display: inline-block;
-  margin-bottom: 0.5em;
-}
-
-nav ul li a {
-  margin-right: 1em;
-}
-
-article img {
-  max-width: 100%;
-}
-
-article ul li {
-  margin-bottom: 0.5em;
-}
-
-.highlight {
-  margin-bottom: 1em;
-}
-
-.tags {
-  display: inline-block;
-  font-size: 0.8em;
-}
-
-.tags ul {
-  list-style: none;
-  margin-bottom: 0;
-}
-
-.tags ul li {
-  display: inline-block;
-  text-transform: lowercase;
-}
-
-.pagination {
-
-}
-
-.summary {
-  margin-bottom: 0.5em;
-}
-
-footer {
-  padding: 1em;
-}
-
-details {
-  margin-bottom: 1em;
-}
-
-details summary:hover {
-  cursor: pointer;
 }
 
 figure {
@@ -150,4 +74,81 @@ blockquote {
   border-left: 4px solid #00000014;
   padding-left: 1em;
   margin-bottom: 1em;
+}
+
+article img {
+  max-width: 100%;
+}
+
+details {
+  margin-bottom: 1em;
+}
+
+details summary:hover {
+  cursor: pointer;
+}
+
+article ul li {
+  margin-bottom: 0.5em;
+}
+
+main header {
+  margin-bottom: 1em;
+}
+
+.site-header {
+  padding: 1em 1em 0 1em;
+}
+
+.site-header nav {
+  display: inline-block;
+}
+
+.site-header nav ul {
+  display: inline-block;
+}
+
+.site-header ul li {
+  display: inline-block;
+  margin-bottom: 0.5em;
+}
+
+.site-header nav ul li a {
+  margin-right: 1em;
+}
+
+.highlight {
+  margin-bottom: 1em;
+}
+
+.tags {
+  display: inline-block;
+  font-size: 0.8em;
+}
+
+.tags ul {
+  list-style: none;
+  margin-bottom: 0;
+}
+
+.tags ul li {
+  display: inline-block;
+  text-transform: lowercase;
+  margin: 0 0.5em 0 0;
+}
+
+.pagination {
+
+}
+
+.summary {
+  margin-bottom: 0.5em;
+}
+
+.related {
+  margin-bottom: 1em;
+}
+
+.site-footer {
+  padding: 1em;
 }

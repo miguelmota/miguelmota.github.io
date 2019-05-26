@@ -1,7 +1,7 @@
 {{ partial "header.html" . }}
   <main>
     <p><em>All things web</em></p>
-    {{ range .Paginator.Pages }}
+    {{ range (.Paginator 100).Pages }}
       {{ partial "summary.html" . }}
     {{ end }}
     {{ partial "pagination.html" . }}
