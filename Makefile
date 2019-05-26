@@ -1,6 +1,6 @@
 .PHONY: build
 build:
-	hugo
+	hugo --minify
 
 .PHONY: server
 server:

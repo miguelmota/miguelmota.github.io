@@ -8,6 +8,16 @@ body {
   font-family: TimesNewRoman,Times New Roman,Times,Baskerville,Georgia,serif;
   font-size: 16px;
   line-height: 1.5;
+  background: #fff;
+  color: #000;
+}
+
+a {
+  color: #00e;
+}
+
+a:visited {
+  color: #551a8b;
 }
 
 p {
