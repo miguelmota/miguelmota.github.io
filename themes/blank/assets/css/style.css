@@ -42,7 +42,12 @@ h1 a {
 }
 
 article {
+  display: block;
   margin-bottom: 2em;
+}
+
+section {
+  display: block;
 }
 
 pre {
