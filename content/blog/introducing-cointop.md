@@ -12,7 +12,7 @@ draft: false
 The interface is inspired by [`htop`](https://en.wikipedia.org/wiki/Htop) and shortcut keys are inspired by [`vim`](https://en.wikipedia.org/wiki/Vim_(text_editor)).
 
 <figure>
-  <a href="cointop_in_action.gif" target="_blank"><img src="cointop_in_action.gif" alt=""></a>
+  <a href="cointop-in-action.gif" target="_blank"><img src="cointop-in-action.gif" alt=""></a>
 	<figcaption>
   Cointop in action
 	</figcaption>

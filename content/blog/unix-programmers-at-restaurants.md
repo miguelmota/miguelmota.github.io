@@ -71,7 +71,7 @@ Voila! there it is, the desired pasta-and-shrimp plate is still the under ten bu
 
 ## Update (i)
 
-Follow the comments on [Reddit](https://www.reddit.com/r/programming/comments/a5sg9k/how_unix_programmers_at_restaurants_search_menus/)
+Follow the comments on [Reddit](https://www.reddit.com/r/programming/comments/a5sg9k/how_unix_programmers_at_restaurants_search_menus/).
 
 ## Update (ii)
 

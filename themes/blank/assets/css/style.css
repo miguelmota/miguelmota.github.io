@@ -7,6 +7,7 @@
 body {
   font-family: TimesNewRoman,Times New Roman,Times,Baskerville,Georgia,serif;
   font-size: 16px;
+  line-height: 1.5;
 }
 
 p {
@@ -76,6 +77,10 @@ article img {
   max-width: 100%;
 }
 
+article ul li {
+  margin-bottom: 0.5em;
+}
+
 .highlight {
   margin-bottom: 1em;
 }
@@ -127,4 +132,12 @@ figcaption {
 
 code {
   background: #f0f0f0;
+}
+
+blockquote {
+  display: block;
+  font-style: italic;
+  border-left: 4px solid #00000014;
+  padding-left: 1em;
+  margin-bottom: 1em;
 }
