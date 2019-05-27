@@ -7,9 +7,9 @@ description: An extensive and useful .gitignore.
 date: 2013-04-04T00:00:00-00:00
 draft: false
 ---
-There are [.gitignore templates](https://github.com/github/gitignore)> suited for pretty much any project. I'm going to share the .gitignore that I recently been using for my web projects. It's and extended verison of [github's global .gitignore](https://help.github.com/articles/ignoring-files)>.
+There are [.gitignore templates](https://github.com/github/gitignore) suited for pretty much any project. I'm going to share the .gitignore that I recently been using for my web projects. It's and extended verison of [github's global .gitignore](https://help.github.com/articles/ignoring-files).
 
-Here is the [gist](https://gist.github.com/miguelmota/5299533)>:
+Here is the [gist](https://gist.github.com/miguelmota/5299533):
 
 ```
 //this will affect all the git repos

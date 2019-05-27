@@ -7,15 +7,15 @@ description: Simple explanations of Redis data structures.
 date: 2014-01-23T00:00:00-00:00
 draft: false
 ---
-[**Redis**](http://redis.io/)> is an in-memory, key-value store that is fast. *Really fast*. Redis can hold hundreds of millions of keys in memory and handle tens of thousands of requests per second without breaking a sweat. It's useful for caching data, maintaining sessions, keeping counters, queues, publish/subscribe real time notifications, and so on. There are many use cases for Redis due to it's simple dictionary model that maps keys to values, but what one should be aware of is that it's focus is *not* long-term data persistance. The whole Redis database is loaded into memory so there is a chance of data loss due to the fact that Redis first stores new entries in memory and then writes it to disk in the background after a certain period of time or amount of new keys have been accumulated. For example, if there were to be a power failure you could potentially lose a minute or two worth of data, which can or may not be fatal depending on your application. Of course, you can configure the threshold to something more comfortable which I will go over later.
+**[Redis](http://redis.io/)** is an in-memory, key-value store that is fast. *Really fast*. Redis can hold hundreds of millions of keys in memory and handle tens of thousands of requests per second without breaking a sweat. It's useful for caching data, maintaining sessions, keeping counters, queues, publish/subscribe real time notifications, and so on. There are many use cases for Redis due to it's simple dictionary model that maps keys to values, but what one should be aware of is that it's focus is *not* long-term data persistance. The whole Redis database is loaded into memory so there is a chance of data loss due to the fact that Redis first stores new entries in memory and then writes it to disk in the background after a certain period of time or amount of new keys have been accumulated. For example, if there were to be a power failure you could potentially lose a minute or two worth of data, which can or may not be fatal depending on your application. Of course, you can configure the threshold to something more comfortable which I will go over later.
 
-The majority of this post will be going over some of the data structures that Redis provides, such as **keys**, **hashes**, **lists**, and **sets**. Redis isn't meant to be an *all-in-one* database replacement. It has it's niche, it's simple and it can do certain *really* well. If you haven't already, I strongly suggest you read the [15 minute intro to Redis data types](http://redis.io/topics/data-types-intro)> on the Redis site. I'll also talk about sorting, multi-commands, and monitoring.
+The majority of this post will be going over some of the data structures that Redis provides, such as **keys**, **hashes**, **lists**, and **sets**. Redis isn't meant to be an *all-in-one* database replacement. It has it's niche, it's simple and it can do certain *really* well. If you haven't already, I strongly suggest you read the [15 minute intro to Redis data types](http://redis.io/topics/data-types-intro) on the Redis site. I'll also talk about sorting, multi-commands, and monitoring.
 
-I would like to give credit to [The Little Redis Book](http://openmymind.net/2012/1/23/The-Little-Redis-Book/)> by [Karl Seguin](http://openmymind.net/)> for helping me gain a lot of the information on Redis and some of the examples I show below. It's definitely a good read and great resource.
+I would like to give credit to [The Little Redis Book](http://openmymind.net/2012/1/23/The-Little-Redis-Book/) by [Karl Seguin](http://openmymind.net/) for helping me gain a lot of the information on Redis and some of the examples I show below. It's definitely a good read and great resource.
 
 ## Installation
 
-[The Redis quickstart guide](http://redis.io/topics/quickstart)> is good place to start. Installing Redis is straight forward. [Download](http://redis.io/download) the tarball, extract, and run `make`. If you're on a Mac you can simply do `brew install redis` with [Homebrew](http://brew.sh/).
+[The Redis quickstart guide](http://redis.io/topics/quickstart) is good place to start. Installing Redis is straight forward. [Download](http://redis.io/download) the tarball, extract, and run `make`. If you're on a Mac you can simply do `brew install redis` with [Homebrew](http://brew.sh/).
 
 After installation, start a redis instance with
 
@@ -452,5 +452,5 @@ Redis is an incredibly fast data store that does a few things *very* well. Defin
 Resources
 
 
-- [The Little Redis Book](http://openmymind.net/2012/1/23/The-Little-Redis-Book/)> by [Karl Seguin](http://openmymind.net/)>
-- [Try Redis](http://try.redis.io/)>
+- [The Little Redis Book](http://openmymind.net/2012/1/23/The-Little-Redis-Book/) by [Karl Seguin](http://openmymind.net/)
+- [Try Redis](http://try.redis.io/)

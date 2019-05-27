@@ -14,7 +14,7 @@ Last time he was here he had a pretty good pasta-and-shrimp plate for under 10 b
 
 Bob wonder's if this same dish is still available. He pops open his laptop running Linux and scrapes the restaurant website menu table into a plain text file.
 
-`menu.txt`
+The `menu.txt` file:
 
 ```text
 the menu
