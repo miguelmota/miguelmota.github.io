@@ -1,6 +1,6 @@
 ---
 layout: blog-post
-title: mig.gs™ - url shortener
+title: mig.gs™ — url shortener
 type: blog
 tags: [thoughts, work, miggs]
 description: A simple url shortening service with stats.

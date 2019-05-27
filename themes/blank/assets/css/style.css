@@ -91,6 +91,14 @@ details {
   margin-bottom: 1em;
 }
 
+header {
+  display: block;
+}
+
+hgroup {
+  display: block;
+}
+
 details summary:hover {
   cursor: pointer;
 }

@@ -44,14 +44,4 @@
 </head>
 <body>
   <img src="/images/miguel_mota_avatar_500.png" alt="" style="display:none;"/>
-  <header class="site-header">
-    <hgroup>
-      <nav>
-        <ul>
-          {{ range .Site.Menus.main }}
-          <li><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
-          {{ end }}
-        </ul>
-      </nav>
-    </hgroup>
-  </header>
+  {{ partial "navbar.html" . }}
