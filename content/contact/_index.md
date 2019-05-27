@@ -10,7 +10,7 @@ route: contact
 </p>
 
 <details id="pgp-public-key">
-  <summary>PGP Public Key</summary>
+  <summary data-ga-label="Contact - PGP Public Key">PGP Public Key</summary>
   <div>
     <pre class="highlight">
 -----BEGIN PGP PUBLIC KEY BLOCK-----
