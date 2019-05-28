@@ -2,7 +2,7 @@
   <header>
     <h1><a href="{{ .Permalink }}" title="View post">{{ .Title }}</a></h1>
     <div class="subheader">
-      <time title="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02 Jan 2006" }}</time>
+      <small style="margin-right:1em;"><time title="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02 Jan 2006" }}</time></small>
       {{ partial "tags.html" . }}
     </div>
   </header>
