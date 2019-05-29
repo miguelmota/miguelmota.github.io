@@ -2,7 +2,7 @@
 layout: blog-post
 title: Bitwise operators in JavaScript
 type: blog
-tags: [JavaScript, operators, bitwise]
+tag: [JavaScript, operators, bitwise]
 description: Interesting things you can do with bitwise operators.
 date: 2014-07-19T00:00:00-00:00
 draft: false

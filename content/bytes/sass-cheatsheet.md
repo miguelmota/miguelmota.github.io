@@ -2,7 +2,7 @@
 layout: byte
 title: Sass Cheatsheet
 type: bytes
-tags: [Sass, CSS]
+tag: [Sass, CSS]
 description: A cheatsheet for Sass.
 date: 2014-10-01T00:00:00-00:00
 draft: false

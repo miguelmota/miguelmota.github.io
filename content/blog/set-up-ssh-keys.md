@@ -2,7 +2,7 @@
 layout: blog-post
 title: Set up SSH keys
 type: blog
-tags: [SSH, git]
+tag: [SSH, git]
 description: How to set up SSH private, public and authorized keys.
 date: 2013-09-30T00:00:00-00:00
 draft: false

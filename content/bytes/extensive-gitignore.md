@@ -2,7 +2,7 @@
 layout: byte
 title: Extensive .gitignore
 type: bytes
-tags: [git, gitignore]
+tag: [git, gitignore]
 description: An extensive and useful .gitignore.
 date: 2013-04-04T00:00:00-00:00
 draft: false

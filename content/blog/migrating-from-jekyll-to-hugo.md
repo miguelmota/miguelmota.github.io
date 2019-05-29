@@ -2,7 +2,7 @@
 layout: blog-post
 title: Migrating from Jekyll to Hugo
 type: blog
-tags: [Jekyll, Hugo, blog, migration]
+tag: [Jekyll, Hugo, blog, migration]
 description: How to migrate your jekyll blog to hugo.
 date: 2019-05-25T00:00:00-00:00
 draft: false

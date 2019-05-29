@@ -1,8 +1,7 @@
 ---
 layout: blog-post
 title: Ant task to compress HTML files
-type: blog
-tags: [HTML, Ant]
+tag: [HTML, Ant]
 description: Tutorial on how to create an ant task to compress html files.
 date: 2011-10-14T00:00:00-00:00
 draft: false

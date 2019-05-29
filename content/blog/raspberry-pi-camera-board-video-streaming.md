@@ -2,7 +2,7 @@
 layout: blog-post
 title: Raspberry Pi camera board video streaming
 type: blog
-tags: [Raspberry Pi, Raspbian, video, streaming, mjpg-streamer]
+tag: [Raspberry Pi, Raspbian, video, streaming, mjpg-streamer]
 description: Set up a video streaming server using the Raspberry Pi camera board.
 date: 2013-09-25T00:00:00-00:00
 draft: false

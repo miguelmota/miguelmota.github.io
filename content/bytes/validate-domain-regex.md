@@ -2,7 +2,7 @@
 layout: byte
 title: Regex to validate domain name
 type: bytes
-tags: [JavaScript, regex]
+tag: [JavaScript, regex]
 description: How to validate a domain name using a regular expression.
 date: 2015-01-04T00:00:00-00:00
 draft: false

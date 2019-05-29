@@ -2,7 +2,7 @@
 layout: byte
 title: How to convert pixels to em in Sass
 type: bytes
-tags: [Sass, css]
+tag: [Sass, css]
 description: How to convert pixels to em in Sass
 date: 2013-04-06T00:00:00-00:00
 draft: false

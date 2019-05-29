@@ -35,6 +35,10 @@ pygmentsStyle = "friendly"
 #pygmentsStyle = "vim"
 #pygmentsStyle = "vs"
 
+[taxonomies]
+	tag = "tag"
+	category = "category"
+
 [params]
 	author = "Miguel Mota"
 	description = "Software developer from sunny Southern California."

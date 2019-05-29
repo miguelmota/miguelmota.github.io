@@ -2,7 +2,7 @@
 layout: byte
 title: How to find the difference between arrays
 type: bytes
-tags: [JavaScript, algorithm]
+tag: [JavaScript, algorithm]
 description: Algorithm to find the difference between array.
 date: 2015-10-23T00:00:00-00:00
 draft: false

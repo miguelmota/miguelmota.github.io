@@ -2,7 +2,7 @@
 layout: byte
 title: OpenSSL Cheatsheet
 type: bytes
-tags: [OpenSSL, TLS, SSL]
+tag: [OpenSSL, TLS, SSL]
 description: A cheatsheet of common OpenSSL commands.
 date: 2017-04-27T00:00:00-00:00
 draft: false

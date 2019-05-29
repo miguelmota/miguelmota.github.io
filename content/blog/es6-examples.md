@@ -2,7 +2,7 @@
 layout: blog-post
 title: ES6 Examples
 type: blog
-tags: [ES6, JavaScript]
+tag: [ES6, JavaScript]
 description: Examples of JavaScript ES6 Features.
 date: 2014-06-20T00:00:00-00:00
 draft: false

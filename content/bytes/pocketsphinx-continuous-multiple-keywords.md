@@ -2,7 +2,7 @@
 layout: byte
 title: How to use multiple keywords in Pocketsphinx continuous mode
 type: bytes
-tags: [Pocketsphinx, speech recognition]
+tag: [Pocketsphinx, speech recognition]
 description: Use multiple keywords in Pocketsphinx continuous mode
 date: 2016-02-20T00:00:00-00:00
 draft: false

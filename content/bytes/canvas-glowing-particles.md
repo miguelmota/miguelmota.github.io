@@ -2,7 +2,7 @@
 layout: byte
 title: How to create glowing particles in canvas
 type: bytes
-tags: [canvas, JavaScript]
+tag: [canvas, JavaScript]
 description: How to create glowing particles in canvas.
 date: 2016-01-15T00:00:00-00:00
 draft: false

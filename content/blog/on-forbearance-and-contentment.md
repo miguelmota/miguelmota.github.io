@@ -2,7 +2,7 @@
 layout: blog-post
 title: test2
 type: blog
-tags: []
+tag: []
 description:
 date: 2018-12-13T00:00:00-00:00
 draft: true

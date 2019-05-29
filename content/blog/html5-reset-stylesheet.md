@@ -2,7 +2,7 @@
 layout: blog-post
 title: HTML5 Reset Stylesheet
 type: blog
-tags: [HTML5, CSS]
+tag: [HTML5, CSS]
 description: A useful HTML5 reset stylesheet.
 date: 2011-08-09T00:00:00-00:00
 draft: false

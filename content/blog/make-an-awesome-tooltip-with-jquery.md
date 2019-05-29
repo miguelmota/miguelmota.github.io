@@ -2,7 +2,7 @@
 layout: blog-post
 title: Make an Awesome Tooltip with jQuery
 type: blog
-tags: [JavaScript, jQuery, demo]
+tag: [JavaScript, jQuery, demo]
 description: Tutorial on how to make an simple yet awesome animated tooltip using jQuery.
 date: 2011-05-24T00:00:00-00:00
 draft: false

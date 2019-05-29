@@ -2,7 +2,7 @@
 layout: blog-post
 title: How To Survive a Zombie Outbreak
 type: blog
-tags: [apocalypse, zombies, thoughts]
+tag: [apocalypse, zombies, thoughts]
 description: Learn how to survive and kill the walking dead during an outbreak with this helpful guide.
 date: 2012-01-22T00:00:00-00:00
 draft: false

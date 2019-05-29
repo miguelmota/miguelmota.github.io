@@ -2,7 +2,7 @@
 layout: byte
 title: Download Blob
 type: bytes
-tags: [JavaScript, Blob]
+tag: [JavaScript, Blob]
 description: How to download a blob object.
 date: 2016-05-02T00:00:00-00:00
 draft: false

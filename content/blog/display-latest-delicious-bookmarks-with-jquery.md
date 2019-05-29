@@ -2,7 +2,7 @@
 layout: blog-post
 title: Display latest delicious bookmarks with jQuery
 type: blog
-tags: [JavaScript, jQuery, JSON, Delicious, demo]
+tag: [JavaScript, jQuery, JSON, Delicious, demo]
 description: Tutorial on how to display your latest Delicious bookmarks using jQuery.
 date: 2011-10-11T00:00:00-00:00
 draft: false

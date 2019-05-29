@@ -2,7 +2,7 @@
 layout: blog-post
 title: Basic HTML5 Audio Manipulation
 type: blog
-tags: [HTML5, JavaScript, audio, demo]
+tag: [HTML5, JavaScript, audio, demo]
 description: Simple HTML5 audio controls using JavaScript.
 date: 2013-07-07T00:00:00-00:00
 draft: false

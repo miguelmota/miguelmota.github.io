@@ -2,7 +2,7 @@
 layout: blog-post
 title: Getting Started with Secure Scuttlebutt (SSB)
 type: blog
-tags: [Scuttlebutt, p2p, decentralization, social network, off-grid]
+tag: [Scuttlebutt, p2p, decentralization, social network, off-grid]
 description: Getting Started with Secure Scuttlebutt (SSB)
 date: 2019-02-24T00:00:00-00:00
 draft: false

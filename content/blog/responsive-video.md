@@ -2,7 +2,7 @@
 layout: blog-post
 title: Responsive Video
 type: blog
-tags: [JavaScript, responsive, video]
+tag: [JavaScript, responsive, video]
 description: A simple script to make videos responsive.
 date: 2013-04-19T00:00:00-00:00
 draft: false

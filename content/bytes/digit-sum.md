@@ -2,7 +2,7 @@
 layout: byte
 title: How to sum the digits of a number
 type: bytes
-tags: [JavaScript, algorithm, recursion]
+tag: [JavaScript, algorithm, recursion]
 description: How to sum the digits of a number.
 date: 2015-10-09T00:00:00-00:00
 draft: false

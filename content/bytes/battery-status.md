@@ -2,7 +2,7 @@
 layout: byte
 title: How to use Battery Status API
 type: bytes
-tags: [JavaScript]
+tag: [JavaScript]
 description: A wrapper for the Battery Status API.
 date: 2015-01-08T00:00:00-00:00
 draft: false

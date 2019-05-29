@@ -2,7 +2,7 @@
 layout: byte
 title: How to use Ansible to deploy with git
 type: bytes
-tags: [Ansible, git]
+tag: [Ansible, git]
 description: A basic Ansible example on deploying with git.
 date: 2014-06-13T00:00:00-00:00
 draft: false

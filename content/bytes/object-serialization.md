@@ -2,7 +2,7 @@
 layout: byte
 title: How to serialize an object in JavaScript
 type: bytes
-tags: [JavaScript]
+tag: [JavaScript]
 description: Serialize an object in Javascript.
 date: 2013-12-10T00:00:00-00:00
 draft: false

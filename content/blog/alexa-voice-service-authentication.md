@@ -2,7 +2,7 @@
 layout: blog-post
 title: Alexa Voice Service (AVS) Authentication
 type: blog
-tags: [AVS, Alexa, Amazon, authentication, cURL]
+tag: [AVS, Alexa, Amazon, authentication, cURL]
 description: Tutorial on how to authenticate with Alexa Voice Service.
 date: 2016-02-28T00:00:00-00:00
 draft: false

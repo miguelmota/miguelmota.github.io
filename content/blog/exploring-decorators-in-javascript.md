@@ -2,7 +2,7 @@
 layout: blog-post
 title: Exploring Decorators in JavaScript
 type: blog
-tags: [JavaScript, decorators, ES7, ES2016]
+tag: [JavaScript, decorators, ES7, ES2016]
 description: Exploring ES7 Decorators in JavaScript.
 date: 2016-03-07T00:00:00-00:00
 draft: false

@@ -2,7 +2,7 @@
 layout: byte
 title: How to convert an ArrayBuffer to Buffer
 type: bytes
-tags: [JavaScript, Node.js]
+tag: [JavaScript, Node.js]
 description: How to convert an ArrayBuffer to Buffer in JavaScript.
 date: 2015-12-29T00:00:00-00:00
 draft: false

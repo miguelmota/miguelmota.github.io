@@ -2,7 +2,7 @@
 layout: blog-post
 title: Node.js and Nginx on Ubuntu
 type: blog
-tags: [Node.js, Nginx, Ubuntu]
+tag: [Node.js, Nginx, Ubuntu]
 description: Get Node.js and Nginx running on your Ubuntu server.
 date: 2013-09-26T00:00:00-00:00
 draft: false

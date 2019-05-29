@@ -2,7 +2,7 @@
 layout: byte
 title: How to create an array excluding provided values
 type: bytes
-tags: [JavaScript]
+tag: [JavaScript]
 description: Create an array with excluding provided value.
 date: 2015-08-14T00:00:00-00:00
 draft: false

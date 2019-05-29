@@ -2,7 +2,7 @@
 layout: blog-post
 title: Summary of "Think and Grow Rich"
 type: blog
-tags: [book, summary, inspiration]
+tag: [book, summary, inspiration]
 description: A summary outlining key points in Napoleon Hill's "Think and Grow Rich" book.
 date: 2016-01-02T00:00:00-00:00
 draft: false

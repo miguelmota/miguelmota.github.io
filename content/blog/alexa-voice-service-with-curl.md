@@ -2,7 +2,7 @@
 layout: blog-post
 title: Alexa Voice Service (AVS) with cURL
 type: blog
-tags: [AVS, Alexa, Amazon, cURL]
+tag: [AVS, Alexa, Amazon, cURL]
 description: Learn how to interact with Alexa Voice Service (AVS) RESTful API with cURL.
 date: 2016-01-17T00:00:00-00:00
 draft: false

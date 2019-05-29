@@ -2,7 +2,7 @@
 layout: blog-post
 title: Sass Media Queries
 type: blog
-tags: [Sass, CSS, media queries, mixins]
+tag: [Sass, CSS, media queries, mixins]
 description: Sass media queries to set breakpoints.
 date: 2013-04-06T00:00:00-00:00
 draft: false

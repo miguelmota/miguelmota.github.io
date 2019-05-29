@@ -2,7 +2,7 @@
 layout: byte
 title: How to find the maximum value in an array
 type: bytes
-tags: [JavaScript, algorithm]
+tag: [JavaScript, algorithm]
 description: Find the maximum value in an array.
 date: 2015-05-22T00:00:00-00:00
 draft: false

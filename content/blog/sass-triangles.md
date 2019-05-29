@@ -2,7 +2,7 @@
 layout: blog-post
 title: Sass Triangles
 type: blog
-tags: [Sass, CSS, mixins]
+tag: [Sass, CSS, mixins]
 description: A Sass mixin for creating triangles.
 date: 2013-05-04T00:00:00-00:00
 draft: false

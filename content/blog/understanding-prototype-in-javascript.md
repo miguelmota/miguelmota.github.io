@@ -2,7 +2,7 @@
 layout: blog-post
 title: Understanding Prototype in JavaScript
 type: blog
-tags: [javascript, prototype]
+tag: [javascript, prototype]
 description: An attempt at demonstrating what prototype in JavaScript is.
 date: 2013-04-25T00:00:00-00:00
 draft: false

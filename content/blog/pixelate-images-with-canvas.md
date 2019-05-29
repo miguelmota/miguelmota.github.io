@@ -2,7 +2,7 @@
 layout: blog-post
 title: Pixelate images with Canvas
 type: blog
-tags: [JavaScript, canvas, demo]
+tag: [JavaScript, canvas, demo]
 description: Learn how to pixelate an image with canvas.
 date: 2015-02-01T00:00:00-00:00
 draft: false

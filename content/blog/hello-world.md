@@ -1,8 +1,6 @@
 ---
-layout: blog-post
 title: Hello World
-type: blog
-tags: [hello world, thoughts, jekyll]
+tag: [hello world, thoughts, blog, jekyll]
 description: Hello World. This is my first blog post using jekyll, a static site generator.
 date: 2011-03-30T00:00:00-00:00
 draft: false

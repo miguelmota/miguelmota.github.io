@@ -2,7 +2,7 @@
 layout: blog-post
 title: Intro to Redis
 type: blog
-tags: [Redis, CLI]
+tag: [Redis, CLI]
 description: Simple explanations of Redis data structures.
 date: 2014-01-23T00:00:00-00:00
 draft: false

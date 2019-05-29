@@ -2,7 +2,7 @@
 layout: byte
 title: How to detect WebGL support
 type: bytes
-tags: [JavaScript, WebGL]
+tag: [JavaScript, WebGL]
 description: Detect if browser supports WebGL.
 date: 2015-05-25T00:00:00-00:00
 draft: false

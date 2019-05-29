@@ -2,7 +2,7 @@
 layout: byte
 title: How to open a Terminal tab programatically
 type: bytes
-tags: [Node.js, Terminal, OS X]
+tag: [Node.js, Terminal, OS X]
 description: Open a Terminal tab programatically in Node.js.
 date: 2014-10-20T00:00:00-00:00
 draft: false

@@ -2,7 +2,7 @@
 layout: byte
 title: How to find the logarithm of a number with specified base
 type: bytes
-tags: [JavaScript]
+tag: [JavaScript]
 description: Find the logarithm of a number with specified base.
 date: 2015-10-23T00:00:00-00:00
 draft: false

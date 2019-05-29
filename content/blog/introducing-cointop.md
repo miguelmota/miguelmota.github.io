@@ -2,7 +2,7 @@
 layout: blog-post
 title: Introducing cointop – An interactive terminal app for tracking cryptocurrencies
 type: blog
-tags: [terminal, tui, command-line, cryptocurrencies]
+tag: [terminal, tui, command-line, cryptocurrencies]
 description: Cointop is an interactive terminal based UI application for tracking cryptocurrencies in real-time.
 date: 2018-05-15T00:00:00-00:00
 draft: false

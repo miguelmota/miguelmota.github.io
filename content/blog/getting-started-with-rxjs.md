@@ -2,7 +2,7 @@
 layout: blog-post
 title: Getting Started with RxJS
 type: blog
-tags: [JavaScript, RxJS, Observables, FRP, Functional Reactive Programming]
+tag: [JavaScript, RxJS, Observables, FRP, Functional Reactive Programming]
 summary: A guide in to the world of Functional Reactive Programming with RxJS.
 date: 2016-04-22T00:00:00-00:00
 draft: false

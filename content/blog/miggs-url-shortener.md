@@ -2,7 +2,7 @@
 layout: blog-post
 title: mig.gs™ — url shortener
 type: blog
-tags: [thoughts, work, miggs]
+tag: [thoughts, work, miggs]
 description: A simple url shortening service with stats.
 date: 2012-02-20T00:00:00-00:00
 draft: false

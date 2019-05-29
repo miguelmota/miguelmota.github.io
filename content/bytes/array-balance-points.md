@@ -2,7 +2,7 @@
 layout: byte
 title: How to find the balance points of an array
 type: bytes
-tags: [JavaScript, algorithm]
+tag: [JavaScript, algorithm]
 description: Find the balance points of an array.
 date: 2015-10-23T00:00:00-00:00
 draft: false

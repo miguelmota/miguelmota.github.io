@@ -2,7 +2,7 @@
 layout: blog-post
 title: Getting started with Service Workers
 type: blog
-tags: [JavaScript, HTML5, Service Workers]
+tag: [JavaScript, HTML5, Service Workers]
 description: Learn how to use the Service Workers API to cache files.
 date: 2016-01-27T00:00:00-00:00
 draft: false

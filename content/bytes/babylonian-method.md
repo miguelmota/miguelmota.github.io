@@ -2,7 +2,7 @@
 layout: byte
 title: How to calculate the square root using Babylonian method.
 type: bytes
-tags: [JavaScript, algorithm]
+tag: [JavaScript, algorithm]
 description: Babylonian method for calculating square root of a number.
 date: 2015-10-25T00:00:00-00:00
 draft: false

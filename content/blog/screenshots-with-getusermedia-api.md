@@ -2,7 +2,7 @@
 layout: blog-post
 title: Screenshots with getUserMedia API
 type: blog
-tags: [HTML5, JavaScript, getUserMedia, demo]
+tag: [HTML5, JavaScript, getUserMedia, demo]
 description: Take webcam screenshots with the getUserMedia JavaScript API.
 date: 2013-08-31T00:00:00-00:00
 draft: false

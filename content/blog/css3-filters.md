@@ -2,7 +2,7 @@
 layout: blog-post
 title: CSS3 Filters
 type: blog
-tags: [CSS3, demo]
+tag: [CSS3, demo]
 description: Spice up the way your photos look with CSS3 filters.
 date: 2012-07-22T00:00:00-00:00
 draft: false

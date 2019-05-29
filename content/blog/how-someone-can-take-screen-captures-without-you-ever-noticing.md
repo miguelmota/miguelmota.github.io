@@ -2,7 +2,7 @@
 layout: blog-post
 title: How someone can take screen captures without you ever noticing
 type: blog
-tags: [macOS, screen capture, hacking, detection, security]
+tag: [macOS, screen capture, hacking, detection, security]
 description: How someone can take screen captures without you ever noticing.
 date: 2019-02-28T00:00:00-00:00
 draft: false

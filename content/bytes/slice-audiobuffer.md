@@ -2,7 +2,7 @@
 layout: byte
 title: How to slice an AudioBuffer
 type: bytes
-tags: [JavaScript, audio]
+tag: [JavaScript, audio]
 description: Slice out a portion of an AudioBuffer.
 date: 2015-11-28T00:00:00-00:00
 draft: false

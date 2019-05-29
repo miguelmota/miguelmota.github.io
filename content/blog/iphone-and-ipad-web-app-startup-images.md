@@ -2,7 +2,7 @@
 layout: blog-post
 title: iPhone and iPad Web App Startup Images
 type: blog
-tags: [HTML, meta, iPhone, iPad, web apps]
+tag: [HTML, meta, iPhone, iPad, web apps]
 description: How to implement iPhone and iPad web app startup images.
 date: 2013-04-07T00:00:00-00:00
 draft: false

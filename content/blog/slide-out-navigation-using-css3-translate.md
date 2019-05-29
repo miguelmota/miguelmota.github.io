@@ -2,7 +2,7 @@
 layout: blog-post
 title: Slide Out Navigation using CSS3 Translate
 type: blog
-tags: [CSS3, transform, translate, navigation, demo]
+tag: [CSS3, transform, translate, navigation, demo]
 description: Facebook style slide out navigation using CSS3 Translate for the animation.
 date: 2013-06-07T00:00:00-00:00
 draft: false

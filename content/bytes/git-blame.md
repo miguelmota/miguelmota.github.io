@@ -2,7 +2,7 @@
 layout: byte
 title: How to blame in git
 type: bytes
-tags: [git]
+tag: [git]
 description: How to blame in git from command line.
 date: 2016-01-20T00:00:00-00:00
 draft: false

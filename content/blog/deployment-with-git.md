@@ -2,7 +2,7 @@
 layout: blog-post
 title: Deployment with Git
 type: blog
-tags: [Git, SSH, deployment]
+tag: [Git, SSH, deployment]
 description: Setting up git hooks for effortless deployment.
 date: 2014-03-14T00:00:00-00:00
 draft: false

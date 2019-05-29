@@ -2,7 +2,7 @@
 layout: byte
 title: How to encrypt with GPG
 type: bytes
-tags: [PGP, GPG, encryption]
+tag: [PGP, GPG, encryption]
 description: Use GPG to encrypt and decrypt files.
 date: 2016-02-21T00:00:00-00:00
 draft: false

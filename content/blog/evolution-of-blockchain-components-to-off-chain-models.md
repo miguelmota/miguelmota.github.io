@@ -2,7 +2,7 @@
 layout: blog-post
 title: Evolution of Blockchain Components to Off-Chain Models
 type: blog
-tags: [blockchain, storage, serverless, off-chain, computation]
+tag: [blockchain, storage, serverless, off-chain, computation]
 description: Evolution of Blockchain Components to Off-Chain Models.
 date: 2019-03-10T00:00:00-00:00
 draft: false

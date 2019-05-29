@@ -2,7 +2,7 @@
 layout: blog-post
 title: Generate Self-signed SSL Certificate
 type: blog
-tags: [SSL, TLS, RSA, HTTP, encryption, security, Node.js]
+tag: [SSL, TLS, RSA, HTTP, encryption, security, Node.js]
 description:
 date: 2015-11-29T00:00:00-00:00
 draft: false

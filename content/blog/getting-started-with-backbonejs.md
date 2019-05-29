@@ -2,7 +2,7 @@
 layout: blog-post
 title: Getting Started with Backbone.js
 type: blog
-tags: [JavaScript, backbone.js]
+tag: [JavaScript, backbone.js]
 description: Getting cozy with Backbone.js Models, Collections, Views, and Routes.
 date: 2013-11-30T00:00:00-00:00
 draft: false

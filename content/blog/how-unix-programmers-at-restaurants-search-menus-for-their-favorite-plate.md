@@ -2,7 +2,7 @@
 layout: blog-post
 title: How Unix programmers at restaurants search menus for their favorite plate
 type: blog
-tags: [unix, linux, command-line, comedy]
+tag: [unix, linux, command-line, comedy]
 description: How Unix programmers at restaurants search menus for their favorite plate.
 date: 2018-12-13T00:00:00-00:00
 draft: false

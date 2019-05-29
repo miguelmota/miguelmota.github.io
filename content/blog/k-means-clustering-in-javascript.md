@@ -2,7 +2,7 @@
 layout: blog-post
 title: K-Means Clustering in JavaScript
 type: blog
-tags: [k-means, machine learning, data mining, algorithm, JavaScript, demo]
+tag: [k-means, machine learning, data mining, algorithm, JavaScript, demo]
 description: An example of the k-means algorithm in JavaScript.
 date: 2015-02-25T00:00:00-00:00
 draft: false

@@ -2,7 +2,7 @@
 layout: blog-post
 title: Memoization – Caching function results in JavaScript
 type: blog
-tags: [JavaScript, memoization, cache]
+tag: [JavaScript, memoization, cache]
 description: Avoid recalcuation by caching and locally storing function results.
 date: 2013-10-30T00:00:00-00:00
 draft: false

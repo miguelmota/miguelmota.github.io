@@ -2,7 +2,7 @@
 layout: blog-post
 title: Set up Raspberry Pi as a Network Server
 type: blog
-tags: [Raspberry Pi, Raspbian, Samba, video, streaming, storage]
+tag: [Raspberry Pi, Raspbian, Samba, video, streaming, storage]
 description: Learn how to set up a Samba on the Raspberry Pi to share files acrosss your home network.
 date: 2016-01-10T00:00:00-00:00
 draft: false
