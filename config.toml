@@ -2,7 +2,8 @@ baseURL = "https://miguelmota.com/"
 languageCode = "en-us"
 title = "Miguel Mota | Software Developer"
 theme = "blank"
-enableEmoji = true pygmentsUseClassic = false
+enableEmoji = true
+pygmentsUseClassic = false
 pygmentsCodeFences = true
 pygmentsCodeFencesGuessSyntax = true
 # https://help.farbox.com/pygments.html
