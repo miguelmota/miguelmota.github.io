@@ -6,9 +6,9 @@
 
   {{ partial "stackoverflow.html" . }}
 
-  {{ $paginator := .Paginate (where .Site.Pages "Type" "blog") 20 }}
+  {{ $paginator := .Paginate (where (where .Site.Pages "Type" "blog") ".Title" "!=" "Blogs") 20 }}
   {{ range $paginator.Pages }}
-    {{ partial "summary.html" . }}
+      {{ partial "summary.html" . }}
   {{ end }}
   {{ partial "pagination.html" . }}
   {{ partial "subscribe.html" . }}
