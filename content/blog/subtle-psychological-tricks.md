@@ -8,7 +8,7 @@ date: 2019-02-14T00:00:00-00:00
 draft: false
 ---
 
-## Tricks for focusing
+## For focusing
 
 **Chewing gum helps your brain focus.**
 
@@ -26,7 +26,7 @@ There's nothing strange about taking a small water break and gives you time to c
 
 The hardest part is starting a task. Once you start a task, you’ll end up doing it for more time than 5 minutes.
 
-## Tricks for being more likable
+## For being more likable
 
 **Look people in the eye when communicating to make them like you more.**
 
@@ -56,7 +56,7 @@ This is known as mimicry. By copying speech patterns, movements, and mannerisms,
 
 Warm hands give the feeling of a warm friendly invitation and atmosphere, while cold hands give the feeling of unwelcomeness.
 
-## Tricks for making people do things for you
+## For making people do things for you
 
 **Say “start with this” instead of “do this” to make a person do a task.**
 
@@ -92,7 +92,7 @@ For example, if you ask a kid if they want “2 stalks of broccoli” or “5 st
 
 **Ask for something huge before asking for what you really want.**
 
-(person will fell guilty for not getting your first request)
+The person will feel guilty for not getting your first request, and will be more willing to fulfill your second request.
 
 **People will talk themselves to avoid silence and end up spilling information.**
 
@@ -106,7 +106,7 @@ People look at your eyes to see which direction you are walking towards and will
 
 It’s a simple way of getting people to help you out because people tend to avoid guilt.
 
-## Convincing people
+## For convincing people
 
 **Start with agreement to find common ground and then disagree to better convince person.**
 
@@ -124,7 +124,7 @@ Elders have more experiences therefore seem more credible when it comes to advic
 
 A story or lie is more believable when it includes an embarrassing moment that occurred. For example, instead of lying about not being a bob’s house by saying “I was not at bob’s house this weekend”, what you should say is “I haven’t been at bob’s house in so long because of that incident I flooded the toilet, so I hanged out with Charlie instead”. The former comes of as more believable because you are being quite specific by providing embarrassing details.
 
-## Tricks for dealing with confrontation
+## For dealing with confrontation
 
 **Borrow something small like a pen from someone who’s not a fan of you to change their minds about you.**
 
@@ -154,7 +154,7 @@ Having a mirror behind you will make the person feel uncomfortable about how the
 
 Kindness is contagious and reduces emotional distance between people. Acting kind is telling the other person that they didn't incapacitate you and are undefeatable. People like people who are kind to them so your enemy might turn into a friend.
 
-## Miscellaneous tricks
+## Other tricks
 
 **See who’s looking at who when they laugh because it’s the person they’re dominated by.**
 

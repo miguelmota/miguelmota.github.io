@@ -155,7 +155,7 @@ main header {
 }
 
 .pagination {
-
+  margin-bottom: 2em;
 }
 
 .summary {
@@ -163,7 +163,25 @@ main header {
 }
 
 .related {
-  margin-bottom: 1em;
+  margin-bottom: 2em;
+}
+
+.subscribe {
+  margin-bottom: 2em;
+}
+
+.subscribe p {
+  margin-bottom: 0.5em;
+}
+
+.subscribe label {
+  display: block;
+  font-size: 0.8em;
+}
+
+.subscribe input[type="email"] {
+  min-width: 16em;
+  padding: 0.2em;
 }
 
 .site-footer {
