@@ -12,15 +12,13 @@ route: about
 
 <p>~8 years of experience in software development, mainly dealing with full-stack web development. Some of my interests are Golang, Node.js, FRP, web audio, Python, Vim, Docker, distributed systems, software architecture, Bitcoin, Ethereum, and decentralized systems in general.</p>
 
-<p>Some other tidbits about me are:</p>
+<p>Some other tidbits:</p>
 
 <ul>
-  <li>Love learning new things and systemizing.</li>
   <li><em>"Make it run, make it right, make it fast"</em> is the general programming process I follow.</li>
-  <li>When there's time to spare you can find me on on <a href="https://stackoverflow.com/users/1439168/miguel-mota" target="_blank" rel="noreferrer noopener" data-ga-label="About - StackOverflow">StackOverflow</a> answering questions.</li>
-  <li><a href="https://en.wikipedia.org/wiki/Stoicism" target="_blank" rel="noreferrer noopener" data-ga-label="About - Stoicism">Stoicism</a> is a philosophy I live by on a daily basis (<a href="https://en.wikipedia.org/wiki/Marcus_Aurelius" target="_blank" rel="noreferrer noopener" data-ga-label="About - Marcus Aurelius">Marcus Aurelius</a> is my favorite stoic).</li>
-  <li>A book I think everyone should read is <a href="https://en.wikipedia.org/wiki/How_to_Win_Friends_and_Influence_People" target="_blank" rel="noreferrer noopener" data-ga-label="About - Favorite Book">How to Win Friends and Influence People</a> by Dale Carnegie.</li>
-  <li>I am an <a href="https://en.wikipedia.org/wiki/INTJ" target="_blank" rel="noopener noreferrer" data-ga-label="About - INTJ">INTJ</a> personality type.</li>
+  <li><a href="https://en.wikipedia.org/wiki/Stoicism" target="_blank" rel="noreferrer noopener" data-ga-label="About - Stoicism">Stoicism</a> practitioner. <a href="https://en.wikipedia.org/wiki/Marcus_Aurelius" target="_blank" rel="noreferrer noopener" data-ga-label="About - Marcus Aurelius">Marcus Aurelius</a> is my favorite stoic.</li>
+  <li>A book everyone should read is <a href="https://en.wikipedia.org/wiki/How_to_Win_Friends_and_Influence_People" target="_blank" rel="noreferrer noopener" data-ga-label="About - Favorite Book">How to Win Friends and Influence People</a> by Dale Carnegie.</li>
+  <li><a href="https://en.wikipedia.org/wiki/INTJ" target="_blank" rel="noopener noreferrer" data-ga-label="About - INTJ">INTJ</a> personality type.</li>
 </li>
 
 <p>View my <a href="/work" data-ga-label="About - Work">work »</a></p>
@@ -28,6 +26,6 @@ route: about
 <h4>About the site</h4>
 <p>This site is built with J̶e̶k̶y̶l̶l̶ <a href="https://gohugo.io/" target="_blank" rel="noopener noreferrer" data-ga-label="About - Hugo">Hugo</a>, a static site generator in Go. I'll ocasionally express <a href="/blog">thoughts</a> and findings which I find worthy of sharing.</p>
 
-<p>And no, this site isn't broken; it's intentially built for <a href="http://motherfuckingwebsite.com/" target="_blank"  rel="noopener noreferrer" data-ga-label="About - Speed and readability">speed and readability</a> 🙂
+<p>And no, this site isn't broken; it's intentially built for <a href="http://motherfuckingwebsite.com/" target="_blank"  rel="noopener noreferrer" data-ga-label="About - Speed and readability">speed and readability</a> ;)
 
 <datetime data-last-update datetime="2015-11-19" pubdate="pubdate">Last updated 15 April 2018</datetime>

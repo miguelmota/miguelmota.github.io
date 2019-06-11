@@ -31,6 +31,7 @@ The interface is inspired by [`htop`](https://en.wikipedia.org/wiki/Htop) and sh
 - Save and view favorite coins
 - Portfolio tracking of holdings
 - 256-color support
+- Custom colorschemes
 - Help menu
 - Offline cache
 - Supports multiple coin stat APIs

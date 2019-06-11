@@ -5,7 +5,7 @@ description: Say hello.
 route: contact
 ---
 <p>
-  <a href="mailto:hello@miguelmota.com" data-ga-label="Contact - Email" title="Email hello@miguelmota.com">hello@miguelmota.com</a><br>
+  hello [at] miguelmota.com<br>
   <small style="opacity: 0.5;font-size: 0.7em;">*Response not guaranteed</small>
 </p>
 
