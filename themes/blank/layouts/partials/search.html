@@ -1,0 +1,8 @@
+<div class="search" id="search">
+  <h3>Search</h3>
+  <form action="https://www.google.com/search" method="get" name="search-form" target="_blank" novalidate class="search-form">
+    <input type="hidden" name="q" value="site:{{ .Site.BaseURL }}">
+    <input type="text" name="q" value="" placeholder="keywords" aria-label="query">
+    <input type="submit" value="Search" name="search">
+  </form>
+</div>

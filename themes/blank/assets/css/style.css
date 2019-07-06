@@ -179,9 +179,30 @@ main header {
   font-size: 0.8em;
 }
 
+input[type="text"],
+input[type="email"] {
+  font-size: 16px;
+  border: 1px solid #dfdfdf;
+}
+
+input[type="submit"] {
+  font-size: 16px;
+}
+
 .subscribe input[type="email"] {
   min-width: 16em;
   padding: 0.2em;
+  margin-bottom: 0.2em;
+}
+
+.search {
+  margin-bottom: 2em;
+}
+
+.search input[type="text"] {
+  min-width: 16em;
+  padding: 0.2em;
+  margin-bottom: 0.2em;
 }
 
 .site-footer {

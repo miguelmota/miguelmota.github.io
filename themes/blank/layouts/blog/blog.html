@@ -1,6 +1,7 @@
 {{ partial "header.html" . }}
   <main>
     <p><em>A blog on (mostly) web</em></p>
+    {{ partial "search.html" . }}
     {{ range (.Paginator 100).Pages }}
       {{ partial "summary.html" . }}
     {{ end }}
