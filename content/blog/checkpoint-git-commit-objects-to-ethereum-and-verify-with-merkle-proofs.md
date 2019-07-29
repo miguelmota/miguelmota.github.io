@@ -9,9 +9,9 @@ draft: false
 images: [checkpoint-and-verification-processes.png]
 ---
 
-In this tutorial we'll go through how to create a smart contract on [Ethereum](https://www.ethereum.org/) that can notarize git commits and offer the ability to verify that a commit was published via verification with a merkle tree proof of git commit hash logs. Then we'll be using git hooks to publish the commit on-chain on every tagged release.
+In this guide we'll go through creating a smart contract on [Ethereum](https://www.ethereum.org/) that notarizes git commits only if the commit date is within the allocated window of time and offer the ability to verify that a commit was published by verifying with merkle proofs composed from commit hash logs. Then we'll be using git pre-push hooks to publish the commit on-chain on every tagged release.
 
-Schematics to help visualize the processes:
+Here's some schematics to help visualize the processes:
 
 ![checkpointing and verification processes diagrams](checkpoint-and-verification-processes.png "Checkpoint and verification processes")
 
@@ -21,24 +21,18 @@ Schematics to help visualize the processes:
 
 ## The problem
 
-When looking at the commit history in a git repository you can never be certain that the commits were published at the commit date it says.
-
-Let's go through a quick example to demonstrate. First we'll initialize a new git repository and commit as normal and expected:
-
+When looking at the commit history in a git repository you can never be certain that the commits were published at the commit date it says. Let's go through a quick example to demonstrate. First we'll initialize a new git repository and commit as normal and expected:
 
 ```bash
 $ git init
 Initialized empty Git repository in /tmp/example-repo/.git/
 
 $ git touch README.md
-
 $ git add .
-
 $ git commit -m "init"
 [master (root-commit) 98f2e97] init
  1 file changed, 0 insertions(+), 0 deletions(-)
  create mode 100644 README.md
-
 
 $ git log
 commit 98f2e9701776e4a861a0d5eff2404ebe5db2633b (HEAD -> master)
@@ -58,7 +52,6 @@ $ git commit -m 'init' --date='10 days ago'
  1 file changed, 0 insertions(+), 0 deletions(-)
  create mode 100644 README.md
 
-
 $ git log
 commit fd6b209b8bb4ff6e1383ef068c444bfc295a09c2 (HEAD -> master)
 Author: Miguel Mota <hello@miguelmota.com>
@@ -67,15 +60,15 @@ Date:   Sat Jun 06 16:00:50 2019 -0700
     init
 ```
 
-Now it appears as if the commit happened 10 days ago.
+Now it appears as if the commit happened *10 days ago*!
 
-Someone can completely make up the dates to make it appear as if it was created a while back so you can never really be sure if they're telling the truth. But if someone published their commits on-chain, then it's much easier to believe them because you can verify.
+Someone can completely make up the dates to make it appear as if it was created a while back so you can never really be sure if they're telling the truth. **But if commits were notarized on-chain, then you don't have to trust; just verify!**
 
 ## Smart contract
 
 There needs to be a way to notarize commits in a way that the commit date can also be verified to be current during notarization, meaning that the notary shouldn't allow commits older than a small window from the current time. This is actually pretty trivial to implement in a smart contract as we'll see.
 
-Before proceeding let's look at what a commit consists of. A commit object contains:
+Before proceeding let's look at what a commit consists of. The commit object field components are:
 
   - `tree` hash
   - `parent` hash, or hashes
@@ -174,7 +167,7 @@ function checkpoint(
   // ...
 ```
 
-Next it should construct the commit hash from the commit data by concanetating the fields into their proper format. We'll be using the [SHA1.sol](https://github.com/ensdomains/solsha1/blob/master/contracts/SHA1.sol) library which implements SHA-1 in solidity. Solidity doesn't offer a nice way to concatenate strings so I apologize for the rough looking code:
+Next it should construct the commit hash from the commit data by concanetating the fields into their proper format. We'll be using the [SHA1.sol](https://github.com/ensdomains/solsha1/blob/master/contracts/SHA1.sol) library which implements SHA-1 in solidity. Solidity doesn't offer a nice way to concatenate strings so apologies for the rough looking code:
 
 ```solidity
   // ...
@@ -201,7 +194,7 @@ Next it should construct the commit hash from the commit data by concanetating t
   // ...
 ```
 
-After concatenating to the proper format, the data must contain prefixed with the *commit* label followed by the length of the data to generate the commit hash:
+After concatenating to the proper format, the data must contain prefixed with the *commit* label followed by the length of the data to generate the commit id hash:
 
 ```solidity
   // ...
@@ -211,7 +204,7 @@ After concatenating to the proper format, the data must contain prefixed with th
   // ...
 ```
 
-And lastly setting the commit hash as the key and the commit date as the value in the storage mapping if it doesn't exist already.
+And lastly setting the commit id as the key and the commit date as the value in the storage mapping if it doesn't exist already.
 
 ```solidity
   // ...
@@ -220,6 +213,8 @@ And lastly setting the commit hash as the key and the commit date as the value i
   checkpoints[commitHash] = _commit.commitDate;
 }
 ```
+
+The contract also contains methods for verifying merkle proofs which we'll see later. If you're not familiar with merkle proofs in solidity, check out this [example](https://github.com/miguelmota/merkletreejs-solidity).
 
 **Here's the full solidity contract:**
 
@@ -379,7 +374,7 @@ We'll go ahead an deploy it to the Kovan testnet, you can see it here on [ethers
 
 ## Git hook
 
-Ok cool it's all deployed now, so now we should create a git hook to submit a transaction to checkpoint.
+We should create a git hook to submit a transaction that performs the checkpoint.
 
 The way this is going to work is we're going to only publish to the smart contract if it's a tagged release, meaning that we'll check if the current git commit has a corresponding git tag associated with it. For simplicity sake, let's use node.js and the child proccess library to execute git commands:
 
@@ -426,9 +421,10 @@ const {
 
 const author = `${authorName} <${authorEmail}>`
 const committer = `${committerName} <${committerEmail}>`
-const message = `${title}${description}
-`
 
+const message = `${title}${description}\n`
+
+// NOTE: newlines are necessary here
 const signature = `-----BEGIN PGP SIGNATURE-----
 
 ${pgp}
@@ -439,7 +435,6 @@ We have all the data formatted and queued and now just need to set up the web3 p
 
 ```bash
 $ git config ethereumcheckpoint.privatekey 4f3edf983ac636a65a842ce7c78d9aa706d3b113bce9c46f30d7d21715b23b1d
-
 $ git config ethereumcheckpoint.provideruri https://kovan.infura.io/
 ```
 
@@ -469,16 +464,14 @@ const fs = require('fs')
 const path = require('path')
 
 const { address: sender } = web3.eth.accounts.privateKeyToAccount(`0x${privateKey}`)
-
 const contractJSON = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../build/contracts/Commits.json')))
 const { abi } = contractJSON
 const networkId = 42 // kovan
 const { address: contractAddress } = contractJSON.networks[networkId]
-
 const contract = new web3.eth.Contract(abi, contractAddress)
 ```
 
-Finally we send submit the transaction on-chain and assert the status to be successful:
+Finally we send a signed transaction on-chain and assert the status to be successful:
 
 ```js
 const data = {
@@ -506,7 +499,7 @@ console.log(`Transaction hash: ${transactionHash}`)
 assert.ok(status)
 ```
 
-**Here's the full git hook code:**
+**Here's the full git pre-push hook code:**
 
 ```js
 const assert = require('assert')
@@ -566,10 +559,14 @@ const committer = `${committerName} <${committerEmail}>`
 const message = `${title}${description}
 `
 
-const signature = `-----BEGIN PGP SIGNATURE-----
+let signature = ''
+if (pgp) {
+  // NOTE: newlines are necessary here
+  signature = `-----BEGIN PGP SIGNATURE-----
 
 ${pgp}
 -----END PGP SIGNATURE-----`.split('\n').join('\n ') + '\n'
+}
 
 const data = {
   tree,
@@ -636,9 +633,7 @@ Assuming you have set the required custom git config attributes already, you can
 
 ```bash
 $ git tag v0.0.1
-
 $ git push origin master
-
 Tag v0.0.1 found, checkpointing commit da1597df5884f651acfa2d3f50bb37d320fb2a20
 Checkpointing commit to Ethereum...
 Transaction hash: 0x0f64c42d47e7c92d5aa0da5eca0a6d3a33aed2695e46b70e3e850ce4694c525f
