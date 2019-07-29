@@ -10,6 +10,14 @@ draft: false
 
 In this tutorial we'll go through how to create a smart contract on [Ethereum](https://www.ethereum.org/) that can notarize git commits and offer the ability to verify that a commit was published via verification with a merkle tree proof of git commit hash logs. Then we'll be using git hooks to publish the commit on-chain on every tagged release.
 
+Schematics to help visualize the processes:
+
+![checkpointing and verification processes diagrams](checkpoint-and-verification-processes.png "Checkpoint and verification processes")
+
+- i. Tagging release
+- ii. Publishing to Ethereum via git pre-push hook
+- iii. Verifying git commit via merkle proofs
+
 ## The problem
 
 When looking at the commit history in a git repository you can never be certain that the commits were published at the commit date it says.
