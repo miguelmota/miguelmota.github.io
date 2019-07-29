@@ -723,3 +723,5 @@ const web3 = new Web3(new Web3.providers.HttpProvider(providerUri))
 ```
 
 All of the code is available on [github](https://github.com/miguelmota/ethereum-checkpoint-git-commit/).
+
+<small>Last updated 28 Jul 2019</small>
