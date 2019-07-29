@@ -3,9 +3,10 @@ layout: blog-post
 title: Checkpoint git commit objects to Ethereum and verify with merkle proofs
 type: blog
 tag: [git, git-hooks, ethereum, blockchain, merkle-tree, merkle-proof]
-description: Tutorial on how to checkpoint git commit objects using git push hooks to Ethereum and then verifying if a commit has been published using merkle proofs on-chain.
+description: Checkpoint git commit objects using git push hooks to Ethereum and then verifying if a commit has been published using merkle proofs on-chain.
 date: 2019-06-19T00:00:00-00:00
 draft: false
+images: [checkpoint-and-verification-processes.png]
 ---
 
 In this tutorial we'll go through how to create a smart contract on [Ethereum](https://www.ethereum.org/) that can notarize git commits and offer the ability to verify that a commit was published via verification with a merkle tree proof of git commit hash logs. Then we'll be using git hooks to publish the commit on-chain on every tagged release.

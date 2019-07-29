@@ -18,6 +18,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="Miguel Mota">
+  {{ partial "twitter_cards.html" . }}
   <title>{{ if ne .Title .Site.Title }}{{ .Title }} » {{ .Site.Title }}{{ else }}{{ .Site.Title }}{{ end }}</title>
   {{ with .Site.Params.description }}<meta name="description" content="{{ . }}">{{ end }}
   {{ with .Site.Params.keywords }}<meta name="keywords" content="{{ . }}">{{ end }}
