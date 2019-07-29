@@ -138,6 +138,14 @@ main header {
   margin-bottom: 1em;
 }
 
+.highlight code {
+  background: none;
+}
+
+.highlight pre {
+  padding: 0.5em;
+}
+
 .tags {
   display: inline-block;
   font-size: 0.8em;
