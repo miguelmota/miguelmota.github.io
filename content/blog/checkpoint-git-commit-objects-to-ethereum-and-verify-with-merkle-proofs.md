@@ -1,9 +1,9 @@
 ---
 layout: blog-post
-title: Checkpoint git commit objects and verify on-chain
+title: Checkpoint git commit objects to Ethereum and verify with merkle proofs
 type: blog
-tag: [git, ethereum, blockchain, merkletree]
-description: Checkpoint git commits with git push hooks and verify using merkle trees on Ethereum
+tag: [git, git-hooks, ethereum, blockchain, merkle-tree, merkle-proof]
+description: Tutorial on how to checkpoint git commit objects using git push hooks to Ethereum and then verifying if a commit has been published using merkle proofs on-chain.
 date: 2019-06-19T00:00:00-00:00
 draft: false
 ---
