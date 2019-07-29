@@ -1,9 +1,9 @@
 ---
 layout: blog-post
-title: Checkpoint git commit objects to Ethereum and verify with merkle proofs
+title: Checkpoint git commit objects to Ethereum and verify using merkle proofs
 type: blog
 tag: [git, git-hooks, ethereum, blockchain, merkle-tree, merkle-proof]
-description: Checkpoint git commit objects using git push hooks to Ethereum and then verifying if a commit has been published using merkle proofs on-chain.
+description: Checkpoint and notarize git commit objects using git push hooks to Ethereum and then verifying if a commit has been published using merkle proofs on-chain.
 date: 2019-06-19T00:00:00-00:00
 draft: false
 images: [checkpoint-and-verification-processes.png]
@@ -163,7 +163,6 @@ function checkpoint(
 ) external returns (bytes20 commitHash) {
   require(_commit.commitDate <= now + 24 hours);
   require(_commit.commitDate > now - 24 hours);
-
   // ...
 ```
 
@@ -171,25 +170,20 @@ Next it should construct the commit hash from the commit data by concanetating t
 
 ```solidity
   // ...
-
   string memory treeStr = concat("tree ", _commit.tree, "\n", "", "", "", "");
-
   string memory parentsStr;
   for (uint256 i = 0; i < _commit.parents.length; i++) {
     parentsStr = concat(parentsStr, "parent ", _commit.parents[i], "\n", "", "", "");
   }
 
   string memory authorStr = concat("author ", _commit.author, " ", uint2str(_commit.authorDate), " ", _commit.authorDateTzOffset, "\n");
-
   string memory committerStr = concat("committer ", _commit.committer, " ", uint2str(_commit.commitDate), " ", _commit.commitDateTzOffset, "\n");
-
   string memory signatureStr = "";
   if (bytes(_commit.signature).length > 0) {
     signatureStr = concat("gpgsig ", _commit.signature, "", "", "", "", "");
   }
 
   string memory messageStr = concat("\n", _commit.message, "", "", "", "", "");
-
   string memory data = concat(treeStr, parentsStr, authorStr, committerStr, signatureStr, messageStr, "");
   // ...
 ```
@@ -198,9 +192,7 @@ After concatenating to the proper format, the data must contain prefixed with th
 
 ```solidity
   // ...
-
   commitHash = SHA1.sha1(abi.encodePacked("commit ", uint2str(strsize(data)), byte(0), data));
-
   // ...
 ```
 
@@ -208,7 +200,6 @@ And lastly setting the commit id as the key and the commit date as the value in 
 
 ```solidity
   // ...
-
   require(checkpoints[commitHash] == 0);
   checkpoints[commitHash] = _commit.commitDate;
 }
@@ -249,25 +240,20 @@ contract Commits {
     require(_commit.commitDate > now - 24 hours);
 
     string memory treeStr = concat("tree ", _commit.tree, "\n", "", "", "", "");
-
     string memory parentsStr;
     for (uint256 i = 0; i < _commit.parents.length; i++) {
       parentsStr = concat(parentsStr, "parent ", _commit.parents[i], "\n", "", "", "");
     }
 
     string memory authorStr = concat("author ", _commit.author, " ", uint2str(_commit.authorDate), " ", _commit.authorDateTzOffset, "\n");
-
     string memory committerStr = concat("committer ", _commit.committer, " ", uint2str(_commit.commitDate), " ", _commit.commitDateTzOffset, "\n");
-
     string memory signatureStr = "";
     if (bytes(_commit.signature).length > 0) {
       signatureStr = concat("gpgsig ", _commit.signature, "", "", "", "", "");
     }
 
     string memory messageStr = concat("\n", _commit.message, "", "", "", "", "");
-
     string memory data = concat(treeStr, parentsStr, authorStr, committerStr, signatureStr, messageStr, "");
-
     commitHash = SHA1.sha1(abi.encodePacked("commit ", uint2str(strsize(data)), byte(0), data));
 
     require(checkpoints[commitHash] == 0);
@@ -277,7 +263,6 @@ contract Commits {
   }
 
   function checkpointed(bytes20 commit) public view returns (bool) {
-
     return checkpoints[commit] != 0;
   }
 
