@@ -166,7 +166,7 @@ function checkpoint(
   // ...
 ```
 
-Next it should construct the commit hash from the commit data by concanetating the fields into their proper format. We'll be using the [SHA1.sol](https://github.com/ensdomains/solsha1/blob/master/contracts/SHA1.sol) library which implements SHA-1 in solidity. Solidity doesn't offer a nice way to concatenate strings so apologies for the rough looking code:
+Next it should construct the commit hash from the commit data by concanetating the fields into their proper format:
 
 ```solidity
   // ...
@@ -188,7 +188,7 @@ Next it should construct the commit hash from the commit data by concanetating t
   // ...
 ```
 
-After concatenating to the proper format, the data must contain prefixed with the *commit* label followed by the length of the data to generate the commit id hash:
+After concatenating to the proper format, the data must contain prefixed with the *commit* label followed by the length of the data to generate the commit id hash. We'll be using the [SHA1.sol](https://github.com/ensdomains/solsha1/blob/master/contracts/SHA1.sol) library which implements SHA-1 in solidity:
 
 ```solidity
   // ...
@@ -292,24 +292,7 @@ contract Commits {
   }
 
   function concat(string memory _a, string memory _b, string memory _c, string memory _d, string memory _e, string memory _f, string memory _g) internal returns (string memory) {
-    bytes memory _ba = bytes(_a);
-    bytes memory _bb = bytes(_b);
-    bytes memory _bc = bytes(_c);
-    bytes memory _bd = bytes(_d);
-    bytes memory _be = bytes(_e);
-    bytes memory _bf = bytes(_f);
-    bytes memory _bg = bytes(_g);
-    string memory abcdefg = new string(_ba.length + _bb.length + _bc.length + _bd.length + _be.length + _bf.length + _bg.length);
-    bytes memory babcdefg = bytes(abcdefg);
-    uint k = 0;
-    for (uint i = 0; i < _ba.length; i++) babcdefg[k++] = _ba[i];
-    for (uint i = 0; i < _bb.length; i++) babcdefg[k++] = _bb[i];
-    for (uint i = 0; i < _bc.length; i++) babcdefg[k++] = _bc[i];
-    for (uint i = 0; i < _bd.length; i++) babcdefg[k++] = _bd[i];
-    for (uint i = 0; i < _be.length; i++) babcdefg[k++] = _be[i];
-    for (uint i = 0; i < _bf.length; i++) babcdefg[k++] = _bf[i];
-    for (uint i = 0; i < _bg.length; i++) babcdefg[k++] = _bg[i];
-    return string(babcdefg);
+    return string(abi.encodePacked(_a, _b, _c, _d, _e, _f, _g));
   }
 
   function uint2str(uint v) internal view returns (string memory str) {
