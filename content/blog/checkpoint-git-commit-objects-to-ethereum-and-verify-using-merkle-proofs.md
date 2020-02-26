@@ -64,6 +64,10 @@ Now it appears as if the commit happened *10 days ago*!
 
 Someone can completely make up the dates to make it appear as if it was created a while back so you can never really be sure if they're telling the truth. **But if commits were notarized on-chain, then you don't have to trust; just verify!**
 
+An example of why checkpointing would be important, is being able to know that a commit was signed with a GPG key that wasn't revoked. For example, if someone has a GPG key they use to sign their commits and it was set to expire in a month and after that month the key gets compromised, the thief can sign commits after the expiration with that key (by backdating their hardware or system clock using [libfaketime](https://github.com/wolfcw/libfaketime)) and sign backdated commits, to make it appear as if they are legitimate commits signed with the key. By publishing the entire commit object which includes the date, the smart contract can only accept commits that are within a day, or even a few hours of the current time so it's impossible to publish on-chain backdated commits. This checkpointing will help in proving authenticity of commits if the chance to do so ever arises since the commit is pegged to the actual date that the committer says the commit occurred on which is enforced by the smart contract.
+
+Although it can, the contract won't store the commit data and will simply emit events. This keeps the state trie light and data is still available off-chain via the event logs. Cost is negligible since it's suggested to only on publish on major/minor tagged releases.
+
 ## Smart contract
 
 There needs to be a way to notarize commits in a way that the commit date can also be verified to be current during notarization, meaning that the notary shouldn't allow commits older than a small window from the current time. This is actually pretty trivial to implement in a smart contract as we'll see.
