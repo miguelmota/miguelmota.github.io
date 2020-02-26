@@ -36,6 +36,12 @@ pygmentsStyle = "friendly"
 #pygmentsStyle = "vim"
 #pygmentsStyle = "vs"
 
+[markup]
+  defaultMarkdownHandler = "goldmark"
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
 [taxonomies]
 	tag = "tag"
 	category = "category"
