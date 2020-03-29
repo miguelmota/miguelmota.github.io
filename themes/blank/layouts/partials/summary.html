@@ -3,6 +3,7 @@
     <h1><a href="{{ .Permalink }}" title="View post">{{ .Title }}</a></h1>
     <div class="subheader">
       <time title="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02 Jan 2006" }}</time>
+      <span>・{{ math.Round (div (countwords .Content) 220.0) }} min read</span>
     </div>
   </header>
   <div class="summary">
