@@ -10,14 +10,14 @@ route: about
 
 <h3>Hi, I'm <strong>Miguel Mota</strong>.</h3>
 
-<p>~8 years of experience in software development, mainly dealing with full-stack web development. Some of my interests are Golang, Node.js, FRP, web audio, Python, Vim, Docker, distributed systems, software architecture, Bitcoin, Ethereum, and decentralized systems in general.</p>
+<p>~8 years of experience in software development, mainly dealing with full-stack web development. Some of my interests are Golang, Node.js, FRP, web audio, Python, Vim, Docker, distributed systems, software architecture, and decentralization.</p>
 
 <p>Some other tidbits:</p>
 
 <ul>
   <li><em>"Make it run, make it right, make it fast"</em> is the general programming process I follow.</li>
   <li><a href="https://en.wikipedia.org/wiki/Stoicism" target="_blank" rel="noreferrer noopener" data-ga-label="About - Stoicism">Stoicism</a> practitioner. <a href="https://en.wikipedia.org/wiki/Marcus_Aurelius" target="_blank" rel="noreferrer noopener" data-ga-label="About - Marcus Aurelius">Marcus Aurelius</a> is my favorite stoic.</li>
-  <li>A book everyone should read is <a href="https://en.wikipedia.org/wiki/How_to_Win_Friends_and_Influence_People" target="_blank" rel="noreferrer noopener" data-ga-label="About - Favorite Book">How to Win Friends and Influence People</a> by Dale Carnegie.</li>
+  <li>A book that changed my life is <em><a href="https://en.wikipedia.org/wiki/Think_and_Grow_Rich" target="_blank" rel="noreferrer noopener" data-ga-label="About - Favorite Book">Think and Grow Rich</a> (1937)</em> by Napoleon Hill.</li>
   <li><a href="https://en.wikipedia.org/wiki/INTJ" target="_blank" rel="noopener noreferrer" data-ga-label="About - INTJ">INTJ</a> personality type.</li>
 </li>
 
@@ -28,4 +28,4 @@ route: about
 
 <p>And no, this site isn't broken; it's intentially built for <a href="http://motherfuckingwebsite.com/" target="_blank"  rel="noopener noreferrer" data-ga-label="About - Speed and readability">speed and readability</a> ;)
 
-<datetime data-last-update datetime="2015-11-19" pubdate="pubdate">Last updated 15 April 2018</datetime>
+<datetime data-last-update datetime="2020-04-07" pubdate="pubdate">Last updated 07 April 2020</datetime>

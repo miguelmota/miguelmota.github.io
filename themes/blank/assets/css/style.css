@@ -56,7 +56,7 @@ pre {
   overflow-x: auto;
 }
 
-ul {
+ul, ol {
   list-style-position: inside;
   margin-bottom: 1em;
 }

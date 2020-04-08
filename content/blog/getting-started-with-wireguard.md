@@ -13,18 +13,19 @@ If you've ever set up an VPN service such as [OpenVPN](https://github.com/OpenVP
 
 ### Why use WireGuard?
 
-- A VPN protects you from man in the middle attacks.
+- A VPN helps protect you from man in the middle attacks.
 - Protect your privacy against ISPs that snoop into your traffic.
 - Get around internet censorship in countries.
 
 Advantages of WireGuard over other VPNs:
 
-- It's kernel-based which reduces attack surface and can be ran in virtually any device.
+- It's kernel-based; improved performance.
 - Establishes connections in less than 100ms.
+- Small footprint; can be ran in virtually any device, ie. embedded devices.
+- Easy to configure and deploy as SSH; reduces attack surface since there's less complexity.
 - Uses modern and improved [cryptographic standards](https://en.wikipedia.org/wiki/WireGuard#Protocol).
-- Easy to configure and deploy as SSH.
 - Simple handshake occurring every few minutes to ensure connection secrecy.
-- IP roaming support meaning you can change wifi networks or disconnect from wifi or celluar  and the VPN tunnel connection won't be lost. *It just works!*
+- IP roaming support meaning you can change wifi networks or disconnect from wifi or celluar and the VPN tunnel connection won't be lost. *It just works!*
 
 ### What we'll be going over
 
@@ -46,7 +47,6 @@ The steps outlined in this post are:
 10. [Starting WireGuard service on server](#starting-wireguard-service-on-server)
 11. [Starting WireGuard service on client](#starting-wireguard-service-on-client)
 12. [Connecting a mobile client to server](#connecting-a-mobile-client-to-server)
-13. [Generating vanity addresses](#generating-vanity-addresses)
 
 Please note that in WireGuard land there is no "server" and "client" in the traditional sense. Rather, computers and devices connected to each other are known as "peers". For simplicity sake, we'll be using "server" to mean the hosted server that will be forwarding all our traffic to, and we'll be using "client" to refer to the home computer that forwards all it's traffic to the server.
 
@@ -234,10 +234,14 @@ The address `10.0.0.1` was chosen because it's an available private subnet on th
 The `[Interface]` section is for configuration the new WireGuard interface we are creating.
 
 - `PrivateKey` is your server's private key.
-- `Address` is the private network IP address that we're assigning to for this network interface.
+- `Address` is the private network IP address range that we're assigning to for this network interface.
 - `ListenPort` is the host port to run the service on. This port will need to be publicly accessible. The port `51820` is the default port.
 
 Make sure to enable the port `51820` for `UDP` traffic. If using EC2 then you should allow it under the Security Group for the EC2 instance.
+
+EC2 instance → Security groups → Click on security group → Edit inbound rules → Add rules → Custom UDP → Port range: 51820 → Source: Anywhere → Save rules
+
+The rules immediately take effect.
 
 If your server is behind a NAT (which in our case it is because it's on EC2 behind a VPC) then all traffic needs to be forwarded from the default interface to the WireGuard interface.
 
@@ -329,7 +333,8 @@ The process of generating WireGuard keys on the client is the same as how it's d
 
 ```bash
 [root@archlinux ~]# mkdir /etc/wireguard/keys
-[root@archlinux ~]# umask 077
+[root@archlinux ~]# cd /etc/wireguard/keys
+[root@archlinux keys]# umask 077
 ```
 
 Generate a private and public key pair for the client using the same command as we did on the server:
@@ -382,7 +387,7 @@ DNS = 1.1.1.1
 
 The `[Interface]` section is for configuration the new WireGuard interface we are creating.
 
-- `Address` is the private network IP address that we're assigning to for this network interface.
+- `Address` is the private network IP address range that we're assigning to for this network interface.
 - `PrivateKey` is your client's private key.
 - `DNS` is the DNS resolve to use.
 
@@ -508,6 +513,12 @@ root@ip-172-30-0-233:/etc/wireguard/keys# wg-quick up wg0
 [#] iptables -A FORWARD -i wg0 -j ACCEPT; iptables -A FORWARD -o wg0 -j ACCEPT; iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
 ```
 
+Depending on your Ubuntu installation, you might need to install additional kernel modules. If you got the error _"RNETLINK answers: Operation not supported"_ trying to start the wg0 interface then install the following packages on the server:
+
+```bash
+root@ip-172-30-0-233:/etc/wireguard# apt-get install wireguard-dkms wireguard-tools linux-headers-$(uname -r)
+```
+
 To start WireGuard across reboots you'll need to _enable_ the service to add it to the systemd init system by running `systemctl enable wg-quick@wg0.service`:
 
 ```bash
@@ -618,7 +629,9 @@ Success! WireGuard is correctly configured and the peers are connected.
 
 Download the WireGuard app for [iOS](https://apps.apple.com/us/app/wireguard/id1441195209) or [Android](https://play.google.com/store/apps/details?id=com.wireguard.android&hl=en_US) on your device.
 
-For this example we'll create a second client (an iPhone) to connect to the WireGuard server. The same steps will need to be followed from when we setup the first client. Since we can't generate the client keys directly on the device, then we'll need to generate them on the server and securely transfer the configuration and key information into the WireGuard app.
+For this example we'll create a second client (an iPhone) to connect to the WireGuard server. The same steps will need to be followed from when we setup the first client.
+
+We can generate keys directly on the device and set up the configuration manually but that's not quick and ideal. Instead we can generate the keys and configuration on the server and then securely transfer the information into the WireGuard app.
 
 Run `wg genkey` but specify different filenames this time to distinguish them from the server keys:
 
@@ -724,6 +737,44 @@ private aEJ33LXCeipouhiAoQjfMjtwrHPfZDvKLguE8XlawnY=  public iPHoEoUy4WgkUXr4e47
 
 It'll keep generating until you manually stop it when you see a key pair that you like.
 
+## Automation
+
+A nice tool to automate the process of setting up a WireGuard VPN is [Algo](https://github.com/trailofbits/algo).
+
+Algo is a set of [Ansible](https://github.com/ansible/ansible) scripts to help you set up and configure WireGuard on the remote server from your local machine.
+
+To get started, clone the algo repository and install the python dependencies:
+
+```bash
+~$ git clone https://github.com/trailofbits/algo.git
+~$ cd algo/
+~/algo$ pip install virtualenv
+~/algo$ python3 -m virtualenv --python="$(command -v python3)" .env && source .env/bin/activate && python3 -m pip install -U pip virtualenv && python3 -m pip install -r requirements.txt
+```
+
+Now run the algo executable file to start the walkthough of deploying an Algo server to the cloud:
+
+```bash
+(.env) ~/algo$ ./algo
+[Cloud prompt]
+What provider would you like to use?
+    1. DigitalOcean
+    2. Amazon Lightsail
+    3. Amazon EC2
+    4. Microsoft Azure
+    5. Google Compute Engine
+    6. Hetzner Cloud
+    7. Vultr
+    8. Scaleway
+    9. OpenStack (DreamCompute optimised)
+    10. CloudStack (Exoscale optimised)
+    11. Install to existing Ubuntu 18.04 or 19.10 server (for more advanced users)
+
+Enter the number of your desired provider
+:
+<truncated>
+```
+
 ## TLDR;
 
 Here's a summary of the server and client configuration and commands used in this post:
@@ -792,8 +843,15 @@ PersistentKeepalive = 25
 ```
 
 ## Resources
+
 - [WireGuard site](https://www.wireguard.com/)
 - [WireGuard vanity address generator](https://github.com/warner/wireguard-vanity-address)
 - [WireGuard for iOS](https://apps.apple.com/us/app/wireguard/id1441195209)
 - [WireGuard for Android](https://play.google.com/store/apps/details?id=com.wireguard.android&hl=en_US)
+- [WireGuard for macOS](https://apps.apple.com/us/app/wireguard/id1451685025?mt=12)
+- [WireGuard for Windows](https://download.wireguard.com/windows-client/)
 - [libqrencode](https://github.com/fukuchi/libqrencode)
+- [Algo](https://github.com/trailofbits/algo)
+
+Follow discussion on [Hacker News](https://news.ycombinator.com/item?id=22788584).
+
