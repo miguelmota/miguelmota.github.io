@@ -17,7 +17,7 @@ If you've ever set up an VPN service such as [OpenVPN](https://github.com/OpenVP
 - Protect your privacy against ISPs that snoop into your traffic.
 - Get around internet censorship in countries.
 
-Advantages of WireGuard over other VPNs:
+**Advantages of WireGuard over other VPNs:**
 
 - It's kernel-based; improved performance.
 - Establishes connections in less than 100ms.
@@ -231,7 +231,7 @@ ListenPort = 51820
 
 The address `10.0.0.1` was chosen because it's an available private subnet on the server. If your server is using that IP range already, then pick a different address like `192.168.2.1` to avoid conflicts.
 
-The `[Interface]` section is for configuration the new WireGuard interface we are creating.
+To summarize, the server `[Interface]` section is for configuration the new WireGuard interface we are creating.
 
 - `PrivateKey` is your server's private key.
 - `Address` is the private network IP address range that we're assigning to for this network interface.
@@ -243,7 +243,7 @@ EC2 instance → Security groups → Click on security group → Edit inbound ru
 
 The rules immediately take effect.
 
-If your server is behind a NAT (which in our case it is because it's on EC2 behind a VPC) then all traffic needs to be forwarded from the default interface to the WireGuard interface.
+If your server is behind a NAT then all traffic needs to be forwarded from the default interface to the WireGuard interface.
 
 To find out the name of the default interface run `ip route`:
 
@@ -385,7 +385,7 @@ PrivateKey = cAqmevIKScn5l4Jg1F69KEIty6gVb8wGNqNlApvzc0c=
 DNS = 1.1.1.1
 ```
 
-The `[Interface]` section is for configuration the new WireGuard interface we are creating.
+To summarize, the client `[Interface]` section is for configuration the new WireGuard interface we are creating.
 
 - `Address` is the private network IP address range that we're assigning to for this network interface.
 - `PrivateKey` is your client's private key.
@@ -421,22 +421,13 @@ Endpoint = 54.225.123.18:51820
 AllowedIPs = 0.0.0.0/0
 ```
 
-Because our server is behind a NAT, we'll also need to set `PersistentKeepalive` to keep the connection alive:
+If your server is behind a NAT and _not_ accessible via a public IP, then under the peer section you'll need to set `PersistentKeepalive` to keep the connection alive. It's important that you **only set `PersistentKeepalive` if your server in an internal server**, otherwise you'd be wasting bandwidth and battery life for no good reason.
 
 ```ini
-[Interface]
-Address = 10.0.0.2/32
-PrivateKey = cAqmevIKScn5l4Jg1F69KEIty6gVb8wGNqNlApvzc0c=
-DNS = 1.1.1.1
-
-[Peer]
-PublicKey = H6StMJOYIjfqhDvG9v46DSX9UlQl52hOoUm7F3COxC4=
-Endpoint = 54.225.123.18:51820
-AllowedIPs = 0.0.0.0/0
 PersistentKeepalive = 25
 ```
 
-The `[Peer]` section is for configuration information about the peer it's connecting to, which in this case it's the client connection to the server.
+To summarize, the client `[Peer]` section is for configuration information about the peer it's connecting to, which in this case it's the client connection to the server.
 
 - `PublicKey` is the public key of the server.
 - `Endpoint` is your server's public IP and port the server's interface is listening, configured with `ListenPort` in the server's config.
@@ -495,7 +486,7 @@ PublicKey = vi4TCAo8TNRkpf4ZpiMsp3YHaOLrcouSDkrm4wJxezw=
 AllowedIPs = 10.0.0.2/32
 ```
 
-The `[Peer]` section is for configuration information about the peer it's connecting to, which in this case it's the servers connection to the client.
+To summarize, the server `[Peer]` section is for configuration information about the peer it's connecting to, which in this case it's the servers connection to the client.
 
 - `PublicKey` is the client's public key.
 - `AllowedIPs` are allowed client IP addresses.
@@ -623,7 +614,7 @@ Now that WireGuard is running, check the public IP address again of the client a
 54.225.123.18
 ```
 
-Success! WireGuard is correctly configured and the peers are connected.
+**Success!** WireGuard is correctly configured and the peers are connected.
 
 ## Connecting a mobile client to server
 
@@ -687,7 +678,6 @@ DNS = 1.1.1.1
 PublicKey = H6StMJOYIjfqhDvG9v46DSX9UlQl52hOoUm7F3COxC4=
 Endpoint = 54.225.123.18:51820
 AllowedIPs = 0.0.0.0/0
-PersistentKeepalive = 25
 ```
 
 Install [qrencode](https://github.com/fukuchi/libqrencode) on the server to generate a QRCode from the configuration file.
@@ -839,7 +829,6 @@ DNS = 1.1.1.1
 PublicKey = <server public key>
 Endpoint = <server public ip>:51820
 AllowedIPs = 0.0.0.0/0
-PersistentKeepalive = 25
 ```
 
 ## Resources
