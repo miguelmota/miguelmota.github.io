@@ -376,7 +376,7 @@ Address = 10.0.0.2/32
 PrivateKey = cAqmevIKScn5l4Jg1F69KEIty6gVb8wGNqNlApvzc0c=
 ```
 
-Set the DNS to Cloudflare's public DNS resolver `1.1.1.1` which is fast and secure:
+Optionally, you can set the DNS resolver to use. We'll set the DNS resolver IP to Cloudflare's public DNS resolver [`1.1.1.1`](https://www.cloudflare.com/learning/dns/what-is-1.1.1.1/) which is fast and secure:
 
 ```ini
 [Interface]
@@ -502,12 +502,6 @@ root@ip-172-30-0-233:/etc/wireguard/keys# wg-quick up wg0
 [#] ip -4 address add 10.0.0.1/24 dev wg0
 [#] ip link set mtu 8921 up dev wg0
 [#] iptables -A FORWARD -i wg0 -j ACCEPT; iptables -A FORWARD -o wg0 -j ACCEPT; iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
-```
-
-Depending on your Ubuntu installation, you might need to install additional kernel modules. If you got the error _"RNETLINK answers: Operation not supported"_ trying to start the wg0 interface then install the following packages on the server:
-
-```bash
-root@ip-172-30-0-233:/etc/wireguard# apt-get install wireguard-dkms wireguard-tools linux-headers-$(uname -r)
 ```
 
 To start WireGuard across reboots you'll need to _enable_ the service to add it to the systemd init system by running `systemctl enable wg-quick@wg0.service`:
@@ -764,6 +758,71 @@ Enter the number of your desired provider
 :
 <truncated>
 ```
+
+## Troubleshooting
+
+_The following are additional steps users reported they needed to take after getting the following errors._
+
+If you tried `wg-quick up wg0` and received the following:
+
+```bash
+root@ubuntu:/etc/wireguard# wg-quick up wg0
+[#] ip link add wg0 type wireguard
+RTNETLINK answers: Operation not supported
+Unable to access interface: Protocol not supported
+[#] ip link delete dev wg0
+Cannot find device "wg0"
+```
+
+The error _"RNETLINK answers: Operation not supported"_ when trying to start the wg0 interface could mean that you need install you install additional kernel modules that are required.
+
+To install the required wireguard kernel modules on Ubuntu, run:
+
+```bash
+root@ubuntu:/etc/wireguard# apt-get install wireguard-dkms wireguard-tools linux-headers-$(uname -r)
+```
+
+Running `modprobe wireguard` should _not_ output anything if the kernel modules were installed successful:
+
+```bash
+root@ubuntu:/etc/wireguard# modprobe wireguard
+```
+
+If you're seeing errors then there's a chance that the [Secure Boot](https://wiki.ubuntu.com/UEFI/SecureBoot) feature is blocking the unsigned WireGuard kernel module. To fix this you'll need to disable Secure Boot or sign the WireGuard module for the kernel to trust it.
+
+Instructions:
+
+- [How can I disable Secure Boot?](https://askubuntu.com/questions/891248/ubuntu-16-04-how-can-i-disable-secure-boot)
+
+After rebooting try loading the interface with the `ip link` command:
+
+```bash
+root@ubuntu:/etc/wireguard# ip link add dev wg0 type wireguard
+```
+
+There should be no output if successful.
+
+If you tried `wg-quick up wg0` and received the following:
+
+```bash
+root@ubuntu:/etc/wireguard# wg-quick up wg0
+[#] ip link add configfile type wireguard
+[#] wg setconf configfile /dev/fd/63
+[#] ip address add 10.0.0.1/24 dev configfile
+[#] ip link set mtu 1420 dev configfile
+[#] ip link set configfile up
+[#] resolvconf -a configfile -m 0 -x
+/usr/bin/wg-quick: line 31: resolvconf: command not found
+[#] ip link delete dev configfile
+```
+
+it could mean that `resolveconf` is not installed on your machine, so you'll need to install the `openresolv` package:
+
+```bash
+root@ubuntu:/etc/wireguard# apt-get install openresolv
+```
+
+More information found [here](https://github.com/StreisandEffect/streisand/issues/1434).
 
 ## TLDR;
 
