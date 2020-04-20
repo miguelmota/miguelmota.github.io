@@ -788,11 +788,7 @@ Running `modprobe wireguard` should _not_ output anything if the kernel modules 
 root@ubuntu:/etc/wireguard# modprobe wireguard
 ```
 
-If you're seeing errors then there's a chance that the [Secure Boot](https://wiki.ubuntu.com/UEFI/SecureBoot) feature is blocking the unsigned WireGuard kernel module. To fix this you'll need to disable Secure Boot or sign the WireGuard module for the kernel to trust it.
-
-Instructions:
-
-- [How can I disable Secure Boot?](https://askubuntu.com/questions/891248/ubuntu-16-04-how-can-i-disable-secure-boot)
+If you're seeing errors then there's a chance that the [Secure Boot](https://wiki.ubuntu.com/UEFI/SecureBoot) feature is blocking the unsigned WireGuard kernel module. To fix this you'll need to disable Secure Boot or sign the WireGuard module for the kernel to trust it. See this [answer](https://askubuntu.com/questions/891248/ubuntu-16-04-how-can-i-disable-secure-boot) for instructions.
 
 After rebooting try loading the interface with the `ip link` command:
 
@@ -822,7 +818,7 @@ it could mean that `resolveconf` is not installed on your machine, so you'll nee
 root@ubuntu:/etc/wireguard# apt-get install openresolv
 ```
 
-More information found [here](https://github.com/StreisandEffect/streisand/issues/1434).
+See this [Github issue](https://github.com/StreisandEffect/streisand/issues/1434) thread for more context.
 
 ## TLDR;
 
