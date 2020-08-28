@@ -1,9 +1,6 @@
 {{ partial "header.html" . }}
 <main>
-  <p>
-  Hi, I'm <strong>Miguel Mota</strong>.<br />
-  <em>A software developer from sunny Southern California. <a href="/about" data-ga-label="Home - Learn More">Learn more »</a></em></p>
-
+  {{ partial "intro.html" }}
   {{ partial "stackoverflow.html" . }}
 
   {{ $paginator := .Paginate (where (where .Site.Pages "Type" "blog") ".Title" "!=" "Blogs") 20 }}

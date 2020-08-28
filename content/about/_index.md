@@ -10,7 +10,7 @@ route: about
 
 <h3>Hi, I'm <strong>Miguel Mota</strong>.</h3>
 
-<p>~8 years of experience in software development, mainly dealing with full-stack web development. Some of my interests are Golang, Node.js, FRP, web audio, Python, Vim, Docker, distributed systems, software architecture, and decentralization.</p>
+<p>~8 years of experience in software development, mainly dealing with full-stack web development. Some of my interests are Linux, <abbr title="Terminal UI">TUIs</abbr>, Golang, Node.js/TypeScript, <abbr title="Functional Reactive Programming">FRP</abbr>, web APIs, Python, Vim, Docker, distributed systems, software architecture, and decentralization.</p>
 
 <p>Some other tidbits:</p>
 
