@@ -26,6 +26,6 @@ route: about
 <h4>About the site</h4>
 <p>This site is built with J̶e̶k̶y̶l̶l̶ <a href="https://gohugo.io/" target="_blank" rel="noopener noreferrer" data-ga-label="About - Hugo">Hugo</a>, a static site generator in Go. I'll ocasionally express <a href="/blog">thoughts</a> and findings which I find worthy of sharing.</p>
 
-<p>And no, this site isn't broken; it's intentially built for <a href="http://motherfuckingwebsite.com/" target="_blank"  rel="noopener noreferrer" data-ga-label="About - Speed and readability">speed and readability</a> ;)
+<p>The basic design is intentially built for <a href="http://motherfuckingwebsite.com/" target="_blank" rel="noopener noreferrer" data-ga-label="About - Speed and readability">speed and readability</a> ;)
 
 <datetime data-last-update datetime="2020-04-07" pubdate="pubdate">Last updated 07 April 2020</datetime>
