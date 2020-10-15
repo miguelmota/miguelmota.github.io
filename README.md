@@ -15,7 +15,7 @@ brew install hugo
 Run server:
 
 ```bash
-make server
+make serve
 ```
 
 Build site:

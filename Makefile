@@ -2,8 +2,8 @@
 build:
 	hugo --gc --minify
 
-.PHONY: server
-server:
+.PHONY: serve
+serve:
 	hugo server --bind 0.0.0.0
 
 .PHONY: deploy
