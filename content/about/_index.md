@@ -17,8 +17,8 @@ route: about
 <ul>
   <li><em>"Make it run, make it right, make it fast"</em> is the general programming process I follow.</li>
   <li><a href="https://en.wikipedia.org/wiki/Stoicism" target="_blank" rel="noreferrer noopener" data-ga-label="About - Stoicism">Stoicism</a> practitioner. <a href="https://en.wikipedia.org/wiki/Marcus_Aurelius" target="_blank" rel="noreferrer noopener" data-ga-label="About - Marcus Aurelius">Marcus Aurelius</a> is my favorite stoic.</li>
-  <li>A book that changed my life is <em><a href="https://en.wikipedia.org/wiki/Think_and_Grow_Rich" target="_blank" rel="noreferrer noopener" data-ga-label="About - Favorite Book">Think and Grow Rich</a> (1937)</em> by Napoleon Hill.</li>
-  <li><a href="https://en.wikipedia.org/wiki/INTJ" target="_blank" rel="noopener noreferrer" data-ga-label="About - INTJ">INTJ</a> personality type.</li>
+  <li>Life-altering book I've read is <em><a href="https://en.wikipedia.org/wiki/Think_and_Grow_Rich" target="_blank" rel="noreferrer noopener" data-ga-label="About - Favorite Book">Think and Grow Rich</a> (1937)</em> by Napoleon Hill.</li>
+  <li>"<a href="https://en.wikipedia.org/wiki/INTJ" target="_blank" rel="noopener noreferrer" data-ga-label="About - INTJ">INTJ</a>" personality type.</li>
 </li>
 
 <p>View my <a href="/work" data-ga-label="About - Work">work »</a></p>

@@ -1,5 +1,5 @@
   <footer class="site-footer">
-    <p>© {{ now.Year }} <a href="{{ .Site.BaseURL }}" data-ga-label="Footer - Home">{{ .Site.Params.author }}</a></p>
+  <p>© {{ now.Year }} <a href="{{ .Site.BaseURL }}" data-ga-label="Footer - Home">{{ .Site.Params.author }}</a> • {{ partial "rss_link.html" }}</p>
     <p><small>i use arch btw</small><p>
   </footer>
   {{ partial "tracking.html" }}

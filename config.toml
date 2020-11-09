@@ -1,6 +1,7 @@
 baseURL = "https://miguelmota.com/"
-languageCode = "en-us"
 title = "Miguel Mota | Software Developer"
+languageCode = "en-us"
+copyright = "This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License."
 theme = "blank"
 enableEmoji = true
 pygmentsUseClassic = false
@@ -43,14 +44,17 @@ pygmentsStyle = "friendly"
       unsafe = true
 
 [taxonomies]
-	tag = "tag"
-	category = "category"
+  tag = "tag"
+  category = "category"
+
+[author]
+  name = "Miguel Mota"
 
 [params]
-	author = "Miguel Mota"
-	description = "Software developer from sunny Southern California."
-	keywords = "miguel mota,web developer,software developer, html5 developer, javascript developer, blockchain developer"
-	googleAnalyticsUID = "UA-12642068-1"
+  author = "Miguel Mota"
+  description = "Software developer from sunny Southern California."
+  keywords = "miguel mota,web developer,software developer, html5 developer, javascript developer, blockchain developer"
+  googleAnalyticsUID = "UA-12642068-1"
 
 [menu]
 
