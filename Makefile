@@ -9,3 +9,7 @@ serve:
 .PHONY: deploy
 deploy:
 	./scripts/deploy.sh
+
+deploy-ipfs:
+	command -v ipfs-deploy || npm i -g ipfs-deploy
+	ipd -p pinata public --no-open
