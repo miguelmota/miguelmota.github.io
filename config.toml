@@ -75,30 +75,15 @@ pygmentsStyle = "friendly"
 
 [[menu.main]]
   weight = 4
-  name   = "Bytes"
-  url    = "/bytes"
-
-[[menu.main]]
-  weight = 5
   name   = "Github"
   url    = "https://github.com/miguelmota"
 
 [[menu.main]]
-  weight = 6
-  name   = "LinkedIn"
-  url    = "https://www.linkedin.com/in/miguelmota/"
-
-[[menu.main]]
-  weight = 7
+  weight = 5
   name   = "Twitter"
   url    = "https://twitter.com/miguelmotah"
 
 [[menu.main]]
-  weight = 8
-  name   = "Hacker News"
-  url    = "https://news.ycombinator.com/user?id=miguelmota"
-
-[[menu.main]]
-  weight = 9
+  weight = 6
   name   = "Contact"
   url    = "/contact"

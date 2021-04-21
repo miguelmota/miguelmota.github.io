@@ -6,7 +6,7 @@ route: contact
 ---
 <p>
   hello [at] miguelmota.com<br>
-  <small style="opacity: 0.5;font-size: 0.7em;">*Response not guaranteed</small>
+  <small style="font-size: 0.7em;">*Response not guaranteed</small>
 </p>
 
 <details id="pgp-public-key">
