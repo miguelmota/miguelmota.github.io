@@ -6,6 +6,10 @@ build:
 serve:
 	hugo server --bind 0.0.0.0
 
+.PHONY: open
+open:
+	xdg-open "http://localhost:1313"
+
 .PHONY: deploy
 deploy:
 	./scripts/deploy.sh
