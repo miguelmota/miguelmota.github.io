@@ -82,8 +82,3 @@ pygmentsStyle = "friendly"
   weight = 5
   name   = "Twitter"
   url    = "https://twitter.com/miguelmotah"
-
-[[menu.main]]
-  weight = 6
-  name   = "Contact"
-  url    = "/contact"
