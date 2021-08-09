@@ -1,0 +1,48 @@
+#chart-container {
+  max-width: 500px;
+}
+.chart {
+  text-align: center;
+}
+.chart .title {
+  font-size: 1rem;
+}
+.chart .inner-tip circle {
+  fill: red;
+}
+.chart .inner-tip text {
+  fill: black;
+  font-size: 1rem;
+}
+.chart .derivative .line {
+  stroke: red;
+  stroke-width: 1px;
+  opacity: 1;
+}
+.tip-x-line {
+
+}
+#chart-constant-sum-1 .derivative .line,
+#chart-constant-sum-2 .derivative .line {
+
+}
+#chart-constant-sum-2 .line-1,
+#chart-constant-sum-2 .line-2,
+#chart-constant-sum-2 .line-3 {
+  opacity: 0.5;
+}
+#chart-combined .derivative .line-0 {
+  stroke: green;
+}
+#chart-combined .derivative .line-1 {
+  stroke: red;
+}
+#chart-combined .derivative .line-2 {
+  stroke: blue;
+}
+#chart-combined .derivative .line {
+  opacity: 0.4;
+}
+#chart-combined .inner-tip circle {
+  fill: black;
+}
