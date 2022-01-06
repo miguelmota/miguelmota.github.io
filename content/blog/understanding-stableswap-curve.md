@@ -7,6 +7,8 @@ description: Understanind the Curve exchange StableSwap algorithm.
 date: 2021-07-17T00:00:00-00:00
 draft: false
 ---
+*Disclaimer: These are my notes on learning about StableSwap and may contain errors. Please do you own research and cite the official whitepaper.*
+
 ## Intro
 
 [StableSwap](https://curve.fi/files/stableswap-paper.pdf) is an autonomous market-maker (AMM) for stablecoins.
@@ -330,7 +332,7 @@ The constant product invariant such as \\(\prod_{i=1}^n x_i = k\\) is self-regul
 
 The StableSwap AMM algorithm combines \\(x * y = k\\) and \\(x + y = C\\).
 
-The StableSwap compromise is that the pool can slide up or down the \\(x+y=k\\) curve only when pools are pretty balanced and the price is stable around $1) value.
+The StableSwap compromise is that the pool can slide up or down the \\(x+y=k\\) curve only when pools are pretty balanced and the price is stable around \\($1\\) value.
 
 When pools become unbalanced then the invariant becomes a product invariant instead of the sum invariant, therefore swapping then becomes expensive like an \\(x * y = k\\) exchange.
 
@@ -511,7 +513,13 @@ The final StableSwap equation:
 
 $$\boxed{An^n\displaystyle\sum x_i + D = ADn^n + \frac{D^{n+1}}{n^n \prod x_i}}$$
 
-## Resources
+<iframe
+  width="100%"
+  height="725"
+  style="border:0;outline:0;margin-top:2rem;"
+  src="https://stableswap-graph.netlify.app/?hide-fork-button"></iframe>
+
+## Sources
 
 - [StableSwap - efficient mechanism for Stablecoin liquidity](https://curve.fi/files/stableswap-paper.pdf)
 - [Curve Research by Dr. Alvaro Feito Boirac](https://alvarofeito.com/articles/curve)
@@ -522,3 +530,17 @@ $$\boxed{An^n\displaystyle\sum x_i + D = ADn^n + \frac{D^{n+1}}{n^n \prod x_i}}$
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script src="https://unpkg.com/function-plot/dist/function-plot.js"></script>
 <script src="main.js"></script>
+
+## Side notes
+
+What this post didn't cover:
+
+- AMM Fees
+- LP Tokens
+- Price impact
+  - I think this is calculated as \\(virtualPrice * depositLpTokenAmount / tokenInputSum\\) where \\(tokenInputSum\\) is the sum of all tokens user is pooling and \\(depositLpTokenAmount\\) is the calculated LP tokens received for pooling input tokens.
+
+Source code:
+
+- Charts
+  - The hacky JS is available [here](https://github.com/miguelmota/miguelmota.github.com/blob/master/static/blog/understanding-stableswap-curve/main.js) and [here](https://github.com/miguelmota/stableswap-curve-example/blob/master/main.js)

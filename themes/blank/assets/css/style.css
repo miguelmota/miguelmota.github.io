@@ -81,6 +81,10 @@ ul, ol {
   margin-bottom: 1em;
 }
 
+ul ul {
+  margin-left: 1rem;
+}
+
 figure {
   margin-bottom: 1em;
 }
