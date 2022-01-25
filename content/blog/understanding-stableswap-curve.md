@@ -211,31 +211,31 @@ If Alice does a subsequent trade of 25 `X` tokens for `Y`:
 
 > \\((x + 25) * y = k\\)
 
-> \\((120 + 25) * y = 10000\\)
+> \\((125 + 25) * y = 10000\\)
 
-> \\(145 * y = 10000\\)
+> \\(150 * y = 10000\\)
 
-> \\(y = 10000 / 145\\)
+> \\(y = 10000 / 150\\)
 
-> \\(y = 68.96551724137932\\)
+> \\(y = 66.66\\)
 
-The new Y is \\(68.96551724137932\\) so the delta is:
+The new Y is \\(66.66\\) so the delta is:
 
 > \\(deltaY = newY - oldY\\)
 
-> \\(deltaY = 80 - 68.96551724137932\\)
+> \\(deltaY = 80 - 66.66\\)
 
-> \\(deltaY = 11.034482758620683\\)
+> \\(deltaY = 13.33\\)
 
-so Alice will receive \\(11.034482758620683\\) `Y` tokens for 25 `X` tokens.
+so Alice will receive \\(13.33\\) `Y` tokens for 25 `X` tokens.
 
 The price is calculated:
 
-> \\(P = 11.034482758620683 / 25\\)
+> \\(P = 13.33 / 25\\)
 
-> \\(P = 0.44137931034482736\\)
+> \\(P = 0.53\\)
 
-1 `Y` token costs \\(0.44137931034482736\\) `X` tokens
+1 `Y` token costs \\(0.53\\) `X` tokens
 
 There were more X tokens in the pool (X supply increased) due to the first trade, so the cost for a Y token (Y supply decreased) became more expensive for \\(k\\) to remain the same.
 
@@ -278,37 +278,37 @@ If Alice sold 50 `X` tokens initially (instead of two separate 25 X tokens and 2
 
 > \\(150 * y = 10000\\)
 
-> \\(Y = 1000 / 150\\)
+> \\(Y = 10000 / 150\\)
 
-> \\(Y = 66.66666666666667\\)
+> \\(Y = 66.66\\)
 
 Calculate \\(receiveY\\):
 
 > \\(receiveY = newY - oldY\)
 
-> \\(receiveY = 100 - 66.66666666666667\\)
+> \\(receiveY = 100 - 66.66\\)
 
-> \\(receiveY = 33.33333333333333\\)
+> \\(receiveY = 33.33\\)
 
-Alice would receive \\(33.33333333333333\\) `Y` tokens for selling 50 `X` tokens.
+Alice would receive \\(33.33\\) `Y` tokens for selling 50 `X` tokens.
 
 Calculate rate:
 
 > \\(P = dy/dx\\)
 
-> \\(P = 33.33333333333333 / 50\\)
+> \\(P = 33.33 / 50\\)
 
-> \\(P = 0.6666666666666665\\)
+> \\(P = 0.66\\)
 
-The rate is 0.6666666666666665 X token for 1 Y token.
+The rate is 0.66 X token for 1 Y token.
 
-In previous first and second trades, Alice had the rate of `0.8` and `0.44137931034482736` respectively.
+In previous first and second trades, Alice had the rate of `0.8` and `0.53` respectively.
 
 If Alice did a single trade instead of the two separate trades, then the price Alice would pay for the tokens is an average between the first and second trades.
 
-> \\(P = (0.8 + 0.44137931034482736) / 2\\)
+> \\(P = (0.8 + 0.53) / 2\\)
 
-> \\(P = 0.6206896551724137\\)
+> \\(P = 0.66\\)
 
 The price Alice paid per token is closely the same as when she did two consecutive trades because the price is determined by the curve.
 
@@ -517,7 +517,7 @@ $$\boxed{An^n\displaystyle\sum x_i + D = ADn^n + \frac{D^{n+1}}{n^n \prod x_i}}$
   width="100%"
   height="725"
   style="border:0;outline:0;margin-top:2rem;"
-  src="https://stableswap-graph.netlify.app/?hide-fork-button"></iframe>
+  src="https://lab.miguelmota.com/stableswap-curve-example/?hide-fork-button"></iframe>
 
 ## Sources
 
