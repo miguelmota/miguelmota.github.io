@@ -440,3 +440,5 @@ The bonder's liquidity used for bonding the transfer root on L1 will be freed af
 
 
 - [Whitepaper](https://hop.exchange/whitepaper.pdf)
+
+https://blog.li.finance/hop-protocol-a-deep-dive-5075eddc4dd
