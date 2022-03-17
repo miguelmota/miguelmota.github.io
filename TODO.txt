@@ -1,0 +1,2 @@
+don't upload .git
+nginx rotate logs

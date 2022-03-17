@@ -8,6 +8,8 @@ date: 2019-02-14T00:00:00-00:00
 draft: false
 ---
 
+_Note: These are some "tricks" I've read about and thought it be interesting to share._
+
 ## For focusing
 
 **Chewing gum helps your brain focus.**

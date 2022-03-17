@@ -52,7 +52,7 @@ pygmentsStyle = "friendly"
 
 [params]
   author = "Miguel Mota"
-  description = "Software developer from sunny Southern California."
+  description = "Software developer"
   keywords = "miguel mota,web developer,software developer, html5 developer, javascript developer, blockchain developer"
   googleAnalyticsUID = "UA-12642068-1"
 
