@@ -2,7 +2,7 @@
 
 > This is my [Hugo](https://gohugo.io/) powered blog.
 
-[https://miguelmota.github.com/](https://miguelmota.github.com/)
+[https://miguelmota.github.io/](https://miguelmota.github.io/)
 
 ## Development
 
