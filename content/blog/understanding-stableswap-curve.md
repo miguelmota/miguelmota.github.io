@@ -473,11 +473,11 @@ Ideally the the curve is linear when pools are equally balanced, such as 50M USD
 
 The sum invariant multiplied by \\(D\\) is:
 
-$$D \chi(x + y) = D^n$$
+$$D \chi(x + y) = D^2$$
 
 The StableSwap formula becomes:
 
-$$D \chi(x + y) + (x * y) = \chi D^n + \frac{D^n}{n^n}$$
+$$D \chi(x + y) + (x * y) = \chi D^2 + \frac{D^2}{2^2}$$
 
 The formula for \\(\chi\\) to be dynamic and adapt to the relative ratio of tokens in the pool:
 
