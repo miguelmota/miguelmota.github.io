@@ -442,3 +442,6 @@ The bonder's liquidity used for bonding the transfer root on L1 will be freed af
 - [Whitepaper](https://hop.exchange/whitepaper.pdf)
 
 https://blog.li.finance/hop-protocol-a-deep-dive-5075eddc4dd
+
+
+when a root gets bonded, the stake is locked for 24h. during that time it is added to "additional debt" (see below). After that time, the funds are freed.
