@@ -10,7 +10,7 @@ route: about
 
 <h3>Hi, I'm <strong>Miguel Mota</strong>.</h3>
 
-<p>~10 years of experience in software development, mainly dealing with full-stack web development. Some of my interests are Linux, <abbr title="Terminal UI">TUIs</abbr>, Golang, Node.js/TypeScript, <abbr title="Functional Reactive Programming">FRP</abbr>, web APIs, Python, Vim, Docker, software architecture, distributed systems, and decentralization.</p>
+<p>~10 years of experience in software development, mainly dealing with full-stack web development. Some of my interests are Linux, <abbr title="Terminal UI">TUIs</abbr>, Golang, Node.js/TypeScript, <abbr title="Functional Reactive Programming">FRP</abbr>, web APIs, Vim, Docker, software architecture, distributed systems, and decentralization.</p>
 
 <em>"Make it run, make it right, make it fast"</em> is the general programming process I follow.
 

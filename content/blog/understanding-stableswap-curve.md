@@ -7,7 +7,7 @@ description: Understanind the Curve exchange StableSwap algorithm.
 date: 2021-07-17T00:00:00-00:00
 draft: false
 ---
-*Disclaimer: These are my notes on learning about StableSwap and may contain errors. Please do you own research and cite the official whitepaper.*
+*Disclaimer: These are my notes on learning about StableSwap and may contain errors. Please do your own research and cite the official whitepaper.*
 
 ## Intro
 
