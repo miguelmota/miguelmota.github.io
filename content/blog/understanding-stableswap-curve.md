@@ -61,6 +61,8 @@ Alice selling tokens means there will be more of that token added to the pool.
 
 Since the constant must remain the same, we have to solve for `Y`:
 
+> \\(x + y = C\\)
+
 > \\((x + 25) + y = C\\)
 
 > \\((100 + 25) + y = 200\\)
@@ -84,9 +86,11 @@ Alice will receive 25 `Y` tokens if she sells 25 `X` tokens.
 
 The pools are now 125 `X` tokens and 75 `Y` tokens.
 
-To calculate the price will do:
+To calculate the price do:
 
 $${P} = \frac{\Delta y}{\Delta x}$$
+
+Read as "price is equal to the change in `Y` divided by the change in `X`" (\\({\Delta y}\\) is delta symbol meaning "change in")
 
 where \\({\Delta y}\\) is how much was _withdrawn_ and \\({\Delta x}\\) is how much was _deposited_.
 
@@ -100,7 +104,7 @@ The rate was exactly `1`.
 
 1 `X` token for 1 `Y` token.
 
-Taking the derivative to graph tangent:
+Taking the derivative to graph the tangent is as follows:
 
 > \\(y = C - x\\)
 
@@ -118,7 +122,7 @@ Moving the mouse over the graph line shows the price at X and Y:
 
 <div class="chart" id="chart-constant-sum-2"></div>
 
-Where pool is equally balanced, like at _(50, 50)_, the price is exactly 1.
+Where pool is equally balanced, such as at _(50, 50)_, the price is exactly **1**.
 
 If Alice does another trade, what price will she get this time?
 
@@ -126,7 +130,7 @@ With a constant sum formula, **the price will always remain the same regardless 
 
 There is **zero slippage** with the linear invariant. Zero slippage is also called **infinite leverage**.
 
-The pool currently has 125 `X` tokens and 75 `Y` tokens.
+Back to the example, the pool currently has 125 `X` tokens and 75 `Y` tokens.
 
 If Alice sells 75 `X` tokens, then Alice receives 75 `Y` tokens.
 
@@ -148,13 +152,15 @@ The invariant \\(k\\) is the constant price.
 
 The formula \\(x * y = k\\) is known as the **constant product formula**.
 
+\\(k\\) was chosen for constant instead of \\(C\\) to differentiate from the constant sum formula.
+
 Solving for \\(y\\) to get the equation for the curve:
 
 > \\(x + y = k\\)
 
 > \\(y = k / x\\)
 
-This is what the Uniswap constant product formula curve looks like if x=10 and y=10:
+This is what the Uniswap constant product formula curve looks like when x=10 and y=10:
 
 <div class="chart" id="chart-constant-product-1"></div>
 
@@ -164,7 +170,7 @@ For example,
 
 if there are 100 `X` tokens and 100 `Y` tokens,
 
-then \\(k\\) is calculated:
+then constant \\(k\\) is calculated as:
 
 > \\(x * y = k\\)
 
@@ -189,7 +195,7 @@ Since 10,000 is constant, then removing 20 `Y` tokens from the pool means there'
 
 > \\(x = 125\\)
 
-This means that `X` tokens need to go up from 100 to 125 to preserve k.
+This means that `X` tokens need to go up from 100 to 125 to preserve \\(k\\).
 
 The difference between 125 (after swap) and 100 (before swap) is 25
 
@@ -227,7 +233,7 @@ The new Y is \\(66.66\\) so the delta is:
 
 > \\(deltaY = 13.33\\)
 
-so Alice will receive \\(13.33\\) `Y` tokens for 25 `X` tokens.
+so Alice will receive \\(13.33\\) `Y` tokens for 25 `X` tokens where there were 125 `X` tokens and 80 `Y` tokens in pool.
 
 The price is calculated:
 
@@ -241,7 +247,7 @@ There were more X tokens in the pool (X supply increased) due to the first trade
 
 The price is adjusted automatically after each trade.
 
-The delta change \\(\frac{\Delta y}{\Delta x}\\) (or dy / dx), is the slope (rise over run), also known as _gradient_, of the curve.
+The delta change \\(\frac{\Delta y}{\Delta x}\\) (or \\(dy / dx\\), is the slope (rise over run), also known as _gradient_, of the curve.
 
 $$\frac{\Delta y}{\Delta x} = slope$$
 
@@ -264,9 +270,9 @@ If more `X` tokens keep being deposited due to `X` token trades, then there will
 - A shallow tangent (more horizontal), means less Y for X tokens (because Y is more expensive due to lower supply)
 - A steeper tangent (more vertical), means more Y for X tokens (because Y is cheaper due to more supply)
 
-In an order book, the more we buy a token, then the more we travel up the curve. The price and volume are set by each trader.
+In an order book; the more we buy a token, then the more we travel up the curve. The price and volume are set by each trader.
 
-In AMM, the _xy=k_ equation and depth of the pool determine the slippage.
+In an AMM, the _xy=k_ equation and depth of the pool determine the slippage.
 
 If Alice sold 50 `X` tokens initially (instead of two separate 25 X tokens and 25 X tokens sells)
 
@@ -371,7 +377,7 @@ Generalized as:
 
 $$(x + y) + (x * y) = D + \left(\frac{D}{n}\right)^n$$
 
-where \\(n = 2\\) since there are two tokens, \\(x\\) and \\(y\\).
+where \\(n = 2\\) since there are two tokens; \\(x\\) and \\(y\\).
 
 Solving for \\(y\\) to get the equation for the curve:
 
@@ -445,9 +451,11 @@ Graphing the equation:
   </div>
 </div>
 
-There's infinite leverage as \\(\chi \rightarrow \infty\\).
+__Note: The max values for chart sliders are arbitrarily set.__
 
-And zero leverage as \\(\chi \rightarrow 0\\).
+There's infinite leverage as \\(\chi \rightarrow \infty\\) (as multiplier approaches infinity).
+
+And zero leverage as \\(\chi \rightarrow 0\\) (as multiplier approaches zero).
 
 Here are the three different invariants we have disccused graphed together; increase \\(\chi\\) to see StableSwap curve flatten like sum invariant and decrease \\(\chi\\) to 0 for curve to be product invariant.
 
@@ -465,9 +473,9 @@ Here are the three different invariants we have disccused graphed together; incr
 
 Ideally the the curve is linear when pools are equally balanced, such as 50M USDC and 50M DAI, so \\(\chi\\) must be a function of the number of X and Y tokens.
 
- \\(\chi\\) will decrease When pools are out of balance, causing a steeper curve like the product invariant curve.
+ \\(\chi\\) will decrease when pools are out of balance, causing a steeper curve like the product invariant curve.
 
- \\(\chi\\) will increases When pools are balanced, causing a linear curve like the sum invariant curve with no slippage.
+ \\(\chi\\) will increases when pools are balanced, causing a linear curve like the sum invariant curve with no slippage.
 
  The sum invariant is multiplied by \\(D\\) to make the leverage factor dimensionless, meaning \\(\chi\\) won't depend on the total number of tokens in the pools or the depth of the pool.
 
@@ -536,11 +544,11 @@ $$\boxed{An^n\displaystyle\sum x_i + D = ADn^n + \frac{D^{n+1}}{n^n \prod x_i}}$
 What this post didn't cover:
 
 - AMM Fees
-- LP Tokens
+- LP (liquidity provider) tokens
 - Price impact
   - I think this is calculated as \\(virtualPrice * depositLpTokenAmount / tokenInputSum\\) where \\(tokenInputSum\\) is the sum of all tokens user is pooling and \\(depositLpTokenAmount\\) is the calculated LP tokens received for pooling input tokens.
 
 Source code:
 
 - Charts
-  - The hacky JS is available [here](https://github.com/miguelmota/miguelmota.github.com/blob/master/static/blog/understanding-stableswap-curve/main.js) and [here](https://github.com/miguelmota/stableswap-curve-example/blob/master/main.js)
+  - The hacky JS is available [here](https://github.com/miguelmota/miguelmota.github.com/blob/master/static/blog/understanding-stableswap-curve/main.js) and [here](https://github.com/miguelmota/stableswap-curve-example/blob/master/main.js).
