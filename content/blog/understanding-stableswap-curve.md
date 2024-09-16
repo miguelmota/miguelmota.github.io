@@ -209,7 +209,7 @@ Calculate the price:
 
 > \\(P = 0.8\\)
 
-1 `Y` token costs 0.8 `X` tokens.
+1 `X` token costs 0.8 `Y` tokens.
 
 If Alice does a subsequent trade of 25 `X` tokens for `Y`:
 
@@ -241,7 +241,7 @@ The price is calculated:
 
 > \\(P = 0.53\\)
 
-1 `Y` token costs \\(0.53\\) `X` tokens
+1 `X` token costs \\(0.53\\) `Y` tokens
 
 There were more X tokens in the pool (X supply increased) due to the first trade, so the cost for a Y token (Y supply decreased) became more expensive for \\(k\\) to remain the same.
 
